@@ -79,7 +79,8 @@ public class ModulesWatcher {
     myModuleUpdater = new ModuleUpdater(repository, watchableCondition, myRefStorage);
   }
 
-  private void updateIfChanged() {
+  private void update() {
+    myRepository.getModelAccess().checkReadAccess();
     if (isChanged()) {
       recountStatus();
     }
@@ -92,7 +93,9 @@ public class ModulesWatcher {
    */
   @NotNull
   public ClassLoadingStatus getStatus(@NotNull SModuleReference mRef) {
-    updateIfChanged();
+    if (isChanged()) {
+      LOG.warn("The class loading status info might be outdated");
+    }
     if (!getAllModules().contains(mRef)) {
       return INVALID;
     } else {
@@ -110,16 +113,19 @@ public class ModulesWatcher {
   public void updateModules(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     myModuleUpdater.updateModules(modules);
+    update();
   }
 
   public void addModules(@NotNull Collection<? extends ReloadableModule> modules) {
     if (modules.isEmpty()) return;
     myModuleUpdater.addModules(modules);
+    update();
   }
 
   public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
     if (mRefs.isEmpty()) return;
     myModuleUpdater.removeModules(mRefs);
+    update();
   }
 
   /**
@@ -127,21 +133,15 @@ public class ModulesWatcher {
    * @see #isChanged()
    */
   private void recountStatus() {
-    if (!isChanged()) return;
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        if (!isChanged()) return;
-        LOG.debug("Recount status map for modules");
-        boolean updated = myModuleUpdater.refreshGraph();
-        Collection<SModuleReference> invalidModules = findInvalidModules();
-        updated |= (!invalidModules.equals(myCurrentInvalidModules));
-        if (updated) {
-          myCurrentInvalidModules = invalidModules;
-          refillStatusMap(invalidModules);
-        }
-      }
-    });
+    LOG.debug("Recount status map for modules");
+    boolean updated = myModuleUpdater.refreshGraph();
+    Collection<SModuleReference> invalidModules = findInvalidModules();
+    updated |= (!invalidModules.equals(myCurrentInvalidModules));
+    if (updated) {
+      myCurrentInvalidModules = invalidModules;
+      refillStatusMap(invalidModules);
+    }
+    LOG.debug("Finished recounting");
   }
 
   /**
@@ -256,7 +256,6 @@ public class ModulesWatcher {
   }
 
   Collection<? extends SModuleReference> getAllModules() {
-    updateIfChanged();
     return myModuleUpdater.getModules();
   }
 
@@ -264,7 +263,6 @@ public class ModulesWatcher {
    * @return all dependencies of this module (closed set under dependency-relation)
    */
   public Collection<SModuleReference> getDependencies(Iterable<? extends SModuleReference> mRefs) {
-    updateIfChanged();
     return myModuleUpdater.getDeps(mRefs);
   }
 
@@ -300,7 +298,6 @@ public class ModulesWatcher {
    * @return all back dependencies of this module (closed set under back-dependency-relation)
    */
   public Collection<SModuleReference> getBackDependencies(Iterable<? extends SModuleReference> mRefs) {
-    updateIfChanged();
     return myModuleUpdater.getBackDeps(mRefs);
   }
 
@@ -311,6 +308,9 @@ public class ModulesWatcher {
   }
 
   boolean isModuleWatched(ReloadableModule module) {
+    if (isChanged()) {
+      LOG.warn("The class loading status info might be outdated");
+    }
     return getAllModules().contains(module.getModuleReference());
   }
 

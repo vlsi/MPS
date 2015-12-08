@@ -16,13 +16,10 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -30,23 +27,16 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * This class stores a map SModuleReference->ModuleClassLoader
  *
  * Note: the actual dispose of ModuleClassLoaders happen asynchronously in the EDT
- * @see jetbrains.mps.classloading.ClassLoadersHolder.MPSClassLoadersRegistry#flushDisposeQueue()
+ * @see MPSClassLoadersRegistry#flushDisposeQueue()
  *
  * @see ClassLoaderManager#myLoadableCondition
  */
@@ -55,9 +45,7 @@ public class ClassLoadersHolder {
 
   private static final List<String> INTERNAL_EXCLUDES = Arrays.asList("jetbrains.mps.samples.xmlPersistence", "TestBehaviorReflective");
 
-  private final ModelAccess myModelAccess;
-  private final ModulesWatcher myModulesWatcher;
-  private final MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
+  private final MPSClassLoadersRegistry myCLRegistry;
   private final SRepositoryListener myRepositoryListener = new SRepositoryListenerBase() {
     @Override
     public void moduleAdded(@NotNull SModule module) {
@@ -78,8 +66,7 @@ public class ClassLoadersHolder {
 
   public ClassLoadersHolder(SRepository repository, ModulesWatcher modulesWatcher) {
     myRepository = repository;
-    myModelAccess = repository.getModelAccess();
-    myModulesWatcher = modulesWatcher;
+    myCLRegistry = new MPSClassLoadersRegistry(modulesWatcher, repository);
   }
 
   public void init() {
@@ -87,7 +74,7 @@ public class ClassLoadersHolder {
   }
 
   public void dispose() {
-    myMPSClassLoadersRegistry.dispose();
+    myCLRegistry.dispose();
     myRepository.removeRepositoryListener(myRepositoryListener);
   }
 
@@ -123,7 +110,7 @@ public class ClassLoadersHolder {
 
   @Nullable
   private ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
-    return myMPSClassLoadersRegistry.getModuleClassLoader(module);
+    return myCLRegistry.getModuleClassLoader(module);
   }
 
   /**
@@ -132,12 +119,12 @@ public class ClassLoadersHolder {
    */
   @NotNull
   public ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
-    return myMPSClassLoadersRegistry.getClassLoadingProgress(mRef);
+    return myCLRegistry.getClassLoadingProgress(mRef);
   }
 
   public void scheduleClassLoaderDisposeInEDT() {
     LOG.debug("Scheduling ModuleClassLoader disposal");
-    myMPSClassLoadersRegistry.flushDisposeQueue();
+    myCLRegistry.flushDisposeQueue();
   }
 
   /**
@@ -145,7 +132,7 @@ public class ClassLoadersHolder {
    * @return modules which changed their ClassLoadingProgress from LAZY_LOADED or LOADED to UNLOADED.
    */
   public Collection<? extends SModuleReference> doUnloadModules(Set<? extends SModuleReference> toUnload) {
-    return myMPSClassLoadersRegistry.doUnloadModules(toUnload);
+    return myCLRegistry.doUnloadModules(toUnload);
   }
 
   /**
@@ -155,160 +142,14 @@ public class ClassLoadersHolder {
    * @return modules which changed their ClassLoadingProgress from UNLOADED to LAZY_LOADED.
    */
   public Collection<ReloadableModule> onLazyLoaded(Set<? extends ReloadableModule> toLoadLazy) {
-    return myMPSClassLoadersRegistry.onLazyLoaded(toLoadLazy);
+    return myCLRegistry.onLazyLoaded(toLoadLazy);
   }
 
   /**
    * @param toLoad for these modules ModuleClassLoaders were actually created
    */
   public void doLoadModules(Set<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-    myMPSClassLoadersRegistry.doLoadModules(toLoad, monitor);
-  }
-
-  /**
-   * Note:
-   * This class deals only with MPS-loadable modules
-   * @see ClassLoaderManager#myMPSLoadableCondition
-   */
-  private class MPSClassLoadersRegistry {
-    private final Map<SModuleReference, ModuleClassLoader> myClassLoaders = new HashMap<SModuleReference, ModuleClassLoader>();
-    private final Map<SModuleReference, ClassLoadingProgress> myMPSLoadableModules = new HashMap<SModuleReference, ClassLoadingProgress>();
-    private final Queue<ModuleClassLoader> myDisposeQueue = new LinkedBlockingQueue<ModuleClassLoader>();
-
-    @Nullable
-    private synchronized ClassLoader getModuleClassLoader(ReloadableModule module) throws ClassLoaderNotFoundException {
-      SModuleReference mRef = module.getModuleReference();
-      if (!myClassLoaders.containsKey(mRef)) {
-        throw new ClassLoaderNotFoundException();
-      }
-      return myClassLoaders.get(mRef);
-    }
-
-    @NotNull
-    public synchronized ClassLoadingProgress getClassLoadingProgress(SModuleReference mRef) {
-      if (!myMPSLoadableModules.containsKey(mRef)) {
-        return ClassLoadingProgress.UNLOADED;
-      }
-      return myMPSLoadableModules.get(mRef);
-    }
-
-    public synchronized Collection<SModuleReference> doUnloadModules(Collection<? extends SModuleReference> toUnload) {
-      Collection<SModuleReference> unloaded = new LinkedHashSet<SModuleReference>();
-      Collection<ModuleClassLoader> toDispose = new LinkedHashSet<ModuleClassLoader>();
-      for (SModuleReference mRef : toUnload) {
-        if (!myMPSLoadableModules.containsKey(mRef)) {
-          LOG.error("", new IllegalStateException("Module " + mRef + " is not loaded -- cannot unload"));
-        } else {
-          ClassLoadingProgress progress = myMPSLoadableModules.get(mRef);
-          myMPSLoadableModules.remove(mRef);
-          if (progress == null) { // ~ UNLOADED
-            LOG.error("", new IllegalStateException("Module " + mRef + " must not be unloaded -- cannot unload it twice"));
-          } else {
-            if (progress == ClassLoadingProgress.LOADED) {
-              if (myClassLoaders.containsKey(mRef)) {
-                toDispose.add(myClassLoaders.get(mRef));
-              } else {
-                LOG.error("", new IllegalStateException("Module " + mRef + " is loaded but has no registered ModuleClassLoader"));
-              }
-            } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
-              if (myClassLoaders.containsKey(mRef)) {
-                LOG.error("", new IllegalStateException("Module " + mRef + " is lazy loaded but already has a registered ModuleClassLoader"));
-                toDispose.add(myClassLoaders.get(mRef));
-              }
-            }
-            myClassLoaders.remove(mRef);
-            unloaded.add(mRef);
-          }
-        }
-      }
-      myDisposeQueue.addAll(toDispose);
-      return unloaded;
-    }
-
-    public synchronized Collection<ReloadableModule> onLazyLoaded(Collection<? extends ReloadableModule> toLoadLazy) {
-      Collection<ReloadableModule> lazyLoaded = new LinkedHashSet<ReloadableModule>();
-      for (ReloadableModule module : toLoadLazy) {
-        SModuleReference mRef = module.getModuleReference();
-        ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(mRef);
-        if (classLoadingProgress != null) {
-          LOG.error("Illegal state: module is already loaded " + module, new Throwable());
-        } else {
-          myMPSLoadableModules.put(mRef, ClassLoadingProgress.LAZY_LOADED);
-          lazyLoaded.add(module);
-        }
-      }
-      return lazyLoaded;
-    }
-
-    public synchronized void doLoadModules(Collection<? extends ReloadableModule> toLoad, ProgressMonitor monitor) {
-      try {
-        monitor.start("Loading modules...", toLoad.size());
-        for (ReloadableModule module : toLoad) {
-          SModuleReference moduleReference = module.getModuleReference();
-          ClassLoadingProgress progress = getClassLoadingProgress(moduleReference);
-          if (progress == ClassLoadingProgress.UNLOADED) {
-            throw new IllegalStateException("Module " + moduleReference + " is in UNLOADED state, i.e. the class loading clients know nothing about this module");
-          } else if (progress == ClassLoadingProgress.LAZY_LOADED) {
-            ModuleClassLoader classLoader = createModuleClassLoader(module);
-            putClassLoader(moduleReference, classLoader);
-            onLoaded(moduleReference);
-          }
-          monitor.advance(1);
-        }
-      } finally {
-        monitor.done();
-      }
-    }
-
-    private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
-      LOG.debug("Creating ModuleClassLoader for " + module);
-      Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
-      final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
-      return new ModelAccessHelper(myRepository).runReadAction(new Computable<ModuleClassLoader>() {
-        @Override
-        public ModuleClassLoader compute() {
-          return new ModuleClassLoader(support);
-        }
-      });
-    }
-
-    private void onLoaded(SModuleReference module) {
-      assert myClassLoaders.containsKey(module);
-      ClassLoadingProgress classLoadingProgress = myMPSLoadableModules.get(module);
-      if (classLoadingProgress != ClassLoadingProgress.LAZY_LOADED) {
-        LOG.error("Illegal state: module has not been lazy loaded " + module, new Throwable());
-      }
-      myMPSLoadableModules.put(module, ClassLoadingProgress.LOADED);
-    }
-
-    private void putClassLoader(SModuleReference module, ModuleClassLoader classLoader) {
-      myClassLoaders.put(module, classLoader);
-    }
-
-    /**
-     * Very quick action.
-     * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
-     */
-    public synchronized void flushDisposeQueue() {
-      if (myDisposeQueue.isEmpty()) return;
-      final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
-      myModelAccess.runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          LOG.debug("Disposing " + toDispose.size() + " class loaders");
-          for (ModuleClassLoader classLoader : toDispose) {
-            classLoader.dispose();
-          }
-        }
-      });
-      myDisposeQueue.clear();
-    }
-
-    public void dispose() {
-      if (!myDisposeQueue.isEmpty()) {
-        flushDisposeQueue();
-      }
-    }
+    myCLRegistry.doLoadModules(toLoad, monitor);
   }
 
   /**
@@ -330,7 +171,7 @@ public class ClassLoadersHolder {
    * LAZY_LOADED -> UNLOADED
    * LOADED -> UNLOADED
    */
-  public static enum ClassLoadingProgress {
+  public enum ClassLoadingProgress {
     /**
      * Class loading has not been initiated yet. [Implies there is no such module in the repository].
      * Note: this enum value is not stored in corresponding map for the sake of simplicity.
@@ -347,5 +188,5 @@ public class ClassLoadersHolder {
     LOADED
   }
 
-  private static class ClassLoaderNotFoundException extends Exception {}
+  static class ClassLoaderNotFoundException extends Exception {}
 }
