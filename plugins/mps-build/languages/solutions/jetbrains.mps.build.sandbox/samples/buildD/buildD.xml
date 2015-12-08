@@ -6,6 +6,8 @@
   <property name="artifacts.buildA" location="${build.dir}/artifacts/buildA" />
   <property file="${artifacts.buildA}/build.properties" prefix="import.buildA" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />
