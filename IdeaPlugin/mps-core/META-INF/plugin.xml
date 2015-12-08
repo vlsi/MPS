@@ -173,6 +173,7 @@
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.MPSRenameRefactoringHandler"/>
+    <vetoRenameCondition implementation="jetbrains.mps.idea.core.refactoring.MPSVetoRenameCondition"/>
     <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate"
                              order="first"/> <!-- isn't first a bit too much -->
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>

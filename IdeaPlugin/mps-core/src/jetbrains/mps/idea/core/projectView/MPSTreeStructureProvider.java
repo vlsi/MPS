@@ -31,7 +31,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -47,9 +46,12 @@ import jetbrains.mps.idea.core.projectView.edit.SNodePasteProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -59,6 +61,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.SwingUtilities;
@@ -192,7 +195,6 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     return result.get();
   }
 
-
   @Nullable
   @Override
   public Object getData(Collection<AbstractTreeNode> selected, String dataName) {
@@ -222,6 +224,9 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     }
     if (PlatformDataKeys.PASTE_PROVIDER.is(dataName)) {
       return getModelProvider(selectedNode, PASTE_PROVIDER_FACTORY);
+    }
+    if (MPSCommonDataKeys.NODE.is(dataName)) {
+      return getNode(selectedNode);
     }
     if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName) || MPSCommonDataKeys.MODEL.is(dataName)) {
       return getModel(selectedNode);
@@ -339,6 +344,25 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (modelVFile == null || (modelVFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && modelVFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE))
       return null;
     return modelVFile;
+  }
+
+  private SNode getNode(AbstractTreeNode treeNode) {
+    if (!(treeNode instanceof MPSPsiElementTreeNode)) {
+      return null;
+    }
+    MPSPsiNodeBase psiNode = ((MPSPsiElementTreeNode) treeNode).getValue();
+    if (!(psiNode instanceof MPSPsiRealNode)) {
+      return null;
+    }
+    final SNodeReference nodeRef = ((MPSPsiRealNode) psiNode).getSNodeReference();
+    final SRepository repository = ProjectHelper.getProjectRepository(treeNode.getProject());
+    // TODO remove read action from here once SModelFileTracker stops doing the same (creating read action if not already in one)
+    return new ModelComputeRunnable<SNode>(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return nodeRef.resolve(repository);
+      }
+    }).runRead(repository.getModelAccess());
   }
 
   private Module getIdeaModule(AbstractTreeNode treeNode) {
