@@ -230,4 +230,9 @@
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
   </target>
+  
+  <target name="publishTCArtifacts">
+    <echo message="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
+    <echo message="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
+  </target>
 </project>

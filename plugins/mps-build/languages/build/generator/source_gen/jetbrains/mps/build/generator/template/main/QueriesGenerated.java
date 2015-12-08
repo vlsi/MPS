@@ -59,7 +59,7 @@ import jetbrains.mps.build.behavior.IWorkflowParticipant__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.build.util.GenerationUtil;
+import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.build.util.ProjectDependency;
@@ -1674,7 +1674,7 @@ public class QueriesGenerated {
         scriptsPath = scriptsPath.substring(0, scriptsPath.length() - 1);
       }
       String fileName = (scriptsPath == null ? null : scriptsPath + "/" + BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(buildProject));
-      buildProject.putUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY, fileName);
+      CopyFacetUtil.setTargetPath(buildProject, fileName);
     }
   }
   public static void mappingScript_CodeBlock_841011766566205060(final MappingScriptContext _context) {

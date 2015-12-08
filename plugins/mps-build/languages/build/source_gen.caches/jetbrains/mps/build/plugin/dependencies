@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet" file="CopyGeneratedScripts_Facet.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -12,7 +11,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.build.plugin.Utils" />
-    <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -35,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.DResource" />
     <classNode dependClassName="jetbrains.mps.text.TextGenResult" />
     <classNode dependClassName="jetbrains.mps.text.TextUnit" />
+    <classNode dependClassName="jetbrains.mps.util.CopyFacetUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

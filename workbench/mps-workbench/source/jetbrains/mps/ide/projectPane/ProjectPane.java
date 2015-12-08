@@ -147,6 +147,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   @Override
+  public void dispose() {
+    myUpdateQueue.dispose();
+    super.dispose();
+  }
+
+  @Override
   protected void removeListeners() {
     super.removeListeners();
     myConnection.disconnect();

@@ -26,8 +26,29 @@
   <depends optional="true">Git4Idea</depends>
   <depends optional="true">jetbrains.mps.ide.make</depends>
 
-  <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="MPSVcs.xml" xpointer="xpointer(/components/*)"/>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+  </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <diff.DiffTool implementation="jetbrains.mps.vcs.platform.integration.ModelDiffTool"/>
+    <diff.merge.MergeTool implementation="jetbrains.mps.vcs.platform.integration.ModelMergeTool"/>
+  </extensions>
 
   <application-components>
     <component>
@@ -73,7 +94,7 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.integration.GeneratedFileConflictResolving</implementation-class>
     </component>
-</project-components>
+  </project-components>
 
   <actions>
     <group id="EditorFixAddition">
@@ -100,7 +121,7 @@
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>
     <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
-    <mps.editorWarningsProvider implementation="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" />
+    <mps.editorWarningsProvider implementation="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings"/>
 
     <projectService serviceInterface="com.intellij.openapi.vcs.AbstractVcsHelper"
                     serviceImplementation="jetbrains.mps.vcs.platform.integration.MPSVcsHelper" overrides="true"/>

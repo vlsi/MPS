@@ -22,7 +22,7 @@ import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextUnit;
-import jetbrains.mps.build.util.GenerationUtil;
+import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -78,10 +78,9 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
                 TextGenResult textGenResult = res.getTextGenResult();
                 for (TextUnit tu : textGenResult.getUnits()) {
-                  Object userObject = tu.getStartNode().getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY);
-                  if (userObject instanceof String) {
+                  String targetXml = CopyFacetUtil.getTargetPath(tu.getStartNode());
+                  if (targetXml != null) {
                     String fileName = tu.getFileName();
-                    String targetXml = ((String) userObject);
                     if (!(fileName.endsWith(".xml"))) {
                       String ext = Utils.getExtensionWithDot(fileName);
                       if ((ext == null || ext.length() == 0)) {
