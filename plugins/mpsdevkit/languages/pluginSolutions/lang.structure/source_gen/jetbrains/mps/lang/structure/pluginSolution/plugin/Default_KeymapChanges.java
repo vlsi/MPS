@@ -13,7 +13,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action", getShortcut("shift F6"));
-    addSimpleShortcut("jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action", getShortcut(" F1"));
     // simple parameterized 
     // complex 
   }

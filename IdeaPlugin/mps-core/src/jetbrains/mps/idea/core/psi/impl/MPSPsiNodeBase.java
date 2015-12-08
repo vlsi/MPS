@@ -75,7 +75,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   protected SRepository getProjectRepository() {
-    Project p = ProjectHelper.toMPSProject(getProject());
+    Project p = ProjectHelper.fromIdeaProject(getProject());
     assert p != null;
     return p.getRepository();
   }

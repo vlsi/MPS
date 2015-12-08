@@ -20,14 +20,14 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psi.ForeignIdReferenceCache;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,16 +49,16 @@ public class ForeignIdReferenceCacheImpl extends ForeignIdReferenceCache {
   private void findReferencesMatching(String prefix, Consumer<SReference> consumer, GlobalSearchScope scope) {
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     List<Collection<Pair<SNodeDescriptor, String>>> values = fileBasedIndex.getValues(ForeignIdReferenceIndex.ID, prefix, scope);
-    collectReferences(consumer, values);
+    collectReferences(consumer, values, ProjectHelper.getProjectRepository(scope.getProject()));
   }
 
-  private void collectReferences(final Consumer<SReference> consumer, final List<Collection<Pair<SNodeDescriptor, String>>> values) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+  private void collectReferences(final Consumer<SReference> consumer, final List<Collection<Pair<SNodeDescriptor, String>>> values, final SRepository repository) {
+    repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (Collection<Pair<SNodeDescriptor, String>> value : values) {
           for (Pair<SNodeDescriptor, String> pair : value) {
-            SNode node = pair.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            SNode node = pair.o1.getNodeReference().resolve(repository);
             if (node == null) continue;
             SReference sref = node.getReference(pair.o2);
             if (sref == null) continue;

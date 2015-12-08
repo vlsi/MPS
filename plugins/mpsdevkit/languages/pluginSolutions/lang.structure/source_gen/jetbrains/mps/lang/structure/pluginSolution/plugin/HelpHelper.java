@@ -63,16 +63,16 @@ public class HelpHelper {
     if (contextModule instanceof Language) {
       String url = LanguageAspectSupport.getHelpUrl(contextModel);
       assert url != null : "should have checked that helpForAspectIsAvailable==true";
-      BrowserUtil.launchBrowser(url);
+      BrowserUtil.browse(url);
     } else {
-      BrowserUtil.launchBrowser(LanguageAspect.CONFLUENCE_BASE + "Generator#Generator-aboutgenerator");
+      BrowserUtil.browse(LanguageAspect.CONFLUENCE_BASE + "Generator#Generator-aboutgenerator");
     }
   }
   public static void showHelpForRoot(SNode node) {
-    BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    BrowserUtil.browse(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
   }
   public static void showHelpForNode(SNode node) {
-    BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    BrowserUtil.browse(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
   }
   public static   enum HelpType {
     NODE("node"),

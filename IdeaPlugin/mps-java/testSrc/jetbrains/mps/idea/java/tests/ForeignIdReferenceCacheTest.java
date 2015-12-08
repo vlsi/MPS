@@ -8,12 +8,12 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psi.ForeignIdReferenceCache;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -81,10 +82,11 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
 
         assertEquals("variableDeclaration", role);
 
-        ModelAccess.instance().runReadAction(new Runnable() {
+        final SRepository repository = ProjectHelper.getProjectRepository(project);
+        repository.getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
-            SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            SNode snode = p.o1.getNodeReference().resolve(repository);
             assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
           }
         });

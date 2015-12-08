@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -17,7 +18,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class AddLanguageImport_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = MPSIcons.Nodes.Language;
   public AddLanguageImport_Action() {
     super("Add Language Import", "", ICON);
     this.setIsAlwaysVisible(false);
