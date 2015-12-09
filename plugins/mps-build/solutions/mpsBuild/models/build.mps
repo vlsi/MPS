@@ -15309,6 +15309,20 @@
                 </node>
               </node>
             </node>
+            <node concept="28jJK3" id="6DuyMKt09pd" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="6DuyMKt09pf" role="28jJRO">
+                <node concept="2Ry0Ak" id="6DuyMKt09qh" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="6DuyMKt09qm" role="2Ry0An">
+                    <property role="2Ry0Am" value="linux" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09qr" role="2Ry0An">
+                      <property role="2Ry0Am" value="fsnotifier-arm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="28jJK3" id="2lgcjg39Cce" role="39821P">
               <node concept="55IIr" id="6jTFJ4eVmDv" role="28jJRO">
                 <node concept="2Ry0Ak" id="6jTFJ4eVmDw" role="iGT6I">
@@ -15391,6 +15405,9 @@
               </node>
               <node concept="3LWZYq" id="6xv$4WsFwxV" role="2HvfZ1">
                 <property role="3LWZYl" value="**/fsnotifier64" />
+              </node>
+              <node concept="3LWZYq" id="6DuyMKt09qx" role="2HvfZ1">
+                <property role="3LWZYl" value="**/fsnotifier-arm" />
               </node>
               <node concept="55IIr" id="2lgcjg39Ccn" role="2HvfZ0">
                 <node concept="2Ry0Ak" id="2lgcjg39Cco" role="iGT6I">
@@ -15746,6 +15763,20 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="6DuyMKt09yY" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="6DuyMKt09z0" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09zw" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09zz" role="2Ry0An">
+                      <property role="2Ry0Am" value="win" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09zC" role="2Ry0An">
+                        <property role="2Ry0Am" value="fsnotifier64.exe" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="28jJK3" id="2lgcjg39Ytv" role="39821P">
                 <property role="28jJZ5" value="755" />
                 <node concept="55IIr" id="2lgcjg39YtI" role="28jJRO">
@@ -15797,6 +15828,9 @@
                 <node concept="3LWZYq" id="6xv$4WsFwBQ" role="2HvfZ1">
                   <property role="3LWZYl" value="**/fsnotifier64" />
                 </node>
+                <node concept="3LWZYq" id="6DuyMKt09ys" role="2HvfZ1">
+                  <property role="3LWZYl" value="**/fsnotifier-arm" />
+                </node>
                 <node concept="55IIr" id="6xv$4WsFwBR" role="2HvfZ0">
                   <node concept="2Ry0Ak" id="6xv$4WsFwBS" role="iGT6I">
                     <property role="2Ry0Am" value="bin" />
@@ -15829,6 +15863,20 @@
                       <property role="2Ry0Am" value="linux" />
                       <node concept="2Ry0Ak" id="2lgcjg39Yue" role="2Ry0An">
                         <property role="2Ry0Am" value="fsnotifier64" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="6DuyMKt09xN" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="6DuyMKt09xP" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09yc" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09yh" role="2Ry0An">
+                      <property role="2Ry0Am" value="linux" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09ym" role="2Ry0An">
+                        <property role="2Ry0Am" value="fsnotifier-arm" />
                       </node>
                     </node>
                   </node>
@@ -15911,6 +15959,19 @@
                       <property role="2Ry0Am" value="mac" />
                       <node concept="2Ry0Ak" id="2lgcjg3aF5s" role="2Ry0An">
                         <property role="2Ry0Am" value="libbreakgen64.jnilib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="6DuyMKt09$Q" role="39821P">
+                <node concept="55IIr" id="6DuyMKt09$S" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09A7" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09Ac" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09Ah" role="2Ry0An">
+                        <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
                       </node>
                     </node>
                   </node>
@@ -16265,6 +16326,19 @@
                       <property role="2Ry0Am" value="mac" />
                       <node concept="2Ry0Ak" id="2lgcjg3akKZ" role="2Ry0An">
                         <property role="2Ry0Am" value="libbreakgen64.jnilib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="6DuyMKt09EH" role="39821P">
+                <node concept="55IIr" id="6DuyMKt09EI" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09EJ" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09EK" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09EL" role="2Ry0An">
+                        <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
                       </node>
                     </node>
                   </node>
