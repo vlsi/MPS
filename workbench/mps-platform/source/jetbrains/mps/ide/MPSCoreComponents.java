@@ -18,21 +18,31 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.migration.MPSMigration;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.UndoHandler;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
- * Evgeny Gryaznov, Sep 3, 2010
+ * Integration of MPS core into IDEA platform. Initializes relevant parts of MPS core,
+ * gives access to {@link jetbrains.mps.components.CoreComponent core components}.
+ *
+ * Is responsible to instantiate components that didn't fit into core but otherwise essential for MPS operation
+ * (like BaseLanguage and Migration at the moment), though this is questionable.
+ *
+ * IMPORTANT: please do not expose 'umbrella' {@link jetbrains.mps.components.ComponentPlugin component plugins} here,
+ * just specific {@link jetbrains.mps.components.CoreComponent}, to avoid excessive dependencies in classpath (e.g. not only this module
+ * depends on [mps-core], but also any other, like VCS, would). Once generic mechanism to access core components is in place, this class
+ * would cease to depend from [mps-core] as well.
  */
 public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
@@ -75,23 +85,36 @@ public class MPSCoreComponents implements ApplicationComponent {
   }
 
   @NotNull
-  public MPSCore getMPSCore() {
-    return myPlatform.getCore();
+  public PersistenceFacade getPersistenceFacade() {
+    return myPlatform.getCore().getPersistenceFacade();
   }
 
+  @NotNull
+  public LibraryInitializer getLibraryInitializer() {
+    return myPlatform.getCore().getLibraryInitializer();
+  }
+
+  @NotNull
   public ClassLoaderManager getClassLoaderManager() {
-    return getMPSCore().getClassLoaderManager();
+    return myPlatform.getCore().getClassLoaderManager();
   }
 
+
+  /**
+   * @deprecated it's our implementation part, shall drop once no uses
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public MPSModuleRepository getModuleRepository() {
-    return getMPSCore().getModuleRepository();
+    return myPlatform.getCore().getModuleRepository();
   }
 
+  /**
+   * @deprecated it's our implementation part, shall drop once no uses
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public GlobalSModelEventsManager getGlobalSModelEventsManager() {
     return GlobalSModelEventsManager.getInstance();
-  }
-
-  public LanguageHierarchyCache getLanguageHierarchyCache() {
-    return LanguageHierarchyCache.getInstance();
   }
 }

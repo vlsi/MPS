@@ -47,7 +47,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
       IdeaPluginFacetComponent ideaPluginFacetComponent,
       @SuppressWarnings("UnusedParameters") PersistentFS filesystem //see MPS-22970
   ) {
-    myLibraryInitializer = coreComponents.getMPSCore().getLibraryInitializer();
+    myLibraryInitializer = coreComponents.getLibraryInitializer();
   }
 
   @Override
