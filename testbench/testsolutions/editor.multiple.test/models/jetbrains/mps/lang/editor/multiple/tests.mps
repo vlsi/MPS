@@ -1615,17 +1615,6 @@
         </node>
       </node>
     </node>
-    <node concept="7g1Uw" id="1PhFbPjmekI" role="LiZbd">
-      <node concept="2MuRF6" id="1PhFbPjmeTp" role="2KZwG9">
-        <node concept="LIFWc" id="1PhFbPjmeTr" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name" />
-        </node>
-      </node>
-    </node>
   </node>
 </model>
 

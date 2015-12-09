@@ -204,6 +204,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   /**
+   * This method should be used for test purposes only
+   *
    * Number of substitute actions suggested by substitute chooser.
    * Check isVisible() before using this method
    *

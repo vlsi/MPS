@@ -204,8 +204,8 @@
     <file name="InspectorOfCompactPresentation_pushHints_Test.java">
       <node id="2112659629360604431" at="19,80,20,117" concept="2" />
       <node id="2112659629360604431" at="20,117,21,137" concept="2" />
-      <node id="2112659629360604431" at="28,51,29,63" concept="2" />
-      <node id="2112659629360607142" at="29,63,30,0" concept="5" />
+      <node id="2112659629360604431" at="28,51,29,44" concept="2" />
+      <node id="2112659629360607142" at="29,44,30,0" concept="5" />
       <node id="2112659629360607301" at="30,0,31,94" concept="4" />
       <node id="2112659629360604435" at="31,94,32,67" concept="4" />
       <node id="8961638890955737122" at="32,67,33,111" concept="0" />
