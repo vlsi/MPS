@@ -18,6 +18,7 @@ package jetbrains.mps.core.platform;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
+import jetbrains.mps.lang.dataFlow.MPSDataFlow;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.text.impl.MPSTextGenerator;
 import jetbrains.mps.typesystem.MPSTypesystem;
@@ -30,6 +31,7 @@ class PlatformBase implements Platform {
   private MPSTypesystem myTypesystem;
   private MPSFindUsages myFindUsages;
   private MPSTextGenerator myTextGen;
+  private MPSDataFlow myDataFlow;
 
   PlatformBase(PlatformOptionsBuilder options) {
     if (options.isLoadCore()) {
@@ -45,10 +47,12 @@ class PlatformBase implements Platform {
       myGenerator = new MPSGenerator();
       myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
       myTextGen = new MPSTextGenerator(myCore.getLanguageRegistry());
+      myDataFlow = new MPSDataFlow(myCore.getClassLoaderManager());
       myTypesystem.init();
       myGenerator.init();
       myFindUsages.init();
       myTextGen.init();
+      myDataFlow.init();
     }
   }
 
@@ -84,6 +88,7 @@ class PlatformBase implements Platform {
 
   @Override
   public void dispose() {
+    dispose(myDataFlow);
     dispose(myTextGen);
     dispose(myFindUsages);
     dispose(myGenerator);

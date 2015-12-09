@@ -23,7 +23,6 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -116,7 +115,6 @@ public final class MPSCore extends ComponentPluginBase {
     init(new CopyPasteManager(myClassLoaderManager));
     init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
-    init(new DataFlowManager(myModuleRepository, myClassLoaderManager));
 
     init(new ResolverComponent());
     init(new ValidationSettings());

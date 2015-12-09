@@ -10,7 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="make-facets" />
-    <orderEntry type="module" module-name="dataflow-rt" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="kernel" />
