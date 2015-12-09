@@ -58,6 +58,8 @@ public class ShowNodeInInspector_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"))).editNode(((SNode) MapSequence.fromMap(_params).get("node")));
+    InspectorEditorComponent inspectorComponent = ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor")));
+    inspectorComponent.getUpdater().setInitialEditorHints(inspectorComponent.getEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node"))));
+    inspectorComponent.editNode(((SNode) MapSequence.fromMap(_params).get("node")));
   }
 }

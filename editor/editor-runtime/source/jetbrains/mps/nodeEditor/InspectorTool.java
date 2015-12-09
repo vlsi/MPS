@@ -52,6 +52,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.Arrays;
 
 public class InspectorTool extends BaseTool implements EditorInspector, ProjectComponent {
   public static final String ID = "Inspector";
@@ -159,8 +160,11 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     }
 
     myFileEditor = fileEditor;
-    myInspectorComponent.getUpdater().setInitialEditorHints(enabledHints);
-    myInspectorComponent.editNode(node);
+
+    boolean needToEdit = myInspectorComponent.getUpdater().setInitialEditorHints(enabledHints);
+    if (needToEdit || myInspectorComponent.getEditedNode() != node) {
+      myInspectorComponent.editNode(node);
+    }
     myMessagePanel.setNode(node);
   }
 
