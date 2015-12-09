@@ -26,7 +26,7 @@ public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransform
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2112659629360604460", "2112659629360604462");
+      initEditor("2112659629360604460", "");
 
       final NodeEditorComponent component = ((NodeEditorComponent) this.getEditorComponent());
       EditorCell rootCell = component.getInspector().getRootCell();
