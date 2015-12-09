@@ -23,7 +23,6 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
@@ -87,7 +86,6 @@ public final class MPSCore extends ComponentPluginBase {
     myPersistenceFacade = init(new PersistenceRegistry());
     init(new FacetsRegistry());
     init(new ConceptRepository());
-    init(new FindUsagesManager());
     init(new MigrationPropertiesManager());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
