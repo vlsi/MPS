@@ -185,10 +185,12 @@ final class EngagedGeneratorCollector {
       }
       LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
       if (language == null) {
-        final String msg = "Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)";
-        LOG.error(String.format(msg, myModel.getModelName(), next));
-        if (origin != null) {
-          LOG.error(String.format("Language %s comes through %s", next, origin));
+        if (origin == null) {
+          final String msg = "Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)";
+          LOG.error(String.format(msg, myModel.getModelName(), next));
+        } else {
+          String msg = "One of generators engaged for model %s needs ('%s') missing language %s. Please check generator %s";
+          LOG.error(String.format(msg, myModel.getModelName(), engagementKind, next, origin.getName()));
         }
         myBadLanguages.add(next.getQualifiedName());
       } else {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -87,6 +88,28 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
       return null;
     } else {
       return selectedContent.getComponent();
+    }
+  }
+
+  /**
+   * Indicate tab is of interest and shall not be closed/replaced with a new one
+   * Does nothing if tab is <code>null</code> or not found
+   */
+  public <T extends JComponent> void pinTab(@Nullable T tab) {
+    Content content = getContentManager().getContent(tab);
+    if (content != null) {
+      content.setPinned(true);
+    }
+  }
+
+  /**
+   * Indicates tab could be replaced with a new one.
+   * Does nothing if tab is <code>null</code> or not found
+   */
+  public <T extends JComponent> void unpinTab(@Nullable T tab) {
+    Content content = getContentManager().getContent(tab);
+    if (content != null) {
+      content.setPinned(false);
     }
   }
 
