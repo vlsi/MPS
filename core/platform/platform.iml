@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Annotations" level="project" />
   </component>
