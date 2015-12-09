@@ -32,6 +32,7 @@ import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
 import com.intellij.psi.impl.file.impl.FileManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
@@ -48,6 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -185,7 +187,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   private MPSPsiModel getMPSPsiModel(final SModel model, final SModelReference modelRef) {
     if (MPS2PsiMapperUtil.hasCorrespondingPsi(model)) return null;
 
-    // synchronizing be model:
+    // synchronizing by model:
     // we guard MPSPsiModel.reload() exactly by model,
     // on the other hand, the key in models is modelRef, but different models in one repo seem to always have
     // different modelRefs
@@ -225,17 +227,32 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         final MPSPsiModel psiModel = models.get(modelReference);
         if (psiModel == null) return null;
 
+        // MPPsiModel.reload() relies on roots' virtual files being up-to-date, so we save the model in case
+        // root name might have changed
         return new ReloadableModel() {
           @Override
           public void reload(SNodeId sNodeId) {
+            MPSPsiNode oldPsiNode = psiModel.lookupNode(sNodeId);
+            if (oldPsiNode != null && psiModel.isRoot(oldPsiNode)) {
+              // sNodeId corresponds to root node
+              save(psiModel);
+            }
             MPSPsiNode psiNode = psiModel.reload(sNodeId);
             notifyPsiChanged(psiModel, psiNode);
           }
 
           @Override
           public void reloadAll() {
+            save(psiModel);
             psiModel.reloadAll();
             notifyPsiChanged(psiModel, null);
+          }
+
+          private void save(MPSPsiModel psiModel) {
+            SModel smodel = psiModel.getSModelReference().resolve(ProjectHelper.getProjectRepository(psiModel.getProject()));
+            if (smodel instanceof EditableSModel) {
+              ((EditableSModel) smodel).save();
+            }
           }
         };
       }

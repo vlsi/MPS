@@ -124,7 +124,7 @@ public class SModelEventProcessor {
 
   }
 
-  public static interface ReloadableModel {
+  public interface ReloadableModel {
 
     /**
      * Called from within write.
@@ -139,7 +139,7 @@ public class SModelEventProcessor {
   }
 
 
-  public static interface ModelProvider {
+  public interface ModelProvider {
 
     ReloadableModel lookupModel(SModelReference modelReference);
 
