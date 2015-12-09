@@ -106,7 +106,7 @@ class Memento {
 
     if (myEditedNodeReference != null) {
       SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
-      if (newEditedNode != null) {
+      if (newEditedNode != null && editor.getEditedNode() != newEditedNode) {
         editor.editNode(newEditedNode);
         editor.getUpdater().flushModelEvents();
         editorRebuildRequired = false;

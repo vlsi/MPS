@@ -199,6 +199,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -873,6 +874,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return selection != null ? selection.getSelectedNodes() : Collections.<SNode>emptyList();
   }
 
+  public String[] getEditorHintsForNode(SNode node) {
+    String[] result = null;
+    jetbrains.mps.openapi.editor.cells.EditorCell nodeCell = findNodeCell(node);
+    if (nodeCell != null) {
+      final Collection<String> nodeContextHints = nodeCell.getCellContext().getHints();
+      result = nodeContextHints.toArray(new String[nodeContextHints.size()]);
+    }
+    return result;
+  }
   public EditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }

@@ -16,11 +16,14 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -28,6 +31,8 @@ import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
 
 public class NodeEditorComponent extends EditorComponent {
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(NodeEditorComponent.class));
+
   private SNode myLastInspectedNode = null;
 
   public NodeEditorComponent(SRepository repository) {
@@ -92,8 +97,10 @@ public class NodeEditorComponent extends EditorComponent {
     myLastInspectedNode = toSelect;
     if (getInspector() == null) return;
 
-    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSCommonDataKeys.FILE_EDITOR.getName());
-    getInspectorTool().inspect(toSelect, fileEditor, getUpdater().getInitialEditorHints());
+    DataContext dataContext = DataManager.getInstance().getDataContext(this);
+    FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
+    String[] inspectorInitialEditorHints = getEditorHintsForNode(toSelect);
+    getInspectorTool().inspect(toSelect, fileEditor, inspectorInitialEditorHints);
   }
 
   @Override

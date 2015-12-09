@@ -31,6 +31,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Arrays;
+
 public class InspectorEditorComponent extends EditorComponent {
 
   private SNode myContainingRoot;
@@ -56,13 +58,6 @@ public class InspectorEditorComponent extends EditorComponent {
   @Override
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
     return new InspectorEditorContext(this, model, repository);
-  }
-
-  public void editNode(final SNode node) {
-    if (myNode == node) {
-      return;
-    }
-    super.editNode(node);
   }
 
   @Override
