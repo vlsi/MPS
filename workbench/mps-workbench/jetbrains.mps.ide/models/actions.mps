@@ -192,7 +192,6 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language()" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -3853,7 +3852,7 @@
               <ref role="3cqZAo" node="5njRL54Q2mh" resolve="inspectorComponent" />
             </node>
             <node concept="liA8E" id="2ADrPEHcvlh" role="2OqNvi">
-              <ref role="37wK5l" to="zyr2:~InspectorEditorComponent.editNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="editNode" />
+              <ref role="37wK5l" to="exr9:~EditorComponent.editNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="editNode" />
               <node concept="2OqwBi" id="2ADrPEHcvPH" role="37wK5m">
                 <node concept="2WthIp" id="2ADrPEHcvvj" role="2Oq$k0" />
                 <node concept="1DTwFV" id="2ADrPEHcx0W" role="2OqNvi">

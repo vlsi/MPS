@@ -3921,6 +3921,18 @@
     <node concept="lpD6D" id="uMiWVbYfD$" role="lpD6w">
       <ref role="lpD7u" to="zosv:6k6gsLyiyLk" resolve="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />
     </node>
+    <node concept="lpD6D" id="1PhFbPjmFjj" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjm96F" resolve="InspectorOfCompactPresentation" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFjL" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjmekf" resolve="InspectorOfCompactPresentation_pushHints" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFkg" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjme4q" resolve="InspectorOfDefaultPresentation" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFkK" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjmdPY" resolve="InspectorOfRichPresentation" />
+    </node>
     <node concept="lpD6D" id="5wNXW0WXJhS" role="lpD6w">
       <ref role="lpD7u" to="zosv:5wNXW0WXvxF" resolve="MostSpecificEditor" />
     </node>
