@@ -14,6 +14,7 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
+        <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
         <child id="2597348684684069742" name="contextHints" index="CpUAK" />
       </concept>
       <concept id="6822301196700715228" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference" flags="ig" index="2aJ2om">
@@ -206,6 +207,9 @@
           <property role="1413C4" value="body-brace" />
         </node>
       </node>
+    </node>
+    <node concept="3F0ifn" id="1PhFbPjlVs_" role="6VMZX">
+      <property role="3F0ifm" value="default" />
     </node>
   </node>
   <node concept="24kQdi" id="5LszKvIa80v">
@@ -668,6 +672,9 @@
       </node>
       <node concept="l2Vlx" id="l3qzLl$mc$" role="2iSdaV" />
     </node>
+    <node concept="3F0ifn" id="1PhFbPjlVsx" role="6VMZX">
+      <property role="3F0ifm" value="rich" />
+    </node>
   </node>
   <node concept="24kQdi" id="qefb9j32x6">
     <ref role="1XX52x" to="jap4:5LszKvI9Zn1" resolve="MultipleEditorsTestChild" />
@@ -721,6 +728,9 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+    </node>
+    <node concept="3F0ifn" id="1PhFbPjlVsz" role="6VMZX">
+      <property role="3F0ifm" value="compact" />
     </node>
   </node>
   <node concept="2ABfQD" id="59ZEGVPl1Sa">

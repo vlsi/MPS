@@ -21,6 +21,9 @@ public class MultipleEditorsTestChild_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7nhtss_a(editorContext, node);
   }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_7nhtss_a(editorContext, node);
+  }
   private EditorCell createCollection_7nhtss_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7nhtss_a");
@@ -116,6 +119,14 @@ public class MultipleEditorsTestChild_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_7nhtss_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
+    editorCell.setCellId("Constant_7nhtss_a");
+    editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
