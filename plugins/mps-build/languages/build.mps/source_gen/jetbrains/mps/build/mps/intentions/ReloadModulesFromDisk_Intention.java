@@ -82,7 +82,10 @@ public final class ReloadModulesFromDisk_Intention extends IntentionDescriptorBa
             ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
           } catch (ModuleLoaderException ex) {
             if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error(ex.getMessage(), ex);
+              LOG.error(ex.getMessage());
+            }
+            if (LOG.isDebugEnabled()) {
+              LOG.debug(ex.getMessage(), ex);
             }
             // TODO report? 
           }
