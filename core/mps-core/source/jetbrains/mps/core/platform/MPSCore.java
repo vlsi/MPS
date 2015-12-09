@@ -26,7 +26,6 @@ import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -85,7 +84,6 @@ public final class MPSCore extends ComponentPluginBase {
     myPersistenceFacade = init(new PersistenceRegistry());
     init(new FacetsRegistry());
     init(new ConceptRepository());
-    init(new MigrationPropertiesManager());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
+import jetbrains.mps.migration.MPSMigration;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -35,6 +36,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
  */
 public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
+  private MPSMigration myMigration;
   private Platform myPlatform;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider,
@@ -53,10 +55,16 @@ public class MPSCoreComponents implements ApplicationComponent {
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
     myBaseLanguage = new MPSBaseLanguage();
     myBaseLanguage.init();
+    // MPSMigration moved here from MPSCore as it is functionality built on top of core, rather than part of it.
+    // It has not been moved to Platform (PlatformBase along with generator and textgen) and lives here as its use from
+    // ant tasks bound to IdeaEnvironment, which has this ApplicationComponent initialized.
+    myMigration = new MPSMigration();
+    myMigration.init();
   }
 
   @Override
   public void disposeComponent() {
+    myMigration.dispose();
     myBaseLanguage.dispose();
     myPlatform.dispose();
   }
