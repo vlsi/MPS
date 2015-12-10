@@ -361,26 +361,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="5s8kLIYGZk2" role="3cqZAp">
-          <node concept="3cpWsn" id="5s8kLIYGZk3" role="3cpWs9">
-            <property role="TrG5h" value="modelsToGenerate" />
-            <node concept="3uibUv" id="5s8kLIYGZk4" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="5s8kLIYGZk5" role="11_B2D">
-                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-              </node>
-            </node>
-            <node concept="1rXfSq" id="4hiugqyzbQ1" role="33vP2m">
-              <ref role="37wK5l" node="1TclyuNTOp8" resolve="getModelsToGenerate" />
-              <node concept="37vLTw" id="3GM_nagTuvR" role="37wK5m">
-                <ref role="3cqZAo" node="1TclyuNTOn4" resolve="refactoring" />
-              </node>
-              <node concept="37vLTw" id="2BHiRxgm65p" role="37wK5m">
-                <ref role="3cqZAo" node="1TclyuNTOmW" resolve="context" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1KUoCiqb7GS" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCiqb7GT" role="3clFbG">
             <node concept="2OqwBi" id="5cztR1nCJ_J" role="2Oq$k0">
@@ -522,7 +502,7 @@
     </node>
     <node concept="3clFb_" id="29N7xYwTGb2" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="doExecuteWithDialog" />
+      <property role="TrG5h" value="doExecuteNoDialog" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm6S6" id="29N7xYwTGb3" role="1B3o_S" />
       <node concept="3cqZAl" id="29N7xYwTGb4" role="3clF45" />
@@ -534,80 +514,9 @@
         </node>
       </node>
       <node concept="3clFbS" id="29N7xYwTGb7" role="3clF47">
-        <node concept="3cpWs8" id="29N7xYwTGhI" role="3cqZAp">
-          <node concept="3cpWsn" id="29N7xYwTGhJ" role="3cpWs9">
-            <property role="TrG5h" value="refactoring" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="29N7xYwTGhK" role="1tU5fm">
-              <ref role="3uigEE" to="ge2m:4a0HOMfn9$I" resolve="IRefactoring" />
-            </node>
-            <node concept="2OqwBi" id="29N7xYwTGhL" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxgm_xX" role="2Oq$k0">
-                <ref role="3cqZAo" node="29N7xYwTGb5" resolve="refactoringContext" />
-              </node>
-              <node concept="liA8E" id="29N7xYwTGhN" role="2OqNvi">
-                <ref role="37wK5l" to="ge2m:4a0HOMfn9t2" resolve="getRefactoring" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5cQVs3xheiN" role="3cqZAp">
-          <node concept="3cpWsn" id="5cQVs3xheiO" role="3cpWs9">
-            <property role="TrG5h" value="project" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="5cQVs3xheiJ" role="1tU5fm">
-              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-            </node>
-            <node concept="2OqwBi" id="5cQVs3xheiP" role="33vP2m">
-              <node concept="2OqwBi" id="5cQVs3xheiQ" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxglrf2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTGb5" resolve="refactoringContext" />
-                </node>
-                <node concept="liA8E" id="5cQVs3xheiS" role="2OqNvi">
-                  <ref role="37wK5l" to="ge2m:4a0HOMfn9yf" resolve="getCurrentOperationContext" />
-                </node>
-              </node>
-              <node concept="liA8E" id="5cQVs3xheiT" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="29N7xYwTGhO" role="3cqZAp">
-          <node concept="3cpWsn" id="29N7xYwTGhP" role="3cpWs9">
-            <property role="TrG5h" value="ideaProject" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="2A7o4JNmSF6" role="1tU5fm">
-              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-            </node>
-            <node concept="2YIFZM" id="2A7o4JNmSF7" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <node concept="37vLTw" id="5cQVs3xheiU" role="37wK5m">
-                <ref role="3cqZAo" node="5cQVs3xheiO" resolve="project" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="29N7xYwTGhX" role="3cqZAp">
-          <node concept="3cpWsn" id="29N7xYwTGhY" role="3cpWs9">
-            <property role="TrG5h" value="modelsToGenerate" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="29N7xYwTGhZ" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="29N7xYwTGi0" role="11_B2D">
-                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-              </node>
-            </node>
-            <node concept="1rXfSq" id="4hiugqyyZv3" role="33vP2m">
-              <ref role="37wK5l" node="1TclyuNTOp8" resolve="getModelsToGenerate" />
-              <node concept="37vLTw" id="3GM_nagTrqS" role="37wK5m">
-                <ref role="3cqZAo" node="29N7xYwTGhJ" resolve="refactoring" />
-              </node>
-              <node concept="37vLTw" id="2BHiRxghiZt" role="37wK5m">
-                <ref role="3cqZAo" node="29N7xYwTGb5" resolve="refactoringContext" />
-              </node>
-            </node>
+        <node concept="3SKdUt" id="7nMNws3dniP" role="3cqZAp">
+          <node concept="3SKdUq" id="7nMNws3dniR" role="3SKWNk">
+            <property role="3SKdUp" value="executeSimple needs EDT but no read, and ThreadUtils doesn't give us forced 'later' semantics, hence SwingUtilities.invokeLater()" />
           </node>
         </node>
         <node concept="3clFbF" id="3_7D3x7x9fb" role="3cqZAp">
@@ -616,35 +525,11 @@
             <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
             <node concept="1bVj0M" id="59P_ms2cVg$" role="37wK5m">
               <node concept="3clFbS" id="59P_ms2cVgJ" role="1bW5cS">
-                <node concept="3clFbF" id="5cQVs3xhtbm" role="3cqZAp">
-                  <node concept="2OqwBi" id="5cQVs3xh_iA" role="3clFbG">
-                    <node concept="liA8E" id="5cQVs3xhEbx" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
-                      <node concept="1bVj0M" id="5cQVs3xhIdv" role="37wK5m">
-                        <node concept="3clFbS" id="5cQVs3xhIdw" role="1bW5cS">
-                          <node concept="3clFbF" id="3_7D3x7x6Nt" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyz8rv" role="3clFbG">
-                              <ref role="37wK5l" node="1TclyuNTOmV" resolve="executeSimple" />
-                              <node concept="37vLTw" id="2BHiRxgmC5n" role="37wK5m">
-                                <ref role="3cqZAo" node="29N7xYwTGb5" resolve="refactoringContext" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="5cQVs3xhwiA" role="2Oq$k0">
-                      <node concept="liA8E" id="5cQVs3xh_6$" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                      </node>
-                      <node concept="2OqwBi" id="5cQVs3xhtno" role="2Oq$k0">
-                        <node concept="liA8E" id="5cQVs3xhw8X" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                        </node>
-                        <node concept="37vLTw" id="5cQVs3xhtbl" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5cQVs3xheiO" resolve="project" />
-                        </node>
-                      </node>
+                <node concept="3clFbF" id="3_7D3x7x6Nt" role="3cqZAp">
+                  <node concept="1rXfSq" id="4hiugqyz8rv" role="3clFbG">
+                    <ref role="37wK5l" node="1TclyuNTOmV" resolve="executeSimple" />
+                    <node concept="37vLTw" id="2BHiRxgmC5n" role="37wK5m">
+                      <ref role="3cqZAo" node="29N7xYwTGb5" resolve="refactoringContext" />
                     </node>
                   </node>
                 </node>
@@ -795,17 +680,12 @@
                                   <node concept="2YIFZM" id="29N7xYwTGk5" role="37wK5m">
                                     <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
                                     <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                    <node concept="2OqwBi" id="29N7xYwTGk6" role="37wK5m">
-                                      <node concept="2OqwBi" id="29N7xYwTGk7" role="2Oq$k0">
-                                        <node concept="37vLTw" id="2BHiRxgm6Mb" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="29N7xYwTGbO" resolve="refactoringContext" />
-                                        </node>
-                                        <node concept="liA8E" id="29N7xYwTGk9" role="2OqNvi">
-                                          <ref role="37wK5l" to="ge2m:4a0HOMfn9yf" resolve="getCurrentOperationContext" />
-                                        </node>
+                                    <node concept="2OqwBi" id="29N7xYwTGk7" role="37wK5m">
+                                      <node concept="37vLTw" id="2BHiRxgm6Mb" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="29N7xYwTGbO" resolve="refactoringContext" />
                                       </node>
-                                      <node concept="liA8E" id="29N7xYwTGka" role="2OqNvi">
-                                        <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                                      <node concept="liA8E" id="29N7xYwTGk9" role="2OqNvi">
+                                        <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
                                       </node>
                                     </node>
                                   </node>
@@ -953,41 +833,6 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="1KUoCipvGun" role="SfCbr">
-                      <node concept="3cpWs8" id="1KUoCipvGuo" role="3cqZAp">
-                        <node concept="3cpWsn" id="1KUoCipvGup" role="3cpWs9">
-                          <property role="TrG5h" value="project" />
-                          <property role="3TUv4t" value="false" />
-                          <node concept="3uibUv" id="1KUoCipvGuq" role="1tU5fm">
-                            <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-                          </node>
-                          <node concept="2OqwBi" id="1KUoCipvGur" role="33vP2m">
-                            <node concept="37vLTw" id="2BHiRxgmaEu" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5s8kLIYGZkW" resolve="refactoringContext" />
-                            </node>
-                            <node concept="liA8E" id="1KUoCipvGut" role="2OqNvi">
-                              <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="1KUoCipvGuu" role="3cqZAp">
-                        <node concept="2OqwBi" id="1KUoCipvGuv" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxglWKh" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5s8kLIYGZkW" resolve="refactoringContext" />
-                          </node>
-                          <node concept="liA8E" id="1KUoCipvGux" role="2OqNvi">
-                            <ref role="37wK5l" to="ge2m:4a0HOMfn9xK" resolve="setCurrentOperationContext" />
-                            <node concept="2ShNRf" id="1KUoCipvGuy" role="37wK5m">
-                              <node concept="1pGfFk" id="1KUoCipvGuz" role="2ShVmc">
-                                <ref role="37wK5l" to="z1c3:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                                <node concept="37vLTw" id="3GM_nagTsbL" role="37wK5m">
-                                  <ref role="3cqZAo" node="1KUoCipvGup" resolve="project" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="3cpWs8" id="1KUoCipvGu_" role="3cqZAp">
                         <node concept="3cpWsn" id="1KUoCipvGuA" role="3cpWs9">
                           <property role="TrG5h" value="refactoring" />
@@ -1282,7 +1127,7 @@
                             <node concept="3clFbS" id="12Ta_LcGxUs" role="9aQI4">
                               <node concept="3clFbF" id="12Ta_LcGxUt" role="3cqZAp">
                                 <node concept="1rXfSq" id="4hiugqyyMOA" role="3clFbG">
-                                  <ref role="37wK5l" node="29N7xYwTGb2" resolve="doExecuteWithDialog" />
+                                  <ref role="37wK5l" node="29N7xYwTGb2" resolve="doExecuteNoDialog" />
                                   <node concept="37vLTw" id="2BHiRxghfnA" role="37wK5m">
                                     <ref role="3cqZAo" node="12Ta_LcGxTV" resolve="refactoringContext" />
                                   </node>

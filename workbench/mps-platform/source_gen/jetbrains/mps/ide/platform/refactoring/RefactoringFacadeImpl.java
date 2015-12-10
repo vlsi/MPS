@@ -8,21 +8,19 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.ProjectOperationContext;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 
 public class RefactoringFacadeImpl implements RefactoringFacade {
@@ -32,7 +30,6 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
   public void executeSimple(final RefactoringContext context) {
     ThreadUtils.assertEDT();
     final IRefactoring refactoring = context.getRefactoring();
-    List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, context);
     context.getSelectedProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         try {
@@ -48,18 +45,11 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
       myLog.error("An error occurred in dgoWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
     }
   }
-  private void doExecuteWithDialog(final RefactoringContext refactoringContext) {
-    final IRefactoring refactoring = refactoringContext.getRefactoring();
-    final Project project = refactoringContext.getCurrentOperationContext().getProject();
-    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
-    final List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
+  private void doExecuteNoDialog(final RefactoringContext refactoringContext) {
+    // executeSimple needs EDT but no read, and ThreadUtils doesn't give us forced 'later' semantics, hence SwingUtilities.invokeLater() 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
-          public void run() {
-            executeSimple(refactoringContext);
-          }
-        });
+        executeSimple(refactoringContext);
       }
     });
   }
@@ -75,7 +65,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
+        ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), "Finding usages...", false) {
           @Override
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
@@ -93,8 +83,6 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
     refactoringContext.getSelectedProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
-          Project project = refactoringContext.getSelectedProject();
-          refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
           IRefactoring refactoring = refactoringContext.getRefactoring();
           result.value = refactoring.getAffectedNodes(refactoringContext);
           if (result.value == null) {
@@ -130,7 +118,7 @@ public class RefactoringFacadeImpl implements RefactoringFacade {
         if (!(usages.getSearchResults().isEmpty())) {
           showRefactoring(refactoringContext, usages);
         } else {
-          doExecuteWithDialog(refactoringContext);
+          doExecuteNoDialog(refactoringContext);
         }
       }
     });

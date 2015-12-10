@@ -119,7 +119,6 @@ public class DeleteModelHelper {
     final RefactoringContext context = new RefactoringContext(project, ref);
     context.setSelectedModel(modelDescriptor);
     context.setSelectedModule(modelDescriptor.getModule());
-    context.setCurrentOperationContext(new ProjectOperationContext(project));
 
     project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       @Override

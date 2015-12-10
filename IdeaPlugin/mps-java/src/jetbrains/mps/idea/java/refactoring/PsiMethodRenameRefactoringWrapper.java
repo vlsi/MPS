@@ -47,7 +47,7 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
 
     // now do the PSI part of refactoring
 
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
+    Project project = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
     PsiMethod method = (PsiMethod) MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
 
     String newName = (String) refactoringContext.getParameter("newName");
@@ -72,7 +72,7 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
+    Project project = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
     PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
     assert psiTarget instanceof PsiMethod;
 
