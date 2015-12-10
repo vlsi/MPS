@@ -412,13 +412,14 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     DefaultActionGroup group = new DefaultActionGroup();
     registerActions(group);
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    toolbar.setTargetComponent(myEditor);
     JPanel toolbarComponent = new JPanel(new BorderLayout());
     toolbarComponent.add(toolbar.getComponent(), BorderLayout.CENTER);
 
     this.add(toolbarComponent, BorderLayout.WEST);
     this.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
 
-    myHighlighter = check_6q36mf_a0o0ic(myTool.getProject());
+    myHighlighter = check_6q36mf_a0p0ic(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -546,7 +547,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), p0 + "");
     return n1;
   }
-  private static Highlighter check_6q36mf_a0o0ic(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0p0ic(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }

@@ -171,6 +171,10 @@ public class EditorCell_Image extends EditorCell_Basic {
     myIcon = icon;
   }
 
+  public Icon getIcon() {
+    return myIcon;
+  }
+
   public static enum ImageAlignment {
     justify, center, title;
   }

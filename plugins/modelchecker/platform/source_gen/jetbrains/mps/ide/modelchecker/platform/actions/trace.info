@@ -1271,7 +1271,7 @@
       <node id="3923570236740723340" at="69,0,70,56" concept="4" />
       <node id="3308111580801096388" at="70,56,71,76" concept="4" />
       <node id="3719390199795365649" at="73,62,74,40" concept="4" />
-      <node id="3719390199795365671" at="76,37,77,90" concept="4" />
+      <node id="3719390199795365671" at="76,46,77,90" concept="4" />
       <node id="3719390199795365677" at="77,90,78,58" concept="4" />
       <node id="3719390199795365683" at="78,58,79,0" concept="13" />
       <node id="3719390199795365684" at="79,0,80,69" concept="10" />
@@ -1352,7 +1352,7 @@
       <node id="3719390199795365847" at="115,124,119,13" concept="8" />
       <node id="3719390199795366234" at="190,0,194,0" concept="9" trace="getResultsIcon#()Ljavax/swing/Icon;" />
       <node id="3719390199795366334" at="220,0,224,0" concept="9" trace="getCategoryKinds#()Ljava/util/List;" />
-      <node id="7899446653863966700" at="71,76,76,37" concept="4" />
+      <node id="7899446653863966700" at="71,76,76,46" concept="4" />
       <node id="3923570236737247101" at="155,77,160,71" concept="4" />
       <node id="3923570236737195151" at="162,0,167,0" concept="9" trace="runCheck#(Ljetbrains/mps/ide/findusages/model/IResultProvider;Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljava/lang/String;)V" />
       <node id="3719390199795366213" at="185,0,190,0" concept="9" trace="getResultsText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;)Ljava/lang/String;" />

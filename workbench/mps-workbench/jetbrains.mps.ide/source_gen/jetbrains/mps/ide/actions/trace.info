@@ -9801,7 +9801,7 @@
       <node id="5426495936043638864" at="76,93,77,56" concept="5" />
       <node id="3923570236744349128" at="77,56,78,103" concept="11" />
       <node id="5426495936043638875" at="80,62,81,41" concept="5" />
-      <node id="5426495936043638880" at="83,37,84,58" concept="5" />
+      <node id="5426495936043638880" at="83,46,84,58" concept="5" />
       <node id="3923570236744354445" at="84,58,85,123" concept="5" />
       <node id="5426495936043638903" at="85,123,86,82" concept="5" />
       <node id="3923570236744399707" at="86,82,87,119" concept="5" />
@@ -9828,7 +9828,7 @@
       <node id="5426495936043638707" at="115,0,119,0" concept="10" trace="getCategoryIcon#(Ljava/lang/String;)Ljavax/swing/Icon;" />
       <node id="5426495936043638715" at="119,0,123,0" concept="10" trace="getCategoryKinds#()Ljava/util/List;" />
       <node id="5426495936043638811" at="61,0,66,0" concept="10" trace="dispose#()V" />
-      <node id="3923570236744203309" at="78,103,83,37" concept="5" />
+      <node id="3923570236744203309" at="78,103,83,46" concept="5" />
       <node id="5426495936043638628" at="93,0,98,0" concept="10" trace="getPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5426495936043638797" at="53,0,59,0" concept="10" trace="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
       <node id="5426495936043638792" at="51,36,59,7" concept="5" />
