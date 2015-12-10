@@ -118,9 +118,10 @@ public class NodePaster {
   public void pasteAsRoots(SModel model, @Nullable String dstPackage) {
     for (SNode pasteNode : myPasteNodes) {
       model.addRootNode(pasteNode);
-      if (dstPackage == null) continue;
-
-      SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.propertyName_BaseConcept_virtualPackage, dstPackage);
+      if (dstPackage != null) {
+        SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.propertyName_BaseConcept_virtualPackage, dstPackage);
+      }
+      CopyPasteManager.getInstance().postProcessNode(pasteNode);
     }
   }
 
