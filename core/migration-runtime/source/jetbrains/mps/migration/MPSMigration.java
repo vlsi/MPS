@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.migration;
 
 import jetbrains.mps.components.ComponentPluginBase;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.migration.global.MigrationPropertiesManager;
 
 /**
- * evgeny, 10/14/11
+ * FIXME Is it worth a component plugin? MigrationPropertiesManager is in fact per-project component.
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-public final class MPSFindUsages extends ComponentPluginBase {
-  private final LanguageRegistry myLanguageRegistry;
-
-  public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {
-    myLanguageRegistry = languageRegistry;
-  }
-
+public class MPSMigration extends ComponentPluginBase {
   @Override
   public void init() {
     super.init();
-    init(new FindUsagesManager());
-    init(new FindersManager(myLanguageRegistry));
+    init(new MigrationPropertiesManager());
   }
 }

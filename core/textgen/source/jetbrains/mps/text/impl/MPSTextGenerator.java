@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.text.impl;
 
 import jetbrains.mps.components.ComponentPluginBase;
-import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * evgeny, 10/14/11
+ * Plug TextGen-related stuff into MPS platform
+ * @author Artem Tikhomirov
+ * @since 3.4
  */
-public final class MPSFindUsages extends ComponentPluginBase {
+public class MPSTextGenerator extends ComponentPluginBase {
   private final LanguageRegistry myLanguageRegistry;
 
-  public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {
+  public MPSTextGenerator(@NotNull LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
   }
 
   @Override
   public void init() {
     super.init();
-    init(new FindUsagesManager());
-    init(new FindersManager(myLanguageRegistry));
+    init(new TextGenRegistry(myLanguageRegistry));
   }
 }

@@ -36,7 +36,7 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
   private final PersistenceFacade myPersistenceFacade;
 
   public JavaStubNavigationContributor(MPSCoreComponents coreComponents) {
-    myPersistenceFacade = coreComponents.getMPSCore().getPersistenceFacade();
+    myPersistenceFacade = coreComponents.getPersistenceFacade();
   }
 
   @Override

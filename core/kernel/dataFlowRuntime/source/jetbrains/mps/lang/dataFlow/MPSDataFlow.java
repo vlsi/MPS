@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.lang.dataFlow;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPluginBase;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import org.jetbrains.annotations.NotNull;
 
 /**
- * evgeny, 10/14/11
+ * FIXME Once we re-write reflective classloading in DataFlow with regular language aspect, we unlikely need this component plugin.
+ * @author Artem Tikhomirov
+ * @since 3.4
  */
-public final class MPSFindUsages extends ComponentPluginBase {
-  private final LanguageRegistry myLanguageRegistry;
+public class MPSDataFlow extends ComponentPluginBase {
+  private ClassLoaderManager myClassLoaderManager;
 
-  public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {
-    myLanguageRegistry = languageRegistry;
+  public MPSDataFlow(ClassLoaderManager clManager) {
+    myClassLoaderManager = clManager;
   }
 
   @Override
   public void init() {
     super.init();
-    init(new FindUsagesManager());
-    init(new FindersManager(myLanguageRegistry));
+    init(new DataFlowManager(null, myClassLoaderManager));
   }
 }

@@ -58,7 +58,7 @@ public class MpsEnvironment extends EnvironmentBase {
     EnvironmentBase.setSystemProperties(false);
     EnvironmentBase.setPluginPath();
     registerFacetFactory();
-    super.init(myPlatform.getCore());
+    super.init(myPlatform.getCore().getLibraryInitializer());
   }
 
   private void registerFacetFactory() {

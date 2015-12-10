@@ -32,7 +32,6 @@
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
-    <classNode dependClassName="jetbrains.mps.core.platform.MPSCore" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.CanonicalPath" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

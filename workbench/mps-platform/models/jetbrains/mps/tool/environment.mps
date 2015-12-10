@@ -563,8 +563,8 @@
               <node concept="37vLTw" id="5A5jZrz2zNu" role="2Oq$k0">
                 <ref role="3cqZAo" node="5A5jZrz2zs4" resolve="coreComponents" />
               </node>
-              <node concept="liA8E" id="5A5jZrz2$0w" role="2OqNvi">
-                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getMPSCore():jetbrains.mps.core.platform.MPSCore" resolve="getMPSCore" />
+              <node concept="liA8E" id="7joLZli9Ea_" role="2OqNvi">
+                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getLibraryInitializer():jetbrains.mps.library.LibraryInitializer" resolve="getLibraryInitializer" />
               </node>
             </node>
           </node>
