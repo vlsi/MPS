@@ -222,9 +222,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1630,10 +1627,10 @@
           <node concept="3clFbF" id="xP3yNycSNz" role="3cqZAp">
             <node concept="2ShNRf" id="xP3yNycSNx" role="3clFbG">
               <node concept="1pGfFk" id="xP3yNycW0U" role="2ShVmc">
-                <ref role="37wK5l" to="tpcg:xP3yNy95i4" resolve="LanguageConceptsScope" />
+                <ref role="37wK5l" to="tpcg:2iCqkkxEdE4" resolve="LanguageConceptsScope" />
                 <node concept="1Q6Npb" id="xP3yNydid9" role="37wK5m" />
-                <node concept="3TUQnm" id="xP3yNydinf" role="37wK5m">
-                  <ref role="3TV0OU" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                <node concept="35c_gC" id="6bxBVrUg5NJ" role="37wK5m">
+                  <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                 </node>
               </node>
             </node>
@@ -1781,7 +1778,7 @@
   </node>
   <node concept="1M2fIO" id="4El8m9GW0A2">
     <property role="3GE5qa" value="CellModel" />
-    <ref role="1M2myG" to="tpc2:7hmFG5jLZmy" resolve="CellModel_Redispatch" />
+    <ref role="1M2myG" to="tpc2:7hmFG5jLZmy" resolve="CellModel_NextEditor" />
     <node concept="nKS2y" id="4El8m9GW0A3" role="1MLUbF">
       <node concept="3clFbS" id="4El8m9GW0A4" role="2VODD2">
         <node concept="3clFbF" id="4El8m9GW0JL" role="3cqZAp">
