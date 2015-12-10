@@ -1564,16 +1564,15 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPS" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
+    <node concept="1DS2jV" id="4fuA5EbPM6N" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="4fuA5EbPM6O" role="1oa70y" />
+    </node>
     <node concept="1DS2jV" id="1N_sel8h_Yv" role="1NuT2Z">
       <property role="TrG5h" value="models" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
       <node concept="1oajcY" id="7HZe2EwZDnO" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="KIYFzsVxen" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDoc" role="1oa70y" />
     </node>
     <node concept="tnohg" id="4viyZco7gSa" role="tncku">
       <node concept="3clFbS" id="4viyZco7gSb" role="2VODD2">
@@ -1582,6 +1581,17 @@
             <node concept="2ShNRf" id="7RFU_zilwDj" role="2Oq$k0">
               <node concept="1pGfFk" id="7RFU_zilwDl" role="2ShVmc">
                 <ref role="37wK5l" to="c1ko:50KxtEq6wT6" resolve="StubResolver" />
+                <node concept="2OqwBi" id="4fuA5EbPgyP" role="37wK5m">
+                  <node concept="2OqwBi" id="4fuA5EbPgyQ" role="2Oq$k0">
+                    <node concept="2WthIp" id="4fuA5EbPgyR" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="4fuA5EbPMeL" role="2OqNvi">
+                      <ref role="2WH_rO" node="4fuA5EbPM6N" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4fuA5EbPgyT" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="liA8E" id="7RFU_zilwDq" role="2OqNvi">
@@ -1592,62 +1602,6 @@
                   <ref role="2WH_rO" node="1N_sel8h_Yv" resolve="models" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="7RFU_zilwDv" role="37wK5m">
-                <node concept="2WthIp" id="7RFU_zilwDw" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7RFU_zilwDx" role="2OqNvi">
-                  <ref role="2WH_rO" node="KIYFzsVxen" resolve="context" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5Scu6nd6VN2" role="3cqZAp">
-          <node concept="3cpWsn" id="5Scu6nd6VN5" role="3cpWs9">
-            <property role="TrG5h" value="modulesToReload" />
-            <node concept="2hMVRd" id="5Scu6nd6VMY" role="1tU5fm">
-              <node concept="3uibUv" id="5Scu6nd6W3z" role="2hN53Y">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="5Scu6nd6W65" role="33vP2m">
-              <node concept="2i4dXS" id="5Scu6nd6X6B" role="2ShVmc">
-                <node concept="3uibUv" id="5Scu6nd6XLA" role="HW$YZ">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="5Scu6nd6Y4e" role="3cqZAp">
-          <node concept="3clFbS" id="5Scu6nd6Y4h" role="2LFqv$">
-            <node concept="3clFbF" id="5Scu6nd6Zn7" role="3cqZAp">
-              <node concept="2OqwBi" id="5Scu6nd6Z$L" role="3clFbG">
-                <node concept="37vLTw" id="5Scu6nd6Zn6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5Scu6nd6VN5" resolve="modulesToReload" />
-                </node>
-                <node concept="TSZUe" id="5Scu6nd70Og" role="2OqNvi">
-                  <node concept="2OqwBi" id="5Scu6nd735p" role="25WWJ7">
-                    <node concept="37vLTw" id="5Scu6nd723d" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5Scu6nd6Y4k" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="5Scu6nd74fh" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="5Scu6nd6Y4k" role="1Duv9x">
-            <property role="TrG5h" value="model" />
-            <node concept="3uibUv" id="5Scu6nd73Si" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="5Scu6nd6Z53" role="1DdaDG">
-            <node concept="2WthIp" id="5Scu6nd6Z56" role="2Oq$k0" />
-            <node concept="1DTwFV" id="5Scu6nd6Z58" role="2OqNvi">
-              <ref role="2WH_rO" node="1N_sel8h_Yv" resolve="models" />
             </node>
           </node>
         </node>
@@ -1658,16 +1612,10 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPSGlobal" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code in the Whole Project" />
     <property role="3GE5qa" value="Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3Kb8mGRKrfg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDhb" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="3Kb8mGRKsmS" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDjX" role="1oa70y" />
     </node>
     <node concept="tnohg" id="3Kb8mGRKrfa" role="tncku">
       <node concept="3clFbS" id="3Kb8mGRKrfb" role="2VODD2">
@@ -1676,6 +1624,17 @@
             <node concept="2ShNRf" id="7RFU_zilwD$" role="2Oq$k0">
               <node concept="1pGfFk" id="7RFU_zilwDA" role="2ShVmc">
                 <ref role="37wK5l" to="c1ko:50KxtEq6wT6" resolve="StubResolver" />
+                <node concept="2OqwBi" id="4fuA5EbPgnP" role="37wK5m">
+                  <node concept="2OqwBi" id="4fuA5EbPghy" role="2Oq$k0">
+                    <node concept="2WthIp" id="4fuA5EbPgh_" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="4fuA5EbPghB" role="2OqNvi">
+                      <ref role="2WH_rO" node="3Kb8mGRKrfg" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4fuA5EbPgvL" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="liA8E" id="7RFU_zilwDF" role="2OqNvi">
@@ -1684,12 +1643,6 @@
                 <node concept="2WthIp" id="7RFU_zilwDH" role="2Oq$k0" />
                 <node concept="1DTwFV" id="7RFU_zilwDI" role="2OqNvi">
                   <ref role="2WH_rO" node="3Kb8mGRKrfg" resolve="project" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="7RFU_zilwDK" role="37wK5m">
-                <node concept="2WthIp" id="7RFU_zilwDL" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7RFU_zilwDM" role="2OqNvi">
-                  <ref role="2WH_rO" node="3Kb8mGRKsmS" resolve="context" />
                 </node>
               </node>
             </node>

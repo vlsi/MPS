@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -21,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -46,18 +46,23 @@ import org.apache.log4j.LogManager;
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
   private Set<SModelReference> myUsedModels;
-  public StubResolver() {
+  private final SRepository myContextRepository;
+
+  public StubResolver(SRepository contextRepo) {
     // resolve to any nonstub model 
     myUsedModels = null;
+    myContextRepository = contextRepo;
   }
-  public StubResolver(Iterable<SModel> models) {
+  public StubResolver(SRepository contextRepo, Iterable<SModel> models) {
     // resolve only to models from sequence 
     myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
         return it.getReference();
       }
     }));
+    myContextRepository = contextRepo;
   }
+
   private List<SReference> getReferencesToResolve(SModel sourceModel, Map<SModelReference, SModelReference> models) {
     // fills models map with stub -> model correspondance 
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
@@ -68,7 +73,8 @@ public class StubResolver {
           continue;
         }
         // trying to find correspondent nonstub model 
-        SModelReference modelRef = check_ar1im2_a0d0a0c0e(SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
+        // FIXME shall collect all models in the SRepository once, and use map name->model here 
+        SModelReference modelRef = check_ar1im2_a0e0a0c0h(SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
         if (modelRef == null) {
           continue;
         }
@@ -80,7 +86,7 @@ public class StubResolver {
     }
     return result;
   }
-  public void resolveInModel(final SModel model, IOperationContext context) {
+  public void resolveInModel(final SModel model) {
     Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     List<SReference> toResolve = getReferencesToResolve(model, models);
     if (ListSequence.fromList(toResolve).isEmpty()) {
@@ -101,31 +107,33 @@ public class StubResolver {
       new MissingDependenciesFixer(model).fixModuleDependencies();
     }
 
-    int cnt = StubResolver.resolveReferences(toResolve, models, context);
+    int cnt = StubResolver.resolveReferences(toResolve, models);
 
     new OptimizeImportsHelper().optimizeModelImports(model);
     if (LOG.isInfoEnabled()) {
       LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
     }
   }
-  public void resolveInModels(List<SModel> models, IOperationContext context) {
+
+  public void resolveInModels(List<SModel> models) {
     for (SModel model : ListSequence.fromList(models)) {
-      resolveInModel(model, context);
+      resolveInModel(model);
     }
   }
-  public void resolveInProject(MPSProject project, IOperationContext context) {
+
+  public void resolveInProject(MPSProject project) {
     for (SModule module : Sequence.fromIterable(project.getModulesWithGenerators())) {
       if (module.isReadOnly()) {
         continue;
       }
       for (SModel model : Sequence.fromIterable(module.getModels())) {
         if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
-          resolveInModel(model, context);
+          resolveInModel(model);
         }
       }
     }
   }
-  public static int resolveReferences(List<SReference> toResolve, Map<SModelReference, SModelReference> models, IOperationContext context) {
+  public static int resolveReferences(List<SReference> toResolve, Map<SModelReference, SModelReference> models) {
     int cnt = 0;
     boolean found;
     do {
@@ -166,7 +174,7 @@ public class StubResolver {
     return cnt;
   }
   protected static Logger LOG = LogManager.getLogger(StubResolver.class);
-  private static SModelReference check_ar1im2_a0d0a0c0e(SModel checkedDotOperand) {
+  private static SModelReference check_ar1im2_a0e0a0c0h(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

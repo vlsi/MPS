@@ -27,14 +27,15 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.util.indexing.FileBasedIndex;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.openapi.module.Module;
 
@@ -70,7 +71,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     List<SNode> result = new ArrayList<SNode>();
     Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(queue).addLastElement(classifier);
-    ClassifierSuccessorsFinder.ValueProcessor valueProcessor = new ClassifierSuccessorsFinder.ValueProcessor(result, queue);
+    ClassifierSuccessorsFinder.ValueProcessor valueProcessor = new ClassifierSuccessorsFinder.ValueProcessor(result, queue, SNodeOperations.getModel(classifier).getRepository());
     ClassifierSuccessorsFinder.ModifiedsuccessorFinder modifiedSuccessorFinder = new ClassifierSuccessorsFinder.ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, queue);
     ClassifierSuccessorsFinder.SearchScope unModifiedFilesSearchScope = new ClassifierSuccessorsFinder.SearchScope(unModifiedModelFiles);
     while (!(QueueSequence.fromQueue(queue).isEmpty())) {
@@ -174,10 +175,13 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
   private static class ValueProcessor implements FileBasedIndex.ValueProcessor<List<GlobalSNodeId>> {
     private List<SNode> myResult;
     private Queue<SNode> myQueue;
+    private final SRepository myRepo;
+
     private Set<GlobalSNodeId> myProcessedNodes = SetSequence.fromSet(new HashSet<GlobalSNodeId>());
-    /*package*/ ValueProcessor(List<SNode> result, Queue<SNode> queue) {
+    /*package*/ ValueProcessor(List<SNode> result, Queue<SNode> queue, SRepository repository) {
       myResult = result;
       myQueue = queue;
+      myRepo = repository;
     }
     @Override
     public boolean process(VirtualFile file, List<GlobalSNodeId> successors) {
@@ -186,7 +190,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
           continue;
         }
         SetSequence.fromSet(myProcessedNodes).addElement(sNodeId);
-        SNode node = sNodeId.getNode();
+        SNode node = sNodeId.getNode(myRepo);
         if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           SNode classifier = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
           ListSequence.fromList(myResult).addElement(classifier);

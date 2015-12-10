@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -61,19 +60,5 @@ public final class SNodeLegacy {
       return null;
     }
     return new SNodeLegacy(parent).getLinkDeclaration(roleInParent);
-  }
-
-  /**
-   * Replacement strategy: no idea, original method (SNode.setConceptFqName) was scheduled for removal after 3.2
-   */
-  @ToRemove(version = 3.2)
-  public void setConceptFqName(String conceptFQName) {
-    if (myNode.getConcept().getQualifiedName().equals(conceptFQName)) {
-      return;
-    }
-    myNode.setConcept(MetaAdapterFactoryByName.getConcept(conceptFQName));
-
-    //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(myNode.getModel());
   }
 }
