@@ -13,6 +13,8 @@
   <property name="buildCore.ver" value="${import.buildCore.buildCore.ver}" />
   <property name="buildCore.MPS" value="${import.buildCore.buildCore.MPS}" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes">
     <aaa />

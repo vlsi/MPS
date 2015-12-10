@@ -26,13 +26,16 @@ public final class IModuleRef__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SModuleReference> moduleReference_id173Z5qAOun8 = new SMethodBuilder<SModuleReference>(new SJavaCompoundTypeImpl(SModuleReference.class)).name("moduleReference").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("173Z5qAOun8").registry(REGISTRY).build();
-  public static final SMethod<String> presentation_id173Z5qAPmZ2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("presentation").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("173Z5qAPmZ2").registry(REGISTRY).build();
+  public static final SMethod<String> presentation_id173Z5qAPmZ2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("presentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("173Z5qAPmZ2").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(moduleReference_id173Z5qAOun8, presentation_id173Z5qAPmZ2);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static String presentation_id173Z5qAPmZ2(@NotNull SNode __thisNode__) {
+    return "IModuleRef default presentation";
+  }
 
   /*package*/ IModuleRef__BehaviorDescriptor() {
     super(REGISTRY);
@@ -50,6 +53,8 @@ public final class IModuleRef__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 1:
+        return (T) ((String) presentation_id173Z5qAPmZ2(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

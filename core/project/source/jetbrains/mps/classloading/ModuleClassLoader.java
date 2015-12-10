@@ -81,7 +81,7 @@ public class ModuleClassLoader extends ClassLoader {
     return aClass;
   }
 
-  private ReloadableModule getModule() {
+  ReloadableModule getModule() {
     return mySupport.getModule();
   }
 

@@ -315,17 +315,18 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeVirtual(SNode node, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method);
     return baseBHDescriptor.invokeSpecial(node, method, parameters);
   }
 
   private <T> T invokeVirtual(SAbstractConcept concept, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
+    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method);
     return baseBHDescriptor.invokeSpecial(concept, method, parameters);
   }
 
   @NotNull
-  private <T> BaseBHDescriptor commonInvokeVirtual(SMethod<T> method, Object... parameters) {
+  private <T> BaseBHDescriptor findDescriptorByVirtualMethod(SMethod<T> method) {
+    assert method.isVirtual();
     BHDescriptor bhDescriptor = myVTable.get(method);
     if (bhDescriptor == null) {
       throw new BHMethodNotFoundException(this, method);

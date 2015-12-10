@@ -12,6 +12,8 @@
   <property name="mpsPlugin.plugin.version" value="${import.mpsPlugin.mpsPlugin.plugin.version}" />
   <property name="mpsPlugin.date" value="${import.mpsPlugin.mpsPlugin.date}" />
   <property name="mpsBootstrapCore.version" value="${import.mpsPlugin.mpsBootstrapCore.version}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mpsPlugin}/mps-core/lib/ant/lib/ant-mps.jar" />

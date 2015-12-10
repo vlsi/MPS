@@ -4,6 +4,8 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildMpsA" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMpsA" />
   <property name="artifacts.buildMpsB" location="${build.dir}/artifacts/buildMpsB" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/temp" />
