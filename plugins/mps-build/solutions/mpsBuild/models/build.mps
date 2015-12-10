@@ -983,6 +983,9 @@
     </node>
     <node concept="398b33" id="5StVQ8qcIGg" role="3989C9">
       <property role="TrG5h" value="mps-core-components" />
+      <node concept="2sjeV3" id="7nMNws3dKIR" role="nCB5Z">
+        <ref role="2sjeV2" node="44LXwdzG1vm" resolve="annotations-lib" />
+      </node>
       <node concept="398b2D" id="5StVQ8qcNrR" role="398b2p">
         <node concept="398BVA" id="5StVQ8qcNVn" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />

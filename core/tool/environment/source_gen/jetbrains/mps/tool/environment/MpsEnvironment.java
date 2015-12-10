@@ -8,6 +8,7 @@ import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import jetbrains.mps.library.LibraryInitializer;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -58,7 +59,7 @@ public class MpsEnvironment extends EnvironmentBase {
     EnvironmentBase.setSystemProperties(false);
     EnvironmentBase.setPluginPath();
     registerFacetFactory();
-    super.init(myPlatform.getCore().getLibraryInitializer());
+    super.init(myPlatform.findComponent(LibraryInitializer.class));
   }
 
   private void registerFacetFactory() {

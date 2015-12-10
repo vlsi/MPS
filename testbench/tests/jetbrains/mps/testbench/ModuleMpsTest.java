@@ -23,7 +23,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -65,7 +65,7 @@ public class ModuleMpsTest extends CoreMpsTest {
    */
   @NotNull
   protected final SRepositoryExt getTestRepository() {
-    return ENV.getPlatform().getCore().getModuleRepository();
+    return ENV.getPlatform().findComponent(MPSModuleRepository.class);
   }
 
   protected final ModelAccess getModelAccess() {

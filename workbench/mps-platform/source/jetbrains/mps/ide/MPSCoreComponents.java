@@ -24,6 +24,7 @@ import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.migration.MPSMigration;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.UndoHandler;
@@ -86,19 +87,18 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @NotNull
   public PersistenceFacade getPersistenceFacade() {
-    return myPlatform.getCore().getPersistenceFacade();
+    return myPlatform.findComponent(PersistenceRegistry.class);
   }
 
   @NotNull
   public LibraryInitializer getLibraryInitializer() {
-    return myPlatform.getCore().getLibraryInitializer();
+    return myPlatform.findComponent(LibraryInitializer.class);
   }
 
   @NotNull
   public ClassLoaderManager getClassLoaderManager() {
-    return myPlatform.getCore().getClassLoaderManager();
+    return myPlatform.findComponent(ClassLoaderManager.class);
   }
-
 
   /**
    * @deprecated it's our implementation part, shall drop once no uses
@@ -106,7 +106,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   @Deprecated
   @ToRemove(version = 0)
   public MPSModuleRepository getModuleRepository() {
-    return myPlatform.getCore().getModuleRepository();
+    return myPlatform.findComponent(MPSModuleRepository.class);
   }
 
   /**

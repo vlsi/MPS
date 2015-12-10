@@ -4336,7 +4336,10 @@
     <javac2 destdir="${build.tmp}/java/out/mps-core-components" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/core/components/source" />
-      <classpath refid="path.jdk.classpath" />
+      <classpath>
+        <path refid="path.java.library.annotations-lib" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-core-components">
       <fileset dir="${mps_home}/core/components/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
