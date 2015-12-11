@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.welcomeScreen;
 
-import com.intellij.ide.IdeBundle;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -28,14 +28,13 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.build.SamplesExtractor;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 
 import java.io.File;
 
 public class OpenSampleProjectAction extends AnAction {
   public OpenSampleProjectAction() {
-    getTemplatePresentation().setIcon(Icons.OPEN_SAMPLE);
+    getTemplatePresentation().setIcon(Nodes.IdeaProject);
   }
 
   public void actionPerformed(AnActionEvent e) {
@@ -46,8 +45,7 @@ public class OpenSampleProjectAction extends AnAction {
     final Project currentProject = PlatformDataKeys.PROJECT.getData(e.getDataContext());
 
     final FileChooserDescriptor descriptor = new OpenMPSProjectFileChooserDescriptor(true);
-    descriptor.setTitle(IdeBundle.message("title.open.project"));
-    descriptor.setDescription("Project files (" + MPSExtentions.DOT_MPS_PROJECT + ") ");
+    descriptor.setTitle("Open Sample Project");
 
     VirtualFile userHomeDir = null;
 
@@ -59,7 +57,9 @@ public class OpenSampleProjectAction extends AnAction {
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
     VirtualFile result = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
-    if(result == null) return;
+    if (result == null) {
+      return;
+    }
 
     String filePath = result.getPath();
     Project project = ProjectUtil.openProject(filePath, currentProject, false);

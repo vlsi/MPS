@@ -3,9 +3,9 @@
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
-  <logo url="/splash.png" textcolor="002387" progressColor="FDA916" progressY="262"/>
+  <logo url="/splash.png" textcolor="002387" progressColor="1272BB" progressX="117" progressY="280" progressHeight="3"/>
   <about url="/mpsAbout.png"/><!-- foreground="7A858F" copyrightForeground="7A858F" linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
-  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size12="/toolwindows/toolWindowProject.png" size128="/MPS_128.png" ico="MPS.ico"/>
+  <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="MPS.ico"/>
   <dialogs-image url="/dialogImage.png"/><!--TODO: remove in 3.4-->
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>

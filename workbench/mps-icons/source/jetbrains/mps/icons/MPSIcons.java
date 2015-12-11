@@ -50,6 +50,7 @@ public class MPSIcons {
     public static final Icon CellKeyMap = IconLoader.getIcon("/cellExplorer/cellKeyMap.png");
     public static final Icon CellProperty = IconLoader.getIcon("/cellExplorer/cellProperty.png");
     public static final Icon Cells = IconLoader.getIcon("/cellExplorer/cells.png");
+    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
     public static final Icon CellTree = IconLoader.getIcon("/cellExplorer/cellTree.png");
   }
 
@@ -65,7 +66,6 @@ public class MPSIcons {
     public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
     public static final Icon NewProject = IconLoader.getIcon("/general/newProject.png");
-    public static final Icon OpenSample = IconLoader.getIcon("/general/openSample.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
     public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
     public static final Icon ErrorsFound = IconLoader.getIcon("/general/errorsFound.png");
@@ -101,6 +101,7 @@ public class MPSIcons {
     public static final Icon Language = IconLoader.getIcon("/nodes/language.png");
     public static final Icon MappingConfig = IconLoader.getIcon("/nodes/mappingConf.png");
     public static final Icon Model = IconLoader.getIcon("/nodes/model.png");
+    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
     public static final Icon ModelOverlay = IconLoader.getIcon("/nodes/model-overlay.png");
     public static final Icon Node = IconLoader.getIcon("/nodes/node.png");
     public static final Icon ProjectModels = IconLoader.getIcon("/nodes/projectModels.png");
@@ -154,14 +155,12 @@ public class MPSIcons {
     public static final Icon ClassHierarchyView = IconLoader.getIcon("/toolWindows/classHierarchyView.png");
     public static final Icon Default = IconLoader.getIcon("/toolWindows/default.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/toolWindows/modelChecker.png");
-    public static final Icon ModelRepositoryViewer = IconLoader.getIcon("/toolWindows/modelRepositoryViewer.png");
     public static final Icon OpenTerminal_13x13 =  IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
-    public static final Icon OutputView = IconLoader.getIcon("/toolWindows/outputView.png");
-    public static final Icon ToolWindowProject = IconLoader.getIcon("/toolWindows/toolWindowProject.png");
     public static final Icon TypeTraceView = IconLoader.getIcon("/toolWindows/typeTraceView.png");
   }
 
   public static final Icon MPS16x16 = IconLoader.getIcon("/MPS_16.png");
+  public static final Icon MPSFavIcon = IconLoader.getIcon("/MPS_favicon.png");
 
   //public static final Icon Templ = IconLoader.getIcon("/");
 }

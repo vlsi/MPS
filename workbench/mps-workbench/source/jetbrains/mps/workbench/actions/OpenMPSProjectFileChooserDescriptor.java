@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.workbench.actions;
 
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ui.LayeredIcon;
-import jetbrains.mps.icons.MPSIcons;
-import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.project.MPSExtentions;
 
 import javax.swing.Icon;
 
-public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
+public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor {
   public OpenMPSProjectFileChooserDescriptor(boolean chooseFiles) {
     super(chooseFiles, true, chooseFiles, chooseFiles, false, false);
   }
@@ -36,22 +34,20 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
     return isMpsProjectFile(file) || isMpsProjectDirectory(file);
   }
 
-  // TODO: create better icon
-  private final static Icon MPSProjectDirIcon = MPSIcons.MPS16x16;
-
   @Override
   public Icon getIcon(VirtualFile file) {
-    if(isMpsProjectFile(file))
-      return MPSIcons.MPS16x16;
-    else if(isMpsProjectDirectory(file))
-      return MPSProjectDirIcon;
+    if (isMpsProjectFile(file) || isMpsProjectDirectory(file)) {
+      return Nodes.IdeaProject;
+    }
     return super.getIcon(file);
   }
 
   @Override
   public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
-    if (!showHiddenFiles && FileElement.isFileHidden(file)) return false;
-     return isMpsProjectFile(file) || super.isFileVisible(file, showHiddenFiles) && file.isDirectory();
+    if (!showHiddenFiles && FileElement.isFileHidden(file)) {
+      return false;
+    }
+    return isMpsProjectFile(file) || super.isFileVisible(file, showHiddenFiles) && file.isDirectory();
   }
 
   public static boolean isMpsProjectFile(VirtualFile file) {
@@ -62,7 +58,9 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
     /**
      * <code>file.getParent() == null<code/> checks that root directory of any drive is never an MPS project
      * */
-    if (!file.isValid() || file.getParent() == null || !file.isDirectory()) return false;
+    if (!file.isValid() || file.getParent() == null || !file.isDirectory()) {
+      return false;
+    }
 
     return file.findChild(Project.DIRECTORY_STORE_FOLDER) != null;
   }

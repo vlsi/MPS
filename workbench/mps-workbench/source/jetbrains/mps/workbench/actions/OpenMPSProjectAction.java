@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.actions;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
+import com.intellij.icons.AllIcons.Welcome;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -30,7 +30,6 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;
@@ -39,7 +38,7 @@ import java.util.Map;
 
 public class OpenMPSProjectAction extends BaseAction {
   private static final Icon OPEN_ICON = Actions.Menu_open;
-  private static final Icon OPEN_ICON_WELCOME_SCREEN = AllIcons.Welcome.OpenProject;
+  private static final Icon OPEN_ICON_WELCOME_SCREEN = Welcome.OpenProject;
 
   public OpenMPSProjectAction() {
     setExecuteOutsideCommand(true);
@@ -66,7 +65,6 @@ public class OpenMPSProjectAction extends BaseAction {
 
     final FileChooserDescriptor descriptor = new OpenMPSProjectFileChooserDescriptor(true);
     descriptor.setTitle(IdeBundle.message("title.open.project"));
-    descriptor.setDescription("Project files (" + MPSExtentions.DOT_MPS_PROJECT + ") ");
 
     VirtualFile userHomeDir = null;
     if (SystemInfo.isMac || SystemInfo.isLinux) {
@@ -79,7 +77,9 @@ public class OpenMPSProjectAction extends BaseAction {
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
     final VirtualFile virtualFile = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
-    if (virtualFile == null) return;
+    if (virtualFile == null) {
+      return;
+    }
 
     String filePath = virtualFile.getPath();
     Project project = ProjectUtil.openProject(filePath, currentProject, false);
