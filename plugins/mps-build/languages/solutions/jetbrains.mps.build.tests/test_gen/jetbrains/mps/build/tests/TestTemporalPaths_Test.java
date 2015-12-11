@@ -10,7 +10,8 @@ import junit.framework.Assert;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 @MPSLaunch
 public class TestTemporalPaths_Test extends BaseTransformationTest {
@@ -48,31 +49,34 @@ public class TestTemporalPaths_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_topLevelJar() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535266"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar")), new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"))));
+      Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535266"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar")), new TestContext(this.getBuildTestsModel())));
     }
     public void test_topLevelFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535287"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535287"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), new TestContext(this.getBuildTestsModel())));
     }
     public void test_topInternalFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder/internal", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("7422876504327290551"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/internal", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("7422876504327290551"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), new TestContext(this.getBuildTestsModel())));
     }
     public void test_jarInFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535289"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar")), new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("280273048052535289"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar")), new TestContext(this.getBuildTestsModel())));
     }
     public void test_folderInJar() throws Exception {
       this.addNodeById("4045247515868358884");
-      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"));
+      TestContext testContext = new TestContext(this.getBuildTestsModel());
       Assert.assertEquals(TestContext.TEMP + "/default/test.jar/internalFolder", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("8104754176559709900"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), testContext));
       Assert.assertEquals(TestContext.TEMP + "/default/test.jar/internalFolder/internalFolder2", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("8104754176559709938"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), testContext));
     }
     public void test_duplicatedNames() throws Exception {
       this.addNodeById("4045247515868358884");
-      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.build.tests@tests"));
+      TestContext testContext = new TestContext(this.getBuildTestsModel());
       Assert.assertEquals(TestContext.TEMP + "/default/some.jar/someFolder", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("4209004860870558811"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), testContext));
       Assert.assertEquals(TestContext.TEMP + "/default/some.jar1/someFolder", BuildLayout_NamedContainer__BehaviorDescriptor.getOutputPath_WithMacro_idfzIHCHip1Q.invoke(SNodeOperations.cast(this.getNodeById("4209004860870558814"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), testContext));
+    }
+    public SModel getBuildTestsModel() {
+      return new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.build.tests@tests");
     }
   }
 }
