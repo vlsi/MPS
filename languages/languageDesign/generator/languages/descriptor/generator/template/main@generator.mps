@@ -3394,6 +3394,9 @@
                                 <node concept="35c_gC" id="52UGxk5qCDB" role="37wK5m">
                                   <ref role="35c_gD" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
                                 </node>
+                                <node concept="35c_gC" id="4GorVqgrFnJ" role="37wK5m">
+                                  <ref role="35c_gD" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
+                                </node>
                                 <node concept="35c_gC" id="52UGxk5qDGN" role="37wK5m">
                                   <ref role="35c_gD" to="tpc2:59ZEGVOSPtB" resolve="ConceptEditorContextHints" />
                                 </node>

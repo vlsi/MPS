@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
@@ -17,7 +16,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"))) {
-        return Arrays.asList(new ConceptEditor[]{new AnonymousCellAnnotation_Editor(), new AnonymousCellAnnotation_comment_Editor()});
+        return Collections.<ConceptEditor>singletonList(new AnonymousCellAnnotation_Editor());
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11a2f985130L, "jetbrains.mps.lang.test.structure.AssertMatch"))) {
         return Collections.<ConceptEditor>singletonList(new AssertMatch_Editor());

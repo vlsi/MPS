@@ -76,9 +76,6 @@ import java.util.Map;
 import java.util.Queue;
 
 /**
- * TODO investigate removing model.save() from reload* methods.
- * Refactorings have to take care of saving models.
- *
  * evgeny, 1/25/13
  */
 public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
@@ -367,24 +364,20 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   /* package */
 
+  boolean isRoot(MPSPsiNode psiNode) {
+    return psiNode.getParent() instanceof MPSPsiRootNode;
+  }
+
   MPSPsiNode reload(SNodeId sNodeId) {
     SRepository repository = getProjectRepository();
     repository.getModelAccess().checkWriteAccess();
-    SModel sModel = myModelReference.resolve(repository);
-    // make sure the model files are up-to-date
-    // below we rely on VirtualFiles, if root has been renamed then the new VirtualFile will not be found
-    // if we don't save the model
-    // TODO review after 3.3
-    if (sModel instanceof EditableSModel) {
-      ((EditableSModel) sModel).save();
-    }
     MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
     if (mpsPsiNode == null) return null;
 
     SNode sNode = mpsPsiNode.getSNodeReference().resolve(MPSModuleRepository.getInstance());
     MPSPsiNode replacement = convert(sNode);
 
-    if (mpsPsiNode.getParent() instanceof MPSPsiRootNode) {
+    if (isRoot(mpsPsiNode)) {
       MPSPsiRootNode rootNode = (MPSPsiRootNode) mpsPsiNode.getParent();
       assert rootNode.getContainingModel().equals(this);
 
@@ -428,14 +421,6 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   void reload(SModel model) {
-    // we rely on root nodes' virtual files, so we force them to be up-to-date in the case when we're called
-    // from an event listener. We may be called both from a read actio and from an event listener (in write action).
-    // In the latter case something supposedly has changed, and the files might have to be updated.
-    // TODO review after 3.3
-    if (getProjectRepository().getModelAccess().canWrite() && model instanceof EditableSModel) {
-      ((EditableSModel) model).save();
-    }
-
     clearChildren();
     for (SNode root : model.getRootNodes()) {
       String rootName = null;

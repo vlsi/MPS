@@ -159,8 +159,11 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     }
 
     myFileEditor = fileEditor;
-    myInspectorComponent.getUpdater().setInitialEditorHints(enabledHints);
-    myInspectorComponent.editNode(node);
+
+    boolean needToEdit = myInspectorComponent.getUpdater().setInitialEditorHints(enabledHints);
+    if (needToEdit || myInspectorComponent.getEditedNode() != node) {
+      myInspectorComponent.editNode(node);
+    }
     myMessagePanel.setNode(node);
   }
 

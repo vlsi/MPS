@@ -26,8 +26,10 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -59,7 +61,19 @@ public class UpdatePsiReferencesMoveParticipant implements MoveNodeRefactoringPa
 
       @Override
       public SNode afterMove(SNode sNode) {
-        myPsiProvider.getPsi(sNode.getModel()).reloadAll();
+        // TODO remove this once/if we map smodel events to psi events synchronously
+        // currently it's done in the end of command
+        // Reloading model is needed because later we use psi element corresponding to finalNode
+        // Saving is needed because in MPSPsiModel we rely in roots' virtual files in case of file-per-root persistence.
+        SModel smodel = sNode.getModel();
+        if (smodel instanceof EditableSModel) {
+          // unfortunately we don't do check if sNode is root, becauase afterMove() is called in random order
+          // not reflecting the order of actual moves
+          ((EditableSModel) smodel).save();
+          MPSPsiModel psiModel = myPsiProvider.getPsi(smodel);
+          psiModel.reloadAll();
+        }
+
         return sNode;
       }
     };

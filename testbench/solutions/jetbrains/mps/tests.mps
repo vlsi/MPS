@@ -1813,49 +1813,52 @@
       <ref role="lpD7u" to="ryl9:5RM5NyAKo4e" resolve="Pre_LocalStaicFieldToStaticFieldReference" />
     </node>
     <node concept="lpD6D" id="2axhso1Gna8" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb7OYD" resolve="AddChild" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb7OYD" resolve="DefaultEditor_AddChild" />
     </node>
     <node concept="lpD6D" id="6G8AH$1K1Bn" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:2vlU4mSUnkk" resolve="AddNodeAttribute" />
+      <ref role="lpD7u" to="ryl9:2vlU4mSUnkk" resolve="DefaultEditor_AddNodeAttribute" />
     </node>
     <node concept="lpD6D" id="6G8AH$1K1dC" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:6z32qfm5_oN" resolve="AddPropertyAttribute" />
+      <ref role="lpD7u" to="ryl9:6z32qfm5_oN" resolve="DefaultEditor_AddPropertyAttribute" />
     </node>
     <node concept="lpD6D" id="pK5T2zG5wd" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb8qTL" resolve="AddReference" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb8qTL" resolve="DefaultEditor_AddReference" />
     </node>
     <node concept="lpD6D" id="pK5T2zG5Sc" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:6z32qfm5KJo" resolve="AddReferenceAttribute" />
+      <ref role="lpD7u" to="ryl9:6z32qfm5KJo" resolve="DefaultEditor_AddReferenceAttribute" />
     </node>
     <node concept="lpD6D" id="2axhso1Goby" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DeleteChild" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DefaultEditor_DeleteChild" />
+    </node>
+    <node concept="lpD6D" id="4Mg6JWFfuNB" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:qgeAIokVrN" resolve="DefaultEditor_DontSubstituteAbstractConcepts" />
     </node>
     <node concept="lpD6D" id="2axhso1GojP" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb8pX4" resolve="EditBooleanProperty" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb8pX4" resolve="DefaultEditor_EditBooleanProperty" />
     </node>
     <node concept="lpD6D" id="5co60CagU1a" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5co60CafvIy" resolve="EditEnumProperty" />
+      <ref role="lpD7u" to="ryl9:5co60CafvIy" resolve="DefaultEditor_EditEnumProperty" />
     </node>
     <node concept="lpD6D" id="2axhso1Gosa" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb8o1r" resolve="EditIntegerProperty" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb8o1r" resolve="DefaultEditor_EditIntegerProperty" />
     </node>
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="EditStringProperty" />
+      <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="DefaultEditor_EditStringProperty" />
     </node>
     <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="ShowReflectiveEditor" />
+      <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="DefaultEditor_ShowReflectiveEditor" />
     </node>
     <node concept="lpD6D" id="5EVBM58RzVy" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="ShowReflectiveEditorAndMove" />
+      <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="DefaultEditor_ShowReflectiveEditorAndMove" />
     </node>
     <node concept="lpD6D" id="wACy6P0Ptq" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:wACy6P0PjQ" resolve="ShowReflectiveEditorForAttribute" />
+      <ref role="lpD7u" to="ryl9:wACy6P0PjQ" resolve="DefaultEditor_ShowReflectiveEditorForAttribute" />
     </node>
     <node concept="lpD6D" id="5EVBM58R$7H" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="ShowReflectiveThenRegularEditor" />
+      <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="DefaultEditor_ShowReflectiveThenRegularEditor" />
     </node>
     <node concept="lpD6D" id="2axhso1GoGU" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="TypeName" />
+      <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="DefaultEditor_TypeName" />
     </node>
     <node concept="lpD6D" id="tOAaiuM9Ov" role="lpD6w">
       <ref role="lpD7u" to="ryl9:tOAaiuH$YQ" resolve="CutClassComment" />
@@ -3917,6 +3920,18 @@
     </node>
     <node concept="lpD6D" id="uMiWVbYfD$" role="lpD6w">
       <ref role="lpD7u" to="zosv:6k6gsLyiyLk" resolve="EditorSpecifiedBy_add_remove_context_hints_RefNodeList" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFjj" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjm96F" resolve="InspectorOfCompactPresentation" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFjL" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjmekf" resolve="InspectorOfCompactPresentation_pushHints" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFkg" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjme4q" resolve="InspectorOfDefaultPresentation" />
+    </node>
+    <node concept="lpD6D" id="1PhFbPjmFkK" role="lpD6w">
+      <ref role="lpD7u" to="zosv:1PhFbPjmdPY" resolve="InspectorOfRichPresentation" />
     </node>
     <node concept="lpD6D" id="5wNXW0WXJhS" role="lpD6w">
       <ref role="lpD7u" to="zosv:5wNXW0WXvxF" resolve="MostSpecificEditor" />

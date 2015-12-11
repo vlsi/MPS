@@ -316,7 +316,7 @@ public class QueriesGenerated {
       return false;
     }
 
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(aspectModel, _context, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")) || LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(_context, aspectModel);
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(aspectModel, _context, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef4e35767L, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")) || LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(_context, aspectModel);
   }
   public static SNode sourceNodeQuery_1820665478710839875(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe38L, 0x25c3f284595702edL, "left"));

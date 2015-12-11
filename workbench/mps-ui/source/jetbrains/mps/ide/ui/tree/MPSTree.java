@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
-import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeUIHelper;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
@@ -200,45 +196,62 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   void myMousePressed(final MouseEvent e) {
-    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(this));
-    IdeFocusManager focusManager;
-    if (p != null) {
-      focusManager = IdeFocusManager.getInstance(p);
-    } else {
-      focusManager = IdeFocusManagerHeadless.INSTANCE;
+    IdeFocusManager.findInstanceByComponent(this).requestFocus(this, true);
+
+    if (e.getButton() == 0) {
+      // This is a workaround for handling context menu button
+      TreePath path = getSelectionPath();
+      if (path == null) return;
+      int rowNum = getRowForPath(path);
+      Rectangle r = getRowBounds(rowNum);
+      showPopup(r.x, r.y);
+      return;
     }
 
-    focusManager.requestFocus(this, true);
+    if (e.isPopupTrigger()) {
+      showPopup(e.getX(), e.getY());
+      return;
+    }
 
     TreePath path = getClosestPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
-    Object lastPathComponent = path.getLastPathComponent();
-    MPSTreeNode nodeToClick=null;
-    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
-      nodeToClick = (MPSTreeNode) lastPathComponent;
+    MPSTreeNode nodeToClick = getOpenableNode(e);
+    if (nodeToClick != null) {
       if ((e.getClickCount() == 1 && isAutoOpen())) {
         autoscroll(nodeToClick);
-      } else if (e.getClickCount() == 2) {
-        e.consume();
-      }
-    } else if (e.getButton() == MouseEvent.BUTTON3) {
-      if (!isPathSelected(path)) {
-        setSelectionPath(path);
       }
     }
+  }
 
-    //workaround for context acquiers
-    final MPSTreeNode node2dc = e.getClickCount()==2?nodeToClick:null;
-    focusManager.doWhenFocusSettlesDown(new Runnable() {
-      @Override
-      public void run() {
-        if (node2dc != null) {
-          doubleClick(node2dc);
-        }
-        if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
-      }
-    });
+  private void myMouseClicked(MouseEvent e) {
+    if (e.isPopupTrigger()) {
+      showPopup(e.getX(), e.getY());
+      return;
+    }
+
+    MPSTreeNode nodeToClick = getOpenableNode(e);
+    if (nodeToClick != null && e.getClickCount() == 2) {
+      doubleClick(nodeToClick);
+    }
+  }
+
+  private MPSTreeNode getOpenableNode(MouseEvent e) {
+    MPSTreeNode node = getNodeFromPath(getClosestPathForLocation(e.getX(), e.getY()));
+
+    if (node == null) return null;
+    if (!node.canBeOpened()) return null;
+
+    return node;
+  }
+
+  @Nullable
+  private MPSTreeNode getNodeFromPath(@Nullable TreePath path) {
+    if (path == null) return null;
+    Object lastPathComponent = path.getLastPathComponent();
+
+    if (!(lastPathComponent instanceof MPSTreeNode)) return null;
+    return (MPSTreeNode) lastPathComponent;
   }
 
   /**
@@ -281,8 +294,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   @Override
   public String getToolTipText(MouseEvent event) {
     TreePath path = getPathForLocation(event.getX(), event.getY());
-    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
-      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+    MPSTreeNode node = getNodeFromPath(path);
+    if (node != null) {
       return node.getTooltipText();
     }
     return null;
@@ -308,11 +321,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private void showPopup(int x, int y) {
     TreePath path = getPathForLocation(x, y);
-    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
-      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+    final MPSTreeNode node = getNodeFromPath(path);
+    if (node != null) {
       JPopupMenu menu = createPopupMenu(node);
       if (menu != null) {
-        if (!getSelectedPaths().contains(pathToString(path))) {
+        if (!isPathSelected(path)) {
           setSelectionPath(path);
         }
         menu.show(this, x, y);
@@ -511,15 +524,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public MPSTreeNode getCurrentNode() {
-    javax.swing.tree.TreePath path = getLeadSelectionPath();
-    if (path == null) {
-      return null;
-    }
-    Object obj = path.getLastPathComponent();
-    if (!(obj instanceof TreeNode)) {
-      return null;
-    }
-    return (MPSTreeNode) obj;
+    return getNodeFromPath(getLeadSelectionPath());
   }
 
   public void setCurrentNode(MPSTreeNode node) {
@@ -708,13 +713,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   @Override
   public int getToggleClickCount() {
-    TreePath selection = getSelectionPath();
-    if (selection == null) return -1;
-    if (selection.getLastPathComponent() instanceof MPSTreeNode) {
-      MPSTreeNode node = (MPSTreeNode) selection.getLastPathComponent();
-      return node.getToggleClickCount();
-    }
-    return -1;
+    MPSTreeNode node = getNodeFromPath(getSelectionPath());
+    if (node == null) return -1;
+    return node.getToggleClickCount();
   }
 
   public boolean isDisposed() {
@@ -755,10 +756,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyTreeWillExpandListener implements TreeWillExpandListener {
     @Override
     public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
-      TreePath path = event.getPath();
-      Object node = path.getLastPathComponent();
-      MPSTreeNode treeNode = (MPSTreeNode) node;
-      treeNode.init();
+      MPSTreeNode treeNode = getNodeFromPath(event.getPath());
+      if (treeNode != null) treeNode.init();
     }
 
     @Override
@@ -772,9 +771,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       if (!myAutoExpandEnabled) return;
 
       TreePath eventPath = event.getPath();
-      MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
+      MPSTreeNode node = getNodeFromPath(eventPath);
 
-      if (node.getChildCount() == 1) {
+      if (node != null && node.getChildCount() == 1) {
         List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
         for (Object item : eventPath.getPath()) {
           path.add((MPSTreeNode) item);
@@ -796,22 +795,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyMouseAdapter extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
-      //this is a workaround for handling context menu button
-      if (e.getButton() == 0) {
-        TreePath path = getSelectionPath();
-        if (path == null) return;
-        int rowNum = getRowForPath(path);
-        Rectangle r = getRowBounds(rowNum);
-        showPopup(r.x, r.y);
-      } else {
-        requestFocus();
-        myMousePressed(e);
-      }
+      myMousePressed(e);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
       myMouseReleased(e);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+      myMouseClicked(e);
     }
 
     @Override
@@ -829,9 +823,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyOpenNodeAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
-      TreePath selPath = getSelectionPath();
-      if (selPath == null) return;
-      MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+      MPSTreeNode selNode = getNodeFromPath(getSelectionPath());
+      if (selNode == null) return;
+
       doubleClick(selNode);
     }
   }

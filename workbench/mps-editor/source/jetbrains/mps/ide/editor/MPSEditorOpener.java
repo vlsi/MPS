@@ -27,6 +27,7 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
@@ -40,6 +41,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -49,6 +51,7 @@ import java.awt.Component;
 
 // FIXME this class is in use by mbeddr, hence we can't just drop deprecated code.
 public class MPSEditorOpener {
+  private static Logger LOG = Logger.wrap(LogManager.getLogger(MPSEditorOpener.class));
   private final MPSProject myProject;
 
   /**
@@ -115,13 +118,14 @@ public class MPSEditorOpener {
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
     final Editor nodeEditor = openEditor(node.getContainingRoot(), false);
 
-    //restore inspector state for opened editor (if exists)
-    if (!restorePrevSelectionInInspector(nodeEditor)) {
-      //open inspector (if no cell is selected in editor, inspector won't be opened)
-      DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
-      FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
+    if ((nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
       NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-      getInspector().inspect(node, fileEditor, nec.getUpdater().getInitialEditorHints());
+      final SNode lastInspectedNode = nec.getLastInspectedNode();
+      if (lastInspectedNode != null) {
+        inspect(nec, lastInspectedNode);
+      } else {
+        inspect(nec, node);
+      }
     }
 
 
@@ -258,18 +262,12 @@ public class MPSEditorOpener {
     }
   }
 
-  private boolean restorePrevSelectionInInspector(Editor nodeEditor) {
-    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
-      return false;
-    }
-    NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if (nec.getLastInspectedNode() == null) {
-      return false;
-    }
-
-    DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
+  //todo this code is a duplicate of inspect(SNode) in jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser
+  //todo remove this and make NodeEditorComponent open inspector when needed
+  private boolean inspect(NodeEditorComponent editorComponent, SNode node) {
+    DataContext dataContext = DataManager.getInstance().getDataContext(editorComponent);
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    getInspector().inspect(nec.getLastInspectedNode(), fileEditor, nec.getUpdater().getInitialEditorHints());
+    getInspector().inspect(node, fileEditor, editorComponent.getEditorHintsForNode(node));
     return true;
   }
 }

@@ -4,6 +4,8 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildZZ" />
   <property name="build.layout" location="${build.dir}/artifacts/buildZZ" />
   <property name="artifacts.buildZ" location="${build.dir}/artifacts/buildZ" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />

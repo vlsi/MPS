@@ -11,10 +11,9 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,170,0" name="jetbrains.mps.lang.test.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,169,0" name="jetbrains.mps.lang.test.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/1101347953350099232">
@@ -7422,43 +7421,6 @@
         <var name="node" id="2886182022232400113" />
       </scope>
       <unit id="5773579205429866752" at="13,0,27,0" name="jetbrains.mps.lang.test.editor.EditorComponentExpression_Editor" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/6047905657530662407">
-    <file name="AnonymousCellAnnotation_comment_Editor.java">
-      <node id="6047905657530662407" at="15,0,16,0" concept="3" trace="myContextHints" />
-      <node id="6047905657530662407" at="17,47,18,26" concept="8" />
-      <node id="6047905657530662407" at="20,79,21,63" concept="8" />
-      <node id="6047905657530663825" at="24,9,25,55" concept="2" />
-      <node id="6047905657530663825" at="25,55,26,139" concept="2" />
-      <node id="6047905657530663825" at="27,7,28,139" concept="7" />
-      <node id="6047905657530663825" at="28,139,29,32" concept="2" />
-      <node id="6047905657530663825" at="29,32,30,83" concept="2" />
-      <node id="6047905657530663825" at="30,83,31,26" concept="8" />
-      <node id="6047905657530663825" at="33,15,34,54" concept="2" />
-      <node id="6047905657530662407" at="20,0,23,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6047905657530662407" at="16,0,20,0" concept="6" trace="getContextHints#()Ljava/util/Collection;" />
-      <node id="6047905657530663825" at="26,139,32,7" concept="0" />
-      <node id="6047905657530663825" at="23,89,35,5" concept="11" />
-      <node id="6047905657530663825" at="23,0,37,0" concept="6" trace="createNextEditor_7nllh3_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="6047905657530662407" at="17,47,18,26" />
-      <scope id="6047905657530662407" at="20,79,21,63" />
-      <scope id="6047905657530663825" at="33,15,34,54" />
-      <scope id="6047905657530662407" at="20,0,23,0">
-        <var name="editorContext" id="6047905657530662407" />
-        <var name="node" id="6047905657530662407" />
-      </scope>
-      <scope id="6047905657530662407" at="16,0,20,0" />
-      <scope id="6047905657530663825" at="27,7,31,26">
-        <var name="editorCell" id="6047905657530663825" />
-      </scope>
-      <scope id="6047905657530663825" at="24,9,32,7" />
-      <scope id="6047905657530663825" at="23,89,35,5" />
-      <scope id="6047905657530663825" at="23,0,37,0">
-        <var name="editorContext" id="6047905657530663825" />
-        <var name="node" id="6047905657530663825" />
-      </scope>
-      <unit id="6047905657530662407" at="14,0,38,0" name="jetbrains.mps.lang.test.editor.AnonymousCellAnnotation_comment_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)/8101092317677916989">

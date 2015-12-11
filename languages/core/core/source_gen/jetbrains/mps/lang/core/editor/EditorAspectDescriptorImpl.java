@@ -39,6 +39,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb6L, "jetbrains.mps.lang.core.structure.ExportScopePublic"))) {
         return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeAttribute_comment_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"))) {
         return Collections.<ConceptEditor>singletonList(new SideTransformInfo_Editor());
       }

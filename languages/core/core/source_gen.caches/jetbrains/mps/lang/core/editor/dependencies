@@ -114,6 +114,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage" />
+    <classNode dependClassName="jetbrains.mps.lang.core.editor.NodeAttribute_comment_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.SideTransformInfo_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.SuppressErrorsAnnotation_Editor" />
@@ -190,6 +191,25 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.editor.NodeAttribute_comment_Editor" file="NodeAttribute_comment_Editor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" file="ShortDescriptionEditorComponent.java">
     <classNode dependClassName="java.lang.String" />
