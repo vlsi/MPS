@@ -6,30 +6,25 @@ import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class customContainers_extension extends Extension.Default<_FunctionTypes._return_P0_E0<? extends List<SNode>>> {
+public class customContainers_extension extends Extension.Default<_FunctionTypes._return_P1_E0<? extends List<SNode>, ? super SRepository>> {
   public customContainers_extension() {
     super("jetbrains.mps.baseLanguage.collections.customContainers");
   }
 
 
 
-  public _FunctionTypes._return_P0_E0<? extends List<SNode>> get() {
-    return new _FunctionTypes._return_P0_E0<List<SNode>>() {
-      public List<SNode> invoke() {
-        List<SNode> res = new ArrayList<SNode>();
+  public _FunctionTypes._return_P1_E0<? extends List<SNode>, ? super SRepository> get() {
+    return new _FunctionTypes._return_P1_E0<List<SNode>, SRepository>() {
+      public List<SNode> invoke(SRepository repo) {
         // Find the model(s) with custom container declarations 
-        SModel mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.collections.trove.containers");
-        if (mdl != null) {
-          ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.nodes(mdl, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c84cL, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"))));
-        }
-        return res;
+        SModel mdl = new ModuleRepositoryFacade(repo).getModelByName("jetbrains.mps.baseLanguage.collections.trove.containers");
+        return SModelOperations.nodes(mdl, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c84cL, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers"));
       }
     };
   }

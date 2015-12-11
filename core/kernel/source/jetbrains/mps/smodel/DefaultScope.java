@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,12 +78,7 @@ public abstract class DefaultScope extends BaseScope {
       return null;
     }
 
-    SModule module;
-    if (reference.getModuleId() != null) {
-      module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
-    } else {
-      module = MPSModuleRepository.getInstance().getModuleByFqName(reference.getModuleName());
-    }
+    SModule module = reference.resolve(MPSModuleRepository.getInstance());
 
     if (module == null) {
       return null;

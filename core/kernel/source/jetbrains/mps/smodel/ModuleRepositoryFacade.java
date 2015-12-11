@@ -160,6 +160,16 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   /**
+   * Provisional code to get rid of uses of direct static instance of MPSModuleRepository.
+   * IMPLEMENTATION NOTE: shall collect names of all modules and use them instead if global MPSModuleRepository
+   * @param fqName module namespace
+   * @return named module, if any
+   */
+  public SModule getModuleByName(@NotNull String fqName) {
+    return REPO.getModuleByFqName(fqName);
+  }
+
+  /**
    * Find language modules directly <em>extending</em> the one supplied.
    * @see jetbrains.mps.project.dependency.modules.LanguageDependenciesManager for <em>extended</em> languages
    * Shall merge the code (perhaps even into third class, i.e. Language), it's stupid to keep two locations.
