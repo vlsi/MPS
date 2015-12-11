@@ -195,7 +195,7 @@ public class RepoListenerTest extends CoreMpsTest {
     // FIXME attach solution with existing model (1+), check content adapter got a chance to attach to a model and modelAdded is dispatched
     //
     // add model, check content adapter is notified, modelAdded is fired
-    project.getModelAccess().runReadAction(new Runnable() {
+    project.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         solution.registerModel(createModel(solution.getModuleReference(), "m1"));
