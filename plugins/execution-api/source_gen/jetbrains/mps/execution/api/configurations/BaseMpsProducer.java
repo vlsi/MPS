@@ -12,8 +12,10 @@ import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.Location;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.configurations.RunConfiguration;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -55,17 +57,18 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     MPSLocation mpsLocation = (MPSLocation) location;
     final MPSPsiElement psiElement = mpsLocation.getPsiElement();
-    RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(location.getProject());
+    RunConfiguration config = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<RunConfiguration>() {
       @Override
       public RunConfiguration compute() {
-        Object mpsItem = psiElement.getMPSItem();
+        Object mpsItem = psiElement.getMPSItem(mpsProject.getRepository());
         if (mpsItem == null) {
           return null;
         }
         if (!(isApplicable(mpsItem))) {
           return null;
         }
-        return doCreateConfiguration((T) psiElement.getMPSItem());
+        return doCreateConfiguration((T) mpsItem);
       }
     });
     if (config == null) {

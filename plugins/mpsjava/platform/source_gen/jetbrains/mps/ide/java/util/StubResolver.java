@@ -17,10 +17,10 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -66,6 +66,7 @@ public class StubResolver {
   private List<SReference> getReferencesToResolve(SModel sourceModel, Map<SModelReference, SModelReference> models) {
     // fills models map with stub -> model correspondance 
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myContextRepository);
     for (SNode node : ListSequence.fromList(SModelOperations.nodes(sourceModel, null))) {
       for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         SModelReference targetModelRef = ref.getTargetSModelReference();
@@ -73,8 +74,7 @@ public class StubResolver {
           continue;
         }
         // trying to find correspondent nonstub model 
-        // FIXME shall collect all models in the SRepository once, and use map name->model here 
-        SModelReference modelRef = check_ar1im2_a0e0a0c0h(SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
+        SModelReference modelRef = check_ar1im2_a0d0a0d0h(repoFacade.getModelByName(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
         if (modelRef == null) {
           continue;
         }
@@ -174,7 +174,7 @@ public class StubResolver {
     return cnt;
   }
   protected static Logger LOG = LogManager.getLogger(StubResolver.class);
-  private static SModelReference check_ar1im2_a0e0a0c0h(SModel checkedDotOperand) {
+  private static SModelReference check_ar1im2_a0d0a0d0h(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

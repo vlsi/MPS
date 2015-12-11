@@ -2050,6 +2050,22 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6j36NaoEiB3" role="3cqZAp">
+          <node concept="3cpWsn" id="6j36NaoEiB4" role="3cpWs9">
+            <property role="TrG5h" value="repoFacade" />
+            <node concept="3uibUv" id="6j36NaoEiB1" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+            </node>
+            <node concept="2ShNRf" id="6j36NaoEiB5" role="33vP2m">
+              <node concept="1pGfFk" id="6j36NaoEiB6" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="6j36NaoEiB7" role="37wK5m">
+                  <ref role="3cqZAo" node="4fuA5EbPd9q" resolve="myContextRepository" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2Gpval" id="7RFU_zilvBI" role="3cqZAp">
           <node concept="2GrKxI" id="7RFU_zilvBJ" role="2Gsz3X">
             <property role="TrG5h" value="node" />
@@ -2129,11 +2145,6 @@
                     <property role="3SKdUp" value="trying to find correspondent nonstub model" />
                   </node>
                 </node>
-                <node concept="3SKdUt" id="4fuA5EbQW$m" role="3cqZAp">
-                  <node concept="3SKdUq" id="4fuA5EbQW$o" role="3SKWNk">
-                    <property role="3SKdUp" value="FIXME shall collect all models in the SRepository once, and use map name-&gt;model here" />
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="7RFU_zilvCv" role="3cqZAp">
                   <node concept="3cpWsn" id="7RFU_zilvCw" role="3cpWs9">
                     <property role="TrG5h" value="modelRef" />
@@ -2142,12 +2153,11 @@
                     </node>
                     <node concept="2EnYce" id="7RFU_zilvCy" role="33vP2m">
                       <node concept="2OqwBi" id="7RFU_zilvCz" role="2Oq$k0">
-                        <node concept="2YIFZM" id="7RFU_zilvC$" role="2Oq$k0">
-                          <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-                          <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
+                        <node concept="37vLTw" id="6j36NaoEiB8" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6j36NaoEiB4" resolve="repoFacade" />
                         </node>
                         <node concept="liA8E" id="7RFU_zilvC_" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~SModelRepository.getModelDescriptor(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelDescriptor" />
+                          <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModelByName(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelByName" />
                           <node concept="2YIFZM" id="4DcpLEzkI2" role="37wK5m">
                             <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
                             <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
