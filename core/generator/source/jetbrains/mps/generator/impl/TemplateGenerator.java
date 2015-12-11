@@ -411,8 +411,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (SNode outputNode : outputNodes) {
         registerRoot(new GeneratedRootDescriptor(outputNode, inputNode, inputPersists, rule.getRuleNode()));
         setChanged();
-        // output node should be accessible via 'findCopiedNode'
-        addCopiedOutputNodeForInputNode(inputNode, outputNode);
+        if (!inputPersists) {
+          // output node should be accessible via 'findCopiedNode'
+          // however, if the node stays in the model, let other rules/copy facility register it as appropriate (see MPS-23159),
+          // it's unlikely anyone referencing original node would need to restore reference to a newly introduced root, when there's
+          // reduction/copy alternative.
+          addCopiedOutputNodeForInputNode(inputNode, outputNode);
+        }
         // we copy user objects in reduction rules, root mapping rules are no different
         // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
         // are marked as originating at inputNode's origin
