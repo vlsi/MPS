@@ -2309,6 +2309,15 @@
           <node concept="3F1sOY" id="5VYK1npI6QN" role="3EZMnx">
             <ref role="1NtTu8" to="kdzh:5VYK1npI0o$" />
           </node>
+          <node concept="3F0ifn" id="6U0n_nYS9mq" role="3EZMnx">
+            <property role="3F0ifm" value="progressX" />
+            <node concept="pVoyu" id="6U0n_nYS9mF" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+          </node>
+          <node concept="3F1sOY" id="6U0n_nYS9mX" role="3EZMnx">
+            <ref role="1NtTu8" to="kdzh:6U0n_nYS9lh" />
+          </node>
           <node concept="3F0ifn" id="5VYK1npI6Rx" role="3EZMnx">
             <property role="3F0ifm" value="progressY" />
             <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
@@ -2321,6 +2330,15 @@
             <node concept="ljvvj" id="5VYK1npJYCT" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
+          </node>
+          <node concept="3F0ifn" id="6U0n_nYUFmL" role="3EZMnx">
+            <property role="3F0ifm" value="progressHeight" />
+            <node concept="pVoyu" id="6U0n_nYUFnl" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+          </node>
+          <node concept="3F1sOY" id="6U0n_nYUFnn" role="3EZMnx">
+            <ref role="1NtTu8" to="kdzh:6U0n_nYUFlY" />
           </node>
           <node concept="l2Vlx" id="5VYK1npI38S" role="2iSdaV" />
           <node concept="VPM3Z" id="5VYK1npJYC4" role="3F10Kt">

@@ -455,6 +455,10 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_1x254q_f01b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1x254q_g01b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1x254q_h01b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1x254q_i01b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_j01b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1x254q_k01b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_l01b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_1x254q_a01b0(EditorContext editorContext, SNode node) {
@@ -593,8 +597,51 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
 
   }
   private EditorCell createConstant_1x254q_g01b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "progressY");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "progressX");
     editorCell.setCellId("Constant_1x254q_g01b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_1x254q_h01b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BuildMps_Branding_Editor.progressXSingleRoleHandler_1x254q_h01b0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x6e805e55fee09551L, "progressX"), editorContext);
+    return provider.createCell();
+  }
+  private class progressXSingleRoleHandler_1x254q_h01b0 extends SingleRoleCellProvider {
+    public progressXSingleRoleHandler_1x254q_h01b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("progressX");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_progressX");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no progressX>";
+    }
+
+  }
+  private EditorCell createConstant_1x254q_i01b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "progressY");
+    editorCell.setCellId("Constant_1x254q_i01b0");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
@@ -602,12 +649,12 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_1x254q_h01b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BuildMps_Branding_Editor.progressYSingleRoleHandler_1x254q_h01b0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9b8abc5L, "progressY"), editorContext);
+  private EditorCell createRefNode_1x254q_j01b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BuildMps_Branding_Editor.progressYSingleRoleHandler_1x254q_j01b0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9b8abc5L, "progressY"), editorContext);
     return provider.createCell();
   }
-  private class progressYSingleRoleHandler_1x254q_h01b0 extends SingleRoleCellProvider {
-    public progressYSingleRoleHandler_1x254q_h01b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class progressYSingleRoleHandler_1x254q_j01b0 extends SingleRoleCellProvider {
+    public progressYSingleRoleHandler_1x254q_j01b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {
@@ -636,6 +683,49 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
 
     protected String getNoTargetText() {
       return "<no progressY>";
+    }
+
+  }
+  private EditorCell createConstant_1x254q_k01b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "progressHeight");
+    editorCell.setCellId("Constant_1x254q_k01b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_1x254q_l01b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BuildMps_Branding_Editor.progressHeightSingleRoleHandler_1x254q_l01b0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x6e805e55feeab57eL, "progressHeight"), editorContext);
+    return provider.createCell();
+  }
+  private class progressHeightSingleRoleHandler_1x254q_l01b0 extends SingleRoleCellProvider {
+    public progressHeightSingleRoleHandler_1x254q_l01b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("progressHeight");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_progressHeight");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no progressHeight>";
     }
 
   }
