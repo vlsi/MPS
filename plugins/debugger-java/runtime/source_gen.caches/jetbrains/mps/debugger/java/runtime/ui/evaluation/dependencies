@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
@@ -47,7 +48,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" file="EvaluationPanel.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Override" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
