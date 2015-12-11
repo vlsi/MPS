@@ -1,8 +1,18 @@
-New Features in MPS 3.2
+New Features in MPS 3.3
 
-- Generator: Cross-model generation
-- Language development: Language versioning & automated migrations
-- Testing Framework: In-process test execution mode
-- Version Control: automatic conflicts resolution
+- Custom language aspects
+- Generic comment-out functionality
+- Paste from history
+- Reflective editor
+- Compare two nodes
+- No used langauges in modules
+- baseLanguage compile-time expression value assistance
+- Provisional mechanism to control layout of output files in textgen
+- Generator: attribute support
+- Generator: anchors in weavings rules
+- Generator: updated cross-model generation
+- Editor: collapse by default
+- Editor: "next applicable editor" cell
+- Generating images of MPS nodes
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
