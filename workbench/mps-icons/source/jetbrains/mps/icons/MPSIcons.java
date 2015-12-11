@@ -162,7 +162,6 @@ public class MPSIcons {
   }
 
   public static final Icon MPS16x16 = IconLoader.getIcon("/MPS_16.png");
-  public static final Icon MPSHome = IconLoader.getIcon("/mpsHome.png");
 
   //public static final Icon Templ = IconLoader.getIcon("/");
 }
