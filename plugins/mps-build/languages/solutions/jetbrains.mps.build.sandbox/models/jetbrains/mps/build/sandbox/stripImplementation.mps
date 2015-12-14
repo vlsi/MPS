@@ -98,8 +98,8 @@
     </language>
   </registry>
   <node concept="1l3spW" id="2Wb4ucKlQKe">
-    <property role="2DA0ip" value="../" />
     <property role="TrG5h" value="buildPlugin" />
+    <property role="2DA0ip" value="../" />
     <node concept="10PD9b" id="2Wb4ucKmaSR" role="10PD9s" />
     <node concept="m$_wf" id="2Wb4ucKlR0y" role="3989C9">
       <property role="m$_wk" value="test" />
@@ -256,7 +256,17 @@
         </node>
       </node>
     </node>
-    <node concept="55IIr" id="2Wb4ucKlQKf" role="auvoZ" />
+    <node concept="55IIr" id="2Wb4ucKlQKf" role="auvoZ">
+      <node concept="2Ry0Ak" id="3ev_qFmA0CM" role="iGT6I">
+        <property role="2Ry0Am" value="jetbrains.mps.build.sandbox" />
+        <node concept="2Ry0Ak" id="3ev_qFmA0CP" role="2Ry0An">
+          <property role="2Ry0Am" value="samples" />
+          <node concept="2Ry0Ak" id="3ev_qFmA0CU" role="2Ry0An">
+            <property role="2Ry0Am" value="stripImpl" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1l3spV" id="2Wb4ucKlQKg" role="1l3spN">
       <node concept="m$_wl" id="2Wb4ucKmdz8" role="39821P">
         <property role="vjkMI" value="true" />
