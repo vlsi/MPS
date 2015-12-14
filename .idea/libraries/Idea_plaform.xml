@@ -28,12 +28,12 @@
       <root url="jar://$PROJECT_DIR$/lib/gson-2.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpclient-4.4.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpcore-4.4.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Beta6.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xml-apis.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlin-reflect.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlin-runtime.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/imgscalr-lib-4.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jna-platform.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Beta7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -110,7 +110,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3.1-src.jar!/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/gson-2.3.1-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/netty-all-4.1.0.Beta6-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/test/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-client-4.4.1-src.zip!/httpcomponents-client-4.4.1/fluent-hc/src/examples" />
@@ -227,6 +226,7 @@
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/xml-structure-view-impl" />
       <root url="jar://$PROJECT_DIR$/lib/src/jna-platform.zip!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jna.zip!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/netty-all-4.1.0.Beta7-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

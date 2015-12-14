@@ -355,18 +355,18 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
-        <child id="6845119683729874664" name="iconToolWindow" index="27fxVX" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
         <child id="6845119683729280452" name="icon" index="27igRh" />
+        <child id="7962467864632399185" name="progressX" index="2gocG4" />
+        <child id="7962467864633062782" name="progressHeight" index="2gqIGF" />
         <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
         <child id="6108265972537182996" name="splashScreen" index="2EqU2t" />
         <child id="6108265972537229337" name="buildNumber" index="2EteIg" />
         <child id="6108265972537229339" name="icon16" index="2EteIi" />
         <child id="6108265972537229338" name="icon32" index="2EteIj" />
-        <child id="6108265972537229340" name="icon32opaque" index="2EteIl" />
         <child id="6108265972537335245" name="updateWebsite" index="2Etnp4" />
         <child id="6108265972537372847" name="shortName" index="2EtHGA" />
         <child id="6108265972537372848" name="fullName" index="2EtHGT" />
@@ -15268,41 +15268,6 @@
     <property role="turDy" value="mpsDistribution.xml" />
     <property role="3GE5qa" value="ide" />
     <property role="2DA0ip" value="../../../../" />
-    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
-      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
-        <property role="TrG5h" value="publishTCArtifacts" />
-        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
-          <property role="TrG5h" value="linuxDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
-          <property role="TrG5h" value="zipDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="55IIr" id="3IKDaVZnIjY" role="auvoZ">
       <node concept="2Ry0Ak" id="3IKDaVZnXlj" role="iGT6I">
         <property role="2Ry0Am" value="build" />
@@ -15339,6 +15304,20 @@
                     <property role="2Ry0Am" value="linux" />
                     <node concept="2Ry0Ak" id="2lgcjg39hVH" role="2Ry0An">
                       <property role="2Ry0Am" value="fsnotifier64" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="28jJK3" id="6DuyMKt09pd" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="6DuyMKt09pf" role="28jJRO">
+                <node concept="2Ry0Ak" id="6DuyMKt09qh" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="6DuyMKt09qm" role="2Ry0An">
+                    <property role="2Ry0Am" value="linux" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09qr" role="2Ry0An">
+                      <property role="2Ry0Am" value="fsnotifier-arm" />
                     </node>
                   </node>
                 </node>
@@ -15426,6 +15405,9 @@
               </node>
               <node concept="3LWZYq" id="6xv$4WsFwxV" role="2HvfZ1">
                 <property role="3LWZYl" value="**/fsnotifier64" />
+              </node>
+              <node concept="3LWZYq" id="6DuyMKt09qx" role="2HvfZ1">
+                <property role="3LWZYl" value="**/fsnotifier-arm" />
               </node>
               <node concept="55IIr" id="2lgcjg39Ccn" role="2HvfZ0">
                 <node concept="2Ry0Ak" id="2lgcjg39Cco" role="iGT6I">
@@ -15781,6 +15763,20 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="6DuyMKt09yY" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="6DuyMKt09z0" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09zw" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09zz" role="2Ry0An">
+                      <property role="2Ry0Am" value="win" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09zC" role="2Ry0An">
+                        <property role="2Ry0Am" value="fsnotifier64.exe" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="28jJK3" id="2lgcjg39Ytv" role="39821P">
                 <property role="28jJZ5" value="755" />
                 <node concept="55IIr" id="2lgcjg39YtI" role="28jJRO">
@@ -15832,6 +15828,9 @@
                 <node concept="3LWZYq" id="6xv$4WsFwBQ" role="2HvfZ1">
                   <property role="3LWZYl" value="**/fsnotifier64" />
                 </node>
+                <node concept="3LWZYq" id="6DuyMKt09ys" role="2HvfZ1">
+                  <property role="3LWZYl" value="**/fsnotifier-arm" />
+                </node>
                 <node concept="55IIr" id="6xv$4WsFwBR" role="2HvfZ0">
                   <node concept="2Ry0Ak" id="6xv$4WsFwBS" role="iGT6I">
                     <property role="2Ry0Am" value="bin" />
@@ -15864,6 +15863,20 @@
                       <property role="2Ry0Am" value="linux" />
                       <node concept="2Ry0Ak" id="2lgcjg39Yue" role="2Ry0An">
                         <property role="2Ry0Am" value="fsnotifier64" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="6DuyMKt09xN" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="6DuyMKt09xP" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09yc" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09yh" role="2Ry0An">
+                      <property role="2Ry0Am" value="linux" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09ym" role="2Ry0An">
+                        <property role="2Ry0Am" value="fsnotifier-arm" />
                       </node>
                     </node>
                   </node>
@@ -15946,6 +15959,19 @@
                       <property role="2Ry0Am" value="mac" />
                       <node concept="2Ry0Ak" id="2lgcjg3aF5s" role="2Ry0An">
                         <property role="2Ry0Am" value="libbreakgen64.jnilib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="6DuyMKt09$Q" role="39821P">
+                <node concept="55IIr" id="6DuyMKt09$S" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09A7" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09Ac" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09Ah" role="2Ry0An">
+                        <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
                       </node>
                     </node>
                   </node>
@@ -16305,6 +16331,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="6DuyMKt09EH" role="39821P">
+                <node concept="55IIr" id="6DuyMKt09EI" role="28jJRO">
+                  <node concept="2Ry0Ak" id="6DuyMKt09EJ" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="6DuyMKt09EK" role="2Ry0An">
+                      <property role="2Ry0Am" value="mac" />
+                      <node concept="2Ry0Ak" id="6DuyMKt09EL" role="2Ry0An">
+                        <property role="2Ry0Am" value="libMacNativeKit64.dylib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="28jJK3" id="2lgcjg39Yv1" role="39821P">
                 <node concept="3co7Ac" id="2lgcjg39Yv7" role="28jJR8">
                   <property role="3co7Am" value="lf" />
@@ -16533,6 +16572,41 @@
     <node concept="2sgV4H" id="3IKDaVZnIk0" role="1l3spa">
       <ref role="1l3spb" node="3IKDaVZmzS6" resolve="mps" />
     </node>
+    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
+      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
+        <property role="TrG5h" value="publishTCArtifacts" />
+        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
+          <property role="TrG5h" value="linuxDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
+          <property role="TrG5h" value="zipDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="1l3spW" id="3IKDaVZmzS6">
     <property role="TrG5h" value="mps" />
@@ -16546,6 +16620,11 @@
       <property role="2OjLBK" value="3" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
+      <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
+        <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
+          <property role="3MwjfP" value="002387" />
+        </node>
+      </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
         <node concept="3_J27D" id="57dcfYPs$xT" role="IuM$f">
           <node concept="3Mxwew" id="57dcfYPs$xY" role="3MwsjC">
@@ -16597,26 +16676,12 @@
       </node>
       <node concept="NbPM2" id="5VYK1npNzOH" role="27hAJg">
         <node concept="3Mxwew" id="5VYK1npNzOG" role="3MwsjC">
-          <property role="3MwjfP" value="262" />
+          <property role="3MwjfP" value="280" />
         </node>
       </node>
       <node concept="NbPM2" id="5VYK1npNzOD" role="27hGoL">
         <node concept="3Mxwew" id="5VYK1npNzOC" role="3MwsjC">
-          <property role="3MwjfP" value="FDA916" />
-        </node>
-      </node>
-      <node concept="55IIr" id="5VYK1npLPvt" role="27fxVX">
-        <node concept="2Ry0Ak" id="5VYK1npLPvy" role="iGT6I">
-          <property role="2Ry0Am" value="workbench" />
-          <node concept="2Ry0Ak" id="5VYK1npLPvB" role="2Ry0An">
-            <property role="2Ry0Am" value="mps-icons" />
-            <node concept="2Ry0Ak" id="5VYK1npLPvG" role="2Ry0An">
-              <property role="2Ry0Am" value="source" />
-              <node concept="2Ry0Ak" id="5VYK1npO7hX" role="2Ry0An">
-                <property role="2Ry0Am" value="MPS_13.png" />
-              </node>
-            </node>
-          </node>
+          <property role="3MwjfP" value="1272BB" />
         </node>
       </node>
       <node concept="55IIr" id="5VYK1npK8$T" role="27igRh">
@@ -16664,8 +16729,8 @@
             <property role="2Ry0Am" value="mps-icons" />
             <node concept="2Ry0Ak" id="ES2LjlZRAK" role="2Ry0An">
               <property role="2Ry0Am" value="source" />
-              <node concept="2Ry0Ak" id="ES2LjlZRAL" role="2Ry0An">
-                <property role="2Ry0Am" value="MPS_32.png" />
+              <node concept="2Ry0Ak" id="2HvzxdKXgE5" role="2Ry0An">
+                <property role="2Ry0Am" value="MPS_welcomeScreen.png" />
               </node>
             </node>
           </node>
@@ -16736,11 +16801,6 @@
           </node>
         </node>
       </node>
-      <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
-        <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="002387" />
-        </node>
-      </node>
       <node concept="55IIr" id="6Iq8148f_Zg" role="2EqU2s">
         <node concept="2Ry0Ak" id="6Iq8148f_Zh" role="iGT6I">
           <property role="2Ry0Am" value="workbench" />
@@ -16786,20 +16846,6 @@
           </node>
         </node>
       </node>
-      <node concept="55IIr" id="6Iq8148fFpJ" role="2EteIl">
-        <node concept="2Ry0Ak" id="6Iq8148fFpK" role="iGT6I">
-          <property role="2Ry0Am" value="workbench" />
-          <node concept="2Ry0Ak" id="6Iq8148fFpL" role="2Ry0An">
-            <property role="2Ry0Am" value="mps-icons" />
-            <node concept="2Ry0Ak" id="6Iq8148fFpM" role="2Ry0An">
-              <property role="2Ry0Am" value="source" />
-              <node concept="2Ry0Ak" id="6Iq8148fFpN" role="2Ry0An">
-                <property role="2Ry0Am" value="MPS_32.png" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="3_J27D" id="5cRJsFB9H19" role="R$TG_">
         <node concept="3Mxwey" id="d_WKSiQCsZ" role="3MwsjC">
           <ref role="3Mxwex" node="d_WKSiP3Fi" resolve="date" />
@@ -16822,6 +16868,16 @@
       <node concept="NbPM2" id="7GO0VN9rZvQ" role="2Mmf0a">
         <node concept="3Mxwew" id="7GO0VN9rZvR" role="3MwsjC">
           <property role="3MwjfP" value="http://forum.jetbrains.com/forum/Meta-Programming-System" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="6U0n_nYUFlV" role="2gocG4">
+        <node concept="3Mxwew" id="6U0n_nYUFlU" role="3MwsjC">
+          <property role="3MwjfP" value="117" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
+        <node concept="3Mxwew" id="6U0n_nYVOoD" role="3MwsjC">
+          <property role="3MwjfP" value="3" />
         </node>
       </node>
     </node>
@@ -28617,12 +28673,6 @@
     <node concept="2DRAP_" id="1w81suM7oKU" role="2DRAPQ">
       <property role="2DPR8u" value="!define PROGRAM_LINK &quot;${MAIN_MENU_FOLDER}\${APP_NAME}.lnk&quot;" />
     </node>
-    <node concept="2DRAP_" id="1w81suM7oLa" role="2DRAPQ">
-      <property role="2DPR8u" value="!define WEB_SITE_LINK &quot;${MAIN_MENU_FOLDER}\${PRODUCT_NAME} Home Page.lnk&quot;" />
-    </node>
-    <node concept="2DRAP_" id="1w81suM7oLr" role="2DRAPQ">
-      <property role="2DPR8u" value="!define UNINSTALL_LINK &quot;${MAIN_MENU_FOLDER}\Uninstall ${APP_NAME}.lnk&quot;" />
-    </node>
     <node concept="2DRAP_" id="1w81suM7oLH" role="2DRAPQ">
       <property role="2DPR8u" value="!define DESKTOP_LINK &quot;$DESKTOP\${APP_NAME}.lnk&quot;" />
     </node>
@@ -28660,9 +28710,6 @@
     </node>
     <node concept="2DRAP_" id="1w81suM7Dmh" role="2DRAPQ">
       <property role="2DPR8u" value="!define MUI_ICON &quot;installer.ico&quot;" />
-    </node>
-    <node concept="2DRAP_" id="1w81suM7FHu" role="2DRAPQ">
-      <property role="2DPR8u" value="!define MUI_UNICON &quot;uninstaller.ico&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM7I4H" role="2DRAPQ">
       <property role="2DPR8u" value="!define MUI_COMPONENTSPAGE_NODESC" />
@@ -28754,12 +28801,6 @@
     <node concept="2DRAP_" id="1w81suM8Pj6" role="2DRAPQ">
       <property role="2DPR8u" value="    WriteIniStr &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;InternetShortcut&quot; &quot;URL&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
     </node>
-    <node concept="2DRAP_" id="1w81suM8RFl" role="2DRAPQ">
-      <property role="2DPR8u" value="    CreateShortCut &quot;${WEB_SITE_LINK}&quot; &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;&quot; &quot;$INSTDIR\homepage.ico&quot;" />
-    </node>
-    <node concept="2DRAP_" id="1w81suM8U3A" role="2DRAPQ">
-      <property role="2DPR8u" value="    CreateShortCut &quot;${UNINSTALL_LINK}&quot; &quot;$INSTDIR\Uninstall.exe&quot;" />
-    </node>
     <node concept="2DRAP_" id="1w81suM8WrT" role="2DRAPQ">
       <property role="2DPR8u" value="SectionEnd" />
     </node>
@@ -28847,12 +28888,6 @@
     </node>
     <node concept="2DRAP_" id="1w81suMabfl" role="2DRAPQ">
       <property role="2DPR8u" value="    Delete &quot;${PROGRAM_LINK}&quot;" />
-    </node>
-    <node concept="2DRAP_" id="1w81suMadCG" role="2DRAPQ">
-      <property role="2DPR8u" value="    Delete &quot;${WEB_SITE_LINK}&quot;" />
-    </node>
-    <node concept="2DRAP_" id="1w81suMag25" role="2DRAPQ">
-      <property role="2DPR8u" value="    Delete &quot;${UNINSTALL_LINK}&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suMairw" role="2DRAPQ">
       <property role="2DPR8u" value="    RmDir  &quot;${MAIN_MENU_FOLDER}&quot;" />

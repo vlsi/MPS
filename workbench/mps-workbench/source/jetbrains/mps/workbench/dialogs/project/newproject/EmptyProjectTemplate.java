@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
-import jetbrains.mps.icons.MPSIcons;
+import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.DocumentationHelper;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +28,7 @@ public class EmptyProjectTemplate implements OtherProjectTemplate {
   @Nullable
   @Override
   public Icon getIcon() {
-    return MPSIcons.MPS16x16;
+    return Nodes.IdeaProject;
   }
 
   @NotNull

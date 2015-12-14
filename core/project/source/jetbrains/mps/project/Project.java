@@ -19,7 +19,6 @@ import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -68,6 +67,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   /**
    * Shorthand for <code>getRepository().getModelAccess()</code>
+   *
    * @return access facility to models coming from a {@link #getRepository() repository} associated with this project.
    */
   @Override

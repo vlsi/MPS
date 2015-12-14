@@ -132,7 +132,6 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   /**
    * Display usages in a tool window of a respective project, according to options supplied.
-   *
    */
   public static void showUsages(@NotNull Project project, @NotNull IResultProvider provider, @NotNull SearchQuery query, @NotNull UsageToolOptions options) {
     project.getComponent(UsagesViewTool.class).findUsages(provider, query, options);
@@ -144,7 +143,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   @Deprecated
   @ToRemove(version = 3.3)
   public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean forceNewTab, String notFoundMsg) {
-    findUsages(provider, query, new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
+    findUsages(provider, query,
+        new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
   }
 
   private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
@@ -298,6 +298,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
+        if (getProject().isDisposed()) {
+          return;
+        }
         final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
         mpsProject.getModelAccess().runReadAction(new Runnable() {
           @Override
@@ -361,6 +364,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     /*package*/void setTransientView(boolean isTransientView) {
       myIsTransientView = isTransientView;
     }
+
     /*package*/boolean isTransientView() {
       return myIsTransientView;
     }
@@ -403,6 +407,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       super("Settings...", "Show find usages settings dialog", General.ProjectSettings);
       mySearchTask = searchTask;
     }
+
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null);
@@ -420,6 +425,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
       DataContext dataContext = new DataContext() {
         private final DataContext myDelegate = e.getDataContext();
+
         @Nullable
         @Override
         public Object getData(@NonNls String dataId) {

@@ -276,8 +276,8 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.0.Beta6-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta6-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.0.Beta7-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta7-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -438,8 +438,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.0.Beta6.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta6.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.0.Beta7.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta7.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
