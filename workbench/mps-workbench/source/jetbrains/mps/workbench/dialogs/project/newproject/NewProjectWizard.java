@@ -22,12 +22,19 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 
 import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Not used any more.
+ * For project creation use {@link jetbrains.mps.workbench.dialogs.project.newproject.CreateProjectWizard CreateProjectWizard}
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private List<String> myHelpIDs = new ArrayList<String>();
   private ProjectOptions myOptions = new ProjectOptions();

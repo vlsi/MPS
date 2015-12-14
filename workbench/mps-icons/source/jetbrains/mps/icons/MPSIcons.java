@@ -65,6 +65,7 @@ public class MPSIcons {
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
     public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
+    @Deprecated /* To remove in 3.3 (no ToRemove annotation to avoid dependency)*/
     public static final Icon NewProject = IconLoader.getIcon("/general/newProject.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
     public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");

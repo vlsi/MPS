@@ -9,13 +9,19 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.annotation.Hack;
+import org.apache.log4j.Level;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.DefaultModelAccess;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.extapi.module.SRepositoryExt;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
@@ -23,8 +29,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -51,31 +55,66 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.BaseFastNodeFinder;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
   private static final String MODULE_REF = "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)";
   private Map<SModelId, ProjectStructureModule.ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelId, ProjectStructureModule.ProjectStructureSModelDescriptor>();
   private static ProjectStructureModule INSTANCE;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
+  private final SRepositoryExt myRepository;
   private final SModuleListener myModuleListener = new SModuleAdapter() {
     @Override
-    public void moduleChanged(SModule module) {
+    public void modelAdded(SModule module, SModel model) {
+      runInWrite(module);
+    }
+
+    /**
+     * bad hack, will go away in 3.4 after we ensure that #modelAdded always has the write lock (as #modelRemoved now)
+     */
+    @Hack
+    private void runInWrite(final SModule module) {
+      if (myRepository.getModelAccess().canWrite()) {
+        refreshModule(module, false);
+      } else {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("Running project structure module refresh asynchronously; no write action here", new Throwable());
+        }
+        if (!(ModelAccess.instance() instanceof DefaultModelAccess)) {
+          myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+            public void run() {
+              refreshModule(module, false);
+            }
+          });
+        } else {
+          String message = "We have DefaultModelAccess, asynchronous call is not possible here; the project structure module is not updated";
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error(message, new Throwable());
+          }
+        }
+      }
+    }
+
+    @Override
+    public void modelRemoved(SModule module, SModelReference reference) {
       refreshModule(module, false);
     }
   };
+
   private final SRepositoryListener myListener = new SRepositoryListenerBase() {
     @Override
     public void moduleAdded(@NotNull SModule module) {
       refreshModule(module, false);
       module.addModuleListener(myModuleListener);
     }
+
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
       module.removeModuleListener(myModuleListener);
       refreshModule(module, true);
     }
   };
-  private final SRepositoryExt myRepository;
 
   /**
    * 
@@ -289,4 +328,5 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       return new BaseFastNodeFinder(getModelDescriptor());
     }
   }
+  protected static Logger LOG = LogManager.getLogger(ProjectStructureModule.class);
 }

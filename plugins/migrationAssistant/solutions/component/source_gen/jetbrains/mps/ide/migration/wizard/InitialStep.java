@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 import javax.swing.JComponent;
 import com.intellij.openapi.project.Project;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
@@ -13,7 +14,6 @@ import java.awt.BorderLayout;
 import javax.swing.JTextPane;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.SystemInfo;
-import java.awt.Dimension;
 import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.BoxLayout;
 import com.intellij.ui.IdeBorderFactory;
@@ -48,6 +48,9 @@ public class InitialStep extends MigrationWizardStep {
 
   @Override
   protected void doCreateComponent(JComponent mainPanel) {
+    // Set preferred size to avoid trim of Help button (if no icon presented) 
+    mainPanel.setPreferredSize(new Dimension(400, 200));
+
     JPanel pagePanel = new JPanel(new GridLayoutManager(2, 1, new JBInsets(5, 5, 5, 0), -1, -1));
     mainPanel.add(pagePanel, BorderLayout.CENTER);
 
