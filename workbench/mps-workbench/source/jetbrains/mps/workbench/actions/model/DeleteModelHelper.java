@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -27,10 +26,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
@@ -39,12 +35,9 @@ import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelDeleteHelper;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -72,29 +65,6 @@ public class DeleteModelHelper {
     }
   }
 
-  public static void deleteGeneratedFiles(SModel modelDescriptor) {
-    String moduleOutputPath = SModuleOperations.getOutputPathFor(modelDescriptor);
-    IFile classesGenDir = null;
-    if (modelDescriptor.getModule().getFacet(JavaModuleFacet.class) != null)
-      classesGenDir = modelDescriptor.getModule().getFacet(JavaModuleFacet.class).getClassesGen();
-
-    if (moduleOutputPath == null) {
-      return;
-    }
-    IFile moduleOutput = FileSystem.getInstance().getFileByPath(moduleOutputPath);
-    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput).delete();
-    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
-    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, classesGenDir).delete();
-
-    if (moduleOutput.getChildren().isEmpty())
-      moduleOutput.delete();
-    final IFile sourceGenCaches = FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(moduleOutputPath));
-    if (sourceGenCaches.getChildren().isEmpty())
-      sourceGenCaches.delete();
-    if (classesGenDir != null && classesGenDir.getChildren().isEmpty())
-      classesGenDir.delete();
-  }
-
   public static void delete(SModule contextModule, SModel modelDescriptor, boolean deleteFiles) {
     boolean deleteIfAsked = true;
     if (contextModule instanceof Language) {
@@ -109,8 +79,7 @@ public class DeleteModelHelper {
     }
 
     if (deleteFiles && deleteIfAsked) {
-      deleteGeneratedFiles(modelDescriptor);
-      SModelRepository.getInstance().deleteModel(modelDescriptor);
+      new ModelDeleteHelper(modelDescriptor).delete();
     }
   }
 
@@ -123,7 +92,7 @@ public class DeleteModelHelper {
     project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor) return;
+        if (modelDescriptor.getReference().resolve(project.getRepository()) != modelDescriptor) return;
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
@@ -207,8 +176,7 @@ public class DeleteModelHelper {
       }
 
       if (myDeleteFiles) {
-        deleteGeneratedFiles(modelDescriptor);
-        SModelRepository.getInstance().deleteModel(modelDescriptor);
+        new ModelDeleteHelper(modelDescriptor).delete();
       }
 
       //todo: check correctness - they are not ALL model owners
