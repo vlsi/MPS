@@ -2827,13 +2827,17 @@
           <node concept="2GrKxI" id="2JwSLRbyYSB" role="2Gsz3X">
             <property role="TrG5h" value="md" />
           </node>
-          <node concept="2OqwBi" id="2JwSLRbyYSC" role="2GsD0m">
-            <node concept="2YIFZM" id="2JwSLRbyYSD" role="2Oq$k0">
-              <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-              <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
+          <node concept="2OqwBi" id="1sZSvV3LW9C" role="2GsD0m">
+            <node concept="2ShNRf" id="1sZSvV3LNtu" role="2Oq$k0">
+              <node concept="1pGfFk" id="1sZSvV3LW4E" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="1sZSvV3LW6l" role="37wK5m">
+                  <ref role="3cqZAo" node="6y_kxB1UvQg" resolve="myMpsProject" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="2JwSLRbyYSE" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelRepository.getModelDescriptors():java.util.List" resolve="getModelDescriptors" />
+            <node concept="liA8E" id="1sZSvV3LWex" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getAllModels():java.util.Collection" resolve="getAllModels" />
             </node>
           </node>
           <node concept="3clFbS" id="2JwSLRbyYSF" role="2LFqv$">

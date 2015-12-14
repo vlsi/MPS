@@ -20,10 +20,10 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -47,14 +47,15 @@ public final class GlobalStatisticTarget__BehaviorDescriptor extends BaseBHDescr
 
   /*package*/ static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
+    SRepository repo = context.getProject().getRepository();
 
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()).size()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", IterableUtil.asCollection(SModelRepository.getInstance().getModelDescriptors()).size()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(repo.getModules()).size()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", new ModuleRepositoryFacade(repo).getAllModels().size()));
 
     return result;
   }
   /*package*/ static Iterable<SNode> getNodes_id4x3U0fq41hN(@NotNull SNode __thisNode__, ConsoleContext c) {
-    Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
+    Iterable<SModule> modules = c.getProject().getRepository().getModules();
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();

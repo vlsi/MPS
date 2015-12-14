@@ -14,12 +14,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -65,17 +64,10 @@ public final class ForbidIncomingReferencesInSubconcepts_Intention extends Inten
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      Iterable<SModel> seq = Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
+      Collection<SModel> allModels = new ModuleRepositoryFacade(editorContext.getRepository()).getAllModels();
+      Iterable<SModel> seq = Sequence.fromIterable(((Iterable<SModel>) allModels)).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel md) {
-          return SModelStereotype.isUserModel(md);
-        }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel md) {
-          return LanguageAspect.STRUCTURE.is(md);
-        }
-      }).select(new ISelector<SModel, SModel>() {
-        public SModel select(SModel it) {
-          return it;
+          return SModelStereotype.isUserModel(md) && LanguageAspect.STRUCTURE.is(md);
         }
       });
 

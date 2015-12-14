@@ -16,11 +16,10 @@ import java.awt.Frame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
@@ -30,11 +29,12 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -111,13 +111,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
     mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
-        for (SModel descriptor : SModelRepository.getInstance().getModelDescriptors()) {
+        for (SModel descriptor : new ModuleRepositoryFacade(mpsProject).getAllModels()) {
           if (!(namespace.equals(descriptor.getModelName()))) {
             continue;
           }
-          SNode node = descriptor.getNode(SNodeId.fromString(id));
+          SNode node = descriptor.getNode(PersistenceFacade.getInstance().createNodeId(id));
           if (node != null) {
-            NavigationSupport.getInstance().openNode(mpsProject, node, true, !(SNodeOperations.isRoot(node)));
+            NavigationSupport.getInstance().openNode(mpsProject, node, true, node.getParent() != null);
           }
         }
         FrameUtil.activateFrame(getMainFrame());
@@ -175,11 +175,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
         }
-        Iterable<SNode> allMethods = (Iterable<SNode>) ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(cls)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
-          }
-        });
+        Iterable<SNode> allMethods = SNodeOperations.ofConcept(SNodeOperations.getChildren(cls), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
         SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return methodName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == parameterCount;

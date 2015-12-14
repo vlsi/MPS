@@ -508,6 +508,27 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1sZSvV3JUdy" role="3cqZAp">
+          <node concept="3cpWsn" id="1sZSvV3JUdz" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <node concept="3uibUv" id="1sZSvV3JUdu" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2OqwBi" id="1sZSvV3JUd$" role="33vP2m">
+              <node concept="2OqwBi" id="1sZSvV3JUd_" role="2Oq$k0">
+                <node concept="37vLTw" id="1sZSvV3KSqr" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1ezeZBAN3z9" resolve="context" />
+                </node>
+                <node concept="liA8E" id="1sZSvV3JUdB" role="2OqNvi">
+                  <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1sZSvV3JUdC" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="6vMIJHUO05Q" role="3cqZAp" />
         <node concept="3clFbF" id="6vMIJHUNy22" role="3cqZAp">
           <node concept="2OqwBi" id="6vMIJHUNy23" role="3clFbG">
@@ -524,12 +545,11 @@
                     <ref role="37wK5l" to="18ew:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
                     <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
                     <node concept="2OqwBi" id="6vMIJHUO7VG" role="37wK5m">
-                      <node concept="2YIFZM" id="6vMIJHUO7Gu" role="2Oq$k0">
-                        <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                        <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      <node concept="37vLTw" id="1sZSvV3JUH1" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1sZSvV3JUdz" resolve="repo" />
                       </node>
                       <node concept="liA8E" id="6vMIJHUO9Et" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                        <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
                       </node>
                     </node>
                   </node>
@@ -552,17 +572,17 @@
                   <property role="Xl_RC" value="Models" />
                 </node>
                 <node concept="2OqwBi" id="6vMIJHUOsIJ" role="1Lso8e">
-                  <node concept="2YIFZM" id="6vMIJHUOqKb" role="2Oq$k0">
-                    <ref role="37wK5l" to="18ew:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
-                    <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
-                    <node concept="2OqwBi" id="6vMIJHUOn5_" role="37wK5m">
-                      <node concept="2YIFZM" id="6vMIJHUOmSa" role="2Oq$k0">
-                        <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
-                        <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
+                  <node concept="2OqwBi" id="1sZSvV3KoYc" role="2Oq$k0">
+                    <node concept="2ShNRf" id="1sZSvV3JURJ" role="2Oq$k0">
+                      <node concept="1pGfFk" id="1sZSvV3KoTS" role="2ShVmc">
+                        <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
+                        <node concept="37vLTw" id="1sZSvV3Kpyj" role="37wK5m">
+                          <ref role="3cqZAo" node="1sZSvV3JUdz" resolve="repo" />
+                        </node>
                       </node>
-                      <node concept="liA8E" id="6vMIJHUOogw" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~SModelRepository.getModelDescriptors():java.util.List" resolve="getModelDescriptors" />
-                      </node>
+                    </node>
+                    <node concept="liA8E" id="1sZSvV3Kpf7" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getAllModels():java.util.Collection" resolve="getAllModels" />
                     </node>
                   </node>
                   <node concept="liA8E" id="6vMIJHUOvEo" role="2OqNvi">
@@ -605,13 +625,22 @@
                 <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
               </node>
             </node>
-            <node concept="2OqwBi" id="1El5OLrIamC" role="33vP2m">
-              <node concept="2YIFZM" id="1El5OLrIamD" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+            <node concept="2OqwBi" id="1sZSvV3JTv5" role="33vP2m">
+              <node concept="2OqwBi" id="1sZSvV3JTjS" role="2Oq$k0">
+                <node concept="2OqwBi" id="1sZSvV3JT9k" role="2Oq$k0">
+                  <node concept="37vLTw" id="1sZSvV3JT1A" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1El5OLrKnuV" resolve="c" />
+                  </node>
+                  <node concept="liA8E" id="1sZSvV3JTiz" role="2OqNvi">
+                    <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1sZSvV3JTu4" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
               </node>
-              <node concept="liA8E" id="1El5OLrIamE" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModules():java.lang.Iterable" resolve="getModules" />
+              <node concept="liA8E" id="1sZSvV3JTCY" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
               </node>
             </node>
           </node>

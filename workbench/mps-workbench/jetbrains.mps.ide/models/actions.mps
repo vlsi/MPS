@@ -22989,7 +22989,7 @@
                       </node>
                       <node concept="2ShNRf" id="5F_WwkyOHob" role="37vLTx">
                         <node concept="1pGfFk" id="5F_WwkyOHoc" role="2ShVmc">
-                          <ref role="37wK5l" to="er15:~ScopeEditor.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions)" resolve="ScopeEditor" />
+                          <ref role="37wK5l" to="er15:~ScopeEditor.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions,org.jetbrains.mps.openapi.module.SRepository)" resolve="ScopeEditor" />
                           <node concept="2OqwBi" id="5F_WwkyOR5A" role="37wK5m">
                             <node concept="37vLTw" id="5F_WwkyONb9" role="2Oq$k0">
                               <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
@@ -22999,6 +22999,14 @@
                               <node concept="3VsKOn" id="5F_WwkyOSZQ" role="37wK5m">
                                 <ref role="3VsUkX" to="32gr:~ScopeOptions" resolve="ScopeOptions" />
                               </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="1sZSvV3MCm0" role="37wK5m">
+                            <node concept="37vLTw" id="1sZSvV3MC9F" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4NF6yZZTO6j" resolve="myProject" />
+                            </node>
+                            <node concept="liA8E" id="1sZSvV3MCul" role="2OqNvi">
+                              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                             </node>
                           </node>
                         </node>

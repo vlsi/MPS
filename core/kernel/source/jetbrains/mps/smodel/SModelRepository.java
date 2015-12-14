@@ -52,6 +52,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 // not deprecated yet, despite access and methods are, as it might be reasonable to
 // keep a facility that gives access to all models of an SRepository (alternative to SRepository.getAllModels method). Or do it with SearchScope?
+// XXX shall become model-centric view of an SRepository. E.g. would be possible to attach listeners to all models, to keep a snapshot of all models
+// or to track changes (i.e. that would be too much for a search scope, hence need a separate class). The view, perhaps, could be filtered (e.g. by
+// Condition<SModel>). Non thread-safe
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
@@ -223,6 +226,7 @@ public class SModelRepository implements CoreComponent {
   }
 
 
+  // FIXME 2 uses in IdeaPlugin, MPSPackageFinder and MPSReferenceSearch
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {
     List<SModel> result = new ArrayList<SModel>();
