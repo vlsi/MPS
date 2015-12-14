@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.util.PathUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.DocumentationHelper;
 import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +33,11 @@ import java.awt.GridLayout;
 import java.io.File;
 import java.net.URL;
 
+/**
+ * Used in deprecated {@link jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard NewProjectWizard}
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class ProjectStep extends BaseStep {
   //for UI tests
   public static final String PROJECT_PATH = "Project Path";

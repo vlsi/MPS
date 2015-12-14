@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationNamesInfo;
 import com.intellij.openapi.application.impl.ApplicationInfoImpl;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.JDOMUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -30,8 +31,10 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
- * evgeny, 6/11/12
+ * DSL for creating step dialogs (may be in its own ApplicationComponent) will hold information about default image
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public class MPSApplicationInfo implements ApplicationComponent {
 
   private String myDialogsImage = null;
