@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,19 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.Collection;
-
 /**
- * evgeny, 11/4/12
+ * Optional extension to data sources that could be removed from physical world.
+ * {@link DataSource} doesn't stipulate per-model nature of the source, with an optional interface we allow
+ * for source instances that are reused among few models.
+ * @author Artem Tikhomirov
+ * @since 3.4
  */
-public interface FileSystemBasedDataSource extends DataSource, DisposableDataSource {
-
+public interface DisposableDataSource extends DataSource {
   /**
-   * @return collection of files (or folders) which comprise a set of source paths (!) for this DataSource
+   * Invoked with intention never come across this data source again.
+   * For a file/folder/DB entry, this would mean 'wipe out'.
    */
-  Collection<IFile> getAffectedFiles();
+  void delete();
 }
