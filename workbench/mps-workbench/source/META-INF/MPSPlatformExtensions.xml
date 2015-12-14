@@ -16,7 +16,7 @@
 
   <!--MPS Patch: search in settings-->
   <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
-  <toolWindow id="Project" anchor="left" icon="MPSToolWindowIcons.ToolWindows.ToolWindowProject"
+  <toolWindow id="Project" anchor="left" icon="AllIcons.Toolwindows.ToolWindowProject"
               factoryClass="jetbrains.mps.ide.projectPane.MPSProjectViewToolWindowFactory"/>
   <!--MPS Patch Start: project view tool tabs-->
   <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>

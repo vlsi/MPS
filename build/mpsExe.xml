@@ -36,9 +36,7 @@
     <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" tofile="${build.tmp}/mps.bat"/>
     <copy file="${basedir}/help/mpshelp.jar" tofile="${build.tmp}/MPS/${mpshelp.jar}"/>
     <copy file="${basedir}/build/resources/mps.ico" tofile="${build.tmp}/mps.ico"/>
-    <copy file="${basedir}/build/resources/mps.inst.ico" tofile="${build.tmp}/installer.ico"/>
-    <copy file="${basedir}/build/resources/mps.uninst.ico" tofile="${build.tmp}/uninstaller.ico"/>
-    <copy file="${basedir}/build/resources/homepage.ico" tofile="${build.tmp}/homepage.ico"/>
+    <copy file="${basedir}/build/resources/mps.ico" tofile="${build.tmp}/installer.ico"/>
     <copy file="${basedir}/build/tools/jre.zip" tofile="${build.tmp}/jre.zip"/>
     <copy file="${basedir}/build/tools/nsis.zip" tofile="${build.tmp}/nsis.zip"/>
     <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/installer.nsi" tofile="${build.tmp}/installer.nsi"/>
@@ -58,7 +56,6 @@
   <target name="exe" if="windows">
     <property name="installer.nsi" value="installer.nsi"/>
     <property name="mps.ico" value="mps.ico"/>
-    <property name="homepage.ico" value="homepage.ico"/>
     <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis"/>
     <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis"/>
     <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos"/>
@@ -72,7 +69,6 @@
       <arg file="${input.dir}/${MPS}"/>
       <arg file="${input.dir}/${mps.bat}"/>
       <arg file="${input.dir}/${mps.ico}"/>
-      <arg file="${input.dir}/${homepage.ico}"/>
       <arg file="${input.dir}/jdk"/>
       <classpath>
         <pathelement path="${input.dir}/${MPS}/lib/mps-workbench.jar"/>
