@@ -105,6 +105,7 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -875,13 +876,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public String[] getEditorHintsForNode(SNode node) {
-    String[] result = null;
     jetbrains.mps.openapi.editor.cells.EditorCell nodeCell = findNodeCell(node);
     if (nodeCell != null) {
-      final Collection<String> nodeContextHints = nodeCell.getCellContext().getHints();
-      result = nodeContextHints.toArray(new String[nodeContextHints.size()]);
+      EditorCellContext cellContext = nodeCell.getCellContext();
+      if (cellContext == null) {
+        return null;
+      }
+      final Collection<String> nodeContextHints = cellContext.getHints();
+      return nodeContextHints.toArray(new String[nodeContextHints.size()]);
     }
-    return result;
+    return null;
   }
   public EditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
