@@ -4781,12 +4781,12 @@
                 <node concept="37vLTw" id="2BHiRxgheGg" role="2Oq$k0">
                   <ref role="3cqZAo" node="6q$OdKd99D_" resolve="refactoringContext" />
                 </node>
-                <node concept="liA8E" id="6q$OdKd9f1_" role="2OqNvi">
-                  <ref role="37wK5l" to="ge2m:4a0HOMfn9yf" resolve="getCurrentOperationContext" />
+                <node concept="liA8E" id="7nMNws3cX1Q" role="2OqNvi">
+                  <ref role="37wK5l" to="ge2m:4a0HOMfn9y3" resolve="getSelectedProject" />
                 </node>
               </node>
               <node concept="liA8E" id="6q$OdKd9f1Y" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="6q$OdKd9f20" role="37wK5m">
                   <ref role="3VsUkX" node="29N7xYwTFLT" resolve="RefactoringView" />
                 </node>

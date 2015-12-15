@@ -20,11 +20,12 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.AbstractAction;
 import javax.swing.BoxLayout;
@@ -35,8 +36,8 @@ import javax.swing.JRadioButton;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private static final String GLOBAL_SCOPE = "Global";
@@ -56,7 +57,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
   private List<String> myModuleNameList;
   private List<String> myModelNameList;
 
-  public ScopeEditor(ScopeOptions defaultOptions) {
+  public ScopeEditor(ScopeOptions defaultOptions, SRepository repository) {
     super(defaultOptions);
 
     myPanel = new JPanel();
@@ -112,12 +113,13 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myModuleField = new DefaultCompletionTextField(moduleNameList);
     myModuleField.setText(ScopeOptions.DEFAULT_VALUE);
 
-    List<SModel> modelList = SModelRepository.getInstance().getModelDescriptors();
-    myModelNameList = new ArrayList<String>();
+    Collection<SModel> modelList = new ModuleRepositoryFacade(repository).getAllModels();
+    myModelNameList = new ArrayList<String>(modelList.size());
 
     for (SModel md : modelList) {
-      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(md))) continue;
-      myModelNameList.add(SNodeOperations.getModelLongName(md));
+      if (!SModelStereotype.isStubModel(md)) {
+        myModelNameList.add(NameUtil.getModelLongName(md));
+      }
     }
 
     myModelNameList.add(0, ScopeOptions.DEFAULT_VALUE);

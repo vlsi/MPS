@@ -15,10 +15,17 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
+import javax.swing.Icon;
+
 public class TextTreeNode extends MPSTreeNode {
   public TextTreeNode(String text) {
     super(text);
     setText(text);
     setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
+  }
+
+  public TextTreeNode(Icon icon, String text) {
+    this(text);
+    setIcon(icon);
   }
 }

@@ -73,7 +73,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         MigrationScriptsView.this.close();
       }
-    }, new PinToolwindowTabAction());
+    }, PinToolwindowTabAction.getPinAction());
     myUsagesView.setContents(finder.getLastSearchResults());
     myMainPanel = new JPanel(new BorderLayout());
     myMainPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);

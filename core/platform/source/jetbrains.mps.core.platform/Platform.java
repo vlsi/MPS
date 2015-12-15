@@ -15,25 +15,12 @@
  */
 package jetbrains.mps.core.platform;
 
-import jetbrains.mps.generator.MPSGenerator;
-import jetbrains.mps.ide.findusages.MPSFindUsages;
-import jetbrains.mps.persistence.MPSPersistence;
-import jetbrains.mps.typesystem.MPSTypesystem;
+import jetbrains.mps.components.ComponentHost;
 
 /**
  * Basic interface for the MPS platform.
  * Can be constructed via {@link jetbrains.mps.core.platform.PlatformFactory}
  */
-public interface Platform {
-  MPSCore getCore();
-
-  MPSPersistence getPersistence();
-
-  MPSGenerator getGenerator();
-
-  MPSTypesystem getTypesystem();
-
-  MPSFindUsages getFindUsages();
-
+public interface Platform extends ComponentHost {
   void dispose();
 }

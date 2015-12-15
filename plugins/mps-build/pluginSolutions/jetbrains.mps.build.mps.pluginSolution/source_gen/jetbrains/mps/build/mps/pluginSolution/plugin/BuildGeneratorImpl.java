@@ -196,6 +196,20 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     this.setNewSolutionName(solutionName);
   }
+
+
+  public boolean isValidModelName(String text) {
+    // FIXME once there's no single model repository, there would be no reason to limit model name to unique in the repo 
+    return new ModuleRepositoryFacade(myProject).getModelByName(text) == null;
+  }
+
+  public boolean isValidSolutionName(String text) {
+    if (text.equals("")) {
+      return false;
+    }
+    return new ModuleRepositoryFacade(myProject).getModuleByName(text) == null;
+  }
+
   protected Iterable<SNode> createBuildScripts(SModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // setup build project 
     SNode buildProject = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")));
@@ -221,37 +235,37 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode buildNumber = null;
     SNode branding = null;
 
-    if (eq_un708i_a0r0l(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
-      SNode macro = _quotation_createNode_un708i_a0a0r0l();
+    if (eq_un708i_a0r0r(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
+      SNode macro = _quotation_createNode_un708i_a0a0r0r();
       ListSequence.fromList(macros).addElement(macro);
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a2a71a11(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a2a71a71(macro));
       userMacroNames.remove("mps_home");
-    } else if (eq_un708i_a0a71a11(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
-      SNode macro = _quotation_createNode_un708i_a0a0a71a11();
+    } else if (eq_un708i_a0a71a71(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
+      SNode macro = _quotation_createNode_un708i_a0a0a71a71();
       ListSequence.fromList(macros).addElement(macro);
       userMacroNames.remove("idea_home");
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a3a0r0l(macro));
-      macro = _quotation_createNode_un708i_a0e0a71a11(macro);
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a3a0r0r(macro));
+      macro = _quotation_createNode_un708i_a0e0a71a71(macro);
       ListSequence.fromList(macros).addElement(macro);
       userMacroNames.remove("plugins_home");
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a0r0l(macro));
-    } else if (eq_un708i_a0b71a11(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
-      dateMacro = _quotation_createNode_un708i_a0a0b71a11();
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a0r0r(macro));
+    } else if (eq_un708i_a0b71a71(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+      dateMacro = _quotation_createNode_un708i_a0a0b71a71();
       ListSequence.fromList(macros).addElement(dateMacro);
-      buildNumber = _quotation_createNode_un708i_a0c0b71a11(name + "-" + ApplicationInfo.getInstance().getBuild().getBaselineVersion() + ".SNAPSHOT");
+      buildNumber = _quotation_createNode_un708i_a0c0b71a71(name + "-" + ApplicationInfo.getInstance().getBuild().getBaselineVersion() + ".SNAPSHOT");
       ListSequence.fromList(macros).addElement(buildNumber);
-      SNode macro = _quotation_createNode_un708i_a0e0b71a11();
+      SNode macro = _quotation_createNode_un708i_a0e0b71a71();
       ListSequence.fromList(macros).addElement(macro);
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a6a1r0l(macro));
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a1r0l(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a6a1r0r(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a1r0r(macro));
       userMacroNames.remove("mps_home");
       userMacroNames.remove("date");
       userMacroNames.remove("build.number");
-      branding = _quotation_createNode_un708i_a0l0b71a11(ICONS, buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS);
+      branding = _quotation_createNode_un708i_a0l0b71a71(ICONS, buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS);
       ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(branding);
     }
     for (String macro : userMacroNames) {
-      ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a81a11(macro));
+      ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a81a71(macro));
     }
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).addSequence(ListSequence.fromList(macros));
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).addSequence(ListSequence.fromList(dependencies));
@@ -259,24 +273,24 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // project structure and layout 
     Set<ModuleData> moduleData = SetSequence.fromSet(new LinkedHashSet<ModuleData>());
     extractModules(selectedData, moduleData);
-    SNode group = _quotation_createNode_un708i_a0z0l(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
+    SNode group = _quotation_createNode_un708i_a0z0r(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
       public SNode select(ModuleData it) {
         return createModuleNode(it);
       }
     }).toListSequence(), name);
-    SNode plugin = _quotation_createNode_un708i_a0ab0l(name, group, name, name);
+    SNode plugin = _quotation_createNode_un708i_a0ab0r(name, group, name, name);
 
     SLinkOperations.setNewChild(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout")));
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(plugin);
     ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(group);
-    if (eq_un708i_a0fb0l(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
-      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(_quotation_createNode_un708i_a0a0a0fb0l(buildNumber, convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a0a13a11(), SNodeOperations.cast(ListSequence.fromList(macros).findFirst(new IWhereFilter<SNode>() {
+    if (eq_un708i_a0fb0r(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(_quotation_createNode_un708i_a0a0a0fb0r(buildNumber, convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a0a13a71(), SNodeOperations.cast(ListSequence.fromList(macros).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_un708i_a0a0a0a0a0b1a0a0a0a13a11(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "mps_home");
+          return eq_un708i_a0a0a0a0a0b1a0a0a0a13a71(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "mps_home");
         }
       }), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))), branding, plugin, buildNumber, dateMacro), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))));
     } else {
-      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(_quotation_createNode_un708i_a0a0a0fb0l_0(name + ".zip", plugin));
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(_quotation_createNode_un708i_a0a0a0fb0r_0(name + ".zip", plugin));
     }
 
     // add mps layout to the target model 
@@ -295,7 +309,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       }
     }
 
-    if (eq_un708i_a0pb0l(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+    if (eq_un708i_a0pb0r(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
       SNode buildStandalone = addStandaloneBuild(targetModelDescriptor, buildProject);
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), buildProject, buildStandalone);
     }
@@ -306,17 +320,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode buildStandalone = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")));
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Distribution");
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4438b4de59410ebcL, "fileName"), "buildDistribution.xml");
-    ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).addElement(_quotation_createNode_un708i_a0a3a21(buildProject));
+    ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).addElement(_quotation_createNode_un708i_a0a3a81(buildProject));
     SLinkOperations.setNewChild(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout")));
     SPropertyOperations.set(buildStandalone, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory"), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory")));
 
-    SNode mpsHomeMacro = _quotation_createNode_un708i_a0h0m();
-    SNode version = _quotation_createNode_un708i_a0i0m();
+    SNode mpsHomeMacro = _quotation_createNode_un708i_a0h0s();
+    SNode version = _quotation_createNode_un708i_a0i0s();
     ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).addElement(mpsHomeMacro);
     ListSequence.fromList(SLinkOperations.getChildren(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).addElement(version);
     SNode buildNumber = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro")) && eq_un708i_a0a0a0a0a0a0a11a21(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(_quotation_createNode_un708i_a0a0a0a0a0a0l0m(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro")) && eq_un708i_a0a0a0a0a0a0a11a81(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(_quotation_createNode_un708i_a0a0a0a0a0a0l0s(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     }), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"));
 
@@ -324,14 +338,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // we do not want to invent something complicated just before release 
     // copy-pasting, really, is better than what we had with custommps 
 
-    SNode linuxTar = _quotation_createNode_un708i_a0r0m(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0r0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1a0a0r0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c1a0a0r0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d1a0a0r0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e1a0a0r0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c0a0a71a21(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version, buildNumber);
+    SNode linuxTar = _quotation_createNode_un708i_a0r0s(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0r0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1a0a0r0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c1a0a0r0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d1a0a0r0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e1a0a0r0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c0a0a71a81(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version, buildNumber);
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(linuxTar);
 
     // we do not fixcrlf etc here 
-    SNode universalZip = _quotation_createNode_un708i_a0v0m(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a4b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1e1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a5b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b5b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c5b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a0g1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a0f7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1f7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1f7b0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c5h1a0a0v0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c0a0a12a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d0a0a12a21(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version, buildNumber);
+    SNode universalZip = _quotation_createNode_un708i_a0v0s(SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a4b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1e1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a5b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b5b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c5b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a0g1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a0f7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1f7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b1f7b0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c5h1a0a0v0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c0a0a12a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d0a0a12a81(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version, buildNumber);
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(universalZip);
 
-    SNode macosZip = _quotation_createNode_un708i_a0y0m(buildNumber, SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a2a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d0a0a0y0m(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0f4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0g4a0a0a42a21(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0f0a0a0y0m(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version);
+    SNode macosZip = _quotation_createNode_un708i_a0y0s(buildNumber, SLinkOperations.getTarget(buildProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), convertToMacroRelative(_quotation_createNode_un708i_a0a0a1a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a2a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d0a0a0y0s(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0a4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0b4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0c4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0d4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0e4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0f4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0g4a0a0a42a81(), mpsHomeMacro), convertToMacroRelative(_quotation_createNode_un708i_a0a0f0a0a0y0s(), mpsHomeMacro), SPropertyOperations.getString(buildProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " ", version);
     ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(buildStandalone, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).addElement(macosZip);
 
     SModelOperations.addRootNode(targetSModel, buildStandalone);
@@ -351,10 +365,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         return null;
       }
       SetSequence.fromSet(modules).addElement(moduleNode);
-      return _quotation_createNode_un708i_a3a0a41(moduleNode);
+      return _quotation_createNode_un708i_a3a0a02(moduleNode);
     } else if (data instanceof NamespaceData) {
       String namespace = ((NamespaceData) data).getText();
-      return _quotation_createNode_un708i_a1a0a0o(namespace);
+      return _quotation_createNode_un708i_a1a0a0u(namespace);
     }
     return null;
   }
@@ -373,11 +387,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
 
     if (module instanceof Solution) {
-      return _quotation_createNode_un708i_a0a5a51(path);
+      return _quotation_createNode_un708i_a0a5a12(path);
     } else if (module instanceof Language) {
-      return _quotation_createNode_un708i_a0a0f0p(path);
+      return _quotation_createNode_un708i_a0a0f0v(path);
     } else {
-      return _quotation_createNode_un708i_a0a0f0p_0(path);
+      return _quotation_createNode_un708i_a0a0f0v_0(path);
     }
   }
   private SNode createPathFromFullPath(String fullPath) throws RelativePathHelper.PathException {
@@ -385,7 +399,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
   private SNode createPath(String relativePath) {
     String[] parts = relativePath.split("/");
-    SNode path = _quotation_createNode_un708i_a0b0r();
+    SNode path = _quotation_createNode_un708i_a0b0x();
     SNode compositePart = SLinkOperations.getTarget(path, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"));
     for (String part : parts) {
       SPropertyOperations.set(compositePart, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), part);
@@ -408,14 +422,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return ProjectHelper.toIdeaProject(myProject).getBasePath();
   }
   protected static Logger LOG = LogManager.getLogger(BuildGeneratorImpl.class);
-  private static SNode _quotation_createNode_un708i_a0a0r0l() {
+  private static SNode _quotation_createNode_un708i_a0a0r0r() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "mps_home");
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a2a71a11(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a2a71a71(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -426,14 +440,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a71a11() {
+  private static SNode _quotation_createNode_un708i_a0a0a71a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "idea_home");
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a3a0r0l(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a3a0r0r(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -444,7 +458,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a6L, "artifacts"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0e0a71a11(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0e0a71a71(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -459,7 +473,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a7a0r0l(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a7a0r0r(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -470,7 +484,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b71a11() {
+  private static SNode _quotation_createNode_un708i_a0a0b71a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -481,7 +495,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, 0x263c91972cd26288L, "initialValue"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0c0b71a11(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0c0b71a71(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -498,14 +512,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, 0x263c91972cd26288L, "initialValue"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0e0b71a11() {
+  private static SNode _quotation_createNode_un708i_a0e0b71a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "mps_home");
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a6a1r0l(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a6a1r0r(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -516,7 +530,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a7a1r0l(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a7a1r0r(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -531,7 +545,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0l0b71a11(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
+  private static SNode _quotation_createNode_un708i_a0l0b71a71(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_13 = null;
     SNode quotedNode_14 = null;
@@ -659,14 +673,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_13.addChild(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x70870ffbed8becf4L, "dialogImage"), quotedNode_26);
     return quotedNode_13;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a81a11(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a0a81a71(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0z0l(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_un708i_a0z0r(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -681,7 +695,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_un708i_a0ab0l(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_un708i_a0ab0r(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -717,7 +731,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4def2c96L, "containerName"), quotedNode_10);
     return quotedNode_5;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a0fb0l(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+  private static SNode _quotation_createNode_un708i_a0a0a0fb0r(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
@@ -886,7 +900,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_7.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"), quotedNode_13);
     return quotedNode_7;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a0a13a11() {
+  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a0a13a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -900,7 +914,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a0fb0l_0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_un708i_a0a0a0fb0r_0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -917,21 +931,21 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_un708i_a0a3a21(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a3a81(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0h0m() {
+  private static SNode _quotation_createNode_un708i_a0h0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "mps_home");
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0i0m() {
+  private static SNode _quotation_createNode_un708i_a0i0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -948,14 +962,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, 0x263c91972cd26288L, "initialValue"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a0a0a0a0l0m() {
+  private static SNode _quotation_createNode_un708i_a0a0a0a0a0a0l0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro"), SReference.create(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro"), quotedNode_1, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("4301118715654465616")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0r0m(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10) {
+  private static SNode _quotation_createNode_un708i_a0r0s(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_11 = null;
     SNode quotedNode_12 = null;
@@ -1075,7 +1089,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_11.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_13);
     return quotedNode_11;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a1a0a0r0m() {
+  private static SNode _quotation_createNode_un708i_a0a0a1a0a0r0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1093,7 +1107,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b1a0a0r0m() {
+  private static SNode _quotation_createNode_un708i_a0a0b1a0a0r0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1111,7 +1125,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c1a0a0r0m() {
+  private static SNode _quotation_createNode_un708i_a0a0c1a0a0r0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1125,7 +1139,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d1a0a0r0m() {
+  private static SNode _quotation_createNode_un708i_a0a0d1a0a0r0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1139,7 +1153,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0e1a0a0r0m() {
+  private static SNode _quotation_createNode_un708i_a0a0e1a0a0r0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1153,7 +1167,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c0a0a71a21() {
+  private static SNode _quotation_createNode_un708i_a0a0c0a0a71a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1163,7 +1177,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0v0m(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16, Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20, Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24, Object parameter_25) {
+  private static SNode _quotation_createNode_un708i_a0v0s(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16, Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20, Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24, Object parameter_25) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_26 = null;
     SNode quotedNode_27 = null;
@@ -1479,7 +1493,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_26.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_28);
     return quotedNode_26;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0a1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1493,7 +1507,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0b1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1507,7 +1521,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0c1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1521,7 +1535,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0d1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1535,7 +1549,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a4b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a4b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1549,7 +1563,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a1e1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0a1e1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1563,7 +1577,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a5b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a5b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1577,7 +1591,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b5b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0b5b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1595,7 +1609,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c5b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0c5b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1613,7 +1627,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a0g1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0a0g1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1627,7 +1641,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1645,7 +1659,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0b7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1663,7 +1677,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0c7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1681,7 +1695,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0d7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1699,7 +1713,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0e7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0e7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1717,7 +1731,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a0f7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a0f7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1743,7 +1757,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a1f7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a1f7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1769,7 +1783,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b1f7b0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0b1f7b0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1795,7 +1809,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c5h1a0a0v0m() {
+  private static SNode _quotation_createNode_un708i_a0a0c5h1a0a0v0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1817,7 +1831,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0c0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1827,7 +1841,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d0a0a12a21() {
+  private static SNode _quotation_createNode_un708i_a0a0d0a0a12a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -1837,7 +1851,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0y0m(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16) {
+  private static SNode _quotation_createNode_un708i_a0y0s(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_17 = null;
     SNode quotedNode_18 = null;
@@ -2038,7 +2052,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_17.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"), quotedNode_19);
     return quotedNode_17;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a1a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a1a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2064,7 +2078,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a2a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a2a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2090,7 +2104,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2116,7 +2130,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d0a0a0y0m() {
+  private static SNode _quotation_createNode_un708i_a0a0d0a0a0y0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2138,7 +2152,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0a4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0a4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2156,7 +2170,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0b4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0b4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2174,7 +2188,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0c4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0c4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2192,7 +2206,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0d4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0d4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2210,7 +2224,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0e4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0e4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2224,7 +2238,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0f4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0f4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2238,7 +2252,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0g4a0a0a42a21() {
+  private static SNode _quotation_createNode_un708i_a0a0g4a0a0a42a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2256,7 +2270,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a0a0f0a0a0y0m() {
+  private static SNode _quotation_createNode_un708i_a0a0f0a0a0y0s() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2266,14 +2280,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_un708i_a3a0a41(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a3a0a02(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a1a0a0o(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a1a0a0u(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2286,7 +2300,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a5a51(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a5a12(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2298,7 +2312,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a0f0p(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a0f0v(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2310,7 +2324,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0a0f0p_0(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a0f0v_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2322,7 +2336,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_un708i_a0b0r() {
+  private static SNode _quotation_createNode_un708i_a0b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -2335,25 +2349,25 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static boolean eq_un708i_a0d0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0r0l(Object a, Object b) {
+  private static boolean eq_un708i_a0r0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0a71a11(Object a, Object b) {
+  private static boolean eq_un708i_a0a71a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0b71a11(Object a, Object b) {
+  private static boolean eq_un708i_a0b71a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0a0a0a0a0b1a0a0a0a13a11(Object a, Object b) {
+  private static boolean eq_un708i_a0a0a0a0a0b1a0a0a0a13a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0fb0l(Object a, Object b) {
+  private static boolean eq_un708i_a0fb0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0pb0l(Object a, Object b) {
+  private static boolean eq_un708i_a0pb0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0a0a0a0a0a0a11a21(Object a, Object b) {
+  private static boolean eq_un708i_a0a0a0a0a0a0a11a81(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -15,12 +15,20 @@
  */
 package jetbrains.mps.core.platform;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
+import jetbrains.mps.lang.dataFlow.MPSDataFlow;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.text.impl.MPSTextGenerator;
 import jetbrains.mps.typesystem.MPSTypesystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 class PlatformBase implements Platform {
   private MPSCore myCore;
@@ -28,6 +36,8 @@ class PlatformBase implements Platform {
   private MPSGenerator myGenerator;
   private MPSTypesystem myTypesystem;
   private MPSFindUsages myFindUsages;
+  private MPSTextGenerator myTextGen;
+  private MPSDataFlow myDataFlow;
 
   PlatformBase(PlatformOptionsBuilder options) {
     if (options.isLoadCore()) {
@@ -42,44 +52,37 @@ class PlatformBase implements Platform {
       myTypesystem = new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager());
       myGenerator = new MPSGenerator();
       myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
+      myTextGen = new MPSTextGenerator(myCore.getLanguageRegistry());
+      myDataFlow = new MPSDataFlow(myCore.getClassLoaderManager());
       myTypesystem.init();
       myGenerator.init();
       myFindUsages.init();
+      myTextGen.init();
+      myDataFlow.init();
     }
   }
 
-  @Nullable
   @Override
-  public MPSCore getCore() {
-    return myCore;
-  }
-
-  @Nullable
-  @Override
-  public MPSPersistence getPersistence() {
-    return myPersistence;
-  }
-
-  @Nullable
-  @Override
-  public MPSGenerator getGenerator() {
-    return myGenerator;
-  }
-
-  @Nullable
-  @Override
-  public MPSTypesystem getTypesystem() {
-    return myTypesystem;
-  }
-
-  @Nullable
-  @Override
-  public MPSFindUsages getFindUsages() {
-    return myFindUsages;
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    if (LibraryInitializer.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getLibraryInitializer());
+    }
+    if (PersistenceFacade.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getPersistenceFacade());
+    }
+    if (ClassLoaderManager.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getClassLoaderManager());
+    }
+    if (MPSModuleRepository.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getModuleRepository());
+    }
+    return null;
   }
 
   @Override
   public void dispose() {
+    dispose(myDataFlow);
+    dispose(myTextGen);
     dispose(myFindUsages);
     dispose(myGenerator);
     dispose(myTypesystem);
@@ -87,7 +90,7 @@ class PlatformBase implements Platform {
     dispose(myCore);
   }
 
-  private void dispose(@Nullable ComponentPlugin plugin) {
+  private static void dispose(@Nullable ComponentPlugin plugin) {
     if (plugin != null) {
       plugin.dispose();
     }

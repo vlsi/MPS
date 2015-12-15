@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
@@ -134,6 +132,14 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @Override
   public boolean isReadOnly() {
     return false;
+  }
+
+  @Override
+  public void delete() {
+    Collection<IFile> toDelete = getFiles();
+    for (IFile f : toDelete) {
+      f.delete();
+    }
   }
 
   @NotNull

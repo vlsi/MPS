@@ -13,6 +13,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
@@ -56,6 +60,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -589,6 +594,10 @@
     <property role="34LRSv" value="operationContext" />
     <property role="1pbfSe" value="641488297" />
     <ref role="1TJDcQ" node="6Tyhu1FomhH" resolve="ContextMemberOperation" />
+    <node concept="asaX9" id="7nMNws3dG0r" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.4" />
+      <property role="YLQ7P" value="IOperationContext has been deprecated for a while, nobody shall be using this operation" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6Tyhu1FomhT">
     <property role="R5$K7" value="false" />

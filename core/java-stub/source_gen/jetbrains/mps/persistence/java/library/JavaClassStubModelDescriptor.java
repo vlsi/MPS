@@ -22,7 +22,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.extapi.module.SModuleBase;
 
 public class JavaClassStubModelDescriptor extends RegularModelDescriptor implements ModelSourceChangeTracker.ReloadCallback {
   private final ModelSourceChangeTracker myTimestampTracker;
@@ -128,7 +129,10 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
   public void reloadFromDiskSafe() {
     assertCanChange();
     if (getSource().getPaths().isEmpty()) {
-      SModelRepository.getInstance().deleteModel(this);
+      SModule module = getModule();
+      if (module instanceof SModuleBase) {
+        ((SModuleBase) module).unregisterModel(this);
+      }
       return;
     }
     reload();

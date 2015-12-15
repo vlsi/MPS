@@ -9199,6 +9199,51 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="qri2St2AfF" role="3cqZAp">
+                    <node concept="3cpWsn" id="qri2St2AfG" role="3cpWs9">
+                      <property role="TrG5h" value="actionToolbar" />
+                      <node concept="3uibUv" id="qri2St2Af$" role="1tU5fm">
+                        <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+                      </node>
+                      <node concept="2OqwBi" id="qri2St2AfH" role="33vP2m">
+                        <node concept="2YIFZM" id="qri2St2AfI" role="2Oq$k0">
+                          <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+                          <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                        </node>
+                        <node concept="liA8E" id="qri2St2AfJ" role="2OqNvi">
+                          <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
+                          <node concept="10M0yZ" id="qri2St2AfK" role="37wK5m">
+                            <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+                            <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+                          </node>
+                          <node concept="37vLTw" id="qri2St2AfL" role="37wK5m">
+                            <ref role="3cqZAo" node="6hlEMz_jvFo" resolve="group" />
+                          </node>
+                          <node concept="3clFbT" id="qri2St2AfM" role="37wK5m">
+                            <property role="3clFbU" value="false" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="qri2St2BNF" role="3cqZAp">
+                    <node concept="2OqwBi" id="qri2St2C3p" role="3clFbG">
+                      <node concept="37vLTw" id="qri2St2BND" role="2Oq$k0">
+                        <ref role="3cqZAo" node="qri2St2AfG" resolve="actionToolbar" />
+                      </node>
+                      <node concept="liA8E" id="qri2St2CnZ" role="2OqNvi">
+                        <ref role="37wK5l" to="qkt:~ActionToolbar.setTargetComponent(javax.swing.JComponent):void" resolve="setTargetComponent" />
+                        <node concept="2OqwBi" id="1LCV41CIbXW" role="37wK5m">
+                          <node concept="37vLTw" id="1LCV41CIbJ0" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7xMU3i04Cyh" resolve="console" />
+                          </node>
+                          <node concept="liA8E" id="1LCV41CIck0" role="2OqNvi">
+                            <ref role="37wK5l" to="jkm4:~ComponentContainer.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="6hlEMz_kVl7" role="3cqZAp">
                     <node concept="2OqwBi" id="6hlEMz_kW8J" role="3clFbG">
                       <node concept="37vLTw" id="6hlEMz_kVl6" role="2Oq$k0">
@@ -9207,24 +9252,8 @@
                       <node concept="liA8E" id="6hlEMz_l8mz" role="2OqNvi">
                         <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
                         <node concept="2OqwBi" id="6hlEMz_mJW6" role="37wK5m">
-                          <node concept="2OqwBi" id="6hlEMz_lgvb" role="2Oq$k0">
-                            <node concept="2YIFZM" id="6hlEMz_lgfs" role="2Oq$k0">
-                              <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
-                              <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
-                            </node>
-                            <node concept="liA8E" id="6hlEMz_lk7m" role="2OqNvi">
-                              <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
-                              <node concept="10M0yZ" id="6hlEMz_lkWR" role="37wK5m">
-                                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-                                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
-                              </node>
-                              <node concept="37vLTw" id="6hlEMz_lmtW" role="37wK5m">
-                                <ref role="3cqZAo" node="6hlEMz_jvFo" resolve="group" />
-                              </node>
-                              <node concept="3clFbT" id="6hlEMz_lo6Q" role="37wK5m">
-                                <property role="3clFbU" value="false" />
-                              </node>
-                            </node>
+                          <node concept="37vLTw" id="qri2St2AfN" role="2Oq$k0">
+                            <ref role="3cqZAo" node="qri2St2AfG" resolve="actionToolbar" />
                           </node>
                           <node concept="liA8E" id="6hlEMz_mMCQ" role="2OqNvi">
                             <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
@@ -9395,25 +9424,16 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3SKdUt" id="4aFrTAYKHXV" role="3cqZAp">
-                    <node concept="3SKdUq" id="4aFrTAYKHZN" role="3SKWNk">
-                      <property role="3SKdUp" value="pin behaves kinda weird, so disable" />
-                    </node>
-                  </node>
-                  <node concept="1X3_iC" id="3$ZLRFpRiE3" role="lGtFl">
-                    <property role="3V$3am" value="statement" />
-                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                    <node concept="3clFbF" id="6XQUAE$N2Fb" role="8Wnug">
-                      <node concept="2OqwBi" id="6XQUAE$Na9d" role="3clFbG">
-                        <node concept="37vLTw" id="6XQUAE$N2Fa" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6hlEMz_jvFo" resolve="group" />
-                        </node>
-                        <node concept="liA8E" id="6XQUAE$NgSv" role="2OqNvi">
-                          <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-                          <node concept="2YIFZM" id="6XQUAE$O0x3" role="37wK5m">
-                            <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
-                            <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
-                          </node>
+                  <node concept="3clFbF" id="6XQUAE$N2Fb" role="3cqZAp">
+                    <node concept="2OqwBi" id="6XQUAE$Na9d" role="3clFbG">
+                      <node concept="37vLTw" id="6XQUAE$N2Fa" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6hlEMz_jvFo" resolve="group" />
+                      </node>
+                      <node concept="liA8E" id="6XQUAE$NgSv" role="2OqNvi">
+                        <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+                        <node concept="2YIFZM" id="6XQUAE$O0x3" role="37wK5m">
+                          <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
+                          <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
                         </node>
                       </node>
                     </node>

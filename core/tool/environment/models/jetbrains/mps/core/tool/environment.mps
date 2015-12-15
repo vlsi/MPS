@@ -30,6 +30,7 @@
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="hhlx" ref="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1600,8 +1601,11 @@
               <node concept="37vLTw" id="3eUNqOk9b1t" role="2Oq$k0">
                 <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
               </node>
-              <node concept="liA8E" id="3eUNqOk9bds" role="2OqNvi">
-                <ref role="37wK5l" to="4o98:~Platform.getCore():jetbrains.mps.core.platform.MPSCore" resolve="getCore" />
+              <node concept="liA8E" id="2W5tzczG3S9" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="2W5tzczG7XF" role="37wK5m">
+                  <ref role="3VsUkX" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
+                </node>
               </node>
             </node>
           </node>
@@ -2715,13 +2719,8 @@
         </node>
         <node concept="3clFbF" id="3eUNqOk863f" role="3cqZAp">
           <node concept="37vLTI" id="3eUNqOk864B" role="3clFbG">
-            <node concept="2OqwBi" id="5mffBJ2W9Bz" role="37vLTx">
-              <node concept="37vLTw" id="5A5jZryYTRl" role="2Oq$k0">
-                <ref role="3cqZAo" node="5A5jZryYTCG" resolve="mpsCore" />
-              </node>
-              <node concept="liA8E" id="5mffBJ2W9KQ" role="2OqNvi">
-                <ref role="37wK5l" to="4o98:~MPSCore.getLibraryInitializer():jetbrains.mps.library.LibraryInitializer" resolve="getLibraryInitializer" />
-              </node>
+            <node concept="37vLTw" id="5A5jZryYTRl" role="37vLTx">
+              <ref role="3cqZAo" node="5A5jZryYTCG" resolve="libInitializer" />
             </node>
             <node concept="37vLTw" id="5A5jZryYTPV" role="37vLTJ">
               <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitializer" />
@@ -2761,12 +2760,12 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="3eUNqOk6cku" role="1B3o_S" />
+      <node concept="3Tmbuc" id="7hYILd4VBBd" role="1B3o_S" />
       <node concept="3cqZAl" id="3eUNqOk6cld" role="3clF45" />
       <node concept="37vLTG" id="5A5jZryYTCG" role="3clF46">
-        <property role="TrG5h" value="mpsCore" />
-        <node concept="3uibUv" id="5mffBJ2W9xZ" role="1tU5fm">
-          <ref role="3uigEE" to="4o98:~MPSCore" resolve="MPSCore" />
+        <property role="TrG5h" value="libInitializer" />
+        <node concept="3uibUv" id="7hYILd4VBy4" role="1tU5fm">
+          <ref role="3uigEE" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
         </node>
         <node concept="2AHcQZ" id="5mffBJ2W9Mw" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />

@@ -82,7 +82,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     VfsRootAccess.SHOULD_PERFORM_ACCESS_CHECK = false;
 
     MPSCoreComponents coreComponents = getMPSCoreComponents();
-    super.init(coreComponents.getMPSCore());
+    super.init(coreComponents.getLibraryInitializer());
   }
 
   private MPSCoreComponents getMPSCoreComponents() {

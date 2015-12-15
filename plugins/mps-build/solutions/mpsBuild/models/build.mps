@@ -5,7 +5,6 @@
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -983,6 +982,9 @@
     </node>
     <node concept="398b33" id="5StVQ8qcIGg" role="3989C9">
       <property role="TrG5h" value="mps-core-components" />
+      <node concept="2sjeV3" id="7nMNws3dKIR" role="nCB5Z">
+        <ref role="2sjeV2" node="44LXwdzG1vm" resolve="annotations-lib" />
+      </node>
       <node concept="398b2D" id="5StVQ8qcNrR" role="398b2p">
         <node concept="398BVA" id="5StVQ8qcNVn" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
@@ -1019,17 +1021,8 @@
       <node concept="nCB5N" id="1WZWsoqJmZ0" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
-      <node concept="nCB5N" id="1WZWsoqJopt" role="nCB5Z">
-        <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
-      </node>
-      <node concept="nCB5N" id="1WZWsoqJplP" role="nCB5Z">
-        <ref role="nCB5Y" node="6g0vjebAkhc" resolve="mps-textgen" />
-      </node>
       <node concept="nCB5N" id="1WZWsoqJqKn" role="nCB5Z">
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
-      </node>
-      <node concept="nCB5N" id="50$ZrJq1nwy" role="nCB5Z">
-        <ref role="nCB5Y" node="1WZWsoqIz7X" resolve="mps-migration" />
       </node>
     </node>
     <node concept="398b33" id="6C2IEmQCfZN" role="3989C9">
@@ -1678,6 +1671,9 @@
       <node concept="nCB5N" id="5mffBJ2ZBzG" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
+      <node concept="nCB5N" id="1BQUFFY60xQ" role="nCB5Z">
+        <ref role="nCB5Y" node="6g0vjebAkhc" resolve="mps-textgen" />
+      </node>
     </node>
     <node concept="398b33" id="16Vg0jOco3P" role="3989C9">
       <property role="TrG5h" value="mps-platform" />
@@ -1759,6 +1755,9 @@
       <node concept="nCB5N" id="1nB28s96Ko" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1nB28rXacP" resolve="mps-environment" />
+      </node>
+      <node concept="nCB5N" id="1BQUFFY6FOb" role="nCB5Z">
+        <ref role="nCB5Y" node="1WZWsoqIz7X" resolve="mps-migration" />
       </node>
       <node concept="25zrj4" id="1ePifXyAvse" role="nCB5Z">
         <node concept="2HycW7" id="1ePifXyAvsa" role="25zrj5">
@@ -15268,6 +15267,41 @@
     <property role="turDy" value="mpsDistribution.xml" />
     <property role="3GE5qa" value="ide" />
     <property role="2DA0ip" value="../../../../" />
+    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
+      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
+        <property role="TrG5h" value="publishTCArtifacts" />
+        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
+          <property role="TrG5h" value="linuxDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
+          <property role="TrG5h" value="zipDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="55IIr" id="3IKDaVZnIjY" role="auvoZ">
       <node concept="2Ry0Ak" id="3IKDaVZnXlj" role="iGT6I">
         <property role="2Ry0Am" value="build" />
@@ -16572,41 +16606,6 @@
     <node concept="2sgV4H" id="3IKDaVZnIk0" role="1l3spa">
       <ref role="1l3spb" node="3IKDaVZmzS6" resolve="mps" />
     </node>
-    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
-      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
-        <property role="TrG5h" value="publishTCArtifacts" />
-        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
-          <property role="TrG5h" value="linuxDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
-          <property role="TrG5h" value="zipDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="1l3spW" id="3IKDaVZmzS6">
     <property role="TrG5h" value="mps" />
@@ -16620,9 +16619,14 @@
       <property role="2OjLBK" value="3" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
-      <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
-        <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="002387" />
+      <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
+        <node concept="3Mxwew" id="6U0n_nYVOoD" role="3MwsjC">
+          <property role="3MwjfP" value="3" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="6U0n_nYUFlV" role="2gocG4">
+        <node concept="3Mxwew" id="6U0n_nYUFlU" role="3MwsjC">
+          <property role="3MwjfP" value="117" />
         </node>
       </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
@@ -16801,6 +16805,11 @@
           </node>
         </node>
       </node>
+      <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
+        <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
+          <property role="3MwjfP" value="002387" />
+        </node>
+      </node>
       <node concept="55IIr" id="6Iq8148f_Zg" role="2EqU2s">
         <node concept="2Ry0Ak" id="6Iq8148f_Zh" role="iGT6I">
           <property role="2Ry0Am" value="workbench" />
@@ -16868,16 +16877,6 @@
       <node concept="NbPM2" id="7GO0VN9rZvQ" role="2Mmf0a">
         <node concept="3Mxwew" id="7GO0VN9rZvR" role="3MwsjC">
           <property role="3MwjfP" value="http://forum.jetbrains.com/forum/Meta-Programming-System" />
-        </node>
-      </node>
-      <node concept="NbPM2" id="6U0n_nYUFlV" role="2gocG4">
-        <node concept="3Mxwew" id="6U0n_nYUFlU" role="3MwsjC">
-          <property role="3MwjfP" value="117" />
-        </node>
-      </node>
-      <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
-        <node concept="3Mxwew" id="6U0n_nYVOoD" role="3MwsjC">
-          <property role="3MwjfP" value="3" />
         </node>
       </node>
     </node>
@@ -25243,6 +25242,12 @@
           <node concept="3bR9La" id="6DW_AMA_g5s" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6US6r0rz8LL" role="3bR37C">
+          <node concept="3bR9La" id="6US6r0rz8LM" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
       </node>

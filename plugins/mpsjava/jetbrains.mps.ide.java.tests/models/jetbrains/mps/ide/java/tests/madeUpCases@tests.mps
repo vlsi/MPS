@@ -15,6 +15,7 @@
     <import index="wfc9" ref="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -197,6 +198,7 @@
         <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
     </language>
@@ -940,11 +942,23 @@
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel1" />
                   <property role="BaBD8" value="no fqName&gt;" />
+                  <node concept="2OqwBi" id="Tb4Psnmmxk" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4Psnmmxl" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4Psnmmxm" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="BaHAS" id="70HT6wFrYmK" role="HW$Y0">
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel1.sub" />
                   <property role="BaBD8" value="jetbrains.mps.ide.java.testMaterial.testModel1s" />
+                  <node concept="2OqwBi" id="Tb4Psnmmz9" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4Psnmmza" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4Psnmmzb" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -976,11 +990,23 @@
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel2" />
                   <property role="BaBD8" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
+                  <node concept="2OqwBi" id="Tb4Psnmmvk" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4Psnmmvl" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4Psnmmvm" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="BaHAS" id="70HT6wFs4iG" role="HW$Y0">
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel2.sub" />
                   <property role="BaBD8" value="jetbrains.mps.ide.java.testMaterial.testModel1s" />
+                  <node concept="2OqwBi" id="Tb4Psnmmtv" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4Psnmmtw" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4Psnmmtx" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1012,11 +1038,23 @@
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel3" />
                   <property role="BaBD8" value="jetbrains.mps.ide.java.testMaterial.testModel21" />
+                  <node concept="2OqwBi" id="Tb4PsnmmpE" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4PsnmmpF" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4PsnmmpG" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="BaHAS" id="70HT6wFs4pB" role="HW$Y0">
                   <property role="BaGAP" value="" />
                   <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.testModel3.sub" />
                   <property role="BaBD8" value="jetsbrains.mps.ide.java.testMaterial.testModel3.sub" />
+                  <node concept="2OqwBi" id="Tb4Psnmmrv" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4Psnmmrw" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4Psnmmrx" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1071,6 +1109,12 @@
               <node concept="BaHAS" id="LfG6aZ92N4" role="37wK5m">
                 <property role="BaGAP" value="" />
                 <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial4" />
+                <node concept="2OqwBi" id="Tb4Psnmm_9" role="up2gk">
+                  <node concept="1jxXqW" id="Tb4Psnmm_a" role="2Oq$k0" />
+                  <node concept="liA8E" id="Tb4Psnmm_b" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -1098,6 +1142,12 @@
             <node concept="BaHAS" id="6YV7lv2CRUx" role="37wK5m">
               <property role="BaGAP" value="" />
               <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.singleFiles" />
+              <node concept="2OqwBi" id="Tb4Psnmmig" role="up2gk">
+                <node concept="1jxXqW" id="Tb4PsnmmgN" role="2Oq$k0" />
+                <node concept="liA8E" id="Tb4Psnmmob" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

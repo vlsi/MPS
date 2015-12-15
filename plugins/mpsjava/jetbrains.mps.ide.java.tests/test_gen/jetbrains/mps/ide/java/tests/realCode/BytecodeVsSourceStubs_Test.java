@@ -21,7 +21,7 @@ public class BytecodeVsSourceStubs_Test extends BaseTransformationTest {
     public void test_Guava() throws Exception {
       String homePath = PathManager.getHomePath();
       String guavaPath = homePath + "/plugins/mpsjava/tests/realCodeBase/google-guava/";
-      Utils.compareBinAndSrcStubs(guavaPath + "guava-12.0.1.jar", guavaPath + "src");
+      new Utils(this.myProject.getRepository()).compareBinAndSrcStubs(guavaPath + "guava-12.0.1.jar", guavaPath + "src");
     }
   }
 }

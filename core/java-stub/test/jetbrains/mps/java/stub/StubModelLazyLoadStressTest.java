@@ -21,7 +21,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.tool.environment.Environment;
@@ -31,8 +30,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -51,22 +48,21 @@ import java.util.concurrent.TimeUnit;
  *    to move to FULLY_LOADED was not triggered - threads might have seen model != null but state still == NOT_LOADED.
  *  - similarly FULLY_LOADED was dispatched outside of model update lock, and the chances were to treat model alrady full with nodes as loaded partially,
  *    so that another thread starts to update it and to remove nodes other thread assumes are in the node map already.
+ *
+ * Since model under test is not attached to a repository, no model access control is in place.
  * @author Artem Tikhomirov
  */
 public class StubModelLazyLoadStressTest {
   private static Environment ourPlatform;
   private static final boolean DEBUG = Boolean.FALSE.booleanValue();
-  private static SRepository ourModuleRepository;
 
   @BeforeClass
   public static void setUp() {
     ourPlatform = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    ourModuleRepository = ourPlatform.getPlatform().getCore().getModuleRepository();
   }
 
   @AfterClass
   public static void tearDown() {
-    ourModuleRepository = null;
     ourPlatform.release();
     ourPlatform = null;
   }
@@ -107,7 +103,6 @@ public class StubModelLazyLoadStressTest {
       }
     });
     SNodeId nodeId = new Foreign("~Pattern.compile(java.lang.String):java.util.regex.Pattern");
-    ModelAccess modelAccess = ourModuleRepository.getModelAccess();
     FindNodeRunnable[] runners = new FindNodeRunnable[10];
     LatchCountAction latch = new LatchCountAction(new CountDownLatch(2));
     CyclicBarrier barrier = new CyclicBarrier(runners.length, latch);
@@ -116,7 +111,7 @@ public class StubModelLazyLoadStressTest {
       if (i+1 == runners.length) {
         trace("about to start latest thread...");
       }
-      new Thread(new ModelReadRunnable(modelAccess, new BarrierRunnable(barrier, runners[i])), "FindNodeThread" + i).start();
+      new Thread(new BarrierRunnable(barrier, runners[i]), "FindNodeThread" + i).start();
     }
     latch.await(10);
     StringBuilder msg = new StringBuilder();

@@ -39,12 +39,10 @@ import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -76,6 +74,8 @@ import java.util.Set;
  * However, for that case I'd expect dependencies to be expressed in a way of module dependencies, not through language and its runtime solution.
  *
  * TODO rewrite module creation via existing functionality.
+ * FIXME shall use TestModuleFactoryBase to create modules, and createEmptyProject() instead of temp dir and solutions added there.
+ *       Once there's project, shall drop use of MPSModuleRepository (take one from Project),
  * @see jetbrains.mps.classloading.ModulesReloadTest
  */
 public class TestMakeOnRealProject extends CoreMpsTest {
@@ -91,7 +91,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
 
   @BeforeClass
   public static void setUp() {
-    ourRepository = ENV.getPlatform().getCore().getModuleRepository();
+    ourRepository = ENV.getPlatform().findComponent(MPSModuleRepository.class);
     ourModelAccess = ourRepository.getModelAccess();
   }
 

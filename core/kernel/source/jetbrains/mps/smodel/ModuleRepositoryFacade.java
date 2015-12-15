@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -157,6 +158,25 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @Nullable
   public SModel getModelByName(@Nullable String modelQualifiedName) {
     return SModelRepository.getInstance().getModelDescriptor(modelQualifiedName);
+  }
+
+  /**
+   * Provisional code to get rid of uses of direct static instance of MPSModuleRepository.
+   * IMPLEMENTATION NOTE: shall collect names of all modules and use them instead if global MPSModuleRepository
+   * @param fqName module namespace
+   * @return named module, if any
+   */
+  public SModule getModuleByName(@NotNull String fqName) {
+    return REPO.getModuleByFqName(fqName);
+  }
+
+  /**
+   * Provisional API while we migrate from singleton SModelRepository.
+   * Likely, SModelRepository would become a view of an SRepository, giving access to models and bulk operations for the set of models.
+   * @return snapshot state of the models available in the repository
+   */
+  public Collection<SModel> getAllModels() {
+    return SModelRepository.getInstance().getModelDescriptors();
   }
 
   /**

@@ -20,6 +20,7 @@
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
     <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -27,6 +28,7 @@
         <child id="1211979305365" name="before" index="JA92f" />
         <child id="1211979322383" name="after" index="JAdkl" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
@@ -188,6 +190,7 @@
         <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -945,6 +948,12 @@
                   <property role="BaGAP" value="java_stub" />
                   <property role="BaHAW" value="java.lang" />
                   <property role="BaBD8" value="no fqName&gt;" />
+                  <node concept="2OqwBi" id="Tb4PsnoHBZ" role="up2gk">
+                    <node concept="1jxXqW" id="Tb4PsnoHAi" role="2Oq$k0" />
+                    <node concept="liA8E" id="Tb4PsnoHIB" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1058,6 +1067,12 @@
               <property role="BaGAP" value="" />
               <property role="BaHAW" value="jetbrains.mps.baseLanguage.structure" />
               <property role="BaBD8" value="no fqName&gt;" />
+              <node concept="2OqwBi" id="Tb4PsnoHOa" role="up2gk">
+                <node concept="1jxXqW" id="Tb4PsnoHL3" role="2Oq$k0" />
+                <node concept="liA8E" id="Tb4PsnoHWj" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -1138,6 +1153,12 @@
               <property role="BaGAP" value="" />
               <property role="BaHAW" value="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test" />
               <property role="BaBD8" value="no fqName&gt;" />
+              <node concept="2OqwBi" id="Tb4PsnoI2z" role="up2gk">
+                <node concept="1jxXqW" id="Tb4PsnoHZs" role="2Oq$k0" />
+                <node concept="liA8E" id="Tb4PsnoIa_" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

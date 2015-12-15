@@ -8,7 +8,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
-import jetbrains.mps.core.platform.MPSCore;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
@@ -58,11 +57,11 @@ public abstract class EnvironmentBase implements Environment {
     myConfig = config;
   }
 
-  public void init(@NotNull MPSCore mpsCore) {
+  protected void init(@NotNull LibraryInitializer libInitializer) {
     if (myInitialized) {
       throw new IllegalStateException("Double initialization " + this);
     }
-    myLibInitializer = mpsCore.getLibraryInitializer();
+    myLibInitializer = libInitializer;
     initMacros();
     initLibraries();
     EnvironmentContainer.setCurrent(this);

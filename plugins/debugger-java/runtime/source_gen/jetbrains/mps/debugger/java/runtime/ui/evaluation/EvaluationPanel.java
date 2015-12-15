@@ -6,10 +6,9 @@ import javax.swing.JTabbedPane;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.nodeEditor.Highlighter;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
@@ -27,16 +26,16 @@ public class EvaluationPanel extends EvaluationUi {
   private final IEvaluationContainer myEvaluationModel;
   private final Highlighter myHighlighter;
   private volatile boolean myIsDisposed = false;
-  public EvaluationPanel(Project project, @NotNull DebugSession session, IEvaluationContainer evaluationModel, boolean autoUpdate) {
+  public EvaluationPanel(final Project mpsProject, @NotNull DebugSession session, IEvaluationContainer evaluationModel, boolean autoUpdate) {
     super(session, autoUpdate);
-    myHighlighter = project.getComponent(Highlighter.class);
+    myHighlighter = mpsProject.getComponent(Highlighter.class);
 
     myEvaluationModel = evaluationModel;
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    mpsProject.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode node = myEvaluationModel.getNode();
-        myEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), true);
+        myEditor = new EmbeddableEditor(mpsProject, true);
         myEditor.editNode(node);
       }
     });

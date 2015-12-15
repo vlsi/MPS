@@ -8,18 +8,28 @@
   <imports>
     <import index="wfc9" ref="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
       </concept>
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -56,6 +66,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -97,24 +108,36 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="65uALbW5M8X" role="3cqZAp">
-          <node concept="2YIFZM" id="70HT6wFrYy0" role="3clFbG">
-            <ref role="37wK5l" to="wfc9:70HT6wFrYn9" resolve="compareBinAndSrcStubs" />
-            <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
-            <node concept="3cpWs3" id="70HT6wFscuH" role="37wK5m">
-              <node concept="Xl_RD" id="70HT6wFrYy1" role="3uHU7w">
-                <property role="Xl_RC" value="guava-12.0.1.jar" />
-              </node>
-              <node concept="37vLTw" id="3GM_nagTtjo" role="3uHU7B">
-                <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
+        <node concept="3clFbF" id="Tb4Psnn5Rb" role="3cqZAp">
+          <node concept="2OqwBi" id="Tb4Psnn69d" role="3clFbG">
+            <node concept="2ShNRf" id="Tb4Psnn5R7" role="2Oq$k0">
+              <node concept="1pGfFk" id="Tb4Psnn643" role="2ShVmc">
+                <ref role="37wK5l" to="wfc9:70HT6wFrGK6" resolve="Utils" />
+                <node concept="2OqwBi" id="Tb4Psnn656" role="37wK5m">
+                  <node concept="1jxXqW" id="Tb4Psnn64d" role="2Oq$k0" />
+                  <node concept="liA8E" id="Tb4Psnn688" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="3cpWs3" id="70HT6wFscux" role="37wK5m">
-              <node concept="37vLTw" id="3GM_nagTxPk" role="3uHU7B">
-                <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
+            <node concept="liA8E" id="Tb4Psnn8eS" role="2OqNvi">
+              <ref role="37wK5l" to="wfc9:Tb4Psnn76m" resolve="compareBinAndSrcStubs" />
+              <node concept="3cpWs3" id="70HT6wFscuH" role="37wK5m">
+                <node concept="Xl_RD" id="70HT6wFrYy1" role="3uHU7w">
+                  <property role="Xl_RC" value="guava-12.0.1.jar" />
+                </node>
+                <node concept="37vLTw" id="3GM_nagTtjo" role="3uHU7B">
+                  <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
+                </node>
               </node>
-              <node concept="Xl_RD" id="70HT6wFrYy2" role="3uHU7w">
-                <property role="Xl_RC" value="src" />
+              <node concept="3cpWs3" id="70HT6wFscux" role="37wK5m">
+                <node concept="37vLTw" id="3GM_nagTxPk" role="3uHU7B">
+                  <ref role="3cqZAo" node="70HT6wFscuP" resolve="guavaPath" />
+                </node>
+                <node concept="Xl_RD" id="70HT6wFrYy2" role="3uHU7w">
+                  <property role="Xl_RC" value="src" />
+                </node>
               </node>
             </node>
           </node>

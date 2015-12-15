@@ -6,20 +6,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 
 public interface IEvaluationContainer {
   public IEvaluationContainer copy(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp);
   public Class generateClass() throws EvaluationException;
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException;
-  /**
-   * 
-   * @deprecated does nothing, the listener supplied is ignored
-   */
-  @Deprecated
-  public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener);
   public String getPresentation();
-  public IOperationContext getContext();
   public SNode getNode();
   public void updateState();
 }

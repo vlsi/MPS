@@ -53,7 +53,7 @@ public class FindUsagesDialog extends DialogWrapper {
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
+        myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class), mpsProject.getRepository());
         myFindersEditor = new MyFindersEditor(defaultOptions, node, project) {
           @Override
           protected void findersListChangedByUser() {

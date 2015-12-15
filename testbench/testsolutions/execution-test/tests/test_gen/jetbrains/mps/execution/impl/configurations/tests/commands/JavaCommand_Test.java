@@ -8,9 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -40,9 +39,9 @@ public class JavaCommand_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_startJavaByNode() throws Exception {
       final Wrappers._T<SNodeReference> pointer = new Wrappers._T<SNodeReference>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      this.myProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          SModel model = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
+          SModel model = new ModuleRepositoryFacade(TestBody.this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
           SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());

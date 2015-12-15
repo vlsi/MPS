@@ -4336,14 +4336,17 @@
     <javac2 destdir="${build.tmp}/java/out/mps-core-components" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/core/components/source" />
-      <classpath refid="path.jdk.classpath" />
+      <classpath>
+        <path refid="path.java.library.annotations-lib" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-core-components">
       <fileset dir="${mps_home}/core/components/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
-  <target name="java.compile.mps-core" depends="java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-generator, java.compile.mps-textgen, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, fetchDependencies">
+  <target name="java.compile.mps-core" depends="java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-core" />
     <javac2 destdir="${build.tmp}/java/out/mps-core" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
@@ -4360,11 +4363,8 @@
         <pathelement path="${build.tmp}/java/out/mps-behavior-runtime" />
         <pathelement path="${build.tmp}/java/out/mps-behavior-legacy-api" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
-        <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <pathelement path="${build.tmp}/java/out/kernel-resources" />
         <pathelement path="${build.tmp}/java/out/mps-make-rt" />
-        <pathelement path="${build.tmp}/java/out/mps-migration" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
@@ -4858,7 +4858,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.platform" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-core-components, java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, fetchDependencies">
+  <target name="java.compile.platform" depends="java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-core-components, java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-textgen, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/platform" />
     <javac2 destdir="${build.tmp}/java/out/platform" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
@@ -4878,6 +4878,7 @@
         <pathelement path="${build.tmp}/java/out/mps-behavior-runtime" />
         <pathelement path="${build.tmp}/java/out/mps-behavior-legacy-api" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
+        <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
@@ -4890,7 +4891,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, fetchDependencies">
+  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, java.compile.mps-migration, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-platform" />
     <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
@@ -4922,6 +4923,7 @@
         <pathelement path="${build.tmp}/java/out/mps-tool" />
         <pathelement path="${build.tmp}/java/out/platform" />
         <pathelement path="${build.tmp}/java/out/mps-environment" />
+        <pathelement path="${build.tmp}/java/out/mps-migration" />
         <fileset file="${mps_home}/lib/platform.jar" />
         <fileset file="${mps_home}/lib/platform-api.jar" />
         <path refid="path.java.library.annotations-lib" />

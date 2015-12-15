@@ -7943,10 +7943,9 @@
                   </node>
                 </node>
               </node>
-              <node concept="2ShNRf" id="3pNk_u$e$Qt" role="37wK5m">
-                <node concept="1pGfFk" id="3pNk_u$eBBE" role="2ShVmc">
-                  <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.&lt;init&gt;()" resolve="PinToolwindowTabAction" />
-                </node>
+              <node concept="2YIFZM" id="qri2St1Fx4" role="37wK5m">
+                <ref role="1Pybhc" to="mklf:~PinToolwindowTabAction" resolve="PinToolwindowTabAction" />
+                <ref role="37wK5l" to="mklf:~PinToolwindowTabAction.getPinAction():com.intellij.openapi.actionSystem.AnAction" resolve="getPinAction" />
               </node>
             </node>
           </node>

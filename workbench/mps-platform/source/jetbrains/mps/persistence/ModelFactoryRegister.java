@@ -35,7 +35,7 @@ public class ModelFactoryRegister implements ApplicationComponent {
   private PersistenceFacade myPersistenceRegistry;
 
   public ModelFactoryRegister(MPSCoreComponents mpsCoreComponents) {
-    myPersistenceRegistry = mpsCoreComponents.getMPSCore().getPersistenceFacade();
+    myPersistenceRegistry = mpsCoreComponents.getPersistenceFacade();
   }
 
   @Override

@@ -4174,15 +4174,6 @@
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
     </node>
   </node>
-  <node concept="lpD6F" id="1lM6JtOM9Yh">
-    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
-      <property role="2R4zub" value="tests.testDepViewer" />
-      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
-    </node>
-    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
-      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
-    </node>
-  </node>
   <node concept="lpD6F" id="3ofMfJ4Yh7E">
     <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
       <property role="2R4zub" value="testPackagedLanguage.test" />

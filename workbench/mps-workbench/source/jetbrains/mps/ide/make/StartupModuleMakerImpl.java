@@ -57,7 +57,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
   public StartupModuleMakerImpl(Project project, MPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager,
       MPSCoreComponents components) {
     super(project);
-    myClassLoaderManager = components.getMPSCore().getClassLoaderManager();
+    myClassLoaderManager = components.getClassLoaderManager();
     myMPSProject = mpsProject;
     myReloadManager = reloadManager;
   }

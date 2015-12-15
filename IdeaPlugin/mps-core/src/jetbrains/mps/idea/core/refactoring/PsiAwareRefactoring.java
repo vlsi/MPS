@@ -33,7 +33,7 @@ public class PsiAwareRefactoring extends RefactoringWrapper {
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
-    Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
+    Project project = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
     List<SNode> nodes = baseRefactoring.getRefactoringTarget().allowMultipleTargets() ? refactoringContext.getSelectedNodes() : Arrays.asList(refactoringContext.getSelectedNode());
     for (SNode target : nodes) {
       PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(target);

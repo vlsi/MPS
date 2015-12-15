@@ -5,8 +5,6 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -15,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,25 +51,20 @@ public class MPSPsiElement<T> extends FakePsiElement {
     myItem = item;
   }
 
-  public Object getMPSItem() {
+  public Object getMPSItem(final SRepository contextRepo) {
     if (myItem instanceof SNodeReference) {
-      return ((SNodeReference) myItem).resolve(MPSModuleRepository.getInstance());
+      return ((SNodeReference) myItem).resolve(contextRepo);
     } else if (myItem instanceof List) {
       return map((List<SNodeReference>) myItem, new Mapper<SNodeReference, SNode>() {
         @Override
         public SNode value(SNodeReference key) {
-          return key.resolve(MPSModuleRepository.getInstance());
+          return key.resolve(contextRepo);
         }
       });
     } else if (myItem instanceof SModelReference) {
-      SModelReference ref = (SModelReference) myItem;
-      SModel descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
-      if (descriptor == null) {
-        return null;
-      }
-      return descriptor;
+      return ((SModelReference) myItem).resolve(contextRepo);
     } else if (myItem instanceof SModuleReference) {
-      return ModuleRepositoryFacade.getInstance().getModule((SModuleReference) myItem);
+      return ((SModuleReference) myItem).resolve(contextRepo);
     } else if (myItem instanceof MPSProject) {
       return myItem;
     }

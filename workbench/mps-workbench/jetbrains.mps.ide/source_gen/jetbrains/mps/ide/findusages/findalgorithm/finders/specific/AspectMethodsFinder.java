@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.annotations.NotNull;
@@ -28,22 +26,21 @@ public class AspectMethodsFinder implements IFinder {
   }
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
+    // I've got no idea what aspect methods it looks for. MPS Integration plugin in Idea takes PsiMethod and pass here package statement and method name 
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
     final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (final SModel descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
-          if (!(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(descriptor)))) {
-            applicableModelDescriptors.add(descriptor);
-          }
-        }
+    for (SModel model : query.getScope().getModels()) {
+      String modelName = model.getModelName();
+      if (data.myModelName.equals(SModelStereotype.withoutStereotype(modelName)) && !(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelName)))) {
+        applicableModelDescriptors.add(model);
       }
-    });
+    }
     SearchResults<SNode> res = new SearchResults<SNode>();
+    res.getSearchedNodes().add(data.myModelName + '#' + data.myMethodName);
     for (SModel model : applicableModelDescriptors) {
       for (SNode node : SNodeUtil.getDescendants(model)) {
-        for (String value : SNodeOperations.getProperties(node).values()) {
+        for (SProperty prop : node.getProperties()) {
+          String value = node.getProperty(prop);
           if (data.myMethodName.endsWith(value)) {
             res.getSearchResults().add(new SearchResult<SNode>(node, "Aspect methods"));
             break;

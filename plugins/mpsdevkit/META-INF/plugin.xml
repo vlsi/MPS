@@ -41,7 +41,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.devkit.cellExplorer.CellExplorerView</implementation-class>
+      <implementation-class>jetbrains.mps.ide.devkit.cellExplorer.CellExplorerTool</implementation-class>
     </component>
   </project-components>
 

@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,6 +48,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
@@ -77,8 +77,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   @Override
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
-    // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = myContainerModel.resolve(myDebuggerRepository);
 
     setUpDependencies(containerModule, containerModel);
 
@@ -226,7 +225,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Nullable
   private SModel findStubForFqName(String fqName) {
-    return SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withStereotype(fqName, SModelStereotype.JAVA_STUB));
+    return new ModuleRepositoryFacade(myDebuggerRepository).getModelByName(SModelStereotype.withStereotype(fqName, SModelStereotype.JAVA_STUB));
   }
   private boolean needUpdateVariables() {
     return !(myVariablesInitialized) || !(myIsInWatch);
@@ -257,11 +256,12 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     }).toListSequence();
   }
-  public static Iterable<SModel> getCandidateNonStubModels(String unitName) {
+  /*package*/ Iterable<SModel> getCandidateNonStubModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
+    final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(myDebuggerRepository);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
       public SModel select(String stereotype) {
-        return SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withStereotype(modelFqName, stereotype));
+        return mrf.getModelByName(SModelStereotype.withStereotype(modelFqName, stereotype));
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

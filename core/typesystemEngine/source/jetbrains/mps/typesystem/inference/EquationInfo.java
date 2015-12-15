@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,8 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,14 +134,6 @@ public class EquationInfo {
   public List<Pair<String, String>> getAdditionalRulesIds() {
     if (myOuterRulesIds == null) return new ArrayList<Pair<String, String>>();
     return new ArrayList<Pair<String, String>>(myOuterRulesIds);
-  }
-
-  public SNode findRuleNode() {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(myRuleModel));
-    if (modelDescriptor == null) return null;
-    SNodeId nodeId = SNodeId.fromString(myRuleId);
-    assert nodeId != null : "wrong node id string";
-    return modelDescriptor.getNode(nodeId);
   }
 
   boolean isStrong() {

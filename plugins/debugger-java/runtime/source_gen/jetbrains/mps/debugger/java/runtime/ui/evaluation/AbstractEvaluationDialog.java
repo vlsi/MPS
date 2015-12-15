@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Dimension;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JComponent;
@@ -26,7 +27,7 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
 
     myProvider = provider;
     final DebugSession debugSession = provider.getDebugSession();
-    myEvaluationPanel = new EvaluationPanel(ideaProject, debugSession, model, false);
+    myEvaluationPanel = new EvaluationPanel(ProjectHelper.fromIdeaProject(ideaProject), debugSession, model, false);
     myEvaluationPanel.setMinimumSize(new Dimension(500, 500));
     myEvaluationPanel.setErrorTextListener(new EvaluationUi.IErrorTextListener() {
       @Override

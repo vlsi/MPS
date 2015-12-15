@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.components.ComponentPluginBase;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,6 +33,7 @@ public final class MPSFindUsages extends ComponentPluginBase {
   @Override
   public void init() {
     super.init();
+    init(new FindUsagesManager());
     init(new FindersManager(myLanguageRegistry));
   }
 }

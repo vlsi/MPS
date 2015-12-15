@@ -36,5 +36,6 @@
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="migrations-runtime" />
   </component>
 </module>

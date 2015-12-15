@@ -8,8 +8,8 @@
   <imports>
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
-    <import index="fzbs" ref="r:12897c41-1d23-444a-8c3d-8a254e74f9b6(jetbrains.mps.ide.build.tests.generatedTests)" />
     <import index="r9lu" ref="r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)" />
+    <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
   </imports>
   <registry>
     <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
@@ -43,6 +43,9 @@
     </node>
     <node concept="2Uj$md" id="4Je5yFFjFK0" role="2Uj_Yd">
       <ref role="2Uj$mc" to="r9lu:4Je5yFFjFCM" resolve="Closures" />
+    </node>
+    <node concept="2Uj$md" id="Tb4Psnmic0" role="2Uj_Yd">
+      <ref role="2Uj$mc" to="rv78:Tb4Psnmhc2" resolve="DepViewer" />
     </node>
     <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
       <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generatedTests" />

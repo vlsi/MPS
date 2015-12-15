@@ -20,14 +20,16 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.mps.util.PathConverter;
@@ -115,17 +117,14 @@ public class RefreshTestProject_Action extends BaseAction {
   private boolean doExecute(ProgressIndicator proInd, final AnActionEvent event) {
     final Wrappers._T<SModel> target = new Wrappers._T<SModel>();
     final Wrappers._boolean ok = new Wrappers._boolean(true);
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+    final SRepository repo = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // shamelessly copypasted from the smodel lang's generator 
         SNode targetRef = SLinkOperations.getTarget(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x6a7c966ca6903a21L, "target"));
-        String targetName = SPropertyOperations.getString(targetRef, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name"));
-        if (isNotEmptyString(SPropertyOperations.getString(targetRef, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype")))) {
-          targetName += "@" + SPropertyOperations.getString(targetRef, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"));
-        }
-        target.value = SModelRepository.getInstance().getModelDescriptor(targetName);
+        target.value = new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(targetRef));
         if (target.value == null) {
-          Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Not found target model: " + targetName, "Model Not Found");
+          Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Not found target model: " + ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(targetRef), "Model Not Found");
           ok.value = false;
         }
       }
@@ -135,7 +134,7 @@ public class RefreshTestProject_Action extends BaseAction {
     }
 
     final List<SNode> manifests = new ArrayList<SNode>();
-    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SNode mref : SLinkOperations.getChildren(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x2dc684499788dbc4L, "manifest"))) {
           SNode manifest = SLinkOperations.getTarget(mref, MetaAdapterFactory.getReferenceLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, 0x2dc684499788c1c5L, "manifest"));
@@ -148,7 +147,7 @@ public class RefreshTestProject_Action extends BaseAction {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
 
-        event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().executeCommand(new Runnable() {
+        repo.getModelAccess().executeCommand(new Runnable() {
           public void run() {
             TestModuleBuildProjectTemplate template = new TestModuleBuildProjectTemplate(event.getData(MPSCommonDataKeys.MPS_PROJECT), target.value);
 
@@ -157,7 +156,7 @@ public class RefreshTestProject_Action extends BaseAction {
 
             SNode existing = ListSequence.fromList(SModelOperations.roots(target.value, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0i0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
             });
             if ((existing != null)) {
@@ -197,10 +196,7 @@ public class RefreshTestProject_Action extends BaseAction {
     }
   }
   protected static Logger LOG = LogManager.getLogger(RefreshTestProject_Action.class);
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
-  }
-  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0i0h(Object a, Object b) {
+  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
