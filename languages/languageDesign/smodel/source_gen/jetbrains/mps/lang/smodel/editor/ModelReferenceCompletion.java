@@ -9,7 +9,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -25,8 +26,7 @@ public class ModelReferenceCompletion extends AbstractCellMenuComponent {
     public ModelReferenceExpression_generic_cellMenu_fkcdzz_a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      // FIXME need a helper to provide all models visible in a repository 
-      return SModelRepository.getInstance().getModelDescriptors();
+      return IterableUtil.asList(new ModuleRepositoryFacade(editorContext.getRepository()).getAllModels());
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModel) parameterObject, node, model, operationContext, editorContext);

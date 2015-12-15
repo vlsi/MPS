@@ -26,6 +26,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
     <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
   </imports>
   <registry>
@@ -301,12 +302,6 @@
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
-      </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -4910,19 +4905,25 @@
         <property role="1ezIyd" value="custom" />
         <node concept="3GJtP1" id="v3WHCwUozm" role="1ou48n">
           <node concept="3clFbS" id="v3WHCwUozn" role="2VODD2">
-            <node concept="3SKdUt" id="4HtHXQsWfso" role="3cqZAp">
-              <node concept="3SKdUq" id="4HtHXQsWfMP" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME need a helper to provide all models visible in a repository" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6CCOtwfKk3M" role="3cqZAp">
-              <node concept="2OqwBi" id="v3WHCwUqpK" role="3clFbG">
-                <node concept="2YIFZM" id="v3WHCwUqpJ" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
-                  <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-                </node>
-                <node concept="liA8E" id="v3WHCwUqpO" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelRepository.getModelDescriptors():java.util.List" resolve="getModelDescriptors" />
+            <node concept="3clFbF" id="199DjJG66Xu" role="3cqZAp">
+              <node concept="2YIFZM" id="199DjJG67bh" role="3clFbG">
+                <ref role="37wK5l" to="18ew:~IterableUtil.asList(java.lang.Iterable):java.util.List" resolve="asList" />
+                <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
+                <node concept="2OqwBi" id="199DjJG66l$" role="37wK5m">
+                  <node concept="2ShNRf" id="199DjJG60mB" role="2Oq$k0">
+                    <node concept="1pGfFk" id="199DjJG65Uq" role="2ShVmc">
+                      <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
+                      <node concept="2OqwBi" id="199DjJG669L" role="37wK5m">
+                        <node concept="1Q80Hx" id="199DjJG65YT" role="2Oq$k0" />
+                        <node concept="liA8E" id="199DjJG66g9" role="2OqNvi">
+                          <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="199DjJG66Aw" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getAllModels():java.util.Collection" resolve="getAllModels" />
+                  </node>
                 </node>
               </node>
             </node>
