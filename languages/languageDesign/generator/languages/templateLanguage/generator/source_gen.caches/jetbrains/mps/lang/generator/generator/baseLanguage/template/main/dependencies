@@ -18,6 +18,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
     <classNode dependClassName="jetbrains.mps.generator.impl.RuleUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.template.VariableNameSource" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
