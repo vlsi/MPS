@@ -28,7 +28,29 @@
   <depends optional="true">Git4Idea</depends>
 
   <xi:include href="../../../plugins/vcs/common/source_gen/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../../../plugins/vcs/common/source/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+  </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <diff.DiffTool implementation="jetbrains.mps.vcs.platform.integration.ModelDiffTool"/>
+    <diff.merge.MergeTool implementation="jetbrains.mps.vcs.platform.integration.ModelMergeTool"/>
+  </extensions>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.FSChangesWatcher</implementation-class>
