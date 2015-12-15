@@ -1772,17 +1772,6 @@
         <ref role="35c_gD" to="tpf8:gvejVYo" resolve="MapSrcListMacro" />
       </node>
     </node>
-    <node concept="Wx3nA" id="7QeCZOGPu95" role="jymVt">
-      <property role="TrG5h" value="concept_SwitchMacro" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="7QeCZOGPu96" role="1B3o_S" />
-      <node concept="3uibUv" id="7vbaBZCTykw" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
-      </node>
-      <node concept="35c_gC" id="7vbaBZCUhXl" role="33vP2m">
-        <ref role="35c_gD" to="tpf8:gcjY4Rm" resolve="SwitchMacro" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="7QeCZOGPu99" role="jymVt">
       <property role="TrG5h" value="concept_TemplateCallMacro" />
       <property role="3TUv4t" value="true" />
@@ -2386,19 +2375,6 @@
               <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
               <node concept="37vLTw" id="64UEbXFVlY9" role="37wK5m">
                 <ref role="3cqZAo" node="4sWLrFSCvN4" resolve="concept_MapSrcNodeMacro" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="64UEbXFV86I" role="3cqZAp">
-          <node concept="2OqwBi" id="64UEbXFV86J" role="3clFbG">
-            <node concept="37vLTw" id="64UEbXFV87G" role="2Oq$k0">
-              <ref role="3cqZAo" node="63JL00BB6qa" resolve="NodeMacroConcepts" />
-            </node>
-            <node concept="liA8E" id="64UEbXFV86K" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="37vLTw" id="64UEbXFVm7Z" role="37wK5m">
-                <ref role="3cqZAo" node="7QeCZOGPu95" resolve="concept_SwitchMacro" />
               </node>
             </node>
           </node>
@@ -4019,31 +3995,7 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="7QeCZOGPvk7" role="jymVt">
-      <property role="TrG5h" value="getSwitchMacro_TemplateSwitch" />
-      <node concept="3Tqbb2" id="7QeCZOGPvkl" role="3clF45">
-        <ref role="ehGHo" to="tpf8:gcjVnq8" resolve="TemplateSwitch" />
-      </node>
-      <node concept="3Tm1VV" id="7QeCZOGPvk9" role="1B3o_S" />
-      <node concept="3clFbS" id="7QeCZOGPvka" role="3clF47">
-        <node concept="3clFbF" id="7QeCZOGPvkd" role="3cqZAp">
-          <node concept="2OqwBi" id="7QeCZOGPvkf" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmNHs" role="2Oq$k0">
-              <ref role="3cqZAo" node="7QeCZOGPvkb" resolve="macro" />
-            </node>
-            <node concept="3TrEf2" id="7QeCZOGPvkj" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpf8:gcjYjpy" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7QeCZOGPvkb" role="3clF46">
-        <property role="TrG5h" value="macro" />
-        <node concept="3Tqbb2" id="7QeCZOGPvkc" role="1tU5fm">
-          <ref role="ehGHo" to="tpf8:gcjY4Rm" resolve="SwitchMacro" />
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="79k837C1Odo" role="jymVt" />
     <node concept="2YIFZL" id="4g8TXD5xqRZ" role="jymVt">
       <property role="TrG5h" value="getTemplateSwitchMacro_TemplateSwitch" />
       <property role="od$2w" value="false" />
@@ -4074,6 +4026,7 @@
         <ref role="ehGHo" to="tpf8:gcjVnq8" resolve="TemplateSwitch" />
       </node>
     </node>
+    <node concept="2tJIrI" id="79k837C1P6d" role="jymVt" />
     <node concept="2YIFZL" id="7QeCZOGPvkn" role="jymVt">
       <property role="TrG5h" value="getIncludeMacro_Template" />
       <node concept="3Tqbb2" id="7QeCZOGPvk_" role="3clF45">
@@ -4761,33 +4714,6 @@
               <node concept="1mIQ4w" id="4_2twMIX21l" role="2OqNvi">
                 <node concept="chp4Y" id="4_2twMIX2dp" role="cj9EA">
                   <ref role="cht4Q" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="4QkEfp6rmWU" role="3eNLev">
-            <node concept="3clFbS" id="4QkEfp6rmWV" role="3eOfB_">
-              <node concept="3cpWs6" id="4QkEfp6rmWW" role="3cqZAp">
-                <node concept="2OqwBi" id="4QkEfp6rmWX" role="3cqZAk">
-                  <node concept="1PxgMI" id="4QkEfp6rmWY" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpf8:gcjY4Rm" resolve="SwitchMacro" />
-                    <node concept="37vLTw" id="2BHiRxglwy4" role="1PxMeX">
-                      <ref role="3cqZAo" node="4QkEfp6rmWN" resolve="node" />
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="4QkEfp6rmXg" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpf8:h08TvVo" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4_2twMIX2fQ" role="3eO9$A">
-              <node concept="37vLTw" id="4_2twMIX2fR" role="2Oq$k0">
-                <ref role="3cqZAo" node="4QkEfp6rmWN" resolve="node" />
-              </node>
-              <node concept="1mIQ4w" id="4_2twMIX2fS" role="2OqNvi">
-                <node concept="chp4Y" id="4_2twMIX2ro" role="cj9EA">
-                  <ref role="cht4Q" to="tpf8:gcjY4Rm" resolve="SwitchMacro" />
                 </node>
               </node>
             </node>

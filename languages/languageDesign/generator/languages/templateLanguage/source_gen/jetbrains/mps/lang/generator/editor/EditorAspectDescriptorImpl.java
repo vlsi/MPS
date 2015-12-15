@@ -131,9 +131,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x110138ccc4bL, "jetbrains.mps.lang.generator.structure.RuleConsequence"))) {
         return Collections.<ConceptEditor>singletonList(new RuleConsequence_Editor());
       }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, "jetbrains.mps.lang.generator.structure.SwitchMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new SwitchMacro_Editor());
-      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de8L, "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression"))) {
         return Collections.<ConceptEditor>singletonList(new TemplateArgumentLinkPatternRefExpression_Editor());
       }

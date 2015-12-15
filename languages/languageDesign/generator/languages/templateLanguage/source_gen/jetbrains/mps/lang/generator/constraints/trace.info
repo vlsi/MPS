@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,59,0" name="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,56,0" name="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/1213104837507">
@@ -671,54 +671,6 @@
       <unit id="982871510068195081" at="38,19,47,9" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints$2" />
       <unit id="982871510068195081" at="30,128,49,5" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints$1" />
       <unit id="982871510068195081" at="23,0,54,0" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/982871510072656543">
-    <file name="SwitchMacro_Constraints.java">
-      <node id="982871510072656543" at="29,36,30,93" concept="13" />
-      <node id="982871510072656543" at="33,98,34,135" concept="7" />
-      <node id="982871510072656543" at="37,44,38,20" concept="8" />
-      <node id="982871510072656543" at="45,63,46,58" concept="8" />
-      <node id="982871510072696866" at="52,53,53,395" concept="8" />
-      <node id="982871510072656543" at="59,7,60,22" concept="8" />
-      <node id="982871510072656543" at="62,0,63,0" concept="11" trace="breakingNode_g2hndj_a0a0a0a0a1a0b0a1a1" />
-      <node id="982871510072656543" at="29,0,32,0" concept="1" trace="SwitchMacro_Constraints#()V" />
-      <node id="982871510072656543" at="36,0,40,0" concept="6" trace="hasOwnScopeProvider#()Z" />
-      <node id="982871510072656543" at="44,0,48,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="982871510072664615" at="51,0,55,0" concept="6" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="982871510072656543" at="49,122,55,14" concept="0" />
-      <node id="982871510072656661" at="49,122,55,14" concept="8" />
-      <node id="982871510072656543" at="48,0,57,0" concept="6" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-      <node id="982871510072656543" at="42,56,57,10" concept="8" />
-      <node id="982871510072656543" at="40,0,59,0" concept="6" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="982871510072656543" at="34,135,59,7" concept="2" />
-      <node id="982871510072656543" at="32,0,62,0" concept="6" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="982871510072656543" at="29,36,30,93" />
-      <scope id="982871510072656543" at="37,44,38,20" />
-      <scope id="982871510072656543" at="45,63,46,58" />
-      <scope id="982871510072664624" at="52,53,53,395" />
-      <scope id="982871510072656543" at="29,0,32,0" />
-      <scope id="982871510072656543" at="36,0,40,0" />
-      <scope id="982871510072656543" at="44,0,48,0" />
-      <scope id="982871510072664615" at="51,0,55,0">
-        <var name="node" id="982871510072664621" />
-      </scope>
-      <scope id="982871510072656543" at="49,122,55,14" />
-      <scope id="982871510072656598" at="49,122,55,14" />
-      <scope id="982871510072656543" at="48,0,57,0">
-        <var name="_context" id="982871510072656543" />
-        <var name="operationContext" id="982871510072656543" />
-      </scope>
-      <scope id="982871510072656543" at="42,56,57,10" />
-      <scope id="982871510072656543" at="40,0,59,0" />
-      <scope id="982871510072656543" at="33,98,60,22">
-        <var name="references" id="982871510072656543" />
-      </scope>
-      <scope id="982871510072656543" at="32,0,62,0" />
-      <unit id="982871510072663994" at="50,23,55,13" name="jetbrains.mps.lang.generator.constraints.SwitchMacro_Constraints$3" />
-      <unit id="982871510072656543" at="43,19,57,9" name="jetbrains.mps.lang.generator.constraints.SwitchMacro_Constraints$2" />
-      <unit id="982871510072656543" at="35,118,59,5" name="jetbrains.mps.lang.generator.constraints.SwitchMacro_Constraints$1" />
-      <unit id="982871510072656543" at="28,0,64,0" name="jetbrains.mps.lang.generator.constraints.SwitchMacro_Constraints" />
     </file>
   </root>
 </debug-info>

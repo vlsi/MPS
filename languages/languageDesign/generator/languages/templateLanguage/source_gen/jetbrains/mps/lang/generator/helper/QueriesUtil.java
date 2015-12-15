@@ -31,9 +31,6 @@ public final class QueriesUtil {
     if (macro == null) {
       return null;
     }
-    if (SNodeOperations.isInstanceOf(macro, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, "jetbrains.mps.lang.generator.structure.SwitchMacro"))) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(macro, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, "jetbrains.mps.lang.generator.structure.SwitchMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x11008e5fed8L, "sourceNodeQuery"));
-    }
     if (SNodeOperations.isInstanceOf(macro, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"))) {
       return SLinkOperations.getTarget(SNodeOperations.cast(macro, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, 0xda3dc6e5174759eL, "sourceNodeQuery"));
     }

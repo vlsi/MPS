@@ -19,7 +19,6 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myMappingConfiguration__BehaviorDescriptor = new MappingConfiguration__BehaviorDescriptor();
   private final BHDescriptor myTemplateFragment__BehaviorDescriptor = new TemplateFragment__BehaviorDescriptor();
   private final BHDescriptor myTemplateSwitch__BehaviorDescriptor = new TemplateSwitch__BehaviorDescriptor();
-  private final BHDescriptor mySwitchMacro__BehaviorDescriptor = new SwitchMacro__BehaviorDescriptor();
   private final BHDescriptor myCopySrcNodeMacro__BehaviorDescriptor = new CopySrcNodeMacro__BehaviorDescriptor();
   private final BHDescriptor myCopySrcListMacro__BehaviorDescriptor = new CopySrcListMacro__BehaviorDescriptor();
   private final BHDescriptor myIfMacro__BehaviorDescriptor = new IfMacro__BehaviorDescriptor();
@@ -88,7 +87,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[72];
+    myConceptBehaviorIds = new long[71];
     myConceptBehaviorIds[0] = 0xfd47e9f6f0L;
     myConceptBehaviorIds[1] = 0xfd47ed6742L;
     myConceptBehaviorIds[2] = 0xfd7f44d616L;
@@ -96,71 +95,70 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[4] = 0xff0bea0475L;
     myConceptBehaviorIds[5] = 0xff1b29b76cL;
     myConceptBehaviorIds[6] = 0x10313ed7688L;
-    myConceptBehaviorIds[7] = 0x10313f84dd6L;
-    myConceptBehaviorIds[8] = 0x10389b50fefL;
-    myConceptBehaviorIds[9] = 0x1038b0c2cc7L;
-    myConceptBehaviorIds[10] = 0x1047c1472deL;
-    myConceptBehaviorIds[11] = 0x1047ce009c3L;
-    myConceptBehaviorIds[12] = 0x10759372d78L;
-    myConceptBehaviorIds[13] = 0x107ce4fbf98L;
-    myConceptBehaviorIds[14] = 0x10fbbd5854aL;
-    myConceptBehaviorIds[15] = 0x10fbbd643c6L;
-    myConceptBehaviorIds[16] = 0x10fc0b05beaL;
-    myConceptBehaviorIds[17] = 0x10fc0b471fcL;
-    myConceptBehaviorIds[18] = 0x10fc0b64647L;
-    myConceptBehaviorIds[19] = 0x10fca296532L;
-    myConceptBehaviorIds[20] = 0x10fd54746dbL;
-    myConceptBehaviorIds[21] = 0x10fe3afb5ffL;
-    myConceptBehaviorIds[22] = 0x10fe3b1dbebL;
-    myConceptBehaviorIds[23] = 0x10fe485cc9bL;
-    myConceptBehaviorIds[24] = 0x10fe4879c6aL;
-    myConceptBehaviorIds[25] = 0x10feefdbd6eL;
-    myConceptBehaviorIds[26] = 0x10fef52f5efL;
-    myConceptBehaviorIds[27] = 0x10fef5bd603L;
-    myConceptBehaviorIds[28] = 0x10ff3acfa74L;
-    myConceptBehaviorIds[29] = 0x110138ccc4bL;
-    myConceptBehaviorIds[30] = 0x11013906056L;
-    myConceptBehaviorIds[31] = 0x11017244494L;
-    myConceptBehaviorIds[32] = 0x11094af4e18L;
-    myConceptBehaviorIds[33] = 0x112103dd1e8L;
-    myConceptBehaviorIds[34] = 0x113c2300eb1L;
-    myConceptBehaviorIds[35] = 0x113c23283bdL;
-    myConceptBehaviorIds[36] = 0x113d09e4da2L;
-    myConceptBehaviorIds[37] = 0x113db24924aL;
-    myConceptBehaviorIds[38] = 0x11621ab7715L;
-    myConceptBehaviorIds[39] = 0x11659655aa8L;
-    myConceptBehaviorIds[40] = 0x11b4d0ca830L;
-    myConceptBehaviorIds[41] = 0x11c0ad08d2aL;
-    myConceptBehaviorIds[42] = 0x11d455674bfL;
-    myConceptBehaviorIds[43] = 0x90726ff283822d4L;
-    myConceptBehaviorIds[44] = 0xda3dc6e51747593L;
-    myConceptBehaviorIds[45] = 0xe2b8adb3aba4b3bL;
-    myConceptBehaviorIds[46] = 0x1231e32ff7a958ceL;
-    myConceptBehaviorIds[47] = 0x1231e32ff7a958cfL;
-    myConceptBehaviorIds[48] = 0x14f7f8a311b8f14fL;
-    myConceptBehaviorIds[49] = 0x17e941d108ce3120L;
-    myConceptBehaviorIds[50] = 0x190d31fe6a12ebb4L;
-    myConceptBehaviorIds[51] = 0x300c02df884235d3L;
-    myConceptBehaviorIds[52] = 0x35a02f6bfc9806c4L;
-    myConceptBehaviorIds[53] = 0x35a02f6bfc9806c7L;
-    myConceptBehaviorIds[54] = 0x380132d742e95ce5L;
-    myConceptBehaviorIds[55] = 0x40be82ad503b3c88L;
-    myConceptBehaviorIds[56] = 0x42d71bfbeb1a07e5L;
-    myConceptBehaviorIds[57] = 0x42d71bfbeb1a5de7L;
-    myConceptBehaviorIds[58] = 0x42d71bfbeb1a5de8L;
-    myConceptBehaviorIds[59] = 0x45991daad6a3d34eL;
-    myConceptBehaviorIds[60] = 0x45991daad6a5c71aL;
-    myConceptBehaviorIds[61] = 0x473cc5baf8a1e7a4L;
-    myConceptBehaviorIds[62] = 0x65a7fcfba8f40208L;
-    myConceptBehaviorIds[63] = 0x65a7fcfba8f41ba9L;
-    myConceptBehaviorIds[64] = 0x671e792f3d934cacL;
-    myConceptBehaviorIds[65] = 0x67b585b44f4d9446L;
-    myConceptBehaviorIds[66] = 0x6cab949e66d5ae81L;
-    myConceptBehaviorIds[67] = 0x7b85dded0be53d6cL;
-    myConceptBehaviorIds[68] = 0x7d58bd9fd9b5e358L;
-    myConceptBehaviorIds[69] = 0x7d58bd9fd9b64463L;
-    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b6d3L;
-    myConceptBehaviorIds[71] = 0x7d58bd9fd9c8b8cbL;
+    myConceptBehaviorIds[7] = 0x10389b50fefL;
+    myConceptBehaviorIds[8] = 0x1038b0c2cc7L;
+    myConceptBehaviorIds[9] = 0x1047c1472deL;
+    myConceptBehaviorIds[10] = 0x1047ce009c3L;
+    myConceptBehaviorIds[11] = 0x10759372d78L;
+    myConceptBehaviorIds[12] = 0x107ce4fbf98L;
+    myConceptBehaviorIds[13] = 0x10fbbd5854aL;
+    myConceptBehaviorIds[14] = 0x10fbbd643c6L;
+    myConceptBehaviorIds[15] = 0x10fc0b05beaL;
+    myConceptBehaviorIds[16] = 0x10fc0b471fcL;
+    myConceptBehaviorIds[17] = 0x10fc0b64647L;
+    myConceptBehaviorIds[18] = 0x10fca296532L;
+    myConceptBehaviorIds[19] = 0x10fd54746dbL;
+    myConceptBehaviorIds[20] = 0x10fe3afb5ffL;
+    myConceptBehaviorIds[21] = 0x10fe3b1dbebL;
+    myConceptBehaviorIds[22] = 0x10fe485cc9bL;
+    myConceptBehaviorIds[23] = 0x10fe4879c6aL;
+    myConceptBehaviorIds[24] = 0x10feefdbd6eL;
+    myConceptBehaviorIds[25] = 0x10fef52f5efL;
+    myConceptBehaviorIds[26] = 0x10fef5bd603L;
+    myConceptBehaviorIds[27] = 0x10ff3acfa74L;
+    myConceptBehaviorIds[28] = 0x110138ccc4bL;
+    myConceptBehaviorIds[29] = 0x11013906056L;
+    myConceptBehaviorIds[30] = 0x11017244494L;
+    myConceptBehaviorIds[31] = 0x11094af4e18L;
+    myConceptBehaviorIds[32] = 0x112103dd1e8L;
+    myConceptBehaviorIds[33] = 0x113c2300eb1L;
+    myConceptBehaviorIds[34] = 0x113c23283bdL;
+    myConceptBehaviorIds[35] = 0x113d09e4da2L;
+    myConceptBehaviorIds[36] = 0x113db24924aL;
+    myConceptBehaviorIds[37] = 0x11621ab7715L;
+    myConceptBehaviorIds[38] = 0x11659655aa8L;
+    myConceptBehaviorIds[39] = 0x11b4d0ca830L;
+    myConceptBehaviorIds[40] = 0x11c0ad08d2aL;
+    myConceptBehaviorIds[41] = 0x11d455674bfL;
+    myConceptBehaviorIds[42] = 0x90726ff283822d4L;
+    myConceptBehaviorIds[43] = 0xda3dc6e51747593L;
+    myConceptBehaviorIds[44] = 0xe2b8adb3aba4b3bL;
+    myConceptBehaviorIds[45] = 0x1231e32ff7a958ceL;
+    myConceptBehaviorIds[46] = 0x1231e32ff7a958cfL;
+    myConceptBehaviorIds[47] = 0x14f7f8a311b8f14fL;
+    myConceptBehaviorIds[48] = 0x17e941d108ce3120L;
+    myConceptBehaviorIds[49] = 0x190d31fe6a12ebb4L;
+    myConceptBehaviorIds[50] = 0x300c02df884235d3L;
+    myConceptBehaviorIds[51] = 0x35a02f6bfc9806c4L;
+    myConceptBehaviorIds[52] = 0x35a02f6bfc9806c7L;
+    myConceptBehaviorIds[53] = 0x380132d742e95ce5L;
+    myConceptBehaviorIds[54] = 0x40be82ad503b3c88L;
+    myConceptBehaviorIds[55] = 0x42d71bfbeb1a07e5L;
+    myConceptBehaviorIds[56] = 0x42d71bfbeb1a5de7L;
+    myConceptBehaviorIds[57] = 0x42d71bfbeb1a5de8L;
+    myConceptBehaviorIds[58] = 0x45991daad6a3d34eL;
+    myConceptBehaviorIds[59] = 0x45991daad6a5c71aL;
+    myConceptBehaviorIds[60] = 0x473cc5baf8a1e7a4L;
+    myConceptBehaviorIds[61] = 0x65a7fcfba8f40208L;
+    myConceptBehaviorIds[62] = 0x65a7fcfba8f41ba9L;
+    myConceptBehaviorIds[63] = 0x671e792f3d934cacL;
+    myConceptBehaviorIds[64] = 0x67b585b44f4d9446L;
+    myConceptBehaviorIds[65] = 0x6cab949e66d5ae81L;
+    myConceptBehaviorIds[66] = 0x7b85dded0be53d6cL;
+    myConceptBehaviorIds[67] = 0x7d58bd9fd9b5e358L;
+    myConceptBehaviorIds[68] = 0x7d58bd9fd9b64463L;
+    myConceptBehaviorIds[69] = 0x7d58bd9fd9c8b6d3L;
+    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b8cbL;
   }
 
   @Deprecated
@@ -189,134 +187,132 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 6:
         return myTemplateSwitch__BehaviorDescriptor;
       case 7:
-        return mySwitchMacro__BehaviorDescriptor;
-      case 8:
         return myCopySrcNodeMacro__BehaviorDescriptor;
-      case 9:
+      case 8:
         return myCopySrcListMacro__BehaviorDescriptor;
-      case 10:
+      case 9:
         return myIfMacro__BehaviorDescriptor;
-      case 11:
+      case 10:
         return myLoopMacro__BehaviorDescriptor;
-      case 12:
+      case 11:
         return myMapSrcNodeMacro__BehaviorDescriptor;
-      case 13:
+      case 12:
         return myMapSrcListMacro__BehaviorDescriptor;
-      case 14:
+      case 13:
         return myCreateRootRule__BehaviorDescriptor;
-      case 15:
+      case 14:
         return myCreateRootRule_Condition__BehaviorDescriptor;
-      case 16:
+      case 15:
         return myBaseMappingRule_Condition__BehaviorDescriptor;
-      case 17:
+      case 16:
         return myTemplateFunctionParameter_sourceNode__BehaviorDescriptor;
-      case 18:
+      case 17:
         return myBaseMappingRule__BehaviorDescriptor;
-      case 19:
+      case 18:
         return myReduction_MappingRule__BehaviorDescriptor;
-      case 20:
+      case 19:
         return myRoot_MappingRule__BehaviorDescriptor;
-      case 21:
+      case 20:
         return myPropertyMacro_GetPropertyValue__BehaviorDescriptor;
-      case 22:
+      case 21:
         return myTemplateFunctionParameter_templatePropertyValue__BehaviorDescriptor;
-      case 23:
+      case 22:
         return myReferenceMacro_GetReferent__BehaviorDescriptor;
-      case 24:
+      case 23:
         return myTemplateFunctionParameter_templateReferent__BehaviorDescriptor;
-      case 25:
+      case 24:
         return myIfMacro_Condition__BehaviorDescriptor;
-      case 26:
+      case 25:
         return mySourceSubstituteMacro__BehaviorDescriptor;
-      case 27:
+      case 26:
         return mySourceSubstituteMacro_SourceNodesQuery__BehaviorDescriptor;
-      case 28:
+      case 27:
         return mySourceSubstituteMacro_SourceNodeQuery__BehaviorDescriptor;
-      case 29:
+      case 28:
         return myRuleConsequence__BehaviorDescriptor;
-      case 30:
+      case 29:
         return myTemplateDeclarationReference__BehaviorDescriptor;
-      case 31:
+      case 30:
         return myRootTemplateAnnotation__BehaviorDescriptor;
-      case 32:
+      case 31:
         return myMapSrcMacro_MapperFunction__BehaviorDescriptor;
-      case 33:
+      case 32:
         return myInlineTemplate_RuleConsequence__BehaviorDescriptor;
-      case 34:
+      case 33:
         return myTemplateFragment_ContextNodeQuery__BehaviorDescriptor;
-      case 35:
+      case 34:
         return myTemplateFunctionParameter_mainContextNode__BehaviorDescriptor;
-      case 36:
+      case 35:
         return myWeaving_MappingRule_ContextNodeQuery__BehaviorDescriptor;
-      case 37:
+      case 36:
         return myTemplateFunctionParameter_parentOutputNode__BehaviorDescriptor;
-      case 38:
+      case 37:
         return myIncludeMacro__BehaviorDescriptor;
-      case 39:
+      case 38:
         return myMappingScript_CodeBlock__BehaviorDescriptor;
-      case 40:
+      case 39:
         return myTemplateQueryBase__BehaviorDescriptor;
-      case 41:
+      case 40:
         return myDropRootRule_Condition__BehaviorDescriptor;
-      case 42:
+      case 41:
         return myMapSrcMacro_PostMapperFunction__BehaviorDescriptor;
-      case 43:
+      case 42:
         return myIGeneratorParameter__BehaviorDescriptor;
-      case 44:
+      case 43:
         return myTemplateSwitchMacro__BehaviorDescriptor;
-      case 45:
+      case 44:
         return myWeavingAnchorQuery__BehaviorDescriptor;
-      case 46:
+      case 45:
         return myInsertMacro__BehaviorDescriptor;
-      case 47:
+      case 46:
         return myInsertMacro_CreateNodeQuery__BehaviorDescriptor;
-      case 48:
+      case 47:
         return myTemplateCallMacro__BehaviorDescriptor;
-      case 49:
+      case 48:
         return myITemplateCall__BehaviorDescriptor;
-      case 50:
+      case 49:
         return myPatternReduction_MappingRule__BehaviorDescriptor;
-      case 51:
+      case 50:
         return myWeaveMacro__BehaviorDescriptor;
-      case 52:
+      case 51:
         return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
-      case 53:
+      case 52:
         return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
-      case 54:
+      case 53:
         return myTemplateArgumentQuery__BehaviorDescriptor;
-      case 55:
+      case 54:
         return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
-      case 56:
+      case 55:
         return myTemplateArgumentPatternRef__BehaviorDescriptor;
-      case 57:
+      case 56:
         return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
-      case 58:
+      case 57:
         return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
-      case 59:
+      case 58:
         return myVarMacro__BehaviorDescriptor;
-      case 60:
+      case 59:
         return myVarMacro_ValueQuery__BehaviorDescriptor;
-      case 61:
+      case 60:
         return myLabelMacro__BehaviorDescriptor;
-      case 62:
+      case 61:
         return myMarshalFunction__BehaviorDescriptor;
-      case 63:
+      case 62:
         return myUnmarshalFunction__BehaviorDescriptor;
-      case 64:
+      case 63:
         return myContextVariableProvider__BehaviorDescriptor;
-      case 65:
+      case 64:
         return myDropAttributeRule_Condition__BehaviorDescriptor;
-      case 66:
+      case 65:
         return myMappingConfiguration_Condition__BehaviorDescriptor;
-      case 67:
+      case 66:
         return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
-      case 68:
+      case 67:
         return myNodeIdentity__BehaviorDescriptor;
-      case 69:
+      case 68:
         return myTrivialNodeId__BehaviorDescriptor;
-      case 70:
+      case 69:
         return myModelIdentity__BehaviorDescriptor;
-      case 71:
+      case 70:
         return myTrivialModelId__BehaviorDescriptor;
       default:
         return null;

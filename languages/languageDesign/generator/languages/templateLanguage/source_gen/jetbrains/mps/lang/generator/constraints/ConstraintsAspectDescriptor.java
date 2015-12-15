@@ -44,9 +44,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x11013906056L) {
       return new TemplateDeclarationReference_Constraints();
     }
-    if (id == 0x10313f84dd6L) {
-      return new SwitchMacro_Constraints();
-    }
     if (id == 0x10313ed7688L) {
       return new TemplateSwitch_Constraints();
     }

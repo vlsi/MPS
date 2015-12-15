@@ -364,32 +364,6 @@
       <ref role="20lvS9" node="h1lLz4x" resolve="GeneratorMessage" />
     </node>
   </node>
-  <node concept="1TIwiD" id="gcjY4Rm">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="template switch macro (no arguments)" />
-    <property role="TrG5h" value="SwitchMacro" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="macro" />
-    <property role="34LRSv" value="$SWITCH$" />
-    <property role="1pbfSe" value="335040217" />
-    <ref role="1TJDcQ" node="gZJkJnJ" resolve="SourceSubstituteMacro" />
-    <node concept="M6xJ_" id="6_gUeuqOeQv" role="lGtFl">
-      <property role="Hh88m" value="" />
-    </node>
-    <node concept="1TJgyj" id="h08TvVo" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="sourceNodeQuery" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
-    </node>
-    <node concept="1TJgyj" id="gcjYjpy" role="1TKVEi">
-      <property role="20kJfa" value="templateSwitch" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="gcjVnq8" resolve="TemplateSwitch" />
-    </node>
-    <node concept="asaX9" id="3fNWR$crqAF" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="gcuGL8H">
     <property role="TrG5h" value="TemplateSwitchReference" />
     <property role="1pbfSe" value="515052336" />
@@ -1898,14 +1872,6 @@
     </node>
     <node concept="PrWs8" id="6suuiWX_9KY" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="6pv6r6HKtLr">
-    <property role="TrG5h" value="PersistGeneration" />
-    <property role="1pbfSe" value="337704460" />
-    <node concept="asaX9" id="2sTGsLqhuWR" role="lGtFl">
-      <property role="YLPcu" value="MPS 3.3" />
-      <property role="YLQ7P" value="This is provisional interface we've utilized to prototype x-model generation. Use drop attribute rules if need to avoid attributes being copied duirng transformation" />
     </node>
   </node>
   <node concept="1TIwiD" id="SFyHGUI$GV">

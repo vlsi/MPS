@@ -2688,60 +2688,6 @@
       <node concept="3clFbS" id="hEwJbaF" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="hEwJh0u">
-    <property role="3GE5qa" value="macro" />
-    <ref role="13h7C2" to="tpf8:gcjY4Rm" resolve="SwitchMacro" />
-    <node concept="13i0hz" id="hEwJh0v" role="13h7CS">
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getInputNodeTypeInsideOfMacro" />
-      <ref role="13i0hy" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
-      <node concept="3clFbS" id="hEwJh0w" role="3clF47">
-        <node concept="3Knyl0" id="hEwJh0x" role="3cqZAp">
-          <node concept="1Yb3XT" id="hEwJh0y" role="3KnVwV">
-            <property role="TrG5h" value="abc" />
-            <node concept="2DMOqp" id="hEwJh0z" role="1YbcFS">
-              <node concept="3Tqbb2" id="hEwJh0$" role="2DMOqq">
-                <node concept="3jrphi" id="hEwJh0_" role="lGtFl">
-                  <property role="2qtEX8" value="concept" />
-                  <property role="3jrwYG" value="concept" />
-                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="hEwJh0A" role="3Ko5Z1">
-            <node concept="2OqwBi" id="hEwJh0B" role="2Oq$k0">
-              <node concept="13iPFW" id="hEwJh0C" role="2Oq$k0" />
-              <node concept="3TrEf2" id="hEwJh0D" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpf8:h08TvVo" />
-              </node>
-            </node>
-            <node concept="3JvlWi" id="hEwJh0E" role="2OqNvi" />
-          </node>
-          <node concept="3clFbS" id="hEwJh0F" role="3KnTvU">
-            <node concept="3cpWs6" id="hEwJh0G" role="3cqZAp">
-              <node concept="2iQiJ2" id="hEwJh0H" role="3cqZAk">
-                <ref role="2iQyjY" node="hEwJh0_" resolve="#concept" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="hEwJh0I" role="3cqZAp">
-          <node concept="2OqwBi" id="hEwJh0J" role="3cqZAk">
-            <node concept="13iAh5" id="hEwJh0K" role="2Oq$k0" />
-            <node concept="2qgKlT" id="hEwJh0L" role="2OqNvi">
-              <ref role="37wK5l" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3THzug" id="hEwJh0M" role="3clF45" />
-      <node concept="3Tm1VV" id="hJrm0xu" role="1B3o_S" />
-    </node>
-    <node concept="13hLZK" id="hEwJh0N" role="13h7CW">
-      <node concept="3clFbS" id="hEwJh0O" role="2VODD2" />
-    </node>
-  </node>
   <node concept="13h7C7" id="7KX5Yh0wLo$">
     <property role="3GE5qa" value="template" />
     <ref role="13h7C2" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />

@@ -190,7 +190,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
       macroImplMap.put(RuleUtil.concept_IfMacro, 8);
       macroImplMap.put(RuleUtil.concept_MapSrcNodeMacro, 9);
       macroImplMap.put(RuleUtil.concept_MapSrcListMacro, 10);
-      macroImplMap.put(RuleUtil.concept_SwitchMacro, 11);
       macroImplMap.put(RuleUtil.concept_TemplateSwitchMacro, 12);
       macroImplMap.put(RuleUtil.concept_IncludeMacro, 13);
       macroImplMap.put(RuleUtil.concept_TemplateCallMacro, 14);
@@ -216,8 +215,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         case 8 : return new IfMacro(macro, templateNode, next, myTemplateProcessor);
         case 9 : return new MapSrcMacros(macro, templateNode, next, myTemplateProcessor, true);
         case 10 : return new MapSrcMacros(macro, templateNode, next, myTemplateProcessor, false);
-        case 11 : return new SwitchMacro(macro, templateNode, next, myTemplateProcessor);
-        case 12 : return new SwitchWithArgMacro(macro, templateNode, next, myTemplateProcessor);
+        case 12 : return new SwitchMacro(macro, templateNode, next, myTemplateProcessor);
         case 13 : return new IncludeMacro(macro, templateNode, next, myTemplateProcessor);
         case 14 : return new CallMacro(macro, templateNode, next, myTemplateProcessor);
         case 15 : return new TraceMacro(macro, templateNode, next, myTemplateProcessor);
@@ -647,19 +645,31 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
   }
 
-  // Old $SWITCH$ without arguments and new $SWITCH$ that allows arguments
+  // $SWITCH$
   private static class SwitchMacro extends MacroWithInput {
+    private volatile TemplateCall myCallProcessor;
 
     protected SwitchMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
     }
 
     protected SNode getTemplateSwitch() {
-      return RuleUtil.getSwitchMacro_TemplateSwitch(macro);
+      return RuleUtil.getTemplateSwitchMacro_TemplateSwitch(macro);
     }
+
     protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
-      return templateContext;
+      TemplateCall tc = myCallProcessor;
+      if (tc == null) {
+        tc = new TemplateCall(macro);
+        if (tc.argumentsMismatch()) {
+          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
+          // fall-through
+        }
+        myCallProcessor = tc;
+      }
+      return tc.prepareCallContext(templateContext);
     }
+
     @NotNull
     @Override
     public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
@@ -669,7 +679,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         throw new TemplateProcessingFailureException(macro, "error processing $SWITCH$ - bad TemplateSwitch reference",
             GeneratorUtil.describeInput(templateContext));
       }
-      final SNodeReference switchPtr = new jetbrains.mps.smodel.SNodePointer(templateSwitch);
+      final SNodeReference switchPtr = templateSwitch.getReference();
       SNode newInputNode = getNewInputNode(templateContext);
       if (newInputNode == null) {
         TemplateSwitchMapping tswitch = myTemplateProcessor.getGenerator().getSwitch(switchPtr);
@@ -678,8 +688,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
         }
         return Collections.emptyList(); // skip template
       }
-
-      boolean inputChanged = (newInputNode != templateContext.getInput());
 
       final TemplateContext switchContext = prepareContext(templateContext).subContext(newInputNode);
 
@@ -693,41 +701,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
       } catch (DismissTopMappingRuleException e) {
         throw e;
       } catch (GenerationException e) {
-        getLogger().error(switchPtr, "internal error in switch.applyDefault: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
+        getLogger().error(switchPtr, "internal error in switch: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
       }
       if (collection == null) {
+        // XXX why tryDefault is part of trySwitch, and not here? For the sake of generated code, perhaps (not to generate conditions 'if nothing generated')?
         // no switch-case found for the inputNode - continue with templateNode under the $switch$
         // use initial context, not the one prepared (could be filled with switch arguments)
         collection = nextMacro(templateContext.subContext(newInputNode));
       }
       return new ArrayList<SNode>(collection);
-    }
-  }
-
-  // new $SWITCH$, with args
-  private static class SwitchWithArgMacro extends SwitchMacro {
-    private volatile TemplateCall myCallProcessor;
-    protected SwitchWithArgMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
-      super(macro, templateNode, next, templateProcessor);
-    }
-
-    @Override
-    protected SNode getTemplateSwitch() {
-      return RuleUtil.getTemplateSwitchMacro_TemplateSwitch(macro);
-    }
-
-    @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
-      TemplateCall tc = myCallProcessor;
-      if (tc == null) {
-        tc = new TemplateCall(macro);
-        if (tc.argumentsMismatch()) {
-          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
-          // fall-through
-        }
-        myCallProcessor = tc;
-      }
-      return tc.prepareCallContext(templateContext);
     }
   }
 
