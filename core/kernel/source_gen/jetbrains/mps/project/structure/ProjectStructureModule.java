@@ -100,6 +100,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     public void modelRemoved(SModule module, SModelReference reference) {
       refreshModule(module, false);
     }
+
+    @Override
+    public void moduleChanged(SModule module) {
+      refreshModule(module, false);
+    }
   };
 
   private final SRepositoryListener myListener = new SRepositoryListenerBase() {

@@ -590,6 +590,37 @@
                 <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
               </node>
             </node>
+            <node concept="2tJIrI" id="DvbFOWcogV" role="jymVt" />
+            <node concept="3clFb_" id="DvbFOWcnrZ" role="jymVt">
+              <property role="1EzhhJ" value="false" />
+              <property role="TrG5h" value="moduleChanged" />
+              <property role="DiZV1" value="false" />
+              <property role="od$2w" value="false" />
+              <node concept="3Tm1VV" id="DvbFOWcns0" role="1B3o_S" />
+              <node concept="3cqZAl" id="DvbFOWcns2" role="3clF45" />
+              <node concept="37vLTG" id="DvbFOWcns3" role="3clF46">
+                <property role="TrG5h" value="module" />
+                <node concept="3uibUv" id="DvbFOWcns4" role="1tU5fm">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="DvbFOWcns6" role="3clF47">
+                <node concept="3clFbF" id="DvbFOWcnH1" role="3cqZAp">
+                  <node concept="1rXfSq" id="DvbFOWcnH2" role="3clFbG">
+                    <ref role="37wK5l" node="4fSpAVAUjwn" resolve="refreshModule" />
+                    <node concept="37vLTw" id="DvbFOWcnH3" role="37wK5m">
+                      <ref role="3cqZAo" node="DvbFOWcns3" resolve="module" />
+                    </node>
+                    <node concept="3clFbT" id="DvbFOWcnH4" role="37wK5m">
+                      <property role="3clFbU" value="false" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2AHcQZ" id="DvbFOWcns7" role="2AJF6D">
+                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+              </node>
+            </node>
             <node concept="3Tm1VV" id="4fSpAVAUjva" role="1B3o_S" />
           </node>
         </node>
