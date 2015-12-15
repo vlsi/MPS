@@ -23,12 +23,9 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.migration.global.MigrationPropertiesManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -51,7 +48,6 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
-import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;
@@ -88,8 +84,6 @@ public final class MPSCore extends ComponentPluginBase {
     myPersistenceFacade = init(new PersistenceRegistry());
     init(new FacetsRegistry());
     init(new ConceptRepository());
-    init(new FindUsagesManager());
-    init(new MigrationPropertiesManager());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());
@@ -110,7 +104,6 @@ public final class MPSCore extends ComponentPluginBase {
     init(new QueryMethodGenerated(myClassLoaderManager));
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
-    init(new TextGenRegistry(myLanguageRegistry));
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
@@ -120,7 +113,6 @@ public final class MPSCore extends ComponentPluginBase {
     init(new CopyPasteManager(myClassLoaderManager));
     init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(myModuleRepository, cleanupManager));
-    init(new DataFlowManager(myModuleRepository, myClassLoaderManager));
 
     init(new ResolverComponent());
     init(new ValidationSettings());

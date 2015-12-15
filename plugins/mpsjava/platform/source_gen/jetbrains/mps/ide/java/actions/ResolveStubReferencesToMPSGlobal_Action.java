@@ -8,8 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -33,14 +31,6 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }
@@ -49,7 +39,7 @@ public class ResolveStubReferencesToMPSGlobal_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new StubResolver().resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    new StubResolver(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()).resolveInProject(event.getData(MPSCommonDataKeys.MPS_PROJECT));
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 }

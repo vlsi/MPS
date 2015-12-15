@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.testbench.TestModuleFactoryBase;
@@ -40,7 +41,7 @@ public abstract class ProjectTestBase extends BaseMpsTest {
   @Test
   public void addModule() {
     Project project = getEnvironment().createEmptyProject();
-    myTestModuleFactory = new TestModuleFactoryBase(getEnvironment().getPlatform().getCore().getModuleRepository());
+    myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFileByPath(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
     project.addModule(newModule);
@@ -51,7 +52,7 @@ public abstract class ProjectTestBase extends BaseMpsTest {
   @Test
   public void removeModule() {
     Project project = getEnvironment().createEmptyProject();
-    myTestModuleFactory = new TestModuleFactoryBase(getEnvironment().getPlatform().getCore().getModuleRepository());
+    myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFileByPath(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
     project.addModule(newModule);

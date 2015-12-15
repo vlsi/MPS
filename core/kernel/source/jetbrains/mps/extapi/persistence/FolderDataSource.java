@@ -125,7 +125,9 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   public long getTimestamp() {
     long max = myLastAddRemove;
     for (IFile file : getStreams()) {
-      if (!isIncluded(file)) continue;
+      if (!isIncluded(file)) {
+        continue;
+      }
 
       long timestamp = file.lastModified();
       if (timestamp > max) {
@@ -159,6 +161,23 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   @Override
   public IFile getFileToListen() {
     return myFolder;
+  }
+
+  @Override
+  public void delete() {
+    if (isReadOnly()) {
+      return;
+    }
+    ArrayList<IFile> toDelete = new ArrayList<IFile>();
+    for (IFile file : getStreams()) {
+      if (isIncluded(file)) {
+        toDelete.add(file);
+      }
+    }
+    for (IFile file : toDelete) {
+      file.delete();
+    }
+    myLastAddRemove = -1;
   }
 
   @Override

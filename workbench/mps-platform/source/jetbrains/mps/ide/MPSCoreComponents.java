@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,38 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.migration.MPSMigration;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.UndoHandler;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
- * Evgeny Gryaznov, Sep 3, 2010
+ * Integration of MPS core into IDEA platform. Initializes relevant parts of MPS core,
+ * gives access to {@link jetbrains.mps.components.CoreComponent core components}.
+ *
+ * Is responsible to instantiate components that didn't fit into core but otherwise essential for MPS operation
+ * (like BaseLanguage and Migration at the moment), though this is questionable.
+ *
+ * IMPORTANT: please do not expose 'umbrella' {@link jetbrains.mps.components.ComponentPlugin component plugins} here,
+ * just specific {@link jetbrains.mps.components.CoreComponent}, to avoid excessive dependencies in classpath (e.g. not only this module
+ * depends on [mps-core], but also any other, like VCS, would). Once generic mechanism to access core components is in place, this class
+ * would cease to depend from [mps-core] as well.
  */
 public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
+  private MPSMigration myMigration;
   private Platform myPlatform;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider,
@@ -53,10 +66,16 @@ public class MPSCoreComponents implements ApplicationComponent {
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
     myBaseLanguage = new MPSBaseLanguage();
     myBaseLanguage.init();
+    // MPSMigration moved here from MPSCore as it is functionality built on top of core, rather than part of it.
+    // It has not been moved to Platform (PlatformBase along with generator and textgen) and lives here as its use from
+    // ant tasks bound to IdeaEnvironment, which has this ApplicationComponent initialized.
+    myMigration = new MPSMigration();
+    myMigration.init();
   }
 
   @Override
   public void disposeComponent() {
+    myMigration.dispose();
     myBaseLanguage.dispose();
     myPlatform.dispose();
   }
@@ -67,23 +86,35 @@ public class MPSCoreComponents implements ApplicationComponent {
   }
 
   @NotNull
-  public MPSCore getMPSCore() {
-    return myPlatform.getCore();
+  public PersistenceFacade getPersistenceFacade() {
+    return myPlatform.findComponent(PersistenceRegistry.class);
   }
 
+  @NotNull
+  public LibraryInitializer getLibraryInitializer() {
+    return myPlatform.findComponent(LibraryInitializer.class);
+  }
+
+  @NotNull
   public ClassLoaderManager getClassLoaderManager() {
-    return getMPSCore().getClassLoaderManager();
+    return myPlatform.findComponent(ClassLoaderManager.class);
   }
 
+  /**
+   * @deprecated it's our implementation part, shall drop once no uses
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public MPSModuleRepository getModuleRepository() {
-    return getMPSCore().getModuleRepository();
+    return myPlatform.findComponent(MPSModuleRepository.class);
   }
 
+  /**
+   * @deprecated it's our implementation part, shall drop once no uses
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public GlobalSModelEventsManager getGlobalSModelEventsManager() {
     return GlobalSModelEventsManager.getInstance();
-  }
-
-  public LanguageHierarchyCache getLanguageHierarchyCache() {
-    return LanguageHierarchyCache.getInstance();
   }
 }

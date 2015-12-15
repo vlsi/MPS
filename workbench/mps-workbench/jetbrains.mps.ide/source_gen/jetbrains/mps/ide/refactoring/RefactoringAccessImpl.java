@@ -51,7 +51,7 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   }
   @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-    RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
+    RefactoringView refactoringView = refactoringContext.getSelectedProject().getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
   }
 }

@@ -127,6 +127,13 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     }
   }
 
+  @Override
+  public void delete() {
+    if (myFile.exists() && !isReadOnly()) {
+      myFile.delete();
+    }
+  }
+
   protected void stopListening() {
     FileSystem.getInstance().removeListener(this);
   }

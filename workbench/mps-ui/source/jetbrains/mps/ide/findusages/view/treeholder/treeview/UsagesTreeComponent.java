@@ -24,6 +24,7 @@ import com.intellij.ide.TreeExpander;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -139,7 +140,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     myPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
     myPathProvider.add(PathItemRole.ROLE_TARGET_NODE);
 
-    myViewToolbar = new ViewToolbar();
+    myViewToolbar = new ViewToolbar(myTree);
     myActionsToolbar = new ActionsToolbar();
 
     myDefaultOptions = defaultOptions;
@@ -295,11 +296,13 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   }
 
   class ViewToolbar extends JPanel {
+    private final JComponent myTargetComponent;
     private PathOptionsToolbar myPathOptionsToolbar;
     private ViewOptionsToolbar myViewOptionsToolbar;
     private JComponent myToolbar = null;
 
-    public ViewToolbar() {
+    public ViewToolbar(JComponent targetComponent) {
+      myTargetComponent = targetComponent;
       myPathOptionsToolbar = new PathOptionsToolbar();
       myViewOptionsToolbar = new ViewOptionsToolbar();
 
@@ -316,7 +319,9 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
       actionGroup.addAll(myPathOptionsToolbar.getActions());
       actionGroup.addSeparator();
       actionGroup.addAll(myViewOptionsToolbar.getActions());
-      myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false).getComponent();
+      ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
+      actionToolbar.setTargetComponent(myTargetComponent);
+      myToolbar = actionToolbar.getComponent();
       add(myToolbar);
     }
 

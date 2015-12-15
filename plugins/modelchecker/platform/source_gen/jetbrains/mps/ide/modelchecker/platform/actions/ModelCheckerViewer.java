@@ -73,7 +73,7 @@ public class ModelCheckerViewer extends JPanel {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         ModelCheckerViewer.this.close();
       }
-    }, new PinToolwindowTabAction());
+    }, PinToolwindowTabAction.getPinAction());
     myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 

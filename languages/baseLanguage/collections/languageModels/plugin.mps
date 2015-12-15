@@ -59,6 +59,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -159,9 +160,11 @@
       <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
+        <child id="1235747002942" name="parameter" index="2SgHGx" />
       </concept>
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
+        <child id="1199542501692" name="parameterType" index="1ajw0F" />
       </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -189,6 +192,7 @@
         <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -260,16 +264,22 @@
       <property role="TrG5h" value="providers" />
       <node concept="3Tm6S6" id="4SIS$II3IRk" role="1B3o_S" />
       <node concept="_YKpA" id="4SIS$II3IRl" role="1tU5fm">
-        <node concept="1ajhzC" id="4SIS$II3IRm" role="_ZDj9">
-          <node concept="2I9FWS" id="4SIS$II3IRn" role="1ajl9A">
+        <node concept="9cv3F" id="6j36NaoDy$X" role="_ZDj9">
+          <node concept="3uibUv" id="6j36NaoDy$Y" role="1ajw0F">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+          <node concept="2I9FWS" id="6j36NaoDy$Z" role="1ajl9A">
             <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
           </node>
         </node>
       </node>
       <node concept="2ShNRf" id="4SIS$II3IRo" role="33vP2m">
         <node concept="Tc6Ow" id="4SIS$II3IRp" role="2ShVmc">
-          <node concept="1ajhzC" id="4SIS$II3IRq" role="HW$YZ">
-            <node concept="2I9FWS" id="4SIS$II3IRr" role="1ajl9A">
+          <node concept="9cv3F" id="6j36NaoDz5t" role="HW$YZ">
+            <node concept="3uibUv" id="6j36NaoDz5u" role="1ajw0F">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2I9FWS" id="6j36NaoDz5v" role="1ajl9A">
               <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
             </node>
           </node>
@@ -296,8 +306,11 @@
           </node>
           <node concept="3cpWsn" id="2kuIGEWu5ev" role="1Duv9x">
             <property role="TrG5h" value="provider" />
-            <node concept="1ajhzC" id="2kuIGEWu5ew" role="1tU5fm">
-              <node concept="2I9FWS" id="2kuIGEWu5ex" role="1ajl9A">
+            <node concept="9cv3F" id="6j36NaoDy_l" role="1tU5fm">
+              <node concept="3uibUv" id="6j36NaoDy_m" role="1ajw0F">
+                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+              </node>
+              <node concept="2I9FWS" id="6j36NaoDy_n" role="1ajl9A">
                 <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
               </node>
             </node>
@@ -311,85 +324,6 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="4SIS$II3IUY" role="1B3o_S" />
-    </node>
-    <node concept="3clFb_" id="4SIS$II3IRs" role="jymVt">
-      <property role="TrG5h" value="allCustomContainerDeclarations" />
-      <node concept="3Tm1VV" id="4SIS$II3IRt" role="1B3o_S" />
-      <node concept="3clFbS" id="4SIS$II3IRu" role="3clF47">
-        <node concept="3cpWs8" id="4SIS$II3IRv" role="3cqZAp">
-          <node concept="3cpWsn" id="4SIS$II3IRw" role="3cpWs9">
-            <property role="TrG5h" value="allCustomContainers" />
-            <node concept="A3Dl8" id="4SIS$II3IRx" role="1tU5fm">
-              <node concept="3Tqbb2" id="4SIS$II3IRy" role="A3Ik2">
-                <ref role="ehGHo" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4SIS$II3IRz" role="33vP2m">
-              <node concept="Xjq3P" id="4SIS$II3IR$" role="2Oq$k0" />
-              <node concept="liA8E" id="4SIS$II3IR_" role="2OqNvi">
-                <ref role="37wK5l" node="4SIS$II3IUo" resolve="primAllCustomContainers" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4SIS$II3IRA" role="3cqZAp">
-          <node concept="3cpWsn" id="4SIS$II3IRB" role="3cpWs9">
-            <property role="TrG5h" value="res" />
-            <node concept="2I9FWS" id="4SIS$II3IRC" role="1tU5fm">
-              <ref role="2I9WkF" to="tp2q:5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
-            </node>
-            <node concept="2ShNRf" id="4SIS$II3IRD" role="33vP2m">
-              <node concept="2T8Vx0" id="4SIS$II3IRE" role="2ShVmc">
-                <node concept="2I9FWS" id="4SIS$II3IRF" role="2T96Bj">
-                  <ref role="2I9WkF" to="tp2q:5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4SIS$II3IRG" role="3cqZAp">
-          <node concept="2OqwBi" id="4SIS$II3IRH" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT_dv" role="2Oq$k0">
-              <ref role="3cqZAo" node="4SIS$II3IRB" resolve="res" />
-            </node>
-            <node concept="X8dFx" id="4SIS$II3IRJ" role="2OqNvi">
-              <node concept="2OqwBi" id="4SIS$II3IRK" role="25WWJ7">
-                <node concept="37vLTw" id="3GM_nagTt6U" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4SIS$II3IRw" resolve="allCustomContainers" />
-                </node>
-                <node concept="3goQfb" id="4SIS$II3IRM" role="2OqNvi">
-                  <node concept="1bVj0M" id="4SIS$II3IRN" role="23t8la">
-                    <node concept="3clFbS" id="4SIS$II3IRO" role="1bW5cS">
-                      <node concept="3clFbF" id="4SIS$II3IRP" role="3cqZAp">
-                        <node concept="2OqwBi" id="4SIS$II3IRQ" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxgmHzi" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4SIS$II3IRT" resolve="cc" />
-                          </node>
-                          <node concept="3Tsc0h" id="4SIS$II3IRS" role="2OqNvi">
-                            <ref role="3TtcxE" to="tp2q:5i_Pov1WWxe" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="4SIS$II3IRT" role="1bW2Oz">
-                      <property role="TrG5h" value="cc" />
-                      <node concept="2jxLKc" id="4SIS$II3IRU" role="1tU5fm" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4SIS$II3IRV" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTzLr" role="3clFbG">
-            <ref role="3cqZAo" node="4SIS$II3IRB" resolve="res" />
-          </node>
-        </node>
-      </node>
-      <node concept="2I9FWS" id="4SIS$II3IRX" role="3clF45">
-        <ref role="2I9WkF" to="tp2q:5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
-      </node>
     </node>
     <node concept="3clFb_" id="4SIS$II3IRY" role="jymVt">
       <property role="TrG5h" value="accessibleCustomContainerDeclarations" />
@@ -495,6 +429,16 @@
                   <node concept="Xjq3P" id="4SIS$II3ISD" role="2Oq$k0" />
                   <node concept="liA8E" id="4SIS$II3ISE" role="2OqNvi">
                     <ref role="37wK5l" node="4SIS$II3IUo" resolve="primAllCustomContainers" />
+                    <node concept="2OqwBi" id="6j36NaoDBg2" role="37wK5m">
+                      <node concept="2JrnkZ" id="6j36NaoDAsJ" role="2Oq$k0">
+                        <node concept="37vLTw" id="6j36NaoDze9" role="2JrQYb">
+                          <ref role="3cqZAo" node="4SIS$II3IRZ" resolve="fromModel" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6j36NaoDCm$" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -682,8 +626,11 @@
           <node concept="3cpWsn" id="4SIS$II3IUu" role="3cpWs9">
             <property role="TrG5h" value="providersCopy" />
             <node concept="_YKpA" id="4SIS$II3IUv" role="1tU5fm">
-              <node concept="1ajhzC" id="4SIS$II3IUw" role="_ZDj9">
-                <node concept="2I9FWS" id="4SIS$II3IUx" role="1ajl9A">
+              <node concept="9cv3F" id="6j36NaoDE1H" role="_ZDj9">
+                <node concept="3uibUv" id="6j36NaoDE1I" role="1ajw0F">
+                  <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                </node>
+                <node concept="2I9FWS" id="6j36NaoDE1J" role="1ajl9A">
                   <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
                 </node>
               </node>
@@ -697,16 +644,19 @@
               <node concept="37vLTI" id="4SIS$II3IUA" role="3clFbG">
                 <node concept="2ShNRf" id="4SIS$II3IUB" role="37vLTx">
                   <node concept="Tc6Ow" id="4SIS$II3IUC" role="2ShVmc">
-                    <node concept="1ajhzC" id="4SIS$II3IUD" role="HW$YZ">
-                      <node concept="2I9FWS" id="4SIS$II3IUE" role="1ajl9A">
-                        <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
-                      </node>
-                    </node>
                     <node concept="2OqwBi" id="4SIS$II3IUF" role="I$8f6">
                       <node concept="2OwXpG" id="4SIS$II3IUG" role="2OqNvi">
                         <ref role="2Oxat5" node="4SIS$II3IRj" resolve="providers" />
                       </node>
                       <node concept="Xjq3P" id="4SIS$II3IUH" role="2Oq$k0" />
+                    </node>
+                    <node concept="9cv3F" id="6j36NaoDDLh" role="HW$YZ">
+                      <node concept="3uibUv" id="6j36NaoDDLi" role="1ajw0F">
+                        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                      </node>
+                      <node concept="2I9FWS" id="6j36NaoDDLj" role="1ajl9A">
+                        <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -730,6 +680,9 @@
                       <node concept="37vLTw" id="2BHiRxglwyO" role="2SgG2M">
                         <ref role="3cqZAo" node="4SIS$II3IUS" resolve="prov" />
                       </node>
+                      <node concept="37vLTw" id="6j36NaoDFmi" role="2SgHGx">
+                        <ref role="3cqZAo" node="6j36NaoDvkO" resolve="repo" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -740,6 +693,13 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6j36NaoDvkO" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="6j36NaoDvkN" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
     </node>
@@ -807,6 +767,9 @@
     <property role="20vvCb" value="customContainers" />
     <property role="TrG5h" value="customContainers" />
     <node concept="9cv3F" id="3Gulco4rgKr" role="luc8K">
+      <node concept="3uibUv" id="6j36NaoDty2" role="1ajw0F">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
       <node concept="2I9FWS" id="3Gulco4rgKs" role="1ajl9A">
         <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
       </node>
@@ -835,22 +798,13 @@
       <node concept="3clFbS" id="3IvUXkeQMeb" role="3clF47">
         <node concept="3cpWs6" id="4SIS$II2Lfb" role="3cqZAp">
           <node concept="1bVj0M" id="4SIS$II2Lfc" role="3cqZAk">
-            <node concept="3clFbS" id="4SIS$II2Lfd" role="1bW5cS">
-              <node concept="3cpWs8" id="4SIS$II2Lfe" role="3cqZAp">
-                <node concept="3cpWsn" id="4SIS$II2Lff" role="3cpWs9">
-                  <property role="TrG5h" value="res" />
-                  <node concept="2I9FWS" id="4SIS$II2Lfg" role="1tU5fm">
-                    <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
-                  </node>
-                  <node concept="2ShNRf" id="4SIS$II2Lfh" role="33vP2m">
-                    <node concept="2T8Vx0" id="4SIS$II2Lfi" role="2ShVmc">
-                      <node concept="2I9FWS" id="4SIS$II2Lfj" role="2T96Bj">
-                        <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+            <node concept="37vLTG" id="6j36NaoDHJC" role="1bW2Oz">
+              <property role="TrG5h" value="repo" />
+              <node concept="3uibUv" id="6j36NaoDHL1" role="1tU5fm">
+                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
               </node>
+            </node>
+            <node concept="3clFbS" id="4SIS$II2Lfd" role="1bW5cS">
               <node concept="3SKdUt" id="4SIS$II2Lfk" role="3cqZAp">
                 <node concept="3SKdUq" id="4SIS$II2Lfl" role="3SKWNk">
                   <property role="3SKdUp" value="Find the model(s) with custom container declarations" />
@@ -864,41 +818,22 @@
                     <property role="BaBD8" value="jetbrains.mps.baseLanguage.collections.custom" />
                     <property role="BaHAW" value="jetbrains.mps.baseLanguage.collections.custom" />
                     <property role="BaGAP" value="" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbJ" id="4SIS$II2Lf$" role="3cqZAp">
-                <node concept="3clFbS" id="4SIS$II2Lf_" role="3clFbx">
-                  <node concept="3clFbF" id="4SIS$II2LfA" role="3cqZAp">
-                    <node concept="2OqwBi" id="4SIS$II2LfB" role="3clFbG">
-                      <node concept="37vLTw" id="3GM_nagT_zt" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4SIS$II2Lff" resolve="res" />
-                      </node>
-                      <node concept="X8dFx" id="4SIS$II2LfD" role="2OqNvi">
-                        <node concept="2OqwBi" id="4SIS$II2LfE" role="25WWJ7">
-                          <node concept="37vLTw" id="3GM_nagT$Vh" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4SIS$II2Lfv" resolve="mdl" />
-                          </node>
-                          <node concept="2SmgA7" id="4SIS$II2LfG" role="2OqNvi">
-                            <node concept="chp4Y" id="1jixkkC_WJ5" role="1dBWTz">
-                              <ref role="cht4Q" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="6j36NaoDHO6" role="up2gk">
+                      <ref role="3cqZAo" node="6j36NaoDHJC" resolve="repo" />
                     </node>
                   </node>
                 </node>
-                <node concept="3y3z36" id="4SIS$II2LfH" role="3clFbw">
-                  <node concept="10Nm6u" id="4SIS$II2LfI" role="3uHU7w" />
-                  <node concept="37vLTw" id="3GM_nagTrXa" role="3uHU7B">
+              </node>
+              <node concept="3cpWs6" id="6j36NaoDJGl" role="3cqZAp">
+                <node concept="2OqwBi" id="4SIS$II2LfE" role="3cqZAk">
+                  <node concept="37vLTw" id="3GM_nagT$Vh" role="2Oq$k0">
                     <ref role="3cqZAo" node="4SIS$II2Lfv" resolve="mdl" />
                   </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="4SIS$II2LfK" role="3cqZAp">
-                <node concept="37vLTw" id="3GM_nagTvch" role="3clFbG">
-                  <ref role="3cqZAo" node="4SIS$II2Lff" resolve="res" />
+                  <node concept="2SmgA7" id="4SIS$II2LfG" role="2OqNvi">
+                    <node concept="chp4Y" id="1jixkkC_WJ5" role="1dBWTz">
+                      <ref role="cht4Q" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

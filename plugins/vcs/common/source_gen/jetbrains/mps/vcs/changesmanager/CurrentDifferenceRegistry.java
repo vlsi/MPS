@@ -22,7 +22,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -31,6 +32,7 @@ import jetbrains.mps.smodel.ModelsEventsCollector;
 import com.intellij.util.containers.MultiMap;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import java.util.ArrayList;
@@ -100,7 +102,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   public void updateLoadedModels() {
-    for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+    for (SModel md : CollectionSequence.fromCollection(new ModuleRepositoryFacade(myMpsProject).getAllModels())) {
       if (md instanceof EditableSModel && !(md.isReadOnly())) {
         updateModel(md);
       }

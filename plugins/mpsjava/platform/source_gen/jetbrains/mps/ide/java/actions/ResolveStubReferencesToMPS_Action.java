@@ -6,17 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.java.util.StubResolver;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 
 public class ResolveStubReferencesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,15 +30,13 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
       return false;
     }
     {
-      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
-      MapSequence.fromMap(_params).put("models", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
       if (p == null) {
         return false;
       }
@@ -52,10 +45,6 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-    Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
-    for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
-      SetSequence.fromSet(modulesToReload).addElement(model.getModule());
-    }
+    new StubResolver(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()).resolveInModels(event.getData(MPSCommonDataKeys.MODELS));
   }
 }

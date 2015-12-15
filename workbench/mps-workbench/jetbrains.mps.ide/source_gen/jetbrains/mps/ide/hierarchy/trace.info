@@ -31,7 +31,7 @@
       <node id="5797068448049410897" at="47,0,48,0" concept="5" trace="myComponent" />
       <node id="5797068448049410912" at="48,0,49,0" concept="5" trace="myScrollPane" />
       <node id="3684544815287378997" at="49,0,50,0" concept="5" trace="myOccurenceNavigator" />
-      <node id="4415621581132875728" at="50,83,51,67" concept="15" />
+      <node id="4415621581132875728" at="50,83,51,68" concept="15" />
       <node id="5102596871687579646" at="53,37,54,55" concept="11" />
       <node id="1122870626408957023" at="58,34,59,13" concept="11" />
       <node id="1466595955268239431" at="60,5,61,30" concept="4" />
@@ -147,7 +147,7 @@
       <node id="3684544815287379002" at="65,49,87,6" concept="4" />
       <node id="1122870626408956960" at="63,0,95,0" concept="9" trace="createTool#()V" />
       <node id="5797068448049411013" at="116,0,178,0" concept="9" trace="createButtonsGroup#()Lcom/intellij/openapi/actionSystem/DefaultActionGroup;" />
-      <scope id="5797068448049410926" at="50,83,51,67" />
+      <scope id="5797068448049410926" at="50,83,51,68" />
       <scope id="5102596871687530641" at="53,37,54,55" />
       <scope id="1122870626408956995" at="58,34,59,13" />
       <scope id="3684544815287379965" at="70,51,71,22" />

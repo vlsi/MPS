@@ -6,16 +6,23 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -36,8 +43,8 @@ public class CalcSNodeStatistic_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -50,21 +57,47 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     final Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
     final Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
     final Wrappers._int zeros = new Wrappers._int(0);
+    ProgressManager.getInstance().run(new Task.Modal(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), "Calculate statistic", true) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitorAdapter progress = new ProgressMonitorAdapter(indicator);
+        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators();
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("Modules: " + Sequence.fromIterable(modules).count());
+            }
+            Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+              public Iterable<SModel> translate(SModule it) {
+                return it.getModels();
+              }
+            });
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("Models: " + Sequence.fromIterable(models).count());
+            }
 
-    InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode node) {
-        int propertiesCount = SNodeOperations.getProperties(node).keySet().size();
-        MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ? MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 : 1));
+            progress.start("Traversing models...", Sequence.fromIterable(models).count());
+            for (SModel m : Sequence.fromIterable(models)) {
+              progress.step(m.getModelName());
+              for (SNode node : Sequence.fromIterable(SNodeUtil.getDescendants(m))) {
+                int propertiesCount = IterableUtil.asCollection(node.getProperties()).size();
+                MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ? MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 : 1));
 
-        int refsCount = SNodeOperations.getReferences(node).size();
-        MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ? MapSequence.fromMap(refsStatistic).get(refsCount) + 1 : 1));
+                int refsCount = IterableUtil.asCollection(node.getReferences()).size();
+                MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ? MapSequence.fromMap(refsStatistic).get(refsCount) + 1 : 1));
 
-        int childrenCount = SNodeOperations.getChildren(node).size();
-        MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ? MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 : 1));
+                int childrenCount = IterableUtil.asCollection(node.getChildren()).size();
+                MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ? MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 : 1));
 
-        if (propertiesCount + refsCount + childrenCount == 0) {
-          zeros.value++;
-        }
+                if (propertiesCount + refsCount + childrenCount == 0) {
+                  zeros.value++;
+                }
+              }
+              progress.advance(1);
+            }
+            progress.done();
+          }
+        });
       }
     });
 

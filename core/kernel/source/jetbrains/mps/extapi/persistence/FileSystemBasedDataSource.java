@@ -23,7 +23,7 @@ import java.util.Collection;
 /**
  * evgeny, 11/4/12
  */
-public interface FileSystemBasedDataSource extends DataSource {
+public interface FileSystemBasedDataSource extends DataSource, DisposableDataSource {
 
   /**
    * @return collection of files (or folders) which comprise a set of source paths (!) for this DataSource

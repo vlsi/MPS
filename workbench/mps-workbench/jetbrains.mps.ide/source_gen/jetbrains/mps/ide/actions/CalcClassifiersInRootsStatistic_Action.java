@@ -6,17 +6,26 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -27,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
@@ -48,8 +56,8 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -61,77 +69,94 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     final Wrappers._int rootsCount = new Wrappers._int(0);
     final Wrappers._long membersOverallTime = new Wrappers._long(0);
 
-    InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(final SNode node) {
-        if (SNodeOperations.isRoot(node)) {
-          rootsCount.value++;
-
-          String nodeName = node + "@" + SNodeOperations.getModelLongName(node.getModel());
-          boolean somethingPrinted = false;
-
-          final Wrappers._T<List<SNode>> types = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
-          long typesCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
-            public void invoke() {
-              types.value = CalcClassifiersInRootsStatistic_Action.this.calcAllClassifierTypesInRoot(node, _params);
+    ProgressManager.getInstance().run(new Task.Modal(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), "Classifiers in roots stats", true) {
+      @Override
+      public void run(@NotNull ProgressIndicator indicator) {
+        final ProgressMonitorAdapter progress = new ProgressMonitorAdapter(indicator);
+        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            Iterable<? extends SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators();
+            progress.start("Modules...", Sequence.fromIterable(modules).count());
+            for (SModule module : Sequence.fromIterable(modules)) {
+              ProgressMonitor subTask = progress.subTask(1);
+              Iterable<SModel> models = module.getModels();
+              subTask.start(module.getModuleName(), IterableUtil.asCollection(models).size());
+              for (SModel m : Sequence.fromIterable(models)) {
+                subTask.step(m.getModelName());
+                for (SNode node : Sequence.fromIterable(m.getRootNodes())) {
+                  rootsCount.value++;
+                  membersOverallTime.value += CalcClassifiersInRootsStatistic_Action.this.analyzeClassifiersInRoot(node, _params);
+                }
+                subTask.advance(1);
+              }
+              subTask.done();
             }
-          }, _params);
-
-          if (typesCalcTime > 1000) {
-            System.out.printf("%s: type calc time = %.3f%n", nodeName, typesCalcTime * 0.001);
-            somethingPrinted = true;
+            progress.done();
           }
-
-          final Set<SNode> classifiers = SetSequence.fromSet(new HashSet<SNode>());
-          SetSequence.fromSet(classifiers).addSequence(ListSequence.fromList(types.value).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-            }
-          }).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return (it != null);
-            }
-          }));
-          if (SetSequence.fromSet(classifiers).count() > 50) {
-            System.out.printf("%s: classifier types = %d; classifiers = %d%n", nodeName, ListSequence.fromList(types.value).count(), SetSequence.fromSet(classifiers).count());
-            somethingPrinted = true;
-          }
-
-          final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
-          long membersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
-            public void invoke() {
-              members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, _params);
-            }
-          }, _params);
-
-          if (ListSequence.fromList(members.value).count() > 4000) {
-            System.out.printf("%s: members count = %d%n", nodeName, ListSequence.fromList(members.value).count());
-            somethingPrinted = true;
-          }
-
-          if (membersCalcTime > 500) {
-            System.out.printf("%s: members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
-            somethingPrinted = true;
-          }
-          membersOverallTime.value += membersCalcTime;
-
-          if (somethingPrinted) {
-            System.out.println();
-          }
-        }
+        });
       }
     });
 
     System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
+  }
+  /*package*/ long analyzeClassifiersInRoot(final SNode node, final Map<String, Object> _params) {
+    String nodeName = node + "@" + SModelOperations.getModelName(SNodeOperations.getModel(node));
+
+    StringBuilder sb = new StringBuilder();
+
+    final Wrappers._T<List<SNode>> types = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
+    long typesCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        types.value = CalcClassifiersInRootsStatistic_Action.this.calcAllClassifierTypesInRoot(node, _params);
+      }
+    }, _params);
+
+    if (typesCalcTime > 1000) {
+      sb.append(String.format("%s: type calc time = %.3f%n", nodeName, typesCalcTime * 0.001));
+    }
+
+    final Set<SNode> classifiers = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(classifiers).addSequence(ListSequence.fromList(types.value).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    }));
+    if (SetSequence.fromSet(classifiers).count() > 50) {
+      sb.append(String.format("%s: classifier types = %d; classifiers = %d%n", nodeName, ListSequence.fromList(types.value).count(), SetSequence.fromSet(classifiers).count()));
+    }
+
+    final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
+    long membersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, _params);
+      }
+    }, _params);
+
+    if (ListSequence.fromList(members.value).count() > 4000) {
+      sb.append(String.format("%s: members count = %d%n", nodeName, ListSequence.fromList(members.value).count()));
+    }
+
+    if (membersCalcTime > 500) {
+      sb.append(String.format("%s: members calc time = %.3f%n", nodeName, membersCalcTime * 0.001));
+    }
+    if (sb.length() > 0) {
+      System.out.println(sb);
+    }
+    return membersCalcTime;
   }
   /*package*/ List<SNode> calcAllClassifierTypesInRoot(SNode rootNode, final Map<String, Object> _params) {
     TypeCheckingContext context = TypeContextManager.getInstance().createTypeCheckingContext(rootNode);
     context.checkRoot();
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
-    for (SNode node : jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{})) {
+    for (SNode node : SNodeOperations.getNodeDescendants(rootNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), true, new SAbstractConcept[]{})) {
       SNode type = context.typeOf(node);
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-        ListSequence.fromList(result).addElement(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+      if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+        ListSequence.fromList(result).addElement(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
     }
     context.dispose();

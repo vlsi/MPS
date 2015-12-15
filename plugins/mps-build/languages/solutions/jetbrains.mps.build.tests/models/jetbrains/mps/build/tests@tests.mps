@@ -25,13 +25,16 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="80j5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
       </concept>
@@ -121,6 +124,9 @@
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -157,6 +163,14 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+    </language>
+    <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
+      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
+      <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
+        <reference id="1205756909548" name="member" index="2WH_rO" />
+      </concept>
+      <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
+      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
     </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
@@ -237,6 +251,7 @@
         <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
@@ -262,6 +277,25 @@
   </registry>
   <node concept="1lH9Xt" id="3wzAMVrRmzt">
     <property role="TrG5h" value="TestTemporalPaths" />
+    <node concept="2XrIbr" id="Tb4PsnoMuN" role="1qtyYc">
+      <property role="TrG5h" value="getBuildTestsModel" />
+      <node concept="H_c77" id="Tb4PsnoMv1" role="3clF45" />
+      <node concept="3clFbS" id="Tb4PsnoMuP" role="3clF47">
+        <node concept="3cpWs6" id="Tb4PsnoMye" role="3cqZAp">
+          <node concept="BaHAS" id="Tb4PsnoMmX" role="3cqZAk">
+            <property role="BaGAP" value="tests" />
+            <property role="BaHAW" value="jetbrains.mps.build.tests" />
+            <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+            <node concept="2OqwBi" id="Tb4PsnoMmY" role="up2gk">
+              <node concept="1jxXqW" id="Tb4PsnoMmZ" role="2Oq$k0" />
+              <node concept="liA8E" id="Tb4PsnoMn0" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1qefOq" id="3wzAMVrRmz$" role="1SKRRt">
       <node concept="1l3spW" id="2dX1QkJu$e_" role="1qenE9">
         <property role="TrG5h" value="test" />
@@ -414,10 +448,11 @@
               <node concept="2ShNRf" id="4Q0JLeVvAef" role="37wK5m">
                 <node concept="1pGfFk" id="4Q0JLeVvAeh" role="2ShVmc">
                   <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                  <node concept="BaHAS" id="5FtnUVJQYe4" role="37wK5m">
-                    <property role="BaGAP" value="tests" />
-                    <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                    <property role="BaBD8" value="jetbrains.mps.buildScrit.tests@tests" />
+                  <node concept="2OqwBi" id="Tb4PsnoMMt" role="37wK5m">
+                    <node concept="2WthIp" id="Tb4PsnoMMu" role="2Oq$k0" />
+                    <node concept="2XshWL" id="Tb4PsnoMMv" role="2OqNvi">
+                      <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -449,10 +484,11 @@
               <node concept="2ShNRf" id="4Q0JLeVvAei" role="37wK5m">
                 <node concept="1pGfFk" id="4Q0JLeVvAej" role="2ShVmc">
                   <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                  <node concept="BaHAS" id="5FtnUVJQYe5" role="37wK5m">
-                    <property role="BaGAP" value="tests" />
-                    <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                    <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+                  <node concept="2OqwBi" id="Tb4PsnoMJK" role="37wK5m">
+                    <node concept="2WthIp" id="Tb4PsnoMJL" role="2Oq$k0" />
+                    <node concept="2XshWL" id="Tb4PsnoMJM" role="2OqNvi">
+                      <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -484,10 +520,11 @@
               <node concept="2ShNRf" id="6s3mHD41nV3" role="37wK5m">
                 <node concept="1pGfFk" id="6s3mHD41nV4" role="2ShVmc">
                   <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                  <node concept="BaHAS" id="bbyISwBJa2" role="37wK5m">
-                    <property role="BaGAP" value="tests" />
-                    <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                    <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+                  <node concept="2OqwBi" id="Tb4PsnoME0" role="37wK5m">
+                    <node concept="2WthIp" id="Tb4PsnoME1" role="2Oq$k0" />
+                    <node concept="2XshWL" id="Tb4PsnoME2" role="2OqNvi">
+                      <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -519,10 +556,11 @@
               <node concept="2ShNRf" id="4Q0JLeVvAek" role="37wK5m">
                 <node concept="1pGfFk" id="4Q0JLeVvAel" role="2ShVmc">
                   <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                  <node concept="BaHAS" id="bbyISwBJa3" role="37wK5m">
-                    <property role="BaGAP" value="tests" />
-                    <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                    <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+                  <node concept="2OqwBi" id="Tb4PsnoMGH" role="37wK5m">
+                    <node concept="2WthIp" id="Tb4PsnoMGI" role="2Oq$k0" />
+                    <node concept="2XshWL" id="Tb4PsnoMGJ" role="2OqNvi">
+                      <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -544,10 +582,11 @@
             <node concept="2ShNRf" id="3DDoTVA5dUb" role="33vP2m">
               <node concept="1pGfFk" id="3DDoTVA5dUc" role="2ShVmc">
                 <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                <node concept="BaHAS" id="bbyISwBJa4" role="37wK5m">
-                  <property role="BaGAP" value="tests" />
-                  <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                  <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+                <node concept="2OqwBi" id="Tb4PsnoMAY" role="37wK5m">
+                  <node concept="2WthIp" id="Tb4PsnoMAZ" role="2Oq$k0" />
+                  <node concept="2XshWL" id="Tb4PsnoMB0" role="2OqNvi">
+                    <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -612,10 +651,11 @@
             <node concept="2ShNRf" id="3DDoTVA5ghE" role="33vP2m">
               <node concept="1pGfFk" id="3DDoTVA5ghF" role="2ShVmc">
                 <ref role="37wK5l" node="4Q0JLeVvAbW" resolve="TestContext" />
-                <node concept="BaHAS" id="bbyISwBJa5" role="37wK5m">
-                  <property role="BaGAP" value="tests" />
-                  <property role="BaHAW" value="jetbrains.mps.build.tests" />
-                  <property role="BaBD8" value="jetbrains.mps.build.tests@tests" />
+                <node concept="2OqwBi" id="Tb4PsnoMzW" role="37wK5m">
+                  <node concept="2WthIp" id="Tb4PsnoMzZ" role="2Oq$k0" />
+                  <node concept="2XshWL" id="Tb4PsnoM$1" role="2OqNvi">
+                    <ref role="2WH_rO" node="Tb4PsnoMuN" resolve="getBuildTestsModel" />
+                  </node>
                 </node>
               </node>
             </node>

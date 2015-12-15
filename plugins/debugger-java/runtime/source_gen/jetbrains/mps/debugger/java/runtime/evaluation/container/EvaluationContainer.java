@@ -6,8 +6,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import org.jetbrains.annotations.NotNull;
@@ -18,22 +17,22 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.project.ModuleContext;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -49,24 +48,23 @@ public class EvaluationContainer implements IEvaluationContainer {
   protected final SModuleReference myContainerModule;
   protected volatile SModelReference myContainerModel;
   protected volatile SNodeReference myNode;
-  protected final MPSModuleRepository myDebuggerRepository = MPSModuleRepository.getInstance();
-  private volatile IOperationContext myContext;
+  protected final SRepository myDebuggerRepository;
 
   protected final DebugSession myDebugSession;
   protected volatile JavaUiState myUiState;
 
-  public EvaluationContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, final List<SNodeReference> nodesToImport, final _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
-    myProject = project;
+  public EvaluationContainer(Project mpsProject, DebugSession session, @NotNull SModuleReference containerModule, final List<SNodeReference> nodesToImport, final _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
+    myProject = mpsProject;
     myDebugSession = session;
     myContainerModule = containerModule;
     myUiState = myDebugSession.getUiState();
-    final ModelAccess modelAccess = project.getModelAccess();
+    myDebuggerRepository = mpsProject.getRepository();
+    final ModelAccess modelAccess = mpsProject.getModelAccess();
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
         SModel descriptor = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(containerModule));
         myContainerModel = descriptor.getReference();
-        myContext = new ModuleContext(containerModule, myProject);
       }
     });
 
@@ -84,12 +82,10 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   @Override
   public Class generateClass() throws EvaluationException {
-    SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
+    SModel containerModel = myContainerModel.resolve(myDebuggerRepository);
     return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, containerModel, Properties.EVALUATOR_NAME, Properties.IS_DEVELOPER_MODE, ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
   }
-  @Override
-  public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
-  }
+
   @Override
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
     return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
@@ -115,10 +111,7 @@ public class EvaluationContainer implements IEvaluationContainer {
       }
     });
   }
-  @Override
-  public IOperationContext getContext() {
-    return myContext;
-  }
+
   @Override
   public SNode getNode() {
     if (myNode == null) {
@@ -158,10 +151,10 @@ public class EvaluationContainer implements IEvaluationContainer {
     }
     @Override
     public SNode createVariableReference(SNode variable) {
-      return createInternalVariableReference_jbng3m_a0a1ab(variable.getName());
+      return createInternalVariableReference_jbng3m_a0a1z(variable.getName());
     }
   }
-  private static SNode createInternalVariableReference_jbng3m_a0a1ab(Object p0) {
+  private static SNode createInternalVariableReference_jbng3m_a0a1z(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"), null, null, false);
     {

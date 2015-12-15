@@ -64,7 +64,7 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        scopeEditor.value = new ScopeEditor(options.value.getOption(ScopeOptions.class));
+        scopeEditor.value = new ScopeEditor(options.value.getOption(ScopeOptions.class), myProject.getRepository());
         findersEditor.value = new FindersEditor(options.value.getOption(FindersOptions.class), node) {
           public void goToFinder(ReloadableFinder finder) {
           }

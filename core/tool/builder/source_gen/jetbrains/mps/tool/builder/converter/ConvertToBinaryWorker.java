@@ -32,13 +32,9 @@ public class ConvertToBinaryWorker {
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     try {
-      platform.getCore().getModuleRepository().getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          for (Map.Entry<String, String> entry : map.entrySet()) {
-            convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
-          }
-        }
-      });
+      for (Map.Entry<String, String> entry : map.entrySet()) {
+        convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
+      }
     } finally {
       PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
       platform.dispose();

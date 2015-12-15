@@ -7,8 +7,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.impl.configurations.util.JUnitUtil;
@@ -48,8 +48,8 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
-      SModel model = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
-      String testName = ModelAccess.instance().runReadAction(new Computable<String>() {
+      SModel model = new ModuleRepositoryFacade(this.myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
+      String testName = new ModelAccessHelper(this.myProject.getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return SNodeOperations.getNode("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090").getName();
         }
@@ -68,7 +68,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         }
         ProcessHandler process = processExecutor.execute();
         final Wrappers._T<CheckTestStateListener> checkListener = new Wrappers._T<CheckTestStateListener>();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        this.myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             checkListener.value = new CheckTestStateListener(testNodes, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
             runState.addListener(checkListener.value);

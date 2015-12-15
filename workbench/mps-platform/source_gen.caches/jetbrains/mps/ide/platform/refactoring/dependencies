@@ -97,7 +97,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -113,8 +112,6 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

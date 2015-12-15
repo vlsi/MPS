@@ -21,29 +21,26 @@
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557455304">
     <file name="customContainers_extension.java">
-      <node id="5633688998557455304" at="17,39,18,69" concept="12" />
-      <node id="5633688998557455310" at="25,35,26,49" concept="7" />
-      <node id="5633688998557455316" at="26,49,27,64" concept="9" />
-      <node id="5633688998557455326" at="27,64,28,120" concept="7" />
-      <node id="5633688998557455334" at="29,26,30,264" concept="2" />
-      <node id="5633688998557455344" at="31,9,32,19" concept="8" />
-      <node id="5633688998557455304" at="17,0,20,0" concept="1" trace="customContainers_extension#()V" />
-      <node id="5633688998557455332" at="28,120,31,9" concept="5" />
-      <node id="5633688998557455308" at="25,0,34,0" concept="6" trace="invoke#()Ljava/util/List;" />
-      <node id="5633688998557455307" at="23,68,34,6" concept="8" />
-      <node id="4296411869844546441" at="23,0,36,0" concept="0" trace="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
-      <scope id="5633688998557455304" at="17,39,18,69" />
-      <scope id="5633688998557455333" at="29,26,30,264" />
-      <scope id="5633688998557455304" at="17,0,20,0" />
-      <scope id="5633688998557455309" at="25,35,32,19">
+      <node id="5633688998557455304" at="16,39,17,69" concept="12" />
+      <node id="5633688998557455316" at="24,51,25,64" concept="9" />
+      <node id="5633688998557455326" at="25,64,26,118" concept="7" />
+      <node id="7260676928374766357" at="26,118,27,206" concept="8" />
+      <node id="5633688998557455304" at="16,0,19,0" concept="1" trace="customContainers_extension#()V" />
+      <node id="5633688998557455308" at="24,0,29,0" concept="6" trace="invoke#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/List;" />
+      <node id="5633688998557455307" at="22,89,29,6" concept="8" />
+      <node id="4296411869844546441" at="22,0,31,0" concept="0" trace="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
+      <scope id="5633688998557455304" at="16,39,17,69" />
+      <scope id="5633688998557455304" at="16,0,19,0" />
+      <scope id="5633688998557455309" at="24,51,27,206">
         <var name="mdl" id="5633688998557455327" />
-        <var name="res" id="5633688998557455311" />
       </scope>
-      <scope id="5633688998557455308" at="25,0,34,0" />
-      <scope id="4296411869844546443" at="23,68,34,6" />
-      <scope id="4296411869844546441" at="23,0,36,0" />
-      <unit id="5633688998557455308" at="24,15,34,5" name="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension$1" />
-      <unit id="5633688998557455304" at="16,0,37,0" name="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension" />
+      <scope id="5633688998557455308" at="24,0,29,0">
+        <var name="repo" id="5633688998557455308" />
+      </scope>
+      <scope id="4296411869844546443" at="22,89,29,6" />
+      <scope id="4296411869844546441" at="22,0,31,0" />
+      <unit id="5633688998557455308" at="23,15,29,5" name="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension$1" />
+      <unit id="5633688998557455304" at="15,0,32,0" name="jetbrains.mps.baseLanguage.collections.plugin.customContainers_extension" />
     </file>
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707567">
@@ -66,99 +63,84 @@
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707726">
     <file name="CustomContainersRegistry.java">
-      <node id="5633688998557707727" at="23,0,24,0" concept="10" trace="INSTANCE" />
-      <node id="5633688998557707731" at="24,0,25,0" concept="3" trace="providers" />
-      <node id="2674780608612815781" at="26,218,27,60" concept="2" />
-      <node id="5633688998557707743" at="30,55,31,73" concept="7" />
-      <node id="5633688998557707750" at="31,73,32,45" concept="7" />
-      <node id="5633688998557707765" at="34,50,35,194" concept="8" />
-      <node id="5633688998557707771" at="37,8,38,15" concept="8" />
-      <node id="5633688998557707779" at="40,78,41,45" concept="7" />
-      <node id="5633688998557707785" at="41,45,42,49" concept="7" />
-      <node id="5633688998557707794" at="43,21,44,150" concept="7" />
-      <node id="5633688998557707803" at="44,150,45,109" concept="7" />
-      <node id="5633688998557707812" at="45,109,46,75" concept="7" />
-      <node id="5633688998557707829" at="48,41,49,102" concept="7" />
-      <node id="5633688998557707838" at="49,102,50,175" concept="8" />
-      <node id="5633688998557707860" at="53,52,54,196" concept="8" />
-      <node id="5633688998557707869" at="57,5,58,15" concept="8" />
-      <node id="5633688998557707909" at="60,48,61,26" concept="7" />
-      <node id="5633688998557707916" at="61,26,62,56" concept="8" />
-      <node id="5633688998557707933" at="64,53,65,76" concept="7" />
-      <node id="5633688998557707941" at="66,25,67,140" concept="2" />
-      <node id="5633688998557707957" at="70,98,71,29" concept="8" />
-      <node id="2674780608612815773" at="25,38,28,5" concept="4" />
-      <node id="5633688998557707763" at="34,0,37,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="5633688998557707858" at="53,0,56,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="5633688998557707938" at="65,76,68,5" concept="13" />
-      <node id="5633688998557707955" at="70,0,73,0" concept="6" trace="translate#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)Ljava/lang/Iterable;" />
-      <node id="5633688998557707827" at="48,0,52,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5633688998557707906" at="60,0,64,0" concept="6" trace="getOwningModule#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="5633688998557707963" at="25,0,30,0" concept="1" trace="CustomContainersRegistry#()V" />
-      <node id="5633688998557707756" at="32,45,37,8" concept="2" />
-      <node id="5633688998557707951" at="68,5,73,7" concept="8" />
-      <node id="5633688998557707740" at="30,0,40,0" concept="6" trace="allCustomContainerDeclarations#()Ljava/util/List;" />
-      <node id="5633688998557707819" at="46,75,56,10" concept="2" />
-      <node id="5633688998557707928" at="64,0,75,0" concept="6" trace="primAllCustomContainers#()Ljava/lang/Iterable;" />
-      <node id="5633688998557707792" at="42,49,57,5" concept="5" />
-      <node id="5633688998557707774" at="40,0,60,0" concept="6" trace="accessibleCustomContainerDeclarations#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <scope id="2674780608612815774" at="26,218,27,60" />
-      <scope id="5633688998557707764" at="34,50,35,194" />
-      <scope id="5633688998557707859" at="53,52,54,196" />
-      <scope id="5633688998557707940" at="66,25,67,140" />
-      <scope id="5633688998557707956" at="70,98,71,29" />
-      <scope id="5633688998557707828" at="48,41,50,175">
+      <node id="5633688998557707727" at="24,0,25,0" concept="10" trace="INSTANCE" />
+      <node id="5633688998557707731" at="25,0,26,0" concept="3" trace="providers" />
+      <node id="2674780608612815781" at="27,260,28,60" concept="2" />
+      <node id="5633688998557707779" at="31,78,32,45" concept="7" />
+      <node id="5633688998557707785" at="32,45,33,49" concept="7" />
+      <node id="5633688998557707794" at="34,21,35,150" concept="7" />
+      <node id="5633688998557707803" at="35,150,36,109" concept="7" />
+      <node id="5633688998557707812" at="36,109,37,100" concept="7" />
+      <node id="5633688998557707829" at="39,41,40,102" concept="7" />
+      <node id="5633688998557707838" at="40,102,41,175" concept="8" />
+      <node id="5633688998557707860" at="44,52,45,196" concept="8" />
+      <node id="5633688998557707869" at="48,5,49,15" concept="8" />
+      <node id="5633688998557707909" at="51,48,52,26" concept="7" />
+      <node id="5633688998557707916" at="52,26,53,56" concept="8" />
+      <node id="5633688998557707933" at="55,75,56,97" concept="7" />
+      <node id="5633688998557707941" at="57,25,58,161" concept="2" />
+      <node id="5633688998557707957" at="61,119,62,33" concept="8" />
+      <node id="2674780608612815773" at="26,38,29,5" concept="4" />
+      <node id="5633688998557707858" at="44,0,47,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707938" at="56,97,59,5" concept="13" />
+      <node id="5633688998557707955" at="61,0,64,0" concept="6" trace="translate#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707827" at="39,0,43,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5633688998557707906" at="51,0,55,0" concept="6" trace="getOwningModule#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="5633688998557707963" at="26,0,31,0" concept="1" trace="CustomContainersRegistry#()V" />
+      <node id="5633688998557707951" at="59,5,64,7" concept="8" />
+      <node id="5633688998557707819" at="37,100,47,10" concept="2" />
+      <node id="5633688998557707928" at="55,0,66,0" concept="6" trace="primAllCustomContainers#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707792" at="33,49,48,5" concept="5" />
+      <node id="5633688998557707774" at="31,0,51,0" concept="6" trace="accessibleCustomContainerDeclarations#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+      <scope id="2674780608612815774" at="27,260,28,60" />
+      <scope id="5633688998557707859" at="44,52,45,196" />
+      <scope id="5633688998557707940" at="57,25,58,161" />
+      <scope id="5633688998557707956" at="61,119,62,33" />
+      <scope id="5633688998557707828" at="39,41,41,175">
         <var name="owner" id="5633688998557707830" />
       </scope>
-      <scope id="5633688998557707908" at="60,48,62,56">
+      <scope id="5633688998557707908" at="51,48,53,56">
         <var name="fmdesc" id="5633688998557707910" />
       </scope>
-      <scope id="2674780608612815773" at="25,38,28,5">
+      <scope id="2674780608612815773" at="26,38,29,5">
         <var name="provider" id="2674780608612815775" />
       </scope>
-      <scope id="5633688998557707965" at="25,38,28,5" />
-      <scope id="5633688998557707763" at="34,0,37,0">
-        <var name="cc" id="5633688998557707763" />
-      </scope>
-      <scope id="5633688998557707858" at="53,0,56,0">
+      <scope id="5633688998557707965" at="26,38,29,5" />
+      <scope id="5633688998557707858" at="44,0,47,0">
         <var name="cc" id="5633688998557707858" />
       </scope>
-      <scope id="5633688998557707955" at="70,0,73,0">
+      <scope id="5633688998557707955" at="61,0,64,0">
         <var name="prov" id="5633688998557707955" />
       </scope>
-      <scope id="5633688998557707827" at="48,0,52,0">
+      <scope id="5633688998557707827" at="39,0,43,0">
         <var name="cc" id="5633688998557707827" />
       </scope>
-      <scope id="5633688998557707906" at="60,0,64,0">
+      <scope id="5633688998557707906" at="51,0,55,0">
         <var name="model" id="5633688998557707926" />
       </scope>
-      <scope id="5633688998557707963" at="25,0,30,0" />
-      <scope id="5633688998557707742" at="30,55,38,15">
-        <var name="allCustomContainers" id="5633688998557707744" />
-        <var name="res" id="5633688998557707751" />
-      </scope>
-      <scope id="5633688998557707932" at="64,53,73,7">
+      <scope id="5633688998557707963" at="26,0,31,0" />
+      <scope id="5633688998557707932" at="55,75,64,7">
         <var name="providersCopy" id="5633688998557707934" />
       </scope>
-      <scope id="5633688998557707740" at="30,0,40,0" />
-      <scope id="5633688998557707928" at="64,0,75,0" />
-      <scope id="5633688998557707793" at="43,21,56,10">
+      <scope id="5633688998557707928" at="55,0,66,0">
+        <var name="repo" id="7260676928374699316" />
+      </scope>
+      <scope id="5633688998557707793" at="34,21,47,10">
         <var name="allCustomContainers" id="5633688998557707813" />
         <var name="allUsedLanguages" id="5633688998557707804" />
         <var name="allVisibleModules" id="5633688998557707795" />
       </scope>
-      <scope id="5633688998557707778" at="40,78,58,15">
+      <scope id="5633688998557707778" at="31,78,49,15">
         <var name="om" id="5633688998557707786" />
         <var name="res" id="5633688998557707780" />
       </scope>
-      <scope id="5633688998557707774" at="40,0,60,0">
+      <scope id="5633688998557707774" at="31,0,51,0">
         <var name="fromModel" id="5633688998557707775" />
       </scope>
-      <unit id="5633688998557707763" at="33,100,37,5" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$1" />
-      <unit id="5633688998557707858" at="52,23,56,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$3" />
-      <unit id="5633688998557707955" at="69,62,73,5" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$4" />
-      <unit id="5633688998557707827" at="47,98,52,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
-      <unit id="5633688998557707726" at="22,0,76,0" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
+      <unit id="5633688998557707858" at="43,23,47,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
+      <unit id="5633688998557707955" at="60,62,64,5" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$3" />
+      <unit id="5633688998557707827" at="38,98,43,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$1" />
+      <unit id="5633688998557707726" at="23,0,67,0" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
     </file>
   </root>
 </debug-info>

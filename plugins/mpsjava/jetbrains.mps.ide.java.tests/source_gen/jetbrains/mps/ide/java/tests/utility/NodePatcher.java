@@ -11,8 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
@@ -39,7 +40,7 @@ public class NodePatcher {
    */
   public static void fixNonStatic(SNode node) {
     for (SNode cls : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true, new SAbstractConcept[]{}))) {
-      if (SNodeAccessUtil.getProperty(cls, "nonStatic") == null) {
+      if (SNodeAccessUtil.getProperty(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic")) == null) {
         SPropertyOperations.set(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic"), "" + (true));
       }
     }
@@ -61,8 +62,8 @@ public class NodePatcher {
       }
     }
   }
-  public static void removeSourceLevelAnnotations(SNode node) {
-    final SNode retentionAnno = ListSequence.fromList(SModelOperations.roots(SModelRepository.getInstance().getModelDescriptor("java.lang.annotation@java_stub"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"))).findFirst(new IWhereFilter<SNode>() {
+  public static void removeSourceLevelAnnotations(SNode node, SRepository repo) {
+    final SNode retentionAnno = ListSequence.fromList(SModelOperations.roots(new ModuleRepositoryFacade(repo).getModelByName("java.lang.annotation@java_stub"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals("Retention");
       }
@@ -85,7 +86,7 @@ public class NodePatcher {
       }
 
       SNodeId sourceConst = new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + "RetentionPolicy.SOURCE");
-      SNodeId nodeId = retensionExp.getReference("enumConstantDeclaration").getTargetNodeId();
+      SNodeId nodeId = retensionExp.getReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration")).getTargetNodeId();
 
       boolean isSourceRetention = sourceConst.equals(nodeId);
 
@@ -110,7 +111,7 @@ public class NodePatcher {
   }
   public static void removeSModelAttrs(SNode node) {
     for (SNode attr : ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()))) {
-      if (SNodeOperations.getConceptDeclaration(attr) == MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports").getDeclarationNode()) {
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(attr)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"))) {
         continue;
       }
       SNodeOperations.detachNode(attr);

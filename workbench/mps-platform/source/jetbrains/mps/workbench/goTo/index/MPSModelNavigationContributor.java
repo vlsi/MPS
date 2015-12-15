@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class MPSModelNavigationContributor implements ApplicationComponent, Navi
   private final PersistenceFacade myPersistenceFacade;
 
   public MPSModelNavigationContributor(MPSCoreComponents coreComponents) {
-    myPersistenceFacade = coreComponents.getMPSCore().getPersistenceFacade();
+    myPersistenceFacade = coreComponents.getPersistenceFacade();
   }
 
   @Override

@@ -192,10 +192,6 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
-  <dependency className="jetbrains.mps.tests.TestModule_tests_testDepViewer" file="TestModule_tests_testDepViewer.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_tests_testPersistence" file="TestModule_tests_testPersistence.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />

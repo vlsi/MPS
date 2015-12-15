@@ -20,9 +20,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
-import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
@@ -33,7 +30,6 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -56,6 +52,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 // not deprecated yet, despite access and methods are, as it might be reasonable to
 // keep a facility that gives access to all models of an SRepository (alternative to SRepository.getAllModels method). Or do it with SearchScope?
+// XXX shall become model-centric view of an SRepository. E.g. would be possible to attach listeners to all models, to keep a snapshot of all models
+// or to track changes (i.e. that would be too much for a search scope, hence need a separate class). The view, perhaps, could be filtered (e.g. by
+// Condition<SModel>). Non thread-safe
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelRepository.class));
 
@@ -112,65 +111,19 @@ public class SModelRepository implements CoreComponent {
     INSTANCE = null;
   }
 
+  /**
+   * @deprecated it's our implementation method, and there are no uses in MPS now, drop as a distinct step to see if mbeddr fails
+   */
   @Deprecated
-  public void registerModelDescriptor(SModel model, SModule container) {
-    ((SModuleBase) container).registerModel((SModelBase) model);
-  }
-
-  @Deprecated
-  public void unRegisterModelDescriptor(SModel md, SModule forModule) {
-    synchronized (myModelsLock) {
-      SModule owner = md.getModule();
-      if (owner != forModule) throw new IllegalStateException();
-      ((SModuleBase) forModule).unregisterModel((SModelBase) md);
-    }
-  }
-
-  public void removeModelDescriptor(SModel model) {
-    SModule module = model.getModule();
-    if (module == null) return;
-    ((SModuleBase) module).unregisterModel((SModelBase) model);
-  }
-
+  @ToRemove(version = 0)
   public void deleteModel(SModel d) {
     ModelAccess.assertLegalWrite();
 
-    removeModelDescriptor(d);
-
-    DataSource source = d.getSource();
-    String modelName = d.getModelName();
-    if (source instanceof FileSystemBasedDataSource) {
-      for (IFile file : getFilesToDelete((FileSystemBasedDataSource) source, modelName)) {
-        if (file.exists()) {
-          file.delete();
-        }
-      }
-    }
+    ModelDeleteHelper h = new ModelDeleteHelper(d);
+    h.detachFromModule();
+    h.deleteDataSource();
   }
 
-  // Fix MPS-23060 File-per-root model files are not deleted when the model is deleted
-  // TODO FileSystemBasedDataSource must have a method to tell all its files, not enclosing directories
-  // We don't want to just delete all getAffectedFiles() including dirs, because a per-root model directory can contain
-  // other models inside of it, if the namespace of the former is a strict prefix of the latter. Actually it may contain
-  // any files not related to the model
-  private Iterable<IFile> getFilesToDelete(FileSystemBasedDataSource source, String modelName) {
-    if (source instanceof FileDataSource) {
-      return Collections.singletonList(((FileDataSource) source).getFile());
-    } else if (source instanceof FolderDataSource) {
-      FolderDataSource folderSource = (FolderDataSource) source;
-      List<IFile> files = new ArrayList<IFile>();
-      for (String stream : folderSource.getAvailableStreams()) {
-        IFile file = folderSource.getFile(stream);
-        if (file != null) {
-          files.add(file);
-        }
-      }
-      return files;
-    } else {
-      LOG.warning(String.format("Cannot safely guess the file set for the model %s to delete; data source is %s", modelName, source.getClass().getName()));
-      return Collections.emptyList();
-    }
-  }
 
   //----------------------------get-----------------------------
 
@@ -273,6 +226,7 @@ public class SModelRepository implements CoreComponent {
   }
 
 
+  // FIXME 2 uses in IdeaPlugin, MPSPackageFinder and MPSReferenceSearch
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {
     List<SModel> result = new ArrayList<SModel>();
