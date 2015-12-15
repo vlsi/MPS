@@ -25,6 +25,9 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vav8l6_a(editorContext, node);
   }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createNextEditor_vav8l6_a(editorContext, node);
+  }
   private EditorCell createCollection_vav8l6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vav8l6_a");
@@ -69,5 +72,19 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
     BaseConcept_comment_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createNextEditor_vav8l6_a(EditorContext editorContext, SNode node) {
+    try {
+      editorContext.getCellFactory().pushCellContext();
+      editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
+      {
+        EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, true, BaseConcept_comment_Editor.class);
+        editorCell.setBig(true);
+        editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+        return editorCell;
+      }
+    } finally {
+      editorContext.getCellFactory().popCellContext();
+    }
   }
 }

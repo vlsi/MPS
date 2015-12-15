@@ -2689,10 +2689,10 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/8383079901754873005">
     <file name="QueriesGenerated.java">
       <node id="7172636034965629597" at="861,112,862,404" concept="5" />
-      <node id="7172636034965632446" at="862,404,863,124" concept="6" />
+      <node id="7172636034965632446" at="862,404,863,163" concept="6" />
       <node id="2489918459624868710" at="1139,109,1140,237" concept="5" />
       <node id="2489918459624867740" at="1140,237,1141,86" concept="6" />
-      <scope id="6509644740689265421" at="861,112,863,124">
+      <scope id="6509644740689265421" at="861,112,863,163">
         <var name="inspectorCell" id="7172636034965629598" />
       </scope>
       <scope id="2489918459624763603" at="1139,109,1141,86">

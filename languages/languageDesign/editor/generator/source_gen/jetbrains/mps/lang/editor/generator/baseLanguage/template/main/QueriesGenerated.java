@@ -860,7 +860,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_6509644740689265420(final PropertyMacroContext _context) {
     SNode inspectorCell = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, 0xfb06ef2f06L, "inspectedCellModel"));
-    return ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), null, false)).contains(inspectorCell);
+    return _context.getNode() == inspectorCell || ListSequence.fromList(SNodeOperations.getNodeAncestors(_context.getNode(), null, false)).contains(inspectorCell);
   }
   public static Object referenceMacro_GetReferent_1229561240559(final ReferenceMacroContext _context) {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout"));
