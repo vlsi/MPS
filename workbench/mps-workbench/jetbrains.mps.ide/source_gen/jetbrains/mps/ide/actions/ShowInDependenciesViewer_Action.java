@@ -70,18 +70,22 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-    SModule from = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0g(treeNode.getParent(), DependencyTreeNode.class));
-    SModule to = treeNode.getModule();
-    DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
+        SModule from = check_hezs1a_a0b0a0a0a0a0a(as_nkoo1o_a0a0b0a0a0a0a0g(treeNode.getParent(), DependencyTreeNode.class));
+        SModule to = treeNode.getModule();
+        DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
+      }
+    });
   }
-  private static SModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_hezs1a_a0b0a0a0a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static <T> T as_nkoo1o_a0a0b0g(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0b0a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
