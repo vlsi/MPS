@@ -9,8 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -36,7 +34,6 @@ public class NodeAttribute_comment_Editor extends DefaultNodeEditor {
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, NodeAttribute_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
         return editorCell;
       }
     } finally {
@@ -57,7 +54,6 @@ public class NodeAttribute_comment_Editor extends DefaultNodeEditor {
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, true, NodeAttribute_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
         return editorCell;
       }
     } finally {

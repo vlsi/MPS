@@ -7,6 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class LocalVariableDeclarationStatement_Declaration_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -21,13 +24,17 @@ public class LocalVariableDeclarationStatement_Declaration_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      new CellAction_CommentOrUncommentNode(node).execute(editorContext);
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return false;
+      if (editorContext.getSelectedNode() != SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"))) {
+        return false;
+      }
+      return new CellAction_CommentOrUncommentNode(node).canExecute(editorContext);
     }
   }
 }
