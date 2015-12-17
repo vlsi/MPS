@@ -320,7 +320,7 @@ public final class CopyPasteUtil {
       return null;
     }
 
-    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(mpsProject, additionalModels.toArray(new SModelReference[necessaryImports.size()]), additionalLanguages.toArray(new SLanguage[necessaryLanguages.size()]));
+    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(mpsProject, additionalModels.toArray(new SModelReference[additionalModels.size()]), additionalLanguages.toArray(new SLanguage[additionalLanguages.size()]));
     dialog.show();
     if (dialog.isOK()) {
       return addImports(mpsProject, targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
