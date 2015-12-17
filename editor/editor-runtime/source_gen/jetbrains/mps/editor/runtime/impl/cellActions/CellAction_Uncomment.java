@@ -13,10 +13,18 @@ import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
+/**
+ * Used only in CellActionCommentOrUncomment
+ * Remove when there will be no instances in generated code
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class CellAction_Uncomment extends AbstractCommentAction {
   private final SNode myNode;
 
 
+  @Deprecated
   public CellAction_Uncomment(@NotNull SNode node) {
     myNode = node;
   }

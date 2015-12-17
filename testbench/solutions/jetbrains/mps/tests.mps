@@ -536,6 +536,9 @@
     <node concept="lpD6D" id="4IrZ8JbCd9V" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cK74" resolve="Comment_BetweenTwoComments" />
     </node>
+    <node concept="lpD6D" id="2wB1LSHYtr0" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2wB1LSHYorJ" resolve="Comment_CatchBlock" />
+    </node>
     <node concept="lpD6D" id="4IrZ8JbCdbq" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cQ7i" resolve="Comment_CommentUncomment" />
     </node>
@@ -568,6 +571,12 @@
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdhE" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cGoI" resolve="Comment_FirstStatement" />
+    </node>
+    <node concept="lpD6D" id="2wB1LSHYtuz" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2wB1LSHYrLJ" resolve="Comment_ForCondition" />
+    </node>
+    <node concept="lpD6D" id="2wB1LSHYtwe" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2wB1LSHYr7P" resolve="Comment_IfCondition" />
     </node>
     <node concept="lpD6D" id="2_1mL0eBmPq" role="lpD6w">
       <ref role="lpD7u" to="e6od:2_1mL0eBmHm" resolve="Comment_Initializer" />
@@ -629,6 +638,9 @@
     <node concept="lpD6D" id="4IrZ8JbCdvE" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0c9kv" resolve="Comment_Type" />
     </node>
+    <node concept="lpD6D" id="2wB1LSHYtxU" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2wB1LSHYt1y" resolve="Comment_Visibility" />
+    </node>
     <node concept="lpD6D" id="4T4PEv8HaFX" role="lpD6w">
       <ref role="lpD7u" to="e6od:4T4PEv8H0le" resolve="Uncomment_Line" />
     </node>
@@ -676,6 +688,9 @@
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdHz" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cJ7d" resolve="Uncomment_Type" />
+    </node>
+    <node concept="lpD6D" id="2wB1LSHYtzB" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2wB1LSHYtnS" resolve="Uncomment_Visibility" />
     </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61DD">
