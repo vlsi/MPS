@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -28,7 +29,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
-
 import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -195,7 +195,12 @@ public abstract class BaseTool {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        register();
+        DumbService.getInstance(getProject()).runWhenSmart(new Runnable() {
+          @Override
+          public void run() {
+            register();
+          }
+        });
       }
     });
   }
@@ -349,7 +354,7 @@ public abstract class BaseTool {
 
   }
 
-  public void dispose(){
+  public void dispose() {
 
   }
 }
