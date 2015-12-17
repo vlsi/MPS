@@ -56,8 +56,8 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3jyf1k_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_b0");
-    Checkbox_Actions_3jyf1k_b0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_b0());
+    Checkbox_ActionMap_0.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_0());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b1a(editorContext, node));
     return editorCell;
@@ -105,8 +105,8 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
-    Checkbox_Actions_3jyf1k_c0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_c0());
+    Checkbox_ActionMap_1.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_1());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b2a(editorContext, node));
     return editorCell;
@@ -159,8 +159,8 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3jyf1k_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_f0");
-    Checkbox_Actions_3jyf1k_f0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_f0());
+    Checkbox_ActionMap_2.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_2());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b5a(editorContext, node));
     return editorCell;
@@ -203,8 +203,8 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3jyf1k_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_g0");
-    Checkbox_Actions_3jyf1k_g0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_g0());
+    Checkbox_ActionMap_3.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_3());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a6a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b6a(editorContext, node));
     return editorCell;
