@@ -16,7 +16,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.util.Condition;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -85,7 +87,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
         public boolean accept(DepLink it) {
           return it.module == module && it.role.isDependency();
         }
-      });
+      }).distinct();
       if (Sequence.fromIterable(moduleDeps).isEmpty()) {
         continue;
       }
@@ -97,12 +99,14 @@ public class DependencyTree extends MPSTree implements DataProvider {
         }
       });
       // if there's any dependency with loop to itself, and role of each element of this path isDependency, then it's dependency cycle 
-      Iterable<DepPath> cycles = Sequence.fromIterable(moduleDeps).translate(new ITranslator2<DepLink, DepPath>() {
+      //  NOTE, selectMany ends up as TranslatingSequence, it we don't want cycles to be recalculated again and again on any  
+      // ModuleDependencyNode.isLeaf call, shall keep it calcualted in a collection once and for all (e.g. with toList) 
+      List<DepPath> cycles = Sequence.fromIterable(moduleDeps).translate(new ITranslator2<DepLink, DepPath>() {
         public Iterable<DepPath> translate(DepLink dep) {
           return cb.cyclePaths(dep);
         }
-      });
-      if (Sequence.fromIterable(cycles).isNotEmpty()) {
+      }).toListSequence();
+      if (ListSequence.fromList(cycles).isNotEmpty()) {
         n.setCycles(cycles);
         n.addTreeMessage(HAS_CYCLE);
       }

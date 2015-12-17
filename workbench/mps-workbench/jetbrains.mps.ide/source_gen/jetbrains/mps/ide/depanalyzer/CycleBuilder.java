@@ -4,48 +4,70 @@ package jetbrains.mps.ide.depanalyzer;
 
 import org.jetbrains.mps.util.Condition;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Arrays;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /*package*/ class CycleBuilder {
   private final Condition<DepLink> elementMatch;
   private DepLink myTarget;
-  private List<DepPath> myCycles;
+  private final List<DepPath> myCycles = new ArrayList<DepPath>();
   private DepPath myCurrent;
+  private final Set<DepLink> myReusedChecked = new HashSet<DepLink>();
+  private int myNestLevelDebug;
+
   /*package*/ CycleBuilder(Condition<DepLink> elementMatch) {
     this.elementMatch = elementMatch;
   }
+
   /**
    * Each cycle found when traversing supplied depLink.
    * Cycle starts and ends at the same module with the same role, and these are of supplied depLink
    * elementMatch condition is met for each element of the path (including first and last).
    */
   public List<DepPath> cyclePaths(DepLink depLink) {
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(String.format("\nStart path cycle calculation from %s", depLink));
+    }
     myTarget = depLink;
-    myCycles = ListSequence.fromList(new ArrayList<DepPath>());
-    List<DepPath> cycles = ListSequence.fromList(new ArrayList<DepPath>());
+    myCycles.clear();
+    myReusedChecked.clear();
     myCurrent = new DepPath();
     myCurrent.push(depLink);
+    myNestLevelDebug = 0;
     nextPathLevel(depLink);
+    myCurrent = null;
+    myTarget = null;
     return myCycles;
   }
   private void nextPathLevel(DepLink l) {
     if (ListSequence.fromList(l.children()).isEmpty() && l.getReused() != null) {
-      // reused is identical to the referencing node, don't check key equality to avoid false cycles 
-      nextPathLevel(l.getReused());
+      if (myReusedChecked.add(l.getReused())) {
+        debug(l, "(reused)");
+        // reused is identical to the referencing node, don't check key equality to avoid false cycles 
+        nextPathLevel(l.getReused());
+      } else {
+        debug(l, "(reused, already checked, ignored)");
+      }
       return;
     }
+    debug(l, "");
+    myNestLevelDebug++;
     for (DepLink ch : ListSequence.fromList(l.children()).where(new IWhereFilter<DepLink>() {
       public boolean accept(DepLink it) {
         return elementMatch.met(it);
       }
     })) {
       if (myCurrent.seen(ch)) {
-        if (eq_tn82ka_a0a0a0b0g(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
+        if (eq_tn82ka_a0a0a0d0k(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
           // cycle found 
           myCurrent.push(ch);
-          ListSequence.fromList(myCycles).addElement(new DepPath(myCurrent));
+          myCycles.add(new DepPath(myCurrent));
           myCurrent.pop();
         }
         continue;
@@ -54,8 +76,22 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
       nextPathLevel(ch);
       myCurrent.pop();
     }
+    myNestLevelDebug--;
   }
-  private static boolean eq_tn82ka_a0a0a0b0g(Object a, Object b) {
+
+  private void debug(DepLink l, String extra) {
+    if (LOG.isDebugEnabled()) {
+      LOG.debug(String.format("%s%s %s %s %s", debugIndent(), l.linktype, l.module.getModuleName(), l.role, extra));
+    }
+  }
+
+  private CharSequence debugIndent() {
+    char[] rv = new char[myNestLevelDebug];
+    Arrays.fill(rv, 0, myNestLevelDebug, ' ');
+    return new String(rv);
+  }
+  protected static Logger LOG = LogManager.getLogger(CycleBuilder.class);
+  private static boolean eq_tn82ka_a0a0a0d0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
