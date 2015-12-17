@@ -120,7 +120,6 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -179,9 +178,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
-        <property id="8355037393041754995" name="isNative" index="2aFKle" />
-      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -221,11 +217,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
-      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
-        <child id="1199569916463" name="body" index="1bW5cS" />
-      </concept>
-    </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
         <child id="2546654756694997556" name="reference" index="92FcQ" />
@@ -250,14 +241,6 @@
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -398,11 +381,14 @@
                 </node>
               </node>
               <node concept="3clFbS" id="1KD4ruQM5y2" role="3clF47">
-                <node concept="3clFbF" id="1KD4ruQM67d" role="3cqZAp">
-                  <node concept="1rXfSq" id="6J$Bwhl9SRj" role="3clFbG">
-                    <ref role="37wK5l" node="6J$Bwhl9OCO" resolve="runInWrite" />
-                    <node concept="37vLTw" id="6J$Bwhl9STO" role="37wK5m">
+                <node concept="3clFbF" id="6J$Bwhl9P_a" role="3cqZAp">
+                  <node concept="1rXfSq" id="6J$Bwhl9P_9" role="3clFbG">
+                    <ref role="37wK5l" node="4fSpAVAUjwn" resolve="refreshModule" />
+                    <node concept="37vLTw" id="6J$Bwhl9Q6K" role="37wK5m">
                       <ref role="3cqZAo" node="1KD4ruQM5xX" resolve="module" />
+                    </node>
+                    <node concept="3clFbT" id="6J$Bwhl9Q8l" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>
@@ -412,148 +398,6 @@
               </node>
             </node>
             <node concept="2tJIrI" id="6J$Bwhl9Oxw" role="jymVt" />
-            <node concept="3clFb_" id="6J$Bwhl9OCO" role="jymVt">
-              <property role="1EzhhJ" value="false" />
-              <property role="TrG5h" value="runInWrite" />
-              <property role="od$2w" value="false" />
-              <property role="DiZV1" value="false" />
-              <property role="2aFKle" value="false" />
-              <node concept="3clFbS" id="6J$Bwhl9OCR" role="3clF47">
-                <node concept="3clFbJ" id="6J$Bwhl9OVQ" role="3cqZAp">
-                  <node concept="3clFbS" id="6J$Bwhl9OVR" role="3clFbx">
-                    <node concept="3clFbF" id="6J$Bwhl9P_a" role="3cqZAp">
-                      <node concept="1rXfSq" id="6J$Bwhl9P_9" role="3clFbG">
-                        <ref role="37wK5l" node="4fSpAVAUjwn" resolve="refreshModule" />
-                        <node concept="37vLTw" id="6J$Bwhl9Q6K" role="37wK5m">
-                          <ref role="3cqZAo" node="6J$Bwhl9PFb" resolve="module" />
-                        </node>
-                        <node concept="3clFbT" id="6J$Bwhl9Q8l" role="37wK5m">
-                          <property role="3clFbU" value="false" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="6J$Bwhl9P8y" role="3clFbw">
-                    <node concept="2OqwBi" id="6J$Bwhl9OXO" role="2Oq$k0">
-                      <node concept="37vLTw" id="6J$Bwhl9OWx" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4fSpAVAUjvX" resolve="myRepository" />
-                      </node>
-                      <node concept="liA8E" id="6J$Bwhl9P7$" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6J$Bwhl9PeF" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~ModelAccess.canWrite():boolean" resolve="canWrite" />
-                    </node>
-                  </node>
-                  <node concept="9aQIb" id="6J$Bwhl9Q97" role="9aQIa">
-                    <node concept="3clFbS" id="6J$Bwhl9Q98" role="9aQI4">
-                      <node concept="34ab3g" id="6J$Bwhl9QKA" role="3cqZAp">
-                        <property role="35gtTG" value="warn" />
-                        <property role="34fQS0" value="true" />
-                        <node concept="Xl_RD" id="6J$Bwhl9QKC" role="34bqiv">
-                          <property role="Xl_RC" value="Running project structure module refresh asynchronously; no write action here" />
-                        </node>
-                        <node concept="2ShNRf" id="6J$Bwhl9RqD" role="34bMjA">
-                          <node concept="1pGfFk" id="6J$Bwhl9SI8" role="2ShVmc">
-                            <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;()" resolve="Throwable" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="6J$Bwhl9Tr2" role="3cqZAp">
-                        <node concept="3fqX7Q" id="6J$Bwhl9Uzc" role="3clFbw">
-                          <node concept="2ZW3vV" id="6J$Bwhl9Uzd" role="3fr31v">
-                            <node concept="3uibUv" id="6J$Bwhl9Uze" role="2ZW6by">
-                              <ref role="3uigEE" to="w1kc:~DefaultModelAccess" resolve="DefaultModelAccess" />
-                            </node>
-                            <node concept="2YIFZM" id="6J$Bwhl9Uzf" role="2ZW6bz">
-                              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbS" id="6J$Bwhl9UtU" role="3clFbx">
-                          <node concept="3clFbF" id="6J$Bwhl9QjR" role="3cqZAp">
-                            <node concept="2OqwBi" id="6J$Bwhl9Qvb" role="3clFbG">
-                              <node concept="2OqwBi" id="6J$Bwhl9QnX" role="2Oq$k0">
-                                <node concept="37vLTw" id="6J$Bwhl9QjP" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4fSpAVAUjvX" resolve="myRepository" />
-                                </node>
-                                <node concept="liA8E" id="6J$Bwhl9Quh" role="2OqNvi">
-                                  <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="6J$Bwhl9Q_g" role="2OqNvi">
-                                <ref role="37wK5l" to="lui2:~ModelAccess.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
-                                <node concept="1bVj0M" id="6J$Bwhl9QAX" role="37wK5m">
-                                  <node concept="3clFbS" id="6J$Bwhl9QAY" role="1bW5cS">
-                                    <node concept="3clFbF" id="6J$Bwhl9QbP" role="3cqZAp">
-                                      <node concept="1rXfSq" id="6J$Bwhl9QbO" role="3clFbG">
-                                        <ref role="37wK5l" node="4fSpAVAUjwn" resolve="refreshModule" />
-                                        <node concept="37vLTw" id="6J$Bwhl9QfM" role="37wK5m">
-                                          <ref role="3cqZAo" node="6J$Bwhl9PFb" resolve="module" />
-                                        </node>
-                                        <node concept="3clFbT" id="6J$Bwhl9Qh4" role="37wK5m">
-                                          <property role="3clFbU" value="false" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="9aQIb" id="6J$Bwhl9Uzg" role="9aQIa">
-                          <node concept="3clFbS" id="6J$Bwhl9Tr4" role="9aQI4">
-                            <node concept="3cpWs8" id="6J$Bwhl9UCu" role="3cqZAp">
-                              <node concept="3cpWsn" id="6J$Bwhl9UCv" role="3cpWs9">
-                                <property role="TrG5h" value="message" />
-                                <node concept="17QB3L" id="6J$Bwhl9UCt" role="1tU5fm" />
-                                <node concept="Xl_RD" id="6J$Bwhl9UCw" role="33vP2m">
-                                  <property role="Xl_RC" value="We have DefaultModelAccess, asynchronous call is not possible here; the project structure module is not updated" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="34ab3g" id="6J$Bwhl9TXj" role="3cqZAp">
-                              <property role="35gtTG" value="error" />
-                              <property role="34fQS0" value="true" />
-                              <node concept="37vLTw" id="6J$Bwhl9UCx" role="34bqiv">
-                                <ref role="3cqZAo" node="6J$Bwhl9UCv" resolve="message" />
-                              </node>
-                              <node concept="2ShNRf" id="6J$Bwhl9U5y" role="34bMjA">
-                                <node concept="1pGfFk" id="6J$Bwhl9Us2" role="2ShVmc">
-                                  <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;()" resolve="Throwable" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3Tm6S6" id="6J$Bwhl9OAh" role="1B3o_S" />
-              <node concept="3cqZAl" id="6J$Bwhl9OCM" role="3clF45" />
-              <node concept="37vLTG" id="6J$Bwhl9PFb" role="3clF46">
-                <property role="TrG5h" value="module" />
-                <node concept="3uibUv" id="6J$Bwhl9PFa" role="1tU5fm">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-              </node>
-              <node concept="P$JXv" id="6J$Bwhl9UDQ" role="lGtFl">
-                <node concept="TZ5HA" id="6J$Bwhl9UDR" role="TZ5H$">
-                  <node concept="1dT_AC" id="6J$Bwhl9UDS" role="1dT_Ay">
-                    <property role="1dT_AB" value="bad hack, will go away in 3.4 after we ensure that #modelAdded always has the write lock (as #modelRemoved now)" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2AHcQZ" id="6J$Bwhl9UMx" role="2AJF6D">
-                <ref role="2AI5Lk" to="ncw5:~Hack" resolve="Hack" />
-              </node>
-            </node>
-            <node concept="2tJIrI" id="1KD4ruQM5UZ" role="jymVt" />
             <node concept="3clFb_" id="1KD4ruQM5y8" role="jymVt">
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="modelRemoved" />
