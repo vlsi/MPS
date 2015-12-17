@@ -15,35 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
-import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author simon
  */
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
-  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectDescriptorBase.class));
-
-  private Map<SAbstractConcept, Collection<ConceptEditor>> myEditorsCache = new HashMap<SAbstractConcept, Collection<ConceptEditor>>();
-  private Map<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>> myEditorComponentsCache =
-      new HashMap<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>>();
+  private EditorsCache myEditorsCache = new EditorsCache();
+  private EditorComponentsCache myEditorComponentsCache = new EditorComponentsCache();
 
   @Override
   public Collection<ConceptEditor> getEditors(final ConceptDescriptor descriptor) {
@@ -56,15 +47,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
-    return getCachedEditors(concept, myEditorsCache, concept, new EditorCollectionComputable<ConceptEditor>() {
-      @Override
-      public Collection<ConceptEditor> compute(EditorAspectDescriptor editorDescriptor) {
-        if (editorDescriptor instanceof EditorAspectDescriptorBase) {
-          return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditors(concept);
-        }
-        return editorDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
-      }
-    });
+    return myEditorsCache.get(concept);
   }
 
   public Collection<ConceptEditor> getDeclaredEditors(final SAbstractConcept concept) {
@@ -72,80 +55,11 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return getCachedEditors(concept, myEditorComponentsCache, new Pair<SAbstractConcept, String>(concept, editorComponentId),
-        new EditorCollectionComputable<ConceptEditorComponent>() {
-          @Override
-          public Collection<ConceptEditorComponent> compute(EditorAspectDescriptor editorDescriptor) {
-            if (editorDescriptor instanceof EditorAspectDescriptorBase) {
-              return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditorComponents(concept, editorComponentId);
-            }
-            return editorDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
-          }
-        });
+    return myEditorComponentsCache.get(new Pair<SAbstractConcept, String>(concept, editorComponentId));
   }
 
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
     return getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
-  }
-
-  private <T extends BaseConceptEditor, KeyT> Collection<T> getCachedEditors(final SAbstractConcept concept,
-      final Map<KeyT, Collection<T>> editorsCache, final KeyT key,
-      EditorCollectionComputable<T> editorComputable) {
-    if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(this)) {
-      editorsCache.clear();
-    } else {
-      if (editorsCache.containsKey(key)) {
-        return editorsCache.get(key);
-      }
-    }
-    Collection<T> allEditors = getAllEditors(concept, editorComputable);
-    editorsCache.put(key, allEditors);
-    ValidEditorDescriptorsCache.getInstance().cacheDescriptor(this);
-    return allEditors;
-  }
-
-  private <T extends BaseConceptEditor> Collection<T> getAllEditors(SAbstractConcept concept,
-      EditorCollectionComputable<T> editorsComputable) {
-    List<T> result = new ArrayList<T>();
-    addEditors(result, editorsComputable, this);
-    SLanguage language = concept.getLanguage();
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
-    if (languageRuntime == null) {
-      LOG.warning("No language runtime found for language: " + language);
-      return result;
-    }
-    for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = getEditorAspectDescriptor(extendingLanguage);
-      if (editorAspect == null) {
-        continue;
-      }
-      addEditors(result, editorsComputable, editorAspect);
-    }
-    return result;
-  }
-
-  @Nullable
-  private EditorAspectDescriptor getEditorAspectDescriptor(LanguageRuntime languageRuntime) {
-    EditorAspectDescriptor editorAspect = null;
-    try {
-      editorAspect = languageRuntime.getAspect(EditorAspectDescriptor.class);
-    } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get editor aspect descriptor for language: " +
-          languageRuntime.getNamespace() + ". Editors of this language will not be taken into account", error);
-    }
-    return editorAspect;
-  }
-
-  private <T extends BaseConceptEditor> void addEditors(List<T> container, EditorCollectionComputable<T> editorsComputable, EditorAspectDescriptor editorAspect) {
-    Collection<T> editorsToAdd = null;
-    try {
-      editorsToAdd = editorsComputable.compute(editorAspect);
-    } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get editors from editor aspect descriptor", error);
-    }
-    if (editorsToAdd != null) {
-      container.addAll(editorsToAdd);
-    }
   }
 
   @Deprecated
@@ -159,7 +73,43 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     return initialEditors;
   }
 
-  private static interface EditorCollectionComputable<T> {
-    Collection<T> compute(EditorAspectDescriptor descriptor);
+  private class EditorsCache extends EditorAspectContributionsCache<SAbstractConcept, ConceptEditor> {
+    public EditorsCache() {
+      super(EditorAspectDescriptorBase.this);
+    }
+
+    @Override
+    protected SLanguage getLanguage(SAbstractConcept key) {
+      return key.getLanguage();
+    }
+
+    @NotNull
+    @Override
+    protected Collection<ConceptEditor> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, SAbstractConcept concept) {
+      if (editorDescriptor instanceof EditorAspectDescriptorBase) {
+        return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditors(concept);
+      }
+      return editorDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
+    }
+  }
+
+  private class EditorComponentsCache extends EditorAspectContributionsCache<Pair<SAbstractConcept, String>, ConceptEditorComponent> {
+    public EditorComponentsCache() {
+      super(EditorAspectDescriptorBase.this);
+    }
+
+    @Override
+    protected SLanguage getLanguage(Pair<SAbstractConcept, String> key) {
+      return key.o1.getLanguage();
+    }
+    @NotNull
+    @Override
+    protected Collection<ConceptEditorComponent> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, Pair<SAbstractConcept, String> key) {
+      if (editorDescriptor instanceof EditorAspectDescriptorBase) {
+        return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditorComponents(key.o1, key.o2);
+      }
+      return editorDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(key.o1), key.o2);
+    }
+
   }
 }
