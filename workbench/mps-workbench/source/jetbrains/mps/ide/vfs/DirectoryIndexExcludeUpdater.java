@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.ProjectTopics;
-import com.intellij.openapi.Disposable;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationListener;
 import com.intellij.openapi.application.ApplicationManager;
@@ -28,8 +26,6 @@ import com.intellij.openapi.roots.impl.DirectoryIndex;
 import com.intellij.openapi.roots.impl.DirectoryIndexExcludePolicy;
 import com.intellij.openapi.roots.impl.ModuleRootEventImpl;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
-import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener.Adapter;
@@ -37,12 +33,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.ide.platform.watching.FileProcessor;
-import jetbrains.mps.ide.platform.watching.ReloadAction;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -57,6 +48,7 @@ import java.util.List;
  *         Date: 30 June 11
  */
 public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
+  private final MPSProject myMpsProject;
   private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
   private MessageBus myMessageBus;
   private MessageBusConnection myConnection;
@@ -77,8 +69,9 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     }
   };
 
-  public DirectoryIndexExcludeUpdater(Project project, DirectoryIndex directoryIndex) {
+  public DirectoryIndexExcludeUpdater(Project project, DirectoryIndex directoryIndex, MPSProject mpsProject) {
     super(project);
+    myMpsProject = mpsProject;
     myMessageBus = myProject.getMessageBus();
 
     DirectoryIndexExcludePolicy[] allExcludePolicies = Extensions.getExtensions(DirectoryIndexExcludePolicy.EP_NAME, myProject);
@@ -119,9 +112,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   }
 
   private SRepository getRepository() {
-    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
-    if (project == null) throw new IllegalStateException("Cannot obtain a repository from the project which is null");
-    return project.getRepository();
+    return myMpsProject.getRepository();
   }
 
   private void notifyRootsChanged(boolean async) {
@@ -163,13 +154,17 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      notifyRootsChanged(true);
+      if (myMpsProject.getProjectModules().contains(module)) {
+        notifyRootsChanged(true);
+      }
     }
 
     @Override
     public void moduleChanged(SModule module) {
       super.moduleChanged(module);
-      notifyRootsChanged(true);
+      if (myMpsProject.getProjectModules().contains(module)) {
+        notifyRootsChanged(true);
+      }
     }
   }
 }
