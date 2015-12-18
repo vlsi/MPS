@@ -28,7 +28,6 @@ public class CommentUtil {
   }
   /**
    * 
-   * 
    * @param node node to comment. This node must have parent
    * @throws IllegalArgumentException if node does not have parent
    */

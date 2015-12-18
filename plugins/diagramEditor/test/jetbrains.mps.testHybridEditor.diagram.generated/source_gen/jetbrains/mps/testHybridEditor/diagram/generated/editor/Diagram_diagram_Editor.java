@@ -9,8 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -60,7 +58,6 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_32adaa_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_32adaa_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_32adaa_b0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_32adaa_c0(editorContext, node));

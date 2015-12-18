@@ -11,8 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -36,7 +34,6 @@ public class Statement_comment_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ffwlke_a0(editorContext, node));
     editorCell.addEditorCell(this.createNextEditor_ffwlke_b0(editorContext, node));
     return editorCell;
@@ -70,7 +67,6 @@ public class Statement_comment_Editor extends DefaultNodeEditor {
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, true, Statement_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
         return editorCell;
       }
     } finally {

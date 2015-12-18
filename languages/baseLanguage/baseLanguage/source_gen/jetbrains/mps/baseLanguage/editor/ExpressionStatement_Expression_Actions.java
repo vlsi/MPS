@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentNode;
 
 public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -46,13 +47,17 @@ public class ExpressionStatement_Expression_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      new CellAction_CommentOrUncommentNode(node).execute(editorContext);
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return false;
+      if (editorContext.getSelectedNode() != SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))) {
+        return false;
+      }
+      return new CellAction_CommentOrUncommentNode(node).canExecute(editorContext);
     }
   }
   public static class ExpressionStatement_Expression_Actions_BACKSPACE extends AbstractCellAction {

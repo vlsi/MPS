@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -121,7 +119,7 @@ public abstract class SingleRoleCellProvider {
         new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
     result.setDefaultText(getNoTargetText());
     result.setEditable(true);
-    result.setAction(CellActionType.COMMENT, new CellAction_Comment(myOwnerNode));
+
     //todo: get rid of getRole()
     result.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
     result.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));

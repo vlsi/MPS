@@ -12,58 +12,56 @@
   </root>
   <root nodeRef="r:c72b5e4e-2400-4bf3-9dfe-086eb4fcaced(jetbrains.mps.console.internalCommands.editor)/5582028874770305519">
     <file name="ConsoleModelExpression_Editor.java">
-      <node id="5582028874770305519" at="14,79,15,62" concept="4" />
-      <node id="5582028874770305520" at="17,88,18,131" concept="3" />
-      <node id="5582028874770305520" at="18,131,19,67" concept="3" />
-      <node id="5582028874770305520" at="20,26,21,27" concept="0" />
-      <node id="5582028874770305520" at="22,5,23,79" concept="0" />
-      <node id="5582028874770305520" at="23,79,24,22" concept="4" />
-      <node id="5582028874770305519" at="14,0,17,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="5582028874770305520" at="19,67,22,5" concept="1" />
-      <node id="5582028874770305520" at="17,0,26,0" concept="2" trace="createComponent_3x8801_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5582028874770305519" at="14,79,15,62" />
-      <scope id="5582028874770305520" at="20,26,21,27" />
-      <scope id="5582028874770305519" at="14,0,17,0">
+      <node id="5582028874770305519" at="12,79,13,62" concept="4" />
+      <node id="5582028874770305520" at="15,88,16,131" concept="3" />
+      <node id="5582028874770305520" at="16,131,17,67" concept="3" />
+      <node id="5582028874770305520" at="18,26,19,27" concept="0" />
+      <node id="5582028874770305520" at="20,5,21,22" concept="4" />
+      <node id="5582028874770305519" at="12,0,15,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5582028874770305520" at="17,67,20,5" concept="1" />
+      <node id="5582028874770305520" at="15,0,23,0" concept="2" trace="createComponent_3x8801_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5582028874770305519" at="12,79,13,62" />
+      <scope id="5582028874770305520" at="18,26,19,27" />
+      <scope id="5582028874770305519" at="12,0,15,0">
         <var name="editorContext" id="5582028874770305519" />
         <var name="node" id="5582028874770305519" />
       </scope>
-      <scope id="5582028874770305520" at="17,88,24,22">
+      <scope id="5582028874770305520" at="15,88,21,22">
         <var name="bigCell" id="5582028874770305520" />
         <var name="editorCell" id="5582028874770305520" />
       </scope>
-      <scope id="5582028874770305520" at="17,0,26,0">
+      <scope id="5582028874770305520" at="15,0,23,0">
         <var name="editorContext" id="5582028874770305520" />
         <var name="node" id="5582028874770305520" />
       </scope>
-      <unit id="5582028874770305519" at="13,0,27,0" name="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_Editor" />
+      <unit id="5582028874770305519" at="11,0,24,0" name="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_Editor" />
     </file>
   </root>
   <root nodeRef="r:c72b5e4e-2400-4bf3-9dfe-086eb4fcaced(jetbrains.mps.console.internalCommands.editor)/8829647120617316972">
     <file name="InternalMode_Editor.java">
-      <node id="8829647120617316972" at="14,79,15,62" concept="4" />
-      <node id="8829647120617318736" at="17,88,18,131" concept="3" />
-      <node id="8829647120617318736" at="18,131,19,67" concept="3" />
-      <node id="8829647120617318736" at="20,26,21,27" concept="0" />
-      <node id="8829647120617318736" at="22,5,23,79" concept="0" />
-      <node id="8829647120617318736" at="23,79,24,22" concept="4" />
-      <node id="8829647120617316972" at="14,0,17,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="8829647120617318736" at="19,67,22,5" concept="1" />
-      <node id="8829647120617318736" at="17,0,26,0" concept="2" trace="createComponent_259f7q_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="8829647120617316972" at="14,79,15,62" />
-      <scope id="8829647120617318736" at="20,26,21,27" />
-      <scope id="8829647120617316972" at="14,0,17,0">
+      <node id="8829647120617316972" at="12,79,13,62" concept="4" />
+      <node id="8829647120617318736" at="15,88,16,131" concept="3" />
+      <node id="8829647120617318736" at="16,131,17,67" concept="3" />
+      <node id="8829647120617318736" at="18,26,19,27" concept="0" />
+      <node id="8829647120617318736" at="20,5,21,22" concept="4" />
+      <node id="8829647120617316972" at="12,0,15,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="8829647120617318736" at="17,67,20,5" concept="1" />
+      <node id="8829647120617318736" at="15,0,23,0" concept="2" trace="createComponent_259f7q_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="8829647120617316972" at="12,79,13,62" />
+      <scope id="8829647120617318736" at="18,26,19,27" />
+      <scope id="8829647120617316972" at="12,0,15,0">
         <var name="editorContext" id="8829647120617316972" />
         <var name="node" id="8829647120617316972" />
       </scope>
-      <scope id="8829647120617318736" at="17,88,24,22">
+      <scope id="8829647120617318736" at="15,88,21,22">
         <var name="bigCell" id="8829647120617318736" />
         <var name="editorCell" id="8829647120617318736" />
       </scope>
-      <scope id="8829647120617318736" at="17,0,26,0">
+      <scope id="8829647120617318736" at="15,0,23,0">
         <var name="editorContext" id="8829647120617318736" />
         <var name="node" id="8829647120617318736" />
       </scope>
-      <unit id="8829647120617316972" at="13,0,27,0" name="jetbrains.mps.console.internalCommands.editor.InternalMode_Editor" />
+      <unit id="8829647120617316972" at="11,0,24,0" name="jetbrains.mps.console.internalCommands.editor.InternalMode_Editor" />
     </file>
   </root>
 </debug-info>

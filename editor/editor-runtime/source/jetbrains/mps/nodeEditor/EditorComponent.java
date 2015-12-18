@@ -54,6 +54,7 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.actions.MPSActions;
@@ -471,6 +472,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
+
+    myActionMap.put(CellActionType.COMMENT, new CellAction_CommentOrUncommentCurrentSelectedNode());
 
     registerKeyboardAction(new AbstractAction() {
       @Override
