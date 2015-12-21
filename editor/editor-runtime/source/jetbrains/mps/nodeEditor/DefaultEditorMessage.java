@@ -17,20 +17,20 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 /**
  * Cyril.Konopko, 01.04.2008
@@ -62,7 +62,7 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public boolean sameAs(SimpleEditorMessage message) {
     return message.getNode() == getNode() && getOwner() == message.getOwner() &&
-      getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
+        getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
   }
 
   @Override
@@ -180,6 +180,11 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public SNode getNode() {
     return myNode;
+  }
+
+  @Override
+  public boolean showInEditor() {
+    return true;
   }
 
   @Override
