@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -46,7 +47,14 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
-    return createImageCell(editorContext, node, null, imageFileName);
+    return createImageCell(editorContext, node, getModule(node), imageFileName);
+  }
+
+  @Nullable
+  private static SModule getModule(SNode node) {
+    SModel model = node.getModel();
+    if (model == null) return null;
+    return model.getModule();
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @Nullable SModule imageModule, String imagePath) {
