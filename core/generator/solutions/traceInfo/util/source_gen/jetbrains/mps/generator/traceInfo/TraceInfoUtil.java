@@ -6,33 +6,32 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
+import java.util.List;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.textgen.trace.DebugInfoRoot;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import java.util.List;
+import java.util.Map;
+import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Map;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.textgen.trace.PositionInfo;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -43,72 +42,35 @@ public class TraceInfoUtil {
     if (info == null) {
       return null;
     }
-    UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position, file);
-    return check_4iwlxm_a3a1(unitInfoForPosition);
+    List<UnitPositionInfo> unitInfoForPosition = info.getUnitInfoForPosition(file, position);
+    return (unitInfoForPosition.isEmpty() ? null : unitInfoForPosition.get(0).getUnitName());
   }
+
   @Nullable
   public static String getUnitName(TraceablePositionInfo position, SModel descriptor) {
     DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
     if (info == null) {
       return null;
     }
-    UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position);
-    return check_4iwlxm_a3a2(unitInfoForPosition);
+    List<UnitPositionInfo> unitInfoForPosition = info.getUnitInfoForPosition(position);
+    return (unitInfoForPosition.isEmpty() ? null : unitInfoForPosition.get(0).getUnitName());
   }
+
+  /**
+   * 
+   * @deprecated Use of SNode as return value is wrong. Use {@link jetbrains.mps.textgen.trace.DebugInfo#getUnitNodesForPosition(String, int) } instead
+   */
   @Nullable
+  @Deprecated
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModel>() {
       public SNode invoke(DebugInfo info, SModel descriptor) {
-        Tuples._2<UnitPositionInfo, DebugInfoRoot> unitInfo = TraceInfoUtil.getRootInfoAndUnitInfoForPosition(info, position, file);
-        if (unitInfo == null) {
-          return null;
-        }
-        final String model = unitInfo._1().getNodeRef().getModelReference().toString();
-        return new SNodePointer(model, unitInfo._0().getNodeId()).resolve(MPSModuleRepository.getInstance());
+        List<SNodeReference> nodesForPosition = info.getUnitNodesForPosition(file, position);
+        return (nodesForPosition.isEmpty() ? null : nodesForPosition.get(0).resolve(MPSModuleRepository.getInstance()));
       }
     });
   }
-  private static UnitPositionInfo getUnitInfoForPosition(DebugInfo info, final int position, final String file) {
-    List<UnitPositionInfo> resultList = info.getUnitInfoForPosition(file, position);
-    if (ListSequence.fromList(resultList).isEmpty()) {
-      return null;
-    }
-    return ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Integer>() {
-      public Integer select(UnitPositionInfo it) {
-        return it.getStartLine();
-      }
-    }, false).first();
-  }
-  private static UnitPositionInfo getUnitInfoForPosition(DebugInfo info, @NotNull final TraceablePositionInfo position) {
-    List<UnitPositionInfo> resultList = info.getUnitInfoForPosition(position.getFileName(), position.getStartLine());
-    if (ListSequence.fromList(resultList).isEmpty()) {
-      return null;
-    }
-    return ListSequence.fromList(resultList).where(new IWhereFilter<UnitPositionInfo>() {
-      public boolean accept(UnitPositionInfo it) {
-        return it.contains(position);
-      }
-    }).sort(new ISelector<UnitPositionInfo, Integer>() {
-      public Integer select(UnitPositionInfo it) {
-        return it.getStartLine();
-      }
-    }, false).first();
-  }
-  private static Tuples._2<UnitPositionInfo, DebugInfoRoot> getRootInfoAndUnitInfoForPosition(DebugInfo info, final int position, final String file) {
-    Map<DebugInfoRoot, List<UnitPositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
-      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
-        return root.getUnitPositions();
-      }
-    });
-    for (IMapping<DebugInfoRoot, List<UnitPositionInfo>> mapping : MapSequence.fromMap(resultList)) {
-      return MultiTuple.<UnitPositionInfo,DebugInfoRoot>from(ListSequence.fromList(mapping.value()).sort(new ISelector<UnitPositionInfo, Integer>() {
-        public Integer select(UnitPositionInfo it) {
-          return it.getStartLine();
-        }
-      }, false).first(), mapping.key());
-    }
-    return null;
-  }
+
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
     return check_4iwlxm_a0a7(getAllTraceableNodes(className, file, position));
@@ -248,12 +210,12 @@ public class TraceInfoUtil {
       }
     });
   }
-  public static String modelFqNameFromUnitName(String unitName) {
+  private static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
   @Nullable
-  public static <T> T findInTraceInfo(@NonNls String unitName, _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModel> getter) {
+  private static <T> T findInTraceInfo(@NonNls String unitName, _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModel> getter) {
     for (SModel descriptor : Sequence.fromIterable(getCandidateModels(unitName))) {
       final DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
       if (info == null) {
@@ -266,7 +228,7 @@ public class TraceInfoUtil {
     }
     return null;
   }
-  public static Iterable<SModel> getCandidateModels(String unitName) {
+  private static Iterable<SModel> getCandidateModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
@@ -309,18 +271,6 @@ public class TraceInfoUtil {
         return nodes;
       }
     });
-  }
-  private static String check_4iwlxm_a3a1(UnitPositionInfo checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUnitName();
-    }
-    return null;
-  }
-  private static String check_4iwlxm_a3a2(UnitPositionInfo checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUnitName();
-    }
-    return null;
   }
   private static SNode check_4iwlxm_a0a7(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {

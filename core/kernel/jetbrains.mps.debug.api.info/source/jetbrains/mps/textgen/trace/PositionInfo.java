@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.textgen.trace;
 
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Comparator;
 
 public abstract class PositionInfo implements Comparable<PositionInfo> {
   private String myFileName;
@@ -137,7 +140,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean contains(String file, int line) {
-    return eq_1myh1n_a0a0a0fb(myFileName, file) && myStartLine <= line && line <= myEndLine;
+    return EqualUtil.equals(myFileName, file) && myStartLine <= line && line <= myEndLine;
   }
 
   public boolean contains(PositionInfo position) {
@@ -169,7 +172,10 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     myEndPosition = position.myEndPosition;
   }
 
-  private static boolean eq_1myh1n_a0a0a0fb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+  static final class StartLineComparator implements Comparator<PositionInfo> {
+    @Override
+    public int compare(PositionInfo p1, PositionInfo p2) {
+      return p1.getStartLine() - p2.getStartLine();
+    }
   }
 }

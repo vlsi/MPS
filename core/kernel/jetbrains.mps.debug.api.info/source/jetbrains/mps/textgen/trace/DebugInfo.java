@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,23 +17,20 @@ package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -101,9 +98,9 @@ public class DebugInfo {
   public Set<TraceablePositionInfo> getPositions(SNode rootNode) {
     // for mbeddr 
     assert (rootNode.getParent() == null);
-    DebugInfoRoot root = MapSequence.fromMap(myRoots).get(getRef(rootNode));
+    DebugInfoRoot root = myRoots.get(getRef(rootNode));
     if (root == null) {
-      return SetSequence.fromSet(new HashSet<TraceablePositionInfo>());
+      return Collections.emptySet();
     }
     return root.getPositions();
   }
@@ -119,7 +116,7 @@ public class DebugInfo {
         }
       }, false).where(new IWhereFilter<UnitPositionInfo>() {
         public boolean accept(UnitPositionInfo it) {
-          return eq_exfyrk_a0a0a0a0a0a0a2a51(it.getNodeId(), id.toString());
+          return EqualUtil.equals(it.getNodeId(), id.toString());
         }
       }).toListSequence();
     }
@@ -127,89 +124,89 @@ public class DebugInfo {
   }
 
   @NotNull
-  public <T extends PositionInfo> List<T> getInfoForPosition(final String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
-    List<T> resultList = ListSequence.fromList(new ArrayList<T>());
-    for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
-      public boolean accept(DebugInfoRoot it) {
-        return SetSequence.fromSet(it.getFileNames()).contains(file);
-      }
-    }).translate(new ITranslator2<DebugInfoRoot, T>() {
-      public Iterable<T> translate(DebugInfoRoot it) {
-        return getAllPositionsForRoot.invoke(it);
-      }
-    })) {
-      if (element.contains(file, line)) {
-        ListSequence.fromList(resultList).addElement(element);
-      }
-    }
-    return ListSequence.fromList(resultList).sort(new ISelector<T, Integer>() {
-      public Integer select(T it) {
-        return it.getStartLine();
-      }
-    }, false).toListSequence();
-  }
-
-  @NotNull
   public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
-    Map<DebugInfoRoot, List<T>> result = MapSequence.fromMap(new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false));
-    for (DebugInfoRoot root : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).where(new IWhereFilter<DebugInfoRoot>() {
-      public boolean accept(DebugInfoRoot it) {
-        return SetSequence.fromSet(it.getFileNames()).contains(file);
-      }
-    })) {
-      List<T> list = MapSequence.fromMap(result).get(root);
-      for (T element : SetSequence.fromSet(getAllPositionsForRoot.invoke(root))) {
+    Map<DebugInfoRoot, List<T>> result = new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false);
+    for (DebugInfoRoot root : getRootsForFile(file)) {
+      List<T> list = result.get(root);
+      for (T element : getAllPositionsForRoot.invoke(root)) {
         if (element.contains(file, line)) {
           if (list == null) {
-            list = ListSequence.fromList(new ArrayList<T>());
-            MapSequence.fromMap(result).put(root, list);
+            result.put(root, list = new ArrayList<T>());
           }
-          ListSequence.fromList(list).addElement(element);
+          list.add(element);
         }
       }
       if (list != null) {
-        MapSequence.fromMap(result).put(root, ListSequence.fromList(list).sort(new ISelector<T, Integer>() {
-          public Integer select(T it) {
-            return it.getStartLine();
-          }
-        }, false).toListSequence());
+        Collections.sort(list, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
       }
     }
     return result;
   }
 
-  @NotNull
-  public List<TraceablePositionInfo> getTraceableInfoForPosition(String file, int line) {
-    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
-      public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
-        return root.getPositions();
-      }
-    });
-  }
-
-  @NotNull
-  public List<ScopePositionInfo> getScopeInfoForPosition(String file, int line) {
-    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
-      public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
-        return root.getScopePositions();
-      }
-    });
-  }
-
+  /**
+   * @return list of positions that contains specified line, reverse sorted by starting line (i.e. latest PositionInfo comes first)
+   */
   @NotNull
   public List<UnitPositionInfo> getUnitInfoForPosition(String file, int line) {
-    return getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
-      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
-        return root.getUnitPositions();
+    ArrayList<UnitPositionInfo> rv = new ArrayList<UnitPositionInfo>();
+    for (DebugInfoRoot dr : getRootsForFile(file)) {
+      for (UnitPositionInfo pi : dr.getUnitPositions()) {
+        if (pi.contains(file, line)) {
+          rv.add(pi);
+        }
       }
-    });
+    }
+    Collections.sort(rv, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+    return rv;
+  }
+
+  /**
+   * @return list of positions that contain specified one, reverse sorted by starting line (i.e. latest PositionInfo comes first).
+   */
+  @NotNull
+  public List<UnitPositionInfo> getUnitInfoForPosition(PositionInfo positionInfo) {
+    ArrayList<UnitPositionInfo> rv = new ArrayList<UnitPositionInfo>();
+    for (DebugInfoRoot dr : getRootsForFile(positionInfo.getFileName())) {
+      for (UnitPositionInfo pi : dr.getUnitPositions()) {
+        if (pi.contains(positionInfo)) {
+          rv.add(pi);
+        }
+      }
+    }
+    Collections.sort(rv, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+    return rv;
+  }
+
+  /**
+   * @return list of nodes known at the specified line, sorted in reversed order (with the node most close to the line coming first)
+   */
+  @NotNull
+  public List<SNodeReference> getUnitNodesForPosition(String fileName, int line) {
+    PersistenceFacade persFacade = PersistenceFacade.getInstance();
+    ArrayList<SNodeReference> unitNodes = new ArrayList<SNodeReference>();
+    for (DebugInfoRoot dr : getRootsForFile(fileName)) {
+      ArrayList<UnitPositionInfo> positionInfos = new ArrayList<UnitPositionInfo>(dr.getUnitPositions());
+      Collections.sort(positionInfos, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      for (UnitPositionInfo upi : positionInfos) {
+        if (upi.contains(fileName, line)) {
+          unitNodes.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(upi.getNodeId())));
+        }
+      }
+    }
+    return unitNodes;
   }
 
   public Iterable<DebugInfoRoot> getRoots() {
-    return MapSequence.fromMap(myRoots).values();
+    return myRoots.values();
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a51(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+  private List<DebugInfoRoot> getRootsForFile(String filename) {
+    ArrayList<DebugInfoRoot> rv = new ArrayList<DebugInfoRoot>(myRoots.size());
+    for (DebugInfoRoot dr : myRoots.values()) {
+      if (dr.getFileNames().contains(filename)) {
+        rv.add(dr);
+      }
+    }
+    return rv;
   }
 }
