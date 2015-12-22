@@ -224,9 +224,6 @@
       <concept id="1068581242867" name="jetbrains.mps.baseLanguage.structure.LongType" flags="in" index="3cpWsb" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -5941,40 +5938,23 @@
               </node>
               <node concept="3clFbS" id="3SnNvqCaJNZ" role="2LFqv$">
                 <node concept="3clFbJ" id="3SnNvqCaJO0" role="3cqZAp">
-                  <node concept="2OqwBi" id="3SnNvqCaJO1" role="3clFbw">
-                    <node concept="1eOMI4" id="2q2JH_NuQdw" role="2Oq$k0">
-                      <node concept="10QFUN" id="2q2JH_NuQdx" role="1eOMHV">
-                        <node concept="3uibUv" id="2q2JH_NuQdy" role="10QFUM">
-                          <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                        </node>
-                        <node concept="2OqwBi" id="2q2JH_NuQdz" role="10QFUP">
-                          <node concept="2OqwBi" id="2q2JH_NuQd$" role="2Oq$k0">
-                            <node concept="37vLTw" id="3GM_nagTym9" role="2Oq$k0">
-                              <ref role="3cqZAo" node="3SnNvqCaJNX" resolve="breakpointForRoot" />
-                            </node>
-                            <node concept="liA8E" id="2q2JH_NuQdA" role="2OqNvi">
-                              <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="2q2JH_NuQdB" role="2OqNvi">
-                            <ref role="37wK5l" to="rw00:3SnNvqCaJWi" resolve="getNodePointer" />
-                          </node>
-                        </node>
+                  <node concept="2OqwBi" id="2q2JH_NuQdz" role="3clFbw">
+                    <node concept="2OqwBi" id="2q2JH_NuQd$" role="2Oq$k0">
+                      <node concept="37vLTw" id="3GM_nagTym9" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3SnNvqCaJNX" resolve="breakpointForRoot" />
+                      </node>
+                      <node concept="liA8E" id="2q2JH_NuQdA" role="2OqNvi">
+                        <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="3SnNvqCaJO7" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SNodePointer.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="2OqwBi" id="3SnNvqCaJO8" role="37wK5m">
-                        <node concept="2OqwBi" id="3SnNvqCaJO9" role="2Oq$k0">
-                          <node concept="37vLTw" id="2BHiRxglZPT" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3SnNvqCaJN1" resolve="breakpoint" />
-                          </node>
-                          <node concept="liA8E" id="3SnNvqCaJOb" role="2OqNvi">
-                            <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
-                          </node>
+                    <node concept="liA8E" id="3Gc6Q_RXxRX" role="2OqNvi">
+                      <ref role="37wK5l" to="rw00:5cGP1m7j3Ku" resolve="equals" />
+                      <node concept="2OqwBi" id="3SnNvqCaJO9" role="37wK5m">
+                        <node concept="37vLTw" id="2BHiRxglZPT" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3SnNvqCaJN1" resolve="breakpoint" />
                         </node>
-                        <node concept="liA8E" id="3SnNvqCaJOc" role="2OqNvi">
-                          <ref role="37wK5l" to="rw00:3SnNvqCaJWi" resolve="getNodePointer" />
+                        <node concept="liA8E" id="3SnNvqCaJOb" role="2OqNvi">
+                          <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
                         </node>
                       </node>
                     </node>
@@ -6000,7 +5980,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="3SnNvqCaJOn" role="2OqNvi">
-                              <ref role="37wK5l" to="rw00:3SnNvqCaJWo" resolve="getSNode" />
+                              <ref role="37wK5l" to="rw00:3SnNvqCaJYl" resolve="getPresentation" />
                             </node>
                           </node>
                         </node>

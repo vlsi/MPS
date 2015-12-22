@@ -19,6 +19,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Comparator;
 
@@ -41,6 +42,15 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   @Nullable
   public String getNodeId() {
     return myNodeId;
+  }
+
+  /**
+   * Replacement for <code>getNodeId().equals(nodePointer.getNodeId().toString())</code>.
+   * @param nodeId tolerates null
+   * @return <code>true</code> iff is the same as the one associated with this position.
+   */
+  public boolean matches(@Nullable SNodeId nodeId) {
+    return EqualUtil.equals(myNodeId, nodeId == null ? null : nodeId.toString());
   }
 
   public int getStartLine() {

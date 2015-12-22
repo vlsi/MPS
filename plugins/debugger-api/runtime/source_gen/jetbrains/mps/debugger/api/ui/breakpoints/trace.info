@@ -1944,35 +1944,12 @@
   </root>
   <root nodeRef="r:e8d15a56-f89d-47fc-ac9f-8a35d3539ac3(jetbrains.mps.debugger.api.ui.breakpoints)/6515087165749902659">
     <file name="BreakpointsUtil.java">
-      <node id="4474271214083121974" at="15,0,16,0" concept="14" trace="MPS_BREAKPOINT" />
-      <node id="6515087165749902669" at="16,0,17,0" concept="14" trace="MPS_BREAKPOINTS_BROWSER_DIALOG" />
-      <node id="6515087165749903351" at="25,145,26,49" concept="10" />
-      <node id="6515087165749903316" at="29,25,30,57" concept="10" />
-      <node id="6515087165749903329" at="31,27,32,17" concept="11" />
-      <node id="6515087165749903333" at="33,9,34,79" concept="4" />
-      <node id="6515087165749902661" at="17,0,19,0" concept="2" trace="BreakpointsUtil#()V" />
-      <node id="6515087165749903327" at="30,57,33,9" concept="8" />
-      <node id="6515087165749903312" at="28,0,36,0" concept="9" trace="run#()V" />
-      <node id="6515087165749903305" at="26,49,36,7" concept="4" />
-      <node id="6515087165749903293" at="23,0,38,0" concept="15" trace="openNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/api/breakpoints/ILocationBreakpoint;ZZ)V" />
-      <scope id="6515087165749902664" at="17,29,17,29" />
-      <scope id="6515087165749903328" at="31,27,32,17" />
-      <scope id="6515087165749902661" at="17,0,19,0" />
-      <scope id="6515087165749903315" at="29,25,34,79">
-        <var name="node" id="6515087165749903317" />
-      </scope>
-      <scope id="6515087165749903312" at="28,0,36,0" />
-      <scope id="6515087165749903296" at="25,145,36,7">
-        <var name="project" id="6515087165749903352" />
-      </scope>
-      <scope id="6515087165749903293" at="23,0,38,0">
-        <var name="breakpoint" id="6515087165749903297" />
-        <var name="context" id="6515087165749903342" />
-        <var name="focus" id="6515087165749903299" />
-        <var name="select" id="6515087165749903302" />
-      </scope>
-      <unit id="6515087165749903311" at="27,48,36,5" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil$1" />
-      <unit id="6515087165749902659" at="14,0,39,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" />
+      <node id="4474271214083121974" at="9,0,10,0" concept="14" trace="MPS_BREAKPOINT" />
+      <node id="6515087165749902669" at="10,0,11,0" concept="14" trace="MPS_BREAKPOINTS_BROWSER_DIALOG" />
+      <node id="6515087165749902661" at="11,0,13,0" concept="2" trace="BreakpointsUtil#()V" />
+      <scope id="6515087165749902664" at="11,29,11,29" />
+      <scope id="6515087165749902661" at="11,0,13,0" />
+      <unit id="6515087165749902659" at="8,0,14,0" name="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" />
     </file>
   </root>
 </debug-info>

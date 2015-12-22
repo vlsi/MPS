@@ -93,8 +93,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
       //  check the following assumption: one breakpoint for one node 
       for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
-        if (((SNodePointer) breakpointForRoot.getLocation().getNodePointer()).equals(breakpoint.getLocation().getNodePointer())) {
-          LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
+        if (breakpointForRoot.getLocation().equals(breakpoint.getLocation())) {
+          LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getPresentation());
           break;
         }
       }

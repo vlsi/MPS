@@ -20,6 +20,8 @@ import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.IncompatibleThreadStateException;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public abstract class JavaBreakpoint extends AbstractBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
@@ -112,6 +114,10 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
       return false;
     }
     return true;
+  }
+
+  protected SRepository getRepository() {
+    return ProjectHelper.getProjectRepository(getProject());
   }
   private static StackFrame check_e43rhl_a0b0c0q(ThreadReference checkedDotOperand) throws IncompatibleThreadStateException {
     if (null != checkedDotOperand) {

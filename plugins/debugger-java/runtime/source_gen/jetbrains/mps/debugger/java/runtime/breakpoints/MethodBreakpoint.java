@@ -5,12 +5,11 @@ package jetbrains.mps.debugger.java.runtime.breakpoints;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
@@ -28,20 +27,31 @@ import com.sun.jdi.event.MethodExitEvent;
 
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = LogManager.getLogger(MethodBreakpoint.class);
-  @NotNull
-  private final BreakpointLocation myLocation;
+  private final SNodeReference myNode;
+  private BreakpointLocation myLocation;
   private String myMethodName = null;
   private String myJniSignature = null;
+
   public MethodBreakpoint(SNodeReference nodePointer, Project project) {
     super(project);
-    myLocation = new BreakpointLocation(nodePointer);
+    myNode = nodePointer;
   }
   public MethodBreakpoint(@NotNull SNode node, Project project) {
-    this(new SNodePointer(node), project);
+    this(node.getReference(), project);
   }
+
+  @NotNull
+  @Override
+  public BreakpointLocation getLocation() {
+    if (myLocation == null) {
+      myLocation = new BreakpointLocationUpdate(myNode, getRepository()).get();
+    }
+    return myLocation;
+  }
+
   @Override
   protected String getClassNameToPrepare() {
-    return myLocation.getTargetUnitName();
+    return getLocation().getTargetUnitName();
   }
   @NotNull
   @Override
@@ -50,7 +60,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   }
   @Override
   public String getPresentation() {
-    return myLocation.getPresentation();
+    return new BreakpointPresentation(getLocation(), getRepository()).getText();
   }
   @Override
   protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
@@ -74,11 +84,12 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
       LOG.error(null, ex);
     }
   }
+
   private boolean updateMethodNameAndSignature() {
     if (myMethodName != null && myJniSignature != null) {
       return true;
     }
-    TraceablePositionInfo targetCodePosition = myLocation.getTargetCodePosition();
+    TraceablePositionInfo targetCodePosition = getLocation().getTargetCodePosition();
     if (targetCodePosition == null) {
       return false;
     }
@@ -113,11 +124,6 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   private boolean accept(Method method) {
     return method.name().equals(myMethodName) && method.signature().equals(myJniSignature);
   }
-  @NotNull
-  @Override
-  public BreakpointLocation getLocation() {
-    return myLocation;
-  }
   @Override
   public boolean isValid() {
     return super.isValid() && updateMethodNameAndSignature();
@@ -131,15 +137,13 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
       return false;
     }
 
-    return eq_spo82x_a0d0p(myLocation, ((MethodBreakpoint) o).myLocation);
+    return eq_spo82x_a0d0u(getLocation(), ((MethodBreakpoint) o).getLocation());
   }
   @Override
   public int hashCode() {
-    int result = 0;
-    result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
-    return result;
+    return myNode.hashCode() + getKind().hashCode() * 31;
   }
-  private static boolean eq_spo82x_a0d0p(Object a, Object b) {
+  private static boolean eq_spo82x_a0d0u(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

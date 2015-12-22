@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -88,7 +87,7 @@ public class DebugInfo {
       return null;
     }
     for (TraceablePositionInfo pi : root.getPositions()) {
-      if (EqualUtil.equals(pi.getNodeId(), node.getNodeId().toString())) {
+      if (pi.matches(node.getNodeId())) {
         return pi;
       }
     }
@@ -116,7 +115,7 @@ public class DebugInfo {
         }
       }, false).where(new IWhereFilter<UnitPositionInfo>() {
         public boolean accept(UnitPositionInfo it) {
-          return EqualUtil.equals(it.getNodeId(), id.toString());
+          return it.matches(id);
         }
       }).toListSequence();
     }
@@ -141,40 +140,6 @@ public class DebugInfo {
       }
     }
     return result;
-  }
-
-  /**
-   * @return list of positions that contains specified line, reverse sorted by starting line (i.e. latest PositionInfo comes first)
-   */
-  @NotNull
-  public List<UnitPositionInfo> getUnitInfoForPosition(String file, int line) {
-    ArrayList<UnitPositionInfo> rv = new ArrayList<UnitPositionInfo>();
-    for (DebugInfoRoot dr : getRootsForFile(file)) {
-      for (UnitPositionInfo pi : dr.getUnitPositions()) {
-        if (pi.contains(file, line)) {
-          rv.add(pi);
-        }
-      }
-    }
-    Collections.sort(rv, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
-    return rv;
-  }
-
-  /**
-   * @return list of positions that contain specified one, reverse sorted by starting line (i.e. latest PositionInfo comes first).
-   */
-  @NotNull
-  public List<UnitPositionInfo> getUnitInfoForPosition(PositionInfo positionInfo) {
-    ArrayList<UnitPositionInfo> rv = new ArrayList<UnitPositionInfo>();
-    for (DebugInfoRoot dr : getRootsForFile(positionInfo.getFileName())) {
-      for (UnitPositionInfo pi : dr.getUnitPositions()) {
-        if (pi.contains(positionInfo)) {
-          rv.add(pi);
-        }
-      }
-    }
-    Collections.sort(rv, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
-    return rv;
   }
 
   /**
