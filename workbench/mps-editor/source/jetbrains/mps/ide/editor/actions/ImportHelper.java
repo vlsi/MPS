@@ -20,8 +20,8 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -97,9 +97,10 @@ public class ImportHelper {
 
   // XXX [artem] used from idea plugin, that's why left intact
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
-                                       @Nullable BaseAction parentAction) {
+      @Nullable BaseAction parentAction) {
     addLanguageImport(project, contextModule, model, parentAction, null);
   }
+
   public static void addLanguageImport(final Project project, final SModule contextModule, final SModel model,
       @Nullable BaseAction parentAction, @Nullable final Runnable onClose) {
     BaseModuleModel goToLanguageModel = new BaseModuleModel(project, "language") {
@@ -126,9 +127,9 @@ public class ImportHelper {
   }
 
   private static class AddLanguageItem extends BaseModuleItem {
-    private Project myProject;
-    private SModule myContextModule;
-    private SModel myModel;
+    private final Project myProject;
+    private final SModule myContextModule;
+    private final SModel myModel;
 
     public AddLanguageItem(Project project, SModuleReference language, SModule contextModule, SModel model) {
       super(language);
@@ -145,7 +146,11 @@ public class ImportHelper {
       modelAccess.runWriteAction(new Runnable() {
         @Override
         public void run() {
-          Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
+          final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+          if(mpsProject == null) {
+            return;
+          }
+          Language lang = new ModuleRepositoryFacade(mpsProject).getModule(getModuleReference(), Language.class);
 
           HashSet<Language> langs = new HashSet<Language>(LanguageDependenciesManager.getAllExtendedLanguages(lang));
           langs.remove(lang);
@@ -154,12 +159,17 @@ public class ImportHelper {
           langs.remove(BootstrapLanguages.coreLanguage());
 
           final Collection<SModuleReference> alreadyImported;
-          if (myModel == null) {
-            alreadyImported = Collections.emptySet();
-          } else {
+          if (myModel != null) {
             // XXX likely, all imported + all visible (i.e. those extended) shall be considered -
             // there's no need to import otherwise visible language
             alreadyImported = SModelOperations.getAllImportedLanguages(myModel);
+          } else if (myContextModule != null && myContextModule instanceof DevKit) {
+            alreadyImported = new HashSet<SModuleReference>();
+            for (Language language : ((DevKit) myContextModule).getAllExportedLanguages()) {
+              alreadyImported.add(language.getModuleReference());
+            }
+          } else {
+            alreadyImported = Collections.emptySet();
           }
           for (Language l : langs) {
             if (alreadyImported.contains(l.getModuleReference())) {
@@ -179,6 +189,10 @@ public class ImportHelper {
         }
       }
 
+      /*TODO: rewrite importing:
+      * If module is already imported itself/by devkit either do nothing or show message.
+      * Better try to filter all such imports in the first place.
+      * */
       toImport.add(getModuleReference());
 
       modelAccess.executeCommand(new Runnable() {
@@ -205,7 +219,9 @@ public class ImportHelper {
             }
           }
           if (reload) {
-            ClassLoaderManager.getInstance().reloadModule(myContextModule);
+            if(myContextModule instanceof ReloadableModule) {
+              ((ReloadableModule) myContextModule).reload();
+            }
           }
         }
       });
@@ -247,8 +263,8 @@ public class ImportHelper {
   }
 
   private static class AddModelItem extends BaseModelItem {
-    private jetbrains.mps.project.Project myProject;
-    private SModel myModel;
+    private final jetbrains.mps.project.Project myProject;
+    private final SModel myModel;
 
     public AddModelItem(jetbrains.mps.project.Project mpsProject, SModel model, SModelReference modelToImport) {
       super(modelToImport);
@@ -272,11 +288,9 @@ public class ImportHelper {
     }
   }
 
-  // FIXME there's one more j.m.w.goTo.NavigateCallback, which suggests we shall navigate from
-  // onClose(). Since Idea developers are too smart to document what's the right approach,
-  // leave the one that used to work here for the time being.
   private static class NavigateCallback extends ChooseByNamePopupComponent.Callback {
     private final Runnable myOnClose;
+    private NavigationItem myNavigationItem;
 
     public NavigateCallback(@Nullable Runnable onClose) {
       myOnClose = onClose;
@@ -287,12 +301,16 @@ public class ImportHelper {
       if (myOnClose != null) {
         myOnClose.run();
       }
+      if(myNavigationItem != null) {
+        myNavigationItem.navigate(true);
+      }
     }
 
     @Override
-    public void elementChosen(Object element) {
-      ((NavigationItem) element).navigate(true);
-
+    public void elementChosen(final Object element) {
+      if(element instanceof NavigationItem) {
+        myNavigationItem = (NavigationItem) element;
+      }
     }
   }
 
