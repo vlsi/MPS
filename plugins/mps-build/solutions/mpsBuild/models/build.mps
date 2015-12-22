@@ -16867,7 +16867,7 @@
       </node>
       <node concept="NbPM2" id="7GO0VN9rZvQ" role="2Mmf0a">
         <node concept="3Mxwew" id="7GO0VN9rZvR" role="3MwsjC">
-          <property role="3MwjfP" value="http://forum.jetbrains.com/forum/Meta-Programming-System" />
+          <property role="3MwjfP" value="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
         </node>
       </node>
       <node concept="NbPM2" id="6U0n_nYUFlV" role="2gocG4">
