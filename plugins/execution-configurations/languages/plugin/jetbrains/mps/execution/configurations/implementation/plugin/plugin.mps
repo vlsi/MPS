@@ -113,6 +113,7 @@
     <import index="drpk" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.make(MPS.Workbench/)" />
     <import index="drpl" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.make(MPS.Platform/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -7586,19 +7587,8 @@
                       <node concept="3clFbT" id="1DeqbSMA_s0" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>
-                      <node concept="2ShNRf" id="1DeqbSMA_s1" role="37wK5m">
-                        <node concept="1pGfFk" id="1DeqbSMA_s2" role="2ShVmc">
-                          <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
-                          <node concept="2OqwBi" id="1DeqbSMA_s3" role="37wK5m">
-                            <node concept="2YIFZM" id="1DeqbSMA_s4" role="2Oq$k0">
-                              <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
-                              <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
-                            </node>
-                            <node concept="liA8E" id="1DeqbSMA_s5" role="2OqNvi">
-                              <ref role="37wK5l" to="xygl:~ProgressManager.getProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getProgressIndicator" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="7bi2vNWiRQ8" role="37wK5m">
+                        <ref role="3cqZAo" node="7bi2vNWiPu6" resolve="progress" />
                       </node>
                     </node>
                   </node>
@@ -7661,6 +7651,12 @@
       </node>
       <node concept="2AHcQZ" id="4sYvxkKJ4VX" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="7bi2vNWiPu6" role="3clF46">
+        <property role="TrG5h" value="progress" />
+        <node concept="3uibUv" id="7bi2vNWiPu5" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="_Qgg$$umEy" role="jymVt">

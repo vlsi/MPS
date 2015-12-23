@@ -3633,6 +3633,12 @@
       <node concept="3Tmbuc" id="1DeqbSMDT1n" role="1B3o_S" />
       <node concept="3cqZAl" id="1DeqbSMDT1o" role="3clF45" />
       <node concept="3clFbS" id="1DeqbSMDT1p" role="3clF47" />
+      <node concept="37vLTG" id="7bi2vNWiHMh" role="3clF46">
+        <property role="TrG5h" value="progress" />
+        <node concept="3uibUv" id="7bi2vNWiHMg" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="1DeqbSMDT1q" role="jymVt">
       <property role="TrG5h" value="addItem" />
@@ -3837,6 +3843,20 @@
                             <node concept="3clFbF" id="1DeqbSMDT4g" role="3cqZAp">
                               <node concept="1rXfSq" id="1DeqbSMDT4h" role="3clFbG">
                                 <ref role="37wK5l" node="1DeqbSMDT1m" resolve="collectCandidates" />
+                                <node concept="2ShNRf" id="1DeqbSMA_s1" role="37wK5m">
+                                  <node concept="1pGfFk" id="1DeqbSMA_s2" role="2ShVmc">
+                                    <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
+                                    <node concept="2OqwBi" id="1DeqbSMA_s3" role="37wK5m">
+                                      <node concept="2YIFZM" id="1DeqbSMA_s4" role="2Oq$k0">
+                                        <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                                        <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
+                                      </node>
+                                      <node concept="liA8E" id="1DeqbSMA_s5" role="2OqNvi">
+                                        <ref role="37wK5l" to="xygl:~ProgressManager.getProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getProgressIndicator" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>

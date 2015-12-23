@@ -8,19 +8,17 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -44,14 +42,13 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     return element.getCachedFqName();
   }
   @Override
-  protected void collectCandidates() {
+  protected void collectCandidates(final ProgressMonitor progress) {
     final List<SNode> nodesList = new ArrayList<SNode>();
     final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-          SAbstractConcept c = MetaAdapterByDeclaration.getConcept(concept);
-          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
+        for (SAbstractConcept c : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
+          Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, progress);
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
         }
       }

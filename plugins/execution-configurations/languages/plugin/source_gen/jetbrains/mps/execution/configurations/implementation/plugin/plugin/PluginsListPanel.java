@@ -13,12 +13,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
@@ -60,11 +59,11 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
     return fqName.value;
   }
   @Override
-  protected void collectCandidates() {
+  protected void collectCandidates(final ProgressMonitor progress) {
     final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin")), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
+        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin")), false, progress);
         synchronized (myLock) {
           ListSequence.fromList(myCandidates).clear();
           for (SNode node : SetSequence.fromSet(usages)) {

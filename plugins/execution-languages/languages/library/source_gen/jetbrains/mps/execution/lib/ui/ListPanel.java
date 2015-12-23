@@ -24,7 +24,9 @@ import com.intellij.ui.components.JBLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import javax.swing.AbstractListModel;
@@ -75,7 +77,7 @@ public abstract class ListPanel<T> extends JPanel {
   protected abstract T wrap(SNode node);
   protected abstract SNodeReference unwrap(T element);
   protected abstract String getFqName(T element);
-  protected abstract void collectCandidates();
+  protected abstract void collectCandidates(ProgressMonitor progress);
   public void addItem(T item) {
     ListSequence.fromList(myValues).addElement(item);
     myListComponent.updateUI();
@@ -105,7 +107,7 @@ public abstract class ListPanel<T> extends JPanel {
       ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
         @Override
         public void run() {
-          collectCandidates();
+          collectCandidates(new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
         }
       }, "Searching for nodes", false, myProject);
     }

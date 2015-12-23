@@ -4584,28 +4584,13 @@
             <node concept="3clFbS" id="7JBhbjirhvs" role="1bW5cS">
               <node concept="2Gpval" id="1DeqbSMA_rG" role="3cqZAp">
                 <node concept="2GrKxI" id="1DeqbSMA_rH" role="2Gsz3X">
-                  <property role="TrG5h" value="concept" />
+                  <property role="TrG5h" value="c" />
                 </node>
                 <node concept="2YIFZM" id="1DeqbSMA_rI" role="2GsD0m">
                   <ref role="37wK5l" to="sfqd:1KnTQt4Oioj" resolve="getWrappedRootConcepts" />
                   <ref role="1Pybhc" to="sfqd:1KnTQt4Oin6" resolve="TestNodeWrapperFactory" />
                 </node>
                 <node concept="3clFbS" id="1DeqbSMA_rJ" role="2LFqv$">
-                  <node concept="3cpWs8" id="1DeqbSMA_rK" role="3cqZAp">
-                    <node concept="3cpWsn" id="1DeqbSMA_rL" role="3cpWs9">
-                      <property role="TrG5h" value="c" />
-                      <node concept="3uibUv" id="1DeqbSMA_rM" role="1tU5fm">
-                        <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
-                      </node>
-                      <node concept="2YIFZM" id="7JBhbjirmG2" role="33vP2m">
-                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                        <node concept="2GrUjf" id="7JBhbjirnWw" role="37wK5m">
-                          <ref role="2Gs0qQ" node="1DeqbSMA_rH" resolve="concept" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="1DeqbSMA_rS" role="3cqZAp">
                     <node concept="3cpWsn" id="1DeqbSMA_rT" role="3cpWs9">
                       <property role="TrG5h" value="usages" />
@@ -4623,26 +4608,15 @@
                           <node concept="2YIFZM" id="1DeqbSMA_rY" role="37wK5m">
                             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                             <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
-                            <node concept="37vLTw" id="1DeqbSMA_rZ" role="37wK5m">
-                              <ref role="3cqZAo" node="1DeqbSMA_rL" resolve="c" />
+                            <node concept="2GrUjf" id="7bi2vNWhNRO" role="37wK5m">
+                              <ref role="2Gs0qQ" node="1DeqbSMA_rH" resolve="c" />
                             </node>
                           </node>
                           <node concept="3clFbT" id="1DeqbSMA_s0" role="37wK5m">
                             <property role="3clFbU" value="false" />
                           </node>
-                          <node concept="2ShNRf" id="1DeqbSMA_s1" role="37wK5m">
-                            <node concept="1pGfFk" id="1DeqbSMA_s2" role="2ShVmc">
-                              <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
-                              <node concept="2OqwBi" id="1DeqbSMA_s3" role="37wK5m">
-                                <node concept="2YIFZM" id="1DeqbSMA_s4" role="2Oq$k0">
-                                  <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
-                                  <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
-                                </node>
-                                <node concept="liA8E" id="1DeqbSMA_s5" role="2OqNvi">
-                                  <ref role="37wK5l" to="xygl:~ProgressManager.getProgressIndicator():com.intellij.openapi.progress.ProgressIndicator" resolve="getProgressIndicator" />
-                                </node>
-                              </node>
-                            </node>
+                          <node concept="37vLTw" id="7bi2vNWiDAX" role="37wK5m">
+                            <ref role="3cqZAo" node="7bi2vNWiBmk" resolve="progress" />
                           </node>
                         </node>
                       </node>
@@ -4872,6 +4846,12 @@
       </node>
       <node concept="2AHcQZ" id="1DeqbSMFm7m" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="7bi2vNWiBmk" role="3clF46">
+        <property role="TrG5h" value="progress" />
+        <node concept="3uibUv" id="7bi2vNWiBmj" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1DeqbSM$WnN" role="jymVt" />
