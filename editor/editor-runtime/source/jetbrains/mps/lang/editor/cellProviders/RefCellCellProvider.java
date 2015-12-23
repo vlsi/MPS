@@ -17,7 +17,6 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -31,13 +30,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Collections;
-import java.util.Iterator;
 
 public class RefCellCellProvider extends AbstractReferentCellProvider {
 
@@ -90,23 +87,28 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     return editorCell;
   }
 
-  private void setSemanticNodeToCells(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, SNode semanticNode) {
+  // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell
+  // TODO: lookup (either empty or top-level cell) & remove this method completely.
+  private void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
     if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
       return;
     }
     ((EditorCell_Basic) rootCell).setSNode(semanticNode);
-    if (rootCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> children = ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell).iterator();
-      while (children.hasNext()) {
-        setSemanticNodeToCells(children.next(), semanticNode);
+    if (rootCell instanceof EditorCell_Collection) {
+      for (EditorCell nextChild : ((EditorCell_Collection) rootCell)) {
+        if (!nextChild.isBig()) {
+          setSemanticNodeToCells(nextChild, semanticNode);
+        }
       }
     }
   }
+
   // gets a kind of attributes possibly hanging on this provider's role
   @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Reference.class;
   }
+
   @Override
   public Iterable<SNode> getRoleAttributes() {
     return AttributeOperations.getLinkAttributes(getSNode(), myGenuineRole);
