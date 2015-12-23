@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -39,7 +37,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_rootCellModelStyle(style, editorCell);
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_zgm7s3_a0(editorContext, node));
     if (renderingCondition_zgm7s3_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_zgm7s3_b0(editorContext, node));
@@ -333,7 +330,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_zgm7s3_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zgm7s3_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zgm7s3_c0(editorContext, node));

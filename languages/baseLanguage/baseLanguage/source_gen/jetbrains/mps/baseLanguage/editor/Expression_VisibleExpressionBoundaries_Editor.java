@@ -9,8 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -37,7 +35,6 @@ public class Expression_VisibleExpressionBoundaries_Editor extends DefaultNodeEd
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nejlv4_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     if (renderingCondition_nejlv4_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_nejlv4_a0(editorContext, node));
     }
@@ -94,7 +91,6 @@ public class Expression_VisibleExpressionBoundaries_Editor extends DefaultNodeEd
     {
       EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, true, Expression_VisibleExpressionBoundaries_Editor.class);
       editorCell.setBig(true);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }

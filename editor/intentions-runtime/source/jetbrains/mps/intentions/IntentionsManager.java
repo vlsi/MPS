@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -342,15 +343,18 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
-    if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return true;
+    if (node.getModel() == null) {
+      return true;
+    }
     Set<String> langNames = new HashSet<String>();
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(editorContext.getRepository());
     // respect intentions from imported languages only
     ArrayList<IntentionAspectDescriptor> activeIntentionAspects = new ArrayList<IntentionAspectDescriptor>();
     // respect migration scripts from imported languages only
     ArrayList<MigrationRefactoringIntentions> activeIntentionsFromMigrationScripts = new ArrayList<MigrationRefactoringIntentions>();
-    for (SLanguage l : SModelOperations.getAllLanguageImports(node.getModel())) {
+    for (SLanguage l : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(node.getModel())).getExtended()) {
       langNames.add(l.getQualifiedName());
-      final LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(l);
+      final LanguageRuntime lr = languageRegistry.getLanguage(l);
       if (lr == null) {
         continue;
       }

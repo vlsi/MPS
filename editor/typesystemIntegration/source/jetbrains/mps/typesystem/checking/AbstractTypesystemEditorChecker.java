@@ -126,22 +126,25 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
             AbstractTypesystemEditorChecker.this,
             editorContext
         );
+
         List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
         final SNode quickFixNode = errorNode.o1;
-        if (applyQuickFixes){
+        if (applyQuickFixes && !instantIntentionApplied){
            if (intentionProviders.size() == 1 &&
               intentionProviders.get(0) != null &&
               intentionProviders.get(0).isExecutedImmediately() &&
               !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED)
           {
             QuickFixProvider intentionProvider = intentionProviders.get(0);
-            if (!instantIntentionApplied) {
-              instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, intentionProvider);
+            instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, intentionProvider);
+            if (instantIntentionApplied) {
+              // skip the message
+              continue;
             }
-          } else {
-            messages.add(message);
           }
         }
+
+        messages.add(message);
       }
     }
   }
