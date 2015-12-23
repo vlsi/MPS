@@ -67,12 +67,15 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
   private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
 
+  private UpdateInfoIndex myUpdateInfoIndex;
+  private UpdateInfoNode myCurrentUpdateInfo;
+
   private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
       Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> cleanDependentCells, Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> dirtyDependentCells,
-      Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> existenceDependentCells) {
+      Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> existenceDependentCells, UpdateInfoIndex updateInfoIndex) {
     myNode = node;
     myModelModifications = new SModelModificationsCollector(events).getModifications();
     myUpdater = updater;
@@ -82,6 +85,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myCleanDependentCells = cleanDependentCells;
     myDirtyDependentCells = dirtyDependentCells;
     myExistenceDependentCells = existenceDependentCells;
+    myUpdateInfoIndex = updateInfoIndex;
   }
 
   @Override
@@ -132,23 +136,29 @@ public class UpdateSessionImpl implements UpdateSession {
     dependentCells.add(cell);
   }
 
-  public EditorCell performUpdate() {
+  Pair<EditorCell, UpdateInfoIndex> performUpdate() {
     ReferencedNodeContext currentContext = ReferencedNodeContext.createNodeContext(getNode());
     myContextStack.push(currentContext);
+    myCurrentUpdateInfo = new UpdateInfoNode(currentContext);
     EditorContext editorContext = getUpdater().getEditorContext();
     editorContext.getCellFactory().pushCellContext();
+
+    Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
       editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
         editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
       }
-      return EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), currentContext,
-          editorContext.isInspector());
+      result.o1 =
+          EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), currentContext, editorContext.isInspector());
     } finally {
       editorContext.getCellFactory().popCellContext();
+      result.o2 = new UpdateInfoIndex(myCurrentUpdateInfo);
+      myCurrentUpdateInfo = null;
       myContextStack.pop();
     }
+    return result;
   }
 
   void setInitialEditorHints(String[] initialHints) {
@@ -177,6 +187,7 @@ public class UpdateSessionImpl implements UpdateSession {
     Collection<String> hints = myHintsForNodeMap.get(node.getReference());
     return hints.toArray(new String[hints.size()]);
   }
+
   void setEditorHintsForNodeMap(Map<SNodeReference, Collection<String>> hintsForNodeMap) {
     myHintsForNodeMap = hintsForNodeMap;
   }
@@ -185,6 +196,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public EditorCell updateChildNodeCell(final SNode node) {
     final ReferencedNodeContext currentContext = myContextStack.peek().sameContextButAnotherNode(node);
     myContextStack.push(currentContext);
+    myCurrentUpdateInfo = new UpdateInfoNode(currentContext, myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
       return runWithExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
@@ -194,6 +206,7 @@ public class UpdateSessionImpl implements UpdateSession {
         }
       });
     } finally {
+      myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
       myContextStack.pop();
     }
   }
@@ -207,21 +220,29 @@ public class UpdateSessionImpl implements UpdateSession {
     final EditorContext editorContext = getUpdater().getEditorContext();
     editorContext.getCellFactory().pushCellContext();
     editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    final ReferencedNodeContext currentContext = ReferencedNodeContext.createNodeAttributeContext(roleAttribute);
+    myContextStack.push(currentContext);
+
+    UpdateInfoNode attributeUpdateInfoNode = new UpdateInfoNode(currentContext);
+    myCurrentUpdateInfo.insertNewParent(attributeUpdateInfoNode);
+    myCurrentUpdateInfo = attributeUpdateInfoNode;
     try {
       return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
         @Override
         public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
+          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, currentContext,
               myModelModifications);
         }
       });
     } finally {
       editorContext.getCellFactory().popCellContext();
+      myContextStack.pop();
     }
   }
 
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
+    // TODO: create new UpdateInfoNode here & replace myContextStack with myCurrentUpdateInfo.getContext()
     ReferencedNodeContext currentContext = myContextStack.peek();
     myContextStack.push(currentContext.contextWithOneMoreReference(node, currentContext.getNode(), role));
     try {
@@ -263,5 +284,12 @@ public class UpdateSessionImpl implements UpdateSession {
         editorContext.getCellFactory().popCellContext();
       }
     }
+  }
+
+  public void reuseChildInfo(ReferencedNodeContext childContext) {
+    UpdateInfoNode updateInfoNode = myUpdateInfoIndex.remove(childContext);
+    assert updateInfoNode != null;
+    myCurrentUpdateInfo.replace(updateInfoNode);
+    myCurrentUpdateInfo = updateInfoNode;
   }
 }

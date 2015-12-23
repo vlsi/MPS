@@ -74,6 +74,7 @@ public class UpdaterImpl implements Updater, CommandContext {
   private int myCommandLevel = 0;
   private String[] myInitialHints;
   private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
+  private UpdateInfoIndex myUpdateInfoIndex;
 
   public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -124,19 +125,22 @@ public class UpdaterImpl implements Updater, CommandContext {
         "Update was executed for the editor associated with disposed project: " + project + ", editor: " + getEditorComponent() + ", node: " +
             getEditorComponent().getEditedNode();
     myUpdateSession = createUpdateSession(node, events);
-    EditorCell result = null;
+    EditorCell rootCell = null;
     try {
-      result = TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, new Computable<EditorCell>() {
-        @Override
-        public EditorCell compute() {
-          return myUpdateSession.performUpdate();
-        }
-      });
+      Pair<EditorCell, UpdateInfoIndex> result =
+          TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, new Computable<Pair<EditorCell, UpdateInfoIndex>>() {
+            @Override
+            public Pair<EditorCell, UpdateInfoIndex> compute() {
+              return myUpdateSession.performUpdate();
+            }
+          });
+      rootCell = result.o1;
+      myUpdateInfoIndex = result.o2;
     } finally {
       myUpdateSession = null;
     }
-    myModelListenersController.attachListeners(node, getRelatedNodes(result), getRelatedRefTargets(result));
-    return result;
+    myModelListenersController.attachListeners(node, getRelatedNodes(rootCell), getRelatedRefTargets(rootCell));
+    return rootCell;
   }
 
   @Override
@@ -234,9 +238,11 @@ public class UpdaterImpl implements Updater, CommandContext {
   protected UpdateSessionImpl createUpdateSession(SNode node, List<SModelEvent> events) {
     UpdateSessionImpl result =
         new UpdateSessionImpl(node, events, this, myBigCellsMap, myRelatedNodes, myRelatedRefTargets, myCleanDependentCells, myDirtyDependentCells,
-            myExistenceDependentCells);
+            myExistenceDependentCells, myUpdateInfoIndex);
     result.setInitialEditorHints(myInitialHints);
     result.setEditorHintsForNodeMap(myEditorHintsForNodeMap);
+// TODO: clean local state completely & use only info from this UpdateSessionImpl to update the editor after it.
+//    myUpdateInfoIndex = null;
     return result;
   }
 

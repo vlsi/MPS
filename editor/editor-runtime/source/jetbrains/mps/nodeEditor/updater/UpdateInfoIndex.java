@@ -1,0 +1,64 @@
+/*
+ * Copyright 2003-2015 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.nodeEditor.updater;
+
+import jetbrains.mps.nodeEditor.ReferencedNodeContext;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
+/**
+ * User: shatalin
+ * Date: 22/12/15
+ */
+public class UpdateInfoIndex {
+  private Map<ReferencedNodeContext, List<UpdateInfoNode>> myIndex;
+
+  UpdateInfoIndex(UpdateInfoNode rootNode) {
+    buildIndex(rootNode);
+  }
+
+  private void buildIndex(UpdateInfoNode node) {
+    myIndex = new HashMap<ReferencedNodeContext, List<UpdateInfoNode>>();
+
+    Queue<UpdateInfoNode> nodesToProcess = new LinkedList<UpdateInfoNode>();
+    nodesToProcess.add(node);
+    while (!nodesToProcess.isEmpty()) {
+      UpdateInfoNode nextNode = nodesToProcess.remove();
+      List<UpdateInfoNode> nodesInContext = myIndex.get(nextNode.getContext());
+      if (nodesInContext == null) {
+        nodesInContext = new LinkedList<UpdateInfoNode>();
+        myIndex.put(nextNode.getContext(), nodesInContext);
+      }
+      nodesInContext.add(nextNode);
+      nodesToProcess.addAll(nextNode.getChildren());
+    }
+  }
+
+  UpdateInfoNode remove(ReferencedNodeContext childContext) {
+    List<UpdateInfoNode> updateInfoNodes = myIndex.get(childContext);
+    assert updateInfoNodes != null : childContext;
+    if (updateInfoNodes.isEmpty()) {
+      return null;
+    }
+    UpdateInfoNode updateInfoNode = updateInfoNodes.remove(0);
+    updateInfoNode.detachFromParent();
+    return updateInfoNode;
+  }
+}
