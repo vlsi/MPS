@@ -20,7 +20,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.smodel.ModelAccess;
 
 public enum JUnitRunTypes {
   PROJECT() {
@@ -173,7 +172,7 @@ public enum JUnitRunTypes {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-        ModelAccess.instance().runReadAction(new Runnable() {
+        project.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             result.value = Sequence.fromIterable(doCollect(configuration, project, monitor)).toListSequence();
           }

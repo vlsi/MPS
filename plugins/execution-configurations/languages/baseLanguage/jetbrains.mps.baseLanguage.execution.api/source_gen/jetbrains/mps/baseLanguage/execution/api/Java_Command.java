@@ -29,7 +29,6 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -206,7 +205,7 @@ public class Java_Command {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode resolve = ((SNodePointer) node).resolve(MPSModuleRepository.getInstance());
+        SNode resolve = node.resolve(MPSModuleRepository.getInstance());
         if (resolve != null) {
           className.value = Java_Command.getClassName(resolve);
         }

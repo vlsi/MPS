@@ -1692,21 +1692,14 @@
                       </node>
                       <node concept="2OqwBi" id="1KUoCipvxoi" role="33vP2m">
                         <node concept="liA8E" id="1KUoCipvxoj" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~SNodePointer.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                          <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
                           <node concept="2YIFZM" id="1KUoCipvxok" role="37wK5m">
                             <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
                             <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
                           </node>
                         </node>
-                        <node concept="1eOMI4" id="1KUoCipvxol" role="2Oq$k0">
-                          <node concept="10QFUN" id="1KUoCipvxom" role="1eOMHV">
-                            <node concept="3uibUv" id="1KUoCipvxon" role="10QFUM">
-                              <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                            </node>
-                            <node concept="37vLTw" id="2BHiRxgm2RP" role="10QFUP">
-                              <ref role="3cqZAo" node="14R2qyOBxhj" resolve="node" />
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="2BHiRxgm2RP" role="2Oq$k0">
+                          <ref role="3cqZAo" node="14R2qyOBxhj" resolve="node" />
                         </node>
                       </node>
                     </node>

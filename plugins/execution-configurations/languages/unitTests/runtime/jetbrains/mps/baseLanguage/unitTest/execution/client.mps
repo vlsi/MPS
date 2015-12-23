@@ -8448,23 +8448,17 @@
                             <node concept="liA8E" id="1KUoCipvCeR" role="2OqNvi">
                               <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                             </node>
-                            <node concept="2YIFZM" id="1KUoCipvCeS" role="2Oq$k0">
-                              <ref role="37wK5l" to="unno:4g$x8cSGKDM" resolve="getModelFromNodeReference" />
-                              <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                              <node concept="1eOMI4" id="1KUoCipvCeT" role="37wK5m">
-                                <node concept="10QFUN" id="1KUoCipvCeU" role="1eOMHV">
-                                  <node concept="3uibUv" id="1KUoCipvCeV" role="10QFUM">
-                                    <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
+                            <node concept="2JrnkZ" id="7bi2vNWkwJ8" role="2Oq$k0">
+                              <node concept="2OqwBi" id="7bi2vNWkw3t" role="2JrQYb">
+                                <node concept="2OqwBi" id="7bi2vNWkvM7" role="2Oq$k0">
+                                  <node concept="37vLTw" id="7bi2vNWkvJY" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="1KUoCipvCf6" resolve="testable" />
                                   </node>
-                                  <node concept="2OqwBi" id="1KUoCipvCeW" role="10QFUP">
-                                    <node concept="37vLTw" id="3GM_nagTAm6" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="1KUoCipvCf6" resolve="testable" />
-                                    </node>
-                                    <node concept="liA8E" id="1KUoCipvCeY" role="2OqNvi">
-                                      <ref role="37wK5l" node="56tRMpP_ejc" resolve="getNodePointer" />
-                                    </node>
+                                  <node concept="liA8E" id="7bi2vNWkvQm" role="2OqNvi">
+                                    <ref role="37wK5l" node="56tRMpP_ej8" resolve="getNode" />
                                   </node>
                                 </node>
+                                <node concept="I4A8Y" id="7bi2vNWkwqM" role="2OqNvi" />
                               </node>
                             </node>
                           </node>

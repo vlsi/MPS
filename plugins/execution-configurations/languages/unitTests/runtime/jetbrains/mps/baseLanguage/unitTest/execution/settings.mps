@@ -2936,12 +2936,16 @@
                         </node>
                         <node concept="3clFbF" id="eZTS3emAYl" role="3cqZAp">
                           <node concept="2OqwBi" id="eZTS3emAYm" role="3clFbG">
-                            <node concept="2YIFZM" id="eZTS3emAYn" role="2Oq$k0">
-                              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
+                            <node concept="2OqwBi" id="7bi2vNWjPUU" role="2Oq$k0">
+                              <node concept="37vLTw" id="7bi2vNWjPvg" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5gyVhZ1bmkX" resolve="project" />
+                              </node>
+                              <node concept="liA8E" id="7bi2vNWjQ6C" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                              </node>
                             </node>
                             <node concept="liA8E" id="eZTS3emAYo" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                               <node concept="1bVj0M" id="eZTS3emAYp" role="37wK5m">
                                 <node concept="3clFbS" id="eZTS3emAYq" role="1bW5cS">
                                   <node concept="3clFbF" id="3vnmwWFCOOT" role="3cqZAp">
