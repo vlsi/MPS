@@ -4,8 +4,8 @@
   <property name="build.tmp" location="${build.dir}/tmp/build" />
   <property name="build.layout" location="${build.dir}/artifacts/build" />
   <property name="project_home" location="${basedir}" />
-  <property name="idea_home" location="${basedir}/../../../../../../Applications/IntelliJ IDEA 14.app/Contents" />
-  <property name="mps_plugin_home" location="${basedir}/../../../../Library/Application Support/IntelliJIdea14" />
+  <property name="idea_home" location="${basedir}/../../../../../../Applications/IntelliJ IDEA 15.app/Contents" />
+  <property name="mps_plugin_home" location="${basedir}/../../../../Library/Application Support/IntelliJIdea15" />
   <property name="artifacts.mpsPlugin" location="${mps_plugin_home}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsPlugin}/build.properties" prefix="import.mpsPlugin" />
