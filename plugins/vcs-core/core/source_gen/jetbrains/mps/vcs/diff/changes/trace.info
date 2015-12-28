@@ -40,9 +40,10 @@
       <node id="5505786199853651282" at="72,0,73,0" concept="6" trace="myName" />
       <node id="5505786199853651325" at="73,0,74,0" concept="6" trace="myAddTask" />
       <node id="5505786199853651829" at="74,0,75,0" concept="6" trace="myDeleteTask" />
-      <node id="5505786199853651842" at="75,192,76,20" concept="5" />
+      <node id="5505786199853651842" at="75,200,76,20" concept="5" />
       <node id="5505786199853651854" at="76,20,77,26" concept="5" />
       <node id="5505786199853651866" at="77,26,78,32" concept="5" />
+      <node id="3009615984011096156" at="78,32,79,0" concept="14" />
       <node id="5505786199853653566" at="33,10,35,5" concept="1" />
       <node id="5505786199853847413" at="37,0,40,0" concept="10" trace="getModuleReference#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
       <node id="5505786199853847419" at="40,0,43,0" concept="10" trace="getDependencyType#()Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange/DependencyType;" />
@@ -56,7 +57,7 @@
       <node id="5505786199853653313" at="15,0,20,0" concept="2" trace="ModuleDependencyChange#(Ljetbrains/mps/vcs/diff/ChangeSet;Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljetbrains/mps/vcs/diff/changes/ModuleDependencyChange/DependencyType;Z)V" />
       <node id="5505786199853653513" at="24,0,29,0" concept="10" trace="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
       <node id="5505786199853653547" at="30,76,35,5" concept="9" />
-      <node id="5505786199853651835" at="75,0,80,0" concept="2" trace="DependencyType#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P2_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P2_E0;)V" />
+      <node id="5505786199853651835" at="75,0,81,0" concept="2" trace="DependencyType#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P2_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P2_E0;)V" />
       <node id="5505786199853653518" at="29,0,37,0" concept="10" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
       <scope id="5505786199853653512" at="21,28,22,93" />
       <scope id="5505786199853653517" at="26,48,27,119" />
@@ -97,8 +98,8 @@
         <var name="model" id="5505786199853653294" />
         <var name="module" id="5505786199853653294" />
       </scope>
-      <scope id="5505786199853651839" at="75,192,78,32" />
       <scope id="5505786199853653508" at="20,0,24,0" />
+      <scope id="5505786199853651839" at="75,200,79,0" />
       <scope id="5505786199853653313" at="15,0,20,0">
         <var name="changeSet" id="5505786199853653319" />
         <var name="delete" id="5505786199853653323" />
@@ -107,7 +108,7 @@
       </scope>
       <scope id="5505786199853653513" at="24,0,29,0" />
       <scope id="5505786199853653527" at="30,76,35,5" />
-      <scope id="5505786199853651835" at="75,0,80,0">
+      <scope id="5505786199853651835" at="75,0,81,0">
         <var name="addTask" id="5505786199853651849" />
         <var name="deleteTask" id="5505786199853651861" />
         <var name="name" id="5505786199853651840" />
@@ -122,8 +123,8 @@
       <unit id="5505786199853653271" at="57,11,61,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$4" />
       <unit id="5505786199853653283" at="62,69,66,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$5" />
       <unit id="5505786199853653294" at="66,11,70,5" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$6" />
-      <unit id="5505786199853651271" at="43,0,81,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType" />
-      <unit id="2241895627641426680" at="12,0,82,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
+      <unit id="5505786199853651271" at="43,0,82,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange$DependencyType" />
+      <unit id="2241895627641426680" at="12,0,83,0" name="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />
     </file>
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/2729259761016168456">
@@ -1375,10 +1376,11 @@
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/8401260027345476466">
     <file name="ChangeType.java">
-      <node id="8401260027345476489" at="12,0,14,0" concept="2" trace="ChangeType#()V" />
-      <scope id="8401260027345476494" at="12,16,12,16" />
-      <scope id="8401260027345476489" at="12,0,14,0" />
-      <unit id="8401260027345476466" at="6,0,15,0" name="jetbrains.mps.vcs.diff.changes.ChangeType" />
+      <node id="3009615984011096149" at="12,24,13,0" concept="14" />
+      <node id="8401260027345476489" at="12,0,15,0" concept="2" trace="ChangeType#()V" />
+      <scope id="8401260027345476494" at="12,24,13,0" />
+      <scope id="8401260027345476489" at="12,0,15,0" />
+      <unit id="8401260027345476466" at="6,0,16,0" name="jetbrains.mps.vcs.diff.changes.ChangeType" />
     </file>
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/8813828754313712692">

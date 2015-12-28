@@ -16,9 +16,10 @@ public enum GeneratorMessageType {
     return myName;
   }
   private final String myValue;
-  GeneratorMessageType(String name, String value) {
+  private GeneratorMessageType(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

@@ -15,9 +15,10 @@ public enum MappingScriptKind {
     return myName;
   }
   private final String myValue;
-  MappingScriptKind(String name, String value) {
+  private MappingScriptKind(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

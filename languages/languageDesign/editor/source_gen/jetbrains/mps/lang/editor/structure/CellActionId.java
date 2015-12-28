@@ -59,9 +59,10 @@ public enum CellActionId {
     return myName;
   }
   private final String myValue;
-  CellActionId(String name, String value) {
+  private CellActionId(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

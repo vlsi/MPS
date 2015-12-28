@@ -17,9 +17,10 @@ public enum ToolPosition {
     return myName;
   }
   private final String myValue;
-  ToolPosition(String name, String value) {
+  private ToolPosition(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

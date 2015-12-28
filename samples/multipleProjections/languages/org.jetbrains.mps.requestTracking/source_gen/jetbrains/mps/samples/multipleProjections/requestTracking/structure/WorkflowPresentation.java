@@ -15,9 +15,10 @@ public enum WorkflowPresentation {
     return myName;
   }
   private final String myValue;
-  WorkflowPresentation(String name, String value) {
+  private WorkflowPresentation(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

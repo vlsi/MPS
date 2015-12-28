@@ -16,9 +16,10 @@ public enum DefaultBaseLineEnum {
     return myName;
   }
   private final String myValue;
-  DefaultBaseLineEnum(String name, String value) {
+  private DefaultBaseLineEnum(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

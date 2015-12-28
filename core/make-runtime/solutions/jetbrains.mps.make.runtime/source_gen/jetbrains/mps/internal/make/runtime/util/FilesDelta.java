@@ -168,7 +168,8 @@ public class FilesDelta implements IDelta {
     DELETED(),
     STALE();
 
-    Status() {
+    private Status() {
+
     }
   }
 }

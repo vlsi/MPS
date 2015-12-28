@@ -734,9 +734,9 @@
       <node id="7471912399447707931" at="150,46,151,18" concept="11" />
       <node id="7471912399447707934" at="153,43,154,18" concept="11" />
       <node id="7471912399447707941" at="156,46,157,18" concept="11" />
+      <node id="3009615984011096146" at="171,22,172,0" concept="13" />
       <node id="3713683100998586444" at="116,12,118,7" concept="0" />
       <node id="7471912399447707917" at="148,0,150,0" concept="2" trace="Visitor#()V" />
-      <node id="1268765481875666723" at="171,0,173,0" concept="2" trace="Status#()V" />
       <node id="505174985642693150" at="24,0,27,0" concept="2" trace="FilesDelta#(Ljetbrains/mps/vfs/IFile;)V" />
       <node id="505174985642693157" at="31,0,34,0" concept="9" trace="written#(Ljetbrains/mps/vfs/IFile;)V" />
       <node id="505174985642693170" at="34,0,37,0" concept="9" trace="kept#(Ljetbrains/mps/vfs/IFile;)V" />
@@ -751,6 +751,7 @@
       <node id="7471912399447707922" at="150,0,153,0" concept="9" trace="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
       <node id="7471912399447707927" at="153,0,156,0" concept="9" trace="acceptKept#(Ljetbrains/mps/vfs/IFile;)Z" />
       <node id="7471912399447707936" at="156,0,159,0" concept="9" trace="acceptDeleted#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="1268765481875666723" at="171,0,174,0" concept="2" trace="Status#()V" />
       <node id="505174985642750413" at="27,0,31,0" concept="2" trace="FilesDelta#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)V" />
       <node id="739009749241046549" at="126,93,130,11" concept="8" />
       <node id="3713683100998509446" at="40,0,45,0" concept="9" trace="stale#(Ljetbrains/mps/vfs/IFile;)V" />
@@ -773,7 +774,6 @@
       <node id="505174985642750388" at="70,0,87,0" concept="9" trace="merge#(Ljetbrains/mps/make/delta/IDelta;)Ljetbrains/mps/make/delta/IDelta;" />
       <node id="505174985642750439" at="103,0,136,0" concept="9" trace="copy#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
       <scope id="7471912399447707920" at="148,22,148,22" />
-      <scope id="1268765481875666725" at="171,14,171,14" />
       <scope id="505174985642693153" at="24,32,25,83" />
       <scope id="505174985642693160" at="31,35,32,68" />
       <scope id="505174985642693173" at="34,32,35,65" />
@@ -800,10 +800,10 @@
       <scope id="7471912399447707925" at="150,46,151,18" />
       <scope id="7471912399447707930" at="153,43,154,18" />
       <scope id="7471912399447707939" at="156,46,157,18" />
+      <scope id="1268765481875666725" at="171,22,172,0" />
       <scope id="505174985642750416" at="27,43,29,59" />
       <scope id="739009749241046552" at="127,89,129,18" />
       <scope id="7471912399447707917" at="148,0,150,0" />
-      <scope id="1268765481875666723" at="171,0,173,0" />
       <scope id="505174985642693150" at="24,0,27,0">
         <var name="dir" id="505174985642735425" />
       </scope>
@@ -826,6 +826,7 @@
       <scope id="7471912399447707936" at="156,0,159,0">
         <var name="file" id="7471912399447707947" />
       </scope>
+      <scope id="1268765481875666723" at="171,0,174,0" />
       <scope id="505174985642750413" at="27,0,31,0">
         <var name="copyFrom" id="505174985642750418" />
       </scope>
@@ -886,11 +887,11 @@
       <scope id="505174985642750439" at="103,0,136,0">
         <var name="that" id="505174985642750444" />
       </scope>
-      <unit id="1268765481875666722" at="165,0,174,0" name="jetbrains.mps.internal.make.runtime.util.FilesDelta$Status" />
       <unit id="7471912399447721246" at="89,44,99,5" name="jetbrains.mps.internal.make.runtime.util.FilesDelta$2" />
+      <unit id="1268765481875666722" at="165,0,175,0" name="jetbrains.mps.internal.make.runtime.util.FilesDelta$Status" />
       <unit id="7471912399447720927" at="48,29,59,5" name="jetbrains.mps.internal.make.runtime.util.FilesDelta$1" />
       <unit id="7471912399447707915" at="147,0,160,0" name="jetbrains.mps.internal.make.runtime.util.FilesDelta$Visitor" />
-      <unit id="505174985642693148" at="20,0,175,0" name="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
+      <unit id="505174985642693148" at="20,0,176,0" name="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     </file>
   </root>
   <root nodeRef="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)/5105453120349025843">

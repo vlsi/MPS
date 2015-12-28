@@ -17,9 +17,10 @@ public enum Cardinality {
     return myName;
   }
   private final String myValue;
-  Cardinality(String name, String value) {
+  private Cardinality(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

@@ -8,6 +8,7 @@ public enum MatrixOperation {
   MatrixSub(),
   MatrixMul();
 
-  MatrixOperation() {
+  private MatrixOperation() {
+
   }
 }

@@ -192,10 +192,11 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     private final Icon myIcon;
     private final String myHelpText;
     private final int myDefaultDelay;
-    State(Icon icon, String helpText, int defaultDelay) {
+    private State(Icon icon, String helpText, int defaultDelay) {
       myIcon = icon;
       myHelpText = helpText;
       myDefaultDelay = defaultDelay;
+
     }
     public Icon getIcon() {
       return myIcon;

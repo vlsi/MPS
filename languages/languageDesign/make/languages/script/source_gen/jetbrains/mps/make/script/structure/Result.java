@@ -15,9 +15,10 @@ public enum Result {
     return myName;
   }
   private final String myValue;
-  Result(String name, String value) {
+  private Result(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

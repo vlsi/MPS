@@ -16,9 +16,10 @@ public enum BuildLayout_TarCompression {
     return myName;
   }
   private final String myValue;
-  BuildLayout_TarCompression(String name, String value) {
+  private BuildLayout_TarCompression(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

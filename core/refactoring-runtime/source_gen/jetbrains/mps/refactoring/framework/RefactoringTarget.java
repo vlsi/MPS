@@ -10,6 +10,7 @@ public enum RefactoringTarget {
   SOLUTION(),
   DEVKIT();
 
-  RefactoringTarget() {
+  private RefactoringTarget() {
+
   }
 }

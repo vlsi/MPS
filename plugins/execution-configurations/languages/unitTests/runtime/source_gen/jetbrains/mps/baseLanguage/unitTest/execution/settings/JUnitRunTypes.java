@@ -164,7 +164,8 @@ public enum JUnitRunTypes {
 
   };
 
-  JUnitRunTypes() {
+  private JUnitRunTypes() {
+
   }
 
   public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project) {

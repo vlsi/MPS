@@ -279,8 +279,9 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     MEMORY("memory");
 
     private final String mySuffix;
-    DiskMemoryConflictVersion(String suffix) {
+    private DiskMemoryConflictVersion(String suffix) {
       mySuffix = suffix;
+
     }
     @Override
     public String getSuffix() {

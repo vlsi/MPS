@@ -9,6 +9,7 @@ public enum ChangeType {
   CHANGE(),
   CONFLICTED();
 
-  ChangeType() {
+  private ChangeType() {
+
   }
 }

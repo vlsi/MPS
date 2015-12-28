@@ -19,9 +19,10 @@ public enum Keymap {
     return myName;
   }
   private final String myValue;
-  Keymap(String name, String value) {
+  private Keymap(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

@@ -15,9 +15,10 @@ public enum SelectPosition {
     return myName;
   }
   private final String myValue;
-  SelectPosition(String name, String value) {
+  private SelectPosition(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

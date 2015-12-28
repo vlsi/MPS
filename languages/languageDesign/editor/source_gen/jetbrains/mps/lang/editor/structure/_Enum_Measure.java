@@ -15,9 +15,10 @@ public enum _Enum_Measure {
     return myName;
   }
   private final String myValue;
-  _Enum_Measure(String name, String value) {
+  private _Enum_Measure(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

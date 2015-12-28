@@ -191,26 +191,27 @@
     <file name="JavaBreakpointKind.java">
       <node id="2891782949125170576" at="14,0,15,0" concept="12" trace="LANGUAGE_PREFIX" />
       <node id="2891782949125170580" at="15,0,16,0" concept="4" trace="myPresentation" />
-      <node id="2891782949125170589" at="16,43,17,34" concept="3" />
-      <node id="2891782949125170597" at="20,36,21,16" concept="9" />
-      <node id="2891782949125170604" at="24,27,25,40" concept="9" />
-      <node id="2891782949125205941" at="25,40,26,39" concept="10" />
-      <node id="2891782949125170613" at="30,35,31,26" concept="9" />
-      <node id="2891782949125170583" at="16,0,19,0" concept="2" trace="JavaBreakpointKind#(Ljava/lang/String;)V" />
-      <node id="2891782949125170593" at="19,0,23,0" concept="7" trace="supportsDisable#()Z" />
-      <node id="2891782949125170600" at="23,0,28,0" concept="7" trace="getName#()Ljava/lang/String;" />
-      <node id="2891782949125170609" at="28,0,33,0" concept="7" trace="getPresentation#()Ljava/lang/String;" />
-      <scope id="2891782949125170588" at="16,43,17,34" />
-      <scope id="2891782949125170596" at="20,36,21,16" />
-      <scope id="2891782949125170612" at="30,35,31,26" />
-      <scope id="2891782949125170603" at="24,27,26,39" />
-      <scope id="2891782949125170583" at="16,0,19,0">
+      <node id="2891782949125170589" at="16,51,17,34" concept="3" />
+      <node id="3009615984011096141" at="17,34,18,0" concept="11" />
+      <node id="2891782949125170597" at="21,36,22,16" concept="9" />
+      <node id="2891782949125170604" at="25,27,26,40" concept="9" />
+      <node id="2891782949125205941" at="26,40,27,39" concept="10" />
+      <node id="2891782949125170613" at="31,35,32,26" concept="9" />
+      <node id="2891782949125170583" at="16,0,20,0" concept="2" trace="JavaBreakpointKind#(Ljava/lang/String;)V" />
+      <node id="2891782949125170593" at="20,0,24,0" concept="7" trace="supportsDisable#()Z" />
+      <node id="2891782949125170600" at="24,0,29,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="2891782949125170609" at="29,0,34,0" concept="7" trace="getPresentation#()Ljava/lang/String;" />
+      <scope id="2891782949125170596" at="21,36,22,16" />
+      <scope id="2891782949125170612" at="31,35,32,26" />
+      <scope id="2891782949125170588" at="16,51,18,0" />
+      <scope id="2891782949125170603" at="25,27,27,39" />
+      <scope id="2891782949125170583" at="16,0,20,0">
         <var name="presentation" id="2891782949125170586" />
       </scope>
-      <scope id="2891782949125170593" at="19,0,23,0" />
-      <scope id="2891782949125170600" at="23,0,28,0" />
-      <scope id="2891782949125170609" at="28,0,33,0" />
-      <unit id="2891782949125146030" at="8,0,34,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind" />
+      <scope id="2891782949125170593" at="20,0,24,0" />
+      <scope id="2891782949125170600" at="24,0,29,0" />
+      <scope id="2891782949125170609" at="29,0,34,0" />
+      <unit id="2891782949125146030" at="8,0,35,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind" />
     </file>
   </root>
   <root nodeRef="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)/2891782949125147574">
@@ -866,8 +867,9 @@
       <node id="4352118152439828213" at="207,7,208,66" concept="3" />
       <node id="4352118152439828225" at="211,42,212,25" concept="9" />
       <node id="4352118152439827962" at="219,0,220,0" concept="4" trace="myValue" />
-      <node id="4352118152439827971" at="220,32,221,24" concept="3" />
-      <node id="4352118152439827979" at="223,31,224,84" concept="9" />
+      <node id="4352118152439827971" at="220,40,221,24" concept="3" />
+      <node id="3009615984011096139" at="221,24,222,0" concept="11" />
+      <node id="4352118152439827979" at="224,31,225,84" concept="9" />
       <node id="4352118152439828228" at="33,0,35,0" concept="2" trace="JavaBreakpointsProvider#()V" />
       <node id="4352118152439828708" at="156,0,158,0" concept="7" trace="init#()V" />
       <node id="4352118152439828712" at="158,0,160,0" concept="7" trace="dispose#()V" />
@@ -877,8 +879,7 @@
       <node id="4352118152439828549" at="118,116,121,11" concept="6" />
       <node id="4352118152439828088" at="176,186,179,13" concept="6" />
       <node id="4352118152439828197" at="203,159,206,9" concept="6" />
-      <node id="4352118152439827965" at="220,0,223,0" concept="2" trace="SuspendPolicy#(I)V" />
-      <node id="4352118152439827975" at="223,0,226,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="4352118152439827975" at="224,0,227,0" concept="7" trace="getName#()Ljava/lang/String;" />
       <node id="4352118152439828242" at="40,0,44,0" concept="7" trace="canCreateFromUi#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpointKind;)Z" />
       <node id="4352118152439828255" at="44,0,48,0" concept="7" trace="canCreateFromNode#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpointKind;)Z" />
       <node id="4352118152439828365" at="74,0,78,0" concept="7" trace="createPropertiesEditor#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpointKind;)Ljetbrains/mps/debug/api/breakpoints/IBreakpointPropertiesUi;" />
@@ -886,6 +887,7 @@
       <node id="4352118152439828688" at="152,0,156,0" concept="7" trace="getIcon#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljavax/swing/Icon;" />
       <node id="4352118152439828139" at="189,0,193,0" concept="7" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="4352118152439828221" at="210,0,214,0" concept="7" trace="getMainComponent#()Ljavax/swing/JComponent;" />
+      <node id="4352118152439827965" at="220,0,224,0" concept="2" trace="SuspendPolicy#(I)V" />
       <node id="4352118152439828232" at="35,0,40,0" concept="7" trace="getAllKinds#()Ljava/util/List;" />
       <node id="4352118152439828192" at="202,56,207,7" concept="5" />
       <node id="4352118152439828466" at="97,32,103,9" concept="1" />
@@ -933,8 +935,7 @@
       <scope id="4352118152439828144" at="190,52,191,70" />
       <scope id="4352118152439828203" at="204,46,205,56" />
       <scope id="4352118152439828224" at="211,42,212,25" />
-      <scope id="4352118152439827970" at="220,32,221,24" />
-      <scope id="4352118152439827978" at="223,31,224,84" />
+      <scope id="4352118152439827978" at="224,31,225,84" />
       <scope id="4352118152439828228" at="33,0,35,0" />
       <scope id="4352118152439828597" at="135,52,137,69">
         <var name="location" id="4352118152439828605" />
@@ -942,14 +943,12 @@
       </scope>
       <scope id="4352118152439828708" at="156,0,158,0" />
       <scope id="4352118152439828712" at="158,0,160,0" />
+      <scope id="4352118152439827970" at="220,40,222,0" />
       <scope id="4352118152439828386" at="80,102,83,26">
         <var name="javaBreakpoint" id="4352118152439828388" />
       </scope>
       <scope id="4352118152439828196" at="203,159,206,9" />
-      <scope id="4352118152439827965" at="220,0,223,0">
-        <var name="value" id="4352118152439827968" />
-      </scope>
-      <scope id="4352118152439827975" at="223,0,226,0" />
+      <scope id="4352118152439827975" at="224,0,227,0" />
       <scope id="4352118152439828242" at="40,0,44,0">
         <var name="kind" id="4352118152439828245" />
       </scope>
@@ -974,6 +973,9 @@
         <var name="e" id="4352118152439828142" />
       </scope>
       <scope id="4352118152439828221" at="210,0,214,0" />
+      <scope id="4352118152439827965" at="220,0,224,0">
+        <var name="value" id="4352118152439827968" />
+      </scope>
       <scope id="4352118152439828232" at="35,0,40,0" />
       <scope id="4352118152439828192" at="202,56,207,7">
         <var name="policy" id="4352118152439828194" />
@@ -1048,9 +1050,9 @@
       </scope>
       <unit id="4352118152439828138" at="188,47,193,7" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$2" />
       <unit id="4352118152439828074" at="173,37,181,9" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$1" />
-      <unit id="4352118152439827954" at="214,0,227,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$SuspendPolicy" />
-      <unit id="4352118152439827950" at="160,0,228,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
-      <unit id="4352118152439827945" at="32,0,229,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider" />
+      <unit id="4352118152439827954" at="214,0,228,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi$SuspendPolicy" />
+      <unit id="4352118152439827950" at="160,0,229,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider$MyIBreakpointPropertiesUi" />
+      <unit id="4352118152439827945" at="32,0,230,0" name="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointsProvider" />
     </file>
   </root>
   <root nodeRef="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)/6951057689129812782">

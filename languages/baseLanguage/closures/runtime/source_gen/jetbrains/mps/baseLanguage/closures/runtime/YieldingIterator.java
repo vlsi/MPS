@@ -69,7 +69,8 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     AT_END(),
     UNKNOWN();
 
-    State() {
+    private State() {
+
     }
   }
 }

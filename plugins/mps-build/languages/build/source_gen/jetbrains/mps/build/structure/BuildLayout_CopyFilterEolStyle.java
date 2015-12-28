@@ -18,9 +18,10 @@ public enum BuildLayout_CopyFilterEolStyle {
     return myName;
   }
   private final String myValue;
-  BuildLayout_CopyFilterEolStyle(String name, String value) {
+  private BuildLayout_CopyFilterEolStyle(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

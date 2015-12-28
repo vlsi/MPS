@@ -15,9 +15,10 @@ public enum LinkMetaclass {
     return myName;
   }
   private final String myValue;
-  LinkMetaclass(String name, String value) {
+  private LinkMetaclass(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

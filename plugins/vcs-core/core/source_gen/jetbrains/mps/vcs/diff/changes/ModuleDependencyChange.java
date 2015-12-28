@@ -72,10 +72,11 @@ public class ModuleDependencyChange extends DependencyChange {
     private String myName;
     private _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> myAddTask;
     private _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> myDeleteTask;
-    DependencyType(String name, _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> addTask, _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> deleteTask) {
+    private DependencyType(String name, _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> addTask, _FunctionTypes._void_P2_E0<? super SModel, ? super SModuleReference> deleteTask) {
       myName = name;
       myAddTask = addTask;
       myDeleteTask = deleteTask;
+
     }
   }
 }

@@ -20,9 +20,10 @@ public enum DayDataType {
     return myName;
   }
   private final String myValue;
-  DayDataType(String name, String value) {
+  private DayDataType(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

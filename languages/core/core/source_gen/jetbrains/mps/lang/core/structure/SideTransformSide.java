@@ -15,9 +15,10 @@ public enum SideTransformSide {
     return myName;
   }
   private final String myValue;
-  SideTransformSide(String name, String value) {
+  private SideTransformSide(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

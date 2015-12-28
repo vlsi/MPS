@@ -17,9 +17,10 @@ public enum CellKeyMapCaretPolicy {
     return myName;
   }
   private final String myValue;
-  CellKeyMapCaretPolicy(String name, String value) {
+  private CellKeyMapCaretPolicy(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

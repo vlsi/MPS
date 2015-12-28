@@ -9,8 +9,9 @@ public enum HasNextState {
   AT_END(0);
 
   private int value;
-  HasNextState(int value) {
+  private HasNextState(int value) {
     this.value = value;
+
   }
   public boolean unknown() {
     return value < 0;

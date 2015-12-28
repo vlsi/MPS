@@ -18,9 +18,10 @@ public enum RefactoringTargetKind_Enum {
     return myName;
   }
   private final String myValue;
-  RefactoringTargetKind_Enum(String name, String value) {
+  private RefactoringTargetKind_Enum(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

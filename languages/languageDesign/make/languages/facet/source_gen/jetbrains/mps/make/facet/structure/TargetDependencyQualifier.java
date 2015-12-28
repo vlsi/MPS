@@ -17,9 +17,10 @@ public enum TargetDependencyQualifier {
     return myName;
   }
   private final String myValue;
-  TargetDependencyQualifier(String name, String value) {
+  private TargetDependencyQualifier(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;

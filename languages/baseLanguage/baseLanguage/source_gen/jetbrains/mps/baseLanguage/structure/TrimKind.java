@@ -19,6 +19,7 @@ public enum TrimKind {
   private TrimKind(String name, String value) {
     myName = name;
     myValue = value;
+
   }
   public String getValue() {
     return myValue;
