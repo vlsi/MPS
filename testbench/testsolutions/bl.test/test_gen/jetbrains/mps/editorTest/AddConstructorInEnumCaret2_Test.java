@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class AddConstructorCaret4_Test extends BaseTransformationTest {
-  public AddConstructorCaret4_Test() {
+public class AddConstructorInEnumCaret2_Test extends BaseTransformationTest {
+  public AddConstructorInEnumCaret2_Test() {
   }
   @Test
-  public void test_AddConstructorCaret4() throws Throwable {
+  public void test_AddConstructorInEnumCaret2() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddConstructorCaret4_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.AddConstructorInEnumCaret2_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class AddConstructorCaret4_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("346011455443117686", "346011455443117690");
-      this.typeString("public aaa(");
+      initEditor("3009615984009686033", "3009615984009686038");
+      this.typeString("A(");
     }
   }
 }

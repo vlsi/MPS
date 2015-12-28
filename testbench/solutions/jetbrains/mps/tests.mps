@@ -1443,6 +1443,21 @@
     <node concept="lpD6D" id="2TdQhrRPT8l" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxTMpP" resolve="AddConstructorCaret4" />
     </node>
+    <node concept="lpD6D" id="2B4jsEPgU8V" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2pV" resolve="AddConstructorInEnumCaret1" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUlt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Ke" resolve="AddConstructorInEnumCaret2" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUy0" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Od" resolve="AddConstructorInEnumCaret3" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUI$" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Pe" resolve="AddConstructorInEnumCaret4" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUV9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPgBOA" resolve="AddConstructorInEnumCaret5" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT7_" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxTMG7" resolve="AddConstructorNotAllowed1" />
     </node>
