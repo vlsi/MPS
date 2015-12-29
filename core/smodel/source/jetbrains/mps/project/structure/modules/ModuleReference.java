@@ -36,6 +36,15 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
+  /**
+   * @deprecated use {@link #ModuleReference(String, SModuleId)} instead. <code>SModuleId</code> is mandatory
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public ModuleReference(String moduleName) {
+    this(moduleName, (SModuleId) null);
+  }
+
   public ModuleReference(String moduleName, SModuleId moduleId) {
     myModuleName = InternUtil.intern(moduleName);
     myModuleId = moduleId;
@@ -95,7 +104,7 @@ public final class ModuleReference implements SModuleReference {
     if (m.matches()) {
       return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
     }
-    throw new IllegalArgumentException(String.format("Bad module reference %s", text));
+    return new ModuleReference(text);
   }
 
   /**
