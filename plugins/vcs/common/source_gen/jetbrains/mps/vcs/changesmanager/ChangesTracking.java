@@ -510,8 +510,17 @@ public class ChangesTracking {
     public void visitRootEvent(final SModelRootEvent event) {
       SNode root = event.getRoot();
       final boolean added = event.isAdded();
-      if ((added ? root.getModel() == null : root.getModel() != null)) {
-        return;
+      if (added) {
+        if (root.getModel() == null) {
+          return;
+        }
+      } else {
+        // there are two almost identical SModelRootEvent generated: from beforeRootRemoved and from rootRemoved 
+        // rootRemoved event has SModelRootEvent with rootRef = (null, null) 
+        //  we skip the first one 
+        if (event.getRootRef().getNodeId() != null) {
+          return;
+        }
       }
       final SNodeId rootId = root.getNodeId();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {

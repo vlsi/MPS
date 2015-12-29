@@ -8451,36 +8451,67 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbJ" id="2QnDi8QvAWp" role="3cqZAp">
-            <node concept="3K4zz7" id="2QnDi8QvAXS" role="3clFbw">
-              <node concept="3y3z36" id="7kqGFYEOM_p" role="3K4GZi">
-                <node concept="2OqwBi" id="7kqGFYEOM_s" role="3uHU7B">
-                  <node concept="liA8E" id="7kqGFYEOM_t" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagT_o$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2QnDi8QvAXs" resolve="root" />
+          <node concept="3clFbJ" id="62puQn38WhI" role="3cqZAp">
+            <node concept="3clFbS" id="62puQn38WhK" role="3clFbx">
+              <node concept="3clFbJ" id="62puQn38WM9" role="3cqZAp">
+                <node concept="3clFbS" id="62puQn38WMb" role="3clFbx">
+                  <node concept="3cpWs6" id="62puQn38X8P" role="3cqZAp" />
+                </node>
+                <node concept="3clFbC" id="62puQn38WYi" role="3clFbw">
+                  <node concept="10Nm6u" id="62puQn38X2r" role="3uHU7w" />
+                  <node concept="2OqwBi" id="62puQn38WUk" role="3uHU7B">
+                    <node concept="37vLTw" id="62puQn38WPT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2QnDi8QvAXs" resolve="root" />
+                    </node>
+                    <node concept="liA8E" id="62puQn38WWl" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                    </node>
                   </node>
                 </node>
-                <node concept="10Nm6u" id="7kqGFYEOM_r" role="3uHU7w" />
-              </node>
-              <node concept="3clFbC" id="7kqGFYEMNKO" role="3K4E3e">
-                <node concept="10Nm6u" id="7kqGFYEMQiz" role="3uHU7w" />
-                <node concept="2OqwBi" id="2QnDi8QvAYj" role="3uHU7B">
-                  <node concept="liA8E" id="7kqGFYEMKXl" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagTvN0" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2QnDi8QvAXs" resolve="root" />
-                  </node>
-                </node>
-              </node>
-              <node concept="37vLTw" id="3GM_nagT$pB" role="3K4Cdx">
-                <ref role="3cqZAo" node="2QnDi8QvAZ$" resolve="added" />
               </node>
             </node>
-            <node concept="3clFbS" id="2QnDi8QvAWr" role="3clFbx">
-              <node concept="3cpWs6" id="2QnDi8QvAYU" role="3cqZAp" />
+            <node concept="37vLTw" id="62puQn38Wzc" role="3clFbw">
+              <ref role="3cqZAo" node="2QnDi8QvAZ$" resolve="added" />
+            </node>
+            <node concept="9aQIb" id="62puQn38XAn" role="9aQIa">
+              <node concept="3clFbS" id="62puQn38XAo" role="9aQI4">
+                <node concept="3SKdUt" id="62puQn38Yut" role="3cqZAp">
+                  <node concept="3SKdUq" id="62puQn38Yuv" role="3SKWNk">
+                    <property role="3SKdUp" value="there are two almost identical SModelRootEvent generated: from beforeRootRemoved and from rootRemoved" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="62puQn38Y_6" role="3cqZAp">
+                  <node concept="3SKdUq" id="62puQn38Y_8" role="3SKWNk">
+                    <property role="3SKdUp" value="rootRemoved event has SModelRootEvent with rootRef = (null, null)" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="62puQn38YFL" role="3cqZAp">
+                  <node concept="3SKdUq" id="62puQn38YFN" role="3SKWNk">
+                    <property role="3SKdUp" value=" we skip the first one" />
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="62puQn38XPC" role="3cqZAp">
+                  <node concept="3clFbS" id="62puQn38XPD" role="3clFbx">
+                    <node concept="3cpWs6" id="62puQn38YoC" role="3cqZAp" />
+                  </node>
+                  <node concept="3y3z36" id="62puQn38Yax" role="3clFbw">
+                    <node concept="10Nm6u" id="62puQn38YeP" role="3uHU7w" />
+                    <node concept="2OqwBi" id="62puQn38Y1Z" role="3uHU7B">
+                      <node concept="2OqwBi" id="62puQn38XTY" role="2Oq$k0">
+                        <node concept="37vLTw" id="62puQn38XTi" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2QnDi8QvcfK" resolve="event" />
+                        </node>
+                        <node concept="liA8E" id="62puQn38XX0" role="2OqNvi">
+                          <ref role="37wK5l" to="j9co:~SModelRootEvent.getRootRef():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRootRef" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="62puQn38Y9j" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
           <node concept="3cpWs8" id="2QnDi8QvAZq" role="3cqZAp">
