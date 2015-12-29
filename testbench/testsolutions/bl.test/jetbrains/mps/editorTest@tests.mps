@@ -15810,15 +15810,6 @@
       </node>
       <node concept="3clFbW" id="676KKEeTgRz" role="jymVt">
         <node concept="3cqZAl" id="676KKEeTgR$" role="3clF45" />
-        <node concept="3Tm1VV" id="676KKEeTgR_" role="1B3o_S">
-          <node concept="LIFWc" id="676KKEeTgRA" role="lGtFl">
-            <property role="LIFWa" value="0" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-        </node>
         <node concept="3clFbS" id="676KKEeTgRC" role="3clF47" />
       </node>
     </node>
@@ -15828,7 +15819,6 @@
       <node concept="3Tm1VV" id="676KKEeTgS5" role="1B3o_S" />
       <node concept="3clFbW" id="676KKEeTgSr" role="jymVt">
         <node concept="3cqZAl" id="676KKEeTgSs" role="3clF45" />
-        <node concept="3Tm1VV" id="676KKEeTgSt" role="1B3o_S" />
         <node concept="3clFbS" id="676KKEeTgSv" role="3clF47" />
       </node>
       <node concept="QsSxf" id="676KKEeTgSL" role="Qtgdg">
