@@ -47,7 +47,6 @@ public enum ArrowHeadDirection {
   private static final int HALFWIDTH = 3;
   private static final int LENGTH = 5;
   private ArrowHeadDirection() {
-
   }
   public abstract void paint(Graphics g, int x, int y);
 }

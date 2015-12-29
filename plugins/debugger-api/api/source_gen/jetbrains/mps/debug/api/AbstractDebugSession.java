@@ -137,7 +137,6 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     WaitingAttach();
 
     private ExecutionState() {
-
     }
   }
 }

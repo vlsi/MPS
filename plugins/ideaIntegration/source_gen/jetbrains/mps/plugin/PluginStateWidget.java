@@ -196,7 +196,6 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
       myIcon = icon;
       myHelpText = helpText;
       myDefaultDelay = defaultDelay;
-
     }
     public Icon getIcon() {
       return myIcon;

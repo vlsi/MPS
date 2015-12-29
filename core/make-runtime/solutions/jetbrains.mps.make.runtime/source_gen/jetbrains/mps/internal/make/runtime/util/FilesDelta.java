@@ -169,7 +169,6 @@ public class FilesDelta implements IDelta {
     STALE();
 
     private Status() {
-
     }
   }
 }

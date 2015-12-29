@@ -13,7 +13,6 @@ public interface IRefactoringTarget {
     MODULE();
 
     private TargetType() {
-
     }
   }
 }

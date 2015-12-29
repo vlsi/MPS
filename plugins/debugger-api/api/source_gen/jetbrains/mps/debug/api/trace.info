@@ -67,10 +67,10 @@
       <node id="4474271214082917180" at="124,27,125,17" concept="11" />
       <node id="944342063944743706" at="127,35,128,21" concept="11" />
       <node id="944342063944723917" at="130,53,131,49" concept="11" />
-      <node id="3009615984011096153" at="139,30,140,0" concept="13" />
       <node id="4474271214082917158" at="118,0,120,0" concept="9" trace="sessionRegistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
       <node id="4474271214082917164" at="120,0,122,0" concept="9" trace="sessionUnregistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
       <node id="4474271214082917170" at="122,0,124,0" concept="9" trace="muteBreakpoints#(Z)V" />
+      <node id="4474271214082916834" at="139,0,141,0" concept="3" trace="ExecutionState#()V" />
       <node id="4474271214082916907" at="34,0,37,0" concept="9" trace="setState#(nullnull)V" />
       <node id="4474271214082916944" at="41,5,44,5" concept="8" />
       <node id="4474271214082916949" at="46,0,49,0" concept="9" trace="isPaused#()Z" />
@@ -93,7 +93,6 @@
       <node id="4474271214082917176" at="124,0,127,0" concept="9" trace="isMute#()Z" />
       <node id="4474271214082917182" at="127,0,130,0" concept="9" trace="getIdeaProject#()Lcom/intellij/openapi/project/Project;" />
       <node id="944342063944663950" at="130,0,133,0" concept="9" trace="getProject#()Ljetbrains/mps/project/Project;" />
-      <node id="4474271214082916834" at="139,0,142,0" concept="3" trace="ExecutionState#()V" />
       <node id="1331672133304165043" at="23,0,27,0" concept="3" trace="AbstractDebugSession#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="4474271214082916932" at="37,88,41,5" concept="20" />
       <node id="4474271214082917151" at="114,0,118,0" concept="9" trace="getEvaluationProvider#()Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" />
@@ -107,6 +106,7 @@
       <scope id="4474271214082917163" at="118,71,118,71" />
       <scope id="4474271214082917169" at="120,73,120,73" />
       <scope id="4474271214082917175" at="122,45,122,45" />
+      <scope id="4474271214082917188" at="139,30,139,30" />
       <scope id="4474271214082916877" at="27,0,28,0" />
       <scope id="4474271214082916881" at="28,0,29,0" />
       <scope id="4474271214082916885" at="29,0,30,0" />
@@ -139,7 +139,6 @@
       <scope id="4474271214082917179" at="124,27,125,17" />
       <scope id="4474271214082917185" at="127,35,128,21" />
       <scope id="944342063944663953" at="130,53,131,49" />
-      <scope id="4474271214082917188" at="139,30,140,0" />
       <scope id="1331672133304165048" at="23,42,25,71" />
       <scope id="4474271214082916939" at="38,60,40,30" />
       <scope id="4474271214082917158" at="118,0,120,0">
@@ -151,6 +150,7 @@
       <scope id="4474271214082917170" at="122,0,124,0">
         <var name="mute" id="4474271214082917173" />
       </scope>
+      <scope id="4474271214082916834" at="139,0,141,0" />
       <scope id="4474271214082916907" at="34,0,37,0">
         <var name="newState" id="4474271214082916912" />
         <var name="oldState" id="4474271214082916910" />
@@ -195,7 +195,6 @@
       <scope id="4474271214082917176" at="124,0,127,0" />
       <scope id="4474271214082917182" at="127,0,130,0" />
       <scope id="944342063944663950" at="130,0,133,0" />
-      <scope id="4474271214082916834" at="139,0,142,0" />
       <scope id="1331672133304165043" at="23,0,27,0">
         <var name="p" id="1331672133304165046" />
       </scope>
@@ -222,8 +221,8 @@
         <var name="newState" id="4474271214082916926" />
         <var name="oldState" id="4474271214082916924" />
       </scope>
-      <unit id="4474271214082912943" at="133,0,143,0" name="jetbrains.mps.debug.api.AbstractDebugSession$ExecutionState" />
-      <unit id="4474271214082912940" at="16,0,144,0" name="jetbrains.mps.debug.api.AbstractDebugSession" />
+      <unit id="4474271214082912943" at="133,0,142,0" name="jetbrains.mps.debug.api.AbstractDebugSession$ExecutionState" />
+      <unit id="4474271214082912940" at="16,0,143,0" name="jetbrains.mps.debug.api.AbstractDebugSession" />
     </file>
   </root>
   <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082912941">

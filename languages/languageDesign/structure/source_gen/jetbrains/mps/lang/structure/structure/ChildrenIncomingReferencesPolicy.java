@@ -19,7 +19,6 @@ public enum ChildrenIncomingReferencesPolicy {
   private ChildrenIncomingReferencesPolicy(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

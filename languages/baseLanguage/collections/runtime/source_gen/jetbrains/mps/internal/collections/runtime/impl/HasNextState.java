@@ -11,7 +11,6 @@ public enum HasNextState {
   private int value;
   private HasNextState(int value) {
     this.value = value;
-
   }
   public boolean unknown() {
     return value < 0;

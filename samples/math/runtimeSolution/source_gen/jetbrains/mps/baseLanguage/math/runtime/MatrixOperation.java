@@ -9,6 +9,5 @@ public enum MatrixOperation {
   MatrixMul();
 
   private MatrixOperation() {
-
   }
 }

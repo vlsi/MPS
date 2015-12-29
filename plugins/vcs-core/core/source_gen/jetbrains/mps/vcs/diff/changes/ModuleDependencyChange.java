@@ -76,7 +76,6 @@ public class ModuleDependencyChange extends DependencyChange {
       myName = name;
       myAddTask = addTask;
       myDeleteTask = deleteTask;
-
     }
   }
 }

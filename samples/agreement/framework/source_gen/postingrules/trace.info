@@ -9,7 +9,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -18,8 +17,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299649861">
     <file name="AccountingException.java">
-      <node id="6531435794299649867" at="7,32,8,12" concept="12" />
-      <node id="6531435794299649874" at="10,40,11,13" concept="12" />
+      <node id="6531435794299649867" at="7,32,8,12" concept="11" />
+      <node id="6531435794299649874" at="10,40,11,13" concept="11" />
       <node id="6531435794299649863" at="7,0,10,0" concept="1" trace="AccountingException#()V" />
       <node id="6531435794299649868" at="10,0,13,0" concept="1" trace="AccountingException#(Ljava/lang/String;)V" />
       <scope id="6531435794299649866" at="7,32,8,12" />
@@ -96,7 +95,7 @@
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651026">
     <file name="MonetaryEvent.java">
       <node id="6531435794299651029" at="9,0,10,0" concept="3" trace="myAmount" />
-      <node id="6531435794299651046" at="10,113,11,53" concept="12" />
+      <node id="6531435794299651046" at="10,113,11,53" concept="11" />
       <node id="6531435794299651051" at="11,53,12,27" concept="2" />
       <node id="6531435794299651061" at="14,28,15,20" concept="8" />
       <node id="6531435794299651057" at="14,0,17,0" concept="6" trace="getAmount#()Lmf/Money;" />
@@ -143,7 +142,7 @@
       <node id="6531435794299653741" at="33,0,37,0" concept="6" trace="toString#()Ljava/lang/String;" />
       <node id="6531435794299653778" at="42,29,46,41" concept="5" />
       <node id="6531435794299653773" at="41,24,47,5" concept="4" />
-      <node id="6531435794299653755" at="37,0,50,0" concept="11" trace="total#(Ljava/util/Collection;)Lmf/Money;" />
+      <node id="6531435794299653755" at="37,0,50,0" concept="10" trace="total#(Ljava/util/Collection;)Lmf/Money;" />
       <scope id="6531435794299653702" at="17,28,18,39" />
       <scope id="6531435794299653711" at="20,31,21,21" />
       <scope id="6531435794299653717" at="23,28,24,20" />
@@ -193,7 +192,7 @@
       <node id="6531435794299651194" at="24,23,25,39" concept="2" />
       <node id="6531435794299651200" at="25,39,26,37" concept="2" />
       <node id="6531435794299651206" at="26,37,27,29" concept="2" />
-      <node id="6531435794299651442" at="29,131,30,51" concept="13" />
+      <node id="6531435794299651442" at="29,131,30,51" concept="12" />
       <node id="6531435794299651447" at="30,51,31,41" concept="2" />
       <node id="6531435794299651453" at="31,41,32,44" concept="2" />
       <node id="6531435794299651217" at="34,49,35,32" concept="2" />
@@ -338,8 +337,8 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651566">
     <file name="MissingPostingRuleException.java">
-      <node id="6531435794299651572" at="7,40,8,12" concept="12" />
-      <node id="6531435794299651579" at="10,48,11,13" concept="12" />
+      <node id="6531435794299651572" at="7,40,8,12" concept="11" />
+      <node id="6531435794299651579" at="10,48,11,13" concept="11" />
       <node id="6531435794299651568" at="7,0,10,0" concept="1" trace="MissingPostingRuleException#()V" />
       <node id="6531435794299651573" at="10,0,13,0" concept="1" trace="MissingPostingRuleException#(Ljava/lang/String;)V" />
       <scope id="6531435794299651571" at="7,40,8,12" />
@@ -353,7 +352,7 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652198">
     <file name="TaxEvent.java">
-      <node id="6531435794299652209" at="8,62,9,106" concept="12" />
+      <node id="6531435794299652209" at="8,62,9,106" concept="11" />
       <node id="6531435794299652221" at="9,106,10,39" concept="2" />
       <node id="6531435794299652226" at="10,39,11,80" concept="0" />
       <node id="6531435794299652201" at="8,0,13,0" concept="1" trace="TaxEvent#(Lpostingrules/AccountingEvent;Lmf/Money;)V" />
@@ -368,9 +367,9 @@
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652730">
     <file name="Usage.java">
       <node id="6531435794299652733" at="9,0,10,0" concept="3" trace="myAmount" />
-      <node id="6531435794299652748" at="10,93,11,64" concept="12" />
+      <node id="6531435794299652748" at="10,93,11,64" concept="11" />
       <node id="6531435794299652753" at="11,64,12,27" concept="2" />
-      <node id="6531435794299652787" at="14,122,15,78" concept="12" />
+      <node id="6531435794299652787" at="14,122,15,78" concept="11" />
       <node id="6531435794299652793" at="15,78,16,27" concept="2" />
       <node id="6531435794299652763" at="18,31,19,20" concept="8" />
       <node id="6531435794299652769" at="22,28,23,31" concept="8" />
@@ -413,9 +412,9 @@
       <node id="6531435794299653488" at="30,36,31,54" concept="8" />
       <node id="6531435794299653504" at="33,42,34,33" concept="2" />
       <node id="6531435794299653516" at="36,61,37,89" concept="7" />
-      <node id="6531435794299653528" at="38,24,39,46" concept="14" />
+      <node id="6531435794299653528" at="38,24,39,46" concept="13" />
       <node id="6531435794299653540" at="41,9,42,62" concept="8" />
-      <node id="6531435794299653534" at="43,42,44,46" concept="14" />
+      <node id="6531435794299653534" at="43,42,44,46" concept="13" />
       <node id="6531435794299653559" at="47,72,48,48" concept="2" />
       <node id="6531435794299653576" at="50,49,51,37" concept="8" />
       <node id="6531435794299653412" at="14,0,16,0" concept="1" trace="ServiceAgreement#()V" />
@@ -427,7 +426,7 @@
       <node id="6531435794299653549" at="47,0,50,0" concept="6" trace="setValue#(Ljava/lang/String;Ljava/lang/Object;Lmf/MfDate;)V" />
       <node id="6531435794299653568" at="50,0,53,0" concept="6" trace="getValue#(Ljava/lang/String;Lmf/MfDate;)Ljava/lang/Object;" />
       <node id="6531435794299653461" at="25,0,30,0" concept="6" trace="getRulesTemporalCollectionFor#(Lpostingrules/EventType;)Lmf/TemporalCollection;" />
-      <node id="6531435794299653531" at="40,5,45,5" concept="15" />
+      <node id="6531435794299653531" at="40,5,45,5" concept="14" />
       <node id="6531435794299653429" at="19,0,25,0" concept="6" trace="addPostingRule#(Lpostingrules/EventType;Lpostingrules/PostingRule;Lmf/MfDate;)V" />
       <node id="6531435794299653510" at="36,0,47,0" concept="6" trace="getPostingRule#(Lpostingrules/AccountingEvent;)Lpostingrules/PostingRule;" />
       <scope id="6531435794299653415" at="14,29,14,29" />
@@ -485,7 +484,7 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653584">
     <file name="PoorCapPR.java">
-      <node id="6531435794299653595" at="9,57,10,27" concept="12" />
+      <node id="6531435794299653595" at="9,57,10,27" concept="11" />
       <node id="6531435794299653604" at="13,56,14,52" concept="7" />
       <node id="6531435794299653613" at="14,52,15,95" concept="7" />
       <node id="6531435794299653627" at="15,95,16,107" concept="7" />
@@ -555,11 +554,10 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299654331">
     <file name="AccountType.java">
-      <node id="3009615984011096157" at="11,25,12,0" concept="9" />
-      <node id="6531435794299654336" at="11,0,14,0" concept="1" trace="AccountType#()V" />
-      <scope id="6531435794299654339" at="11,25,12,0" />
-      <scope id="6531435794299654336" at="11,0,14,0" />
-      <unit id="6531435794299654331" at="6,0,15,0" name="postingrules.AccountType" />
+      <node id="6531435794299654336" at="11,0,13,0" concept="1" trace="AccountType#()V" />
+      <scope id="6531435794299654339" at="11,25,11,25" />
+      <scope id="6531435794299654336" at="11,0,13,0" />
+      <unit id="6531435794299654331" at="6,0,14,0" name="postingrules.AccountType" />
     </file>
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299654975">
@@ -675,12 +673,12 @@
     <file name="Adjustment.java">
       <node id="6531435794299655214" at="10,0,11,0" concept="3" trace="myNewEvents" />
       <node id="6531435794299655221" at="11,0,12,0" concept="3" trace="myOldEvents" />
-      <node id="6531435794299655236" at="12,81,13,95" concept="13" />
+      <node id="6531435794299655236" at="12,81,13,95" concept="12" />
       <node id="6531435794299655246" at="13,95,14,26" concept="2" />
       <node id="6531435794299655249" at="14,26,15,24" concept="2" />
-      <node id="6531435794299655262" at="17,79,18,52" concept="12" />
+      <node id="6531435794299655262" at="17,79,18,52" concept="11" />
       <node id="6531435794299655273" at="20,43,21,25" concept="2" />
-      <node id="6531435794299655289" at="24,32,25,104" concept="14" />
+      <node id="6531435794299655289" at="24,32,25,104" concept="13" />
       <node id="6531435794299655301" at="26,5,27,25" concept="2" />
       <node id="6531435794299655306" at="27,25,28,34" concept="2" />
       <node id="6531435794299655252" at="17,0,20,0" concept="1" trace="Adjustment#(Lmf/MfDate;Lmf/MfDate;Lpostingrules/Subject;)V" />
@@ -720,7 +718,7 @@
       <node id="6531435794299655365" at="19,31,20,22" concept="2" />
       <node id="6531435794299655370" at="22,5,23,18" concept="8" />
       <node id="6531435794299655380" at="25,79,26,34" concept="2" />
-      <node id="6531435794299655385" at="26,34,27,42" concept="14" />
+      <node id="6531435794299655385" at="26,34,27,42" concept="13" />
       <node id="6531435794299655392" at="29,45,30,43" concept="8" />
       <node id="6531435794299655416" at="34,11,35,24" concept="2" />
       <node id="6531435794299655409" at="36,29,37,37" concept="2" />
@@ -730,7 +728,7 @@
       <node id="6531435794299655389" at="29,0,32,0" concept="6" trace="hasProcessingErrors#()Z" />
       <node id="6531435794299655372" at="25,0,29,0" concept="6" trace="logProcessingError#(Lpostingrules/AccountingEvent;Ljava/lang/Exception;)V" />
       <node id="6531435794299655354" at="17,68,22,5" concept="4" />
-      <node id="6531435794299655406" at="33,55,38,7" concept="15" />
+      <node id="6531435794299655406" at="33,55,38,7" concept="14" />
       <node id="6531435794299655401" at="32,25,39,5" concept="4" />
       <node id="6531435794299655342" at="16,0,25,0" concept="6" trace="unprocessedEvents#()Ljava/util/List;" />
       <node id="6531435794299655397" at="32,0,41,0" concept="6" trace="process#()V" />
@@ -772,15 +770,15 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655543">
     <file name="EventType.java">
-      <node id="6531435794299655546" at="9,0,10,0" concept="10" trace="USAGE" />
-      <node id="6531435794299655552" at="10,0,11,0" concept="10" trace="TAX" />
-      <node id="6531435794299655558" at="11,0,12,0" concept="10" trace="SERVICE_CALL" />
-      <node id="6531435794299655570" at="12,33,13,16" concept="12" />
+      <node id="6531435794299655546" at="9,0,10,0" concept="9" trace="USAGE" />
+      <node id="6531435794299655552" at="10,0,11,0" concept="9" trace="TAX" />
+      <node id="6531435794299655558" at="11,0,12,0" concept="9" trace="SERVICE_CALL" />
+      <node id="6531435794299655570" at="12,33,13,16" concept="11" />
       <node id="6531435794299655586" at="15,31,16,36" concept="2" />
       <node id="6531435794299655577" at="18,49,19,55" concept="8" />
       <node id="6531435794299655564" at="12,0,15,0" concept="1" trace="EventType#(Ljava/lang/String;)V" />
       <node id="6531435794299655583" at="15,0,18,0" concept="6" trace="register#()V" />
-      <node id="6531435794299655572" at="18,0,21,0" concept="11" trace="get#(Ljava/lang/String;)Lpostingrules/EventType;" />
+      <node id="6531435794299655572" at="18,0,21,0" concept="10" trace="get#(Ljava/lang/String;)Lpostingrules/EventType;" />
       <scope id="6531435794299655569" at="12,33,13,16" />
       <scope id="6531435794299655585" at="15,31,16,36" />
       <scope id="6531435794299655576" at="18,49,19,55" />
@@ -796,7 +794,7 @@
   </root>
   <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656295">
     <file name="MultiplyByRatePR.java">
-      <node id="6531435794299656306" at="8,64,9,27" concept="12" />
+      <node id="6531435794299656306" at="8,64,9,27" concept="11" />
       <node id="6531435794299656315" at="12,56,13,35" concept="7" />
       <node id="6531435794299656321" at="13,35,14,150" concept="8" />
       <node id="6531435794299656298" at="8,0,11,0" concept="1" trace="MultiplyByRatePR#(Lpostingrules/AccountType;Z)V" />
@@ -819,7 +817,7 @@
     <file name="AmountFormulaPR.java">
       <node id="6531435794299656583" at="8,0,9,0" concept="3" trace="myMultiplier" />
       <node id="6531435794299656586" at="9,0,10,0" concept="3" trace="myFixedFee" />
-      <node id="6531435794299656601" at="10,98,11,27" concept="12" />
+      <node id="6531435794299656601" at="10,98,11,27" concept="11" />
       <node id="6531435794299656604" at="11,27,12,35" concept="2" />
       <node id="6531435794299656610" at="12,35,13,31" concept="2" />
       <node id="6531435794299656622" at="16,56,17,58" concept="7" />
@@ -847,7 +845,7 @@
       <node id="6531435794299656643" at="13,0,14,0" concept="3" trace="myEntries" />
       <node id="6531435794299656650" at="14,0,15,0" concept="3" trace="myCurrency" />
       <node id="6531435794299656653" at="15,0,16,0" concept="3" trace="myType" />
-      <node id="6531435794299656662" at="16,37,17,25" concept="13" />
+      <node id="6531435794299656662" at="16,37,17,25" concept="12" />
       <node id="6531435794299656673" at="19,55,20,31" concept="2" />
       <node id="6531435794299656679" at="20,31,21,23" concept="2" />
       <node id="6531435794299656691" at="23,35,24,40" concept="2" />
@@ -855,7 +853,7 @@
       <node id="6531435794299656701" at="25,23,26,25" concept="2" />
       <node id="6531435794299656713" at="28,56,29,44" concept="7" />
       <node id="6531435794299656720" at="29,44,30,16" concept="2" />
-      <node id="6531435794299656738" at="33,47,34,79" concept="14" />
+      <node id="6531435794299656738" at="33,47,34,79" concept="13" />
       <node id="6531435794299656746" at="37,26,38,35" concept="8" />
       <node id="6531435794299656754" at="40,47,41,44" concept="7" />
       <node id="6531435794299656774" at="43,41,44,43" concept="2" />

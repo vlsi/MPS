@@ -15,7 +15,6 @@ public enum JavaBreakpointKind implements IBreakpointKind<JavaBreakpoint> {
   private final String myPresentation;
   private JavaBreakpointKind(String presentation) {
     myPresentation = presentation;
-
   }
   @Override
   public boolean supportsDisable() {

@@ -219,7 +219,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       private final int myValue;
       private SuspendPolicy(int value) {
         myValue = value;
-
       }
       public String getName() {
         return this.name().substring(0, 1) + this.name().toLowerCase().substring(1);

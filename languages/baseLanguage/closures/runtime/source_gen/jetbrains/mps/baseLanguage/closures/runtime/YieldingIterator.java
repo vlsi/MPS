@@ -70,7 +70,6 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     UNKNOWN();
 
     private State() {
-
     }
   }
 }

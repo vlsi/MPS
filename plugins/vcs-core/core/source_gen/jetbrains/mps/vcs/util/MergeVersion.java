@@ -11,7 +11,6 @@ public enum MergeVersion implements ModelVersion {
   private final String mySuffix;
   private MergeVersion(String suffix) {
     mySuffix = suffix;
-
   }
   @Override
   public String getSuffix() {

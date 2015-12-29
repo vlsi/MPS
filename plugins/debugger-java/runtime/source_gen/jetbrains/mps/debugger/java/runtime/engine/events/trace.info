@@ -211,8 +211,7 @@
       <node id="6460341978864584432" at="388,32,389,25" concept="10" />
       <node id="2891782949125146477" at="397,0,398,0" concept="5" trace="myJdiType" />
       <node id="2891782949125147415" at="398,35,399,26" concept="4" />
-      <node id="3009615984011096158" at="399,26,400,0" concept="12" />
-      <node id="2891782949125147420" at="402,29,403,23" concept="10" />
+      <node id="2891782949125147420" at="401,29,402,23" concept="10" />
       <node id="6460341978864599991" at="163,12,165,7" concept="1" />
       <node id="1502365335852725771" at="331,10,333,5" concept="1" />
       <node id="6460341978864584386" at="344,0,346,0" concept="3" trace="EventProcessorRunnable#()V" />
@@ -239,7 +238,8 @@
       <node id="3070226725409672211" at="379,0,382,0" concept="8" trace="invoke#()V" />
       <node id="6460341978864584421" at="385,0,388,0" concept="8" trace="stop#()V" />
       <node id="6460341978864584429" at="388,0,391,0" concept="8" trace="isStopped#()Z" />
-      <node id="2891782949125146485" at="402,0,405,0" concept="8" trace="getJdiType#()I" />
+      <node id="2891782949125146480" at="398,0,401,0" concept="3" trace="StepKind#(I)V" />
+      <node id="2891782949125146485" at="401,0,404,0" concept="8" trace="getJdiType#()I" />
       <node id="613652663728244002" at="103,0,107,0" concept="8" trace="invoke#()V" />
       <node id="6460341978864584700" at="138,41,142,5" concept="7" />
       <node id="7672976942235878458" at="189,50,193,5" concept="7" />
@@ -247,7 +247,6 @@
       <node id="7255550618273842463" at="251,0,255,0" concept="8" trace="cancelled#()V" />
       <node id="8197435796639346689" at="315,0,319,0" concept="8" trace="getMulticaster#()Ljetbrains/mps/debugger/java/runtime/engine/DebugProcessMulticaster;" />
       <node id="6676843613964987702" at="338,0,342,0" concept="14" trace="isOnPooledThread#()Z" />
-      <node id="2891782949125146480" at="398,0,402,0" concept="3" trace="StepKind#(I)V" />
       <node id="613652663728244188" at="111,0,116,0" concept="8" trace="invoke#()V" />
       <node id="2891782949125147358" at="124,16,129,11" concept="1" />
       <node id="6460341978864585304" at="145,0,150,0" concept="8" trace="processClassPrepareEvent#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventContext;Lcom/sun/jdi/event/ClassPrepareEvent;)V" />
@@ -355,7 +354,8 @@
       <scope id="3070226725409672212" at="379,32,380,34" />
       <scope id="6460341978864584424" at="385,24,386,25" />
       <scope id="6460341978864584431" at="388,32,389,25" />
-      <scope id="2891782949125147419" at="402,29,403,23" />
+      <scope id="2891782949125147414" at="398,35,399,26" />
+      <scope id="2891782949125147419" at="401,29,402,23" />
       <scope id="2891782949125146953" at="85,17,87,52" />
       <scope id="613652663728244003" at="103,28,105,39" />
       <scope id="2891782949125147348" at="130,16,132,29" />
@@ -369,7 +369,6 @@
       <scope id="8197435796639346692" at="315,51,317,25" />
       <scope id="6676843613964939456" at="338,44,340,107" />
       <scope id="6460341978864584386" at="344,0,346,0" />
-      <scope id="2891782949125147414" at="398,35,400,0" />
       <scope id="2891782949125146678" at="75,0,78,0" />
       <scope id="613652663728244189" at="111,28,114,24">
         <var name="jdiType" id="613652663728244386" />
@@ -405,7 +404,10 @@
       <scope id="3070226725409672211" at="379,0,382,0" />
       <scope id="6460341978864584421" at="385,0,388,0" />
       <scope id="6460341978864584429" at="388,0,391,0" />
-      <scope id="2891782949125146485" at="402,0,405,0" />
+      <scope id="2891782949125146480" at="398,0,401,0">
+        <var name="jdiType" id="2891782949125146483" />
+      </scope>
+      <scope id="2891782949125146485" at="401,0,404,0" />
       <scope id="6460341978864584468" at="62,99,66,13" />
       <scope id="613652663728232509" at="93,28,97,38">
         <var name="context" id="4838790954312082115" />
@@ -419,9 +421,6 @@
       <scope id="7255550618273842463" at="251,0,255,0" />
       <scope id="8197435796639346689" at="315,0,319,0" />
       <scope id="6676843613964987702" at="338,0,342,0" />
-      <scope id="2891782949125146480" at="398,0,402,0">
-        <var name="jdiType" id="2891782949125146483" />
-      </scope>
       <scope id="2891782949125146580" at="68,52,73,68" />
       <scope id="613652663728244188" at="111,0,116,0" />
       <scope id="6460341978864585304" at="145,0,150,0">
@@ -558,13 +557,13 @@
       <unit id="613652663728232508" at="92,52,99,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$1" />
       <unit id="3070226725409672081" at="230,66,239,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$6" />
       <unit id="7255550618273619580" at="259,55,268,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$9" />
-      <unit id="2891782949125146472" at="392,0,406,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$StepKind" />
+      <unit id="2891782949125146472" at="392,0,405,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$StepKind" />
       <unit id="613652663728244205" at="119,52,135,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$4" />
       <unit id="5447665676660713120" at="256,66,276,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$8" />
       <unit id="3070226725409667447" at="352,65,375,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$1" />
       <unit id="6676843613964893806" at="203,27,227,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$5" />
       <unit id="6460341978864584380" at="342,0,392,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$EventProcessorRunnable" />
-      <unit id="6460341978864584371" at="45,0,407,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
+      <unit id="6460341978864584371" at="45,0,406,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     </file>
   </root>
   <root nodeRef="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)/6460341978864584962">

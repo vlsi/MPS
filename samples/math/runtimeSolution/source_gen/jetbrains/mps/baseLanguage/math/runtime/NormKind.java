@@ -10,6 +10,5 @@ public enum NormKind {
   NormMax();
 
   private NormKind() {
-
   }
 }

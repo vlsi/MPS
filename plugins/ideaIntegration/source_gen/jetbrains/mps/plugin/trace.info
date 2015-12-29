@@ -78,14 +78,13 @@
       <node id="8611316981187585701" at="195,65,196,20" concept="3" />
       <node id="8611316981187585705" at="196,20,197,28" concept="3" />
       <node id="8611316981187585709" at="197,28,198,36" concept="3" />
-      <node id="3009615984011096148" at="198,36,199,0" concept="11" />
-      <node id="8611316981187585717" at="201,27,202,20" concept="9" />
-      <node id="8611316981187585723" at="204,33,205,24" concept="9" />
-      <node id="8611316981187585729" at="207,34,208,28" concept="9" />
-      <node id="8611316981187585796" at="212,45,213,55" concept="14" />
-      <node id="8611316981187585805" at="215,40,216,22" concept="3" />
-      <node id="8611316981187585808" at="216,22,217,29" concept="3" />
-      <node id="8611316981187585811" at="217,29,218,16" concept="3" />
+      <node id="8611316981187585717" at="200,27,201,20" concept="9" />
+      <node id="8611316981187585723" at="203,33,204,24" concept="9" />
+      <node id="8611316981187585729" at="206,34,207,28" concept="9" />
+      <node id="8611316981187585796" at="211,45,212,55" concept="14" />
+      <node id="8611316981187585805" at="214,40,215,22" concept="3" />
+      <node id="8611316981187585808" at="215,22,216,29" concept="3" />
+      <node id="8611316981187585811" at="216,29,217,16" concept="3" />
       <node id="8611316981187585544" at="122,14,124,9" concept="0" />
       <node id="8611316981187585536" at="125,12,127,7" concept="0" />
       <node id="8611316981187585518" at="135,12,137,7" concept="0" />
@@ -96,10 +95,10 @@
       <node id="8611316981187585413" at="92,25,95,5" concept="6" />
       <node id="8611316981187585606" at="180,0,183,0" concept="7" trace="isConnected#()Z" />
       <node id="8611316981187585614" at="183,0,186,0" concept="7" trace="canOperate#()Z" />
-      <node id="8611316981187585713" at="201,0,204,0" concept="7" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="8611316981187585719" at="204,0,207,0" concept="7" trace="getHelpText#()Ljava/lang/String;" />
-      <node id="8611316981187585725" at="207,0,210,0" concept="7" trace="getDefaultDelay#()I" />
-      <node id="8611316981187585790" at="212,0,215,0" concept="1" trace="MyTimer#(Ljava/awt/event/ActionListener;)V" />
+      <node id="8611316981187585713" at="200,0,203,0" concept="7" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="8611316981187585719" at="203,0,206,0" concept="7" trace="getHelpText#()Ljava/lang/String;" />
+      <node id="8611316981187585725" at="206,0,209,0" concept="7" trace="getDefaultDelay#()I" />
+      <node id="8611316981187585790" at="211,0,214,0" concept="1" trace="MyTimer#(Ljava/awt/event/ActionListener;)V" />
       <node id="8611316981187585426" at="112,0,116,0" concept="7" trace="tick#()V" />
       <node id="8611316981187585524" at="130,26,134,9" concept="6" />
       <node id="8611316981187585588" at="171,0,175,0" concept="7" trace="run#()V" />
@@ -114,10 +113,10 @@
       <node id="8611316981187585504" at="141,28,146,11" concept="6" />
       <node id="8611316981187585484" at="151,26,156,9" concept="6" />
       <node id="8611316981187585469" at="158,62,163,9" concept="6" />
-      <node id="8611316981187585799" at="215,0,220,0" concept="7" trace="setNewDelay#(I)V" />
+      <node id="8611316981187585691" at="195,0,200,0" concept="1" trace="State#(Ljavax/swing/Icon;Ljava/lang/String;I)V" />
+      <node id="8611316981187585799" at="214,0,219,0" concept="7" trace="setNewDelay#(I)V" />
       <node id="8611316981187520296" at="91,0,97,0" concept="7" trace="dispose#()V" />
       <node id="8611316981187585583" at="169,59,175,9" concept="3" />
-      <node id="8611316981187585691" at="195,0,201,0" concept="1" trace="State#(Ljavax/swing/Icon;Ljava/lang/String;I)V" />
       <node id="8611316981187585501" at="140,60,147,9" concept="6" />
       <node id="8611316981187585457" at="157,12,164,7" concept="0" />
       <node id="8611316981187585403" at="51,0,59,0" concept="7" trace="run#()V" />
@@ -164,10 +163,10 @@
       <scope id="8611316981187585591" at="172,27,173,41" />
       <scope id="8611316981187585609" at="180,33,181,51" />
       <scope id="8611316981187585617" at="183,32,184,86" />
-      <scope id="8611316981187585716" at="201,27,202,20" />
-      <scope id="8611316981187585722" at="204,33,205,24" />
-      <scope id="8611316981187585728" at="207,34,208,28" />
-      <scope id="8611316981187585795" at="212,45,213,55" />
+      <scope id="8611316981187585716" at="200,27,201,20" />
+      <scope id="8611316981187585722" at="203,33,204,24" />
+      <scope id="8611316981187585728" at="206,34,207,28" />
+      <scope id="8611316981187585795" at="211,45,212,55" />
       <scope id="3328426647534966567" at="60,0,62,31">
         <var name="t" id="3328426647534966569" />
       </scope>
@@ -178,17 +177,17 @@
       <scope id="8611316981187520299" at="92,25,95,5" />
       <scope id="8611316981187585606" at="180,0,183,0" />
       <scope id="8611316981187585614" at="183,0,186,0" />
-      <scope id="8611316981187585713" at="201,0,204,0" />
-      <scope id="8611316981187585719" at="204,0,207,0" />
-      <scope id="8611316981187585725" at="207,0,210,0" />
-      <scope id="8611316981187585790" at="212,0,215,0">
+      <scope id="8611316981187585700" at="195,65,198,36" />
+      <scope id="8611316981187585713" at="200,0,203,0" />
+      <scope id="8611316981187585719" at="203,0,206,0" />
+      <scope id="8611316981187585725" at="206,0,209,0" />
+      <scope id="8611316981187585790" at="211,0,214,0">
         <var name="listener" id="8611316981187585793" />
       </scope>
-      <scope id="8611316981187585804" at="215,40,218,16" />
+      <scope id="8611316981187585804" at="214,40,217,16" />
       <scope id="8611316981187585426" at="112,0,116,0" />
       <scope id="8611316981187585523" at="130,26,134,9" />
       <scope id="8611316981187585588" at="171,0,175,0" />
-      <scope id="8611316981187585700" at="195,65,199,0" />
       <scope id="8611316981187585406" at="52,31,57,15" />
       <scope id="8611316981187520275" at="67,0,72,0">
         <var name="bar" id="8611316981187520278" />
@@ -203,17 +202,17 @@
       <scope id="8611316981187585541" at="119,26,124,9" />
       <scope id="8611316981187585503" at="141,28,146,11" />
       <scope id="8611316981187585483" at="151,26,156,9" />
-      <scope id="8611316981187585799" at="215,0,220,0">
+      <scope id="8611316981187585691" at="195,0,200,0">
+        <var name="defaultDelay" id="8611316981187585698" />
+        <var name="helpText" id="8611316981187585696" />
+        <var name="icon" id="8611316981187585694" />
+      </scope>
+      <scope id="8611316981187585799" at="214,0,219,0">
         <var name="delay" id="8611316981187585802" />
       </scope>
       <scope id="8611316981187520296" at="91,0,97,0" />
       <scope id="8611316981187585458" at="157,14,163,9">
         <var name="newDelay" id="8611316981187585460" />
-      </scope>
-      <scope id="8611316981187585691" at="195,0,201,0">
-        <var name="defaultDelay" id="8611316981187585698" />
-        <var name="helpText" id="8611316981187585696" />
-        <var name="icon" id="8611316981187585694" />
       </scope>
       <scope id="3328426647529427731" at="39,27,46,17" />
       <scope id="8611316981187585500" at="140,60,147,9" />
@@ -249,10 +248,10 @@
       <unit id="8611316981187585587" at="170,37,175,7" name="jetbrains.mps.plugin.PluginStateWidget$3" />
       <unit id="8611316981187585402" at="50,72,59,11" name="jetbrains.mps.plugin.PluginStateWidget$2" />
       <unit id="8611316981187550176" at="75,15,84,5" name="jetbrains.mps.plugin.PluginStateWidget$2" />
-      <unit id="8611316981187585787" at="211,0,221,0" name="jetbrains.mps.plugin.PluginStateWidget$MyTimer" />
-      <unit id="8611316981187585664" at="186,0,211,0" name="jetbrains.mps.plugin.PluginStateWidget$State" />
+      <unit id="8611316981187585787" at="210,0,220,0" name="jetbrains.mps.plugin.PluginStateWidget$MyTimer" />
+      <unit id="8611316981187585664" at="186,0,210,0" name="jetbrains.mps.plugin.PluginStateWidget$State" />
       <unit id="8611316981187585389" at="36,48,65,5" name="jetbrains.mps.plugin.PluginStateWidget$1" />
-      <unit id="8611316981187517974" at="24,0,222,0" name="jetbrains.mps.plugin.PluginStateWidget" />
+      <unit id="8611316981187517974" at="24,0,221,0" name="jetbrains.mps.plugin.PluginStateWidget" />
     </file>
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131070856">

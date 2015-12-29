@@ -10,6 +10,5 @@ public enum ChangeType {
   CONFLICTED();
 
   private ChangeType() {
-
   }
 }

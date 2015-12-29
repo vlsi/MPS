@@ -11,6 +11,5 @@ public enum RefactoringTarget {
   DEVKIT();
 
   private RefactoringTarget() {
-
   }
 }

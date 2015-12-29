@@ -9,6 +9,5 @@ public enum AccountType {
   TAX();
 
   private AccountType() {
-
   }
 }

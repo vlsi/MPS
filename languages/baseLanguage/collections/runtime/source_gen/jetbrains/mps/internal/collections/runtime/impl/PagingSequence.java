@@ -34,7 +34,6 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     CUT();
 
     private Page() {
-
     }
   }
   private class PagingIterator implements Iterator<U> {

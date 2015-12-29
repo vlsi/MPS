@@ -12,6 +12,5 @@ public enum Outcome {
   NONE();
 
   private Outcome() {
-
   }
 }

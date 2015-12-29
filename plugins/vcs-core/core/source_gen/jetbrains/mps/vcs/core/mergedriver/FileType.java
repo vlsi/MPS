@@ -40,7 +40,6 @@ public enum FileType {
   private FileType(String suffix, String xmlRoot) {
     mySuffix = suffix;
     myXmlRoot = xmlRoot;
-
   }
 
   public String getSuffix() {

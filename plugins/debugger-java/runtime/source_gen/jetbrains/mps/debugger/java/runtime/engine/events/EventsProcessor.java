@@ -397,7 +397,6 @@ public class EventsProcessor {
     private final int myJdiType;
     private StepKind(int jdiType) {
       myJdiType = jdiType;
-
     }
     public int getJdiType() {
       return myJdiType;
