@@ -19,7 +19,6 @@ public enum BuildSource_JavaContentFolderKind {
   private BuildSource_JavaContentFolderKind(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

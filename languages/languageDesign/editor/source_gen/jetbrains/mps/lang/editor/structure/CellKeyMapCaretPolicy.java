@@ -20,7 +20,6 @@ public enum CellKeyMapCaretPolicy {
   private CellKeyMapCaretPolicy(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

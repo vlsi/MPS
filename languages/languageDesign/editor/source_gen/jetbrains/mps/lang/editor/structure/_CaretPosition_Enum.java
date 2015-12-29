@@ -19,7 +19,6 @@ public enum _CaretPosition_Enum {
   private _CaretPosition_Enum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

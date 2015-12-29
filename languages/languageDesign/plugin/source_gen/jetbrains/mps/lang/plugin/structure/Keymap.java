@@ -22,7 +22,6 @@ public enum Keymap {
   private Keymap(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

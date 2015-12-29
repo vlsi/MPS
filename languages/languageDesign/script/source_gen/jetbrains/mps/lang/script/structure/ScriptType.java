@@ -18,7 +18,6 @@ public enum ScriptType {
   private ScriptType(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

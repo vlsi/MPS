@@ -18,7 +18,6 @@ public enum Options_DefaultCustom {
   private Options_DefaultCustom(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

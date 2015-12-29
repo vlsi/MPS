@@ -18,7 +18,6 @@ public enum SideTransformSide {
   private SideTransformSide(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

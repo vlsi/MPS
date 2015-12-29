@@ -20,7 +20,6 @@ public enum PredefinedCellID {
   private PredefinedCellID(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

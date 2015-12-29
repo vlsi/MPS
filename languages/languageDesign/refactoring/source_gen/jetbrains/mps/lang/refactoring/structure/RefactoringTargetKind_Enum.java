@@ -21,7 +21,6 @@ public enum RefactoringTargetKind_Enum {
   private RefactoringTargetKind_Enum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

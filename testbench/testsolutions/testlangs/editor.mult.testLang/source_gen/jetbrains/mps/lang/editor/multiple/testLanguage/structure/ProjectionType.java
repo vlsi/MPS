@@ -19,7 +19,6 @@ public enum ProjectionType {
   private ProjectionType(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

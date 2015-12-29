@@ -18,7 +18,6 @@ public enum _Enum_Measure {
   private _Enum_Measure(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

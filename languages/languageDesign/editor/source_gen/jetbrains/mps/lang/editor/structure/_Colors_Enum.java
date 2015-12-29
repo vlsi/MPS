@@ -34,7 +34,6 @@ public enum _Colors_Enum {
   private _Colors_Enum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

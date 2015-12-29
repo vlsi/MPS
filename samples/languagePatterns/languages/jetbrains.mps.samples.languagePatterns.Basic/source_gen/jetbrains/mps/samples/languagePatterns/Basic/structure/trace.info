@@ -7,7 +7,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
@@ -22,57 +21,56 @@
       <node id="3803436373353348028" at="18,0,19,0" concept="2" trace="myValue" />
       <node id="3803436373353348028" at="19,50,20,18" concept="1" />
       <node id="3803436373353348028" at="20,18,21,20" concept="1" />
-      <node id="3803436373353348028" at="21,20,22,0" concept="7" />
-      <node id="3803436373353348028" at="24,28,25,19" concept="6" />
-      <node id="3803436373353348028" at="27,36,28,19" concept="6" />
-      <node id="3803436373353348028" at="30,50,31,82" concept="5" />
-      <node id="3803436373353348028" at="31,82,32,62" concept="1" />
-      <node id="3803436373353348028" at="32,62,33,61" concept="1" />
-      <node id="3803436373353348028" at="33,61,34,63" concept="1" />
-      <node id="3803436373353348028" at="34,63,35,16" concept="6" />
-      <node id="3803436373353348028" at="37,42,38,29" concept="6" />
-      <node id="3803436373353348028" at="41,24,42,38" concept="6" />
-      <node id="3803436373353348028" at="44,61,45,31" concept="6" />
-      <node id="3803436373353348028" at="47,60,48,30" concept="6" />
-      <node id="3803436373353348028" at="50,62,51,32" concept="6" />
-      <node id="3803436373353348028" at="52,5,53,36" concept="6" />
+      <node id="3803436373353348028" at="23,28,24,19" concept="6" />
+      <node id="3803436373353348028" at="26,36,27,19" concept="6" />
+      <node id="3803436373353348028" at="29,50,30,82" concept="5" />
+      <node id="3803436373353348028" at="30,82,31,62" concept="1" />
+      <node id="3803436373353348028" at="31,62,32,61" concept="1" />
+      <node id="3803436373353348028" at="32,61,33,63" concept="1" />
+      <node id="3803436373353348028" at="33,63,34,16" concept="6" />
+      <node id="3803436373353348028" at="36,42,37,29" concept="6" />
+      <node id="3803436373353348028" at="40,24,41,38" concept="6" />
+      <node id="3803436373353348028" at="43,61,44,31" concept="6" />
+      <node id="3803436373353348028" at="46,60,47,30" concept="6" />
+      <node id="3803436373353348028" at="49,62,50,32" concept="6" />
+      <node id="3803436373353348028" at="51,5,52,36" concept="6" />
       <node id="3803436373353348028" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="24,0,27,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="27,0,30,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="37,0,40,0" concept="8" trace="getDefault#()Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
-      <node id="3803436373353348028" at="40,54,43,5" concept="3" />
-      <node id="3803436373353348028" at="43,5,46,5" concept="3" />
-      <node id="3803436373353348028" at="46,5,49,5" concept="3" />
-      <node id="3803436373353348028" at="49,5,52,5" concept="3" />
-      <node id="3803436373353348028" at="19,0,24,0" concept="0" trace="OrangeTaste#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3803436373353348028" at="30,0,37,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="3803436373353348028" at="40,0,55,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
+      <node id="3803436373353348028" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="3803436373353348028" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3803436373353348028" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
+      <node id="3803436373353348028" at="39,54,42,5" concept="3" />
+      <node id="3803436373353348028" at="42,5,45,5" concept="3" />
+      <node id="3803436373353348028" at="45,5,48,5" concept="3" />
+      <node id="3803436373353348028" at="48,5,51,5" concept="3" />
+      <node id="3803436373353348028" at="19,0,23,0" concept="0" trace="OrangeTaste#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3803436373353348028" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="3803436373353348028" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
       <scope id="3803436373353348028" at="15,27,16,18" />
-      <scope id="3803436373353348028" at="24,28,25,19" />
-      <scope id="3803436373353348028" at="27,36,28,19" />
-      <scope id="3803436373353348028" at="37,42,38,29" />
-      <scope id="3803436373353348028" at="41,24,42,38" />
-      <scope id="3803436373353348028" at="44,61,45,31" />
-      <scope id="3803436373353348028" at="47,60,48,30" />
-      <scope id="3803436373353348028" at="50,62,51,32" />
+      <scope id="3803436373353348028" at="23,28,24,19" />
+      <scope id="3803436373353348028" at="26,36,27,19" />
+      <scope id="3803436373353348028" at="36,42,37,29" />
+      <scope id="3803436373353348028" at="40,24,41,38" />
+      <scope id="3803436373353348028" at="43,61,44,31" />
+      <scope id="3803436373353348028" at="46,60,47,30" />
+      <scope id="3803436373353348028" at="49,62,50,32" />
+      <scope id="3803436373353348028" at="19,50,21,20" />
       <scope id="3803436373353348028" at="15,0,18,0" />
-      <scope id="3803436373353348028" at="19,50,22,0" />
-      <scope id="3803436373353348028" at="24,0,27,0" />
-      <scope id="3803436373353348028" at="27,0,30,0" />
-      <scope id="3803436373353348028" at="37,0,40,0" />
-      <scope id="3803436373353348028" at="19,0,24,0">
+      <scope id="3803436373353348028" at="23,0,26,0" />
+      <scope id="3803436373353348028" at="26,0,29,0" />
+      <scope id="3803436373353348028" at="36,0,39,0" />
+      <scope id="3803436373353348028" at="19,0,23,0">
         <var name="name" id="3803436373353348028" />
         <var name="value" id="3803436373353348028" />
       </scope>
-      <scope id="3803436373353348028" at="30,50,35,16">
+      <scope id="3803436373353348028" at="29,50,34,16">
         <var name="list" id="3803436373353348028" />
       </scope>
-      <scope id="3803436373353348028" at="30,0,37,0" />
-      <scope id="3803436373353348028" at="40,54,53,36" />
-      <scope id="3803436373353348028" at="40,0,55,0">
+      <scope id="3803436373353348028" at="29,0,36,0" />
+      <scope id="3803436373353348028" at="39,54,52,36" />
+      <scope id="3803436373353348028" at="39,0,54,0">
         <var name="value" id="3803436373353348028" />
       </scope>
-      <unit id="3803436373353348028" at="9,0,56,0" name="jetbrains.mps.samples.languagePatterns.Basic.structure.OrangeTaste" />
+      <unit id="3803436373353348028" at="9,0,55,0" name="jetbrains.mps.samples.languagePatterns.Basic.structure.OrangeTaste" />
     </file>
     <file name="OrangeTaste_PropertySupport.java">
       <node id="3803436373353348028" at="11,24,12,18" concept="6" />
@@ -93,8 +91,8 @@
       <node id="3803436373353348028" at="23,47,26,5" concept="3" />
       <node id="3803436373353348028" at="29,46,32,7" concept="3" />
       <node id="3803436373353348028" at="37,57,40,5" concept="3" />
-      <node id="3803436373353348028" at="14,99,20,5" concept="9" />
-      <node id="3803436373353348028" at="27,99,33,5" concept="9" />
+      <node id="3803436373353348028" at="14,99,20,5" concept="8" />
+      <node id="3803436373353348028" at="27,99,33,5" concept="8" />
       <node id="3803436373353348028" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="3803436373353348028" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
       <node id="3803436373353348028" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />

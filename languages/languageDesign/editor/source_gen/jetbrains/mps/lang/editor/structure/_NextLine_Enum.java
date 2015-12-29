@@ -19,7 +19,6 @@ public enum _NextLine_Enum {
   private _NextLine_Enum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

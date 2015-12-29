@@ -21,7 +21,6 @@ public enum BuildLayout_CopyFilterEolStyle {
   private BuildLayout_CopyFilterEolStyle(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

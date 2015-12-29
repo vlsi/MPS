@@ -19,7 +19,6 @@ public enum NodePresentationOptions {
   private NodePresentationOptions(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

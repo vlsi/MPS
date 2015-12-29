@@ -18,7 +18,6 @@ public enum ValueType {
   private ValueType(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

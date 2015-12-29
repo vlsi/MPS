@@ -20,7 +20,6 @@ public enum Feedback {
   private Feedback(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

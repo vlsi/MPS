@@ -18,7 +18,6 @@ public enum TableComponentEnum {
   private TableComponentEnum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;

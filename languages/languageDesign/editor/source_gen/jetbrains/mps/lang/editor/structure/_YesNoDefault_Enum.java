@@ -19,7 +19,6 @@ public enum _YesNoDefault_Enum {
   private _YesNoDefault_Enum(String name, String value) {
     myName = name;
     myValue = value;
-
   }
   public String getValue() {
     return myValue;
