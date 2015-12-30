@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 // TODO: move to jetbrains.mps.nodeEditor.updater package, make package-local
 public class ReferencedNodeContext {
@@ -33,8 +35,8 @@ public class ReferencedNodeContext {
   // - unique identities of each reference in this chain (roles/cellIDs/..)
   //
   // TODO: Simplify information persisted in this context object
-  private Stack<String> myContextRoles = null;
-  private Stack<SNode> myContextRefererNodes = null;
+  private Deque<String> myContextRoles = null;
+  private Deque<SNode> myContextRefererNodes = null;
 
   private SNode myNode = null;
   private boolean myIsNodeAttribute = false;
@@ -47,11 +49,11 @@ public class ReferencedNodeContext {
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
     this(node);
     if (prototype.myContextRoles != null) {
-      myContextRoles = new Stack<String>();
+      myContextRoles = new LinkedList<String>();
       myContextRoles.addAll(prototype.myContextRoles);
     }
     if (prototype.myContextRefererNodes != null) {
-      myContextRefererNodes = new Stack<SNode>();
+      myContextRefererNodes = new LinkedList<SNode>();
       myContextRefererNodes.addAll(prototype.myContextRefererNodes);
     }
   }
@@ -91,14 +93,14 @@ public class ReferencedNodeContext {
 
   private void addContextRole(String contextRole) {
     if (myContextRoles == null) {
-      myContextRoles = new Stack<String>();
+      myContextRoles = new LinkedList<String>();
     }
     myContextRoles.push(contextRole);
   }
 
   private void addContextRefererNode(SNode contextRefererNode) {
     if (myContextRefererNodes == null) {
-      myContextRefererNodes = new Stack<SNode>();
+      myContextRefererNodes = new LinkedList<SNode>();
     }
     myContextRefererNodes.push(contextRefererNode);
   }
@@ -136,5 +138,18 @@ public class ReferencedNodeContext {
       }
     }
     return result;
+  }
+
+  public void calculateSize(MemoryAnalyzer analyzer) {
+    analyzer.appendObject(this);
+    if (myContextRoles != null) {
+      analyzer.appendCollection(myContextRoles);
+      for (String contextRole : myContextRoles) {
+        analyzer.appendObject(contextRole);
+      }
+    }
+    if (myContextRefererNodes != null) {
+      analyzer.appendCollection(myContextRefererNodes);
+    }
   }
 }

@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.updater;
 
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
+import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -86,5 +88,14 @@ public class UpdateInfoNode {
 
   ReferencedNodeContext getContext() {
     return myContext;
+  }
+
+  void calculateSize(@NotNull MemoryAnalyzer analyzer) {
+    analyzer.appendObject(this);
+    analyzer.appendCollection(myChildren);
+    myContext.calculateSize(analyzer);
+    for (UpdateInfoNode child : getChildren()) {
+      child.calculateSize(analyzer);
+    }
   }
 }

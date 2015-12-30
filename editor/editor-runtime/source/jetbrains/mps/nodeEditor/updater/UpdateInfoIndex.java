@@ -16,11 +16,13 @@
 package jetbrains.mps.nodeEditor.updater;
 
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
+import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
 
 /**
@@ -28,9 +30,11 @@ import java.util.Queue;
  * Date: 22/12/15
  */
 public class UpdateInfoIndex {
+  private final UpdateInfoNode myRootNode;
   private Map<ReferencedNodeContext, List<UpdateInfoNode>> myIndex;
 
   UpdateInfoIndex(UpdateInfoNode rootNode) {
+    myRootNode = rootNode;
     buildIndex(rootNode);
   }
 
@@ -49,6 +53,11 @@ public class UpdateInfoIndex {
       nodesInContext.add(nextNode);
       nodesToProcess.addAll(nextNode.getChildren());
     }
+    MemoryAnalyzer memoryAnalyzer = new MemoryAnalyzer();
+    if (memoryAnalyzer.isValid()) {
+      calculateSize(memoryAnalyzer);
+      System.out.println("Size: " + (memoryAnalyzer.getSize() / 1024) + "Kb");
+    }
   }
 
   UpdateInfoNode remove(ReferencedNodeContext childContext) {
@@ -60,5 +69,16 @@ public class UpdateInfoIndex {
     UpdateInfoNode updateInfoNode = updateInfoNodes.remove(0);
     updateInfoNode.detachFromParent();
     return updateInfoNode;
+  }
+
+  void calculateSize(MemoryAnalyzer memoryAnalyzer) {
+    memoryAnalyzer.appendObject(this);
+    memoryAnalyzer.appendObject(myIndex);
+    memoryAnalyzer.appendFirstNonPrimitiveField(myIndex);
+    for (Entry<ReferencedNodeContext, List<UpdateInfoNode>> entry : myIndex.entrySet()) {
+      memoryAnalyzer.appendObject(entry);
+      memoryAnalyzer.appendCollection(entry.getValue());
+    }
+    myRootNode.calculateSize(memoryAnalyzer);
   }
 }

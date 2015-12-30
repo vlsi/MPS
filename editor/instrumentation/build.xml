@@ -1,0 +1,34 @@
+<project name="editorInstrumentation" default="build">
+  <property name="build.dir" location="../../build"/>
+  <property name="build.tmp" location="${build.dir}/tmp/editorInstrumentation"/>
+  <property name="build.layout" location="${build.dir}/artifacts/editorInstrumentation"/>
+
+  <property name="src.dir" location="./src"/>
+
+  <property name="mps.lib" location="../../lib"/>
+
+  <target name="clean">
+    <delete dir="${build.tmp}"/>
+    <delete dir="${build.layout}"/>
+  </target>
+
+  <target name="build" depends="clean">
+    <mkdir dir="${build.tmp}"/>
+    <javac destdir="${build.tmp}">
+      <src>
+        <path location="${src.dir}"/>
+      </src>
+    </javac>
+    <jar destfile="${build.layout}/editorAgent.jar">
+      <fileset dir="${build.tmp}"/>
+      <manifest>
+        <attribute name="PreMain-Class" value="jetbrains.mps.editor.Agent"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="deploy" depends="build">
+    <delete file="${mps.lib}/editorAgent.jar"/>
+    <copy file="${build.layout}/editorAgent.jar" todir="${mps.lib}"/>
+  </target>
+</project>
