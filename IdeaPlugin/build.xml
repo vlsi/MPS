@@ -131,6 +131,10 @@
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
+    <ant antfile="${base_dir}/build/mpsVcsLanguages.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
   </target>
 
   <target name="build" depends="buildCore">

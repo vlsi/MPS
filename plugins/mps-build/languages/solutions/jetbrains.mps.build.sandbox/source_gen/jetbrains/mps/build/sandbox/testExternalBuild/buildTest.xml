@@ -75,6 +75,7 @@
     <ant antfile="../../../../build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsVcsLanguages.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />
@@ -232,6 +233,10 @@
       <target name="assemble" />
     </ant>
     <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsVcsLanguages.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
