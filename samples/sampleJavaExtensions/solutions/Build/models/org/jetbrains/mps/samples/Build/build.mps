@@ -419,7 +419,7 @@
                     <node concept="2Ry0Ak" id="2HnsMd13Cru" role="2Ry0An">
                       <property role="2Ry0Am" value="Applications" />
                       <node concept="2Ry0Ak" id="2HnsMd13Crz" role="2Ry0An">
-                        <property role="2Ry0Am" value="IntelliJ IDEA 14.app" />
+                        <property role="2Ry0Am" value="IntelliJ IDEA 15.app" />
                         <node concept="2Ry0Ak" id="2HnsMd13CrC" role="2Ry0An">
                           <property role="2Ry0Am" value="Contents" />
                         </node>
@@ -448,8 +448,8 @@
                   <property role="2Ry0Am" value="Library" />
                   <node concept="2Ry0Ak" id="2HnsMd13C4Y" role="2Ry0An">
                     <property role="2Ry0Am" value="Application Support" />
-                    <node concept="2Ry0Ak" id="2HnsMd13C4Z" role="2Ry0An">
-                      <property role="2Ry0Am" value="IntelliJIdea14" />
+                    <node concept="2Ry0Ak" id="7Locks3sfVq" role="2Ry0An">
+                      <property role="2Ry0Am" value="IntelliJIdea15" />
                     </node>
                   </node>
                 </node>
