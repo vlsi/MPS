@@ -16,7 +16,7 @@ public enum AlignEnum {
     return myName;
   }
   private final String myValue;
-  AlignEnum(String name, String value) {
+  private AlignEnum(String name, String value) {
     myName = name;
     myValue = value;
   }

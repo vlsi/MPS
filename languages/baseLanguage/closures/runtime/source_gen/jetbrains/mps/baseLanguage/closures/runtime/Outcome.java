@@ -11,6 +11,6 @@ public enum Outcome {
   BREAK(),
   NONE();
 
-  Outcome() {
+  private Outcome() {
   }
 }

@@ -16,7 +16,7 @@ public enum _ImageAlignment_Enum {
     return myName;
   }
   private final String myValue;
-  _ImageAlignment_Enum(String name, String value) {
+  private _ImageAlignment_Enum(String name, String value) {
     myName = name;
     myValue = value;
   }

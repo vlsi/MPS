@@ -16,7 +16,7 @@ public enum EnumerationMemberIdentifierPolicy {
     return myName;
   }
   private final String myValue;
-  EnumerationMemberIdentifierPolicy(String name, String value) {
+  private EnumerationMemberIdentifierPolicy(String name, String value) {
     myName = name;
     myValue = value;
   }

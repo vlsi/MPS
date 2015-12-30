@@ -395,7 +395,7 @@ public class EventsProcessor {
     Out(StepRequest.STEP_OUT);
 
     private final int myJdiType;
-    StepKind(int jdiType) {
+    private StepKind(int jdiType) {
       myJdiType = jdiType;
     }
     public int getJdiType() {

@@ -15,7 +15,7 @@ public enum ValueType {
     return myName;
   }
   private final String myValue;
-  ValueType(String name, String value) {
+  private ValueType(String name, String value) {
     myName = name;
     myValue = value;
   }

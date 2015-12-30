@@ -31,7 +31,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     SUBSTRACTION(),
     DISJUNCTION();
 
-    Kind() {
+    private Kind() {
     }
   }
   private class ComparingIterator implements Iterator<U> {

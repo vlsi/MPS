@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -1442,6 +1442,21 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8l" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxTMpP" resolve="AddConstructorCaret4" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgU8V" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2pV" resolve="AddConstructorInEnumCaret1" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUlt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Ke" resolve="AddConstructorInEnumCaret2" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUy0" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Od" resolve="AddConstructorInEnumCaret3" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUI$" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPf2Pe" resolve="AddConstructorInEnumCaret4" />
+    </node>
+    <node concept="lpD6D" id="2B4jsEPgUV9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2B4jsEPgBOA" resolve="AddConstructorInEnumCaret5" />
     </node>
     <node concept="lpD6D" id="2TdQhrRPT7_" role="lpD6w">
       <ref role="lpD7u" to="ryl9:jdhTnxTMG7" resolve="AddConstructorNotAllowed1" />

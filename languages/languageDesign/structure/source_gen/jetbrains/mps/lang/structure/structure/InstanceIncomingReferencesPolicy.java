@@ -16,7 +16,7 @@ public enum InstanceIncomingReferencesPolicy {
     return myName;
   }
   private final String myValue;
-  InstanceIncomingReferencesPolicy(String name, String value) {
+  private InstanceIncomingReferencesPolicy(String name, String value) {
     myName = name;
     myValue = value;
   }

@@ -15,7 +15,7 @@ public enum Options_DefaultTrue {
     return myName;
   }
   private final String myValue;
-  Options_DefaultTrue(String name, String value) {
+  private Options_DefaultTrue(String name, String value) {
     myName = name;
     myValue = value;
   }

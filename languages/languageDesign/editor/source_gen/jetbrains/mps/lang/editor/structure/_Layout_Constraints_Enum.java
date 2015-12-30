@@ -16,7 +16,7 @@ public enum _Layout_Constraints_Enum {
     return myName;
   }
   private final String myValue;
-  _Layout_Constraints_Enum(String name, String value) {
+  private _Layout_Constraints_Enum(String name, String value) {
     myName = name;
     myValue = value;
   }

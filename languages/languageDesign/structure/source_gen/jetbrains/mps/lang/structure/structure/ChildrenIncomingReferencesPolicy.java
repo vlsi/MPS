@@ -16,7 +16,7 @@ public enum ChildrenIncomingReferencesPolicy {
     return myName;
   }
   private final String myValue;
-  ChildrenIncomingReferencesPolicy(String name, String value) {
+  private ChildrenIncomingReferencesPolicy(String name, String value) {
     myName = name;
     myValue = value;
   }

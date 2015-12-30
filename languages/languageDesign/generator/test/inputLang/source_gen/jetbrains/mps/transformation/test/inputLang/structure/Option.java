@@ -16,7 +16,7 @@ public enum Option {
     return myName;
   }
   private final String myValue;
-  Option(String name, String value) {
+  private Option(String name, String value) {
     myName = name;
     myValue = value;
   }

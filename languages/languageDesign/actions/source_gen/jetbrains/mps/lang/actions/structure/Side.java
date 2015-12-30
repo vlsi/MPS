@@ -16,7 +16,7 @@ public enum Side {
     return myName;
   }
   private final String myValue;
-  Side(String name, String value) {
+  private Side(String name, String value) {
     myName = name;
     myValue = value;
   }

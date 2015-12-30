@@ -12,7 +12,7 @@ public interface IRefactoringTarget {
     MODEL(),
     MODULE();
 
-    TargetType() {
+    private TargetType() {
     }
   }
 }
