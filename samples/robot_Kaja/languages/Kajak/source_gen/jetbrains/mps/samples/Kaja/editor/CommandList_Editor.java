@@ -33,7 +33,6 @@ public class CommandList_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    CommandList_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createRefNodeList_yxeg41_a0(editorContext, node));
     return editorCell;
   }
