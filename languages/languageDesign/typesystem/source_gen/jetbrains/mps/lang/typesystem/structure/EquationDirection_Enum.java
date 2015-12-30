@@ -16,7 +16,7 @@ public enum EquationDirection_Enum {
     return myName;
   }
   private final String myValue;
-  EquationDirection_Enum(String name, String value) {
+  private EquationDirection_Enum(String name, String value) {
     myName = name;
     myValue = value;
   }

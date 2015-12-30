@@ -27,8 +27,9 @@ import com.intellij.notification.Notifications;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import org.apache.log4j.Level;
+import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
@@ -43,7 +44,6 @@ import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
-import org.apache.log4j.Level;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -162,6 +162,12 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   }
 
   private void resolveDiskMemoryConflict(final EditableSModel model) {
+    if (!(model.getSource() instanceof FileDataSource)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error(String.format("Conflicting content in memory and on disk for model %s from %s. Unfortunately, MPS does not support conflict resolution for models from multiple files yet, conflict ignored.", model.getModelName(), model.getSource().getLocation()));
+      }
+      return;
+    }
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -273,7 +279,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     MEMORY("memory");
 
     private final String mySuffix;
-    DiskMemoryConflictVersion(String suffix) {
+    private DiskMemoryConflictVersion(String suffix) {
       mySuffix = suffix;
     }
     @Override

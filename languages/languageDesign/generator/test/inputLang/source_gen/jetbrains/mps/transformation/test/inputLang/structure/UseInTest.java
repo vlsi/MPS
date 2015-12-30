@@ -23,7 +23,7 @@ public enum UseInTest {
     return myName;
   }
   private final String myValue;
-  UseInTest(String name, String value) {
+  private UseInTest(String name, String value) {
     myName = name;
     myValue = value;
   }

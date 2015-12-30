@@ -16,7 +16,7 @@ public enum BuildSource_JavaContentFolderKind {
     return myName;
   }
   private final String myValue;
-  BuildSource_JavaContentFolderKind(String name, String value) {
+  private BuildSource_JavaContentFolderKind(String name, String value) {
     myName = name;
     myValue = value;
   }

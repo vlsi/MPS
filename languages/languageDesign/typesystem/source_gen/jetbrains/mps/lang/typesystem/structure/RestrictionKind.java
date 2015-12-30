@@ -15,7 +15,7 @@ public enum RestrictionKind {
     return myName;
   }
   private final String myValue;
-  RestrictionKind(String name, String value) {
+  private RestrictionKind(String name, String value) {
     myName = name;
     myValue = value;
   }

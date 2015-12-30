@@ -23,6 +23,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 public class MPSCodeStyleFacade extends DefaultCodeStyleFacade {
   private final Project myProject;
 
+  public MPSCodeStyleFacade() {
+    this(null);
+  }
+
   public MPSCodeStyleFacade(Project project) {
     myProject = project;
   }

@@ -19,7 +19,7 @@ public enum Severity {
     return myName;
   }
   private final String myValue;
-  Severity(String name, String value) {
+  private Severity(String name, String value) {
     myName = name;
     myValue = value;
   }

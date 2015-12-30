@@ -23,7 +23,7 @@ public class AddConstructorCaret2_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("346011455443114226", "346011455443114230");
-      this.typeString("aaa()");
+      this.typeString("aaa(");
     }
   }
 }

@@ -15,7 +15,7 @@ public enum ScriptType {
     return myName;
   }
   private final String myValue;
-  ScriptType(String name, String value) {
+  private ScriptType(String name, String value) {
     myName = name;
     myValue = value;
   }

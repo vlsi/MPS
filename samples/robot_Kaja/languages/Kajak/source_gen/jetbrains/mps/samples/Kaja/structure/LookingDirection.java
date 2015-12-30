@@ -17,7 +17,7 @@ public enum LookingDirection {
     return myName;
   }
   private final String myValue;
-  LookingDirection(String name, String value) {
+  private LookingDirection(String name, String value) {
     myName = name;
     myValue = value;
   }

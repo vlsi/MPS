@@ -8,6 +8,6 @@ public enum AccountType {
   SERVICE(),
   TAX();
 
-  AccountType() {
+  private AccountType() {
   }
 }

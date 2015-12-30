@@ -19,7 +19,7 @@ public enum SideTransformTag {
     return myName;
   }
   private final String myValue;
-  SideTransformTag(String name, String value) {
+  private SideTransformTag(String name, String value) {
     myName = name;
     myValue = value;
   }

@@ -20,8 +20,8 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
     <import index="tpcz" ref="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -7337,14 +7337,29 @@
               </node>
             </node>
           </node>
-          <node concept="3fqX7Q" id="i0$ivXo" role="3clFbw">
-            <node concept="2OqwBi" id="i0$isKV" role="3fr31v">
-              <node concept="37vLTw" id="3GM_nagT$aj" role="2Oq$k0">
-                <ref role="3cqZAo" node="hYRNWef" resolve="declaringClass" />
+          <node concept="22lmx$" id="3dYNaXaG2xg" role="3clFbw">
+            <node concept="2OqwBi" id="3dYNaXaG5H_" role="3uHU7w">
+              <node concept="2OqwBi" id="3dYNaXaG3Du" role="2Oq$k0">
+                <node concept="117lpO" id="3dYNaXaG3rd" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3dYNaXaG4wQ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                </node>
               </node>
-              <node concept="1mIQ4w" id="i0$itE7" role="2OqNvi">
-                <node concept="chp4Y" id="i0$iu8r" role="cj9EA">
-                  <ref role="cht4Q" to="tpee:fKQs72_" resolve="EnumClass" />
+              <node concept="1mIQ4w" id="3dYNaXaG5PC" role="2OqNvi">
+                <node concept="chp4Y" id="3dYNaXaG5XO" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:gFTm6Wc" resolve="PrivateVisibility" />
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="i0$ivXo" role="3uHU7B">
+              <node concept="2OqwBi" id="i0$isKV" role="3fr31v">
+                <node concept="37vLTw" id="3GM_nagT$aj" role="2Oq$k0">
+                  <ref role="3cqZAo" node="hYRNWef" resolve="declaringClass" />
+                </node>
+                <node concept="1mIQ4w" id="i0$itE7" role="2OqNvi">
+                  <node concept="chp4Y" id="i0$iu8r" role="cj9EA">
+                    <ref role="cht4Q" to="tpee:fKQs72_" resolve="EnumClass" />
+                  </node>
                 </node>
               </node>
             </node>

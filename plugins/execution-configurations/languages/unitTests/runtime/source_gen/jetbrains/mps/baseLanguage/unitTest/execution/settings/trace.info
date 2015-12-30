@@ -1397,7 +1397,7 @@
       <node id="6062668769034855855" at="121,0,135,0" concept="11" trace="check#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/String;" />
       <node id="6062668769034855772" at="145,0,160,0" concept="11" trace="check#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/String;" />
       <node id="6062668769034855736" at="170,0,185,0" concept="11" trace="collect#(Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;Ljetbrains/mps/project/Project;)Ljava/lang/Iterable;" />
-      <scope id="6062668769034855756" at="167,19,167,19" />
+      <scope id="6062668769034855756" at="167,27,167,27" />
       <scope id="6062668769034856093" at="29,28,30,80" />
       <scope id="6062668769034856115" at="38,28,39,20" />
       <scope id="6062668769034856122" at="41,53,42,49" />

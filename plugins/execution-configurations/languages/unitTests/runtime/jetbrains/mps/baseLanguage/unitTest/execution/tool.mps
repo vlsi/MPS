@@ -15211,7 +15211,6 @@
         </node>
       </node>
       <node concept="3cqZAl" id="36vIONTtRkx" role="3clF45" />
-      <node concept="3Tm1VV" id="36vIONTtRky" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="36vIONTtRjJ" role="jymVt">
       <property role="TrG5h" value="getIcon" />

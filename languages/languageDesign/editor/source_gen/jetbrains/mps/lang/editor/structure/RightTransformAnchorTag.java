@@ -20,7 +20,7 @@ public enum RightTransformAnchorTag {
     return myName;
   }
   private final String myValue;
-  RightTransformAnchorTag(String name, String value) {
+  private RightTransformAnchorTag(String name, String value) {
     myName = name;
     myValue = value;
   }

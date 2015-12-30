@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="tests.testDepViewer" uuid="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" moduleVersion="0" compileInMPS="true">
+<solution name="tests.testDepViewer" uuid="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

@@ -16,7 +16,7 @@ public enum Unit {
     return myName;
   }
   private final String myValue;
-  Unit(String name, String value) {
+  private Unit(String name, String value) {
     myName = name;
     myValue = value;
   }

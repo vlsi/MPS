@@ -16,7 +16,7 @@ public enum ProjectionType {
     return myName;
   }
   private final String myValue;
-  ProjectionType(String name, String value) {
+  private ProjectionType(String name, String value) {
     myName = name;
     myValue = value;
   }
