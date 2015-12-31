@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -69,6 +70,12 @@ public class UpdateInfoNode {
     UpdateInfoNode parent = myParent;
     detachFromParent();
     updateInfoNode.attachNewParent(parent);
+    if (updateInfoNode.getContext().isNodeAttribute()) {
+      for (UpdateInfoNode childInfo : new ArrayList<UpdateInfoNode>(getChildren())) {
+        childInfo.detachFromParent();
+        childInfo.attachNewParent(updateInfoNode);
+      }
+    }
   }
 
   void insertNewParent(UpdateInfoNode attributeUpdateInfo) {

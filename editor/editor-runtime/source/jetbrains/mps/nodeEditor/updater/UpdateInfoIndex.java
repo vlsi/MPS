@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -24,14 +28,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  * User: shatalin
  * Date: 22/12/15
  */
 public class UpdateInfoIndex {
+  private static final Logger LOG = LogManager.getLogger(UpdateInfoIndex.class);
+
   private final UpdateInfoNode myRootNode;
   private Map<ReferencedNodeContext, List<UpdateInfoNode>> myIndex;
+  private Set<SNode> myVisualizedRoots;
 
   UpdateInfoIndex(UpdateInfoNode rootNode) {
     myRootNode = rootNode;
@@ -39,7 +47,9 @@ public class UpdateInfoIndex {
   }
 
   private void buildIndex(UpdateInfoNode node) {
+    long start = System.currentTimeMillis();
     myIndex = new HashMap<ReferencedNodeContext, List<UpdateInfoNode>>();
+    myVisualizedRoots = new THashSet<SNode>();
 
     Queue<UpdateInfoNode> nodesToProcess = new LinkedList<UpdateInfoNode>();
     nodesToProcess.add(node);
@@ -51,12 +61,14 @@ public class UpdateInfoIndex {
         myIndex.put(nextNode.getContext(), nodesInContext);
       }
       nodesInContext.add(nextNode);
+      myVisualizedRoots.add(nextNode.getContext().getNode().getContainingRoot());
       nodesToProcess.addAll(nextNode.getChildren());
     }
+    LOG.debug("Building index took: " + (System.currentTimeMillis() - start) + "ms");
     MemoryAnalyzer memoryAnalyzer = new MemoryAnalyzer();
     if (memoryAnalyzer.isValid()) {
       calculateSize(memoryAnalyzer);
-      System.out.println("Size: " + (memoryAnalyzer.getSize() / 1024) + "Kb");
+      LOG.debug("UpdateInfoIndex size: " + (memoryAnalyzer.getSize() / 1024) + "Kb");
     }
   }
 
@@ -71,14 +83,23 @@ public class UpdateInfoIndex {
     return updateInfoNode;
   }
 
+  boolean isVisualized(SNode changedNode) {
+    return myVisualizedRoots.contains(changedNode.getContainingRoot());
+  }
+
   void calculateSize(MemoryAnalyzer memoryAnalyzer) {
     memoryAnalyzer.appendObject(this);
+
     memoryAnalyzer.appendObject(myIndex);
     memoryAnalyzer.appendFirstNonPrimitiveField(myIndex);
     for (Entry<ReferencedNodeContext, List<UpdateInfoNode>> entry : myIndex.entrySet()) {
       memoryAnalyzer.appendObject(entry);
       memoryAnalyzer.appendCollection(entry.getValue());
     }
+
+    memoryAnalyzer.appendObject(myVisualizedRoots);
+    memoryAnalyzer.appendField(myVisualizedRoots, "_set");
+
     myRootNode.calculateSize(memoryAnalyzer);
   }
 }

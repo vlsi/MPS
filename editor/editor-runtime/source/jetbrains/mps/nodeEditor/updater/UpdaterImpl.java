@@ -382,4 +382,8 @@ public class UpdaterImpl implements Updater, CommandContext {
   EditorComponent getEditorComponent() {
     return myEditorComponent;
   }
+
+  UpdateInfoIndex getUpdateInfoIndex() {
+    return myUpdateInfoIndex;
+  }
 }
