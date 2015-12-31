@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -31,6 +30,7 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
@@ -40,15 +40,15 @@ import java.util.List;
  * Date: 09/09/14
  */
 class ModelEventsVisitor implements SModelEventVisitor {
-  private final EditorComponent myEditorComponent;
+  private final UpdateInfoIndex myUpdateInfoIndex;
   private Boolean myIsPropertyModification = null;
   private Pair<SNodeReference, String> myModifiedProperty = null;
   private Boolean myIsPropertyAddedRemoved;
 
   private ModelEventsSelectionHandler mySelectionHandler;
 
-  ModelEventsVisitor(List<SModelEvent> events, EditorComponent editorComponent) {
-    myEditorComponent = editorComponent;
+  ModelEventsVisitor(List<SModelEvent> events, UpdateInfoIndex updateInfoIndex) {
+    myUpdateInfoIndex = updateInfoIndex;
     for (SModelEvent event : events) {
       event.accept(this);
     }
@@ -78,7 +78,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
   @Override
   public void visitChildEvent(SModelChildEvent event) {
     visitNonPropertyEvent();
-    if (!mayAffectSelection(event)) {
+    if (!mayAffectSelection(event.getParent())) {
       return;
     }
     if (event.isAdded()) {
@@ -91,7 +91,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
   @Override
   public void visitReferenceEvent(SModelReferenceEvent event) {
     visitNonPropertyEvent();
-    if (!mayAffectSelection(event)) {
+    if (!mayAffectSelection(event.getReference().getSourceNode())) {
       return;
     }
     if (event.isAdded()) {
@@ -149,7 +149,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
     myIsPropertyAddedRemoved = null;
   }
 
-  private boolean mayAffectSelection(SModelEvent event) {
-    return myEditorComponent.getEditedNode() != null && myEditorComponent.getEditedNode().getContainingRoot() == event.getAffectedRoot();
+  private boolean mayAffectSelection(SNode changedNode) {
+    return myUpdateInfoIndex.isVisualized(changedNode);
   }
 }
