@@ -39,6 +39,9 @@ public class Comment_Action extends BaseAction {
     if (selection == null || !(EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells()))) {
       return false;
     }
+    if (eq_fuv223_a0c0d(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getEditedNode(), event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode())) {
+      return false;
+    }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(((SNode) event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode()), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldCommentContainer")) && Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldCommentContainer")), SMethodTrimmedId.create("getCommentedNodes", null, "3$Sh7m_tmZE")))).isNotEmpty() || ListSequence.fromList(AttributeOperations.getAttributeList(it, new IAttributeDescriptor.AllAttributes())).where(new IWhereFilter<SNode>() {
@@ -72,5 +75,8 @@ public class Comment_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection().executeAction(CellActionType.COMMENT);
+  }
+  private static boolean eq_fuv223_a0c0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
