@@ -1359,6 +1359,12 @@
     <node concept="lpD6D" id="2TdQhrRPT7a" role="lpD6w">
       <ref role="lpD7u" to="tpej:4yhXPMFqSwE" resolve="FloatConstant2" />
     </node>
+    <node concept="lpD6D" id="rutuztYHtF" role="lpD6w">
+      <ref role="lpD7u" to="tpej:rutuztWYnj" resolve="TestMigrateCommentBlock" />
+    </node>
+    <node concept="lpD6D" id="rutuztYHvQ" role="lpD6w">
+      <ref role="lpD7u" to="tpej:rutuztX2OS" resolve="TestMigrateCommentLines" />
+    </node>
   </node>
   <node concept="lpD6F" id="69H_rR6IcfB">
     <node concept="2R4zua" id="69H_rR6IcfD" role="2R4z3u">
