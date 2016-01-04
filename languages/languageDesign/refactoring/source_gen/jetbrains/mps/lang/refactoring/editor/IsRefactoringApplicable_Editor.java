@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
@@ -36,7 +34,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, 0, new IsRefactoringApplicableHint());
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_xt8j9n_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xt8j9n_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xt8j9n_c0(editorContext, node));

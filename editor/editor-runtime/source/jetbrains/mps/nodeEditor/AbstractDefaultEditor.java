@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -28,7 +27,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
@@ -86,7 +84,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     SProperty nameProperty = getNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    mainCellCollection.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     addLabel(camelToLabel(myConcept.getName()));
     addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, FIRST_LABEL_BACKGROUND_COLOR);
     if (nameProperty != null) {

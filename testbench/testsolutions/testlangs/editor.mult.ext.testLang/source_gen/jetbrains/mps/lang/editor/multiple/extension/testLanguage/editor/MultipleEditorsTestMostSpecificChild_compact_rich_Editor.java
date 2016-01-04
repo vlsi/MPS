@@ -12,8 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -34,7 +32,6 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createProperty_crd8ui_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_crd8ui_b0(editorContext, node));
     return editorCell;

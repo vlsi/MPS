@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -20,13 +18,13 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
@@ -48,7 +46,6 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y27sly_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_y27sly_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y27sly_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_c0(editorContext, node));
@@ -266,7 +263,6 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x41fde5e4adce38c8L, "dependencies")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -350,7 +346,6 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0xa2d3cf45cccf776L, "prepareStatements")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -405,7 +400,6 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y27sly_a_0");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_y27sly_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y27sly_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_c0_0(editorContext, node));

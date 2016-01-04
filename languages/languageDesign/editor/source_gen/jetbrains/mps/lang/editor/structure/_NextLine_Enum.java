@@ -16,7 +16,7 @@ public enum _NextLine_Enum {
     return myName;
   }
   private final String myValue;
-  _NextLine_Enum(String name, String value) {
+  private _NextLine_Enum(String name, String value) {
     myName = name;
     myValue = value;
   }

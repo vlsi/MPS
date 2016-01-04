@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -18,10 +16,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -34,7 +31,6 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bnd800_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_bnd800_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bnd800_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bnd800_c0(editorContext, node));
@@ -152,7 +148,6 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new InputRoot_Editor.inputChildListHandler_bnd800_b4a(node, "inputChild", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputChild");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -19,10 +17,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -36,7 +33,6 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xp0b50_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_xp0b50_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_xp0b50_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xp0b50_c0(editorContext, node));
@@ -114,7 +110,6 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CustomContainers_Editor.containerDeclarationListHandler_xp0b50_a1c0(node, "containerDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_containerDeclaration");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x54a5d587c1f3c84cL, 0x54a5d587c1f3c84eL, "containerDeclaration")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

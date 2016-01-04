@@ -9,6 +9,6 @@ public enum NormKind {
   Norm2F(),
   NormMax();
 
-  NormKind() {
+  private NormKind() {
   }
 }

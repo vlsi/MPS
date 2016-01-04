@@ -9,8 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -29,7 +27,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_th2ud5_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_th2ud5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_th2ud5_c0(editorContext, node));

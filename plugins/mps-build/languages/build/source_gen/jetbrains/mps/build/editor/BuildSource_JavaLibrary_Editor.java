@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -22,10 +20,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -38,7 +35,6 @@ public class BuildSource_JavaLibrary_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kr3uwk_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_kr3uwk_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kr3uwk_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kr3uwk_c0(editorContext, node));
@@ -100,7 +96,6 @@ public class BuildSource_JavaLibrary_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

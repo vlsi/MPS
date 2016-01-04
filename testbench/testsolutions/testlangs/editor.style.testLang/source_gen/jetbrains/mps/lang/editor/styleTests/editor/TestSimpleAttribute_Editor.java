@@ -10,8 +10,6 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -28,7 +26,6 @@ public class TestSimpleAttribute_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestSimpleAttribute_Editor._StyleParameter_QueryFunction_cfre1m_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_cfre1m_a0a(EditorContext editorContext, SNode node) {

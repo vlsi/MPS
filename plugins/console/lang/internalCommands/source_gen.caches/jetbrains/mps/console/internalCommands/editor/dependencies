@@ -2,9 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.internalCommands.editor.ConsoleModelExpression_Editor" file="ConsoleModelExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
@@ -23,9 +21,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.internalCommands.editor.InternalMode_Editor" file="InternalMode_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />

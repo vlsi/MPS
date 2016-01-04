@@ -16,7 +16,7 @@ public enum OrangeTaste {
     return myName;
   }
   private final String myValue;
-  OrangeTaste(String name, String value) {
+  private OrangeTaste(String name, String value) {
     myName = name;
     myValue = value;
   }

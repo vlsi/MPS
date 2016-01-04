@@ -37,7 +37,7 @@ public enum FileType {
 
   private String mySuffix;
   private String myXmlRoot;
-  FileType(String suffix, String xmlRoot) {
+  private FileType(String suffix, String xmlRoot) {
     mySuffix = suffix;
     myXmlRoot = xmlRoot;
   }

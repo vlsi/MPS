@@ -9,8 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -20,10 +18,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -41,7 +38,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_com5ge_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_com5ge_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_com5ge_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_com5ge_c0(editorContext, node));
@@ -299,7 +295,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f723dL, "inputs")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -369,7 +364,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

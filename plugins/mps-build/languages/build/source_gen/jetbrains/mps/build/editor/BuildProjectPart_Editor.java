@@ -12,8 +12,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class BuildProjectPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -27,7 +25,6 @@ public class BuildProjectPart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

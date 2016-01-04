@@ -17,7 +17,7 @@ public enum Feedback {
     return myName;
   }
   private final String myValue;
-  Feedback(String name, String value) {
+  private Feedback(String name, String value) {
     myName = name;
     myValue = value;
   }

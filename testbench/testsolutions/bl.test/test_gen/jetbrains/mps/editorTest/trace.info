@@ -3286,6 +3286,116 @@
       <unit id="2907839077756756657" at="11,0,35,0" name="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009684603">
+    <file name="AddConstructorInEnumCaret1_Test.java">
+      <node id="3009615984009684603" at="15,66,16,107" concept="3" />
+      <node id="3009615984009684603" at="16,107,17,107" concept="3" />
+      <node id="3009615984009684603" at="24,51,25,63" concept="3" />
+      <node id="3009615984009684616" at="25,63,26,37" concept="3" />
+      <node id="3009615984009684603" at="12,0,14,0" concept="2" trace="AddConstructorInEnumCaret1_Test#()V" />
+      <node id="3009615984009684603" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3009615984009684603" at="14,0,19,0" concept="6" trace="test_AddConstructorInEnumCaret1#()V" />
+      <node id="3009615984009684603" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3009615984009684603" at="12,44,12,44" />
+      <scope id="3009615984009684603" at="21,23,21,23" />
+      <scope id="3009615984009684603" at="12,0,14,0" />
+      <scope id="3009615984009684603" at="15,66,17,107" />
+      <scope id="3009615984009684603" at="21,0,23,0" />
+      <scope id="3009615984009684603" at="24,51,26,37" />
+      <scope id="3009615984009684603" at="14,0,19,0" />
+      <scope id="3009615984009684603" at="23,0,28,0" />
+      <unit id="3009615984009684603" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret1_Test$TestBody" />
+      <unit id="3009615984009684603" at="10,0,30,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009686030">
+    <file name="AddConstructorInEnumCaret2_Test.java">
+      <node id="3009615984009686030" at="15,66,16,107" concept="3" />
+      <node id="3009615984009686030" at="16,107,17,107" concept="3" />
+      <node id="3009615984009686030" at="24,51,25,63" concept="3" />
+      <node id="3009615984009686032" at="25,63,26,28" concept="3" />
+      <node id="3009615984009686030" at="12,0,14,0" concept="2" trace="AddConstructorInEnumCaret2_Test#()V" />
+      <node id="3009615984009686030" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3009615984009686030" at="14,0,19,0" concept="6" trace="test_AddConstructorInEnumCaret2#()V" />
+      <node id="3009615984009686030" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3009615984009686030" at="12,44,12,44" />
+      <scope id="3009615984009686030" at="21,23,21,23" />
+      <scope id="3009615984009686030" at="12,0,14,0" />
+      <scope id="3009615984009686030" at="15,66,17,107" />
+      <scope id="3009615984009686030" at="21,0,23,0" />
+      <scope id="3009615984009686030" at="24,51,26,28" />
+      <scope id="3009615984009686030" at="14,0,19,0" />
+      <scope id="3009615984009686030" at="23,0,28,0" />
+      <unit id="3009615984009686030" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret2_Test$TestBody" />
+      <unit id="3009615984009686030" at="10,0,30,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009686285">
+    <file name="AddConstructorInEnumCaret3_Test.java">
+      <node id="3009615984009686285" at="15,66,16,107" concept="3" />
+      <node id="3009615984009686285" at="16,107,17,107" concept="3" />
+      <node id="3009615984009686285" at="24,51,25,63" concept="3" />
+      <node id="3009615984009686287" at="25,63,26,45" concept="3" />
+      <node id="3009615984009686285" at="12,0,14,0" concept="2" trace="AddConstructorInEnumCaret3_Test#()V" />
+      <node id="3009615984009686285" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3009615984009686285" at="14,0,19,0" concept="6" trace="test_AddConstructorInEnumCaret3#()V" />
+      <node id="3009615984009686285" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3009615984009686285" at="12,44,12,44" />
+      <scope id="3009615984009686285" at="21,23,21,23" />
+      <scope id="3009615984009686285" at="12,0,14,0" />
+      <scope id="3009615984009686285" at="15,66,17,107" />
+      <scope id="3009615984009686285" at="21,0,23,0" />
+      <scope id="3009615984009686285" at="24,51,26,45" />
+      <scope id="3009615984009686285" at="14,0,19,0" />
+      <scope id="3009615984009686285" at="23,0,28,0" />
+      <unit id="3009615984009686285" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret3_Test$TestBody" />
+      <unit id="3009615984009686285" at="10,0,30,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009686350">
+    <file name="AddConstructorInEnumCaret4_Test.java">
+      <node id="3009615984009686350" at="15,66,16,107" concept="3" />
+      <node id="3009615984009686350" at="16,107,17,107" concept="3" />
+      <node id="3009615984009686350" at="24,51,25,63" concept="3" />
+      <node id="3009615984009686352" at="25,63,26,35" concept="3" />
+      <node id="3009615984009686350" at="12,0,14,0" concept="2" trace="AddConstructorInEnumCaret4_Test#()V" />
+      <node id="3009615984009686350" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3009615984009686350" at="14,0,19,0" concept="6" trace="test_AddConstructorInEnumCaret4#()V" />
+      <node id="3009615984009686350" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3009615984009686350" at="12,44,12,44" />
+      <scope id="3009615984009686350" at="21,23,21,23" />
+      <scope id="3009615984009686350" at="12,0,14,0" />
+      <scope id="3009615984009686350" at="15,66,17,107" />
+      <scope id="3009615984009686350" at="21,0,23,0" />
+      <scope id="3009615984009686350" at="24,51,26,35" />
+      <scope id="3009615984009686350" at="14,0,19,0" />
+      <scope id="3009615984009686350" at="23,0,28,0" />
+      <unit id="3009615984009686350" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret4_Test$TestBody" />
+      <unit id="3009615984009686350" at="10,0,30,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret4_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984010100006">
+    <file name="AddConstructorInEnumCaret5_Test.java">
+      <node id="3009615984010100006" at="15,66,16,107" concept="3" />
+      <node id="3009615984010100006" at="16,107,17,107" concept="3" />
+      <node id="3009615984010100006" at="24,51,25,63" concept="3" />
+      <node id="3009615984010100008" at="25,63,26,36" concept="3" />
+      <node id="3009615984010100006" at="12,0,14,0" concept="2" trace="AddConstructorInEnumCaret5_Test#()V" />
+      <node id="3009615984010100006" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3009615984010100006" at="14,0,19,0" concept="6" trace="test_AddConstructorInEnumCaret5#()V" />
+      <node id="3009615984010100006" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3009615984010100006" at="12,44,12,44" />
+      <scope id="3009615984010100006" at="21,23,21,23" />
+      <scope id="3009615984010100006" at="12,0,14,0" />
+      <scope id="3009615984010100006" at="15,66,17,107" />
+      <scope id="3009615984010100006" at="21,0,23,0" />
+      <scope id="3009615984010100006" at="24,51,26,36" />
+      <scope id="3009615984010100006" at="14,0,19,0" />
+      <scope id="3009615984010100006" at="23,0,28,0" />
+      <unit id="3009615984010100006" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret5_Test$TestBody" />
+      <unit id="3009615984010100006" at="10,0,30,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret5_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412946301151">
     <file name="UndoLocalVariableDeclarationCreation_Test.java">
       <node id="3150412412946301151" at="15,76,16,107" concept="3" />
@@ -4757,7 +4867,7 @@
       <node id="346011455443114225" at="15,60,16,107" concept="3" />
       <node id="346011455443114225" at="16,107,17,101" concept="3" />
       <node id="346011455443114225" at="24,51,25,61" concept="3" />
-      <node id="346011455443114234" at="25,61,26,31" concept="3" />
+      <node id="346011455443114234" at="25,61,26,30" concept="3" />
       <node id="346011455443114225" at="12,0,14,0" concept="2" trace="AddConstructorCaret2_Test#()V" />
       <node id="346011455443114225" at="21,0,23,0" concept="2" trace="TestBody#()V" />
       <node id="346011455443114225" at="14,0,19,0" concept="6" trace="test_AddConstructorCaret2#()V" />
@@ -4767,7 +4877,7 @@
       <scope id="346011455443114225" at="12,0,14,0" />
       <scope id="346011455443114225" at="15,60,17,101" />
       <scope id="346011455443114225" at="21,0,23,0" />
-      <scope id="346011455443114225" at="24,51,26,31" />
+      <scope id="346011455443114225" at="24,51,26,30" />
       <scope id="346011455443114225" at="14,0,19,0" />
       <scope id="346011455443114225" at="23,0,28,0" />
       <unit id="346011455443114225" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorCaret2_Test$TestBody" />
@@ -4801,7 +4911,7 @@
       <node id="346011455443117685" at="15,60,16,107" concept="3" />
       <node id="346011455443117685" at="16,107,17,101" concept="3" />
       <node id="346011455443117685" at="24,51,25,61" concept="3" />
-      <node id="346011455443117698" at="25,61,26,38" concept="3" />
+      <node id="346011455443117698" at="25,61,26,37" concept="3" />
       <node id="346011455443117685" at="12,0,14,0" concept="2" trace="AddConstructorCaret4_Test#()V" />
       <node id="346011455443117685" at="21,0,23,0" concept="2" trace="TestBody#()V" />
       <node id="346011455443117685" at="14,0,19,0" concept="6" trace="test_AddConstructorCaret4#()V" />
@@ -4811,7 +4921,7 @@
       <scope id="346011455443117685" at="12,0,14,0" />
       <scope id="346011455443117685" at="15,60,17,101" />
       <scope id="346011455443117685" at="21,0,23,0" />
-      <scope id="346011455443117685" at="24,51,26,38" />
+      <scope id="346011455443117685" at="24,51,26,37" />
       <scope id="346011455443117685" at="14,0,19,0" />
       <scope id="346011455443117685" at="23,0,28,0" />
       <unit id="346011455443117685" at="19,0,29,0" name="jetbrains.mps.editorTest.AddConstructorCaret4_Test$TestBody" />

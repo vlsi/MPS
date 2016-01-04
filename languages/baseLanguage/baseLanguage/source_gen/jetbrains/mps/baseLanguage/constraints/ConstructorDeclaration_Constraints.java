@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConstructorDeclaration_Constraints extends BaseConstraintsDescriptor {
@@ -32,6 +34,20 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
+    }
+
+    return result;
+  }
+  @Override
+  public boolean hasOwnCanBeParentMethod() {
+    return true;
+  }
+  @Override
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
     }
 
     return result;
@@ -77,5 +93,12 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) && SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo"));
   }
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) || neq_iwy3m3_a0a0a0h(link, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))) || SConceptOperations.isExactly(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+  }
+  private static boolean neq_iwy3m3_a0a0a0h(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213107437659");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "3710628196244285182");
 }

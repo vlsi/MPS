@@ -16,7 +16,7 @@ public enum StaticScope {
     return myName;
   }
   private final String myValue;
-  StaticScope(String name, String value) {
+  private StaticScope(String name, String value) {
     myName = name;
     myValue = value;
   }

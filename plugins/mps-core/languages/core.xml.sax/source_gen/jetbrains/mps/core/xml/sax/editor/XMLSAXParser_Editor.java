@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -18,10 +16,9 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -32,6 +29,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class XMLSAXParser_Editor extends DefaultNodeEditor {
@@ -42,7 +40,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pkrqbh_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pkrqbh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_c0(editorContext, node));
@@ -111,7 +108,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, 0x1f6c736337b5e302L, "parameters")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -166,7 +162,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, 0x1f6c736337b5e305L, "fields")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -295,7 +290,6 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, 0x1f6c736337b5e304L, "nodes")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

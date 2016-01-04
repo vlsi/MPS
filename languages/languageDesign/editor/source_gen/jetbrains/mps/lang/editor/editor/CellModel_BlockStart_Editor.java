@@ -13,8 +13,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
@@ -39,7 +37,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     style.set(StyleAttributes.NULL_TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -57,7 +54,6 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_5tinyn_a0(editorContext, node));
     return editorCell;
   }

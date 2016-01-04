@@ -202,7 +202,7 @@ public class RefactoringUtil {
 
     };
 
-    Applicability() {
+    private Applicability() {
     }
     public abstract boolean lessThan(RefactoringUtil.Applicability level);
   }

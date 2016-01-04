@@ -9,8 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -37,7 +35,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_paqmtn_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_paqmtn_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_paqmtn_c0(editorContext, node));
@@ -185,7 +182,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a_0");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createComponent_paqmtn_a0(editorContext, node));
     return editorCell;

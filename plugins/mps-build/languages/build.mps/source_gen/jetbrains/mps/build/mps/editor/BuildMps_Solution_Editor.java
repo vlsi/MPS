@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
@@ -31,9 +29,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 
@@ -48,7 +46,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ju7sd7_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_ju7sd7_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ju7sd7_b0(editorContext, node));
     if (renderingCondition_ju7sd7_a2a(node, editorContext)) {
@@ -268,7 +265,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -334,7 +330,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -398,7 +393,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     if (renderingCondition_ju7sd7_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_ju7sd7_a0(editorContext, node));
     }
@@ -511,7 +505,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -577,7 +570,6 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

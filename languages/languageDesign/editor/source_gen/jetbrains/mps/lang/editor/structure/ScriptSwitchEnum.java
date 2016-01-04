@@ -16,7 +16,7 @@ public enum ScriptSwitchEnum {
     return myName;
   }
   private final String myValue;
-  ScriptSwitchEnum(String name, String value) {
+  private ScriptSwitchEnum(String name, String value) {
     myName = name;
     myValue = value;
   }

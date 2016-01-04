@@ -18,7 +18,7 @@ public enum RuleType {
     return myName;
   }
   private final String myValue;
-  RuleType(String name, String value) {
+  private RuleType(String name, String value) {
     myName = name;
     myValue = value;
   }

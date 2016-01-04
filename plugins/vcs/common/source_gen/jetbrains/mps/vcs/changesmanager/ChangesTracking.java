@@ -55,6 +55,11 @@ import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import java.util.Map;
 import java.util.HashMap;
+import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
+import jetbrains.mps.extapi.model.SModelBase;
+import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
@@ -370,6 +375,34 @@ public class ChangesTracking {
         event.accept(this);
       }
       childChanged = null;
+
+      // make model file[s] dirty 
+      Set<IFile> affectedFiles = SetSequence.fromSet(new HashSet<IFile>());
+      DataSource dataSource = myModelDescriptor.getSource();
+      if (dataSource instanceof FileDataSource) {
+        SetSequence.fromSet(affectedFiles).addElement(((FileDataSource) dataSource).getFile());
+      } else if (dataSource instanceof FilePerRootDataSource) {
+        FilePerRootDataSource ds = (FilePerRootDataSource) dataSource;
+        Map<SNodeId, String> streamNames = FilePerRootFormatUtil.getStreamNames(((SModelBase) myModelDescriptor).getSModel());
+        for (SModelEvent event : ListSequence.fromList(events)) {
+          SNode root = event.getAffectedRoot();
+          if (root != null) {
+            SetSequence.fromSet(affectedFiles).addElement(ds.getFile(streamNames.get(root.getNodeId())));
+          }
+        }
+        // model file can be affected also 
+        SetSequence.fromSet(affectedFiles).addElement(ds.getFile(FilePerRootDataSource.HEADER_FILE));
+      }
+      VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
+      for (IFile iFile : SetSequence.fromSet(affectedFiles)) {
+        VirtualFile vFile = VirtualFileUtils.getVirtualFile(iFile);
+        if (vFile != null) {
+          Document document = FileDocumentManager.getInstance().getDocument(vFile);
+          if (document != null && provider != null) {
+            provider.refreshFileStatusFromDocument(vFile, document);
+          }
+        }
+      }
     }
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
@@ -477,8 +510,17 @@ public class ChangesTracking {
     public void visitRootEvent(final SModelRootEvent event) {
       SNode root = event.getRoot();
       final boolean added = event.isAdded();
-      if ((added ? root.getModel() == null : root.getModel() != null)) {
-        return;
+      if (added) {
+        if (root.getModel() == null) {
+          return;
+        }
+      } else {
+        // there are two almost identical SModelRootEvent generated: from beforeRootRemoved and from rootRemoved 
+        // rootRemoved event has SModelRootEvent with rootRef = (null, null) 
+        //  we skip the first one 
+        if (event.getRootRef().getNodeId() != null) {
+          return;
+        }
       }
       final SNodeId rootId = root.getNodeId();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {

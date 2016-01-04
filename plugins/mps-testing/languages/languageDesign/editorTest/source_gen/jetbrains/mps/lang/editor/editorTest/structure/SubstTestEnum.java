@@ -16,7 +16,7 @@ public enum SubstTestEnum {
     return myName;
   }
   private final String myValue;
-  SubstTestEnum(String name, String value) {
+  private SubstTestEnum(String name, String value) {
     myName = name;
     myValue = value;
   }

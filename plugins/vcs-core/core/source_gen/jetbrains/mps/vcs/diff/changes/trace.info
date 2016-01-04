@@ -40,7 +40,7 @@
       <node id="5505786199853651282" at="72,0,73,0" concept="6" trace="myName" />
       <node id="5505786199853651325" at="73,0,74,0" concept="6" trace="myAddTask" />
       <node id="5505786199853651829" at="74,0,75,0" concept="6" trace="myDeleteTask" />
-      <node id="5505786199853651842" at="75,192,76,20" concept="5" />
+      <node id="5505786199853651842" at="75,200,76,20" concept="5" />
       <node id="5505786199853651854" at="76,20,77,26" concept="5" />
       <node id="5505786199853651866" at="77,26,78,32" concept="5" />
       <node id="5505786199853653566" at="33,10,35,5" concept="1" />
@@ -97,7 +97,7 @@
         <var name="model" id="5505786199853653294" />
         <var name="module" id="5505786199853653294" />
       </scope>
-      <scope id="5505786199853651839" at="75,192,78,32" />
+      <scope id="5505786199853651839" at="75,200,78,32" />
       <scope id="5505786199853653508" at="20,0,24,0" />
       <scope id="5505786199853653313" at="15,0,20,0">
         <var name="changeSet" id="5505786199853653319" />
@@ -1376,7 +1376,7 @@
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/8401260027345476466">
     <file name="ChangeType.java">
       <node id="8401260027345476489" at="12,0,14,0" concept="2" trace="ChangeType#()V" />
-      <scope id="8401260027345476494" at="12,16,12,16" />
+      <scope id="8401260027345476494" at="12,24,12,24" />
       <scope id="8401260027345476489" at="12,0,14,0" />
       <unit id="8401260027345476466" at="6,0,15,0" name="jetbrains.mps.vcs.diff.changes.ChangeType" />
     </file>

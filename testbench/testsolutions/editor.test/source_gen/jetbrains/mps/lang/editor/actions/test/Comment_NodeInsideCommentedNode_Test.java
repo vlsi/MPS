@@ -22,7 +22,7 @@ public class Comment_NodeInsideCommentedNode_Test extends BaseTransformationTest
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5639868649489826781", "5639868649489826794");
+      initEditor("2893289111810592999", "2893289111810593594");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }

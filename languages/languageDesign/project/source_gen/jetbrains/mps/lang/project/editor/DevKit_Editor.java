@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,10 +16,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -34,7 +31,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ks60l1_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ks60l1_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ks60l1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ks60l1_c0(editorContext, node));
@@ -220,7 +216,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41767L, "extendedDevkits")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -293,7 +288,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41765L, "exportedLanguages")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -366,7 +360,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe2fL, 0x60ae235487d41766L, "exportedSolutions")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -439,7 +432,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2cL, "dependencies")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -512,7 +504,6 @@ public class DevKit_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb52669L, "stubModels")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

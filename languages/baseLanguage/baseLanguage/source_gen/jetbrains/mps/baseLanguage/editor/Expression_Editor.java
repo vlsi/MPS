@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -35,7 +33,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     if (bigCell != null) {
       bigCell.setBig(true);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext) {

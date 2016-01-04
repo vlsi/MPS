@@ -16,7 +16,7 @@ public enum TrimKind {
     return myName;
   }
   private final String myValue;
-  TrimKind(String name, String value) {
+  private TrimKind(String name, String value) {
     myName = name;
     myValue = value;
   }

@@ -33,7 +33,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     TAIL(),
     CUT();
 
-    Page() {
+    private Page() {
     }
   }
   private class PagingIterator implements Iterator<U> {

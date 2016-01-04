@@ -15,7 +15,7 @@ public enum TableComponentEnum {
     return myName;
   }
   private final String myValue;
-  TableComponentEnum(String name, String value) {
+  private TableComponentEnum(String name, String value) {
     myName = name;
     myValue = value;
   }

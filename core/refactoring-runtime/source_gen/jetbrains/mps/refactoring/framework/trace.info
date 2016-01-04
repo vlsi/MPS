@@ -24,7 +24,7 @@
   <root nodeRef="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)/4792031542972804300">
     <file name="RefactoringTarget.java">
       <node id="4792031542972815531" at="13,0,15,0" concept="3" trace="RefactoringTarget#()V" />
-      <scope id="4792031542972815534" at="13,23,13,23" />
+      <scope id="4792031542972815534" at="13,31,13,31" />
       <scope id="4792031542972815531" at="13,0,15,0" />
       <unit id="4792031542972804300" at="6,0,16,0" name="jetbrains.mps.refactoring.framework.RefactoringTarget" />
     </file>
@@ -210,7 +210,7 @@
       <node id="4792031542972805107" at="54,74,94,5" concept="8" />
       <node id="4792031542972804986" at="52,0,97,0" concept="15" trace="getRefactorings#(Ljetbrains/mps/smodel/Language;)Ljava/util/Set;" />
       <scope id="4792031542972804890" at="34,28,34,28" />
-      <scope id="4792031542972805600" at="205,21,205,21" />
+      <scope id="4792031542972805600" at="205,29,205,29" />
       <scope id="4792031542972804925" at="39,49,40,17" />
       <scope id="4792031542972804977" at="47,98,48,72" />
       <scope id="3912421253249039727" at="62,15,63,71" />
@@ -813,7 +813,7 @@
       <node id="4792031542972815548" at="8,0,9,0" concept="9" trace="allowMultipleTargets#()Z" />
       <node id="4792031542972815552" at="9,0,10,0" concept="9" trace="isApplicable#(Ljava/lang/Object;)Z" />
       <node id="4792031542972815541" at="15,0,17,0" concept="3" trace="TargetType#()V" />
-      <scope id="4792031542972815558" at="15,18,15,18" />
+      <scope id="4792031542972815558" at="15,26,15,26" />
       <scope id="4792031542972815544" at="7,0,8,0" />
       <scope id="4792031542972815548" at="8,0,9,0" />
       <scope id="4792031542972815552" at="9,0,10,0">

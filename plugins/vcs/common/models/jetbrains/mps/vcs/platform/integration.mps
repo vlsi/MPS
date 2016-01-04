@@ -4328,6 +4328,57 @@
       <property role="TrG5h" value="resolveDiskMemoryConflict" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="6KmbN9hT18U" role="3clF47">
+        <node concept="3clFbJ" id="3Ss$euZpw91" role="3cqZAp">
+          <node concept="3clFbS" id="3Ss$euZpw93" role="3clFbx">
+            <node concept="34ab3g" id="3Ss$euZpA6M" role="3cqZAp">
+              <property role="35gtTG" value="error" />
+              <node concept="2YIFZM" id="3Ss$euZpAGK" role="34bqiv">
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <node concept="Xl_RD" id="3Ss$euZpA6O" role="37wK5m">
+                  <property role="Xl_RC" value="Conflicting content in memory and on disk for model %s from %s. Unfortunately, MPS does not support conflict resolution for models from multiple files yet, conflict ignored." />
+                </node>
+                <node concept="2OqwBi" id="3Ss$euZpCIs" role="37wK5m">
+                  <node concept="37vLTw" id="3Ss$euZpCdp" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="3Ss$euZpCM1" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3Ss$euZpEWr" role="37wK5m">
+                  <node concept="2OqwBi" id="3Ss$euZpEKP" role="2Oq$k0">
+                    <node concept="37vLTw" id="3Ss$euZpEfK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                    </node>
+                    <node concept="liA8E" id="3Ss$euZpEQS" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3Ss$euZpF0o" role="2OqNvi">
+                    <ref role="37wK5l" to="dush:~DataSource.getLocation():java.lang.String" resolve="getLocation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="3Ss$euZp$ec" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="3Ss$euZpz9G" role="3clFbw">
+            <node concept="2ZW3vV" id="3Ss$euZpz9I" role="3fr31v">
+              <node concept="3uibUv" id="3Ss$euZpz9J" role="2ZW6by">
+                <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
+              </node>
+              <node concept="2OqwBi" id="3Ss$euZpz9K" role="2ZW6bz">
+                <node concept="37vLTw" id="3Ss$euZpz9L" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                </node>
+                <node concept="liA8E" id="3Ss$euZpz9M" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="E7RDZao6Yq" role="3cqZAp">
           <node concept="3cpWsn" id="E7RDZao6Yr" role="3cpWs9">
             <property role="TrG5h" value="file" />

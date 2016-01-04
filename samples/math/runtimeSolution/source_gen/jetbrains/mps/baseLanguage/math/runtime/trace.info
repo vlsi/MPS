@@ -1914,7 +1914,7 @@
   <root nodeRef="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)/877422884702866560">
     <file name="MatrixOperation.java">
       <node id="877422884702866565" at="11,0,13,0" concept="2" trace="MatrixOperation#()V" />
-      <scope id="877422884702866568" at="11,21,11,21" />
+      <scope id="877422884702866568" at="11,29,11,29" />
       <scope id="877422884702866565" at="11,0,13,0" />
       <unit id="877422884702866560" at="6,0,14,0" name="jetbrains.mps.baseLanguage.math.runtime.MatrixOperation" />
     </file>
@@ -2221,7 +2221,7 @@
   <root nodeRef="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)/877422884702867284">
     <file name="NormKind.java">
       <node id="877422884702867290" at="12,0,14,0" concept="2" trace="NormKind#()V" />
-      <scope id="877422884702867293" at="12,14,12,14" />
+      <scope id="877422884702867293" at="12,22,12,22" />
       <scope id="877422884702867290" at="12,0,14,0" />
       <unit id="877422884702867284" at="6,0,15,0" name="jetbrains.mps.baseLanguage.math.runtime.NormKind" />
     </file>

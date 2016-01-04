@@ -1076,7 +1076,7 @@
       <node id="4282822416100099897" at="14,0,18,0" concept="8" trace="shiftLeft#(Ljetbrains/mps/ide/dataFlow/presentation/Line;I)V" />
       <node id="4282822416100099951" at="24,12,31,7" concept="7" />
       <node id="4282822416100099926" at="21,0,36,0" concept="8" trace="paint#(Ljava/awt/Graphics;IIILjava/awt/Color;)V" />
-      <scope id="4282822416100100039" at="43,19,43,19" />
+      <scope id="4282822416100100039" at="43,27,43,27" />
       <scope id="4282822416100100022" at="36,50,37,43" />
       <scope id="4282822416100100040" at="45,0,46,0">
         <var name="backGround" id="4282822416100100051" />
@@ -1313,7 +1313,7 @@
       <node id="4282822416100100661" at="31,0,36,0" concept="8" trace="paint#(Ljava/awt/Graphics;II)V" />
       <node id="4282822416100100701" at="39,0,44,0" concept="8" trace="paint#(Ljava/awt/Graphics;II)V" />
       <scope id="4282822416100100579" at="10,49,10,49" />
-      <scope id="4282822416100100750" at="49,24,49,24" />
+      <scope id="4282822416100100750" at="49,32,49,32" />
       <scope id="4282822416100100751" at="51,0,52,0">
         <var name="g" id="4282822416100100754" />
         <var name="x" id="4282822416100100756" />

@@ -10,8 +10,6 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class GetEditorOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,7 +24,6 @@ public class GetEditorOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

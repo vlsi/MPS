@@ -22,8 +22,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class StateMachine_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
@@ -179,7 +177,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_9yuogs_a");
     editorCell.setCellId("Table_9yuogs_a_0");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

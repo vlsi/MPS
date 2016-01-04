@@ -17,7 +17,7 @@ public enum ResourcesPolicy {
     return myName;
   }
   private final String myValue;
-  ResourcesPolicy(String name, String value) {
+  private ResourcesPolicy(String name, String value) {
     myName = name;
     myValue = value;
   }
