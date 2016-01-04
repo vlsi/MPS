@@ -27,6 +27,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, 0, true);
     editorCell.getStyle().putAll(style);
+    CommandHolder_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_nvbf9m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nvbf9m_b0(editorContext, node));
     return editorCell;
