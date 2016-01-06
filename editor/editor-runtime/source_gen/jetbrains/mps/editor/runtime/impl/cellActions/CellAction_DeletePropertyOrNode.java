@@ -4,6 +4,7 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -13,19 +14,18 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
  */
 @Deprecated
 public class CellAction_DeletePropertyOrNode extends AbstractCellAction {
-  private SNode mySemanticNode;
-  private String myPropertyName;
-  private boolean myIsBackspace;
+  private final SNode mySemanticNode;
+  private final String myPropertyName;
+  private final CellAction_DeleteNode.DeleteDirection myDirection;
   @Deprecated
   public CellAction_DeletePropertyOrNode(SNode semanticNode, String propertyName) {
-    mySemanticNode = semanticNode;
-    myPropertyName = propertyName;
+    this(semanticNode, propertyName, CellAction_DeleteNode.DeleteDirection.FORWARD);
   }
   @Deprecated
-  public CellAction_DeletePropertyOrNode(SNode semanticNode, String propertyName, boolean isBackspace) {
+  public CellAction_DeletePropertyOrNode(SNode semanticNode, String propertyName, CellAction_DeleteNode.DeleteDirection direction) {
     mySemanticNode = semanticNode;
     myPropertyName = propertyName;
-    this.myIsBackspace = isBackspace;
+    this.myDirection = direction;
   }
   @Override
   public boolean canExecute(EditorContext context) {
@@ -36,7 +36,7 @@ public class CellAction_DeletePropertyOrNode extends AbstractCellAction {
     if (SNodeAccessUtil.getProperty(mySemanticNode, myPropertyName) != null) {
       SNodeAccessUtil.setProperty(mySemanticNode, myPropertyName, null);
     } else {
-      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode, myIsBackspace);
+      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode, myDirection);
       if (deleteAction.canExecute(context)) {
         deleteAction.execute(context);
       }

@@ -5,21 +5,21 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CellAction_DeleteSPropertyOrNode extends AbstractCellAction {
-  private SNode mySemanticNode;
-  private SProperty myProperty;
-  private boolean myIsBackspace;
+  private final SNode mySemanticNode;
+  private final SProperty myProperty;
+  private final CellAction_DeleteNode.DeleteDirection myDirection;
   public CellAction_DeleteSPropertyOrNode(SNode semanticNode, SProperty property) {
-    mySemanticNode = semanticNode;
-    myProperty = property;
+    this(semanticNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD);
   }
-  public CellAction_DeleteSPropertyOrNode(SNode semanticNode, SProperty property, boolean isBackspace) {
+  public CellAction_DeleteSPropertyOrNode(SNode semanticNode, SProperty property, CellAction_DeleteNode.DeleteDirection direction) {
     mySemanticNode = semanticNode;
     myProperty = property;
-    myIsBackspace = isBackspace;
+    myDirection = direction;
   }
   @Override
   public boolean canExecute(EditorContext context) {
@@ -30,7 +30,7 @@ public class CellAction_DeleteSPropertyOrNode extends AbstractCellAction {
     if (SNodeAccessUtil.getProperty(mySemanticNode, myProperty) != null) {
       SNodeAccessUtil.setProperty(mySemanticNode, myProperty, null);
     } else {
-      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode, myIsBackspace);
+      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode, myDirection);
       if (deleteAction.canExecute(context)) {
         deleteAction.execute(context);
       }

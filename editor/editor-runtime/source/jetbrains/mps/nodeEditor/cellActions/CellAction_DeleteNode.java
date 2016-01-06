@@ -32,16 +32,16 @@ import java.util.Iterator;
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteNode extends AbstractCellAction {
-  private SNode mySemanticNode;
-  private boolean myIsBackspace;
+  private final SNode mySemanticNode;
+  private final DeleteDirection myDirection;
 
   public CellAction_DeleteNode(SNode semanticNode) {
-    mySemanticNode = semanticNode;
+    this(semanticNode, DeleteDirection.FORWARD);
   }
 
-  public CellAction_DeleteNode(SNode semanticNode, boolean isBackspace) {
+  public CellAction_DeleteNode(SNode semanticNode, DeleteDirection direction) {
     mySemanticNode = semanticNode;
-    myIsBackspace = isBackspace;
+    myDirection = direction;
   }
 
   protected SNode getSourceNode() {
@@ -59,11 +59,14 @@ public class CellAction_DeleteNode extends AbstractCellAction {
     SNode nodeToDelete = getNodeToDelete(context);
     SNode parent = nodeToDelete.getParent();
     SContainmentLink containmentLink = nodeToDelete.getContainmentLink();
-    boolean selectStart = !myIsBackspace;
-    SNode siblingToSelect = getSiblingToSelect(parent, nodeToDelete, myIsBackspace);
+    boolean isForward = myDirection == DeleteDirection.FORWARD;
+
+    boolean selectStart = isForward;
+    SNode siblingToSelect = getSiblingToSelect(parent, nodeToDelete, isForward);
+
     if (siblingToSelect == null) {
-      siblingToSelect = getSiblingToSelect(parent, nodeToDelete, !myIsBackspace);
-      selectStart = myIsBackspace;
+      selectStart = !isForward;
+      siblingToSelect = getSiblingToSelect(parent, nodeToDelete, !isForward);
     }
     nodeToDelete.delete();
     context.flushEvents();
@@ -74,17 +77,17 @@ public class CellAction_DeleteNode extends AbstractCellAction {
     return CellUtil.getNodeToDelete(mySemanticNode);
   }
 
-  private SNode getSiblingToSelect(SNode parent, SNode node, boolean isPrev) {
+  private SNode getSiblingToSelect(SNode parent, SNode node, boolean isNext) {
     SContainmentLink containmentLink = node.getContainmentLink();
     Iterator<? extends SNode> iterator = parent.getChildren(containmentLink).iterator();
     SNode prev = null;
     while (iterator.hasNext()) {
       SNode child = iterator.next();
       if (child == node) {
-        if (isPrev) {
-          return prev;
-        } else {
+        if (isNext) {
           return iterator.hasNext() ? iterator.next() : null;
+        } else {
+          return prev;
         }
       }
       prev = child;
@@ -117,5 +120,10 @@ public class CellAction_DeleteNode extends AbstractCellAction {
       return;
     }
     selectNode(editorComponent, parent, false);
+  }
+
+  public enum DeleteDirection {
+    FORWARD,
+    BACKWARD
   }
 }

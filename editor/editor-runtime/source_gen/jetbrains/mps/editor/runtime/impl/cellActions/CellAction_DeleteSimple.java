@@ -10,8 +10,8 @@ public class CellAction_DeleteSimple extends CellAction_DeleteNode {
   public CellAction_DeleteSimple(SNode semanticNode) {
     super(semanticNode);
   }
-  public CellAction_DeleteSimple(SNode semanticNode, boolean isBackspace) {
-    super(semanticNode, isBackspace);
+  public CellAction_DeleteSimple(SNode semanticNode, CellAction_DeleteNode.DeleteDirection direction) {
+    super(semanticNode, direction);
   }
 
   @Override
