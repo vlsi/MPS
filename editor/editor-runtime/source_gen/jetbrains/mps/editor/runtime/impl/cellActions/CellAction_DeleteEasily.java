@@ -16,6 +16,9 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   public CellAction_DeleteEasily(SNode semanticNode) {
     super(semanticNode);
   }
+  public CellAction_DeleteEasily(SNode semanticNode, boolean isBackspace) {
+    super(semanticNode, isBackspace);
+  }
   @Override
   public boolean canExecute(EditorContext context) {
     return super.canExecute(context) && canBeDeletedEasily();

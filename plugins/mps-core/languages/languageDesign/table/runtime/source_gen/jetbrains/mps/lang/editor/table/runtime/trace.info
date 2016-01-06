@@ -329,8 +329,8 @@
       <node id="792303165832291042" at="228,45,229,31" concept="4" />
       <node id="2317844423961239097" at="231,7,232,19" concept="11" />
       <node id="5710834253138172001" at="234,100,235,74" concept="10" />
-      <node id="4166013692429777093" at="235,74,236,86" concept="4" />
-      <node id="792303165832219776" at="236,86,237,89" concept="4" />
+      <node id="4166013692429777093" at="235,74,236,93" concept="4" />
+      <node id="792303165832219776" at="236,93,237,95" concept="4" />
       <node id="5676661828149535757" at="238,20,239,77" concept="4" />
       <node id="5710834253138172170" at="243,58,244,43" concept="4" />
       <node id="2499295656179667791" at="250,56,251,37" concept="4" />
@@ -409,7 +409,7 @@
       <node id="8514238689685500727" at="115,16,123,11" concept="1" />
       <node id="3031432740458868230" at="35,0,44,0" concept="2" trace="EditorCell_Table#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellLayout/CellLayout;Ljetbrains/mps/lang/editor/table/runtime/TableModel;Ljava/lang/String;)V" />
       <node id="2390677225378626357" at="205,81,214,5" concept="6" />
-      <node id="5676661828149535752" at="237,89,247,5" concept="8" />
+      <node id="5676661828149535752" at="237,95,247,5" concept="8" />
       <node id="899362601591216895" at="262,0,272,0" concept="9" trace="installEmptyRowCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;I)V" />
       <node id="6610030841081056405" at="279,0,289,0" concept="9" trace="installEmptyTableCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="9150287053027696877" at="304,0,314,0" concept="9" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />

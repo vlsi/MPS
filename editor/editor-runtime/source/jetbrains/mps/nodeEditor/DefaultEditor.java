@@ -170,8 +170,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(noTargetText);
 
-      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
-      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
+      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode(), false));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode(), true));
 
       noRefCell.setCellId("empty_" + referenceLink.getName());
       noRefCell.setRole(referenceLink.getName());

@@ -121,8 +121,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
 
-      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
-      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
+      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode(), false));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode(), true));
 
       if (myIsAggregation) {
         noRefCell.setAction(CellActionType.INSERT, new CellAction_Insert(getSNode(), myGenuineRole));

@@ -17837,7 +17837,7 @@
                 </node>
                 <node concept="2ShNRf" id="4D55SD3C4sr" role="37wK5m">
                   <node concept="1pGfFk" id="4D55SD3Cqdy" role="2ShVmc">
-                    <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                    <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                     <node concept="2OqwBi" id="4D55SD3CsPw" role="37wK5m">
                       <node concept="liA8E" id="4D55SD3Cvsc" role="2OqNvi">
                         <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
@@ -17845,6 +17845,9 @@
                       <node concept="37vLTw" id="4D55SD3CsAC" role="2Oq$k0">
                         <ref role="3cqZAo" node="7dwhomQQSlS" resolve="editorCell" />
                       </node>
+                    </node>
+                    <node concept="3clFbT" id="6xSPNrOmaXF" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>
@@ -17864,7 +17867,7 @@
                 </node>
                 <node concept="2ShNRf" id="FYOSwgSCSn" role="37wK5m">
                   <node concept="1pGfFk" id="FYOSwgSCSo" role="2ShVmc">
-                    <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                    <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                     <node concept="2OqwBi" id="FYOSwgSCSq" role="37wK5m">
                       <node concept="liA8E" id="FYOSwgSCSr" role="2OqNvi">
                         <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
@@ -17872,6 +17875,9 @@
                       <node concept="37vLTw" id="FYOSwgSCSt" role="2Oq$k0">
                         <ref role="3cqZAo" node="7dwhomQQSlS" resolve="editorCell" />
                       </node>
+                    </node>
+                    <node concept="3clFbT" id="6xSPNrOmb6D" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
@@ -26173,9 +26179,12 @@
                           </node>
                           <node concept="2ShNRf" id="XrrhtvD5A1" role="37wK5m">
                             <node concept="1pGfFk" id="XrrhtvD5A2" role="2ShVmc">
-                              <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                              <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                               <node concept="37vLTw" id="XrrhtvD5A3" role="37wK5m">
                                 <ref role="3cqZAo" node="XrrhtvD5CE" resolve="elementNode" />
+                              </node>
+                              <node concept="3clFbT" id="6FJczH_4Kkl" role="37wK5m">
+                                <property role="3clFbU" value="false" />
                               </node>
                             </node>
                           </node>
@@ -26195,9 +26204,12 @@
                           </node>
                           <node concept="2ShNRf" id="XrrhtvD5A9" role="37wK5m">
                             <node concept="1pGfFk" id="XrrhtvD5Aa" role="2ShVmc">
-                              <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                              <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                               <node concept="37vLTw" id="XrrhtvD5Ab" role="37wK5m">
                                 <ref role="3cqZAo" node="XrrhtvD5CE" resolve="elementNode" />
+                              </node>
+                              <node concept="3clFbT" id="6FJczH_4KE1" role="37wK5m">
+                                <property role="3clFbU" value="true" />
                               </node>
                             </node>
                           </node>
@@ -26936,9 +26948,12 @@
                   </node>
                   <node concept="2ShNRf" id="XrrhtvD5F8" role="37wK5m">
                     <node concept="1pGfFk" id="XrrhtvD5F9" role="2ShVmc">
-                      <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                      <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                       <node concept="37vLTw" id="XrrhtvD5Fa" role="37wK5m">
                         <ref role="3cqZAo" node="XrrhtvD5Fl" resolve="prevNode" />
+                      </node>
+                      <node concept="3clFbT" id="6FJczH_4KZg" role="37wK5m">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -26958,9 +26973,12 @@
                   </node>
                   <node concept="2ShNRf" id="XrrhtvD5Fg" role="37wK5m">
                     <node concept="1pGfFk" id="XrrhtvD5Fh" role="2ShVmc">
-                      <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                      <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                       <node concept="37vLTw" id="XrrhtvD5Fi" role="37wK5m">
                         <ref role="3cqZAo" node="XrrhtvD5Fl" resolve="prevNode" />
+                      </node>
+                      <node concept="3clFbT" id="6FJczH_4KOA" role="37wK5m">
+                        <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>

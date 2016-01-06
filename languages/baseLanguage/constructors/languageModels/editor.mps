@@ -627,9 +627,12 @@
                                                     </node>
                                                     <node concept="2ShNRf" id="5UC0dNSP1r1" role="37wK5m">
                                                       <node concept="1pGfFk" id="5UC0dNSP1r3" role="2ShVmc">
-                                                        <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                                                        <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                                                         <node concept="37vLTw" id="2BHiRxgha6j" role="37wK5m">
                                                           <ref role="3cqZAo" node="5UC0dNSP1p4" resolve="elementNode" />
+                                                        </node>
+                                                        <node concept="3clFbT" id="6xSPNrOlMdx" role="37wK5m">
+                                                          <property role="3clFbU" value="false" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -649,9 +652,12 @@
                                                     </node>
                                                     <node concept="2ShNRf" id="FYOSwhPGNJ" role="37wK5m">
                                                       <node concept="1pGfFk" id="FYOSwhPGNK" role="2ShVmc">
-                                                        <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                                                        <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                                                         <node concept="37vLTw" id="FYOSwhPGNL" role="37wK5m">
                                                           <ref role="3cqZAo" node="5UC0dNSP1p4" resolve="elementNode" />
+                                                        </node>
+                                                        <node concept="3clFbT" id="6xSPNrOlM9C" role="37wK5m">
+                                                          <property role="3clFbU" value="true" />
                                                         </node>
                                                       </node>
                                                     </node>

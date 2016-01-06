@@ -2700,9 +2700,12 @@
               </node>
               <node concept="2ShNRf" id="3BgDQ5UGD50" role="37wK5m">
                 <node concept="1pGfFk" id="3BgDQ5UGW1W" role="2ShVmc">
-                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                   <node concept="1rXfSq" id="3BgDQ5UH0F2" role="37wK5m">
                     <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                  </node>
+                  <node concept="3clFbT" id="6xSPNrOmbUm" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
@@ -2722,9 +2725,12 @@
               </node>
               <node concept="2ShNRf" id="FYOSwhQcM4" role="37wK5m">
                 <node concept="1pGfFk" id="FYOSwhQcM5" role="2ShVmc">
-                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,boolean)" resolve="CellAction_DeleteNode" />
                   <node concept="1rXfSq" id="FYOSwhQcM6" role="37wK5m">
                     <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                  </node>
+                  <node concept="3clFbT" id="6xSPNrOmc9U" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>

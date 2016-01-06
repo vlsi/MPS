@@ -11,9 +11,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class CellAction_DeleteSPropertyOrNode extends AbstractCellAction {
   private SNode mySemanticNode;
   private SProperty myProperty;
+  private boolean myIsBackspace;
   public CellAction_DeleteSPropertyOrNode(SNode semanticNode, SProperty property) {
     mySemanticNode = semanticNode;
     myProperty = property;
+  }
+  public CellAction_DeleteSPropertyOrNode(SNode semanticNode, SProperty property, boolean isBackspace) {
+    mySemanticNode = semanticNode;
+    myProperty = property;
+    myIsBackspace = isBackspace;
   }
   @Override
   public boolean canExecute(EditorContext context) {
@@ -24,7 +30,7 @@ public class CellAction_DeleteSPropertyOrNode extends AbstractCellAction {
     if (SNodeAccessUtil.getProperty(mySemanticNode, myProperty) != null) {
       SNodeAccessUtil.setProperty(mySemanticNode, myProperty, null);
     } else {
-      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode);
+      CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode, myIsBackspace);
       if (deleteAction.canExecute(context)) {
         deleteAction.execute(context);
       }

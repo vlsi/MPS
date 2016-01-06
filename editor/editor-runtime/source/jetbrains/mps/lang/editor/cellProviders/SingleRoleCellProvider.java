@@ -61,8 +61,8 @@ public abstract class SingleRoleCellProvider {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
     } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSimple(child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSimple(child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSimple(child, false));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSimple(child, true));
     }
     return editorCell;
   }
