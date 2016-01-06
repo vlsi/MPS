@@ -2597,18 +2597,31 @@
       <node concept="3clFbS" id="6KwcZ1G3Pk7" role="2VODD2">
         <node concept="3clFbF" id="7eEUNheBkG" role="3cqZAp">
           <node concept="1Wc70l" id="3QzsDXkRfem" role="3clFbG">
-            <node concept="3y3z36" id="G99PKF0Oev" role="3uHU7B">
-              <node concept="2YIFZM" id="G99PKF0Oew" role="3uHU7B">
-                <ref role="37wK5l" node="7eEUNheBjj" resolve="getEditorCellToInsert" />
-                <ref role="1Pybhc" node="6KwcZ1G4033" resolve="EditorActionUtils" />
-                <node concept="2OqwBi" id="G99PKF0Oex" role="37wK5m">
-                  <node concept="2WthIp" id="G99PKF0Oey" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="G99PKF0Oez" role="2OqNvi">
+            <node concept="1Wc70l" id="7jvB3bcXL8H" role="3uHU7B">
+              <node concept="2OqwBi" id="7jvB3bcXLD0" role="3uHU7B">
+                <node concept="2OqwBi" id="7jvB3bcXLk6" role="2Oq$k0">
+                  <node concept="2WthIp" id="7jvB3bcXLgy" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="7jvB3bcXLtO" role="2OqNvi">
                     <ref role="2WH_rO" node="6KwcZ1G3Pjo" resolve="editorComponent" />
                   </node>
                 </node>
+                <node concept="liA8E" id="7jvB3bcXMLt" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~Component.isFocusOwner():boolean" resolve="isFocusOwner" />
+                </node>
               </node>
-              <node concept="10Nm6u" id="G99PKF0Oe$" role="3uHU7w" />
+              <node concept="3y3z36" id="G99PKF0Oev" role="3uHU7w">
+                <node concept="2YIFZM" id="G99PKF0Oew" role="3uHU7B">
+                  <ref role="37wK5l" node="7eEUNheBjj" resolve="getEditorCellToInsert" />
+                  <ref role="1Pybhc" node="6KwcZ1G4033" resolve="EditorActionUtils" />
+                  <node concept="2OqwBi" id="G99PKF0Oex" role="37wK5m">
+                    <node concept="2WthIp" id="G99PKF0Oey" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="G99PKF0Oez" role="2OqNvi">
+                      <ref role="2WH_rO" node="6KwcZ1G3Pjo" resolve="editorComponent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="10Nm6u" id="G99PKF0Oe$" role="3uHU7w" />
+              </node>
             </node>
             <node concept="2YIFZM" id="G99PKF0Oe_" role="3uHU7w">
               <ref role="1Pybhc" node="6KwcZ1G4033" resolve="EditorActionUtils" />
@@ -5425,6 +5438,28 @@
               </node>
               <node concept="liA8E" id="234vdksFSW_" role="2OqNvi">
                 <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6hkUHZdn3pw" role="3cqZAp">
+          <node concept="3clFbS" id="6hkUHZdn3py" role="3clFbx">
+            <node concept="3cpWs6" id="6hkUHZdn63J" role="3cqZAp">
+              <node concept="3clFbT" id="6hkUHZdn6vf" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6hkUHZdn3D4" role="3clFbw">
+            <node concept="2OqwBi" id="6hkUHZdn4xc" role="3fr31v">
+              <node concept="2OqwBi" id="6hkUHZdn3Qv" role="2Oq$k0">
+                <node concept="2WthIp" id="6hkUHZdn3Dl" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6hkUHZdn4ap" role="2OqNvi">
+                  <ref role="2WH_rO" node="5QmTFjQZTY3" resolve="editorComponent" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6hkUHZdn5KA" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.isFocusOwner():boolean" resolve="isFocusOwner" />
               </node>
             </node>
           </node>

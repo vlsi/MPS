@@ -31,6 +31,9 @@ public class Escape_Action extends BaseAction {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
+    if (!(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner())) {
+      return false;
+    }
     Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
     int selectionStackSize = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize();
     return selectionStackSize > 1 || (selectionStackSize == 1 && selection != null && selection.canExecuteAction(CellActionType.CLEAR_SELECTION)) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
