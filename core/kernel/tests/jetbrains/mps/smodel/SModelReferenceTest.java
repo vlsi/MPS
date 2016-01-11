@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,7 @@ public class SModelReferenceTest {
     assertEquals("~module1%", pref1.getModuleReference().getModuleId().toString());
 
     //
-    SModuleReference moduleRefNoName = getPersistenceFacade().createModuleReference("9ef82768-a1b1-451e-b136-5a86b2b5fdbb");
+    SModuleReference moduleRefNoName = getPersistenceFacade().createModuleReference("9ef82768-a1b1-451e-b136-5a86b2b5fdbb()");
     SModuleReference moduleRefWithName = getPersistenceFacade().createModuleReference("9ef82768-a1b1-451e-b136-5a86b2b5fdbb(jetbrains.mps.persistence)");
     testFromString(getPersistenceFacade().createModelReference(moduleRefNoName, SModelId.generate(), "m1"));
     testFromString(getPersistenceFacade().createModelReference(moduleRefWithName, SModelId.generate(), "m2"));

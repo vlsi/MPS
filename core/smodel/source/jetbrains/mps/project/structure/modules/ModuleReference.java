@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,15 +35,6 @@ public final class ModuleReference implements SModuleReference {
 
   private final String myModuleName;
   private final SModuleId myModuleId;
-
-  /**
-   * @deprecated use {@link #ModuleReference(String, SModuleId)} instead. <code>SModuleId</code> is mandatory
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public ModuleReference(String moduleName) {
-    this(moduleName, (SModuleId) null);
-  }
 
   public ModuleReference(String moduleName, SModuleId moduleId) {
     myModuleName = InternUtil.intern(moduleName);
@@ -104,7 +95,7 @@ public final class ModuleReference implements SModuleReference {
     if (m.matches()) {
       return new ModuleReference(m.group(2), ModuleId.fromString(m.group(1)));
     }
-    return new ModuleReference(text);
+    throw new IllegalArgumentException(String.format("Bad module reference %s", text));
   }
 
   /**

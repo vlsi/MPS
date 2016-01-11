@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,10 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.ToStringComparator;
@@ -29,7 +27,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,11 +66,15 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Language> getExportedLanguages() {
+    SRepository repo = getRepository();
+    if (repo == null) {
+      return Collections.emptyList();
+    }
     List<Language> langs = new ArrayList<Language>();
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
+    // FIXME in fact, shall produce SLanguage, not Language module here
     for (SModuleReference l : myDescriptor.getExportedLanguages()) {
-      SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(l.getModuleName());
-      // TODO WTF? replace ref with l
-      Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
+      Language lang = repoFacade.getModule(l, Language.class);
       if (lang != null) {
         langs.add(lang);
       }
@@ -106,23 +108,15 @@ public class DevKit extends AbstractModule {
     return result;
   }
 
-  Iterable<SModuleReference> getExtendedDevKits_internal() {
-    return myDescriptor.getExtendedDevkits();
-  }
-
-  Iterable<SModuleReference> getExportedSolutions_internal() {
-    return myDescriptor.getExportedSolutions();
-  }
-
-  Iterable<SModuleReference> getExportedLanguages_internal() {
-    return myDescriptor.getExportedLanguages();
-  }
-
   public List<DevKit> getExtendedDevKits() {
+    SRepository repo = getRepository();
+    if (repo == null) {
+      return Collections.emptyList();
+    }
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     List<DevKit> result = new ArrayList<DevKit>();
     for (SModuleReference ref : myDescriptor.getExtendedDevkits()) {
-      String uid = ref.getModuleName();
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(uid, DevKit.class);
+      DevKit devKit = repoFacade.getModule(ref, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
       }
@@ -137,7 +131,9 @@ public class DevKit extends AbstractModule {
   }
 
   private void collectDevKits(List<DevKit> result) {
-    if (result.contains(this)) return;
+    if (result.contains(this)) {
+      return;
+    }
     result.add(this);
     for (DevKit dk : getExtendedDevKits()) {
       dk.collectDevKits(result);
@@ -145,12 +141,17 @@ public class DevKit extends AbstractModule {
   }
 
   public List<Solution> getExportedSolutions() {
+    SRepository repo = getRepository();
+    if (repo == null) {
+      return Collections.emptyList();
+    }
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     List<Solution> result = new ArrayList<Solution>();
     for (SModuleReference ref : myDescriptor.getExportedSolutions()) {
-      String uid = ref.getModuleName();
-      Solution solution = ModuleRepositoryFacade.getInstance().getModule(uid, Solution.class);
-      if (solution == null) continue;
-      result.add(solution);
+      Solution solution = repoFacade.getModule(ref, Solution.class);
+      if (solution != null) {
+        result.add(solution);
+      }
     }
     return result;
   }
