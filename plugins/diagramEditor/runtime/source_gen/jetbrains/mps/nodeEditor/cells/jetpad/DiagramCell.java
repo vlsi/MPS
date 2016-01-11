@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.jetpad.mapper.MapperFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import java.awt.event.FocusListener;
+import jetbrains.mps.nodeEditor.cells.SelectCellOnFocusGainedFocusListener;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
@@ -22,7 +24,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.event.FocusListener;
 import java.awt.event.FocusEvent;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
@@ -67,6 +68,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
+  private final FocusListener mySelectCellOnFocusGained = new SelectCellOnFocusGainedFocusListener(this);
   private Mapper<SNode, ViewContainer> myRootMapper;
   private Mapper<SNode, ViewContainer> myDecorationRootMapper;
   private ViewContainerComponent myComponent;
@@ -135,9 +137,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   public void onAdd() {
     super.onAdd();
     getEditor().getCellTracker().addComponentCell(this);
+    getComponent().addFocusListener(mySelectCellOnFocusGained);
   }
   @Override
   public void onRemove() {
+    getComponent().removeFocusListener(mySelectCellOnFocusGained);
     getEditor().getCellTracker().removeComponentCell(this);
     super.onRemove();
   }
@@ -163,7 +167,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myPatternEditorY = y;
   }
   public void setExternalTrait(ViewTrait trait) {
-    check_xnhqai_a0a72(myRegistration);
+    check_xnhqai_a0a82(myRegistration);
     if (trait == null) {
       myTraitProperty.set(getEventHandlingTrait());
     } else {
@@ -219,7 +223,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         public void handle(View view, MouseEvent event) {
           if (!(hasConnectionDragFeedback())) {
             View sourceView = view.viewAt(event.location());
-            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
               return;
             }
             showConnectionDragFeedback(sourceView);
@@ -551,13 +555,13 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
 
-  private static void check_xnhqai_a0a72(Registration checkedDotOperand) {
+  private static void check_xnhqai_a0a82(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
     }
 
   }
-  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }

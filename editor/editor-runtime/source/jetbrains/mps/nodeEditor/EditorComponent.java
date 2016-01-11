@@ -197,8 +197,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -329,7 +327,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
-  private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
   private MessagesGutter myMessagesGutter;
@@ -735,23 +732,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (MPSToolTipManager.getInstance() != null) {
       MPSToolTipManager.getInstance().registerComponent(this);
     }
-
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
-      @Override
-      public void propertyChange(PropertyChangeEvent evt) {
-        if (isDisposed()) {
-          return;
-        }
-        Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-        if (EditorComponent.this.isAncestorOf(focusOwner)) {
-          Component current = focusOwner;
-          while (current.getParent() != EditorComponent.this) {
-            current = current.getParent();
-          }
-          selectComponentCell(current);
-        }
-      }
-    });
 
     getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
@@ -1373,13 +1353,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new EditorContext(this, getEditedNode() != null ? getEditedNode().getModel() : null, myRepository);
   }
 
-  private void selectComponentCell(Component component) {
-    EditorCell_WithComponent cell = findCellForComponent(component, myRootCell);
-    Selection selection = mySelectionManager.getSelection();
-    if (cell == null || (selection != null && CellTraversalUtil.isAncestorOrEquals(cell, selection.getSelectedCells().get(0)))) return;
-    changeSelection(cell);
-  }
-
   @NotNull
   public JComponent getExternalComponent() {
     assert myHasUI;
@@ -1514,7 +1487,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myHighlightManager.dispose();
 
     detachListeners();
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
 
     myUpdater.dispose();
 

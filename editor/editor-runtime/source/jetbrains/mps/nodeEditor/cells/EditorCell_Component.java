@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,19 +24,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.border.Border;
-import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class EditorCell_Component extends EditorCell_Basic implements EditorCell_WithComponent {
-  private JComponent myComponent;
+public class EditorCell_Component extends EditorCell_ComponentBase {
+  private final JComponent myComponent;
+  private final FocusListener mySelectCellOnFocusGainedFocusListener = new SelectCellOnFocusGainedFocusListener(this);
 
   public EditorCell_Component(EditorContext editorContext, SNode node, JComponent component) {
     super(editorContext, node);
-    final EditorComponent nodeEditorComponent = getEditor();
     myComponent = component;
+    final EditorComponent nodeEditorComponent = getEditor();
 
     myComponent.addKeyListener(new KeyAdapter() {
       @Override
@@ -57,22 +57,17 @@ public class EditorCell_Component extends EditorCell_Basic implements EditorCell
     setAction(CellActionType.PASTE_BEFORE, EmptyCellAction.getInstance());
   }
 
-  @Override
-  public void setX(int x) {
-    myComponent.setLocation(x, myComponent.getY());
-    super.setX(x);
+  public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
+    return new EditorCell_Component(context, node, component);
+  }
+
+  public String toString() {
+    return "ComponentCell";
   }
 
   @Override
-  public void setY(int y) {
-    myComponent.setLocation(myComponent.getX(), y);
-    super.setY(y);
-  }
-
-  @Override
-  public void moveTo(int x, int y) {
-    super.moveTo(x, y);
-    myComponent.setLocation(myX, myY);
+  public JComponent getComponent() {
+    return myComponent;
   }
 
   @Override
@@ -84,14 +79,6 @@ public class EditorCell_Component extends EditorCell_Basic implements EditorCell
   @Override
   public boolean isDrawBorder() {
     return false;
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  @Override
-  protected void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
   @Override
@@ -107,11 +94,6 @@ public class EditorCell_Component extends EditorCell_Basic implements EditorCell
       ascent += border.getBorderInsets(myComponent).top;
     }
     return ascent;
-  }
-
-  public static EditorCell createComponentCell(EditorContext context, SNode node, JComponent component, String cellId) {
-    EditorCell_Component editorCell_component = new EditorCell_Component(context, node, component);
-    return editorCell_component;
   }
 
   @Override
@@ -134,16 +116,13 @@ public class EditorCell_Component extends EditorCell_Basic implements EditorCell
   @Override
   public void onAdd() {
     super.onAdd();
-    getEditor().getCellTracker().addComponentCell(this);
+    getComponent().addFocusListener(mySelectCellOnFocusGainedFocusListener);
   }
 
   @Override
   public void onRemove() {
-    getEditor().getCellTracker().removeComponentCell(this);
+    getComponent().removeFocusListener(mySelectCellOnFocusGainedFocusListener);
     super.onRemove();
   }
 
-  public String toString() {
-    return "ComponentCell";
-  }
 }

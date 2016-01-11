@@ -784,6 +784,22 @@
   <node concept="312cEu" id="7efWZtHWeDk">
     <property role="TrG5h" value="DiagramCell" />
     <property role="1sVAO0" value="true" />
+    <node concept="312cEg" id="CIwLLOVeDE" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="mySelectCellOnFocusGained" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="CIwLLOVaL4" role="1B3o_S" />
+      <node concept="3uibUv" id="CIwLLOVeqW" role="1tU5fm">
+        <ref role="3uigEE" to="hyam:~FocusListener" resolve="FocusListener" />
+      </node>
+      <node concept="2ShNRf" id="CIwLLOVhJN" role="33vP2m">
+        <node concept="1pGfFk" id="CIwLLOVBCv" role="2ShVmc">
+          <ref role="37wK5l" to="g51k:~SelectCellOnFocusGainedFocusListener.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell)" resolve="SelectCellOnFocusGainedFocusListener" />
+          <node concept="Xjq3P" id="CIwLLOVBOm" role="37wK5m" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="2kUb22mGMmp" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1471,6 +1487,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="CIwLLOVD3N" role="3cqZAp">
+          <node concept="2OqwBi" id="CIwLLOVDkJ" role="3clFbG">
+            <node concept="1rXfSq" id="CIwLLOVD3L" role="2Oq$k0">
+              <ref role="37wK5l" node="7efWZtHXzWi" resolve="getComponent" />
+            </node>
+            <node concept="liA8E" id="CIwLLOVDTt" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Component.addFocusListener(java.awt.event.FocusListener):void" resolve="addFocusListener" />
+              <node concept="37vLTw" id="CIwLLOVExi" role="37wK5m">
+                <ref role="3cqZAo" node="CIwLLOVeDE" resolve="mySelectCellOnFocusGained" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="75sA8i0iQBJ" role="1B3o_S" />
       <node concept="3cqZAl" id="75sA8i0iQBK" role="3clF45" />
@@ -1483,6 +1512,19 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="75sA8i0iQBN" role="3clF47">
+        <node concept="3clFbF" id="CIwLLOVFAh" role="3cqZAp">
+          <node concept="2OqwBi" id="CIwLLOVFRo" role="3clFbG">
+            <node concept="1rXfSq" id="CIwLLOVFAf" role="2Oq$k0">
+              <ref role="37wK5l" node="7efWZtHXzWi" resolve="getComponent" />
+            </node>
+            <node concept="liA8E" id="CIwLLOVGtW" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Component.removeFocusListener(java.awt.event.FocusListener):void" resolve="removeFocusListener" />
+              <node concept="37vLTw" id="CIwLLOVH3r" role="37wK5m">
+                <ref role="3cqZAo" node="CIwLLOVeDE" resolve="mySelectCellOnFocusGained" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="75sA8i0iQBO" role="3cqZAp">
           <node concept="2OqwBi" id="75sA8i0iQBP" role="3clFbG">
             <node concept="2OqwBi" id="75sA8i0iQBQ" role="2Oq$k0">
