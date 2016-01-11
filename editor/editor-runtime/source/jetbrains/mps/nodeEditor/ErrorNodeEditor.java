@@ -27,6 +27,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class ErrorNodeEditor implements ConceptEditor {
+  @NotNull
   @Override
   public Collection<String> getContextHints() {
     return Collections.emptyList();

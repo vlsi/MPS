@@ -28,6 +28,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class DefaultNodeEditor implements ConceptEditor {
+  @NotNull
   @Override
   public Collection<String> getContextHints() {
     return Collections.emptyList();

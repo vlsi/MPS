@@ -22,7 +22,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
-import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -33,10 +32,8 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
@@ -86,7 +83,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       myUsedEditors.put(node, set);
     }
     set.add(excludedEditor);
-    EditorCell editorCell = createEditorCell_internal(node, isInspector, Collections.<Class<? extends BaseConceptEditor>>unmodifiableSet(set));
+    EditorCell editorCell = createEditorCell_internal(node, isInspector, Collections.unmodifiableSet(set));
     set.remove(excludedEditor);
     if (set.isEmpty()) {
       myUsedEditors.remove(node);
@@ -96,13 +93,13 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    return createEditorCell_internal(node, isInspector, new HashSet<Class<? extends BaseConceptEditor>>());
+    return createEditorCell_internal(node, isInspector, new HashSet<Class<? extends ConceptEditor>>());
   }
 
-  private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends BaseConceptEditor>> excludedEditors) {
+  private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
     boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
     SConcept concept = node.getConcept();
-    ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : myConceptEditorRegistry.getEditor(concept, excludedEditors);
+    ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : myConceptEditorRegistry.get(concept, excludedEditors);
     EditorCell result = null;
     if (editor != null) {
       try {
@@ -190,7 +187,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {
-    ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(node.getConcept());
+    ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).get(node.getConcept());
     if (conceptEditorComponent != null) {
       return conceptEditorComponent;
     }
@@ -203,8 +200,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       super(EditorCellFactoryImpl.this);
     }
 
+    @NotNull
     @Override
-    protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
+    protected Collection<ConceptEditor> get(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
       if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
         return ((EditorAspectDescriptorBase) aspectDescriptor).getEditors(concept);
       }
@@ -220,8 +218,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       myEditorComponentId = editorComponentId;
     }
 
+    @NotNull
     @Override
-    protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
+    protected Collection<ConceptEditorComponent> get(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
       if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
         return ((EditorAspectDescriptorBase) aspectDescriptor).getEditorComponents(concept, myEditorComponentId);
       }
@@ -230,6 +229,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private static class DefaultInterfaceEditor implements ConceptEditor {
+    @NotNull
     @Override
     public Collection<String> getContextHints() {
       return Collections.emptyList();
@@ -257,6 +257,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       myEditorComponentId = editorComponentId;
     }
 
+    @NotNull
     @Override
     public Collection<String> getContextHints() {
       return Collections.emptyList();
