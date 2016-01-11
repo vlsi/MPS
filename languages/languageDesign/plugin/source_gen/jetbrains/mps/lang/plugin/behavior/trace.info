@@ -283,6 +283,9 @@
     <file name="PersistentPropertyReference_BehaviorDescriptor.java">
       <unit at="16,0,40,0" name="jetbrains.mps.lang.plugin.behavior.PersistentPropertyReference_BehaviorDescriptor" />
     </file>
+    <file name="PinTabOperation_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.behavior.PinTabOperation_BehaviorDescriptor" />
+    </file>
     <file name="PluginDependency_BehaviorDescriptor.java">
       <unit at="14,0,24,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
     </file>
@@ -354,6 +357,9 @@
     </file>
     <file name="ToolbarCreator_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.behavior.ToolbarCreator_BehaviorDescriptor" />
+    </file>
+    <file name="UnpinTabOperation_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.behavior.UnpinTabOperation_BehaviorDescriptor" />
     </file>
     <file name="UpdateBlock_BehaviorDescriptor.java">
       <unit at="15,0,30,0" name="jetbrains.mps.lang.plugin.behavior.UpdateBlock_BehaviorDescriptor" />

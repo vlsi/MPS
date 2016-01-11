@@ -2059,5 +2059,37 @@
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3ItNAtJe66x">
+    <property role="1pbfSe" value="1428803576" />
+    <property role="TrG5h" value="PinTabOperation" />
+    <property role="34LRSv" value="pinTab" />
+    <property role="3GE5qa" value="Tool.Operations" />
+    <ref role="1TJDcQ" node="71t2ztIwe1c" resolve="TabbedToolOperation" />
+    <node concept="1TJgyj" id="4F0ra6Zryx0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="componentExpression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="3ItNAtJe686" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4F0ra6ZrAu8">
+    <property role="1pbfSe" value="170841129" />
+    <property role="3GE5qa" value="Tool.Operations" />
+    <property role="TrG5h" value="UnpinTabOperation" />
+    <property role="34LRSv" value="unpinTab" />
+    <ref role="1TJDcQ" node="71t2ztIwe1c" resolve="TabbedToolOperation" />
+    <node concept="1TJgyj" id="4F0ra6ZrAub" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="componentExpression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4F0ra6ZrAu9" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
+    </node>
+  </node>
 </model>
 
