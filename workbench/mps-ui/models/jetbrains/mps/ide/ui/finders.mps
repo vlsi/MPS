@@ -3477,46 +3477,38 @@
                 </node>
               </node>
             </node>
-            <node concept="1DcWWT" id="ZVS8OJne32" role="3cqZAp">
-              <node concept="2OqwBi" id="ZVS8OJne33" role="1DdaDG">
-                <node concept="liA8E" id="ZVS8OJne34" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~DevKit.getAllExportedLanguages():java.util.List" resolve="getAllExportedLanguages" />
+            <node concept="3clFbF" id="62EP7cLyXzy" role="3cqZAp">
+              <node concept="2OqwBi" id="62EP7cLyXKD" role="3clFbG">
+                <node concept="37vLTw" id="62EP7cLyXzw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="ZVS8OJnf1k" resolve="rv" />
                 </node>
-                <node concept="1eOMI4" id="ZVS8OJne35" role="2Oq$k0">
-                  <node concept="10QFUN" id="ZVS8OJne36" role="1eOMHV">
-                    <node concept="3uibUv" id="ZVS8OJne37" role="10QFUM">
-                      <ref role="3uigEE" to="z1c3:~DevKit" resolve="DevKit" />
-                    </node>
-                    <node concept="37vLTw" id="ZVS8OJne38" role="10QFUP">
-                      <ref role="3cqZAo" node="ZVS8OJne20" resolve="searchedModule" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="ZVS8OJne39" role="2LFqv$">
-                <node concept="3clFbF" id="ZVS8OJnn4u" role="3cqZAp">
-                  <node concept="2OqwBi" id="ZVS8OJnngJ" role="3clFbG">
-                    <node concept="37vLTw" id="ZVS8OJnn4s" role="2Oq$k0">
-                      <ref role="3cqZAo" node="ZVS8OJnf1k" resolve="rv" />
-                    </node>
-                    <node concept="liA8E" id="ZVS8OJnnVz" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
-                      <node concept="2YIFZM" id="ZVS8OJno6n" role="37wK5m">
-                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getLanguage(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                        <node concept="37vLTw" id="ZVS8OJnoot" role="37wK5m">
-                          <ref role="3cqZAo" node="ZVS8OJne3q" resolve="devKitLanguage" />
+                <node concept="liA8E" id="62EP7cLyXYH" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~ArrayList.addAll(java.util.Collection):boolean" resolve="addAll" />
+                  <node concept="2YIFZM" id="62EP7cLyYdn" role="37wK5m">
+                    <ref role="37wK5l" to="18ew:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
+                    <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
+                    <node concept="2OqwBi" id="62EP7cLyYkJ" role="37wK5m">
+                      <node concept="liA8E" id="62EP7cLyYkK" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~DevKit.getAllExportedLanguageIds():java.lang.Iterable" resolve="getAllExportedLanguageIds" />
+                      </node>
+                      <node concept="1eOMI4" id="62EP7cLyYkL" role="2Oq$k0">
+                        <node concept="10QFUN" id="62EP7cLyYkM" role="1eOMHV">
+                          <node concept="3uibUv" id="62EP7cLyYkN" role="10QFUM">
+                            <ref role="3uigEE" to="z1c3:~DevKit" resolve="DevKit" />
+                          </node>
+                          <node concept="37vLTw" id="62EP7cLyYkO" role="10QFUP">
+                            <ref role="3cqZAo" node="ZVS8OJne20" resolve="searchedModule" />
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3cpWsn" id="ZVS8OJne3q" role="1Duv9x">
-                <property role="TrG5h" value="devKitLanguage" />
-                <node concept="3uibUv" id="ZVS8OJne3r" role="1tU5fm">
-                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                </node>
+            </node>
+            <node concept="3cpWs6" id="62EP7cLyYQK" role="3cqZAp">
+              <node concept="37vLTw" id="62EP7cLyYZU" role="3cqZAk">
+                <ref role="3cqZAo" node="ZVS8OJnf1k" resolve="rv" />
               </node>
             </node>
           </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -161,8 +160,8 @@ public class ModelDependenciesManager {
    * @param retval collection to fill with languages of interest
    */
   protected void handle(DevKit devkit, Collection<SLanguage> retval) {
-    for (Language dkLang : devkit.getAllExportedLanguages()) {
-      handle(MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(dkLang), dkLang.getModuleName()), retval);
+    for (SLanguage dkLang : devkit.getAllExportedLanguageIds()) {
+      handle(dkLang, retval);
     }
   }
 

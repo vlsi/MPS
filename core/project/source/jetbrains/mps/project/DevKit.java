@@ -73,6 +73,7 @@ public class DevKit extends AbstractModule {
     List<Language> langs = new ArrayList<Language>();
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(repo);
     // FIXME in fact, shall produce SLanguage, not Language module here
+    // there are two uses in mbeddr that need to get fixed first
     for (SModuleReference l : myDescriptor.getExportedLanguages()) {
       Language lang = repoFacade.getModule(l, Language.class);
       if (lang != null) {
@@ -83,6 +84,14 @@ public class DevKit extends AbstractModule {
     return langs;
   }
 
+  /**
+   *
+   * @deprecated use {@link #getAllExportedLanguageIds()} instead.
+   * Once there are no uses, rename getAllExportedLanguageIds to this method and deprecate the former. And, please, stop using Iterable when there's Collection.
+   * It's plain stupid to write for() just to add all elements of the iterable to another collection (and don't get me started about IterableUtil.asCollection)
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public List<Language> getAllExportedLanguages() {
     List<Language> result = new ArrayList<Language>();
     for (DevKit dk : getAllExtendedDevkits()) {

@@ -74,9 +74,8 @@ public class LanguageUsagesFinder implements IFinder {
     // FIXME likely it's smarter to unwrap devkit at the caller's, wrapped with CompositeFinder 
     if (searchedModule instanceof DevKit) {
       ArrayList<SLanguage> rv = new ArrayList<SLanguage>();
-      for (Language devKitLanguage : ((DevKit) searchedModule).getAllExportedLanguages()) {
-        rv.add(MetaAdapterByDeclaration.getLanguage(devKitLanguage));
-      }
+      rv.addAll(IterableUtil.asCollection(((DevKit) searchedModule).getAllExportedLanguageIds()));
+      return rv;
     }
     if (searchedModule instanceof Language) {
       return Collections.singletonList(MetaAdapterByDeclaration.getLanguage((Language) searchedModule));

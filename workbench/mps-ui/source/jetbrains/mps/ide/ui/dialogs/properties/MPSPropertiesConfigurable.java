@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -502,10 +501,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
               } else {
                 final SModule devkit = entry.myDevKit.resolve(myProject.getRepository());
                 if (devkit instanceof DevKit) {
-                  // FIXME update DevKit to use SLanguage
-                  for (Language l : ((DevKit) devkit).getAllExportedLanguages()) {
-                    languages.add(MetaAdapterByDeclaration.getLanguage(l));
-                  }
+                  languages.addAll(IterableUtil.asCollection(((DevKit) devkit).getAllExportedLanguageIds()));
                 }
               }
             }

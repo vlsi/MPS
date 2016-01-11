@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,13 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NotCondition;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -560,9 +560,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         }
         HashSet<SLanguage> burstDeps = new HashSet<SLanguage>();
         final DevKit devKit = (DevKit) module;
-        for (Language l : devKit.getAllExportedLanguages()) {
-          burstDeps.add(MetaAdapterByDeclaration.getLanguage(l));
-        }
+        burstDeps.addAll(IterableUtil.asCollection(devKit.getAllExportedLanguageIds()));
         // if module is already there (e.g. explicitly imported), do not consider devkit with it as used/necessary
         burstDeps.removeAll(myExplicitUse);
         return CollectionUtil.intersects(burstDeps, myActualUse);
