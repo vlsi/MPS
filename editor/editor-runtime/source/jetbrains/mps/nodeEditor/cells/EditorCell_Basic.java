@@ -93,7 +93,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private boolean mySelected;
 
   @NotNull
-  private EditorContext myEditorContext;
+  private final EditorContext myEditorContext;
 
   private EditorCell_Collection myParent = null;
   private SNode myNode;
