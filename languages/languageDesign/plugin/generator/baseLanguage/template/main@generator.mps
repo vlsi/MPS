@@ -230,6 +230,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -3392,6 +3395,18 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="4F0ra6ZrSyV" role="3acgRq">
+      <ref role="30HIoZ" to="tp4k:3ItNAtJe66x" resolve="PinTabOperation" />
+      <node concept="j$656" id="4F0ra6ZrSP4" role="1lVwrX">
+        <ref role="v9R2y" node="4F0ra6ZrSP2" resolve="reduce_PinTabOperation" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="4F0ra6ZrTva" role="3acgRq">
+      <ref role="30HIoZ" to="tp4k:4F0ra6ZrAu8" resolve="UnpinTabOperation" />
+      <node concept="j$656" id="4F0ra6ZrTLl" role="1lVwrX">
+        <ref role="v9R2y" node="4F0ra6ZrTLj" resolve="reduce_UnpinTabOperation" />
       </node>
     </node>
     <node concept="3lhOvk" id="4LNA5o6dMw2" role="3lj3bC">
@@ -15674,6 +15689,110 @@
             <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="4F0ra6ZrSP2">
+    <property role="TrG5h" value="reduce_PinTabOperation" />
+    <property role="3GE5qa" value="Tool" />
+    <ref role="3gUMe" to="tp4k:3ItNAtJe66x" resolve="PinTabOperation" />
+    <node concept="312cEu" id="3ItNAtJea0i" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="MyGeneratedTabbedTool" />
+      <node concept="3clFb_" id="3ItNAtJeab1" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="myPinTab" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="3ItNAtJeab4" role="3clF47">
+          <node concept="3clFbF" id="3ItNAtJeabO" role="3cqZAp">
+            <node concept="2OqwBi" id="3ItNAtJeadG" role="3clFbG">
+              <node concept="Xjq3P" id="3ItNAtJeabN" role="2Oq$k0" />
+              <node concept="liA8E" id="3ItNAtJeams" role="2OqNvi">
+                <ref role="37wK5l" to="71xd:~BaseTabbedProjectTool.pinTab(javax.swing.JComponent):void" resolve="pinTab" />
+                <node concept="2ShNRf" id="3ItNAtJeaq7" role="37wK5m">
+                  <node concept="1pGfFk" id="3ItNAtJedp$" role="2ShVmc">
+                    <ref role="37wK5l" to="dxuu:~JComponent.&lt;init&gt;()" resolve="JComponent" />
+                  </node>
+                  <node concept="29HgVG" id="3ItNAtJeez0" role="lGtFl">
+                    <node concept="3NFfHV" id="3ItNAtJeez1" role="3NFExx">
+                      <node concept="3clFbS" id="3ItNAtJeez2" role="2VODD2">
+                        <node concept="3clFbF" id="3ItNAtJeez8" role="3cqZAp">
+                          <node concept="2OqwBi" id="3ItNAtJeez3" role="3clFbG">
+                            <node concept="3TrEf2" id="4F0ra6ZrTX5" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp4k:4F0ra6Zryx0" />
+                            </node>
+                            <node concept="30H73N" id="3ItNAtJeez7" role="2Oq$k0" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="raruj" id="3ItNAtJeeyj" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3ItNAtJeaaG" role="1B3o_S" />
+        <node concept="3cqZAl" id="3ItNAtJeaaU" role="3clF45" />
+      </node>
+      <node concept="3Tm1VV" id="3ItNAtJea0j" role="1B3o_S" />
+      <node concept="3uibUv" id="3ItNAtJea0W" role="1zkMxy">
+        <ref role="3uigEE" to="71xd:~BaseTabbedProjectTool" resolve="BaseTabbedProjectTool" />
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="4F0ra6ZrTLj">
+    <property role="TrG5h" value="reduce_UnpinTabOperation" />
+    <property role="3GE5qa" value="Tool" />
+    <ref role="3gUMe" to="tp4k:4F0ra6ZrAu8" resolve="UnpinTabOperation" />
+    <node concept="312cEu" id="4F0ra6ZrTLv" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="MyGeneratedTabbedTool" />
+      <node concept="3clFb_" id="4F0ra6ZrTLw" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="myPinTab" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="4F0ra6ZrTLx" role="3clF47">
+          <node concept="3clFbF" id="4F0ra6ZrTLy" role="3cqZAp">
+            <node concept="2OqwBi" id="4F0ra6ZrTLz" role="3clFbG">
+              <node concept="Xjq3P" id="4F0ra6ZrTL$" role="2Oq$k0" />
+              <node concept="liA8E" id="4F0ra6ZrTL_" role="2OqNvi">
+                <ref role="37wK5l" to="71xd:~BaseTabbedProjectTool.unpinTab(javax.swing.JComponent):void" resolve="unpinTab" />
+                <node concept="2ShNRf" id="4F0ra6ZrTLA" role="37wK5m">
+                  <node concept="1pGfFk" id="4F0ra6ZrTLB" role="2ShVmc">
+                    <ref role="37wK5l" to="dxuu:~JComponent.&lt;init&gt;()" resolve="JComponent" />
+                  </node>
+                  <node concept="29HgVG" id="4F0ra6ZrTLC" role="lGtFl">
+                    <node concept="3NFfHV" id="4F0ra6ZrTLD" role="3NFExx">
+                      <node concept="3clFbS" id="4F0ra6ZrTLE" role="2VODD2">
+                        <node concept="3clFbF" id="4F0ra6ZrTLF" role="3cqZAp">
+                          <node concept="2OqwBi" id="4F0ra6ZrTLG" role="3clFbG">
+                            <node concept="3TrEf2" id="4F0ra6ZrU6o" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp4k:4F0ra6ZrAub" />
+                            </node>
+                            <node concept="30H73N" id="4F0ra6ZrTLI" role="2Oq$k0" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="raruj" id="4F0ra6ZrTLJ" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="4F0ra6ZrTLK" role="1B3o_S" />
+        <node concept="3cqZAl" id="4F0ra6ZrTLL" role="3clF45" />
+      </node>
+      <node concept="3Tm1VV" id="4F0ra6ZrTLM" role="1B3o_S" />
+      <node concept="3uibUv" id="4F0ra6ZrTLN" role="1zkMxy">
+        <ref role="3uigEE" to="71xd:~BaseTabbedProjectTool" resolve="BaseTabbedProjectTool" />
       </node>
     </node>
   </node>

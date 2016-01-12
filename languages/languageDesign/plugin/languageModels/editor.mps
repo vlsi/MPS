@@ -4435,5 +4435,51 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="3ItNAtJe8TZ">
+    <property role="3GE5qa" value="Tool.Operations" />
+    <ref role="1XX52x" to="tp4k:3ItNAtJe66x" resolve="PinTabOperation" />
+    <node concept="3EZMnI" id="4F0ra6Zryxr" role="2wV5jI">
+      <node concept="PMmxH" id="4F0ra6Zryxs" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="4F0ra6Zryxt" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="4F0ra6Zryxu" role="3EZMnx">
+        <ref role="1NtTu8" to="tp4k:4F0ra6Zryx0" />
+      </node>
+      <node concept="3F0ifn" id="4F0ra6Zryxv" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hXb$V4T" resolve="RightBracket" />
+      </node>
+      <node concept="l2Vlx" id="4F0ra6Zryxw" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4F0ra6ZrAu_">
+    <property role="3GE5qa" value="Tool.Operations" />
+    <ref role="1XX52x" to="tp4k:4F0ra6ZrAu8" resolve="UnpinTabOperation" />
+    <node concept="3EZMnI" id="4F0ra6ZrAuB" role="2wV5jI">
+      <node concept="PMmxH" id="4F0ra6ZrAuC" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="4F0ra6ZrAuD" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="4F0ra6ZrAuE" role="3EZMnx">
+        <ref role="1NtTu8" to="tp4k:4F0ra6ZrAub" />
+      </node>
+      <node concept="3F0ifn" id="4F0ra6ZrAuF" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hXb$V4T" resolve="RightBracket" />
+      </node>
+      <node concept="l2Vlx" id="4F0ra6ZrAuG" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

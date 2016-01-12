@@ -164,6 +164,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c466b22aL, "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"))) {
         return Collections.<ConceptEditor>singletonList(new PersistentPropertyReference_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x3b9dce676f3861a1L, "jetbrains.mps.lang.plugin.structure.PinTabOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new PinTabOperation_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb0207abL, "jetbrains.mps.lang.plugin.structure.PopupCreator"))) {
         return Collections.<ConceptEditor>singletonList(new PopupCreator_Editor());
       }
@@ -205,6 +208,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1b97d211bb01f6f6L, "jetbrains.mps.lang.plugin.structure.ToolbarCreator"))) {
         return Collections.<ConceptEditor>singletonList(new ToolbarCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x4ac06ca1bf6e6788L, "jetbrains.mps.lang.plugin.structure.UnpinTabOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new UnpinTabOperation_Editor());
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x120b44a69d3L, "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"))) {
         return Collections.<ConceptEditor>singletonList(new UpdateGroupBlock_Editor());
