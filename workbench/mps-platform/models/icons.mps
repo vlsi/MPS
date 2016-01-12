@@ -248,6 +248,11 @@
       <concept id="1225894555487" name="jetbrains.mps.baseLanguage.structure.BitwiseNotExpression" flags="nn" index="1H0AT2">
         <child id="1225894555490" name="expression" index="1H0ATZ" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
@@ -3728,22 +3733,42 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1KJq9M8bhaO" role="3cqZAp">
+          <node concept="3cpWsn" id="1KJq9M8bhaP" role="3cpWs9">
+            <property role="TrG5h" value="macroHelper" />
+            <node concept="3uibUv" id="1KJq9M8bhaN" role="1tU5fm">
+              <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+            </node>
+            <node concept="2YIFZM" id="1KJq9M8bhaQ" role="33vP2m">
+              <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+              <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+              <node concept="37vLTw" id="1KJq9M8bhaR" role="37wK5m">
+                <ref role="3cqZAo" node="pNj8CkUF0y" resolve="module" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="pNj8CkUNlk" role="3cqZAp">
           <node concept="3cpWsn" id="pNj8CkUNll" role="3cpWs9">
             <property role="TrG5h" value="iconPath" />
             <node concept="17QB3L" id="pNj8CkUNlm" role="1tU5fm" />
-            <node concept="2OqwBi" id="pNj8CkUNln" role="33vP2m">
-              <node concept="2YIFZM" id="pNj8CkUNlo" role="2Oq$k0">
-                <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
-                <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(jetbrains.mps.project.AbstractModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
-                <node concept="37vLTw" id="pNj8CkUO1O" role="37wK5m">
-                  <ref role="3cqZAo" node="pNj8CkUF0y" resolve="module" />
+            <node concept="3K4zz7" id="1KJq9M8bmbo" role="33vP2m">
+              <node concept="10Nm6u" id="1KJq9M8bmsH" role="3K4E3e" />
+              <node concept="3clFbC" id="1KJq9M8blDV" role="3K4Cdx">
+                <node concept="10Nm6u" id="1KJq9M8blXP" role="3uHU7w" />
+                <node concept="37vLTw" id="1KJq9M8bloI" role="3uHU7B">
+                  <ref role="3cqZAo" node="1KJq9M8bhaP" resolve="macroHelper" />
                 </node>
               </node>
-              <node concept="liA8E" id="pNj8CkUNlq" role="2OqNvi">
-                <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                <node concept="37vLTw" id="pNj8CkUNlr" role="37wK5m">
-                  <ref role="3cqZAo" node="pNj8CkUFO4" resolve="path" />
+              <node concept="2OqwBi" id="pNj8CkUNln" role="3K4GZi">
+                <node concept="37vLTw" id="1KJq9M8bhaS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1KJq9M8bhaP" resolve="macroHelper" />
+                </node>
+                <node concept="liA8E" id="pNj8CkUNlq" role="2OqNvi">
+                  <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                  <node concept="37vLTw" id="pNj8CkUNlr" role="37wK5m">
+                    <ref role="3cqZAo" node="pNj8CkUFO4" resolve="path" />
+                  </node>
                 </node>
               </node>
             </node>

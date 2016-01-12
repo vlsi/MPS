@@ -27,6 +27,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.IFile;
@@ -120,7 +121,8 @@ public class CachingIconManager {
     if (module == null) {
       return null;
     }
-    String iconPath = MacrosFactory.forModule(module).expandPath(path);
+    MacroHelper macroHelper = MacrosFactory.forModule(module);
+    String iconPath = (macroHelper == null ? null : macroHelper.expandPath(path));
     if (iconPath == null) {
       return null;
     }
