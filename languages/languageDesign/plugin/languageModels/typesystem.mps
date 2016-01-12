@@ -27,7 +27,7 @@
     <import index="obo9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins.actions(MPS.Platform/)" />
     <import index="eqyk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins.tool(MPS.Platform/)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
-    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -1635,6 +1635,96 @@
     <node concept="1YaCAy" id="6pfW_jugFXh" role="1YuTPh">
       <property role="TrG5h" value="ideaConfigurationXml" />
       <ref role="1YaFvo" to="tp4k:2LXdEGeeK_q" resolve="IdeaConfigurationXml" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3ItNAtJe9je">
+    <property role="TrG5h" value="typeof_PinTabOperation" />
+    <property role="3GE5qa" value="Tool.Operations" />
+    <node concept="3clFbS" id="3ItNAtJe9jf" role="18ibNy">
+      <node concept="1Z5TYs" id="3ItNAtJe9w_" role="3cqZAp">
+        <node concept="mw_s8" id="3ItNAtJe9yT" role="1ZfhKB">
+          <node concept="2c44tf" id="3ItNAtJe9yL" role="mwGJk">
+            <node concept="3cqZAl" id="3ItNAtJe9zf" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="3ItNAtJe9wC" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3ItNAtJe9tg" role="mwGJk">
+            <node concept="1YBJjd" id="3ItNAtJe9tZ" role="1Z2MuG">
+              <ref role="1YBMHb" node="3ItNAtJe9jh" resolve="pinTabOp" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1ZobV4" id="3ItNAtJe9jE" role="3cqZAp">
+        <node concept="mw_s8" id="3ItNAtJe9zJ" role="1ZfhKB">
+          <node concept="2c44tf" id="3ItNAtJe9zF" role="mwGJk">
+            <node concept="3uibUv" id="3ItNAtJe9_H" role="2c44tc">
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3ItNAtJe9jR" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3ItNAtJe9jN" role="mwGJk">
+            <node concept="2OqwBi" id="3ItNAtJe9mD" role="1Z2MuG">
+              <node concept="1YBJjd" id="3ItNAtJe9kb" role="2Oq$k0">
+                <ref role="1YBMHb" node="3ItNAtJe9jh" resolve="pinTabOp" />
+              </node>
+              <node concept="3TrEf2" id="3ItNAtJe9rL" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp4k:4F0ra6Zryx0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3ItNAtJe9jh" role="1YuTPh">
+      <property role="TrG5h" value="pinTabOp" />
+      <ref role="1YaFvo" to="tp4k:3ItNAtJe66x" resolve="PinTabOperation" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="4F0ra6ZrH0k">
+    <property role="TrG5h" value="typeof_UnpinTabOperation" />
+    <property role="3GE5qa" value="Tool.Operations" />
+    <node concept="3clFbS" id="4F0ra6ZrH0l" role="18ibNy">
+      <node concept="1Z5TYs" id="4F0ra6ZrH1g" role="3cqZAp">
+        <node concept="mw_s8" id="4F0ra6ZrH1h" role="1ZfhKB">
+          <node concept="2c44tf" id="4F0ra6ZrH1i" role="mwGJk">
+            <node concept="3cqZAl" id="4F0ra6ZrH1j" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="4F0ra6ZrH1k" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4F0ra6ZrH1l" role="mwGJk">
+            <node concept="1YBJjd" id="4F0ra6ZrJ6N" role="1Z2MuG">
+              <ref role="1YBMHb" node="4F0ra6ZrH0n" resolve="unpinTabOp" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1ZobV4" id="4F0ra6ZrH1n" role="3cqZAp">
+        <node concept="mw_s8" id="4F0ra6ZrH1o" role="1ZfhKB">
+          <node concept="2c44tf" id="4F0ra6ZrH1p" role="mwGJk">
+            <node concept="3uibUv" id="4F0ra6ZrH1q" role="2c44tc">
+              <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4F0ra6ZrH1r" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4F0ra6ZrH1s" role="mwGJk">
+            <node concept="2OqwBi" id="4F0ra6ZrH1t" role="1Z2MuG">
+              <node concept="1YBJjd" id="4F0ra6ZrJd_" role="2Oq$k0">
+                <ref role="1YBMHb" node="4F0ra6ZrH0n" resolve="unpinTabOp" />
+              </node>
+              <node concept="3TrEf2" id="4F0ra6ZrJkE" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp4k:4F0ra6ZrAub" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4F0ra6ZrH0n" role="1YuTPh">
+      <property role="TrG5h" value="unpinTabOp" />
+      <ref role="1YaFvo" to="tp4k:4F0ra6ZrAu8" resolve="UnpinTabOperation" />
     </node>
   </node>
 </model>
