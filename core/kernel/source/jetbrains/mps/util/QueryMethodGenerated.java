@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
   @NotNull
   public static Class getQueriesGeneratedClassFor(@NotNull SModelReference sm, boolean suppressErrorLogging) throws ClassNotFoundException {
-    String packageName = SModelStereotype.withoutStereotype(sm.getModelName());
+    String packageName = sm.getName().getLongName();
     String queriesClassName = packageName + ".QueriesGenerated";
     return ourInstance.getGeneratedClass(sm, queriesClassName, suppressErrorLogging);
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -290,13 +290,13 @@ class GenerationSession {
           nestedException = "";
         }
         String error = gfe.getMessage() == null ? gfe.toString() : gfe.getMessage();
-        String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getReference().getModelName(), error, nestedException);
+        String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getName(), error, nestedException);
         myLogger.handleException(gfe);
         myLogger.error(gfe.getTemplateModelLocation(), msg, GeneratorUtil.describeInput(gfe.getTemplateContext()));
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {
         myLogger.handleException(e);
-        myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed");
+        myLogger.error(String.format("Generation failed for model '%s': %s", myOriginalInputModel.getName(), e.toString()));
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } finally {
         if (success) {
@@ -356,7 +356,7 @@ class GenerationSession {
       myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger), transitionTrace);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
-        myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
+        myLogger.warning(String.format("model '%s' has been generated with errors", inputModel.getName()));
       }
 //      myStepArguments = null;
       return outputModel;
@@ -529,8 +529,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info(
-            "clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
+        myLogger.info(String.format("clone model '%s' --> '%s'", currentInputModel.getName(), currentInputModel_clone.getName()));
       }
       new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
@@ -575,7 +574,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentModel.getReference().getModelName() + "' --> '" + currentOutputModel_clone.getReference().getModelName() + "'");
+        myLogger.info(String.format("clone model '%s' --> '%s'", currentModel.getName(), currentOutputModel_clone.getName()));
       }
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();

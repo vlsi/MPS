@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ public class ChildAdopter {
     }
     for (SLanguage lang : langToReport.keySet()) {
       String hint = String.format("workaround: add the language '%s' to list of 'Languages Engaged On Generation' in model '%s'",
-          lang.getQualifiedName(), myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName());
+          lang.getQualifiedName(), myGenerator.getGeneratorSessionContext().getOriginalInputModel().getName());
       myGenerator.getLogger().error(templateNode,
           String.format("language of output node is '%s' - this language did not show up when computing generation steps!", lang.getQualifiedName()),
           GeneratorUtil.describeInput(templateContext),

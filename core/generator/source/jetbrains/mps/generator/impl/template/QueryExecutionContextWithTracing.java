@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -62,7 +61,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   private static String getRulePackage(SNode ruleNode) {
-    return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getReference());
+    return ruleNode.getModel().getName().getLongName();
   }
 
   private static String taskName(@NotNull String name, SNode ruleNode) {
@@ -76,7 +75,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     if (ruleNode == null) {
       return name;
     }
-    return name + ':' + JavaNameUtil.packageNameForModelUID(ruleNode.getModelReference());
+    return name + ':' + ruleNode.getModelReference().getName().getLongName();
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,10 +18,9 @@ package jetbrains.mps.workbench.choose.models;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
   @Deprecated
@@ -48,10 +47,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
 
   @Override
   public String doGetObjectName(SModelReference ref) {
-    return NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(ref.getModelName())) + getStereotypeString(ref);
-  }
-
-  private String getStereotypeString(SModelReference ref) {
-    return !SModelStereotype.getStereotype(ref.getModelName()).equals("") ? ("@" + SModelStereotype.getStereotype(ref.getModelName())) : "";
+    SModelName modelName = ref.getName();
+    return modelName.hasStereotype() ? modelName.getSimpleName() + '@' + modelName.getStereotype() : modelName.getSimpleName();
   }
 }

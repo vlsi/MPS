@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
           if (node.getModel() != null && node.getModel().getModule() instanceof TransientSModule) {
             // it's common to open same node from different generation steps (transient models)
             // and to tell nodes from different steps we append model's identification
-            final String s = SModelStereotype.getStereotype(node.getModel());
+            final String s = node.getModel().getName().getStereotype();
             if (!s.isEmpty()) {
               myPresentationName = myName + '@' + s;
             }

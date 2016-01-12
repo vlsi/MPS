@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -82,10 +83,15 @@ public class SModelStereotype {
 
   @NotNull
   public static String getStereotype(@NotNull SModel model) {
-    return getStereotype(model.getModelName());
+    return model.getName().getStereotype();
   }
 
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName#getStereotype()}
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static String getStereotype(String modelName) {
     int atIndex = modelName.lastIndexOf('@');
     if (atIndex == -1) {
@@ -96,9 +102,12 @@ public class SModelStereotype {
   }
 
   /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName} instead
    * @param name not null
    * @return name without stereotype (if any)
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static String withoutStereotype(String name) {
     int atIndex = name.lastIndexOf('@');
     if (atIndex == -1) {
@@ -108,6 +117,11 @@ public class SModelStereotype {
     }
   }
 
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static String withStereotype(@NotNull String modelName, @Nullable String stereotype) {
     if (modelName.indexOf('@') != -1) {
       throw new IllegalArgumentException("Model name already got stereotype");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,17 @@ public interface SModel {
    * This is an equivalent to getModelReference().getModelName
    * The returned name of the model may include a stereotype, such as 'generator' or 'tests', separated by the '@' character,
    * e.g. jetbrains.mps.sample.generator.main@generator
+   * @deprecated Prefer {@link #getName()} with access to distinct fractions of the name
    */
+  @Deprecated
   String getModelName();
+
+  /**
+   * This is an equivalent to <code>getModelReference().getName()</code>
+   * @return name of the model in its full glory
+   */
+  @NotNull
+  SModelName getName();
 
   @NotNull
   SModelReference getReference();

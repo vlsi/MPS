@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
@@ -95,7 +96,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public SNode createNode(SConcept concept) {
+  public SNode createNode(@NotNull SConcept concept) {
     // nodeId should be model's responsibility, not SNode's as we shall migrate towards model-local node ids, preferably int instead of long,
     // and at least not random
     return new jetbrains.mps.smodel.SNode(concept, jetbrains.mps.smodel.SModel.generateUniqueId());
@@ -163,6 +164,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public String getModelName() {
 //    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelName();
+  }
+
+  @NotNull
+  @Override
+  public SModelName getName() {
+    return myModelReference.getName();
   }
 
   @Override

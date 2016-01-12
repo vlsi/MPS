@@ -59,7 +59,7 @@ public final class JavaNameUtil {
   }
 
   public static String packageNameForModelUID(@NotNull SModelReference modelReference) {
-    return SModelStereotype.withoutStereotype(modelReference.getModelName());
+    return modelReference.getName().getLongName();
   }
 
   public static String packageName(@NotNull SModel model) {

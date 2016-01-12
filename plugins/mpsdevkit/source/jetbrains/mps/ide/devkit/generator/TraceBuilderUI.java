@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -58,7 +58,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   private boolean myExcludeEmptySteps = true;
   private boolean myCompactTemplates = false;
   private boolean myGroupByStep = true;
-  private enum NodeGrouping { Change, Input, Output };
+  private enum NodeGrouping { Change, Input, Output }
   private NodeGrouping myChangeGrouping = NodeGrouping.Change;
 
   public TraceBuilderUI() {
@@ -106,16 +106,16 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
 
   @Override
   public void beginStep(@NotNull SModelReference input, @NotNull SModelReference output) {
-    final String modelName1 = input.getModelName();
-    final String modelName2 = output.getModelName();
+    final SModelName modelName1 = input.getName();
+    final SModelName modelName2 = output.getName();
     final String from;
     final String to;
-    if (SModelStereotype.withoutStereotype(modelName1).equals(SModelStereotype.withoutStereotype(modelName2))) {
-      from = SModelStereotype.getStereotype(modelName1);
-      to = SModelStereotype.getStereotype(modelName2);
+    if (modelName1.getLongName().equals(modelName2.getLongName())) {
+      from = modelName1.getStereotype();
+      to = modelName2.getStereotype();
     } else {
-      from = modelName1;
-      to = modelName2;
+      from = modelName1.getValue();
+      to = modelName2.getValue();
     }
     myStepNode = new TraceNodeUI(String.format("Phase %s->%s", from, to), Icons.COLLECTION, null);
     myStepChange = new StepChanges();

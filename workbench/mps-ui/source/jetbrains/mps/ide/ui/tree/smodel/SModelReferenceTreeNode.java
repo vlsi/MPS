@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,6 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
@@ -34,10 +32,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
   public SModelReferenceTreeNode(SModel modelDescriptor, Project mpsProject) {
     myProject = mpsProject;
     myModelDescriptor = modelDescriptor;
-    String name = SNodeOperations.getModelLongName(modelDescriptor);
-    if (SModelStereotype.getStereotype(modelDescriptor).length() > 0) {
-      name += "@" + SModelStereotype.getStereotype(modelDescriptor);
-    }
+    String name = modelDescriptor.getName().getValue();
     setUserObject(name);
     setNodeIdentifier(name);
     setAutoExpandable(true);

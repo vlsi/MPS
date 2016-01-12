@@ -149,8 +149,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
     }
 
     for (SModel model : visibleModels) {
-      final SModelReference modelRef = model.getReference();
-      final String modelName = modelRef.getModelName();
+      final String modelName = model.getName().getValue();
       List<VisibleModel> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
         myName2Models.put(modelName, modelsFromCache = new ArrayList<VisibleModel>(3));

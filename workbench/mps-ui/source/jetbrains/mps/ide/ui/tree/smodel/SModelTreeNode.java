@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,14 +277,14 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   }
 
   public boolean isSubfolderModel(@NotNull SModel candidate) {
-    final String modelName = NameUtil.getModelLongName(myModelDescriptor);
-    String candidateName = NameUtil.getModelLongName(candidate);
-    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) {
+    final String modelName = myModelDescriptor.getName().getLongName();
+    String candidateName = candidate.getName().getLongName();
+    if (!candidateName.startsWith(modelName) || modelName.equals(candidateName)) {
       return false;
     }
     if (candidateName.charAt(modelName.length()) == '.') {
-      String modelStereotype = SModelStereotype.getStereotype(myModelDescriptor);
-      String candidateStereotype = SModelStereotype.getStereotype(candidate);
+      String modelStereotype = myModelDescriptor.getName().getStereotype();
+      String candidateStereotype = candidate.getName().getStereotype();
       if (!modelStereotype.equals(candidateStereotype)) {
         return false;
       }

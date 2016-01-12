@@ -244,7 +244,7 @@ public class ValidationUtil {
     final SModelReference modelToValidateRef = model.getReference();
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {
-        String msg = "Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName());
+        String msg = "Can't find model: " + reference.getName();
         if (!processor.process(new MissingModelError(model, msg, reference))) {
           return;
         }

@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SModelTreeNode> {
   @Override
   protected String getNamespace(SModelTreeNode node) {
-    SModel d = node.getModel();
-    return NameUtil.namespaceFromLongName(SModelStereotype.withoutStereotype(d.getReference().getModelName()));
+    return node.getModel().getName().getNamespace();
   }
 }

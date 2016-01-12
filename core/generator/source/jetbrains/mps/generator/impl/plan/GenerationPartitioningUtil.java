@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -108,8 +106,7 @@ public class GenerationPartitioningUtil {
       final String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       final String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelUID);
-      String modelName = moreDetails ? SModelStereotype.withoutStereotype(modelReference.getModelName()) : NameUtil.shortNameFromLongName(
-          SModelStereotype.withoutStereotype(modelReference.getModelName()));
+      String modelName = moreDetails ? modelReference.getName().getLongName() : modelReference.getName().getSimpleName();
       StringBuilder sb = new StringBuilder();
       sb.append(modelName);
       sb.append('.');

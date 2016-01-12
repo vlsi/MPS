@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,10 +36,8 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -108,7 +106,7 @@ public class GeneratorPrioritiesTree {
     myRootNode.add(generatorNode);
 
     for (SModel templateModel : generator.getOwnTemplateModels()) {
-      String modelName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(templateModel.getModelName()));
+      String modelName = templateModel.getName().getSimpleName();
       CheckedTreeNodeEx templateNode = new CheckedTreeNodeEx(templateModel.getReference(), modelName, Models.TemplatesModel);
       generatorNode.add(templateNode);
       for (SNode mapping : SModelOperations.roots(templateModel, RuleUtil.concept_MappingConfiguration)) {

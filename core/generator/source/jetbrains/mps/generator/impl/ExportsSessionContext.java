@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ public class ExportsSessionContext {
 
   // FIXME copied from j.m.u.QueryMethodGenerated
   private static void invokeExportFunction(SModel m, String funcName, ExportLabelContext ctx) {
-    String packageName = SModelStereotype.withoutStereotype(m.getModelName());
+    String packageName = m.getName().getLongName();
     String className = packageName + ".ExportLabelFunctions";
     try {
       Class elfClass = ClassLoaderManager.getInstance().getClass(m.getModule(), className);

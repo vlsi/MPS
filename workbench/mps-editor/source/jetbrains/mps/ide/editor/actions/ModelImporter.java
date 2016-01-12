@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,7 +104,7 @@ public class ModelImporter {
       res = JOptionPane.YES_OPTION;
     } else {
       res = JOptionPane.showConfirmDialog(myFrame,
-          "<html>Model <b>" + modelToImport.getModelName() + "</b> is owned by module <b>" + mRefToImport.getModuleName() +
+          "<html>Model <b>" + modelToImport.getName() + "</b> is owned by module <b>" + mRefToImport.getModuleName() +
               "</b> which is not imported.</html>\n\n" +
 
               "Importing the module will take some time.\n" +

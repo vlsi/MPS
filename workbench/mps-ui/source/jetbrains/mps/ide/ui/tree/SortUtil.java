@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public class SortUtil {
     @Override
     public int compare(SModel o, SModel o1) {
       if (o == o1) return 0;
-      int result = Comparing.compare(NameUtil.getModelLongName(o), NameUtil.getModelLongName(o1));
+      int result = Comparing.compare(o.getName().getLongName(), o1.getName().getLongName());
       if (result != 0) return result;
-      String str = SModelStereotype.getStereotype(o);
-      String str1 = SModelStereotype.getStereotype(o1);
+      String str = o.getName().getStereotype();
+      String str1 = o1.getName().getStereotype();
       if ((o instanceof TransientSModel) && (o1 instanceof TransientSModel)) {
         try {
           String[] part = str.split("_");

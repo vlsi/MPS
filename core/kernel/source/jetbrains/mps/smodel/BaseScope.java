@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,14 +63,8 @@ public abstract class BaseScope implements SearchScope {
   public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
     // todo: like module resolve!
     for (SModel model : getModels()) {
-      if (reference.getModelId() != null) {
-        if (model.getReference().equals(reference)) {
-          return model;
-        }
-      } else {
-        if (model.getModelName().equals(reference.getModelName())) {
-          return model;
-        }
+      if (model.getReference().equals(reference)) {
+        return model;
       }
     }
     return null;

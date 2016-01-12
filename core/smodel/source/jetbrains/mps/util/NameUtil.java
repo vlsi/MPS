@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -380,20 +381,23 @@ public class NameUtil {
   }
 
   /**
+   * @deprecated Use {@link SModelName#getLongName()} instead
    * @param model not null
    * @return qualified name of the model without stereotype
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static String getModelLongName(SModel model) {
-    String name = model.getModelName();
-    return SModelStereotype.withoutStereotype(name);
+    return model.getName().getLongName();
   }
 
   /**
+   * @deprecated Use {@link SModelName#getLongName()} instead
    * @param modelRef not null
    * @return qualified name of the model without stereotype
    */
   public static String getModelLongName(SModelReference modelRef) {
-    return SModelStereotype.withoutStereotype(modelRef.getModelName());
+    return modelRef.getName().getLongName();
   }
 
   /**
@@ -401,6 +405,7 @@ public class NameUtil {
    * use {@link SModelStereotype#withoutStereotype(String)} instead. If you got model or model reference, use corresponding getModelLongName()
    * from this class.
    * To make it true OOP at last, introduce ModelName class with getLongName() and getStereotype() methods, to get rid of this ugly static helpers
+   * @see org.jetbrains.mps.openapi.model.SModelName
    * @param name not null
    * @return name without stereotype part
    */
@@ -411,12 +416,11 @@ public class NameUtil {
   }
 
   public static String compactModelName(SModelReference ref) {
-    String compactNamespace = NameUtil.compactNamespace(SModelStereotype.withoutStereotype(ref.getModelName()));
-    String st = SModelStereotype.getStereotype(ref.getModelName());
-    if (st.length() == 0) {
-      return compactNamespace;
+    String compactNamespace = NameUtil.compactNamespace(ref.getName().getLongName());
+    if (ref.getName().hasStereotype()) {
+      return compactNamespace + '@' + ref.getName().getStereotype().charAt(0);
     } else {
-      return compactNamespace + "@" + st.charAt(0);
+      return compactNamespace;
     }
   }
 

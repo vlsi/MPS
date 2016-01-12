@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -301,13 +301,12 @@ public class GenerationTestBase {
   }
 
   protected static SModel findModel(Project project, String fqName) {
-    for (SModule m : project.getModules()) {
+    for (SModule m : project.getProjectModules()) {
       for (SModel descr : m.getModels()) {
         if (!(descr instanceof EditableSModel)) {
           continue;
         }
-        String longName = descr.getReference().getModelName();
-        if (longName.equals(fqName)) {
+        if (fqName.equals(descr.getName().getValue())) {
           return descr;
         }
       }

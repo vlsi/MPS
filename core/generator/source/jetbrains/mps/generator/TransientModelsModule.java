@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,11 +270,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public GenerationTrace getTrace(SModelReference model) {
-    return myTraces.get(SModelStereotype.withoutStereotype(model.getModelName()));
+    return myTraces.get(model.getName().getLongName());
   }
 
   public void publishTrace(@NotNull SModelReference model, @NotNull GenerationTrace trace) {
-    myTraces.put(SModelStereotype.withoutStereotype(model.getModelName()), trace);
+    myTraces.put(model.getName().getLongName(), trace);
   }
 
   public void changeModelReference(@NotNull SModel transientModel, @NotNull SModelReference newRef) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -83,10 +82,10 @@ public class CrossModelEnvironment {
   }
 
   private SModel[] getCheckpointModelsFor(SModelReference model) {
-    String nameNoStereotype = NameUtil.getModelLongName(model);
+    String nameNoStereotype = model.getName().getLongName();
     ArrayList<SModel> rv = new ArrayList<SModel>(4);
     for (SModel m : myModule.getModels()) {
-      if (nameNoStereotype.equals(NameUtil.getModelLongName(m))) {
+      if (nameNoStereotype.equals(m.getName().getLongName())) {
         rv.add(m);
       }
     }
@@ -108,7 +107,7 @@ public class CrossModelEnvironment {
   }
 
   /*package*/ static String createCheckpointModelName(SModelReference originalModel, Checkpoint step) {
-    String longName = NameUtil.getModelLongName(originalModel);
+    String longName = originalModel.getName().getLongName();
     String stereotype = "cp-" + step.getName();
     return SModelStereotype.withStereotype(longName, stereotype);
   }

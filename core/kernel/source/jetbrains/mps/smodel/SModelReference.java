@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -44,13 +45,13 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @NotNull
   private final SModelId myModelId;
   @NotNull
-  private final String myModelName;
+  private final SModelName myModelName;
   @Nullable
   public final SModuleReference myModuleReference;
 
   public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
     myModelId = modelId;
-    myModelName = modelName;
+    myModelName = new SModelName(modelName);
     if (module == null) {
       if (!modelId.isGloballyUnique()) {
         throw new IllegalArgumentException(String.format("Only globally unique model id could be used without module specification: %s", modelId));
@@ -67,10 +68,17 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @NotNull
   @Override
-  public String getModelName() {
+  public SModelName getName() {
     return myModelName;
   }
 
+  @NotNull
+  @Override
+  public String getModelName() {
+    return myModelName.getValue();
+  }
+
+  @Nullable
   @Override
   public SModuleReference getModuleReference() {
     return myModuleReference;
@@ -265,7 +273,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     String modelId = myModelId instanceof ModelNameSModelId ? myModelId.getModelName() : myModelId.toString();
     sb.append(StringUtil.escapeRefChars(modelId));
 
-    if (getModuleReference() == null && myModelName.equals(myModelId.getModelName())) {
+    if (getModuleReference() == null && myModelName.getValue().equals(myModelId.getModelName())) {
       return sb.toString();
     }
 
@@ -274,16 +282,12 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleName()));
       sb.append("/");
     }
-    if (!myModelName.equals(myModelId.getModelName())) {
+    if (!myModelName.getValue().equals(myModelId.getModelName())) {
       // no reason to write down model name if it's part of module id
-      sb.append(StringUtil.escapeRefChars(myModelName));
+      sb.append(StringUtil.escapeRefChars(myModelName.getValue()));
     }
     sb.append(")");
     return sb.toString();
-  }
-
-  public String getStereotype() {
-    return SModelStereotype.getStereotype(myModelName);
   }
 
   /**
