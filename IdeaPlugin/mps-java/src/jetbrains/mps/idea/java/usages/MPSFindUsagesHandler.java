@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,13 +34,14 @@ import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * This handler is returned for our MPS PSI nodes.
@@ -66,7 +67,8 @@ public class MPSFindUsagesHandler extends FindUsagesHandler {
 
     boolean cont = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.lang.structure"), "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
+        final SModuleReference langStructureModule = PersistenceFacade.getInstance().createModuleReference("c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)");
+        GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(langStructureModule, "jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder"));
         // FIXME MPSModuleRepo --> get SRepo by project
         SNode node = ((MPSPsiNode) element).getSNodeReference().resolve(MPSModuleRepository.getInstance());
 
