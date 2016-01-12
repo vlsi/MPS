@@ -16,8 +16,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.workbench.action.BaseAction;
-import java.util.Map;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class HistoryConsoleTab extends BaseConsoleTab {
 
@@ -54,11 +53,11 @@ public class HistoryConsoleTab extends BaseConsoleTab {
     });
   }
 
-  private class CloseAction extends BaseAction {
+  private class CloseAction extends AnAction {
     public CloseAction() {
       super("Close", "Close tab", AllIcons.Actions.Cancel);
     }
-    protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
+    public void actionPerformed(AnActionEvent event) {
       myTool.closeTab(HistoryConsoleTab.this);
     }
   }

@@ -23,6 +23,7 @@ import jetbrains.mps.ide.undo.MPSUndoUtil;
 
 public class ConsoleFileEditor implements DocumentsEditor {
   private EditorComponent myEditor;
+  private boolean myDisposed = false;
 
   private static class MyFileEditorState implements FileEditorState {
     private Object memento;
@@ -74,13 +75,15 @@ public class ConsoleFileEditor implements DocumentsEditor {
   }
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    final Wrappers._T<ConsoleFileEditor.MyFileEditorState> result = new Wrappers._T<ConsoleFileEditor.MyFileEditorState>();
-    myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        result.value = new ConsoleFileEditor.MyFileEditorState(myEditor.getEditorContext().createMemento());
-      }
-    });
-    return result.value;
+    final Wrappers._T<Object> memento = new Wrappers._T<Object>(null);
+    if (!(myDisposed)) {
+      myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          memento.value = myEditor.getEditorContext().createMemento();
+        }
+      });
+    }
+    return new ConsoleFileEditor.MyFileEditorState(memento.value);
   }
   public void setState(@NotNull final FileEditorState state) {
     if (state instanceof ConsoleFileEditor.MyFileEditorState) {
@@ -125,8 +128,12 @@ public class ConsoleFileEditor implements DocumentsEditor {
   public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
   }
   public void dispose() {
+    myDisposed = true;
   }
   public Document[] getDocuments() {
+    if (myDisposed) {
+      return new Document[0];
+    }
     final MPSNodeVirtualFile[] virtualFile = new MPSNodeVirtualFile[1];
     myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
