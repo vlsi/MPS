@@ -26,8 +26,8 @@ public class UsesPlatformCheckbox_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7xa7wl_a");
     editorCell.setBig(true);
-    Checkbox_Actions_7xa7wl_a.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_7xa7wl_a());
+    Checkbox_ActionMap_5.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_5());
     editorCell.addEditorCell(this.createAlternation_7xa7wl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7xa7wl_b0(editorContext, node));
     return editorCell;

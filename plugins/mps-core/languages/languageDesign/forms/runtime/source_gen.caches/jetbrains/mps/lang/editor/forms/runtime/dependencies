@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.forms.runtime.AbstractToggleCheckboxAction" file="AbstractToggleCheckboxAction.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" file="SaveSelectionForCheckbox.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator" />

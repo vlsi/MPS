@@ -10,10 +10,16 @@ import jetbrains.mps.nodeEditor.selectionRestoring.ChildCellLocator;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellIdLocator;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
 
+/**
+ * 
+ * @deprecated AbstractToggleCheckboxAction was created & used by generated code starting from now. This class will be removed after MPS 3.3
+ */
+@Deprecated
 public abstract class SaveSelectionForCheckbox {
   private static final int EXPECTED_CHILD_INDEX = 0;
   protected final EditorCell mySelectedCell;
 
+  @Deprecated
   public SaveSelectionForCheckbox(EditorCell selectedCell) {
     mySelectedCell = selectedCell;
   }
