@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
 /**
  * Will be removed after 3.3
@@ -12,6 +13,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public class CellModel_Error_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
+  public boolean virtual_canBeUsedAsEmptyCell_7922979826015777738(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
     return null;
   }

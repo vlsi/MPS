@@ -82,6 +82,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myDrawBorderStyleClassItem__BehaviorDescriptor = new DrawBorderStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myForegroundNullColorStyleClassItem__BehaviorDescriptor = new ForegroundNullColorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myCellModel_Indent__BehaviorDescriptor = new CellModel_Indent__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_BlockStart__BehaviorDescriptor = new CellModel_BlockStart__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_BlockEnd__BehaviorDescriptor = new CellModel_BlockEnd__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Block__BehaviorDescriptor = new CellModel_Block__BehaviorDescriptor();
   private final BHDescriptor myTextBackgroundColorStyleClassItem__BehaviorDescriptor = new TextBackgroundColorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor = new TextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myPaddingLeftStyleClassItem__BehaviorDescriptor = new PaddingLeftStyleClassItem__BehaviorDescriptor();
@@ -141,13 +144,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myScriptKindClassItem__BehaviorDescriptor = new ScriptKindClassItem__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Empty__BehaviorDescriptor = new CellModel_Empty__BehaviorDescriptor();
   private final BHDescriptor myCellModel_NextEditor__BehaviorDescriptor = new CellModel_NextEditor__BehaviorDescriptor();
   private final BHDescriptor mySynchronizeable__BehaviorDescriptor = new Synchronizeable__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[131];
+    myConceptBehaviorIds = new long[135];
     myConceptBehaviorIds[0] = 0xf9845363abL;
     myConceptBehaviorIds[1] = 0xf9eafb9a39L;
     myConceptBehaviorIds[2] = 0xf9eaff2517L;
@@ -218,67 +222,71 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[67] = 0x1143bd7dc37L;
     myConceptBehaviorIds[68] = 0x1146e20cfb3L;
     myConceptBehaviorIds[69] = 0x116fdad17a0L;
-    myConceptBehaviorIds[70] = 0x11ac043ee66L;
-    myConceptBehaviorIds[71] = 0x11ac0441c7eL;
-    myConceptBehaviorIds[72] = 0x11ae41cffc4L;
-    myConceptBehaviorIds[73] = 0x11ae41d378fL;
-    myConceptBehaviorIds[74] = 0x11ae8b76d40L;
-    myConceptBehaviorIds[75] = 0x11ae8b8b7d7L;
-    myConceptBehaviorIds[76] = 0x11b35f4f515L;
-    myConceptBehaviorIds[77] = 0x11b35f5eefdL;
-    myConceptBehaviorIds[78] = 0x11bdf8bf6bbL;
-    myConceptBehaviorIds[79] = 0x11beb039542L;
-    myConceptBehaviorIds[80] = 0x11c47c26987L;
-    myConceptBehaviorIds[81] = 0x11c4caca3eeL;
-    myConceptBehaviorIds[82] = 0x11c4cd1c73aL;
-    myConceptBehaviorIds[83] = 0x11c4d022befL;
-    myConceptBehaviorIds[84] = 0x11cd786e1a9L;
-    myConceptBehaviorIds[85] = 0x11cd78e1636L;
-    myConceptBehaviorIds[86] = 0x11d52e019f6L;
-    myConceptBehaviorIds[87] = 0x11d52e2b1a0L;
-    myConceptBehaviorIds[88] = 0x11d6d56c00cL;
-    myConceptBehaviorIds[89] = 0x11d878b980aL;
-    myConceptBehaviorIds[90] = 0x11d878c87bcL;
-    myConceptBehaviorIds[91] = 0x11d878e7095L;
-    myConceptBehaviorIds[92] = 0x11f41c44bf7L;
-    myConceptBehaviorIds[93] = 0x11f41c727e1L;
-    myConceptBehaviorIds[94] = 0x11fb7279917L;
-    myConceptBehaviorIds[95] = 0x11fe1c8b36cL;
-    myConceptBehaviorIds[96] = 0x120154c4089L;
-    myConceptBehaviorIds[97] = 0x120154df6f3L;
-    myConceptBehaviorIds[98] = 0x120194c6bfdL;
-    myConceptBehaviorIds[99] = 0x12019ed89beL;
-    myConceptBehaviorIds[100] = 0x120c4d9abaeL;
-    myConceptBehaviorIds[101] = 0x3e34c38c0ad5587L;
-    myConceptBehaviorIds[102] = 0x3e34c38c0b28cacL;
-    myConceptBehaviorIds[103] = 0x950e7629b27d75eL;
-    myConceptBehaviorIds[104] = 0x950e7629b27d763L;
-    myConceptBehaviorIds[105] = 0x9da6a4591fc7fb5L;
-    myConceptBehaviorIds[106] = 0xb09275c2ae83bcdL;
-    myConceptBehaviorIds[107] = 0x2de97a3d3b88abfaL;
-    myConceptBehaviorIds[108] = 0x2ef3b3796a0b8287L;
-    myConceptBehaviorIds[109] = 0x2ef3b3796a126f24L;
-    myConceptBehaviorIds[110] = 0x3001698d23c1e791L;
-    myConceptBehaviorIds[111] = 0x30eb862d8702cebfL;
-    myConceptBehaviorIds[112] = 0x329d4406465c63a0L;
-    myConceptBehaviorIds[113] = 0x334adf8cb15f3fdeL;
-    myConceptBehaviorIds[114] = 0x3744c0f9ea5367ebL;
-    myConceptBehaviorIds[115] = 0x3744c0f9eb0a02a3L;
-    myConceptBehaviorIds[116] = 0x399cb6c68aa9aeaaL;
-    myConceptBehaviorIds[117] = 0x3ed01d37608fe0afL;
-    myConceptBehaviorIds[118] = 0x3ee423fc2ad10eceL;
-    myConceptBehaviorIds[119] = 0x511249404d287d9dL;
-    myConceptBehaviorIds[120] = 0x527faacef50d095eL;
-    myConceptBehaviorIds[121] = 0x555cb285f801e1a1L;
-    myConceptBehaviorIds[122] = 0x5917043ba8fab771L;
-    myConceptBehaviorIds[123] = 0x696ed29ebd7c142bL;
-    myConceptBehaviorIds[124] = 0x69c06896a0e42a51L;
-    myConceptBehaviorIds[125] = 0x6a67a319ce06ae0fL;
-    myConceptBehaviorIds[126] = 0x6a692c170d1b09d8L;
-    myConceptBehaviorIds[127] = 0x6a692c170d1d584eL;
-    myConceptBehaviorIds[128] = 0x72908ac6c78618c8L;
-    myConceptBehaviorIds[129] = 0x7456aec153c7f5a2L;
-    myConceptBehaviorIds[130] = 0x79b75ced2c4a134dL;
+    myConceptBehaviorIds[70] = 0x116fdb876c6L;
+    myConceptBehaviorIds[71] = 0x116fdba37cdL;
+    myConceptBehaviorIds[72] = 0x1170b90f356L;
+    myConceptBehaviorIds[73] = 0x11ac043ee66L;
+    myConceptBehaviorIds[74] = 0x11ac0441c7eL;
+    myConceptBehaviorIds[75] = 0x11ae41cffc4L;
+    myConceptBehaviorIds[76] = 0x11ae41d378fL;
+    myConceptBehaviorIds[77] = 0x11ae8b76d40L;
+    myConceptBehaviorIds[78] = 0x11ae8b8b7d7L;
+    myConceptBehaviorIds[79] = 0x11b35f4f515L;
+    myConceptBehaviorIds[80] = 0x11b35f5eefdL;
+    myConceptBehaviorIds[81] = 0x11bdf8bf6bbL;
+    myConceptBehaviorIds[82] = 0x11beb039542L;
+    myConceptBehaviorIds[83] = 0x11c47c26987L;
+    myConceptBehaviorIds[84] = 0x11c4caca3eeL;
+    myConceptBehaviorIds[85] = 0x11c4cd1c73aL;
+    myConceptBehaviorIds[86] = 0x11c4d022befL;
+    myConceptBehaviorIds[87] = 0x11cd786e1a9L;
+    myConceptBehaviorIds[88] = 0x11cd78e1636L;
+    myConceptBehaviorIds[89] = 0x11d52e019f6L;
+    myConceptBehaviorIds[90] = 0x11d52e2b1a0L;
+    myConceptBehaviorIds[91] = 0x11d6d56c00cL;
+    myConceptBehaviorIds[92] = 0x11d878b980aL;
+    myConceptBehaviorIds[93] = 0x11d878c87bcL;
+    myConceptBehaviorIds[94] = 0x11d878e7095L;
+    myConceptBehaviorIds[95] = 0x11f41c44bf7L;
+    myConceptBehaviorIds[96] = 0x11f41c727e1L;
+    myConceptBehaviorIds[97] = 0x11fb7279917L;
+    myConceptBehaviorIds[98] = 0x11fe1c8b36cL;
+    myConceptBehaviorIds[99] = 0x120154c4089L;
+    myConceptBehaviorIds[100] = 0x120154df6f3L;
+    myConceptBehaviorIds[101] = 0x120194c6bfdL;
+    myConceptBehaviorIds[102] = 0x12019ed89beL;
+    myConceptBehaviorIds[103] = 0x120c4d9abaeL;
+    myConceptBehaviorIds[104] = 0x3e34c38c0ad5587L;
+    myConceptBehaviorIds[105] = 0x3e34c38c0b28cacL;
+    myConceptBehaviorIds[106] = 0x950e7629b27d75eL;
+    myConceptBehaviorIds[107] = 0x950e7629b27d763L;
+    myConceptBehaviorIds[108] = 0x9da6a4591fc7fb5L;
+    myConceptBehaviorIds[109] = 0xb09275c2ae83bcdL;
+    myConceptBehaviorIds[110] = 0x2de97a3d3b88abfaL;
+    myConceptBehaviorIds[111] = 0x2ef3b3796a0b8287L;
+    myConceptBehaviorIds[112] = 0x2ef3b3796a126f24L;
+    myConceptBehaviorIds[113] = 0x3001698d23c1e791L;
+    myConceptBehaviorIds[114] = 0x30eb862d8702cebfL;
+    myConceptBehaviorIds[115] = 0x329d4406465c63a0L;
+    myConceptBehaviorIds[116] = 0x334adf8cb15f3fdeL;
+    myConceptBehaviorIds[117] = 0x3744c0f9ea5367ebL;
+    myConceptBehaviorIds[118] = 0x3744c0f9eb0a02a3L;
+    myConceptBehaviorIds[119] = 0x399cb6c68aa9aeaaL;
+    myConceptBehaviorIds[120] = 0x3ed01d37608fe0afL;
+    myConceptBehaviorIds[121] = 0x3ee423fc2ad10eceL;
+    myConceptBehaviorIds[122] = 0x511249404d287d9dL;
+    myConceptBehaviorIds[123] = 0x527faacef50d095eL;
+    myConceptBehaviorIds[124] = 0x555cb285f801e1a1L;
+    myConceptBehaviorIds[125] = 0x5917043ba8fab771L;
+    myConceptBehaviorIds[126] = 0x696ed29ebd7c142bL;
+    myConceptBehaviorIds[127] = 0x69c06896a0e42a51L;
+    myConceptBehaviorIds[128] = 0x6a67a319ce06ae0fL;
+    myConceptBehaviorIds[129] = 0x6a692c170d1b09d8L;
+    myConceptBehaviorIds[130] = 0x6a692c170d1d584eL;
+    myConceptBehaviorIds[131] = 0x72908ac6c78618c8L;
+    myConceptBehaviorIds[132] = 0x73604585b6d5c973L;
+    myConceptBehaviorIds[133] = 0x7456aec153c7f5a2L;
+    myConceptBehaviorIds[134] = 0x79b75ced2c4a134dL;
   }
 
   @Deprecated
@@ -433,126 +441,134 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 69:
         return myCellModel_Indent__BehaviorDescriptor;
       case 70:
-        return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
+        return myCellModel_BlockStart__BehaviorDescriptor;
       case 71:
-        return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
+        return myCellModel_BlockEnd__BehaviorDescriptor;
       case 72:
-        return myPaddingLeftStyleClassItem__BehaviorDescriptor;
+        return myCellModel_Block__BehaviorDescriptor;
       case 73:
-        return myPaddingRightStyleClassItem__BehaviorDescriptor;
+        return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
       case 74:
-        return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
+        return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
       case 75:
-        return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
+        return myPaddingLeftStyleClassItem__BehaviorDescriptor;
       case 76:
-        return myCellModel_TransactionalProperty__BehaviorDescriptor;
+        return myPaddingRightStyleClassItem__BehaviorDescriptor;
       case 77:
-        return myTransactionalPropertyHandler__BehaviorDescriptor;
+        return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
       case 78:
-        return myDrawBracketsStyleClassItem__BehaviorDescriptor;
+        return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
       case 79:
-        return myIStyleContainer__BehaviorDescriptor;
+        return myCellModel_TransactionalProperty__BehaviorDescriptor;
       case 80:
-        return myQueryFunction_FontStyle__BehaviorDescriptor;
+        return myTransactionalPropertyHandler__BehaviorDescriptor;
       case 81:
-        return myQueryFunction_Integer__BehaviorDescriptor;
+        return myDrawBracketsStyleClassItem__BehaviorDescriptor;
       case 82:
-        return myQueryFunction_StyleParameter__BehaviorDescriptor;
+        return myIStyleContainer__BehaviorDescriptor;
       case 83:
-        return myQueryFunction_Underlined__BehaviorDescriptor;
+        return myQueryFunction_FontStyle__BehaviorDescriptor;
       case 84:
-        return myStrikeOutStyleSheet__BehaviorDescriptor;
+        return myQueryFunction_Integer__BehaviorDescriptor;
       case 85:
-        return myQueryFunction_Boolean__BehaviorDescriptor;
+        return myQueryFunction_StyleParameter__BehaviorDescriptor;
       case 86:
-        return myIQueryFunction_Color__BehaviorDescriptor;
+        return myQueryFunction_Underlined__BehaviorDescriptor;
       case 87:
-        return myRGBColor__BehaviorDescriptor;
+        return myStrikeOutStyleSheet__BehaviorDescriptor;
       case 88:
-        return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
+        return myQueryFunction_Boolean__BehaviorDescriptor;
       case 89:
-        return myPaddingTopStyleClassItem__BehaviorDescriptor;
+        return myIQueryFunction_Color__BehaviorDescriptor;
       case 90:
-        return myPaddingBottomStyleClassItem__BehaviorDescriptor;
+        return myRGBColor__BehaviorDescriptor;
       case 91:
-        return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
+        return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
       case 92:
-        return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
+        return myPaddingTopStyleClassItem__BehaviorDescriptor;
       case 93:
-        return myPunctuationRightStyleClassItem__BehaviorDescriptor;
+        return myPaddingBottomStyleClassItem__BehaviorDescriptor;
       case 94:
-        return myBaseLineCell__BehaviorDescriptor;
+        return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
       case 95:
-        return myQueryFunction_String__BehaviorDescriptor;
+        return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
       case 96:
-        return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
+        return myPunctuationRightStyleClassItem__BehaviorDescriptor;
       case 97:
-        return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
+        return myBaseLineCell__BehaviorDescriptor;
       case 98:
-        return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
+        return myQueryFunction_String__BehaviorDescriptor;
       case 99:
-        return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
+        return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
       case 100:
-        return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
+        return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
       case 101:
-        return myAppendTextOperation__BehaviorDescriptor;
+        return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
       case 102:
-        return mySetBoldOperation__BehaviorDescriptor;
+        return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
       case 103:
-        return myQueryFunction_MethodPresentation__BehaviorDescriptor;
+        return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
       case 104:
-        return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
+        return myAppendTextOperation__BehaviorDescriptor;
       case 105:
-        return myQueryFunction_SeparatorText__BehaviorDescriptor;
+        return mySetBoldOperation__BehaviorDescriptor;
       case 106:
-        return myReadOnlyStyleClassItem__BehaviorDescriptor;
+        return myQueryFunction_MethodPresentation__BehaviorDescriptor;
       case 107:
-        return myQueryFunction_ColorComposit__BehaviorDescriptor;
+        return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
       case 108:
-        return myIStyleSheetMember__BehaviorDescriptor;
+        return myQueryFunction_SeparatorText__BehaviorDescriptor;
       case 109:
-        return myStyleClass__BehaviorDescriptor;
+        return myReadOnlyStyleClassItem__BehaviorDescriptor;
       case 110:
-        return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
+        return myQueryFunction_ColorComposit__BehaviorDescriptor;
       case 111:
-        return myQueryFunction_Style__BehaviorDescriptor;
+        return myIStyleSheetMember__BehaviorDescriptor;
       case 112:
-        return mySelectInEditorOperation__BehaviorDescriptor;
+        return myStyleClass__BehaviorDescriptor;
       case 113:
-        return myCellModel_URL__BehaviorDescriptor;
+        return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
       case 114:
-        return myStyleAttributeDeclaration__BehaviorDescriptor;
+        return myQueryFunction_Style__BehaviorDescriptor;
       case 115:
-        return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
+        return mySelectInEditorOperation__BehaviorDescriptor;
       case 116:
-        return myStyleKey__BehaviorDescriptor;
+        return myCellModel_URL__BehaviorDescriptor;
       case 117:
-        return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
+        return myStyleAttributeDeclaration__BehaviorDescriptor;
       case 118:
-        return myAbstractStyledTextOperation__BehaviorDescriptor;
+        return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
       case 119:
-        return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
+        return myStyleKey__BehaviorDescriptor;
       case 120:
-        return myConceptEditorHintDeclaration__BehaviorDescriptor;
+        return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
       case 121:
-        return myQueryHintsSpecification__BehaviorDescriptor;
+        return myAbstractStyledTextOperation__BehaviorDescriptor;
       case 122:
-        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
+        return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
       case 123:
-        return myQueryFunction_SNode__BehaviorDescriptor;
+        return myConceptEditorHintDeclaration__BehaviorDescriptor;
       case 124:
-        return myDefaultBaseLine__BehaviorDescriptor;
+        return myQueryHintsSpecification__BehaviorDescriptor;
       case 125:
-        return myQueryFunction_ParametersList__BehaviorDescriptor;
+        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
       case 126:
-        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
+        return myQueryFunction_SNode__BehaviorDescriptor;
       case 127:
-        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
+        return myDefaultBaseLine__BehaviorDescriptor;
       case 128:
-        return myScriptKindClassItem__BehaviorDescriptor;
+        return myQueryFunction_ParametersList__BehaviorDescriptor;
       case 129:
-        return myCellModel_NextEditor__BehaviorDescriptor;
+        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
       case 130:
+        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
+      case 131:
+        return myScriptKindClassItem__BehaviorDescriptor;
+      case 132:
+        return myCellModel_Empty__BehaviorDescriptor;
+      case 133:
+        return myCellModel_NextEditor__BehaviorDescriptor;
+      case 134:
         return mySynchronizeable__BehaviorDescriptor;
       default:
         return null;

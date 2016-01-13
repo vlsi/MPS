@@ -28,8 +28,9 @@ public final class CellModel_Constant__BehaviorDescriptor extends BaseBHDescript
   public static final SMethod<Integer> getDefaultFontStyle_idhL_r0Mx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getDefaultFontStyle").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("hL_r0Mx").registry(REGISTRY).build();
   public static final SMethod<Boolean> canBeSynchronized_id3wXm3h1AYM7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeSynchronized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wXm3h1AYM7").registry(REGISTRY).build();
   public static final SMethod<Boolean> shellBeSynchronized_id3TPTV99_TMT = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("shellBeSynchronized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3TPTV99_TMT").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultFontStyle_idhL_r0Mx, canBeSynchronized_id3wXm3h1AYM7, shellBeSynchronized_id3TPTV99_TMT);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultFontStyle_idhL_r0Mx, canBeSynchronized_id3wXm3h1AYM7, shellBeSynchronized_id3TPTV99_TMT, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -42,6 +43,9 @@ public final class CellModel_Constant__BehaviorDescriptor extends BaseBHDescript
   }
   /*package*/ static boolean shellBeSynchronized_id3TPTV99_TMT(@NotNull SNode __thisNode__) {
     return false;
+  }
+  /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
+    return true;
   }
 
   /*package*/ CellModel_Constant__BehaviorDescriptor() {
@@ -66,6 +70,8 @@ public final class CellModel_Constant__BehaviorDescriptor extends BaseBHDescript
         return (T) ((Boolean) canBeSynchronized_id3wXm3h1AYM7(node));
       case 2:
         return (T) ((Boolean) shellBeSynchronized_id3TPTV99_TMT(node));
+      case 3:
+        return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
