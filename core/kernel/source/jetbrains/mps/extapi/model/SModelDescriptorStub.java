@@ -256,6 +256,16 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
+  public int getLanguageVersion(SLanguage lang) {
+    Integer res = getSModel().usedLanguagesWithVersions().get(lang);
+    if (res == null) {
+      LOG.error("Model " + getModelName() + ": version for language " + lang.getQualifiedName() + " not found. Using last version instead");
+      return lang.getLanguageVersion();
+    }
+    return res;
+  }
+
+  @Override
   public void addLanguageId(SLanguage ref, int version) {
     getSModelInternal().addLanguage(ref, version);
     validateModuleLanguageVersions();
