@@ -18,7 +18,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -78,7 +77,7 @@ public class Diff_Facet extends IFacet.Stub {
               if (vars(pa.global()).fileToPath() != null) {
                 monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
                 for (TResource tgres : Sequence.fromIterable(input)) {
-                  String fqn = SModelStereotype.withoutStereotype(tgres.modelDescriptor().getReference().getModelName());
+                  String fqn = tgres.modelDescriptor().getName().getLongName();
                   monitor.currentProgress().advanceWork("Diffing", 1, fqn);
                   DeltaReconciler dr = new DeltaReconciler(tgres.delta());
                   final Set<String> retainedPaths = SetSequence.fromSet(new HashSet<String>());

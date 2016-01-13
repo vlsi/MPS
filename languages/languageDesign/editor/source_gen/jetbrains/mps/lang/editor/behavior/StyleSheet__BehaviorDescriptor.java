@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -36,9 +36,9 @@ public final class StyleSheet__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getClassFqName_idhEwJfl1(@NotNull SNode __thisNode__) {
-    String namespace = SModelStereotype.withoutStereotype(SNodeOperations.getModel(__thisNode__).getReference().getModelName());
+    String namespace = SModelOperations.getModelName(SNodeOperations.getModel(__thisNode__));
     if (namespace.length() > 0) {
-      namespace = namespace + ".";
+      namespace = namespace + '.';
     }
     return namespace + StyleSheet__BehaviorDescriptor.getClassName_idhEwJfly.invoke(__thisNode__);
   }

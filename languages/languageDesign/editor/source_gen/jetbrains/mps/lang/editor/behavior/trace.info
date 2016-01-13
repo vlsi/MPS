@@ -3001,7 +3001,7 @@
       <node id="1213877515584" at="30,0,31,0" concept="15" trace="getClassFqName_idhEwJfl1" />
       <node id="1213877515584" at="31,0,32,0" concept="15" trace="getClassName_idhEwJfly" />
       <node id="1213877515584" at="33,0,34,0" concept="15" trace="BH_METHODS" />
-      <node id="1213877515588" at="38,83,39,128" concept="11" />
+      <node id="1213877515588" at="38,83,39,93" concept="11" />
       <node id="1213877515601" at="40,33,41,34" concept="5" />
       <node id="1213877515612" at="42,5,43,98" concept="12" />
       <node id="1213877515621" at="45,81,46,185" concept="12" />
@@ -3018,7 +3018,7 @@
       <node id="1213877515584" at="88,48,89,22" concept="12" />
       <node id="1213877515584" at="94,40,95,19" concept="12" />
       <node id="1213877515584" at="35,0,37,0" concept="16" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877515599" at="39,128,42,5" concept="9" />
+      <node id="1213877515599" at="39,93,42,5" concept="9" />
       <node id="1213877515584" at="45,0,48,0" concept="16" trace="getClassName_idhEwJfly#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1213877515584" at="49,0,52,0" concept="3" trace="StyleSheet__BehaviorDescriptor#()V" />
       <node id="1213877515584" at="60,49,63,5" concept="9" />

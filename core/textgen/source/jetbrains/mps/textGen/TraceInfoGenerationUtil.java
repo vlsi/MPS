@@ -137,7 +137,7 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void warnIfUnitNameInvalid(String unitName, SNode node) {
-    String longName = SModelStereotype.withoutStereotype(node.getModel().getReference().getModelName());
+    String longName = node.getModel().getName().getLongName();
     if (!(unitName.startsWith(longName))) {
       LOG.warning("Unit name has to start with model fqName. Fix " + unitName + " in " + longName + ".", node);
     } else if (unitName.length() <= longName.length() + 1 || !(unitName.substring(longName.length()).startsWith(".")) || unitName.substring(longName.length()+1).contains(".")) {

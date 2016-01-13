@@ -14462,23 +14462,24 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="6m8$_ve9rLV" role="3clFbw">
-                <node concept="2YIFZM" id="6m8$_ve9rgz" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <node concept="2OqwBi" id="6m8$_ve9rxq" role="37wK5m">
-                    <node concept="37vLTw" id="6m8$_ve9rrn" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6m8$_ve9ndG" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="6m8$_ve9rFs" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
-                    </node>
-                  </node>
+              <node concept="2OqwBi" id="6cEFRXIwB1c" role="3clFbw">
+                <node concept="37vLTw" id="6cEFRXIwAhl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4TtYrYGuWjq" resolve="fqName" />
                 </node>
-                <node concept="liA8E" id="6m8$_ve9shV" role="2OqNvi">
+                <node concept="liA8E" id="6cEFRXIwC13" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="37vLTw" id="6m8$_ve9srG" role="37wK5m">
-                    <ref role="3cqZAo" node="4TtYrYGuWjq" resolve="fqName" />
+                  <node concept="2OqwBi" id="6cEFRXIwCnZ" role="37wK5m">
+                    <node concept="2OqwBi" id="6cEFRXIwCkR" role="2Oq$k0">
+                      <node concept="37vLTw" id="6cEFRXIwCfO" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6m8$_ve9ndG" resolve="model" />
+                      </node>
+                      <node concept="liA8E" id="6cEFRXIwCmN" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6cEFRXIwCqK" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
+                    </node>
                   </node>
                 </node>
               </node>

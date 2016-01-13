@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 
@@ -23,7 +22,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     setToggleClickCount(-1);
     setNodeIdentifier(((SNodePointer) myTestCase.getNodePointer()).toString());
     setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    setAdditionalText(SModelStereotype.withoutStereotype(myTestCase.getNodePointer().getModelReference().getModelName()));
+    setAdditionalText(myTestCase.getNodePointer().getModelReference().getName().getLongName());
   }
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);

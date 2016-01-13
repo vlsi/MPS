@@ -2730,7 +2730,9 @@
     </node>
     <node concept="312cEg" id="2TzypFyLJdS" role="jymVt">
       <property role="TrG5h" value="myModelName" />
-      <node concept="17QB3L" id="2JwJPkdAKLD" role="1tU5fm" />
+      <node concept="3uibUv" id="6OOlWTkvCwC" role="1tU5fm">
+        <ref role="3uigEE" to="mhbf:~SModelName" resolve="SModelName" />
+      </node>
       <node concept="3Tm6S6" id="2TzypFyLJdT" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="7zbsrrwelkx" role="jymVt">
@@ -3019,7 +3021,7 @@
           <node concept="37vLTI" id="2TzypFyLJeS" role="3clFbG">
             <node concept="2OqwBi" id="2n9zn0CqMZ1" role="37vLTx">
               <node concept="liA8E" id="2n9zn0CqMZ2" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
               </node>
               <node concept="37vLTw" id="3GM_nagTx_0" role="2Oq$k0">
                 <ref role="3cqZAo" node="2TzypFyLJey" resolve="baseModel" />

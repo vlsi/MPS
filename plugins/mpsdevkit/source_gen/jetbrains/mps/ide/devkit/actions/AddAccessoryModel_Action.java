@@ -27,7 +27,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
@@ -107,7 +106,7 @@ public class AddAccessoryModel_Action extends BaseAction {
     });
     final boolean importModuleDependency;
     if (!(visibleFromModule.value)) {
-      int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + SModelStereotype.withoutStereotype(result.getModelName()) + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
+      int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + result.getName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
       importModuleDependency = res == JOptionPane.YES_OPTION;
     } else {
       importModuleDependency = false;

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -167,7 +166,7 @@ public class DirParser {
   }
   private SModel registerModelForPackage(String fqName) {
     for (SModel model : myModule.getModels()) {
-      if (SModelStereotype.withoutStereotype(model.getModelName()).equals(fqName)) {
+      if (fqName.equals(model.getName().getLongName())) {
         // package is already present... 
         // maybe we shouldn't touch it then, maybe it should be an option 
         return model;

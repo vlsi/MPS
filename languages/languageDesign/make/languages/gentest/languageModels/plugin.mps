@@ -501,30 +501,26 @@
                     <node concept="3cpWs8" id="3dHZFFulcmX" role="3cqZAp">
                       <node concept="3cpWsn" id="3dHZFFulcmY" role="3cpWs9">
                         <property role="TrG5h" value="fqn" />
-                        <node concept="2YIFZM" id="4DcpLEzkIX" role="33vP2m">
-                          <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                          <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                          <node concept="2OqwBi" id="4DcpLEzkIY" role="37wK5m">
-                            <node concept="liA8E" id="4DcpLEzkIZ" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
-                            </node>
-                            <node concept="2OqwBi" id="4DcpLEzkJ0" role="2Oq$k0">
-                              <node concept="liA8E" id="4DcpLEzkJ1" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                              </node>
-                              <node concept="2OqwBi" id="4DcpLEzkJ2" role="2Oq$k0">
-                                <node concept="2GrUjf" id="4DcpLEzkJ3" role="2Oq$k0">
-                                  <ref role="2Gs0qQ" node="4g8ToP4EII8" resolve="tgres" />
-                                </node>
-                                <node concept="2sxana" id="4DcpLEzkJ4" role="2OqNvi">
-                                  <ref role="2sxfKC" to="fn29:44ybjD5JWZk" resolve="modelDescriptor" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                         <node concept="3uibUv" id="3dHZFFulcmZ" role="1tU5fm">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                        </node>
+                        <node concept="2OqwBi" id="6cEFRXIGQkM" role="33vP2m">
+                          <node concept="2OqwBi" id="6cEFRXIGPEy" role="2Oq$k0">
+                            <node concept="2OqwBi" id="4DcpLEzkJ2" role="2Oq$k0">
+                              <node concept="2GrUjf" id="4DcpLEzkJ3" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="4g8ToP4EII8" resolve="tgres" />
+                              </node>
+                              <node concept="2sxana" id="4DcpLEzkJ4" role="2OqNvi">
+                                <ref role="2sxfKC" to="fn29:44ybjD5JWZk" resolve="modelDescriptor" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="6cEFRXIGQ0Q" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="6cEFRXIGQEp" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
+                          </node>
                         </node>
                       </node>
                     </node>

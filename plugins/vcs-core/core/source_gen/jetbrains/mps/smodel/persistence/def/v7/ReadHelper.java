@@ -14,7 +14,6 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.persistence.LightModelEnvironmentInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -103,7 +102,7 @@ public class ReadHelper {
       }
       return s.substring(ix + 1);
     } else {
-      return SModelStereotype.withoutStereotype(modelRef.getModelName()) + "." + s.substring(ix + 1);
+      return modelRef.getName().getLongName() + '.' + s.substring(ix + 1);
     }
   }
   public String readRole(String s) {

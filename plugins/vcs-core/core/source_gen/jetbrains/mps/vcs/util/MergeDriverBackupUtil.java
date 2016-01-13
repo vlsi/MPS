@@ -4,9 +4,8 @@ package jetbrains.mps.vcs.util;
 
 import java.io.File;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelName;
 import java.io.IOException;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
@@ -18,16 +17,16 @@ public class MergeDriverBackupUtil {
   public MergeDriverBackupUtil() {
     // Used in MergeProviderDecorator 
   }
-  public static File zipModel(byte[][] contents, @Nullable String modelName) throws IOException {
+  public static File zipModel(byte[][] contents, @Nullable SModelName modelName) throws IOException {
     String shortFileName = "unknown.mps";
     if (modelName != null) {
-      shortFileName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelName)) + MPSExtentions.DOT_MODEL;
+      shortFileName = modelName.getSimpleName() + MPSExtentions.DOT_MODEL;
     }
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[MergeConstants.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[MergeConstants.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[MergeConstants.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelLongName("unknown.mps", modelName);
+    File zipfile = chooseZipFileForModelLongName("unknown.mps", modelName.getLongName());
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);

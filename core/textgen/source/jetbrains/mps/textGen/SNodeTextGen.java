@@ -16,7 +16,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.util.SNodeOperations;
@@ -220,7 +219,7 @@ public abstract class SNodeTextGen {
       } else {
         final SModelReference modelReference = reference.getTargetSModelReference();
         if (modelReference != null) {
-          packageName = SModelStereotype.withoutStereotype(modelReference.getModelName());
+          packageName = modelReference.getName().getLongName();
         } else {
           int lastDot = shortName.lastIndexOf('.');
           if (lastDot >= 0) {
@@ -239,7 +238,7 @@ public abstract class SNodeTextGen {
         return "???";
       }
       shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
-      packageName = SModelStereotype.withoutStereotype(targetNode.getModel().getReference().getModelName());
+      packageName = targetNode.getModel().getName().getLongName();
     }
     if (uniq) {
       // todo: uniq, wtf?

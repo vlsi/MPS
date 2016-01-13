@@ -19,6 +19,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -103,7 +104,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       return false;
     }
     if (isClassifier) {
-      String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      String fqName = SModelOperations.getModelName(SNodeOperations.getModel(targetNode)) + '.' + SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, fqName)) {
           return true;
@@ -140,7 +141,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     assert classifier != null;
-    return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return ref.getName().getLongName() + '.' + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   private static String check_ygbrs1_a0c0a(File checkedDotOperand) {
     if (null != checkedDotOperand) {

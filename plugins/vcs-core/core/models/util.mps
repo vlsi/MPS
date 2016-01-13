@@ -212,7 +212,9 @@
       <node concept="37vLTG" id="341WClvYwgm" role="3clF46">
         <property role="TrG5h" value="modelName" />
         <property role="3TUv4t" value="false" />
-        <node concept="17QB3L" id="1nBtCnDGbbd" role="1tU5fm" />
+        <node concept="3uibUv" id="6OOlWTkvEP2" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModelName" resolve="SModelName" />
+        </node>
         <node concept="2AHcQZ" id="341WClvYwgo" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
         </node>
@@ -242,15 +244,12 @@
                   <ref role="3cqZAo" node="341WClvYwgr" resolve="shortFileName" />
                 </node>
                 <node concept="3cpWs3" id="341WClvYwgA" role="37vLTx">
-                  <node concept="2YIFZM" id="341WClvYwgB" role="3uHU7B">
-                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                    <ref role="37wK5l" to="18ew:~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolve="shortNameFromLongName" />
-                    <node concept="2YIFZM" id="1nBtCnDF2Wn" role="37wK5m">
-                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                      <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                      <node concept="37vLTw" id="1nBtCnDF3d5" role="37wK5m">
-                        <ref role="3cqZAo" node="341WClvYwgm" resolve="modelName" />
-                      </node>
+                  <node concept="2OqwBi" id="6OOlWTkvFn2" role="3uHU7B">
+                    <node concept="37vLTw" id="6OOlWTkvFlg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="341WClvYwgm" resolve="modelName" />
+                    </node>
+                    <node concept="liA8E" id="6OOlWTkvFpq" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModelName.getSimpleName():java.lang.String" resolve="getSimpleName" />
                     </node>
                   </node>
                   <node concept="10M0yZ" id="341WClvYwgF" role="3uHU7w">
@@ -374,8 +373,13 @@
               <node concept="Xl_RD" id="341WClvYwhi" role="37wK5m">
                 <property role="Xl_RC" value="unknown.mps" />
               </node>
-              <node concept="37vLTw" id="1nBtCnDF7ua" role="37wK5m">
-                <ref role="3cqZAo" node="341WClvYwgm" resolve="modelName" />
+              <node concept="2OqwBi" id="6OOlWTkvT6t" role="37wK5m">
+                <node concept="37vLTw" id="1nBtCnDF7ua" role="2Oq$k0">
+                  <ref role="3cqZAo" node="341WClvYwgm" resolve="modelName" />
+                </node>
+                <node concept="liA8E" id="6OOlWTkvTfZ" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
+                </node>
               </node>
             </node>
           </node>

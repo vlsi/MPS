@@ -30,8 +30,7 @@ public class AspectMethodsFinder implements IFinder {
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
     final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
     for (SModel model : query.getScope().getModels()) {
-      String modelName = model.getModelName();
-      if (data.myModelName.equals(SModelStereotype.withoutStereotype(modelName)) && !(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelName)))) {
+      if (data.myModelName.equals(model.getName().getLongName()) && !(SModelStereotype.isStubModel(model))) {
         applicableModelDescriptors.add(model);
       }
     }

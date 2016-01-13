@@ -274,26 +274,26 @@
     <file name="RenameModelDialog.java">
       <node id="64647105392047600" at="14,0,15,0" concept="3" trace="myProject" />
       <node id="2482360940803572000" at="15,0,16,0" concept="3" trace="myModelDescriptor" />
-      <node id="2325849581576423737" at="17,95,18,63" concept="13" />
-      <node id="64647105392052880" at="18,63,19,27" concept="2" />
+      <node id="2325849581576423737" at="17,95,18,69" concept="13" />
+      <node id="64647105392052880" at="18,69,19,27" concept="2" />
       <node id="2482360940803572024" at="19,27,20,27" concept="2" />
       <node id="2482360940803572032" at="20,27,21,29" concept="2" />
-      <node id="2325849581576430453" at="25,40,26,50" concept="7" />
-      <node id="2325849581576430468" at="27,86,28,62" concept="2" />
+      <node id="2325849581576430453" at="25,40,26,70" concept="7" />
+      <node id="2325849581576430468" at="27,64,28,62" concept="2" />
       <node id="2325849581576430471" at="28,62,29,13" concept="8" />
-      <node id="8474866949349193645" at="33,27,34,63" concept="2" />
+      <node id="8474866949349193645" at="33,27,34,74" concept="2" />
       <node id="2325849581576430445" at="37,5,38,32" concept="2" />
       <node id="8474866949349192963" at="33,0,36,0" concept="6" trace="run#()V" />
-      <node id="2325849581576430460" at="26,50,30,5" concept="5" />
-      <node id="8474866949349192961" at="31,69,36,9" concept="2" />
+      <node id="2325849581576430460" at="26,70,30,5" concept="5" />
+      <node id="8474866949349192961" at="31,64,36,9" concept="2" />
       <node id="2482360940803572006" at="17,0,23,0" concept="1" trace="RenameModelDialog#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/EditableSModel;)V" />
       <node id="2325849581576430472" at="30,5,37,5" concept="5" />
       <node id="2325849581576430440" at="24,0,40,0" concept="6" trace="doRefactoringAction#()V" />
-      <scope id="8474866949349192965" at="33,27,34,63" />
-      <scope id="2325849581576430467" at="27,86,29,13" />
+      <scope id="8474866949349192965" at="33,27,34,74" />
+      <scope id="2325849581576430467" at="27,64,29,13" />
       <scope id="8474866949349192963" at="33,0,36,0" />
       <scope id="2482360940803572017" at="17,95,21,29" />
-      <scope id="2325849581576430483" at="31,69,36,9" />
+      <scope id="2325849581576430483" at="31,64,36,9" />
       <scope id="2482360940803572006" at="17,0,23,0">
         <var name="mpsProject" id="64647105392034155" />
         <var name="sm" id="2482360940803572015" />

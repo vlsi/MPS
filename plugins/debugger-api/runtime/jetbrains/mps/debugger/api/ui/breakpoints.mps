@@ -3041,16 +3041,17 @@
         </node>
         <node concept="3clFbS" id="3SnNvqCbxDk" role="3clF47">
           <node concept="3cpWs6" id="3SnNvqCbxDl" role="3cqZAp">
-            <node concept="2YIFZM" id="4DcpLEzkG6" role="3cqZAk">
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <node concept="2OqwBi" id="4DcpLEzkG7" role="37wK5m">
-                <node concept="liA8E" id="4DcpLEzkG8" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmiYW" role="2Oq$k0">
+            <node concept="2OqwBi" id="6cEFRXIy2dJ" role="3cqZAk">
+              <node concept="2OqwBi" id="6cEFRXIy1c8" role="2Oq$k0">
+                <node concept="37vLTw" id="6cEFRXIy10T" role="2Oq$k0">
                   <ref role="3cqZAo" node="3SnNvqCbxxo" resolve="group" />
                 </node>
+                <node concept="liA8E" id="6cEFRXIy1HB" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModelReference.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6cEFRXIy2Ln" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
               </node>
             </node>
           </node>

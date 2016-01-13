@@ -4371,12 +4371,13 @@
                     </node>
                     <node concept="3cpWs3" id="2wxFklq8LVo" role="37vLTx">
                       <node concept="3cpWs3" id="2wxFklq8LVp" role="3uHU7B">
-                        <node concept="2YIFZM" id="4DcpLEzkHs" role="3uHU7B">
-                          <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                          <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                          <node concept="2OqwBi" id="4DcpLEzkHt" role="37wK5m">
+                        <node concept="Xl_RD" id="2wxFklq8LVx" role="3uHU7w">
+                          <property role="Xl_RC" value="." />
+                        </node>
+                        <node concept="2OqwBi" id="6cEFRXIy8jl" role="3uHU7B">
+                          <node concept="2OqwBi" id="4DcpLEzkHt" role="2Oq$k0">
                             <node concept="liA8E" id="4DcpLEzkHu" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                              <ref role="37wK5l" to="mhbf:~SModelReference.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                             </node>
                             <node concept="2OqwBi" id="4DcpLEzkHv" role="2Oq$k0">
                               <node concept="liA8E" id="4DcpLEzkHz" role="2OqNvi">
@@ -4387,9 +4388,9 @@
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="Xl_RD" id="2wxFklq8LVx" role="3uHU7w">
-                          <property role="Xl_RC" value="." />
+                          <node concept="liA8E" id="6cEFRXIy8uF" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
+                          </node>
                         </node>
                       </node>
                       <node concept="37vLTw" id="3GM_nagTxQv" role="3uHU7w">

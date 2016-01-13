@@ -965,20 +965,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="6hha$XdHb3n" role="2LFqv$">
-            <node concept="3cpWs8" id="4fuA5EbNUaj" role="3cqZAp">
-              <node concept="3cpWsn" id="4fuA5EbNUak" role="3cpWs9">
-                <property role="TrG5h" value="modelName" />
-                <node concept="17QB3L" id="4fuA5EbO14U" role="1tU5fm" />
-                <node concept="2OqwBi" id="4fuA5EbNUal" role="33vP2m">
-                  <node concept="37vLTw" id="4fuA5EbNUam" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6hha$XdHb3l" resolve="model" />
-                  </node>
-                  <node concept="liA8E" id="4fuA5EbNUan" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="4fuA5EbNSYr" role="3cqZAp">
               <node concept="3clFbS" id="4fuA5EbNSYt" role="3clFbx">
                 <node concept="3clFbF" id="6hha$XdHb3v" role="3cqZAp">
@@ -1007,25 +993,27 @@
                   </node>
                   <node concept="liA8E" id="4fuA5EbNToX" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="2YIFZM" id="4fuA5EbNTsw" role="37wK5m">
-                      <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                      <node concept="37vLTw" id="4fuA5EbNUao" role="37wK5m">
-                        <ref role="3cqZAo" node="4fuA5EbNUak" resolve="modelName" />
+                    <node concept="2OqwBi" id="6cEFRXI$Mgr" role="37wK5m">
+                      <node concept="2OqwBi" id="6cEFRXI$MFt" role="2Oq$k0">
+                        <node concept="37vLTw" id="6cEFRXI$MFu" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6hha$XdHb3l" resolve="model" />
+                        </node>
+                        <node concept="liA8E" id="6cEFRXI$MFv" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6cEFRXI$MjR" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
                       </node>
                     </node>
                   </node>
                 </node>
                 <node concept="3fqX7Q" id="6hha$XdHb3p" role="3uHU7w">
-                  <node concept="2YIFZM" id="6hha$XdHb3q" role="3fr31v">
-                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
+                  <node concept="2YIFZM" id="6cEFRXI$MDT" role="3fr31v">
+                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
                     <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                    <node concept="2YIFZM" id="791rit5f66b" role="37wK5m">
-                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                      <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(java.lang.String):java.lang.String" resolve="getStereotype" />
-                      <node concept="37vLTw" id="4fuA5EbNUhC" role="37wK5m">
-                        <ref role="3cqZAo" node="4fuA5EbNUak" resolve="modelName" />
-                      </node>
+                    <node concept="37vLTw" id="6cEFRXI$MDU" role="37wK5m">
+                      <ref role="3cqZAo" node="6hha$XdHb3l" resolve="model" />
                     </node>
                   </node>
                 </node>

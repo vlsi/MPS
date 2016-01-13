@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -128,7 +127,7 @@ public final class SModelOperations {
     if (model == null) {
       return null;
     }
-    return SNodeOperations.getModelLongName(model);
+    return model.getName().getLongName();
   }
   public static SNode getModuleStub(SModel model) {
     final SModule module = model.getModule();

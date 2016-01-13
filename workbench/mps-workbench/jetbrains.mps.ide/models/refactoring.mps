@@ -2012,12 +2012,17 @@
               <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
             </node>
           </node>
-          <node concept="2OqwBi" id="1HT8bsPZuQQ" role="37wK5m">
-            <node concept="37vLTw" id="1HT8bsPZui9" role="2Oq$k0">
-              <ref role="3cqZAo" node="29N7xYwTG4J" resolve="sm" />
+          <node concept="2OqwBi" id="6cEFRXI$NMY" role="37wK5m">
+            <node concept="2OqwBi" id="1HT8bsPZuQQ" role="2Oq$k0">
+              <node concept="37vLTw" id="1HT8bsPZui9" role="2Oq$k0">
+                <ref role="3cqZAo" node="29N7xYwTG4J" resolve="sm" />
+              </node>
+              <node concept="liA8E" id="6cEFRXI$NLB" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+              </node>
             </node>
-            <node concept="liA8E" id="1HT8bsPZxf9" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+            <node concept="liA8E" id="6cEFRXI$NPW" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModelName.getValue():java.lang.String" resolve="getValue" />
             </node>
           </node>
           <node concept="Xl_RD" id="2174XWuQEc8" role="37wK5m">
@@ -2068,9 +2073,16 @@
           <node concept="3cpWsn" id="2174XWuQEdQ" role="3cpWs9">
             <property role="TrG5h" value="newModelName" />
             <property role="3TUv4t" value="true" />
-            <node concept="17QB3L" id="4tdf8jJZUmq" role="1tU5fm" />
-            <node concept="1rXfSq" id="4hiugqyyZ5k" role="33vP2m">
-              <ref role="37wK5l" to="u42p:WWy1UWgXzO" resolve="getCurrentValue" />
+            <node concept="3uibUv" id="6cEFRXI_1SN" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelName" resolve="SModelName" />
+            </node>
+            <node concept="2ShNRf" id="6cEFRXI$Pjf" role="33vP2m">
+              <node concept="1pGfFk" id="6cEFRXI_1M2" role="2ShVmc">
+                <ref role="37wK5l" to="mhbf:~SModelName.&lt;init&gt;(java.lang.String)" resolve="SModelName" />
+                <node concept="1rXfSq" id="4hiugqyyZ5k" role="37wK5m">
+                  <ref role="37wK5l" to="u42p:WWy1UWgXzO" resolve="getCurrentValue" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2080,11 +2092,12 @@
               <node concept="2YIFZM" id="2174XWuQEdZ" role="1eOMHV">
                 <ref role="37wK5l" to="emwx:~SourceVersion.isName(java.lang.CharSequence):boolean" resolve="isName" />
                 <ref role="1Pybhc" to="emwx:~SourceVersion" resolve="SourceVersion" />
-                <node concept="2YIFZM" id="6q_XF7KvS2U" role="37wK5m">
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <node concept="37vLTw" id="6q_XF7KvS$x" role="37wK5m">
+                <node concept="2OqwBi" id="6cEFRXI_1Xf" role="37wK5m">
+                  <node concept="37vLTw" id="6cEFRXI_1Wl" role="2Oq$k0">
                     <ref role="3cqZAo" node="2174XWuQEdQ" resolve="newModelName" />
+                  </node>
+                  <node concept="liA8E" id="6cEFRXI_1Zn" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
                   </node>
                 </node>
               </node>
@@ -2110,13 +2123,13 @@
                   <ref role="3cqZAo" node="2174XWuQEdQ" resolve="newModelName" />
                 </node>
                 <node concept="liA8E" id="2174XWuQEed" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="mhbf:~SModelName.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="2OqwBi" id="2174XWuQEee" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxeuOQc" role="2Oq$k0">
                       <ref role="3cqZAo" node="29N7xYwTG4w" resolve="myModelDescriptor" />
                     </node>
                     <node concept="liA8E" id="2174XWuQEei" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                      <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                     </node>
                   </node>
                 </node>
@@ -2134,8 +2147,13 @@
                       <node concept="37vLTw" id="4FkYMYI0trf" role="37wK5m">
                         <ref role="3cqZAo" node="29N7xYwTG4w" resolve="myModelDescriptor" />
                       </node>
-                      <node concept="37vLTw" id="4FkYMYI0trg" role="37wK5m">
-                        <ref role="3cqZAo" node="2174XWuQEdQ" resolve="newModelName" />
+                      <node concept="2OqwBi" id="6cEFRXI_2c3" role="37wK5m">
+                        <node concept="37vLTw" id="4FkYMYI0trg" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2174XWuQEdQ" resolve="newModelName" />
+                        </node>
+                        <node concept="liA8E" id="6cEFRXI_2eu" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModelName.getValue():java.lang.String" resolve="getValue" />
+                        </node>
                       </node>
                     </node>
                   </node>

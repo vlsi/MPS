@@ -4519,11 +4519,17 @@
           </node>
         </node>
         <node concept="3cpWs6" id="5IkW5anFb4Y" role="3cqZAp">
-          <node concept="2YIFZM" id="6SyhPqtjtFc" role="3cqZAk">
-            <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-            <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-            <node concept="37vLTw" id="6SyhPqtjux8" role="37wK5m">
-              <ref role="3cqZAo" node="5IkW5anFb4O" resolve="model" />
+          <node concept="2OqwBi" id="6cEFRXIvhDM" role="3cqZAk">
+            <node concept="2OqwBi" id="6cEFRXIvhBp" role="2Oq$k0">
+              <node concept="37vLTw" id="6cEFRXIvhAq" role="2Oq$k0">
+                <ref role="3cqZAo" node="5IkW5anFb4O" resolve="model" />
+              </node>
+              <node concept="liA8E" id="6cEFRXIvhCY" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6cEFRXIvhGk" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
             </node>
           </node>
         </node>

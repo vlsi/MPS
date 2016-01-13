@@ -24,7 +24,6 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -204,7 +203,7 @@ import javax.swing.UIManager;
     }
     @Override
     public String getText(@NotNull SModelReference group) {
-      return SModelStereotype.withoutStereotype(group.getModelName());
+      return group.getName().getLongName();
     }
     @Override
     public Icon getIcon(SModelReference model) {

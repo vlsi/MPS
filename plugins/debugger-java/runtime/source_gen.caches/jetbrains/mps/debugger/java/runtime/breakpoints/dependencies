@@ -192,7 +192,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

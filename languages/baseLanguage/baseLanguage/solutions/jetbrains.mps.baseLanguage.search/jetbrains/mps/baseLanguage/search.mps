@@ -346,6 +346,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
@@ -932,27 +933,14 @@
       <node concept="3Tm1VV" id="2LflJcA4jVH" role="1B3o_S" />
       <node concept="3clFbS" id="2LflJcA4jVI" role="3clF47">
         <node concept="3cpWs6" id="2LflJcA4jVY" role="3cqZAp">
-          <node concept="2YIFZM" id="4DcpLEzkHj" role="3cqZAk">
-            <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-            <node concept="2OqwBi" id="4DcpLEzkHk" role="37wK5m">
-              <node concept="liA8E" id="4DcpLEzkHl" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+          <node concept="2OqwBi" id="6cEFRXIyjry" role="3cqZAk">
+            <node concept="2OqwBi" id="6cEFRXIyjhg" role="2Oq$k0">
+              <node concept="37vLTw" id="6cEFRXIyjcZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="2LflJcA4jVK" resolve="node" />
               </node>
-              <node concept="2OqwBi" id="4DcpLEzkHm" role="2Oq$k0">
-                <node concept="liA8E" id="4DcpLEzkHn" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                </node>
-                <node concept="2JrnkZ" id="4DcpLEzkHo" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4DcpLEzkHp" role="2JrQYb">
-                    <node concept="37vLTw" id="2BHiRxgmHT4" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2LflJcA4jVK" resolve="node" />
-                    </node>
-                    <node concept="I4A8Y" id="4DcpLEzkHr" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
+              <node concept="I4A8Y" id="6cEFRXIyjmb" role="2OqNvi" />
             </node>
+            <node concept="LkI2h" id="6cEFRXIyjyq" role="2OqNvi" />
           </node>
         </node>
       </node>

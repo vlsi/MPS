@@ -3181,20 +3181,17 @@
         </node>
         <node concept="3clFbS" id="3tOCygy4T_n" role="3clF47">
           <node concept="3cpWs6" id="3tOCygy4T_o" role="3cqZAp">
-            <node concept="2YIFZM" id="3tOCygy4T_p" role="3cqZAk">
-              <ref role="37wK5l" to="18ew:~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolve="shortNameFromLongName" />
-              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-              <node concept="2YIFZM" id="4DcpLEzkGu" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="2OqwBi" id="4DcpLEzkGv" role="37wK5m">
-                  <node concept="liA8E" id="4DcpLEzkGw" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
-                  </node>
-                  <node concept="1rXfSq" id="4hiugqyzeyi" role="2Oq$k0">
-                    <ref role="37wK5l" node="3tOCygy4T_c" resolve="getObject" />
-                  </node>
+            <node concept="2OqwBi" id="6cEFRXIzo5n" role="3cqZAk">
+              <node concept="2OqwBi" id="4DcpLEzkGv" role="2Oq$k0">
+                <node concept="liA8E" id="4DcpLEzkGw" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModelReference.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                 </node>
+                <node concept="1rXfSq" id="4hiugqyzeyi" role="2Oq$k0">
+                  <ref role="37wK5l" node="3tOCygy4T_c" resolve="getObject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="6cEFRXIzoab" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModelName.getSimpleName():java.lang.String" resolve="getSimpleName" />
               </node>
             </node>
           </node>

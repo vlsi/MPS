@@ -21,15 +21,14 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.RegularModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -84,7 +83,7 @@ public class TestModule extends AbstractModule {
   }
 
   public SModel createModel(SModel originalModel) {
-    String originalLong = SNodeOperations.getModelLongName(originalModel);
+    String originalLong = originalModel.getName().getLongName();
     String newModelName = originalLong + "@999";
 
     SModel result = new TestSModelDescriptor(newModelName, originalModel);
@@ -109,8 +108,10 @@ public class TestModule extends AbstractModule {
 
   @Override
   public SModel resolveInDependencies(SModelId reference) {
-    boolean own = reference.getModelName() != null && myModels.keySet().contains(SModelStereotype.withoutStereotype(reference.getModelName()));
-    if (!own) return super.resolveInDependencies(reference);
+    boolean own = reference.getModelName() != null && myModels.containsKey(reference.getModelName());
+    if (!own) {
+      return super.resolveInDependencies(reference);
+    }
     return myModels.get(reference.getModelName());
   }
 
@@ -125,12 +126,10 @@ public class TestModule extends AbstractModule {
   }
 
   class TestSModelDescriptor extends RegularModelDescriptor {
-    private final String myLongName;
     private final SModel myToCopy;
 
     private TestSModelDescriptor(String modelName, SModel toCopy) {
       super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName), new NullDataSource());
-      myLongName = SModelStereotype.withoutStereotype(modelName);
       myToCopy = toCopy;
     }
 
@@ -150,7 +149,7 @@ public class TestModule extends AbstractModule {
       try {
         return new ModelLoadResult<jetbrains.mps.smodel.SModel>(ModelPersistence.readModel(modelContent, false), ModelLoadingState.FULLY_LOADED);
       } catch (ModelReadException e) {
-        return new ModelLoadResult<jetbrains.mps.smodel.SModel>(new StubModel(PersistenceFacade.getInstance().createModelReference(myLongName), e), ModelLoadingState.FULLY_LOADED);
+        return new ModelLoadResult<jetbrains.mps.smodel.SModel>(new StubModel(PersistenceFacade.getInstance().createModelReference(getName().getLongName()), e), ModelLoadingState.FULLY_LOADED);
       }
     }
   }

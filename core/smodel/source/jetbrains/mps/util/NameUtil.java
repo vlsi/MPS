@@ -396,6 +396,8 @@ public class NameUtil {
    * @param modelRef not null
    * @return qualified name of the model without stereotype
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static String getModelLongName(SModelReference modelRef) {
     return modelRef.getName().getLongName();
   }

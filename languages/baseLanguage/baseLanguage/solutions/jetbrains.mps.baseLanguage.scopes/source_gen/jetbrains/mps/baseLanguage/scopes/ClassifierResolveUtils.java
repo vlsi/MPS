@@ -41,6 +41,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 
 public class ClassifierResolveUtils {
@@ -288,7 +289,7 @@ public class ClassifierResolveUtils {
       return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
     } else {
-      AbstractModule module = (AbstractModule) check_8z6r2b_a0a0a0gb0m(SNodeOperations.getModel(contextNode));
+      AbstractModule module = (AbstractModule) contextNodeModel.getModule();
       SearchScope moduleScope = (module == null ? GlobalScope.getInstance() : module.getScope());
 
       // walk through single-type imports 
@@ -321,7 +322,7 @@ public class ClassifierResolveUtils {
       // models with the same name as contextNodeModel (correspond to the same package in java) 
       ListSequence.fromList(javaImportedThings).addElement(contextNodeModel);
 
-      String ourPkgName = SModelStereotype.withoutStereotype(contextNodeModel.getModelName());
+      String ourPkgName = contextNodeModel.getName().getLongName();
       ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, ourPkgName)).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
           return it != contextNodeModel;
@@ -482,12 +483,12 @@ public class ClassifierResolveUtils {
 
       for (SModel m : Sequence.fromIterable(models)) {
 
-        if (!(pkgName.equals(SModelStereotype.withoutStereotype(m.getModelName())))) {
+        if (!(pkgName.equals(m.getName().getLongName()))) {
           continue;
         }
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (m.getModule() instanceof TransientSModule)) {
+        if (!(m.equals(contextNodeModel)) && (m.getModule() instanceof TransientSModule)) {
           continue;
         }
 
@@ -521,9 +522,9 @@ public class ClassifierResolveUtils {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
     for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
-      if (SModelStereotype.withoutStereotype(candidate.getReference().getModelName()).equals(name)) {
+      if (name.equals(candidate.getName().getLongName())) {
         // partial order: all models with stereotype after all models without it 
-        if ("".equals(SModelStereotype.getStereotype(candidate))) {
+        if (!(candidate.getName().hasStereotype())) {
           ListSequence.fromList(models).insertElement(0, candidate);
         } else {
           ListSequence.fromList(models).addElement(candidate);
@@ -534,15 +535,13 @@ public class ClassifierResolveUtils {
     return models;
   }
   public static Iterable<SNode> staticImportedMethods(SNode imports) {
-    return staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode(), imports);
+    return SNodeOperations.ofConcept(staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
   }
   public static Iterable<SNode> staticImportedFields(SNode imports) {
-    return staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode(), imports);
+    return SNodeOperations.ofConcept(staticImportedThings(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), imports), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
   }
-  /**
-   * methodsOrFields: true for methods. false for fields
-   */
-  public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
+
+  private static Iterable<SNode> staticImportedThings(SAbstractConcept neededConcept, SNode imports) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     SModule module = SNodeOperations.getModel(imports).getModule();
     GlobalModuleDependenciesManager gmdm = new GlobalModuleDependenciesManager(module);
@@ -566,11 +565,7 @@ public class ClassifierResolveUtils {
           continue;
         }
 
-        Iterable<SNode> neededMembers = ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
-          }
-        });
+        Iterable<SNode> neededMembers = SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas), SNodeOperations.asSConcept(neededConcept));
         ListSequence.fromList(result).addSequence(Sequence.fromIterable(neededMembers));
 
       } else {
@@ -586,11 +581,7 @@ public class ClassifierResolveUtils {
         }
 
         // or findAll instead of findFirst ? 
-        SNode neededMember = ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
-          }
-        }).findFirst(new IWhereFilter<SNode>() {
+        SNode neededMember = Sequence.fromIterable(SNodeOperations.ofConcept(IMemberContainer__BehaviorDescriptor.getMembers_idhEwJjl2.invoke(containingClas), SNodeOperations.asSConcept(neededConcept))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return memberName.equals(it.getName());
           }
@@ -626,12 +617,6 @@ public class ClassifierResolveUtils {
     return null;
   }
   private static SModule check_8z6r2b_a0d0d(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static SModule check_8z6r2b_a0a0a0gb0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

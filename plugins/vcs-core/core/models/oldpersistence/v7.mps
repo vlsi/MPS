@@ -2926,20 +2926,21 @@
                     </node>
                   </node>
                   <node concept="3cpWs3" id="3McbO0WUegf" role="3uHU7B">
-                    <node concept="2YIFZM" id="1PVFwJzVdgJ" role="3uHU7B">
-                      <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                      <node concept="2OqwBi" id="3McbO0WUeg5" role="37wK5m">
-                        <node concept="liA8E" id="3McbO0WUeg9" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTsIv" role="2Oq$k0">
+                    <node concept="2OqwBi" id="6cEFRXI_gkO" role="3uHU7B">
+                      <node concept="2OqwBi" id="6cEFRXI_fCv" role="2Oq$k0">
+                        <node concept="37vLTw" id="6cEFRXI_fha" role="2Oq$k0">
                           <ref role="3cqZAo" node="3McbO0WUeeR" resolve="modelRef" />
                         </node>
+                        <node concept="liA8E" id="6cEFRXI_fYN" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModelReference.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6cEFRXI_gGy" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
                       </node>
                     </node>
-                    <node concept="Xl_RD" id="3McbO0WUegi" role="3uHU7w">
-                      <property role="Xl_RC" value="." />
+                    <node concept="1Xhbcc" id="6cEFRXI_hrf" role="3uHU7w">
+                      <property role="1XhdNS" value="." />
                     </node>
                   </node>
                 </node>

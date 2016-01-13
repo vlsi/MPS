@@ -7,8 +7,6 @@ import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -46,11 +44,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(modelTreeNode);
   }
   public static ModelTreeNode createSModelTreeNode(SModel descriptor) {
-    SModelReference sModelReference = descriptor.getReference();
-    String label = SModelStereotype.withoutStereotype(sModelReference.getModelName());
-    if (SModelStereotype.getStereotype(sModelReference.getModelName()).length() > 0) {
-      label += "@" + SModelStereotype.getStereotype(sModelReference.getModelName());
-    }
+    String label = descriptor.getName().getValue();
     ModelTreeNode node = new ModelTreeNode(label, IconManager.getIconFor(descriptor), descriptor);
     node.setInitialized(false);
     return node;

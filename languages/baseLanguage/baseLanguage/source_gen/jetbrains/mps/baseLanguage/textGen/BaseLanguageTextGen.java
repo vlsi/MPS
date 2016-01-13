@@ -23,8 +23,9 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -318,7 +319,7 @@ public abstract class BaseLanguageTextGen {
         // todo: remove! 
         final SModelReference modelReference = reference.getTargetSModelReference();
         if (modelReference != null) {
-          packageName = SModelStereotype.withoutStereotype(modelReference.getModelName());
+          packageName = modelReference.getName().getLongName();
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("generating classifier reference with target model reference " + modelReference + " @ " + classifierRef);
           }
@@ -328,8 +329,8 @@ public abstract class BaseLanguageTextGen {
             packageName = shortName.substring(0, lastDot);
             shortName = shortName.substring(lastDot + 1).replace('$', '.');
           } else {
-            SModelReference sModelReference = classifierRef.getSourceNode().getModel().getReference();
-            packageName = (sModelReference != null ? SModelStereotype.withoutStereotype(sModelReference.getModelName()) : "");
+            SModel sModel = classifierRef.getSourceNode().getModel();
+            packageName = (sModel != null ? sModel.getName().getLongName() : "");
           }
         }
         return MultiTuple.<String,String>from(packageName, shortName);
@@ -340,7 +341,7 @@ public abstract class BaseLanguageTextGen {
         tgs.reportError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
-      return MultiTuple.<String,String>from(SModelStereotype.withoutStereotype(targetNode.getModel().getReference().getModelName()), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
+      return MultiTuple.<String,String>from(SModelOperations.getModelName(SNodeOperations.getModel(targetNode)), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
     }
   }
   protected static Set<String> getUserObjects(String type, final TextGenContext ctx) {
@@ -354,7 +355,7 @@ public abstract class BaseLanguageTextGen {
   }
   protected static String getPackageName(SNode cls, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    return SModelStereotype.withoutStereotype(cls.getModel().getReference().getModelName());
+    return SModelOperations.getModelName(SNodeOperations.getModel(cls));
   }
   protected static String getClassName(String packageName, String fqName, SNode contextNode, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

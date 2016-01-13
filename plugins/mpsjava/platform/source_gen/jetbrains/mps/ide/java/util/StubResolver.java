@@ -70,11 +70,11 @@ public class StubResolver {
     for (SNode node : ListSequence.fromList(SModelOperations.nodes(sourceModel, null))) {
       for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         SModelReference targetModelRef = ref.getTargetSModelReference();
-        if (targetModelRef == null || !(JAVA_STUB.equals(SModelStereotype.getStereotype(targetModelRef.getModelName())))) {
+        if (targetModelRef == null || !(JAVA_STUB.equals(targetModelRef.getName().getStereotype()))) {
           continue;
         }
         // trying to find correspondent nonstub model 
-        SModelReference modelRef = check_ar1im2_a0d0a0d0h(repoFacade.getModelByName(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
+        SModelReference modelRef = check_ar1im2_a0d0a0d0h(repoFacade.getModelByName(targetModelRef.getName().getLongName()));
         if (modelRef == null) {
           continue;
         }
@@ -160,11 +160,11 @@ public class StubResolver {
         });
         if (ListSequence.fromList(resolved).count() > 1) {
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
+            LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getName());
           }
         }
         if (ListSequence.fromList(resolved).isNotEmpty()) {
-          SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          SNodeAccessUtil.setReferenceTarget(node, ref.getLink(), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;
           found = true;

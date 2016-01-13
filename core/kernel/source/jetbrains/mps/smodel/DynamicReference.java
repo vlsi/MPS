@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -79,36 +78,36 @@ public class DynamicReference extends SReferenceBase {
    */
   @Deprecated
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
-    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
+    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getName(), resolveInfo);
   }
 
   public DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
-    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
+    this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getName(), resolveInfo);
   }
 
   public static DynamicReference createDynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
-    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+    return new DynamicReference(role, sourceNode, modelName == null ? null : new SModelName(modelName), resolveInfo);
   }
   public static DynamicReference createDynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
-    return new DynamicReference(role, sourceNode, modelName, resolveInfo);
+    return new DynamicReference(role, sourceNode, modelName == null ? null : new SModelName(modelName), resolveInfo);
   }
 
-  private DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+  private DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable SModelName modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
-    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(role)) {
+    if (modelName != null && !resolveInfo.startsWith(modelName.getLongName()) && isTargetClassifier(role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
-      setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
+      setResolveInfo(modelName.getLongName() + '.' + resolveInfo);
     } else {
       setResolveInfo(resolveInfo);
     }
   }
 
   @Deprecated
-  private DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+  private DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelName modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
-    if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
+    if (modelName != null && !resolveInfo.startsWith(modelName.getLongName()) && isTargetClassifier(sourceNode, role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
-      setResolveInfo(SModelStereotype.withoutStereotype(modelName) + "." + resolveInfo);
+      setResolveInfo(modelName.getLongName() + '.' + resolveInfo);
     } else {
       setResolveInfo(resolveInfo);
     }
