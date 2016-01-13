@@ -2427,7 +2427,7 @@
                     <ref role="2Gs0qQ" node="6yQopEiYZZr" resolve="m" />
                   </node>
                   <node concept="liA8E" id="6ozGTEfoEcy" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~SModelInternal.getLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getLanguageVersion" />
+                    <ref role="37wK5l" to="w1kc:~SModelInternal.getLanguageImportVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getLanguageImportVersion" />
                     <node concept="37vLTw" id="6ozGTEfoEcz" role="37wK5m">
                       <ref role="3cqZAo" node="6yQopEiYMX7" resolve="lang" />
                     </node>

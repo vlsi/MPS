@@ -90,7 +90,7 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
         return it.importedLanguageIds().contains(lang);
       }
     })) {
-      int modelVer = m.getLanguageVersion(lang);
+      int modelVer = m.getLanguageImportVersion(lang);
       if (modelVer != -1) {
         ver = Math.min(ver, modelVer);
       }

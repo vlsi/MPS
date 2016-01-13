@@ -404,7 +404,7 @@
       <node id="7545325542224697099" at="85,84,86,32" concept="9" />
       <node id="7545325542224704468" at="86,32,87,45" concept="9" />
       <node id="1986292623906605803" at="89,48,90,55" concept="10" />
-      <node id="7359923692465464094" at="92,9,93,48" concept="9" />
+      <node id="7359923692465464094" at="92,9,93,54" concept="9" />
       <node id="7545325542224711590" at="94,27,95,38" concept="4" />
       <node id="7545325542224722367" at="97,5,98,15" concept="10" />
       <node id="7545325542224558170" at="29,0,32,0" concept="2" trace="FixMigrationVersions_33_331#()V" />
@@ -415,7 +415,7 @@
       <node id="7545325542224558370" at="73,0,76,0" concept="8" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="7545325542224558378" at="78,0,81,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
       <node id="1986292623906602879" at="89,0,92,0" concept="8" trace="accept#(Ljetbrains/mps/smodel/SModelInternal;)Z" />
-      <node id="7545325542224700168" at="93,48,96,7" concept="7" />
+      <node id="7545325542224700168" at="93,54,96,7" concept="7" />
       <node id="7545325542224558188" at="37,0,41,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
       <node id="7545325542224558370" at="71,59,76,8" concept="9" />
       <node id="7545325542224558373" at="76,8,81,38" concept="10" />
