@@ -422,5 +422,154 @@
       <unit id="1110928002290223181" at="26,0,279,0" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelConditionsConsideringChildAttributes" />
     </file>
   </root>
+  <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/1265112845350114910">
+    <file name="Migrate_EditorCellModelShowIfConditionsToEmptyCell.java">
+      <node id="1265112845350114910" at="26,30,27,64" concept="8" />
+      <node id="1265112845350114910" at="30,33,31,17" concept="8" />
+      <node id="1265112845350115501" at="34,5,35,59" concept="7" />
+      <node id="1265112845350115501" at="37,52,38,23" concept="8" />
+      <node id="1265112845350411816" at="42,41,43,35" concept="8" />
+      <node id="1265112845350413539" at="46,65,47,207" concept="3" />
+      <node id="1265112845350417635" at="47,207,48,186" concept="3" />
+      <node id="1265112845350420365" at="48,186,49,220" concept="3" />
+      <node id="1265112845350114910" at="51,5,52,16" concept="8" />
+      <node id="1265112845350114910" at="54,51,55,146" concept="8" />
+      <node id="1265112845350406487" at="59,191,60,19" concept="8" />
+      <node id="1265112845350171462" at="62,191,63,19" concept="8" />
+      <node id="1265112845350350696" at="65,363,66,19" concept="8" />
+      <node id="1265112845350173262" at="67,5,68,501" concept="7" />
+      <node id="1265112845350194747" at="69,57,70,19" concept="8" />
+      <node id="1265112845350204271" at="71,5,72,64" concept="7" />
+      <node id="6982326378360525956" at="73,390,74,19" concept="8" />
+      <node id="6982326378360525959" at="75,5,76,879" concept="7" />
+      <node id="1265112845350307881" at="77,203,78,19" concept="8" />
+      <node id="1265112845350335194" at="79,5,80,214" concept="7" />
+      <node id="1265112845350324089" at="81,377,82,19" concept="8" />
+      <node id="1265112845350311195" at="83,5,84,197" concept="7" />
+      <node id="1265112845350326741" at="85,200,86,19" concept="8" />
+      <node id="1265112845350327964" at="87,5,88,220" concept="7" />
+      <node id="1265112845350334528" at="89,381,90,19" concept="8" />
+      <node id="1265112845350351418" at="91,5,92,222" concept="7" />
+      <node id="1265112845350351136" at="93,248,94,19" concept="8" />
+      <node id="1265112845350370938" at="95,5,96,411" concept="7" />
+      <node id="1265112845350388073" at="97,57,98,19" concept="8" />
+      <node id="1265112845350384455" at="99,5,100,64" concept="7" />
+      <node id="1265112845350396338" at="101,755,102,19" concept="8" />
+      <node id="1265112845350398224" at="103,5,104,553" concept="7" />
+      <node id="1265112845350353528" at="104,553,105,345" concept="8" />
+      <node id="1265112845350423517" at="107,65,108,63" concept="7" />
+      <node id="1265112845350423517" at="108,63,109,30" concept="7" />
+      <node id="1265112845350423517" at="109,30,110,30" concept="7" />
+      <node id="1265112845350423517" at="110,30,111,30" concept="7" />
+      <node id="1265112845350423517" at="111,30,112,231" concept="3" />
+      <node id="1265112845350423517" at="112,231,113,236" concept="3" />
+      <node id="1265112845350423517" at="113,236,114,169" concept="3" />
+      <node id="1265112845350423517" at="114,169,115,166" concept="3" />
+      <node id="1265112845350423517" at="115,166,116,229" concept="3" />
+      <node id="1265112845350423517" at="116,229,117,166" concept="3" />
+      <node id="1265112845350423517" at="117,166,118,24" concept="8" />
+      <node id="1265112845350350374" at="120,55,121,43" concept="8" />
+      <node id="1265112845350423517" at="115,166,117,166" concept="1" />
+      <node id="1265112845350423517" at="115,166,117,166" concept="1" />
+      <node id="1265112845350114910" at="26,0,29,0" concept="6" trace="getCaption#()Ljava/lang/String;" />
+      <node id="1265112845350115501" at="37,0,40,0" concept="6" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="1265112845350411814" at="42,0,45,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1265112845350114910" at="54,0,57,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="1265112845350403592" at="58,50,61,5" concept="5" />
+      <node id="1265112845350169572" at="61,5,64,5" concept="5" />
+      <node id="1265112845350342716" at="64,5,67,5" concept="5" />
+      <node id="1265112845350173926" at="68,501,71,5" concept="5" />
+      <node id="6982326378360525954" at="72,64,75,5" concept="5" />
+      <node id="1265112845350303509" at="76,879,79,5" concept="5" />
+      <node id="1265112845350312942" at="80,214,83,5" concept="5" />
+      <node id="1265112845350325577" at="84,197,87,5" concept="5" />
+      <node id="1265112845350332321" at="88,220,91,5" concept="5" />
+      <node id="1265112845350339868" at="92,222,95,5" concept="5" />
+      <node id="1265112845350387079" at="96,411,99,5" concept="5" />
+      <node id="1265112845350393468" at="100,64,103,5" concept="5" />
+      <node id="1265112845350423517" at="112,231,115,166" concept="1" />
+      <node id="1265112845350423517" at="112,231,115,166" concept="1" />
+      <node id="1265112845350350374" at="120,0,123,0" concept="10" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1265112845350114910" at="29,0,33,0" concept="6" trace="isRerunnable#()Z" />
+      <node id="1265112845350115501" at="35,59,40,8" concept="7" />
+      <node id="1265112845350411807" at="40,8,45,9" concept="7" />
+      <node id="1265112845350411320" at="45,9,50,7" concept="4" />
+      <node id="1265112845350423517" at="111,30,117,166" concept="1" />
+      <node id="1265112845350423517" at="111,30,117,166" concept="1" />
+      <node id="1265112845350423517" at="107,0,120,0" concept="10" trace="_quotation_createNode_i6fkmm_a0c0b0a0h#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1265112845350115501" at="33,41,51,5" concept="1" />
+      <node id="1265112845350114910" at="33,0,54,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1265112845350122605" at="58,0,107,0" concept="6" trace="needToMigrate#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1265112845350114910" at="26,30,27,64" />
+      <scope id="1265112845350114910" at="30,33,31,17" />
+      <scope id="1265112845350115501" at="37,52,38,23" />
+      <scope id="1265112845350411815" at="42,41,43,35" />
+      <scope id="1265112845350114910" at="54,51,55,146" />
+      <scope id="1265112845350403594" at="59,191,60,19" />
+      <scope id="1265112845350169574" at="62,191,63,19" />
+      <scope id="1265112845350342718" at="65,363,66,19" />
+      <scope id="1265112845350173928" at="69,57,70,19" />
+      <scope id="6982326378360525955" at="73,390,74,19" />
+      <scope id="1265112845350303511" at="77,203,78,19" />
+      <scope id="1265112845350312944" at="81,377,82,19" />
+      <scope id="1265112845350325579" at="85,200,86,19" />
+      <scope id="1265112845350332329" at="89,381,90,19" />
+      <scope id="1265112845350339870" at="93,248,94,19" />
+      <scope id="1265112845350387081" at="97,57,98,19" />
+      <scope id="1265112845350393470" at="101,755,102,19" />
+      <scope id="1265112845350350374" at="120,55,121,43" />
+      <scope id="1265112845350423517" at="115,166,117,166" />
+      <scope id="1265112845350114910" at="26,0,29,0" />
+      <scope id="1265112845350115501" at="37,0,40,0" />
+      <scope id="1265112845350411814" at="42,0,45,0">
+        <var name="it" id="1265112845350411814" />
+      </scope>
+      <scope id="1265112845350411324" at="46,65,49,220" />
+      <scope id="1265112845350114910" at="54,0,57,0" />
+      <scope id="1265112845350423517" at="112,231,115,166" />
+      <scope id="1265112845350350374" at="120,0,123,0">
+        <var name="str" id="1265112845350350374" />
+      </scope>
+      <scope id="1265112845350114910" at="29,0,33,0" />
+      <scope id="1265112845350411320" at="45,9,50,7">
+        <var name="cellModel" id="1265112845350411322" />
+      </scope>
+      <scope id="1265112845350423517" at="111,30,117,166" />
+      <scope id="1265112845350423517" at="107,65,118,24">
+        <var name="facade" id="1265112845350423517" />
+        <var name="quotedNode_1" id="1265112845350423517" />
+        <var name="quotedNode_2" id="1265112845350423517" />
+        <var name="quotedNode_3" id="1265112845350423517" />
+      </scope>
+      <scope id="1265112845350423517" at="107,0,120,0" />
+      <scope id="1265112845350115501" at="34,5,50,7">
+        <var name="cellModels" id="1265112845350411808" />
+        <var name="context" id="1265112845350115501" />
+        <var name="scope" id="1265112845350115501" />
+      </scope>
+      <scope id="1265112845350114910" at="33,41,52,16" />
+      <scope id="1265112845350114910" at="33,0,54,0">
+        <var name="m" id="1265112845350114910" />
+      </scope>
+      <scope id="1265112845350122608" at="58,50,105,345">
+        <var name="childAndAttributesExpression" id="1265112845350327965" />
+        <var name="childAndAttributesOperation" id="1265112845350351419" />
+        <var name="linkQualifier" id="1265112845350398225" />
+        <var name="parameter" id="1265112845350384456" />
+        <var name="parameters" id="1265112845350370939" />
+        <var name="returnDotExpression" id="1265112845350335195" />
+        <var name="returnExpression" id="6982326378360525960" />
+        <var name="returnOperand" id="1265112845350311196" />
+        <var name="statement" id="1265112845350204272" />
+        <var name="statements" id="1265112845350173263" />
+      </scope>
+      <scope id="1265112845350122605" at="58,0,107,0">
+        <var name="cellModel" id="1265112845350134233" />
+      </scope>
+      <unit id="1265112845350115501" at="36,42,40,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$1" />
+      <unit id="1265112845350411814" at="41,301,45,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$2" />
+      <unit id="1265112845350114910" at="25,0,124,0" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell" />
+    </file>
+  </root>
 </debug-info>
 
