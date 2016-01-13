@@ -22,8 +22,6 @@ as a placeholder in the container and concrete sub-concepts (Apples, Oranges) ar
 
 
 
-Motivated by the discussion at http://forum.jetbrains.com/thread/Meta-Programming-System-2138?message=Meta-Programming-System-2138-3
-
 Components held within Containers are referred to from ComponentUsages. The reference, however, should contain the name of the containing Container together
 with the name of the Component - both in the completion menu and in the editor. Additionally, scoping rules should guarantee that only one reference to any
 Component may exist and the completion menu is filtered so that already referred Components are not offered.

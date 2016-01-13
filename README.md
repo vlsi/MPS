@@ -12,7 +12,7 @@ Useful links
 - [Documentation](http://confluence.jetbrains.net/display/MPSD32/MPS+User%27s+Guide)
 - [JetBrains MPS wiki space](http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space)
 - [Issue tracker](http://www.jetbrains.net/tracker/issues/MPS)
-- [Forum](http://forum.jetbrains.com/forum/Meta-Programming-System)
+- [Forum](https://mps-support.jetbrains.com/hc/en-us/community/topics)
 
 
 Building MPS from sources
