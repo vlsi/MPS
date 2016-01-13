@@ -261,8 +261,7 @@ public class MigrationComponent extends AbstractProjectComponent {
         continue;
       }
 
-      ((SModelInternal) model).deleteLanguageId(fromLanguage);
-      ((SModelInternal) model).addLanguage(fromLanguage, toVersion);
+      ((SModelInternal) model).setLanguageVersion(fromLanguage, toVersion, true);
     }
 
     return true;
