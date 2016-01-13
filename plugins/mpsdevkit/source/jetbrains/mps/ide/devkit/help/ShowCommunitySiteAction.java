@@ -21,6 +21,6 @@ public class ShowCommunitySiteAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://devnet.jetbrains.net/community/mps";
+    return "https://mps-support.jetbrains.com/hc/en-us/community/topics";
   }
 }

@@ -250,6 +250,12 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
+  public void setLanguageVersion(@NotNull SLanguage language, int version, boolean force) {
+    getSModel().setLanguageVersion(language, version, force);
+    validateModuleLanguageVersions();
+  }
+
+  @Override
   public void addLanguageId(SLanguage ref, int version) {
     getSModelInternal().addLanguage(ref, version);
     validateModuleLanguageVersions();

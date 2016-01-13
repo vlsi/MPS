@@ -667,7 +667,14 @@ public class SModel implements SModelData {
     addLanguage(language, language.getLanguageVersion());
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //use setLanguageVersion
   public void addLanguage(SLanguage id, int version) {
+    setLanguageVersion(id,version,false);
+  }
+
+  public void setLanguageVersion(SLanguage id, int version, boolean force) {
     assertLegalChange();
 
     Integer existingVersion = myLanguagesIds.get(id);
@@ -675,9 +682,7 @@ public class SModel implements SModelData {
       if (version == -1 || existingVersion == version) {
         return;
       }
-      if (existingVersion == -1) {
-        myLanguagesIds.remove(id);
-      } else {
+      if (existingVersion != -1 && !force) {
         throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version);
       }
     }
