@@ -13533,12 +13533,6 @@
             <ref role="3bR37D" node="2Qa9MYMHrcB" resolve="jetbrains.mps.editorlang.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7l_AIgXSHJL" role="3bR37C">
-          <node concept="3bR9La" id="7l_AIgXSHJM" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="6zkSwmUIjUi" resolve="jetbrains.mps.lang.aspect" />
-          </node>
-        </node>
       </node>
       <node concept="1E1JtA" id="5bqL32k0kue" role="2G$12L">
         <property role="BnDLt" value="true" />
