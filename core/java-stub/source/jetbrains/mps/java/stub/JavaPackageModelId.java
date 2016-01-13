@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.java.stub;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.SModelIdFactory;
 
 /**
@@ -45,7 +46,7 @@ public final class JavaPackageModelId implements SModelId {
 
   @Override
   public String getModelName() {
-    return SModelStereotype.withStereotype(myPackageName, SModelStereotype.JAVA_STUB);
+    return new SModelName(myPackageName, SModelStereotype.JAVA_STUB).getValue();
   }
 
   @Override

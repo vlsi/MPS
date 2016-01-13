@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,10 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -55,7 +55,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
   // if we decide to re-use this cache throughout all models loaded within a module. We didn't use this cache,
   // and created a new one for each SReferenceCreator, and it didn't cause any performance issue, thus moved into single class and not reused.
   // 2. We wrap SModel into VisibleModel to keep set of known model roots along with the model, to avoid attempt to load model again and again from model.getNode()
-  private final Map<String, List<VisibleModel>> myName2Models = new HashMap<String, List<VisibleModel>>();
+  private final Map<SModelName, List<VisibleModel>> myName2Models = new HashMap<SModelName, List<VisibleModel>>();
 
   private final Set<SModelReference> myModelImports = new HashSet<SModelReference>();
 
@@ -67,7 +67,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
     myModule = module;
     myModel = new VisibleModel(model);
     myModelReference = model.getReference();
-    myModelLongName = NameUtil.getModelLongName(myModelReference);
+    myModelLongName = model.getName().getLongName();
   }
 
   @NotNull
@@ -79,7 +79,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
       }
     }
 
-    Collection<VisibleModel> possibleModels = findModels(SModelStereotype.withStereotype(pack, SModelStereotype.JAVA_STUB));
+    Collection<VisibleModel> possibleModels = findModels(new SModelName(pack, SModelStereotype.JAVA_STUB));
 
     if (possibleModels.isEmpty()) {
       return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
@@ -131,7 +131,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
    * @param modelName qualified name including stereotype (if any), not <code>null</code>
    * @return ordered collection, first come local matches, if any; never <code>null</code>
    */
-  private List<VisibleModel> findModels(String modelName) {
+  private List<VisibleModel> findModels(SModelName modelName) {
     if (myName2Models.isEmpty()) {
       ensureInitialized();
     }
@@ -149,7 +149,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
     }
 
     for (SModel model : visibleModels) {
-      final String modelName = model.getName().getValue();
+      final SModelName modelName = model.getName();
       List<VisibleModel> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
         myName2Models.put(modelName, modelsFromCache = new ArrayList<VisibleModel>(3));

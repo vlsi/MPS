@@ -21,7 +21,6 @@ import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.IconUtil;
 
@@ -73,9 +72,9 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         if (structureModel == null) {
           modelRoot = l.getModelRoots().iterator().next();
         } else {
-          modelRoot = ModelRootUtil.getModelRoot(structureModel);
+          modelRoot = structureModel.getModelRoot();
         }
-        SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getPresentableAspectName(), modelRoot);
+        SModuleOperations.createModelWithAdjustments(l.getModuleName() + '.' + getPresentableAspectName(), modelRoot);
       }
 
       private final Icon ICON = IconUtil.getIcon("documentation.png");

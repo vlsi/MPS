@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -80,7 +79,7 @@ public class ModelNodeNavigatable implements Navigatable {
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
       SModelRepository smrepo = SModelRepository.getInstance();
       for (SModel smd: smrepo.getModelDescriptors(facet.getSolution())) {
-        if (SModelStereotype.withoutStereotype(smd.getReference().getModelName()).equals(modelName)) {
+        if (smd.getName().getLongName().equals(modelName)) {
           model = smd;
         }
       }

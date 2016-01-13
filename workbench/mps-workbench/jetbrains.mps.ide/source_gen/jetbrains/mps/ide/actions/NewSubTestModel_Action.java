@@ -10,21 +10,20 @@ import java.util.Map;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.ModelRootUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.ui.tree.SortUtil;
@@ -47,8 +46,7 @@ public class NewSubTestModel_Action extends BaseAction {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
-    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")))) && ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot().canCreateModel(SModelStereotype.withStereotype(((SModel) MapSequence.fromMap(_params).get("model")).getModelName(), SModelStereotype.TESTS));
-
+    return !(((SModel) MapSequence.fromMap(_params).get("model")).getName().hasStereotype()) && ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot().canCreateModel(new SModelName(((SModel) MapSequence.fromMap(_params).get("model")).getName().getLongName(), SModelStereotype.TESTS).getValue());
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -92,12 +90,13 @@ public class NewSubTestModel_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<SModel> createdModel = new Wrappers._T<SModel>(null);
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        createdModel.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
+        SModelName testModelName = new SModelName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
+        createdModel.value = SModuleOperations.createModelWithAdjustments(testModelName.getValue(), ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot());
         if (createdModel.value == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
-            LOG.warn("Can't create submodel " + SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS) + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
+            LOG.warn("Can't create submodel " + testModelName + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getName());
           }
           return;
         }
@@ -117,21 +116,22 @@ public class NewSubTestModel_Action extends BaseAction {
   }
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
-    builder.append(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
+    String modelBaseName = ((SModel) MapSequence.fromMap(_params).get("model")).getName().getLongName();
+    builder.append(modelBaseName);
     int testModelCount = 0;
     List<SModel> models = IterableUtil.asList(((SModel) MapSequence.fromMap(_params).get("model")).getModule().getModels());
     List<SModel> sortedModels = SortUtil.sortModels(models);
     for (SModel md : sortedModels) {
-      if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {
+      if (!(SModelStereotype.isTestModel(md))) {
         continue;
       }
-      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ? "" : testModelCount));
-      if (name.equals(SNodeOperations.getModelLongName(md))) {
+      String name = (testModelCount == 0 ? modelBaseName : modelBaseName + testModelCount);
+      if (name.equals(md.getName().getLongName())) {
         testModelCount++;
       }
     }
     if (testModelCount != 0) {
-      builder.append(testModelCount + "");
+      builder.append(testModelCount);
     }
     return builder.toString();
   }

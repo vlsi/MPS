@@ -33,16 +33,7 @@ public final class SModelName {
   private final String myValue;
 
   public SModelName(@NotNull String qualifiedCompleteName) {
-    qualifiedCompleteName = qualifiedCompleteName.trim();
-    int atIndex = qualifiedCompleteName.lastIndexOf('@');
-    if (atIndex == 0 || (!qualifiedCompleteName.isEmpty() && atIndex == qualifiedCompleteName.length() - 1)) {
-      throw new IllegalArgumentException(String.format("Stereotype separator '@' shall not appear at the position %d in '%s'", atIndex, qualifiedCompleteName));
-    }
-    int nameLastChar = atIndex > 0 ? atIndex - 1 : qualifiedCompleteName.length() - 1;
-    if (qualifiedCompleteName.charAt(nameLastChar) == '.') {
-      throw new IllegalArgumentException("Name of the model shall not end with '.'");
-    }
-    myValue = qualifiedCompleteName;
+    myValue = checkIllegalChars(qualifiedCompleteName);
   }
 
   public SModelName(@Nullable CharSequence namespace, @NotNull CharSequence simpleName, @Nullable CharSequence stereotype) {
@@ -60,7 +51,16 @@ public final class SModelName {
       sb.append('@');
       sb.append(stereotype);
     }
-    myValue = sb.toString();
+    myValue = checkIllegalChars(sb.toString());
+  }
+
+  public SModelName(@NotNull CharSequence qualifiedName, @Nullable CharSequence stereotype) {
+    if (stereotype != null && stereotype.length() > 0) {
+      assert stereotype.toString().indexOf('@') == -1;
+      myValue = checkIllegalChars(new StringBuilder(qualifiedName).append('@').append(stereotype).toString());
+    } else {
+      myValue = checkIllegalChars(qualifiedName.toString());
+    }
   }
 
   /**
@@ -132,5 +132,18 @@ public final class SModelName {
   @Override
   public int hashCode() {
     return myValue.hashCode();
+  }
+
+  private static String checkIllegalChars(String qualifiedCompleteName) throws IllegalArgumentException {
+    qualifiedCompleteName = qualifiedCompleteName.trim();
+    int atIndex = qualifiedCompleteName.lastIndexOf('@');
+    if (atIndex == 0 || (!qualifiedCompleteName.isEmpty() && atIndex == qualifiedCompleteName.length() - 1)) {
+      throw new IllegalArgumentException(String.format("Stereotype separator '@' shall not appear at the position %d in '%s'", atIndex, qualifiedCompleteName));
+    }
+    int nameLastChar = atIndex > 0 ? atIndex - 1 : qualifiedCompleteName.length() - 1;
+    if (qualifiedCompleteName.charAt(nameLastChar) == '.') {
+      throw new IllegalArgumentException("Name of the model shall not end with '.'");
+    }
+    return qualifiedCompleteName;
   }
 }

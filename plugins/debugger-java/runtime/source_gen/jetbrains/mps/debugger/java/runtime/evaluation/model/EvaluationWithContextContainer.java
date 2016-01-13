@@ -49,6 +49,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
@@ -225,7 +226,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Nullable
   private SModel findStubForFqName(String fqName) {
-    return new ModuleRepositoryFacade(myDebuggerRepository).getModelByName(SModelStereotype.withStereotype(fqName, SModelStereotype.JAVA_STUB));
+    return new ModuleRepositoryFacade(myDebuggerRepository).getModelByName(new SModelName(fqName, SModelStereotype.JAVA_STUB).getValue());
   }
   private boolean needUpdateVariables() {
     return !(myVariablesInitialized) || !(myIsInWatch);
@@ -259,9 +260,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   /*package*/ Iterable<SModel> getCandidateNonStubModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(myDebuggerRepository);
-    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
-      public SModel select(String stereotype) {
-        return mrf.getModelByName(SModelStereotype.withStereotype(modelFqName, stereotype));
+    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<CharSequence, SModel>() {
+      public SModel select(CharSequence stereotype) {
+        return mrf.getModelByName(new SModelName(modelFqName, stereotype).getValue());
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -270,7 +271,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
   }
   public static String modelFqNameFromUnitName(String unitName) {
-    int lastDot = unitName.lastIndexOf(".");
+    int lastDot = unitName.lastIndexOf('.');
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {

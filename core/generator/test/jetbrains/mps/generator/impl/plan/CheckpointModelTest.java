@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ import jetbrains.mps.util.PathManager;
 import org.hamcrest.CoreMatchers;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -107,10 +108,10 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final String cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
+    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
     SModel cpModel = null;
     for (SModel trm : checkpointModule.getModels()) {
-      if (cpModelName.equals(trm.getModelName())) {
+      if (cpModelName.equals(trm.getName())) {
         cpModel = trm;
         break;
       }

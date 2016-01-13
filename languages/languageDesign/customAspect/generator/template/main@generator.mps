@@ -212,6 +212,9 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -872,11 +875,12 @@
                   <node concept="37vLTw" id="Q$WxRnIELA" role="37vLTJ">
                     <ref role="3cqZAo" node="Q$WxRnIELh" resolve="modelRoot" />
                   </node>
-                  <node concept="2YIFZM" id="Q$WxRnIGKY" role="37vLTx">
-                    <ref role="1Pybhc" to="w1kc:~ModelRootUtil" resolve="ModelRootUtil" />
-                    <ref role="37wK5l" to="w1kc:~ModelRootUtil.getModelRoot(org.jetbrains.mps.openapi.model.SModel):org.jetbrains.mps.openapi.persistence.ModelRoot" resolve="getModelRoot" />
-                    <node concept="37vLTw" id="Q$WxRnIELC" role="37wK5m">
+                  <node concept="2OqwBi" id="6OOlWTkza_R" role="37vLTx">
+                    <node concept="37vLTw" id="6OOlWTkzaxo" role="2Oq$k0">
                       <ref role="3cqZAo" node="Q$WxRnIELd" resolve="structureModel" />
+                    </node>
+                    <node concept="liA8E" id="6OOlWTkzaCI" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getModelRoot():org.jetbrains.mps.openapi.persistence.ModelRoot" resolve="getModelRoot" />
                     </node>
                   </node>
                 </node>
@@ -925,8 +929,8 @@
                     <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                   </node>
                 </node>
-                <node concept="Xl_RD" id="Q$WxRnIELI" role="3uHU7w">
-                  <property role="Xl_RC" value="." />
+                <node concept="1Xhbcc" id="6OOlWTkzaGT" role="3uHU7w">
+                  <property role="1XhdNS" value="." />
                 </node>
               </node>
               <node concept="1rXfSq" id="Q$WxRnINnd" role="3uHU7w">

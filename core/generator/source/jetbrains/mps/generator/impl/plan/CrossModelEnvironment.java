@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -106,16 +107,16 @@ public class CrossModelEnvironment {
     return null;
   }
 
-  /*package*/ static String createCheckpointModelName(SModelReference originalModel, Checkpoint step) {
+  /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, Checkpoint step) {
     String longName = originalModel.getName().getLongName();
     String stereotype = "cp-" + step.getName();
-    return SModelStereotype.withStereotype(longName, stereotype);
+    return new SModelName(longName, stereotype);
   }
 
   // originalModel is just to construct name/reference of the checkpoint model
   public SModel createBlankCheckpointModel(SModelReference originalModel, Checkpoint step) {
-    final String transientModelName = createCheckpointModelName(originalModel, step);
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
+    final SModelName transientModelName = createCheckpointModelName(originalModel, step);
+    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);
     return checkpointModel;
   }
