@@ -947,7 +947,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         if (oldLanguageVersions.containsKey(lang)) {
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
-          newLanguageVersions.put(lang, lang.getLanguageVersion());
+          int currentVersion = lang.getLanguageVersion();
+
+          for (SModel m: getModels()) {
+            SModelInternal modelInternal = (SModelInternal) m;
+            if (modelInternal.importedLanguageIds().contains(lang) && modelInternal.getLanguageImportVersion(lang) != currentVersion) {
+              throw new IllegalStateException("Could not update used language versions. Language " + lang + "has current version " + currentVersion
+                  + " while model " + m + " uses this language with version " + modelInternal.getLanguageImportVersion(lang));
+            }
+          }
+
+          newLanguageVersions.put(lang, currentVersion);
           // this check is needed to avoid numerous changes in msd/mpl files when opening project without dependency versions
           // here we assume that validateLanguageVersions() is called before validateDependencyVersions()
           // todo: remove this hack after 3.3

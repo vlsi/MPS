@@ -76,6 +76,7 @@ import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -419,7 +420,9 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     this.add(toolbarComponent, BorderLayout.WEST);
     this.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
 
-    myHighlighter = check_6q36mf_a0p0ic(myTool.getProject());
+    Disposer.register(this, myFileEditor);
+
+    myHighlighter = check_6q36mf_a0r0ic(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -547,7 +550,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), p0 + "");
     return n1;
   }
-  private static Highlighter check_6q36mf_a0p0ic(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0r0ic(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }

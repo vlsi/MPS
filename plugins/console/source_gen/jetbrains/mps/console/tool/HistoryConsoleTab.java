@@ -14,10 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
-import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Map;
 
 public class HistoryConsoleTab extends BaseConsoleTab {
 
@@ -47,11 +46,11 @@ public class HistoryConsoleTab extends BaseConsoleTab {
     group.add(PinToolwindowTabAction.getPinAction());
   }
 
-  private class CloseAction extends BaseAction {
+  private class CloseAction extends AnAction {
     public CloseAction() {
       super("Close", "Close tab", AllIcons.Actions.Cancel);
     }
-    protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
+    public void actionPerformed(AnActionEvent event) {
       myTool.closeTab(HistoryConsoleTab.this);
     }
   }

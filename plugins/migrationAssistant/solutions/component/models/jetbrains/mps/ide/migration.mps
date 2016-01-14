@@ -7165,15 +7165,12 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="27_Cq_TQ6sU" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.setLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage,int,boolean):void" resolve="setLanguageVersion" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.setLanguageImportVersion(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="setLanguageImportVersion" />
                   <node concept="37vLTw" id="M_fVsyNefm" role="37wK5m">
                     <ref role="3cqZAo" node="6QXKeyZ7YRz" resolve="fromLanguage" />
                   </node>
                   <node concept="37vLTw" id="M_fVsyNfeg" role="37wK5m">
                     <ref role="3cqZAo" node="27_Cq_TQdRE" resolve="toVersion" />
-                  </node>
-                  <node concept="3clFbT" id="uxxKaVIePL" role="37wK5m">
-                    <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>

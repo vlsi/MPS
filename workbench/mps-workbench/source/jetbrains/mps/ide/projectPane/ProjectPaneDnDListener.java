@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.actions.SetNodePackage_Action;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
@@ -48,6 +49,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 import java.awt.Point;
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
@@ -126,7 +128,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
           if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
             SNode baseNode = sourceNode.o1;
             List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project, baseNode);
-            for (RelationDescriptor tab:tabs){
+            for (RelationDescriptor tab : tabs) {
               if (!tab.isApplicable(baseNode)) continue;
 
               for (SNode aspect : tab.getNodes(baseNode)) {
@@ -140,38 +142,46 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     });
   }
 
+  //must return empty list in case no nodes are available
+  @NotNull
   private List<Pair<SNodeReference, String>> getSourceNodes(DropTargetEvent dtde) {
     try {
-      Object source = null;
-      if (dtde instanceof DropTargetDropEvent)
-        source = ((DropTargetDropEvent)dtde).getTransferable().getTransferData(myDataFlavor);
-      else if (dtde instanceof DropTargetDragEvent)
-        source = ((DropTargetDragEvent)dtde).getTransferable().getTransferData(myDataFlavor);
-      if (source instanceof List)  return (List<Pair<SNodeReference, String>>)source;
+      Transferable transferable = null;
+      if (dtde instanceof DropTargetDropEvent) {
+        transferable = ((DropTargetDropEvent) dtde).getTransferable();
+      } else if (dtde instanceof DropTargetDragEvent) {
+        transferable = ((DropTargetDragEvent) dtde).getTransferable();
+      }
+      if (transferable == null) return Collections.emptyList();
+
+      Object source = transferable.getTransferData(myDataFlavor);
+      if (!(source instanceof List)) return Collections.emptyList();
+
+      return (List) source;
     } catch (UnsupportedFlavorException e) {
-      LOG.error(null, e);
+      return Collections.emptyList();
     } catch (IOException e) {
       LOG.error(null, e);
+      return Collections.emptyList();
     }
-    return null;
   }
 
   private MPSTreeNode getTargetTreeNode(DropTargetEvent dtde) {
     Point point;
     if (dtde instanceof DropTargetDropEvent)
-      point = ((DropTargetDropEvent)dtde).getLocation();
+      point = ((DropTargetDropEvent) dtde).getLocation();
     else if (dtde instanceof DropTargetDragEvent)
-      point = ((DropTargetDragEvent)dtde).getLocation();
+      point = ((DropTargetDragEvent) dtde).getLocation();
     else
       return null;
     final TreePath treePath = myTree.getPathForLocation(point.x, point.y);
-    if (treePath == null)  return null;
+    if (treePath == null) return null;
     Object target = treePath.getLastPathComponent();
-    if (!(target instanceof MPSTreeNode))  return null;
-    return (MPSTreeNode)target;
+    if (!(target instanceof MPSTreeNode)) return null;
+    return (MPSTreeNode) target;
   }
 
-  private boolean isDropTargetAcceptable(MPSTreeNode treeNode, List<Pair<SNodeReference, String>> srcNodes) {
+  private boolean isDropTargetAcceptable(MPSTreeNode treeNode, @NotNull List<Pair<SNodeReference, String>> srcNodes) {
     // check all nodes from the same model and drop target is folder in that model or model itself
     SModelReference srcModelRef = null;
     for (Pair<SNodeReference, String> srcNode : srcNodes) {
@@ -183,9 +193,9 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     }
     if (srcModelRef == null) return false;  // empty list is not acceptable
     if (treeNode instanceof SModelTreeNode) {
-      return srcModelRef.equals(((SModelTreeNode)treeNode).getModel().getReference());
+      return srcModelRef.equals(((SModelTreeNode) treeNode).getModel().getReference());
     } else if (treeNode instanceof SNodeGroupTreeNode) {
-      return srcModelRef.equals(((SNodeGroupTreeNode)treeNode).getModelReference());
+      return srcModelRef.equals(((SNodeGroupTreeNode) treeNode).getModelReference());
     }
     return false;
   }
@@ -196,7 +206,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     for (final Pair<SNodeReference, String> node : sourceNodes) {
       SNode snode = node.o1.resolve(MPSModuleRepository.getInstance());
 
-      if (snode==null) continue;
+      if (snode == null) continue;
       if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
       SModel sourceModel = snode.getModel();
       if (EqualUtil.equals(sourceModel, targetModel)) {
