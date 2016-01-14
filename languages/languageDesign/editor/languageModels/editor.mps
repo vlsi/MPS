@@ -2432,6 +2432,32 @@
           </node>
         </node>
       </node>
+      <node concept="3EZMnI" id="UjlmrfWUd" role="3EZMnx">
+        <node concept="2iRfu4" id="UjlmrfWUe" role="2iSdaV" />
+        <node concept="3F0ifn" id="UjlmrfO7K" role="3EZMnx">
+          <property role="3F0ifm" value="/empty cell:" />
+          <ref role="1k5W1q" node="hX1xO3O" resolve="bordered" />
+        </node>
+        <node concept="3F1sOY" id="UjlmrfO7L" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;default&gt;" />
+          <ref role="1NtTu8" to="tpc2:UjlmrgInb" />
+          <node concept="VPXOz" id="UjlmrfO7M" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="pkWqt" id="UjlmrhnCq" role="pqm2j">
+          <node concept="3clFbS" id="UjlmrhnCr" role="2VODD2">
+            <node concept="3clFbF" id="Ujlmrg3cJ" role="3cqZAp">
+              <node concept="2OqwBi" id="Ujlmrg3iZ" role="3clFbG">
+                <node concept="pncrf" id="Ujlmrg3cI" role="2Oq$k0" />
+                <node concept="3TrcHB" id="Ujlmrg3x1" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpc2:Ujlmrg18k" resolve="customizeEmptyCell" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="PMmxH" id="h7TNL7h" role="3EZMnx">
         <ref role="PMmxG" node="h7TMK$j" resolve="_CloseTag" />
       </node>
@@ -2508,6 +2534,20 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="2iRfu4" id="i2IxuN4" role="2iSdaV" />
+          <node concept="pkWqt" id="2GeWSWLWq7Q" role="pqm2j">
+            <node concept="3clFbS" id="2GeWSWLWq7R" role="2VODD2">
+              <node concept="3clFbF" id="2GeWSWLWq8x" role="3cqZAp">
+                <node concept="3fqX7Q" id="2GeWSWLWq8z" role="3clFbG">
+                  <node concept="2OqwBi" id="2GeWSWLWq8$" role="3fr31v">
+                    <node concept="pncrf" id="2GeWSWLWq8_" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="2GeWSWLWq8A" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpc2:Ujlmrg18k" resolve="customizeEmptyCell" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3EZMnI" id="hF9sT4c" role="3EZMnx">
           <property role="3EZMnw" value="false" />
@@ -2538,12 +2578,22 @@
           <node concept="pkWqt" id="hF9sT4k" role="pqm2j">
             <node concept="3clFbS" id="hF9sT4l" role="2VODD2">
               <node concept="3clFbF" id="hF9sT4m" role="3cqZAp">
-                <node concept="3clFbC" id="hF9sT4n" role="3clFbG">
-                  <node concept="10Nm6u" id="hF9sT4o" role="3uHU7w" />
-                  <node concept="2OqwBi" id="hF9sT4p" role="3uHU7B">
-                    <node concept="pncrf" id="hF9sT4q" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="hF9sT4r" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpc2:g_$x2vM" resolve="noTargetText" />
+                <node concept="1Wc70l" id="2GeWSWLWpgk" role="3clFbG">
+                  <node concept="3fqX7Q" id="2GeWSWLWpju" role="3uHU7B">
+                    <node concept="2OqwBi" id="2GeWSWLWpvE" role="3fr31v">
+                      <node concept="pncrf" id="2GeWSWLWppz" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="2GeWSWLWpSQ" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpc2:Ujlmrg18k" resolve="customizeEmptyCell" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbC" id="hF9sT4n" role="3uHU7w">
+                    <node concept="10Nm6u" id="hF9sT4o" role="3uHU7w" />
+                    <node concept="2OqwBi" id="hF9sT4p" role="3uHU7B">
+                      <node concept="pncrf" id="hF9sT4q" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="hF9sT4r" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpc2:g_$x2vM" resolve="noTargetText" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2551,6 +2601,34 @@
             </node>
           </node>
           <node concept="2iRfu4" id="i2IxuSg" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="Ujlmrg3Aa" role="3EZMnx">
+          <property role="3EZMnw" value="false" />
+          <node concept="3F0ifn" id="Ujlmrg3Ab" role="3EZMnx">
+            <property role="3F0ifm" value="customize empty cell*" />
+            <ref role="1k5W1q" node="hF4H1c8" resolve="property" />
+          </node>
+          <node concept="3F0A7n" id="Ujlmrg3Ac" role="3EZMnx">
+            <property role="1O74Pk" value="true" />
+            <property role="1$x2rV" value="&lt;none&gt;" />
+            <ref role="1NtTu8" to="tpc2:Ujlmrg18k" resolve="customizeEmptyCell" />
+            <node concept="VPXOz" id="Ujlmrg3Ad" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+            <node concept="30gYXW" id="Ujlmrg3Ae" role="3F10Kt">
+              <property role="Vb096" value="yellow" />
+            </node>
+            <node concept="30h1P$" id="Ujlmrg3Af" role="3F10Kt">
+              <property role="Vb096" value="cyan" />
+            </node>
+          </node>
+          <node concept="VPM3Z" id="Ujlmrg3Ag" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VPXOz" id="Ujlmrg3Ah" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="2iRfu4" id="Ujlmrg3Aq" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="55my_QKPih4" role="3EZMnx">
           <node concept="VPM3Z" id="55my_QKPih5" role="3F10Kt">

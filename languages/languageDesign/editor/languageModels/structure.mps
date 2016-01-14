@@ -301,6 +301,12 @@
       <property role="20kJfa" value="removeHints" />
       <ref role="20lvS9" node="42lfqf__buC" resolve="ContextHintsSpecification" />
     </node>
+    <node concept="1TJgyj" id="UjlmrgInb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="emptyCellModel" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="fBEYTCT" resolve="EditorCellModel" />
+    </node>
     <node concept="1TJgyj" id="fBF1sR8" role="1TKVEi">
       <property role="20kJfa" value="linkDeclaration" />
       <property role="20lbJX" value="1" />
@@ -309,6 +315,10 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QN" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="1TJgyi" id="Ujlmrg18k" role="1TKVEl">
+      <property role="TrG5h" value="customizeEmptyCell" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="fBF2Hee">

@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -49,15 +50,23 @@ public abstract class SingleRoleCellProvider {
     myEditorContext = editorContext;
   }
 
+  /*
+   * @deprecated use createChildCell(SNode)
+   */
+  @Deprecated
   protected EditorCell createChildCell(EditorContext editorContext, SNode child) {
-    return createChildCell_internal(editorContext, child);
+    return createChildCell_internal(editorContext, child, true);
+  }
+
+  protected EditorCell createChildCell(SNode child) {
+    return createChildCell(myEditorContext, child);
   }
 
   @NotNull
-  private EditorCell createChildCell_internal(EditorContext editorContext, SNode child) {
+  private EditorCell createChildCell_internal(EditorContext editorContext, SNode child, boolean isRealChild) {
     EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
     //todo get rid of getDeclarationNode
-    if (child == getRealChild()) {
+    if (isRealChild) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
     } else {
@@ -81,15 +90,15 @@ public abstract class SingleRoleCellProvider {
     SNode realChild = getRealChild();
     for (SNode node : getNodesToPresent()) {
       EditorCell cell;
-      if (node == realChild){
-        cell = createChildCell(myEditorContext, node);
+      if (node == realChild) {
+        cell = createChildCell(node);
       } else {
-        cell = createChildCell_internal(myEditorContext, node);
+        cell = createChildCell_internal(myEditorContext, node, false);
       }
       resultCell.addEditorCell(cell);
     }
     if (realChild == null) {
-      resultCell.addEditorCell(createEmptyCell());
+      resultCell.addEditorCell(createEmptyCellCollection());
     }
     return resultCell;
   }
@@ -101,16 +110,27 @@ public abstract class SingleRoleCellProvider {
   }
 
   private EditorCell createSingleCell() {
-    Iterator<? extends SNode> iterator = myOwnerNode.getChildren(myContainmentLink).iterator();
-    if (iterator.hasNext()) {
-      return createChildCell(myEditorContext, iterator.next());
+    SNode child = getRealChild();
+    if (child != null) {
+      return createChildCell(child);
     } else {
-      return createEmptyCell();
+      return createEmptyCellCollection();
     }
   }
 
   private boolean areAttributesEmpty() {
     return !AttributeOperations.getChildAttributes(myOwnerNode, myContainmentLink).iterator().hasNext();
+  }
+
+  private EditorCell createEmptyCellCollection() {
+    EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
+    collection.setSelectable(false);
+    collection.addEditorCell(createEmptyCell());
+
+    //todo: get rid of getRole()
+    collection.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
+    collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
+    return collection;
   }
 
   protected EditorCell createEmptyCell() {
@@ -119,17 +139,13 @@ public abstract class SingleRoleCellProvider {
         new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
     result.setDefaultText(getNoTargetText());
     result.setEditable(true);
-
-    //todo: get rid of getRole()
-    result.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
-    result.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink.getRole()));
     return result;
   }
 
   protected String getNoTargetText() {
-    //todo get rid of getRolName
-    return "<no " + myContainmentLink.getRoleName() + ">";
+    return "<no " + myContainmentLink.getName() + ">";
   }
+
   protected Iterable<SNode> getNodesToPresent() {
     return AttributeOperations.getChildNodesAndAttributes(myOwnerNode, myContainmentLink);
   }
