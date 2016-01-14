@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -48,7 +49,6 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
@@ -75,7 +75,7 @@ public class NewModelDialog extends DialogWrapper {
   private JComboBox myModelStorageFormat = new JComboBox();
   private SModel myClone;
   private boolean myPreserveIds;
-  private SModel myResult;
+  private EditableSModel myResult;
   private String myNamespace;
   public NewModelDialog(Project project, AbstractModule module, String namespace, String stereotype, boolean strict) throws HeadlessException {
     super(ProjectHelper.toIdeaProject(project));
@@ -124,7 +124,7 @@ public class NewModelDialog extends DialogWrapper {
     }
     return module.getModuleName();
   }
-  public SModel getResult() {
+  public EditableSModel getResult() {
     return myResult;
   }
   private void initContentPane() {
@@ -294,9 +294,9 @@ public class NewModelDialog extends DialogWrapper {
       });
     }
 
-    myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<SModel>() {
+    myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
-      public SModel compute() {
+      public EditableSModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
         EditableSModel result;

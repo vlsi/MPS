@@ -61,7 +61,7 @@
       <node id="686066472821692452" at="120,49,121,28" concept="10" />
       <node id="686066472821692470" at="122,7,123,39" concept="10" />
       <node id="1218634788292" at="124,5,125,34" concept="10" />
-      <node id="1613125646032871527" at="127,29,128,20" concept="10" />
+      <node id="1613125646032871527" at="127,37,128,20" concept="10" />
       <node id="1613125646032871533" at="130,34,131,63" concept="9" />
       <node id="3205480298361480036" at="131,63,132,55" concept="4" />
       <node id="4851117361033800178" at="132,55,133,0" concept="12" />
@@ -159,7 +159,7 @@
       <node id="7961782505698717120" at="288,154,289,46" concept="4" />
       <node id="3205480298362261671" at="289,46,290,54" concept="4" />
       <node id="3205480298361688943" at="295,5,296,0" concept="12" />
-      <node id="5149305731183885523" at="299,31,300,36" concept="9" />
+      <node id="5149305731183885523" at="299,39,300,36" concept="9" />
       <node id="5149305731183885527" at="300,36,301,66" concept="9" />
       <node id="2085437128637568116" at="301,66,302,30" concept="9" />
       <node id="2085437128637568372" at="303,45,304,131" concept="4" />
@@ -222,7 +222,7 @@
       <node id="2085437128637568648" at="305,14,307,9" concept="1" />
       <node id="155338796450201800" at="325,14,327,9" concept="1" />
       <node id="686066472821691761" at="119,0,122,7" concept="7" />
-      <node id="1613125646032871523" at="127,0,130,0" concept="8" trace="getResult#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1613125646032871523" at="127,0,130,0" concept="8" trace="getResult#()Lorg/jetbrains/mps/openapi/model/EditableSModel;" />
       <node id="1613125646032871621" at="149,0,152,5" concept="7" />
       <node id="3298715926002509728" at="155,110,158,9" concept="7" />
       <node id="7632112388012135511" at="192,94,195,5" concept="7" />
@@ -283,14 +283,14 @@
       <node id="1423104411235768782" at="267,0,283,0" concept="8" trace="run#()V" />
       <node id="1423104411235768780" at="265,0,283,9" concept="4" />
       <node id="1613125646032871453" at="80,0,99,0" concept="3" trace="NewModelDialog#(Ljetbrains/mps/project/Project;Ljetbrains/mps/project/AbstractModule;Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <node id="5149305731183885519" at="298,0,333,0" concept="8" trace="compute#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="5149305731183885519" at="298,0,333,0" concept="8" trace="compute#()Lorg/jetbrains/mps/openapi/model/EditableSModel;" />
       <node id="5149305731183885509" at="296,0,333,7" concept="4" />
       <node id="3205480298361689313" at="249,0,295,5" concept="7" />
       <node id="3298715926002509814" at="359,0,410,0" concept="8" trace="check#()Z" />
       <node id="5149305731183885477" at="244,0,339,0" concept="8" trace="doOKAction#()V" />
       <node id="1613125646032871529" at="130,0,237,0" concept="8" trace="initContentPane#()V" />
       <scope id="686066472821691762" at="120,49,121,28" />
-      <scope id="1613125646032871526" at="127,29,128,20" />
+      <scope id="1613125646032871526" at="127,37,128,20" />
       <scope id="3298715926002507287" at="142,35,143,31" />
       <scope id="1613125646032871627" at="150,31,151,66" />
       <scope id="3298715926002509804" at="156,42,157,58" />
@@ -440,7 +440,7 @@
         <var name="stereotype" id="1613125646032871462" />
         <var name="strict" id="1613125646032871464" />
       </scope>
-      <scope id="5149305731183885522" at="299,31,331,22">
+      <scope id="5149305731183885522" at="299,39,331,22">
         <var name="fqName" id="5149305731183885524" />
         <var name="mr" id="5149305731183885528" />
         <var name="result" id="2085437128637568117" />
