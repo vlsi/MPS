@@ -390,10 +390,16 @@
       <ref role="lpD7u" to="e6od:P9hc2Kh9KP" resolve="Subst_MultiChild_OnlyEnumProperty_with_Another" />
     </node>
     <node concept="lpD6D" id="P9hc2KhcHg" role="lpD6w">
-      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+      <ref role="lpD7u" to="e6od:2wtgzyWe$4X" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
     </node>
     <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="2wtgzyWeBjY" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_WithNonEmptyCell_Complete" />
+    </node>
+    <node concept="lpD6D" id="76t$LiKqF$a" role="lpD6w">
+      <ref role="lpD7u" to="e6od:76t$LiKqFxu" resolve="Subst_SingleChild_WithNonEmptyCell_Insert" />
     </node>
     <node concept="lpD6D" id="2qEq7FDsz4G" role="lpD6w">
       <ref role="lpD7u" to="65l5:2qEq7FDsttl" resolve="RedoChangesOfTransactionalPropertyCell" />
@@ -628,6 +634,9 @@
     </node>
     <node concept="lpD6D" id="2_1mL0eBmWW" role="lpD6w">
       <ref role="lpD7u" to="e6od:2_1mL0eBlSN" resolve="Comment_Return" />
+    </node>
+    <node concept="lpD6D" id="6PSwRUj7pKm" role="lpD6w">
+      <ref role="lpD7u" to="e6od:6PSwRUj7o0m" resolve="Comment_ReturnExpression_NoEmptyCell" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdrY" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cI7w" resolve="Comment_SecondStatement" />

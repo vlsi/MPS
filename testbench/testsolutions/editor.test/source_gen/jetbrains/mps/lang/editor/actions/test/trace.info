@@ -3,6 +3,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/1683214195544025561">
     <file name="Comment_DeleteSingleRoleWholeComment_Test.java">
       <node id="1683214195544025561" at="15,76,16,115" concept="1" />
@@ -178,6 +179,29 @@
       <scope id="2103596388770305401" at="23,0,29,0" />
       <unit id="2103596388770305401" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentWithSelection_Test$TestBody" />
       <unit id="2103596388770305401" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentWithSelection_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2890539347285262653">
+    <file name="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test.java">
+      <node id="2890539347285262653" at="15,90,16,115" concept="1" />
+      <node id="2890539347285262653" at="16,115,17,145" concept="1" />
+      <node id="2890539347285262653" at="24,51,25,63" concept="1" />
+      <node id="2890539347285262662" at="25,63,26,28" concept="1" />
+      <node id="2890539347285262660" at="26,28,27,76" concept="1" />
+      <node id="2890539347285262653" at="12,0,14,0" concept="0" trace="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test#()V" />
+      <node id="2890539347285262653" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="2890539347285262653" at="14,0,19,0" concept="2" trace="test_Subst_SingleChild_OnlyBooleanProperty_with_Another#()V" />
+      <node id="2890539347285262653" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2890539347285262653" at="12,68,12,68" />
+      <scope id="2890539347285262653" at="21,23,21,23" />
+      <scope id="2890539347285262653" at="12,0,14,0" />
+      <scope id="2890539347285262653" at="15,90,17,145" />
+      <scope id="2890539347285262653" at="21,0,23,0" />
+      <scope id="2890539347285262653" at="24,51,27,76" />
+      <scope id="2890539347285262653" at="14,0,19,0" />
+      <scope id="2890539347285262653" at="23,0,29,0" />
+      <unit id="2890539347285262653" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
+      <unit id="2890539347285262653" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2893289111810574063">
@@ -1199,6 +1223,55 @@
       <unit id="7803854675610520166" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7888199326996725782">
+    <file name="Comment_ReturnExpression_NoEmptyCell_Test.java">
+      <node id="7888199326996725782" at="15,76,16,115" concept="1" />
+      <node id="7888199326996725782" at="16,115,17,131" concept="1" />
+      <node id="7888199326996725782" at="24,51,25,63" concept="1" />
+      <node id="7888199326996725784" at="25,63,26,75" concept="1" />
+      <node id="7888199326996727983" at="26,75,27,77" concept="1" />
+      <node id="7888199326996727989" at="27,77,28,77" concept="1" />
+      <node id="7888199326996727997" at="28,77,29,77" concept="1" />
+      <node id="7888199326996725782" at="12,0,14,0" concept="0" trace="Comment_ReturnExpression_NoEmptyCell_Test#()V" />
+      <node id="7888199326996725782" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="7888199326996725782" at="14,0,19,0" concept="2" trace="test_Comment_ReturnExpression_NoEmptyCell#()V" />
+      <node id="7888199326996725782" at="23,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7888199326996725782" at="12,54,12,54" />
+      <scope id="7888199326996725782" at="21,23,21,23" />
+      <scope id="7888199326996725782" at="12,0,14,0" />
+      <scope id="7888199326996725782" at="15,76,17,131" />
+      <scope id="7888199326996725782" at="21,0,23,0" />
+      <scope id="7888199326996725782" at="14,0,19,0" />
+      <scope id="7888199326996725782" at="24,51,29,77" />
+      <scope id="7888199326996725782" at="23,0,31,0" />
+      <unit id="7888199326996725782" at="19,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_ReturnExpression_NoEmptyCell_Test$TestBody" />
+      <unit id="7888199326996725782" at="10,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Comment_ReturnExpression_NoEmptyCell_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/8186861414697842782">
+    <file name="Subst_SingleChild_WithNonEmptyCell_Insert_Test.java">
+      <node id="8186861414697842782" at="15,81,16,115" concept="1" />
+      <node id="8186861414697842782" at="16,115,17,136" concept="1" />
+      <node id="8186861414697842782" at="24,51,25,63" concept="1" />
+      <node id="8186861414697842789" at="25,63,26,74" concept="1" />
+      <node id="8186861414697851881" at="26,74,27,28" concept="1" />
+      <node id="8186861414697851877" at="27,28,28,0" concept="3" />
+      <node id="8186861414697842782" at="12,0,14,0" concept="0" trace="Subst_SingleChild_WithNonEmptyCell_Insert_Test#()V" />
+      <node id="8186861414697842782" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8186861414697842782" at="14,0,19,0" concept="2" trace="test_Subst_SingleChild_WithNonEmptyCell_Insert#()V" />
+      <node id="8186861414697842782" at="23,0,30,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8186861414697842782" at="12,59,12,59" />
+      <scope id="8186861414697842782" at="21,23,21,23" />
+      <scope id="8186861414697842782" at="12,0,14,0" />
+      <scope id="8186861414697842782" at="15,81,17,136" />
+      <scope id="8186861414697842782" at="21,0,23,0" />
+      <scope id="8186861414697842782" at="24,51,28,0" />
+      <scope id="8186861414697842782" at="14,0,19,0" />
+      <scope id="8186861414697842782" at="23,0,30,0" />
+      <unit id="8186861414697842782" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCell_Insert_Test$TestBody" />
+      <unit id="8186861414697842782" at="10,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCell_Insert_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911890332">
     <file name="Subst_MultiChild_AddNewChildBySeparator_Test.java">
       <node id="9133079350911890332" at="15,79,16,115" concept="1" />
@@ -1288,26 +1361,27 @@
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174085944">
-    <file name="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test.java">
-      <node id="957371990174085944" at="15,90,16,115" concept="1" />
-      <node id="957371990174085944" at="16,115,17,145" concept="1" />
-      <node id="957371990174085944" at="24,51,25,61" concept="1" />
-      <node id="957371990174537433" at="25,61,26,28" concept="1" />
-      <node id="3694071247855998061" at="26,28,27,76" concept="1" />
-      <node id="957371990174085944" at="12,0,14,0" concept="0" trace="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test#()V" />
-      <node id="957371990174085944" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="957371990174085944" at="14,0,19,0" concept="2" trace="test_Subst_SingleChild_OnlyBooleanProperty_with_Another#()V" />
-      <node id="957371990174085944" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="957371990174085944" at="12,68,12,68" />
-      <scope id="957371990174085944" at="21,23,21,23" />
-      <scope id="957371990174085944" at="12,0,14,0" />
-      <scope id="957371990174085944" at="15,90,17,145" />
-      <scope id="957371990174085944" at="21,0,23,0" />
-      <scope id="957371990174085944" at="24,51,27,76" />
-      <scope id="957371990174085944" at="14,0,19,0" />
-      <scope id="957371990174085944" at="23,0,29,0" />
-      <unit id="957371990174085944" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
-      <unit id="957371990174085944" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test" />
+    <file name="Subst_SingleChild_WithNonEmptyCell_Complete_Test.java">
+      <node id="957371990174085944" at="17,83,18,115" concept="1" />
+      <node id="957371990174085944" at="18,115,19,138" concept="1" />
+      <node id="957371990174085944" at="26,51,27,61" concept="1" />
+      <node id="3694071247855998061" at="27,61,28,76" concept="1" />
+      <node id="957371990174537433" at="28,76,29,28" concept="1" />
+      <node id="2890539347285227863" at="29,28,30,87" concept="1" />
+      <node id="957371990174085944" at="14,0,16,0" concept="0" trace="Subst_SingleChild_WithNonEmptyCell_Complete_Test#()V" />
+      <node id="957371990174085944" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="957371990174085944" at="16,0,21,0" concept="2" trace="test_Subst_SingleChild_WithNonEmptyCell_Complete#()V" />
+      <node id="957371990174085944" at="25,0,32,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="957371990174085944" at="14,61,14,61" />
+      <scope id="957371990174085944" at="23,23,23,23" />
+      <scope id="957371990174085944" at="14,0,16,0" />
+      <scope id="957371990174085944" at="17,83,19,138" />
+      <scope id="957371990174085944" at="23,0,25,0" />
+      <scope id="957371990174085944" at="26,51,30,87" />
+      <scope id="957371990174085944" at="16,0,21,0" />
+      <scope id="957371990174085944" at="25,0,32,0" />
+      <unit id="957371990174085944" at="21,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCell_Complete_Test$TestBody" />
+      <unit id="957371990174085944" at="12,0,34,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCell_Complete_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174539535">

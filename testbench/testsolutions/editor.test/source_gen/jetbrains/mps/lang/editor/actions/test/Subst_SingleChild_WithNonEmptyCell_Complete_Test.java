@@ -6,15 +6,17 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 @MPSLaunch
-public class Subst_SingleChild_OnlyBooleanProperty_with_Another_Test extends BaseTransformationTest {
-  public Subst_SingleChild_OnlyBooleanProperty_with_Another_Test() {
+public class Subst_SingleChild_WithNonEmptyCell_Complete_Test extends BaseTransformationTest {
+  public Subst_SingleChild_WithNonEmptyCell_Complete_Test() {
   }
   @Test
-  public void test_Subst_SingleChild_OnlyBooleanProperty_with_Another() throws Throwable {
+  public void test_Subst_SingleChild_WithNonEmptyCell_Complete() throws Throwable {
     this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_WithNonEmptyCell_Complete_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,9 +24,10 @@ public class Subst_SingleChild_OnlyBooleanProperty_with_Another_Test extends Bas
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2890539347285262654", "2890539347285262656");
-      this.typeString("v1");
+      initEditor("957371990174094570", "957371990174483162");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      this.typeString("v2");
+      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }
