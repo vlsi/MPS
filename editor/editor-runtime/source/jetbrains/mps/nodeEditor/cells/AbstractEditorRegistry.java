@@ -109,7 +109,8 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     try {
       aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
     } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get editor aspect descriptor for language: " + languageRuntime, error);
+      LOG.error("Failed to get editor aspect descriptor for language: " +
+          languageRuntime.getNamespace() + ". Editors of this language will not be taken into account", error);
     }
     if (aspectDescriptor != null) {
       for (T conceptEditor : getEditors(aspectDescriptor, concept)) {
