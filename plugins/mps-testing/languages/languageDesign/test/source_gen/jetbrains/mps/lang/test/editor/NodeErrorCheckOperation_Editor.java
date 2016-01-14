@@ -73,19 +73,17 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
     public errorRefSingleRoleHandler_kzyi6r_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(myEditorContext, new AggregationCellContext(myOwnerNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new NodeErrorCheckOperation_Editor.NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0()}));
       if (editorCell.getRole() == null) {
         editorCell.setRole("errorRef");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -93,11 +91,9 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no errorRef>";
     }
-
   }
   public static class NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0() {

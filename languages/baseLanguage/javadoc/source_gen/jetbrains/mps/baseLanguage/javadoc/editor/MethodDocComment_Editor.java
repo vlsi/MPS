@@ -251,9 +251,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     if (renderingCondition_ls0i5e_a7e0a(node, editorContext)) {
       editorCell.addEditorCell(this.createRefNode_ls0i5e_h4a0(editorContext, node));
     }
-    if (renderingCondition_ls0i5e_a8e0a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_ls0i5e_i4a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_ls0i5e_i4a0(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_ls0i5e_a4a0(SNode node, EditorContext editorContext) {
@@ -560,12 +558,12 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     public deprecatedSingleRoleHandler_ls0i5e_h4a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("deprecated");
@@ -577,8 +575,6 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       editorCell.getStyle().putAll(style);
       DeleteTagsAndHandleDeprecationOnAttributedNode.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -586,11 +582,9 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no deprecated>";
     }
-
   }
   private static boolean renderingCondition_ls0i5e_a7e0a(SNode node, EditorContext editorContext) {
     return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")));
@@ -603,12 +597,12 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     public returnSingleRoleHandler_ls0i5e_i4a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("return");
@@ -619,23 +613,23 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_return");
+      EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
-    protected String getNoTargetText() {
-      return "<no return>";
+    private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createCollection_ls0i5e_a8e0a(editorContext, node);
     }
-
-  }
-  private static boolean renderingCondition_ls0i5e_a8e0a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x514c0f6870509198L, "return"))).isNotEmpty();
+    private EditorCell createCollection_ls0i5e_a8e0a(EditorContext editorContext, SNode node) {
+      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+      editorCell.setCellId("Collection_ls0i5e_a8e0a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.SELECTABLE, 0, false);
+      editorCell.getStyle().putAll(style);
+      return editorCell;
+    }
   }
   private EditorCell createConstant_ls0i5e_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");

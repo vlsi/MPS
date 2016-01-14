@@ -220,12 +220,12 @@ public class DSLDescriptor_Editor extends DefaultNodeEditor {
     public initializerSingleRoleHandler_jtr19c_i0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(myEditorContext, new AggregationCellContext(myOwnerNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new DSLDescriptor_Editor.DSLDescriptor_generic_cellMenu_jtr19c_a0i0()}));
       if (editorCell.getRole() == null) {
         editorCell.setRole("initializer");
@@ -235,8 +235,6 @@ public class DSLDescriptor_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -244,11 +242,9 @@ public class DSLDescriptor_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no initializer>";
     }
-
   }
   public static class DSLDescriptor_generic_cellMenu_jtr19c_a0i0 extends AbstractCellMenuPart_Generic_Item {
     public DSLDescriptor_generic_cellMenu_jtr19c_a0i0() {

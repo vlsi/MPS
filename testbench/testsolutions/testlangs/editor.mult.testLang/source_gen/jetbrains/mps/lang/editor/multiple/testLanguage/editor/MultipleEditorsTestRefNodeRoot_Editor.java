@@ -97,12 +97,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     public richChildSingleRoleHandler_fxz4pq_c2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("richChild");
@@ -115,7 +115,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     @Override
     public EditorCell createCell() {
       try {
-
         myEditorContext.getCellFactory().pushCellContext();
         myEditorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"});
         myEditorContext.getCellFactory().removeCellContextHints();
@@ -124,8 +123,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         myEditorContext.getCellFactory().popCellContext();
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -133,11 +130,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no richChild>";
     }
-
   }
   private EditorCell createConstant_fxz4pq_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -189,12 +184,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     public compactChildSingleRoleHandler_fxz4pq_c4c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("compactChild");
@@ -207,7 +202,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     @Override
     public EditorCell createCell() {
       try {
-
         myEditorContext.getCellFactory().pushCellContext();
         myEditorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
         myEditorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"});
@@ -216,8 +210,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         myEditorContext.getCellFactory().popCellContext();
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -225,11 +217,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no compactChild>";
     }
-
   }
   private EditorCell createConstant_fxz4pq_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -279,12 +269,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     public conditionallyProjectedChildSingleRoleHandler_fxz4pq_j2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("conditionallyProjectedChild");
@@ -297,7 +287,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     @Override
     public EditorCell createCell() {
       try {
-
         myEditorContext.getCellFactory().pushCellContext();
         myEditorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a9c0(myOwnerNode, myEditorContext)).toGenericArray(String.class));
         myEditorContext.getCellFactory().removeCellContextHints();
@@ -306,8 +295,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         myEditorContext.getCellFactory().popCellContext();
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -315,11 +302,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no conditionallyProjectedChild>";
     }
-
   }
   private Iterable<String> getEditorHints_fxz4pq_a9c0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551cL, "projectionType"), "rich", null)) {
@@ -405,12 +390,12 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     public conditionallyRichOrCompactChildSingleRoleHandler_fxz4pq_d21c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("conditionallyRichOrCompactChild");
@@ -423,7 +408,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
     @Override
     public EditorCell createCell() {
       try {
-
         myEditorContext.getCellFactory().pushCellContext();
         myEditorContext.getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a(myOwnerNode, myEditorContext)).toGenericArray(String.class));
         myEditorContext.getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fxz4pq_a3m2a_0(myOwnerNode, myEditorContext)).toGenericArray(String.class));
@@ -432,8 +416,6 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         myEditorContext.getCellFactory().popCellContext();
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -441,11 +423,9 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no conditionallyRichOrCompactChild>";
     }
-
   }
   private Iterable<String> getEditorHints_fxz4pq_a3m2a(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, 0x1b06bb955221551dL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
