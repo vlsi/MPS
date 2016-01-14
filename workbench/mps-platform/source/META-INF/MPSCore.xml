@@ -103,7 +103,7 @@
     <getDataRule key="MPS_IOperationContext"
                  implementationClass="jetbrains.mps.ide.dataExtraction.ContextRule"/>
 
-    <fileBasedIndex implementation="jetbrains.mps.workbench.goTo.index.RootNodeNameIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.workbench.index.RootNodeNameIndex"/>
     <gotoClassContributor implementation="jetbrains.mps.workbench.goTo.GoToClassMPSContributor"/>
     <editorTabTitleProvider implementation="jetbrains.mps.fileTypes.MPSEditorTabTitleProvider"/>
   </extensions>

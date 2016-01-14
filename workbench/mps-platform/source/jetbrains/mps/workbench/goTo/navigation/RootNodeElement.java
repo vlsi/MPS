@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,32 +17,44 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
-public class RootNodeElement implements NavigationItem {
-  private NavigationTarget myNodeResult;
+/**
+ * Bridges OpenAPI {@link NavigationTarget} with IDEA's {@link NavigationItem}
+ * Although may be package-local for use in RootChooseModel only, ImportHelper needs access to NavigationTarget (due to the nature
+ * of BaseMPSChooseModel, which forcefully wraps elements into NavigationItem, and ImportHelper needs different navigation than
+ * that in this class (perhaps, shall subclass RootChooseModel in ImportHelper then?).
+ * FIXME It' bad idea to associate particular behavior (here, navigation) with a data model for element chooser.
+ */
+public final class RootNodeElement implements NavigationItem {
+  private final Project myProject;
+  private final NavigationTarget myTarget;
 
-  public RootNodeElement(NavigationTarget nodeResult) {
-    myNodeResult = nodeResult;
+  public RootNodeElement(Project mpsProject, NavigationTarget target) {
+    myProject = mpsProject;
+    myTarget = target;
   }
 
   @Override
   public String getName() {
-    return myNodeResult.getPresentation();
+    return myTarget.getPresentation();
   }
 
   @Override
   public ItemPresentation getPresentation() {
-    return new SNodeDescriptorPresentation(myNodeResult);
+    return new SNodeDescriptorPresentation(myTarget);
   }
 
   public SModelReference getModel() {
-    return myNodeResult.getNodeReference().getModelReference();
+    return myTarget.getNodeReference().getModelReference();
   }
 
   @Override
   public void navigate(boolean requestFocus) {
+    new EditorNavigator(myProject).shallFocus(requestFocus).selectIfChild().open(myTarget.getNodeReference());
   }
 
   @Override

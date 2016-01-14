@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

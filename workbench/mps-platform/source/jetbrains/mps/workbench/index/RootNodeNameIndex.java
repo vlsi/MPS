@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.goTo.index;
+package jetbrains.mps.workbench.index;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.containers.EmptyIterable;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.FileContent;
@@ -33,9 +32,13 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
+import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
+import jetbrains.mps.workbench.index.ModelRootsData.Entry;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -43,18 +46,24 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Indexes .mps files and makes an index model-&gt;List &lt;SNodeDescriptor&gt;
+ * Indexes .mps files, producing an object that keeps all navigable model roots.
+ * Note, it's not a true index, rather a caching mechanism that employs indexing infrastructure (as any
+ * SingleEntryFileBasedIndexExtension does). There's only one key to access indexed values, and it's id of the virtual file itself,
+ * see {@link #getFileKey(VirtualFile)}. It's not an index as one needs to know file to obtain the key (look at {@link #getValues(VirtualFile)}).
  */
-public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
+public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelRootsData> {
   @NonNls
-  public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("RootNodeNameIndex2");
+  private static final ID<Integer, ModelRootsData> NAME = ID.create("mps.RootNodeName");
   private static final Logger LOG = LogManager.getLogger(RootNodeNameIndex.class);
   private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
@@ -88,60 +97,86 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     return model;
   }
 
-  @Override
-  @NotNull
-  public ID<Integer, List<SNodeDescriptor>> getName() {
-    return NAME;
-  }
-
+  // FIXME No idea what's this method for, why do we care about node id serialization format. Drop
   public static Iterable<SNode> getRootsToIterate(SModel model) {
-    if (SModelStereotype.isStubModel(model)) {
-      return new EmptyIterable<SNode>();
-    }
     return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
+  /**
+   * @return key one needs to access indexed values
+   */
+  public static int getFileKey(@NotNull VirtualFile file) {
+    // this is what SingleEntryIndexer does to associate values with a file, and what
+    // SingleEntryFileBasedIndexExtension shall expose in its API but does not, and every client of it shall
+    // duplicate this implementation logic when trying to access index values (Math.abs() is often overlooked)
+    int fileId = FileBasedIndex.getFileId(file);
+    if (fileId != Math.abs(fileId)) {
+      System.out.printf("!!!" + file.getPath());
+    }
+    return fileId;
+//    return Math.abs(fileId);
+  }
+
+  /**
+   * @return cached, aka 'indexed' values associated with the model file, ready for navigation
+   */
+  @NotNull
+  public static Collection<NavigationTarget> getValues(@NotNull VirtualFile modelFile) {
+    int fileId = RootNodeNameIndex.getFileKey(modelFile);
+    ConcreteFilesGlobalSearchScope fileScope = new ConcreteFilesGlobalSearchScope(Collections.singleton(modelFile));
+    List<ModelRootsData> descriptors = FileBasedIndex.getInstance().getValues(RootNodeNameIndex.NAME, fileId, fileScope);
+    if (descriptors.isEmpty()) {
+      return Collections.emptyList();
+    }
+    ModelRootsData modelEntry = descriptors.get(0); // key is unique for the model
+    Collection<Entry> entries = modelEntry.getEntries();
+    ArrayList<NavigationTarget> rv = new ArrayList<NavigationTarget>(entries.size());
+    for (Entry e : entries) {
+      rv.add(new SNodeDescriptor(e.myName, e.myConcept, new SNodePointer(modelEntry.getModelReference(), e.myNode)));
+    }
+    return rv;
+  }
+
   @Override
-  public DataExternalizer<List<SNodeDescriptor>> getValueExternalizer() {
-    return new SNodeDescriptorListEnumerator();
+  @NotNull
+  public ID<Integer, ModelRootsData> getName() {
+    return NAME;
   }
 
   @NotNull
   @Override
-  public SingleEntryIndexer<List<SNodeDescriptor>> getIndexer() {
+  public DataExternalizer<ModelRootsData> getValueExternalizer() {
+    return new ModelRootsExternalizer();
+  }
+
+  @NotNull
+  @Override
+  public SingleEntryIndexer<ModelRootsData> getIndexer() {
     return new MyIndexer();
   }
 
+  @NotNull
   @Override
   public InputFilter getInputFilter() {
     return new MyInputFilter();
   }
 
   @Override
-  public boolean dependsOnFileContent() {
-    return true;
-  }
-
-  @Override
   public int getVersion() {
-    return 8;
-  }
-
-  @Override
-  public int getCacheSize() {
-    return DEFAULT_CACHE_SIZE;
+    return 1;
   }
 
   private static class MyCondition implements Condition<SNode> {
     @Override
     public boolean met(SNode node) {
+      // FIXME I've got no idea why we discriminate nodes with such id
       return !node.getNodeId().toString().contains("$");
     }
   }
 
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
     @Override
-    public boolean acceptInput(VirtualFile file) {
+    public boolean acceptInput(@NotNull VirtualFile file) {
       FileType fileType = file.getFileType();
       return MPSFileTypeFactory.MPS_FILE_TYPE.equals(fileType) || MPSFileTypeFactory.MPS_BINARY_FILE_TYPE.equals(fileType);
     }
@@ -149,34 +184,34 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
   // FIXME (1) ModelAccess? Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept)?
   // FIXME (2) modelReference with each root node?! it's the same for all elements in the list!
-  private static class MyIndexer extends SingleEntryIndexer<List<SNodeDescriptor>> {
+  private static class MyIndexer extends SingleEntryIndexer<ModelRootsData> {
     private MyIndexer() {
       super(false);
     }
 
     @Override
-    protected List<SNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
-      final List<SNodeDescriptor> descriptors = new ArrayList<SNodeDescriptor>();
+    protected ModelRootsData computeValue(@NotNull final FileContent inputData) {
       try {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        return ModelAccess.instance().runReadAction(new Computable<ModelRootsData>() {
           @Override
-          public void run() {
+          public ModelRootsData compute() {
             SModel model = doModelParsing(inputData);
-            // e.g. model with merge conflict
-            if (model == null) return;
-
-            for (final SNode node : getRootsToIterate(model)) {
-              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-              String nodeName = (persistentName == null) ? "null" : persistentName;
-              SNodeDescriptor value = new SNodeDescriptor(nodeName, node);
-              descriptors.add(value);
+            if (model == null || SModelStereotype.isStubModel(model)) {
+              // e.g. model with merge conflict
+              // stub models are handled elsewhere
+              return null;
             }
+
+            ModelRootsData data = new ModelRootsData(model);
+            // it looks there's no reason to serialize data for empty model
+            return data.isEmpty() ? null : data;
           }
+
         });
       } catch (Exception e) {
         LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
       }
-      return descriptors;
+      return null;
     }
   }
 }

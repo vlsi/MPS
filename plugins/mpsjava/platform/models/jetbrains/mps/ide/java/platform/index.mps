@@ -30,10 +30,9 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="zy18" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.goTo.index(MPS.Platform/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="qpn1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.index(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2340,10 +2339,10 @@
                     <node concept="3uibUv" id="76$C_kPIpRi" role="1tU5fm">
                       <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
                     </node>
-                    <node concept="2YIFZM" id="5mI2DYCrLVt" role="33vP2m">
-                      <ref role="37wK5l" to="zy18:~RootNodeNameIndex.doModelParsing(com.intellij.util.indexing.FileContent):org.jetbrains.mps.openapi.model.SModel" resolve="doModelParsing" />
-                      <ref role="1Pybhc" to="zy18:~RootNodeNameIndex" resolve="RootNodeNameIndex" />
-                      <node concept="37vLTw" id="2BHiRxghgrN" role="37wK5m">
+                    <node concept="2YIFZM" id="6XI93xd$vqN" role="33vP2m">
+                      <ref role="37wK5l" to="qpn1:~RootNodeNameIndex.doModelParsing(com.intellij.util.indexing.FileContent):org.jetbrains.mps.openapi.model.SModel" resolve="doModelParsing" />
+                      <ref role="1Pybhc" to="qpn1:~RootNodeNameIndex" resolve="RootNodeNameIndex" />
+                      <node concept="37vLTw" id="6XI93xd$vqO" role="37wK5m">
                         <ref role="3cqZAo" node="3Cep5Ce5gRr" resolve="inputData" />
                       </node>
                     </node>

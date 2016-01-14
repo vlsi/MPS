@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.ide.icons.IconManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import javax.swing.Icon;
 
-public class SNodeDescriptorPresentation extends BasePresentation {
+/*package*/ class SNodeDescriptorPresentation extends BasePresentation {
   private NavigationTarget myNodeResult;
 
   public SNodeDescriptorPresentation(NavigationTarget nodeResult) {
@@ -34,7 +34,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
     SModelReference modelReference = myNodeResult.getNodeReference().getModelReference();
     return modelReference.getModuleReference() == null
         ? modelReference.getModelName()
-        : modelReference.getModuleReference().getModuleName() + "/" + myNodeResult.getNodeReference().getModelReference().getModelName();
+        : modelReference.getModuleReference().getModuleName() + "/" + modelReference.getModelName();
   }
 
   @Override

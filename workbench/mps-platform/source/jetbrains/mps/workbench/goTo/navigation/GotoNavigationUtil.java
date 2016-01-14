@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -54,10 +54,9 @@ public class GotoNavigationUtil {
       ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
       subMonitor.start("", current.size());
       for (SModel m : current) {
-        subMonitor.step(m.getModelName());
+        subMonitor.step(m.getName().getValue());
         for (SNode root : RootNodeNameIndex.getRootsToIterate(m)) {
-          String nodeName = (root.getName() == null) ? "null" : root.getName();
-          consumer.consume(new SNodeDescriptor(nodeName, root));
+          consumer.consume(new SNodeDescriptor(root));
         }
         if (monitor.isCanceled()) break;
         subMonitor.advance(1);
