@@ -28,6 +28,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Integrating {@link SNodeEntry} into IDEA's Index persistence mechanism.
@@ -52,13 +55,9 @@ public final class SNodeEntryExternalizer implements DataExternalizer<SNodeEntry
     }
     ByteArrayOutputStream bos = new ByteArrayOutputStream(17 /*Module UUID */ + 17 /*Model UUID*/ + 9 /*Node long*/);
     ModelOutputStream mos = new ModelOutputStream(bos);
-    mos.writeModuleID(value.getModuleId());
-    mos.writeModelID(value.getModelId());
-    mos.writeNodeId(value.getNodeId());
+    saveEntry(mos, value);
     mos.close();
-    if (myMarkerToken != 0) {
-      out.writeInt(myMarkerToken);
-    }
+    writeToken(out);
     byte[] bytes = bos.toByteArray();
     out.writeInt(bytes.length);
     out.write(bytes);
@@ -66,21 +65,73 @@ public final class SNodeEntryExternalizer implements DataExternalizer<SNodeEntry
 
   @Override
   public SNodeEntry read(@NotNull DataInput in) throws IOException {
+    readToken(in);
+    ModelInputStream mis = openStream(in);
+    SNodeEntry rv = readEntry(mis);
+    mis.close();
+    return rv;
+  }
+
+
+  public void saveMany(@NotNull DataOutput out, @NotNull Collection<SNodeEntry> values) throws IOException {
+    writeToken(out);
+    ByteArrayOutputStream bos = new ByteArrayOutputStream(17 /*Module UUID */ + 17 /*Model UUID*/ + 9 /*Node long*/);
+    ModelOutputStream mos = new ModelOutputStream(bos);
+    for (SNodeEntry value : values) {
+      saveEntry(mos, value);
+    }
+    mos.close();
+    writeToken(out);
+    byte[] bytes = bos.toByteArray();
+    out.writeInt(bytes.length);
+    out.write(bytes);
+  }
+
+  public List<SNodeEntry> readMany(@NotNull DataInput in) throws IOException {
+    readToken(in);
+    ArrayList<SNodeEntry> rv = new ArrayList<SNodeEntry>();
+    ModelInputStream mis = openStream(in);
+    while (mis.available() > 0) {
+      rv.add(readEntry(mis));
+    }
+    mis.close();
+    return rv;
+
+  }
+
+  private void saveEntry(ModelOutputStream mos, SNodeEntry value) throws IOException {
+    mos.writeModuleID(value.getModuleId());
+    mos.writeModelID(value.getModelId());
+    mos.writeNodeId(value.getNodeId());
+  }
+
+  private SNodeEntry readEntry(ModelInputStream mis) throws IOException {
+    SModuleId module = mis.readModuleID();
+    SModelId model = mis.readModelID();
+    SNodeId node = mis.readNodeId();
+    return new SNodeEntry(module, model, node);
+  }
+
+  private ModelInputStream openStream(DataInput in) throws IOException {
+    int len = in.readInt();
+    assert len > 0;
+    byte[] data = new byte[len];
+    in.readFully(data);
+    return new ModelInputStream(new ByteArrayInputStream(data));
+  }
+
+  private void writeToken(DataOutput out) throws IOException {
+    if (myMarkerToken != 0) {
+      out.writeInt(myMarkerToken);
+    }
+  }
+
+  private void readToken(DataInput in) throws IOException {
     if (myMarkerToken != 0) {
       int token = in.readInt();
       if (myMarkerToken != token) {
         throw new IOException("Bad stream, token to identify SNodeEntry expected.");
       }
     }
-    int len = in.readInt();
-    assert len > 0;
-    byte[] data = new byte[len];
-    in.readFully(data);
-    ModelInputStream mis = new ModelInputStream(new ByteArrayInputStream(data));
-    SModuleId module = mis.readModuleID();
-    SModelId model = mis.readModelID();
-    SNodeId node = mis.readNodeId();
-    mis.close();
-    return new SNodeEntry(module, model, node);
   }
 }

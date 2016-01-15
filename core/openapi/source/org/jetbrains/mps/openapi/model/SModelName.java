@@ -136,6 +136,9 @@ public final class SModelName {
 
   private static String checkIllegalChars(String qualifiedCompleteName) throws IllegalArgumentException {
     qualifiedCompleteName = qualifiedCompleteName.trim();
+    if (qualifiedCompleteName.isEmpty()) {
+      return qualifiedCompleteName;
+    }
     int atIndex = qualifiedCompleteName.lastIndexOf('@');
     if (atIndex == 0 || (!qualifiedCompleteName.isEmpty() && atIndex == qualifiedCompleteName.length() - 1)) {
       throw new IllegalArgumentException(String.format("Stereotype separator '@' shall not appear at the position %d in '%s'", atIndex, qualifiedCompleteName));
