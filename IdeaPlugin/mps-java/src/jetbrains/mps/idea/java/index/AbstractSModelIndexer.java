@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * FIXME see {@link SNodeDescriptorsDataExternalizer} for details
  * User: fyodor
  * Date: 3/28/13
  */

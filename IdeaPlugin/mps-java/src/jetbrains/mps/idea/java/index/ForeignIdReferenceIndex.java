@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected void updateCollection(SModelReference modelRef, SReference sref, Collection<Pair<SNodeDescriptor, String>> collection) {
         SNode src = sref.getSourceNode();
         String role = sref.getRole();
-        SNodeDescriptor descriptor = new SNodeDescriptor(getSNodeName(src), src);
+        SNodeDescriptor descriptor = new SNodeDescriptor(src);
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
@@ -144,7 +144,8 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       public void save(DataOutput out, Collection<Pair<SNodeDescriptor, String>> value) throws IOException {
         out.writeInt(value.size());
         for (Pair<SNodeDescriptor, String> pair : value) {
-          pair.o1.save(out);
+
+          SNodeDescriptorsDataExternalizer.saveDescriptor(pair.o1, out);
           out.writeUTF(pair.o2);
         }
       }
@@ -154,7 +155,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
         int size = in.readInt();
         List<Pair<SNodeDescriptor, String>> result = new ArrayList<Pair<SNodeDescriptor, String> >();
         for (int i = 0; i < size; i++) {
-          SNodeDescriptor d = SNodeDescriptor.read(in);
+          SNodeDescriptor d = SNodeDescriptorsDataExternalizer.readDescriptor(in);
           String r = in.readUTF();
           result.add(new Pair<SNodeDescriptor, String>(d, r));
         }
@@ -175,6 +176,6 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
 
   @Override
   public int getVersion() {
-    return 1;
+    return 2;
   }
 }

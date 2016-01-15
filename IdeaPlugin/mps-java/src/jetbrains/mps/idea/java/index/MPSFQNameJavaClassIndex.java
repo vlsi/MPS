@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,6 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
 
   public static final ID<String, Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSFQNameJavaClassIndex");
 
-  private static final DataIndexer<String, Collection<SNodeDescriptor>, FileContent> INDEXER = new MyIndexer();
-
   public MPSFQNameJavaClassIndex() {
   }
 
@@ -52,12 +50,12 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
   @NotNull
   @Override
   public DataIndexer<String, Collection<SNodeDescriptor>, FileContent> getIndexer() {
-    return INDEXER;
+    return new MyIndexer();
   }
 
   @Override
   public int getVersion() {
-    return 1;
+    return 2;
   }
 
   private static class MyIndexer extends SNodeDescriptorIndexer {
