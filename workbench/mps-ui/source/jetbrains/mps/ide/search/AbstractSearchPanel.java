@@ -186,7 +186,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
 
   protected void setInitialText(final String initialText) {
     final String text = initialText != null ? initialText : "";
-    if (text.indexOf("\n") >= 0) {
+    if (text.contains("\n")) {
       myIsRegex.setSelected(true);
       myText.setText(StringUtil.escapeToRegexp(text));
     } else {
@@ -248,7 +248,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     }
     myFindResult.setFont(font);
     myFindResult.setText(text);
-    if (matches == 0) {
+    if (matches == 0 && !myText.getText().isEmpty()) {
       myText.setBackground(myBadSequenceColor);
     } else if (myText.getBackground() == myBadSequenceColor) {
       myText.setBackground(myDefaultBackground);
