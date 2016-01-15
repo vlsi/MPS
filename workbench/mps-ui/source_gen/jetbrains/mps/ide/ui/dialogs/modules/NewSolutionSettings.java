@@ -96,12 +96,17 @@ public class NewSolutionSettings extends JPanel {
     fireChaged();
   }
   public void setProjectPath(String projectPath) {
-    String oldProjectPath = myProjectPath;
+    // If path is the same - just return 
+    if (myProjectPath != null && myProjectPath.equals(projectPath)) {
+      return;
+    }
+
+    final String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
     if ((oldProjectPath != null && oldProjectPath.length() > 0) && mySolutionLocation.getText().contains(oldProjectPath)) {
       setSolutionLocation(mySolutionLocation.getText().replace(oldProjectPath, myProjectPath));
     } else {
-      setSolutionLocation(myProjectPath + File.separator + "solutions" + File.separator + getSolutionLocation());
+      setSolutionLocation(generateSolutionPath());
     }
     fireChaged();
   }

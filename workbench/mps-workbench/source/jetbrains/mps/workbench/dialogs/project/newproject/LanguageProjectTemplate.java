@@ -21,5 +21,5 @@ import com.intellij.openapi.extensions.ExtensionPointName;
  * Implementation of this interface extends list of project templates in 'DSL' group in 'New project dialog'
  */
 public interface LanguageProjectTemplate extends MPSProjectTemplate {
-  public static final ExtensionPointName<LanguageProjectTemplate> EP_NAME = ExtensionPointName.create("com.intellij.mps.languageProjectTemplateEP");
+  ExtensionPointName<LanguageProjectTemplate> EP_NAME = ExtensionPointName.create("com.intellij.mps.languageProjectTemplateEP");
 }
