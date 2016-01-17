@@ -1863,8 +1863,14 @@
     <node concept="lpD6D" id="pK5T2zG5Sc" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6z32qfm5KJo" resolve="DefaultEditor_AddReferenceAttribute" />
     </node>
+    <node concept="lpD6D" id="10HrLiaLxp2" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLxnO" resolve="DefaultEditor_BackspaceFriend" />
+    </node>
     <node concept="lpD6D" id="2axhso1Goby" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DefaultEditor_DeleteChild" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLx_Q" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLxoJ" resolve="DefaultEditor_DeleteFriend" />
     </node>
     <node concept="lpD6D" id="4Mg6JWFfuNB" role="lpD6w">
       <ref role="lpD7u" to="ryl9:qgeAIokVrN" resolve="DefaultEditor_DontSubstituteAbstractConcepts" />
@@ -2994,7 +3000,13 @@
     <node concept="lpD6D" id="3FJ0r$qO3cQ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hYoXabv" resolve="AnnotationSelection" />
     </node>
+    <node concept="lpD6D" id="10HrLiaLwLu" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLvah" resolve="BackspaceArgument" />
+    </node>
     <node concept="lpD6D" id="1FBMxSpl7Jf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLqd8" resolve="BackspaceErrorReference" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLwss" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1FBMxSpkM01" resolve="BackspaceFirstStatement" />
     </node>
     <node concept="lpD6D" id="1FBMxSpl8y1" role="lpD6w">
@@ -3010,6 +3022,12 @@
       <ref role="lpD7u" to="ryl9:1FBMxSpkLrt" resolve="BackspaceStatement" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cC" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLwjZ" resolve="DeleteArgument" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLwYf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLuWa" resolve="DeleteErrorReference" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLxb1" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVqZcJj" resolve="DeleteFieldReference" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cF" role="lpD6w">
