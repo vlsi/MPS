@@ -32,7 +32,7 @@ public class DemoApplication_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept"));
     }
     protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if (!(SPropertyOperations.getBoolean(source, MetaAdapterFactory.getProperty(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, 0x446739e63be7cbc4L, "valid")))) {
         return null;
       }

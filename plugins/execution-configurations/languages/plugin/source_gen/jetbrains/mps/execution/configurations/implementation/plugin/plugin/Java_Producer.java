@@ -36,7 +36,7 @@ public class Java_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if ((((SNode) BHReflection.invoke(source, SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null)) {
         return null;
       }
@@ -57,7 +57,7 @@ public class Java_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
         return null;
       }
@@ -82,7 +82,7 @@ public class Java_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"));
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
         return null;
       }
