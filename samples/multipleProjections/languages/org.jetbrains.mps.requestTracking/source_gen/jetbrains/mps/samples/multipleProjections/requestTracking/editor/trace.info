@@ -67,8 +67,8 @@
       <node id="3675491646420733859" at="91,55,92,87" concept="2" />
       <node id="3675491646420733859" at="92,87,93,23" concept="6" />
       <node id="3675491646420733859" at="96,96,97,134" concept="2" />
-      <node id="3675491646420733859" at="98,34,99,95" concept="2" />
-      <node id="3675491646420733859" at="99,95,100,98" concept="2" />
+      <node id="3675491646420733859" at="98,34,99,142" concept="2" />
+      <node id="3675491646420733859" at="99,142,100,146" concept="2" />
       <node id="3675491646420733859" at="102,122,103,139" concept="2" />
       <node id="3675491646420733859" at="27,0,30,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3675491646420733859" at="77,0,80,0" concept="1" trace="workflowsListHandler_p8hb45_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -96,7 +96,7 @@
       <scope id="3675491646420733859" at="80,66,82,93">
         <var name="listOwner" id="3675491646420733859" />
       </scope>
-      <scope id="3675491646420733859" at="98,34,100,98" />
+      <scope id="3675491646420733859" at="98,34,100,146" />
       <scope id="3675491646420733859" at="27,0,30,0">
         <var name="editorContext" id="3675491646420733859" />
         <var name="node" id="3675491646420733859" />

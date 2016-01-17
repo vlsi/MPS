@@ -576,8 +576,8 @@
       <node id="954830572075974239" at="85,55,86,87" concept="2" />
       <node id="954830572075974239" at="86,87,87,23" concept="6" />
       <node id="954830572075974239" at="90,96,91,134" concept="2" />
-      <node id="954830572075974239" at="92,34,93,95" concept="2" />
-      <node id="954830572075974239" at="93,95,94,98" concept="2" />
+      <node id="954830572075974239" at="92,34,93,142" concept="2" />
+      <node id="954830572075974239" at="93,142,94,146" concept="2" />
       <node id="954830572075974239" at="96,122,97,139" concept="2" />
       <node id="1262430001742033568" at="48,0,50,0" concept="4" trace="setText#(Ljava/lang/String;)V" />
       <node id="954830572075974239" at="32,0,35,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -609,7 +609,7 @@
       <scope id="954830572075974239" at="74,66,76,93">
         <var name="listOwner" id="954830572075974239" />
       </scope>
-      <scope id="954830572075974239" at="92,34,94,98" />
+      <scope id="954830572075974239" at="92,34,94,146" />
       <scope id="954830572075974239" at="32,0,35,0">
         <var name="editorContext" id="954830572075974239" />
         <var name="node" id="954830572075974239" />

@@ -58,8 +58,8 @@
       <node id="2944629966652442731" at="80,55,81,87" concept="2" />
       <node id="2944629966652442731" at="81,87,82,23" concept="6" />
       <node id="2944629966652442731" at="85,96,86,134" concept="2" />
-      <node id="2944629966652442731" at="87,34,88,95" concept="2" />
-      <node id="2944629966652442731" at="88,95,89,98" concept="2" />
+      <node id="2944629966652442731" at="87,34,88,142" concept="2" />
+      <node id="2944629966652442731" at="88,142,89,146" concept="2" />
       <node id="2944629966652442731" at="91,122,92,139" concept="2" />
       <node id="2944629966652442731" at="24,0,27,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2944629966652442731" at="66,0,69,0" concept="1" trace="stepsListHandler_ibbzj5_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -87,7 +87,7 @@
       <scope id="2944629966652442731" at="69,66,71,93">
         <var name="listOwner" id="2944629966652442731" />
       </scope>
-      <scope id="2944629966652442731" at="87,34,89,98" />
+      <scope id="2944629966652442731" at="87,34,89,146" />
       <scope id="2944629966652442731" at="24,0,27,0">
         <var name="editorContext" id="2944629966652442731" />
         <var name="node" id="2944629966652442731" />
@@ -265,8 +265,8 @@
       <node id="2944629966652442855" at="87,55,88,87" concept="2" />
       <node id="2944629966652442855" at="88,87,89,23" concept="6" />
       <node id="2944629966652442855" at="92,96,93,134" concept="2" />
-      <node id="2944629966652442855" at="94,34,95,95" concept="2" />
-      <node id="2944629966652442855" at="95,95,96,98" concept="2" />
+      <node id="2944629966652442855" at="94,34,95,142" concept="2" />
+      <node id="2944629966652442855" at="95,142,96,146" concept="2" />
       <node id="2944629966652442855" at="97,9,98,255" concept="2" />
       <node id="3542851458883492497" at="105,120,106,92" concept="5" />
       <node id="3542851458883492504" at="106,92,107,52" concept="6" />
@@ -303,7 +303,7 @@
       <scope id="2944629966652442855" at="76,66,78,93">
         <var name="listOwner" id="2944629966652442855" />
       </scope>
-      <scope id="2944629966652442855" at="94,34,96,98" />
+      <scope id="2944629966652442855" at="94,34,96,146" />
       <scope id="3542851458883492487" at="103,0,105,0" />
       <scope id="3542851458883492496" at="105,120,107,52">
         <var name="allLanguages" id="3542851458883492498" />
