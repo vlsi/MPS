@@ -241,9 +241,7 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
-    Map<SLanguage, Integer> usedLangs = sourceModel.usedLanguagesWithVersions();
-
-    for (SLanguage l : usedLangs.keySet()) {
+    for (SLanguage l : sourceModel.usedLanguages()) {
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, myIdEncoder.toText(IdHelper.getLanguageId(l)));
       // although there's name of the language in the registry, don't want to rely on it:
@@ -252,7 +250,7 @@ public class ModelWriter9 implements IModelWriter {
       // (c) such a relation would require registry to be written and read before usedLanguages - just an extra thing to worry about
       // Perhaps, once SLanguageAdapterById would tolerate null lang name (i.e we switch to ids completely), this attribute can be thrown away
       languageElem.setAttribute(ModelPersistence9.NAME, l.getQualifiedName());
-      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(usedLangs.get(l)));
+      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(sourceModel.getLanguageImportVersion(l)));
       rootElement.addContent(languageElem);
     }
   }

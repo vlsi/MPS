@@ -420,8 +420,8 @@
     </node>
     <node concept="312cEg" id="1pyYjDPRa0n" role="jymVt">
       <property role="TrG5h" value="myResult" />
-      <node concept="3uibUv" id="1pyYjDPRa0o" role="1tU5fm">
-        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+      <node concept="3uibUv" id="50HON5izKDW" role="1tU5fm">
+        <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
       </node>
       <node concept="3Tm6S6" id="1pyYjDPRa0p" role="1B3o_S" />
     </node>
@@ -954,8 +954,8 @@
     <node concept="3clFb_" id="1pyYjDPRa1z" role="jymVt">
       <property role="TrG5h" value="getResult" />
       <node concept="3Tm1VV" id="1pyYjDPRa1$" role="1B3o_S" />
-      <node concept="3uibUv" id="1pyYjDPRa1_" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+      <node concept="3uibUv" id="50HON5izJdP" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
       </node>
       <node concept="3clFbS" id="1pyYjDPRa1A" role="3clF47">
         <node concept="3cpWs6" id="1pyYjDPRa1B" role="3cqZAp">
@@ -3004,14 +3004,14 @@
                       <property role="TrG5h" value="" />
                       <ref role="1Y3XeK" to="18ew:~Computable" resolve="Computable" />
                       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3uibUv" id="4tQ0$v36jNe" role="2Ghqu4">
-                        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                      <node concept="3uibUv" id="50HON5izMfl" role="2Ghqu4">
+                        <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                       </node>
                       <node concept="3clFb_" id="4tQ0$v36jNf" role="jymVt">
                         <property role="TrG5h" value="compute" />
                         <node concept="3Tm1VV" id="4tQ0$v36jNg" role="1B3o_S" />
-                        <node concept="3uibUv" id="4tQ0$v36jNh" role="3clF45">
-                          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                        <node concept="3uibUv" id="50HON5izMJv" role="3clF45">
+                          <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                         </node>
                         <node concept="3clFbS" id="4tQ0$v36jNi" role="3clF47">
                           <node concept="3cpWs8" id="4tQ0$v36jNj" role="3cqZAp">

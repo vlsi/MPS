@@ -25,6 +25,7 @@ import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -34,9 +35,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -129,7 +130,7 @@ public class MoveModel_Action extends BaseAction {
       }
     });
     dialog.value.show();
-    final SModel newModel = dialog.value.getResult();
+    final EditableSModel newModel = dialog.value.getResult();
     if (newModel == null) {
       return;
     }
@@ -138,9 +139,9 @@ public class MoveModel_Action extends BaseAction {
       public void run() {
         Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(GlobalScope.getInstance(), Collections.singleton(modelReference), new EmptyProgressMonitor());
         for (SModel usage : SetSequence.fromSet(usages)) {
-          if (SModelStereotype.isUserModel(usage)) {
+          if (SModelStereotype.isUserModel(usage) && usage instanceof EditableSModel) {
             ((SModelInternal) usage).addModelImport(newModel.getReference(), true);
-            MoveModel_Action.this.updateUsages(usage, modelReference, newModel.getReference(), _params);
+            MoveModel_Action.this.updateUsages((EditableSModel) usage, modelReference, newModel.getReference(), _params);
             ((SModelInternal) usage).deleteModelImport(modelReference);
           }
         }
@@ -149,22 +150,24 @@ public class MoveModel_Action extends BaseAction {
       }
     });
   }
-  private void updateUsages(SModel usageModel, final SModelReference oldModelReference, final SModelReference newModelReference, final Map<String, Object> _params) {
-    ListSequence.fromList(SModelOperations.nodes(usageModel, null)).translate(new ITranslator2<SNode, SReference>() {
+  private void updateUsages(EditableSModel usageModel, final SModelReference oldModelReference, final SModelReference newModelReference, final Map<String, Object> _params) {
+    Iterable<SNode> nodes = (Iterable<SNode>) SNodeUtil.getDescendants(usageModel);
+    Sequence.fromIterable(nodes).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
     }).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference it) {
-        return eq_pp3sda_a0a0a0a0a0a0a7(it.getTargetSModelReference(), oldModelReference);
+        return eq_pp3sda_a0a0a0a0a0a1a7(it.getTargetSModelReference(), oldModelReference);
       }
     }).visitAll(new IVisitor<SReference>() {
       public void visit(SReference it) {
         ((SReferenceBase) (SReference) it).setTargetSModelReference(newModelReference);
       }
     });
+    usageModel.setChanged(true);
   }
-  private static boolean eq_pp3sda_a0a0a0a0a0a0a7(Object a, Object b) {
+  private static boolean eq_pp3sda_a0a0a0a0a0a1a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

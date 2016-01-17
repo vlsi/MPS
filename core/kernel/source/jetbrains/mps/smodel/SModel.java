@@ -650,8 +650,19 @@ public class SModel implements SModelData {
     return Collections.unmodifiableSet(myLanguagesIds.keySet());
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Map<SLanguage, Integer> usedLanguagesWithVersions() {
     return Collections.unmodifiableMap(myLanguagesIds);
+  }
+
+  public int getLanguageImportVersion(SLanguage lang) {
+    Integer res = usedLanguagesWithVersions().get(lang);
+    if (res == null) {
+      LOG.error("Model " + getModelDescriptor().getModelName() + ": version for language " + lang.getQualifiedName() + " not found. Using last version instead.");
+      return lang.getLanguageVersion();
+    }
+    return res;
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
@@ -667,24 +678,36 @@ public class SModel implements SModelData {
     addLanguage(language, language.getLanguageVersion());
   }
 
-  public void addLanguage(SLanguage id, int version) {
-    assertLegalChange();
-
-    Integer existingVersion = myLanguagesIds.get(id);
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //use setLanguageVersion
+  public void addLanguage(SLanguage language, int version) {
+    Integer existingVersion = myLanguagesIds.get(language);
     if (existingVersion != null) {
       if (version == -1 || existingVersion == version) {
         return;
       }
-      if (existingVersion == -1) {
-        myLanguagesIds.remove(id);
-      } else {
-        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version);
+      if (existingVersion != -1) {
+        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version + "; model: " + getModelDescriptor() + "; language: " + language);
       }
     }
 
-    myLanguagesIds.put(id, version);
+    setLanguageVersionInternal(language, version);
+  }
+
+  public void setLanguageImportVersion(SLanguage language, int version) {
+    if (!myLanguagesIds.containsKey(language)) {
+      throw new IllegalStateException("Can't change version for non-existing language import. Model: " + getModelDescriptor() + "; language: " + language);
+    }
+
+    setLanguageVersionInternal(language, version);
+  }
+
+  private void setLanguageVersionInternal(SLanguage language, int version) {
+    assertLegalChange();
+    myLanguagesIds.put(language, version);
     invalidateModelDepsManager();
-    fireLanguageAddedEvent(id);
+    fireLanguageAddedEvent(language);
     markChanged();
   }
 

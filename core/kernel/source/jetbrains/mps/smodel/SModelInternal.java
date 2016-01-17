@@ -19,13 +19,13 @@ import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
-import java.util.Map;
 
 public interface SModelInternal extends ModelWithDisposeInfo  {
 
@@ -54,12 +54,19 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addLanguage(@NotNull SLanguage language);
 
+  @Deprecated //use setLanguageVersion
+  @ToRemove(version = 3.3)
   void addLanguage(@NotNull SLanguage language, int version);
+
+  void setLanguageImportVersion(@NotNull SLanguage language, int version);
+
+  int getLanguageImportVersion(SLanguage lang);
 
   /**
    * SLanguage is the reference to a language, and it bears version (SLanguage.getLanguageVersion()), no need to specify it explicitly here
    */
   @Deprecated
+  @ToRemove(version = 3.3)
   void addLanguageId(SLanguage ref, int version);
 
   List<SModuleReference> importedDevkits();

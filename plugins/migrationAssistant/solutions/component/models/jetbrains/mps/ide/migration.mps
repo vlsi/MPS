@@ -7152,26 +7152,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="306A1RQKHwF" role="3cqZAp" />
-            <node concept="3clFbF" id="27_Cq_TPTMv" role="3cqZAp">
-              <node concept="2OqwBi" id="27_Cq_TPTWv" role="3clFbG">
-                <node concept="1eOMI4" id="27_Cq_TQ4MO" role="2Oq$k0">
-                  <node concept="10QFUN" id="27_Cq_TQ4MP" role="1eOMHV">
-                    <node concept="2GrUjf" id="27_Cq_TQ4MN" role="10QFUP">
-                      <ref role="2Gs0qQ" node="27_Cq_TPKsf" resolve="model" />
-                    </node>
-                    <node concept="3uibUv" id="27_Cq_TQ58F" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="27_Cq_TQ5Qr" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.deleteLanguageId(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="deleteLanguageId" />
-                  <node concept="37vLTw" id="27_Cq_TQ5UR" role="37wK5m">
-                    <ref role="3cqZAo" node="6QXKeyZ7YRz" resolve="fromLanguage" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="27_Cq_TQ6sO" role="3cqZAp">
               <node concept="2OqwBi" id="27_Cq_TQ6sP" role="3clFbG">
                 <node concept="1eOMI4" id="27_Cq_TQ6sQ" role="2Oq$k0">
@@ -7185,7 +7165,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="27_Cq_TQ6sU" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="addLanguage" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.setLanguageImportVersion(org.jetbrains.mps.openapi.language.SLanguage,int):void" resolve="setLanguageImportVersion" />
                   <node concept="37vLTw" id="M_fVsyNefm" role="37wK5m">
                     <ref role="3cqZAo" node="6QXKeyZ7YRz" resolve="fromLanguage" />
                   </node>

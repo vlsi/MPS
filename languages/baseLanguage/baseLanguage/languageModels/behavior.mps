@@ -823,8 +823,8 @@
         <node concept="3clFbF" id="hEwI4kf" role="3cqZAp">
           <node concept="2c44tf" id="hEwI4kg" role="3clFbG">
             <node concept="10M0yZ" id="hEwI4kh" role="2c44tc">
-              <ref role="1PxDUh" to="wyt6:~Integer" resolve="Integer" />
               <ref role="3cqZAo" to="wyt6:~Integer.TYPE" resolve="TYPE" />
+              <ref role="1PxDUh" to="wyt6:~Long" resolve="Long" />
             </node>
           </node>
         </node>

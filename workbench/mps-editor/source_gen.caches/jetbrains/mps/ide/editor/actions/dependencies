@@ -890,6 +890,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action" file="ShowGenerationActions_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroupUtil" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.popup.JBPopupFactory" />
