@@ -101,9 +101,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
     if (editorCell.getCellId() == null) {
       editorCell.setCellId("property_" + property);
     }
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getSNode(), property));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getSNode(), property));
-
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getSNode(), property, DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getSNode(), property, DeleteDirection.BACKWARD));
     SDataType type = property.getType();
     if (type instanceof SPrimitiveDataType) {
       if (((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
@@ -219,8 +218,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
     EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getSNode(), error, true);
     if (!link.isOptional()) {
       if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
-        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
-        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
+        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
         return errorCell;
       }
     }
@@ -277,8 +276,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode, DeleteDirection.FORWARD));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(listOwner, elementNode, myLink, editorContext));

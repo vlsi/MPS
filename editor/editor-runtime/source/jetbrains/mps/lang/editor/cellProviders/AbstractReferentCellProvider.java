@@ -137,8 +137,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
     setRoleForCellWithNoTarget(errorCell);
     return errorCell;
   }
