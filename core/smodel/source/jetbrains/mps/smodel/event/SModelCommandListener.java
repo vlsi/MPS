@@ -18,5 +18,6 @@ package jetbrains.mps.smodel.event;
 import java.util.List;
 
 public interface SModelCommandListener {
+  // AP: events can be empty or not?
   void eventsHappenedInCommand(List<SModelEvent> events);
 }

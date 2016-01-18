@@ -8,19 +8,21 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.Location;
+import java.util.List;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.impl.RunManagerImpl;
-import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
@@ -31,23 +33,58 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
   @Nullable
   private ConfigurationContext myContext;
+
   public BaseMpsProducer(ConfigurationType configurationType, String factoryClassName) {
     super(BaseMpsProducer.findFactory(configurationType, factoryClassName));
   }
+
   public BaseMpsProducer(ConfigurationFactory configurationFactory) {
     super(configurationFactory);
   }
+
   public void setSourceElement(PsiElement sourceElement) {
     mySourceElement = sourceElement;
   }
+
   @Override
   public PsiElement getSourceElement() {
     return mySourceElement;
   }
+
+  @NotNull
+  protected final MPSProject getMpsProject() {
+    if (myContext == null) {
+      throw new IllegalStateException("Context is not set");
+    }
+    Project project = myContext.getProject();
+    return ProjectHelper.fromIdeaProject(project);
+  }
+
   @Nullable
   protected ConfigurationContext getContext() {
     return myContext;
   }
+
+  /**
+   * Here we are making resolve by type and name (!), however it is not legal in some scenarios (consider main1 and main2, user creates configuration
+   * named main2, which runs the main method from the main1 class. If now user switches to the main2 and presses ctrl-shift-f10 he will be still
+   * running the main method from the main1 class)
+   * The proper way is to implement this method in each producer obligatory.
+   * However runconfigurations generator must be fully updated with new platform
+   * RunConfigurationProducer (instead of RuntimeConfigurationProducer).
+   */
+  @Override
+  @Nullable
+  protected RunnerAndConfigurationSettings findExistingByElement(Location location, @NotNull List<RunnerAndConfigurationSettings> existingConfigurations, ConfigurationContext context) {
+    RunnerAndConfigurationSettings given = getConfiguration();
+    for (RunnerAndConfigurationSettings existing : existingConfigurations) {
+      if (EqualUtil.equals(existing.getType(), given.getType()) && existing.getName().equals(given.getName())) {
+        return existing;
+      }
+    }
+    return null;
+  }
+
   @Nullable
   @Override
   protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext context) {
@@ -57,18 +94,18 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     MPSLocation mpsLocation = (MPSLocation) location;
     final MPSPsiElement psiElement = mpsLocation.getPsiElement();
-    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(location.getProject());
-    RunConfiguration config = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<RunConfiguration>() {
+    MPSProject mpsProject = mpsLocation.getMPSProject();
+    RunConfiguration config = new ModelAccessHelper(mpsProject.getRepository()).runReadAction(new Computable<RunConfiguration>() {
       @Override
       public RunConfiguration compute() {
-        Object mpsItem = psiElement.getMPSItem(mpsProject.getRepository());
+        Object mpsItem = psiElement.getMPSItem();
         if (mpsItem == null) {
           return null;
         }
         if (!(isApplicable(mpsItem))) {
           return null;
         }
-        return doCreateConfiguration((T) mpsItem);
+        return doCreateConfiguration((T) psiElement.getMPSItem());
       }
     });
     if (config == null) {
@@ -76,17 +113,22 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     }
     return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, false);
   }
+
   @Nullable
   protected abstract RunConfiguration doCreateConfiguration(T node);
+
   protected abstract boolean isApplicable(Object element);
+
   @Override
   public int compareTo(Object o) {
     return RuntimeConfigurationProducer.PREFERED;
   }
+
   @Override
   public int hashCode() {
     return ((myContext == null ? 0 : myContext.hashCode())) + 10 * ((mySourceElement == null ? 0 : mySourceElement.hashCode())) + 20 * getClass().getName().hashCode();
   }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null || !((obj instanceof BaseMpsProducer))) {
@@ -95,6 +137,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
     BaseMpsProducer configCreator = (BaseMpsProducer) obj;
     return EqualUtil.equals(configCreator.myContext, myContext) && EqualUtil.equals(configCreator.mySourceElement, mySourceElement) && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
   }
+
   @NotNull
   protected static ConfigurationFactory findFactory(ConfigurationType configurationType, @NonNls String configurationFactoryClassName) {
     for (ConfigurationFactory factory : Sequence.fromIterable(Sequence.fromArray(configurationType.getConfigurationFactories()))) {

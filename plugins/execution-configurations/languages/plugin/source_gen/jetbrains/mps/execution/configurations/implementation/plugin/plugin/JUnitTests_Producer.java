@@ -49,7 +49,7 @@ public class JUnitTests_Producer {
       return source instanceof MPSProject;
     }
     protected JUnitTests_Configuration doCreateConfiguration(final MPSProject source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(new MPSPsiElement(getMpsProject()));
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "All Tests in Project", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.PROJECT);
       configuration.getJUnitSettings().setLightExec(false);
@@ -68,7 +68,7 @@ public class JUnitTests_Producer {
       return source instanceof SModule;
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SModule source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       String name = source.getModuleName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODULE);
@@ -89,7 +89,7 @@ public class JUnitTests_Producer {
       return source instanceof SModel;
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SModel source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       String name = source.getModelName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
@@ -110,7 +110,7 @@ public class JUnitTests_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       SNode testableMethod = TestNodeWrapperFactory.findWrappableAncestor(source, false);
       if (testableMethod != null) {
         ITestNodeWrapper testWrapper = TestNodeWrapperFactory.tryToWrap(testableMethod);
@@ -158,7 +158,7 @@ public class JUnitTests_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
       if (method == null) {
         return null;
@@ -200,7 +200,7 @@ public class JUnitTests_Producer {
       return true;
     }
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       boolean containsTest = false;
       boolean canRunInProcess = true;
       for (SNode testCase : source) {
@@ -242,7 +242,7 @@ public class JUnitTests_Producer {
       return true;
     }
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + ((String) BHReflection.invoke(ListSequence.fromList(source).first(), SMethodTrimmedId.create("getTestName", null, "hGBohAB"))) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.METHOD);
       boolean canRunInProcess = true;

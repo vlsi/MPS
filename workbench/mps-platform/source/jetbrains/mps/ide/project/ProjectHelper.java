@@ -19,6 +19,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -31,6 +32,11 @@ import java.awt.Frame;
  */
 public class ProjectHelper {
 
+  /**
+   * @deprecated use {@link MPSProject#getProject()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Nullable
   public static com.intellij.openapi.project.Project toIdeaProject(Project p) {
     if (p instanceof MPSProject) {

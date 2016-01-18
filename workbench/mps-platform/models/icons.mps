@@ -39,6 +39,7 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
+    <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -216,6 +217,7 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -1570,37 +1572,28 @@
               </node>
               <node concept="9aQIb" id="277Nzj6qTJ1" role="9aQIa">
                 <node concept="3clFbS" id="277Nzj6qTJ2" role="9aQI4">
-                  <node concept="3cpWs8" id="277Nzj6qTJ3" role="3cqZAp">
-                    <node concept="3cpWsn" id="277Nzj6qTJ4" role="3cpWs9">
-                      <property role="TrG5h" value="icons" />
-                      <node concept="2OqwBi" id="USp7Tv$0we" role="33vP2m">
-                        <node concept="liA8E" id="USp7Tv$2RS" role="2OqNvi">
-                          <ref role="37wK5l" to="3qmy:~ClassLoaderManager.getOwnClass(org.jetbrains.mps.openapi.module.SModule,java.lang.String):java.lang.Class" resolve="getOwnClass" />
-                          <node concept="37vLTw" id="USp7Tv$5Lh" role="37wK5m">
-                            <ref role="3cqZAo" node="277Nzj6qTIR" resolve="language" />
+                  <node concept="SfApY" id="6QJIZpRyTlV" role="3cqZAp">
+                    <node concept="3clFbS" id="6QJIZpRyTlX" role="SfCbr">
+                      <node concept="3cpWs8" id="277Nzj6qTJ3" role="3cqZAp">
+                        <node concept="3cpWsn" id="277Nzj6qTJ4" role="3cpWs9">
+                          <property role="TrG5h" value="iconClass" />
+                          <node concept="2OqwBi" id="USp7Tv$0we" role="33vP2m">
+                            <node concept="liA8E" id="USp7Tv$2RS" role="2OqNvi">
+                              <ref role="37wK5l" to="j8aq:~ReloadableModuleBase.getOwnClass(java.lang.String):java.lang.Class" resolve="getOwnClass" />
+                              <node concept="37vLTw" id="USp7Tv$8Rh" role="37wK5m">
+                                <ref role="3cqZAo" node="277Nzj6qTIA" resolve="className" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="6QJIZpRyRtw" role="2Oq$k0">
+                              <ref role="3cqZAo" node="277Nzj6qTIR" resolve="language" />
+                            </node>
                           </node>
-                          <node concept="37vLTw" id="USp7Tv$8Rh" role="37wK5m">
-                            <ref role="3cqZAo" node="277Nzj6qTIA" resolve="className" />
+                          <node concept="3uibUv" id="277Nzj6qTJ5" role="1tU5fm">
+                            <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                            <node concept="3qTvmN" id="6QJIZpRyUwO" role="11_B2D" />
                           </node>
                         </node>
-                        <node concept="2YIFZM" id="USp7TvzZ3E" role="2Oq$k0">
-                          <ref role="37wK5l" to="3qmy:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                          <ref role="1Pybhc" to="3qmy:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                        </node>
                       </node>
-                      <node concept="3uibUv" id="277Nzj6qTJ5" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="277Nzj6qTJa" role="3cqZAp">
-                    <node concept="3y3z36" id="277Nzj6qTJb" role="3clFbw">
-                      <node concept="37vLTw" id="3GM_nagTBD2" role="3uHU7B">
-                        <ref role="3cqZAo" node="277Nzj6qTJ4" resolve="icons" />
-                      </node>
-                      <node concept="10Nm6u" id="277Nzj6qTJd" role="3uHU7w" />
-                    </node>
-                    <node concept="3clFbS" id="277Nzj6qTJe" role="3clFbx">
                       <node concept="3cpWs8" id="277Nzj6qTJf" role="3cqZAp">
                         <node concept="3cpWsn" id="277Nzj6qTJg" role="3cpWs9">
                           <property role="TrG5h" value="method" />
@@ -1633,7 +1626,7 @@
                               </node>
                               <node concept="2OqwBi" id="277Nzj6qTJt" role="37vLTx">
                                 <node concept="37vLTw" id="3GM_nagTtS_" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="277Nzj6qTJ4" resolve="icons" />
+                                  <ref role="3cqZAo" node="277Nzj6qTJ4" resolve="iconClass" />
                                 </node>
                                 <node concept="liA8E" id="277Nzj6qTJv" role="2OqNvi">
                                   <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
@@ -1681,6 +1674,21 @@
                               <ref role="3cqZAo" node="277Nzj6qTJy" resolve="icon" />
                             </node>
                           </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="TDmWw" id="6QJIZpRyTlY" role="TEbGg">
+                      <node concept="3clFbS" id="6QJIZpRyTm0" role="TDEfX">
+                        <node concept="3cpWs6" id="6QJIZpRyWRP" role="3cqZAp">
+                          <node concept="37vLTw" id="6QJIZpRyXE2" role="3cqZAk">
+                            <ref role="3cqZAo" node="277Nzj6qTEH" resolve="EMPTY_ICON" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWsn" id="6QJIZpRyTm2" role="TDEfY">
+                        <property role="TrG5h" value="e" />
+                        <node concept="3uibUv" id="6QJIZpRyWhP" role="1tU5fm">
+                          <ref role="3uigEE" to="j8aq:~ModuleClassLoaderIsNullException" resolve="ModuleClassLoaderIsNullException" />
                         </node>
                       </node>
                     </node>
@@ -3751,7 +3759,6 @@
         <node concept="3cpWs8" id="pNj8CkUNlk" role="3cqZAp">
           <node concept="3cpWsn" id="pNj8CkUNll" role="3cpWs9">
             <property role="TrG5h" value="iconPath" />
-            <node concept="17QB3L" id="pNj8CkUNlm" role="1tU5fm" />
             <node concept="3K4zz7" id="1KJq9M8bmbo" role="33vP2m">
               <node concept="10Nm6u" id="1KJq9M8bmsH" role="3K4E3e" />
               <node concept="3clFbC" id="1KJq9M8blDV" role="3K4Cdx">
@@ -3772,6 +3779,7 @@
                 </node>
               </node>
             </node>
+            <node concept="17QB3L" id="pNj8CkUNlm" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbJ" id="pNj8CkV3lP" role="3cqZAp">

@@ -443,10 +443,10 @@
             <node concept="3uibUv" id="7JDtVAB8xQQ" role="1tU5fm">
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
-            <node concept="2YIFZM" id="7JDtVAB8xQT" role="33vP2m">
+            <node concept="2YIFZM" id="4IIZM6SPw3X" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-              <node concept="21ER0p" id="7JDtVAB8xQU" role="37wK5m" />
+              <node concept="21ER0p" id="4IIZM6SPw3Y" role="37wK5m" />
             </node>
           </node>
         </node>

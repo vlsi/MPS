@@ -1,12 +1,14 @@
 package jetbrains.mps.plugins.runconfigs;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -18,15 +20,30 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FIXME rewrite into several classes instead of this with Object field
+ */
 public class MPSPsiElement<T> extends FakePsiElement {
+  private final MPSProject myMPSProject;
+  private final SRepository myRepository;
+  private Object myItem; // AP: always a reference to node, model, module OR simply MPSProject
 
-  private Object myItem;
-
-  public MPSPsiElement(SNode node) {
-    myItem = new jetbrains.mps.smodel.SNodePointer(node);
+  public MPSPsiElement(SNode node, MPSProject project) {
+    this(node.getReference(), project);
   }
 
-  public MPSPsiElement(List<SNode> nodes) {
+  @Override
+  public PsiFile getContainingFile() {
+    return null;
+  }
+
+  public MPSPsiElement(SNodeReference nRef, MPSProject project) {
+    this(project);
+    myItem = nRef;
+  }
+
+  public MPSPsiElement(List<SNode> nodes, MPSProject project) {
+    this(project);
     myItem = map(nodes, new Mapper<SNode, SNodeReference>() {
       @Override
       public SNodeReference value(SNode key) {
@@ -35,36 +52,36 @@ public class MPSPsiElement<T> extends FakePsiElement {
     });
   }
 
-  public MPSPsiElement(SModel model) {
+  public MPSPsiElement(SModel model, MPSProject project) {
+    this(project);
     myItem = model.getReference();
   }
 
-  public MPSPsiElement(SModule module) {
+  public MPSPsiElement(SModule module, MPSProject project) {
+    this(project);
     myItem = module.getModuleReference();
   }
 
-  public MPSPsiElement(MPSProject project) {
+  public MPSPsiElement(@NotNull MPSProject project) {
+    myMPSProject = project;
+    myRepository = project.getRepository();
     myItem = project;
   }
 
-  private MPSPsiElement(Object item) {
-    myItem = item;
-  }
-
-  public Object getMPSItem(final SRepository contextRepo) {
+  public Object getMPSItem() {
     if (myItem instanceof SNodeReference) {
-      return ((SNodeReference) myItem).resolve(contextRepo);
+      return ((SNodeReference) myItem).resolve(myRepository);
     } else if (myItem instanceof List) {
       return map((List<SNodeReference>) myItem, new Mapper<SNodeReference, SNode>() {
         @Override
         public SNode value(SNodeReference key) {
-          return key.resolve(contextRepo);
+          return key.resolve(myRepository);
         }
       });
     } else if (myItem instanceof SModelReference) {
-      return ((SModelReference) myItem).resolve(contextRepo);
+      return ((SModelReference) myItem).resolve(myRepository);
     } else if (myItem instanceof SModuleReference) {
-      return ((SModuleReference) myItem).resolve(contextRepo);
+      return ((SModuleReference) myItem).resolve(myRepository);
     } else if (myItem instanceof MPSProject) {
       return myItem;
     }
@@ -74,16 +91,36 @@ public class MPSPsiElement<T> extends FakePsiElement {
     ));
   }
 
+  @NotNull
+  @Override
+  public Project getProject() {
+    return myMPSProject.getProject();
+  }
+
+  @Override
+  public boolean isValid() {
+    if (myItem instanceof SNode) {
+      boolean exists = new ModelAccessHelper(myRepository).runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return ((SNodeReference) myItem).resolve(myRepository) != null;
+        }
+      });
+      return exists;
+    }
+    return true;
+  }
+
   @Override
   public PsiElement getParent() {
     if (!((myItem instanceof SNodeReference))) {
       return null;
     }
-    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+    return new ModelAccessHelper(myRepository).runReadAction(new Computable<PsiElement>() {
       @Override
       public PsiElement compute() {
         SNodeReference pointer = (SNodeReference) myItem;
-        SNode node = pointer.resolve(MPSModuleRepository.getInstance());
+        SNode node = pointer.resolve(myRepository);
         if (node == null) {
           return null;
         }
@@ -91,7 +128,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
         if (parent == null) {
           return null;
         }
-        return new MPSPsiElement(new jetbrains.mps.smodel.SNodePointer(parent));
+        return new MPSPsiElement(parent, myMPSProject);
       }
     });
   }
@@ -104,33 +141,24 @@ public class MPSPsiElement<T> extends FakePsiElement {
     return result;
   }
 
-  public static MPSPsiElement createFor(Object o) {
+  public static MPSPsiElement createFor(Object o, MPSProject mpsProject) {
     if (o instanceof SNode) {
-      return new MPSPsiElement((SNode) o);
+      return new MPSPsiElement((SNode) o, mpsProject);
     }
     if (o instanceof SModel) {
-      return new MPSPsiElement((SModel) o);
+      return new MPSPsiElement((SModel) o, mpsProject);
     }
     if (o instanceof SModule) {
-      return new MPSPsiElement((SModule) o);
+      return new MPSPsiElement((SModule) o, mpsProject);
     }
     if (o instanceof MPSProject) {
-      return new MPSPsiElement((MPSProject) o);
+      if (o != mpsProject) {
+        throw new IllegalArgumentException("MPSProject must be the same : " + o + " ; mpsProject : " + mpsProject);
+      }
+      return new MPSPsiElement(mpsProject);
     }
     if (MPSPsiElement.isListOf(o, SNode.class)) {
-      return new MPSPsiElement(((List<SNode>) o));
-    }
-    if (o instanceof SNodeReference) {
-      return new MPSPsiElement(o);
-    }
-    if (o instanceof SModelReference) {
-      return new MPSPsiElement(o);
-    }
-    if (o instanceof SModuleReference) {
-      return new MPSPsiElement(o);
-    }
-    if (MPSPsiElement.isListOf(o, SNodeReference.class)) {
-      return new MPSPsiElement(o);
+      return new MPSPsiElement(((List<SNode>) o), mpsProject);
     }
     throw new IllegalArgumentException(o.getClass().getName());
   }

@@ -259,8 +259,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" file="TestsErrorsChecker.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageChecker" />
@@ -274,6 +276,9 @@
     <classNode dependClassName="jetbrains.mps.project.validation.NodeValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelCommandListener" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

@@ -50,7 +50,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       return true;
     }
     public boolean execute(Project project, ExecutionEnvironment environment) {
-      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
       List<IResource> resources = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
         public List<IResource> compute() {
           Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {

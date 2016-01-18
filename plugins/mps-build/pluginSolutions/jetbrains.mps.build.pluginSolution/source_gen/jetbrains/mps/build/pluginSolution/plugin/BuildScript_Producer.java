@@ -32,7 +32,7 @@ public class BuildScript_Producer {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
     protected BuildScript_Configuration doCreateConfiguration(final SNode source) {
-      setSourceElement(new MPSPsiElement(source));
+      setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       SNode containingRoot = SNodeOperations.getContainingRoot(source);
       if (SNodeOperations.isInstanceOf(containingRoot, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")) && !(SNodeOperations.getModel(containingRoot).getModule().isPackaged())) {
         String name = SPropertyOperations.getString(SNodeOperations.cast(containingRoot, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

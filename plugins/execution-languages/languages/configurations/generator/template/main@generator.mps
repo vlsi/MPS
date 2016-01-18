@@ -5681,9 +5681,42 @@
               <ref role="37wK5l" to="eibu:7pREJKpbIhj" resolve="setSourceElement" />
               <node concept="2ShNRf" id="3uNEAUKw1oO" role="37wK5m">
                 <node concept="1pGfFk" id="3uNEAUKw1oQ" role="2ShVmc">
-                  <ref role="37wK5l" to="irxm:~MPSPsiElement.&lt;init&gt;(java.lang.Object)" resolve="MPSPsiElement" />
-                  <node concept="37vLTw" id="2BHiRxgmaHT" role="37wK5m">
-                    <ref role="3cqZAo" node="3uNEAUKvTjB" resolve="source" />
+                  <ref role="37wK5l" to="irxm:~MPSPsiElement.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="MPSPsiElement" />
+                  <node concept="1rXfSq" id="pDlR6_QxOZ" role="37wK5m">
+                    <ref role="37wK5l" to="eibu:224UGqZGMqc" resolve="getMpsProject" />
+                  </node>
+                </node>
+                <node concept="1W57fq" id="pDlR6_PAnb" role="lGtFl">
+                  <node concept="3IZrLx" id="pDlR6_PAnd" role="3IZSJc">
+                    <node concept="3clFbS" id="pDlR6_PAnf" role="2VODD2">
+                      <node concept="3clFbF" id="pDlR6_PLrg" role="3cqZAp">
+                        <node concept="2OqwBi" id="pDlR6_PLW7" role="3clFbG">
+                          <node concept="2OqwBi" id="pDlR6_PLwv" role="2Oq$k0">
+                            <node concept="30H73N" id="pDlR6_PLrf" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="pDlR6_PLDj" role="2OqNvi">
+                              <ref role="3Tt5mk" to="uhxm:6liWaRMAf9f" />
+                            </node>
+                          </node>
+                          <node concept="1mIQ4w" id="pDlR6_PMab" role="2OqNvi">
+                            <node concept="chp4Y" id="pDlR6_PMSi" role="cj9EA">
+                              <ref role="cht4Q" to="uhxm:6liWaRMAihI" resolve="ProjectSource" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="gft3U" id="pDlR6_PNII" role="UU_$l">
+                    <node concept="2YIFZM" id="pDlR6_QgEb" role="gfFT$">
+                      <ref role="1Pybhc" to="irxm:~MPSPsiElement" resolve="MPSPsiElement" />
+                      <ref role="37wK5l" to="irxm:~MPSPsiElement.createFor(java.lang.Object,jetbrains.mps.project.MPSProject):jetbrains.mps.plugins.runconfigs.MPSPsiElement" resolve="createFor" />
+                      <node concept="37vLTw" id="pDlR6_Qhhw" role="37wK5m">
+                        <ref role="3cqZAo" node="3uNEAUKvTjB" resolve="source" />
+                      </node>
+                      <node concept="1rXfSq" id="pDlR6_QhSg" role="37wK5m">
+                        <ref role="37wK5l" to="eibu:224UGqZGMqc" resolve="getMpsProject" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

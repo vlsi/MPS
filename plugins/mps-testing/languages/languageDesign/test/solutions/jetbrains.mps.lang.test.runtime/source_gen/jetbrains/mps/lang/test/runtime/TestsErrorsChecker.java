@@ -4,6 +4,10 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import java.util.List;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.MessageStatus;
@@ -24,13 +28,45 @@ import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
+/**
+ * 
+ * @deprecated needs to be united with the common model checking logic. Here we have the second cache of the same things.
+ */
+@Deprecated
 public class TestsErrorsChecker {
   private SNode myRoot;
-  private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> modelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
 
+  /**
+   * contains cached warnings and errors for the current root
+   */
+  private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder<IErrorReporter>();
+
+  /**
+   * clears our cache on any model change
+   */
+  private static SModelCommandListener ourModelChangesListener;
+
+  private static void initModelListener() {
+    if (ourModelChangesListener == null) {
+      ourModelChangesListener = new SModelCommandListener() {
+        public void eventsHappenedInCommand(List<SModelEvent> events) {
+          if (!(events.isEmpty())) {
+            ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
+          }
+        }
+      };
+      GlobalSModelEventsManager.getInstance().addGlobalCommandListener(ourModelChangesListener);
+    }
+  }
+
+  static {
+    initModelListener();
+  }
+
+  @Deprecated
   public TestsErrorsChecker(SNode root) {
     assert root == SNodeOperations.getContainingRoot(root);
-    this.myRoot = root;
+    myRoot = root;
   }
 
   public Iterable<IErrorReporter> getAllErrors() {
@@ -62,7 +98,7 @@ public class TestsErrorsChecker {
   }
 
   private Iterable<IErrorReporter> getRootErrors() {
-    Set<IErrorReporter> cachedErrors = TestsErrorsChecker.modelErrorsHolder.get(myRoot);
+    Set<IErrorReporter> cachedErrors = TestsErrorsChecker.ourModelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
@@ -89,7 +125,7 @@ public class TestsErrorsChecker {
         return !(ErrorReportUtil.manuallySuppressed(it.getSNode()));
       }
     }));
-    TestsErrorsChecker.modelErrorsHolder.set(myRoot, res);
+    TestsErrorsChecker.ourModelErrorsHolder.set(myRoot, res);
     return res;
   }
 

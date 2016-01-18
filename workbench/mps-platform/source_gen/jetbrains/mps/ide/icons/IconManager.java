@@ -33,8 +33,8 @@ import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
+import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
@@ -190,11 +190,11 @@ public final class IconManager {
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {
-        Class icons = ClassLoaderManager.getInstance().getOwnClass(language, className);
-        if (icons != null) {
+        try {
+          Class<?> iconClass = language.getOwnClass(className);
           Method method;
           try {
-            method = icons.getMethod("getLanguageIcon");
+            method = iconClass.getMethod("getLanguageIcon");
           } catch (NoSuchMethodException e) {
             return EMPTY_ICON;
           }
@@ -202,6 +202,8 @@ public final class IconManager {
           if (icon != null) {
             return icon;
           }
+        } catch (ModuleClassLoaderIsNullException e) {
+          return EMPTY_ICON;
         }
       }
     } catch (Exception e) {
