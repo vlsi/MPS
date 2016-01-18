@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dlcag30g7f8xz06gay2bjj85tntl0t0" />
+<dependencies version="2" modelHash="-7n39fpr1l9sfevomeci0t095mzwc4vk">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" hash="-3y3d84t65unkhazkxml0lw3kpkaar7a" />
+  <dep model="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" hash="3j28jbvouupcruf0r7kzw2vsqpr967a" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-3l0ntyki6pi6hklxqi43imlok2yd59v" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="816130369292799544" name="first" hash="-4w5dhevaznjzr0ycd4akcknk2gbg214">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" />
+    <dep model="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="first.java" />
+  </source>
+  <source id="2985097847315873733" name="qwert" hash="1thmbrtr82yuq79i7th6udzzoemlw8p">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:d2f1f29a-ca9b-4289-8061-76aebd89bc21(jetbrains.mps.samples.lambdaCalculus.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="qwert.java" />
+  </source>
+</dependencies>
 

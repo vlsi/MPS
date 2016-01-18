@@ -1,3 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4vsn2jaszuo7w8pfs44ge3w1cqlx976" />
+<dependencies version="2" modelHash="2fprt3tixc2u1m20jwpwh8cc99oxlr7">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" hash="-bj6bada4atryd32rl8anj96uvtzlrdl" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-70nba0u8h7ros1aqwppr7ujwzkma2sx" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="4496691318496301641" name="TestClass" hash="chyp9z5c6zh7wyh24yxybwq7a7m31hn">
+    <dep root="2323553266850069117" />
+    <dep root="2323553266850069150" />
+    <dep root="2323553266850070343" />
+    <dep root="2323553266850070380" />
+    <dep root="2323553266850070418" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="TestClass.java" />
+  </source>
+  <source id="143681448798969379" name="Descendant" hash="-8g59564y8o6g3sak0oirsw2thross5b">
+    <dep root="2323553266850069117" />
+    <dep root="2323553266850069150" />
+    <dep root="2323553266850070343" />
+    <dep root="2323553266850070380" />
+    <dep root="2323553266850070418" />
+    <dep root="4496691318496301641" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
+    <file name="Descendant.java" />
+  </source>
+  <source id="2323553266850069117" name="Arg1" hash="-289gpk0p9rboflj8immlo025ak8hqh">
+    <file name="Arg1.java" />
+  </source>
+  <source id="2323553266850069150" name="Arg2" hash="1du5g8r4bwbydf8j981p3k9taai33sq">
+    <file name="Arg2.java" />
+  </source>
+  <source id="2323553266850070343" name="Arg3" hash="4f4qljap34twl9bjiwaxzksx5y9pzfx">
+    <file name="Arg3.java" />
+  </source>
+  <source id="2323553266850070380" name="Arg4" hash="2kujxaukdij2362tygm96lwnsvrffah">
+    <file name="Arg4.java" />
+  </source>
+  <source id="2323553266850070418" name="Arg5" hash="-cr0pt1yy7jbdl93qqypy290asg2nh6k">
+    <file name="Arg5.java" />
+  </source>
+  <source id="35825318245951521" name="Further" hash="-3z82toji73ypfo3jf0wfaxa3o72veke">
+    <dep root="143681448798969379" />
+    <dep root="4496691318496301641" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
+    <file name="Further.java" />
+  </source>
+</dependencies>
 

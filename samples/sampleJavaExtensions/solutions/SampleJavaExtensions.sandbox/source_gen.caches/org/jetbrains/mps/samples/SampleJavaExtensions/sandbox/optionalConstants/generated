@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-j2fdxzid7zucn4lz6p45tbzvo5wtt6" />
+<dependencies version="2" modelHash="-cs9sb1ns6h9u25splw11wmw9zoontki">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+  <dep model="r:706de079-1b9a-465a-b781-ee22a4d6ea4c(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants)" hash="-apd5f4lyl9lws9rkn8f08uwa9acz98n" />
+  <dep model="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)" hash="-cs869d4idurn925lfobzjmlwvku443e" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <common hash="6hx2mn7ijl9351rzw0qhcea4rc6bwlp" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2687243112288283092" name="OtherConstants" hash="-2hefwc5erqitrfjz910zrxz90f690vi">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:706de079-1b9a-465a-b781-ee22a4d6ea4c(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.coreConstants)" />
+    <dep model="r:8a83b4bb-5556-4799-a811-f71c11235499(org.jetbrains.mps.samples.Constants.generator.template.generator.template.generator.template.main@generator)" />
+    <file name="OtherConstants.java" />
+  </source>
+</dependencies>
 

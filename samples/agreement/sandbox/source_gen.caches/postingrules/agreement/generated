@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dz9vos35ogjzkfvd5rgd1wrbwbqp0tm" />
+<dependencies version="2" modelHash="-6baa4l551ykwjippubrsyrz79txueex">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
+  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="aji1rl5fins6owtqhspv3m2w70kuvu3" />
+  <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="44xyetdzl8h62ai7pq1vq0qjq03paht" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-93mqppy1bxfpgq8rg5h1s7ejy4epwwk" dependsOnNodes="true">
+    <dep root="1112303557868" />
+    <dep root="1112304761925" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" />
+    <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="AgreementRegistryBuilder.java" />
+  </common>
+  <source id="1112303557868" name="Regular" hash="-b68m9l3ksr9hjvenw3zbu2422zxfyhm" />
+  <source id="1112304761925" name="LowPay" hash="44vw9aot5phlz1yz80pew7aj39uqwax" />
+</dependencies>
 

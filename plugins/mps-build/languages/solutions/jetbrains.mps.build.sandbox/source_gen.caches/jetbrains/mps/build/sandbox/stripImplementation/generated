@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dyemadfevrhntl7y4271onl4jxpxge5" />
+<dependencies version="2" modelHash="-8a675fiu5vrmbumg8kfp7dr96elrchh">
+  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="c3tv6v2r4kfvburnpn0pk581ddo0qsa" />
+  <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="89oi7dp6wo26ypbgdkgbfpdc2eso76o" />
+  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-9xclxuxoorfi3soiur5pezasgi6zmtp" />
+  <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="2h6s2k3l86dmp6rkkmpny6c5ri9c2wn" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-b0gmf9gdj7s2en8dhdttnsme7ks4gcw" />
+  <dep model="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-ao893wybwq5m2h36x2uedtu1mj8xbyj" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="46k4j8lp7yj0owx5qjl3xv5uuyimyra" />
+  <common hash="-ciofpifh3ndy4w6euig5oypes1qyz7m" />
+  <source id="3389822811992714254" name="buildPlugin" hash="5vqv9hcazm6ncj024qeedb516x2s0rw">
+    <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
+    <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
+    <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <dep model="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" />
+    <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
+    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+    <file name="buildPlugin.xml" />
+  </source>
+</dependencies>
 

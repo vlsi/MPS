@@ -1,3 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ajuweu4yqzucva2tp4z54aszoz65qzy" />
+<dependencies version="2" modelHash="-7hr43p0zih329je60rzc8dry95qnxn2">
+  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-7322stybmv6e4tlazp8o0myh6s1g8x4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="47b2m142a3szdxv1vm0jabcyc6q3pdr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="23ha2pjpkphs6ntucrfpvyolxe8lcr6" dependsOnNodes="true">
+    <dep root="1790427706118304177" />
+    <dep root="1790427706118381722" />
+    <dep root="3607579524910560662" />
+    <dep root="3607579524910560663" />
+    <dep root="4001135958233291203" />
+    <dep root="4001135958235394442" />
+    <dep root="4001135958235922842" />
+    <dep root="5447719361346490674" />
+    <dep root="5447719361346490730" />
+    <dep root="5447719361346519865" />
+    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="5447719361346490674" name="MoneyLiteral" hash="-1i1fdlb9tt9gzo4g2m6en7gpk7fgbnw" />
+  <source id="5447719361346490730" name="MoneyType" hash="-cymmzc429zxm8ikwhoo2jcxnzub74px" />
+  <source id="5447719361346519865" name="GetAmount" hash="9lvloviubq2or9fw4hqwgrxciq6toxl" />
+  <source id="1790427706118304177" name="GetCurrency" hash="-d7rg86y75udbop7mszz52jsiatlqhwd" />
+  <source id="1790427706118381722" name="ConvertTo" hash="-2tgvqkvr7a2l557g29o0hrm01il3tex" />
+  <source id="3607579524910560662" name="CurrencyDefTable" hash="6nwjwpo1twea36jmwm0pb62agwetzgn" />
+  <source id="3607579524910560663" name="CurrencyUnit" hash="-1jg9ta8jw8bbhks0q0zjfj6ywe7n4ve" />
+  <source id="4001135958233291203" name="CurrentStockPrice" hash="e9hx7w3pab912zl0oxuocvhya0z9ppg" />
+  <source id="4001135958235394442" name="StockSymbol" hash="3ym9hl7xkgurxosys5kxuejllrxvezr" />
+  <source id="4001135958235922842" name="MovingAverage" hash="1jkkpal2lajxat66y56wijvlan7pqwu" />
+</dependencies>
 

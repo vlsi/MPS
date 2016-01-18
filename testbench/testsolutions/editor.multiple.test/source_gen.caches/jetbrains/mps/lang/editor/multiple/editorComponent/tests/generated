@@ -1,3 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8h3ht2bnafg2r3l572w34xlwsz7ol6n" />
+<dependencies version="2" modelHash="curn3nvahdif4sigx82fd5eccs9hn2a">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="2vrjnhfqdi4szxdwwpro73ckmcehjp7" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-7wgzk30birnpwxjx9jyvlifd5e1innn" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-dlz9whsh3q6qef0rp4iyzgmmdamvlk0" dependsOnNodes="true">
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="6420745394459121798" name="DefaultEditorComponent" hash="-719j7vr1h3sdfwjn5li5emqd0hw0vt0" dependsOnNodes="true">
+    <dep root="5950344441601613251" />
+    <dep root="6420745394459130152" />
+    <dep root="6420745394459130264" />
+    <dep root="6420745394459902267" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="DefaultEditorComponent_Test.java" />
+  </source>
+  <source id="5950344441601613251" hash="d8ffvdte2m2i0p41ibn7f0upaqme9on" />
+  <source id="6420745394459130152" name="EditorComponentSpecifiedBy_context_hint" hash="3p2jvjdrkgyf1b5mtbzsvsvhcrfirsm" dependsOnNodes="true">
+    <dep root="5950344441601613251" />
+    <dep root="6420745394459121798" />
+    <dep root="6420745394459130264" />
+    <dep root="6420745394459902267" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="EditorComponentSpecifiedBy_context_hint_Test.java" />
+  </source>
+  <source id="6420745394459130264" name="MostSpecificEditorComponent" hash="934vb6gh8xk5qweymy531zz23fquovz" dependsOnNodes="true">
+    <dep root="5950344441601613251" />
+    <dep root="6420745394459121798" />
+    <dep root="6420745394459130152" />
+    <dep root="6420745394459902267" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="MostSpecificEditorComponent_Test.java" />
+  </source>
+  <source id="6420745394459902267" name="OverridenEditorComponent" hash="dsed6lkysczflodeix7gn8ww1m9di5j" dependsOnNodes="true">
+    <dep root="5950344441601613251" />
+    <dep root="6420745394459121798" />
+    <dep root="6420745394459130152" />
+    <dep root="6420745394459130264" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <file name="OverridenEditorComponent_Test.java" />
+  </source>
+</dependencies>
 
