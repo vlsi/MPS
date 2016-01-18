@@ -18,22 +18,30 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 5, 2003 1:03:02 PM
  */
 public class CellAction_DeleteNode extends AbstractCellAction {
-  private SNode mySemanticNode;
+  private final SNode mySemanticNode;
+  private final DeleteDirection myDirection;
 
   public CellAction_DeleteNode(SNode semanticNode) {
+    this(semanticNode, DeleteDirection.FORWARD);
+  }
+
+  public CellAction_DeleteNode(SNode semanticNode, DeleteDirection direction) {
     mySemanticNode = semanticNode;
+    myDirection = direction;
   }
 
   protected SNode getSourceNode() {
@@ -42,16 +50,80 @@ public class CellAction_DeleteNode extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = context.getEditorComponent().findNodeCell(mySemanticNode);
+    EditorCell cell = context.getEditorComponent().findNodeCell(mySemanticNode);
     return cell != null && cell.getParent() != null && !ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(context.getEditorComponent(), cell);
   }
 
   @Override
   public void execute(EditorContext context) {
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(CellUtil.getNodeToDelete(mySemanticNode));
-    for (SNode node : nodes) {
-      node.delete();
+    SNode nodeToDelete = getNodeToDelete(context);
+    SNode parent = nodeToDelete.getParent();
+    SContainmentLink containmentLink = nodeToDelete.getContainmentLink();
+    boolean isForward = myDirection == DeleteDirection.FORWARD;
+
+    boolean selectStart = isForward;
+    SNode siblingToSelect = getSiblingToSelect(parent, nodeToDelete, isForward);
+
+    if (siblingToSelect == null) {
+      selectStart = !isForward;
+      siblingToSelect = getSiblingToSelect(parent, nodeToDelete, !isForward);
     }
+    nodeToDelete.delete();
+    context.flushEvents();
+    setSelection(context.getEditorComponent(), parent, siblingToSelect, selectStart, containmentLink);
+  }
+
+  protected SNode getNodeToDelete(EditorContext context) {
+    return CellUtil.getNodeToDelete(mySemanticNode);
+  }
+
+  private SNode getSiblingToSelect(SNode parent, SNode node, boolean isNext) {
+    SContainmentLink containmentLink = node.getContainmentLink();
+    Iterator<? extends SNode> iterator = parent.getChildren(containmentLink).iterator();
+    SNode prev = null;
+    while (iterator.hasNext()) {
+      SNode child = iterator.next();
+      if (child == node) {
+        if (isNext) {
+          return iterator.hasNext() ? iterator.next() : null;
+        } else {
+          return prev;
+        }
+      }
+      prev = child;
+    }
+    return null;
+  }
+
+  private void setSelection(EditorComponent editorComponent, SNode parent, SNode siblingToSelect, boolean isStartPosition, SContainmentLink link) {
+    if (siblingToSelect != null) {
+      selectNode(editorComponent, siblingToSelect, isStartPosition);
+    } else {
+      selectNullCell(editorComponent, parent, link);
+    }
+  }
+
+  private boolean selectNode(EditorComponent editorComponent, SNode node, boolean isStartPosition) {
+    if (isStartPosition) {
+      editorComponent.getSelectionManager().setSelection(node, SelectionManager.FIRST_CELL, 0);
+    } else {
+      editorComponent.getSelectionManager().setSelection(node, SelectionManager.LAST_CELL, -1);
+    }
+    return true;
+  }
+
+
+  private void selectNullCell(EditorComponent editorComponent, SNode parent, SContainmentLink link) {
+    EditorCell nullCell = editorComponent.findNodeCellWithRole(parent, link.getName());
+    if (nullCell != null) {
+      ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).changeSelectionWRTFocusPolicy(nullCell);
+      return;
+    }
+    selectNode(editorComponent, parent, false);
+  }
+
+  public enum DeleteDirection {
+    FORWARD,
+    BACKWARD
   }
 }

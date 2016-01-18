@@ -10,8 +10,12 @@ public class CellAction_DeleteSimple extends CellAction_DeleteNode {
   public CellAction_DeleteSimple(SNode semanticNode) {
     super(semanticNode);
   }
+  public CellAction_DeleteSimple(SNode semanticNode, CellAction_DeleteNode.DeleteDirection direction) {
+    super(semanticNode, direction);
+  }
+
   @Override
-  public void execute(EditorContext context) {
-    getSourceNode().delete();
+  protected SNode getNodeToDelete(EditorContext context) {
+    return getSourceNode();
   }
 }

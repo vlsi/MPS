@@ -2700,9 +2700,13 @@
               </node>
               <node concept="2ShNRf" id="3BgDQ5UGD50" role="37wK5m">
                 <node concept="1pGfFk" id="3BgDQ5UGW1W" role="2ShVmc">
-                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode$DeleteDirection)" resolve="CellAction_DeleteNode" />
                   <node concept="1rXfSq" id="3BgDQ5UH0F2" role="37wK5m">
                     <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                  </node>
+                  <node concept="Rm8GO" id="1VSb7QEZ2Tf" role="37wK5m">
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.FORWARD" resolve="FORWARD" />
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
                   </node>
                 </node>
               </node>
@@ -2722,9 +2726,13 @@
               </node>
               <node concept="2ShNRf" id="FYOSwhQcM4" role="37wK5m">
                 <node concept="1pGfFk" id="FYOSwhQcM5" role="2ShVmc">
-                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+                  <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode$DeleteDirection)" resolve="CellAction_DeleteNode" />
                   <node concept="1rXfSq" id="FYOSwhQcM6" role="37wK5m">
                     <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                  </node>
+                  <node concept="Rm8GO" id="1VSb7QEZ3aB" role="37wK5m">
+                    <ref role="Rm8GQ" to="q4oi:~CellAction_DeleteNode$DeleteDirection.BACKWARD" resolve="BACKWARD" />
+                    <ref role="1Px2BO" to="q4oi:~CellAction_DeleteNode$DeleteDirection" resolve="CellAction_DeleteNode.DeleteDirection" />
                   </node>
                 </node>
               </node>

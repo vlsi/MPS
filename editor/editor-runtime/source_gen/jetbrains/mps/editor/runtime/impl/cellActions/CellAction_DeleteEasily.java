@@ -16,6 +16,9 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   public CellAction_DeleteEasily(SNode semanticNode) {
     super(semanticNode);
   }
+  public CellAction_DeleteEasily(SNode semanticNode, CellAction_DeleteNode.DeleteDirection direction) {
+    super(semanticNode, direction);
+  }
   @Override
   public boolean canExecute(EditorContext context) {
     return super.canExecute(context) && canBeDeletedEasily();

@@ -172,8 +172,8 @@
       <node id="1177460073219" at="227,55,228,87" concept="2" />
       <node id="1177460073219" at="228,87,229,23" concept="6" />
       <node id="1177460073219" at="232,96,233,134" concept="2" />
-      <node id="1177460073219" at="234,34,235,95" concept="2" />
-      <node id="1177460073219" at="235,95,236,98" concept="2" />
+      <node id="1177460073219" at="234,34,235,142" concept="2" />
+      <node id="1177460073219" at="235,142,236,146" concept="2" />
       <node id="1177460073219" at="238,122,239,139" concept="2" />
       <node id="1177460073219" at="33,0,36,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1177460073219" at="55,82,58,5" concept="0" />
@@ -246,7 +246,7 @@
       <scope id="1177460073219" at="213,66,215,51">
         <var name="listOwner" id="1177460073219" />
       </scope>
-      <scope id="1177460073219" at="234,34,236,98" />
+      <scope id="1177460073219" at="234,34,236,146" />
       <scope id="1177460073219" at="33,0,36,0">
         <var name="editorContext" id="1177460073219" />
         <var name="node" id="1177460073219" />
@@ -1746,8 +1746,8 @@
       <node id="6655357163912246428" at="173,55,174,87" concept="2" />
       <node id="6655357163912246428" at="174,87,175,23" concept="6" />
       <node id="6655357163912246428" at="178,96,179,134" concept="2" />
-      <node id="6655357163912246428" at="180,34,181,95" concept="2" />
-      <node id="6655357163912246428" at="181,95,182,98" concept="2" />
+      <node id="6655357163912246428" at="180,34,181,142" concept="2" />
+      <node id="6655357163912246428" at="181,142,182,146" concept="2" />
       <node id="6655357163912246428" at="184,122,185,139" concept="2" />
       <node id="849077997121893209" at="190,88,191,87" concept="5" />
       <node id="849077997121893209" at="191,87,192,47" concept="2" />
@@ -1854,7 +1854,7 @@
       <scope id="6655357163912246428" at="162,66,164,93">
         <var name="listOwner" id="6655357163912246428" />
       </scope>
-      <scope id="6655357163912246428" at="180,34,182,98" />
+      <scope id="6655357163912246428" at="180,34,182,146" />
       <scope id="7867202088808134476" at="233,35,235,94">
         <var name="manager" id="7867202088808134476" />
       </scope>

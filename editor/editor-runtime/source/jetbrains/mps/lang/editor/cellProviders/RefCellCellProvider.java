@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
@@ -71,16 +72,16 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
     if (myIsCardinality1) {
       if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
       } else {
         editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
         editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       }
     } else {
       if (myIsAggregation) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
       } else {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(node, myGenuineRole));
@@ -116,8 +117,8 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     if (myIsCardinality1) {
       if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
-        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
-        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
+        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
+        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         return errorCell;
       }
     }

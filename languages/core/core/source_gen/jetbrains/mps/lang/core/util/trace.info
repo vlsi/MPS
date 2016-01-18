@@ -17,60 +17,57 @@
       <node id="699163291708768670" at="27,51,28,33" concept="7" />
       <node id="699163291708768679" at="31,50,32,134" concept="7" />
       <node id="699163291708900118" at="35,62,36,311" concept="6" />
-      <node id="699163291708901752" at="37,63,38,68" concept="6" />
-      <node id="699163291708903988" at="38,68,39,59" concept="1" />
-      <node id="699163291708907119" at="39,59,40,29" concept="6" />
-      <node id="699163291708912685" at="41,75,42,70" concept="1" />
-      <node id="699163291708913033" at="42,70,43,31" concept="1" />
-      <node id="699163291708944393" at="45,75,46,48" concept="1" />
-      <node id="699163291708776078" at="48,7,49,42" concept="1" />
+      <node id="699163291708907119" at="37,63,38,29" concept="6" />
+      <node id="699163291708912685" at="39,75,40,70" concept="1" />
+      <node id="699163291708913033" at="40,70,41,31" concept="1" />
+      <node id="699163291708944393" at="43,75,44,48" concept="1" />
+      <node id="699163291708776078" at="46,7,47,42" concept="1" />
       <node id="699163291708768668" at="27,0,30,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
       <node id="699163291708768677" at="31,0,34,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="699163291708923525" at="44,9,47,9" concept="3" />
+      <node id="699163291708923525" at="42,9,45,9" concept="3" />
       <node id="699163291708709132" at="20,0,24,0" concept="0" trace="OldCommentContainerMigration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="699163291708888460" at="40,29,44,9" concept="3" />
+      <node id="699163291708888460" at="38,29,42,9" concept="3" />
       <node id="699163291708768656" at="25,25,34,7" concept="6" />
-      <node id="4672844534978797291" at="36,311,48,7" concept="4" />
-      <node id="699163291708773954" at="34,7,50,5" concept="3" />
-      <node id="699163291708711473" at="25,0,52,0" concept="5" trace="migrate#()V" />
+      <node id="4672844534978797291" at="36,311,46,7" concept="4" />
+      <node id="699163291708773954" at="34,7,48,5" concept="3" />
+      <node id="699163291708711473" at="25,0,50,0" concept="5" trace="migrate#()V" />
       <scope id="699163291708768669" at="27,51,28,33" />
       <scope id="699163291708768678" at="31,50,32,134" />
-      <scope id="699163291708923527" at="45,75,46,48" />
+      <scope id="699163291708923527" at="43,75,44,48" />
       <scope id="699163291708709136" at="20,99,22,25" />
-      <scope id="699163291708888464" at="41,75,43,31" />
+      <scope id="699163291708888464" at="39,75,41,31" />
       <scope id="699163291708768668" at="27,0,30,0">
         <var name="it" id="699163291708768668" />
       </scope>
       <scope id="699163291708768677" at="31,0,34,0">
         <var name="it" id="699163291708768677" />
       </scope>
-      <scope id="699163291708923525" at="44,9,47,9">
+      <scope id="699163291708923525" at="42,9,45,9">
         <var name="commentedNode" id="699163291708923526" />
       </scope>
       <scope id="699163291708709132" at="20,0,24,0">
         <var name="concept" id="699163291708709158" />
         <var name="module" id="699163291708709182" />
       </scope>
-      <scope id="699163291708888460" at="40,29,44,9">
+      <scope id="699163291708888460" at="38,29,42,9">
         <var name="commentedNode" id="699163291708888462" />
       </scope>
-      <scope id="4672844534978797293" at="37,63,47,9">
-        <var name="first" id="699163291708901755" />
+      <scope id="4672844534978797293" at="37,63,45,9">
         <var name="next" id="699163291708907122" />
       </scope>
-      <scope id="699163291708773958" at="35,62,49,42">
+      <scope id="699163291708773958" at="35,62,47,42">
         <var name="commentedNodes" id="699163291708900119" />
       </scope>
-      <scope id="699163291708773954" at="34,7,50,5">
+      <scope id="699163291708773954" at="34,7,48,5">
         <var name="comment" id="699163291708773956" />
       </scope>
-      <scope id="699163291708711476" at="25,25,50,5">
+      <scope id="699163291708711476" at="25,25,48,5">
         <var name="oldComments" id="699163291708768657" />
       </scope>
-      <scope id="699163291708711473" at="25,0,52,0" />
+      <scope id="699163291708711473" at="25,0,50,0" />
       <unit id="699163291708768668" at="26,111,30,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$1" />
       <unit id="699163291708768677" at="30,21,34,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$2" />
-      <unit id="699163291708709104" at="17,0,53,0" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration" />
+      <unit id="699163291708709104" at="17,0,51,0" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration" />
     </file>
   </root>
   <root nodeRef="r:57494669-3aca-4a91-9957-81c283ecd636(jetbrains.mps.lang.core.util)/699163291708945644">
