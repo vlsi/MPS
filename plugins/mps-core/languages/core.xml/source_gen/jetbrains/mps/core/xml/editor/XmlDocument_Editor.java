@@ -35,12 +35,12 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     public prologSingleRoleHandler_aohue5_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("prolog");
@@ -49,8 +49,6 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -58,11 +56,9 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no prolog>";
     }
-
   }
   private EditorCell createRefNode_aohue5_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new XmlDocument_Editor.rootElementSingleRoleHandler_aohue5_b0(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5e2f66f285946ac9L, 0x5c842a42c549486fL, "rootElement"), editorContext);
@@ -72,19 +68,17 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
     public rootElementSingleRoleHandler_aohue5_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("rootElement");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -92,10 +86,8 @@ public class XmlDocument_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no rootElement>";
     }
-
   }
 }

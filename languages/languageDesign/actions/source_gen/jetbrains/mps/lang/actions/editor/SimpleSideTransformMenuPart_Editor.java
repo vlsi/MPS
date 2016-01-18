@@ -118,19 +118,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public matchingTextSingleRoleHandler_cqa5bf_b1b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("matchingText");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -138,11 +136,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createConstant_cqa5bf_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
@@ -175,19 +171,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public descriptionTextSingleRoleHandler_cqa5bf_b3b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("descriptionText");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -195,11 +189,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createCollection_cqa5bf_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
@@ -264,19 +256,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public iconSingleRoleHandler_cqa5bf_b1e1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("icon");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -284,11 +274,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createConstant_cqa5bf_f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon node");
@@ -321,19 +309,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public iconNodeSingleRoleHandler_cqa5bf_b6b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("iconNode");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -341,11 +327,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createConstant_cqa5bf_h1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
@@ -378,19 +362,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public actionTypeSingleRoleHandler_cqa5bf_b8b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("actionType");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -398,11 +380,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createConstant_cqa5bf_j1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
@@ -435,19 +415,17 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     public handlerSingleRoleHandler_cqa5bf_b01b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("handler");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -455,10 +433,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<none>";
     }
-
   }
 }

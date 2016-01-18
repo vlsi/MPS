@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -106,7 +107,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private <T extends BaseConceptEditor> Collection<T> getAllEditors(SAbstractConcept concept,
       EditorCollectionComputable<T> editorsComputable) {
     List<T> result = new ArrayList<T>();
-    result.addAll(editorsComputable.compute(this));
+    addEditors(result, editorsComputable, this);
     SLanguage language = concept.getLanguage();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
     if (languageRuntime == null) {
@@ -114,20 +115,37 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
       return result;
     }
     for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = null;
-      try {
-        editorAspect = extendingLanguage.getAspect(EditorAspectDescriptor.class);
-      } catch (NoClassDefFoundError error) {
-        LOG.error("Failed to get editor aspect descriptor for language: " +
-            language + ". Editors of this language will not be taken into account", error);
-      }
+      EditorAspectDescriptor editorAspect = getEditorAspectDescriptor(extendingLanguage);
       if (editorAspect == null) {
         continue;
       }
-      Collection<T> editors = editorsComputable.compute(editorAspect);
-      result.addAll(editors);
+      addEditors(result, editorsComputable, editorAspect);
     }
     return result;
+  }
+
+  @Nullable
+  private EditorAspectDescriptor getEditorAspectDescriptor(LanguageRuntime languageRuntime) {
+    EditorAspectDescriptor editorAspect = null;
+    try {
+      editorAspect = languageRuntime.getAspect(EditorAspectDescriptor.class);
+    } catch (NoClassDefFoundError error) {
+      LOG.error("Failed to get editor aspect descriptor for language: " +
+          languageRuntime.getNamespace() + ". Editors of this language will not be taken into account", error);
+    }
+    return editorAspect;
+  }
+
+  private <T extends BaseConceptEditor> void addEditors(List<T> container, EditorCollectionComputable<T> editorsComputable, EditorAspectDescriptor editorAspect) {
+    Collection<T> editorsToAdd = null;
+    try {
+      editorsToAdd = editorsComputable.compute(editorAspect);
+    } catch (NoClassDefFoundError error) {
+      LOG.error("Failed to get editors from editor aspect descriptor", error);
+    }
+    if (editorsToAdd != null) {
+      container.addAll(editorsToAdd);
+    }
   }
 
   @Deprecated

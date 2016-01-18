@@ -79,19 +79,17 @@ public class Quotation_Editor extends DefaultNodeEditor {
     public quotedNodeSingleRoleHandler_29llnk_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("quotedNode");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -99,11 +97,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no quotedNode>";
     }
-
   }
   private EditorCell createConstant_29llnk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
@@ -149,19 +145,17 @@ public class Quotation_Editor extends DefaultNodeEditor {
     public modelToCreateSingleRoleHandler_29llnk_b3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("modelToCreate");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -169,11 +163,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no modelToCreate>";
     }
-
   }
   private EditorCell createConstant_29llnk_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
@@ -195,19 +187,17 @@ public class Quotation_Editor extends DefaultNodeEditor {
     public nodeIdSingleRoleHandler_29llnk_e3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("nodeId");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -215,11 +205,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<default>";
     }
-
   }
   private EditorCell createConstant_29llnk_f3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");

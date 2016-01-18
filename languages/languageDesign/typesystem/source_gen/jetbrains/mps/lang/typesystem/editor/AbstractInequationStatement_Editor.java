@@ -105,19 +105,17 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     public leftExpressionSingleRoleHandler_ka3b3c_c0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("leftExpression");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -125,11 +123,9 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no leftExpression>";
     }
-
   }
   private EditorCell createComponent_ka3b3c_d0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
@@ -151,19 +147,17 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     public rightExpressionSingleRoleHandler_ka3b3c_e0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("rightExpression");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -171,11 +165,9 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no rightExpression>";
     }
-
   }
   private EditorCell createConstant_ka3b3c_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
@@ -226,19 +218,17 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     public leftExpressionSingleRoleHandler_ka3b3c_b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("leftExpression");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -246,11 +236,9 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no leftExpression>";
     }
-
   }
   private EditorCell createComponent_ka3b3c_c1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
@@ -275,19 +263,17 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     public rightExpressionSingleRoleHandler_ka3b3c_d1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("rightExpression");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -295,11 +281,9 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no rightExpression>";
     }
-
   }
   private EditorCell createConstant_ka3b3c_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");

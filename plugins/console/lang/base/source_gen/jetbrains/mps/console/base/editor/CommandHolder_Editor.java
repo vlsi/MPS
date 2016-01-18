@@ -27,6 +27,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.READ_ONLY, 0, true);
     editorCell.getStyle().putAll(style);
+    CommandHolder_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_nvbf9m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nvbf9m_b0(editorContext, node));
     return editorCell;
@@ -49,12 +50,12 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     public commandSingleRoleHandler_nvbf9m_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("command");
@@ -63,8 +64,6 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.READ_ONLY, 0, false);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -72,10 +71,8 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no command>";
     }
-
   }
 }

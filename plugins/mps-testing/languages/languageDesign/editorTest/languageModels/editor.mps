@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -119,7 +119,10 @@
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
-      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
+      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY">
+        <property id="16410578721444372" name="customizeEmptyCell" index="2ru_X1" />
+        <child id="16410578721629643" name="emptyCellModel" index="2ruayu" />
+      </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="3647146066980922272" name="jetbrains.mps.lang.editor.structure.SelectInEditorOperation" flags="nn" index="1OKiuA">
         <child id="1948540814633499358" name="editorContext" index="lBI5i" />
@@ -708,12 +711,43 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="3F0ifn" id="P9hc2KffN9" role="3EZMnx">
-          <property role="3F0ifm" value="singe child:" />
+          <property role="3F0ifm" value="single child:" />
         </node>
         <node concept="3F1sOY" id="P9hc2KffNl" role="3EZMnx">
           <ref role="1NtTu8" to="68nn:P9hc2Kf3nJ" />
         </node>
         <node concept="l2Vlx" id="P9hc2KffCO" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="2wtgzyWe9Ae" role="3EZMnx">
+        <node concept="VPM3Z" id="2wtgzyWe9Ah" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2wtgzyWe9CA" role="3EZMnx">
+          <property role="3F0ifm" value="single child with non empty cell" />
+        </node>
+        <node concept="3F1sOY" id="2wtgzyWe9CH" role="3EZMnx">
+          <property role="2ru_X1" value="true" />
+          <ref role="1NtTu8" to="68nn:2wtgzyWe9_r" />
+          <node concept="3EZMnI" id="2wtgzyWe9CL" role="2ruayu">
+            <node concept="3F0ifn" id="2wtgzyWe9CT" role="3EZMnx">
+              <property role="3F0ifm" value="&lt;" />
+            </node>
+            <node concept="3F0ifn" id="2wtgzyWe9CZ" role="3EZMnx">
+              <property role="3F0ifm" value="child" />
+            </node>
+            <node concept="3F0ifn" id="2wtgzyWe9D7" role="3EZMnx">
+              <property role="3F0ifm" value="&gt;" />
+            </node>
+            <node concept="l2Vlx" id="2wtgzyWe9CM" role="2iSdaV" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="2wtgzyWe9Al" role="2iSdaV" />
+        <node concept="lj46D" id="2wtgzyWe9Cz" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="2wtgzyWenKz" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3EZMnI" id="7UZdOvgzaO7" role="3EZMnx">
         <node concept="3F0ifn" id="7UZdOvgzaQX" role="3EZMnx">

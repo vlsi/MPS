@@ -16,12 +16,10 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -121,8 +119,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
 
-      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
-      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
+      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.FORWARD));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.BACKWARD));
 
       if (myIsAggregation) {
         noRefCell.setAction(CellActionType.INSERT, new CellAction_Insert(getSNode(), myGenuineRole));
@@ -139,8 +137,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
     setRoleForCellWithNoTarget(errorCell);
     return errorCell;
   }

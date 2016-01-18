@@ -28,8 +28,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,9 +45,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     if (renderingCondition_uvxm5p_a3a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_uvxm5p_d0(editorContext, node));
     }
-    if (renderingCondition_uvxm5p_a4a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_uvxm5p_e0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_uvxm5p_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_uvxm5p_a0(EditorContext editorContext, SNode node) {
@@ -125,12 +121,12 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public querySingleRoleHandler_uvxm5p_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("query");
@@ -139,22 +135,22 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_query");
+      EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
-    protected String getNoTargetText() {
-      return "<no query>";
+    private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createCollection_uvxm5p_a4a(editorContext, node);
     }
-
-  }
-  private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, 0x11fe1c3d49fL, "query"))).isNotEmpty();
+    private EditorCell createCollection_uvxm5p_a4a(EditorContext editorContext, SNode node) {
+      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+      editorCell.setCellId("Collection_uvxm5p_a4a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.SELECTABLE, 0, false);
+      editorCell.getStyle().putAll(style);
+      return editorCell;
+    }
   }
 }

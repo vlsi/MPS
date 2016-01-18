@@ -67,9 +67,9 @@
       <node id="1159268590362" at="95,55,96,87" concept="2" />
       <node id="1159268590362" at="96,87,97,23" concept="6" />
       <node id="1159268590362" at="100,96,101,134" concept="2" />
-      <node id="1159268590362" at="102,34,103,95" concept="2" />
-      <node id="1159268590362" at="103,95,104,98" concept="2" />
-      <node id="1159268590362" at="104,98,105,80" concept="2" />
+      <node id="1159268590362" at="102,34,103,142" concept="2" />
+      <node id="1159268590362" at="103,142,104,146" concept="2" />
+      <node id="1159268590362" at="104,146,105,80" concept="2" />
       <node id="1159268590362" at="107,122,108,139" concept="2" />
       <node id="1159268590362" at="113,104,114,100" concept="5" />
       <node id="1159268590362" at="114,100,115,38" concept="2" />
@@ -77,9 +77,9 @@
       <node id="1159268590362" at="116,36,117,55" concept="2" />
       <node id="1159268590362" at="117,55,118,56" concept="2" />
       <node id="1159268590362" at="118,56,119,42" concept="2" />
-      <node id="1159268590362" at="119,42,120,90" concept="2" />
-      <node id="1159268590362" at="120,90,121,87" concept="2" />
-      <node id="1159268590362" at="121,87,122,24" concept="6" />
+      <node id="1159268590362" at="119,42,120,134" concept="2" />
+      <node id="1159268590362" at="120,134,121,138" concept="2" />
+      <node id="1159268590362" at="121,138,122,24" concept="6" />
       <node id="1159268590362" at="29,0,32,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1159268590362" at="81,0,84,0" concept="1" trace="extendsListHandler_7ntfj2_d0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="1159268590362" at="106,9,109,9" concept="3" />

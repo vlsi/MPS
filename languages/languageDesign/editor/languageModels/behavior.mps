@@ -3691,6 +3691,19 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="6RO52Mcgrfa" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="6RO52Mcgrfb" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52Mcgrfc" role="3clF47">
+        <node concept="3clFbF" id="6RO52Mcgsi0" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgshZ" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52Mcgsix" role="3clF45" />
+    </node>
     <node concept="13hLZK" id="hEwIJH5" role="13h7CW">
       <node concept="3clFbS" id="hEwIJH6" role="2VODD2" />
     </node>
@@ -5105,6 +5118,21 @@
       <node concept="17QB3L" id="4druX3VZSxJ" role="3clF45" />
       <node concept="3Tm1VV" id="hKxUO0t" role="1B3o_S" />
     </node>
+    <node concept="13i0hz" id="6RO52McgsoJ" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52McgsoK" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52McgsoL" role="3clF47">
+        <node concept="3clFbF" id="6RO52McgsoM" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgsoN" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52McgsoO" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="hKxUU1l">
     <property role="3GE5qa" value="CellModel" />
@@ -5706,6 +5734,21 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="6RO52McgvaK" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52McgvaL" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52McgvaM" role="3clF47">
+        <node concept="3clFbF" id="6RO52McgvaN" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgvaO" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52McgvaP" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="hKxVe3w">
     <property role="3GE5qa" value="CellModel" />
@@ -5817,6 +5860,21 @@
       </node>
       <node concept="10P_77" id="hTuYhbR" role="3clF45" />
       <node concept="3Tm1VV" id="hTuYiFl" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="6RO52Mcgswy" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52Mcgswz" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52Mcgsw$" role="3clF47">
+        <node concept="3clFbF" id="6RO52Mcgsw_" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgswA" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52McgswB" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="hKxVY5n">
@@ -6110,6 +6168,21 @@
         </node>
       </node>
       <node concept="10P_77" id="3TPTV99Acgx" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="6RO52Mcgslb" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52Mcgslc" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52Mcgslh" role="3clF47">
+        <node concept="3clFbF" id="6RO52Mcgsne" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52Mcgsnd" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52Mcgsli" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="hLA0Gkp">
@@ -6536,6 +6609,21 @@
       </node>
       <node concept="17QB3L" id="4druX3VZSxU" role="3clF45" />
       <node concept="3Tm1VV" id="hPRumqs" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="6RO52McgsvI" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52McgsvJ" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52McgsvK" role="3clF47">
+        <node concept="3clFbF" id="6RO52McgsvL" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgsvM" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52McgsvN" role="3clF45" />
     </node>
     <node concept="13hLZK" id="hPRum6X" role="13h7CW">
       <node concept="3clFbS" id="hPRum6Y" role="2VODD2" />
@@ -13952,6 +14040,21 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="6yxxNaAwsaA" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6yxxNaAwsaB" role="1B3o_S" />
+      <node concept="3clFbS" id="6yxxNaAwsaG" role="3clF47">
+        <node concept="3clFbF" id="6yxxNaAwsfP" role="3cqZAp">
+          <node concept="3clFbT" id="6yxxNaAwsfO" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6yxxNaAwsaH" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="59ZEGVRaF0F">
     <property role="3GE5qa" value="EditorContextHints" />
@@ -16476,6 +16579,94 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="6yxxNaAwsCs">
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="13h7C2" to="tpc2:hrXIzvd" resolve="CellModel_BlockEnd" />
+    <node concept="13i0hz" id="6yxxNaAwsCv" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6yxxNaAwsCw" role="1B3o_S" />
+      <node concept="3clFbS" id="6yxxNaAwsCx" role="3clF47">
+        <node concept="3clFbF" id="6yxxNaAwsCy" role="3cqZAp">
+          <node concept="3clFbT" id="6yxxNaAwsCz" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6yxxNaAwsC$" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="6yxxNaAwsCt" role="13h7CW">
+      <node concept="3clFbS" id="6yxxNaAwsCu" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6yxxNaAwsCK">
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="13h7C2" to="tpc2:hrXI7r6" resolve="CellModel_BlockStart" />
+    <node concept="13i0hz" id="6yxxNaAwsCN" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6yxxNaAwsCO" role="1B3o_S" />
+      <node concept="3clFbS" id="6yxxNaAwsCP" role="3clF47">
+        <node concept="3clFbF" id="6yxxNaAwsCQ" role="3cqZAp">
+          <node concept="3clFbT" id="6yxxNaAwsCR" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6yxxNaAwsCS" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="6yxxNaAwsCL" role="13h7CW">
+      <node concept="3clFbS" id="6yxxNaAwsCM" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6RO52McgwQX">
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="13h7C2" to="tpc2:7dwhomQPs_N" resolve="CellModel_Empty" />
+    <node concept="13i0hz" id="6RO52McgwR0" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6RO52McgwR1" role="1B3o_S" />
+      <node concept="3clFbS" id="6RO52McgwR2" role="3clF47">
+        <node concept="3clFbF" id="6RO52McgwR3" role="3cqZAp">
+          <node concept="3clFbT" id="6RO52McgwR4" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6RO52McgwR5" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="6RO52McgwQY" role="13h7CW">
+      <node concept="3clFbS" id="6RO52McgwQZ" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6yxxNaAwsA$">
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="13h7C2" to="tpc2:hsb$fdm" resolve="CellModel_Block" />
+    <node concept="13hLZK" id="6yxxNaAwsA_" role="13h7CW">
+      <node concept="3clFbS" id="6yxxNaAwsAA" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="6yxxNaAwsAB" role="13h7CS">
+      <property role="TrG5h" value="canBeUsedAsEmptyCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+      <node concept="3Tm1VV" id="6yxxNaAwsAC" role="1B3o_S" />
+      <node concept="3clFbS" id="6yxxNaAwsAH" role="3clF47">
+        <node concept="3clFbF" id="6yxxNaAwsCj" role="3cqZAp">
+          <node concept="3clFbT" id="6yxxNaAwsCi" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6yxxNaAwsAI" role="3clF45" />
     </node>
   </node>
 </model>

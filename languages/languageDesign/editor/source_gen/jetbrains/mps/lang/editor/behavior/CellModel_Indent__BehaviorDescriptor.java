@@ -25,13 +25,17 @@ public final class CellModel_Indent__BehaviorDescriptor extends BaseBHDescriptor
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> isCellIdInitialized_idhTuDsSD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCellIdInitialized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTuDsSD").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isCellIdInitialized_idhTuDsSD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isCellIdInitialized_idhTuDsSD, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static boolean isCellIdInitialized_idhTuDsSD(@NotNull SNode __thisNode__) {
+    return true;
+  }
+  /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
     return true;
   }
 
@@ -53,6 +57,8 @@ public final class CellModel_Indent__BehaviorDescriptor extends BaseBHDescriptor
     switch (methodIndex) {
       case 0:
         return (T) ((Boolean) isCellIdInitialized_idhTuDsSD(node));
+      case 1:
+        return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

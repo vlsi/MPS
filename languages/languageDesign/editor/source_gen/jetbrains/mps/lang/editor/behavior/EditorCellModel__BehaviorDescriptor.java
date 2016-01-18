@@ -65,8 +65,9 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Boolean> isIndented_idi0pN94$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isIndented").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pN94$").registry(REGISTRY).build();
   public static final SMethod<Boolean> isNewLineChildren_idi0pNGlC = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isNewLineChildren").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pNGlC").registry(REGISTRY).build();
   public static final SMethod<SNode> getParentCollectionCell_id7XYaZQUjT8u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParentCollectionCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XYaZQUjT8u").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCellModelKind_idhHfCaJf, getCellId_idhHbewHT, getDefaultCellId_id3VYF6qfIQs_, getUniqueCellIdPrefix_id7c58AbNRrel, getAbbreviation_id7c58AbNSIrP, getFactoryMethodName_idhHfE2BD, getParent_idhJF64sU, isSelectable_idhJF6SX1, setSelectable_idi4bRWUe, getColor_idhPjC$St, getStyle_id6H7j4iO1E_a, getForegroundColor_idhL6TA5F, getBackgroundColor_idhL7rNfN, getTextBackgroundColor_idhL7BhMP, isUnderlined_idhLmqR8u, isStrikeOut_idhNnL8J1, getFontSize_idhLmaQwP, getFontStyle_idhLcv3Z9, getOpeningTag_idhKxXtpm, getClosingTag_idhKxXx_K, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getOpeningPrefix_idhKxW98J, getDefaultFontStyle_idhL_r0Mx, isCellIdInitialized_idhTuDsSD, getBooleanStyleValue_idi0pNf1r, isNewLine_idi0pLPAc, isOnNewLine_idi0pUMOG, isIndented_idi0pN94$, isNewLineChildren_idi0pNGlC, getParentCollectionCell_id7XYaZQUjT8u);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCellModelKind_idhHfCaJf, getCellId_idhHbewHT, getDefaultCellId_id3VYF6qfIQs_, getUniqueCellIdPrefix_id7c58AbNRrel, getAbbreviation_id7c58AbNSIrP, getFactoryMethodName_idhHfE2BD, getParent_idhJF64sU, isSelectable_idhJF6SX1, setSelectable_idi4bRWUe, getColor_idhPjC$St, getStyle_id6H7j4iO1E_a, getForegroundColor_idhL6TA5F, getBackgroundColor_idhL7rNfN, getTextBackgroundColor_idhL7BhMP, isUnderlined_idhLmqR8u, isStrikeOut_idhNnL8J1, getFontSize_idhLmaQwP, getFontStyle_idhLcv3Z9, getOpeningTag_idhKxXtpm, getClosingTag_idhKxXx_K, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getOpeningPrefix_idhKxW98J, getDefaultFontStyle_idhL_r0Mx, isCellIdInitialized_idhTuDsSD, getBooleanStyleValue_idi0pNf1r, isNewLine_idi0pLPAc, isOnNewLine_idi0pUMOG, isIndented_idi0pN94$, isNewLineChildren_idi0pNGlC, getParentCollectionCell_id7XYaZQUjT8u, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -275,6 +276,9 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static SNode getParentCollectionCell_id7XYaZQUjT8u(@NotNull SNode __thisNode__) {
     return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"));
   }
+  /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
+    return false;
+  }
 
   /*package*/ EditorCellModel__BehaviorDescriptor() {
     super(REGISTRY);
@@ -355,6 +359,8 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
         return (T) ((Boolean) isNewLineChildren_idi0pNGlC(node));
       case 30:
         return (T) ((SNode) getParentCollectionCell_id7XYaZQUjT8u(node));
+      case 31:
+        return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

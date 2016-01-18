@@ -122,19 +122,17 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     public externalIdSingleRoleHandler_kqvvq_c1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(myEditorContext, new AggregationCellContext(myOwnerNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a()}));
       if (editorCell.getRole() == null) {
         editorCell.setRole("externalId");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -142,11 +140,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "";
     }
-
   }
   public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
     public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a() {

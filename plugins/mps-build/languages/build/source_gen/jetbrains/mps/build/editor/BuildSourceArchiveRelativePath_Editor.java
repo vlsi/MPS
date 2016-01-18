@@ -58,19 +58,17 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     public archivePathSingleRoleHandler_4z471d_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("archivePath");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -78,11 +76,9 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no archivePath>";
     }
-
   }
   private EditorCell createConstant_4z471d_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!/");
@@ -105,12 +101,12 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     public compositePartSingleRoleHandler_4z471d_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new CompositeSubstituteInfo(myEditorContext, new AggregationCellContext(myOwnerNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_Editor.BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0()}));
       if (editorCell.getRole() == null) {
         editorCell.setRole("compositePart");
@@ -123,8 +119,6 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       }
       BuildSourceArchiveRelativePath_Delete.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -132,11 +126,9 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "";
     }
-
   }
   public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {

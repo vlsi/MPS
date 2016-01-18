@@ -22,7 +22,7 @@ public class Subst_SingleChild_OnlyBooleanProperty_with_Another_Test extends Bas
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("957371990174094570", "957371990174483162");
+      initEditor("2890539347285262654", "2890539347285262656");
       this.typeString("v1");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }

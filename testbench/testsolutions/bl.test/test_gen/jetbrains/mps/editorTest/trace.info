@@ -33,6 +33,140 @@
       <unit id="1086097794003843976" at="10,0,31,0" name="jetbrains.mps.editorTest.ReplacePlusWithMinus_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577063752">
+    <file name="BackspaceErrorReference_Test.java">
+      <node id="1165710012577063752" at="15,63,16,107" concept="3" />
+      <node id="1165710012577063752" at="16,107,17,104" concept="3" />
+      <node id="1165710012577063752" at="24,51,25,63" concept="3" />
+      <node id="1165710012577063773" at="25,63,26,77" concept="3" />
+      <node id="1165710012577083140" at="26,77,27,77" concept="3" />
+      <node id="1165710012577063752" at="12,0,14,0" concept="2" trace="BackspaceErrorReference_Test#()V" />
+      <node id="1165710012577063752" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577063752" at="14,0,19,0" concept="6" trace="test_BackspaceErrorReference#()V" />
+      <node id="1165710012577063752" at="23,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577063752" at="12,41,12,41" />
+      <scope id="1165710012577063752" at="21,23,21,23" />
+      <scope id="1165710012577063752" at="12,0,14,0" />
+      <scope id="1165710012577063752" at="15,63,17,104" />
+      <scope id="1165710012577063752" at="21,0,23,0" />
+      <scope id="1165710012577063752" at="24,51,27,77" />
+      <scope id="1165710012577063752" at="14,0,19,0" />
+      <scope id="1165710012577063752" at="23,0,29,0" />
+      <unit id="1165710012577063752" at="19,0,30,0" name="jetbrains.mps.editorTest.BackspaceErrorReference_Test$TestBody" />
+      <unit id="1165710012577063752" at="10,0,31,0" name="jetbrains.mps.editorTest.BackspaceErrorReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577083146">
+    <file name="DeleteErrorReference_Test.java">
+      <node id="1165710012577083146" at="15,60,16,107" concept="3" />
+      <node id="1165710012577083146" at="16,107,17,101" concept="3" />
+      <node id="1165710012577083146" at="24,51,25,63" concept="3" />
+      <node id="1165710012577083148" at="25,63,26,74" concept="3" />
+      <node id="1165710012577083150" at="26,74,27,74" concept="3" />
+      <node id="1165710012577083146" at="12,0,14,0" concept="2" trace="DeleteErrorReference_Test#()V" />
+      <node id="1165710012577083146" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577083146" at="14,0,19,0" concept="6" trace="test_DeleteErrorReference#()V" />
+      <node id="1165710012577083146" at="23,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577083146" at="12,38,12,38" />
+      <scope id="1165710012577083146" at="21,23,21,23" />
+      <scope id="1165710012577083146" at="12,0,14,0" />
+      <scope id="1165710012577083146" at="15,60,17,101" />
+      <scope id="1165710012577083146" at="21,0,23,0" />
+      <scope id="1165710012577083146" at="24,51,27,74" />
+      <scope id="1165710012577083146" at="14,0,19,0" />
+      <scope id="1165710012577083146" at="23,0,29,0" />
+      <unit id="1165710012577083146" at="19,0,30,0" name="jetbrains.mps.editorTest.DeleteErrorReference_Test$TestBody" />
+      <unit id="1165710012577083146" at="10,0,31,0" name="jetbrains.mps.editorTest.DeleteErrorReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577084049">
+    <file name="BackspaceArgument_Test.java">
+      <node id="1165710012577084049" at="15,57,16,107" concept="3" />
+      <node id="1165710012577084049" at="16,107,17,98" concept="3" />
+      <node id="1165710012577084049" at="24,51,25,63" concept="3" />
+      <node id="1165710012577084051" at="25,63,26,77" concept="3" />
+      <node id="1165710012577084049" at="12,0,14,0" concept="2" trace="BackspaceArgument_Test#()V" />
+      <node id="1165710012577084049" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577084049" at="14,0,19,0" concept="6" trace="test_BackspaceArgument#()V" />
+      <node id="1165710012577084049" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577084049" at="12,35,12,35" />
+      <scope id="1165710012577084049" at="21,23,21,23" />
+      <scope id="1165710012577084049" at="12,0,14,0" />
+      <scope id="1165710012577084049" at="15,57,17,98" />
+      <scope id="1165710012577084049" at="21,0,23,0" />
+      <scope id="1165710012577084049" at="24,51,26,77" />
+      <scope id="1165710012577084049" at="14,0,19,0" />
+      <scope id="1165710012577084049" at="23,0,28,0" />
+      <unit id="1165710012577084049" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceArgument_Test$TestBody" />
+      <unit id="1165710012577084049" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceArgument_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577088767">
+    <file name="DeleteArgument_Test.java">
+      <node id="1165710012577088767" at="15,54,16,107" concept="3" />
+      <node id="1165710012577088767" at="16,107,17,95" concept="3" />
+      <node id="1165710012577088767" at="24,51,25,63" concept="3" />
+      <node id="1165710012577088769" at="25,63,26,74" concept="3" />
+      <node id="1165710012577088767" at="12,0,14,0" concept="2" trace="DeleteArgument_Test#()V" />
+      <node id="1165710012577088767" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577088767" at="14,0,19,0" concept="6" trace="test_DeleteArgument#()V" />
+      <node id="1165710012577088767" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577088767" at="12,32,12,32" />
+      <scope id="1165710012577088767" at="21,23,21,23" />
+      <scope id="1165710012577088767" at="12,0,14,0" />
+      <scope id="1165710012577088767" at="15,54,17,95" />
+      <scope id="1165710012577088767" at="21,0,23,0" />
+      <scope id="1165710012577088767" at="24,51,26,74" />
+      <scope id="1165710012577088767" at="14,0,19,0" />
+      <scope id="1165710012577088767" at="23,0,28,0" />
+      <unit id="1165710012577088767" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteArgument_Test$TestBody" />
+      <unit id="1165710012577088767" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteArgument_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577093108">
+    <file name="DefaultEditor_BackspaceFriend_Test.java">
+      <node id="1165710012577093108" at="15,69,16,107" concept="3" />
+      <node id="1165710012577093108" at="16,107,17,110" concept="3" />
+      <node id="1165710012577093108" at="24,51,25,63" concept="3" />
+      <node id="1165710012577093115" at="25,63,26,77" concept="3" />
+      <node id="1165710012577093108" at="12,0,14,0" concept="2" trace="DefaultEditor_BackspaceFriend_Test#()V" />
+      <node id="1165710012577093108" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577093108" at="14,0,19,0" concept="6" trace="test_DefaultEditor_BackspaceFriend#()V" />
+      <node id="1165710012577093108" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577093108" at="12,47,12,47" />
+      <scope id="1165710012577093108" at="21,23,21,23" />
+      <scope id="1165710012577093108" at="12,0,14,0" />
+      <scope id="1165710012577093108" at="15,69,17,110" />
+      <scope id="1165710012577093108" at="21,0,23,0" />
+      <scope id="1165710012577093108" at="24,51,26,77" />
+      <scope id="1165710012577093108" at="14,0,19,0" />
+      <scope id="1165710012577093108" at="23,0,28,0" />
+      <unit id="1165710012577093108" at="19,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_BackspaceFriend_Test$TestBody" />
+      <unit id="1165710012577093108" at="10,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_BackspaceFriend_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1165710012577093167">
+    <file name="DefaultEditor_DeleteFriend_Test.java">
+      <node id="1165710012577093167" at="15,66,16,107" concept="3" />
+      <node id="1165710012577093167" at="16,107,17,107" concept="3" />
+      <node id="1165710012577093167" at="24,51,25,63" concept="3" />
+      <node id="1165710012577093169" at="25,63,26,74" concept="3" />
+      <node id="1165710012577093167" at="12,0,14,0" concept="2" trace="DefaultEditor_DeleteFriend_Test#()V" />
+      <node id="1165710012577093167" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1165710012577093167" at="14,0,19,0" concept="6" trace="test_DefaultEditor_DeleteFriend#()V" />
+      <node id="1165710012577093167" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1165710012577093167" at="12,44,12,44" />
+      <scope id="1165710012577093167" at="21,23,21,23" />
+      <scope id="1165710012577093167" at="12,0,14,0" />
+      <scope id="1165710012577093167" at="15,66,17,107" />
+      <scope id="1165710012577093167" at="21,0,23,0" />
+      <scope id="1165710012577093167" at="24,51,26,74" />
+      <scope id="1165710012577093167" at="14,0,19,0" />
+      <scope id="1165710012577093167" at="23,0,28,0" />
+      <unit id="1165710012577093167" at="19,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_DeleteFriend_Test$TestBody" />
+      <unit id="1165710012577093167" at="10,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_DeleteFriend_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1195975797953542959">
     <file name="PressingBackspaseInFirstPosition_Test.java">
       <node id="1195975797953542959" at="15,72,16,107" concept="3" />
@@ -1683,6 +1817,204 @@
       <scope id="1932269937152125075" at="25,0,30,0" />
       <unit id="1932269937152125075" at="21,0,31,0" name="jetbrains.mps.editorTest.RestoreRangeSeletion_Test$TestBody" />
       <unit id="1932269937152125075" at="12,0,32,0" name="jetbrains.mps.editorTest.RestoreRangeSeletion_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228993245">
+    <file name="BackspaceStatement_Test.java">
+      <node id="1938740395228993245" at="15,58,16,107" concept="3" />
+      <node id="1938740395228993245" at="16,107,17,99" concept="3" />
+      <node id="1938740395228993245" at="24,51,25,63" concept="3" />
+      <node id="1938740395228993262" at="25,63,26,77" concept="3" />
+      <node id="1938740395228993245" at="12,0,14,0" concept="2" trace="BackspaceStatement_Test#()V" />
+      <node id="1938740395228993245" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228993245" at="14,0,19,0" concept="6" trace="test_BackspaceStatement#()V" />
+      <node id="1938740395228993245" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228993245" at="12,36,12,36" />
+      <scope id="1938740395228993245" at="21,23,21,23" />
+      <scope id="1938740395228993245" at="12,0,14,0" />
+      <scope id="1938740395228993245" at="15,58,17,99" />
+      <scope id="1938740395228993245" at="21,0,23,0" />
+      <scope id="1938740395228993245" at="24,51,26,77" />
+      <scope id="1938740395228993245" at="14,0,19,0" />
+      <scope id="1938740395228993245" at="23,0,28,0" />
+      <unit id="1938740395228993245" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceStatement_Test$TestBody" />
+      <unit id="1938740395228993245" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228993930">
+    <file name="BackspaceParameter_Test.java">
+      <node id="1938740395228993930" at="15,58,16,107" concept="3" />
+      <node id="1938740395228993930" at="16,107,17,99" concept="3" />
+      <node id="1938740395228993930" at="24,51,25,63" concept="3" />
+      <node id="1938740395228993949" at="25,63,26,77" concept="3" />
+      <node id="1938740395228993930" at="12,0,14,0" concept="2" trace="BackspaceParameter_Test#()V" />
+      <node id="1938740395228993930" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228993930" at="14,0,19,0" concept="6" trace="test_BackspaceParameter#()V" />
+      <node id="1938740395228993930" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228993930" at="12,36,12,36" />
+      <scope id="1938740395228993930" at="21,23,21,23" />
+      <scope id="1938740395228993930" at="12,0,14,0" />
+      <scope id="1938740395228993930" at="15,58,17,99" />
+      <scope id="1938740395228993930" at="21,0,23,0" />
+      <scope id="1938740395228993930" at="24,51,26,77" />
+      <scope id="1938740395228993930" at="14,0,19,0" />
+      <scope id="1938740395228993930" at="23,0,28,0" />
+      <unit id="1938740395228993930" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceParameter_Test$TestBody" />
+      <unit id="1938740395228993930" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceParameter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228994369">
+    <file name="DeleteParameter_Test.java">
+      <node id="1938740395228994369" at="15,55,16,107" concept="3" />
+      <node id="1938740395228994369" at="16,107,17,96" concept="3" />
+      <node id="1938740395228994369" at="24,51,25,63" concept="3" />
+      <node id="1938740395228994397" at="25,63,26,74" concept="3" />
+      <node id="1938740395228994369" at="12,0,14,0" concept="2" trace="DeleteParameter_Test#()V" />
+      <node id="1938740395228994369" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228994369" at="14,0,19,0" concept="6" trace="test_DeleteParameter#()V" />
+      <node id="1938740395228994369" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228994369" at="12,33,12,33" />
+      <scope id="1938740395228994369" at="21,23,21,23" />
+      <scope id="1938740395228994369" at="12,0,14,0" />
+      <scope id="1938740395228994369" at="15,55,17,96" />
+      <scope id="1938740395228994369" at="21,0,23,0" />
+      <scope id="1938740395228994369" at="24,51,26,74" />
+      <scope id="1938740395228994369" at="14,0,19,0" />
+      <scope id="1938740395228994369" at="23,0,28,0" />
+      <unit id="1938740395228994369" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteParameter_Test$TestBody" />
+      <unit id="1938740395228994369" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteParameter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228994465">
+    <file name="DeleteOnlyStatement_Test.java">
+      <node id="1938740395228994465" at="15,59,16,107" concept="3" />
+      <node id="1938740395228994465" at="16,107,17,100" concept="3" />
+      <node id="1938740395228994465" at="24,51,25,63" concept="3" />
+      <node id="1938740395228994491" at="25,63,26,74" concept="3" />
+      <node id="1938740395228994465" at="12,0,14,0" concept="2" trace="DeleteOnlyStatement_Test#()V" />
+      <node id="1938740395228994465" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228994465" at="14,0,19,0" concept="6" trace="test_DeleteOnlyStatement#()V" />
+      <node id="1938740395228994465" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228994465" at="12,37,12,37" />
+      <scope id="1938740395228994465" at="21,23,21,23" />
+      <scope id="1938740395228994465" at="12,0,14,0" />
+      <scope id="1938740395228994465" at="15,59,17,100" />
+      <scope id="1938740395228994465" at="21,0,23,0" />
+      <scope id="1938740395228994465" at="24,51,26,74" />
+      <scope id="1938740395228994465" at="14,0,19,0" />
+      <scope id="1938740395228994465" at="23,0,28,0" />
+      <unit id="1938740395228994465" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteOnlyStatement_Test$TestBody" />
+      <unit id="1938740395228994465" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteOnlyStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228994779">
+    <file name="BackspaceOnlyStatement_Test.java">
+      <node id="1938740395228994779" at="15,62,16,107" concept="3" />
+      <node id="1938740395228994779" at="16,107,17,103" concept="3" />
+      <node id="1938740395228994779" at="24,51,25,63" concept="3" />
+      <node id="1938740395228994793" at="25,63,26,77" concept="3" />
+      <node id="1938740395228994779" at="12,0,14,0" concept="2" trace="BackspaceOnlyStatement_Test#()V" />
+      <node id="1938740395228994779" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228994779" at="14,0,19,0" concept="6" trace="test_BackspaceOnlyStatement#()V" />
+      <node id="1938740395228994779" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228994779" at="12,40,12,40" />
+      <scope id="1938740395228994779" at="21,23,21,23" />
+      <scope id="1938740395228994779" at="12,0,14,0" />
+      <scope id="1938740395228994779" at="15,62,17,103" />
+      <scope id="1938740395228994779" at="21,0,23,0" />
+      <scope id="1938740395228994779" at="24,51,26,77" />
+      <scope id="1938740395228994779" at="14,0,19,0" />
+      <scope id="1938740395228994779" at="23,0,28,0" />
+      <unit id="1938740395228994779" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceOnlyStatement_Test$TestBody" />
+      <unit id="1938740395228994779" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceOnlyStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228994798">
+    <file name="DeleteFirstStatement_Test.java">
+      <node id="1938740395228994798" at="15,60,16,107" concept="3" />
+      <node id="1938740395228994798" at="16,107,17,101" concept="3" />
+      <node id="1938740395228994798" at="24,51,25,63" concept="3" />
+      <node id="1938740395228994812" at="25,63,26,74" concept="3" />
+      <node id="1938740395228994798" at="12,0,14,0" concept="2" trace="DeleteFirstStatement_Test#()V" />
+      <node id="1938740395228994798" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228994798" at="14,0,19,0" concept="6" trace="test_DeleteFirstStatement#()V" />
+      <node id="1938740395228994798" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228994798" at="12,38,12,38" />
+      <scope id="1938740395228994798" at="21,23,21,23" />
+      <scope id="1938740395228994798" at="12,0,14,0" />
+      <scope id="1938740395228994798" at="15,60,17,101" />
+      <scope id="1938740395228994798" at="21,0,23,0" />
+      <scope id="1938740395228994798" at="24,51,26,74" />
+      <scope id="1938740395228994798" at="14,0,19,0" />
+      <scope id="1938740395228994798" at="23,0,28,0" />
+      <unit id="1938740395228994798" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteFirstStatement_Test$TestBody" />
+      <unit id="1938740395228994798" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteFirstStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228995585">
+    <file name="BackspaceFirstStatement_Test.java">
+      <node id="1938740395228995585" at="15,63,16,107" concept="3" />
+      <node id="1938740395228995585" at="16,107,17,104" concept="3" />
+      <node id="1938740395228995585" at="24,51,25,63" concept="3" />
+      <node id="1938740395228995606" at="25,63,26,77" concept="3" />
+      <node id="1938740395228995585" at="12,0,14,0" concept="2" trace="BackspaceFirstStatement_Test#()V" />
+      <node id="1938740395228995585" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228995585" at="14,0,19,0" concept="6" trace="test_BackspaceFirstStatement#()V" />
+      <node id="1938740395228995585" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228995585" at="12,41,12,41" />
+      <scope id="1938740395228995585" at="21,23,21,23" />
+      <scope id="1938740395228995585" at="12,0,14,0" />
+      <scope id="1938740395228995585" at="15,63,17,104" />
+      <scope id="1938740395228995585" at="21,0,23,0" />
+      <scope id="1938740395228995585" at="24,51,26,77" />
+      <scope id="1938740395228995585" at="14,0,19,0" />
+      <scope id="1938740395228995585" at="23,0,28,0" />
+      <unit id="1938740395228995585" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceFirstStatement_Test$TestBody" />
+      <unit id="1938740395228995585" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceFirstStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228995650">
+    <file name="DeleteLastStatement_Test.java">
+      <node id="1938740395228995650" at="15,59,16,107" concept="3" />
+      <node id="1938740395228995650" at="16,107,17,100" concept="3" />
+      <node id="1938740395228995650" at="24,51,25,63" concept="3" />
+      <node id="1938740395228995671" at="25,63,26,74" concept="3" />
+      <node id="1938740395228995650" at="12,0,14,0" concept="2" trace="DeleteLastStatement_Test#()V" />
+      <node id="1938740395228995650" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228995650" at="14,0,19,0" concept="6" trace="test_DeleteLastStatement#()V" />
+      <node id="1938740395228995650" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228995650" at="12,37,12,37" />
+      <scope id="1938740395228995650" at="21,23,21,23" />
+      <scope id="1938740395228995650" at="12,0,14,0" />
+      <scope id="1938740395228995650" at="15,59,17,100" />
+      <scope id="1938740395228995650" at="21,0,23,0" />
+      <scope id="1938740395228995650" at="24,51,26,74" />
+      <scope id="1938740395228995650" at="14,0,19,0" />
+      <scope id="1938740395228995650" at="23,0,28,0" />
+      <unit id="1938740395228995650" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteLastStatement_Test$TestBody" />
+      <unit id="1938740395228995650" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteLastStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1938740395228995834">
+    <file name="BackspaceLastStatement_Test.java">
+      <node id="1938740395228995834" at="15,62,16,107" concept="3" />
+      <node id="1938740395228995834" at="16,107,17,103" concept="3" />
+      <node id="1938740395228995834" at="24,51,25,63" concept="3" />
+      <node id="1938740395228995855" at="25,63,26,77" concept="3" />
+      <node id="1938740395228995834" at="12,0,14,0" concept="2" trace="BackspaceLastStatement_Test#()V" />
+      <node id="1938740395228995834" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="1938740395228995834" at="14,0,19,0" concept="6" trace="test_BackspaceLastStatement#()V" />
+      <node id="1938740395228995834" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1938740395228995834" at="12,40,12,40" />
+      <scope id="1938740395228995834" at="21,23,21,23" />
+      <scope id="1938740395228995834" at="12,0,14,0" />
+      <scope id="1938740395228995834" at="15,62,17,103" />
+      <scope id="1938740395228995834" at="21,0,23,0" />
+      <scope id="1938740395228995834" at="24,51,26,77" />
+      <scope id="1938740395228995834" at="14,0,19,0" />
+      <scope id="1938740395228995834" at="23,0,28,0" />
+      <unit id="1938740395228995834" at="19,0,29,0" name="jetbrains.mps.editorTest.BackspaceLastStatement_Test$TestBody" />
+      <unit id="1938740395228995834" at="10,0,30,0" name="jetbrains.mps.editorTest.BackspaceLastStatement_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1954244792706673782">

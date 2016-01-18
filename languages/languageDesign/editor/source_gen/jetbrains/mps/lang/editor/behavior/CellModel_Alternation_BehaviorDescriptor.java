@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
  */
 @Deprecated
 public class CellModel_Alternation_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
+  public boolean virtual_canBeUsedAsEmptyCell_7922979826015777738(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
     return null;
   }

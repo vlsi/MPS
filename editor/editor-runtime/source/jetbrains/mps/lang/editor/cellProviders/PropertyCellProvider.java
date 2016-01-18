@@ -18,9 +18,9 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -39,8 +39,6 @@ import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Collections;
 
 public class PropertyCellProvider extends CellProviderWithRole {
   private static final Logger LOG = LogManager.getLogger(PropertyCellProvider.class);
@@ -74,11 +72,11 @@ public class PropertyCellProvider extends CellProviderWithRole {
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName, DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName, DeleteDirection.BACKWARD));
     } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode(), DeleteDirection.BACKWARD));
     }
     return editorCell;
   }

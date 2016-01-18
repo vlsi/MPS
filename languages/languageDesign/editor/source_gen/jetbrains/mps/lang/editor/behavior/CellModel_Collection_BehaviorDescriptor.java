@@ -16,6 +16,9 @@ public class CellModel_Collection_BehaviorDescriptor extends EditorCellModel_Beh
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
+  public boolean virtual_canBeUsedAsEmptyCell_7922979826015777738(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
     return null;
   }

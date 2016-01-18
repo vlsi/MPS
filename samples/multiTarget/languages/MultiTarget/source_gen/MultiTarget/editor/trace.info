@@ -64,8 +64,8 @@
       <node id="852022627621592891" at="89,55,90,87" concept="2" />
       <node id="852022627621592891" at="90,87,91,23" concept="6" />
       <node id="852022627621592891" at="94,96,95,134" concept="2" />
-      <node id="852022627621592891" at="96,34,97,95" concept="2" />
-      <node id="852022627621592891" at="97,95,98,98" concept="2" />
+      <node id="852022627621592891" at="96,34,97,142" concept="2" />
+      <node id="852022627621592891" at="97,142,98,146" concept="2" />
       <node id="852022627621592891" at="100,122,101,139" concept="2" />
       <node id="852022627621592891" at="27,0,30,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="852022627621592891" at="75,0,78,0" concept="1" trace="membersListHandler_xjnu6t_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -93,7 +93,7 @@
       <scope id="852022627621592891" at="78,66,80,93">
         <var name="listOwner" id="852022627621592891" />
       </scope>
-      <scope id="852022627621592891" at="96,34,98,98" />
+      <scope id="852022627621592891" at="96,34,98,146" />
       <scope id="852022627621592891" at="27,0,30,0">
         <var name="editorContext" id="852022627621592891" />
         <var name="node" id="852022627621592891" />

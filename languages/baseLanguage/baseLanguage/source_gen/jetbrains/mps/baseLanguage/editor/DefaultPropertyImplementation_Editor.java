@@ -32,20 +32,18 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     public defaultGetAccessorSingleRoleHandler_fanyxu_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("defaultGetAccessor");
       }
       DefaultPropertyImplementation2Custom.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -53,11 +51,9 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no defaultGetAccessor>";
     }
-
   }
   private EditorCell createRefNode_fanyxu_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new DefaultPropertyImplementation_Editor.defaultSetAccessorSingleRoleHandler_fanyxu_b0(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b7633177L, 0x117e16fe6eaL, "defaultSetAccessor"), editorContext);
@@ -67,20 +63,18 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
     public defaultSetAccessorSingleRoleHandler_fanyxu_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("defaultSetAccessor");
       }
       DefaultPropertyImplementation2CustomSetter.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -88,10 +82,8 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no defaultSetAccessor>";
     }
-
   }
 }

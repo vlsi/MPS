@@ -4,7 +4,7 @@
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -301,6 +301,12 @@
       <property role="20kJfa" value="removeHints" />
       <ref role="20lvS9" node="42lfqf__buC" resolve="ContextHintsSpecification" />
     </node>
+    <node concept="1TJgyj" id="UjlmrgInb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="emptyCellModel" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="fBEYTCT" resolve="EditorCellModel" />
+    </node>
     <node concept="1TJgyj" id="fBF1sR8" role="1TKVEi">
       <property role="20kJfa" value="linkDeclaration" />
       <property role="20lbJX" value="1" />
@@ -309,6 +315,10 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QN" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="1TJgyi" id="Ujlmrg18k" role="1TKVEl">
+      <property role="TrG5h" value="customizeEmptyCell" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="fBF2Hee">

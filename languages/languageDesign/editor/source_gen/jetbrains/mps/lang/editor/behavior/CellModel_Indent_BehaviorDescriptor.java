@@ -12,6 +12,9 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
  */
 @Deprecated
 public class CellModel_Indent_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
+  public boolean virtual_canBeUsedAsEmptyCell_7922979826015777738(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public boolean virtual_isCellIdInitialized_1229948571177(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }

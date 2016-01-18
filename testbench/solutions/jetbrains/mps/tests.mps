@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -390,10 +390,16 @@
       <ref role="lpD7u" to="e6od:P9hc2Kh9KP" resolve="Subst_MultiChild_OnlyEnumProperty_with_Another" />
     </node>
     <node concept="lpD6D" id="P9hc2KhcHg" role="lpD6w">
-      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+      <ref role="lpD7u" to="e6od:2wtgzyWe$4X" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
     </node>
     <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="2wtgzyWeBjY" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_WithNonEmptyCell_Complete" />
+    </node>
+    <node concept="lpD6D" id="76t$LiKqF$a" role="lpD6w">
+      <ref role="lpD7u" to="e6od:76t$LiKqFxu" resolve="Subst_SingleChild_WithNonEmptyCell_Insert" />
     </node>
     <node concept="lpD6D" id="2qEq7FDsz4G" role="lpD6w">
       <ref role="lpD7u" to="65l5:2qEq7FDsttl" resolve="RedoChangesOfTransactionalPropertyCell" />
@@ -628,6 +634,9 @@
     </node>
     <node concept="lpD6D" id="2_1mL0eBmWW" role="lpD6w">
       <ref role="lpD7u" to="e6od:2_1mL0eBlSN" resolve="Comment_Return" />
+    </node>
+    <node concept="lpD6D" id="6PSwRUj7pKm" role="lpD6w">
+      <ref role="lpD7u" to="e6od:6PSwRUj7o0m" resolve="Comment_ReturnExpression_NoEmptyCell" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdrY" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cI7w" resolve="Comment_SecondStatement" />
@@ -1359,6 +1368,12 @@
     <node concept="lpD6D" id="2TdQhrRPT7a" role="lpD6w">
       <ref role="lpD7u" to="tpej:4yhXPMFqSwE" resolve="FloatConstant2" />
     </node>
+    <node concept="lpD6D" id="rutuztYHtF" role="lpD6w">
+      <ref role="lpD7u" to="tpej:rutuztWYnj" resolve="TestMigrateCommentBlock" />
+    </node>
+    <node concept="lpD6D" id="rutuztYHvQ" role="lpD6w">
+      <ref role="lpD7u" to="tpej:rutuztX2OS" resolve="TestMigrateCommentLines" />
+    </node>
   </node>
   <node concept="lpD6F" id="69H_rR6IcfB">
     <node concept="2R4zua" id="69H_rR6IcfD" role="2R4z3u">
@@ -1857,8 +1872,14 @@
     <node concept="lpD6D" id="pK5T2zG5Sc" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6z32qfm5KJo" resolve="DefaultEditor_AddReferenceAttribute" />
     </node>
+    <node concept="lpD6D" id="10HrLiaLxp2" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLxnO" resolve="DefaultEditor_BackspaceFriend" />
+    </node>
     <node concept="lpD6D" id="2axhso1Goby" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8n5C" resolve="DefaultEditor_DeleteChild" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLx_Q" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLxoJ" resolve="DefaultEditor_DeleteFriend" />
     </node>
     <node concept="lpD6D" id="4Mg6JWFfuNB" role="lpD6w">
       <ref role="lpD7u" to="ryl9:qgeAIokVrN" resolve="DefaultEditor_DontSubstituteAbstractConcepts" />
@@ -2988,14 +3009,53 @@
     <node concept="lpD6D" id="3FJ0r$qO3cQ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hYoXabv" resolve="AnnotationSelection" />
     </node>
+    <node concept="lpD6D" id="10HrLiaLwLu" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLvah" resolve="BackspaceArgument" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpl7Jf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLqd8" resolve="BackspaceErrorReference" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLwss" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkM01" resolve="BackspaceFirstStatement" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpl8y1" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkM3U" resolve="BackspaceLastStatement" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpl9ld" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLNr" resolve="BackspaceOnlyStatement" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpla87" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLAa" resolve="BackspaceParameter" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSplaV5" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLrt" resolve="BackspaceStatement" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3cC" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLwjZ" resolve="DeleteArgument" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLwYf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:10HrLiaLuWa" resolve="DeleteErrorReference" />
+    </node>
+    <node concept="lpD6D" id="10HrLiaLxb1" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVqZcJj" resolve="DeleteFieldReference" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cF" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVOfcJb" resolve="DeleteFirstChild" />
     </node>
+    <node concept="lpD6D" id="1FBMxSpldkf" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLNI" resolve="DeleteFirstStatement" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpldHA" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkM12" resolve="DeleteLastStatement" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSple6Z" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLIx" resolve="DeleteOnlyStatement" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3cG" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVTXvBo" resolve="DeleteOverridenMethodInBehavior" />
+    </node>
+    <node concept="lpD6D" id="1FBMxSpleUd" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:1FBMxSpkLH1" resolve="DeleteParameter" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cA" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hVqTjvj" resolve="DeleteStatement" />

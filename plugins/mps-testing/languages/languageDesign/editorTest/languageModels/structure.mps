@@ -379,6 +379,11 @@
       <property role="20kJfa" value="singleChild" />
       <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
+    <node concept="1TJgyj" id="2wtgzyWe9_r" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildWithNonEmptyCell" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
     <node concept="1TJgyj" id="P9hc2KgOpM" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="multiChild" />

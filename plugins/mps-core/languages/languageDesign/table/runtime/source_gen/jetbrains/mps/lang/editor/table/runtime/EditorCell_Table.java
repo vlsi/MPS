@@ -233,8 +233,8 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
   private EditorCell createRowOutermostCell(final int rowNumber, String cellId, boolean beggining) {
     EditorCell emptyCell = new EditorCell_Empty(getContext(), getSNode());
-    emptyCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
-    emptyCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
+    emptyCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    emptyCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
     if (beggining) {
       emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     } else {

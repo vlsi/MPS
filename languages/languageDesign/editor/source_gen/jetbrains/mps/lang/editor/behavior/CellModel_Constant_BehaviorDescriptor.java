@@ -16,6 +16,9 @@ public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLab
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
+  public boolean virtual_canBeUsedAsEmptyCell_7922979826015777738(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public int virtual_getDefaultFontStyle_1221472292001(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }

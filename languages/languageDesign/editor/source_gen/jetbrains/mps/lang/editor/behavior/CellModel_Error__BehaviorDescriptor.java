@@ -26,8 +26,9 @@ public final class CellModel_Error__BehaviorDescriptor extends BaseBHDescriptor 
 
   public static final SMethod<String> getOpeningText_idhKxU$w9 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxU$w9").registry(REGISTRY).build();
   public static final SMethod<String> getClosingText_idhKxUEwj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxUEwj").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -37,6 +38,9 @@ public final class CellModel_Error__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static String getClosingText_idhKxUEwj(@NotNull SNode __thisNode__) {
     return "!]";
+  }
+  /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
+    return true;
   }
 
   /*package*/ CellModel_Error__BehaviorDescriptor() {
@@ -59,6 +63,8 @@ public final class CellModel_Error__BehaviorDescriptor extends BaseBHDescriptor 
         return (T) ((String) getOpeningText_idhKxU$w9(node));
       case 1:
         return (T) ((String) getClosingText_idhKxUEwj(node));
+      case 2:
+        return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

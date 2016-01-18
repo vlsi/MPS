@@ -276,6 +276,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
@@ -295,6 +296,7 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -340,6 +342,7 @@
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
+      <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
@@ -3746,6 +3749,92 @@
     <node concept="1YaCAy" id="6SUBcAgbk_H" role="1YuTPh">
       <property role="TrG5h" value="cellKeyMapDeclaration" />
       <ref role="1YaFvo" to="tpc2:fJ25Fcr" resolve="CellKeyMapDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6RO52McgzG0">
+    <property role="TrG5h" value="check_EditorCellModel_emptyCell" />
+    <property role="3GE5qa" value="CellModel" />
+    <node concept="3clFbS" id="6RO52McgzG1" role="18ibNy">
+      <node concept="3cpWs8" id="6yxxNaAu_lk" role="3cqZAp">
+        <node concept="3cpWsn" id="6yxxNaAu_ll" role="3cpWs9">
+          <property role="TrG5h" value="emptyCellModel" />
+          <node concept="3Tqbb2" id="6yxxNaAu_lg" role="1tU5fm">
+            <ref role="ehGHo" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+          </node>
+          <node concept="2OqwBi" id="6yxxNaAuDoc" role="33vP2m">
+            <node concept="1YBJjd" id="6yxxNaAuDj1" role="2Oq$k0">
+              <ref role="1YBMHb" node="6RO52McgzG3" resolve="cellModel_RefNode" />
+            </node>
+            <node concept="3TrEf2" id="6yxxNaAuDz8" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:UjlmrgInb" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="6RO52McgzG7" role="3cqZAp">
+        <node concept="3clFbS" id="6RO52McgzG8" role="3clFbx">
+          <node concept="3cpWs6" id="6yxxNaAuDAr" role="3cqZAp" />
+        </node>
+        <node concept="3clFbC" id="6yxxNaAuD$H" role="3clFbw">
+          <node concept="37vLTw" id="6yxxNaAuDdb" role="3uHU7B">
+            <ref role="3cqZAo" node="6yxxNaAu_ll" resolve="emptyCellModel" />
+          </node>
+          <node concept="10Nm6u" id="6yxxNaAuDfQ" role="3uHU7w" />
+        </node>
+      </node>
+      <node concept="3clFbF" id="6yxxNaAuDAH" role="3cqZAp">
+        <node concept="2OqwBi" id="6yxxNaAuEkU" role="3clFbG">
+          <node concept="2OqwBi" id="6yxxNaAuDCP" role="2Oq$k0">
+            <node concept="37vLTw" id="6yxxNaAuDAF" role="2Oq$k0">
+              <ref role="3cqZAo" node="6yxxNaAu_ll" resolve="emptyCellModel" />
+            </node>
+            <node concept="2Rf3mk" id="6yxxNaAuDHs" role="2OqNvi">
+              <node concept="1xMEDy" id="6yxxNaAuDHu" role="1xVPHs">
+                <node concept="chp4Y" id="6yxxNaAuDLR" role="ri$Ld">
+                  <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                </node>
+              </node>
+              <node concept="1xIGOp" id="6yxxNaAuDK1" role="1xVPHs" />
+            </node>
+          </node>
+          <node concept="2es0OD" id="6yxxNaAuGnS" role="2OqNvi">
+            <node concept="1bVj0M" id="6yxxNaAuGnU" role="23t8la">
+              <node concept="3clFbS" id="6yxxNaAuGnV" role="1bW5cS">
+                <node concept="3clFbJ" id="6yxxNaAuGpY" role="3cqZAp">
+                  <node concept="3clFbS" id="6yxxNaAuGpZ" role="3clFbx">
+                    <node concept="a7r0C" id="6yxxNaAuKjW" role="3cqZAp">
+                      <node concept="37vLTw" id="6yxxNaAuKqI" role="2OEOjV">
+                        <ref role="3cqZAo" node="6yxxNaAuGnW" resolve="it" />
+                      </node>
+                      <node concept="Xl_RD" id="6yxxNaAuKnn" role="a7wSD">
+                        <property role="Xl_RC" value="Using this cell as empty may prevent user from adding child node" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="6yxxNaAuGG1" role="3clFbw">
+                    <node concept="2OqwBi" id="6yxxNaAuGG3" role="3fr31v">
+                      <node concept="37vLTw" id="6yxxNaAuGG4" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6yxxNaAuGnW" resolve="it" />
+                      </node>
+                      <node concept="2qgKlT" id="6yxxNaAuGG5" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcb:6RO52Mcgrfa" resolve="canBeUsedAsEmptyCell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="Rh6nW" id="6yxxNaAuGnW" role="1bW2Oz">
+                <property role="TrG5h" value="it" />
+                <node concept="2jxLKc" id="6yxxNaAuGnX" role="1tU5fm" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6RO52McgzG3" role="1YuTPh">
+      <property role="TrG5h" value="cellModel_RefNode" />
+      <ref role="1YaFvo" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
     </node>
   </node>
 </model>

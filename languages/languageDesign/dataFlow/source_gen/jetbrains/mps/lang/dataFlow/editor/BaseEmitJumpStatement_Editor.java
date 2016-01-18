@@ -19,8 +19,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -35,9 +34,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createComponent_bs8xw7_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bs8xw7_c0(editorContext, node));
-    if (renderingCondition_bs8xw7_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_bs8xw7_d0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_bs8xw7_d0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_bs8xw7_a0(EditorContext editorContext, SNode node) {
@@ -75,19 +72,17 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     public jumpToSingleRoleHandler_bs8xw7_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("jumpTo");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -95,11 +90,9 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no jumpTo>";
     }
-
   }
   private EditorCell createRefNode_bs8xw7_d0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new BaseEmitJumpStatement_Editor.positionSingleRoleHandler_bs8xw7_d0(node, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, 0x1160a375bea5106L, "position"), editorContext);
@@ -109,33 +102,33 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     public positionSingleRoleHandler_bs8xw7_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("position");
       }
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_position");
+      EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
-    protected String getNoTargetText() {
-      return "<no position>";
+    private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createCollection_bs8xw7_a3a(editorContext, node);
     }
-
-  }
-  private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, 0x1160a375bea5106L, "position"))).isNotEmpty();
+    private EditorCell createCollection_bs8xw7_a3a(EditorContext editorContext, SNode node) {
+      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+      editorCell.setCellId("Collection_bs8xw7_a3a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.SELECTABLE, 0, false);
+      editorCell.getStyle().putAll(style);
+      return editorCell;
+    }
   }
 }
