@@ -24,6 +24,7 @@
   <idea-version since-build="143.1" until-build="144.1"/>
 
   <depends>jetbrains.mps.core</depends>
+  <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"/>
