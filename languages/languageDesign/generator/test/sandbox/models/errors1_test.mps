@@ -2,7 +2,7 @@
 <model ref="r:65fc685c-7150-448a-852d-28be5daa3af8(errors1_test)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting" version="-1" />
+    <use id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting" version="0" />
   </languages>
   <imports />
   <registry>

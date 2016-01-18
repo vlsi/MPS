@@ -2,7 +2,7 @@
 <model ref="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)">
   <persistence version="9" />
   <languages>
-    <use id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" version="-1" />
+    <use id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" version="0" />
   </languages>
   <imports />
   <registry>

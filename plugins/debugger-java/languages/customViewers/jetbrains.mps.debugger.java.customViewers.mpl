@@ -41,7 +41,7 @@
         <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" fqName="jetbrains.mps.baseLanguage.logging" version="0" />
         <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" fqName="jetbrains.mps.baseLanguage.tuples" version="0" />
         <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" fqName="jetbrains.mps.baseLanguageInternal" version="0" />
-        <language id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" fqName="jetbrains.mps.debugger.java.customViewers" version="-1" />
+        <language id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" fqName="jetbrains.mps.debugger.java.customViewers" version="0" />
         <language id="80208897-4572-437d-b50e-8f050cba9566" fqName="jetbrains.mps.debugger.java.privateMembers" version="0" />
         <language id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" fqName="jetbrains.mps.lang.checkedName" version="0" />
         <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />

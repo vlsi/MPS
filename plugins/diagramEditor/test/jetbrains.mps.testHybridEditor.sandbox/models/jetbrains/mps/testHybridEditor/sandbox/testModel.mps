@@ -2,7 +2,7 @@
 <model ref="r:bfc3cc23-55a3-453e-8ef5-e40fe2c110a4(jetbrains.mps.testHybridEditor.sandbox.testModel)">
   <persistence version="9" />
   <languages>
-    <use id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor" version="-1" />
+    <use id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor" version="0" />
   </languages>
   <imports />
   <registry>

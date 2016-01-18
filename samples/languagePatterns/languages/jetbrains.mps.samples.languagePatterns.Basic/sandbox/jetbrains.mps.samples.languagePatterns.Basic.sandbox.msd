@@ -14,7 +14,7 @@
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
-    <language id="7a6f7ef7-3988-464b-8cc5-1182671c136e" fqName="jetbrains.mps.samples.languagePatterns.Basic" version="-1" />
+    <language id="7a6f7ef7-3988-464b-8cc5-1182671c136e" fqName="jetbrains.mps.samples.languagePatterns.Basic" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />

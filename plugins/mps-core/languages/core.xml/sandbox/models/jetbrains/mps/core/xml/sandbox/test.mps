@@ -2,7 +2,7 @@
 <model ref="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)">
   <persistence version="9" />
   <languages>
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
   </languages>
   <imports />
   <registry>

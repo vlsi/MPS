@@ -2,7 +2,7 @@
 <model ref="r:bb11553b-584d-4979-8f12-1e0a4261b307(jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="f8fecd49-3abe-4733-9741-0c637123d219" name="jetbrains.mps.samples.theSimplestLanguage" version="-1" />
+    <use id="f8fecd49-3abe-4733-9741-0c637123d219" name="jetbrains.mps.samples.theSimplestLanguage" version="0" />
   </languages>
   <imports />
   <registry>

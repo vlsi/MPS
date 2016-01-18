@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)">
   <persistence version="9" />
   <languages>
-    <use id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" version="-1" />
+    <use id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" version="0" />
   </languages>
   <imports />
   <registry>
