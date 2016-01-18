@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.apache.log4j.LogManager;
@@ -58,17 +59,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ModelPersistence handles all persistences supported by current MPS version.
+ * ModelPersistence handles all XML persistence versions supported by current MPS installation.
  * The range of supported versions is [FIRST_SUPPORTED_VERSION, LAST_VERSION].
- * MPS must be able to read any of these persistences and write the last one.
+ * MPS must be able to read any of these persistence versions and write the last one.
  * <p/>
- * The "previous" persistences writeability is not a must, but it is better
+ * The "previous" persistence version being writable is not a must, but it is better
  * to support it to have less moments when we accidentally need to convert
- * persistences. E.g. to be able to fix model before migration from previous
+ * between persistence versions. E.g. to be able to fix model before migration from previous
  * version and save it in old persistence, or to merge two non-migrated branches
  * without converting persistence.
  * <p/>
- * It is supposed that only one or two persistences are supported:
+ * It is supposed that only one or two persistence versions are supported:
  * the last persistence used by previous MPS version (to read and
  * migrate project created in the previous version, and, sometimes,
  * a new persistence introduced in current version.
@@ -78,7 +79,7 @@ import java.util.Map;
  * in persistence is actually made because of change in SModel. So, we can't
  * actual SModel to a very old persistence or even read all the information
  * from old persistence into a new SModel. The good thing about that is that we
- * can "partially" support very old persistences where we might need such a support.
+ * can "partially" support very old persistence versions where we might need such a support.
  * See VCSPersistenceSupport for an example.
  */
 public class ModelPersistence {
@@ -320,10 +321,22 @@ public class ModelPersistence {
     }
   }
 
+  /**
+   * @deprecated use {@link #index(InputStream, Callback)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public static void index(byte[] data, Callback newConsumer) throws IOException {
+    index(new ByteArrayInputStream(data), newConsumer);
+  }
+
+  public static void index(InputStream data, Callback newConsumer) throws IOException {
+    assert data.markSupported() : "XML model persistence reads the stream twice (to parse header and to figure out persistence version)";
+    // Both BufferedInputStream and ByteArrayInputStream do support marks, latter without limit.
     try {
       SModelHeader header = new SModelHeader();
-      InputSource source = new InputSource(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+      data.mark(1<<16); // allow for huge headers
+      InputSource source = new InputSource(new InputStreamReader(data, FileUtil.DEFAULT_CHARSET));
       parseAndHandleExceptions(source, new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());
       if (!(mp instanceof XMLPersistence)) {
@@ -333,8 +346,9 @@ public class ModelPersistence {
         return;
       }
 
+      data.reset();
       Indexer indexSupport = ((XMLPersistence) mp).getIndexSupport(newConsumer);
-      indexSupport.index(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+      indexSupport.index(new InputStreamReader(data, FileUtil.DEFAULT_CHARSET));
     } catch (IOException ex) {
       throw ex;
     } catch (Exception ex) {

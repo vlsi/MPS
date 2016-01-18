@@ -51,7 +51,7 @@ import java.util.Map;
 /**
  * Factory for models stored in .mps files.
  */
-public class DefaultModelPersistence implements CoreComponent, ModelFactory {
+public class DefaultModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
 
   /**
@@ -197,6 +197,11 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
         model instanceof PersistenceVersionAware ? ((PersistenceVersionAware) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
 
     ModelPersistence.saveModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource, persistenceVersion);
+  }
+
+  @Override
+  public void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException {
+    ModelPersistence.index(input, callback);
   }
 
   @Override
