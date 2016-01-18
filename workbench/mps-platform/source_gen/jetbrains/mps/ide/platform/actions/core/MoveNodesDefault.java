@@ -275,7 +275,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         public String select(RefactoringParticipant.Option it) {
           return it.getDescription();
         }
-      }).toListSequence(), "Select Participants");
+      }).toListSequence(), "Refactoring Options");
     } else {
       selectedOptionIndices = ListSequence.fromList(new ArrayList<Integer>());
     }

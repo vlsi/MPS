@@ -3268,7 +3268,7 @@
                     <node concept="ANE8D" id="1$U7CSckq2t" role="2OqNvi" />
                   </node>
                   <node concept="Xl_RD" id="1$U7CSckq2u" role="37wK5m">
-                    <property role="Xl_RC" value="Select Participants" />
+                    <property role="Xl_RC" value="Refactoring Options" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="46QvZZVOjuf" role="37vLTJ">
@@ -4751,7 +4751,7 @@
                     <node concept="1pGfFk" id="6EAgubLABym" role="2ShVmc">
                       <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
                       <node concept="Xl_RD" id="6EAgubLAB_b" role="37wK5m">
-                        <property role="Xl_RC" value="Select how update the nodes usages:" />
+                        <property role="Xl_RC" value="Select participants to execute" />
                       </node>
                     </node>
                   </node>
