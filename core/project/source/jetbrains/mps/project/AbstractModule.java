@@ -949,11 +949,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         } else {
           int currentVersion = lang.getLanguageVersion();
 
-          for (SModel m: getModels()) {
+          for (SModel m : getModels()) {
             SModelInternal modelInternal = (SModelInternal) m;
-            if (modelInternal.importedLanguageIds().contains(lang) && modelInternal.getLanguageImportVersion(lang) != currentVersion) {
-              throw new IllegalStateException("Could not update used language versions. Language " + lang + "has current version " + currentVersion
-                  + " while model " + m + " uses this language with version " + modelInternal.getLanguageImportVersion(lang));
+            int modelVer = modelInternal.getLanguageImportVersion(lang);
+            if (modelVer == -1) continue;
+
+            if (modelInternal.importedLanguageIds().contains(lang) && modelVer != currentVersion) {
+              LOG.error("Could not update used language versions. Language " + lang + " has current version " + currentVersion
+                  + " while model " + m.getModelName() + " uses this language with version " + modelVer);
             }
           }
 
