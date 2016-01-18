@@ -951,6 +951,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
           for (SModel m : getModels()) {
             SModelInternal modelInternal = (SModelInternal) m;
+            if (!modelInternal.importedLanguageIds().contains(lang)) continue;
             int modelVer = modelInternal.getLanguageImportVersion(lang);
             if (modelVer == -1) continue;
 

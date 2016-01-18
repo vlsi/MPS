@@ -11,23 +11,23 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
 
-public class FixMigrationVersions_33_331 extends BaseProjectMigration implements CleanupProjectMigration {
-  public static final String ID = "jetbrains.mps.fixMig_33_331";
+public class FixLanguageVersions extends BaseProjectMigration implements CleanupProjectMigration {
+  public static final String ID = "jetbrains.mps.fixLangVersions";
 
-  public FixMigrationVersions_33_331() {
-    super(FixMigrationVersions_33_331.ID);
+  public FixLanguageVersions() {
+    super(FixLanguageVersions.ID);
   }
 
   public void forceExecutionNextTime(Project p) {
@@ -36,7 +36,7 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
 
   @Override
   public String getDescription() {
-    return "Correct language versions in modules";
+    return "Correct \"-1\" language versions in models/modules";
   }
 
   @Override
@@ -49,10 +49,23 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
 
       Map<SLanguage, Integer> oldVersions = md.getLanguageVersions();
       Map<SLanguage, Integer> newVersions = new HashMap<SLanguage, Integer>();
-      for (SLanguage lang : oldVersions.keySet()) {
-        int newVer = getVerFromModels(m, lang);
-        if (oldVersions.get(lang) > newVer) {
-          newVersions.put(lang, newVer);
+      for (final SLanguage lang : m.getUsedLanguages()) {
+        Integer oldV = oldVersions.get(lang);
+        if (oldV == null || oldV == -1) {
+          oldV = 0;
+          newVersions.put(lang, oldV);
+        }
+
+        List<SModel> models = m.getModels();
+        for (SModelInternal model : ListSequence.fromList(models).ofType(SModelInternal.class).where(new IWhereFilter<SModelInternal>() {
+          public boolean accept(SModelInternal it) {
+            return it.importedLanguageIds().contains(lang);
+          }
+        })) {
+          if (model.importedLanguageIds().contains(lang) && model.getLanguageImportVersion(lang) != -1) {
+            continue;
+          }
+          model.setLanguageImportVersion(lang, oldV);
         }
       }
 
@@ -80,24 +93,5 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
         }
       }).ofType(AbstractModule.class);
     }
-  }
-
-  private static int getVerFromModels(AbstractModule module, final SLanguage lang) {
-    int ver = Integer.MAX_VALUE;
-    List<SModel> models = module.getModels();
-    for (SModelInternal m : ListSequence.fromList(models).ofType(SModelInternal.class).where(new IWhereFilter<SModelInternal>() {
-      public boolean accept(SModelInternal it) {
-        return it.importedLanguageIds().contains(lang);
-      }
-    })) {
-      if (m.importedLanguageIds().contains(lang)) {
-        continue;
-      }
-      int modelVer = m.getLanguageImportVersion(lang);
-      if (modelVer != -1) {
-        ver = Math.min(ver, modelVer);
-      }
-    }
-    return ver;
   }
 }
