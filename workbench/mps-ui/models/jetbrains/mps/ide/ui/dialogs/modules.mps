@@ -143,6 +143,12 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -854,9 +860,40 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="4Pro_Kxdjab" role="3clF47">
+        <node concept="3SKdUt" id="67bJ46$OR$e" role="3cqZAp">
+          <node concept="3SKdUq" id="67bJ46$OR$f" role="3SKWNk">
+            <property role="3SKdUp" value="If path is the same - just return" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="67bJ46$OR$g" role="3cqZAp">
+          <node concept="3clFbS" id="67bJ46$OR$h" role="3clFbx">
+            <node concept="3cpWs6" id="67bJ46$OR$i" role="3cqZAp" />
+          </node>
+          <node concept="1Wc70l" id="67bJ46$OR$j" role="3clFbw">
+            <node concept="2OqwBi" id="67bJ46$OR$k" role="3uHU7w">
+              <node concept="37vLTw" id="67bJ46$OR$l" role="2Oq$k0">
+                <ref role="3cqZAo" node="3sOM1a0WLof" resolve="myProjectPath" />
+              </node>
+              <node concept="liA8E" id="67bJ46$OR$m" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="67bJ46$OR$n" role="37wK5m">
+                  <ref role="3cqZAo" node="4Pro_Kxdje2" resolve="projectPath" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="67bJ46$OR$o" role="3uHU7B">
+              <node concept="37vLTw" id="67bJ46$OR$p" role="3uHU7B">
+                <ref role="3cqZAo" node="3sOM1a0WLof" resolve="myProjectPath" />
+              </node>
+              <node concept="10Nm6u" id="67bJ46$OR$q" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="67bJ46$ORuE" role="3cqZAp" />
         <node concept="3cpWs8" id="4Y3WKnTSlt7" role="3cqZAp">
           <node concept="3cpWsn" id="4Y3WKnTSlt8" role="3cpWs9">
             <property role="TrG5h" value="oldProjectPath" />
+            <property role="3TUv4t" value="true" />
             <node concept="17QB3L" id="4Y3WKnTSlt9" role="1tU5fm" />
             <node concept="37vLTw" id="4Y3WKnTSlta" role="33vP2m">
               <ref role="3cqZAo" node="3sOM1a0WLof" resolve="myProjectPath" />
@@ -929,30 +966,8 @@
               <node concept="3clFbF" id="4Y3WKnTSltA" role="3cqZAp">
                 <node concept="1rXfSq" id="4Y3WKnTSltB" role="3clFbG">
                   <ref role="37wK5l" node="60EFvKOxHyk" resolve="setSolutionLocation" />
-                  <node concept="3cpWs3" id="4Y3WKnTSltC" role="37wK5m">
-                    <node concept="1rXfSq" id="4Y3WKnTSltD" role="3uHU7w">
-                      <ref role="37wK5l" node="3xlIXKBmfiy" resolve="getSolutionLocation" />
-                    </node>
-                    <node concept="3cpWs3" id="4Y3WKnTSltE" role="3uHU7B">
-                      <node concept="3cpWs3" id="4Y3WKnTSltF" role="3uHU7B">
-                        <node concept="3cpWs3" id="4Y3WKnTSltG" role="3uHU7B">
-                          <node concept="37vLTw" id="4Y3WKnTSltH" role="3uHU7B">
-                            <ref role="3cqZAo" node="3sOM1a0WLof" resolve="myProjectPath" />
-                          </node>
-                          <node concept="10M0yZ" id="4Y3WKnTSltI" role="3uHU7w">
-                            <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                            <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="4Y3WKnTSltJ" role="3uHU7w">
-                          <property role="Xl_RC" value="solutions" />
-                        </node>
-                      </node>
-                      <node concept="10M0yZ" id="4Y3WKnTSltK" role="3uHU7w">
-                        <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                        <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                      </node>
-                    </node>
+                  <node concept="1rXfSq" id="67bJ46$OSmM" role="37wK5m">
+                    <ref role="37wK5l" node="1CfITPj2rOO" resolve="generateSolutionPath" />
                   </node>
                 </node>
               </node>
@@ -2006,9 +2021,40 @@
       <node concept="3cqZAl" id="4Pro_KxdFLJ" role="3clF45" />
       <node concept="3Tm1VV" id="4Pro_KxdFLK" role="1B3o_S" />
       <node concept="3clFbS" id="4Pro_KxdFLL" role="3clF47">
+        <node concept="3SKdUt" id="67bJ46$OMRo" role="3cqZAp">
+          <node concept="3SKdUq" id="67bJ46$OMRq" role="3SKWNk">
+            <property role="3SKdUp" value="If path is the same - just return" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="67bJ46$ONrl" role="3cqZAp">
+          <node concept="3clFbS" id="67bJ46$ONrn" role="3clFbx">
+            <node concept="3cpWs6" id="67bJ46$OQEB" role="3cqZAp" />
+          </node>
+          <node concept="1Wc70l" id="67bJ46$OOLy" role="3clFbw">
+            <node concept="2OqwBi" id="67bJ46$OPtE" role="3uHU7w">
+              <node concept="37vLTw" id="67bJ46$OPf5" role="2Oq$k0">
+                <ref role="3cqZAo" node="7iZR6YlPOqa" resolve="myProjectPath" />
+              </node>
+              <node concept="liA8E" id="67bJ46$OPx5" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="67bJ46$OPVY" role="37wK5m">
+                  <ref role="3cqZAo" node="4Pro_KxdFQO" resolve="projectPath" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="67bJ46$OOjH" role="3uHU7B">
+              <node concept="37vLTw" id="67bJ46$OO2y" role="3uHU7B">
+                <ref role="3cqZAo" node="7iZR6YlPOqa" resolve="myProjectPath" />
+              </node>
+              <node concept="10Nm6u" id="67bJ46$OO$4" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="67bJ46$ON0c" role="3cqZAp" />
         <node concept="3cpWs8" id="7ae3pd96Do3" role="3cqZAp">
           <node concept="3cpWsn" id="7ae3pd96Do6" role="3cpWs9">
             <property role="TrG5h" value="oldProjectPath" />
+            <property role="3TUv4t" value="true" />
             <node concept="17QB3L" id="7ae3pd96Do1" role="1tU5fm" />
             <node concept="37vLTw" id="7ae3pd96Fbi" role="33vP2m">
               <ref role="3cqZAo" node="7iZR6YlPOqa" resolve="myProjectPath" />

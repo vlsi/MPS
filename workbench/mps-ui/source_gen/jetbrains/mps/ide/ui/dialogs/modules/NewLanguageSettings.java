@@ -120,7 +120,12 @@ public class NewLanguageSettings extends JPanel {
     mySandboxSolution.setSelected(needed);
   }
   public void setProjectPath(String projectPath) {
-    String oldProjectPath = myProjectPath;
+    // If path is the same - just return 
+    if (myProjectPath != null && myProjectPath.equals(projectPath)) {
+      return;
+    }
+
+    final String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
     if ((oldProjectPath != null && oldProjectPath.length() > 0) && myLanguageLocation.getText().contains(oldProjectPath)) {
       setLanguageLocation(myLanguageLocation.getText().replace(oldProjectPath, myProjectPath));

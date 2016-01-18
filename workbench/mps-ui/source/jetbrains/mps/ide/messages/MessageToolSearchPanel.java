@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.FontMetrics;
@@ -32,7 +38,9 @@ import java.util.regex.Pattern;
 
 class MessageToolSearchPanel extends AbstractSearchPanel {
 
-  private final Color myHighlightColor = new Color(250, 250, 0, 150);
+  private static final Logger LOG = LogManager.getLogger(MessageToolSearchPanel.class);
+
+  private final Color myHighlightColor = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.SEARCH_RESULT_ATTRIBUTES).getBackgroundColor();
 
   private JList myList;
   private SearchHistoryStorage myHistory;
@@ -44,6 +52,28 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
   public MessageToolSearchPanel(JList list, SearchHistoryStorage history) {
     myList = list;
     myHistory = history;
+
+    // Update search if list of messages is changed in any way
+    myList.getModel().addListDataListener(new ListDataListener() {
+      @Override
+      public void intervalAdded(ListDataEvent e) {
+        reSearch();
+      }
+
+      @Override
+      public void intervalRemoved(ListDataEvent e) {
+        reSearch();
+      }
+
+      @Override
+      public void contentsChanged(ListDataEvent e) {
+        reSearch();
+      }
+
+      private void reSearch() {
+        myRenderer.search();
+      }
+    });
   }
 
   @Override
@@ -100,7 +130,6 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     setVisible(false);
     myFindResult.setText("");
     myText.setText("");
-    myText.setBackground(Color.white);
     revalidate();
     myList.setCellRenderer(myOriginalCellRenderer);
     myList.requestFocus();
@@ -138,7 +167,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
           while (matcher.find()) {
             int column = matcher.start() + 11;
             if (!(myColumnResults.contains(column) && myResults.contains(i)
-              && myColumnResults.indexOf(column) == myResults.indexOf(i))) {
+                && myColumnResults.indexOf(column) == myResults.indexOf(i))) {
               myColumnResults.add(column);
               myResults.add(i);
               myCountResult++;
@@ -161,7 +190,6 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
       super.paint(g);
       if (myText.getText().length() == 0) {
         myFindResult.setText("");
-        myText.setBackground(Color.white);
       }
     }
 
@@ -177,17 +205,23 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
           }
         }
         for (Integer column : columns) {
+          final int endIndex = column + myText.getText().length();
+          if (getText().length() <= endIndex) {
+            LOG.warn(String.format("Results are out of date. Index %d is out of range for text:\n%s\n", endIndex, getText()));
+            return; // Avoid IndexOutOfBoundsException to prevent painting problems.
+          }
+          final String findedText = getText().substring(column, endIndex);
+
           Graphics2D g2 = (Graphics2D) g;
           FontMetrics fontMetrics = g2.getFontMetrics();
           Color color = g2.getColor();
           g2.setColor(myHighlightColor);
-          String findedText = getText().substring(column, column + myText.getText().length());
           int startTextX = getInsets().left + getIcon().getIconWidth()
-            + getIconTextGap()
-            + fontMetrics.stringWidth(getText().substring(0, column));
+              + getIconTextGap()
+              + fontMetrics.stringWidth(getText().substring(0, column));
           g2.fillRect(startTextX, 1,
-            fontMetrics.stringWidth(findedText),
-            fontMetrics.getHeight() - 1);
+              fontMetrics.stringWidth(findedText),
+              fontMetrics.getHeight() - 1);
           g2.setColor(color);
           g2.drawString(findedText, startTextX, fontMetrics.getHeight() - fontMetrics.getLeading() - 1);
         }

@@ -24,23 +24,23 @@ import javax.swing.JComponent;
 public interface MPSProjectTemplate {
 
   @Nullable
-  public Icon getIcon();
+  Icon getIcon();
 
   @NotNull
-  public String getName();
+  String getName();
 
   @Nullable
-  public String getDescription();
+  String getDescription();
 
   /**
    * Can extend dialog UI for set special properties
    * @return additional UI component for settings
    */
   @Nullable
-  public JComponent getSettings();
+  JComponent getSettings();
 
   @NotNull
-  public TemplateFiller getTemplateFiller();
+  TemplateFiller getTemplateFiller();
 
-  public void setProjectPath(String projectPath);
+  void setProjectPath(String projectPath);
 }
