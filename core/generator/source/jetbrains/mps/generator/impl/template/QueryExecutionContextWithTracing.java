@@ -22,8 +22,6 @@ import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.NodeMapper;
-import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -196,26 +194,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("evaluate variable value query", query), true);
       return wrapped.evaluateVariableQuery(inputNode, query, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
-    try {
-      tracer.push("query in postprocessor" + processor.getClass().getCanonicalName(), true);
-      wrapped.executeInContext(outputNode, context, processor);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
-    try {
-      tracer.push("query in nodemapper" + mapper.getClass().getCanonicalName(), true);
-      return wrapped.executeInContext(outputNode, context, mapper);
     } finally {
       tracer.pop();
     }

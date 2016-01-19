@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,10 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
-import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -108,35 +104,6 @@ public abstract class MapSrcProcessor implements NodePostProcessor {
           getTemplateContext().getEnvironment().getLogger().error(getTemplateNode(), String.format("mapping failed: '%s'", t.getMessage()), GeneratorUtil.describeInput(getTemplateContext()));
           getTemplateContext().getEnvironment().getLogger().handleException(t);
         }
-      }
-    }
-  }
-
-  /**
-   * Compatibility with legacy NodeMapper and PostProcessor
-   */
-  @ToRemove(version = 3.3)
-  public static class NodeMapperProcessorAdapter extends MapSrcProcessor {
-    private final NodeMapper myNodeMapper;
-    private final PostProcessor myPostProcessor;
-
-    protected NodeMapperProcessorAdapter(@NotNull SNodeReference templateNode, @NotNull SNode outputAnchor, @NotNull TemplateContext context,
-        @Nullable NodeMapper nodeMapper, @Nullable PostProcessor postProcessor) {
-      super(templateNode, outputAnchor, context);
-      myNodeMapper = nodeMapper;
-      myPostProcessor = postProcessor;
-    }
-
-    @NotNull
-    @Override
-    public SNode substitute() throws GenerationFailureException {
-      return myNodeMapper == null ? super.substitute() : myNodeMapper.map(getOutputAnchor(), getTemplateContext());
-    }
-
-    @Override
-    public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-      if (myPostProcessor != null) {
-        myPostProcessor.process(outputNode, getTemplateContext());
       }
     }
   }

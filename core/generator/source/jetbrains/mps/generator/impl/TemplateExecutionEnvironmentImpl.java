@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,14 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.MapSrcProcessor.NodeMapperProcessorAdapter;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
-import jetbrains.mps.generator.runtime.PostProcessor;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
@@ -250,32 +245,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context) {
-    resolve(new RefResolverAdapter(outputNode, ((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), context, resolver));
-  }
-
-  @Override
   public void resolve(@NotNull ReferenceResolver2 resolver) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
     new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).registerWith(generator);
-  }
-
-  /*
-   *  returns temporary node
-   */
-  @Override
-  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
-    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(mapper.getTemplateNode(), childToReplaceLater, context, mapper, null));
-    return childToReplaceLater;
-  }
-
-  @Override
-  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
-    // XXX using reference to output node instead the one to macro/template model is a hack.
-    // This method is compatibility code, for generator code generated in MPS 3.2
-    SNodeReference templateNode = outputNode.getReference();
-    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(templateNode, outputNode, context, null, processor));
   }
 
   @Override

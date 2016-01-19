@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,34 +138,9 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * ReferenceMacro support
-   * @deprecated replaced with {@link #resolve(ReferenceResolver2)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context);
-
-  /**
-   * ReferenceMacro support
    * @since 3.3
    */
   void resolve(@NotNull ReferenceResolver2 resolver);
-
-  /**
-   * @deprecated use {@link #postProcess(NodePostProcessor)} instead
-   * Support for $MAP-SRC$ macro's mapping function
-   * @return temporary node
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
-
-  /**
-   * @deprecated use {@link #postProcess(NodePostProcessor)} instead
-   * Support for $MAP-SRC$ macro's post-process function
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   /**
    * Support for $MAP-SRC$ macro, to substitute and/or process nodes in output model once transformation step is over and output model is <em>almost</em> ready.

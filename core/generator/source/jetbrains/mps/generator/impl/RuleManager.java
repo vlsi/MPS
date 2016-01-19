@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration2;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -79,9 +78,7 @@ public class RuleManager {
       myWeaving_MappingRules.add(mappingConfig.getWeavingRules());
 
       dropRootRules.add(mappingConfig.getDropRules());
-      if (mappingConfig instanceof TemplateMappingConfiguration2) {
-        dropAttributeRules.add(((TemplateMappingConfiguration2) mappingConfig).getDropAttributeRules());
-      }
+      dropAttributeRules.add(mappingConfig.getDropAttributeRules());
       reductionRules.add(mappingConfig.getReductionRules());
       for (TemplateMappingScript postMappingScript : mappingConfig.getPostScripts()) {
         if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {

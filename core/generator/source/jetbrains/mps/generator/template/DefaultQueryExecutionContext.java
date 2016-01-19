@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,6 @@ import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.NodeMapper;
-import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -253,16 +251,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       getLog().error(refMacro.getReference(), "cannot evaluate reference macro, exception was thrown", GeneratorUtil.describeInput(context));
     }
     return null;
-  }
-
-  @Override
-  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
-    processor.process(outputNode, context);
-  }
-
-  @Override
-  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
-    return mapper.map(outputNode, context);
   }
 
   @Override

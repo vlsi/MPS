@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,9 @@ import java.util.Collections;
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateMappingConfiguration} to use as superclass in generated code
  * to facilitate future API changes
  * @author Artem Tikhomirov
+ * @since 3.3
  */
-public abstract class MapConfigBase implements TemplateMappingConfiguration, TemplateMappingConfiguration2 {
+public abstract class MapConfigBase implements TemplateMappingConfiguration {
 
   private final SNodeReference myMapConfigNode;
   private final String myName;

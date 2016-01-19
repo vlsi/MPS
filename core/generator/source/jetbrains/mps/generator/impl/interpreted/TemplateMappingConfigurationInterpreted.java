@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration2;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -42,7 +41,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public class TemplateMappingConfigurationInterpreted implements TemplateMappingConfiguration, TemplateMappingConfiguration2 {
+public class TemplateMappingConfigurationInterpreted implements TemplateMappingConfiguration {
 
   private final SNode myMappingConfiguration;
   private final TemplateModel myModel;
