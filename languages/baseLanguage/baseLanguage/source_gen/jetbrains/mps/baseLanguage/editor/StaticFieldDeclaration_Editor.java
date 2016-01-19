@@ -10,13 +10,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -51,7 +51,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_t6d1qn_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_b0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_t6d1qn_c0(editorContext, node));
+    if (renderingCondition_t6d1qn_a2a(node, editorContext)) {
+      editorCell.addEditorCell(this.createComponent_t6d1qn_c0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_t6d1qn_d0(editorContext, node));
     if (renderingCondition_t6d1qn_a4a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_t6d1qn_e0(editorContext, node));
@@ -84,6 +86,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_t6d1qn_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
+  }
+  private static boolean renderingCondition_t6d1qn_a2a(SNode node, EditorContext editorContext) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_t6d1qn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
