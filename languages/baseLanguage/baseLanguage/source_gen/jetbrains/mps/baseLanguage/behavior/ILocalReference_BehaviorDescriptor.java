@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ILocalReference_BehaviorDescriptor {
-  public SNode virtual_getDeclaration_3262277503800831941(SNode thisNode);
+SNode virtual_getDeclaration_3262277503800831941(SNode thisNode);
 }

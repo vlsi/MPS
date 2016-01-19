@@ -12,9 +12,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
  */
 @Deprecated
 public interface IOperation_BehaviorDescriptor {
-  public boolean virtual_isLValue_1213877410080(SNode thisNode);
-  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode);
-  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode);
-  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode);
-  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept);
+boolean virtual_isLValue_1213877410080(SNode thisNode);
+boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode);
+String virtual_getVariableExpectedName_1213877410087(SNode thisNode);
+boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode);
+boolean virtual_lvalue_1262430001741498364(SConcept thisConcept);
 }

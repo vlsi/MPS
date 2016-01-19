@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IInternalType_BehaviorDescriptor {
-  public SNode virtual_getPublicType_1213877443338(SNode thisNode);
+SNode virtual_getPublicType_1213877443338(SNode thisNode);
 }

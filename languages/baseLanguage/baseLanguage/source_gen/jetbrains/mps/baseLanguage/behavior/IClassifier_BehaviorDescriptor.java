@@ -12,8 +12,8 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
  */
 @Deprecated
 public interface IClassifier_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getTypeVariables_7405920559687237503(SNode thisNode);
-  public Iterable<SNode> virtual_getSuperTypes_7405920559687237523(SNode thisNode);
-  public SNode virtual_getThisType_7405920559687254782(SNode thisNode);
-  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType);
+Iterable<SNode> virtual_getTypeVariables_7405920559687237503(SNode thisNode);
+Iterable<SNode> virtual_getSuperTypes_7405920559687237523(SNode thisNode);
+SNode virtual_getThisType_7405920559687254782(SNode thisNode);
+void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType);
 }

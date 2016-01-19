@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IClassifierType_BehaviorDescriptor {
-  public SNode virtual_getClassifier_7405920559687237513(SNode thisNode);
-  public Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode);
+SNode virtual_getClassifier_7405920559687237513(SNode thisNode);
+Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode);
 }

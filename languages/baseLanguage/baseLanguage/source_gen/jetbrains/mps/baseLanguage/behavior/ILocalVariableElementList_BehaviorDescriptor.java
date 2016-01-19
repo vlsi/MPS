@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ILocalVariableElementList_BehaviorDescriptor {
-  public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode);
+List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode);
 }

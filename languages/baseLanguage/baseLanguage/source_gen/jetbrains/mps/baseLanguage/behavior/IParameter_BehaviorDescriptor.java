@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IParameter_BehaviorDescriptor {
-  public String virtual_getParameterName_1225280611056(SNode thisNode);
-  public SNode virtual_getDeclaration_1225282371351(SNode thisNode);
+String virtual_getParameterName_1225280611056(SNode thisNode);
+SNode virtual_getDeclaration_1225282371351(SNode thisNode);
 }

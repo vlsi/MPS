@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IVariableReference_BehaviorDescriptor {
-  public SNode virtual_getVariable_1023687332192481693(SNode thisNode);
+SNode virtual_getVariable_1023687332192481693(SNode thisNode);
 }

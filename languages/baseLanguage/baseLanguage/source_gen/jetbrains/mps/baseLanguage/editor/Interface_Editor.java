@@ -7,13 +7,13 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -48,7 +48,9 @@ public class Interface_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4hcgjd_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4hcgjd_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_4hcgjd_b0(editorContext, node));
+    if (renderingCondition_4hcgjd_a1a(node, editorContext)) {
+      editorCell.addEditorCell(this.createComponent_4hcgjd_b0(editorContext, node));
+    }
     if (renderingCondition_4hcgjd_a2a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_4hcgjd_c0(editorContext, node));
     }
@@ -73,6 +75,9 @@ public class Interface_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_4hcgjd_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
+  }
+  private static boolean renderingCondition_4hcgjd_a1a(SNode node, EditorContext editorContext) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_4hcgjd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");

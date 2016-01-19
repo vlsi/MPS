@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ILocalDeclaration_BehaviorDescriptor {
-  public boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode);
-  public boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode);
+boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode);
+boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode);
 }

@@ -12,5 +12,5 @@ import org.jetbrains.annotations.NotNull;
  */
 @Deprecated
 public interface IConditional_BehaviorDescriptor {
-  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value);
+NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value);
 }

@@ -15,10 +15,10 @@ import java.util.List;
 @Deprecated
 public interface IMethodLike_BehaviorDescriptor extends ISuppressErrors_BehaviorDescriptor {
   @Nullable
-  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode);
-  public SNode virtual_getLastStatement_1239354409446(SNode thisNode);
-  public SNode virtual_getBody_1239354440022(SNode thisNode);
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode);
-  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode);
-  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode);
+SNode virtual_getExpectedRetType_1239354342632(SNode thisNode);
+SNode virtual_getLastStatement_1239354409446(SNode thisNode);
+SNode virtual_getBody_1239354440022(SNode thisNode);
+List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode);
+boolean virtual_implicitThrows_4989157187872658723(SNode thisNode);
+boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode);
 }

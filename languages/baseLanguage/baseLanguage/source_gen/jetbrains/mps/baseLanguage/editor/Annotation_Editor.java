@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -14,12 +16,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -35,7 +35,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_mr1gse_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_mr1gse_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_mr1gse_b0(editorContext, node));
+    if (renderingCondition_mr1gse_a1a(node, editorContext)) {
+      editorCell.addEditorCell(this.createComponent_mr1gse_b0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_mr1gse_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mr1gse_d0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_mr1gse_e0(editorContext, node));
@@ -48,6 +50,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_mr1gse_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
+  }
+  private static boolean renderingCondition_mr1gse_a1a(SNode node, EditorContext editorContext) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_mr1gse_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@interface");
