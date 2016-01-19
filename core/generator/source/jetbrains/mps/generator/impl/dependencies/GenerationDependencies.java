@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@ package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -140,6 +143,18 @@ public class GenerationDependencies {
     }
     myDependenciesTraces = null;
     return sb.toString();
+  }
+
+  public void update(@Nullable SNodeReference root, @NotNull String fileName) {
+    final GenerationRootDependencies rd;
+    if (root == null) {
+      rd = getDependenciesFor(GeneratableSModel.HEADER);
+    } else {
+      rd = getDependenciesFor(root.getNodeId().toString());
+    }
+    if (rd != null) {
+      rd.addGeneratedFile(fileName);
+    }
   }
 
   public Element toXml() {

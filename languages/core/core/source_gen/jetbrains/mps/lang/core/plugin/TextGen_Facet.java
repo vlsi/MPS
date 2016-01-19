@@ -45,22 +45,25 @@ import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.generator.impl.textgen.TextFacility2;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
-import jetbrains.mps.util.IStatus;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.text.impl.BLDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
+import jetbrains.mps.text.impl.DebugInfoBuilder;
 import jetbrains.mps.generator.ModelExports;
+import jetbrains.mps.util.IStatus;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
 
@@ -203,7 +206,7 @@ public class TextGen_Facet extends IFacet.Stub {
               // XXX remove this code after 3.3. It's compatibility setting not to handle node attributes in textgen 
               TextGen.enableNodeAttributes(GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen());
               final IMessageHandler messageHandler = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler();
-              Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
+              final Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
 
               // Perhaps, shall check res.status.isError(), however not sure if there 
@@ -260,11 +263,6 @@ public class TextGen_Facet extends IFacet.Stub {
                       }), Target_make.vars(pa.global()).pathToFile());
                       MapSequence.fromMap(deltas2).put(inputResource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), retainedFilesDelta));
 
-
-                      TextFacility2 tf2 = new TextFacility2(inputResource.status(), tgr);
-                      tf2.generateDebug(_generateDebugInfo).generateBaseLangDeps(true);
-                      tf2.prepare();
-
                       final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getOutputDir(inputResource.model()).getPath());
                       final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getCachesDir(inputResource.model()).getPath());
                       StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
@@ -273,18 +271,38 @@ public class TextGen_Facet extends IFacet.Stub {
                       ListSequence.fromList(fileProcessors2).addElement(fp);
                       FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, fp);
                       FileDeltaCollector cachesLocation = new FileDeltaCollector(cacheOutputDir, fp);
-                      IStatus status = tf2.serializeOutcome(javaSourcesLoc);
-                      if (status.isError()) {
-                        monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
+                      // 
+                      // Serialize outcome 
+                      GenerationDependencies genDeps = inputResource.status().getDependencies();
+                      for (TextUnit tu : tgr.getUnits()) {
+                        TextUnit.Status tgState = tu.getState();
+                        assert tgState != TextUnit.Status.Undefined;
+                        genDeps.update(TracingUtil.getInput(tu.getStartNode()), tu.getFileName());
+                        if (tgState == TextUnit.Status.Empty) {
+                          continue;
+                        }
+                        if (tgState == TextUnit.Status.Failed) {
+                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.format("Text outcome for %s has been generated with errors", tu.getFileName()))));
+                          // fall through 
+                        }
+                        javaSourcesLoc.saveStream(tu.getFileName(), tu.getBytes());
                       }
+                      // let the world know unchanged files are still in use 
+                      for (GenerationRootDependencies rdep : genDeps.getUnchangedDependencies()) {
+                        for (String fname : rdep.getFiles()) {
+                          javaSourcesLoc.touch(fname);
+                        }
+                      }
+                      // 
+                      // Update caches and auxiliary artifacts 
                       CacheGenLayout cgl = new CacheGenLayout(messageHandler);
-                      cgl.register(cachesLocation, BLDependenciesCache.getInstance().getGenerator());
+                      cgl.register(cachesLocation, BLDependenciesCache.getInstance().newCacheGenerator(new BLDependenciesBuilder().build(tgr)));
                       cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
                       if (_generateDebugInfo) {
-                        cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().getGenerator());
+                        cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().newCacheGenerator(new DebugInfoBuilder(mpsProject.getRepository()).build(tgr)));
                       }
                       cgl.register(javaSourcesLoc, new ModelExports.CacheGen());
-                      status = tf2.serializeCaches(cgl);
+                      IStatus status = cgl.serialize(inputResource.status());
                       if (status.isError()) {
                         monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(status.getMessage())));
                       }

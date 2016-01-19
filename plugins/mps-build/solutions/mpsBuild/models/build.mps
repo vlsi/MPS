@@ -1224,6 +1224,7 @@
         </node>
       </node>
       <node concept="nCB5N" id="6g0vjebAq2c" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
       </node>
       <node concept="nCB5N" id="6g0vjebAx3c" role="nCB5Z">

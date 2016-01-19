@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,6 @@ import java.util.Collections;
  *
  * XXX SNode may serve as input for multiple snippets throughout several files, here we track units/positions from 'primary' output
  * which is the one from the root of the node supplied.
- *
- * FIXME Move to [debuginfo-api] module once TraceInfoCache.getInstance() dependency is resolved
  *
  * @author Artem Tikhomirov
  * @since 3.4

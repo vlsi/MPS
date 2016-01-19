@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,15 +55,15 @@ public class DebugInfo {
     return (node == null ? null : node.getReference());
   }
 
-  /*package*/ void addPosition(TraceablePositionInfo position, SNode containingRoot) {
+  public void addPosition(TraceablePositionInfo position, SNode containingRoot) {
     getOrCreateDebugInfoRoot(containingRoot).addPosition(position);
   }
 
-  /*package*/ void addScopePosition(ScopePositionInfo position, SNode containingRoot) {
+  public void addScopePosition(ScopePositionInfo position, SNode containingRoot) {
     getOrCreateDebugInfoRoot(containingRoot).addScopePosition(position);
   }
 
-  /*package*/ void addUnitPosition(UnitPositionInfo unitPosition, SNode containingRoot) {
+  public void addUnitPosition(UnitPositionInfo unitPosition, SNode containingRoot) {
     getOrCreateDebugInfoRoot(containingRoot).addUnitPosition(unitPosition);
   }
 

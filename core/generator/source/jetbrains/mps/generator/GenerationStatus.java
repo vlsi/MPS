@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.util.Status;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -35,9 +36,7 @@ public class GenerationStatus extends Status {
   private final SModel myInputModel;
   private final boolean myCanceled;
   private final boolean myWarnings;
-  private DebugInfo myDebugInfo;
   private GenerationDependencies myDependencies;
-  private ModelDependencies myBLDependencies;
   private ModelExports myExports;
 
   private SModel myOriginalInputModel;
@@ -73,28 +72,37 @@ public class GenerationStatus extends Status {
     return myInputModel;
   }
 
+  /**
+   * debug info is not part of generation/transformation process, rather that of textgen, thus has nothing to do with GenerationStatus
+   * @return always <code>null</code>
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public DebugInfo getDebugInfo() {
-    return myDebugInfo;
+    return null;
   }
 
-  public void setDebugInfo(DebugInfo debugInfo) {
-    myDebugInfo = debugInfo;
-  }
-
+  /**
+   * BL dependencies are not part of generation/transformation process, rather that of textgen, thus has nothing to do with GenerationStatus
+   * @return always <code>null</code>
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public ModelDependencies getBLDependencies() {
-    return myBLDependencies;
+    return null;
   }
 
   public GenerationDependencies getDependencies() {
     return myDependencies;
   }
 
+  /**
+   * @deprecated use {@link GenerationDependencies#getUnchangedDependencies() getDependencies().getUnchangedDependencies()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public List<GenerationRootDependencies> getUnchangedDependencies() {
     return myDependencies != null ? myDependencies.getUnchangedDependencies() : Collections.<GenerationRootDependencies>emptyList();
-  }
-
-  public void setBLDependencies(ModelDependencies dependencies) {
-    myBLDependencies = dependencies;
   }
 
   public SModel getOriginalInputModel() {

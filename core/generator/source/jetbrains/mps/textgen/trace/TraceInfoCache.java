@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,9 +42,15 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * The reason [generator] needs [debuginfo-api], which is otherwise textgen-specific (moreover, BL-textgen)
+ */
 public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
@@ -136,8 +142,8 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
     }
   }
 
-  public CacheGenerator getGenerator() {
-    return new TraceInfoCache.CacheGen();
+  public CacheGenerator newCacheGenerator(@Nullable DebugInfo newInfo) {
+    return new CacheGen(newInfo);
   }
 
   public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
@@ -177,6 +183,13 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   }
 
   private class CacheGen implements CacheGenerator {
+    private final DebugInfo myInfoNew;
+
+    public CacheGen(DebugInfo newInfo) {
+      myInfoNew = newInfo;
+    }
+
+
     @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
       DebugInfo cache = updateUnchanged(status);
@@ -188,8 +201,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
     }
 
     private DebugInfo updateUnchanged(GenerationStatus genStatus) {
-      DebugInfo generatedDebugInfo = genStatus.getDebugInfo();
-      if (generatedDebugInfo == null) {
+      if (myInfoNew == null) {
         return null;
       }
       // complete debug info with info for roots that did not changed and therefore were not generated 
@@ -197,14 +209,51 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
       DebugInfo cachedDebugInfo = TraceInfoCache.this.getLastGeneratedDebugInfo(genStatus.getOriginalInputModel());
       if (cachedDebugInfo != null) {
         List<String> unchangedFiles = new ArrayList<String>();
-        for (GenerationRootDependencies dependency : genStatus.getUnchangedDependencies()) {
+        for (GenerationRootDependencies dependency : genStatus.getDependencies().getUnchangedDependencies()) {
           unchangedFiles.addAll(dependency.getFiles());
         }
-        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedFiles);
+        completeDebugInfoFromCache(cachedDebugInfo, myInfoNew, unchangedFiles);
       }
-      return generatedDebugInfo;
+      return myInfoNew;
     }
   }
+
+  static void completeDebugInfoFromCache(@NotNull DebugInfo cachedDebugInfo, @NotNull DebugInfo generatedDebugInfo, Collection<String> unchangedFiles) {
+    Set<String> files = new HashSet<String>(unchangedFiles);
+    for (DebugInfoRoot cachedRoot : cachedDebugInfo.getRoots()) {
+      DebugInfoRoot generatedRoot = generatedDebugInfo.getRootInfo(cachedRoot.getNodeRef());
+      boolean newFromCache = false;
+      if (generatedRoot == null) {
+        generatedRoot = new DebugInfoRoot(cachedRoot.getNodeRef());
+        newFromCache = true;
+      }
+      for (TraceablePositionInfo position : cachedRoot.getPositions()) {
+        if (files.contains(position.getFileName())) {
+          generatedRoot.addPosition(position);
+        }
+      }
+      for (ScopePositionInfo position : cachedRoot.getScopePositions()) {
+        if (files.contains(position.getFileName())) {
+          generatedRoot.addScopePosition(position);
+        }
+      }
+      for (UnitPositionInfo position : cachedRoot.getUnitPositions()) {
+        if (files.contains(position.getFileName())) {
+          generatedRoot.addUnitPosition(position);
+        }
+      }
+      if (newFromCache) {
+        // if a node is removed, generatedDebugInfo won't have an entry for it, while cachedDebugInfo has.
+        // no position from this cached info, however, would pass unchangedFiles filter, and generatedDebugInfo
+        // would stay empty. Here, we detect this case and drop stale debug info entries
+        final boolean noCachedData = generatedRoot.getPositions().isEmpty() && generatedRoot.getScopePositions().isEmpty() && generatedRoot.getUnitPositions().isEmpty();
+        if (!noCachedData) {
+          generatedDebugInfo.putRootInfo(generatedRoot);
+        }
+      }
+    }
+  }
+
 
   private static class CacheParser implements Parser<DebugInfo> {
     @Override

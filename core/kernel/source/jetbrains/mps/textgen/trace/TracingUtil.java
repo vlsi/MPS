@@ -28,9 +28,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-// In fact, lives in generator due to my laziness. CopyUtil dependency (which requires kernel due to ImportElements) can be dropped
-// in favor of its simplified/extracted pieces put to smodel module.
-public class TracingUtil {
+/**
+ * Mechanism Generator uses to keep trace of origin for transformed nodes. As the package name suggests, it's rather part of [debuginfo-api] module,
+ * however, generated code uses this class in runtime, and as long as [debuginfo-api] is auxiliary (not part of the [kernel]/mps-core), it's better to keep this class
+ * here. After all, [debuginfo-api] is not the only client of the trace.
+ *
+ * Perhaps, shall push this class even further, down to [smodel], as it's quite generic. Meanwhile, there's CopyUtil that got quite some dependencies to [kernel].
+ * Once either CopyUtil's dependencies are in [smodel], or there's simplified alternative (I don't need too much from CopyUtil here, in fact), consider moving
+ * the class further.
+ */
+public final class TracingUtil {
   // key for 'node user object' used to keep track of 'original input node' for a generated node
   // only used when output node has been created as a 'copy' of 'original input node'
   public static final String ORIGINAL_INPUT_NODE = "originalInputNode";

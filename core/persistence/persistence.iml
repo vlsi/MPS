@@ -24,6 +24,5 @@
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="environment" scope="TEST" />
     <orderEntry type="module" module-name="mps-ant" scope="TEST" />
-    <orderEntry type="module" module-name="components" />
   </component>
 </module>

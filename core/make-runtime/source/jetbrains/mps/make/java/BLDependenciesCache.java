@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,8 +72,8 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
     return "dependencies";
   }
 
-  public CacheGenerator getGenerator() {
-    return new CacheGen();
+  public CacheGenerator newCacheGenerator(@Nullable ModelDependencies newDeps) {
+    return new CacheGen(newDeps);
   }
 
   @Nullable
@@ -83,6 +83,12 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
   }
 
   private class CacheGen implements CacheGenerator {
+    private final ModelDependencies myDepsNew;
+
+    public CacheGen(ModelDependencies newDeps) {
+      myDepsNew = newDeps;
+    }
+
     @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
       final ModelDependencies deps = updateUnchanged(status);
@@ -95,8 +101,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
     }
 
     private ModelDependencies updateUnchanged(GenerationStatus genStatus) {
-      final ModelDependencies newDeps = genStatus.getBLDependencies();
-      if (newDeps == null) {
+      if (myDepsNew == null) {
         return null;
       }
       // update modelDependencies and generationDependencies
@@ -104,7 +109,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
 
       // process unchanged files
       SModel originalInputModel = genStatus.getOriginalInputModel();
-      for (GenerationRootDependencies rdep : genStatus.getUnchangedDependencies()) {
+      for (GenerationRootDependencies rdep : genStatus.getDependencies().getUnchangedDependencies()) {
         for (String filename : rdep.getFiles()) {
           // re-register baseLanguage dependencies
           if (modelDep == null) {
@@ -113,12 +118,12 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
           if (modelDep != null) {
             RootDependencies root = modelDep.getDependency(filename);
             if (root != null) {
-              newDeps.replaceRoot(root);
+              myDepsNew.replaceRoot(root);
             }
           }
         }
       }
-      return newDeps;
+      return myDepsNew;
     }
   }
 

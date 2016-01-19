@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -206,8 +205,7 @@ final class SerializeSupport {
 
   // ensure roots get serialized in the same order
   private static DebugInfoRoot[] sortedRoots(DebugInfo debugInfo) {
-    final List<DebugInfoRoot> roots = IterableUtil.asList(debugInfo.getRoots());
-    DebugInfoRoot[] rv = roots.toArray(new DebugInfoRoot[roots.size()]);
+    DebugInfoRoot[] rv = toArray(debugInfo.getRoots());
     Arrays.sort(rv, new Comparator<DebugInfoRoot>() {
       @Override
       public int compare(DebugInfoRoot o1, DebugInfoRoot o2) {
@@ -222,6 +220,14 @@ final class SerializeSupport {
       }
     });
     return rv;
+  }
+
+  private static DebugInfoRoot[] toArray(Iterable<DebugInfoRoot> roots) {
+    ArrayList<DebugInfoRoot> rv = new ArrayList<DebugInfoRoot>();
+    for (DebugInfoRoot root : roots) {
+      rv.add(root);
+    }
+    return rv.toArray(new DebugInfoRoot[rv.size()]);
   }
 
   private static void collectAllConcepts(DebugInfoRoot[] roots, Set<String> concepts) {
