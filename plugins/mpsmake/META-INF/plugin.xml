@@ -20,7 +20,7 @@
   <description>Make IDE Integration</description>
   <version>3.4</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="143.1" until-build="144.1"/>
+  <idea-version since-build="143.1" until-build="146.1"/>
 
   <depends>com.intellij.modules.mps</depends>
 
