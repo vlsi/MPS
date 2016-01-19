@@ -20,6 +20,7 @@ import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +37,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   private final Project myProject;
   private List<SNodeUndoableAction> myWrapped;
 
-  SNodeIdeaUndoableAction(@NotNull Project project, List<SNodeUndoableAction> wrapped) {
+  SNodeIdeaUndoableAction(@NotNull Project project, List<SNodeUndoableAction> wrapped, UndoContext undoContext) {
     myProject = project;
     myWrapped = wrapped;
     List<DocumentReference> affected = new LinkedList<DocumentReference>();
@@ -47,13 +48,17 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     }
 
     if (!myIsGlobal) {
-      for (SNodeUndoableAction a : wrapped) {
-        SNode rootNode = a.getRoot();
-        if (rootNode.getModel() == null) continue;
-        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(rootNode);
-        assert file.hasValidMPSNode() : "Invalid file was returned by VFS node is not available: " + rootNode + ", deleted = " + (rootNode.getModel() == null);
+      for (SNode virtualFileNode : undoContext.getVirtualFileNodes(wrapped)) {
+        if (virtualFileNode.getModel() == null) {
+          continue;
+        }
+        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(virtualFileNode);
+        assert file.hasValidMPSNode() :
+            "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
 
-        if (MPSUndoUtil.getDoc(file) == null) continue;
+        if (MPSUndoUtil.getDoc(file) == null) {
+          continue;
+        }
         affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
       }
     }

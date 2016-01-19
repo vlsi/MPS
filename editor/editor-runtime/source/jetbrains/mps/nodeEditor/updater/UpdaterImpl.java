@@ -374,6 +374,13 @@ public class UpdaterImpl implements Updater, CommandContext {
     }
   }
 
+  @NotNull
+  @Override
+  public SNode getContextNode() {
+    assert !myDisposed;
+    return myEditorComponent.getEditedNode();
+  }
+
   boolean isSelectionProcessingAllowed() {
     return myCommandLevel != 0;
   }

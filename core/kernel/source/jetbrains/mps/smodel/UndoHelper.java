@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 
 public class UndoHelper {
@@ -69,5 +70,9 @@ public class UndoHelper {
 
   public boolean isInsideUndoableCommand() {
     return myHandler.isInsideUndoableCommand();
+  }
+
+  public void startCommand(UndoContext context) {
+    myHandler.startCommand(context);
   }
 }
