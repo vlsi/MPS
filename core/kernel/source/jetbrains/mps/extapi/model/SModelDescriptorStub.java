@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -24,6 +26,8 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -309,7 +313,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    new SModelLegacy(getSModelInternal()).addModelImport(modelReference, firstVersion);
+    new SModelLegacy(getSModel()).addModelImport(modelReference, firstVersion);
   }
 
   @Override
@@ -323,28 +327,35 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public final void calculateImplicitImports() {
-    getSModelInternal().getImplicitImportsSupport().calculateImplicitImports();
-  }
-
-  @Override
   public final List<SModuleReference> engagedOnGenerationLanguages() {
     return getSModelInternal().engagedOnGenerationLanguages();
   }
 
   @Override
   public final void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    getSModelInternal().addEngagedOnGenerationLanguage(ref);
+    getSModel().addEngagedOnGenerationLanguage(ref);
+  }
+
+  @Override
+  public final void addEngagedOnGenerationLanguage(SLanguage lang) {
+    addEngagedOnGenerationLanguage(moduleRefForLanguage(lang));
   }
 
   @Override
   public final void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    getSModelInternal().removeEngagedOnGenerationLanguage(ref);
+    getSModel().removeEngagedOnGenerationLanguage(ref);
   }
 
   @Override
-  public final List<ImportElement> getAdditionalModelVersions() {
-    return getSModelInternal().getImplicitImportsSupport().getAdditionalModelVersions();
+  public final void removeEngagedOnGenerationLanguage(SLanguage lang) {
+    removeEngagedOnGenerationLanguage(moduleRefForLanguage(lang));
+  }
+
+  private static SModuleReference moduleRefForLanguage(SLanguage lang) {
+    String name = lang.getQualifiedName();
+    SLanguageId id = MetaIdHelper.getLanguage(lang);
+    ModuleId moduleId = ModuleId.regular(id.getIdValue());
+    return new ModuleReference(name, moduleId);
   }
 
   @Override
@@ -354,27 +365,27 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   @Override
   public final StackTraceElement[] getDisposedStacktrace() {
-    return getSModelInternal().getDisposedStacktrace();
+    return getSModel().getDisposedStacktrace();
   }
 
   @Override
-  public FastNodeFinder createNodeFinder(SModel model) {
+  public FastNodeFinder createNodeFinder(@NotNull SModel model) {
     assert model == this;
     return getSModel().createFastNodeFinder();
   }
 
   @Override
   public final boolean updateSModelReferences() {
-    return getSModelInternal().updateSModelReferences();
+    return getSModel().updateSModelReferences();
   }
 
   @Override
   public final boolean updateModuleReferences() {
-    return getSModelInternal().updateModuleReferences();
+    return getSModel().updateModuleReferences();
   }
 
   @Override
   public void changeModelReference(SModelReference newModelReference) {
-    getSModelInternal().changeModelReference(newModelReference);
+    getSModel().changeModelReference(newModelReference);
   }
 }

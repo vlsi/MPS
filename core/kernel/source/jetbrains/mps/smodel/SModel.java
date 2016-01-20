@@ -770,8 +770,12 @@ public class SModel implements SModelData {
    * This is compatibility method with legacy persistence mechanism, unless used, no implicit imports are tracked.
    * Drop once we no longer need to support serialization of old persistence formats (there's no reason to track
    * implicit imports if we aren't going to serialize them afterwards)
+   *
+   * It looks that there's no longer consumer of implicit imports. There's code to update them, but no code to read values, except
+   * for clients of #getAllImportElements()
    */
   @NotNull
+  @ToRemove(version = 3.4)
   public ImplicitImportsLegacyHolder getImplicitImportsSupport() {
     if (myLegacyImplicitImports == null) {
       myLegacyImplicitImports = new ImplicitImportsLegacyHolder(this);
@@ -806,13 +810,6 @@ public class SModel implements SModelData {
     if (model instanceof EditableSModel) {
       ((EditableSModel) model).setChanged(true);
     }
-  }
-
-  public void addEngagedOnGenerationLanguage(SLanguage lang) {
-    String name = lang.getQualifiedName();
-    SLanguageId id = ((SLanguageAdapter) lang).getId();
-    ModuleId moduleId = ModuleId.regular(id.getIdValue());
-    addEngagedOnGenerationLanguage(new ModuleReference(name, moduleId));
   }
 
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {

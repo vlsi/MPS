@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,16 +83,27 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void deleteModelImport(SModelReference modelReference);
 
-  // create new implicit import list based on used models, explicit import and old implicit import list
-  void calculateImplicitImports();
-
   List<SModuleReference> engagedOnGenerationLanguages();
 
+  /**
+   * @deprecated use {@link #addEngagedOnGenerationLanguage(SLanguage)} instead
+   * Shall move to SModelLegacy
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void addEngagedOnGenerationLanguage(SModuleReference ref);
 
+  void addEngagedOnGenerationLanguage(SLanguage lang);
+
+  /**
+   * @deprecated use {@link #removeEngagedOnGenerationLanguage(SLanguage)} instead
+   * Shall move to SModelLegacy
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void removeEngagedOnGenerationLanguage(SModuleReference ref);
 
-  List<ImportElement> getAdditionalModelVersions();
+  void removeEngagedOnGenerationLanguage(SLanguage lang);
 
   boolean updateSModelReferences();
 
