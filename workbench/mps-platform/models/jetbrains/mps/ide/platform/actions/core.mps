@@ -519,6 +519,7 @@
       <concept id="1240906768633" name="jetbrains.mps.baseLanguage.collections.structure.PutAllOperation" flags="nn" index="3FNE7p">
         <child id="1240906921264" name="map" index="3FOfgg" />
       </concept>
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
       <concept id="8293956702609956630" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference" flags="nn" index="3M$PaV">
         <reference id="8293956702609966325" name="variable" index="3M$S_o" />
@@ -3222,46 +3223,79 @@
             <node concept="_YKpA" id="1$U7CSckq1_" role="1tU5fm">
               <node concept="10Oyi0" id="1$U7CSckq1C" role="_ZDj9" />
             </node>
-            <node concept="2YIFZM" id="1$U7CSckq2e" role="33vP2m">
-              <ref role="1Pybhc" node="6msDcinOaKu" resolve="SelectOptionsDialog" />
-              <ref role="37wK5l" node="5zhJtEaVXFl" resolve="selectOptions" />
-              <node concept="2YIFZM" id="1$U7CSckq2f" role="37wK5m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="37vLTw" id="1$U7CSckq2g" role="37wK5m">
-                  <ref role="3cqZAo" node="3BJTP_NlODE" resolve="project" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="1$U7CSckq2h" role="37wK5m">
-                <node concept="2OqwBi" id="1$U7CSckq2i" role="2Oq$k0">
-                  <node concept="37vLTw" id="1$U7CSckq2j" role="2Oq$k0">
-                    <ref role="3cqZAo" node="PXLOXmuX6E" resolve="options" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="46QvZZVOm_A" role="3cqZAp">
+          <node concept="3clFbS" id="46QvZZVOm_C" role="3clFbx">
+            <node concept="3clFbF" id="46QvZZVOju9" role="3cqZAp">
+              <node concept="37vLTI" id="46QvZZVOjub" role="3clFbG">
+                <node concept="2YIFZM" id="1$U7CSckq2e" role="37vLTx">
+                  <ref role="37wK5l" node="5zhJtEaVXFl" resolve="selectOptions" />
+                  <ref role="1Pybhc" node="6msDcinOaKu" resolve="SelectOptionsDialog" />
+                  <node concept="2YIFZM" id="1$U7CSckq2f" role="37wK5m">
+                    <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                    <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                    <node concept="37vLTw" id="1$U7CSckq2g" role="37wK5m">
+                      <ref role="3cqZAo" node="3BJTP_NlODE" resolve="project" />
+                    </node>
                   </node>
-                  <node concept="3$u5V9" id="1$U7CSckq2k" role="2OqNvi">
-                    <node concept="1bVj0M" id="1$U7CSckq2l" role="23t8la">
-                      <node concept="3clFbS" id="1$U7CSckq2m" role="1bW5cS">
-                        <node concept="3clFbF" id="1$U7CSckq2n" role="3cqZAp">
-                          <node concept="2OqwBi" id="1$U7CSckq2o" role="3clFbG">
-                            <node concept="37vLTw" id="1$U7CSckq2p" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1$U7CSckq2r" resolve="it" />
+                  <node concept="2OqwBi" id="1$U7CSckq2h" role="37wK5m">
+                    <node concept="2OqwBi" id="1$U7CSckq2i" role="2Oq$k0">
+                      <node concept="37vLTw" id="1$U7CSckq2j" role="2Oq$k0">
+                        <ref role="3cqZAo" node="PXLOXmuX6E" resolve="options" />
+                      </node>
+                      <node concept="3$u5V9" id="1$U7CSckq2k" role="2OqNvi">
+                        <node concept="1bVj0M" id="1$U7CSckq2l" role="23t8la">
+                          <node concept="3clFbS" id="1$U7CSckq2m" role="1bW5cS">
+                            <node concept="3clFbF" id="1$U7CSckq2n" role="3cqZAp">
+                              <node concept="2OqwBi" id="1$U7CSckq2o" role="3clFbG">
+                                <node concept="37vLTw" id="1$U7CSckq2p" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1$U7CSckq2r" resolve="it" />
+                                </node>
+                                <node concept="liA8E" id="1$U7CSckq2q" role="2OqNvi">
+                                  <ref role="37wK5l" node="37Il31hWTci" resolve="getDescription" />
+                                </node>
+                              </node>
                             </node>
-                            <node concept="liA8E" id="1$U7CSckq2q" role="2OqNvi">
-                              <ref role="37wK5l" node="37Il31hWTci" resolve="getDescription" />
-                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="1$U7CSckq2r" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="1$U7CSckq2s" role="1tU5fm" />
                           </node>
                         </node>
                       </node>
-                      <node concept="Rh6nW" id="1$U7CSckq2r" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="1$U7CSckq2s" role="1tU5fm" />
-                      </node>
                     </node>
+                    <node concept="ANE8D" id="1$U7CSckq2t" role="2OqNvi" />
+                  </node>
+                  <node concept="Xl_RD" id="1$U7CSckq2u" role="37wK5m">
+                    <property role="Xl_RC" value="Refactoring Options" />
                   </node>
                 </node>
-                <node concept="ANE8D" id="1$U7CSckq2t" role="2OqNvi" />
+                <node concept="37vLTw" id="46QvZZVOjuf" role="37vLTJ">
+                  <ref role="3cqZAo" node="1$U7CSckq2d" resolve="selectedOptionIndices" />
+                </node>
               </node>
-              <node concept="Xl_RD" id="1$U7CSckq2u" role="37wK5m">
-                <property role="Xl_RC" value="Select Participants" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="46QvZZVOqr1" role="3clFbw">
+            <node concept="37vLTw" id="46QvZZVOptF" role="2Oq$k0">
+              <ref role="3cqZAo" node="PXLOXmuX6E" resolve="options" />
+            </node>
+            <node concept="3GX2aA" id="46QvZZVOsfk" role="2OqNvi" />
+          </node>
+          <node concept="9aQIb" id="46QvZZVOtZS" role="9aQIa">
+            <node concept="3clFbS" id="46QvZZVOtZT" role="9aQI4">
+              <node concept="3clFbF" id="46QvZZVOvkr" role="3cqZAp">
+                <node concept="37vLTI" id="46QvZZVOvMD" role="3clFbG">
+                  <node concept="2ShNRf" id="46QvZZVOwbp" role="37vLTx">
+                    <node concept="Tc6Ow" id="46QvZZVOw94" role="2ShVmc">
+                      <node concept="10Oyi0" id="46QvZZVOw95" role="HW$YZ" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="46QvZZVOvkq" role="37vLTJ">
+                    <ref role="3cqZAo" node="1$U7CSckq2d" resolve="selectedOptionIndices" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -4717,7 +4751,7 @@
                     <node concept="1pGfFk" id="6EAgubLABym" role="2ShVmc">
                       <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
                       <node concept="Xl_RD" id="6EAgubLAB_b" role="37wK5m">
-                        <property role="Xl_RC" value="Select how update the nodes usages:" />
+                        <property role="Xl_RC" value="Select participants to execute" />
                       </node>
                     </node>
                   </node>

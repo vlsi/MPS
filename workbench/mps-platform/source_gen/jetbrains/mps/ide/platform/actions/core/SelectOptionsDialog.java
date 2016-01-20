@@ -40,7 +40,7 @@ public class SelectOptionsDialog extends RefactoringDialog {
       c.weightx = 1;
       c.weighty = 1;
 
-      panel.add(new JLabel("Select how update the nodes usages:"), c);
+      panel.add(new JLabel("Select participants to execute"), c);
 
     }
 
