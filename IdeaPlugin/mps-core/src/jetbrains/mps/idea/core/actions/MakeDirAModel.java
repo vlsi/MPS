@@ -20,6 +20,7 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -41,6 +42,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,14 +86,21 @@ public class MakeDirAModel extends NewModelActionBase {
         EditableSModel model = null;
         try {
           String relPath = null;
-          for (VirtualFile sr : ModuleRootManager.getInstance(module).getSourceRoots()) {
+          ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
+          ArrayList<VirtualFile> roots = new ArrayList<VirtualFile>();
+          roots.addAll(Arrays.asList(rootManager.getSourceRoots()));
+          roots.addAll(Arrays.asList(rootManager.getContentRoots()));
+          for (VirtualFile sr : roots) {
             relPath = VfsUtilCore.getRelativePath(targetDir, sr);
             if (relPath != null) {
               break;
             }
           }
+
           Map<String, String> options = new HashMap<String, String>();
-          options.put(ModelFactory.OPTION_RELPATH, relPath);
+          if (relPath != null) {
+            options.put(ModelFactory.OPTION_RELPATH, relPath);
+          }
           model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, options,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
         } catch (IOException ioException) {
