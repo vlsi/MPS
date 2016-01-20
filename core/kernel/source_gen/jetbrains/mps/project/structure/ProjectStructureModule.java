@@ -38,6 +38,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.RegularModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.smodel.ModelLoadResult;
+import jetbrains.mps.smodel.SnapshotModelData;
+import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -48,9 +50,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.BaseFastNodeFinder;
 
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
   private static final String MODULE_REF = "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)";
@@ -243,7 +242,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     @Override
     @NotNull
     protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
-      final ProjectStructureModule.ProjectStructureSModel model = new ProjectStructureModule.ProjectStructureSModel(getReference());
+      final jetbrains.mps.smodel.SModel model = new SnapshotModelData(getReference(), new ForeignNodeIdMap());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
       if (file != null && moduleDescriptor != null) {
@@ -285,20 +284,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       // that the content of the model is new (instead of a null, could pass getSModelInternal(), but see no reason 
       // to read module file unless needed) 
       replaceModelAndFireEvent(oldModel, null);
-    }
-  }
-
-  public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {
-    public ProjectStructureSModel(@NotNull SModelReference modelReference) {
-      super(modelReference, new ForeignNodeIdMap());
-    }
-    @Override
-    public boolean canFireEvent() {
-      return false;
-    }
-    @Override
-    public FastNodeFinder createFastNodeFinder() {
-      return new BaseFastNodeFinder(getModelDescriptor());
     }
   }
 }

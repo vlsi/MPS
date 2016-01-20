@@ -1854,14 +1854,19 @@
             <node concept="3cpWsn" id="4fSpAVAUjrS" role="3cpWs9">
               <property role="3TUv4t" value="true" />
               <property role="TrG5h" value="model" />
-              <node concept="3uibUv" id="4fSpAVAUjrU" role="1tU5fm">
-                <ref role="3uigEE" node="4fSpAVAUjud" resolve="ProjectStructureModule.ProjectStructureSModel" />
+              <node concept="3uibUv" id="3$eHQlfCtsb" role="1tU5fm">
+                <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
               </node>
               <node concept="2ShNRf" id="4fSpAVAUjDB" role="33vP2m">
                 <node concept="1pGfFk" id="4fSpAVAUjDC" role="2ShVmc">
-                  <ref role="37wK5l" node="4fSpAVAUjuh" resolve="ProjectStructureModule.ProjectStructureSModel" />
+                  <ref role="37wK5l" to="w1kc:~SnapshotModelData.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap)" resolve="SnapshotModelData" />
                   <node concept="1rXfSq" id="4fSpAVAUjrW" role="37wK5m">
                     <ref role="37wK5l" to="g3l6:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  </node>
+                  <node concept="2ShNRf" id="3$eHQlfCtdg" role="37wK5m">
+                    <node concept="1pGfFk" id="3$eHQlfCtdh" role="2ShVmc">
+                      <ref role="37wK5l" to="tzbx:~ForeignNodeIdMap.&lt;init&gt;()" resolve="ForeignNodeIdMap" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2280,87 +2285,6 @@
           </node>
         </node>
         <node concept="3cqZAl" id="4fSpAVAUjuc" role="3clF45" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4F1sLpFrhXl" role="jymVt" />
-    <node concept="312cEu" id="4fSpAVAUjud" role="jymVt">
-      <property role="TrG5h" value="ProjectStructureSModel" />
-      <property role="2bfB8j" value="false" />
-      <property role="1sVAO0" value="false" />
-      <property role="1EXbeo" value="false" />
-      <node concept="3Tm1VV" id="4fSpAVAUjuf" role="1B3o_S" />
-      <node concept="3uibUv" id="4fSpAVAUjug" role="1zkMxy">
-        <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-      </node>
-      <node concept="3clFbW" id="4fSpAVAUjuh" role="jymVt">
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="3cqZAl" id="4fSpAVAUjui" role="3clF45" />
-        <node concept="37vLTG" id="4fSpAVAUjuj" role="3clF46">
-          <property role="TrG5h" value="modelReference" />
-          <property role="3TUv4t" value="false" />
-          <node concept="2AHcQZ" id="4fSpAVAUjuk" role="2AJF6D">
-            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-          </node>
-          <node concept="3uibUv" id="4fSpAVAUjul" role="1tU5fm">
-            <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="4fSpAVAUjum" role="3clF47">
-          <node concept="XkiVB" id="4fSpAVAUkUv" role="3cqZAp">
-            <ref role="37wK5l" to="w1kc:~SModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap)" resolve="SModel" />
-            <node concept="37vLTw" id="4fSpAVAUjuo" role="37wK5m">
-              <ref role="3cqZAo" node="4fSpAVAUjuj" resolve="modelReference" />
-            </node>
-            <node concept="2ShNRf" id="4fSpAVAUkXr" role="37wK5m">
-              <node concept="1pGfFk" id="4fSpAVAUkXs" role="2ShVmc">
-                <ref role="37wK5l" to="tzbx:~ForeignNodeIdMap.&lt;init&gt;()" resolve="ForeignNodeIdMap" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="4fSpAVAUjuq" role="1B3o_S" />
-      </node>
-      <node concept="3clFb_" id="4fSpAVAUjur" role="jymVt">
-        <property role="TrG5h" value="canFireEvent" />
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="2AHcQZ" id="4fSpAVAUjus" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-        <node concept="3clFbS" id="4fSpAVAUjut" role="3clF47">
-          <node concept="3cpWs6" id="4fSpAVAUjuu" role="3cqZAp">
-            <node concept="3clFbT" id="4fSpAVAUjuv" role="3cqZAk">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="4fSpAVAUjuw" role="1B3o_S" />
-        <node concept="10P_77" id="4fSpAVAUjux" role="3clF45" />
-      </node>
-      <node concept="3clFb_" id="4fSpAVAUjuy" role="jymVt">
-        <property role="TrG5h" value="createFastNodeFinder" />
-        <property role="DiZV1" value="false" />
-        <property role="od$2w" value="false" />
-        <node concept="2AHcQZ" id="4fSpAVAUjuz" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-        <node concept="3clFbS" id="4fSpAVAUju$" role="3clF47">
-          <node concept="3cpWs6" id="4fSpAVAUju_" role="3cqZAp">
-            <node concept="2ShNRf" id="4fSpAVAUkXt" role="3cqZAk">
-              <node concept="1pGfFk" id="4fSpAVAUkXu" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~BaseFastNodeFinder.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="BaseFastNodeFinder" />
-                <node concept="1rXfSq" id="4fSpAVAUjuB" role="37wK5m">
-                  <ref role="37wK5l" to="w1kc:~SModel.getModelDescriptor():jetbrains.mps.extapi.model.SModelBase" resolve="getModelDescriptor" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="4fSpAVAUjuC" role="1B3o_S" />
-        <node concept="3uibUv" id="4fSpAVAUjuD" role="3clF45">
-          <ref role="3uigEE" to="w1kc:~FastNodeFinder" resolve="FastNodeFinder" />
-        </node>
       </node>
     </node>
   </node>

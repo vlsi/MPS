@@ -719,6 +719,23 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="63JDBWkL1Mu" role="jymVt">
+      <property role="TrG5h" value="getLanguageDescriptorLang" />
+      <node concept="3uibUv" id="63JDBWkL1SM" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+      </node>
+      <node concept="3Tm1VV" id="63JDBWkL1Mx" role="1B3o_S" />
+      <node concept="3clFbS" id="63JDBWkL1My" role="3clF47">
+        <node concept="3clFbF" id="63JDBWkL1Tv" role="3cqZAp">
+          <node concept="pHN19" id="63JDBWkL1Tt" role="3clFbG">
+            <node concept="2V$Bhx" id="63JDBWkL1TH" role="2V$M_3">
+              <property role="2V$B1T" value="f4ad079d-bc71-4ffb-9600-9328705cf998" />
+              <property role="2V$B1Q" value="jetbrains.mps.lang.descriptor" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="4pBxc6EfAka" role="jymVt">
       <property role="TrG5h" value="baseLanguage" />
       <node concept="3Tm1VV" id="4pBxc6EfAkb" role="1B3o_S" />

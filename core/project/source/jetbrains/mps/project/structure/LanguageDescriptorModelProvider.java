@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,16 +25,14 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.RegularModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SnapshotModelData;
+import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
-import jetbrains.mps.smodel.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -51,12 +49,10 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -181,7 +177,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
             SModelReference ref = getSModelReference(l);
             LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
             if (languageModelDescriptor != null) {
-              languageModelDescriptor.updateGenerationLanguages(languageModelDescriptor.getSModel());
+              languageModelDescriptor.updateGenerationLanguages();
             }
 
             break aspects;
@@ -275,6 +271,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   public LanguageModelDescriptor createModel(SModelReference ref, Language module) {
     LanguageModelDescriptor result = new LanguageModelDescriptor(ref, module);
+    result.updateGenerationLanguages();
 
     myModels.put(ref, result);
     module.registerModel(result);
@@ -300,37 +297,24 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public static final class LanguageModelDescriptor extends RegularModelDescriptor implements GeneratableSModel {
+  public static final class LanguageModelDescriptor extends TrivialModelDescriptor implements GeneratableSModel {
     private final Language myModule;
     private String myHash;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
-      super(ref, new NullDataSource());
+      super(new SnapshotModelData(ref));
       myModule = module;
       myHash = null;
     }
 
-    @NotNull
-    @Override
-    protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
-      jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference()) {
-        @Override
-        public boolean canFireEvent() {
-          return false;
-        }
-      };
-      updateGenerationLanguages(model);
-      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
-    }
-
-    public void updateGenerationLanguages(jetbrains.mps.smodel.SModel model) {
-      model.addEngagedOnGenerationLanguage(BootstrapLanguages.descriptorLanguageRef());
+    public void updateGenerationLanguages() {
+      getSModel().addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
       for (SModel aspect : LanguageAspectSupport.getAspectModels(myModule)) {
         for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
-          model.addEngagedOnGenerationLanguage(aspectLanguage);
+          getSModel().addEngagedOnGenerationLanguage(aspectLanguage);
 
           //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
-          model.addLanguage(aspectLanguage);
+          addLanguage(aspectLanguage);
         }
       }
     }

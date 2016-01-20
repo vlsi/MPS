@@ -1881,23 +1881,13 @@
       <ref role="2VPoh2" node="1uh_eNRSFyP" resolve="descriptor" />
       <node concept="2VP$b9" id="7BqJJVi3$ML" role="2VPoh3">
         <node concept="3clFbS" id="7BqJJVi3$MM" role="2VODD2">
-          <node concept="3clFbF" id="7BqJJVi3$MN" role="3cqZAp">
-            <node concept="2OqwBi" id="7BqJJVi3$N5" role="3clFbG">
-              <node concept="2YIFZM" id="2n9zn0CqMWC" role="2Oq$k0">
-                <ref role="37wK5l" to="unno:7WvVJ3rO1Xl" resolve="getModelStereotype" />
-                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                <node concept="2JrnkZ" id="2n9zn0CqMWD" role="37wK5m">
-                  <node concept="2OqwBi" id="2n9zn0CqMWE" role="2JrQYb">
-                    <node concept="1iwH7S" id="2n9zn0CqMWF" role="2Oq$k0" />
-                    <node concept="1st3f0" id="2n9zn0CqMWG" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="7BqJJVi3$N9" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="Xl_RD" id="7BqJJVi3$Na" role="37wK5m">
-                  <property role="Xl_RC" value="descriptor" />
-                </node>
+          <node concept="3clFbF" id="63JDBWkLd85" role="3cqZAp">
+            <node concept="2YIFZM" id="63JDBWkLdaO" role="3clFbG">
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isDescriptorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isDescriptorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <node concept="2OqwBi" id="63JDBWkLddD" role="37wK5m">
+                <node concept="1iwH7S" id="63JDBWkLddE" role="2Oq$k0" />
+                <node concept="1st3f0" id="63JDBWkLddF" role="2OqNvi" />
               </node>
             </node>
           </node>

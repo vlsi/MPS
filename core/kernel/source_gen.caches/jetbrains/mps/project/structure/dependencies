@@ -22,9 +22,7 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.stub.ProjectStructureBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseFastNodeFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseMPSModuleOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.FastNodeFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadResult" />
@@ -35,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SnapshotModelData" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />

@@ -77,6 +77,10 @@ public class SModelStereotype {
     return GENERATOR.equals(stereotype);
   }
 
+  public static boolean isDescriptorModel(SModel model) {
+    return isDescriptorModelStereotype(getStereotype(model));
+  }
+
   public static boolean isDescriptorModelStereotype(String stereotype) {
     return DESCRIPTOR.equals(stereotype);
   }
