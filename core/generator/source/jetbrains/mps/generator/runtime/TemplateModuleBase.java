@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -29,7 +28,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -70,11 +68,19 @@ public abstract class TemplateModuleBase implements TemplateModule {
     return rv;
   }
 
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<String> getUsedLanguages() {
-    return Collections.emptyList();
+  /**
+   * @deprecated Existence of API method that returns dependency information as two strings with "/" delimiter could be hardly justified.
+   * However, MPS 3.3 still generates getReferencedModules(), and I've left the method for binary compatibility. Shall remove once template for
+   * generator module registers extended generators in other way (at least as module reference, not as [name1/name2]). XXX perhaps,
+   * shall not supply module reference from code, but rather expose them from module.xml descriptor? Otherwise, need to pass some sort of registry
+   * here to resolve module reference to TemplateModule/GeneratorRuntime
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public Collection<String> getReferencedModules() {
+    return null;
   }
+
 
   @Override
   @ToRemove(version = 3.2)
@@ -87,18 +93,6 @@ public abstract class TemplateModuleBase implements TemplateModule {
   @ToRemove(version = 3.2)
   public Set<SLanguage> getQueryLanguages() {
     return Collections.emptySet();
-  }
-
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<SLanguage> getTargetLanguages() {
-    HashSet<SLanguage> rv = new HashSet<SLanguage>();
-    // once I fix templates for generated generators to generate this method instead of getUsedLanguages(),
-    // I shall pull getUsedLanguages implementation from interpreted module here (for transition period)
-    for (String l : getUsedLanguages()) {
-      rv.add(MetaAdapterFactoryByName.getLanguage(l));
-    }
-    return rv;
   }
 
   protected TemplateModel loadModel(String modelName) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_A
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -37,7 +36,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -175,24 +173,6 @@ public class Generator extends ReloadableModuleBase {
 
   public List<SModuleReference> getReferencedGeneratorUIDs() {
     return new ArrayList<SModuleReference>(myGeneratorDescriptor.getDepGenerators());
-  }
-
-  /**
-   * @deprecated Vague name (at the moment, these are extended generators), unclear resolution scope (global at the moment).
-   * {@link #getDeclaredDependencies()} will replace this method once all dependencies are represented with SDependency,
-   * meanwhile use {@link #getReferencedGeneratorUIDs()}
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public List<Generator> getReferencedGenerators() {
-    List<Generator> result = new ArrayList<Generator>();
-    for (SModuleReference guid : getReferencedGeneratorUIDs()) {
-      SModule module = guid.resolve(MPSModuleRepository.getInstance());
-      if (module instanceof Generator) {
-        result.add((Generator) module);
-      }
-    }
-    return result;
   }
 
   public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {

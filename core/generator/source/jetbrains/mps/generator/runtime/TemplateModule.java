@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,9 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.language.GeneratorRuntime;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 
 import java.util.Collection;
 import java.util.Set;
@@ -36,22 +35,6 @@ public interface TemplateModule extends GeneratorRuntime {
   Collection<TemplateMappingPriorityRule> getPriorities();
 
   Collection<TemplateModel> getModels();
-
-  /**
-   * @deprecated Existence of API method that returns dependency information as two strings with "/" delimiter could be hardly justified.
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  Collection<String> getReferencedModules();
-
-  /**
-   * @deprecated uncertain contract, string. Use {@link #getTargetLanguages()} instead
-   * template target languages, i.e. languages we translate from(?)/to
-   * (only to? is it possible to useLanguage other than in output template? E.g. for a pattern rule?)
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  Collection<String> getUsedLanguages();
 
   /**
    * Generators this generator explicitly extends. This effectively means rules ans switches from all
