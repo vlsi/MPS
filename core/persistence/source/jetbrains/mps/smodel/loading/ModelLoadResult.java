@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,13 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelLoadResult {
   private final SModel model;
   private ModelLoadingState state;
   private ContentKind contentKind = ContentKind.MODEL;
-
-  /**
-   * @deprecated shall refactor uses of this cons in old persistence implementations and then shall remove it
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public ModelLoadResult(@NotNull LazySModel model, ModelLoadingState state) {
-    this((SModel) model, state);
-  }
 
   public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
     this.model = model;

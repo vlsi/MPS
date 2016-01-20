@@ -3398,84 +3398,22 @@
         </node>
       </node>
       <node concept="3clFbS" id="p9Lm3R6Gkz" role="3clF47">
-        <node concept="3cpWs8" id="p9Lm3R6Gk_" role="3cqZAp">
-          <node concept="3cpWsn" id="p9Lm3R6Gk$" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="history" />
-            <node concept="3uibUv" id="p9Lm3R6GkA" role="1tU5fm">
-              <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+        <node concept="3clFbF" id="7lRF$jCXCqb" role="3cqZAp">
+          <node concept="2OqwBi" id="p9Lm3R6H1b" role="3clFbG">
+            <node concept="37vLTw" id="p9Lm3R6H1a" role="2Oq$k0">
+              <ref role="3cqZAo" node="p9Lm3R6Gkv" resolve="rootElement" />
             </node>
-            <node concept="2OqwBi" id="p9Lm3R6H1b" role="33vP2m">
-              <node concept="37vLTw" id="p9Lm3R6H1a" role="2Oq$k0">
-                <ref role="3cqZAo" node="p9Lm3R6Gkv" resolve="rootElement" />
-              </node>
-              <node concept="liA8E" id="p9Lm3R6H1c" role="2OqNvi">
-                <ref role="37wK5l" to="mmaq:~Element.getChild(java.lang.String):org.jdom.Element" resolve="getChild" />
-                <node concept="Xl_RD" id="p9Lm3R6GkC" role="37wK5m">
-                  <property role="Xl_RC" value="refactoringHistory" />
-                </node>
+            <node concept="liA8E" id="p9Lm3R6H1c" role="2OqNvi">
+              <ref role="37wK5l" to="mmaq:~Element.getChild(java.lang.String):org.jdom.Element" resolve="getChild" />
+              <node concept="Xl_RD" id="p9Lm3R6GkC" role="37wK5m">
+                <property role="Xl_RC" value="refactoringHistory" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="p9Lm3R6GkD" role="3cqZAp">
-          <node concept="3y3z36" id="p9Lm3R6GkE" role="3clFbw">
-            <node concept="37vLTw" id="p9Lm3R6GkF" role="3uHU7B">
-              <ref role="3cqZAo" node="p9Lm3R6Gk$" resolve="history" />
-            </node>
-            <node concept="10Nm6u" id="p9Lm3R6GkG" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="p9Lm3R6GkI" role="3clFbx">
-            <node concept="3cpWs8" id="p9Lm3R6GkK" role="3cqZAp">
-              <node concept="3cpWsn" id="p9Lm3R6GkJ" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="copy" />
-                <node concept="3uibUv" id="p9Lm3R6GkL" role="1tU5fm">
-                  <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
-                </node>
-                <node concept="10QFUN" id="p9Lm3R6GkM" role="33vP2m">
-                  <node concept="2OqwBi" id="p9Lm3R6H1g" role="10QFUP">
-                    <node concept="37vLTw" id="p9Lm3R6H1f" role="2Oq$k0">
-                      <ref role="3cqZAo" node="p9Lm3R6Gk$" resolve="history" />
-                    </node>
-                    <node concept="liA8E" id="p9Lm3R6H1h" role="2OqNvi">
-                      <ref role="37wK5l" to="mmaq:~Element.clone():org.jdom.Element" resolve="clone" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="p9Lm3R6GkO" role="10QFUM">
-                    <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="p9Lm3R6GkP" role="3cqZAp">
-              <node concept="2OqwBi" id="p9Lm3R6H1l" role="3clFbG">
-                <node concept="37vLTw" id="p9Lm3R6H1k" role="2Oq$k0">
-                  <ref role="3cqZAo" node="p9Lm3R6GkJ" resolve="copy" />
-                </node>
-                <node concept="liA8E" id="p9Lm3R6H1m" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Content.detach():org.jdom.Content" resolve="detach" />
-                </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="p9Lm3R6GqS" role="3cqZAp">
-              <node concept="3SKdUq" id="p9Lm3R6GqR" role="3SKWNk">
-                <property role="3SKdUp" value="noinspection deprecation" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="p9Lm3R6GkR" role="3cqZAp">
-              <node concept="2OqwBi" id="p9Lm3R6H1q" role="3clFbG">
-                <node concept="37vLTw" id="p9Lm3R6H1p" role="2Oq$k0">
-                  <ref role="3cqZAo" node="p9Lm3R6Gkx" resolve="model" />
-                </node>
-                <node concept="liA8E" id="p9Lm3R6H1r" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~DefaultSModel.setRefactoringHistoryElement(org.jdom.Element):void" resolve="setRefactoringHistoryElement" />
-                  <node concept="37vLTw" id="p9Lm3R6GkT" role="37wK5m">
-                    <ref role="3cqZAo" node="p9Lm3R6GkJ" resolve="copy" />
-                  </node>
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="7lRF$jCXCod" role="3cqZAp">
+          <node concept="3SKdUq" id="7lRF$jCXCof" role="3SKWNk">
+            <property role="3SKdUp" value="no-op, we do not care about refactorings in that old persistence versions" />
           </node>
         </node>
       </node>

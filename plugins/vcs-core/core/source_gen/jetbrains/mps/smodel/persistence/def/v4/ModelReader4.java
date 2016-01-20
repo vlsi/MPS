@@ -103,13 +103,8 @@ public class ModelReader4 implements IModelReader {
     return model;
   }
   protected void readRefactorings(Element rootElement, DefaultSModel model) {
-    Element history = rootElement.getChild("refactoringHistory");
-    if (history != null) {
-      Element copy = (Element) history.clone();
-      copy.detach();
-      // noinspection deprecation 
-      model.setRefactoringHistoryElement(copy);
-    }
+    rootElement.getChild("refactoringHistory");
+    // no-op, we do not care about refactorings in that old persistence versions 
   }
   protected void readLanguageAspects(DefaultSModel model, List<Element> aspectElements) {
     for (Element aspectElement : aspectElements) {
