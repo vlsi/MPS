@@ -62,7 +62,7 @@ public class PartitioningHelper {
     // show partitioning 
     console.addText("---------------------  mappings partitioning  -----------------------------------\n\n");
     int stepCount = 1;
-    for (ModelGenerationPlan.Step step : plan.getSteps_()) {
+    for (ModelGenerationPlan.Step step : plan.getSteps()) {
       console.addText(" [ " + stepCount++ + " ]\n");
       if (step instanceof ModelGenerationPlan.Checkpoint) {
         console.addText(" Checkpoint: " + ((ModelGenerationPlan.Checkpoint) step).getName());

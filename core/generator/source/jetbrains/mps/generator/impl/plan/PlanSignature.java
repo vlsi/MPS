@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,10 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Step;
+import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
@@ -34,17 +35,15 @@ public class PlanSignature {
   private final String myInputName;
   private final List<List<TemplateMappingConfiguration>> myPlan;
 
-  public PlanSignature(SModel m, GenerationPlan plan) {
-    this(m, toListList(plan));
-  }
-
   public PlanSignature(SModel m, ModelGenerationPlan plan) {
-    this(m, plan.getSteps());
-  }
-
-  private PlanSignature(SModel m, List<List<TemplateMappingConfiguration>> plan) {
-    myInputName = NameUtil.getModelLongName(m);
-    myPlan = plan;
+    myInputName = m.getName().getLongName();
+    List<Step> steps = plan.getSteps();
+    myPlan = new ArrayList<List<TemplateMappingConfiguration>>(steps.size());
+    for (Step p : steps) {
+      if (p instanceof Transform) {
+        myPlan.add(((Transform) p).getTransformations());
+      }
+    }
   }
 
   public String getSignature() {
@@ -75,14 +74,5 @@ public class PlanSignature {
   private static String toString(TemplateMappingConfiguration mappingConfig) {
     TemplateModel model = mappingConfig.getModel();
     return model.getLongName() + "#" + mappingConfig.getName();
-  }
-
-  private static List<List<TemplateMappingConfiguration>> toListList(GenerationPlan plan) {
-    final int stepCount = plan.getSteps().size();
-    ArrayList<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>(stepCount);
-    for (int i = 0; i < stepCount; i++) {
-      rv.add(plan.getSteps().get(i));
-    }
-    return rv;
   }
 }

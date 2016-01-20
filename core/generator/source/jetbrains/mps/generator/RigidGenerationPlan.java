@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.annotations.NotNull;
@@ -43,18 +42,7 @@ public class RigidGenerationPlan implements ModelGenerationPlan {
   }
 
   @Override
-  public List<List<TemplateMappingConfiguration>> getSteps() {
-    ArrayList<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>(mySteps.length);
-    for (Step p : mySteps) {
-      if (p instanceof Transform) {
-        rv.add(((Transform) p).getTransformations());
-      }
-    }
-    return rv;
-  }
-
-  @Override
-  public List<Step> getSteps_() {
+  public List<Step> getSteps() {
     return Arrays.asList(mySteps);
   }
 

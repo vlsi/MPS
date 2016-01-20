@@ -241,13 +241,13 @@ public class CheckpointModelTest extends PlatformMpsTest {
       }
     });
     Assert.assertNotNull(plan);
-    Assert.assertEquals(3, plan.getSteps_().size());
-    myErrors.checkThat(plan.getSteps_().get(0), CoreMatchers.instanceOf(Transform.class));
-    myErrors.checkThat(plan.getSteps_().get(1), CoreMatchers.instanceOf(Checkpoint.class));
-    myErrors.checkThat(plan.getSteps_().get(2), CoreMatchers.instanceOf(Transform.class));
-    Transform s1 = (Transform) plan.getSteps_().get(0);
-    Checkpoint s2 = (Checkpoint) plan.getSteps_().get(1);
-    Transform s3 = (Transform) plan.getSteps_().get(2);
+    Assert.assertEquals(3, plan.getSteps().size());
+    myErrors.checkThat(plan.getSteps().get(0), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps().get(1), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps().get(2), CoreMatchers.instanceOf(Transform.class));
+    Transform s1 = (Transform) plan.getSteps().get(0);
+    Checkpoint s2 = (Checkpoint) plan.getSteps().get(1);
+    Transform s3 = (Transform) plan.getSteps().get(2);
     myErrors.checkThat(s1.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s3.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
     myErrors.checkThat(s2.getName(), CoreMatchers.equalTo("first"));

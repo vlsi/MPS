@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,13 +76,7 @@ public class GenerationPlan implements ModelGenerationPlan {
   }
 
   @Override
-  @Deprecated
-  public List<List<TemplateMappingConfiguration>> getSteps() {
-    return myPlan;
-  }
-
-  @Override
-  public List<Step> getSteps_() {
+  public List<Step> getSteps() {
     if (mySteps == null) {
       LinkedList<Step> steps = new LinkedList<Step>();
       for (List<TemplateMappingConfiguration> p : myPlan) {

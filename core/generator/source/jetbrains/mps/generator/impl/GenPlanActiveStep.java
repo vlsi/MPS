@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ final class GenPlanActiveStep {
   @Nullable
   public Checkpoint getLastCheckpoint() {
     Checkpoint lastSeen = null;
-    for (Step p : myPlan.getSteps_()) {
+    for (Step p : myPlan.getSteps()) {
       if (myStep.equals(p)) {
         break;
       }
@@ -98,7 +98,7 @@ final class GenPlanActiveStep {
 
   @Nullable
   public Checkpoint getNextCheckpoint() {
-    Iterator<Step> it = myPlan.getSteps_().iterator();
+    Iterator<Step> it = myPlan.getSteps().iterator();
     while (it.hasNext()) {
       if (myStep.equals(it.next())) {
         break;

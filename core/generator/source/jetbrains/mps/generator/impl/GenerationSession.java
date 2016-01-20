@@ -36,7 +36,6 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
-import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -147,7 +146,7 @@ class GenerationSession {
     }
     warnIfGenerateSelf(myGenerationPlan);
 
-    monitor.start("", 1 + myGenerationPlan.getSteps_().size());
+    monitor.start("", 1 + myGenerationPlan.getSteps().size());
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
       IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
@@ -221,8 +220,8 @@ class GenerationSession {
         TransitionTrace transitionTrace = new TransitionTrace(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
         transitionTrace.reset(currInputModel);
 
-        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps_().size(); myMajorStep++) {
-          Step planStep = myGenerationPlan.getSteps_().get(myMajorStep);
+        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
+          Step planStep = myGenerationPlan.getSteps().get(myMajorStep);
           if (planStep instanceof Transform) {
             Transform transformStep = (Transform) planStep;
             final List<TemplateMappingConfiguration> mappingConfigurations = transformStep.getTransformations();

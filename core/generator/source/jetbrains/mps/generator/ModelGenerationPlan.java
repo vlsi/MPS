@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,12 @@ import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -36,14 +34,7 @@ import java.util.List;
  */
 public interface ModelGenerationPlan {
 
-  /**
-   * @deprecated list of list is not pretty good API
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  List<List<TemplateMappingConfiguration>> getSteps();
-
-  List<Step> getSteps_();
+  List<Step> getSteps();
 
   Collection<TemplateModule> getGenerators();
 

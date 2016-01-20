@@ -996,7 +996,7 @@
               <ref role="3cqZAo" node="7vhSOKo1SSF" resolve="plan" />
             </node>
             <node concept="liA8E" id="7vhSOKo2Dhl" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~ModelGenerationPlan.getSteps_():java.util.List" resolve="getSteps_" />
+              <ref role="37wK5l" to="ap4t:~ModelGenerationPlan.getSteps():java.util.List" resolve="getSteps" />
             </node>
           </node>
         </node>
