@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-
-import java.util.Collection;
 
 /**
  * Default implementation all generated reduction rules shall use.
@@ -42,15 +36,6 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
   private final SNodeReference myRule;
   private final SAbstractConcept myConcept;
   private final boolean myIncludeInheritors;
-
-  /**
-   * @deprecated use {@link #ReductionRuleBase(SNodeReference, SAbstractConcept, boolean)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected ReductionRuleBase(@NotNull SNodeReference ruleNode, @NotNull String appConcept, boolean withInheritors) {
-    this(ruleNode, GeneratorUtil.toSConcept(appConcept), withInheritors);
-  }
 
   /**
    * @param ruleNode identifies rule in template model, handy for navigation and error reporting
@@ -72,13 +57,7 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
 
   @NotNull
   @Override
-  public String getApplicableConcept() {
-    return myConcept.getQualifiedName();
-  }
-
-  @NotNull
-  @Override
-  public final SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept() {
     // the reason why this class if different from other XXXRuleBase classes in concept field handing is
     // that there were no subclasses of RRB in MPS 3.2 to override #getApplicableConcept method (there's cons with args already, while
     // other base classes had no-arg cons in MPS 3.2
@@ -90,50 +69,15 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
     return myIncludeInheritors;
   }
 
-  // XXX now there's no reason to override tryToApply just to delegate to doApply()
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return doApply(context);
-  }
-
-  @Nullable
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    // FIXME Compatibility code, once no MPS 3.2-generated rules are there, the method shall become abstract
-    return tryToApply(context.getEnvironment(), context);
-  }
-
-  /**
-   * @deprecated with {@link #apply(TemplateContext)}, there's no reason to override this method. Left for compatibility with code generated in MPS 3.2
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException {
-    return null;
-  }
-
   /*
-   * Next two isApplicable methods provided here to facilitate migration of generated reduction rules, conditionally implementing TemplateRuleWithCondition.
-   * They used to generate isApplicable(TEE,TC), while new code generates isApplicable(TC), which is invoked by generator
+   * Next isApplicable method is provided here to facilitate migration of generated reduction rules, conditionally implementing TemplateRuleWithCondition.
    * FIXME worth to get back to the idea of any rule being 'with condition', merely telling true if no explicit condition specified
    */
 
-
   /**
-   * Compatibility with new MPS 3.3 API method, always <code>true</code>
-   */
-  @ToRemove(version = 3.3)
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return true;
-  }
-
-  /**
-   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
    * Subclasses can rely on default implementation to return <code>true</code>.
    */
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-    return isApplicable(context.getEnvironment(), context);
+    return true;
   }
 }

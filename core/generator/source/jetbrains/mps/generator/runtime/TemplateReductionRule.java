@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -28,13 +26,6 @@ import java.util.Collection;
  * Evgeny Gryaznov, 10/27/10
  */
 public interface TemplateReductionRule extends TemplateRuleForConcept {
-
-  /**
-   * @deprecated use {@link #apply(TemplateContext)}  instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
   /**
    * Try to apply rule in the given context

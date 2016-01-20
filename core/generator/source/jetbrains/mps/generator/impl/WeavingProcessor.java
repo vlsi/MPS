@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class WeavingProcessor {
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
       boolean includeInheritors = rule.applyToInheritors();
-      for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept2(), includeInheritors)) {
+      for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept(), includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
           continue;
         }
@@ -174,7 +174,7 @@ public class WeavingProcessor {
 
     @Override
     public String toString() {
-      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept2().getQualifiedName(), myApplicableNode);
+      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept().getQualifiedName(), myApplicableNode);
     }
   }
  }

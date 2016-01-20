@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,12 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 12/7/10
  */
 public interface TemplateRuleWithCondition extends TemplateRule {
-
-  /**
-   * @deprecated use single-arg alternative {@link #isApplicable(TemplateContext)}
-   * IMPLEMENTATION NOTE: generator invokes new method, and expect default implementation of isApplicable(TC) method
-   * to delegate to isApplicable(TEE,TC) to support legacy generated rules.
-   * Default implementation of isApplicable(TEE, TC) shall return true to ensure new contract for isApplicable(TC) - that
-   * subclasses shall not override that method to supply default implementation (no condition -> true).
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
   /**
    * Tell whether rule can be applied in the context

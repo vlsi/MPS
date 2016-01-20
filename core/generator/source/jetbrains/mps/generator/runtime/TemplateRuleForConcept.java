@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -28,22 +27,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @since 3.3
  */
 public interface TemplateRuleForConcept extends TemplateRule {
-  /**
-   * @deprecated this method is to be replaced with {@link #getApplicableConcept2()}
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.3)
-  String getApplicableConcept();
 
   /**
-   * THIS IS INTERNAL API. NAME OF THE METHOD WOULD CHANGE ONCE {@link #getApplicableConcept()} IS GONE.
-   * This is also the reason why implementation of the method in base classes is final, to prevent accidental override in generated rules
    * @return concept to trigger this rule
-   * @since 3.3
    */
   @NotNull
-  SAbstractConcept getApplicableConcept2();
+  SAbstractConcept getApplicableConcept();
 
   boolean applyToInheritors();
 }

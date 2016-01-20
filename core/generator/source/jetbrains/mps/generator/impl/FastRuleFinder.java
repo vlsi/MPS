@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
     Map<String, List<T>> inheritedRules = new HashMap<String, List<T>>();
 
     for (T rule : reductionRules) {
-      final SAbstractConcept applicableConcept = rule.getApplicableConcept2();
+      final SAbstractConcept applicableConcept = rule.getApplicableConcept();
       String applicableConceptFqName = applicableConcept.getQualifiedName();
 
       List<T> rules = specificRules.get(applicableConceptFqName);

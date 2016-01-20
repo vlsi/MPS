@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -30,18 +28,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * @author Artem Tikhomirov
  */
 public abstract class WeaveRuleBase implements TemplateWeavingRule {
-  // FIXME make final once no-arg cons is gone
-  private SNodeReference myRuleNode;
-  private SAbstractConcept myAppConcept;
-  private boolean myApplyToSubConcepts;
-
-  /**
-   * @deprecated compatibility with MPS 3.2 code
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected WeaveRuleBase() {
-  }
+  private final SNodeReference myRuleNode;
+  private final SAbstractConcept myAppConcept;
+  private final boolean myApplyToSubConcepts;
 
   protected WeaveRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept, boolean applyToSubConcepts) {
     myRuleNode = ruleNode;
@@ -50,21 +39,11 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
   }
 
   /**
-   * Compatibility with new MPS 3.3 API method, always <code>true</code>
-   */
-  @ToRemove(version = 3.3)
-  @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return true;
-  }
-
-  /**
-   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
    * Subclasses can rely on default implementation to return <code>true</code>.
    */
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-    return isApplicable(context.getEnvironment(), context);
+    return true;
   }
 
   @NotNull
@@ -75,14 +54,8 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
 
   @NotNull
   @Override
-  public String getApplicableConcept() {
-    return myAppConcept.getQualifiedName();
-  }
-
-  @NotNull
-  @Override
-  public final SAbstractConcept getApplicableConcept2() {
-    return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
+  public final SAbstractConcept getApplicableConcept() {
+    return myAppConcept;
   }
 
   @Override

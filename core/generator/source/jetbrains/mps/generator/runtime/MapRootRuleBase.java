@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-
-import java.util.Collection;
 
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateRootMappingRule} to use as superclass in generated code
@@ -31,19 +25,10 @@ import java.util.Collection;
  * @author Artem Tikhomirov
  */
 public abstract class MapRootRuleBase implements TemplateRootMappingRule {
-  // FIXME make final once no-arg cons is gone
-  private SNodeReference myRuleNode;
-  private SAbstractConcept myAppConcept;
-  private boolean myApplyToSubConcepts;
-  private boolean myKeepSourceRoot;
-
-  /**
-   * @deprecated compatibility for code generated with MPS 3.2
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected MapRootRuleBase() {
-  }
+  private final SNodeReference myRuleNode;
+  private final SAbstractConcept myAppConcept;
+  private final boolean myApplyToSubConcepts;
+  private final boolean myKeepSourceRoot;
 
   /**
    * @param ruleNode identifies rule for navigation/error reporting
@@ -61,14 +46,8 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
 
   @NotNull
   @Override
-  public String getApplicableConcept() {
-    return myAppConcept.getQualifiedName();
-  }
-
-  @NotNull
-  @Override
-  public final SAbstractConcept getApplicableConcept2() {
-    return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
+  public final SAbstractConcept getApplicableConcept() {
+    return myAppConcept;
   }
 
   @Override
@@ -88,34 +67,10 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   }
 
   /**
-   * Compatibility with code generated in MPS 3.2, delegate to new method.
-   */
-  @ToRemove(version = 3.3)
-  @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return true;
-  }
-
-  /**
    * Default implementation subclasses can rely on, always <code>true</code>
    */
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-    return isApplicable(context.getEnvironment(), context);
-  }
-
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    // compatibility, code generated in MPS 3.2 overrides this method
-    return null;
-  }
-
-  @Nullable
-  @Override
-  @ToRemove(version = 3.3)
-  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
-    // FIXME this method shall become abstract once no code generated with MPS 3.2 left
-    return apply(context.getEnvironment(), context);
+    return true;
   }
 }

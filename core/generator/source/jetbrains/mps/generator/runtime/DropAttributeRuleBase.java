@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,24 +42,13 @@ public class DropAttributeRuleBase implements TemplateDropAttributeRule {
 
   @NotNull
   @Override
-  public final String getApplicableConcept() {
-    return getApplicableConcept2().getQualifiedName();
-  }
-
-  @NotNull
-  @Override
-  public final SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept() {
     return myAppConcept;
   }
 
   @Override
   public final boolean applyToInheritors() {
     return myApplyToSubConcepts;
-  }
-
-  @Override
-  public final boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return isApplicable(context);
   }
 
   @Override
