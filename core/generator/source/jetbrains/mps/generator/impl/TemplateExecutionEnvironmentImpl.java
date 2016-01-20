@@ -40,13 +40,10 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -83,17 +80,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public SModel getOutputModel() {
     return generator.getOutputModel();
-  }
-
-  @NotNull
-  @Override
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SNode createOutputNode(@NotNull String conceptName) {
-    // I use getInstanceConcept because it doesn't return null for unknown concepts
-    // Another alternative is to check getContainingConcept for null and instantiate BaseConcept then
-    SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
-    return createOutputNode(c);
   }
 
   @NotNull
@@ -199,13 +185,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return templateDeclarationInstance.apply(this, context);
   }
 
-  @Override
-  public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull final TemplateContext context, @NotNull final SNode outputContextNode, Object... arguments) throws GenerationException {
-    WeaveContextImpl weaveContext = new WeaveContextImpl(outputContextNode, context);
-    return prepareWeave(weaveContext, templateNode).weaveTemplate(templateDeclaration, arguments);
-  }
-
-
   /*package*/ TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
     TemplateModel templateModel = generator.getGenerationPlan().getTemplateModel(templateDeclaration.getModelReference());
     TemplateDeclaration templateDeclarationInstance = templateModel == null ? null : templateModel.loadTemplate(templateDeclaration, arguments);
@@ -253,18 +232,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void postProcess(@NotNull NodePostProcessor postProcessor) {
     generator.getDelayedChanges().add(postProcessor);
-  }
-
-  @Override
-  public void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode) {
-    if (outputNodeToWeave == null) {
-      return;
-    }
-    final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
-    DefaultTemplateContext templateContext = new DefaultTemplateContext(this, inputNode, null);
-
-    // FIXME using deprecated method for now, as the new one may throw an exception. Once 3.3 is out, just remove this whole method.
-    prepareWeave(new WeaveContextImpl(contextParentNode, templateContext), templateNode).weave(contextParentNode, role, outputNodeToWeave, null);
   }
 
   @NotNull

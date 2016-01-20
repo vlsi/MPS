@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +19,10 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -48,15 +46,6 @@ public class TransientModelsProvider {
   private String mySessionId;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
   private TransientModelsModule myCheckpointsModule;
-
-  /**
-   * @deprecated Generator shall not depend from Project, it may run from e.g. ant task where no project is available.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public TransientModelsProvider(Project project, TransientSwapOwner owner) {
-    this(project.getRepository(), owner);
-  }
 
   public TransientModelsProvider(@NotNull SRepository repository, @Nullable TransientSwapOwner swapOwner) {
     myRepository = (SRepositoryExt) repository;

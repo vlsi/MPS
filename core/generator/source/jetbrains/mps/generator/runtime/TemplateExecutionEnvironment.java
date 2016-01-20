@@ -25,7 +25,6 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -60,14 +59,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   SModel getOutputModel();
 
   /**
-   * @deprecated shall use {@link #createOutputNode(SConcept)}
-   */
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 3.3)
-  SNode createOutputNode(@NotNull String conceptName);
-
-  /**
    *
    * @param concept we don't expect templates to instantiate interface concepts.
    * @return instance of the concept, instantiated using output model as a factory, not belonging to the model, though.
@@ -80,7 +71,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * Access 2nd-generation trace facility
-   * @return
    */
   @NotNull
   GenerationTrace getTrace();
@@ -116,15 +106,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
-  /**
-   * Invoked from generated template code when a template that produces nodes to weave resides in another
-   * generator module or model (see reduce_TemplateInvocationWeave. XXX why model - 'generate generators' is per module option, shall check other module only)
-   * @deprecated Use {@link #prepareWeave(WeaveContext, SNodeReference)} and {@link NodeWeaveFacility#weaveTemplate(SNodeReference, Object...)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
-
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
   void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
@@ -155,13 +136,4 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   @NotNull
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
-
-  /**
-   * @deprecated use {@link #prepareWeave(WeaveContext, SNodeReference)}} and {@link NodeWeaveFacility} instead
-   * FIXME Consider splitting validation aspect from child addition, which could be generated.
-   * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
 }

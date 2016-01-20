@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,8 +71,7 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
     weave(contextParentNode, childRole, outputNodeToWeave, myWeaveContext.getAnchorNode(contextParentNode, outputNodeToWeave));
   }
 
-  @Override
-  public void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave, @Nullable SNode anchor) {
+  private void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave, @Nullable SNode anchor) {
     assert anchor == null || anchor.getParent() == contextParentNode; // perhaps, this check shall be up the stack?
     TracingUtil.fillOriginalNode(myTemplateContext.getInput(), outputNodeToWeave, false);
 

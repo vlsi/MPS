@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -37,18 +35,6 @@ public final class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   private final SReferenceLink myRole;
 
   /**
-   * @deprecated there's code generated with MPS 3.2 that instantiates this context
-   * @since 3.1
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role) {
-    super(context, macroNode);
-    myOutputNode = outputNode;
-    myRole = ((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role);
-  }
-
-  /**
    * @since 3.3
    */
   public ReferenceMacroContext(@NotNull TemplateContext context, @NotNull SNode outputNode, @NotNull SNodeReference macroNode, @NotNull SReferenceLink role) {
@@ -63,11 +49,6 @@ public final class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   @Override
   public SNode getOutputNode() {
     return myOutputNode;
-  }
-
-  @Override
-  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
-    return getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(inputNode, label);
   }
 
   /**

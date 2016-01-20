@@ -1458,46 +1458,6 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3clFb_" id="5FtnUVJQPBM" role="jymVt">
-        <property role="IEkAT" value="false" />
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
-        <property role="DiZV1" value="false" />
-        <node concept="3Tm1VV" id="5FtnUVJQPBN" role="1B3o_S" />
-        <node concept="3uibUv" id="5FtnUVJQPBO" role="3clF45">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-        <node concept="37vLTG" id="5FtnUVJQPBP" role="3clF46">
-          <property role="TrG5h" value="node" />
-          <node concept="3uibUv" id="5FtnUVJQPBQ" role="1tU5fm">
-            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="5FtnUVJQPBR" role="3clF46">
-          <property role="TrG5h" value="string" />
-          <node concept="3uibUv" id="5FtnUVJQPBS" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-          </node>
-        </node>
-        <node concept="37vLTG" id="5FtnUVJQPBT" role="3clF46">
-          <property role="TrG5h" value="context" />
-          <node concept="3uibUv" id="5FtnUVJQPBU" role="1tU5fm">
-            <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="5FtnUVJQPBV" role="3clF47">
-          <node concept="YS8fn" id="5FtnUVJQPFF" role="3cqZAp">
-            <node concept="2ShNRf" id="5FtnUVJQPFG" role="YScLw">
-              <node concept="1pGfFk" id="5FtnUVJQPFH" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="5FtnUVJQPBW" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
       <node concept="3clFb_" id="5FtnUVJQPBy" role="jymVt">
         <property role="IEkAT" value="false" />
         <property role="1EzhhJ" value="false" />

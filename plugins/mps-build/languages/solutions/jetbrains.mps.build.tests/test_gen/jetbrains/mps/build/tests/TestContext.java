@@ -114,10 +114,6 @@ public class TestContext extends Context {
       throw new UnsupportedOperationException();
     }
     @Override
-    public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode node, String string, IOperationContext context) {
-      throw new UnsupportedOperationException();
-    }
-    @Override
     public void registerMappingLabel(SNode node, String string, SNode node1) {
       throw new UnsupportedOperationException();
     }

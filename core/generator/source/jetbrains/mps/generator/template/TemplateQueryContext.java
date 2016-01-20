@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,18 +50,6 @@ public class TemplateQueryContext {
   public TemplateQueryContext(@NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
     myTemplateNode = templateNode;
     myContext = null;
-    myGenerator = generator;
-  }
-
-  /**
-   * @deprecated Use  alternative with SNodeReference, without explicit input node and ITemplateGenerator
-   * Kept in 3.3 as there might be generated code in MC.isApplicable methods that call it.
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
-    myTemplateNode = templateNode == null ? null : templateNode.getReference();
-    myContext = context == null ? null : context.subContext(inputNode);
     myGenerator = generator;
   }
 
@@ -148,16 +135,6 @@ public class TemplateQueryContext {
     // but this would expose knowledge that areMappingsAvailable is meaningful only in strict mode.
     // Since we do not restrict registration of mapping labels e.g. in TEEImpl, I decided not to keep a check here
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
-  }
-
-  /**
-   * @deprecated use {@link ReferenceMacroContext#getOutputNodeByInputNodeAndMappingLabel(SNode, String)} instead.
-   *             No need to expose this function in general TQC. Left for compatibility with existing generators in MPS 3.2.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
-    throw new UnsupportedOperationException("use this method only in reference macros");
   }
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
