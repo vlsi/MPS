@@ -2,7 +2,7 @@
 <model ref="r:54928e3f-958a-4bc2-abbc-5dd015b1b824(jetbrains.mps.build.sandbox.anttask)">
   <persistence version="9" />
   <languages>
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
   </languages>
   <imports />
   <registry>

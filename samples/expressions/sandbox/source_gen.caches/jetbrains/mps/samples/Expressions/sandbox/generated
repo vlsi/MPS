@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-494vyiolmus74wee3mjh2ekcouil2p1" />
+<dependencies version="2" modelHash="a8i443robmsc5ujqjy1x0yw06ye6xoq">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
+  <common hash="-6w4ugglxqdiyiln9xzh2tsxwzq50ygn" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2073504467208336329" name="Main" hash="-69pq1zajjjrs2evh25c47xmiu62sevw">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Main.java" />
+  </source>
+  <source id="3453667744252544858" name="Simple" hash="-a7rvahyl70d8qjfpcmwiy3v12m656er">
+    <file name="Simple.java" />
+  </source>
+  <source id="3453667744252546022" name="TypeError" hash="orz7vfijuwsao95ynu36us28opvg4g">
+    <file name="TypeError.java" />
+  </source>
+</dependencies>
 

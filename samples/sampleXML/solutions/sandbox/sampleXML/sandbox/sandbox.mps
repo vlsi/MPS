@@ -2,7 +2,7 @@
 <model ref="r:9275a8a2-e7f7-46e1-b987-f14e658b8954(sampleXML.sandbox.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="-1" />
+    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="0" />
   </languages>
   <imports />
   <registry>

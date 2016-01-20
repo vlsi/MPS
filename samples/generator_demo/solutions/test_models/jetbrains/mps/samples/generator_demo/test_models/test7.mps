@@ -2,8 +2,8 @@
 <model ref="r:28292228-dd23-49f9-b60b-1b769a5866b8(jetbrains.mps.samples.generator_demo.test_models.test7)">
   <persistence version="9" />
   <languages>
-    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="-1" />
-    <use id="b1ccc903-f5a9-42d1-add9-80ac0e69d662" name="jetbrains.mps.samples.generator_demo.demoLang7" version="-1" />
+    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="0" />
+    <use id="b1ccc903-f5a9-42d1-add9-80ac0e69d662" name="jetbrains.mps.samples.generator_demo.demoLang7" version="0" />
   </languages>
   <imports />
   <registry>

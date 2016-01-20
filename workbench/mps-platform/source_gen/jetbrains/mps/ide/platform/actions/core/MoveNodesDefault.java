@@ -34,11 +34,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import java.util.ArrayList;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -269,11 +269,16 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    List<Integer> selectedOptionIndices = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(options.value).select(new ISelector<RefactoringParticipant.Option, String>() {
-      public String select(RefactoringParticipant.Option it) {
-        return it.getDescription();
-      }
-    }).toListSequence(), "Select Participants");
+    List<Integer> selectedOptionIndices;
+    if (ListSequence.fromList(options.value).isNotEmpty()) {
+      selectedOptionIndices = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(options.value).select(new ISelector<RefactoringParticipant.Option, String>() {
+        public String select(RefactoringParticipant.Option it) {
+          return it.getDescription();
+        }
+      }).toListSequence(), "Refactoring Options");
+    } else {
+      selectedOptionIndices = ListSequence.fromList(new ArrayList<Integer>());
+    }
     if (selectedOptionIndices == null) {
       return;
     }

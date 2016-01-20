@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" version="-1" />
+    <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" version="0" />
   </languages>
   <imports />
   <registry>

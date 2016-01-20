@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -4833,7 +4833,7 @@
     </node>
     <node concept="1YaCAy" id="6qi8GzL_bQX" role="1YuTPh">
       <property role="TrG5h" value="acf" />
-      <ref role="1YaFvo" to="tpd4:6qi8GzL_1PZ" resolve="ApplicableConceptFunction" />
+      <ref role="1YaFvo" to="tpd4:6qi8GzL_1PZ" resolve="IsApplicableConceptFunction" />
     </node>
   </node>
 </model>

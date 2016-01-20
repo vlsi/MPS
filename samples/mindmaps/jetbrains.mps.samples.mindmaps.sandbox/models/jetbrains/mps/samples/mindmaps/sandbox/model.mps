@@ -2,7 +2,7 @@
 <model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)">
   <persistence version="9" />
   <languages>
-    <use id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" version="-1" />
+    <use id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" version="0" />
   </languages>
   <imports />
   <registry>

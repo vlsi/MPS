@@ -36,7 +36,7 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
 
   @Override
   public String getDescription() {
-    return "Correct used language versions";
+    return "Correct language versions in modules";
   }
 
   @Override
@@ -90,6 +90,9 @@ public class FixMigrationVersions_33_331 extends BaseProjectMigration implements
         return it.importedLanguageIds().contains(lang);
       }
     })) {
+      if (m.importedLanguageIds().contains(lang)) {
+        continue;
+      }
       int modelVer = m.getLanguageImportVersion(lang);
       if (modelVer != -1) {
         ver = Math.min(ver, modelVer);
