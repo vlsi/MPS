@@ -1692,6 +1692,21 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="TDmWw" id="6H6yZyy0chJ" role="TEbGg">
+                      <node concept="3clFbS" id="6H6yZyy0chK" role="TDEfX">
+                        <node concept="3cpWs6" id="6H6yZyy0g_7" role="3cqZAp">
+                          <node concept="37vLTw" id="6H6yZyy0g_h" role="3cqZAk">
+                            <ref role="3cqZAo" node="277Nzj6qTEH" resolve="EMPTY_ICON" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWsn" id="6H6yZyy0chL" role="TDEfY">
+                        <property role="TrG5h" value="e" />
+                        <node concept="3uibUv" id="6H6yZyy0g4G" role="1tU5fm">
+                          <ref role="3uigEE" to="wyt6:~ClassNotFoundException" resolve="ClassNotFoundException" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

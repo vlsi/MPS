@@ -204,6 +204,8 @@ public final class IconManager {
           }
         } catch (ModuleClassLoaderIsNullException e) {
           return EMPTY_ICON;
+        } catch (ClassNotFoundException e) {
+          return EMPTY_ICON;
         }
       }
     } catch (Exception e) {
