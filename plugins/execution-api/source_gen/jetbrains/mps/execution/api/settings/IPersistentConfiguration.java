@@ -6,7 +6,7 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 
 public interface IPersistentConfiguration extends JDOMExternalizable {
-  public void checkConfiguration() throws RuntimeConfigurationException;
-  public SettingsEditorEx<? extends IPersistentConfiguration> getEditor();
-  public IPersistentConfiguration createCloneTemplate();
+  void checkConfiguration() throws RuntimeConfigurationException;
+  SettingsEditorEx<? extends IPersistentConfiguration> getEditor();
+  IPersistentConfiguration createCloneTemplate();
 }

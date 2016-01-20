@@ -9,5 +9,5 @@ public interface IReferenceInfoResolver {
   /**
    * * Finds node by referenceInfo and optional targetModelReference.
    */
-  public SNode resolve(String referenceInfo, SModelReference targetModelReference);
+  SNode resolve(String referenceInfo, SModelReference targetModelReference);
 }

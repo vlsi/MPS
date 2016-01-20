@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IWorkflowParticipant_BehaviorDescriptor {
-  public SNode virtual_getTargetTask_6854204111265837872(SNode thisNode);
+  SNode virtual_getTargetTask_6854204111265837872(SNode thisNode);
 }

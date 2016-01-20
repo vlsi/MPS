@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ScopeConcept_BehaviorDescriptor {
-  public List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode);
+  List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode);
 }

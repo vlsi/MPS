@@ -7,5 +7,5 @@ import org.jdom.Document;
 import jetbrains.mps.smodel.SModelHeader;
 
 public interface IModelReader {
-  public DefaultSModel readModel(Document document, SModelHeader header);
+  DefaultSModel readModel(Document document, SModelHeader header);
 }

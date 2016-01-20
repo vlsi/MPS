@@ -4,7 +4,7 @@ package jetbrains.mps.testbench.util;
 
 
 public interface Output {
-  public boolean isNotEmpty();
-  public String getDescription();
-  public String getText();
+  boolean isNotEmpty();
+  String getDescription();
+  String getText();
 }

@@ -4,8 +4,8 @@ package jetbrains.mps.debug.api;
 
 
 public interface SessionChangeListener {
-  public void stateChanged(AbstractDebugSession session);
-  public void paused(AbstractDebugSession session);
-  public void resumed(AbstractDebugSession session);
-  public void muted(AbstractDebugSession session);
+  void stateChanged(AbstractDebugSession session);
+  void paused(AbstractDebugSession session);
+  void resumed(AbstractDebugSession session);
+  void muted(AbstractDebugSession session);
 }

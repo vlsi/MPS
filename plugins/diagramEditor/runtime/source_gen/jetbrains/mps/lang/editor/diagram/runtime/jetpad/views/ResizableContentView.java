@@ -7,5 +7,5 @@ import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.ViewPropertyKind;
 
 public interface ResizableContentView extends MovableContentView {
-  public static final ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize", ViewPropertyKind.RELAYOUT);
+  ViewPropertySpec<Vector> PREFERRED_SIZE = new ViewPropertySpec("preferredSize", ViewPropertyKind.RELAYOUT);
 }

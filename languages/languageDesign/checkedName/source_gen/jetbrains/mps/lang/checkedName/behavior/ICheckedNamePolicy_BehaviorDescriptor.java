@@ -13,8 +13,8 @@ import jetbrains.mps.checkedName.PropertyReference;
  */
 @Deprecated
 public interface ICheckedNamePolicy_BehaviorDescriptor {
-  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode);
-  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode);
-  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode);
-  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode);
+  List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode);
+  SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode);
+  List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode);
+  PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode);
 }

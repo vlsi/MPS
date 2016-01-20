@@ -5,9 +5,9 @@ package jetbrains.mps.debug.api.breakpoints;
 import org.jetbrains.annotations.NonNls;
 
 public interface IBreakpointKind<B extends IBreakpoint> {
-  public boolean supportsDisable();
+  boolean supportsDisable();
   @NonNls
-  public String getName();
+  String getName();
   @NonNls
-  public String getPresentation();
+  String getPresentation();
 }

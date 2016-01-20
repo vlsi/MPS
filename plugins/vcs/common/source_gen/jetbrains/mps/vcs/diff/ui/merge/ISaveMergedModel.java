@@ -10,5 +10,5 @@ public interface ISaveMergedModel {
    * 
    * @return true - close dialog, false - continue merging
    */
-  public boolean save(MergeModelsPanel parent, SModel resultModel);
+  boolean save(MergeModelsPanel parent, SModel resultModel);
 }

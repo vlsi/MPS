@@ -5,6 +5,6 @@ package jetbrains.mps.make.resources;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public interface IPropertiesAccessor {
-  public IPropertiesPool forResource(IResource res);
-  public IPropertiesPool global();
+  IPropertiesPool forResource(IResource res);
+  IPropertiesPool global();
 }

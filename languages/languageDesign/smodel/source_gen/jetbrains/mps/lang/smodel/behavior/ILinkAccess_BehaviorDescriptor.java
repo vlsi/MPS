@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ILinkAccess_BehaviorDescriptor {
-  public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode);
-  public boolean virtual_isAggregation_4024382256428848854(SNode thisNode);
-  public SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode);
+  boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode);
+  boolean virtual_isAggregation_4024382256428848854(SNode thisNode);
+  SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode);
 }

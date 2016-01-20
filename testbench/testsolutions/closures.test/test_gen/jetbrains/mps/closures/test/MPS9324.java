@@ -13,7 +13,7 @@ public class MPS9324<T> {
     };
   }
   public static interface Predicate<TT> {
-    public void doIt(TT t);
+    void doIt(TT t);
   }
   public static class Parameter<TTT> {
     public Parameter() {

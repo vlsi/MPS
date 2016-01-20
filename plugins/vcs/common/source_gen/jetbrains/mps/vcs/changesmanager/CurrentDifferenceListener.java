@@ -7,8 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
 public interface CurrentDifferenceListener extends EventListener {
-  public void changeAdded(@NotNull ModelChange change);
-  public void changeRemoved(@NotNull ModelChange change);
-  public void changeUpdateStarted();
-  public void changeUpdateFinished();
+  void changeAdded(@NotNull ModelChange change);
+  void changeRemoved(@NotNull ModelChange change);
+  void changeUpdateStarted();
+  void changeUpdateFinished();
 }

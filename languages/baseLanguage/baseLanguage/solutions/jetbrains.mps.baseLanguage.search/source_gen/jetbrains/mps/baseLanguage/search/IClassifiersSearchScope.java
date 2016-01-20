@@ -9,23 +9,23 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 @Deprecated
 public interface IClassifiersSearchScope extends ISearchScope {
-  public static final int INTERFACE = 1;
-  public static final int CLASS = 2;
-  public static final int ANNOTATION = 4;
-  public static final int CLASSIFFIER = INTERFACE | CLASS | ANNOTATION;
-  public static final int CONSTRUCTOR = 8;
-  public static final int INSTANCE_METHOD = 16;
-  public static final int INSTANCE_FIELD = 32;
-  public static final int INSTANCE_MEMBER = INSTANCE_METHOD | INSTANCE_FIELD;
-  public static final int STATIC_METHOD = 64;
-  public static final int STATIC_FIELD = 128;
-  public static final int ENUM_CONSTANT = 256;
-  public static final int NON_FINAL = 512;
-  public static final int NON_FINAL_CLASS = NON_FINAL | CLASS;
-  public static final int STATIC_MEMBER = STATIC_METHOD | STATIC_FIELD | ENUM_CONSTANT;
-  public static final int ANY_MEMBER = INSTANCE_MEMBER | STATIC_MEMBER | CONSTRUCTOR;
-  public static final int ANYTHING = 65535;
+  int INTERFACE = 1;
+  int CLASS = 2;
+  int ANNOTATION = 4;
+  int CLASSIFFIER = INTERFACE | CLASS | ANNOTATION;
+  int CONSTRUCTOR = 8;
+  int INSTANCE_METHOD = 16;
+  int INSTANCE_FIELD = 32;
+  int INSTANCE_MEMBER = INSTANCE_METHOD | INSTANCE_FIELD;
+  int STATIC_METHOD = 64;
+  int STATIC_FIELD = 128;
+  int ENUM_CONSTANT = 256;
+  int NON_FINAL = 512;
+  int NON_FINAL_CLASS = NON_FINAL | CLASS;
+  int STATIC_MEMBER = STATIC_METHOD | STATIC_FIELD | ENUM_CONSTANT;
+  int ANY_MEMBER = INSTANCE_MEMBER | STATIC_MEMBER | CONSTRUCTOR;
+  int ANYTHING = 65535;
   @NotNull
-  public List<SNode> getClassifiers();
-  public List<SNode> getClassifierNodes();
+  List<SNode> getClassifiers();
+  List<SNode> getClassifierNodes();
 }

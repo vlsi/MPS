@@ -12,9 +12,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IMigrationUnit_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
-  public int virtual_fromVersion_5168866961621042645(SNode thisNode);
-  public boolean virtual_isVersionSet_5168866961621097742(SNode thisNode);
-  public Iterable<SNode> virtual_getExecuteAfter_2521103492728978905(SNode thisNode);
-  public Iterable<SNode> virtual_getRequiredData_8585153554445862713(SNode thisNode);
-  public SNode virtual_getProducedData_8585153554445933384(SNode thisNode);
+  int virtual_fromVersion_5168866961621042645(SNode thisNode);
+  boolean virtual_isVersionSet_5168866961621097742(SNode thisNode);
+  Iterable<SNode> virtual_getExecuteAfter_2521103492728978905(SNode thisNode);
+  Iterable<SNode> virtual_getRequiredData_8585153554445862713(SNode thisNode);
+  SNode virtual_getProducedData_8585153554445933384(SNode thisNode);
 }

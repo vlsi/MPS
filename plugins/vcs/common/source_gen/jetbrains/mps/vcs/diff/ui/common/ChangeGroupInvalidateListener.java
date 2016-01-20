@@ -4,5 +4,5 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 
 public interface ChangeGroupInvalidateListener {
-  public void changeGroupsInvalidated();
+  void changeGroupsInvalidated();
 }

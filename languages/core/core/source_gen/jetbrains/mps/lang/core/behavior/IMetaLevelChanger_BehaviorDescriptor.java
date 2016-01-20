@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IMetaLevelChanger_BehaviorDescriptor {
-  public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode);
+  int virtual_getMetaLevelChange_201537367881074474(SNode thisNode);
 }

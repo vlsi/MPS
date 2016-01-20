@@ -212,9 +212,9 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
   }
   public static interface IWatchListener {
-    public void watchAdded(IEvaluationContainer model);
-    public void watchUpdated(IEvaluationContainer model);
-    public void watchRemoved(IEvaluationContainer model);
+    void watchAdded(IEvaluationContainer model);
+    void watchUpdated(IEvaluationContainer model);
+    void watchRemoved(IEvaluationContainer model);
   }
   public static class WatchAdapter implements EvaluationProvider.IWatchListener {
     public WatchAdapter() {

@@ -110,7 +110,7 @@ public class TestOutputComponent implements TestView {
     }
   }
   private static interface IMessage {
-    public void print();
+    void print();
   }
   public abstract class CompositeMessage implements TestOutputComponent.IMessage {
     protected final List<TestOutputComponent.IMessage> myChildren = ListSequence.fromList(new ArrayList<TestOutputComponent.IMessage>());

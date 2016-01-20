@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IClassifierPart_BehaviorDescriptor {
-  public SNode virtual_getMainClassifier_1213877255428(SNode thisNode);
+  SNode virtual_getMainClassifier_1213877255428(SNode thisNode);
 }

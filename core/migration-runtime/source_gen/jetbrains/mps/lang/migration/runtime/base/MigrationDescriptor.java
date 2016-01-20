@@ -6,5 +6,5 @@ import org.jetbrains.annotations.Nullable;
 
 public interface MigrationDescriptor {
   @Nullable
-  public MigrationScript getScript(int fromVersion);
+  MigrationScript getScript(int fromVersion);
 }

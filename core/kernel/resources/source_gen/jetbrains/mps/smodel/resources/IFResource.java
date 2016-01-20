@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 @Deprecated
 public interface IFResource extends IResource {
-  public String packageName();
-  public Map<String, Object> contents();
-  public Map<SNodeReference, String> rootNodeNames();
-  public SModule module();
-  public SModel model();
+  String packageName();
+  Map<String, Object> contents();
+  Map<SNodeReference, String> rootNodeNames();
+  SModule module();
+  SModel model();
 }

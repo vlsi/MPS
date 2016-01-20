@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 public interface IExtractMethodRefactoringProcessor {
-  public SNode getContainerMethod();
-  public SNode createNewMethod();
-  public void addMethod(SNode method);
-  public SNode createMethodCall(SNode method, List<SNode> params);
-  public SNode getContainerReturnType();
+  SNode getContainerMethod();
+  SNode createNewMethod();
+  void addMethod(SNode method);
+  SNode createMethodCall(SNode method, List<SNode> params);
+  SNode getContainerReturnType();
 }

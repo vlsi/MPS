@@ -13,5 +13,5 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
  */
 @Deprecated
 public interface BuildExternalDependency_BehaviorDescriptor {
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder);
+  void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder);
 }

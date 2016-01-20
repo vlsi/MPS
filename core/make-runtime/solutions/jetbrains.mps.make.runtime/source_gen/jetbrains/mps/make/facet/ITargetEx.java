@@ -4,5 +4,5 @@ package jetbrains.mps.make.facet;
 
 
 public interface ITargetEx extends ITarget {
-  public boolean isOptional();
+  boolean isOptional();
 }

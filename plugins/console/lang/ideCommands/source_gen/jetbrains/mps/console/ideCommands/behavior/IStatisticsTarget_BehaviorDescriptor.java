@@ -13,5 +13,5 @@ import jetbrains.mps.console.tool.ConsoleContext;
  */
 @Deprecated
 public interface IStatisticsTarget_BehaviorDescriptor {
-  public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context);
+  Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context);
 }

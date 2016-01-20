@@ -9,5 +9,5 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 public interface TreeNodeFeatureExtractor {
   @Nullable
-  public Feature getFeature(@NotNull MPSTreeNode treeNode);
+  Feature getFeature(@NotNull MPSTreeNode treeNode);
 }

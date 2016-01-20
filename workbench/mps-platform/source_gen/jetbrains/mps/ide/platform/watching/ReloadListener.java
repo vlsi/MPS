@@ -4,6 +4,6 @@ package jetbrains.mps.ide.platform.watching;
 
 
 public interface ReloadListener {
-  public void reloadStarted();
-  public void reloadFinished();
+  void reloadStarted();
+  void reloadFinished();
 }

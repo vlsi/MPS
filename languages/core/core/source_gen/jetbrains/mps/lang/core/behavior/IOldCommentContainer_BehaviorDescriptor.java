@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IOldCommentContainer_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getCommentedNodes_4123120730935488490(SNode thisNode);
+  Iterable<SNode> virtual_getCommentedNodes_4123120730935488490(SNode thisNode);
 }

@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IAspectConcept_BehaviorDescriptor {
-  public String virtual_getGeneratedClassName_8921494878338859238(SNode thisNode);
+  String virtual_getGeneratedClassName_8921494878338859238(SNode thisNode);
 }

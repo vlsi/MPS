@@ -9,9 +9,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public interface IEvaluationProvider {
-  public void showEvaluationDialog(Project mpsProject);
-  public void showEvaluationDialog(Project mpsProject, List<SNodeReference> selectedNodes);
+  void showEvaluationDialog(Project mpsProject);
+  void showEvaluationDialog(Project mpsProject, List<SNodeReference> selectedNodes);
   @Nullable
-  public JComponent createWatchesPanel();
-  public boolean canEvaluate();
+  JComponent createWatchesPanel();
+  boolean canEvaluate();
 }

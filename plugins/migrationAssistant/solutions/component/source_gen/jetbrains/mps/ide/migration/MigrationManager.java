@@ -8,27 +8,27 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 
 public interface MigrationManager {
-  public boolean isMigrationRequired();
+  boolean isMigrationRequired();
 
-  public MigrationComponent getMigrationComponent();
+  MigrationComponent getMigrationComponent();
 
-  public Iterable<ProjectMigration> getProjectMigrationsToApply();
+  Iterable<ProjectMigration> getProjectMigrationsToApply();
 
-  public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules);
+  List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules);
 
-  public List<ScriptApplied.ScriptAppliedReference> getMissingMigrations();
+  List<ScriptApplied.ScriptAppliedReference> getMissingMigrations();
 
-  public int projectStepsCount(boolean isCleanup);
+  int projectStepsCount(boolean isCleanup);
 
-  public MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup);
+  MigrationManager.MigrationStep nextProjectStep(Map<String, Object> options, boolean cleanup);
 
-  public int moduleStepsCount();
+  int moduleStepsCount();
 
-  public MigrationManager.MigrationStep nextModuleStep();
+  MigrationManager.MigrationStep nextModuleStep();
 
-  public static interface MigrationStep {
-    public String getDescription();
-    public boolean execute();
-    public void forceExecutionNextTime();
+  static interface MigrationStep {
+    String getDescription();
+    boolean execute();
+    void forceExecutionNextTime();
   }
 }

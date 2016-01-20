@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface I3_BehaviorDescriptor {
-  public int virtual_foo_1203202913687794490(SNode thisNode);
-  public int virtual_foo_1203202913687794501(SNode thisNode);
+  int virtual_foo_1203202913687794490(SNode thisNode);
+  int virtual_foo_1203202913687794501(SNode thisNode);
 }

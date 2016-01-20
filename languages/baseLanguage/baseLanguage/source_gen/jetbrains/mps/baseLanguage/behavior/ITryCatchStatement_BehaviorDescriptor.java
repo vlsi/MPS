@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ITryCatchStatement_BehaviorDescriptor {
-List<SNode> virtual_getCatchClauses_3718132079121388582(SNode thisNode);
+  List<SNode> virtual_getCatchClauses_3718132079121388582(SNode thisNode);
 }

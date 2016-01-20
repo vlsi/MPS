@@ -7,7 +7,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 
 public interface DescriptorIOProvider {
-  public DescriptorIO<SolutionDescriptor> solutionDescriptorIO();
-  public DescriptorIO<LanguageDescriptor> languageDescriptorIO();
-  public DescriptorIO<DevkitDescriptor> devkitDescriptorIO();
+  DescriptorIO<SolutionDescriptor> solutionDescriptorIO();
+  DescriptorIO<LanguageDescriptor> languageDescriptorIO();
+  DescriptorIO<DevkitDescriptor> devkitDescriptorIO();
 }

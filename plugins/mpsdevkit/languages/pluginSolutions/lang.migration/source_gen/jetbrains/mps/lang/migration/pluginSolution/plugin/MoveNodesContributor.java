@@ -8,15 +8,15 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface MoveNodesContributor {
 
-  public static interface SpecialiazationPart {
-    public String getAffectedNodesCategory();
-    public void setFrom(SNode from);
-    public void setTo(SNode from);
-    public void execute(Iterable<SNode> nodes);
-    public Iterable<SNodeReference> getAffectedNodes(SearchScope searchScope);
+  static interface SpecialiazationPart {
+    String getAffectedNodesCategory();
+    void setFrom(SNode from);
+    void setTo(SNode from);
+    void execute(Iterable<SNode> nodes);
+    Iterable<SNodeReference> getAffectedNodes(SearchScope searchScope);
 
   }
 
-  public Iterable<MoveNodesContributor.SpecialiazationPart> getLocalSpecializations(SNode from);
-  public Iterable<SNode> getMigrationSpecializations(SNode from);
+  Iterable<MoveNodesContributor.SpecialiazationPart> getLocalSpecializations(SNode from);
+  Iterable<SNode> getMigrationSpecializations(SNode from);
 }

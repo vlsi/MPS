@@ -5,6 +5,6 @@ package jetbrains.mps.datatransfer;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface PastePostProcessor {
-  public SNode getApplicableConcept();
-  public void postProcesNode(SNode node);
+  SNode getApplicableConcept();
+  void postProcesNode(SNode node);
 }

@@ -9,21 +9,21 @@ import java.util.Set;
 import java.awt.event.MouseEvent;
 
 public interface IBlock {
-  public void paint(Graphics g);
-  public void relayout(Component component);
-  public SNodeReference getSourceNode();
-  public SNodeReference getRuleNodeReference();
-  public int getX();
-  public int getY();
-  public int getWidth();
-  public int getHeight();
-  public void setWidth(int width);
-  public void setHeight(int height);
-  public void setX(int x);
-  public void setY(int y);
-  public void addBlockListener(IBlockListener listener);
-  public void removeBlockListener(IBlockListener listener);
-  public void setSucc(Set<IBlock> succ);
-  public Set<IBlock> succ();
-  public boolean processMousePressed(MouseEvent mEvent);
+  void paint(Graphics g);
+  void relayout(Component component);
+  SNodeReference getSourceNode();
+  SNodeReference getRuleNodeReference();
+  int getX();
+  int getY();
+  int getWidth();
+  int getHeight();
+  void setWidth(int width);
+  void setHeight(int height);
+  void setX(int x);
+  void setY(int y);
+  void addBlockListener(IBlockListener listener);
+  void removeBlockListener(IBlockListener listener);
+  void setSucc(Set<IBlock> succ);
+  Set<IBlock> succ();
+  boolean processMousePressed(MouseEvent mEvent);
 }

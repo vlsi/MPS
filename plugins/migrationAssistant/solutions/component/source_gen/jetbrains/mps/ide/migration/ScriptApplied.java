@@ -5,13 +5,13 @@ package jetbrains.mps.ide.migration;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ScriptApplied {
-  public static interface ScriptAppliedReference {
-    public SModule getModule();
-    public ScriptApplied resolve(MigrationComponent migrationComponent, boolean silently);
-    public boolean isAlreadyDone();
-    public String getKindDescription(ScriptApplied resolved);
+  static interface ScriptAppliedReference {
+    SModule getModule();
+    ScriptApplied resolve(MigrationComponent migrationComponent, boolean silently);
+    boolean isAlreadyDone();
+    String getKindDescription(ScriptApplied resolved);
   }
-  public Iterable<ScriptApplied.ScriptAppliedReference> getDependencies();
-  public boolean execute(MigrationComponent migrationComponent);
-  public String getDescription();
+  Iterable<ScriptApplied.ScriptAppliedReference> getDependencies();
+  boolean execute(MigrationComponent migrationComponent);
+  String getDescription();
 }

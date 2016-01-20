@@ -7,10 +7,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IWatchable {
-  public String getName();
-  public WatchablesCategory getCategory();
-  public IValue getValue();
-  public Icon getPresentationIcon();
+  String getName();
+  WatchablesCategory getCategory();
+  IValue getValue();
+  Icon getPresentationIcon();
   @Nullable
-  public SNode getNode();
+  SNode getNode();
 }

@@ -8,12 +8,12 @@ import org.jetbrains.annotations.Nullable;
 
 public interface StructChangeSet extends ChangeSet {
   @NotNull
-  public SNodeId getOldNodeId();
+  SNodeId getOldNodeId();
   @NotNull
-  public SNodeId getNewNodeId();
+  SNodeId getNewNodeId();
 
   @Nullable
-  public SNodeId mapToNewId(SNodeId idOld);
+  SNodeId mapToNewId(SNodeId idOld);
   @Nullable
-  public SNodeId mapToOldId(SNodeId idNew);
+  SNodeId mapToOldId(SNodeId idNew);
 }

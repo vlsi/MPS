@@ -8,6 +8,6 @@ import jetbrains.mps.debug.api.IDebugger;
 
 public interface IDebuggerConfiguration {
   @Nullable
-  public IDebuggerSettings createDebuggerSettings();
-  public IDebugger getDebugger();
+  IDebuggerSettings createDebuggerSettings();
+  IDebugger getDebugger();
 }

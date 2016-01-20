@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ILinkAccessQualifierContainer_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode);
+  Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode);
 }

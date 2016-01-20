@@ -7,11 +7,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface ICollectionSequence<T> extends ISequence<T>, Collection<T> {
-  public T addElement(T t);
-  public T removeElement(T t);
-  public ICollectionSequence<T> addSequence(ISequence<? extends T> seq);
-  public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq);
-  public ICollectionSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
-  public ICollectionSequence<T> asUnmodifiable();
-  public ICollectionSequence<T> asSynchronized();
+  T addElement(T t);
+  T removeElement(T t);
+  ICollectionSequence<T> addSequence(ISequence<? extends T> seq);
+  ICollectionSequence<T> removeSequence(ISequence<? extends T> seq);
+  ICollectionSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
+  ICollectionSequence<T> asUnmodifiable();
+  ICollectionSequence<T> asSynchronized();
 }

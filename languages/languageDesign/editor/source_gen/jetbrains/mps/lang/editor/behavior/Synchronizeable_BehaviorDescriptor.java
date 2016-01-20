@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface Synchronizeable_BehaviorDescriptor {
-  public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode);
-  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode);
+  boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode);
+  boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode);
 }

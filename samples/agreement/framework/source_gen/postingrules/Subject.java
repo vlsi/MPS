@@ -4,8 +4,8 @@ package postingrules;
 
 
 public interface Subject {
-  public void addEntry(Entry arg, AccountType type);
-  public Subject getAdjuster();
-  public void reverseEntry(Entry arg);
-  public void process(AccountingEvent e);
+  void addEntry(Entry arg, AccountType type);
+  Subject getAdjuster();
+  void reverseEntry(Entry arg);
+  void process(AccountingEvent e);
 }

@@ -5,6 +5,6 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import java.util.Set;
 
 public interface IInstruction<T extends IInstruction<T>> {
-  public Set<T> succ();
-  public Set<T> pred();
+  Set<T> succ();
+  Set<T> pred();
 }

@@ -11,17 +11,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IMakeService {
-  public boolean openNewSession(MakeSession session);
-  public void closeSession(MakeSession session);
-  public boolean isSessionActive();
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources);
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script);
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller);
-  public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor);
-  public void addListener(IMakeNotificationListener listener);
-  public void removeListener(IMakeNotificationListener listener);
+  boolean openNewSession(MakeSession session);
+  void closeSession(MakeSession session);
+  boolean isSessionActive();
+  Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources);
+  Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script);
+  Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller);
+  Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor);
+  void addListener(IMakeNotificationListener listener);
+  void removeListener(IMakeNotificationListener listener);
 
-  public static class INSTANCE {
+  class INSTANCE {
     private static IMakeService Component;
     private INSTANCE() {
     }

@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface VariableOwner_BehaviorDescriptor {
-  public List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode);
+  List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode);
 }

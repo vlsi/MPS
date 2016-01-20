@@ -4,10 +4,10 @@ package jetbrains.mps.refactoring.framework;
 
 
 public interface IRefactoringTarget {
-  public IRefactoringTarget.TargetType getTarget();
-  public boolean allowMultipleTargets();
-  public boolean isApplicable(Object entity);
-  public static   enum TargetType {
+  IRefactoringTarget.TargetType getTarget();
+  boolean allowMultipleTargets();
+  boolean isApplicable(Object entity);
+  static   enum TargetType {
     NODE(),
     MODEL(),
     MODULE();

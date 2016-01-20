@@ -5,6 +5,6 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 
 public interface MovableContentView {
-  public static final ViewPropertySpec<Integer> POSITION_X = new ViewPropertySpec("position_x");
-  public static final ViewPropertySpec<Integer> POSITION_Y = new ViewPropertySpec("position_y");
+  ViewPropertySpec<Integer> POSITION_X = new ViewPropertySpec("position_x");
+  ViewPropertySpec<Integer> POSITION_Y = new ViewPropertySpec("position_y");
 }

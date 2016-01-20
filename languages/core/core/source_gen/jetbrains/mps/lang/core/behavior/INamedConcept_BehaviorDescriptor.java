@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface INamedConcept_BehaviorDescriptor {
-  public String virtual_getFqName_1213877404258(SNode thisNode);
+  String virtual_getFqName_1213877404258(SNode thisNode);
 }

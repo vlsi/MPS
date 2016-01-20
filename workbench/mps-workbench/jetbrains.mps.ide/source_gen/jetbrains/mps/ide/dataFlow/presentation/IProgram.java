@@ -5,7 +5,7 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import java.util.List;
 
 public interface IProgram<T extends IInstruction<T>> {
-  public IInstruction<T> getStart();
-  public IInstruction<T> getEnd();
-  public List<IInstruction<T>> getInstructions();
+  IInstruction<T> getStart();
+  IInstruction<T> getEnd();
+  List<IInstruction<T>> getInstructions();
 }

@@ -4,5 +4,5 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 
 public interface Synchronizer {
-  public void sync();
+  void sync();
 }

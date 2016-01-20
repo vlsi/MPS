@@ -12,6 +12,6 @@ import org.jetbrains.mps.openapi.model.SModel;
  */
 @Deprecated
 public interface NodeIdentity_BehaviorDescriptor {
-  public SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model);
-  public boolean virtual_match_1662555581307437492(SNode thisNode, SNode n);
+  SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model);
+  boolean virtual_match_1662555581307437492(SNode thisNode, SNode n);
 }

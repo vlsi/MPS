@@ -4,5 +4,5 @@ package jetbrains.mps.make.facet;
 
 
 public interface ITargetEx2 extends ITargetEx {
-  public int workEstimate();
+  int workEstimate();
 }

@@ -4,5 +4,5 @@ package jetbrains.mps.closures.test;
 
 
 public interface IFilter {
-  public boolean filter(String name);
+  boolean filter(String name);
 }

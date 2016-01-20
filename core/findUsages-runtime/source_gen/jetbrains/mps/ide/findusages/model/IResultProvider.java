@@ -7,6 +7,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface IResultProvider extends IExternalizeable {
-  public SearchResults getResults(SearchQuery query, ProgressMonitor monitor);
-  public long getEstimatedTime(SearchScope scope);
+  SearchResults getResults(SearchQuery query, ProgressMonitor monitor);
+  long getEstimatedTime(SearchScope scope);
 }

@@ -4,6 +4,6 @@ package jetbrains.mps.editor.runtime.style;
 
 
 public interface StyledTextPrinter {
-  public StyledTextPrinter setBold(boolean bold);
-  public StyledTextPrinter append(String text);
+  StyledTextPrinter setBold(boolean bold);
+  StyledTextPrinter append(String text);
 }

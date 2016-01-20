@@ -384,7 +384,7 @@ __switch__:
     return null;
   }
   public static interface ConflictChecker {
-    public boolean isChangeConflicted(ModelChange change);
+    boolean isChangeConflicted(ModelChange change);
   }
   protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
   private static ModelAccessor check_myu41h_a0a0a41(EditorCell_Property checkedDotOperand) {

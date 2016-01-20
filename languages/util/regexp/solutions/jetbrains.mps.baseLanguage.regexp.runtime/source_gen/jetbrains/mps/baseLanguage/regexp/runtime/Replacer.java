@@ -5,5 +5,5 @@ package jetbrains.mps.baseLanguage.regexp.runtime;
 import java.util.regex.Matcher;
 
 public interface Replacer {
-  public String replace(Matcher m);
+  String replace(Matcher m);
 }

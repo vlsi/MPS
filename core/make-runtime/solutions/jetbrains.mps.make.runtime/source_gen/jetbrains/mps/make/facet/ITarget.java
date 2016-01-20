@@ -8,20 +8,20 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.internal.make.runtime.util.DefaultHName;
 
 public interface ITarget {
-  public ITarget.Name getName();
-  public boolean requiresInput();
-  public boolean producesOutput();
-  public Iterable<Class<? extends IResource>> expectedInput();
-  public Iterable<Class<? extends IResource>> expectedOutput();
-  public Iterable<ITarget.Name> before();
-  public Iterable<ITarget.Name> notBefore();
-  public Iterable<ITarget.Name> after();
-  public Iterable<ITarget.Name> notAfter();
-  public IConfig createConfig();
-  public <T> T createParameters(Class<T> varCls);
-  public <T> T createParameters(Class<T> varCls, T copyFrom);
-  public IJob createJob();
-  public static class Name extends DefaultHName<IFacet.Name> {
+  ITarget.Name getName();
+  boolean requiresInput();
+  boolean producesOutput();
+  Iterable<Class<? extends IResource>> expectedInput();
+  Iterable<Class<? extends IResource>> expectedOutput();
+  Iterable<ITarget.Name> before();
+  Iterable<ITarget.Name> notBefore();
+  Iterable<ITarget.Name> after();
+  Iterable<ITarget.Name> notAfter();
+  IConfig createConfig();
+  <T> T createParameters(Class<T> varCls);
+  <T> T createParameters(Class<T> varCls, T copyFrom);
+  IJob createJob();
+  class Name extends DefaultHName<IFacet.Name> {
     public Name(String name) {
       super(name);
     }

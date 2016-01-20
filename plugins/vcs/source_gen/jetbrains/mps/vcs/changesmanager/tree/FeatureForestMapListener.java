@@ -6,5 +6,5 @@ import java.util.EventListener;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 
 public interface FeatureForestMapListener<V> extends EventListener {
-  public void featureStateChanged(Feature feature);
+  void featureStateChanged(Feature feature);
 }

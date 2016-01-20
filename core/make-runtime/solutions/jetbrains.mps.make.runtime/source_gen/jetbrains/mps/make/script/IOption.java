@@ -4,5 +4,5 @@ package jetbrains.mps.make.script;
 
 
 public interface IOption {
-  public String getText();
+  String getText();
 }

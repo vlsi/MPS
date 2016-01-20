@@ -6,8 +6,8 @@ import org.junit.runner.Request;
 import org.junit.internal.AssumptionViolatedException;
 
 public interface Filter {
-  public boolean accept(Request request) throws Filter.FilterException;
-  public static class FilterException extends AssumptionViolatedException {
+  boolean accept(Request request) throws Filter.FilterException;
+  class FilterException extends AssumptionViolatedException {
     public FilterException(String msg) {
       super(msg);
     }

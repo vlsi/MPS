@@ -62,10 +62,10 @@ public abstract class MigrationScriptBase implements MigrationScript {
   }
 
   private static interface SNodePlacePointer {
-    public boolean isNodeInPlace();
-    public void insertOrReplace(SNode newNode);
-    public void remove();
-    /*package*/ static class ChildPointer implements MigrationScriptBase.SNodePlacePointer {
+    boolean isNodeInPlace();
+    void insertOrReplace(SNode newNode);
+    void remove();
+    class ChildPointer implements MigrationScriptBase.SNodePlacePointer {
       private SNode node;
       private SNode parent;
       private SContainmentLink link;
@@ -92,7 +92,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
         }
       }
     }
-    /*package*/ static class RootPointer implements MigrationScriptBase.SNodePlacePointer {
+    class RootPointer implements MigrationScriptBase.SNodePlacePointer {
       private SNode node;
       private SModel model;
       /*package*/ RootPointer(SNode node) {

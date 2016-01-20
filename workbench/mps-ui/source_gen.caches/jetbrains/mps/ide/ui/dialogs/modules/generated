@@ -1,28 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-gkf1xaezra9xpg0xrnqzxhwk4245pr">
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-a40133rojlz3xogonc641sly7kdfrjw" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-91g0lpn8gfmr52ze063lp3pwkkfyn8u" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cjol5b8en1ar14600bn1ejtnvuamg8" />
-  <common hash="-83oae8lyuyut7fdtgp9yggltyqfl2li" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="3978024352671960228" name="NewSolutionSettings" hash="-4f0ijs6x75gbsze6s2qxxchfksj59nf">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="NewSolutionSettings.java" />
-  </source>
-  <source id="8412685000764658714" name="NewLanguageSettings" hash="coiib07sd72xqdfnotlp3xts9dbb5u8">
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="NewLanguageSettings.java" />
-  </source>
-  <source id="8412685000764838330" name="Util" hash="-5qetz6yjg09k4htbovm7uj0bk8b4hvw">
-    <file name="Util.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-gkf1xaezra9xpg0xrnqzxhwk4245pr" />
 

@@ -5,8 +5,8 @@ package jetbrains.mps.lang.migration.runtime.base;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface RefactoringLog {
-  public String getCaption();
-  public RefactoringLogReference getDescriptor();
-  public Iterable<RefactoringLogReference> getExecuteAfter();
-  public void execute(SModule module);
+  String getCaption();
+  RefactoringLogReference getDescriptor();
+  Iterable<RefactoringLogReference> getExecuteAfter();
+  void execute(SModule module);
 }

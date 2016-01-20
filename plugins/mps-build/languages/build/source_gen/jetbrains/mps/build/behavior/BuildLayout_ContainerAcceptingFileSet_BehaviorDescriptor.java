@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor {
-  public String virtual_getFileSetExtension_6408167411310575216(SNode thisNode);
-  public boolean virtual_hasPrefixAttribute_6408167411310575232(SNode thisNode);
-  public boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode);
+  String virtual_getFileSetExtension_6408167411310575216(SNode thisNode);
+  boolean virtual_hasPrefixAttribute_6408167411310575232(SNode thisNode);
+  boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode);
 }

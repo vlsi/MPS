@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IJob {
-  public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor);
-  public static class Stub implements IJob {
+  IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor);
+  class Stub implements IJob {
     public Stub() {
     }
     @Deprecated

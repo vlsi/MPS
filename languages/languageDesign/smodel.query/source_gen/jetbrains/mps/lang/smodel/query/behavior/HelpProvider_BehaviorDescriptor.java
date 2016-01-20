@@ -11,10 +11,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
  */
 @Deprecated
 public interface HelpProvider_BehaviorDescriptor {
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept);
-  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept);
-  public String virtual_getKind_7006261637493126084(SConcept thisConcept);
-  public String virtual_getGroup_6928665434441162387(SConcept thisConcept);
-  public String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept);
-  public String virtual_getDisplayString_6891027939994892943(SConcept thisConcept);
+  String virtual_getShortHelp_473081947982699339(SConcept thisConcept);
+  String virtual_getHelpPage_7006261637493125297(SConcept thisConcept);
+  String virtual_getKind_7006261637493126084(SConcept thisConcept);
+  String virtual_getGroup_6928665434441162387(SConcept thisConcept);
+  String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept);
+  String virtual_getDisplayString_6891027939994892943(SConcept thisConcept);
 }

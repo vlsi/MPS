@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 
 
 public interface ClosuresMappingId {
-  public static final String CLOSURE__ADAPTER_CLASS = "closure_adapterClass";
-  public static final String CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS = "contextOwner_closureContext_class";
-  public static final String CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT = "contextOwner_closureContext_variable";
-  public static final String VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD = "variable_closureContext_classField";
-  public static final String NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD = "_closureContext";
+  String CLOSURE__ADAPTER_CLASS = "closure_adapterClass";
+  String CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS = "contextOwner_closureContext_class";
+  String CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT = "contextOwner_closureContext_variable";
+  String VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD = "variable_closureContext_classField";
+  String NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD = "_closureContext";
 }

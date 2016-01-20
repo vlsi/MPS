@@ -4,6 +4,6 @@ package jetbrains.mps.debugger.java.runtime.engine.concurrent;
 
 
 public interface IManagerCommand {
-  public void invoke();
-  public void cancel();
+  void invoke();
+  void cancel();
 }

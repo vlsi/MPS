@@ -7,5 +7,5 @@ import jetbrains.mps.compiler.IClassesData;
 
 @Deprecated
 public interface ICResouce extends IResource {
-  public IClassesData classes();
+  IClassesData classes();
 }

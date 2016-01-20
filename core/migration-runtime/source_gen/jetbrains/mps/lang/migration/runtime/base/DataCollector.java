@@ -7,5 +7,5 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface DataCollector {
-  public Map<SModule, SNode> collectData(SModule myModule, MigrationScriptReference scriptReference);
+  Map<SModule, SNode> collectData(SModule myModule, MigrationScriptReference scriptReference);
 }

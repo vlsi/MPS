@@ -6,18 +6,18 @@ import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.internal.make.runtime.util.FqName;
 
 public interface IFacet {
-  public IFacet.Name getName();
-  public Iterable<IFacet.Name> extended();
-  public Iterable<IFacet.Name> required();
-  public Iterable<IFacet.Name> optional();
-  public Iterable<ITarget> targets();
-  public IPropertiesPersistence propertiesPersistence();
-  public static class Name extends FqName {
+  IFacet.Name getName();
+  Iterable<IFacet.Name> extended();
+  Iterable<IFacet.Name> required();
+  Iterable<IFacet.Name> optional();
+  Iterable<ITarget> targets();
+  IPropertiesPersistence propertiesPersistence();
+  class Name extends FqName {
     public Name(String fqn) {
       super(fqn);
     }
   }
-  public static class Stub implements IFacet {
+  class Stub implements IFacet {
     public Stub() {
     }
     @Override

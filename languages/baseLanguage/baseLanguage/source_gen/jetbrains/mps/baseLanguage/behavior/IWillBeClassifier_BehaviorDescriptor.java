@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SModel;
  */
 @Deprecated
 public interface IWillBeClassifier_BehaviorDescriptor {
-String virtual_classifierName_4609636120081351397(SNode thisNode);
-SNode virtual_baseClassifier_4125795553993767872(SNode thisNode);
-SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel);
+  String virtual_classifierName_4609636120081351397(SNode thisNode);
+  SNode virtual_baseClassifier_4125795553993767872(SNode thisNode);
+  SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel);
 }

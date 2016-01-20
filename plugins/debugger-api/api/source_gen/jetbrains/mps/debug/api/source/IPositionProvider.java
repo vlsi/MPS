@@ -9,8 +9,8 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public interface IPositionProvider<P extends SourcePosition> {
   @Nullable
-  public P getPosition(@Nullable ILocation location);
+  P getPosition(@Nullable ILocation location);
   @Nullable
-  public P getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber);
-  public boolean accepts(AbstractDebugSession session);
+  P getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber);
+  boolean accepts(AbstractDebugSession session);
 }

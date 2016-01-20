@@ -14,6 +14,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public interface ModuleIdentity_BehaviorDescriptor {
   @Nullable
-  public SModuleReference virtual_getModuleReference_427659576753753658(SNode thisNode);
-  public void virtual_setModuleReference_427659576753753683(SNode thisNode, @Nullable SModuleReference moduleRef);
+  SModuleReference virtual_getModuleReference_427659576753753658(SNode thisNode);
+  void virtual_setModuleReference_427659576753753683(SNode thisNode, @Nullable SModuleReference moduleRef);
 }

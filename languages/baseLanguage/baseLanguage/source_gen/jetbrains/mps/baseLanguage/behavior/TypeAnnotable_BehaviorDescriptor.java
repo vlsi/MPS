@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface TypeAnnotable_BehaviorDescriptor {
-SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode);
+  SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode);
 }

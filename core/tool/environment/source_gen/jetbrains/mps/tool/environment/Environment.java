@@ -31,7 +31,7 @@ public interface Environment extends Retainable {
    * @return newly created Project.
    */
   @NotNull
-  public Project createEmptyProject();
+  Project createEmptyProject();
 
   /**
    * Creates a project and opens it according to the given strategy
@@ -39,26 +39,26 @@ public interface Environment extends Retainable {
    * @return newly created Project constructed as the strategy suggests. It is already opened.
    */
   @NotNull
-  public Project createProject(@NotNull ProjectStrategy strategy);
+  Project createProject(@NotNull ProjectStrategy strategy);
 
   @NotNull
-  public Project openProject(@NotNull File projectFile);
+  Project openProject(@NotNull File projectFile);
 
-  public void init();
+  void init();
 
   /**
    * disposes the environment for real, does not consider ref counts
    */
-  public void dispose();
+  void dispose();
 
   /**
    * flushes all #invokeAndLater calls and all ModelAccess event queue if needed
    */
-  public void flushAllEvents();
+  void flushAllEvents();
 
   /**
    * 
    * @return MPS (its platform aspect) of this tooling environment, not null when initialized.
    */
-  public Platform getPlatform();
+  Platform getPlatform();
 }

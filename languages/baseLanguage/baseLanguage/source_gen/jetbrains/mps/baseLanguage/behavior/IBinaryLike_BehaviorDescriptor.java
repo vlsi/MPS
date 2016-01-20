@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IBinaryLike_BehaviorDescriptor {
-boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen);
-void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr);
-void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr);
-SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode);
-SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode);
+  boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen);
+  void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr);
+  void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr);
+  SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode);
+  SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode);
 }

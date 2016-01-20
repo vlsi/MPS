@@ -5,6 +5,6 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi;
 import javax.swing.Icon;
 
 public interface PaletteElement {
-  public Icon getIcon();
-  public String getText();
+  Icon getIcon();
+  String getText();
 }

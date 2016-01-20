@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ContextVariableProvider_BehaviorDescriptor {
-  public List<SNode> virtual_contextVariables_7430509679011531975(SNode thisNode);
+  List<SNode> virtual_contextVariables_7430509679011531975(SNode thisNode);
 }

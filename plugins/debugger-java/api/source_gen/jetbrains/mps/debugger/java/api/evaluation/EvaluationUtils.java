@@ -152,7 +152,7 @@ public abstract class EvaluationUtils {
    * @param T result
    */
   public static interface Invocatable<T> {
-    public T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
+    T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
   /**
    * Something that can throw EvaluationException
@@ -160,7 +160,7 @@ public abstract class EvaluationUtils {
    * @param T result
    */
   public static interface EvaluationInvocatable<T> {
-    public T invoke() throws EvaluationException;
+    T invoke() throws EvaluationException;
   }
   /**
    * Some action which also has information about thread reference where it happenes.

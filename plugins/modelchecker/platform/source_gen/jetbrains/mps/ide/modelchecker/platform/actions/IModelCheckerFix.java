@@ -4,5 +4,5 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 
 public interface IModelCheckerFix {
-  public boolean doFix();
+  boolean doFix();
 }

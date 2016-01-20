@@ -5,5 +5,5 @@ package jetbrains.mps.ide.java.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface MoveRefactoringRunnable {
-  public void run(SNode whereToMove);
+  void run(SNode whereToMove);
 }

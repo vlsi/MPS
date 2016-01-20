@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:25f06c07-78a7-4e25-ad31-0aab371a7372(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)">
+<model ref="r:5066aa04-1517-4c23-af17-5c14e341e602(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)">
   <persistence version="9" />
   <languages />
   <imports>
@@ -28,54 +28,54 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="3IvUXkfrUe3">
+  <node concept="2$UQVi" id="1$EDuB6K859">
     <ref role="2$VUEs" to="xdt3:58Wq7fcwZdn" resolve="PropertyToSetter" />
-    <node concept="2$$0lk" id="3IvUXkfrUe4" role="2$$55j">
+    <node concept="2$$0lk" id="1$EDuB6K85a" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel1" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUe5" role="2$VCQS">
+    <node concept="2$VJBW" id="1$EDuB6K85b" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty" />
       <property role="2$VJBR" value="5176577547833280835" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUe6" role="2$VCQQ">
+    <node concept="2$VJBW" id="1$EDuB6K85c" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-      <property role="2$VJBR" value="4296411869854278524" />
+      <property role="2$VJBR" value="1813444223450513730" />
     </node>
-    <node concept="3y4gSD" id="3IvUXkfrUe2" role="2$VCQN">
+    <node concept="3y4gSD" id="1$EDuB6K858" role="2$VCQN">
       <property role="3y4gSE" value="set_prop1" />
     </node>
   </node>
-  <node concept="2$UQVi" id="3IvUXkfrUel">
+  <node concept="2$UQVi" id="1$EDuB6K85r">
     <ref role="2$VUEs" to="xdt3:58Wq7fcwZdn" resolve="PropertyToSetter" />
-    <node concept="2$$0lk" id="3IvUXkfrUem" role="2$$55j">
+    <node concept="2$$0lk" id="1$EDuB6K85s" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel1" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUen" role="2$VCQS">
+    <node concept="2$VJBW" id="1$EDuB6K85t" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty" />
       <property role="2$VJBR" value="5176577547833280841" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUeo" role="2$VCQQ">
+    <node concept="2$VJBW" id="1$EDuB6K85u" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-      <property role="2$VJBR" value="4296411869854278542" />
+      <property role="2$VJBR" value="1813444223450513748" />
     </node>
-    <node concept="3y4gSD" id="3IvUXkfrUek" role="2$VCQN">
+    <node concept="3y4gSD" id="1$EDuB6K85q" role="2$VCQN">
       <property role="3y4gSE" value="set_prop2" />
     </node>
   </node>
-  <node concept="2$UQVi" id="3IvUXkfrUeu">
+  <node concept="2$UQVi" id="1$EDuB6K85$">
     <ref role="2$VUEs" to="xdt3:58Wq7fcwxhG" resolve="BeanToClass" />
-    <node concept="2$$0lk" id="3IvUXkfrUev" role="2$$55j">
+    <node concept="2$$0lk" id="1$EDuB6K85_" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel1" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUew" role="2$VCQS">
+    <node concept="2$VJBW" id="1$EDuB6K85A" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
       <property role="2$VJBR" value="5176577547833280834" />
     </node>
-    <node concept="2$VJBW" id="3IvUXkfrUex" role="2$VCQQ">
+    <node concept="2$VJBW" id="1$EDuB6K85B" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="4296411869854278519" />
+      <property role="2$VJBR" value="1813444223450513725" />
     </node>
-    <node concept="3y4gSD" id="3IvUXkfrUet" role="2$VCQN">
+    <node concept="3y4gSD" id="1$EDuB6K85z" role="2$VCQN">
       <property role="3y4gSE" value="Bean1Impl" />
     </node>
   </node>

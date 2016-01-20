@@ -10,7 +10,7 @@ public interface MigrationErrorContainer {
    * @return null means success
    */
   @Nullable
-  public MigrationErrorDescriptor getErrorDescriptor();
+  MigrationErrorDescriptor getErrorDescriptor();
 
-  public void setErrorDescriptor(MigrationErrorDescriptor errors);
+  void setErrorDescriptor(MigrationErrorDescriptor errors);
 }

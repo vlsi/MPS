@@ -4,7 +4,7 @@ package jetbrains.mps.internalCollections.test.closures;
 
 
 public interface IBar {
-  public static class Bar implements IBar {
+  class Bar implements IBar {
     public Bar() {
     }
   }

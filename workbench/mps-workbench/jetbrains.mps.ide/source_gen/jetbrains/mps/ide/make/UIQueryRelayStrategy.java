@@ -37,6 +37,6 @@ public class UIQueryRelayStrategy {
     return ListSequence.fromList(optList).getElement(res.value);
   }
   public static interface DialogListener {
-    public void beforeDialogShown();
+    void beforeDialogShown();
   }
 }

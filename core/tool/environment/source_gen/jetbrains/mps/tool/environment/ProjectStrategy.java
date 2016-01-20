@@ -7,6 +7,6 @@ import jetbrains.mps.project.Project;
 
 public interface ProjectStrategy {
   @NotNull
-  public Project create(@NotNull Environment env);
-  public boolean isApplicable();
+  Project create(@NotNull Environment env);
+  boolean isApplicable();
 }

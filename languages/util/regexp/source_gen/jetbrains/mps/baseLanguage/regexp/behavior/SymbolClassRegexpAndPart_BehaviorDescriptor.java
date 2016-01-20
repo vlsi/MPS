@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface SymbolClassRegexpAndPart_BehaviorDescriptor {
-  public String virtual_getRepresentation_8173814113624650482(SNode thisNode);
+  String virtual_getRepresentation_8173814113624650482(SNode thisNode);
 }

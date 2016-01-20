@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IRuleWithTwoNodes_BehaviorDescriptor {
-  public SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode);
+  SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode);
 }

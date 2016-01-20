@@ -8,13 +8,13 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface IRefactoring {
-  public String getUserFriendlyName();
-  public Class getOverridenRefactoringClass();
-  public IRefactoringTarget getRefactoringTarget();
-  public boolean init(RefactoringContext refactoringContext);
-  public void refactor(RefactoringContext refactoringContext);
-  public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext);
-  public void doWhenDone(RefactoringContext refactoringContext);
+  String getUserFriendlyName();
+  Class getOverridenRefactoringClass();
+  IRefactoringTarget getRefactoringTarget();
+  boolean init(RefactoringContext refactoringContext);
+  void refactor(RefactoringContext refactoringContext);
+  List<SModel> getModelsToGenerate(RefactoringContext refactoringContext);
+  void doWhenDone(RefactoringContext refactoringContext);
   @Nullable
-  public SearchResults getAffectedNodes(RefactoringContext refactoringContext);
+  SearchResults getAffectedNodes(RefactoringContext refactoringContext);
 }

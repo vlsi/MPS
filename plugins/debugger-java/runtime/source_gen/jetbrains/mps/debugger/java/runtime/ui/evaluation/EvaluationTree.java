@@ -162,7 +162,7 @@ import jetbrains.mps.ide.messages.Icons;
     public abstract void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model);
   }
   public static interface EvaluationModelNode {
-    public IEvaluationContainer getModel();
+    IEvaluationContainer getModel();
   }
   private static class InitializedState extends EvaluationTree.EvaluationState {
     public InitializedState() {

@@ -4,5 +4,5 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 
 public interface IPersistenceWithReader {
-  public IModelReader getModelReader();
+  IModelReader getModelReader();
 }

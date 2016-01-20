@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface AutoInitDSLClass_BehaviorDescriptor {
-  public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode);
+  SNode virtual_getDescriptor_1055884086724995485(SNode thisNode);
 }

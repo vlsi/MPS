@@ -15,9 +15,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public interface IAttributeDescriptor {
-  public boolean match(@NotNull SNode attribute);
-  public void update(@NotNull SNode attribute);
-  public static class AttributeDescriptor implements IAttributeDescriptor {
+  boolean match(@NotNull SNode attribute);
+  void update(@NotNull SNode attribute);
+  class AttributeDescriptor implements IAttributeDescriptor {
     protected SAbstractConcept myAttributeConcept;
     @Deprecated
     @ToRemove(version = 3.2)
@@ -35,12 +35,12 @@ public interface IAttributeDescriptor {
     public void update(@NotNull SNode attribute) {
     }
   }
-  public static class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
+  class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
     public AllAttributes() {
       super((SAbstractConcept) null);
     }
   }
-  public static class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
+  class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
     @Deprecated
     @ToRemove(version = 3.2)
     public NodeAttribute(@NotNull String attributeConceptName) {
@@ -50,7 +50,7 @@ public interface IAttributeDescriptor {
       super(attributeDeclaration);
     }
   }
-  public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
+  class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SReferenceLink myLink;
     @Deprecated
     @ToRemove(version = 3.2)
@@ -84,7 +84,7 @@ public interface IAttributeDescriptor {
       AttributeOperations.setLink(attribute, myLink);
     }
   }
-  public static class ChildAttribute extends IAttributeDescriptor.AttributeDescriptor {
+  class ChildAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SContainmentLink myLink;
     public ChildAttribute(@NotNull SConcept attributeDeclaration, SContainmentLink link) {
       super(attributeDeclaration);
@@ -103,7 +103,7 @@ public interface IAttributeDescriptor {
       AttributeOperations.setChildLink(attribute, myLink);
     }
   }
-  public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
+  class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SProperty myProperty;
     @Deprecated
     @ToRemove(version = 3.2)

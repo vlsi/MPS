@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.views;
 import jetbrains.jetpad.geometry.Vector;
 
 public interface DragHandler {
-  public void dragStarted(Vector position);
-  public void updatePosition(Vector position);
-  public void dragStopped(Vector position);
+  void dragStarted(Vector position);
+  void updatePosition(Vector position);
+  void dragStopped(Vector position);
 }

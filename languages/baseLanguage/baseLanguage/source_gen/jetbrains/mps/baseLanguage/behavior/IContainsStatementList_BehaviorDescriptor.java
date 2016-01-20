@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IContainsStatementList_BehaviorDescriptor {
-boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode);
-boolean virtual_isStatementListCompact_1237546693016(SNode thisNode);
+  boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode);
+  boolean virtual_isStatementListCompact_1237546693016(SNode thisNode);
 }

@@ -6,6 +6,6 @@ import org.jetbrains.annotations.NotNull;
 
 public interface IDebuggerSettings {
   @NotNull
-  public String getCommandLine(boolean application);
-  public boolean isEmpty();
+  String getCommandLine(boolean application);
+  boolean isEmpty();
 }

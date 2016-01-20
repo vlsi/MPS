@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface FigureParameter_BehaviorDescriptor {
-  public SNode virtual_getParameterType_342110547581236128(SNode thisNode);
+  SNode virtual_getParameterType_342110547581236128(SNode thisNode);
 }

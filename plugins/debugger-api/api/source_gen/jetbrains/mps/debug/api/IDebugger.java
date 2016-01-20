@@ -13,11 +13,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> {
   @NotNull
-  public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project);
+  AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project);
   @NotNull
-  public String getName();
+  String getName();
   @NotNull
-  public IBreakpointsProvider<B, K> getBreakpointsProvider();
+  IBreakpointsProvider<B, K> getBreakpointsProvider();
   @Nullable
-  public ILocationBreakpoint createBreakpoint(SNode node, String kind, Project project);
+  ILocationBreakpoint createBreakpoint(SNode node, String kind, Project project);
 }

@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface UnitConcept_BehaviorDescriptor {
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode);
+  String virtual_getUnitName_5067982036267369911(SNode thisNode);
 }

@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IQueryFunction_Color_BehaviorDescriptor {
-  public boolean virtual_isFunction_1225463329531(SNode thisNode);
-  public String virtual_getRGBValue_1225468086082(SNode thisNode);
+  boolean virtual_isFunction_1225463329531(SNode thisNode);
+  String virtual_getRGBValue_1225468086082(SNode thisNode);
 }

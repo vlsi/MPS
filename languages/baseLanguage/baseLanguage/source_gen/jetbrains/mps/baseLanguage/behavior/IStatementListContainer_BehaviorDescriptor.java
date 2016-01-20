@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IStatementListContainer_BehaviorDescriptor {
-boolean virtual_isClosure_3262277503800835439(SNode thisNode);
-boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode);
+  boolean virtual_isClosure_3262277503800835439(SNode thisNode);
+  boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode);
 }

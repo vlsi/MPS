@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 
 public interface TestStateListener {
-  public void onTestStart(TestEvent event);
-  public void onTestFinish(TestEvent event);
-  public void onTestFailure(TestEvent event);
-  public void onTestAssumptionFailure(TestEvent event);
-  public void onLooseTest(String className, String methodName);
+  void onTestStart(TestEvent event);
+  void onTestFinish(TestEvent event);
+  void onTestFailure(TestEvent event);
+  void onTestAssumptionFailure(TestEvent event);
+  void onLooseTest(String className, String methodName);
 }

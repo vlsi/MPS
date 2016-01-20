@@ -6,9 +6,9 @@ import java.util.List;
 import javax.swing.Icon;
 
 public interface IThread {
-  public List<IStackFrame> getFrames();
-  public int getFramesCount();
-  public String getName();
-  public String getPresentation();
-  public Icon getPresentationIcon();
+  List<IStackFrame> getFrames();
+  int getFramesCount();
+  String getName();
+  String getPresentation();
+  Icon getPresentationIcon();
 }

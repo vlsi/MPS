@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 
 public interface TestExecutor {
-  public void init();
-  public void execute();
-  public void dispose();
+  void init();
+  void execute();
+  void dispose();
 }

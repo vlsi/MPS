@@ -4,5 +4,5 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 
 public interface IGraphCreator<T extends IInstruction<T>> {
-  public IBlock createBlock(T instruction, int x, int y, int width, int height);
+  IBlock createBlock(T instruction, int x, int y, int width, int height);
 }

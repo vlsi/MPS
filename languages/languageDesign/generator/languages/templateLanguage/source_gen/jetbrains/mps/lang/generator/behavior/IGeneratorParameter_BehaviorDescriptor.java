@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IGeneratorParameter_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
-  public String virtual_getUniqueId_650531548511609559(SNode thisNode);
+  String virtual_getUniqueId_650531548511609559(SNode thisNode);
 }

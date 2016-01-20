@@ -5,7 +5,7 @@ package jetbrains.mps.build.util;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface RequiredDependenciesBuilder {
-  public void add(SNode node);
-  public void add(SNode node, Object artifactId);
-  public void addWithContent(SNode node);
+  void add(SNode node);
+  void add(SNode node, Object artifactId);
+  void addWithContent(SNode node);
 }

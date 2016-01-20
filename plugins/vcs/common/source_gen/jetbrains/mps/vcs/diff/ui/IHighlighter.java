@@ -4,5 +4,5 @@ package jetbrains.mps.vcs.diff.ui;
 
 
 public interface IHighlighter {
-  public void rehighlight();
+  void rehighlight();
 }

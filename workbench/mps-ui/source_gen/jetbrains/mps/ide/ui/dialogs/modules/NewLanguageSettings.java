@@ -160,6 +160,6 @@ public class NewLanguageSettings extends JPanel {
   }
 
   public static interface LangSettingsChangedListener {
-    public void changed();
+    void changed();
   }
 }

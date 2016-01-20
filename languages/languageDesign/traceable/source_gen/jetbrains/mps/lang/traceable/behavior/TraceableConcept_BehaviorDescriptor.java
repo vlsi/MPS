@@ -13,5 +13,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public interface TraceableConcept_BehaviorDescriptor {
   @Nullable
-  public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode);
+  String virtual_getTraceableProperty_5067982036267369901(SNode thisNode);
 }

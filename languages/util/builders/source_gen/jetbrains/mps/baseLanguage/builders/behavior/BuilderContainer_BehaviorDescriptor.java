@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface BuilderContainer_BehaviorDescriptor {
-  public boolean virtual_isLeaf_932644095877881871(SNode thisNode);
+  boolean virtual_isLeaf_932644095877881871(SNode thisNode);
 }

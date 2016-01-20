@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public interface ParametersInformation<T> {
-  public Iterable<T> getMethods(SNode node, EditorContext editorContext);
-  public void getStyledMethodPresentation(SNode node, EditorContext editorContext, T method, StyledTextPrinter printer);
-  public boolean isMethodCurrent(SNode node, EditorContext editorContext, T method);
+  Iterable<T> getMethods(SNode node, EditorContext editorContext);
+  void getStyledMethodPresentation(SNode node, EditorContext editorContext, T method, StyledTextPrinter printer);
+  boolean isMethodCurrent(SNode node, EditorContext editorContext, T method);
 }

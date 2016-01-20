@@ -8,10 +8,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface ConsoleStream {
-  public void addText(String text);
-  public void addNode(SNode node);
-  public void addNodeRef(SNode node);
-  public void addException(Throwable t);
-  public void addClosure(_FunctionTypes._void_P0_E0 closure, String text);
-  public void addSequence(Project project, _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription);
+  void addText(String text);
+  void addNode(SNode node);
+  void addNodeRef(SNode node);
+  void addException(Throwable t);
+  void addClosure(_FunctionTypes._void_P0_E0 closure, String text);
+  void addSequence(Project project, _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription);
 }

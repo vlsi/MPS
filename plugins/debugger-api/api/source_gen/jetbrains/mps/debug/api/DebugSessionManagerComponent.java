@@ -134,9 +134,9 @@ public class DebugSessionManagerComponent implements ProjectComponent {
     return project.getComponent(DebugSessionManagerComponent.class);
   }
   public static interface DebugSessionListener {
-    public void registered(AbstractDebugSession session);
-    public void currentSessionChanged(AbstractDebugSession session);
-    public void detached(AbstractDebugSession session);
+    void registered(AbstractDebugSession session);
+    void currentSessionChanged(AbstractDebugSession session);
+    void detached(AbstractDebugSession session);
   }
   public static abstract class DebugSessionAdapter implements DebugSessionManagerComponent.DebugSessionListener {
     public DebugSessionAdapter() {

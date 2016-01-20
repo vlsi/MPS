@@ -5,11 +5,11 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.messages.IMessage;
 
 public interface IFeedback {
-  public IFeedback.Severity getSeverity();
-  public String getMessage();
-  public Object getSource();
-  public Throwable getException();
-  public static   enum Severity {
+  IFeedback.Severity getSeverity();
+  String getMessage();
+  Object getSource();
+  Throwable getException();
+  static   enum Severity {
     ERROR("error"),
     WARNING("warning"),
     INFO("info");
@@ -23,7 +23,7 @@ public interface IFeedback {
       return severity.toUpperCase();
     }
   }
-  public static abstract class Stub implements IFeedback {
+  abstract class Stub implements IFeedback {
     public Stub() {
     }
     @Override
@@ -35,7 +35,7 @@ public interface IFeedback {
       return null;
     }
   }
-  public static class MESSAGE implements IFeedback {
+  class MESSAGE implements IFeedback {
     private IMessage msg;
     public MESSAGE(IMessage message) {
       this.msg = message;
@@ -66,7 +66,7 @@ public interface IFeedback {
       return msg.getException();
     }
   }
-  public static class Default extends IFeedback.Stub implements IFeedback {
+  class Default extends IFeedback.Stub implements IFeedback {
     private final String message;
     private final Throwable throwable;
     private final IFeedback.Severity severity;
@@ -99,7 +99,7 @@ public interface IFeedback {
       return throwable;
     }
   }
-  public static class ERROR extends IFeedback.Default implements IFeedback {
+  class ERROR extends IFeedback.Default implements IFeedback {
     public ERROR(String message) {
       super(message, null, IFeedback.Severity.ERROR);
     }
@@ -107,7 +107,7 @@ public interface IFeedback {
       super(message, throwable, IFeedback.Severity.ERROR);
     }
   }
-  public static class WARNING extends IFeedback.Default implements IFeedback {
+  class WARNING extends IFeedback.Default implements IFeedback {
     public WARNING(String message) {
       super(message, null, IFeedback.Severity.WARNING);
     }
@@ -115,7 +115,7 @@ public interface IFeedback {
       super(message, throwable, IFeedback.Severity.WARNING);
     }
   }
-  public static class INFORMATION extends IFeedback.Default implements IFeedback {
+  class INFORMATION extends IFeedback.Default implements IFeedback {
     public INFORMATION(String message) {
       super(message, null, IFeedback.Severity.INFO);
     }

@@ -4,5 +4,5 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi;
 
 
 /*package*/ interface PaletteAction extends PaletteElement {
-  public void onClick();
+  void onClick();
 }

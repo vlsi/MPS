@@ -6,5 +6,5 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IDescendantsProvider {
-  public Set<SNode> getDescendants(SNode nodeAdapter);
+  Set<SNode> getDescendants(SNode nodeAdapter);
 }

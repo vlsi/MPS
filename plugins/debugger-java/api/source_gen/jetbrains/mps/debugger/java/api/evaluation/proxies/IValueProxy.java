@@ -13,9 +13,9 @@ import com.sun.jdi.Value;
  */
 public interface IValueProxy {
   @Nullable
-  public Value getJDIValue();
+  Value getJDIValue();
   @Nullable
-  public Object getJavaValue();
-  public boolean javaEquals(IValueProxy valueProxy);
-  public String getPresentation();
+  Object getJavaValue();
+  boolean javaEquals(IValueProxy valueProxy);
+  String getPresentation();
 }

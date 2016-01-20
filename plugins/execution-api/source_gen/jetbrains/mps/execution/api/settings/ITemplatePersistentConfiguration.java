@@ -4,5 +4,5 @@ package jetbrains.mps.execution.api.settings;
 
 
 public interface ITemplatePersistentConfiguration extends IPersistentConfiguration {
-  public SettingsEditorEx<? extends IPersistentConfiguration> getEditorEx();
+  SettingsEditorEx<? extends IPersistentConfiguration> getEditorEx();
 }

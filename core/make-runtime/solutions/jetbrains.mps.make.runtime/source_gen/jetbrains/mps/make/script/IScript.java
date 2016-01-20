@@ -8,10 +8,10 @@ import jetbrains.mps.make.resources.IResource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IScript {
-  public boolean isValid();
-  public Iterable<IMessage> validationErrors();
-  public ITarget startingTarget();
-  public ITarget finalTarget();
-  public Iterable<ITarget> allTargets();
-  public IResult execute(IScriptController monitors, Iterable<? extends IResource> input, ProgressMonitor monitor);
+  boolean isValid();
+  Iterable<IMessage> validationErrors();
+  ITarget startingTarget();
+  ITarget finalTarget();
+  Iterable<ITarget> allTargets();
+  IResult execute(IScriptController monitors, Iterable<? extends IResource> input, ProgressMonitor monitor);
 }

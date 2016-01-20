@@ -5,6 +5,6 @@ package jetbrains.mps.execution.api.commands;
 import java.util.List;
 
 public interface CommandPart {
-  public List<String> getCommandList();
-  public int getLength();
+  List<String> getCommandList();
+  int getLength();
 }

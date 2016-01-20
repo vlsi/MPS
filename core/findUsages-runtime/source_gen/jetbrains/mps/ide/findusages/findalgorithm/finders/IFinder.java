@@ -7,5 +7,5 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IFinder {
-  public SearchResults find(SearchQuery query, ProgressMonitor monitor);
+  SearchResults find(SearchQuery query, ProgressMonitor monitor);
 }

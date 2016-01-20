@@ -5,6 +5,6 @@ package jetbrains.mps.ide.platform.actions.core;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface MoveNodeRefactoringParticipant<InitialDataObject, FinalDataObject> extends RefactoringParticipant<InitialDataObject, FinalDataObject, SNode, SNode> {
-  public static interface MoveNodeRefactoringDataCollector<InitialDataObject, FinalDataObject> extends RefactoringParticipant.RefactoringDataCollector<InitialDataObject, FinalDataObject, SNode, SNode> {
+  static interface MoveNodeRefactoringDataCollector<InitialDataObject, FinalDataObject> extends RefactoringParticipant.RefactoringDataCollector<InitialDataObject, FinalDataObject, SNode, SNode> {
   }
 }

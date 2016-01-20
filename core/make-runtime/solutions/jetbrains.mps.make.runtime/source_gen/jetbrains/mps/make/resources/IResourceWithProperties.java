@@ -4,5 +4,5 @@ package jetbrains.mps.make.resources;
 
 
 public interface IResourceWithProperties {
-  public IPropertiesIO getProperties();
+  IPropertiesIO getProperties();
 }

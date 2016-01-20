@@ -13,19 +13,19 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public interface IBreakpointsProvider<B extends IBreakpoint, K extends IBreakpointKind<B>> {
   @NotNull
-  public List<K> getAllKinds();
-  public boolean canCreateFromUi(@NotNull K kind);
-  public boolean canCreateFromNode(@NotNull K kind);
+  List<K> getAllKinds();
+  boolean canCreateFromUi(@NotNull K kind);
+  boolean canCreateFromNode(@NotNull K kind);
   @Nullable
-  public B createFromUi(@NotNull K kind, Project project);
+  B createFromUi(@NotNull K kind, Project project);
   @Nullable
-  public ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull K kind, Project project);
+  ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull K kind, Project project);
   @Nullable
-  public IBreakpointPropertiesUi<B> createPropertiesEditor(@NotNull K kind);
+  IBreakpointPropertiesUi<B> createPropertiesEditor(@NotNull K kind);
   @Nullable
-  public B loadFromState(Element state, K kind, Project project);
+  B loadFromState(Element state, K kind, Project project);
   @Nullable
-  public Element saveToState(@NotNull B breakpoint);
+  Element saveToState(@NotNull B breakpoint);
   @Nullable
-  public Icon getIcon(@NotNull B breakpoint, @Nullable AbstractDebugSession session);
+  Icon getIcon(@NotNull B breakpoint, @Nullable AbstractDebugSession session);
 }

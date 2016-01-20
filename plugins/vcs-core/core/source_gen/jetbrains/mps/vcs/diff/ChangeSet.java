@@ -9,13 +9,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public interface ChangeSet {
   @NotNull
-  public List<ModelChange> getModelChanges();
+  List<ModelChange> getModelChanges();
   @NotNull
-  public <C extends ModelChange> Iterable<C> getModelChanges(Class<C> changeClass);
+  <C extends ModelChange> Iterable<C> getModelChanges(Class<C> changeClass);
   @NotNull
-  public SModel getOldModel();
+  SModel getOldModel();
   @NotNull
-  public SModel getNewModel();
+  SModel getNewModel();
   @NotNull
-  public ChangeSet getOppositeChangeSet();
+  ChangeSet getOppositeChangeSet();
 }

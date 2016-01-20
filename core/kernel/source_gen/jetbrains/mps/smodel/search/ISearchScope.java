@@ -19,12 +19,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public interface ISearchScope {
   @NotNull
-  public List<SNode> getNodes(Condition<SNode> condition);
-  public boolean isInScope(SNode node);
+  List<SNode> getNodes(Condition<SNode> condition);
+  boolean isInScope(SNode node);
   @NotNull
-  public List<SNode> getNodes();
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept);
-  public static class Adapter extends Scope {
+  List<SNode> getNodes();
+  IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept);
+  class Adapter extends Scope {
     protected final ISearchScope searchScope;
     public Adapter(ISearchScope searchScope) {
       this.searchScope = searchScope;
@@ -65,7 +65,7 @@ public interface ISearchScope {
       return this.searchScope.isInScope(node);
     }
   }
-  public static class RefAdapter extends ISearchScope.Adapter {
+  class RefAdapter extends ISearchScope.Adapter {
     @Nullable
     private final SReference reference;
     public RefAdapter(ISearchScope searchScope, @NotNull SReference reference) {

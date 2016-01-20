@@ -4,5 +4,5 @@ package jetbrains.mps.ide.platform.watching;
 
 
 public interface ReloadAction<T extends ReloadParticipant> {
-  public void runAction(T participant);
+  void runAction(T participant);
 }

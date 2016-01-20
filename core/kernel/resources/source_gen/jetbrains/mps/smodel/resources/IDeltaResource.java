@@ -7,5 +7,5 @@ import jetbrains.mps.make.delta.IDelta;
 
 @Deprecated
 public interface IDeltaResource extends IResource {
-  public Iterable<IDelta> delta();
+  Iterable<IDelta> delta();
 }

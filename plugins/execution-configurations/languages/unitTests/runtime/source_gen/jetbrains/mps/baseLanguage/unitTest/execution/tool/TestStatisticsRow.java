@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 
 public interface TestStatisticsRow {
-  public String getText();
-  public String getAdditionalText();
-  public long getElapsedTime();
-  public long getUsageBefore();
-  public long getUsageAfter();
-  public long getUsageDelta();
-  public int getSuccessful();
-  public int getFailed();
-  public int getErrored();
-  public boolean matches(String testCase, String testMethod);
+  String getText();
+  String getAdditionalText();
+  long getElapsedTime();
+  long getUsageBefore();
+  long getUsageAfter();
+  long getUsageDelta();
+  int getSuccessful();
+  int getFailed();
+  int getErrored();
+  boolean matches(String testCase, String testMethod);
 }

@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface Resource_BehaviorDescriptor {
-  public void virtual_generate_8974276187400030152(SNode thisNode);
+  void virtual_generate_8974276187400030152(SNode thisNode);
 }

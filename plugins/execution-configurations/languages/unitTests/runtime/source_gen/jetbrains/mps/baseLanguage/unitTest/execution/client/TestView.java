@@ -4,6 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 
 public interface TestView {
-  public void init();
-  public void update();
+  void init();
+  void update();
 }

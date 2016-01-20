@@ -4,5 +4,5 @@ package jetbrains.mps.ide.platform.refactoring;
 
 
 public interface RefactoringViewAction {
-  public void performAction(RefactoringViewItem refactoringViewItem);
+  void performAction(RefactoringViewItem refactoringViewItem);
 }

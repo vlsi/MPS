@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
  */
 @Deprecated
 public interface IClassifierMember_BehaviorDescriptor {
-boolean virtual_isStatic_7405920559687241224(SNode thisNode);
-boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode);
-void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier);
+  boolean virtual_isStatic_7405920559687241224(SNode thisNode);
+  boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode);
+  void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier);
 }

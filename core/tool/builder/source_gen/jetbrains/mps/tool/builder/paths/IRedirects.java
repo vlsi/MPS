@@ -5,5 +5,5 @@ package jetbrains.mps.tool.builder.paths;
 import jetbrains.mps.vfs.IFile;
 
 public interface IRedirects {
-  public IFile getRedirect(String path);
+  IFile getRedirect(String path);
 }

@@ -12,14 +12,14 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
-  public static interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
-    public InitialDataObject beforeMove(InitialPoint nodeToMove);
-    public FinalDataObject afterMove(FinalPoint movedNode);
+  static interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+    InitialDataObject beforeMove(InitialPoint nodeToMove);
+    FinalDataObject afterMove(FinalPoint movedNode);
   }
 
-  public RefactoringParticipant.RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> getDataCollector();
+  RefactoringParticipant.RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> getDataCollector();
 
-  public static class Option {
+  class Option {
     private String myId;
     private String myDescription;
     public Option(String id, String description) {
@@ -43,25 +43,25 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     }
   }
 
-  public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
+  List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope);
+  List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope);
 
-  public static interface Change<InitialDataObject, FinalDataObject> {
-    public SearchResults getSearchResults();
-    public boolean needsToPreserveOldNode();
-    public void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
+  static interface Change<InitialDataObject, FinalDataObject> {
+    SearchResults getSearchResults();
+    boolean needsToPreserveOldNode();
+    void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 
-  public static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
-    public String getId();
-    public SNode serializeInitialState(InitialDataObject initialState);
-    public InitialDataObject deserializeInitialState(SNode serialized);
-    public SNode serializeFinalState(FinalDataObject finalState);
-    public FinalDataObject deserializeFinalState(SNode serialized);
+  static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+    String getId();
+    SNode serializeInitialState(InitialDataObject initialState);
+    InitialDataObject deserializeInitialState(SNode serialized);
+    SNode serializeFinalState(FinalDataObject finalState);
+    FinalDataObject deserializeFinalState(SNode serialized);
   }
 
-  public static class ParticipantState<I, F, IP, FP> {
+  class ParticipantState<I, F, IP, FP> {
     private RefactoringParticipant<I, F, IP, FP> myParticipant;
     private I myInitialState;
     private List<RefactoringParticipant.Change<I, F>> changes;

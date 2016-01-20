@@ -4,5 +4,5 @@ package jetbrains.mps.samples.formulaLanguage.api;
 
 
 public interface Function<T> {
-  public T compute(Object parm);
+  T compute(Object parm);
 }

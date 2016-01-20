@@ -5,5 +5,5 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 
 public interface ResultsListener {
-  public void resultsChanged(IFinder finder);
+  void resultsChanged(IFinder finder);
 }

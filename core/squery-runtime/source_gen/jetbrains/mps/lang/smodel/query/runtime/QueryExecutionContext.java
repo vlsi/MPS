@@ -5,5 +5,5 @@ package jetbrains.mps.lang.smodel.query.runtime;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface QueryExecutionContext {
-  public SearchScope getDefaultSearchScope();
+  SearchScope getDefaultSearchScope();
 }

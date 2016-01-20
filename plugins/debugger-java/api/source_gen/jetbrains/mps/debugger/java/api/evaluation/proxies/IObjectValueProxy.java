@@ -9,8 +9,8 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 
 public interface IObjectValueProxy extends IValueProxy {
   @Nullable
-  public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException;
-  public IValueProxy invokeMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
-  public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
-  public boolean isInstanceOf(String typename) throws EvaluationException;
+  IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException;
+  IValueProxy invokeMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
+  IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
+  boolean isInstanceOf(String typename) throws EvaluationException;
 }

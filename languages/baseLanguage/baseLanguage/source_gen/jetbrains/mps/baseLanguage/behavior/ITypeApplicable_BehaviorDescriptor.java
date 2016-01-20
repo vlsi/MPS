@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ITypeApplicable_BehaviorDescriptor {
-List<SNode> virtual_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs);
+  List<SNode> virtual_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs);
 }

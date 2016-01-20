@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface BuildLayout_InJarNode_BehaviorDescriptor {
-  public boolean virtual_reexportsFromJar_5970181360961342219(SNode thisNode, Object o);
+  boolean virtual_reexportsFromJar_5970181360961342219(SNode thisNode, Object o);
 }

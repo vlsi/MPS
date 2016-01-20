@@ -4,5 +4,5 @@ package jetbrains.mps.lang.test.util;
 
 
 public interface MpsRunListener {
-  public void testRunDone();
+  void testRunDone();
 }

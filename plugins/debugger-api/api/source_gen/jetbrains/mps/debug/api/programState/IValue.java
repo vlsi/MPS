@@ -6,9 +6,9 @@ import javax.swing.Icon;
 import java.util.List;
 
 public interface IValue {
-  public String getValuePresentation();
-  public Icon getPresentationIcon();
-  public boolean isStructure();
-  public List<IWatchable> getSubvalues();
-  public void initSubvalues();
+  String getValuePresentation();
+  Icon getPresentationIcon();
+  boolean isStructure();
+  List<IWatchable> getSubvalues();
+  void initSubvalues();
 }

@@ -10,12 +10,12 @@ import org.jetbrains.annotations.NonNls;
 
 public interface IDebuggableFramesSelector {
   @Nullable
-  public IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames);
-  public int findDeepestDebuggableFrameIndex(List<IStackFrame> frames);
-  public boolean isDebuggableFrame(@NotNull IStackFrame frame);
-  public boolean isDebuggablePosition(@NonNls String unitName, @NonNls String fileName, int position);
+  IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames);
+  int findDeepestDebuggableFrameIndex(List<IStackFrame> frames);
+  boolean isDebuggableFrame(@NotNull IStackFrame frame);
+  boolean isDebuggablePosition(@NonNls String unitName, @NonNls String fileName, int position);
   /**
    * * Tells if two position in code correspond to the same node.
    */
-  public boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount);
+  boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount);
 }

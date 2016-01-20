@@ -4,12 +4,12 @@ package jetbrains.mps.tool.builder.unittest;
 
 
 public interface ITestReporter {
-  public void runFinished();
-  public void testStarted(String testFQname);
-  public void testFinished(String testFQname);
-  public void testFailed(String testFQname, String msg, String longMsg);
-  public void testOutputLine(String testFQname, String msg);
-  public void testErrorLine(String testFQname, String msg);
-  public void outputLine(String msg);
-  public void errorLine(String msg);
+  void runFinished();
+  void testStarted(String testFQname);
+  void testFinished(String testFQname);
+  void testFailed(String testFQname, String msg, String longMsg);
+  void testOutputLine(String testFQname, String msg);
+  void testErrorLine(String testFQname, String msg);
+  void outputLine(String msg);
+  void errorLine(String msg);
 }

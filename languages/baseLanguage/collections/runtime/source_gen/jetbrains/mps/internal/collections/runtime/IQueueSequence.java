@@ -7,12 +7,12 @@ import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface IQueueSequence<T> extends ICollectionSequence<T>, Queue<T> {
-  public T addLastElement(T t);
-  public T removeFirstElement();
-  public IQueueSequence<T> addSequence(ISequence<? extends T> seq);
-  public IQueueSequence<T> removeSequence(ISequence<? extends T> seq);
-  public IQueueSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
-  public Queue<T> toQueue();
-  public IQueueSequence<T> asUnmodifiable();
-  public IQueueSequence<T> asSynchronized();
+  T addLastElement(T t);
+  T removeFirstElement();
+  IQueueSequence<T> addSequence(ISequence<? extends T> seq);
+  IQueueSequence<T> removeSequence(ISequence<? extends T> seq);
+  IQueueSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
+  Queue<T> toQueue();
+  IQueueSequence<T> asUnmodifiable();
+  IQueueSequence<T> asSynchronized();
 }

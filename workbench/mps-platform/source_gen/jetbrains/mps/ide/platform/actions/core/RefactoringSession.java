@@ -5,8 +5,8 @@ package jetbrains.mps.ide.platform.actions.core;
 
 public interface RefactoringSession {
 
-  public void putObject(String id, Object object);
-  public Object getObject(String id);
+  void putObject(String id, Object object);
+  Object getObject(String id);
 
-  public void registerChange(Runnable change);
+  void registerChange(Runnable change);
 }

@@ -12,6 +12,6 @@ import java.util.List;
  */
 @Deprecated
 public interface HasAnnotation_BehaviorDescriptor {
-boolean virtual_canBeAnnotated_1233076312117(SNode thisNode);
-List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode);
+  boolean virtual_canBeAnnotated_1233076312117(SNode thisNode);
+  List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode);
 }

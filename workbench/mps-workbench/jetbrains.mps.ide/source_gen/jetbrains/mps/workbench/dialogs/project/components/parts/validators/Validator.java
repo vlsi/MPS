@@ -4,5 +4,5 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.validators;
 
 
 public interface Validator {
-  public boolean isBrokenValue(Object value);
+  boolean isBrokenValue(Object value);
 }

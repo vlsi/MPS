@@ -83,7 +83,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
     return factory.iterator(myStart, myStartIncluded, myEnd, myEndIncluded);
   }
   private static interface IteratorFactory<T> {
-    public Iterator<T> iterator(T start, boolean startIncluded, T end, boolean endIncluded);
+    Iterator<T> iterator(T start, boolean startIncluded, T end, boolean endIncluded);
   }
   static {
     ourIteratorFactories.put(Character.class, new Interval.IteratorFactory<Character>() {

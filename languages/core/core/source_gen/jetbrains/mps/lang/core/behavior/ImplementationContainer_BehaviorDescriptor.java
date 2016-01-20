@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ImplementationContainer_BehaviorDescriptor {
-  public boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child);
+  boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child);
 }

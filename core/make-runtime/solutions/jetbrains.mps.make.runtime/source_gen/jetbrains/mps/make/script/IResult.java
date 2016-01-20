@@ -5,9 +5,9 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.resources.IResource;
 
 public interface IResult {
-  public boolean isSucessful();
-  public Iterable<IResource> output();
-  public static class SUCCESS implements IResult {
+  boolean isSucessful();
+  Iterable<IResource> output();
+  class SUCCESS implements IResult {
     private Iterable<IResource> output;
     public SUCCESS(Iterable<IResource> output) {
       this.output = output;
@@ -21,7 +21,7 @@ public interface IResult {
       return output;
     }
   }
-  public static class FAILURE implements IResult {
+  class FAILURE implements IResult {
     private Iterable<IResource> output;
     public FAILURE(Iterable<IResource> output) {
       this.output = output;

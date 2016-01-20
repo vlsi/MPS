@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ITestable_BehaviorDescriptor {
-  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode);
+  boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode);
 }

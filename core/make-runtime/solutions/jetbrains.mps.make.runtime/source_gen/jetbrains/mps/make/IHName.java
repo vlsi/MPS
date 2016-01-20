@@ -4,7 +4,7 @@ package jetbrains.mps.make;
 
 
 public interface IHName<T> {
-  public T parentName();
-  public String name();
-  public String fqName();
+  T parentName();
+  String name();
+  String fqName();
 }

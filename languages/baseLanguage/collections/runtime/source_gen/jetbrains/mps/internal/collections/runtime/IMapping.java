@@ -5,8 +5,8 @@ package jetbrains.mps.internal.collections.runtime;
 import java.util.Map;
 
 public interface IMapping<U, V> {
-  public U key();
-  public V value();
-  public V value(V newValue);
-  public Map.Entry<U, V> toEntry();
+  U key();
+  V value();
+  V value(V newValue);
+  Map.Entry<U, V> toEntry();
 }

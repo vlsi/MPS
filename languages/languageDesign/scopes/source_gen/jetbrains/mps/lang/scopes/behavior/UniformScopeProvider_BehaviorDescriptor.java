@@ -14,5 +14,5 @@ import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
  */
 @Deprecated
 public interface UniformScopeProvider_BehaviorDescriptor extends ScopeProvider_BehaviorDescriptor {
-  public Scope virtual_getScope_2995585510566823862(SNode thisNode, SNode kind, ScopeProviderContext context);
+  Scope virtual_getScope_2995585510566823862(SNode thisNode, SNode kind, ScopeProviderContext context);
 }

@@ -7,6 +7,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ITestResource extends IResource {
-  public List<String> buildCommandLine();
-  public SModule getModule();
+  List<String> buildCommandLine();
+  SModule getModule();
 }

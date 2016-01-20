@@ -4,12 +4,12 @@ package jetbrains.mps.make.script;
 
 
 public interface IProgress {
-  public int workLeft();
-  public void beginWork(String name, int estimate, int ofTotal);
-  public void advanceWork(String name, int done);
-  public void advanceWork(String name, int done, String comment);
-  public void finishWork(String name);
-  public static class Stub implements IProgress {
+  int workLeft();
+  void beginWork(String name, int estimate, int ofTotal);
+  void advanceWork(String name, int done);
+  void advanceWork(String name, int done, String comment);
+  void finishWork(String name);
+  class Stub implements IProgress {
     public Stub() {
     }
     @Override

@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface I_BehaviorDescriptor {
-  public String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode thisNode, int dummy);
-  public String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode thisNode, String in);
+  String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode thisNode, int dummy);
+  String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode thisNode, String in);
 }

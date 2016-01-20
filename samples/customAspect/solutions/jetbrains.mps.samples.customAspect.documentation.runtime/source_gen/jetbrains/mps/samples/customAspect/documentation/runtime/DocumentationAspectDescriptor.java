@@ -6,5 +6,5 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public interface DocumentationAspectDescriptor extends ILanguageAspect {
-  public String getConceptDocumentation(SAbstractConcept concept);
+  String getConceptDocumentation(SAbstractConcept concept);
 }

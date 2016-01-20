@@ -6,8 +6,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface RefactoringViewItem {
-  public void close();
-  public static interface RefactoringViewItemEx extends RefactoringViewItem {
-    public List<SNodeReference> getIncludedResultNodes();
+  void close();
+  static interface RefactoringViewItemEx extends RefactoringViewItem {
+    List<SNodeReference> getIncludedResultNodes();
   }
 }

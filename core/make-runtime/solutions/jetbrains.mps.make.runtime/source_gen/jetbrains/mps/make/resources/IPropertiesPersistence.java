@@ -6,6 +6,6 @@ import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public interface IPropertiesPersistence {
-  public void loadValues(Map<String, String> store, IPropertiesPool properties);
-  public void storeValues(Map<String, String> store, IPropertiesPool properties);
+  void loadValues(Map<String, String> store, IPropertiesPool properties);
+  void storeValues(Map<String, String> store, IPropertiesPool properties);
 }

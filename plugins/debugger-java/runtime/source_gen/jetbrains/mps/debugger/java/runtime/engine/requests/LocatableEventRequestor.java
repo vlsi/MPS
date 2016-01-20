@@ -6,6 +6,6 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 
 public interface LocatableEventRequestor extends Requestor {
-  public boolean isRequestHitByEvent(EventContext context, LocatableEvent event);
-  public int getSuspendPolicy();
+  boolean isRequestHitByEvent(EventContext context, LocatableEvent event);
+  int getSuspendPolicy();
 }

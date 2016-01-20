@@ -6,5 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public interface TableModelFactory {
-  public TableModel createTableModel(SNode node, EditorContext editorContext);
+  TableModel createTableModel(SNode node, EditorContext editorContext);
 }

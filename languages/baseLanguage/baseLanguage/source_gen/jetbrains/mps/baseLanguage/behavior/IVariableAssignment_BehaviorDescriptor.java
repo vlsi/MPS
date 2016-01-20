@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IVariableAssignment_BehaviorDescriptor {
-boolean virtual_isCanBeUnused_1223985713603(SNode thisNode);
-SNode virtual_getValue_1224857430232(SNode thisNode);
+  boolean virtual_isCanBeUnused_1223985713603(SNode thisNode);
+  SNode virtual_getValue_1224857430232(SNode thisNode);
 }

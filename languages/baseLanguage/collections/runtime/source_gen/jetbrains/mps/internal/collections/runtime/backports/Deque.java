@@ -10,21 +10,21 @@ import java.util.Iterator;
  */
 @Deprecated
 public interface Deque<T> extends Queue<T>, java.util.Deque<T> {
-  public void addFirst(T t);
-  public void addLast(T t);
-  public Iterator<T> descendingIterator();
-  public T getFirst();
-  public T getLast();
-  public boolean offerFirst(T t);
-  public boolean offerLast(T t);
-  public T peekFirst();
-  public T peekLast();
-  public T pollFirst();
-  public T pollLast();
-  public T pop();
-  public void push(T t);
-  public T removeFirst();
-  public boolean removeFirstOccurrence(Object o);
-  public T removeLast();
-  public boolean removeLastOccurrence(Object o);
+  void addFirst(T t);
+  void addLast(T t);
+  Iterator<T> descendingIterator();
+  T getFirst();
+  T getLast();
+  boolean offerFirst(T t);
+  boolean offerLast(T t);
+  T peekFirst();
+  T peekLast();
+  T pollFirst();
+  T pollLast();
+  T pop();
+  void push(T t);
+  T removeFirst();
+  boolean removeFirstOccurrence(Object o);
+  T removeLast();
+  boolean removeLastOccurrence(Object o);
 }

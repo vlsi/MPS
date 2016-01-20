@@ -12,6 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface LanguageIdentity_BehaviorDescriptor {
-  public SLanguage virtual_getLanguage_3542851458883438739(SNode thisNode);
-  public void virtual_setLanguage_3542851458883438752(SNode thisNode, SLanguage language);
+  SLanguage virtual_getLanguage_3542851458883438739(SNode thisNode);
+  void virtual_setLanguage_3542851458883438752(SNode thisNode, SLanguage language);
 }

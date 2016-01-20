@@ -7,14 +7,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface MigrationScript {
-  public String getCaption();
-  public MigrationScriptReference getDescriptor();
-  public Iterable<MigrationScriptReference> executeAfter();
-  public Iterable<MigrationScriptReference> requiresData();
-  public boolean isRerunnable();
+  String getCaption();
+  MigrationScriptReference getDescriptor();
+  Iterable<MigrationScriptReference> executeAfter();
+  Iterable<MigrationScriptReference> requiresData();
+  boolean isRerunnable();
 
-  public void setDataCollector(DataCollector dataCollector);
+  void setDataCollector(DataCollector dataCollector);
   @Nullable
-  public SNode execute(SModule module);
-  public Iterable<Problem> check(SModule module);
+  SNode execute(SModule module);
+  Iterable<Problem> check(SModule module);
 }

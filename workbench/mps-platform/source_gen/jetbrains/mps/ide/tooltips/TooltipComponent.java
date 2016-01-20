@@ -5,5 +5,5 @@ package jetbrains.mps.ide.tooltips;
 import java.awt.event.MouseEvent;
 
 public interface TooltipComponent {
-  public String getMPSTooltipText(MouseEvent mouseEvent);
+  String getMPSTooltipText(MouseEvent mouseEvent);
 }

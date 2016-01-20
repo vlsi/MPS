@@ -92,7 +92,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     my_accumulatorField.processText(value, myLocator);
   }
   private static interface ChildHandler {
-    public void apply(Object resultObject, Object value) throws SAXException;
+    void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {
     private String[] requiredAttributes = new String[0];

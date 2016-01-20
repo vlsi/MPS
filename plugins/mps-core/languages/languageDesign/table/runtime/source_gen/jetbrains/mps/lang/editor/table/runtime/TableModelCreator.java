@@ -7,5 +7,5 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 @Deprecated
 public interface TableModelCreator {
-  public TableModel getTable(SNode node, EditorContext editorContext);
+  TableModel getTable(SNode node, EditorContext editorContext);
 }

@@ -7,15 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface MoveRefactoringContributor {
-  public String getDescription();
-  public void willBeMoved(List<SNode> n);
-  public SearchResults<SNode> getAffectedNodes();
-  public List<Boolean> shouldKeepOldNodes(List<Boolean> movingAsChild);
-  public void isMoved(List<SNode> n);
-  public void commit();
+  String getDescription();
+  void willBeMoved(List<SNode> n);
+  SearchResults<SNode> getAffectedNodes();
+  List<Boolean> shouldKeepOldNodes(List<Boolean> movingAsChild);
+  void isMoved(List<SNode> n);
+  void commit();
 
 
-  public static interface MoveNodesBuilderFactory {
-    public MoveRefactoringContributor createContributor(MoveContext c);
+  static interface MoveNodesBuilderFactory {
+    MoveRefactoringContributor createContributor(MoveContext c);
   }
 }

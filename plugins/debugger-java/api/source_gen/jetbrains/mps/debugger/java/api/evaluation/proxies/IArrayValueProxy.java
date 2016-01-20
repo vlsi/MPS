@@ -8,7 +8,7 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 
 public interface IArrayValueProxy extends IValueProxy {
   @NotNull
-  public IValueProxy getElementAt(int index);
-  public void setElement(Value element, int index) throws EvaluationException;
-  public int getLength();
+  IValueProxy getElementAt(int index);
+  void setElement(Value element, int index) throws EvaluationException;
+  int getLength();
 }

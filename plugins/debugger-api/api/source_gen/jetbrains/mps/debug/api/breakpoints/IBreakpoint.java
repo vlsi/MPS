@@ -8,17 +8,17 @@ import com.intellij.openapi.project.Project;
 
 public interface IBreakpoint {
   @NotNull
-  public IBreakpointKind getKind();
-  public void removeFromRunningSessions();
-  public void addToRunningSessions();
-  public boolean isEnabled();
-  public long getCreationTime();
-  public boolean isValid();
-  public void setEnabled(boolean value);
+  IBreakpointKind getKind();
+  void removeFromRunningSessions();
+  void addToRunningSessions();
+  boolean isEnabled();
+  long getCreationTime();
+  boolean isValid();
+  void setEnabled(boolean value);
   @NonNls
-  public String getPresentation();
-  public void setCreationTime(long creationTime);
-  public void addBreakpointListener(@NotNull IBreakpointListener listener);
-  public void removeBreakpointListener(IBreakpointListener listener);
-  public Project getProject();
+  String getPresentation();
+  void setCreationTime(long creationTime);
+  void addBreakpointListener(@NotNull IBreakpointListener listener);
+  void removeBreakpointListener(IBreakpointListener listener);
+  Project getProject();
 }

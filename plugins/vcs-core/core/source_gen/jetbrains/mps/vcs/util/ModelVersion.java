@@ -4,5 +4,5 @@ package jetbrains.mps.vcs.util;
 
 
 public interface ModelVersion {
-  public String getSuffix();
+  String getSuffix();
 }

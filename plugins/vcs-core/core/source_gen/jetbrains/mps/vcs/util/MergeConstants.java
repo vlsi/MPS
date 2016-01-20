@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.util;
 
 
 public interface MergeConstants {
-  public static final int CURRENT = 0;
-  public static final int ORIGINAL = 1;
-  public static final int LAST_REVISION = 2;
+  int CURRENT = 0;
+  int ORIGINAL = 1;
+  int LAST_REVISION = 2;
 }

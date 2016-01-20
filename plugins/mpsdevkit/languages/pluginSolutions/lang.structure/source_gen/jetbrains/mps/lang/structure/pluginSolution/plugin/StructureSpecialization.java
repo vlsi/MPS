@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface StructureSpecialization<I, F> extends MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> {
-  public void confirm(Tuples._2<Language, I> initialState, Tuples._2<Language, F> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder);
-  public Collection<SNode> findInstances(I initialState, SearchScope searchScope);
-  public void doReplaceInstance(SNode instance, I initialState, F finalState);
+  void confirm(Tuples._2<Language, I> initialState, Tuples._2<Language, F> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder);
+  Collection<SNode> findInstances(I initialState, SearchScope searchScope);
+  void doReplaceInstance(SNode instance, I initialState, F finalState);
 }

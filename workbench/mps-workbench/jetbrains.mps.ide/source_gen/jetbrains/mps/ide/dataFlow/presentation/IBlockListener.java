@@ -5,5 +5,5 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import java.awt.event.MouseEvent;
 
 public interface IBlockListener {
-  public void mousePressed(MouseEvent event, IBlock block);
+  void mousePressed(MouseEvent event, IBlock block);
 }

@@ -5,11 +5,11 @@ package jetbrains.mps.internal.collections.runtime;
 import java.util.SortedSet;
 
 public interface ISortedSetSequence<T> extends ISetSequence<T>, SortedSet<T> {
-  public ISortedSetSequence<T> headSet(T toElement);
-  public ISortedSetSequence<T> tailSet(T fromElement);
-  public ISortedSetSequence<T> subSet(T fromElement, T toElement);
-  public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq);
-  public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq);
-  public ISortedSetSequence<T> asUnmodifiable();
-  public ISortedSetSequence<T> asSynchronized();
+  ISortedSetSequence<T> headSet(T toElement);
+  ISortedSetSequence<T> tailSet(T fromElement);
+  ISortedSetSequence<T> subSet(T fromElement, T toElement);
+  ISortedSetSequence<T> addSequence(ISequence<? extends T> seq);
+  ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq);
+  ISortedSetSequence<T> asUnmodifiable();
+  ISortedSetSequence<T> asSynchronized();
 }

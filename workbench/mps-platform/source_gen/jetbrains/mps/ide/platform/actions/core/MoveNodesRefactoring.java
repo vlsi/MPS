@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface MoveNodesRefactoring {
-  public String getName();
-  public boolean isApplicable(MPSProject project, List<SNode> target);
-  public void apply(MPSProject project, List<SNode> target);
+  String getName();
+  boolean isApplicable(MPSProject project, List<SNode> target);
+  void apply(MPSProject project, List<SNode> target);
 }

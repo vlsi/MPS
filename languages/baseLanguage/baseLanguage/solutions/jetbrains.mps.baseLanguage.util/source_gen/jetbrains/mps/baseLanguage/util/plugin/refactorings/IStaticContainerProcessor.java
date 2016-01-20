@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 public interface IStaticContainerProcessor {
-  public SNode createNewMethod();
-  public void addMethod(SNode method);
-  public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres);
+  SNode createNewMethod();
+  void addMethod(SNode method);
+  SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres);
 }

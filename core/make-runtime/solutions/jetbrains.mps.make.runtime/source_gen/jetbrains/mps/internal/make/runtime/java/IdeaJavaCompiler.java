@@ -6,6 +6,6 @@ import jetbrains.mps.make.MPSCompilationResult;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface IdeaJavaCompiler {
-  public boolean isValid();
-  public MPSCompilationResult compileModules(SModule[] modules);
+  boolean isValid();
+  MPSCompilationResult compileModules(SModule[] modules);
 }

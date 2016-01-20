@@ -7,16 +7,16 @@ import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
-  public T addFirstElement(T t);
-  public T removeLastElement();
-  public T peekElement();
-  public T popElement();
-  public T pushElement(T t);
-  public IDequeSequence<T> addSequence(ISequence<? extends T> seq);
-  public IDequeSequence<T> removeSequence(ISequence<? extends T> seq);
-  public IDequeSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
+  T addFirstElement(T t);
+  T removeLastElement();
+  T peekElement();
+  T popElement();
+  T pushElement(T t);
+  IDequeSequence<T> addSequence(ISequence<? extends T> seq);
+  IDequeSequence<T> removeSequence(ISequence<? extends T> seq);
+  IDequeSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
   @Deprecated
-  public Deque<T> toDeque();
-  public IDequeSequence<T> asUnmodifiable();
-  public IDequeSequence<T> asSynchronized();
+  Deque<T> toDeque();
+  IDequeSequence<T> asUnmodifiable();
+  IDequeSequence<T> asSynchronized();
 }

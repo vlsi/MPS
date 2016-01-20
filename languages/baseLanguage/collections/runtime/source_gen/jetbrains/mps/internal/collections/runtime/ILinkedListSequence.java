@@ -8,19 +8,19 @@ import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface ILinkedListSequence<T> extends IListSequence<T>, Queue<T>, Deque<T> {
-  public T addLastElement(T t);
-  public T removeFirstElement();
-  public Queue<T> toQueue();
-  public T addFirstElement(T t);
-  public T removeLastElement();
-  public T peekElement();
-  public T popElement();
-  public T pushElement(T t);
+  T addLastElement(T t);
+  T removeFirstElement();
+  Queue<T> toQueue();
+  T addFirstElement(T t);
+  T removeLastElement();
+  T peekElement();
+  T popElement();
+  T pushElement(T t);
   @Deprecated
-  public Deque<T> toDeque();
-  public ILinkedListSequence<T> addSequence(ISequence<? extends T> seq);
-  public ILinkedListSequence<T> removeSequence(ISequence<? extends T> seq);
-  public ILinkedListSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
-  public ILinkedListSequence<T> asUnmodifiable();
-  public ILinkedListSequence<T> asSynchronized();
+  Deque<T> toDeque();
+  ILinkedListSequence<T> addSequence(ISequence<? extends T> seq);
+  ILinkedListSequence<T> removeSequence(ISequence<? extends T> seq);
+  ILinkedListSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter);
+  ILinkedListSequence<T> asUnmodifiable();
+  ILinkedListSequence<T> asSynchronized();
 }

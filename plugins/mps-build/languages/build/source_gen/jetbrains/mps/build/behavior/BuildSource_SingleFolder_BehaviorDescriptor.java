@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface BuildSource_SingleFolder_BehaviorDescriptor {
-  public String virtual_getApproximateName_5610619299014531547(SNode thisNode);
+  String virtual_getApproximateName_5610619299014531547(SNode thisNode);
 }

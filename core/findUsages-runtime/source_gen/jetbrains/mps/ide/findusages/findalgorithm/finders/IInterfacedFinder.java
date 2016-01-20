@@ -12,21 +12,21 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IInterfacedFinder extends IFinder {
-  public SAbstractConcept getSConcept();
-  public boolean isApplicable(SNode node);
-  public boolean isVisible(SNode node);
-  public boolean isUsedByDefault(SNode node);
-  public String getDescription();
-  public String getLongDescription();
-  public boolean canNavigate();
+  SAbstractConcept getSConcept();
+  boolean isApplicable(SNode node);
+  boolean isVisible(SNode node);
+  boolean isUsedByDefault(SNode node);
+  String getDescription();
+  String getLongDescription();
+  boolean canNavigate();
   @Nullable
-  public SNodeReference getDeclarationNode();
+  SNodeReference getDeclarationNode();
   /**
    * 
    * @deprecated use {@link jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder#getDeclarationNode() }
    */
   @Deprecated
   @ToRemove(version = 3.3)
-  public SNode getNodeToNavigate();
-  public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor);
+  SNode getNodeToNavigate();
+  SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor);
 }

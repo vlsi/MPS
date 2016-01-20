@@ -6,6 +6,6 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.project.Project;
 
 public interface ConsoleContext extends QueryExecutionContext {
-  public Project getProject();
-  public BaseConsoleTab getOutputWindow();
+  Project getProject();
+  BaseConsoleTab getOutputWindow();
 }

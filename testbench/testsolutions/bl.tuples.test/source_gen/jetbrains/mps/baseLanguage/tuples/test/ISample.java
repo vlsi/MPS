@@ -4,5 +4,5 @@ package jetbrains.mps.baseLanguage.tuples.test;
 
 
 public interface ISample {
-  public String getSample();
+  String getSample();
 }

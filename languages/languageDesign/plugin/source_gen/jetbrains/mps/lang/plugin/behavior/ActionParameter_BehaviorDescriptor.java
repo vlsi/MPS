@@ -12,6 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ActionParameter_BehaviorDescriptor extends IValidIdentifier_BehaviorDescriptor {
-  public SNode virtual_getType_1171743928471337193(SNode thisNode);
-  public SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode);
+  SNode virtual_getType_1171743928471337193(SNode thisNode);
+  SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode);
 }

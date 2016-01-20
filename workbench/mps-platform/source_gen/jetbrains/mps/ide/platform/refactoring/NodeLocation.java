@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 
 public interface NodeLocation {
-  public boolean canInsert(SRepository repository, SNode nodeToMove);
-  public void insertNode(SRepository repository, SNode nodeToMove);
-  public static class NodeLocationChild implements NodeLocation {
+  boolean canInsert(SRepository repository, SNode nodeToMove);
+  void insertNode(SRepository repository, SNode nodeToMove);
+  class NodeLocationChild implements NodeLocation {
     private SNodeReference parent;
     private SContainmentLink role;
     public NodeLocationChild(SNode parent, SContainmentLink role) {
@@ -50,7 +50,7 @@ public interface NodeLocation {
       parent.resolve(repository).addChild(role, nodeToMove);
     }
   }
-  public static class NodeLocationRoot implements NodeLocation {
+  class NodeLocationRoot implements NodeLocation {
     private SModelReference model;
     public NodeLocationRoot(SModel model) {
       this.model = model.getReference();
@@ -66,7 +66,7 @@ public interface NodeLocation {
       model.resolve(repository).addRootNode(nodeToMove);
     }
   }
-  public static class NodeLocationRootWithAspectModelCreation implements NodeLocation {
+  class NodeLocationRootWithAspectModelCreation implements NodeLocation {
     private SModuleReference myLanguage;
     private LanguageAspect myAspect;
     public NodeLocationRootWithAspectModelCreation(Language languageModule, LanguageAspect aspect) {

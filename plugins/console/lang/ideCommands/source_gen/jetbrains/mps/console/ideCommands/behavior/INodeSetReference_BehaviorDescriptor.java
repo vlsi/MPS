@@ -12,5 +12,5 @@ import jetbrains.mps.console.tool.ConsoleContext;
  */
 @Deprecated
 public interface INodeSetReference_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context);
+  Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context);
 }

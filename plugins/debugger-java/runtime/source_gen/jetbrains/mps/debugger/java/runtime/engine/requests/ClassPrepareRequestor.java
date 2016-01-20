@@ -6,5 +6,5 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 
 public interface ClassPrepareRequestor extends Requestor {
-  public void processClassPrepare(final EventsProcessor debugProcess, final ReferenceType classType);
+  void processClassPrepare(final EventsProcessor debugProcess, final ReferenceType classType);
 }

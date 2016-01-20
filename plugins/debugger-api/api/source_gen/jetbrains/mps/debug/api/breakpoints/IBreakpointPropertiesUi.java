@@ -5,6 +5,6 @@ package jetbrains.mps.debug.api.breakpoints;
 import javax.swing.JComponent;
 
 public interface IBreakpointPropertiesUi<B extends IBreakpoint> {
-  public void setBreakpoint(B breakpoint);
-  public JComponent getMainComponent();
+  void setBreakpoint(B breakpoint);
+  JComponent getMainComponent();
 }

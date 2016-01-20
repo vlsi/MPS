@@ -12,9 +12,9 @@ import java.util.Map;
  */
 @Deprecated
 public interface IMethodCall_BehaviorDescriptor extends TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor {
-SNode virtual_getInstanceType_8008512149545154471(SNode thisNode);
-Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode);
-Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName);
-boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode);
-boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode);
+  SNode virtual_getInstanceType_8008512149545154471(SNode thisNode);
+  Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode);
+  Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName);
+  boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode);
+  boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode);
 }

@@ -6,9 +6,9 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import javax.swing.JComponent;
 
 public interface ProjectPrefsExtraPanel {
-  public static ExtensionPointName<ProjectPrefsExtraPanel> EP_NAME = ExtensionPointName.create("com.intellij.mps.projectPrefsPanel");
-  public JComponent getComponent();
-  public boolean isModified();
-  public void apply();
-  public void reset();
+  ExtensionPointName<ProjectPrefsExtraPanel> EP_NAME = ExtensionPointName.create("com.intellij.mps.projectPrefsPanel");
+  JComponent getComponent();
+  boolean isModified();
+  void apply();
+  void reset();
 }

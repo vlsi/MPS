@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ITemplateCall_BehaviorDescriptor extends TypeDerivable_BehaviorDescriptor {
-  public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression);
+  SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression);
 }

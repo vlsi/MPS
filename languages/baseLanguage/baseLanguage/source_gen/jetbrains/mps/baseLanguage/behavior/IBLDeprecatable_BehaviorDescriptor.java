@@ -12,6 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IBLDeprecatable_BehaviorDescriptor extends IDeprecatable_BehaviorDescriptor {
-void virtual_markDeprecated_7983358747957651026(SNode thisNode);
-void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode);
+  void virtual_markDeprecated_7983358747957651026(SNode thisNode);
+  void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode);
 }

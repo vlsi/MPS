@@ -5,7 +5,7 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.make.facet.ITarget;
 
 public interface IPropertiesPool {
-  public boolean hasProperties(ITarget.Name target);
-  public <T> T properties(ITarget.Name target, Class<T> cls);
-  public void setPredecessor(IPropertiesPool ppool);
+  boolean hasProperties(ITarget.Name target);
+  <T> T properties(ITarget.Name target, Class<T> cls);
+  void setPredecessor(IPropertiesPool ppool);
 }

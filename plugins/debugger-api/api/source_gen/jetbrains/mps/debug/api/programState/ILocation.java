@@ -4,8 +4,8 @@ package jetbrains.mps.debug.api.programState;
 
 
 public interface ILocation {
-  public String getFileName();
-  public String getUnitName();
-  public String getRoutineName();
-  public int getLineNumber();
+  String getFileName();
+  String getUnitName();
+  String getRoutineName();
+  int getLineNumber();
 }

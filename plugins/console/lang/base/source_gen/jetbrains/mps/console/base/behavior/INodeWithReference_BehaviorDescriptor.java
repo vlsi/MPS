@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface INodeWithReference_BehaviorDescriptor extends IActionHolder_BehaviorDescriptor {
-  public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode);
+  String virtual_getTextWhenBroken_328850564593858078(SNode thisNode);
 }

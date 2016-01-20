@@ -5,8 +5,8 @@ package jetbrains.mps.debug.api.programState;
 import java.util.List;
 
 public interface IStackFrame {
-  public ILocation getLocation();
-  public IThread getThread();
-  public IValue getValue(IWatchable watchable);
-  public List<IWatchable> getVisibleWatchables();
+  ILocation getLocation();
+  IThread getThread();
+  IValue getValue(IWatchable watchable);
+  List<IWatchable> getVisibleWatchables();
 }

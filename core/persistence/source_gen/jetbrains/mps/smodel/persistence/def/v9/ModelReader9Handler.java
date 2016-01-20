@@ -123,7 +123,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     myValues.push(result);
   }
   private static interface ChildHandler {
-    public void apply(Object resultObject, Object value) throws SAXException;
+    void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {
     private String[] requiredAttributes = new String[0];

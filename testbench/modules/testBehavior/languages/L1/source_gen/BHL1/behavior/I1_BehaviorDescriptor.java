@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface I1_BehaviorDescriptor {
-  public void virtual_bar_7433446194418049811(SNode thisNode);
-  public Object virtual_foo_9105163402711226683(SNode thisNode);
+  void virtual_bar_7433446194418049811(SNode thisNode);
+  Object virtual_foo_9105163402711226683(SNode thisNode);
 }

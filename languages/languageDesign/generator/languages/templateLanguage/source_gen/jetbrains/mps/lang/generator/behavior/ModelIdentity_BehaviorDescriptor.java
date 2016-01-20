@@ -13,5 +13,5 @@ import jetbrains.mps.generator.TransientModelsModule;
  */
 @Deprecated
 public interface ModelIdentity_BehaviorDescriptor {
-  public SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module);
+  SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module);
 }

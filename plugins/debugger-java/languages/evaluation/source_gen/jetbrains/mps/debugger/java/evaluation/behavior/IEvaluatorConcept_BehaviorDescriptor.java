@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IEvaluatorConcept_BehaviorDescriptor {
-  public SNode virtual_getCode_317191294093624551(SNode thisNode);
+  SNode virtual_getCode_317191294093624551(SNode thisNode);
 }

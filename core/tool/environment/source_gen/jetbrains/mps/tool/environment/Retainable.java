@@ -10,9 +10,9 @@ public interface Retainable {
   /**
    * use it to increase the counter
    */
-  public void retain();
+  void retain();
   /**
    * use it to decrease the counter
    */
-  public void release();
+  void release();
 }

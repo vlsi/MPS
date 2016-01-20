@@ -84,9 +84,9 @@ public class FileProcessor {
     }
   }
   private static interface FileContent {
-    public boolean isUnchanged(IFile file);
-    public void saveToFile(IFile file);
-    public int calcApproximateSize();
+    boolean isUnchanged(IFile file);
+    void saveToFile(IFile file);
+    int calcApproximateSize();
   }
   private static class StringFileContent implements FileProcessor.FileContent {
     private String myContent;

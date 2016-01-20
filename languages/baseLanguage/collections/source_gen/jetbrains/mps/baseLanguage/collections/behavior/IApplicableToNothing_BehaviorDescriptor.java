@@ -15,6 +15,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
  */
 @Deprecated
 public interface IApplicableToNothing_BehaviorDescriptor extends IDontSubstituteByDefault_BehaviorDescriptor, IOperation_BehaviorDescriptor {
-  public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept);
-  public SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType);
+  List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept);
+  SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType);
 }

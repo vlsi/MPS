@@ -4,6 +4,6 @@ package jetbrains.mps.resourceBundles;
 
 
 public interface PluginResourceBundle<T> {
-  public Iterable<String> getKeys();
-  public T getResource(String key);
+  Iterable<String> getKeys();
+  T getResource(String key);
 }

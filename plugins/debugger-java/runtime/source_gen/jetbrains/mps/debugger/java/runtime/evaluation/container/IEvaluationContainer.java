@@ -8,10 +8,10 @@ import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IEvaluationContainer {
-  public IEvaluationContainer copy(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp);
-  public Class generateClass() throws EvaluationException;
-  public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException;
-  public String getPresentation();
-  public SNode getNode();
-  public void updateState();
+  IEvaluationContainer copy(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp);
+  Class generateClass() throws EvaluationException;
+  Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException;
+  String getPresentation();
+  SNode getNode();
+  void updateState();
 }

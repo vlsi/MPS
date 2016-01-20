@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IStyleContainer_BehaviorDescriptor {
-  public SNode virtual_getParent_1219419981626(SNode thisNode);
+  SNode virtual_getParent_1219419981626(SNode thisNode);
 }

@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
  */
 @Deprecated
 public interface XmlPrologElement_BehaviorDescriptor extends XmlPart_BehaviorDescriptor {
-  public boolean virtual_isSingle_1262430001741497810(SConcept thisConcept);
-  public boolean virtual_isFirst_1262430001741498376(SConcept thisConcept);
+  boolean virtual_isSingle_1262430001741497810(SConcept thisConcept);
+  boolean virtual_isFirst_1262430001741498376(SConcept thisConcept);
 }

@@ -5,12 +5,12 @@ package jetbrains.mps.tool.common;
 import org.jetbrains.annotations.NotNull;
 
 public interface IMessageFormat {
-  public StringBuffer escapeBuildMessage(@NotNull StringBuffer message);
-  public String escapeBuildMessage(@NotNull String message);
-  public String getLinesSeparator();
-  public String formatTestStart(@NotNull String testName);
-  public String formatTestFinish(@NotNull String testName);
-  public CharSequence formatTestFailure(@NotNull String testName, @NotNull String message, @NotNull CharSequence details);
-  public boolean isBuildServerMessage(@NotNull CharSequence message);
-  public int hasContinuation(@NotNull String message);
+  StringBuffer escapeBuildMessage(@NotNull StringBuffer message);
+  String escapeBuildMessage(@NotNull String message);
+  String getLinesSeparator();
+  String formatTestStart(@NotNull String testName);
+  String formatTestFinish(@NotNull String testName);
+  CharSequence formatTestFailure(@NotNull String testName, @NotNull String message, @NotNull CharSequence details);
+  boolean isBuildServerMessage(@NotNull CharSequence message);
+  int hasContinuation(@NotNull String message);
 }

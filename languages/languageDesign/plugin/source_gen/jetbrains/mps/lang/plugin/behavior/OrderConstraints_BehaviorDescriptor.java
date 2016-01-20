@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface OrderConstraints_BehaviorDescriptor {
-  public SNode virtual_getOrder_3038738109029048953(SNode thisNode);
-  public boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab);
+  SNode virtual_getOrder_3038738109029048953(SNode thisNode);
+  boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab);
 }

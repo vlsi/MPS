@@ -136,13 +136,13 @@ public final class GeneratorUtilEx {
     }
   }
   public static interface ConsequenceDispatch {
-    public void inlineSwitch(SNode ruleConsequence);
-    public void inlineTemplateWithContext(SNode ruleConsequence);
-    public void inlineTemplate(SNode ruleConsequence);
-    public void templateDeclarationReference(SNode ruleConsequence);
-    public void weaveEach(SNode ruleConsequence);
-    public void abandonInput(SNode ruleConsequence);
-    public void dismissTopRule(SNode ruleConsequence);
-    public void unknown(SNode ruleConsequence);
+    void inlineSwitch(SNode ruleConsequence);
+    void inlineTemplateWithContext(SNode ruleConsequence);
+    void inlineTemplate(SNode ruleConsequence);
+    void templateDeclarationReference(SNode ruleConsequence);
+    void weaveEach(SNode ruleConsequence);
+    void abandonInput(SNode ruleConsequence);
+    void dismissTopRule(SNode ruleConsequence);
+    void unknown(SNode ruleConsequence);
   }
 }

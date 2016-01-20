@@ -12,5 +12,5 @@ import jetbrains.mps.errors.IErrorReporter;
  */
 @Deprecated
 public interface IChecksRules_BehaviorDescriptor {
-  public boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, Iterable<IErrorReporter> errorReporters);
+  boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, Iterable<IErrorReporter> errorReporters);
 }

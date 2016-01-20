@@ -5,9 +5,9 @@ package jetbrains.mps.internal.collections.runtime;
 import java.util.Map;
 
 public interface IMapSequence<U, V> extends ISequence<IMapping<U, V>>, Map<U, V> {
-  public ISetSequence<IMapping<U, V>> mappingsSet();
-  public IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map);
-  public V putValue(U key, V value);
-  public V removeKey(U u);
-  public Map<U, V> toMap();
+  ISetSequence<IMapping<U, V>> mappingsSet();
+  IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map);
+  V putValue(U key, V value);
+  V removeKey(U u);
+  Map<U, V> toMap();
 }

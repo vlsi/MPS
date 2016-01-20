@@ -6,7 +6,7 @@ import java.util.Map;
 import java.io.IOException;
 
 public interface IPropertiesIO {
-  public Object getKey();
-  public Map<String, String> readProperties() throws IOException;
-  public void writeProperties(Map<String, String> store) throws IOException;
+  Object getKey();
+  Map<String, String> readProperties() throws IOException;
+  void writeProperties(Map<String, String> store) throws IOException;
 }

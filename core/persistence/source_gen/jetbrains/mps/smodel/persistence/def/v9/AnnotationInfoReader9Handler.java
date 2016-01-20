@@ -98,7 +98,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     my_accumulatorField.processText(value, myLocator);
   }
   private static interface ChildHandler {
-    public void apply(Object resultObject, Object value) throws SAXException;
+    void apply(Object resultObject, Object value) throws SAXException;
   }
   private class ElementHandler {
     private String[] requiredAttributes = new String[0];

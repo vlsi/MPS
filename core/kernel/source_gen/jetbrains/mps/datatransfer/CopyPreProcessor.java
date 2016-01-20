@@ -5,6 +5,6 @@ package jetbrains.mps.datatransfer;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface CopyPreProcessor {
-  public SNode getApplicableConcept();
-  public void preProcesNode(SNode copy, SNode original);
+  SNode getApplicableConcept();
+  void preProcesNode(SNode copy, SNode original);
 }

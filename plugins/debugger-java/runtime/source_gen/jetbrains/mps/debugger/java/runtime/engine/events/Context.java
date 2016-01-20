@@ -7,6 +7,6 @@ import com.sun.jdi.ThreadReference;
 
 public interface Context {
   @Nullable
-  public ThreadReference getThread();
-  public int getSuspendPolicy();
+  ThreadReference getThread();
+  int getSuspendPolicy();
 }

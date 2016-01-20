@@ -13,5 +13,5 @@ import java.util.List;
  */
 @Deprecated
 public interface IExtractMethodAvailable_BehaviorDescriptor {
-IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract);
+  IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract);
 }

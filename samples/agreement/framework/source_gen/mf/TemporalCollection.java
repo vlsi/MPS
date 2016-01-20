@@ -4,9 +4,9 @@ package mf;
 
 
 public interface TemporalCollection {
-  public Object get(MfDate when);
-  public void put(MfDate at, Object item);
-  public Object get(int year, int month, int date);
-  public Object get();
-  public void put(Object item);
+  Object get(MfDate when);
+  void put(MfDate at, Object item);
+  Object get(int year, int month, int date);
+  Object get();
+  void put(Object item);
 }

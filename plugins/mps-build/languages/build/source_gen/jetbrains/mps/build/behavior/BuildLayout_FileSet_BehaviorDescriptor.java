@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface BuildLayout_FileSet_BehaviorDescriptor {
-  public boolean virtual_isImplicit_1330375798085107777(SNode thisNode);
+  boolean virtual_isImplicit_1330375798085107777(SNode thisNode);
 }

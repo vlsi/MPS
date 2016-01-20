@@ -136,6 +136,6 @@ public class NewSolutionSettings extends JPanel {
   }
 
   public static interface SolutionSettingsChangedListener {
-    public void changed();
+    void changed();
   }
 }

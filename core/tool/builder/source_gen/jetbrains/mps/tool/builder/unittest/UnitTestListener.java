@@ -4,9 +4,9 @@ package jetbrains.mps.tool.builder.unittest;
 
 
 public interface UnitTestListener {
-  public void testStarted(String testName);
-  public void testFailed(String test, String message, String details);
-  public void testFinished(String testName);
-  public void logMessage(String message);
-  public void logError(String errorMessage);
+  void testStarted(String testName);
+  void testFailed(String test, String message, String details);
+  void testFinished(String testName);
+  void logMessage(String message);
+  void logError(String errorMessage);
 }

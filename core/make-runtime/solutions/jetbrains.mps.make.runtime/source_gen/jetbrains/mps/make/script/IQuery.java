@@ -5,13 +5,13 @@ package jetbrains.mps.make.script;
 import jetbrains.mps.internal.make.runtime.util.SmartWrapper;
 
 public interface IQuery<T extends IOption> {
-  public IQuery.Name getName();
-  public String getTitle();
-  public String getText();
-  public Iterable<T> options();
-  public T voidOption();
-  public T defaultOption();
-  public static class Name extends SmartWrapper<String> {
+  IQuery.Name getName();
+  String getTitle();
+  String getText();
+  Iterable<T> options();
+  T voidOption();
+  T defaultOption();
+  class Name extends SmartWrapper<String> {
     public Name(String name) {
       super(name);
     }

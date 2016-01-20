@@ -4,5 +4,5 @@ package jetbrains.mps.internal.collections.runtime;
 
 
 public interface IEnumerable<T> {
-  public IEnumerator<T> enumerator();
+  IEnumerator<T> enumerator();
 }

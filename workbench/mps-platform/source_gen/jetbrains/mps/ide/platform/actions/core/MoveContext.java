@@ -5,5 +5,5 @@ package jetbrains.mps.ide.platform.actions.core;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public interface MoveContext {
-  public SearchScope getSearchScope();
+  SearchScope getSearchScope();
 }

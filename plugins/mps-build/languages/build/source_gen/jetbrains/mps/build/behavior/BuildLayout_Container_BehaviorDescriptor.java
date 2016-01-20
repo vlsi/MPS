@@ -12,7 +12,7 @@ import jetbrains.mps.build.util.Context;
  */
 @Deprecated
 public interface BuildLayout_Container_BehaviorDescriptor {
-  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context);
-  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode);
-  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode);
+  String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context);
+  String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode);
+  String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode);
 }

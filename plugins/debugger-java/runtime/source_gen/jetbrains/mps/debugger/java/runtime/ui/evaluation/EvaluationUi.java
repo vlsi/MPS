@@ -138,7 +138,7 @@ public abstract class EvaluationUi extends JPanel {
     myErrorListener = listener;
   }
   public static interface IErrorTextListener {
-    public void updateErrorText(String text);
+    void updateErrorText(String text);
   }
   private class MySessionChangeAdapter extends SessionChangeAdapter {
     public MySessionChangeAdapter() {

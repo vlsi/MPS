@@ -5,6 +5,6 @@ package jetbrains.mps.refactoring.runtime.access;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 public interface RefactoringFacade {
-  public void executeSimple(final RefactoringContext context);
-  public void execute(final RefactoringContext refactoringContext);
+  void executeSimple(final RefactoringContext context);
+  void execute(final RefactoringContext refactoringContext);
 }

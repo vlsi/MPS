@@ -5,5 +5,5 @@ package jetbrains.mps.make.outook;
 import jetbrains.mps.make.facet.IFacet;
 
 public interface IOutlook {
-  public Iterable<IFacet.Name> facetNames();
+  Iterable<IFacet.Name> facetNames();
 }

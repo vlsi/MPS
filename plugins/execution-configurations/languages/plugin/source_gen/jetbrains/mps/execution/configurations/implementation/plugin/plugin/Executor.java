@@ -6,5 +6,5 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 
 public interface Executor {
-  public ProcessHandler execute() throws ExecutionException;
+  ProcessHandler execute() throws ExecutionException;
 }

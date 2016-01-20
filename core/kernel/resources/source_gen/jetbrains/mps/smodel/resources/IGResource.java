@@ -9,8 +9,8 @@ import jetbrains.mps.generator.GenerationStatus;
 
 @Deprecated
 public interface IGResource extends IResource {
-  public SModule module();
-  public SModel model();
-  public Iterable<SModel> retainedModels();
-  public GenerationStatus status();
+  SModule module();
+  SModel model();
+  Iterable<SModel> retainedModels();
+  GenerationStatus status();
 }

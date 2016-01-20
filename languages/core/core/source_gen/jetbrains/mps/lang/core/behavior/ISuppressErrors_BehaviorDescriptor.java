@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface ISuppressErrors_BehaviorDescriptor {
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child);
+  boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child);
 }

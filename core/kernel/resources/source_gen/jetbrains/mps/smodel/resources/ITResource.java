@@ -8,6 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 @Deprecated
 public interface ITResource extends IResource, IDeltaResource {
-  public SModule module();
-  public SModel modelDescriptor();
+  SModule module();
+  SModel modelDescriptor();
 }

@@ -11,5 +11,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface IRuleReference_BehaviorDescriptor {
-  public String virtual_getName_7691029917083872184(SNode thisNode);
+  String virtual_getName_7691029917083872184(SNode thisNode);
 }

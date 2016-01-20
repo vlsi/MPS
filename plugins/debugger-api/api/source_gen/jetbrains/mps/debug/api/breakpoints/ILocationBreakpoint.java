@@ -6,5 +6,5 @@ import org.jetbrains.annotations.NotNull;
 
 public interface ILocationBreakpoint extends IBreakpoint {
   @NotNull
-  public BreakpointLocation getLocation();
+  BreakpointLocation getLocation();
 }

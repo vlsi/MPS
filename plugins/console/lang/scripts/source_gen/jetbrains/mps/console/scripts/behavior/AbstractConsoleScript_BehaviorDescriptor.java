@@ -12,5 +12,5 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public interface AbstractConsoleScript_BehaviorDescriptor extends IValidIdentifier_BehaviorDescriptor {
-  public Iterable<SNode> virtual_getCommands_1734392475491235554(SNode thisNode);
+  Iterable<SNode> virtual_getCommands_1734392475491235554(SNode thisNode);
 }

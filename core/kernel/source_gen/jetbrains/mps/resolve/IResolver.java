@@ -16,5 +16,5 @@ public interface IResolver {
    * @param repository  
    * @return false if IResolver was not able to resolve this reference
    */
-  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull SRepository repository);
+  boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull SRepository repository);
 }
