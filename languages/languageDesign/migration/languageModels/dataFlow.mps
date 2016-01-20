@@ -2,7 +2,7 @@
 <model ref="90746344-04fd-4286-97d5-b46ae6a81709/r:fd659746-8412-4fe8-a781-0bd8ae2004ef(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.dataFlow)">
   <persistence version="9" />
   <languages>
-    <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="-1" />
+    <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>

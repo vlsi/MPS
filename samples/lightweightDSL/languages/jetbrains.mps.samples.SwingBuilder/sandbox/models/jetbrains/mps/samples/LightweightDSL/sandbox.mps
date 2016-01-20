@@ -2,7 +2,7 @@
 <model ref="r:a5147a13-1ac5-4824-a844-41f6f1bf58a3(jetbrains.mps.samples.SwingBuilder.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="b4dbff0c-8c31-4a79-a45a-98e5fd0530e7" name="jetbrains.mps.samples.SwingBuilder" version="-1" />
+    <use id="b4dbff0c-8c31-4a79-a45a-98e5fd0530e7" name="jetbrains.mps.samples.SwingBuilder" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />

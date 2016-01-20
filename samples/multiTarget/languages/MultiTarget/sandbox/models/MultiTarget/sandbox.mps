@@ -2,9 +2,9 @@
 <model ref="r:43e69ec6-fc9f-4dba-a1fa-6498c42fda7a(MultiTarget.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="42cb3037-2cd2-44e7-8fe7-254f0c50f311" name="MultiTarget" version="-1" />
+    <use id="42cb3037-2cd2-44e7-8fe7-254f0c50f311" name="MultiTarget" version="0" />
     <use id="2be98ea6-ab10-4fb3-8aad-ddec015f4320" name="jetbrains.mps.samples.TargetBL" version="0" />
-    <use id="80471978-5b5c-4b34-a272-816c5dc96e2a" name="jetbrains.mps.samples.TargetXML" version="-1" />
+    <use id="80471978-5b5c-4b34-a272-816c5dc96e2a" name="jetbrains.mps.samples.TargetXML" version="0" />
   </languages>
   <imports />
   <registry>

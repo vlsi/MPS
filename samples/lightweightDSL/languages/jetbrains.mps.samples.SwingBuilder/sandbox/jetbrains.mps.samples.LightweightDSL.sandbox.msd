@@ -19,7 +19,7 @@
     <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" fqName="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
-    <language id="b4dbff0c-8c31-4a79-a45a-98e5fd0530e7" fqName="jetbrains.mps.samples.SwingBuilder" version="-1" />
+    <language id="b4dbff0c-8c31-4a79-a45a-98e5fd0530e7" fqName="jetbrains.mps.samples.SwingBuilder" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />

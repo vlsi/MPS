@@ -2,7 +2,7 @@
 <model ref="r:63a6a44c-f24e-44b6-83ad-9204b2e588eb(jetbrains.mps.samples.generator_demo.test_models.test2)">
   <persistence version="9" />
   <languages>
-    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="-1" />
+    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" version="0" />
     <generationPart ref="ef47f5be-76c4-4166-8925-2b415ec6b840(jetbrains.mps.samples.generator_demo.demoLang2)" />
   </languages>
   <imports />

@@ -2,7 +2,7 @@
 <model ref="r:53dcac98-920f-4bbc-b1cd-3c9b6b614f80(jetbrains.mps.baseLanguage.money.sandbox.model)">
   <persistence version="9" />
   <languages>
-    <use id="f43135f9-b833-4685-8d26-ffb6c8215f72" name="jetbrains.mps.baseLanguage.money" version="-1" />
+    <use id="f43135f9-b833-4685-8d26-ffb6c8215f72" name="jetbrains.mps.baseLanguage.money" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>

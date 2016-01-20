@@ -2,7 +2,7 @@
 <model ref="r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)">
   <persistence version="9" />
   <languages>
-    <use id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" version="-1" />
+    <use id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" version="0" />
   </languages>
   <imports />
   <registry>

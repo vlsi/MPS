@@ -2,8 +2,8 @@
 <model ref="r:39176b67-3f1b-4c69-b735-1b7cc44a78f3(jetbrains.mps.samples.heating.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" version="-1" />
-    <use id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" name="jetbrains.mps.samples.heating.tabular" version="-1" />
+    <use id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" version="0" />
+    <use id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" name="jetbrains.mps.samples.heating.tabular" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports />
