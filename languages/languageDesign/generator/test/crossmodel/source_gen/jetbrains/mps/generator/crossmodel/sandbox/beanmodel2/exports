@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:76ce7da7-7fa2-4e31-976a-32c17e3c8869(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
+<model ref="r:4816c4b1-513e-4c27-b37e-18bebacc04b3(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
   <persistence version="9" />
   <languages />
   <imports>
@@ -28,20 +28,20 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="1$EDuB6K85Y">
+  <node concept="2$UQVi" id="2deF_k_vrAn">
     <ref role="2$VUEs" to="xdt3:58Wq7fcwxhG" resolve="BeanToClass" />
-    <node concept="2$$0lk" id="1$EDuB6K85Z" role="2$$55j">
+    <node concept="2$$0lk" id="2deF_k_vrAo" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel2" />
     </node>
-    <node concept="2$VJBW" id="1$EDuB6K860" role="2$VCQS">
+    <node concept="2$VJBW" id="2deF_k_vrAp" role="2$VCQS">
       <property role="2$VJBT" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
       <property role="2$VJBR" value="5176577547833280844" />
     </node>
-    <node concept="2$VJBW" id="1$EDuB6K861" role="2$VCQQ">
+    <node concept="2$VJBW" id="2deF_k_vrAq" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="1813444223450513771" />
+      <property role="2$VJBR" value="2544162520235358596" />
     </node>
-    <node concept="3y4gSD" id="1$EDuB6K85X" role="2$VCQN">
+    <node concept="3y4gSD" id="2deF_k_vrAm" role="2$VCQN">
       <property role="3y4gSE" value="Bean2Impl" />
     </node>
   </node>
