@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root>
+    <file name="MigrationDescriptorImpl.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.test.testMigration.migration.MigrationDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:dc2b45f0-78b2-4601-964c-2b8c9e63c51c(jetbrains.mps.test.testMigration.migration)/2002619181442788459">
+    <file name="TestMigration.java">
+      <node id="2002619181442788459" at="15,30,16,27" concept="2" />
+      <node id="2002619181442788459" at="19,33,20,17" concept="2" />
+      <node id="2002619181442788769" at="23,9,24,96" concept="0" />
+      <node id="2002619181442788459" at="26,5,27,16" concept="2" />
+      <node id="2002619181442788459" at="29,51,30,153" concept="2" />
+      <node id="2002619181442788459" at="15,0,18,0" concept="1" trace="getCaption#()Ljava/lang/String;" />
+      <node id="2002619181442788459" at="29,0,32,0" concept="1" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="2002619181442788459" at="18,0,22,0" concept="1" trace="isRerunnable#()Z" />
+      <node id="2002619181442806912" at="22,41,26,5" concept="3" />
+      <node id="2002619181442788459" at="22,0,29,0" concept="1" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2002619181442806908" at="25,0,25,29">
+        <var name="e" id="2002619181442806910" />
+      </scope>
+      <scope id="2002619181442806909" at="25,29,25,29" />
+      <scope id="2002619181442788459" at="15,30,16,27" />
+      <scope id="2002619181442788459" at="19,33,20,17" />
+      <scope id="2002619181442806913" at="23,9,24,96" />
+      <scope id="2002619181442788459" at="29,51,30,153" />
+      <scope id="2002619181442788459" at="15,0,18,0" />
+      <scope id="2002619181442788459" at="29,0,32,0" />
+      <scope id="2002619181442788459" at="18,0,22,0" />
+      <scope id="2002619181442788459" at="22,41,27,16" />
+      <scope id="2002619181442788459" at="22,0,29,0">
+        <var name="m" id="2002619181442788459" />
+      </scope>
+      <unit id="2002619181442788459" at="14,0,34,0" name="jetbrains.mps.test.testMigration.migration.TestMigration" />
+    </file>
+  </root>
+</debug-info>
+
