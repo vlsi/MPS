@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,9 @@ import org.jetbrains.mps.openapi.model.SModel.Problem;
  * {@link #modelUnloaded(SModel)}, {@link #modelLoaded(SModel, boolean)}, {@link #modelReplaced(SModel)}.
  * However, at the moment we do not ensure this, and chances are you get different sequence for different models.
  * FIXME we lack tests that state aforementioned contract for notifications.
+ *
+ * FIXME may be useful to provide modelChanged() notification to avoid attaching node change listeners just to figure out if model has been changed.
+ * Event makes sense for EditableSModel only, perhaps, could be a separate listener, then?
  */
 public interface SModelListener {
 

@@ -1,0 +1,195 @@
+/*
+ * Copyright 2003-2016 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.project.structure;
+
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SnapshotModelData;
+import jetbrains.mps.smodel.TrivialModelDescriptor;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.MacrosFactory;
+import org.apache.log4j.Logger;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+
+import java.io.IOException;
+import java.io.StringWriter;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Contribute @descriptor model to Generator module.
+ *
+ * IMPLEMENTATION NOTE: Unlike {@link LanguageDescriptorModelProvider}, deliberately doesn't react to model changes now (module's descriptor model
+ * is refreshed on model save only), waiting for {@link org.jetbrains.mps.openapi.model.SModelListener} being capable of generic modelChanged event
+ * (don't want to listen to distinct node changes)
+ *
+ * @author Artem Tikhomirov
+ * @since 3.4
+ */
+public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
+  private final Map<SModelReference, GeneratorDescriptorModel> myModels = Collections.synchronizedMap(new HashMap<SModelReference, GeneratorDescriptorModel>());
+
+
+  @Override
+  public boolean isApplicable(SModule module) {
+    return module instanceof Generator && !module.isPackaged();
+  }
+
+  @Override
+  public void refreshModule(SModule module) {
+    SModelReference modelReference = getModelReference(module);
+    GeneratorDescriptorModel dm = myModels.get(modelReference);
+    if (dm != null) {
+      dm.invalidate();
+    } else {
+      Generator generator = (Generator) module;
+      dm = new GeneratorDescriptorModel(modelReference, generator);
+      myModels.put(modelReference, dm);
+      generator.registerModel(dm);
+    }
+  }
+
+  @Override
+  public void forgetModule(SModule module) {
+    SModelReference modelReference = getModelReference(module);
+    GeneratorDescriptorModel dm = myModels.remove(modelReference);
+    if (dm != null) {
+      Generator generator = (Generator) module;
+      assert dm.getModule() == generator;
+      generator.unregisterModel(dm);
+    }
+  }
+
+  @Override
+  public void dispose() {
+    ArrayList<GeneratorDescriptorModel> models = new ArrayList<GeneratorDescriptorModel>(myModels.values());
+    myModels.clear();
+    for (GeneratorDescriptorModel m : models) {
+      SModule module = m.getModule();
+      if (module != null && module instanceof Generator) {
+        ((Generator) module).unregisterModel(m);
+      }
+    }
+  }
+
+  /**
+   * FIXME ForeignModelId is globallyUnique == true. Shall either carefully check all uses of foreign id
+   * are deemed module-local and make it globallyUnique == false, or use a dedicated ModelId here
+   * (i.e. PlainStringModelId("generator@descriptor"); though that would require all the serialization/de-serialization factories in PersistenceFacade)
+   * Perhaps, could bring ModelNameModelId back to work, with unique == false?
+   */
+  private SModelReference getModelReference(SModule module) {
+    SModuleId moduleId = module.getModuleReference().getModuleId();
+    assert moduleId != null;
+    SModelId id = jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString());
+    // Would like to keep name of the model identical to that of language descriptor, to keep qualified name of the Generator RT class the same it was before.
+    // Once the name of the activator class is serialized in module.xml (or otherwise part of module descriptor), could change it as see fit.
+    // Could have cast module to generator, get source language module, and use it. Don' want to cast, though, rather assume name of generator module is
+    // identical to that of source language (up to # sign)
+    String moduleName = module.getModuleName();
+    int sharpIndex = moduleName.indexOf('#');
+    if (sharpIndex != -1) {
+      moduleName = moduleName.substring(0, sharpIndex);
+    }
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, moduleName + "@" + SModelStereotype.DESCRIPTOR);
+  }
+
+  static class GeneratorDescriptorModel extends TrivialModelDescriptor implements GeneratableSModel {
+    private final Generator myModule;
+    private String myHash;
+
+    GeneratorDescriptorModel(SModelReference modelReference, Generator module) {
+      super(new SnapshotModelData(modelReference));
+      myModule = module;
+    }
+
+    void invalidate() {
+      myHash = null;
+      // XXX shall fire changed event?
+    }
+
+    @Override
+    public boolean isGeneratable() {
+      return false; // FIXME WORK IN PROGRESS, remove once templates are ready.
+//      return !myModule.isReadOnly();
+    }
+
+    @Override
+    public boolean isGenerateIntoModelFolder() {
+      return false;
+    }
+
+    @Override
+    public void setGenerateIntoModelFolder(boolean value) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public String getModelHash() {
+      String hash = myHash;
+      if (hash != null) {
+        return hash;
+      }
+      Element element = new Element("gd");
+      // FIXME can't use myModule for MacrosFactory - there's no file in generator's descriptor, hence use one of the source language.
+      // Though once generator modules are standalone there's file, guess, the right way is to tolerate modules without file, and to supply
+      // e.g. MacrosFactory.getGlobal() instead of null.
+      GeneratorDescriptorPersistence.saveGeneratorDescriptor(element, myModule.getModuleDescriptor(), MacrosFactory.forModule(myModule.getSourceLanguage()));
+      StringWriter out = new StringWriter();
+      try {
+        JDOMUtil.writeDocument(new Document(element), out);
+      } catch (IOException ex) {
+        Logger.getLogger(getClass()).warn(ex.getMessage(), ex);
+      }
+      hash = ModelDigestUtil.hashText(out.toString());
+      BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
+      for (SModel m : myModule.getModels()) {
+        if (m instanceof GeneratableSModel && !SModelStereotype.isDescriptorModel(m)) {
+          modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) m).getModelHash(), Character.MAX_RADIX));
+        }
+      }
+      myHash = hash = modelHash.toString(Character.MAX_RADIX);
+      return hash;
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      return Collections.singletonMap(GeneratableSModel.FILE, getModelHash());
+    }
+
+    @Override
+    public void setDoNotGenerate(boolean value) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isDoNotGenerate() {
+      return false;
+    }
+  }
+}

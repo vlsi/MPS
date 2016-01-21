@@ -18,9 +18,7 @@ package jetbrains.mps.project.structure;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -36,7 +34,6 @@ import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -44,124 +41,73 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class LanguageDescriptorModelProvider implements CoreComponent {
+/**
+ * Contributes '@descriptor' model to Language modules.
+ */
+public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
-  private final SRepository myRepository;
-  private ClassLoaderManager myClassLoaderManager;
-  private final SRepositoryListener myListener = new SRepositoryContentAdapter() {
+  private final ClassLoaderManager myClassLoaderManager;
+  private final RootChangeListener myListener = new RootChangeListener();
 
-    @Override
-    protected boolean isIncluded(SModule module) {
-      return isWorkspaceLanguageModule(module);
-    }
+  private class RootChangeListener extends SNodeChangeListenerAdapter {
+    private final Set<SModelReference> myListenedModels = new HashSet<SModelReference>();
 
-    @Override
-    public void moduleAdded(@NotNull SModule module) {
-      super.moduleAdded(module);
-      if (isWorkspaceLanguageModule(module)) {
-        refreshModule((Language) module);
+
+    public void attach(SModule module) {
+      for (SModel model : module.getModels()) {
+        if (model instanceof EditableSModel && LanguageAspectSupport.isAspectModel(model)) {
+          if (myListenedModels.add(model.getReference())) {
+            model.addChangeListener(this);
+          }
+        }
       }
     }
 
-    @Override
-    public void moduleChanged(SModule module) {
-      if (isWorkspaceLanguageModule(module)) {
-        refreshModule((Language) module);
+    public void detach(SModule module) {
+      // doesn't hurt to remove a listener even if we didn't add it
+      for (SModel m : module.getModels()) {
+        myListenedModels.remove(m.getReference());
+        m.removeChangeListener(this);
       }
-    }
-
-    @Override
-    public void beforeModuleRemoved(@NotNull SModule module) {
-      super.beforeModuleRemoved(module);
-      if (isWorkspaceLanguageModule(module)) {
-        forgetModule((Language) module);
-      }
-    }
-
-    @Override
-    public void modelAdded(SModule module, SModel model) {
-      super.modelAdded(module, model);
-      if (isWorkspaceLanguageModule(module)) {
-        refreshModule((Language) module);
-      }
-    }
-
-    @Override
-    public void modelReplaced(SModel model) {
-      super.modelReplaced(model);
-      if (isWorkspaceLanguageModule(model.getModule())) {
-        refreshModule((Language) model.getModule());
-      }
-    }
-
-    @Override
-    public void beforeModelRemoved(SModule module, SModel model) {
-      super.beforeModelRemoved(module, model);
-      if (!isWorkspaceLanguageModule(module)) return;
-
-      refreshModule((Language) module);
-    }
-
-    @Override
-    protected void startListening(SModel model) {
-      if (!isWorkspaceLanguageModule(model.getModule())) return;
-      if (!(model instanceof EditableSModel)) return;
-      if (!LanguageAspectSupport.isAspectModel(model)) return;
-
-      model.addChangeListener(this);
-      model.addModelListener(this);
-    }
-
-    @Override
-    protected void stopListening(SModel model) {
-      if (!isWorkspaceLanguageModule(model.getModule())) return;
-      if (!(model instanceof EditableSModel)) return;
-
-      model.removeChangeListener(this);
-      model.removeModelListener(this);
     }
 
     @Override
     public void nodeAdded(@NotNull SNodeAddEvent event) {
-      if (!event.isRoot()) return;
+      if (!event.isRoot()) {
+        return;
+      }
       Language language = Language.getLanguageFor(event.getModel());
-      if (language == null) return;
-
-      refreshModule(language);
+      if (language != null) {
+        refreshModule(language);
+      }
     }
 
     @Override
     public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
-      if (!event.isRoot()) return;
+      if (!event.isRoot()) {
+        return;
+      }
       Language language = Language.getLanguageFor(event.getModel());
-      if (language == null) return;
-
-      refreshModule(language);
+      if (language != null) {
+        refreshModule(language);
+      }
     }
+  }
 
-    @Override
-    public void modelSaved(SModel model) {
-      final Language language = Language.getLanguageFor(model);
-      if (language == null) return;
-
-      refreshModule(language);
-    }
-  };
   private final MPSClassesListener myAspectReloadListener = new MPSClassesListenerAdapter() {
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
@@ -171,8 +117,6 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           for (SModule loadedModule : loadedModules) {
             if (! (loadedModule instanceof Language)) continue;
             if (!mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) continue;
-
-            myRepository.getModelAccess().checkWriteAccess();
 
             SModelReference ref = getSModelReference(l);
             LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
@@ -187,50 +131,40 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
   };
 
-  public LanguageDescriptorModelProvider(SRepository repository, ClassLoaderManager classLoaderManager) {
-    // TODO [multiple repositories] shall deal with Project SRepository (with workspace, editable modules only)
-    myRepository = repository;
+  public LanguageDescriptorModelProvider(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
-  }
-
-  @Override
-  public void init() {
-    myRepository.addRepositoryListener(myListener);
-
-    myRepository.getModelAccess().checkWriteAccess();
-
     myClassLoaderManager.addClassesHandler(myAspectReloadListener);
-
-    for (SModule module : myRepository.getModules()) {
-      if (!isWorkspaceLanguageModule(module)) {
-        continue;
-      }
-      final Language langModule = (Language) module;
-      SModelReference ref = getSModelReference(langModule);
-      createModel(ref, langModule);
-    }
   }
 
   @Override
   public void dispose() {
     myClassLoaderManager.removeClassesHandler(myAspectReloadListener);
-    myRepository.removeRepositoryListener(myListener);
-    clearAll();
+    removeAll();
   }
 
-  void forgetModule(Language module) {
-    myRepository.getModelAccess().checkWriteAccess();
+  /**
+   * We don't care to supply descriptor model for deployed modules as there's no use for language descriptor there
+   */
+  @Override
+  public boolean isApplicable(SModule module) {
+    return module instanceof Language && !module.isPackaged();
+  }
 
+  @Override
+  public void forgetModule(SModule language) {
+    myListener.detach(language);
+    Language module = (Language) language;
     SModelReference ref = getSModelReference(module);
-    LanguageModelDescriptor descriptor = myModels.get(ref);
+    LanguageModelDescriptor descriptor = myModels.remove(ref);
     if (descriptor != null) {
       removeModel(descriptor);
     }
   }
 
-  /*package*/ void refreshModule(Language module) {
-    myRepository.getModelAccess().checkWriteAccess();
-
+  @Override
+  public void refreshModule(SModule language) {
+    myListener.attach(language);
+    Language module = (Language) language;
     SModelReference ref = getSModelReference(module);
     if (!myModels.containsKey(ref)) {
       createModel(ref, module);
@@ -242,30 +176,18 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
   }
 
-  public void clearAll() {
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        removeAll();
-        myModels.clear();
-      }
-    });
-  }
-
   private void removeAll() {
-    List<SModel> models = new ArrayList<SModel>(myModels.values());
-    for (SModel model : models) {
+    List<LanguageModelDescriptor> models = new ArrayList<LanguageModelDescriptor>(myModels.values());
+    for (LanguageModelDescriptor model : models) {
       removeModel(model);
     }
+    myModels.clear();
   }
 
-  private void removeModel(SModel md) {
-    if (myModels.remove(md.getReference()) != null) {
-      SModuleBase module = (SModuleBase) md.getModule();
-      if (module == null) {
-        return;
-      }
-      module.unregisterModel((SModelBase) md);
+  private void removeModel(LanguageModelDescriptor md) {
+    SModule module = md.getModule();
+    if (module instanceof SModuleBase) {
+      ((SModuleBase) module).unregisterModel(md);
     }
   }
 
@@ -276,14 +198,6 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     myModels.put(ref, result);
     module.registerModel(result);
     return result;
-  }
-
-  /**
-   * We don't care to supply descriptor model for deployed modules as there's no use for language descriptor there
-   */
-  /*package*/
-  static boolean isWorkspaceLanguageModule(@Nullable SModule module) {
-    return module instanceof Language && !module.isPackaged();
   }
 
   private static SModelReference getSModelReference(Language module) {

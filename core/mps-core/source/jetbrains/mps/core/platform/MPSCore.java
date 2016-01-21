@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
+import jetbrains.mps.project.structure.DescriptorModelComponent;
+import jetbrains.mps.project.structure.GeneratorDescriptorModelProvider;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -108,7 +110,7 @@ public final class MPSCore extends ComponentPluginBase {
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, modelRepository));
-    init(new LanguageDescriptorModelProvider(myModuleRepository, myClassLoaderManager));
+    init(new DescriptorModelComponent(myModuleRepository, new LanguageDescriptorModelProvider(myClassLoaderManager), new GeneratorDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
     init(new CopyPasteManager(myClassLoaderManager));
     init(new PasteWrappersManager(myClassLoaderManager));
