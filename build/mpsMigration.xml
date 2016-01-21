@@ -1,21 +1,35 @@
-<project name="mpsMigration" default="migrate" basedir="../">
+<project name="mpsMigration" default="check" basedir="..">
 
-  <property name="mps_home" location="/Users/muhin/work/mps/build/artifacts/mps" />
-  <property name="artifacts.mpsBootstrapCore" location="build/artifacts/mpsBootstrapCore" />
-  <property name="artifacts.mps" location="${mps_home}" />
+  <property name="test_project" location="testbench/modules/testMigration" />
 
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
+    <pathelement location="lib/ant/lib/ant-mps.jar" />
     <pathelement location="lib/jdom.jar" />
     <pathelement location="lib/log4j.jar" />
   </path>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"  classpathref="path.mps.ant.path" />
 
+  <target name="check" depends="migrate,check-test-result"/>
+
   <target name="migrate">
     <echo message="migrating" />
-    <migrate project="/Users/muhin/MPSProjects/Project1/">
-      <macro name="mps_home" path="${mps_home}" />
+    <migrate project="${test_project}">
+      <macro name="mps_home" path="${mps_home}"/>
     </migrate>
   </target>
+
+  <target name="check-test-result">
+    <junit fork="true" dir="${mps_home}" showoutput="true">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Dmps.junit.modules.root=."/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1200m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
+      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+      <test name="jetbrains.mps.migration.TestSingleMigration" />
+      <formatter type="xml"/>
+    </junit>
+  </target>
+
 </project>
