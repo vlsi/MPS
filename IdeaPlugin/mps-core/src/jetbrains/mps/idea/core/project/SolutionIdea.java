@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,8 +73,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.openapi.module.SModuleListener;
+import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -471,7 +471,7 @@ public class SolutionIdea extends Solution {
     return getModuleName() + " [idea module derived solution]";
   }
 
-  private final SModuleListener MODULE_RUNTIME_IMPORTER = new SModuleAdapter() {
+  private final SModuleListener MODULE_RUNTIME_IMPORTER = new SModuleListenerBase() {
     @Override
     public void modelAdded(SModule module, SModel model) {
       if (!(model instanceof SModelInternal)) return;

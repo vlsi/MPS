@@ -359,8 +359,8 @@
             <property role="2bfB8j" value="true" />
             <property role="1sVAO0" value="false" />
             <property role="1EXbeo" value="false" />
-            <ref role="1Y3XeK" to="lui2:~SModuleAdapter" resolve="SModuleAdapter" />
-            <ref role="37wK5l" to="lui2:~SModuleAdapter.&lt;init&gt;()" resolve="SModuleAdapter" />
+            <ref role="1Y3XeK" to="lui2:~SModuleListenerBase" resolve="SModuleListenerBase" />
+            <ref role="37wK5l" to="lui2:~SModuleListenerBase.&lt;init&gt;()" resolve="SModuleListenerBase" />
             <node concept="3clFb_" id="1KD4ruQM5xT" role="jymVt">
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="modelAdded" />

@@ -15,53 +15,11 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+/**
+ * @deprecated unfortunate naming, not an adapter to SModule, use {@link SModuleListenerBase} instead.
+ * The class will be removed after 3.4
+ */
+@Deprecated
+public class SModuleAdapter extends SModuleListenerBase {
 
-public class SModuleAdapter implements SModuleListener {
-
-  @Override
-  public void modelAdded(SModule module, SModel model) {
-  }
-
-  @Override
-  public void beforeModelRemoved(SModule module, SModel model) {
-  }
-
-  @Override
-  public void modelRemoved(SModule module, SModelReference ref) {
-  }
-
-  @Override
-  public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
-  }
-
-  @Override
-  public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
-  }
-
-  @Override
-  public void dependencyAdded(SModule module, SDependency dep) {
-    moduleChanged(module);
-  }
-
-  @Override
-  public void dependencyRemoved(SModule module, SDependency dep) {
-    moduleChanged(module);
-  }
-
-  @Override
-  public void languageAdded(SModule module, SLanguage lang) {
-    moduleChanged(module);
-  }
-
-  @Override
-  public void languageRemoved(SModule module, SLanguage lang) {
-    moduleChanged(module);
-  }
-
-  @Override
-  public void moduleChanged(SModule module) {
-  }
 }
