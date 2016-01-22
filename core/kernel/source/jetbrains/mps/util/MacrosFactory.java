@@ -65,6 +65,15 @@ public class MacrosFactory {
   }
 
   /**
+   * Checks whether {@code path} contains a macro.
+   * @param path a non-null string
+   * @return {@code true} if {@code path} starts with "${" and contains "}", {@code false} otherwise.
+   */
+  public static boolean containsMacro(@NotNull String path) {
+    return path.startsWith("${") && path.contains("}");
+  }
+
+  /**
    * @deprecated use forModuleFile
    */
   @Deprecated
@@ -202,7 +211,7 @@ public class MacrosFactory {
     private static final Logger LOG = LogManager.getLogger(Macros.class);
 
     protected String expand(String path, IFile anchorFile) {
-      if (!path.startsWith("${") || !path.contains("}")) return path;
+      if (!containsMacro(path)) return path;
       String macro = path.substring(2, path.indexOf("}"));
 
       String relativePath = removePrefix(path);
@@ -278,7 +287,7 @@ public class MacrosFactory {
 
     @Override
     public String expandPath(@Nullable String path) {
-      if (path == null || !path.startsWith("${")) return path; // No macros to expand
+      if (path == null || !containsMacro(path)) return path; // No macros to expand
 
       // This is a support for paths with macros which were saved in Windows before MPS beta.
       // Path with macros should always be stored with slashes.
