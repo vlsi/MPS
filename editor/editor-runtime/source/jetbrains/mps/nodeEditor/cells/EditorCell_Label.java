@@ -376,7 +376,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   protected boolean toShowCaret() {
-    return myCaretIsVisible && isWithinSelection() && getEditor().hasFocus();
+    return myCaretIsVisible && isWithinSelection() && getEditor().isActive();
   }
 
   TextLine getTextLine() {

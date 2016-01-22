@@ -890,6 +890,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     return null;
   }
+
   public EditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }
@@ -3093,6 +3094,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
+  }
+
+  /**
+   * Return true if UI focus "within" this editor component. Means: owned by this component or any child-components
+   * (in case of component cells displayed inside this editor).
+   *
+   * @return true if the focus is inside this EditorComponent
+   */
+  public boolean isActive() {
+    Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+    return hasFocus() || SwingUtilities.getAncestorOfClass(EditorComponent.class, focusOwner) == this;
   }
 
   private class ReferenceUnderliner {
