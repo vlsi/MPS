@@ -42,6 +42,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -92,7 +93,7 @@ public class FilePerRootFormatUtil {
 
     // load roots
     List<String> streams = new ArrayList<String>();
-    for (String s : dataSource.getAvailableStreams())  streams.add(s);
+    for (String s : dataSource.getAvailableStreams()) streams.add(s);
     Collections.sort(streams);
     for (String stream : streams) {
       if (!(stream.endsWith(FilePerRootDataSource.ROOT_EXTENSION))) continue;
@@ -141,6 +142,7 @@ public class FilePerRootFormatUtil {
     }
     return modelPersistence.getVersion();
   }
+
   /**
    * returns true if the content should be reloaded from storage after save
    */
@@ -171,6 +173,18 @@ public class FilePerRootFormatUtil {
       if (!result.containsKey(s)) toRemove.add(s);
     }
     for (Entry<String, Document> entry : result.entrySet()) {
+      //if we have a file having a name, which differs in case only, we want to remove this file before writing to the new one
+      //to sync cases in root- and filenames
+      String fnameLower = entry.getKey().toLowerCase();
+      Set<String> removed = new HashSet<String>();
+      for (String s : toRemove) {
+        if (s.toLowerCase().equals(fnameLower)){
+          source.delete(s);
+          removed.add(s);
+        }
+      }
+      toRemove.removeAll(removed);
+
       JDOMUtil.writeDocument(entry.getValue(), source, entry.getKey());
     }
     for (String r : toRemove) {
@@ -193,11 +207,11 @@ public class FilePerRootFormatUtil {
       if (value.length() == 0) {
         value = key instanceof Regular ? key.toString() : "Root";
       }
-      if (!usedNames.add(value)) {
+      if (!usedNames.add(value.toLowerCase())) {
         String baseString = value;
         int index = 2;
         value = baseString + index;
-        while (!usedNames.add(value)) {
+        while (!usedNames.add(value.toLowerCase())) {
           index++;
           value = baseString + index;
         }
@@ -208,7 +222,7 @@ public class FilePerRootFormatUtil {
   }
 
   private static String asFileName(String s) {
-    if(s == null) return "";
+    if (s == null) return "";
     StringBuilder sb = new StringBuilder(s.length());
     for (int i = 0; i < s.length(); i++) {
       int c = (int) s.charAt(i);
