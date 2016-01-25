@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="Generator.java">
+      <unit at="19,0,71,0" name="jetbrains.mps.baseLanguage.jdk7.Generator" />
+    </file>
+  </root>
+</debug-info>
+

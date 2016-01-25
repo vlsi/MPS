@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <root>
-    <file name="Generator.java">
-      <unit at="18,0,68,0" name="jetbrains.mps.samples.KajaSceneConstruction.Generator" />
-    </file>
     <file name="Language.java">
       <unit at="14,0,49,0" name="jetbrains.mps.samples.KajaSceneConstruction.Language" />
     </file>

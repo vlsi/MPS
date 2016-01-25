@@ -186,10 +186,12 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       try {
         Class<?> rtClass;
         try {
-          rtClass = sourceLanguage.getOwnClass(rtClassName);
-        } catch (ClassNotFoundException ex) {
-          // FIXME once Generator class is part of own module, this would be the only way to load classes
           rtClass = g.getOwnClass(rtClassName);
+        } catch (ClassNotFoundException ex) {
+          // FIXME compatibility with legacy generators that has been generated with Generator class along with Language RT class
+          // under language module. XXX need this unless provide module activator class name in module.xml/module descriptor so that
+          // can tell legacy module from a newer one (newer would have activator for Generator module, while legacy had none)
+          rtClass = sourceLanguage.getOwnClass(rtClassName);
         }
         if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {
           final Class<? extends GeneratorRuntime> aClass = rtClass.asSubclass(GeneratorRuntime.class);
@@ -198,8 +200,30 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
             throw new InstantiationException(String.format("Could not find language runtime for %s to attach generator %s to", sourceLanguage.getModuleName(),
                 g.getModuleName()));
           }
-          final Constructor<? extends GeneratorRuntime> constructor = aClass.getConstructor(sourceLanguageRuntime.getClass());
-          return constructor.newInstance(sourceLanguageRuntime);
+          Constructor<? extends GeneratorRuntime> constructor = null;
+          for (Constructor<?> cons : aClass.getConstructors()) {
+            if (cons.getParameterTypes().length != 1) {
+              continue;
+            }
+            final Class<?> paramType = cons.getParameterTypes()[0];
+            if (paramType == sourceLanguageRuntime.getClass()) {
+              // Generator classes used to accept instance of Language runtime class as their cons argument.
+              // However, once moved to own module and being generated from distinct descriptor model, the reference become cross-model one,
+              // and given the choice between export labels and base RT class as cons argument, the pick is no-brainer.
+              constructor = aClass.getConstructor(sourceLanguageRuntime.getClass());
+              break;
+            }
+            if (paramType == LanguageRuntime.class) {
+              constructor = aClass.getConstructor(LanguageRuntime.class);
+              break;
+            }
+          }
+          if (constructor == null) {
+            LOG.error(String.format("No constructor to accept language runtime found in class %s of generator %s", rtClassName, g.getModuleName()));
+            return null;
+          } else {
+            return constructor.newInstance(sourceLanguageRuntime);
+          }
         }
       } catch (ClassNotFoundException e) {
         LOG.error(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
