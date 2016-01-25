@@ -5,8 +5,6 @@ package jetbrains.mps.samples.mindmaps;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
-import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl;
@@ -32,10 +30,6 @@ public class Language extends LanguageRuntime {
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
-  }
-  @Override
-  public Collection<TemplateModule> getGenerators() {
-    return null;
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

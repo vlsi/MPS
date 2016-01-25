@@ -5,8 +5,6 @@ package jetbrains.mps.lang.editor.diagram.testLanguage;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
-import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -34,10 +32,6 @@ public class Language extends LanguageRuntime {
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
-  }
-  @Override
-  public Collection<TemplateModule> getGenerators() {
-    return null;
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
