@@ -35,7 +35,7 @@ public interface TemplateModule extends GeneratorRuntime {
   Collection<TemplateModel> getModels();
 
   /**
-   * Generators this generator explicitly extends. This effectively means rules ans switches from all
+   * Generators this generator explicitly extends. This effectively means rules and switches from all
    * extended generators are considered.
    */
   Collection<TemplateModule> getExtendedGenerators();

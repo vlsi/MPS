@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SnapshotModelData;
@@ -29,6 +30,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -69,6 +71,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     } else {
       Generator generator = (Generator) module;
       dm = new GeneratorDescriptorModel(modelReference, generator);
+      dm.addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
       myModels.put(modelReference, dm);
       generator.registerModel(dm);
     }
@@ -116,7 +119,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     if (sharpIndex != -1) {
       moduleName = moduleName.substring(0, sharpIndex);
     }
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, moduleName + "@" + SModelStereotype.DESCRIPTOR);
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(moduleName, SModelStereotype.DESCRIPTOR).getValue());
   }
 
   static class GeneratorDescriptorModel extends TrivialModelDescriptor implements GeneratableSModel {
@@ -135,7 +138,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
 
     @Override
     public boolean isGeneratable() {
-      return false; // FIXME WORK IN PROGRESS, remove once templates are ready.
+      return !myModule.isReadOnly() && myModule.generateTemplates(); // FIXME WORK IN PROGRESS, remove once templates are ready.
 //      return !myModule.isReadOnly();
     }
 

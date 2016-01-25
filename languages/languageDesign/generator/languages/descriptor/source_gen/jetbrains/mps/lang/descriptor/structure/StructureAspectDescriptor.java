@@ -12,25 +12,28 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
+  /*package*/ final ConceptDescriptor myConceptGeneratorDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor", MetaIdFactory.conceptId(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3919235298192590468L, "generator", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L), false)).references("generator").create();
   /*package*/ final ConceptDescriptor myConceptGeneratorInternal_Aspect = new ConceptDescriptorBuilder("jetbrains.mps.lang.descriptor.structure.GeneratorInternal_Aspect", MetaIdFactory.conceptId(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5100536058472628079L, "implClass")).properties("implClass").referenceDescriptors(new ConceptDescriptorBuilder.Ref(5100536058472628070L, "interfaceClass", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L), false)).references("interfaceClass").create();
   /*package*/ final ConceptDescriptor myConceptLanguageDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor", MetaIdFactory.conceptId(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(1698302279987270971L, "language", MetaIdFactory.conceptId(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL), false, false, false)).children(new String[]{"language"}, new boolean[]{false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptGeneratorInternal_Aspect, myConceptLanguageDescriptor);
+    return Arrays.asList(myConceptGeneratorDescriptor, myConceptGeneratorInternal_Aspect, myConceptLanguageDescriptor);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
-        return myConceptGeneratorInternal_Aspect;
+        return myConceptGeneratorDescriptor;
       case 1:
+        return myConceptGeneratorInternal_Aspect;
+      case 2:
         return myConceptLanguageDescriptor;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.descriptor.structure.GeneratorInternal_Aspect", "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor", "jetbrains.mps.lang.descriptor.structure.GeneratorInternal_Aspect", "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
 }
