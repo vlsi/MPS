@@ -1041,7 +1041,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new ConcurrentSubtypingCache();
   }
 
-  private String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     if (messages.isEmpty()) {
       return null;
@@ -2022,7 +2022,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private void goByCurrentReference() {
+  public void goByCurrentReference() {
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     getModelAccess().executeCommand(new EditorCommand(getCommandContext()) {
       @Override
@@ -2041,7 +2041,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRepository.getModelAccess();
   }
 
-  private void showCellError() {
+  public void showCellError() {
     final jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
       getModelAccess().runReadAction(new Runnable() {
