@@ -104,16 +104,12 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     }
   }
 
-  /**
-   * FIXME ForeignModelId is globallyUnique == true. Shall either carefully check all uses of foreign id
-   * are deemed module-local and make it globallyUnique == false, or use a dedicated ModelId here
-   * (i.e. PlainStringModelId("generator@descriptor"); though that would require all the serialization/de-serialization factories in PersistenceFacade)
-   * Perhaps, could bring ModelNameModelId back to work, with unique == false?
-   */
   private SModelReference getModelReference(SModule module) {
     SModuleId moduleId = module.getModuleReference().getModuleId();
     assert moduleId != null;
-    SModelId id = jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString());
+    // There's no special meaning in using 'descriptor' kind in model id, we look into model name's stereotype to tell whether
+    // it's descriptor model or not anyway. It's just a tribute to LanguageDescriptorModelProvider legacy, where it used to be that way for years
+    SModelId id = jetbrains.mps.smodel.SModelId.foreign(SModelStereotype.DESCRIPTOR, moduleId.toString());
     // Would like to keep name of the model identical to that of language descriptor, to keep qualified name of the Generator RT class the same it was before.
     // Once the name of the activator class is serialized in module.xml (or otherwise part of module descriptor), could change it as see fit.
     // Could have cast module to generator, get source language module, and use it. Don' want to cast, though, rather assume name of generator module is

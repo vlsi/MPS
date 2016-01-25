@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.UUID;
 
@@ -43,14 +46,28 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
   }
 
-  public static SModelId foreign(String id) {
+  public static SModelId foreign(@NotNull String id) {
     return new ForeignSModelId(id);
   }
 
-  public static SModelId foreign(String kind, String id) {
-    return new ForeignSModelId(kind + "#" + id);
+  /**
+   * See {@link jetbrains.mps.smodel.SModelId.ForeignSModelId} for details
+   */
+  public static SModelId foreign(@Nullable String kind, @NotNull String id) {
+    if (kind != null && !kind.trim().isEmpty()) {
+      return new ForeignSModelId(kind.trim() + "#" + id);
+    } else {
+      return new ForeignSModelId(id);
+    }
   }
 
+  /**
+   * @deprecated moduleId shall not be part of model id. Although it's possible that intention was to make it 'globally unique' (as it superclass suggests),
+   * usage pattern tells us they were not deemed global (there's always module id when a model reference with foreign id is created). And even global id shall
+   * not use set of strings concatenated with '#' to describe complex data structure.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SModelId foreign(String kind, String moduleId, String id) {
     if (moduleId == null || moduleId.length() == 0) {
       return new ForeignSModelId(kind + "#" + id);
@@ -82,6 +99,11 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
   private SModelId() {
   }
 
+  /**
+   * @deprecated model id is immutable, what's the point to make a copy?
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public SModelId getCopy() {
     return fromString(toString());
   }
@@ -96,12 +118,13 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     return null;
   }
 
+  @Immutable
   public final static class RegularSModelId extends SModelId {
     public static final String TYPE = "r";
 
-    private UUID myId;
+    private final UUID myId;
 
-    private RegularSModelId(UUID id) {
+    /*package*/ RegularSModelId(UUID id) {
       myId = id;
     }
 
@@ -128,19 +151,41 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
   }
 
-  // XXX why don't we expose 'kind' if we do specify one at creation time?
-  // What's the point of this ForeignSModelId then? It could be plain AnyStringModelId then.
+  /**
+   * Model identity based on plain string, with optional kind part up to first hash ('#') sign (i.e. "[kind#]identity").
+   * Almost any string could be used for identity. Although there's no known restrictions at the moment, it's advised not to
+   * stretch this freedom too much.
+   * Primary difference with {@link jetbrains.mps.smodel.SModelId.ModelNameSModelId} is that identity is not treated as model name
+   */
+  @Immutable
   public final static class ForeignSModelId extends SModelId {
     public static final String TYPE = "f";
-    private String myId;
+    private final String myId;
 
-    private ForeignSModelId(String id) {
+    /*package*/ ForeignSModelId(String id) {
       myId = InternUtil.intern(id);
     }
 
-    // XXX what about null/not null?
+    /**
+     * @return never <code>null</code>
+     */
     public String getId() {
       return myId;
+    }
+
+    /**
+     * @return optional part of the identity string, up to first '#', excluding; empty string if no kind part found
+     */
+    public String getKind() {
+      // What's the point of this ForeignSModelId then if we don't expose 'kind', provided we've specified one at creation time?
+      // It could be plain AnyStringModelId then.
+      int x = myId.indexOf('#');
+      return x == -1 ? "" : myId.substring(0, x);
+    }
+
+    @Override
+    public boolean isGloballyUnique() {
+      return false;
     }
 
     public boolean equals(Object obj) {
@@ -162,9 +207,10 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
   }
 
+  @Immutable
   public final static class ModelNameSModelId extends SModelId {
     public static final String TYPE = "m";
-    private String myModelName;
+    private final String myModelName;
 
     public ModelNameSModelId(String modelName) {
       super();
@@ -198,9 +244,10 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
   }
 
+  @Immutable
   public final static class RelativePathSModelId extends SModelId {
     public static final String TYPE = "path";
-    private String myPath;
+    private final String myPath;
 
     public RelativePathSModelId(String path) {
       super();

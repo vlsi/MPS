@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -203,8 +204,9 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   private static SModelReference getSModelReference(Language module) {
     SModuleId moduleId = module.getModuleReference().getModuleId();
     assert moduleId != null;
-    SModelId id = jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString());
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, module.getModuleName() + "@" + SModelStereotype.DESCRIPTOR);
+    // see GeneratorDescriptorModelProvider#getModelReference for rants regarding use of 'descriptor' in model id
+    SModelId id = jetbrains.mps.smodel.SModelId.foreign(SModelStereotype.DESCRIPTOR, moduleId.toString());
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(module.getModuleName(), SModelStereotype.DESCRIPTOR).getValue());
   }
 
   public String toString() {

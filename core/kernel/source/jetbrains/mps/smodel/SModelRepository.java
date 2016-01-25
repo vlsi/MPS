@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -202,7 +202,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   /**
-   * Here we duplicate code if JavaPackageNameStub, not to introduce dependency to [java-stub] module
+   * Here we duplicate code of JavaPackageNameStub, not to introduce dependency to [java-stub] module
    */
   @ToRemove(version = 3.3)
   @Hack

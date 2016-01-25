@@ -247,6 +247,10 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    * would anyone keep it to model id then, and common patter for model reference (with module id coming first) shall be used.
    *
    * Once all model references to java stub are updated, this code shall cease to exist.
+   *
+   * IMPORTANT: there's a fly in the ointment, though - we shall read references of old models, and thus shall keep this code
+   * forever. Perhaps, we can move it into persistence/vcs modules and bury it there? Another alternative is to introduce
+   * new model identity to replace 'f:' identity, and leave dedicated SModelId factory for the legacy support in vcs/persistence only.
    */
   @ToRemove(version = 3.3)
   @Nullable
