@@ -44,7 +44,7 @@
         <node concept="3clFbS" id="7BqJJVi3vjM" role="2VODD2">
           <node concept="3clFbF" id="7BqJJVi3vjN" role="3cqZAp">
             <node concept="Xl_RD" id="7BqJJVi3vjO" role="3clFbG">
-              <property role="Xl_RC" value="descriptor" />
+              <property role="Xl_RC" value="language descriptor" />
             </node>
           </node>
         </node>

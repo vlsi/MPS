@@ -26,7 +26,7 @@ public class LanguageDescriptor_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return "descriptor";
+        return "language descriptor";
       }
     });
     return properties;

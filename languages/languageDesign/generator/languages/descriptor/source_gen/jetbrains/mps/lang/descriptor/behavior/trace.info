@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="GeneratorDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorDescriptor_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorDescriptor_BehaviorDescriptor" />
     </file>
     <file name="GeneratorInternal_Aspect_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" />
