@@ -64,6 +64,10 @@ public class DescriptorModelComponent implements CoreComponent {
     private final SModuleListenerBase myModuleListener = new SModuleListenerBase() {
       @Override
       public void modelAdded(SModule module, SModel model) {
+        if (SModelStereotype.isDescriptorModel(model)) {
+          // it's me who have added the model, no need to refresh
+          return;
+        }
         refresh(module);
         attachListeners(model);
       }
@@ -75,6 +79,9 @@ public class DescriptorModelComponent implements CoreComponent {
 
       @Override
       public void modelRemoved(SModule module, SModelReference ref) {
+        if (SModelStereotype.isDescriptorModelStereotype(ref.getName().getStereotype())) {
+          return; // the only source of descriptor models is our provider, no need to refresh
+        }
         // shall refresh once model is gone, not when it's yet about to be removed
         refresh(module);
       }
@@ -168,6 +175,8 @@ public class DescriptorModelComponent implements CoreComponent {
 
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
+      // in fact, shall detach listeners before actual forget, as removal of the descriptor model
+      // triggers model events we do not really care about. Shall rather keep set of SModuleReferences we've attached listeners to.
       if (forget(module)) {
         detachListeners(module);
       }

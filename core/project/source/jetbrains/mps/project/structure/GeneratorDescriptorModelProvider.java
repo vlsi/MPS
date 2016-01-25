@@ -80,15 +80,15 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
   @Override
   public void forgetModule(SModule module) {
     SModelReference modelReference = getModelReference(module);
-    GeneratorDescriptorModel dm = myModels.remove(modelReference);
+    // generator.unregisterModel below triggers module changed (to be precise, modelRemoved) event, and we may
+    // get into #refreshModule() above again, hence it's safe not to remove entry from the map unless all events have been sent
+    // (even provided we do our best in DescriptorModelComponent not to send refresh for added/removed descriptor models)
+    GeneratorDescriptorModel dm = myModels.get(modelReference);
     if (dm != null) {
       Generator generator = (Generator) module;
-      // FIXME project closed and re-open leaves stale models in myModels, with getModule() != the new one, and assertion fails
-      // Note, dm.getModule().getRepository == null
-//      assert dm.getModule() == generator;
-      if (dm.getModule() == generator) {
-        generator.unregisterModel(dm);
-      }
+      assert dm.getModule() == generator;
+      generator.unregisterModel(dm);
+      myModels.remove(modelReference);
     }
   }
 
