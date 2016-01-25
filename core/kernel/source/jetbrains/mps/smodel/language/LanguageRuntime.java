@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,14 +21,17 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -65,7 +68,11 @@ public abstract class LanguageRuntime {
    */
   public abstract int getVersion();
 
-  public abstract Collection<? extends GeneratorRuntime> getGenerators();
+  public Collection<? extends GeneratorRuntime> getGenerators() {
+    ArrayList<GeneratorRuntime> rv = new ArrayList<GeneratorRuntime>(4);
+    populateRegisteredGenerators(rv);
+    return rv;
+  }
 
   /**
    * Provide aspect instance associated with the language. Aspect is instantiated only once, lazily (the first time asked)
@@ -109,6 +116,23 @@ public abstract class LanguageRuntime {
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
     // FIXME Method shall become abstract past 3.3, once we change generated override methods not to delegate to this super.
     return null;
+  }
+
+  /*
+   * perhaps, could use WeakHashMap, although proper registration/un-registration sequence shall enforce no stale entries
+   */
+  private final Map<SModuleReference, GeneratorRuntime> myRegisteredGenerators = new HashMap<SModuleReference, GeneratorRuntime>();
+
+  protected final void populateRegisteredGenerators(List<? super GeneratorRuntime> consumer) {
+    consumer.addAll(myRegisteredGenerators.values());
+  }
+
+  /*package*/ void register(GeneratorRuntime runtime) {
+    myRegisteredGenerators.put(runtime.getModuleReference(), runtime);
+  }
+
+  /*package*/ void unregister(GeneratorRuntime runtime) {
+    myRegisteredGenerators.remove(runtime.getModuleReference());
   }
 
   /**

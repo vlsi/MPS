@@ -28,8 +28,6 @@ import java.util.Set;
  */
 public interface TemplateModule extends GeneratorRuntime {
 
-  LanguageRuntime getSourceLanguage();
-
   SModuleReference getReference();
 
   Collection<TemplateMappingPriorityRule> getPriorities();

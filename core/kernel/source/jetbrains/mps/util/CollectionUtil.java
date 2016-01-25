@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,31 +15,38 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.util.Condition;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
  */
 public class CollectionUtil {
-  @Deprecated
-  //use Iterable & ConditionalIterable instead
-  public static <T, F extends T> List<F> filter(Class<F> cls, List<T> l) {
+  public static <T, F extends T> List<F> filter(Class<F> cls, List<? extends T> l) {
     List<F> result = new ArrayList<F>();
     for (T t : l) {
-      if (cls.isInstance(t)) result.add((F) t);
+      if (cls.isInstance(t)) {
+        result.add(cls.cast(t));
+      }
     }
     return result;
   }
 
-  @Deprecated
-  //use Iterable & ConditionalIterable instead
-  public static <T, F extends T> Set<F> filter(Class<F> cls, Set<T> s) {
+  public static <T, F extends T> Set<F> filter(Class<F> cls, Set<? extends T> s) {
     Set<F> result = new HashSet<F>();
     for (T t : s) {
-      if (cls.isInstance(t)) result.add((F) t);
+      if (cls.isInstance(t)) {
+        result.add(cls.cast(t));
+      }
     }
     return result;
   }
@@ -88,11 +95,6 @@ public class CollectionUtil {
     Set<T> result = new HashSet<T>();
     result.addAll(Arrays.asList(ts));
     return result;
-  }
-
-  @Deprecated //was used by constructors language
-  public static <T> List<T> list(T... ts) {
-    return Arrays.asList(ts);
   }
 
   public static <T> Iterator<T> concat(final Iterator<? extends T> it1, final Iterator<? extends T> it2) {
@@ -223,13 +225,13 @@ public class CollectionUtil {
   }
 
   public static void main(String[] args) {
-    Iterable<String> it1 = CollectionUtil.list("5", "6", "7", "8");
-    Iterable<String> it2 = CollectionUtil.list("5", null, "6", null, "7", "8");
-    Iterable<String> it3 = CollectionUtil.list("5", null, "6", "7", "8", null, null);
-    Iterable<String> it4 = CollectionUtil.list(new String[]{null});
-    Iterable<String> it5 = CollectionUtil.list(null, null);
-    Iterable<String> it6 = CollectionUtil.list(null, null, null);
-    Iterable<String> it7 = CollectionUtil.list();
+    Iterable<String> it1 = Arrays.asList("5", "6", "7", "8");
+    Iterable<String> it2 = Arrays.asList("5", null, "6", null, "7", "8");
+    Iterable<String> it3 = Arrays.asList("5", null, "6", "7", "8", null, null);
+    Iterable<String> it4 = Arrays.asList(new String[] { null });
+    Iterable<String> it5 = Arrays.asList(null, null);
+    Iterable<String> it6 = Arrays.asList(null, null, null);
+    Iterable<String> it7 = Arrays.asList();
 
     printWithoutNulls(it1);
     printWithoutNulls(it2);
