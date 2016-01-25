@@ -119,7 +119,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     if (sharpIndex != -1) {
       moduleName = moduleName.substring(0, sharpIndex);
     }
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(moduleName, SModelStereotype.DESCRIPTOR).getValue());
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(moduleName, SModelStereotype.DESCRIPTOR));
   }
 
   static class GeneratorDescriptorModel extends TrivialModelDescriptor implements GeneratableSModel {

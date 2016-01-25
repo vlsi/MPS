@@ -49,9 +49,16 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Nullable
   public final SModuleReference myModuleReference;
 
+  /**
+   * Use of this constructor is discouraged, favor {@link #SModelReference(SModuleReference, SModelId, SModelName)} instead
+   */
   public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
+    this(module, modelId, new SModelName(modelName));
+  }
+
+  public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull SModelName modelName) {
     myModelId = modelId;
-    myModelName = new SModelName(modelName);
+    myModelName = modelName;
     if (module == null) {
       if (!modelId.isGloballyUnique()) {
         throw new IllegalArgumentException(String.format("Only globally unique model id could be used without module specification: %s", modelId));
