@@ -29,7 +29,7 @@
       <node id="1509962061695074414" at="420,107,421,241" concept="9" />
       <scope id="1509962061695074413" at="420,107,421,241" />
     </file>
-    <file name="Templatedescriptor.java">
+    <file name="Templatelanguage_x0020descriptor.java">
       <node id="1698302279987411125" at="25,43,26,32" concept="9" />
       <node id="1698302279987411125" at="28,158,29,210" concept="8" />
       <node id="1698302279987411125" at="30,9,31,112" concept="3" />
@@ -41,15 +41,15 @@
       <node id="1698302279987411125" at="38,29,39,169" concept="3" />
       <node id="1698302279987411125" at="40,9,41,31" concept="10" />
       <node id="1698302279987411125" at="44,5,45,46" concept="9" />
-      <node id="1698302279987411125" at="47,0,48,0" concept="12" trace="template_e20rlw_a0a1" />
-      <node id="1698302279987411125" at="48,0,49,0" concept="12" trace="insertMacro_e20rlw_b0a0a1a3a1a2" />
-      <node id="1698302279987411125" at="23,0,25,0" concept="1" trace="Templatedescriptor#()V" />
+      <node id="1698302279987411125" at="47,0,48,0" concept="12" trace="template_qjs370_a0a1" />
+      <node id="1698302279987411125" at="48,0,49,0" concept="12" trace="insertMacro_qjs370_b0a0a1a3a1a2" />
+      <node id="1698302279987411125" at="23,0,25,0" concept="1" trace="Templatelanguage_x0020descriptor#()V" />
       <node id="1698302279987411125" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1698302279987411125" at="37,97,40,9" concept="6" />
       <node id="1698302279987411125" at="33,54,42,7" concept="0" />
       <node id="1698302279987411125" at="29,210,44,5" concept="15" />
       <node id="1698302279987411125" at="28,0,47,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <scope id="1698302279987411125" at="23,31,23,31" />
+      <scope id="1698302279987411125" at="23,45,23,45" />
       <scope id="1698302279987411125" at="43,15,43,15" />
       <scope id="1698302279987411125" at="25,43,26,32" />
       <scope id="1698302279987411125" at="38,29,39,169" />
@@ -69,7 +69,7 @@
         <var name="context" id="1698302279987411125" />
         <var name="environment" id="1698302279987411125" />
       </scope>
-      <unit id="1698302279987411125" at="21,0,50,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" />
+      <unit id="1698302279987411125" at="21,0,50,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Templatelanguage_x0020descriptor" />
     </file>
   </root>
   <root nodeRef="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)/2030416617761786951">
@@ -2679,8 +2679,8 @@
       <node id="3919235298192647143" at="53,80,54,84" concept="8" />
       <node id="3919235298192647143" at="54,84,55,20" concept="9" />
       <node id="3919235298192647143" at="59,30,60,160" concept="14" />
-      <node id="3919235298192647143" at="62,105,63,130" concept="8" />
-      <node id="3919235298192647143" at="63,130,64,20" concept="9" />
+      <node id="3919235298192647143" at="62,105,63,144" concept="8" />
+      <node id="3919235298192647143" at="63,144,64,20" concept="9" />
       <node id="3919235298192647143" at="48,0,51,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="3919235298192647143" at="59,0,62,0" concept="1" trace="CreateRootRule0#()V" />
       <node id="3919235298192647143" at="35,0,39,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />

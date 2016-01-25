@@ -60,7 +60,7 @@ public class MappingLanguageModule extends MapConfigBase implements TemplateMapp
       super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3919235298192674546"));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new Templatedescriptor().apply(environment, new DefaultTemplateContext(environment, null, null));
+      Collection<SNode> result = new Templatelanguage_x0020descriptor().apply(environment, new DefaultTemplateContext(environment, null, null));
       return result;
     }
   }

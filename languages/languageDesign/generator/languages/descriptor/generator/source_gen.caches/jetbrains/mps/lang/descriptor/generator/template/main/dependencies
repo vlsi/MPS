@@ -54,7 +54,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Templatelanguage_x0020descriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -254,32 +254,14 @@
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGDClass" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGeneratorRuntime" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateLanguage" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Templategenerator_x0020descriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.Templatelanguage_x0020descriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Templatedescriptor" file="Templatedescriptor.java">
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContextWithMacro" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Templategenerator_x0020descriptor" file="Templategenerator_x0020descriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -290,6 +272,24 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.Templatelanguage_x0020descriptor" file="Templatelanguage_x0020descriptor.java">
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContextWithMacro" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

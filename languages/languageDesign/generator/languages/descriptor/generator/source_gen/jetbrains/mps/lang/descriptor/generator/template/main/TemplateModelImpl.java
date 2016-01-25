@@ -53,7 +53,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987411125"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templatedescriptor();
+      return new Templatelanguage_x0020descriptor();
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639617419"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
