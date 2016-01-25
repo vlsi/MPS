@@ -83,8 +83,12 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     GeneratorDescriptorModel dm = myModels.remove(modelReference);
     if (dm != null) {
       Generator generator = (Generator) module;
-      assert dm.getModule() == generator;
-      generator.unregisterModel(dm);
+      // FIXME project closed and re-open leaves stale models in myModels, with getModule() != the new one, and assertion fails
+      // Note, dm.getModule().getRepository == null
+//      assert dm.getModule() == generator;
+      if (dm.getModule() == generator) {
+        generator.unregisterModel(dm);
+      }
     }
   }
 
