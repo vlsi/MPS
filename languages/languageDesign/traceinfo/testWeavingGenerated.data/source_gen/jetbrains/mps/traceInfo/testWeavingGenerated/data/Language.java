@@ -5,9 +5,6 @@ package jetbrains.mps.traceInfo.testWeavingGenerated.data;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
-import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl;
@@ -33,10 +30,6 @@ public class Language extends LanguageRuntime {
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
-  }
-  @Override
-  public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(new Generator(this));
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

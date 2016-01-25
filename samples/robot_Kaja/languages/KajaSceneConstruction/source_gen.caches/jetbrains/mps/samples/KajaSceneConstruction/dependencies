@@ -21,12 +21,8 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.Generator" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.structure.StructureAspectDescriptor" />
