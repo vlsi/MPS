@@ -662,7 +662,7 @@ class GenerationSession {
     if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
       SModuleReference me = myOriginalInputModel.getModule().getModuleReference();
       for (TemplateModule t : generationPlan.getGenerators()) {
-        if (t.getReference().equals(me)) {
+        if (t.getModuleReference().equals(me)) {
           myLogger.warning("the generator is used to generate itself: try to avoid using language constructs in its queries");
           break;
         }

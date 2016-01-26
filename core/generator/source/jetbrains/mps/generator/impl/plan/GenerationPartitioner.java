@@ -78,7 +78,7 @@ public class GenerationPartitioner {
     myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
     for (TemplateModule module : myGenerators) {
-      myModulesMap.put(module.getReference(), module);
+      myModulesMap.put(module.getModuleReference(), module);
       for (TemplateModel model : module.getModels()) {
         myModelMap.put(model.getSModelReference(), model);
       }
@@ -205,7 +205,7 @@ public class GenerationPartitioner {
   // XXX likely there's similar code in UI and/or TemplateUtil, need to check/refactor
   private static MappingConfig_AbstractRef createRefs(TemplateModule generator, Collection<TemplateMappingConfiguration> cfgs) {
     final MappingConfig_ExternalRef ext = new MappingConfig_ExternalRef();
-    ext.setGenerator(generator.getReference());
+    ext.setGenerator(generator.getModuleReference());
     final MappingConfig_RefSet set = new MappingConfig_RefSet();
     ext.setMappingConfig(set);
     for (TemplateMappingConfiguration mc : cfgs) {
@@ -230,10 +230,10 @@ public class GenerationPartitioner {
       final String lang = generator.getSourceLanguage().getNamespace();
       if (lhs.isEmpty() && rhs.isEmpty()) {
         final String msg = String.format("Generator for language %s defines priority rule %s, both sides of the rule miss mapping configuration. The rule doesn't affect the generation and is ignored.", lang, rule);
-        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+        myConflicts.registerInvalid(generator.getModuleReference(), msg, rule);
       } else {
         final String msg = String.format("Generator for language %s defines invalid priority rule %s, with no mapping configurations specified at one side. The rule is ignored.", lang, rule);
-        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+        myConflicts.registerInvalid(generator.getModuleReference(), msg, rule);
       }
       return;
     }

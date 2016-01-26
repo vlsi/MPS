@@ -38,10 +38,27 @@ public abstract class TemplateModuleBase implements TemplateModule {
   @NotNull
   @Override
   public SModuleReference getModuleReference() {
+    // FIXME shall become abstract method once getReference() is removed.
     return getReference();
   }
 
-  ///////////////////////////////////////////
+  @Override
+  @ToRemove(version = 3.4)
+  public SModuleReference getReference() {
+    throw new IllegalStateException("Code generated with MPS 3.3 overrides this method, new code generated with MPS 3.4 shall override getModuleReference");
+  }
+
+  @Override
+  public Collection<TemplateModel> getModels() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  public Collection<TemplateMappingPriorityRule> getPriorities() {
+    return Collections.emptyList();
+  }
+
+///////////////////////////////////////////
   // compatibility code, shall be removed/refactored once generated generators provide proper configuration/generated methods
   // Marked ToRemove, although it's likely these methods will just change to convert simple configuration data from generated generator classes
 

@@ -45,7 +45,7 @@ public class PartitioningHelper {
       }
       for (TemplateMappingPriorityRule r : rules) {
         Message msg = new Message(MessageKind.INFORMATION, r.toString());
-        msg.setHintObject(generator.getReference());
+        msg.setHintObject(generator.getModuleReference());
         messagesView.add(msg);
       }
     }
