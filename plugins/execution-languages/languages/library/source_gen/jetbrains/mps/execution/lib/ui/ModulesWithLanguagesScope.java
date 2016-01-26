@@ -13,14 +13,19 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
+/**
+ * The scope which accepts module iff it uses one of 'required' langs
+ */
 public class ModulesWithLanguagesScope extends FilteredScope {
-  private Set<Language> requiredLanguages;
+  private final Set<Language> myRequiredLanguages;
+
   public ModulesWithLanguagesScope(SearchScope innerScope, Iterable<Language> requiredLanguages) {
     super(innerScope);
-    this.requiredLanguages = SetSequence.fromSetWithValues(new HashSet<Language>(), requiredLanguages);
+    myRequiredLanguages = SetSequence.fromSetWithValues(new HashSet<Language>(), requiredLanguages);
   }
+
   @Override
   protected boolean acceptModel(SModel model) {
     if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
@@ -28,14 +33,18 @@ public class ModulesWithLanguagesScope extends FilteredScope {
     }
     return acceptModule(model.getModule());
   }
+
   @Override
   protected boolean acceptModule(SModule module) {
     if (module instanceof TransientSModule || module instanceof Generator) {
       return false;
     }
-    for (Language requiredLanguage : SetSequence.fromSet(requiredLanguages)) {
-      if (new GlobalModuleDependenciesManager(module).getUsedLanguages().contains(requiredLanguage)) {
-        return true;
+    final Set<SLanguage> usedLanguages = module.getUsedLanguages();
+    for (Language requiredLanguage : SetSequence.fromSet(myRequiredLanguages)) {
+      for (SLanguage usedLanguage : SetSequence.fromSet(usedLanguages)) {
+        if (requiredLanguage.equals(usedLanguage.getSourceModule())) {
+          return true;
+        }
       }
     }
     return false;

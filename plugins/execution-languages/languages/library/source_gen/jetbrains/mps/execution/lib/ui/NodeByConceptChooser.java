@@ -7,12 +7,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -31,36 +28,36 @@ public class NodeByConceptChooser extends NodeChooser {
   private SAbstractConcept myTargetConcept;
   @Nullable
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
-  private final ModulesWithLanguagesScope myScope;
+  private final SearchScope myScope;
+
   public NodeByConceptChooser() {
     this(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), null);
   }
+
   public NodeByConceptChooser(SAbstractConcept conceptFqName, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
 
     myTargetConcept = conceptFqName;
     myAcceptor = acceptor;
-
-    final Wrappers._T<Language> language = new Wrappers._T<Language>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        language.value = ((Language) myTargetConcept.getLanguage().getSourceModule());
-      }
-    });
-    myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), Sequence.<Language>singleton(language.value));
+    myScope = GlobalScope.getInstance();
   }
+
   public SAbstractConcept getTargetConcept() {
     return myTargetConcept;
   }
+
   public void setTargetConcept(SAbstractConcept targetConcept) {
     myTargetConcept = targetConcept;
   }
+
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> getAcceptor() {
     return myAcceptor;
   }
+
   public void setAcceptor(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     myAcceptor = acceptor;
   }
+
   @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor) {
     Set<SNode> instances = ((Set) manager.findInstances(myScope, Collections.singleton(myTargetConcept), false, monitor));
@@ -74,10 +71,12 @@ public class NodeByConceptChooser extends NodeChooser {
       }).toListSequence();
     }
   }
+
   @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
+
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
