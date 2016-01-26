@@ -112,6 +112,11 @@ public abstract class TemplateModuleBase implements TemplateModule {
     return Collections.emptySet();
   }
 
+  /**
+   * @deprecated Code generated with MPS-3.3 uses this method, remove once MPS-3.4 is out
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   protected TemplateModel loadModel(String modelName) {
     ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getModuleReference());
     Class<TemplateModel> clazz = null;

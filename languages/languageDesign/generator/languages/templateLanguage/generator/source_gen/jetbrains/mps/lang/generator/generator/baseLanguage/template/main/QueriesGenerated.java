@@ -189,7 +189,7 @@ public class QueriesGenerated {
     return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5070605274413823491(final PropertyMacroContext _context) {
-    return GenUtil.asIdentifier("Template" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return GenUtil.asIdentifier("Template_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_99767819676237359(final PropertyMacroContext _context) {
     return GenUtil.saveVar(_context, _context.getNode(), "tlist" + ++((int[]) _context.getVariable("varindex"))[0]);
@@ -295,7 +295,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_747214206848678950(final PropertyMacroContext _context) {
-    return GenUtil.asIdentifier("Template" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return GenUtil.asIdentifier("Template_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_1104862325080102158(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -304,7 +304,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x113e48b50faL, "topPriorityGroup"));
   }
   public static Object propertyMacro_GetPropertyValue_4429320018138031261(final PropertyMacroContext _context) {
-    return GenUtil.asIdentifier("Mapping" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return GenUtil.asIdentifier("Mapping_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_4155486055398088841(final PropertyMacroContext _context) {
     return GenUtil.saveVar(_context, _context.getNode(), "tlist" + ++((int[]) _context.getVariable("varindex"))[0]);
@@ -451,7 +451,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11d88828be1L, "nullInputMessage")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11055c63121L, 0x11055c67157L, "messageText"));
   }
   public static Object propertyMacro_GetPropertyValue_1940510396026567414(final PropertyMacroContext _context) {
-    return GenUtil.asIdentifier("Switch" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return GenUtil.asIdentifier("Switch_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_8196331069071255561(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -561,7 +561,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1165958fcd6L, 0x1165f0d3f2fL, "modifiesModel"));
   }
   public static Object propertyMacro_GetPropertyValue_9196441569928602697(final PropertyMacroContext _context) {
-    return GenUtil.asIdentifier("Script" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return GenUtil.asIdentifier("Script_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_6389702176794111045(final PropertyMacroContext _context) {
     String n = "applyNode" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("toExtract"))).indexOf(_context.getNode());
@@ -1121,12 +1121,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_9191117361655049707(final ReferenceMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a12ebb8L, "ruleConsequence")));
     return name;
-  }
-  public static Object referenceMacro_GetReferent_5891355986059869283(final ReferenceMacroContext _context) {
-    return GenUtil.asIdentifier("Mapping" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-  }
-  public static Object referenceMacro_GetReferent_5891355986059869350(final ReferenceMacroContext _context) {
-    return GenUtil.asIdentifier("Switch" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object referenceMacro_GetReferent_2990947723228973305(final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "templDeclarationClass"))).first();

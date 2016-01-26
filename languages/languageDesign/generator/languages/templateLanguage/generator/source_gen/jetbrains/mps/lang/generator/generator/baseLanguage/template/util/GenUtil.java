@@ -46,20 +46,14 @@ public class GenUtil {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
-      if (c == '_') {
-        sb.append("__");
-      } else if (Character.isDigit(c) && sb.length() > 0) {
+      if (Character.isDigit(c) && sb.length() > 0) {
         sb.append(c);
       } else if (Character.isJavaIdentifierStart(c) && c != '$') {
         sb.append(c);
       } else {
+        // replace all non-identifier characters with underscore 
+        //  I realize that may lead to name clashes, but odds are too low and do not justify e.g. _x0020 in the name with spaces 
         sb.append('_');
-        String val = Integer.toHexString(c);
-        if (val.length() < 4) {
-          val = "0000".substring(val.length()) + val;
-        }
-        sb.append('x');
-        sb.append(val);
       }
     }
 
