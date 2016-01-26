@@ -4,21 +4,20 @@ package jetbrains.mps.transformation.test.inputLang;
 
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import java.util.Collection;
+import jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.TemplateModelImpl;
 import java.util.Arrays;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.NotNull;
 
 public class Generator extends TemplateModuleBase {
-  public static String MODULE_REF = "45250695-332a-4a0e-94bc-014e09fa751d(jetbrains.mps.transformation.test.inputLang#1195164860857)";
   private final LanguageRuntime sourceLanguage;
-  private Collection<TemplateModel> models;
+  private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
@@ -31,19 +30,25 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<TemplateModel> getModels() {
     if (models == null) {
-      models = Arrays.asList(loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl"), loadModel("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl"));
+      models = new TemplateModel[9];
+      models[0] = new TemplateModelImpl(this);
+      models[1] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl(this);
+      models[2] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments.TemplateModelImpl(this);
+      models[3] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl(this);
+      models[4] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl(this);
+      models[5] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateModelImpl(this);
+      models[6] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl(this);
+      models[7] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl(this);
+      models[8] = new jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl(this);
     }
-    return models;
+    return Arrays.asList(models);
   }
 
-  @Override
-  public Collection<TemplateMappingPriorityRule> getPriorities() {
-    return null;
-  }
 
+  @NotNull
   @Override
-  public SModuleReference getReference() {
-    return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
+  public SModuleReference getModuleReference() {
+    return PersistenceFacade.getInstance().createModuleReference("45250695-332a-4a0e-94bc-014e09fa751d(jetbrains.mps.transformation.test.inputLang#1195164860857)");
   }
 
   @Override
@@ -62,8 +67,4 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
-  @Override
-  public Collection<String> getReferencedModules() {
-    return null;
-  }
 }

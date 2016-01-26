@@ -8,19 +8,19 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.NotNull;
 
 public class Generator extends TemplateModuleBase {
-  public static String MODULE_REF = "2ec34c1e-7442-4656-9a59-44fa731a9286(jetbrains.mps.baseLanguage.jdk7#616711547384942258)";
   private final LanguageRuntime sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
-  private Collection<TemplateModel> models;
+  private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
@@ -34,9 +34,10 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<TemplateModel> getModels() {
     if (models == null) {
-      models = Arrays.asList(loadModel("jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl"));
+      models = new TemplateModel[1];
+      models[0] = new TemplateModelImpl(this);
     }
-    return models;
+    return Arrays.asList(models);
   }
 
   @Override
@@ -44,9 +45,10 @@ public class Generator extends TemplateModuleBase {
     return priorities;
   }
 
+  @NotNull
   @Override
-  public SModuleReference getReference() {
-    return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
+  public SModuleReference getModuleReference() {
+    return PersistenceFacade.getInstance().createModuleReference("2ec34c1e-7442-4656-9a59-44fa731a9286(jetbrains.mps.baseLanguage.jdk7#616711547384942258)");
   }
 
   @Override
@@ -63,8 +65,4 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
-  @Override
-  public Collection<String> getReferencedModules() {
-    return null;
-  }
 }

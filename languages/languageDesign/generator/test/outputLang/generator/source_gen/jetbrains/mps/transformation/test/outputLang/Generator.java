@@ -4,21 +4,20 @@ package jetbrains.mps.transformation.test.outputLang;
 
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
+import java.util.Collection;
+import jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl;
 import java.util.Arrays;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.NotNull;
 
 public class Generator extends TemplateModuleBase {
-  public static String MODULE_REF = "de2f9603-575d-4d84-b063-776b6d27a0b9(jetbrains.mps.transformation.test.outputLang#1209603905948)";
   private final LanguageRuntime sourceLanguage;
-  private Collection<TemplateModel> models;
+  private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
@@ -31,19 +30,17 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<TemplateModel> getModels() {
     if (models == null) {
-      models = Arrays.asList(loadModel("jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl"));
+      models = new TemplateModel[1];
+      models[0] = new TemplateModelImpl(this);
     }
-    return models;
+    return Arrays.asList(models);
   }
 
-  @Override
-  public Collection<TemplateMappingPriorityRule> getPriorities() {
-    return null;
-  }
 
+  @NotNull
   @Override
-  public SModuleReference getReference() {
-    return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
+  public SModuleReference getModuleReference() {
+    return PersistenceFacade.getInstance().createModuleReference("de2f9603-575d-4d84-b063-776b6d27a0b9(jetbrains.mps.transformation.test.outputLang#1209603905948)");
   }
 
   @Override
@@ -60,8 +57,4 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
-  @Override
-  public Collection<String> getReferencedModules() {
-    return null;
-  }
 }

@@ -7,20 +7,19 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.NotNull;
 
 public class Generator extends TemplateModuleBase {
-  public static String MODULE_REF = "e104ec4c-a001-4f8f-b6bf-654f6a062891(jetbrains.mps.samples.Kaja#3265739055509559144)";
   private final LanguageRuntime sourceLanguage;
   private final Collection<String> referencedGenerators;
-  private Collection<TemplateModel> models;
+  private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
@@ -34,19 +33,17 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<TemplateModel> getModels() {
     if (models == null) {
-      models = Arrays.asList(loadModel("jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl"));
+      models = new TemplateModel[1];
+      models[0] = new TemplateModelImpl(this);
     }
-    return models;
+    return Arrays.asList(models);
   }
 
-  @Override
-  public Collection<TemplateMappingPriorityRule> getPriorities() {
-    return null;
-  }
 
+  @NotNull
   @Override
-  public SModuleReference getReference() {
-    return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
+  public SModuleReference getModuleReference() {
+    return PersistenceFacade.getInstance().createModuleReference("e104ec4c-a001-4f8f-b6bf-654f6a062891(jetbrains.mps.samples.Kaja#3265739055509559144)");
   }
 
   @Override

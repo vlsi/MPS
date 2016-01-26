@@ -8,20 +8,20 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.NotNull;
 
 public class Generator extends TemplateModuleBase {
-  public static String MODULE_REF = "791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)";
   private final LanguageRuntime sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<String> referencedGenerators;
-  private Collection<TemplateModel> models;
+  private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
@@ -36,9 +36,10 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<TemplateModel> getModels() {
     if (models == null) {
-      models = Arrays.asList(loadModel("jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl"));
+      models = new TemplateModel[1];
+      models[0] = new TemplateModelImpl(this);
     }
-    return models;
+    return Arrays.asList(models);
   }
 
   @Override
@@ -46,9 +47,10 @@ public class Generator extends TemplateModuleBase {
     return priorities;
   }
 
+  @NotNull
   @Override
-  public SModuleReference getReference() {
-    return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
+  public SModuleReference getModuleReference() {
+    return PersistenceFacade.getInstance().createModuleReference("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)");
   }
 
   @Override
