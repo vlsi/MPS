@@ -23,7 +23,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     model = PersistenceFacade.getInstance().createModelReference("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)");
   }
@@ -45,11 +45,11 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814327603"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templatereduce__And();
+      return new Template_reduce_And();
     }
     if (template.equals(new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814327665"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templatereduce__Or();
+      return new Template_reduce_Or();
     }
     return null;
   }

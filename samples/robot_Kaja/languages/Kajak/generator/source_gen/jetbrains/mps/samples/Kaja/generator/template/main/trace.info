@@ -29,7 +29,7 @@
       <node id="3210697320273781188" at="67,112,68,187" concept="9" />
       <scope id="3210697320273781187" at="67,112,68,187" />
     </file>
-    <file name="Templatereduce__TraceMessage.java">
+    <file name="Template_reduce_TraceMessage.java">
       <node id="3210697320273763071" at="27,43,28,155" concept="9" />
       <node id="3210697320273763071" at="30,97,31,78" concept="8" />
       <node id="3210697320273763071" at="31,78,32,202" concept="8" />
@@ -52,8 +52,8 @@
       <node id="3210697320273763071" at="72,78,73,51" concept="8" />
       <node id="3210697320273763071" at="73,51,74,163" concept="3" />
       <node id="3210697320273763071" at="74,163,75,50" concept="9" />
-      <node id="3210697320273763071" at="77,0,78,0" concept="12" trace="propertyMacro_v6xy2p_c0a0c0b0b0d0b0c0c0c" />
-      <node id="3210697320273763071" at="25,0,27,0" concept="1" trace="Templatereduce__TraceMessage#()V" />
+      <node id="3210697320273763071" at="77,0,78,0" concept="12" trace="propertyMacro_zb4n4r_c0a0c0b0b0d0b0c0c0c" />
+      <node id="3210697320273763071" at="25,0,27,0" concept="1" trace="Template_reduce_TraceMessage#()V" />
       <node id="3210697320273763071" at="27,0,30,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3210697320273763071" at="48,13,51,13" concept="6" />
       <node id="3210697320273763071" at="55,9,58,9" concept="6" />
@@ -107,20 +107,20 @@
       <scope id="3210697320273763071" at="30,0,65,0">
         <var name="context" id="3210697320273763071" />
       </scope>
-      <unit id="3210697320273763071" at="23,0,79,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__TraceMessage" />
+      <unit id="3210697320273763071" at="23,0,79,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_TraceMessage" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039570163">
-    <file name="Mappingmain.java">
+    <file name="Mapping_main.java">
       <node id="3308300503039570163" at="28,0,29,0" concept="4" trace="rules" />
       <node id="3308300503039570163" at="29,0,30,0" concept="4" trace="rootRules" />
       <node id="3308300503039570163" at="30,0,31,0" concept="4" trace="dropRules" />
       <node id="3308300503039570163" at="31,0,32,0" concept="4" trace="preScripts" />
-      <node id="3308300503039570163" at="32,52,33,177" concept="13" />
-      <node id="3308300503039570163" at="33,177,34,821" concept="3" />
-      <node id="3308300503039570163" at="34,821,35,103" concept="3" />
-      <node id="3308300503039570163" at="35,103,36,97" concept="3" />
-      <node id="3308300503039570163" at="36,97,37,175" concept="3" />
+      <node id="3308300503039570163" at="32,53,33,177" concept="13" />
+      <node id="3308300503039570163" at="33,177,34,843" concept="3" />
+      <node id="3308300503039570163" at="34,843,35,104" concept="3" />
+      <node id="3308300503039570163" at="35,104,36,98" concept="3" />
+      <node id="3308300503039570163" at="36,98,37,178" concept="3" />
       <node id="3308300503039570163" at="40,64,41,17" concept="9" />
       <node id="3308300503039570163" at="44,61,45,21" concept="9" />
       <node id="3308300503039570163" at="48,58,49,21" concept="9" />
@@ -269,7 +269,7 @@
       <node id="3308300503039570163" at="279,0,285,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039570163" at="290,0,296,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039570163" at="301,0,307,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="3308300503039570163" at="32,0,39,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
+      <node id="3308300503039570163" at="32,0,39,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <scope id="3308300503039570163" at="40,64,41,17" />
       <scope id="3308300503039570163" at="44,61,45,21" />
       <scope id="3308300503039570163" at="48,58,49,21" />
@@ -418,7 +418,7 @@
       <scope id="3308300503039570163" at="43,0,47,0" />
       <scope id="3308300503039570163" at="47,0,51,0" />
       <scope id="3308300503039570163" at="51,0,55,0" />
-      <scope id="3308300503039570163" at="32,52,37,175" />
+      <scope id="3308300503039570163" at="32,53,37,178" />
       <scope id="3308300503039570163" at="59,0,65,0">
         <var name="context" id="3308300503039570163" />
       </scope>
@@ -491,31 +491,31 @@
       <scope id="3308300503039570163" at="32,0,39,0">
         <var name="model" id="3308300503039570163" />
       </scope>
-      <unit id="3308300503039570163" at="308,0,313,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$DropRootRule0" />
-      <unit id="3308300503039570163" at="55,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule0" />
-      <unit id="3308300503039570163" at="66,0,77,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule1" />
-      <unit id="3308300503039570163" at="77,0,88,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule2" />
-      <unit id="3308300503039570163" at="88,0,99,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule3" />
-      <unit id="3308300503039570163" at="99,0,110,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule4" />
-      <unit id="3308300503039570163" at="110,0,121,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule5" />
-      <unit id="3308300503039570163" at="121,0,132,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule6" />
-      <unit id="3308300503039570163" at="132,0,143,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule7" />
-      <unit id="3308300503039570163" at="143,0,154,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule8" />
-      <unit id="3308300503039570163" at="154,0,165,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule9" />
-      <unit id="3308300503039570163" at="165,0,176,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule10" />
-      <unit id="3308300503039570163" at="176,0,187,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule11" />
-      <unit id="3308300503039570163" at="187,0,198,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule12" />
-      <unit id="3308300503039570163" at="198,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule13" />
-      <unit id="3308300503039570163" at="209,0,220,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule14" />
-      <unit id="3308300503039570163" at="220,0,231,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule15" />
-      <unit id="3308300503039570163" at="231,0,242,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule16" />
-      <unit id="3308300503039570163" at="242,0,253,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule17" />
-      <unit id="3308300503039570163" at="253,0,264,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule18" />
-      <unit id="3308300503039570163" at="264,0,275,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule19" />
-      <unit id="3308300503039570163" at="275,0,286,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule20" />
-      <unit id="3308300503039570163" at="286,0,297,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule21" />
-      <unit id="3308300503039570163" at="297,0,308,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$RootMappingRule0" />
-      <unit id="3308300503039570163" at="26,0,314,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain" />
+      <unit id="3308300503039570163" at="308,0,313,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$DropRootRule0" />
+      <unit id="3308300503039570163" at="55,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule0" />
+      <unit id="3308300503039570163" at="66,0,77,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule1" />
+      <unit id="3308300503039570163" at="77,0,88,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule2" />
+      <unit id="3308300503039570163" at="88,0,99,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule3" />
+      <unit id="3308300503039570163" at="99,0,110,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule4" />
+      <unit id="3308300503039570163" at="110,0,121,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule5" />
+      <unit id="3308300503039570163" at="121,0,132,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule6" />
+      <unit id="3308300503039570163" at="132,0,143,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule7" />
+      <unit id="3308300503039570163" at="143,0,154,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule8" />
+      <unit id="3308300503039570163" at="154,0,165,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule9" />
+      <unit id="3308300503039570163" at="165,0,176,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule10" />
+      <unit id="3308300503039570163" at="176,0,187,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule11" />
+      <unit id="3308300503039570163" at="187,0,198,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule12" />
+      <unit id="3308300503039570163" at="198,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule13" />
+      <unit id="3308300503039570163" at="209,0,220,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule14" />
+      <unit id="3308300503039570163" at="220,0,231,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule15" />
+      <unit id="3308300503039570163" at="231,0,242,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule16" />
+      <unit id="3308300503039570163" at="242,0,253,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule17" />
+      <unit id="3308300503039570163" at="253,0,264,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule18" />
+      <unit id="3308300503039570163" at="264,0,275,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule19" />
+      <unit id="3308300503039570163" at="275,0,286,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule20" />
+      <unit id="3308300503039570163" at="286,0,297,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$ReductionRule21" />
+      <unit id="3308300503039570163" at="297,0,308,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main$RootMappingRule0" />
+      <unit id="3308300503039570163" at="26,0,314,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mapping_main" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039570165">
@@ -538,7 +538,7 @@
       <scope id="4394627182934963474" at="109,120,114,7" />
       <unit id="4394627182934963508" at="110,383,114,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$1" />
     </file>
-    <file name="Templatemap__Script.java">
+    <file name="Template_map_Script.java">
       <node id="3308300503039570165" at="30,43,31,32" concept="9" />
       <node id="3308300503039570165" at="33,158,34,195" concept="8" />
       <node id="3308300503039570165" at="35,9,36,112" concept="3" />
@@ -721,19 +721,19 @@
       <node id="3308300503039570165" at="450,30,451,163" concept="3" />
       <node id="3308300503039570165" at="452,9,453,31" concept="10" />
       <node id="3308300503039570165" at="456,5,457,46" concept="9" />
-      <node id="3308300503039570165" at="459,0,460,0" concept="12" trace="template_8w4ply_a0a1" />
-      <node id="3308300503039570165" at="460,0,461,0" concept="12" trace="propertyMacro_8w4ply_c0a0c0b0b0c" />
-      <node id="3308300503039570165" at="461,0,462,0" concept="12" trace="loopMacroRef_8w4ply_b0a0a1a2a1a6a1a6a1a2" />
-      <node id="3308300503039570165" at="462,0,463,0" concept="12" trace="copySrcMacro_8w4ply_b0a0e0c0c0b0g0b0g0b0c" />
-      <node id="3308300503039570165" at="463,0,464,0" concept="12" trace="loopMacroRef_8w4ply_b0a0a1a7a1a2" />
-      <node id="3308300503039570165" at="464,0,465,0" concept="12" trace="copySrcMacro_8w4ply_b0a0e0c0h0b0c" />
-      <node id="3308300503039570165" at="465,0,466,0" concept="12" trace="loopMacroRef_8w4ply_b0a0a1a8a1a2" />
-      <node id="3308300503039570165" at="466,0,467,0" concept="12" trace="copySrcListMacro_8w4ply_b0a0a3a2a8a1a2" />
-      <node id="3308300503039570165" at="467,0,468,0" concept="12" trace="templateNode_8w4ply_c0a1a1a3a1a2a1a2a1a5a1a9a1a2" />
-      <node id="3308300503039570165" at="468,0,469,0" concept="12" trace="templateNode_8w4ply_c0a1a1a2a1a4a1a2a1a2a1a5a1a9a1a2" />
-      <node id="3308300503039570165" at="469,0,470,0" concept="12" trace="templateNode_8w4ply_c0a1a1a2a1a2a1a3a1a5a1a9a1a2" />
-      <node id="3308300503039570165" at="470,0,471,0" concept="12" trace="templateNode_8w4ply_c0a1a1a2a1a2a1a4a1a5a1a9a1a2" />
-      <node id="3308300503039570165" at="28,0,30,0" concept="1" trace="Templatemap__Script#()V" />
+      <node id="3308300503039570165" at="459,0,460,0" concept="12" trace="template_rbrxtl_a0a1" />
+      <node id="3308300503039570165" at="460,0,461,0" concept="12" trace="propertyMacro_rbrxtl_c0a0c0b0b0c" />
+      <node id="3308300503039570165" at="461,0,462,0" concept="12" trace="loopMacroRef_rbrxtl_b0a0a1a2a1a6a1a6a1a2" />
+      <node id="3308300503039570165" at="462,0,463,0" concept="12" trace="copySrcMacro_rbrxtl_b0a0e0c0c0b0g0b0g0b0c" />
+      <node id="3308300503039570165" at="463,0,464,0" concept="12" trace="loopMacroRef_rbrxtl_b0a0a1a7a1a2" />
+      <node id="3308300503039570165" at="464,0,465,0" concept="12" trace="copySrcMacro_rbrxtl_b0a0e0c0h0b0c" />
+      <node id="3308300503039570165" at="465,0,466,0" concept="12" trace="loopMacroRef_rbrxtl_b0a0a1a8a1a2" />
+      <node id="3308300503039570165" at="466,0,467,0" concept="12" trace="copySrcListMacro_rbrxtl_b0a0a3a2a8a1a2" />
+      <node id="3308300503039570165" at="467,0,468,0" concept="12" trace="templateNode_rbrxtl_c0a1a1a3a1a2a1a2a1a5a1a9a1a2" />
+      <node id="3308300503039570165" at="468,0,469,0" concept="12" trace="templateNode_rbrxtl_c0a1a1a2a1a4a1a2a1a2a1a5a1a9a1a2" />
+      <node id="3308300503039570165" at="469,0,470,0" concept="12" trace="templateNode_rbrxtl_c0a1a1a2a1a2a1a3a1a5a1a9a1a2" />
+      <node id="3308300503039570165" at="470,0,471,0" concept="12" trace="templateNode_rbrxtl_c0a1a1a2a1a2a1a4a1a5a1a9a1a2" />
+      <node id="3308300503039570165" at="28,0,30,0" concept="1" trace="Template_map_Script#()V" />
       <node id="3308300503039570165" at="30,0,33,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039570165" at="44,9,47,9" concept="6" />
       <node id="3308300503039570165" at="56,9,59,9" concept="6" />
@@ -1119,11 +1119,11 @@
         <var name="context" id="3308300503039570165" />
         <var name="environment" id="3308300503039570165" />
       </scope>
-      <unit id="3308300503039570165" at="26,0,472,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatemap__Script" />
+      <unit id="3308300503039570165" at="26,0,472,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_map_Script" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039580716">
-    <file name="Templatereduce__Step.java">
+    <file name="Template_reduce_Step.java">
       <node id="3308300503039580716" at="26,43,27,155" concept="9" />
       <node id="3308300503039580716" at="29,97,30,78" concept="8" />
       <node id="3308300503039580716" at="30,78,31,197" concept="8" />
@@ -1201,7 +1201,7 @@
       <node id="3308300503039580716" at="203,78,204,51" concept="8" />
       <node id="3308300503039580716" at="204,51,205,163" concept="3" />
       <node id="3308300503039580716" at="205,163,206,50" concept="9" />
-      <node id="3308300503039580716" at="24,0,26,0" concept="1" trace="Templatereduce__Step#()V" />
+      <node id="3308300503039580716" at="24,0,26,0" concept="1" trace="Template_reduce_Step#()V" />
       <node id="3308300503039580716" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039580716" at="61,25,64,25" concept="6" />
       <node id="3308300503039580716" at="68,21,71,21" concept="6" />
@@ -1370,11 +1370,11 @@
       <scope id="3308300503039580716" at="29,0,196,0">
         <var name="context" id="3308300503039580716" />
       </scope>
-      <unit id="3308300503039580716" at="22,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Step" />
+      <unit id="3308300503039580716" at="22,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Step" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039647645">
-    <file name="Templatereduce__LeftTurn.java">
+    <file name="Template_reduce_LeftTurn.java">
       <node id="3308300503039647645" at="25,43,26,155" concept="9" />
       <node id="3308300503039647645" at="28,97,29,78" concept="8" />
       <node id="3308300503039647645" at="29,78,30,197" concept="8" />
@@ -1411,7 +1411,7 @@
       <node id="3308300503039647645" at="105,78,106,51" concept="8" />
       <node id="3308300503039647645" at="106,51,107,163" concept="3" />
       <node id="3308300503039647645" at="107,163,108,50" concept="9" />
-      <node id="3308300503039647645" at="23,0,25,0" concept="1" trace="Templatereduce__LeftTurn#()V" />
+      <node id="3308300503039647645" at="23,0,25,0" concept="1" trace="Template_reduce_LeftTurn#()V" />
       <node id="3308300503039647645" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039647645" at="50,17,53,17" concept="6" />
       <node id="3308300503039647645" at="57,13,60,13" concept="6" />
@@ -1496,11 +1496,11 @@
       <scope id="3308300503039647645" at="28,0,98,0">
         <var name="context" id="3308300503039647645" />
       </scope>
-      <unit id="3308300503039647645" at="21,0,111,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__LeftTurn" />
+      <unit id="3308300503039647645" at="21,0,111,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_LeftTurn" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039647798">
-    <file name="Templatereduce__IsWall.java">
+    <file name="Template_reduce_IsWall.java">
       <node id="3308300503039647798" at="25,43,26,155" concept="9" />
       <node id="3308300503039647798" at="28,97,29,78" concept="8" />
       <node id="3308300503039647798" at="29,78,30,204" concept="8" />
@@ -1512,7 +1512,7 @@
       <node id="3308300503039647798" at="45,78,46,51" concept="8" />
       <node id="3308300503039647798" at="46,51,47,163" concept="3" />
       <node id="3308300503039647798" at="47,163,48,50" concept="9" />
-      <node id="3308300503039647798" at="23,0,25,0" concept="1" trace="Templatereduce__IsWall#()V" />
+      <node id="3308300503039647798" at="23,0,25,0" concept="1" trace="Template_reduce_IsWall#()V" />
       <node id="3308300503039647798" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039647798" at="38,0,42,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039647798" at="30,204,35,5" concept="15" />
@@ -1544,7 +1544,7 @@
       <scope id="3308300503039647798" at="28,0,38,0">
         <var name="context" id="3308300503039647798" />
       </scope>
-      <unit id="3308300503039647798" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__IsWall" />
+      <unit id="3308300503039647798" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsWall" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039647832">
@@ -1556,7 +1556,7 @@
       <scope id="3308300503039939839" at="76,108,77,193" />
       <scope id="3308300503039939856" at="79,108,80,194" />
     </file>
-    <file name="Templatereduce__IfStatement.java">
+    <file name="Template_reduce_IfStatement.java">
       <node id="3308300503039647832" at="24,43,25,155" concept="9" />
       <node id="3308300503039647832" at="27,97,28,78" concept="8" />
       <node id="3308300503039647832" at="28,78,29,194" concept="8" />
@@ -1598,10 +1598,10 @@
       <node id="3308300503039647832" at="107,78,108,51" concept="8" />
       <node id="3308300503039647832" at="108,51,109,163" concept="3" />
       <node id="3308300503039647832" at="109,163,110,50" concept="9" />
-      <node id="3308300503039647832" at="112,0,113,0" concept="12" trace="copySrcMacro_6ae4o9_b0a0c0c0c0c" />
-      <node id="3308300503039647832" at="113,0,114,0" concept="12" trace="copySrcMacro_6ae4o9_b0a0c0c0b0d0c0c" />
-      <node id="3308300503039647832" at="114,0,115,0" concept="12" trace="copySrcMacro_6ae4o9_b0a0c0c0b0c0b0e0c0c" />
-      <node id="3308300503039647832" at="22,0,24,0" concept="1" trace="Templatereduce__IfStatement#()V" />
+      <node id="3308300503039647832" at="112,0,113,0" concept="12" trace="copySrcMacro_damv7z_b0a0c0c0c0c" />
+      <node id="3308300503039647832" at="113,0,114,0" concept="12" trace="copySrcMacro_damv7z_b0a0c0c0b0d0c0c" />
+      <node id="3308300503039647832" at="114,0,115,0" concept="12" trace="copySrcMacro_damv7z_b0a0c0c0b0c0b0e0c0c" />
+      <node id="3308300503039647832" at="22,0,24,0" concept="1" trace="Template_reduce_IfStatement#()V" />
       <node id="3308300503039647832" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039647832" at="36,191,39,9" concept="5" />
       <node id="3308300503039647832" at="50,199,53,13" concept="5" />
@@ -1698,7 +1698,7 @@
       <scope id="3308300503039647832" at="27,0,100,0">
         <var name="context" id="3308300503039647832" />
       </scope>
-      <unit id="3308300503039647832" at="20,0,116,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__IfStatement" />
+      <unit id="3308300503039647832" at="20,0,116,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IfStatement" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039654079">
@@ -1706,7 +1706,7 @@
       <node id="3308300503039654098" at="82,108,83,191" concept="9" />
       <scope id="3308300503039654097" at="82,108,83,191" />
     </file>
-    <file name="Templatereduce__Not.java">
+    <file name="Template_reduce_Not.java">
       <node id="3308300503039654079" at="24,43,25,155" concept="9" />
       <node id="3308300503039654079" at="27,97,28,78" concept="8" />
       <node id="3308300503039654079" at="28,78,29,196" concept="8" />
@@ -1723,8 +1723,8 @@
       <node id="3308300503039654079" at="53,78,54,51" concept="8" />
       <node id="3308300503039654079" at="54,51,55,163" concept="3" />
       <node id="3308300503039654079" at="55,163,56,50" concept="9" />
-      <node id="3308300503039654079" at="58,0,59,0" concept="12" trace="copySrcMacro_vw9rmx_b0a0c0c0c0c" />
-      <node id="3308300503039654079" at="22,0,24,0" concept="1" trace="Templatereduce__Not#()V" />
+      <node id="3308300503039654079" at="58,0,59,0" concept="12" trace="copySrcMacro_mriqof_b0a0c0c0c0c" />
+      <node id="3308300503039654079" at="22,0,24,0" concept="1" trace="Template_reduce_Not#()V" />
       <node id="3308300503039654079" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039654079" at="36,191,39,9" concept="5" />
       <node id="3308300503039654079" at="46,0,50,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -1768,7 +1768,7 @@
       <scope id="3308300503039654079" at="27,0,46,0">
         <var name="context" id="3308300503039654079" />
       </scope>
-      <unit id="3308300503039654079" at="20,0,60,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Not" />
+      <unit id="3308300503039654079" at="20,0,60,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Not" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039660392">
@@ -1780,7 +1780,7 @@
       <scope id="3308300503039660464" at="52,112,53,186" />
       <scope id="3308300503039939728" at="85,108,86,187" />
     </file>
-    <file name="Templatereduce__Repeat.java">
+    <file name="Template_reduce_Repeat.java">
       <node id="3308300503039660392" at="26,43,27,155" concept="9" />
       <node id="3308300503039660392" at="29,97,30,78" concept="8" />
       <node id="3308300503039660392" at="30,78,31,196" concept="8" />
@@ -1842,12 +1842,12 @@
       <node id="3308300503039660392" at="163,78,164,51" concept="8" />
       <node id="3308300503039660392" at="164,51,165,163" concept="3" />
       <node id="3308300503039660392" at="165,163,166,50" concept="9" />
-      <node id="3308300503039660392" at="168,0,169,0" concept="12" trace="propertyMacro_bc3eh9_c0a0c0b0b0c0c0c" />
-      <node id="3308300503039660392" at="169,0,170,0" concept="12" trace="copySrcMacro_bc3eh9_b0a0c0c0b0d0c0c" />
-      <node id="3308300503039660392" at="170,0,171,0" concept="12" trace="propertyMacro_bc3eh9_c0a0c0b0b0c0b0e0c0c" />
-      <node id="3308300503039660392" at="171,0,172,0" concept="12" trace="templateNode_bc3eh9_c0a1a1a3a1a4a2a2" />
-      <node id="3308300503039660392" at="172,0,173,0" concept="12" trace="templateNode_bc3eh9_c0a1a1a2a1a5a2a2" />
-      <node id="3308300503039660392" at="24,0,26,0" concept="1" trace="Templatereduce__Repeat#()V" />
+      <node id="3308300503039660392" at="168,0,169,0" concept="12" trace="propertyMacro_9c7i7b_c0a0c0b0b0c0c0c" />
+      <node id="3308300503039660392" at="169,0,170,0" concept="12" trace="copySrcMacro_9c7i7b_b0a0c0c0b0d0c0c" />
+      <node id="3308300503039660392" at="170,0,171,0" concept="12" trace="propertyMacro_9c7i7b_c0a0c0b0b0c0b0e0c0c" />
+      <node id="3308300503039660392" at="171,0,172,0" concept="12" trace="templateNode_9c7i7b_c0a1a1a3a1a4a2a2" />
+      <node id="3308300503039660392" at="172,0,173,0" concept="12" trace="templateNode_9c7i7b_c0a1a1a2a1a5a2a2" />
+      <node id="3308300503039660392" at="24,0,26,0" concept="1" trace="Template_reduce_Repeat#()V" />
       <node id="3308300503039660392" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039660392" at="46,13,49,13" concept="6" />
       <node id="3308300503039660392" at="58,13,61,13" concept="6" />
@@ -1980,7 +1980,7 @@
       <scope id="3308300503039660392" at="29,0,156,0">
         <var name="context" id="3308300503039660392" />
       </scope>
-      <unit id="3308300503039660392" at="22,0,174,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Repeat" />
+      <unit id="3308300503039660392" at="22,0,174,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Repeat" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039667450">
@@ -1990,7 +1990,7 @@
       <scope id="3308300503039667495" at="88,108,89,192" />
       <scope id="3308300503039939774" at="91,108,92,187" />
     </file>
-    <file name="Templatereduce__While.java">
+    <file name="Template_reduce_While.java">
       <node id="3308300503039667450" at="24,43,25,155" concept="9" />
       <node id="3308300503039667450" at="27,97,28,78" concept="8" />
       <node id="3308300503039667450" at="28,78,29,197" concept="8" />
@@ -2017,9 +2017,9 @@
       <node id="3308300503039667450" at="74,78,75,51" concept="8" />
       <node id="3308300503039667450" at="75,51,76,163" concept="3" />
       <node id="3308300503039667450" at="76,163,77,50" concept="9" />
-      <node id="3308300503039667450" at="79,0,80,0" concept="12" trace="copySrcMacro_2p1u8o_b0a0c0c0c0c" />
-      <node id="3308300503039667450" at="80,0,81,0" concept="12" trace="copySrcMacro_2p1u8o_b0a0c0c0b0d0c0c" />
-      <node id="3308300503039667450" at="22,0,24,0" concept="1" trace="Templatereduce__While#()V" />
+      <node id="3308300503039667450" at="79,0,80,0" concept="12" trace="copySrcMacro_ypk27y_b0a0c0c0c0c" />
+      <node id="3308300503039667450" at="80,0,81,0" concept="12" trace="copySrcMacro_ypk27y_b0a0c0c0b0d0c0c" />
+      <node id="3308300503039667450" at="22,0,24,0" concept="1" trace="Template_reduce_While#()V" />
       <node id="3308300503039667450" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039667450" at="36,191,39,9" concept="5" />
       <node id="3308300503039667450" at="50,199,53,13" concept="5" />
@@ -2084,7 +2084,7 @@
       <scope id="3308300503039667450" at="27,0,67,0">
         <var name="context" id="3308300503039667450" />
       </scope>
-      <unit id="3308300503039667450" at="20,0,82,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__While" />
+      <unit id="3308300503039667450" at="20,0,82,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_While" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039683664">
@@ -2092,7 +2092,7 @@
       <node id="3308300503039683772" at="94,108,95,192" concept="9" />
       <scope id="3308300503039683771" at="94,108,95,192" />
     </file>
-    <file name="Templatereduce__Heading.java">
+    <file name="Template_reduce_Heading.java">
       <node id="3308300503039683664" at="24,43,25,155" concept="9" />
       <node id="3308300503039683664" at="27,97,28,78" concept="8" />
       <node id="3308300503039683664" at="28,78,29,204" concept="8" />
@@ -2110,9 +2110,9 @@
       <node id="3308300503039683664" at="54,78,55,51" concept="8" />
       <node id="3308300503039683664" at="55,51,56,163" concept="3" />
       <node id="3308300503039683664" at="56,163,57,50" concept="9" />
-      <node id="3308300503039683664" at="59,0,60,0" concept="12" trace="templateNode_tax5tt_c0a1a2a2" />
-      <node id="3308300503039683664" at="60,0,61,0" concept="12" trace="copySrcMacro_tax5tt_b0a0c0d0c0c" />
-      <node id="3308300503039683664" at="22,0,24,0" concept="1" trace="Templatereduce__Heading#()V" />
+      <node id="3308300503039683664" at="59,0,60,0" concept="12" trace="templateNode_2x0e93_c0a1a2a2" />
+      <node id="3308300503039683664" at="60,0,61,0" concept="12" trace="copySrcMacro_2x0e93_b0a0c0d0c0c" />
+      <node id="3308300503039683664" at="22,0,24,0" concept="1" trace="Template_reduce_Heading#()V" />
       <node id="3308300503039683664" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039683664" at="37,191,40,9" concept="5" />
       <node id="3308300503039683664" at="47,0,51,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -2156,11 +2156,11 @@
       <scope id="3308300503039683664" at="27,0,47,0">
         <var name="context" id="3308300503039683664" />
       </scope>
-      <unit id="3308300503039683664" at="20,0,62,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Heading" />
+      <unit id="3308300503039683664" at="20,0,62,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Heading" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039683778">
-    <file name="Templatereduce__North.java">
+    <file name="Template_reduce_North.java">
       <node id="3308300503039683778" at="25,43,26,155" concept="9" />
       <node id="3308300503039683778" at="28,97,29,78" concept="8" />
       <node id="3308300503039683778" at="29,78,30,204" concept="8" />
@@ -2173,7 +2173,7 @@
       <node id="3308300503039683778" at="46,78,47,51" concept="8" />
       <node id="3308300503039683778" at="47,51,48,165" concept="3" />
       <node id="3308300503039683778" at="48,165,49,50" concept="9" />
-      <node id="3308300503039683778" at="23,0,25,0" concept="1" trace="Templatereduce__North#()V" />
+      <node id="3308300503039683778" at="23,0,25,0" concept="1" trace="Template_reduce_North#()V" />
       <node id="3308300503039683778" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039683778" at="39,0,43,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039683778" at="30,204,36,5" concept="15" />
@@ -2205,11 +2205,11 @@
       <scope id="3308300503039683778" at="28,0,39,0">
         <var name="context" id="3308300503039683778" />
       </scope>
-      <unit id="3308300503039683778" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__North" />
+      <unit id="3308300503039683778" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_North" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039683794">
-    <file name="Templatereduce__East.java">
+    <file name="Template_reduce_East.java">
       <node id="3308300503039683794" at="25,43,26,155" concept="9" />
       <node id="3308300503039683794" at="28,97,29,78" concept="8" />
       <node id="3308300503039683794" at="29,78,30,204" concept="8" />
@@ -2222,7 +2222,7 @@
       <node id="3308300503039683794" at="46,78,47,51" concept="8" />
       <node id="3308300503039683794" at="47,51,48,165" concept="3" />
       <node id="3308300503039683794" at="48,165,49,50" concept="9" />
-      <node id="3308300503039683794" at="23,0,25,0" concept="1" trace="Templatereduce__East#()V" />
+      <node id="3308300503039683794" at="23,0,25,0" concept="1" trace="Template_reduce_East#()V" />
       <node id="3308300503039683794" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039683794" at="39,0,43,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039683794" at="30,204,36,5" concept="15" />
@@ -2254,11 +2254,11 @@
       <scope id="3308300503039683794" at="28,0,39,0">
         <var name="context" id="3308300503039683794" />
       </scope>
-      <unit id="3308300503039683794" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__East" />
+      <unit id="3308300503039683794" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_East" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039683808">
-    <file name="Templatereduce__South.java">
+    <file name="Template_reduce_South.java">
       <node id="3308300503039683808" at="25,43,26,155" concept="9" />
       <node id="3308300503039683808" at="28,97,29,78" concept="8" />
       <node id="3308300503039683808" at="29,78,30,204" concept="8" />
@@ -2271,7 +2271,7 @@
       <node id="3308300503039683808" at="46,78,47,51" concept="8" />
       <node id="3308300503039683808" at="47,51,48,165" concept="3" />
       <node id="3308300503039683808" at="48,165,49,50" concept="9" />
-      <node id="3308300503039683808" at="23,0,25,0" concept="1" trace="Templatereduce__South#()V" />
+      <node id="3308300503039683808" at="23,0,25,0" concept="1" trace="Template_reduce_South#()V" />
       <node id="3308300503039683808" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039683808" at="39,0,43,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039683808" at="30,204,36,5" concept="15" />
@@ -2303,11 +2303,11 @@
       <scope id="3308300503039683808" at="28,0,39,0">
         <var name="context" id="3308300503039683808" />
       </scope>
-      <unit id="3308300503039683808" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__South" />
+      <unit id="3308300503039683808" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_South" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039683823">
-    <file name="Templatereduce__West.java">
+    <file name="Template_reduce_West.java">
       <node id="3308300503039683823" at="25,43,26,155" concept="9" />
       <node id="3308300503039683823" at="28,97,29,78" concept="8" />
       <node id="3308300503039683823" at="29,78,30,204" concept="8" />
@@ -2320,7 +2320,7 @@
       <node id="3308300503039683823" at="46,78,47,51" concept="8" />
       <node id="3308300503039683823" at="47,51,48,165" concept="3" />
       <node id="3308300503039683823" at="48,165,49,50" concept="9" />
-      <node id="3308300503039683823" at="23,0,25,0" concept="1" trace="Templatereduce__West#()V" />
+      <node id="3308300503039683823" at="23,0,25,0" concept="1" trace="Template_reduce_West#()V" />
       <node id="3308300503039683823" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039683823" at="39,0,43,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039683823" at="30,204,36,5" concept="15" />
@@ -2352,7 +2352,7 @@
       <scope id="3308300503039683823" at="28,0,39,0">
         <var name="context" id="3308300503039683823" />
       </scope>
-      <unit id="3308300503039683823" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__West" />
+      <unit id="3308300503039683823" at="21,0,52,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_West" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039700894">
@@ -2388,20 +2388,20 @@
       <unit id="3308300503039970441" at="132,20,138,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$3" />
       <unit id="3308300503039970368" at="124,47,132,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$2" />
     </file>
-    <file name="ScriptMoveRoutineDefinitions.java">
+    <file name="Script_MoveRoutineDefinitions.java">
       <node id="3308300503039700894" at="17,41,18,29" concept="9" />
       <node id="3308300503039700894" at="20,31,21,101" concept="9" />
       <node id="3308300503039700894" at="23,34,24,16" concept="9" />
       <node id="3308300503039700894" at="26,24,27,22" concept="9" />
       <node id="3308300503039700894" at="29,65,30,126" concept="3" />
       <node id="3308300503039700894" at="32,0,33,0" concept="12" trace="mappingScriptNode" />
-      <node id="3308300503039700894" at="15,0,17,0" concept="1" trace="ScriptMoveRoutineDefinitions#()V" />
+      <node id="3308300503039700894" at="15,0,17,0" concept="1" trace="Script_MoveRoutineDefinitions#()V" />
       <node id="3308300503039700894" at="17,0,20,0" concept="7" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039700894" at="20,0,23,0" concept="7" trace="getLongName#()Ljava/lang/String;" />
       <node id="3308300503039700894" at="23,0,26,0" concept="7" trace="modifiesModel#()Z" />
       <node id="3308300503039700894" at="26,0,29,0" concept="7" trace="getKind#()I" />
       <node id="3308300503039700894" at="29,0,32,0" concept="7" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/template/ITemplateGenerator;)V" />
-      <scope id="3308300503039700894" at="15,41,15,41" />
+      <scope id="3308300503039700894" at="15,42,15,42" />
       <scope id="3308300503039700894" at="17,41,18,29" />
       <scope id="3308300503039700894" at="20,31,21,101" />
       <scope id="3308300503039700894" at="23,34,24,16" />
@@ -2416,7 +2416,7 @@
         <var name="generator" id="3308300503039700894" />
         <var name="model" id="3308300503039700894" />
       </scope>
-      <unit id="3308300503039700894" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.ScriptMoveRoutineDefinitions" />
+      <unit id="3308300503039700894" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveRoutineDefinitions" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039701203">
@@ -2433,7 +2433,7 @@
       <scope id="3308300503039907033" at="97,108,98,187" />
       <scope id="3308300503039701228" at="55,112,62,5" />
     </file>
-    <file name="Templatereduce__RoutineDefinition.java">
+    <file name="Template_reduce_RoutineDefinition.java">
       <node id="3308300503039701203" at="26,43,27,155" concept="9" />
       <node id="3308300503039701203" at="29,109,30,78" concept="8" />
       <node id="3308300503039701203" at="30,78,31,36" concept="8" />
@@ -2468,9 +2468,9 @@
       <node id="3308300503039701203" at="94,78,95,63" concept="8" />
       <node id="3308300503039701203" at="96,66,97,170" concept="3" />
       <node id="3308300503039701203" at="98,5,99,22" concept="9" />
-      <node id="3308300503039701203" at="101,0,102,0" concept="12" trace="propertyMacro_18musb_c0a0c0b0e0c" />
-      <node id="3308300503039701203" at="102,0,103,0" concept="12" trace="copySrcMacro_18musb_b0a0c0c0b0f0e0c" />
-      <node id="3308300503039701203" at="24,0,26,0" concept="1" trace="Templatereduce__RoutineDefinition#()V" />
+      <node id="3308300503039701203" at="101,0,102,0" concept="12" trace="propertyMacro_9qqvr5_c0a0c0b0e0c" />
+      <node id="3308300503039701203" at="102,0,103,0" concept="12" trace="copySrcMacro_9qqvr5_b0a0c0c0b0f0e0c" />
+      <node id="3308300503039701203" at="24,0,26,0" concept="1" trace="Template_reduce_RoutineDefinition#()V" />
       <node id="3308300503039701203" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039701203" at="43,9,46,9" concept="6" />
       <node id="3308300503039701203" at="54,9,57,9" concept="6" />
@@ -2550,7 +2550,7 @@
       <scope id="3308300503039701203" at="29,0,87,0">
         <var name="context" id="3308300503039701203" />
       </scope>
-      <unit id="3308300503039701203" at="22,0,104,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineDefinition" />
+      <unit id="3308300503039701203" at="22,0,104,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineDefinition" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039701253">
@@ -2558,7 +2558,7 @@
       <node id="3308300503039701318" at="70,109,71,253" concept="9" />
       <scope id="3308300503039701317" at="70,109,71,253" />
     </file>
-    <file name="Templatereduce__RoutineCall.java">
+    <file name="Template_reduce_RoutineCall.java">
       <node id="3308300503039701253" at="24,43,25,155" concept="9" />
       <node id="3308300503039701253" at="27,97,28,78" concept="8" />
       <node id="3308300503039701253" at="28,78,29,202" concept="8" />
@@ -2575,7 +2575,7 @@
       <node id="3308300503039701253" at="60,78,61,51" concept="8" />
       <node id="3308300503039701253" at="61,51,62,163" concept="3" />
       <node id="3308300503039701253" at="62,163,63,50" concept="9" />
-      <node id="3308300503039701253" at="22,0,24,0" concept="1" trace="Templatereduce__RoutineCall#()V" />
+      <node id="3308300503039701253" at="22,0,24,0" concept="1" trace="Template_reduce_RoutineCall#()V" />
       <node id="3308300503039701253" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039701253" at="38,0,41,0" concept="7" trace="resolve#()Ljava/lang/Object;" />
       <node id="3308300503039701253" at="43,9,46,9" concept="6" />
@@ -2622,8 +2622,8 @@
       <scope id="3308300503039701253" at="27,0,53,0">
         <var name="context" id="3308300503039701253" />
       </scope>
-      <unit id="3308300503039701253" at="37,34,41,11" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall$1" />
-      <unit id="3308300503039701253" at="20,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__RoutineCall" />
+      <unit id="3308300503039701253" at="37,34,41,11" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineCall$1" />
+      <unit id="3308300503039701253" at="20,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_RoutineCall" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039761162">
@@ -2638,20 +2638,20 @@
       <scope id="3308300503039761164" at="140,103,145,7" />
       <unit id="3308300503039761278" at="141,227,145,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$4" />
     </file>
-    <file name="ScriptRemoveEmptyLines.java">
+    <file name="Script_RemoveEmptyLines.java">
       <node id="3308300503039761162" at="17,41,18,29" concept="9" />
       <node id="3308300503039761162" at="20,31,21,95" concept="9" />
       <node id="3308300503039761162" at="23,34,24,16" concept="9" />
       <node id="3308300503039761162" at="26,24,27,22" concept="9" />
       <node id="3308300503039761162" at="29,65,30,126" concept="3" />
       <node id="3308300503039761162" at="32,0,33,0" concept="12" trace="mappingScriptNode" />
-      <node id="3308300503039761162" at="15,0,17,0" concept="1" trace="ScriptRemoveEmptyLines#()V" />
+      <node id="3308300503039761162" at="15,0,17,0" concept="1" trace="Script_RemoveEmptyLines#()V" />
       <node id="3308300503039761162" at="17,0,20,0" concept="7" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039761162" at="20,0,23,0" concept="7" trace="getLongName#()Ljava/lang/String;" />
       <node id="3308300503039761162" at="23,0,26,0" concept="7" trace="modifiesModel#()Z" />
       <node id="3308300503039761162" at="26,0,29,0" concept="7" trace="getKind#()I" />
       <node id="3308300503039761162" at="29,0,32,0" concept="7" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/template/ITemplateGenerator;)V" />
-      <scope id="3308300503039761162" at="15,35,15,35" />
+      <scope id="3308300503039761162" at="15,36,15,36" />
       <scope id="3308300503039761162" at="17,41,18,29" />
       <scope id="3308300503039761162" at="20,31,21,95" />
       <scope id="3308300503039761162" at="23,34,24,16" />
@@ -2666,7 +2666,7 @@
         <var name="generator" id="3308300503039761162" />
         <var name="model" id="3308300503039761162" />
       </scope>
-      <unit id="3308300503039761162" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.ScriptRemoveEmptyLines" />
+      <unit id="3308300503039761162" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Script_RemoveEmptyLines" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039928809">
@@ -2674,7 +2674,7 @@
       <node id="3308300503039928827" at="119,120,120,193" concept="9" />
       <scope id="3308300503039928826" at="119,120,120,193" />
     </file>
-    <file name="Templatereduce__CommandList.java">
+    <file name="Template_reduce_CommandList.java">
       <node id="3308300503039928809" at="24,43,25,155" concept="9" />
       <node id="3308300503039928809" at="27,109,28,78" concept="8" />
       <node id="3308300503039928809" at="28,78,29,36" concept="8" />
@@ -2686,8 +2686,8 @@
       <node id="3308300503039928809" at="41,78,42,63" concept="8" />
       <node id="3308300503039928809" at="43,66,44,166" concept="3" />
       <node id="3308300503039928809" at="45,5,46,22" concept="9" />
-      <node id="3308300503039928809" at="48,0,49,0" concept="12" trace="copySrcListMacro_g3b4ec_b0a0a2a2" />
-      <node id="3308300503039928809" at="22,0,24,0" concept="1" trace="Templatereduce__CommandList#()V" />
+      <node id="3308300503039928809" at="48,0,49,0" concept="12" trace="copySrcListMacro_n3juy2_b0a0a2a2" />
+      <node id="3308300503039928809" at="22,0,24,0" concept="1" trace="Template_reduce_CommandList#()V" />
       <node id="3308300503039928809" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3308300503039928809" at="42,63,45,5" concept="5" />
       <node id="3308300503039928809" at="34,0,38,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -2722,7 +2722,7 @@
         <var name="weaveContext" id="3308300503039928809" />
         <var name="weaveSupport" id="3308300503039928809" />
       </scope>
-      <unit id="3308300503039928809" at="20,0,50,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__CommandList" />
+      <unit id="3308300503039928809" at="20,0,50,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommandList" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/4394627182935101790">
@@ -2813,20 +2813,20 @@
       <unit id="4394627182935102221" at="156,60,195,9" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$6" />
       <unit id="4394627182935102052" at="148,224,197,5" name="jetbrains.mps.samples.Kaja.generator.template.main.QueriesGenerated$5" />
     </file>
-    <file name="ScriptMoveLibraryRoutineDefinitions.java">
+    <file name="Script_MoveLibraryRoutineDefinitions.java">
       <node id="4394627182935101790" at="17,41,18,29" concept="9" />
       <node id="4394627182935101790" at="20,31,21,108" concept="9" />
       <node id="4394627182935101790" at="23,34,24,16" concept="9" />
       <node id="4394627182935101790" at="26,24,27,22" concept="9" />
       <node id="4394627182935101790" at="29,65,30,126" concept="3" />
       <node id="4394627182935101790" at="32,0,33,0" concept="12" trace="mappingScriptNode" />
-      <node id="4394627182935101790" at="15,0,17,0" concept="1" trace="ScriptMoveLibraryRoutineDefinitions#()V" />
+      <node id="4394627182935101790" at="15,0,17,0" concept="1" trace="Script_MoveLibraryRoutineDefinitions#()V" />
       <node id="4394627182935101790" at="17,0,20,0" concept="7" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="4394627182935101790" at="20,0,23,0" concept="7" trace="getLongName#()Ljava/lang/String;" />
       <node id="4394627182935101790" at="23,0,26,0" concept="7" trace="modifiesModel#()Z" />
       <node id="4394627182935101790" at="26,0,29,0" concept="7" trace="getKind#()I" />
       <node id="4394627182935101790" at="29,0,32,0" concept="7" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/template/ITemplateGenerator;)V" />
-      <scope id="4394627182935101790" at="15,48,15,48" />
+      <scope id="4394627182935101790" at="15,49,15,49" />
       <scope id="4394627182935101790" at="17,41,18,29" />
       <scope id="4394627182935101790" at="20,31,21,108" />
       <scope id="4394627182935101790" at="23,34,24,16" />
@@ -2841,11 +2841,11 @@
         <var name="generator" id="4394627182935101790" />
         <var name="model" id="4394627182935101790" />
       </scope>
-      <unit id="4394627182935101790" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.ScriptMoveLibraryRoutineDefinitions" />
+      <unit id="4394627182935101790" at="13,0,34,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Script_MoveLibraryRoutineDefinitions" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/6405700485436123139">
-    <file name="Templatereduce__Drop.java">
+    <file name="Template_reduce_Drop.java">
       <node id="6405700485436123139" at="26,43,27,155" concept="9" />
       <node id="6405700485436123139" at="29,97,30,78" concept="8" />
       <node id="6405700485436123139" at="30,78,31,197" concept="8" />
@@ -2928,7 +2928,7 @@
       <node id="6405700485436123139" at="215,78,216,51" concept="8" />
       <node id="6405700485436123139" at="216,51,217,163" concept="3" />
       <node id="6405700485436123139" at="217,163,218,50" concept="9" />
-      <node id="6405700485436123139" at="24,0,26,0" concept="1" trace="Templatereduce__Drop#()V" />
+      <node id="6405700485436123139" at="24,0,26,0" concept="1" trace="Template_reduce_Drop#()V" />
       <node id="6405700485436123139" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6405700485436123139" at="56,21,59,21" concept="6" />
       <node id="6405700485436123139" at="63,17,66,17" concept="6" />
@@ -3108,11 +3108,11 @@
       <scope id="6405700485436123139" at="29,0,208,0">
         <var name="context" id="6405700485436123139" />
       </scope>
-      <unit id="6405700485436123139" at="22,0,221,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Drop" />
+      <unit id="6405700485436123139" at="22,0,221,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Drop" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/6405700485436170020">
-    <file name="Templatereduce__Pick.java">
+    <file name="Template_reduce_Pick.java">
       <node id="6405700485436170020" at="26,43,27,155" concept="9" />
       <node id="6405700485436170020" at="29,97,30,78" concept="8" />
       <node id="6405700485436170020" at="30,78,31,197" concept="8" />
@@ -3190,7 +3190,7 @@
       <node id="6405700485436170020" at="203,78,204,51" concept="8" />
       <node id="6405700485436170020" at="204,51,205,163" concept="3" />
       <node id="6405700485436170020" at="205,163,206,50" concept="9" />
-      <node id="6405700485436170020" at="24,0,26,0" concept="1" trace="Templatereduce__Pick#()V" />
+      <node id="6405700485436170020" at="24,0,26,0" concept="1" trace="Template_reduce_Pick#()V" />
       <node id="6405700485436170020" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6405700485436170020" at="51,17,54,17" concept="6" />
       <node id="6405700485436170020" at="73,25,76,25" concept="6" />
@@ -3359,11 +3359,11 @@
       <scope id="6405700485436170020" at="29,0,196,0">
         <var name="context" id="6405700485436170020" />
       </scope>
-      <unit id="6405700485436170020" at="22,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Pick" />
+      <unit id="6405700485436170020" at="22,0,209,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Pick" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/6405700485436186605">
-    <file name="Templatereduce__IsMark.java">
+    <file name="Template_reduce_IsMark.java">
       <node id="6405700485436186605" at="25,43,26,155" concept="9" />
       <node id="6405700485436186605" at="28,97,29,78" concept="8" />
       <node id="6405700485436186605" at="29,78,30,204" concept="8" />
@@ -3375,7 +3375,7 @@
       <node id="6405700485436186605" at="45,78,46,51" concept="8" />
       <node id="6405700485436186605" at="46,51,47,163" concept="3" />
       <node id="6405700485436186605" at="47,163,48,50" concept="9" />
-      <node id="6405700485436186605" at="23,0,25,0" concept="1" trace="Templatereduce__IsMark#()V" />
+      <node id="6405700485436186605" at="23,0,25,0" concept="1" trace="Template_reduce_IsMark#()V" />
       <node id="6405700485436186605" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6405700485436186605" at="38,0,42,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="6405700485436186605" at="30,204,35,5" concept="15" />
@@ -3407,7 +3407,7 @@
       <scope id="6405700485436186605" at="28,0,38,0">
         <var name="context" id="6405700485436186605" />
       </scope>
-      <unit id="6405700485436186605" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__IsMark" />
+      <unit id="6405700485436186605" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsMark" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/6405700485436287829">
@@ -3415,7 +3415,7 @@
       <node id="6405700485436287843" at="64,112,65,184" concept="9" />
       <scope id="6405700485436287842" at="64,112,65,184" />
     </file>
-    <file name="Templatereduce__CommentLine.java">
+    <file name="Template_reduce_CommentLine.java">
       <node id="6405700485436287829" at="25,43,26,155" concept="9" />
       <node id="6405700485436287829" at="28,97,29,78" concept="8" />
       <node id="6405700485436287829" at="29,78,30,206" concept="8" />
@@ -3432,8 +3432,8 @@
       <node id="6405700485436287829" at="57,78,58,51" concept="8" />
       <node id="6405700485436287829" at="58,51,59,163" concept="3" />
       <node id="6405700485436287829" at="59,163,60,50" concept="9" />
-      <node id="6405700485436287829" at="62,0,63,0" concept="12" trace="propertyMacro_a1y0jd_c0a0c0b0b0c0c0c" />
-      <node id="6405700485436287829" at="23,0,25,0" concept="1" trace="Templatereduce__CommentLine#()V" />
+      <node id="6405700485436287829" at="62,0,63,0" concept="12" trace="propertyMacro_h26r33_c0a0c0b0b0c0c0c" />
+      <node id="6405700485436287829" at="23,0,25,0" concept="1" trace="Template_reduce_CommentLine#()V" />
       <node id="6405700485436287829" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6405700485436287829" at="40,9,43,9" concept="6" />
       <node id="6405700485436287829" at="50,0,54,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -3476,7 +3476,7 @@
       <scope id="6405700485436287829" at="28,0,50,0">
         <var name="context" id="6405700485436287829" />
       </scope>
-      <unit id="6405700485436287829" at="21,0,64,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__CommentLine" />
+      <unit id="6405700485436287829" at="21,0,64,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_CommentLine" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/7060824959893177707">
@@ -3484,7 +3484,7 @@
       <node id="7060824959896242676" at="100,108,101,30" concept="9" />
       <scope id="7060824959896242620" at="100,108,101,30" />
     </file>
-    <file name="Templatereduce__Looking.java">
+    <file name="Template_reduce_Looking.java">
       <node id="7060824959893177707" at="25,43,26,155" concept="9" />
       <node id="7060824959893177707" at="28,97,29,78" concept="8" />
       <node id="7060824959893177707" at="29,78,30,204" concept="8" />
@@ -3508,10 +3508,10 @@
       <node id="7060824959893177707" at="73,78,74,51" concept="8" />
       <node id="7060824959893177707" at="74,51,75,163" concept="3" />
       <node id="7060824959893177707" at="75,163,76,50" concept="9" />
-      <node id="7060824959893177707" at="78,0,79,0" concept="12" trace="templateNode_pmalv5_c0a1a2a2" />
-      <node id="7060824959893177707" at="79,0,80,0" concept="12" trace="switchMacroRef_pmalv5_b0a0a0a1a3a2a2" />
-      <node id="7060824959893177707" at="80,0,81,0" concept="12" trace="templateSwitchNode_pmalv5_a0a0c0a1a1a3a2a2" />
-      <node id="7060824959893177707" at="23,0,25,0" concept="1" trace="Templatereduce__Looking#()V" />
+      <node id="7060824959893177707" at="78,0,79,0" concept="12" trace="templateNode_yqxv9z_c0a1a2a2" />
+      <node id="7060824959893177707" at="79,0,80,0" concept="12" trace="switchMacroRef_yqxv9z_b0a0a0a1a3a2a2" />
+      <node id="7060824959893177707" at="80,0,81,0" concept="12" trace="templateSwitchNode_yqxv9z_a0a0c0a1a1a3a2a2" />
+      <node id="7060824959893177707" at="23,0,25,0" concept="1" trace="Template_reduce_Looking#()V" />
       <node id="7060824959893177707" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="7060824959893177707" at="50,15,53,15" concept="6" />
       <node id="7060824959893177707" at="56,9,59,9" concept="5" />
@@ -3573,7 +3573,7 @@
       <scope id="7060824959893177707" at="28,0,66,0">
         <var name="context" id="7060824959893177707" />
       </scope>
-      <unit id="7060824959893177707" at="21,0,82,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__Looking" />
+      <unit id="7060824959893177707" at="21,0,82,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_Looking" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/7060824959896164452">
@@ -3587,9 +3587,9 @@
       <scope id="7060824959896333441" at="40,110,41,203" />
       <scope id="7060824959896333393" at="43,110,44,202" />
     </file>
-    <file name="SwitchReduceDirectionEnum.java">
+    <file name="Switch_ReduceDirectionEnum.java">
       <node id="7060824959896164452" at="27,0,28,0" concept="4" trace="rules" />
-      <node id="7060824959896164452" at="28,38,29,251" concept="3" />
+      <node id="7060824959896164452" at="28,39,29,255" concept="3" />
       <node id="7060824959896164452" at="31,41,32,155" concept="9" />
       <node id="7060824959896164452" at="34,45,35,16" concept="9" />
       <node id="7060824959896164452" at="37,62,38,17" concept="9" />
@@ -3627,7 +3627,7 @@
       <node id="7060824959896164452" at="122,510,123,484" concept="3" />
       <node id="7060824959896164452" at="125,7,126,48" concept="9" />
       <node id="7060824959896164452" at="43,0,45,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
-      <node id="7060824959896164452" at="28,0,31,0" concept="1" trace="SwitchReduceDirectionEnum#()V" />
+      <node id="7060824959896164452" at="28,0,31,0" concept="1" trace="Switch_ReduceDirectionEnum#()V" />
       <node id="7060824959896164452" at="31,0,34,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="7060824959896164452" at="34,0,37,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="7060824959896164452" at="37,0,40,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
@@ -3653,7 +3653,7 @@
       <scope id="7060824959896164452" at="82,17,82,17" />
       <scope id="7060824959896164452" at="103,17,103,17" />
       <scope id="7060824959896164452" at="124,17,124,17" />
-      <scope id="7060824959896164452" at="28,38,29,251" />
+      <scope id="7060824959896164452" at="28,39,29,255" />
       <scope id="7060824959896164452" at="31,41,32,155" />
       <scope id="7060824959896164452" at="34,45,35,16" />
       <scope id="7060824959896164452" at="37,62,38,17" />
@@ -3729,15 +3729,15 @@
       <scope id="7060824959896164452" at="116,0,128,0">
         <var name="context" id="7060824959896164452" />
       </scope>
-      <unit id="7060824959896164452" at="45,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.SwitchReduceDirectionEnum$ReductionRule0" />
-      <unit id="7060824959896164452" at="66,0,87,0" name="jetbrains.mps.samples.Kaja.generator.template.main.SwitchReduceDirectionEnum$ReductionRule1" />
-      <unit id="7060824959896164452" at="87,0,108,0" name="jetbrains.mps.samples.Kaja.generator.template.main.SwitchReduceDirectionEnum$ReductionRule2" />
-      <unit id="7060824959896164452" at="108,0,129,0" name="jetbrains.mps.samples.Kaja.generator.template.main.SwitchReduceDirectionEnum$ReductionRule3" />
-      <unit id="7060824959896164452" at="25,0,130,0" name="jetbrains.mps.samples.Kaja.generator.template.main.SwitchReduceDirectionEnum" />
+      <unit id="7060824959896164452" at="45,0,66,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum$ReductionRule0" />
+      <unit id="7060824959896164452" at="66,0,87,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum$ReductionRule1" />
+      <unit id="7060824959896164452" at="87,0,108,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum$ReductionRule2" />
+      <unit id="7060824959896164452" at="108,0,129,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum$ReductionRule3" />
+      <unit id="7060824959896164452" at="25,0,130,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Switch_ReduceDirectionEnum" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/859008965969439776">
-    <file name="Templatereduce__IsFull.java">
+    <file name="Template_reduce_IsFull.java">
       <node id="859008965969439776" at="25,43,26,154" concept="9" />
       <node id="859008965969439776" at="28,97,29,78" concept="8" />
       <node id="859008965969439776" at="29,78,30,204" concept="8" />
@@ -3749,7 +3749,7 @@
       <node id="859008965969439776" at="45,78,46,51" concept="8" />
       <node id="859008965969439776" at="46,51,47,163" concept="3" />
       <node id="859008965969439776" at="47,163,48,50" concept="9" />
-      <node id="859008965969439776" at="23,0,25,0" concept="1" trace="Templatereduce__IsFull#()V" />
+      <node id="859008965969439776" at="23,0,25,0" concept="1" trace="Template_reduce_IsFull#()V" />
       <node id="859008965969439776" at="25,0,28,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="859008965969439776" at="38,0,42,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="859008965969439776" at="30,204,35,5" concept="15" />
@@ -3781,7 +3781,7 @@
       <scope id="859008965969439776" at="28,0,38,0">
         <var name="context" id="859008965969439776" />
       </scope>
-      <unit id="859008965969439776" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Templatereduce__IsFull" />
+      <unit id="859008965969439776" at="21,0,51,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Template_reduce_IsFull" />
     </file>
   </root>
 </debug-info>

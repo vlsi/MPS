@@ -23,7 +23,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)");
   }
@@ -45,11 +45,11 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195166061402"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateOutputRoot__By__RootRule();
+      return new Template_OutputRoot_By_RootRule();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateOutputRoot__by__MappingRule();
+      return new Template_OutputRoot_by_MappingRule();
     }
     return null;
   }

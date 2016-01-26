@@ -22,7 +22,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     model = PersistenceFacade.getInstance().createModelReference("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)");
   }

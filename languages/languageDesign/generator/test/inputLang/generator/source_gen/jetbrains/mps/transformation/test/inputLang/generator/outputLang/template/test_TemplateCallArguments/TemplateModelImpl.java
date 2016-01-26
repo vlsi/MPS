@@ -24,8 +24,8 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switchswitch__InputNode());
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_switch_InputNode());
     model = PersistenceFacade.getInstance().createModelReference("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)");
   }
   public String getLongName() {
@@ -46,15 +46,15 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948461339"))) {
       TemplateUtil.assertTemplateParametersCount(template, 3, arguments.length);
-      return new Templatereduce__InputNode((String) arguments[0], (Integer) arguments[1], (SNode) arguments[2]);
+      return new Template_reduce_InputNode((String) arguments[0], (Integer) arguments[1], (SNode) arguments[2]);
     }
     if (template.equals(new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578754"))) {
       TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Templateproduce__OutputNode((String) arguments[0]);
+      return new Template_produce_OutputNode((String) arguments[0]);
     }
     if (template.equals(new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948453396"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateMyOutputRoot2();
+      return new Template_MyOutputRoot2();
     }
     return null;
   }

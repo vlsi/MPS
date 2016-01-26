@@ -23,22 +23,22 @@
     </file>
   </root>
   <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550418959">
-    <file name="Mappingmain.java">
+    <file name="Mapping_main.java">
       <node id="400642802550418959" at="23,0,24,0" concept="4" trace="rules" />
-      <node id="400642802550418959" at="24,52,25,181" concept="12" />
-      <node id="400642802550418959" at="25,181,26,95" concept="3" />
+      <node id="400642802550418959" at="24,53,25,181" concept="12" />
+      <node id="400642802550418959" at="25,181,26,96" concept="3" />
       <node id="400642802550418959" at="29,64,30,17" concept="9" />
       <node id="400642802550418959" at="33,29,34,328" concept="12" />
       <node id="400642802550418959" at="37,103,38,80" concept="8" />
-      <node id="400642802550418959" at="38,80,39,108" concept="8" />
-      <node id="400642802550418959" at="39,108,40,20" concept="9" />
+      <node id="400642802550418959" at="38,80,39,99" concept="8" />
+      <node id="400642802550418959" at="39,99,40,20" concept="9" />
       <node id="400642802550418959" at="33,0,36,0" concept="1" trace="ReductionRule0#()V" />
-      <node id="400642802550418959" at="24,0,28,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
+      <node id="400642802550418959" at="24,0,28,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="400642802550418959" at="28,0,32,0" concept="7" trace="getReductionRules#()Ljava/util/Collection;" />
       <node id="400642802550418959" at="36,0,42,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="400642802550418959" at="29,64,30,17" />
       <scope id="400642802550418959" at="33,29,34,328" />
-      <scope id="400642802550418959" at="24,52,26,95" />
+      <scope id="400642802550418959" at="24,53,26,96" />
       <scope id="400642802550418959" at="33,0,36,0" />
       <scope id="400642802550418959" at="37,103,40,20">
         <var name="environment" id="400642802550418959" />
@@ -51,8 +51,8 @@
       <scope id="400642802550418959" at="36,0,42,0">
         <var name="context" id="400642802550418959" />
       </scope>
-      <unit id="400642802550418959" at="32,0,43,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain$ReductionRule0" />
-      <unit id="400642802550418959" at="21,0,44,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain" />
+      <unit id="400642802550418959" at="32,0,43,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mapping_main$ReductionRule0" />
+      <unit id="400642802550418959" at="21,0,44,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mapping_main" />
     </file>
   </root>
   <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550420129">
@@ -73,7 +73,7 @@
         <var name="m" id="3708576844065084051" />
       </scope>
     </file>
-    <file name="Templatestring_x0020switch_x0020template.java">
+    <file name="Template_string_switch_template.java">
       <node id="400642802550420129" at="31,43,32,159" concept="9" />
       <node id="400642802550420129" at="34,97,35,78" concept="8" />
       <node id="400642802550420129" at="35,78,36,199" concept="8" />
@@ -148,13 +148,13 @@
       <node id="400642802550420129" at="185,78,186,51" concept="8" />
       <node id="400642802550420129" at="186,51,187,163" concept="3" />
       <node id="400642802550420129" at="187,163,188,50" concept="9" />
-      <node id="400642802550420129" at="190,0,191,0" concept="11" trace="loopMacroRef_wjpymb_b0a0a1a2a2a2" />
-      <node id="400642802550420129" at="191,0,192,0" concept="11" trace="propertyMacro_wjpymb_c0a0c0b0b0c0d0c0c0c0c" />
-      <node id="400642802550420129" at="192,0,193,0" concept="11" trace="copySrcMacro_wjpymb_b0a0c0d0d0c0c0c0c" />
-      <node id="400642802550420129" at="193,0,194,0" concept="11" trace="copySrcMacro_wjpymb_b0a0c0d0c0c" />
-      <node id="400642802550420129" at="194,0,195,0" concept="11" trace="copySrcListMacro_wjpymb_b0a0a1a3a1a2a1a4a1a4a1a4a2a2" />
-      <node id="400642802550420129" at="195,0,196,0" concept="11" trace="copySrcMacro_wjpymb_b0a0c0f0b0e0c0c" />
-      <node id="400642802550420129" at="29,0,31,0" concept="1" trace="Templatestring_x0020switch_x0020template#()V" />
+      <node id="400642802550420129" at="190,0,191,0" concept="11" trace="loopMacroRef_a36rdq_b0a0a1a2a2a2" />
+      <node id="400642802550420129" at="191,0,192,0" concept="11" trace="propertyMacro_a36rdq_c0a0c0b0b0c0d0c0c0c0c" />
+      <node id="400642802550420129" at="192,0,193,0" concept="11" trace="copySrcMacro_a36rdq_b0a0c0d0d0c0c0c0c" />
+      <node id="400642802550420129" at="193,0,194,0" concept="11" trace="copySrcMacro_a36rdq_b0a0c0d0c0c" />
+      <node id="400642802550420129" at="194,0,195,0" concept="11" trace="copySrcListMacro_a36rdq_b0a0a1a3a1a2a1a4a1a4a1a4a2a2" />
+      <node id="400642802550420129" at="195,0,196,0" concept="11" trace="copySrcMacro_a36rdq_b0a0c0f0b0e0c0c" />
+      <node id="400642802550420129" at="29,0,31,0" concept="1" trace="Template_string_switch_template#()V" />
       <node id="400642802550420129" at="31,0,34,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="400642802550420129" at="43,41,46,11" concept="6" />
       <node id="400642802550420129" at="58,15,61,15" concept="6" />
@@ -192,7 +192,7 @@
       <node id="400642802550420129" at="92,7,173,7" concept="0" />
       <node id="400642802550420129" at="36,199,175,5" concept="13" />
       <node id="400642802550420129" at="34,0,178,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="400642802550420129" at="29,53,29,53" />
+      <scope id="400642802550420129" at="29,44,29,44" />
       <scope id="400642802550420129" at="57,25,57,25" />
       <scope id="400642802550420129" at="73,21,73,21" />
       <scope id="400642802550420129" at="121,35,121,35" />
@@ -317,7 +317,7 @@
       <scope id="400642802550420129" at="34,0,178,0">
         <var name="context" id="400642802550420129" />
       </scope>
-      <unit id="400642802550420129" at="27,0,197,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" />
+      <unit id="400642802550420129" at="27,0,197,0" name="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Template_string_switch_template" />
     </file>
   </root>
 </debug-info>

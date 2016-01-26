@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Mappingmain" file="Mappingmain.java">
+  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Mapping_main" file="Mapping_main.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -11,8 +11,8 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__And" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__Or" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_And" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_Or" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -40,9 +40,9 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Mappingmain" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__And" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__Or" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Mapping_main" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_And" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_Or" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -50,7 +50,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__And" file="Templatereduce__And.java">
+  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_And" file="Template_reduce_And.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -68,7 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Templatereduce__Or" file="Templatereduce__Or.java">
+  <dependency className="jetbrains.mps.samples.KajaAndOr.generator.template.main.Template_reduce_Or" file="Template_reduce_Or.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />

@@ -21,10 +21,10 @@
     </file>
   </root>
   <root nodeRef="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)/7980748436587788164">
-    <file name="Mappingmain.java">
+    <file name="Mapping_main.java">
       <node id="7980748436587788164" at="31,0,32,0" concept="3" trace="rules" />
-      <node id="7980748436587788164" at="32,52,33,194" concept="10" />
-      <node id="7980748436587788164" at="33,194,34,129" concept="2" />
+      <node id="7980748436587788164" at="32,53,33,194" concept="10" />
+      <node id="7980748436587788164" at="33,194,34,131" concept="2" />
       <node id="7980748436587788164" at="37,64,38,17" concept="7" />
       <node id="7980748436587788164" at="41,29,42,349" concept="10" />
       <node id="7980748436587788164" at="45,103,46,80" concept="6" />
@@ -62,10 +62,10 @@
       <node id="7980748436587788164" at="111,11,112,114" concept="2" />
       <node id="7980748436587788164" at="114,35,115,105" concept="7" />
       <node id="7980748436587788164" at="119,7,120,48" concept="7" />
-      <node id="7980748436587788164" at="123,0,124,0" concept="9" trace="copySrcMacro_417xrn_b0a0c0c0c0b3" />
-      <node id="7980748436587788164" at="124,0,125,0" concept="9" trace="copySrcMacro_417xrn_b0a0c0d0c0b3" />
-      <node id="7980748436587788164" at="125,0,126,0" concept="9" trace="traceMacro_417xrn_b0a0a1a1a4a2a1d" />
-      <node id="7980748436587788164" at="126,0,127,0" concept="9" trace="propertyMacro_417xrn_c0a0c0b0e0b0e0c0b3" />
+      <node id="7980748436587788164" at="123,0,124,0" concept="9" trace="copySrcMacro_ief6mt_b0a0c0c0c0b3" />
+      <node id="7980748436587788164" at="124,0,125,0" concept="9" trace="copySrcMacro_ief6mt_b0a0c0d0c0b3" />
+      <node id="7980748436587788164" at="125,0,126,0" concept="9" trace="traceMacro_ief6mt_b0a0a1a1a4a2a1d" />
+      <node id="7980748436587788164" at="126,0,127,0" concept="9" trace="propertyMacro_ief6mt_c0a0c0b0e0b0e0c0b3" />
       <node id="7980748436587788164" at="41,0,44,0" concept="1" trace="ReductionRule0#()V" />
       <node id="7980748436587788164" at="54,194,57,11" concept="4" />
       <node id="7980748436587788164" at="63,194,66,11" concept="4" />
@@ -73,7 +73,7 @@
       <node id="7980748436587788164" at="87,11,90,11" concept="4" />
       <node id="7980748436587788164" at="100,0,103,0" concept="1" trace="ReductionRule1#()V" />
       <node id="7980748436587788164" at="114,0,117,0" concept="5" trace="resolve#()Ljava/lang/Object;" />
-      <node id="7980748436587788164" at="32,0,36,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
+      <node id="7980748436587788164" at="32,0,36,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="7980748436587788164" at="36,0,40,0" concept="5" trace="getReductionRules#()Ljava/util/Collection;" />
       <node id="7980748436587788164" at="103,0,107,0" concept="5" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="7980748436587788164" at="75,219,80,13" concept="11" />
@@ -99,7 +99,7 @@
       <scope id="7980748436587788164" at="100,29,101,347" />
       <scope id="7980748436587788164" at="104,94,105,131" />
       <scope id="7980748436587788164" at="114,35,115,105" />
-      <scope id="7980748436587788164" at="32,52,34,129" />
+      <scope id="7980748436587788164" at="32,53,34,131" />
       <scope id="7980748436587788164" at="76,17,78,340" />
       <scope id="7980748436587788164" at="41,0,44,0" />
       <scope id="7980748436587788164" at="54,194,57,11">
@@ -156,10 +156,10 @@
       <scope id="7980748436587788164" at="44,0,98,0">
         <var name="context" id="7980748436587788164" />
       </scope>
-      <unit id="7980748436587788164" at="113,32,117,9" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$1" />
-      <unit id="7980748436587788164" at="99,0,123,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule1" />
-      <unit id="7980748436587788164" at="40,0,99,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain$ReductionRule0" />
-      <unit id="7980748436587788164" at="29,0,128,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
+      <unit id="7980748436587788164" at="113,32,117,9" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$1" />
+      <unit id="7980748436587788164" at="99,0,123,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$ReductionRule1" />
+      <unit id="7980748436587788164" at="40,0,99,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main$ReductionRule0" />
+      <unit id="7980748436587788164" at="29,0,128,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="7980748436587793848" at="20,110,21,255" concept="7" />

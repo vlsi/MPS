@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain" file="Mappingmain.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mapping_main" file="Mapping_main.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Template_string_switch_template" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
@@ -44,8 +44,8 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mapping_main" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Template_string_switch_template" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
@@ -59,7 +59,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Templatestring_x0020switch_x0020template" file="Templatestring_x0020switch_x0020template.java">
+  <dependency className="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Template_string_switch_template" file="Template_string_switch_template.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />

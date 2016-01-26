@@ -23,10 +23,10 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)/1202255161944">
-    <file name="Mappingmain.java">
+    <file name="Mapping_main.java">
       <node id="1202255161944" at="24,0,25,0" concept="4" trace="rootRules" />
-      <node id="1202255161944" at="25,52,26,212" concept="12" />
-      <node id="1202255161944" at="26,212,27,139" concept="3" />
+      <node id="1202255161944" at="25,53,26,212" concept="12" />
+      <node id="1202255161944" at="26,212,27,141" concept="3" />
       <node id="1202255161944" at="30,61,31,21" concept="9" />
       <node id="1202255161944" at="34,31,35,362" concept="12" />
       <node id="1202255161944" at="38,94,39,118" concept="9" />
@@ -42,7 +42,7 @@
       <node id="1202255161944" at="61,74,62,20" concept="9" />
       <node id="1202255161944" at="34,0,37,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="1202255161944" at="50,0,53,0" concept="1" trace="RootMappingRule1#()V" />
-      <node id="1202255161944" at="25,0,29,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
+      <node id="1202255161944" at="25,0,29,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="1202255161944" at="29,0,33,0" concept="7" trace="getRootRules#()Ljava/util/Collection;" />
       <node id="1202255161944" at="37,0,41,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="1202255161944" at="53,0,57,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
@@ -53,7 +53,7 @@
       <scope id="1202255161944" at="38,94,39,118" />
       <scope id="1202255161944" at="50,31,51,362" />
       <scope id="1202255161944" at="54,94,55,118" />
-      <scope id="1202255161944" at="25,52,27,139" />
+      <scope id="1202255161944" at="25,53,27,141" />
       <scope id="1202255161944" at="34,0,37,0" />
       <scope id="1202255161944" at="50,0,53,0" />
       <scope id="1202255161944" at="25,0,29,0">
@@ -80,9 +80,9 @@
       <scope id="1202255161944" at="57,0,64,0">
         <var name="context" id="1202255161944" />
       </scope>
-      <unit id="1202255161944" at="33,0,49,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule0" />
-      <unit id="1202255161944" at="49,0,65,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain$RootMappingRule1" />
-      <unit id="1202255161944" at="22,0,66,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mappingmain" />
+      <unit id="1202255161944" at="33,0,49,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mapping_main$RootMappingRule0" />
+      <unit id="1202255161944" at="49,0,65,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mapping_main$RootMappingRule1" />
+      <unit id="1202255161944" at="22,0,66,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Mapping_main" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1202255161956" at="23,104,24,207" concept="9" />
@@ -125,7 +125,7 @@
       <scope id="1233603475879" at="50,114,52,186" />
       <scope id="1225236165360" at="93,103,95,88" />
     </file>
-    <file name="TemplateOutputRoot__1.java">
+    <file name="Template_OutputRoot_1.java">
       <node id="1202255620269" at="32,43,33,32" concept="9" />
       <node id="1202255620269" at="35,166,36,54" concept="8" />
       <node id="1202255620269" at="36,54,37,316" concept="8" />
@@ -179,15 +179,15 @@
       <node id="1202255620269" at="147,61,148,162" concept="3" />
       <node id="1202255620269" at="149,9,150,31" concept="10" />
       <node id="1202255620269" at="153,5,154,46" concept="9" />
-      <node id="1202255620269" at="156,0,157,0" concept="11" trace="template_ewlaka_a0a1" />
-      <node id="1202255620269" at="157,0,158,0" concept="11" trace="loopMacroRef_ewlaka_b0a0a3a2a2" />
-      <node id="1202255620269" at="158,0,159,0" concept="11" trace="loopMacroRef_ewlaka_b0a0a3a4a2a2" />
-      <node id="1202255620269" at="159,0,160,0" concept="11" trace="propertyMacro_ewlaka_c0a0c0b0e0e0e0c0c" />
-      <node id="1202255620269" at="160,0,161,0" concept="11" trace="propertyMacro_ewlaka_c0a0c0b0b0d0e0e0e0c0c" />
-      <node id="1202255620269" at="161,0,162,0" concept="11" trace="propertyMacro_ewlaka_c0a0c0b0b0b0e0e0e0e0c0c" />
-      <node id="1202255620269" at="162,0,163,0" concept="11" trace="ifMacroRef_ewlaka_b0a0b0e0e0e0e0c0c" />
-      <node id="1202255620269" at="163,0,164,0" concept="11" trace="propertyMacro_ewlaka_c0a0c0b0b0f0e0e0e0c0c" />
-      <node id="1202255620269" at="30,0,32,0" concept="1" trace="TemplateOutputRoot__1#()V" />
+      <node id="1202255620269" at="156,0,157,0" concept="11" trace="template_wvaolp_a0a1" />
+      <node id="1202255620269" at="157,0,158,0" concept="11" trace="loopMacroRef_wvaolp_b0a0a3a2a2" />
+      <node id="1202255620269" at="158,0,159,0" concept="11" trace="loopMacroRef_wvaolp_b0a0a3a4a2a2" />
+      <node id="1202255620269" at="159,0,160,0" concept="11" trace="propertyMacro_wvaolp_c0a0c0b0e0e0e0c0c" />
+      <node id="1202255620269" at="160,0,161,0" concept="11" trace="propertyMacro_wvaolp_c0a0c0b0b0d0e0e0e0c0c" />
+      <node id="1202255620269" at="161,0,162,0" concept="11" trace="propertyMacro_wvaolp_c0a0c0b0b0b0e0e0e0e0c0c" />
+      <node id="1202255620269" at="162,0,163,0" concept="11" trace="ifMacroRef_wvaolp_b0a0b0e0e0e0e0c0c" />
+      <node id="1202255620269" at="163,0,164,0" concept="11" trace="propertyMacro_wvaolp_c0a0c0b0b0f0e0e0e0c0c" />
+      <node id="1202255620269" at="30,0,32,0" concept="1" trace="Template_OutputRoot_1#()V" />
       <node id="1202255620269" at="32,0,35,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1202255620269" at="38,39,41,7" concept="6" />
       <node id="1202255620269" at="45,39,48,9" concept="6" />
@@ -321,9 +321,9 @@
         <var name="context" id="1202255620269" />
         <var name="environment" id="1202255620269" />
       </scope>
-      <unit id="1202255620269" at="107,40,112,13" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1$1" />
-      <unit id="1202255620269" at="127,38,132,11" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1$2" />
-      <unit id="1202255620269" at="28,0,165,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__1" />
+      <unit id="1202255620269" at="107,40,112,13" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_1$1" />
+      <unit id="1202255620269" at="127,38,132,11" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_1$2" />
+      <unit id="1202255620269" at="28,0,165,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)/1202338159177">
@@ -372,7 +372,7 @@
         <var name="text" id="1202338740214" />
       </scope>
     </file>
-    <file name="TemplateOutputRoot__2.java">
+    <file name="Template_OutputRoot_2.java">
       <node id="1202338159177" at="32,43,33,32" concept="9" />
       <node id="1202338159177" at="35,158,36,212" concept="8" />
       <node id="1202338159177" at="37,9,38,106" concept="3" />
@@ -423,12 +423,12 @@
       <node id="1202338159177" at="150,62,151,163" concept="3" />
       <node id="1202338159177" at="152,9,153,31" concept="10" />
       <node id="1202338159177" at="156,5,157,46" concept="9" />
-      <node id="1202338159177" at="159,0,160,0" concept="11" trace="template_ewlaka_a0a1" />
-      <node id="1202338159177" at="160,0,161,0" concept="11" trace="loopMacroRef_ewlaka_b0a0a1a4a1a2" />
-      <node id="1202338159177" at="161,0,162,0" concept="11" trace="loopMacroRef_ewlaka_b0a0a3a2a4a1a2" />
-      <node id="1202338159177" at="162,0,163,0" concept="11" trace="loopMacroRef_ewlaka_b0a0a3a4a2a4a1a2" />
-      <node id="1202338159177" at="163,0,164,0" concept="11" trace="propertyMacro_ewlaka_c0a0c0b0d0e0e0c0e0b0c" />
-      <node id="1202338159177" at="30,0,32,0" concept="1" trace="TemplateOutputRoot__2#()V" />
+      <node id="1202338159177" at="159,0,160,0" concept="11" trace="template_wvaolp_a0a1" />
+      <node id="1202338159177" at="160,0,161,0" concept="11" trace="loopMacroRef_wvaolp_b0a0a1a4a1a2" />
+      <node id="1202338159177" at="161,0,162,0" concept="11" trace="loopMacroRef_wvaolp_b0a0a3a2a4a1a2" />
+      <node id="1202338159177" at="162,0,163,0" concept="11" trace="loopMacroRef_wvaolp_b0a0a3a4a2a4a1a2" />
+      <node id="1202338159177" at="163,0,164,0" concept="11" trace="propertyMacro_wvaolp_c0a0c0b0d0e0e0c0e0b0c" />
+      <node id="1202338159177" at="30,0,32,0" concept="1" trace="Template_OutputRoot_2#()V" />
       <node id="1202338159177" at="32,0,35,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1202338159177" at="45,41,48,11" concept="6" />
       <node id="1202338159177" at="52,43,55,13" concept="6" />
@@ -561,10 +561,10 @@
         <var name="context" id="1202338159177" />
         <var name="environment" id="1202338159177" />
       </scope>
-      <unit id="1202338159177" at="97,48,104,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$2" />
-      <unit id="1202338159177" at="74,48,85,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$1" />
-      <unit id="1202338159177" at="116,48,127,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2$3" />
-      <unit id="1202338159177" at="28,0,165,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.TemplateOutputRoot__2" />
+      <unit id="1202338159177" at="97,48,104,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_2$2" />
+      <unit id="1202338159177" at="74,48,85,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_2$1" />
+      <unit id="1202338159177" at="116,48,127,21" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_2$3" />
+      <unit id="1202338159177" at="28,0,165,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput.Template_OutputRoot_2" />
     </file>
   </root>
 </debug-info>

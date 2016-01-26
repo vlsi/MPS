@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" file="Mappingmain.java">
+  <dependency className="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main" file="Mapping_main.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mapping_main" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />

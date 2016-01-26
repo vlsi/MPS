@@ -23,8 +23,8 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new MappingGeneratorModule(this), new MappingLanguageModule(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchreturnLanguageAspectDescriptor(), new SwitchInstantiateAspectDescriptor());
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_GeneratorModule(this), new Mapping_LanguageModule(this));
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_returnLanguageAspectDescriptor(), new Switch_InstantiateAspectDescriptor());
     model = PersistenceFacade.getInstance().createModelReference("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)");
   }
   public String getLongName() {
@@ -45,23 +45,23 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639697475"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateGeneratorRuntime();
+      return new Template_GeneratorRuntime();
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "9020561928507177266"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateLanguage();
+      return new Template_Language();
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987411125"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templatelanguage_x0020descriptor();
+      return new Template_language_descriptor();
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639617419"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templategenerator_x0020descriptor();
+      return new Template_generator_descriptor();
     }
     if (template.equals(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639692929"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateGDClass();
+      return new Template_GDClass();
     }
     return null;
   }

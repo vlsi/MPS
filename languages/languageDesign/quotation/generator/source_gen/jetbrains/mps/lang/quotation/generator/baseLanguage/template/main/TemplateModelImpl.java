@@ -24,8 +24,8 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this), new Mappingpreprocess(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchNodeBuilder__value(), new SwitchNodeBuilder__child());
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this), new Mapping_preprocess(this));
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_NodeBuilder_value(), new Switch_NodeBuilder_child());
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)");
   }
   public String getLongName() {
@@ -46,19 +46,19 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351886726"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateQuotedNode__to__statementList();
+      return new Template_QuotedNode_to_statementList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396628814"))) {
       TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new TemplateQuotation__to__staticMethodCall((SNode) arguments[0]);
+      return new Template_Quotation_to_staticMethodCall((SNode) arguments[0]);
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295242"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateNodeBuilder__to__methodCall();
+      return new Template_NodeBuilder_to_methodCall();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709776"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templatereduce__NodeBuilderNode();
+      return new Template_reduce_NodeBuilderNode();
     }
     return null;
   }

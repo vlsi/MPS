@@ -24,8 +24,8 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   private final SModelReference model;
   public TemplateModelImpl(TemplateModule module) {
     super(module);
-    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchcustomStatement());
+    mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_customStatement());
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)");
   }
   public String getLongName() {
@@ -46,31 +46,31 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617065"))) {
       TemplateUtil.assertTemplateParametersCount(template, 2, arguments.length);
-      return new TemplateconvertMult((SNode) arguments[0], (SNode) arguments[1]);
+      return new Template_convertMult((SNode) arguments[0], (SNode) arguments[1]);
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695007"))) {
       TemplateUtil.assertTemplateParametersCount(template, 5, arguments.length);
-      return new TemplateprocessStatement((String) arguments[0], (String) arguments[1], (SNode) arguments[2], (Integer) arguments[3], (Boolean) arguments[4]);
+      return new Template_processStatement((String) arguments[0], (String) arguments[1], (SNode) arguments[2], (Integer) arguments[3], (Boolean) arguments[4]);
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030947"))) {
       TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Templateprocess42((SNode) arguments[0]);
+      return new Template_process42((SNode) arguments[0]);
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524"))) {
       TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Templateaaaaa((SNode) arguments[0]);
+      return new Template_aaaaa((SNode) arguments[0]);
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980718989"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templategen__static__method();
+      return new Template_gen_static_method();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009934880"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Templateweave__Statement();
+      return new Template_weave_Statement();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412775"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new TemplateRootCustom();
+      return new Template_RootCustom();
     }
     return null;
   }

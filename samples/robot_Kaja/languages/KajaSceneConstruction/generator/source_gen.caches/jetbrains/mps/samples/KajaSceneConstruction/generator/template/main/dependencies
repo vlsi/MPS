@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Mappingmain" file="Mappingmain.java">
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Mapping_main" file="Mapping_main.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -11,10 +11,10 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__BuildWall" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DestroyWall" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DropMark" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__PickMark" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_BuildWall" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DestroyWall" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DropMark" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_PickMark" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -42,11 +42,11 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Mappingmain" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__BuildWall" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DestroyWall" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DropMark" />
-    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__PickMark" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Mapping_main" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_BuildWall" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DestroyWall" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DropMark" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_PickMark" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -54,7 +54,7 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModelBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__BuildWall" file="Templatereduce__BuildWall.java">
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_BuildWall" file="Template_reduce_BuildWall.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -75,7 +75,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DestroyWall" file="Templatereduce__DestroyWall.java">
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DestroyWall" file="Template_reduce_DestroyWall.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -96,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DropMark" file="Templatereduce__DropMark.java">
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_DropMark" file="Template_reduce_DropMark.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationBase" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__PickMark" file="Templatereduce__PickMark.java">
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Template_reduce_PickMark" file="Template_reduce_PickMark.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
