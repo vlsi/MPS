@@ -42,13 +42,11 @@ import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
@@ -242,37 +240,22 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     @Override
     @NotNull
     protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
-      final jetbrains.mps.smodel.SModel model = new SnapshotModelData(getReference(), new ForeignNodeIdMap());
+      final SnapshotModelData modelData = new SnapshotModelData(getReference(), new ForeignNodeIdMap());
       final ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
       final IFile file = ((AbstractModule) myModule).getDescriptorFile();
       if (file != null && moduleDescriptor != null) {
-        NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-          @Override
-          public void run() {
-            new ProjectStructureBuilder(moduleDescriptor, file, model) {
-              @Override
-              public Iterable<SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
-                SModule module = (moduleDescriptor == descriptor ? myModule : ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference()));
-                if (module == null) {
-                  return Collections.emptyList();
-                }
-                return Sequence.fromIterable(module.getModels()).where(new IWhereFilter<SModel>() {
-                  @Override
-                  public boolean accept(SModel o) {
-                    return SModelStereotype.isUserModel(o);
-                  }
-                }).select(new ISelector<SModel, SModelReference>() {
-                  @Override
-                  public SModelReference select(SModel o) {
-                    return o.getReference();
-                  }
-                });
-              }
-            }.convert();
+        if (myModule instanceof Language) {
+          SNode langNode = new ProjectStructureBuilder((AbstractModule) myModule, this).convertLanguage();
+          for (Generator g : ((Language) myModule).getGenerators()) {
+            ListSequence.fromList(SLinkOperations.getChildren(langNode, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).addElement(new ProjectStructureBuilder(g, this).convertGenerator());
           }
-        });
+          modelData.addRootNode(langNode);
+        } else {
+          SNode root = new ProjectStructureBuilder((AbstractModule) myModule, this).convert();
+          modelData.addRootNode(root);
+        }
       }
-      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult<jetbrains.mps.smodel.SModel>(modelData, ModelLoadingState.FULLY_LOADED);
     }
     /*package*/ void originalModuleChanged() {
       jetbrains.mps.smodel.SModel oldModel = getCurrentModelInternal();
