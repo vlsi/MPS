@@ -60,6 +60,7 @@
       <concept id="7667276221847570194" name="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" flags="ln" index="2$oqgb">
         <reference id="8863456892852949148" name="parametersInformation" index="Bvoe9" />
       </concept>
+      <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_NextEditor" flags="ng" index="B$lHz" />
       <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
       <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz">
         <child id="1164824815888" name="cellMenuPart" index="OY2wv" />
@@ -1513,6 +1514,7 @@
       </node>
       <node concept="l2Vlx" id="i0NEeNl" role="2iSdaV" />
     </node>
+    <node concept="B$lHz" id="6mz0KzMD$Ov" role="6VMZX" />
   </node>
   <node concept="24kQdi" id="h2Rg574">
     <property role="3GE5qa" value="operation.node" />

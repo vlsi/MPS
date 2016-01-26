@@ -32,6 +32,9 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uze3jf_a(editorContext, node);
   }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createNextEditor_uze3jf_a(editorContext, node);
+  }
   private EditorCell createCollection_uze3jf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uze3jf_a");
@@ -170,5 +173,12 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createNextEditor_uze3jf_a(EditorContext editorContext, SNode node) {
+    {
+      EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, true, Model_CreateNewRootNodeOperation_Editor.class);
+      editorCell.setBig(true);
+      return editorCell;
+    }
   }
 }
