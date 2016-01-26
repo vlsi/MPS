@@ -243,6 +243,11 @@
       <property role="TrG5h" value="stereotype" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyj" id="2BHFktfnliL" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="module" />
+      <ref role="20lvS9" node="1AZH1sZHi4c" resolve="ModuleReference" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5xDtKQA7vSC">
     <property role="TrG5h" value="ModuleDependency" />

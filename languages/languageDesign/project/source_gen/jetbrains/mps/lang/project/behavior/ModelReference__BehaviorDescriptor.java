@@ -12,11 +12,18 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SModelName;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -26,12 +33,15 @@ public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getModelReference_id5qdugmiLBZZ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getModelReference").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5qdugmiLBZZ").registry(REGISTRY).build();
+  public static final SMethod<SModelReference> toModelReference_id2BHFktfnfdc = new SMethodBuilder<SModelReference>(new SJavaCompoundTypeImpl(SModelReference.class)).name("toModelReference").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2BHFktfnfdc").registry(REGISTRY).build();
+  public static final SMethod<Void> populateFrom_id2BHFktfniCd = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateFrom").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2BHFktfniCd").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModelReference.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModelReference_id5qdugmiLBZZ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModelReference_id5qdugmiLBZZ, toModelReference_id2BHFktfnfdc, populateFrom_id2BHFktfniCd);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  @Deprecated
   /*package*/ static String getModelReference_id5qdugmiLBZZ(@NotNull SNode __thisNode__) {
     String result = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"));
     if (isNotEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")))) {
@@ -41,6 +51,31 @@ public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
       result = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid")) + "(" + result + ")";
     }
     return result;
+  }
+  /*package*/ static SModelReference toModelReference_id2BHFktfnfdc(@NotNull SNode __thisNode__) {
+    SModuleReference moduleRef = null;
+    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module")) != null) {
+      moduleRef = ModuleReference__BehaviorDescriptor.toModuleReference_id2BHFktfnkjF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module")));
+    }
+    PersistenceFacade pf = PersistenceFacade.getInstance();
+    return pf.createModelReference(moduleRef, pf.createModelId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))), new SModelName(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"))).getValue());
+  }
+  /*package*/ static void populateFrom_id2BHFktfniCd(@NotNull SNode __thisNode__, SModelReference modelRef) {
+    if (modelRef.getModelId().isGloballyUnique()) {
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module")));
+    } else {
+      SNode moduleRef = SModelOperations.createNewNode(SNodeOperations.getModel(__thisNode__), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, "jetbrains.mps.lang.project.structure.ModuleReference")));
+      ModuleReference__BehaviorDescriptor.populateFrom_id2BHFktfnlSL.invoke(moduleRef, modelRef.getModuleReference());
+      SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x29edad474f5d54b1L, "module"), moduleRef);
+    }
+    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"), PersistenceFacade.getInstance().asString(modelRef.getModelId()));
+    SModelName modelName = modelRef.getName();
+    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName"), modelName.getLongName());
+    if (modelName.hasStereotype()) {
+      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), modelName.getStereotype());
+    } else {
+      SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype"), null);
+    }
   }
 
   /*package*/ ModelReference__BehaviorDescriptor() {
@@ -61,6 +96,11 @@ public final class ModelReference__BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) ((String) getModelReference_id5qdugmiLBZZ(node));
+      case 1:
+        return (T) ((SModelReference) toModelReference_id2BHFktfnfdc(node));
+      case 2:
+        populateFrom_id2BHFktfniCd(node, (SModelReference) parameters[0]);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }
