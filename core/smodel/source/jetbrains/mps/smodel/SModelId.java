@@ -153,8 +153,8 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
 
   /**
    * Model identity based on plain string, with optional kind part up to first hash ('#') sign (i.e. "[kind#]identity").
-   * Almost any string could be used for identity. Although there's no known restrictions at the moment, it's advised not to
-   * stretch this freedom too much.
+   * Almost any string could be used for identity, provided it's unique within a repository.
+   * Although there's no known restrictions about string except uniqueness at the moment, it's advised not to stretch this freedom too much.
    * Primary difference with {@link jetbrains.mps.smodel.SModelId.ModelNameSModelId} is that identity is not treated as model name
    */
   @Immutable
@@ -181,11 +181,6 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
       // It could be plain AnyStringModelId then.
       int x = myId.indexOf('#');
       return x == -1 ? "" : myId.substring(0, x);
-    }
-
-    @Override
-    public boolean isGloballyUnique() {
-      return false;
     }
 
     public boolean equals(Object obj) {
