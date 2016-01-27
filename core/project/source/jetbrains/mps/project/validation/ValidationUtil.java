@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -509,6 +509,12 @@ public class ValidationUtil {
     }
 
     final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
+    /*
+     * FIXME GMDM(module).getModules(COMPILE) gives a set of classpath dependencies required to build given module, NOT cp dependencies to build
+     * modules using this language! E.g. see https://youtrack.jetbrains.com/issue/MPS-22857
+     * It's not clear whether ModuleMaker collects dependencies right, too. Given setup of the aforementioned issue, language B and its runtime would
+     * be discovered, but its generates into A dependency is likely to be ignored (it's not re-export dependency)
+     */
     for (SModule d : new GlobalModuleDependenciesManager(sourceLanguage).getModules(Deptype.COMPILE)) {
       compileTimeDeps.add(d.getModuleReference());
     }

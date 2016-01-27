@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -32,15 +31,15 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 @Immutable
 public final class GenControllerContext {
-  private final Project myProject;
+  private final SRepository myRepository;
   private final GenerationOptions myOptions;
   private final TransientModelsProvider myTransientModelProvider;
   private final ModelStreamManager.Provider myStreamProvider;
   private final ExportsVault myExportsVault;
   private final CrossModelEnvironment myCrossModelEnvironment;
 
-  public GenControllerContext(@NotNull Project project, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
-    myProject = project;
+  public GenControllerContext(@NotNull SRepository repository, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
+    myRepository = repository;
     myOptions = options;
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
@@ -50,20 +49,12 @@ public final class GenControllerContext {
   }
 
   /**
-   * @deprecated Generator shall not depend from Project to work from restricted environments
-   */
-  @Deprecated
-  public Project getProject() {
-    return myProject;
-  }
-
-  /**
    * @deprecated see {@link GenerationSessionContext#getRepository()} for reasons.
    *             It's not the idea that generator knows about the context repository is bad, we just need better story around it.
    */
   @Deprecated
   public SRepository getRepository() {
-    return myProject.getRepository();
+    return myRepository;
   }
 
   public GenerationOptions getOptions() {

@@ -19,9 +19,9 @@ import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -160,11 +160,14 @@ public class TemplateQueryContext {
     return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, getInputNode());
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public IOperationContext getInvocationContext() {
     // according to doc: Operation context associated with module - owner of the original input model
+    //throw new UnsupportedOperationException("IOperationContext has been deprecated for years and scheduled for removal. Do not use TemplateQueryContext.getInvocationContext()");
+    // FIXME it's only lang.migration generator that uses this method, refactor.
     SModule originalModule = getOriginalInputModel().getModule();
-    final Project project = myGenerator.getGeneratorSessionContext().getProject();
-    return new ModuleContext(originalModule, project);
+    return new ModuleContext(originalModule, myGenerator.getGeneratorSessionContext().getProject());
   }
 
   // user objects

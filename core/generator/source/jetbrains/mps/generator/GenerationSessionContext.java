@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -139,10 +140,14 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   @Override
-  @Deprecated
   @ToRemove(version = 3.3)
   public Project getProject() {
-    return myEnvironment.getProject();
+    SRepository repository = myOriginalInputModel.getModule().getRepository();
+    if (!(repository instanceof ProjectRepository)) {
+      repository = myEnvironment.getRepository();
+    }
+    assert repository instanceof ProjectRepository;
+    return ((ProjectRepository) repository).getProject();
   }
 
   /**
@@ -162,7 +167,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   public String toString() {
-    return String.format("%s: generating %s in project %s", getClass().getSimpleName(), myOriginalInputModel.getModelName(), getProject().getName());
+    return String.format("%s: generating %s in", getClass().getSimpleName(), myOriginalInputModel.getName());
   }
 
   public void putTransientObject(Object key, Object o) {
