@@ -166,7 +166,7 @@ public class UsagesView implements IExternalizeable {
     DefaultActionGroup ag = new DefaultActionGroup();
     ag.addAll(actions);
     ag.addAll(myTreeComponent.getActionsToolbar());
-    myPanel.add(createActionsToolbar(ag), BorderLayout.WEST);
+    myPanel.add(createActionsToolbar(ag, myTreeComponent), BorderLayout.WEST);
   }
 
   public void setActions(Collection<? extends AnAction> actions) {
@@ -263,10 +263,11 @@ public class UsagesView implements IExternalizeable {
     }
   }
 
-  private JPanel createActionsToolbar(ActionGroup ag) {
+  private JPanel createActionsToolbar(ActionGroup ag, JComponent targetComponent) {
     JPanel rv = new JPanel();
     rv.setBorder(BorderFactory.createEmptyBorder(2, 1, 2, 1));
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ag, false);
+    actionToolbar.setTargetComponent(targetComponent);
     actionToolbar.setOrientation(SwingConstants.VERTICAL);
     rv.add(actionToolbar.getComponent());
     return rv;
