@@ -86,6 +86,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       @Override
       public void editorRebuilt(EditorComponent editor) {
+        assert !myDisposed;
         boolean needRebuild = getMessagesCache().isEmpty();
         if (!needRebuild) {
           for (EditorCell cell : getMessagesCache().keySet()) {
@@ -157,6 +158,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public List<SimpleEditorMessage> getMessages(EditorCell cell) {
+    assert !myDisposed;
     List<SimpleEditorMessage> result = getMessagesCache().get(cell);
     if (result != null) {
       return new ArrayList<SimpleEditorMessage>(result);
@@ -246,7 +248,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(SimpleEditorMessage message) {
-    assert !myDisposed;
     for (SimpleEditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -261,7 +262,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void unmark(SimpleEditorMessage message) {
-    assert !myDisposed;
     synchronized (myMessagesLock) {
       if (removeMessage(message)) {
         invalidateMessagesCaches();
@@ -360,11 +360,18 @@ public class NodeHighlightManager implements EditorMessageOwner {
     repaintAndRebuildEditorMessages();
   }
 
+  /**
+   * @deprecated since MPS 3.3 looks like not used anymore
+   */
+  @Deprecated
   public void markSingleMessage(SimpleEditorMessage message) {
     mark(message);
     repaintAndRebuildEditorMessages();
   }
 
+  /**
+   * Should work even if NodeHighlightManager is disposed because it can be called by the Highlighter thread
+   */
   public Set<SimpleEditorMessage> getMessages() {
     Set<SimpleEditorMessage> result = new HashSet<SimpleEditorMessage>();
     synchronized (myMessagesLock) {
@@ -373,6 +380,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
+  /**
+   * @deprecated since MPS 3.3 looks like not used anymore
+   */
+  @Deprecated
   public SimpleEditorMessage getMessageFor(SNode node) {
     synchronized (myMessagesLock) {
       for (SimpleEditorMessage msg : myMessages) {
@@ -409,7 +420,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor.removeRebuildListener(myRebuildListener);
   }
 
+  /**
+   * @deprecated since MPS 3.3 looks like not used anymore
+   */
+  @Deprecated
   public EditorCell getCell(SimpleEditorMessage change) {
+    assert !myDisposed;
     if (ModelAccess.instance().canWrite() && ModelAccess.instance().isInEDT()) {
       refreshMessagesCache();
     }
