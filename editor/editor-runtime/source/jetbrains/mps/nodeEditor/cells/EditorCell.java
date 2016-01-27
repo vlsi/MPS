@@ -195,10 +195,18 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getNextSibling();
 
+  /**
+   * @deprecated since MPS 3.3 not used.
+   */
+  @Deprecated
   EditorCell getNextSibling(Condition<EditorCell> condition);
 
   EditorCell getPrevSibling();
 
+  /**
+   * @deprecated since MPS 3.3 not used.
+   */
+  @Deprecated
   EditorCell getPrevSibling(Condition<EditorCell> condition);
 
   EditorCell getNextLeaf();

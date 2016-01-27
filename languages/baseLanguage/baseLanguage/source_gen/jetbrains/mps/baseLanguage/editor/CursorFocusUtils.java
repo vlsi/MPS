@@ -6,35 +6,40 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import java.util.Iterator;
 
 public class CursorFocusUtils {
   public static void setCursorAfterModifierDeleted(EditorContext editorContext, SNode node, boolean backspace) {
     EditorCell currentCell = editorContext.getSelectedCell();
     EditorCell_Collection parent = currentCell.getParent();
-    int index = parent.indexOf(currentCell);
 
-    EditorCell previousCell = null;
-    EditorCell nextCell = null;
-    if (index > 0 && index < parent.getCellsCount() - ((backspace ? 0 : 1))) {
-      previousCell = parent.getCellAt(index - 1);
-      nextCell = parent.getCellAt(index + 1);
-      editorContext.selectWRTFocusPolicy((backspace ? previousCell : nextCell));
+    EditorCell cellToSelect = getNextCell(parent, currentCell, !(backspace));
+    if (cellToSelect != null) {
+      editorContext.selectWRTFocusPolicy(cellToSelect);
       if (!(backspace)) {
-        editorContext.getSelectedCell().setCaretX(0);
+        // TODO: should we set caret to the end of cell if backspace ? 
+        cellToSelect.setCaretX(0);
       }
-    } else if (index == parent.getCellsCount() - 1) {
+      return;
+    } else if (!(backspace)) {
+      // TODO: shold we do same process if backspace? 
       // try cells one level up (needed only for methods when Delete) 
       EditorCell_Collection parentParent = parent.getParent();
-      index = parentParent.indexOf(parent);
-      nextCell = parentParent.getCellAt(index + 1);
-      if (nextCell != null) {
-        editorContext.selectWRTFocusPolicy(nextCell);
-        editorContext.getSelectedCell().setCaretX(0);
-      } else {
-        editorContext.selectWRTFocusPolicy(node);
+      cellToSelect = getNextCell(parentParent, parent, !(backspace));
+      if (cellToSelect != null) {
+        editorContext.selectWRTFocusPolicy(cellToSelect);
+        cellToSelect.setCaretX(0);
+        return;
       }
-    } else {
-      editorContext.selectWRTFocusPolicy(node);
     }
+    editorContext.selectWRTFocusPolicy(node);
+  }
+
+  private static EditorCell getNextCell(EditorCell_Collection parent, EditorCell anchorCell, boolean forward) {
+    Iterator<EditorCell> iterator = (forward ? parent.iterator() : parent.reverseIterator());
+    while (iterator.hasNext() && iterator.next() != anchorCell) {
+      // do nothing, just continue iteration until currentCell found 
+    }
+    return (iterator.hasNext() ? iterator.next() : null);
   }
 }

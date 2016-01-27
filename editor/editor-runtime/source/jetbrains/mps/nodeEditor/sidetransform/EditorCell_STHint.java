@@ -199,7 +199,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
 
     EditorCell_Collection cellCollection = myAnchorCell.getParent();
     int index = mySide == CellSide.RIGHT ? cellCollection.indexOf(myAnchorCell) + 1 : cellCollection.indexOf(myAnchorCell);
-    cellCollection.addEditorCellAt(index, this, false);
+    cellCollection.addEditorCellAt(this, index);
     return myBigCell;
   }
 

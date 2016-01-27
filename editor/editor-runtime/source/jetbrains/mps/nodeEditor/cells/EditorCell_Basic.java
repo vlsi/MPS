@@ -589,7 +589,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (myParent.getSNode() != myNode) {
       return true;
     }
-    if (myParent.getChildCount() == 1) {
+    if (myParent.getCellsCount() == 1) {
       return myParent.isSingleNodeCell();
     }
     return false;
@@ -1138,7 +1138,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return null;
     }
     int index = myParent.indexOf(this);
-    if (index + 1 < myParent.getChildCount()) {
+    if (index + 1 < myParent.getCellsCount()) {
       EditorCell nextChild = myParent.getChildAt(index + 1);
       assert nextChild.getParent() == myParent;
       return nextChild;

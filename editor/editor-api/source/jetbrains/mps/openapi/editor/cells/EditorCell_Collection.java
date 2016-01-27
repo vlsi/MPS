@@ -36,7 +36,22 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   void addEditorCell(EditorCell editorCell);
 
+  /**
+   * @deprecated since MPS 3.3 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
+   */
+  @Deprecated
   void addEditorCellAt(int index, EditorCell cellToAdd, boolean ignoreBraces);
+
+  /**
+   * Insert specified EditorCell into specified position. Index parameter should fulfill following requirements:
+   * - index >=0
+   * - index <= size of this EditorCell_Collection
+   * the size of this collection is the number of cells returned from iterator() method of this EditorCell_Collection
+   *
+   * @param cellToAdd cell to add
+   * @param index     position to add cell
+   */
+  void addEditorCellAt(EditorCell cellToAdd, int index);
 
   int getCellsCount();
 
