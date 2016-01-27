@@ -19,6 +19,7 @@ import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
@@ -28,7 +29,6 @@ import jetbrains.mps.generator.impl.GenPlanBuilder;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.test.NoOpHandler;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -57,7 +57,6 @@ import org.junit.rules.ErrorCollector;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -100,8 +99,9 @@ public class CheckpointModelTest extends PlatformMpsTest {
     });
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    boolean result = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m), null, new NoOpHandler(), new EmptyProgressMonitor(), null, opt, tmProvider);
-    myErrors.checkThat("Generation succeeds", result, CoreMatchers.equalTo(true));
+    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
+    GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
+    myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = tmProvider.getCrossModelEnvironment();
 //      CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider); FIXME uncomment
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
@@ -149,8 +149,9 @@ public class CheckpointModelTest extends PlatformMpsTest {
     });
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    boolean result = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m), null, new NoOpHandler(), new EmptyProgressMonitor(), null, opt, tmProvider);
-    myErrors.checkThat("Generation succeeds", result, CoreMatchers.equalTo(true));
+    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
+    GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
+    myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = tmProvider.getCrossModelEnvironment();
     boolean crossModelCheckpointsPresent = cme.hasState(mr);
     myErrors.checkThat("CrossModelEnvironment.hasState", crossModelCheckpointsPresent, CoreMatchers.equalTo(true));
@@ -211,22 +212,17 @@ public class CheckpointModelTest extends PlatformMpsTest {
     });
     SModel m1 = resolve(mr1);
     OptionsBuilder optBuilder = GenerationOptions.getDefaults();
-    final NoOpHandler h = new NoOpHandler() {
-      @Override
-      public boolean canHandle(SModel inputModel) {
-        // by default, checks if model is generateable
-        return true;
-      }
-    };
     GenerationOptions opt = optBuilder.customPlan(m1, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    boolean result1 = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m1), null, h, new EmptyProgressMonitor(), null, opt, tmProvider);
+    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
+    GenerationStatus genStatus1 = genFacade.process(new EmptyProgressMonitor(), m1);
     SModel m2 = resolve(mr2);
     // although could, don't want to put plan for m2 right along with plan for m1, want to have them separate
     opt = optBuilder.customPlan(m2, plan).create();
-    boolean result2 = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m2), null, h, new EmptyProgressMonitor(), null, opt, tmProvider);
-    myErrors.checkThat("m1 generation succeeds", result1, CoreMatchers.equalTo(true));
-    myErrors.checkThat("m2 generation succeeds", result2, CoreMatchers.equalTo(true));
+    genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
+    GenerationStatus genStatus2 = genFacade.process(new EmptyProgressMonitor(), m2);
+    myErrors.checkThat("m1 generation succeeds", genStatus1.isOk(), CoreMatchers.equalTo(true));
+    myErrors.checkThat("m2 generation succeeds", genStatus2.isOk(), CoreMatchers.equalTo(true));
   }
 
   @Test

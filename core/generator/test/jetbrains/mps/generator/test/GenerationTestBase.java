@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
@@ -60,7 +61,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -99,17 +99,14 @@ public class GenerationTestBase {
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
     final SRepository repo = p.getRepository();
+    final TestMessageHandler msg = new TestMessageHandler();
 
     // Stage 1. Regenerate. Warm-up
 
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), null,
-        new NoOpHandler(),
-        new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(repo, null));
+    new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
 
 
     // Stage 2. Regenerate. Measure time.
@@ -118,11 +115,7 @@ public class GenerationTestBase {
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     long start = System.nanoTime();
-    GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), null,
-        new NoOpHandler(),
-        new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(repo, null));
+    new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -131,11 +124,7 @@ public class GenerationTestBase {
         .generateInParallel(true, threads)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     start = System.nanoTime();
-    GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), null,
-        new NoOpHandler(),
-        new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(repo, null));
+    new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
     long severalThreads = System.nanoTime() - start;
 
     String prefix = myTestName.getMethodName();
@@ -193,11 +182,9 @@ public class GenerationTestBase {
       GenerationOptions options = GenerationOptions.getDefaults()
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(repo);
-      GenerationFacade.generateModels(p,
-          Collections.singletonList(descr), null,
-          generationHandler,
-          new EmptyProgressMonitor(), new TestMessageHandler(), options,
-          new TransientModelsProvider(repo, null));
+      GenerationFacade gf = new GenerationFacade(repo, options).messages(new TestMessageHandler()).transients(new TransientModelsProvider(repo, null));
+      GenerationStatus genStatus = gf.process(new EmptyProgressMonitor(), descr);
+      generationHandler.handleOutput(descr, genStatus);
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
           new String[]{randomName, originalModel.getModule().getModuleName()},
@@ -240,11 +227,9 @@ public class GenerationTestBase {
         generationHandler = new IncrementalTestGenerationHandler(repo, incrementalGenerationResults);
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
-        GenerationFacade.generateModels(p,
-            Collections.singletonList(descr), null,
-            generationHandler,
-            new EmptyProgressMonitor(), new TestMessageHandler(), options,
-            new TransientModelsProvider(repo, null));
+        gf = new GenerationFacade(repo, options).messages(new TestMessageHandler()).transients(new TransientModelsProvider(repo, null));
+        genStatus = gf.process(new EmptyProgressMonitor(), descr);
+        generationHandler.handleOutput(descr, genStatus);
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -258,11 +243,9 @@ public class GenerationTestBase {
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
       generationHandler = new IncrementalTestGenerationHandler(repo, incrementalGenerationResults);
       long start = System.nanoTime();
-      GenerationFacade.generateModels(p,
-          Collections.singletonList(descr), null,
-          generationHandler,
-          new EmptyProgressMonitor(), new TestMessageHandler(), options,
-          new TransientModelsProvider(repo, null));
+      gf = new GenerationFacade(repo, options).messages(new TestMessageHandler()).transients(new TransientModelsProvider(repo, null));
+      genStatus = gf.process(new EmptyProgressMonitor(), descr);
+      generationHandler.handleOutput(descr, genStatus);
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());

@@ -18,7 +18,6 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
@@ -28,7 +27,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextGeneratorEngine;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
@@ -45,9 +43,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.Assert;
 
 import java.io.IOException;
@@ -62,7 +58,7 @@ import java.util.Map;
  * Evgeny Gryaznov, Oct 4, 2010
  */
 @ToRemove(version = 3.2)
-public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
+public class IncrementalTestGenerationHandler {
 
   private final Map<String, String> generatedContent = new HashMap<String, String>();
   private final SRepository myRepository;
@@ -119,13 +115,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     }
   }
 
-  @Override
-  public boolean canHandle(SModel inputModel) {
-    return true;
-  }
-
-  @Override
-  public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
+  public boolean handleOutput(SModel inputModel, GenerationStatus status) {
     myLastDependencies = null;
     IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
 
@@ -171,11 +161,6 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       Assert.assertFalse(textGenStatus.isError());
     }
     return true;
-  }
-
-  @Override
-  public int estimateCompilationMillis() {
-    return 0;
   }
 
   static class CollectingStreamHandler implements StreamHandler {
