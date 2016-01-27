@@ -18,7 +18,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GeneratorTask.Factory;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
@@ -209,6 +208,7 @@ public final class GenerationFacade {
     myTaskListener = recorder;
     try {
       final GeneratorTaskBase task = new GeneratorTaskBase(model);
+      modelStreams(new ModelStreamProviderImpl());
       process0(monitor, Collections.singletonList(task));
       return recorder.getRecorded(task);
     } finally {

@@ -32,6 +32,7 @@ import java.util.List;
 
 /**
  * @deprecated see {@link jetbrains.mps.generator.generationTypes.IGenerationHandler}
+ *             There are 2 uses in mbeddr, remove once mbeddr switches to MPS 3.4 API
  * Evgeny Gryaznov, Jan 20, 2010
  */
 @Deprecated

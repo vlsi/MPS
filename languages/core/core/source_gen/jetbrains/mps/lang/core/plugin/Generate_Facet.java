@@ -44,14 +44,16 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.CustomGenerationModuleFacet;
-import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.generator.GenerationTaskRecorder;
+import jetbrains.mps.generator.GeneratorTask;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.generator.DefaultTaskBuilder;
+import jetbrains.mps.generator.GeneratorTaskBase;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 
 public class Generate_Facet extends IFacet.Stub {
@@ -425,11 +427,10 @@ public class Generate_Facet extends IFacet.Stub {
       return new IJob.Stub() {
         @Override
         public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
+          Iterable<IResource> _output_fi61u2_a0d = null;
           final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              boolean generationOk = false;
               final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
               final Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
               mpsProject.getModelAccess().runReadAction(new Runnable() {
@@ -457,37 +458,40 @@ public class Generate_Facet extends IFacet.Stub {
                 });
               }
 
-              IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
-                public Boolean invoke(GResource data) {
-                  data.retainedModels(MapSequence.fromMap(retainedModels.value).get(data.module()));
-                  _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
-                  return true;
-                }
-              });
+              GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
               IMessageHandler mh = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getMessageHandler();
 
-              progressMonitor.start("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<MResource, Integer>() {
-                public Integer combine(Integer s, MResource it) {
-                  return s + Sequence.fromIterable(it.models()).count() * 1000;
-                }
-              }));
+              progressMonitor.start("Generating", 110);
               try {
                 List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
                   public Iterable<SModel> translate(MResource in) {
                     return in.models();
                   }
                 }).toListSequence();
+                DefaultTaskBuilder<GeneratorTaskBase> tb = new DefaultTaskBuilder<GeneratorTaskBase>(new GeneratorTask.Factory<GeneratorTaskBase>() {
+                  public GeneratorTaskBase create(SModel model) {
+                    return new GeneratorTaskBase(model);
+                  }
+                });
+                tb.addAll(models);
+                GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
+                genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
+                genFacade.process(progressMonitor.subTask(100), tb.getResult());
 
-                generationOk = GenerationFacade.generateModels(mpsProject, models, null, gh, progressMonitor.subTask(1000), mh, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create(), Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider());
+                for (GenerationStatus genStatus : taskHandler.getAllRecorded()) {
+                  if (!(genStatus.isOk())) {
+                    return new IResult.FAILURE(_output_fi61u2_a0d);
+                  }
+                  SModel inputModel = genStatus.getOriginalInputModel();
+                  GResource data = new GResource(inputModel.getModule(), inputModel, MapSequence.fromMap(retainedModels.value).get(inputModel.getModule()), genStatus);
+                  _output_fi61u2_a0d = Sequence.fromIterable(_output_fi61u2_a0d).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
+                }
               } finally {
                 progressMonitor.done();
               }
 
-              if (!(generationOk)) {
-                return new IResult.FAILURE(_output_fi61u2_a0d.value);
-              }
               if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
-                _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CleanupActivityResource() {
+                _output_fi61u2_a0d = Sequence.fromIterable(_output_fi61u2_a0d).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CleanupActivityResource() {
                   public String describe() {
                     return "Drop transient models";
                   }
@@ -501,7 +505,7 @@ public class Generate_Facet extends IFacet.Stub {
                 })));
               }
             default:
-              return new IResult.SUCCESS(_output_fi61u2_a0d.value);
+              return new IResult.SUCCESS(_output_fi61u2_a0d);
           }
         }
       };

@@ -46,7 +46,7 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
     myFactory = factory;
   }
 
-  List<T> getResult() {
+  public List<T> getResult() {
     ArrayList<T> rv = new ArrayList<T>();
     for (List<SModel> step : myModuleSequence.values()) {
       for (SModel m : topoOrder(step)) {
