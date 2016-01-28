@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -17,6 +18,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 public class RectangleNode_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }

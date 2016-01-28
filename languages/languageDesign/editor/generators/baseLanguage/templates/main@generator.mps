@@ -71,6 +71,7 @@
     <import index="nh4" ref="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -857,6 +858,9 @@
       </node>
       <node concept="2AHcQZ" id="6xjWUW6XSYf" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="xXGiAam3uk" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="fXkRVIV" role="jymVt">
@@ -2434,6 +2438,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="xXGiAalDbe" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="fXN5R6V" role="jymVt">

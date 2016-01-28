@@ -91,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
@@ -279,6 +280,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>

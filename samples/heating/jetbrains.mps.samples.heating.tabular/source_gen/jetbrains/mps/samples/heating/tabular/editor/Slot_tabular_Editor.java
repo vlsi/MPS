@@ -5,6 +5,7 @@ package jetbrains.mps.samples.heating.tabular.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,6 +22,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class Slot_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.heating.tabular.editor.HeatingViews.tabular"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }

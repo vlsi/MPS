@@ -5,6 +5,7 @@ package jetbrains.mps.samples.componentDependencies.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,6 +37,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class Dependency_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }

@@ -5,6 +5,7 @@ package jetbrains.mps.samples.mindmaps.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,6 +37,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
 public class Thought_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }

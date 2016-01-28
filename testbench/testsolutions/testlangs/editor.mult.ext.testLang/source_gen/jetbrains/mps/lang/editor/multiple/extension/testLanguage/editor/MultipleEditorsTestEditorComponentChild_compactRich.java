@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -18,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MultipleEditorsTestEditorComponentChild_compactRich implements ConceptEditorComponent {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich", "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }

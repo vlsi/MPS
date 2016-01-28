@@ -5,6 +5,7 @@ package jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,6 +27,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 public class StateMachine_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }
