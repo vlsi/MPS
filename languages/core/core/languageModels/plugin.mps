@@ -597,31 +597,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3SKdUt" id="6qpcmSx0nul" role="3cqZAp">
-              <node concept="3SKdUq" id="6qpcmSx0o$$" role="3SKWNk">
-                <property role="3SKdUp" value="XXX remove this code after 3.3. It's compatibility setting not to handle node attributes in textgen" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6qpcmSx0hIl" role="3cqZAp">
-              <node concept="2YIFZM" id="6qpcmSx0l9m" role="3clFbG">
-                <ref role="37wK5l" to="yy4t:~TextGen.enableNodeAttributes(boolean):void" resolve="enableNodeAttributes" />
-                <ref role="1Pybhc" to="yy4t:~TextGen" resolve="TextGen" />
-                <node concept="2OqwBi" id="6qpcmSx0m31" role="37wK5m">
-                  <node concept="2OqwBi" id="6qpcmSx0lQ3" role="2Oq$k0">
-                    <node concept="2YIFZM" id="6qpcmSx0lPc" role="2Oq$k0">
-                      <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-                      <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
-                    </node>
-                    <node concept="liA8E" id="6qpcmSx0m27" role="2OqNvi">
-                      <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6qpcmSx0mf7" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~IGenerationSettings.handleAttributesInTextGen():boolean" resolve="handleAttributesInTextGen" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="7A08csWbR35" role="3cqZAp">
               <node concept="3cpWsn" id="7A08csWbR36" role="3cpWs9">
                 <property role="TrG5h" value="messageHandler" />
@@ -2237,26 +2212,6 @@
       <node concept="2aLE7I" id="5L5h3brvDMW" role="ElM8M">
         <node concept="ElOhj" id="5L5h3brvDMX" role="2aLE7H">
           <node concept="3clFbS" id="5L5h3brvDMY" role="2VODD2">
-            <node concept="3clFbF" id="6qpcmSx0pDY" role="3cqZAp">
-              <node concept="2YIFZM" id="6qpcmSx0pDZ" role="3clFbG">
-                <ref role="37wK5l" to="yy4t:~TextGen.enableNodeAttributes(boolean):void" resolve="enableNodeAttributes" />
-                <ref role="1Pybhc" to="yy4t:~TextGen" resolve="TextGen" />
-                <node concept="2OqwBi" id="6qpcmSx0pE0" role="37wK5m">
-                  <node concept="2OqwBi" id="6qpcmSx0pE1" role="2Oq$k0">
-                    <node concept="2YIFZM" id="6qpcmSx0pE2" role="2Oq$k0">
-                      <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
-                      <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
-                    </node>
-                    <node concept="liA8E" id="6qpcmSx0pE3" role="2OqNvi">
-                      <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6qpcmSx0pE4" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~IGenerationSettings.handleAttributesInTextGen():boolean" resolve="handleAttributesInTextGen" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="BfgvErhHeX" role="3cqZAp">
               <node concept="3cpWsn" id="BfgvErhHeY" role="3cpWs9">
                 <property role="TrG5h" value="tgEngine" />

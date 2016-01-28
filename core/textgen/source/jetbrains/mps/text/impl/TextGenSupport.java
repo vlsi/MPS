@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,11 +149,9 @@ public final class TextGenSupport implements TextArea {
     }
     // start with last attribute with textgen, if any
     SNode n = node;
-    if (useAttributesToOverrideOrder()) {
-      for (SNode attribute : node.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
-        if (TextGenRegistry.getInstance().hasTextGen(attribute)) {
-          n = attribute;
-        }
+    for (SNode attribute : node.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
+      if (TextGenRegistry.getInstance().hasTextGen(attribute)) {
+        n = attribute;
       }
     }
     doAppendNode(n);
@@ -161,13 +159,6 @@ public final class TextGenSupport implements TextArea {
 
   private void doAppendNode(SNode node) {
     ((TextGenTransitionContext) myContext).generateText(node);
-  }
-
-  private boolean useAttributesToOverrideOrder() {
-    // There might be TextGen that explicitly process node attributes (e.g. in MPS, BL did for bl.javadoc)
-    // For these, we shall not process attributes in automatic way (original generators for attributes didn't include
-    // call to attributedNode, hence only attributes were generated, without content of owner node.
-    return ((TextGenTransitionContext) myContext).getCompatibilityOption_EnableAttributes();
   }
 
   // FIXME copy of SNodeTextGen.foundError()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.text.impl;
 
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.rt.TextGenContext;
-import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -54,11 +53,6 @@ public final class TextGenTransitionContext implements TextGenContext {
 
   public TextGenBuffer getLegacyBuffer() {
     return myLegacyBuffer;
-  }
-
-  /*package*/ boolean getCompatibilityOption_EnableAttributes() {
-    final Object value = myLegacyBuffer.getUserObject(TextGen.COMPATIBILITY_USE_ATTRIBUTES);
-    return value instanceof Boolean && ((Boolean) value);
   }
 
   /**

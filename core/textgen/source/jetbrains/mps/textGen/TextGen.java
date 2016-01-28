@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,17 +52,12 @@ import java.util.Set;
 @Deprecated
 @ToRemove(version = 3.3)
 public class TextGen {
-  public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
   public static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
   public static final String ROOT_NODE = "ROOT_NODE";
 
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
-
-  public static final Object COMPATIBILITY_USE_ATTRIBUTES = "use-attributes";
-
-  private static boolean ourEnabledNodeAttributes = true;
 
   // api
   public static TextGenerationResult generateText(SNode node) {
@@ -107,12 +102,8 @@ public class TextGen {
 
   private static void populateTextGenCompatibilityObjects(TextGenBuffer buffer, SNode node) {
     // BL-specific object, BL shall manage itself
-    if (node.getModel() != null) {
-      buffer.putUserObject(PACKAGE_NAME, NameUtil.getModelLongName(node.getModel()));
-    }
     // shall get replaced with TextUnit#getStartNode()
     buffer.putUserObject(ROOT_NODE, node);
-    buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
   }
 
   public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
@@ -168,11 +159,6 @@ public class TextGen {
       }
     }
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
-  }
-
-  @ToRemove(version = 3.3)
-  public static void enableNodeAttributes(boolean enable) {
-    ourEnabledNodeAttributes = enable;
   }
 
   // helper stuff
