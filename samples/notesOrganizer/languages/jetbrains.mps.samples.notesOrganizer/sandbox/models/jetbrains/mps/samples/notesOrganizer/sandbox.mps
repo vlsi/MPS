@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:f650e3f3-2209-4ea5-b446-6c6278f36f4b(jetbrains.mps.samples.notesOrganizer.sandbox)">
+  <persistence version="9" />
+  <languages>
+    <use id="4b0f115a-8868-4d72-8d61-97071eaaa5f1" name="jetbrains.mps.samples.notesOrganizer" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+  </languages>
+  <imports />
+  <registry>
+    <language id="4b0f115a-8868-4d72-8d61-97071eaaa5f1" name="jetbrains.mps.samples.notesOrganizer">
+      <concept id="8908453262579799883" name="jetbrains.mps.samples.notesOrganizer.structure.Priority" flags="ng" index="1HB3x0" />
+      <concept id="8908453262579799880" name="jetbrains.mps.samples.notesOrganizer.structure.Category" flags="ng" index="1HB3x3" />
+      <concept id="8908453262579799874" name="jetbrains.mps.samples.notesOrganizer.structure.Notes" flags="ng" index="1HB3x9">
+        <property id="8908453262580051923" name="presentation" index="1HSs3o" />
+        <child id="8908453262579867207" name="notes" index="1HBN5c" />
+      </concept>
+      <concept id="8908453262579799877" name="jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration" flags="ng" index="1HB3xe">
+        <child id="8908453262579799955" name="priorities" index="1HB3yo" />
+        <child id="8908453262579799953" name="categories" index="1HB3yq" />
+        <child id="8908453262579856256" name="statuses" index="1HBdMb" />
+      </concept>
+      <concept id="8908453262579856388" name="jetbrains.mps.samples.notesOrganizer.structure.TextNotePart" flags="ng" index="1HBdGf">
+        <property id="8908453262579856389" name="text" index="1HBdGe" />
+      </concept>
+      <concept id="8908453262579856173" name="jetbrains.mps.samples.notesOrganizer.structure.Note" flags="ng" index="1HBdKA">
+        <reference id="8908453262579856174" name="priority" index="1HBdK_" />
+        <reference id="8908453262579856260" name="status" index="1HBdMf" />
+        <child id="8908453262579856221" name="category" index="1HBdLm" />
+        <child id="8908453262579856383" name="parts" index="1HBdNO" />
+      </concept>
+      <concept id="8908453262579856180" name="jetbrains.mps.samples.notesOrganizer.structure.CategoryReference" flags="ng" index="1HBdKZ">
+        <reference id="8908453262579856181" name="target" index="1HBdKY" />
+      </concept>
+      <concept id="8908453262579856224" name="jetbrains.mps.samples.notesOrganizer.structure.Status" flags="ng" index="1HBdLF" />
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1HB3xe" id="7IxbKGmfuIc">
+    <property role="TrG5h" value="MyConfig" />
+    <node concept="1HBdLF" id="7IxbKGmfEB$" role="1HBdMb">
+      <property role="TrG5h" value="Created" />
+    </node>
+    <node concept="1HBdLF" id="7IxbKGmfEBA" role="1HBdMb">
+      <property role="TrG5h" value="In-progress" />
+    </node>
+    <node concept="1HBdLF" id="7IxbKGmfEBD" role="1HBdMb">
+      <property role="TrG5h" value="Done" />
+    </node>
+    <node concept="1HBdLF" id="7IxbKGmfEBH" role="1HBdMb">
+      <property role="TrG5h" value="Postponed" />
+    </node>
+    <node concept="1HBdLF" id="7IxbKGmfEBM" role="1HBdMb">
+      <property role="TrG5h" value="Cancelled" />
+    </node>
+    <node concept="1HBdLF" id="7IxbKGmfEBS" role="1HBdMb">
+      <property role="TrG5h" value="Waiting for input" />
+    </node>
+    <node concept="1HB3x0" id="7IxbKGmfvcv" role="1HB3yo">
+      <property role="TrG5h" value="Critical" />
+    </node>
+    <node concept="1HB3x0" id="7IxbKGmfvcx" role="1HB3yo">
+      <property role="TrG5h" value="High" />
+    </node>
+    <node concept="1HB3x0" id="7IxbKGmfvc$" role="1HB3yo">
+      <property role="TrG5h" value="Normal" />
+    </node>
+    <node concept="1HB3x0" id="7IxbKGmfvcC" role="1HB3yo">
+      <property role="TrG5h" value="Low" />
+    </node>
+    <node concept="1HB3x3" id="7IxbKGmfuId" role="1HB3yq">
+      <property role="TrG5h" value="Work" />
+    </node>
+    <node concept="1HB3x3" id="7IxbKGmfuIf" role="1HB3yq">
+      <property role="TrG5h" value="Car" />
+    </node>
+    <node concept="1HB3x3" id="7IxbKGmfuIi" role="1HB3yq">
+      <property role="TrG5h" value="Home" />
+    </node>
+  </node>
+  <node concept="1HB3x9" id="7IxbKGmfxT6">
+    <property role="TrG5h" value="My notes" />
+    <property role="1HSs3o" value="default" />
+    <node concept="1HBdKA" id="7IxbKGmfz9r" role="1HBN5c">
+      <ref role="1HBdMf" node="7IxbKGmfEB$" resolve="Created" />
+      <ref role="1HBdK_" node="7IxbKGmfvcv" resolve="Critical" />
+      <node concept="1HBdGf" id="7IxbKGmfz9v" role="1HBdNO">
+        <property role="1HBdGe" value="sdsa" />
+      </node>
+      <node concept="1HBdGf" id="7IxbKGmfZYc" role="1HBdNO">
+        <property role="1HBdGe" value="dsfsdfsdf" />
+      </node>
+      <node concept="1HBdGf" id="7IxbKGmfZYf" role="1HBdNO">
+        <property role="1HBdGe" value="sdfsdf" />
+      </node>
+      <node concept="1HBdGf" id="7IxbKGmfZYj" role="1HBdNO">
+        <property role="1HBdGe" value="fdgjl gfdlkjg lkfdjg lkdfjg ldfkjg lkdfj glkfdj glkdf j" />
+      </node>
+      <node concept="1HBdGf" id="7IxbKGmfZYo" role="1HBdNO">
+        <property role="1HBdGe" value="dfgkjdfklgjfdklgjklfdj lkfdjklg dfld" />
+      </node>
+      <node concept="1HBdGf" id="7IxbKGmfZYu" role="1HBdNO">
+        <property role="1HBdGe" value="dfgjkfjdg" />
+      </node>
+      <node concept="1HBdKZ" id="7IxbKGmfz9E" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
+      </node>
+      <node concept="1HBdKZ" id="7IxbKGmfECg" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuIf" resolve="Car" />
+      </node>
+    </node>
+    <node concept="1HBdKA" id="7IxbKGmfZY_" role="1HBN5c">
+      <ref role="1HBdK_" node="7IxbKGmfvcv" resolve="Critical" />
+      <ref role="1HBdMf" node="7IxbKGmfEBD" resolve="Done" />
+      <node concept="1HBdGf" id="7IxbKGmfZYA" role="1HBdNO">
+        <property role="1HBdGe" value="szdsdsd dsfdsfds" />
+      </node>
+      <node concept="1HBdGf" id="3o4bEdk_czl" role="1HBdNO">
+        <property role="1HBdGe" value="dsfdsfdsf sdfdsfdsf" />
+      </node>
+      <node concept="1HBdKZ" id="7IxbKGmg5Vv" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
+      </node>
+    </node>
+  </node>
+</model>
+

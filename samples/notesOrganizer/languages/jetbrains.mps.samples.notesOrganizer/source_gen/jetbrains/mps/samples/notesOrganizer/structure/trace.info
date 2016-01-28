@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="13,0,58,0" name="jetbrains.mps.samples.notesOrganizer.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:d80ddecc-25d5-4844-86af-49ea7b4962af(jetbrains.mps.samples.notesOrganizer.structure)/8908453262580051925">
+    <file name="NotesPresentation.java">
+      <node id="8908453262580051925" at="14,0,15,0" concept="2" trace="myName" />
+      <node id="8908453262580051925" at="15,27,16,18" concept="6" />
+      <node id="8908453262580051925" at="18,0,19,0" concept="2" trace="myValue" />
+      <node id="8908453262580051925" at="19,56,20,18" concept="1" />
+      <node id="8908453262580051925" at="20,18,21,20" concept="1" />
+      <node id="8908453262580051925" at="23,28,24,19" concept="6" />
+      <node id="8908453262580051925" at="26,36,27,19" concept="6" />
+      <node id="8908453262580051925" at="29,56,30,94" concept="5" />
+      <node id="8908453262580051925" at="30,94,31,79" concept="1" />
+      <node id="8908453262580051925" at="31,79,32,70" concept="1" />
+      <node id="8908453262580051925" at="32,70,33,72" concept="1" />
+      <node id="8908453262580051925" at="33,72,34,16" concept="6" />
+      <node id="8908453262580051925" at="36,48,37,46" concept="6" />
+      <node id="8908453262580051925" at="40,24,41,44" concept="6" />
+      <node id="8908453262580051925" at="43,78,44,48" concept="6" />
+      <node id="8908453262580051925" at="46,69,47,39" concept="6" />
+      <node id="8908453262580051925" at="49,71,50,41" concept="6" />
+      <node id="8908453262580051925" at="51,5,52,42" concept="6" />
+      <node id="8908453262580051925" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="8908453262580051925" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="8908453262580051925" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="8908453262580051925" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/notesOrganizer/structure/NotesPresentation;" />
+      <node id="8908453262580051925" at="39,60,42,5" concept="3" />
+      <node id="8908453262580051925" at="42,5,45,5" concept="3" />
+      <node id="8908453262580051925" at="45,5,48,5" concept="3" />
+      <node id="8908453262580051925" at="48,5,51,5" concept="3" />
+      <node id="8908453262580051925" at="19,0,23,0" concept="0" trace="NotesPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8908453262580051925" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="8908453262580051925" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/notesOrganizer/structure/NotesPresentation;" />
+      <scope id="8908453262580051925" at="15,27,16,18" />
+      <scope id="8908453262580051925" at="23,28,24,19" />
+      <scope id="8908453262580051925" at="26,36,27,19" />
+      <scope id="8908453262580051925" at="36,48,37,46" />
+      <scope id="8908453262580051925" at="40,24,41,44" />
+      <scope id="8908453262580051925" at="43,78,44,48" />
+      <scope id="8908453262580051925" at="46,69,47,39" />
+      <scope id="8908453262580051925" at="49,71,50,41" />
+      <scope id="8908453262580051925" at="19,56,21,20" />
+      <scope id="8908453262580051925" at="15,0,18,0" />
+      <scope id="8908453262580051925" at="23,0,26,0" />
+      <scope id="8908453262580051925" at="26,0,29,0" />
+      <scope id="8908453262580051925" at="36,0,39,0" />
+      <scope id="8908453262580051925" at="19,0,23,0">
+        <var name="name" id="8908453262580051925" />
+        <var name="value" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="29,56,34,16">
+        <var name="list" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="29,0,36,0" />
+      <scope id="8908453262580051925" at="39,60,52,42" />
+      <scope id="8908453262580051925" at="39,0,54,0">
+        <var name="value" id="8908453262580051925" />
+      </scope>
+      <unit id="8908453262580051925" at="9,0,55,0" name="jetbrains.mps.samples.notesOrganizer.structure.NotesPresentation" />
+    </file>
+    <file name="NotesPresentation_PropertySupport.java">
+      <node id="8908453262580051925" at="11,24,12,18" concept="6" />
+      <node id="8908453262580051925" at="13,5,14,111" concept="5" />
+      <node id="8908453262580051925" at="15,33,16,52" concept="5" />
+      <node id="8908453262580051925" at="17,45,18,20" concept="6" />
+      <node id="8908453262580051925" at="20,5,21,17" concept="6" />
+      <node id="8908453262580051925" at="24,24,25,18" concept="6" />
+      <node id="8908453262580051925" at="26,5,27,111" concept="5" />
+      <node id="8908453262580051925" at="28,33,29,52" concept="5" />
+      <node id="8908453262580051925" at="30,45,31,43" concept="6" />
+      <node id="8908453262580051925" at="33,5,34,16" concept="6" />
+      <node id="8908453262580051925" at="36,49,37,69" concept="5" />
+      <node id="8908453262580051925" at="38,27,39,32" concept="6" />
+      <node id="8908453262580051925" at="40,5,41,14" concept="6" />
+      <node id="8908453262580051925" at="10,44,13,5" concept="3" />
+      <node id="8908453262580051925" at="16,52,19,7" concept="3" />
+      <node id="8908453262580051925" at="23,47,26,5" concept="3" />
+      <node id="8908453262580051925" at="29,52,32,7" concept="3" />
+      <node id="8908453262580051925" at="37,69,40,5" concept="3" />
+      <node id="8908453262580051925" at="14,111,20,5" concept="8" />
+      <node id="8908453262580051925" at="27,111,33,5" concept="8" />
+      <node id="8908453262580051925" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8908453262580051925" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="8908453262580051925" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="8908453262580051925" at="11,24,12,18" />
+      <scope id="8908453262580051925" at="17,45,18,20" />
+      <scope id="8908453262580051925" at="24,24,25,18" />
+      <scope id="8908453262580051925" at="30,45,31,43" />
+      <scope id="8908453262580051925" at="38,27,39,32" />
+      <scope id="8908453262580051925" at="15,33,19,7">
+        <var name="constant" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="28,33,32,7">
+        <var name="constant" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="36,49,41,14">
+        <var name="constant" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="36,0,43,0">
+        <var name="value" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="10,44,21,17">
+        <var name="constants" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="23,47,34,16">
+        <var name="constants" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="10,0,23,0">
+        <var name="value" id="8908453262580051925" />
+      </scope>
+      <scope id="8908453262580051925" at="23,0,36,0">
+        <var name="value" id="8908453262580051925" />
+      </scope>
+      <unit id="8908453262580051925" at="9,0,44,0" name="jetbrains.mps.samples.notesOrganizer.structure.NotesPresentation_PropertySupport" />
+    </file>
+  </root>
+</debug-info>
+
