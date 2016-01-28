@@ -2,7 +2,10 @@
 
   <property name="test_project" location="testbench/modules/testMigration" />
 
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/mpsPlugins" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="idea_home" location="" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
@@ -28,6 +31,17 @@
 
   <target name="check-test-result">
     <junit fork="true" dir="${mps_home}" showoutput="true">
+      <classpath>
+        <fileset dir="${artifacts.mps}/lib">
+          <include name="**/*.jar" />
+        </fileset>
+        <pathelement path="${jdk.home}/lib/tools.jar" />
+        <fileset dir="${build.tmp}">
+          <include name="mps.class.path.jar" />
+        </fileset>
+        <pathelement path="${basedir}/testbench/testclasses"/>
+      </classpath>
+
       <jvmarg value="-ea"/>
       <jvmarg value="-Dmps.junit.modules.root=."/>
       <jvmarg value="-Xss1024k"/>
