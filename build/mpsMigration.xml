@@ -2,10 +2,17 @@
 
   <property name="test_project" location="testbench/modules/testMigration" />
 
+  <property name="build.dir" location="build" />
+  <property name="artifacts.mps" location="${mps_home}" />
+  <property name="idea_home" location="" />
+  <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
+  <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
+  <property name="artifacts.IDEA" location="${idea_home}" />
+
   <path id="path.mps.ant.path">
-    <pathelement location="lib/ant/lib/ant-mps.jar" />
-    <pathelement location="lib/jdom.jar" />
-    <pathelement location="lib/log4j.jar" />
+    <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
+    <pathelement location="${artifacts.mps}/lib/jdom.jar" />
+    <pathelement location="${artifacts.mps}/lib/log4j.jar" />
   </path>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"  classpathref="path.mps.ant.path" />
