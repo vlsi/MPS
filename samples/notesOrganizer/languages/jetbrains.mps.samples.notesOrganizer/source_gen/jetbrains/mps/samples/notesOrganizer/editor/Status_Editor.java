@@ -24,6 +24,7 @@ public class Status_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_gjf57x_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gjf57x_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_gjf57x_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createProperty_gjf57x_a0(EditorContext editorContext, SNode node) {
@@ -78,9 +79,13 @@ public class Status_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_gjf57x_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "active state");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "active");
     editorCell.setCellId("Constant_gjf57x_b1a");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createComponent_gjf57x_c0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.notesOrganizer.editor.MetaInfo");
     return editorCell;
   }
 }

@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("compact", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact"), new ConceptEditorHintImpl("inspected", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.inspected"));
@@ -48,6 +49,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<ConceptEditor>emptyList();
   }
 
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"))) {
+        if ("jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new NoteMetaInformation());
+        }
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x36042ea354974c99L, "jetbrains.mps.samples.notesOrganizer.structure.NoteMetaInfo"))) {
+        if ("jetbrains.mps.samples.notesOrganizer.editor.MetaInfo".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new MetaInfo());
+        }
+      }
+    }
+    return Collections.<ConceptEditorComponent>emptyList();
+  }
 
   public Collection<ConceptEditorHint> getHints() {
     return myHints;

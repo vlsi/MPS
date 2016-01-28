@@ -5,9 +5,14 @@
     <use id="4b0f115a-8868-4d72-8d61-97071eaaa5f1" name="jetbrains.mps.samples.notesOrganizer" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
-  <imports />
+  <imports>
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
+  </imports>
   <registry>
     <language id="4b0f115a-8868-4d72-8d61-97071eaaa5f1" name="jetbrains.mps.samples.notesOrganizer">
+      <concept id="3892287256988699801" name="jetbrains.mps.samples.notesOrganizer.structure.NoteMetaInfo" flags="ng" index="1y$Q8U">
+        <reference id="3892287256988699805" name="color" index="1y$Q8Y" />
+      </concept>
       <concept id="8908453262579799883" name="jetbrains.mps.samples.notesOrganizer.structure.Priority" flags="ng" index="1HB3x0" />
       <concept id="8908453262579799880" name="jetbrains.mps.samples.notesOrganizer.structure.Category" flags="ng" index="1HB3x3" />
       <concept id="8908453262579799874" name="jetbrains.mps.samples.notesOrganizer.structure.Notes" flags="ng" index="1HB3x9">
@@ -46,6 +51,7 @@
     <node concept="1HBdLF" id="7IxbKGmfEB$" role="1HBdMb">
       <property role="TrG5h" value="Created" />
       <property role="1y$nXF" value="true" />
+      <ref role="1y$Q8Y" to="z60i:~Color.yellow" resolve="yellow" />
     </node>
     <node concept="1HBdLF" id="7IxbKGmfEBA" role="1HBdMb">
       <property role="TrG5h" value="In-progress" />
@@ -66,6 +72,7 @@
     </node>
     <node concept="1HB3x0" id="7IxbKGmfvcv" role="1HB3yo">
       <property role="TrG5h" value="Critical" />
+      <ref role="1y$Q8Y" to="z60i:~Color.RED" resolve="RED" />
     </node>
     <node concept="1HB3x0" id="7IxbKGmfvcx" role="1HB3yo">
       <property role="TrG5h" value="High" />
@@ -78,6 +85,7 @@
     </node>
     <node concept="1HB3x3" id="7IxbKGmfuId" role="1HB3yq">
       <property role="TrG5h" value="Work" />
+      <ref role="1y$Q8Y" to="z60i:~Color.BLUE" resolve="BLUE" />
     </node>
     <node concept="1HB3x3" id="7IxbKGmfuIf" role="1HB3yq">
       <property role="TrG5h" value="Car" />
@@ -90,8 +98,8 @@
     <property role="TrG5h" value="My notes" />
     <property role="1HSs3o" value="default" />
     <node concept="1HBdKA" id="7IxbKGmfz9r" role="1HBN5c">
-      <ref role="1HBdMf" node="7IxbKGmfEB$" resolve="Created" />
       <ref role="1HBdK_" node="7IxbKGmfvcv" resolve="Critical" />
+      <ref role="1HBdMf" node="7IxbKGmfEB$" resolve="Created" />
       <node concept="1HBdGf" id="7IxbKGmfz9v" role="1HBdNO">
         <property role="1HBdGe" value="sdsa" />
       </node>
@@ -128,6 +136,9 @@
       </node>
       <node concept="1HBdKZ" id="7IxbKGmg5Vv" role="1HBdLm">
         <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
+      </node>
+      <node concept="1HBdKZ" id="3o4bEdkATQJ" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuId" resolve="Work" />
       </node>
     </node>
   </node>

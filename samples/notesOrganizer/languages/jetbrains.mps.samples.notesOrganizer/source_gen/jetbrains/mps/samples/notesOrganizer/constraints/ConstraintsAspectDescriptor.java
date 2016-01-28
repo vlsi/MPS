@@ -14,6 +14,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x7ba12f0b163d1745L) {
       return new NotesConfiguration_Constraints();
     }
+    if (id == 0x36042ea354974c99L) {
+      return new NoteMetaInfo_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

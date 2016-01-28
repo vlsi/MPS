@@ -6,6 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -104,7 +105,7 @@
     <property role="1pbfSe" value="1847703981" />
     <property role="TrG5h" value="Category" />
     <property role="34LRSv" value="category" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="3o4bEdk_OMp" resolve="NoteMetaInfo" />
     <node concept="PrWs8" id="7IxbKGmfht9" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -113,7 +114,7 @@
     <property role="1pbfSe" value="1847703978" />
     <property role="TrG5h" value="Priority" />
     <property role="34LRSv" value="priority" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="3o4bEdk_OMp" resolve="NoteMetaInfo" />
     <node concept="PrWs8" id="7IxbKGmfhtc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -161,7 +162,7 @@
     <property role="1pbfSe" value="1847647637" />
     <property role="TrG5h" value="Status" />
     <property role="34LRSv" value="status" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="3o4bEdk_OMp" resolve="NoteMetaInfo" />
     <node concept="1TJgyi" id="3o4bEdk_l78" role="1TKVEl">
       <property role="TrG5h" value="active" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
@@ -200,6 +201,19 @@
     <node concept="M4N5e" id="7IxbKGmgeZt" role="M5hS2">
       <property role="1uS6qv" value="inspected" />
       <property role="1uS6qo" value="inspected" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3o4bEdk_OMp">
+    <property role="1pbfSe" value="1969521860" />
+    <property role="TrG5h" value="NoteMetaInfo" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3o4bEdk_OMt" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="color" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
   </node>
 </model>
