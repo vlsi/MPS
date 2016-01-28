@@ -24,6 +24,6 @@ import static org.junit.Assert.assertTrue;
 public class TestSingleMigration {
   @Test
   public void testSingleMigration() {
-    assertTrue(new File("testbench/modules/testMigration/test.txt").exists());
+    assertTrue(new File(System.getProperty("test_home") + File.separator + "test.txt").exists());
   }
 }

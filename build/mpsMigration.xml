@@ -1,6 +1,6 @@
 <project name="mpsMigration" default="check" basedir="..">
 
-  <property name="test_project" location="testbench/modules/testMigration" />
+  <property name="test_project" location="${basedir}/testbench/modules/testMigration" />
 
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
@@ -23,7 +23,6 @@
   <target name="check" depends="migrate,check-test-result"/>
 
   <target name="migrate">
-    <echo message="migrating" />
     <migrate project="${test_project}">
       <macro name="mps_home" path="${mps_home}"/>
     </migrate>
@@ -48,6 +47,7 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+      <jvmarg value="-Dtest_home=${test_project}"/>
       <test name="jetbrains.mps.migration.TestSingleMigration" />
       <formatter type="xml"/>
     </junit>
