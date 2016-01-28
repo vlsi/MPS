@@ -90,7 +90,7 @@ public class CaretBlinker {
       while (true) {
         synchronized (myRegistrationLock) {
           for (EditorComponent editor : myEditors) {
-            if (editor.hasFocus()) {
+            if (editor.isActive()) {
               EditorCell selectedCell = editor.getDeepestSelectedCell();
               if (selectedCell == null) continue;
               ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();

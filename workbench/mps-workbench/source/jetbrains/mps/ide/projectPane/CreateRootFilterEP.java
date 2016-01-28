@@ -17,12 +17,10 @@ package jetbrains.mps.ide.projectPane;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -42,11 +40,11 @@ public class CreateRootFilterEP {
   private final Set<Condition<SAbstractConcept>> myFilters = new HashSet<Condition<SAbstractConcept>>();
   private final Set<CreateNodeExtension> myCreateExtensions = new HashSet<CreateNodeExtension>();
 
-  public void addFilter(Condition<SAbstractConcept> filter){
+  public void addFilter(Condition<SAbstractConcept> filter) {
     myFilters.add(filter);
   }
 
-  public void removeFilter(Condition<SAbstractConcept> filter){
+  public void removeFilter(Condition<SAbstractConcept> filter) {
     myFilters.remove(filter);
   }
 
@@ -79,12 +77,12 @@ public class CreateRootFilterEP {
    * There's no specific order, all CreateNodeExtension get a chance to act.
    */
   @NotNull
-  Collection<CreateNodeExtension> getCreateNodeExtensions() {
+  public Collection<CreateNodeExtension> getCreateNodeExtensions() {
     return new ArrayList<CreateNodeExtension>(myCreateExtensions);
   }
 
-  public boolean shouldBeRemoved(SAbstractConcept c){
-    for (Condition<SAbstractConcept> f: myFilters){
+  public boolean shouldBeRemoved(SAbstractConcept c) {
+    for (Condition<SAbstractConcept> f : myFilters) {
       if (f.met(c)) return true;
     }
     return false;
