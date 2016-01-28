@@ -206,6 +206,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ImportEntry" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -750,6 +751,10 @@
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.textGen.ImportEntry" file="ImportEntry.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.annotations.Immutable" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ImportsContext" file="ImportsContext.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.String" />
@@ -758,12 +763,11 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ImportEntry" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.text.BasicToken" />
-    <classNode dependClassName="jetbrains.mps.text.TextBuffer" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGen" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenBuffer" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />

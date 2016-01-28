@@ -280,7 +280,16 @@ public abstract class BaseLanguageTextGen {
     }
 
     BaseLanguageTextGen.addDependency(packageName, fqName, ctx);
-    return ImportsContext.getInstance(tgs.getLegacyBuffer()).getClassifierRefText(packageName, fqName, contextNode);
+    ImportEntry importEntry = ImportsContext.getInstance(tgs.getLegacyBuffer()).getClassifierRefText(packageName, fqName, contextNode);
+    if (importEntry.needsImport()) {
+      tgs.pushTextArea("IMPORTS");
+      tgs.append("import ");
+      tgs.append(importEntry.getImport());
+      tgs.append(";");
+      tgs.newLine();
+      tgs.popTextArea();
+    }
+    return importEntry.getName();
   }
   protected static void addDependency(String packageName, String fqName, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

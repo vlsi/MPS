@@ -105,10 +105,7 @@ public final class TextGenBuffer {
   }
 
 
-  /*
-   * FIXME shall be package-local, but there's no other way to access TextBuffer (or TextGenContext) in BL.ImportsContext
-   */
-  public TextBuffer getRealBuffer() {
+  /*package-local*/ TextBuffer getRealBuffer() {
     return myBuffer;
   }
 
