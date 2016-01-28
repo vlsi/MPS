@@ -31,6 +31,9 @@ import java.util.List;
  * @deprecated replaced with {@link jetbrains.mps.text.rt.TextGenDescriptor} and {@link jetbrains.mps.text.rt.TextGenDescriptorBase}.
  * Though it's tempting to keep present approach (descriptor being only an adapter, and actual base class for generated textgen being stateful), refactoring
  * of this class is troublesome due to vast API it exposes.
+ *
+ * IMPORTANT HAS TO STAY IN 3.4 (although could be empty), to facilitate compilation of operation/utility methods we've been generating in MPS 3.3 for compile
+ * time compatibility with MPS 3.2
  */
 @Deprecated
 @ToRemove(version = 3.3)

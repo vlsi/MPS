@@ -12,7 +12,6 @@ import org.jdom.Document;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -32,12 +31,6 @@ public abstract class ElementCreator {
     } catch (Exception e) {
       LogManager.getLogger(Document.class).error(null, e);
     }
-  }
-  public static void byElement(SNode node, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
   protected static Element createElement(SNode element, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

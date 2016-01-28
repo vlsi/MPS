@@ -19,7 +19,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -216,90 +215,6 @@ public abstract class BaseLanguageTextGen {
     }
     String longName = NameUtil.longNameFromNamespaceAndShortName(packageAndShortName._0(), packageAndShortName._1());
     BaseLanguageTextGen.appendClassName(packageAndShortName._0(), longName, classifierRef.getSourceNode(), ctx);
-  }
-  public static void typeParameters(List<SNode> types, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void arguments(SNode methodCall, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void newLine(boolean need, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void annotations(SNode annotable, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void visibility(SNode v, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void visibilityWithIndent(SNode v, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void internalClassifierName(SNode node, SNode contextNode, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void internalClassName(String packageName, String className, SNode contextNode, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void variableDeclaration(SNode node, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void fileHeader(SNode cls, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void methodCall(SNode methodCall, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void methodTypeArguments(SNode methodCall, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void referenceToShortName(SReference reference, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void blClassifierRef(SReference classifierRef, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
   protected static Tuples._2<String, String> getPackageAndShortName(SReference classifierRef, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

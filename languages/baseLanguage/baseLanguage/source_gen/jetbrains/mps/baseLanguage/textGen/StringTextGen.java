@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class StringTextGen {
   public static void compilableString(String s, final TextGenContext ctx) {
@@ -35,12 +34,6 @@ public abstract class StringTextGen {
       }
     }
     tgs.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(result, ctx));
-  }
-  public static void compilableString(String s, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
   protected static boolean isBadDoubleQuote(String s, int i, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);

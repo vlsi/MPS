@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
   public static void typeDeclarations(SNode generic, final TextGenContext ctx) {
@@ -28,11 +27,5 @@ public abstract class GenericDeclarationTextGen2 extends BaseLanguageTextGen {
       }
       tgs.append(">");
     }
-  }
-  public static void typeDeclarations(SNode generic, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
 }

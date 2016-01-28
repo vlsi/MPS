@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescr
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
-import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class DocCommentTextGen {
   public static void javadocIndent(final TextGenContext ctx) {
@@ -98,23 +97,5 @@ public abstract class DocCommentTextGen {
     tgs.indent();
     tgs.append(" */");
     tgs.newLine();
-  }
-  public static void javadocIndent(SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void docCommentStart(SNode node, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
-  }
-  public static void docCommentEnd(SNode node, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
 }

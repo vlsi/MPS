@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class BaseLangInternal extends BaseLanguageTextGen {
   public static void className(String fqClassName, SNode contextNode, final TextGenContext ctx) {
@@ -31,11 +30,5 @@ public abstract class BaseLangInternal extends BaseLanguageTextGen {
       }
       BaseLanguageTextGen.internalClassName(packageName, className, contextNode, ctx);
     }
-  }
-  public static void className(String fqClassName, SNode contextNode, SNodeTextGen ctx) {
-    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
-    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
-    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
-    // this method present. 
   }
 }
