@@ -37,6 +37,7 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -258,7 +259,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         generator.addCopiedOutputNodeForInputNode(inputNode, reducedNode);
         // preserve user objects
         if (TracingUtil.getInput(reducedNode) == null) {
-          jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
+          CopyUtil.copyUserObjects(inputNode, reducedNode);
           // keep track of 'original input node'
           TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -108,8 +109,8 @@ public class CloneUtil {
   public SNode clone(SNode inputNode) {
     SNode outputNode = myFactory.create(inputNode);
 
-    jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
-    jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
+    CopyUtil.copyProperties(inputNode, outputNode);
+    CopyUtil.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
     if (myTraceOriginalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -117,8 +118,8 @@ public final class CopyUtil {
 
     jetbrains.mps.smodel.SNode result = new jetbrains.mps.smodel.SNode(node.getConcept());
     mapping.put(node, result);
-    jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
-    jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);
+    copyProperties(node, result);
+    copyUserObjects(node, result);
     for (SNode child : node.getChildren()) {
       if (!copyAttributes && AttributeOperations.isAttribute(child)) continue;
       SContainmentLink role = child.getContainmentLink();
@@ -135,6 +136,18 @@ public final class CopyUtil {
       results.add(clone(node, mapping, true));
     }
     return results;
+  }
+
+  public static void copyProperties(SNode from, SNode to) {
+    for (SProperty p : from.getProperties()) {
+      to.setProperty(p, from.getProperty(p));
+    }
+  }
+
+  public static void copyUserObjects(SNode from, final SNode to) {
+    for (Object key : from.getUserObjectKeys()) {
+      to.putUserObject(key, from.getUserObject(key));
+    }
   }
 
   public static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {

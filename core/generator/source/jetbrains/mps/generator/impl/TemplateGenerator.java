@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -63,7 +62,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -416,7 +414,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         // we copy user objects in reduction rules, root mapping rules are no different
         // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
         // are marked as originating at inputNode's origin
-        jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
+        CopyUtil.copyUserObjects(inputNode, outputNode);
       }
 
     } catch (DismissTopMappingRuleException e) {
@@ -979,7 +977,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     private void reportBrokenRef(@NotNull SNode inputNode, @NotNull SReference ref) {
       getLogger().error(inputNode.getReference(),
-          String.format("broken reference '%s' in %s (target model is null)", ref.getRole(), SNodeOperations.getDebugText(inputNode)),
+          String.format("broken reference '%s' in %s (target model is null)", ref.getLink().getName(), SNodeOperations.getDebugText(inputNode)),
           GeneratorUtil.describeIfExists(inputNode, "input node"));
     }
 
@@ -999,8 +997,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // output node should be accessible via 'findCopiedNode'
       myEnv.getGenerator().addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
-      jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
-      jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
+      CopyUtil.copyProperties(inputNode, outputNode);
+      CopyUtil.copyUserObjects(inputNode, outputNode);
 
       for (SReference inputReference : inputNode.getReferences()) {
         if (inputNodeModel != null) {
@@ -1028,7 +1026,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               outputNode.setReference(reference.getLink(), reference);
             } else if (inputReference instanceof DynamicReference) {
               DynamicReference outputReference = new DynamicReference(
-                  inputReference.getRole(),
+                  inputReference.getLink(),
                   outputNode,
                   targetModelReference,
                   ((DynamicReference) inputReference).getResolveInfo());
