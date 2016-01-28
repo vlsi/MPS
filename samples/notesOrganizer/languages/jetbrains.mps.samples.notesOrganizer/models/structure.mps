@@ -162,6 +162,10 @@
     <property role="TrG5h" value="Status" />
     <property role="34LRSv" value="status" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3o4bEdk_l78" role="1TKVEl">
+      <property role="TrG5h" value="active" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="7IxbKGmfvdx" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>

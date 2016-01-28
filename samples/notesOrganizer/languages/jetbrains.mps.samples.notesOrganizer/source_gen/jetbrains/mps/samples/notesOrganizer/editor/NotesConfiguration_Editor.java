@@ -228,6 +228,7 @@ public class NotesConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NotesConfiguration_Editor.statusesListHandler_uldp7_b7a(node, "statuses", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statuses");
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

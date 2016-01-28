@@ -31,7 +31,9 @@
       <concept id="8908453262579856180" name="jetbrains.mps.samples.notesOrganizer.structure.CategoryReference" flags="ng" index="1HBdKZ">
         <reference id="8908453262579856181" name="target" index="1HBdKY" />
       </concept>
-      <concept id="8908453262579856224" name="jetbrains.mps.samples.notesOrganizer.structure.Status" flags="ng" index="1HBdLF" />
+      <concept id="8908453262579856224" name="jetbrains.mps.samples.notesOrganizer.structure.Status" flags="ng" index="1HBdLF">
+        <property id="3892287256988570056" name="active" index="1y$nXF" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -43,9 +45,11 @@
     <property role="TrG5h" value="MyConfig" />
     <node concept="1HBdLF" id="7IxbKGmfEB$" role="1HBdMb">
       <property role="TrG5h" value="Created" />
+      <property role="1y$nXF" value="true" />
     </node>
     <node concept="1HBdLF" id="7IxbKGmfEBA" role="1HBdMb">
       <property role="TrG5h" value="In-progress" />
+      <property role="1y$nXF" value="true" />
     </node>
     <node concept="1HBdLF" id="7IxbKGmfEBD" role="1HBdMb">
       <property role="TrG5h" value="Done" />
@@ -58,6 +62,7 @@
     </node>
     <node concept="1HBdLF" id="7IxbKGmfEBS" role="1HBdMb">
       <property role="TrG5h" value="Waiting for input" />
+      <property role="1y$nXF" value="true" />
     </node>
     <node concept="1HB3x0" id="7IxbKGmfvcv" role="1HB3yo">
       <property role="TrG5h" value="Critical" />
