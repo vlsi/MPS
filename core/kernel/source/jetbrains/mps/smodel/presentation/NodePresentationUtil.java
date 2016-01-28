@@ -16,15 +16,16 @@
 package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.awt.Font;
 
@@ -67,6 +68,13 @@ public class NodePresentationUtil {
     return m;
   }
 
+  public static String matchingText(SConcept concept, boolean referentPresentation) {
+    if (!referentPresentation && !concept.getConceptAlias().isEmpty()) {
+      return concept.getConceptAlias();
+    }
+    return concept.getName();
+  }
+
   public static String matchingText(SNode node) {
     return matchingText(node, false);
   }
@@ -93,6 +101,18 @@ public class NodePresentationUtil {
       }
     }
     return node.getPresentation();
+  }
+
+  public static String descriptionText(SConcept concept, boolean referentPresentation) {
+    if (!referentPresentation) {
+      if (!concept.getShortDescription().isEmpty()) {
+        return concept.getShortDescription();
+      }
+      if (concept.getSuperConcept() != null) {
+        return "(" + concept.getSuperConcept().getName() + " in " + concept.getSuperConcept().getLanguage().getQualifiedName() + ")";
+      }
+    }
+    return SNodeUtil.concept_ConceptDeclaration.getName() + " (" + SNodeUtil.concept_ConceptDeclaration.getLanguage().getQualifiedName() + ")";
   }
 
   public static String descriptionText(SNode node) {

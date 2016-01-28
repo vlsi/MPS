@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -85,6 +86,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     if (parameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) parameterObject, isReferentPresentation());
     }
+    if (parameterObject instanceof SConcept) {
+      return NodePresentationUtil.matchingText((SConcept) parameterObject, isReferentPresentation());
+    }
     return "" + parameterObject;
   }
 
@@ -92,6 +96,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
   protected String getDescriptionText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
       return NodePresentationUtil.descriptionText((SNode) parameterObject, isReferentPresentation());
+    }
+    if (parameterObject instanceof SConcept) {
+      return NodePresentationUtil.descriptionText((SConcept) parameterObject, isReferentPresentation());
     }
     return "";
   }
