@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -38,7 +38,7 @@ public final class ModuleReference__BehaviorDescriptor extends BaseBHDescriptor 
 
   @Deprecated
   /*package*/ static String getModuleReference_id15qhGW3fE3K(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid")) + "(" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210eL, "qualifiedName")) + ")";
+    return PersistenceFacade.getInstance().asString(ModuleReference__BehaviorDescriptor.toModuleReference_id2BHFktfnkjF.invoke(__thisNode__));
   }
   /*package*/ static SModuleReference toModuleReference_id2BHFktfnkjF(@NotNull SNode __thisNode__) {
     //  FIXME consider deprecating ModuleReference in favor of lang.smodel.ModuleIdentity/ModulePointer. 

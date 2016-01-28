@@ -374,7 +374,7 @@ public class QueriesGenerated {
       }
     }, true).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistenceFacade.getInstance().createModelReference(ModelReference__BehaviorDescriptor.getModelReference_id5qdugmiLBZZ.invoke(it)).resolve(((Language) _context.getVariable("var:langModule")).getRepository()) != null;
+        return ModelReference__BehaviorDescriptor.toModelReference_id2BHFktfnfdc.invoke(it).resolve(((Language) _context.getVariable("var:langModule")).getRepository()) != null;
       }
     });
   }
@@ -421,10 +421,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
   public static Object insertMacro_varValue_931939946132747150(final TemplateQueryContext _context) {
-    return PersistenceFacade.getInstance().createModelReference(ModelReference__BehaviorDescriptor.getModelReference_id5qdugmiLBZZ.invoke(_context.getNode()));
+    return (SModelReference) ModelReference__BehaviorDescriptor.toModelReference_id2BHFktfnfdc.invoke(_context.getNode());
   }
   public static Object insertMacro_varValue_2030416617761783846(final TemplateQueryContext _context) {
-    return PersistenceFacade.getInstance().createModelReference(ModelReference__BehaviorDescriptor.getModelReference_id5qdugmiLBZZ.invoke(_context.getNode())).resolve(((Language) _context.getVariable("var:langModule")).getRepository());
+    return ModelReference__BehaviorDescriptor.toModelReference_id2BHFktfnfdc.invoke(_context.getNode()).resolve(((Language) _context.getVariable("var:langModule")).getRepository());
   }
   public static Object insertMacro_varValue_2509399947043525756(final TemplateQueryContext _context) {
     SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(Module__BehaviorDescriptor.getModuleReference_id7OJukvJ5PmG.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, 0x179194ecf7e0953bL, "language"))));
