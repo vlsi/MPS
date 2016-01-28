@@ -28,7 +28,7 @@ import java.util.LinkedList;
  * User: shatalin
  * Date: 22/12/15
  */
-public class UpdateInfoNode {
+class UpdateInfoNode {
   private final ReferencedNodeContext myContext;
   private UpdateInfoNode myParent;
   private final Collection<UpdateInfoNode> myChildren = new LinkedList<UpdateInfoNode>();
@@ -53,36 +53,44 @@ public class UpdateInfoNode {
   }
 
   private void attachNewParent(UpdateInfoNode parent) {
-    if (parent != null) {
-      myParent = parent;
-      parent.addChild(this);
-    }
+    assert myParent == null;
+    myParent = parent;
+    parent.addChild(this);
   }
 
-  void detachFromParent() {
-    if (myParent != null) {
-      myParent.removeChild(this);
-      myParent = null;
-    }
-  }
-
-  void replace(UpdateInfoNode updateInfoNode) {
+  private UpdateInfoNode detachFromParent() {
     UpdateInfoNode parent = myParent;
-    detachFromParent();
-    updateInfoNode.attachNewParent(parent);
+    myParent.removeChild(this);
+    myParent = null;
+    return parent;
+  }
+
+  UpdateInfoNode replace(@NotNull UpdateInfoNode updateInfoNode) {
+    if (getParent() != null) {
+      updateInfoNode.attachNewParent(detachFromParent());
+    }
     if (updateInfoNode.getContext().isNodeAttribute()) {
       for (UpdateInfoNode childInfo : new ArrayList<UpdateInfoNode>(getChildren())) {
         childInfo.detachFromParent();
         childInfo.attachNewParent(updateInfoNode);
       }
     }
+    return updateInfoNode;
   }
 
-  void insertNewParent(UpdateInfoNode attributeUpdateInfo) {
-    UpdateInfoNode parent = myParent;
-    detachFromParent();
-    attributeUpdateInfo.attachNewParent(parent);
+  UpdateInfoNode insertNewParent(@NotNull UpdateInfoNode attributeUpdateInfo) {
+    if (getParent() != null) {
+      attributeUpdateInfo.attachNewParent(detachFromParent());
+    }
     attachNewParent(attributeUpdateInfo);
+    return attributeUpdateInfo;
+  }
+
+  UpdateInfoNode detach() {
+    if (getParent() != null) {
+      detachFromParent();
+    }
+    return this;
   }
 
   UpdateInfoNode getParent() {

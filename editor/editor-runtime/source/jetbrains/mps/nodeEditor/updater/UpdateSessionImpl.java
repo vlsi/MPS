@@ -213,9 +213,7 @@ public class UpdateSessionImpl implements UpdateSession {
     editorContext.getCellFactory().pushCellContext();
     editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
 
-    UpdateInfoNode attributeUpdateInfoNode = new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
-    myCurrentUpdateInfo.insertNewParent(attributeUpdateInfoNode);
-    myCurrentUpdateInfo = attributeUpdateInfoNode;
+    myCurrentUpdateInfo = myCurrentUpdateInfo.insertNewParent(new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute)));
     try {
       return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
         @Override
@@ -281,7 +279,6 @@ public class UpdateSessionImpl implements UpdateSession {
   public void reuseChildInfo(ReferencedNodeContext childContext) {
     UpdateInfoNode updateInfoNode = myUpdateInfoIndex.remove(childContext);
     assert updateInfoNode != null;
-    myCurrentUpdateInfo.replace(updateInfoNode);
-    myCurrentUpdateInfo = updateInfoNode;
+    myCurrentUpdateInfo = myCurrentUpdateInfo.replace(updateInfoNode);
   }
 }

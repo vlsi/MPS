@@ -34,7 +34,7 @@ import java.util.Set;
  * User: shatalin
  * Date: 22/12/15
  */
-public class UpdateInfoIndex {
+class UpdateInfoIndex {
   private static final Logger LOG = LogManager.getLogger(UpdateInfoIndex.class);
 
   private final UpdateInfoNode myRootNode;
@@ -78,9 +78,7 @@ public class UpdateInfoIndex {
     if (updateInfoNodes.isEmpty()) {
       return null;
     }
-    UpdateInfoNode updateInfoNode = updateInfoNodes.remove(0);
-    updateInfoNode.detachFromParent();
-    return updateInfoNode;
+    return updateInfoNodes.remove(0).detach();
   }
 
   boolean isVisualized(SNode changedNode) {
