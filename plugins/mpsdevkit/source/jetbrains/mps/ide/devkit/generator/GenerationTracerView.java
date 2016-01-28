@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PopupAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -175,13 +176,13 @@ final class GenerationTracerView {
   }
 
   JPopupMenu createViewSettingsMenu() {
+    final GenTraceSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings();
     ActionListener l = new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         if (false == e.getSource() instanceof JCheckBoxMenuItem) {
           return;
         }
-        final GenTraceSettings settings = GenerationSettings.getInstance().getTraceSettings();
         boolean value = ((JCheckBoxMenuItem) e.getSource()).isSelected();
         switch (Integer.parseInt(e.getActionCommand())) {
           case 1 : settings.setGroupByStep(value); break;
@@ -192,7 +193,6 @@ final class GenerationTracerView {
         viewSettingsChanged();
       }
     };
-    final GenTraceSettings settings = GenerationSettings.getInstance().getTraceSettings();
     final JPopupMenu menu = new JPopupMenu();
     JCheckBoxMenuItem menuItem = new JCheckBoxMenuItem("Group changes by step");
     menuItem.setToolTipText("Changes grouped by generation steps");

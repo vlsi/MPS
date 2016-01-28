@@ -116,8 +116,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
-  @ToRemove(version = 3.3)
-  private final boolean myDoesCopyNodeAttribute;
   private boolean myAreMappingsReady = false;
 
   /* cached session data */
@@ -166,9 +164,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
-    // Generally, shall use GenerationOptions. However, it's single release flag to ensure backward compatibility, and there's no reason
-    // to add it to 'api-like' GenerationOptions.
-    myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen();
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
@@ -767,9 +762,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes) throws GenerationException {
-    if (!myDoesCopyNodeAttribute) {
-      return;
-    }
     final SNode input = ctx.getInput();
     if (input == null) {
       // context in create root rule might have no input

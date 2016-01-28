@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import org.jetbrains.annotations.Nls;
@@ -76,7 +77,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
   private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
-  private JCheckBox myEnableAttributesTextGen = new JCheckBox("Enable node attributes");
 
   private JLabel myStatusLabel;
   private final ItemListener myStatusUpdater = new ItemListener() {
@@ -90,12 +90,11 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private final ButtonSelectStateTracker myButtonState = new ButtonSelectStateTracker();
 
   public GenerationSettingsPreferencesPage() {
-    myGenerationSettings = GenerationSettings.getInstance();
+    myGenerationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     reset();
     myPage = createPage();
     myButtonState.reset();
     myAvoidDynamicRefs.setToolTipText("Best effort to use static references, not dynamic, when target is referenced by name/resolveInfo");
-    myEnableAttributesTextGen.setToolTipText("Un-check to activate compatibility mode, with no special treatment of node attributes");
   }
 
   public String getName() {
@@ -295,9 +294,8 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
     textgenPanel.add(myFailOnMissingTextgen);
     textgenPanel.add(myGenerateDebugInfo);
-    textgenPanel.add(myEnableAttributesTextGen);
     textgenPanel.setBorder(IdeBorderFactory.createTitledBorder("TextGen options"));
-    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo, myEnableAttributesTextGen);
+    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo);
     return textgenPanel;
   }
 
@@ -327,7 +325,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
-    myGenerationSettings.enableHandleAttributesInTextGen(myEnableAttributesTextGen.isSelected());
 
     myButtonState.reset(); // memorize the new state
 
@@ -391,7 +388,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
     myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
     myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
-    myEnableAttributesTextGen.setSelected(myGenerationSettings.handleAttributesInTextGen());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);

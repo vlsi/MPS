@@ -4,7 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 
@@ -14,7 +14,7 @@ public class SaveTransientModelsAction extends ToggleAction {
   }
   @Override
   public boolean isSelected(AnActionEvent e) {
-    return GenerationSettings.getInstance().isSaveTransientModels();
+    return GenerationSettingsProvider.getInstance().getGenerationSettings().isSaveTransientModels();
   }
   @Override
   public void update(AnActionEvent e) {
@@ -28,7 +28,7 @@ public class SaveTransientModelsAction extends ToggleAction {
   }
   @Override
   public void setSelected(AnActionEvent e, boolean state) {
-    GenerationSettings.getInstance().setSaveTransientModels(state);
+    GenerationSettingsProvider.getInstance().getGenerationSettings().setSaveTransientModels(state);
     TransientModelsNotification.updateWidgets();
   }
 }

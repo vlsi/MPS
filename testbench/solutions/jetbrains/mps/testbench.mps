@@ -702,27 +702,6 @@
             </node>
           </node>
         </node>
-        <node concept="1X3_iC" id="3$ZLRFpTB_v" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3cpWs8" id="7V$GMzHGLh8" role="8Wnug">
-            <node concept="3cpWsn" id="7V$GMzHGLh9" role="3cpWs9">
-              <property role="TrG5h" value="optBuilder" />
-              <property role="3TUv4t" value="true" />
-              <node concept="3uibUv" id="7V$GMzHGLha" role="1tU5fm">
-                <ref role="3uigEE" to="ap4t:~GenerationOptions$OptionsBuilder" resolve="GenerationOptions.OptionsBuilder" />
-              </node>
-              <node concept="2YIFZM" id="7V$GMzHGLhb" role="33vP2m">
-                <ref role="1Pybhc" to="ap4t:~GenerationOptions" resolve="GenerationOptions" />
-                <ref role="37wK5l" to="ap4t:~GenerationOptions.fromSettings(jetbrains.mps.generator.IGenerationSettings):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="fromSettings" />
-                <node concept="2YIFZM" id="7V$GMzHGLhc" role="37wK5m">
-                  <ref role="1Pybhc" to="o6ex:~GenerationSettings" resolve="GenerationSettings" />
-                  <ref role="37wK5l" to="o6ex:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="NauThptQnH" role="3cqZAp">
           <node concept="3cpWsn" id="NauThptQnK" role="3cpWs9">
             <property role="TrG5h" value="optBuilder" />

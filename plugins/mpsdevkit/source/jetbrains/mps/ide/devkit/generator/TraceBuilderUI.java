@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -238,7 +238,7 @@ L1:   for (SNodeReference t : templateNodes) {
    */
   public static Collection<TraceNodeUI> buildTrace(@NotNull GenerationTrace trace, @NotNull SNode node) {
     final TraceBuilderUI v = defaults();
-    if (!GenerationSettings.getInstance().getTraceSettings().isGroupByChange()) {
+    if (!GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings().isGroupByChange()) {
       v.groupByInputNode();
     }
     trace.walkForward(node, v);
@@ -247,14 +247,14 @@ L1:   for (SNodeReference t : templateNodes) {
 
   public static Collection<TraceNodeUI> buildBackTrace(@NotNull GenerationTrace trace, @NotNull final SNode node) {
     final TraceBuilderUI v = defaults();
-    if (!GenerationSettings.getInstance().getTraceSettings().isGroupByChange()) {
+    if (!GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings().isGroupByChange()) {
       v.groupByOutputNode();
     }
     trace.walkBackward(node, v);
     return v.getResult();
   }
   public static TraceBuilderUI defaults() {
-    GenTraceSettings s = GenerationSettings.getInstance().getTraceSettings();
+    GenTraceSettings s = GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings();
     return new TraceBuilderUI().excludeEmptySteps(!s.isShowEmptySteps()).compactTemplates(s.isCompactTemplates()).groupByStep(s.isGroupByStep());
   }
 

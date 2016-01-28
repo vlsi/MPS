@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,15 +41,6 @@ import javax.swing.Icon;
   }
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent {
-
-  /**
-   * @deprecated use {@link GenerationSettingsProvider#getGenerationSettings()} instead
-   */
-  @Deprecated
-  public static IModifiableGenerationSettings getInstance() {
-    final GenerationSettings gs = ApplicationManager.getApplication().getComponent(GenerationSettings.class);
-    return gs.getModifiableSettings();
-  }
 
   private final DefaultModifiableGenerationSettings myState = new DefaultModifiableGenerationSettings();
 
@@ -94,7 +85,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setIncrementalUseCache(state.myIncrementalUseCache);
     myState.setFailOnMissingTextGen(state.myFailOnMissingTextGen);
     myState.setGenerateDebugInfo(state.myGenerateDebugInfo);
-    myState.enableHandleAttributesInTextGen(state.myHandleAttributesInTextGen);
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
     myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
     myState.enableInplaceTransformations(state.myActiveInplaceTransform);
@@ -139,7 +129,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myTraceCompactTemplates;
     public boolean myTraceShowEmptySteps;
     public boolean myTraceGroupByChange;
-    public boolean myHandleAttributesInTextGen;
 
     public MyState() {
       // use defaults from a single place. PersistentStateComponent demands no-arg cons with default values set (case: no xml file yet)
@@ -162,7 +151,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myIncrementalUseCache = s.isIncrementalUseCache();
       myFailOnMissingTextGen = s.isFailOnMissingTextGen();
       myGenerateDebugInfo = s.isGenerateDebugInfo();
-      myHandleAttributesInTextGen = s.handleAttributesInTextGen();
       myShowBadChildWarning = s.isShowBadChildWarning();
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransformations();

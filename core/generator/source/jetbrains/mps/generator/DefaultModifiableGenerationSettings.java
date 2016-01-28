@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myActiveInplaceTransform = true;
   private boolean myCreateStaticRefs = true;
   private GenTraceSettings myTraceSettings = new GenTraceSettings();
-  private boolean myHandleAttributesInTextGen = true;
 
   @Override
   public boolean isSaveTransientModels() {
@@ -187,17 +186,6 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   @Override
   public void setGenerateDebugInfo(boolean generateDebugInfo) {
     myGenerateDebugInfo = generateDebugInfo;
-  }
-
-
-  @Override
-  public void enableHandleAttributesInTextGen(boolean enable) {
-    myHandleAttributesInTextGen = enable;
-  }
-
-  @Override
-  public boolean handleAttributesInTextGen() {
-    return myHandleAttributesInTextGen;
   }
 
   @Override

@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
@@ -25,7 +25,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
+    boolean optionEnabled = GenerationSettingsProvider.getInstance().getGenerationSettings().isCheckModelsBeforeGeneration();
     if (optionEnabled) {
       event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
     } else {
@@ -34,7 +34,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    IModifiableGenerationSettings settings = GenerationSettings.getInstance();
+    IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
   }
 }

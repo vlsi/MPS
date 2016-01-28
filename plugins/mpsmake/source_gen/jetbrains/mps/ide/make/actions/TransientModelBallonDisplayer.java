@@ -26,7 +26,7 @@ import java.awt.Point;
 import com.intellij.util.ui.UIUtil;
 import java.awt.Dimension;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.notification.impl.NotificationSettings;
 import jetbrains.mps.make.MakeNotification;
@@ -95,7 +95,7 @@ public class TransientModelBallonDisplayer implements Disposable {
   }
 
   private void showBallon() {
-    if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(isPopupShown())) {
+    if (!(GenerationSettingsProvider.getInstance().getGenerationSettings().isSaveTransientModels()) || !(isPopupShown())) {
       return;
     }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
