@@ -39,13 +39,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
 public class IntelligentInputUtil {
+  private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
 
   public static boolean processCell(final EditorCell_Label cell, final EditorContext editorContext, final String pattern,
       final CellSide side) {
@@ -271,7 +271,11 @@ public class IntelligentInputUtil {
 
       if (yetNewNode != null) {
         EditorCell yetNewNodeCell = findNodeCell(editorContext, yetNewNode);
-        assert yetNewNodeCell != null : "Unable to find editor cell for the node " + yetNewNode.toString() + ", created by RT: " + rtItem.toString();
+        if (yetNewNodeCell == null) {
+          LOG.warn("Unable to find editor cell for the node returned as a result of right-transform: " + yetNewNode.toString() + "(" + yetNewNode.getConcept() +
+              "). Seems like the node is invisible in editor. Node was created by RT: " + rtItem.toString());
+          return true;
+        }
         EditorCell errorCell = CellFinderUtil.findFirstError(yetNewNodeCell, true);
         if (errorCell != null) {
           editorContext.selectWRTFocusPolicy(errorCell);
