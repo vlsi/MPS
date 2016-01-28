@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.util.io;
 
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
@@ -163,6 +164,8 @@ public class ModelInputStream extends DataInputStream {
       return jetbrains.mps.smodel.SModelId.foreign(readString());
     } else if (c == MODELID_STRING) {
       return PersistenceFacade.getInstance().createModelId(readString());
+    } else if (c == MODELID_INTEGER) {
+      return new IntegerSModelId(readInt());
     } else {
       throw new IOException("unknown id");
     }

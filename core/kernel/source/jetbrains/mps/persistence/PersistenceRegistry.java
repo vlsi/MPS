@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -324,6 +325,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       @Override
       public SModelId create(String text) {
         return new RelativePathSModelId(text);
+      }
+    });
+    setModelIdFactory(IntegerSModelId.TYPE, new SModelIdFactory() {
+      @Override
+      public SModelId create(String text) {
+        return IntegerSModelId.parse(text);
       }
     });
   }

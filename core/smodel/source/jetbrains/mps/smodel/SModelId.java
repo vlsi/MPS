@@ -156,6 +156,10 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
    * Almost any string could be used for identity, provided it's unique within a repository.
    * Although there's no known restrictions about string except uniqueness at the moment, it's advised not to stretch this freedom too much.
    * Primary difference with {@link jetbrains.mps.smodel.SModelId.ModelNameSModelId} is that identity is not treated as model name
+   *
+   * IMPORTANT: it's advised not to use this kind of model id and leave it for legacy code (e.g. VCS that reads model in old persistence format).
+   *            This one has misguiding name (foreign to what?), mandates globally uniqueness while doesn't help to achieve one.
+   *            Consider use of {@link jetbrains.mps.smodel.SModelId.IntegerSModelId} if you need simple model id.
    */
   @Immutable
   public final static class ForeignSModelId extends SModelId {
@@ -281,6 +285,53 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
 
     public String toString() {
       return TYPE + ":" + myPath;
+    }
+  }
+
+  /**
+   * Integer-backed, module-private model identity.
+   * MPS reserves values in range [0x0F000000..0xFFFFFFFF] for own uses, you're free to use lower range.
+   */
+  @Immutable
+  public static final class IntegerSModelId extends SModelId {
+    public static final String TYPE = "i";
+    private final int myValue;
+
+    public IntegerSModelId(int value) {
+      myValue = value;
+    }
+
+    public int getValue() {
+      return myValue;
+    }
+
+    @Override
+    public boolean isGloballyUnique() {
+      return false;
+    }
+
+    @Override
+    public int hashCode() {
+      return myValue;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj instanceof IntegerSModelId && ((IntegerSModelId) obj).myValue == myValue;
+    }
+
+    @Override
+    public String getType() {
+      return TYPE;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("%s:%04x", TYPE, myValue);
+    }
+
+    public static IntegerSModelId parse(String cs) throws IllegalArgumentException {
+      return new IntegerSModelId(Integer.parseInt(cs, 16));
     }
   }
 }

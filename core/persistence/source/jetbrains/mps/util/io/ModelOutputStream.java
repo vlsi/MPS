@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import gnu.trove.TObjectIntHashMap;
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;
@@ -57,6 +58,7 @@ public class ModelOutputStream extends DataOutputStream {
   static final byte MODELID_STRING = 0x26;
   static final byte MODELID_REGULAR = 0x28;
   static final byte MODELID_FOREIGN = 0x27;
+  static final byte MODELID_INTEGER = 0x29;
   static final byte NODEPTR = 0x44;
   static final byte MODULEID_FOREIGN = 0x47;
   static final byte MODULEID_REGULAR = 0x48;
@@ -183,6 +185,9 @@ public class ModelOutputStream extends DataOutputStream {
     } else if (id instanceof ForeignSModelId) {
       writeByte(MODELID_FOREIGN);
       writeString(((ForeignSModelId) id).getId());
+    } else if (id instanceof IntegerSModelId) {
+      writeByte(MODELID_INTEGER);
+      writeInt(((IntegerSModelId) id).getValue());
     } else {
       writeByte(MODELID_STRING);
       writeString(id.toString());

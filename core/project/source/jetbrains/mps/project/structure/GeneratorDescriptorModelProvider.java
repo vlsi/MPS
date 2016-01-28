@@ -20,6 +20,7 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
@@ -33,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -54,6 +54,8 @@ import java.util.Map;
  * @since 3.4
  */
 public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
+  private final SModelId myDescriptorModelId = new IntegerSModelId(0x0f020202);
+
   private final Map<SModelReference, GeneratorDescriptorModel> myModels = Collections.synchronizedMap(new HashMap<SModelReference, GeneratorDescriptorModel>());
 
 
@@ -105,11 +107,6 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
   }
 
   private SModelReference getModelReference(SModule module) {
-    SModuleId moduleId = module.getModuleReference().getModuleId();
-    assert moduleId != null;
-    // There's no special meaning in using 'descriptor' kind in model id, we look into model name's stereotype to tell whether
-    // it's descriptor model or not anyway. It's just a tribute to LanguageDescriptorModelProvider legacy, where it used to be that way for years
-    SModelId id = jetbrains.mps.smodel.SModelId.foreign(SModelStereotype.DESCRIPTOR, moduleId.toString());
     // Would like to keep name of the model identical to that of language descriptor, to keep qualified name of the Generator RT class the same it was before.
     // Once the name of the activator class is serialized in module.xml (or otherwise part of module descriptor), could change it as see fit.
     // Could have cast module to generator, get source language module, and use it. Don' want to cast, though, rather assume name of generator module is
@@ -119,7 +116,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     if (sharpIndex != -1) {
       moduleName = moduleName.substring(0, sharpIndex);
     }
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(moduleName, SModelStereotype.DESCRIPTOR));
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), myDescriptorModelId, new SModelName(moduleName, SModelStereotype.DESCRIPTOR));
   }
 
   static class GeneratorDescriptorModel extends TrivialModelDescriptor implements GeneratableSModel {

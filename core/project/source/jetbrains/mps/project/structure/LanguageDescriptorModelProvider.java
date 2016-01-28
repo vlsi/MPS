@@ -26,6 +26,7 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
@@ -44,7 +45,6 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
@@ -60,6 +60,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * Contributes '@descriptor' model to Language modules.
  */
 public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
+  private final static SModelId ourDescriptorModelId = new IntegerSModelId(0x0f010101);
+
   private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
   private final ClassLoaderManager myClassLoaderManager;
   private final RootChangeListener myListener = new RootChangeListener();
@@ -201,12 +203,8 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     return result;
   }
 
-  private static SModelReference getSModelReference(Language module) {
-    SModuleId moduleId = module.getModuleReference().getModuleId();
-    assert moduleId != null;
-    // see GeneratorDescriptorModelProvider#getModelReference for rants regarding use of 'descriptor' in model id
-    SModelId id = jetbrains.mps.smodel.SModelId.foreign(SModelStereotype.DESCRIPTOR, moduleId.toString());
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, new SModelName(module.getModuleName(), SModelStereotype.DESCRIPTOR).getValue());
+  /*package*/ static SModelReference getSModelReference(Language module) {
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), ourDescriptorModelId, new SModelName(module.getModuleName(), SModelStereotype.DESCRIPTOR));
   }
 
   public String toString() {
