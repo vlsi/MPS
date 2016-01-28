@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -45,6 +46,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
+ * Available from {@link ITemplateGenerator#getGeneratorSessionContext()}.
+ * Generally shall not get exposed in generated code, however there are templates that cast genContext to TemplateQueryContext and access ITemplateGenerator
+ * from there, with subsequent access to this class (e.g. bl.java.closures - those under BL, not that standalone).
  * Igor Alshannikov
  * Sep 19, 2005
  */
