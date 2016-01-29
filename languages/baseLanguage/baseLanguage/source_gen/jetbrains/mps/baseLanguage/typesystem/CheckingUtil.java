@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,8 +45,28 @@ public class CheckingUtil {
     return false;
   }
 
+  public static boolean isFinalVariableReferenceAssignedIllegally(SNode reference) {
+    return CheckingUtil.isAssigned(reference) && (!(isInConstructorOrInstanceInitializer(reference)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
+  }
+  public static boolean isFinalFieldReferenceAssignedIllegally(SNode operation) {
+    if (!(CheckingUtil.isAssigned(operation))) {
+      return false;
+    }
+    SNode operand = SLinkOperations.getTarget(IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(operation), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
+    if (operand == null) {
+      return false;
+    }
+    if (!(SNodeOperations.isInstanceOf(operand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression")))) {
+      return true;
+    }
+    return (!(isInConstructorOrInstanceInitializer(operation)) || (SLinkOperations.getTarget(SLinkOperations.getTarget(operation, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null));
+  }
+
+  private static boolean isInConstructorOrInstanceInitializer(SNode node) {
+    return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false) != null || SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false) != null);
+  }
   public static boolean isAssignedIllegaly(SNode node) {
-    return CheckingUtil.isAssigned(node) && ((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), false, false) == null && SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false) == null) || refersToDeclarationWithInitializer(node));
+    return CheckingUtil.isAssigned(node) && (!(isInConstructorOrInstanceInitializer(node)) || refersToDeclarationWithInitializer(node));
   }
 
   private static boolean refersToDeclarationWithInitializer(SNode node) {
@@ -81,7 +102,7 @@ public class CheckingUtil {
       return false;
     }
     try {
-      Object compileTimeConstantValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, check_36hle6_a0a0a0d0k(expr.getModel()));
+      Object compileTimeConstantValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, check_36hle6_a0a0a0d0o(expr.getModel()));
       if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
         return false;
       }
@@ -108,7 +129,7 @@ public class CheckingUtil {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
-  private static SModule check_36hle6_a0a0a0d0k(SModel checkedDotOperand) {
+  private static SModule check_36hle6_a0a0a0d0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

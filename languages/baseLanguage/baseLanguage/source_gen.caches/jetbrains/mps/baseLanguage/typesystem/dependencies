@@ -251,6 +251,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -3891,6 +3892,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalFieldInOperation_NonTypesystemRule" file="check_UninitializedLocalFieldInOperation_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
