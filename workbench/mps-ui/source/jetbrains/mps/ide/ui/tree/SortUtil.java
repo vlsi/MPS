@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SModuleNameComparator;
+import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -81,5 +82,12 @@ public class SortUtil {
     List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
     Collections.sort(sortedNodes, new ToStringComparator());
     return sortedNodes;
+  }
+
+  // in use by mbeddr, TargetChooser_SModelTreeNode
+  public static List<SNode> sortNodesByPresentation(List<SNode> nodes) {
+    ArrayList<SNode> rv = new ArrayList<SNode>(nodes);
+    Collections.sort(rv, new SNodePresentationComparator());
+    return rv;
   }
 }
