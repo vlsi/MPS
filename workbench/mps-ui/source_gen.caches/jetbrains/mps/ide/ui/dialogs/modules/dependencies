@@ -5,7 +5,6 @@
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
-    <classNode dependClassName="com.intellij.openapi.util.Comparing" />
     <classNode dependClassName="com.intellij.openapi.util.EmptyRunnable" />
     <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="com.intellij.ui.FieldPanel" />
@@ -21,6 +20,7 @@
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="javax.swing.event.DocumentEvent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.Util" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings" file="NewSolutionSettings.java">
@@ -28,7 +28,6 @@
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
-    <classNode dependClassName="com.intellij.openapi.util.Comparing" />
     <classNode dependClassName="com.intellij.openapi.util.EmptyRunnable" />
     <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="com.intellij.ui.FieldPanel" />

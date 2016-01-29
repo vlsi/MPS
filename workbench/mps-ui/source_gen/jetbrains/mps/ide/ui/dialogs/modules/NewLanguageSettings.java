@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
 import java.io.File;
-import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.ui.InsertPathAction;
@@ -20,6 +19,7 @@ import com.intellij.ui.FieldPanel;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import java.awt.Dimension;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
 
 public class NewLanguageSettings extends JPanel {
@@ -53,7 +53,7 @@ public class NewLanguageSettings extends JPanel {
         }
         String path = myProjectPath + File.separator + "languages" + File.separator;
         final String langName = getLanguageName();
-        if (!(Comparing.strEqual(langName, getLanguageLocation()))) {
+        if (!(langName.equals(getLanguageLocation()))) {
           path += langName;
         }
         if (!(myLangLocationChangedByUser)) {
@@ -91,6 +91,7 @@ public class NewLanguageSettings extends JPanel {
     reset();
   }
 
+  @NotNull
   public String getLanguageName() {
     return myLanguageName.getText().trim();
   }

@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
 import java.io.File;
-import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.ui.InsertPathAction;
@@ -49,7 +48,7 @@ public class NewSolutionSettings extends JPanel {
         }
         String path = myProjectPath + File.separator + "solutions" + File.separator;
         final String solutionName = getSolutionName();
-        if (!(Comparing.strEqual(solutionName, getSolutionLocation()))) {
+        if (!(solutionName.equals(getSolutionLocation()))) {
           path += solutionName;
         }
         if (!(mySolutionLocationChangedByUser)) {

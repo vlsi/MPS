@@ -16,6 +16,7 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text()" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -30,6 +31,12 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1224500790866" name="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" flags="nn" index="pVOtf" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -419,14 +426,15 @@
                         </node>
                         <node concept="3clFbJ" id="4Y3WKnTREz1" role="3cqZAp">
                           <node concept="3fqX7Q" id="4Y3WKnTREz2" role="3clFbw">
-                            <node concept="2YIFZM" id="4Y3WKnTREz3" role="3fr31v">
-                              <ref role="37wK5l" to="zn9m:~Comparing.strEqual(java.lang.String,java.lang.String):boolean" resolve="strEqual" />
-                              <ref role="1Pybhc" to="zn9m:~Comparing" resolve="Comparing" />
-                              <node concept="37vLTw" id="4Y3WKnTREz4" role="37wK5m">
+                            <node concept="2OqwBi" id="1$4b3XFSVs9" role="3fr31v">
+                              <node concept="37vLTw" id="4Y3WKnTREz4" role="2Oq$k0">
                                 <ref role="3cqZAo" node="4Y3WKnTREyY" resolve="solutionName" />
                               </node>
-                              <node concept="1rXfSq" id="4Y3WKnTREz5" role="37wK5m">
-                                <ref role="37wK5l" node="3xlIXKBmfiy" resolve="getSolutionLocation" />
+                              <node concept="liA8E" id="1$4b3XFSVw4" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                <node concept="1rXfSq" id="1$4b3XFSW1S" role="37wK5m">
+                                  <ref role="37wK5l" node="3xlIXKBmfiy" resolve="getSolutionLocation" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1414,14 +1422,15 @@
                         </node>
                         <node concept="3clFbJ" id="7ae3pd93nHp" role="3cqZAp">
                           <node concept="3fqX7Q" id="7ae3pd93nHv" role="3clFbw">
-                            <node concept="2YIFZM" id="7vBFgkyZQMI" role="3fr31v">
-                              <ref role="37wK5l" to="zn9m:~Comparing.strEqual(java.lang.String,java.lang.String):boolean" resolve="strEqual" />
-                              <ref role="1Pybhc" to="zn9m:~Comparing" resolve="Comparing" />
-                              <node concept="37vLTw" id="7vBFgkyZT6J" role="37wK5m">
+                            <node concept="2OqwBi" id="1$4b3XFSZXQ" role="3fr31v">
+                              <node concept="37vLTw" id="7vBFgkyZT6J" role="2Oq$k0">
                                 <ref role="3cqZAo" node="7ae3pd93nHl" resolve="langName" />
                               </node>
-                              <node concept="1rXfSq" id="7vBFgkyZT6K" role="37wK5m">
-                                <ref role="37wK5l" node="7iZR6YlUbRX" resolve="getLanguageLocation" />
+                              <node concept="liA8E" id="1$4b3XFT01R" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                <node concept="1rXfSq" id="1$4b3XFT0zF" role="37wK5m">
+                                  <ref role="37wK5l" node="7iZR6YlUbRX" resolve="getLanguageLocation" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1812,6 +1821,9 @@
       </node>
       <node concept="3Tm1VV" id="7iZR6YlUbRI" role="1B3o_S" />
       <node concept="17QB3L" id="7iZR6YlUbRJ" role="3clF45" />
+      <node concept="2AHcQZ" id="1$4b3XFSYso" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
     </node>
     <node concept="3clFb_" id="7iZR6YlUbRK" role="jymVt">
       <property role="1EzhhJ" value="false" />
