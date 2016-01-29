@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 
 /**
  * User: shatalin
@@ -31,7 +30,7 @@ import java.util.LinkedList;
 class UpdateInfoNode {
   private final ReferencedNodeContext myContext;
   private UpdateInfoNode myParent;
-  private final Collection<UpdateInfoNode> myChildren = new LinkedList<UpdateInfoNode>();
+  private final Collection<UpdateInfoNode> myChildren = new ArrayList<UpdateInfoNode>();
 
   UpdateInfoNode(ReferencedNodeContext context) {
     myContext = context;

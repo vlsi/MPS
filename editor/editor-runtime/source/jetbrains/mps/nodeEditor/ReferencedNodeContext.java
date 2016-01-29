@@ -19,12 +19,13 @@ import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Deque;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 // TODO: move to jetbrains.mps.nodeEditor.updater package, make package-local
 public class ReferencedNodeContext {
-  // Both stacks are used to identify "path" to the specified node via number of references.
+  // Both collections are used to identify "path" to the specified node via number of references.
   // To distinguish between editor cells created as a part of referenced node cell in-place
   // editor and cells created as a part of target node "main" editor or another in-place
   // referenced cell editor.
@@ -35,8 +36,8 @@ public class ReferencedNodeContext {
   // - unique identities of each reference in this chain (roles/cellIDs/..)
   //
   // TODO: Simplify information persisted in this context object
-  private Deque<String> myContextRoles = null;
-  private Deque<SNode> myContextRefererNodes = null;
+  private List<String> myContextRoles = null;
+  private List<SNode> myContextRefererNodes = null;
 
   private SNode myNode = null;
   private boolean myIsNodeAttribute = false;
@@ -49,12 +50,10 @@ public class ReferencedNodeContext {
   private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
     this(node);
     if (prototype.myContextRoles != null) {
-      myContextRoles = new LinkedList<String>();
-      myContextRoles.addAll(prototype.myContextRoles);
+      myContextRoles = new ArrayList<String>(prototype.myContextRoles);
     }
     if (prototype.myContextRefererNodes != null) {
-      myContextRefererNodes = new LinkedList<SNode>();
-      myContextRefererNodes.addAll(prototype.myContextRefererNodes);
+      myContextRefererNodes = new ArrayList<SNode>(prototype.myContextRefererNodes);
     }
   }
 
@@ -95,14 +94,14 @@ public class ReferencedNodeContext {
     if (myContextRoles == null) {
       myContextRoles = new LinkedList<String>();
     }
-    myContextRoles.push(contextRole);
+    myContextRoles.add(contextRole);
   }
 
   private void addContextRefererNode(SNode contextRefererNode) {
     if (myContextRefererNodes == null) {
       myContextRefererNodes = new LinkedList<SNode>();
     }
-    myContextRefererNodes.push(contextRefererNode);
+    myContextRefererNodes.add(contextRefererNode);
   }
 
   public int hashCode() {

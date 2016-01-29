@@ -99,7 +99,7 @@ public class MemoryAnalyzer {
     appendObject(list);
     Field entryField = getFirstNonPrimitiveField(list.getClass());
     if (entryField != null) {
-      appendField(list, entryField, list.size());
+      appendField(list, entryField, 1);
     }
   }
 

@@ -26,9 +26,4 @@
       </manifest>
     </jar>
   </target>
-
-  <target name="deploy" depends="build">
-    <delete file="${mps.lib}/editorAgent.jar"/>
-    <copy file="${build.layout}/editorAgent.jar" todir="${mps.lib}"/>
-  </target>
 </project>

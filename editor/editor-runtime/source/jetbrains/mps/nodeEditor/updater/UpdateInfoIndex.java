@@ -22,6 +22,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -57,7 +58,7 @@ class UpdateInfoIndex {
       UpdateInfoNode nextNode = nodesToProcess.remove();
       List<UpdateInfoNode> nodesInContext = myIndex.get(nextNode.getContext());
       if (nodesInContext == null) {
-        nodesInContext = new LinkedList<UpdateInfoNode>();
+        nodesInContext = new ArrayList<UpdateInfoNode>(1);
         myIndex.put(nextNode.getContext(), nodesInContext);
       }
       nodesInContext.add(nextNode);
