@@ -63,6 +63,14 @@
       <property role="TrG5h" value="presentation" />
       <ref role="AX2Wp" node="7IxbKGmgeZl" resolve="NotesPresentation" />
     </node>
+    <node concept="1TJgyi" id="3o4bEdkBe9v" role="1TKVEl">
+      <property role="TrG5h" value="showActive" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="3o4bEdkE5l_" role="1TKVEl">
+      <property role="TrG5h" value="selectedCategory" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="7IxbKGmfxT7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="notes" />
