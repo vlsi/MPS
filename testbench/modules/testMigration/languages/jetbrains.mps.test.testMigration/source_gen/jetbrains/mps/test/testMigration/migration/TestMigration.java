@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.io.File;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.io.IOException;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -21,7 +23,7 @@ public class TestMigration extends MigrationScriptBase {
   }
   public SNode execute(final SModule m) {
     try {
-      new File(((AbstractModule) m).getModuleSourceDir().getPath(), "test.txt").createNewFile();
+      new File(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("76984b71-9d72-4667-ac35-ed5f78c7f6e3(jetbrains.mps.test.testMigration)"))).getModuleSourceDir().getParent().getParent().getPath(), "test.txt").createNewFile();
     } catch (IOException e) {
     }
     return null;
