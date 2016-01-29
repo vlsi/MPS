@@ -17,12 +17,17 @@ package jetbrains.mps.openapi.editor.descriptor;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collection;
 
 /**
  * User: shatalin
  * Date: 5/13/13
  */
 public interface BaseConceptEditor extends EditorHintsSpecific {
+  @NotNull
+  Collection<String> getContextHints();
   EditorCell createEditorCell(EditorContext editorContext, SNode node);
 }
