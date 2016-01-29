@@ -4436,6 +4436,28 @@
       <unit id="3336561591620755372" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval3_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3386991982400364573">
+    <file name="MoveInManyStatementsContainer_Test.java">
+      <node id="3386991982400364573" at="15,69,16,107" concept="3" />
+      <node id="3386991982400364573" at="16,107,17,110" concept="3" />
+      <node id="3386991982400364573" at="24,51,25,63" concept="3" />
+      <node id="3386991982400364594" at="25,63,26,82" concept="3" />
+      <node id="3386991982400364573" at="12,0,14,0" concept="2" trace="MoveInManyStatementsContainer_Test#()V" />
+      <node id="3386991982400364573" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="3386991982400364573" at="14,0,19,0" concept="6" trace="test_MoveInManyStatementsContainer#()V" />
+      <node id="3386991982400364573" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3386991982400364573" at="12,47,12,47" />
+      <scope id="3386991982400364573" at="21,23,21,23" />
+      <scope id="3386991982400364573" at="12,0,14,0" />
+      <scope id="3386991982400364573" at="15,69,17,110" />
+      <scope id="3386991982400364573" at="21,0,23,0" />
+      <scope id="3386991982400364573" at="24,51,26,82" />
+      <scope id="3386991982400364573" at="14,0,19,0" />
+      <scope id="3386991982400364573" at="23,0,28,0" />
+      <unit id="3386991982400364573" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveInManyStatementsContainer_Test$TestBody" />
+      <unit id="3386991982400364573" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveInManyStatementsContainer_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/341917192548518608">
     <file name="AddLRParens_Test.java">
       <node id="341917192548518608" at="15,51,16,107" concept="3" />
@@ -9089,26 +9111,26 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5527013591529129291">
-    <file name="ManyStatementsList_Test.java">
-      <node id="5527013591529129291" at="15,58,16,107" concept="3" />
-      <node id="5527013591529129291" at="16,107,17,99" concept="3" />
+    <file name="MoveInManyStatementsList_Test.java">
+      <node id="5527013591529129291" at="15,64,16,107" concept="3" />
+      <node id="5527013591529129291" at="16,107,17,105" concept="3" />
       <node id="5527013591529129291" at="24,51,25,63" concept="3" />
       <node id="7130462290292121080" at="25,63,26,82" concept="3" />
       <node id="7130462290292123859" at="26,82,27,82" concept="3" />
-      <node id="5527013591529129291" at="12,0,14,0" concept="2" trace="ManyStatementsList_Test#()V" />
+      <node id="5527013591529129291" at="12,0,14,0" concept="2" trace="MoveInManyStatementsList_Test#()V" />
       <node id="5527013591529129291" at="21,0,23,0" concept="2" trace="TestBody#()V" />
-      <node id="5527013591529129291" at="14,0,19,0" concept="6" trace="test_ManyStatementsList#()V" />
+      <node id="5527013591529129291" at="14,0,19,0" concept="6" trace="test_MoveInManyStatementsList#()V" />
       <node id="5527013591529129291" at="23,0,29,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="5527013591529129291" at="12,36,12,36" />
+      <scope id="5527013591529129291" at="12,42,12,42" />
       <scope id="5527013591529129291" at="21,23,21,23" />
       <scope id="5527013591529129291" at="12,0,14,0" />
-      <scope id="5527013591529129291" at="15,58,17,99" />
+      <scope id="5527013591529129291" at="15,64,17,105" />
       <scope id="5527013591529129291" at="21,0,23,0" />
       <scope id="5527013591529129291" at="24,51,27,82" />
       <scope id="5527013591529129291" at="14,0,19,0" />
       <scope id="5527013591529129291" at="23,0,29,0" />
-      <unit id="5527013591529129291" at="19,0,30,0" name="jetbrains.mps.editorTest.ManyStatementsList_Test$TestBody" />
-      <unit id="5527013591529129291" at="10,0,31,0" name="jetbrains.mps.editorTest.ManyStatementsList_Test" />
+      <unit id="5527013591529129291" at="19,0,30,0" name="jetbrains.mps.editorTest.MoveInManyStatementsList_Test$TestBody" />
+      <unit id="5527013591529129291" at="10,0,31,0" name="jetbrains.mps.editorTest.MoveInManyStatementsList_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5633355289409916129">
@@ -9549,6 +9571,139 @@
       <scope id="577599984096529177" at="23,0,28,0" />
       <unit id="577599984096529177" at="19,0,29,0" name="jetbrains.mps.editorTest.LT_AssignmentRValue_with_PlusAssignment_Test$TestBody" />
       <unit id="577599984096529177" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_AssignmentRValue_with_PlusAssignment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572044472">
+    <file name="MoveCommentedSiblingStatement_Test.java">
+      <node id="5845623209572044472" at="15,69,16,107" concept="3" />
+      <node id="5845623209572044472" at="16,107,17,110" concept="3" />
+      <node id="5845623209572044472" at="24,51,25,63" concept="3" />
+      <node id="5845623209572044489" at="25,63,26,82" concept="3" />
+      <node id="5845623209572044472" at="12,0,14,0" concept="2" trace="MoveCommentedSiblingStatement_Test#()V" />
+      <node id="5845623209572044472" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572044472" at="14,0,19,0" concept="6" trace="test_MoveCommentedSiblingStatement#()V" />
+      <node id="5845623209572044472" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572044472" at="12,47,12,47" />
+      <scope id="5845623209572044472" at="21,23,21,23" />
+      <scope id="5845623209572044472" at="12,0,14,0" />
+      <scope id="5845623209572044472" at="15,69,17,110" />
+      <scope id="5845623209572044472" at="21,0,23,0" />
+      <scope id="5845623209572044472" at="24,51,26,82" />
+      <scope id="5845623209572044472" at="14,0,19,0" />
+      <scope id="5845623209572044472" at="23,0,28,0" />
+      <unit id="5845623209572044472" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveCommentedSiblingStatement_Test$TestBody" />
+      <unit id="5845623209572044472" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveCommentedSiblingStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572065068">
+    <file name="MoveStatementAboveComment_Test.java">
+      <node id="5845623209572065068" at="15,65,16,107" concept="3" />
+      <node id="5845623209572065068" at="16,107,17,106" concept="3" />
+      <node id="5845623209572065068" at="24,51,25,63" concept="3" />
+      <node id="5845623209572065104" at="25,63,26,82" concept="3" />
+      <node id="5845623209572065068" at="12,0,14,0" concept="2" trace="MoveStatementAboveComment_Test#()V" />
+      <node id="5845623209572065068" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572065068" at="14,0,19,0" concept="6" trace="test_MoveStatementAboveComment#()V" />
+      <node id="5845623209572065068" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572065068" at="12,43,12,43" />
+      <scope id="5845623209572065068" at="21,23,21,23" />
+      <scope id="5845623209572065068" at="12,0,14,0" />
+      <scope id="5845623209572065068" at="15,65,17,106" />
+      <scope id="5845623209572065068" at="21,0,23,0" />
+      <scope id="5845623209572065068" at="24,51,26,82" />
+      <scope id="5845623209572065068" at="14,0,19,0" />
+      <scope id="5845623209572065068" at="23,0,28,0" />
+      <unit id="5845623209572065068" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveStatementAboveComment_Test$TestBody" />
+      <unit id="5845623209572065068" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveStatementAboveComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572066825">
+    <file name="MoveCommentedParameter_Test.java">
+      <node id="5845623209572066825" at="15,62,16,107" concept="3" />
+      <node id="5845623209572066825" at="16,107,17,103" concept="3" />
+      <node id="5845623209572066825" at="24,51,25,63" concept="3" />
+      <node id="5845623209572066842" at="25,63,26,84" concept="3" />
+      <node id="5845623209572066825" at="12,0,14,0" concept="2" trace="MoveCommentedParameter_Test#()V" />
+      <node id="5845623209572066825" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572066825" at="14,0,19,0" concept="6" trace="test_MoveCommentedParameter#()V" />
+      <node id="5845623209572066825" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572066825" at="12,40,12,40" />
+      <scope id="5845623209572066825" at="21,23,21,23" />
+      <scope id="5845623209572066825" at="12,0,14,0" />
+      <scope id="5845623209572066825" at="15,62,17,103" />
+      <scope id="5845623209572066825" at="21,0,23,0" />
+      <scope id="5845623209572066825" at="24,51,26,84" />
+      <scope id="5845623209572066825" at="14,0,19,0" />
+      <scope id="5845623209572066825" at="23,0,28,0" />
+      <unit id="5845623209572066825" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveCommentedParameter_Test$TestBody" />
+      <unit id="5845623209572066825" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveCommentedParameter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572067315">
+    <file name="MoveStatementBetweenComments_Test.java">
+      <node id="5845623209572067315" at="15,68,16,107" concept="3" />
+      <node id="5845623209572067315" at="16,107,17,109" concept="3" />
+      <node id="5845623209572067315" at="24,51,25,63" concept="3" />
+      <node id="5845623209572067351" at="25,63,26,84" concept="3" />
+      <node id="5845623209572067315" at="12,0,14,0" concept="2" trace="MoveStatementBetweenComments_Test#()V" />
+      <node id="5845623209572067315" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572067315" at="14,0,19,0" concept="6" trace="test_MoveStatementBetweenComments#()V" />
+      <node id="5845623209572067315" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572067315" at="12,46,12,46" />
+      <scope id="5845623209572067315" at="21,23,21,23" />
+      <scope id="5845623209572067315" at="12,0,14,0" />
+      <scope id="5845623209572067315" at="15,68,17,109" />
+      <scope id="5845623209572067315" at="21,0,23,0" />
+      <scope id="5845623209572067315" at="24,51,26,84" />
+      <scope id="5845623209572067315" at="14,0,19,0" />
+      <scope id="5845623209572067315" at="23,0,28,0" />
+      <unit id="5845623209572067315" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveStatementBetweenComments_Test$TestBody" />
+      <unit id="5845623209572067315" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveStatementBetweenComments_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572069238">
+    <file name="MoveInManyStatementsListCommented_Test.java">
+      <node id="5845623209572069238" at="15,73,16,107" concept="3" />
+      <node id="5845623209572069238" at="16,107,17,114" concept="3" />
+      <node id="5845623209572069238" at="24,51,25,63" concept="3" />
+      <node id="5845623209572069269" at="25,63,26,82" concept="3" />
+      <node id="5845623209572069271" at="26,82,27,82" concept="3" />
+      <node id="5845623209572069238" at="12,0,14,0" concept="2" trace="MoveInManyStatementsListCommented_Test#()V" />
+      <node id="5845623209572069238" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572069238" at="14,0,19,0" concept="6" trace="test_MoveInManyStatementsListCommented#()V" />
+      <node id="5845623209572069238" at="23,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572069238" at="12,51,12,51" />
+      <scope id="5845623209572069238" at="21,23,21,23" />
+      <scope id="5845623209572069238" at="12,0,14,0" />
+      <scope id="5845623209572069238" at="15,73,17,114" />
+      <scope id="5845623209572069238" at="21,0,23,0" />
+      <scope id="5845623209572069238" at="24,51,27,82" />
+      <scope id="5845623209572069238" at="14,0,19,0" />
+      <scope id="5845623209572069238" at="23,0,29,0" />
+      <unit id="5845623209572069238" at="19,0,30,0" name="jetbrains.mps.editorTest.MoveInManyStatementsListCommented_Test$TestBody" />
+      <unit id="5845623209572069238" at="10,0,31,0" name="jetbrains.mps.editorTest.MoveInManyStatementsListCommented_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5845623209572070749">
+    <file name="MoveCommentedStatementToIf_Test.java">
+      <node id="5845623209572070749" at="15,66,16,107" concept="3" />
+      <node id="5845623209572070749" at="16,107,17,107" concept="3" />
+      <node id="5845623209572070749" at="24,51,25,63" concept="3" />
+      <node id="5845623209572070776" at="25,63,26,84" concept="3" />
+      <node id="5845623209572070749" at="12,0,14,0" concept="2" trace="MoveCommentedStatementToIf_Test#()V" />
+      <node id="5845623209572070749" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5845623209572070749" at="14,0,19,0" concept="6" trace="test_MoveCommentedStatementToIf#()V" />
+      <node id="5845623209572070749" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5845623209572070749" at="12,44,12,44" />
+      <scope id="5845623209572070749" at="21,23,21,23" />
+      <scope id="5845623209572070749" at="12,0,14,0" />
+      <scope id="5845623209572070749" at="15,66,17,107" />
+      <scope id="5845623209572070749" at="21,0,23,0" />
+      <scope id="5845623209572070749" at="24,51,26,84" />
+      <scope id="5845623209572070749" at="14,0,19,0" />
+      <scope id="5845623209572070749" at="23,0,28,0" />
+      <unit id="5845623209572070749" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveCommentedStatementToIf_Test$TestBody" />
+      <unit id="5845623209572070749" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveCommentedStatementToIf_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/587335067072943350">
@@ -12454,25 +12609,25 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7130462290292123895">
-    <file name="ManyStatements_Test.java">
-      <node id="7130462290292123895" at="15,54,16,107" concept="3" />
-      <node id="7130462290292123895" at="16,107,17,95" concept="3" />
+    <file name="MoveInManyStatementsNode_Test.java">
+      <node id="7130462290292123895" at="15,64,16,107" concept="3" />
+      <node id="7130462290292123895" at="16,107,17,105" concept="3" />
       <node id="7130462290292123895" at="24,51,25,63" concept="3" />
       <node id="7130462290292131781" at="25,63,26,82" concept="3" />
-      <node id="7130462290292123895" at="12,0,14,0" concept="2" trace="ManyStatements_Test#()V" />
+      <node id="7130462290292123895" at="12,0,14,0" concept="2" trace="MoveInManyStatementsNode_Test#()V" />
       <node id="7130462290292123895" at="21,0,23,0" concept="2" trace="TestBody#()V" />
-      <node id="7130462290292123895" at="14,0,19,0" concept="6" trace="test_ManyStatements#()V" />
+      <node id="7130462290292123895" at="14,0,19,0" concept="6" trace="test_MoveInManyStatementsNode#()V" />
       <node id="7130462290292123895" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="7130462290292123895" at="12,32,12,32" />
+      <scope id="7130462290292123895" at="12,42,12,42" />
       <scope id="7130462290292123895" at="21,23,21,23" />
       <scope id="7130462290292123895" at="12,0,14,0" />
-      <scope id="7130462290292123895" at="15,54,17,95" />
+      <scope id="7130462290292123895" at="15,64,17,105" />
       <scope id="7130462290292123895" at="21,0,23,0" />
       <scope id="7130462290292123895" at="24,51,26,82" />
       <scope id="7130462290292123895" at="14,0,19,0" />
       <scope id="7130462290292123895" at="23,0,28,0" />
-      <unit id="7130462290292123895" at="19,0,29,0" name="jetbrains.mps.editorTest.ManyStatements_Test$TestBody" />
-      <unit id="7130462290292123895" at="10,0,30,0" name="jetbrains.mps.editorTest.ManyStatements_Test" />
+      <unit id="7130462290292123895" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveInManyStatementsNode_Test$TestBody" />
+      <unit id="7130462290292123895" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveInManyStatementsNode_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7130462290292145235">
@@ -13159,6 +13314,76 @@
       <scope id="738178674097913525" at="23,0,28,0" />
       <unit id="738178674097913525" at="19,0,29,0" name="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Assignment_Test$TestBody" />
       <unit id="738178674097913525" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Assignment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7386845112408787973">
+    <file name="MoveRangeToBlock_Test.java">
+      <node id="7386845112408787973" at="15,56,16,107" concept="3" />
+      <node id="7386845112408787973" at="16,107,17,97" concept="3" />
+      <node id="7386845112408787973" at="24,51,25,63" concept="3" />
+      <node id="7386845112408788014" at="25,63,26,82" concept="3" />
+      <node id="7386845112408788016" at="26,82,27,82" concept="3" />
+      <node id="7386845112408788018" at="27,82,28,84" concept="3" />
+      <node id="7386845112408787973" at="12,0,14,0" concept="2" trace="MoveRangeToBlock_Test#()V" />
+      <node id="7386845112408787973" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="7386845112408787973" at="14,0,19,0" concept="6" trace="test_MoveRangeToBlock#()V" />
+      <node id="7386845112408787973" at="23,0,30,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="7386845112408787973" at="12,34,12,34" />
+      <scope id="7386845112408787973" at="21,23,21,23" />
+      <scope id="7386845112408787973" at="12,0,14,0" />
+      <scope id="7386845112408787973" at="15,56,17,97" />
+      <scope id="7386845112408787973" at="21,0,23,0" />
+      <scope id="7386845112408787973" at="24,51,28,84" />
+      <scope id="7386845112408787973" at="14,0,19,0" />
+      <scope id="7386845112408787973" at="23,0,30,0" />
+      <unit id="7386845112408787973" at="19,0,31,0" name="jetbrains.mps.editorTest.MoveRangeToBlock_Test$TestBody" />
+      <unit id="7386845112408787973" at="10,0,32,0" name="jetbrains.mps.editorTest.MoveRangeToBlock_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7386845112408811680">
+    <file name="MoveRangeOutOfBlock_Test.java">
+      <node id="7386845112408811680" at="15,59,16,107" concept="3" />
+      <node id="7386845112408811680" at="16,107,17,100" concept="3" />
+      <node id="7386845112408811680" at="24,51,25,63" concept="3" />
+      <node id="7386845112408811719" at="25,63,26,82" concept="3" />
+      <node id="7386845112408811721" at="26,82,27,82" concept="3" />
+      <node id="7386845112408811723" at="27,82,28,82" concept="3" />
+      <node id="7386845112408811680" at="12,0,14,0" concept="2" trace="MoveRangeOutOfBlock_Test#()V" />
+      <node id="7386845112408811680" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="7386845112408811680" at="14,0,19,0" concept="6" trace="test_MoveRangeOutOfBlock#()V" />
+      <node id="7386845112408811680" at="23,0,30,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="7386845112408811680" at="12,37,12,37" />
+      <scope id="7386845112408811680" at="21,23,21,23" />
+      <scope id="7386845112408811680" at="12,0,14,0" />
+      <scope id="7386845112408811680" at="15,59,17,100" />
+      <scope id="7386845112408811680" at="21,0,23,0" />
+      <scope id="7386845112408811680" at="24,51,28,82" />
+      <scope id="7386845112408811680" at="14,0,19,0" />
+      <scope id="7386845112408811680" at="23,0,30,0" />
+      <unit id="7386845112408811680" at="19,0,31,0" name="jetbrains.mps.editorTest.MoveRangeOutOfBlock_Test$TestBody" />
+      <unit id="7386845112408811680" at="10,0,32,0" name="jetbrains.mps.editorTest.MoveRangeOutOfBlock_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7386845112408815360">
+    <file name="MoveVariableDeclarationFromStart_Test.java">
+      <node id="7386845112408815360" at="15,72,16,107" concept="3" />
+      <node id="7386845112408815360" at="16,107,17,113" concept="3" />
+      <node id="7386845112408815360" at="24,51,25,63" concept="3" />
+      <node id="7386845112408815379" at="25,63,26,84" concept="3" />
+      <node id="7386845112408815360" at="12,0,14,0" concept="2" trace="MoveVariableDeclarationFromStart_Test#()V" />
+      <node id="7386845112408815360" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="7386845112408815360" at="14,0,19,0" concept="6" trace="test_MoveVariableDeclarationFromStart#()V" />
+      <node id="7386845112408815360" at="23,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="7386845112408815360" at="12,50,12,50" />
+      <scope id="7386845112408815360" at="21,23,21,23" />
+      <scope id="7386845112408815360" at="12,0,14,0" />
+      <scope id="7386845112408815360" at="15,72,17,113" />
+      <scope id="7386845112408815360" at="21,0,23,0" />
+      <scope id="7386845112408815360" at="24,51,26,84" />
+      <scope id="7386845112408815360" at="14,0,19,0" />
+      <scope id="7386845112408815360" at="23,0,28,0" />
+      <unit id="7386845112408815360" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveVariableDeclarationFromStart_Test$TestBody" />
+      <unit id="7386845112408815360" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveVariableDeclarationFromStart_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7424976593885769460">

@@ -2931,17 +2931,20 @@
     <node concept="lpD6D" id="2TdQhrRPT5E" role="lpD6w">
       <ref role="lpD7u" to="ryl9:iYIY04Prpd" resolve="WrapRLConstant" />
     </node>
-    <node concept="lpD6D" id="2tTgVY$IfEU" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:6bOvqMpbyzR" resolve="ManyStatements" />
-    </node>
-    <node concept="lpD6D" id="2tTgVY$Ikqz" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:4MNTpfZQolb" resolve="ManyStatementsList" />
-    </node>
     <node concept="lpD6D" id="2tTgVY$IfJ0" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6bOvqMpbBLj" resolve="MoveBlockToBlock" />
     </node>
     <node concept="lpD6D" id="6ueBWtFO0n4" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6ueBWtFMZEH" resolve="MoveClass" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl49I" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLkAo9" resolve="MoveCommentedParameter" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl4m$" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLkwUS" resolve="MoveCommentedSiblingStatement" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl4zr" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLkBlt" resolve="MoveCommentedStatementToIf" />
     </node>
     <node concept="lpD6D" id="2tTgVY$IfN7" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2tTgVY$$ttd" resolve="MoveFirstStatementInTry" />
@@ -2954,6 +2957,18 @@
     </node>
     <node concept="lpD6D" id="2tTgVY$Igt4" role="lpD6w">
       <ref role="lpD7u" to="ryl9:45untfP5iLX" resolve="MoveIfByCondition" />
+    </node>
+    <node concept="lpD6D" id="2tTgVY$Ikqz" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2W10Odg4u0t" resolve="MoveInManyStatementsContainer" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl7mv" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4MNTpfZQolb" resolve="MoveInManyStatementsList" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl6$2" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLkAXQ" resolve="MoveInManyStatementsListCommented" />
+    </node>
+    <node concept="lpD6D" id="2tTgVY$IfEU" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:6bOvqMpbyzR" resolve="MoveInManyStatementsNode" />
     </node>
     <node concept="lpD6D" id="4x7B772RN2$" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4x7B772QJo_" resolve="MoveInnerClass" />
@@ -2980,7 +2995,19 @@
       <ref role="lpD7u" to="ryl9:OVlDUncJcu" resolve="MoveParameterToNextMethod" />
     </node>
     <node concept="lpD6D" id="2tTgVY$IgoN" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:6q3m7SnXiyw" resolve="MoveRangeOutOfBlock" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl7Kk" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:6q3m7SnXcK5" resolve="MoveRangeToBlock" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl7zp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:OVlDUnbKy7" resolve="MoveRangeToNextMethod" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl7Xg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLk_WG" resolve="MoveStatementAboveComment" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl8ad" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:54vOPpLkAvN" resolve="MoveStatementBetweenComments" />
     </node>
     <node concept="lpD6D" id="6aJCh0xElZK" role="lpD6w">
       <ref role="lpD7u" to="ryl9:GukXiyksSa" resolve="MoveStatementFromCenter" />
@@ -3002,6 +3029,9 @@
     </node>
     <node concept="lpD6D" id="2tTgVY$IkhQ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:OVlDUnb$lb" resolve="MoveToNextMethod" />
+    </node>
+    <node concept="lpD6D" id="54vOPpLl8nb" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:6q3m7SnXjs0" resolve="MoveVariableDeclarationFromStart" />
     </node>
     <node concept="lpD6D" id="2tTgVY$Ikmc" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1gC0sUv3_uy" resolve="MovingNode" />
