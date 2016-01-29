@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ public final class TextGenBuffer {
   public static final String SPACES = "                                ";
 
   private final TextAreaFactory myChunkFactory;
-  private final boolean myFakePositionSupport;
   private TextBuffer myBuffer;
 
   private int myPrevBufferKey = -1;
@@ -70,7 +69,6 @@ public final class TextGenBuffer {
   private List<IMessage> myErrors = new ArrayList<IMessage>();
 
   TextGenBuffer(boolean fakePositionSupport, StringBuilder[] buffers) {
-    myFakePositionSupport = fakePositionSupport;
     myChunkFactory = buffers == null ? new BasicTextAreaFactory(LINE_SEPARATOR, 2048, ' ', myIndent) : new MyTextAreaFactory(buffers);
     myBuffer = new TextBufferImpl(myChunkFactory);
     // let buffer know all its text areas, in the order they used to be here
@@ -88,7 +86,6 @@ public final class TextGenBuffer {
    * INTENDED FOR TRANSITION PERIOD ONLY, DO NOT USE
    */
   TextGenBuffer(boolean fakePositionSupport, TextBuffer buffer) {
-    myFakePositionSupport = fakePositionSupport;
     myChunkFactory = null; // it's unexpected for clients of this TextGenBuffer (merely user object holder) to ask #getBufferText(int)
     myBuffer = buffer;
   }
@@ -109,41 +106,12 @@ public final class TextGenBuffer {
     return myBuffer;
   }
 
-  public String getText() {
-    // FIXME rewrite with myBuffer.newLayout(), layout specifies where to put empty separator strings
-    // XXX not getTextSnapshot().getText() because at the moment it alters TOP buffer with newlines, and subsequent this.getText() would be different.
-    final CharSequence topBuffer = getBufferText(TOP);
-    final CharSequence defaultBuffer = getBufferText(DEFAULT);
-    if (topBuffer.length() == 0) {
-      return defaultBuffer.toString();
-    }
-    StringBuilder rv = new StringBuilder(topBuffer.length() + defaultBuffer.length());
-    rv.append(topBuffer);
-    rv.append(LINE_SEPARATOR);
-    rv.append(LINE_SEPARATOR);
-    rv.append(defaultBuffer);
-    return rv.toString();
-  }
-
-  public String getLineSeparator() {
-    return LINE_SEPARATOR;
-  }
-
   public boolean hasErrors() {
     return myContainsErrors;
   }
 
   public Collection<IMessage> problems() {
     return Collections.unmodifiableList(myErrors);
-  }
-
-  public void foundError() {
-    myContainsErrors = true;
-  }
-
-  public void foundError(String error) {
-    myContainsErrors = true;
-    myErrors.add(prepare(MessageKind.ERROR, error, null));
   }
 
   public void foundError(String error, @Nullable SNode node, @Nullable Throwable t) {
@@ -159,30 +127,6 @@ public final class TextGenBuffer {
     return message;
   }
 
-  protected void increaseDepth() {
-    myBuffer.area().increaseIndent();
-  }
-
-  protected void decreaseDepth() {
-    myBuffer.area().decreaseIndent();
-  }
-
-  public void append(String s) {
-    // todo: is public ok?
-    if (s == null) {
-      return;
-    }
-    myBuffer.area().append(s);
-  }
-
-    protected void appendWithIndent(String s) {
-    indentBuffer();
-    append(s);
-  }
-
-  protected void indentBuffer() {
-    myBuffer.area().indent();
-  }
 
   public void putUserObject(Object key, Object o) {
     myUserObjects.put(key, o);
@@ -190,18 +134,6 @@ public final class TextGenBuffer {
 
   public Object getUserObject(Object key) {
     return myUserObjects.get(key);
-  }
-
-  public String getDefaultBufferText() {
-    return getBufferText(DEFAULT).toString();
-  }
-
-  public String getTopBufferText() {
-    return getBufferText(TOP).toString();
-  }
-
-  public int getDefaultBufferLength() {
-    return getBufferLength(DEFAULT);
   }
 
   public int getTopBufferLength() {
@@ -217,24 +149,6 @@ public final class TextGenBuffer {
     CharSequence rv = myChunkFactory.value(myBuffer.area());
     myBuffer.popTextArea();
     return rv;
-  }
-
-  public int getLineNumber() {
-    if (myFakePositionSupport) {
-      return 0;
-    }
-    throw new IllegalStateException();
-  }
-
-  public int getPosition() {
-    if (myFakePositionSupport) {
-      return 0;
-    }
-    throw new IllegalStateException();
-  }
-
-  public boolean hasPositionsSupport() {
-    return myFakePositionSupport;
   }
 
   public int selectPart(int partId) {

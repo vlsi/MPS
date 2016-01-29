@@ -19,21 +19,17 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
-import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
-import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -47,7 +43,6 @@ import java.util.Set;
 
 /**
  * @deprecated Use {@link jetbrains.mps.text.TextGeneratorEngine} to produce text from models.
- * There's yet no alternative to transform single node to text, FIXME shall implement
  */
 @Deprecated
 @ToRemove(version = 3.3)
@@ -60,27 +55,9 @@ public class TextGen {
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
 
   // api
-  public static TextGenerationResult generateText(SNode node) {
-    return generateText(node, false, false, null);
-  }
-
-  public static boolean canGenerateTextFor(SNode node) {
-    return !(getTextGenForNode(node) instanceof MissingTextGenDescriptor);
-  }
-
-  public static String getExtension(@NotNull SNode node) {
-    return getLegacyTextGen(node).getExtension(node);
-  }
-
-  public static String getFileName(@NotNull SNode node) {
-    final SNodeTextGen tg = getLegacyTextGen(node);
-    String fname = tg.getFilename(node);
-    String extension = tg.getExtension(node);
-    return (extension == null) ? fname : fname + '.' + extension;
-  }
 
   public static TextGenerationResult generateText(SNode node, boolean failIfNoTextgen, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
-    if (canGenerateTextFor(node)) {
+    if (node != null && TextGenRegistry.getInstance().hasTextGen(node)) {
       return generateText(node, withDebugInfo, buffers);
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
@@ -162,27 +139,6 @@ public class TextGen {
   }
 
   // helper stuff
-  @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return TextGenRegistry.getInstance().getTextGenDescriptor(node);
-  }
-
-  // compatibility code until TextUnit and code to break input model into these units, with filename assigned, are introduced.
-  private static SNodeTextGen getLegacyTextGen(@NotNull SNode node) {
-    try {
-      Class<? extends SNodeTextGen> textgenClass = TextGenRegistry.getInstance().getLegacyTextGenClass(node.getConcept());
-      if (textgenClass != null && SNodeTextGen.class.isAssignableFrom(textgenClass)) {
-        return textgenClass.newInstance();
-      }
-    } catch (InstantiationException ex) {
-      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
-      // fall-through
-    } catch (IllegalAccessException ex) {
-      Logger.getLogger(TextGen.class).error("Failed to instantiate textgen", ex);
-      // fall-through
-    }
-    return new DefaultTextGen();
-  }
 
   private static List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
     Set<String> dependenciesObject = (Set<String>) buffer.getUserObject(key);

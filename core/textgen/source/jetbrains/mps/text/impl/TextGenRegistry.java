@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.structure.DescriptorUtils;
-import jetbrains.mps.text.LegacyTextGenAdapter;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenDescriptor;
@@ -89,7 +88,7 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
    * @return <code>true</code> if there's a TextGen for the node
    */
   public boolean hasTextGen(@NotNull SNode node) {
-    return !(getTextGenDescriptor(node.getConcept()) instanceof MissingTextGenDescriptor);
+    return !(getTextGenDescriptor(node) instanceof MissingTextGenDescriptor);
   }
 
   @NotNull
@@ -126,12 +125,6 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     }
 
     if (descriptor == null) {
-      // fall-back solution for Language classes generated in previous MPS version. They don't answer for new TextGenAspectDescriptor,
-      // thus we use logic extracted from TextGenAspectInterpreted, modified to use contemporary TextGenDescriptor.
-      final Class<? extends SNodeTextGen> legacyTextGenClass = getLegacyTextGenClass(concept);
-      if (legacyTextGenClass != null) {
-        return new LegacyTextGenAdapter(legacyTextGenClass);
-      }
       descriptor = new MissingTextGenDescriptor();
     }
 

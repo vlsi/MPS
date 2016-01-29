@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,26 +36,8 @@ import java.util.List;
  */
 public abstract class TextGenAspectBase implements TextGenAspectDescriptor {
 
-  /**
-   * PROVISIONAL API. WORK IN PROGRESS.
-   * Default implementation which tries to produce a text unit per root.
-   * @param model input to transform to text units
-   * @return units to generate
-   */
-  @NotNull
-  public List<TextUnit> breakdownToUnits(@NotNull SModel model) {
-    final boolean needsJava = SModelOperations.getAllLanguageImports(model).contains(MetaAdapterFactory.getLanguage(BootstrapLanguages.baseLanguageRef()));
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
-    for (SNode root : model.getRootNodes()) {
-      String name = TextGen.getFileName(root);
-      rv.add(needsJava ? new JavaTextUnit(root, name) : new RegularTextUnit(root, name));
-    }
-    return rv;
-  }
-
   public void breakdownToUnits(@NotNull TextGenModelOutline modelOutline) {
-    for (TextUnit tu : breakdownToUnits(modelOutline.getModel())) {
-      modelOutline.registerTextUnit(tu);
-    }
+    // no-op by default, descriptors generated with MPS 3.3 override, if any root textgen present
+    // FIXME likely the method shall move into TextGenAspectDescriptor
   }
 }
