@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,7 @@ package jetbrains.mps.util;
 
 import java.util.Comparator;
 
-
-public class ToStringComparator implements Comparator<Object> {
+public final class ToStringComparator implements Comparator<Object> {
   private boolean myIgnoreCase;
 
   public ToStringComparator(boolean ignoreCase) {
@@ -31,8 +30,8 @@ public class ToStringComparator implements Comparator<Object> {
 
   @Override
   public int compare(Object o1, Object o2) {
-    String s1 = "" + o1;
-    String s2 = "" + o2;
+    String s1 = String.valueOf(o1);
+    String s2 = String.valueOf(o2);
     if (myIgnoreCase) {
       return s1.compareToIgnoreCase(s2);
     } else {

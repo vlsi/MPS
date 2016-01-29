@@ -33,6 +33,7 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1977,6 +1978,59 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3cpWs8" id="3XuU3Xrs5Pq" role="3cqZAp">
+                    <node concept="3cpWsn" id="3XuU3Xrs5Pr" role="3cpWs9">
+                      <property role="TrG5h" value="generators" />
+                      <node concept="3uibUv" id="3XuU3Xrs5Po" role="1tU5fm">
+                        <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+                        <node concept="3uibUv" id="3XuU3Xrs61e" role="11_B2D">
+                          <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+                        </node>
+                      </node>
+                      <node concept="2ShNRf" id="3XuU3Xrs64$" role="33vP2m">
+                        <node concept="1pGfFk" id="3XuU3Xrsp6M" role="2ShVmc">
+                          <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                          <node concept="2OqwBi" id="6mz0KzMF13s" role="37wK5m">
+                            <node concept="1eOMI4" id="6mz0KzMF13t" role="2Oq$k0">
+                              <node concept="10QFUN" id="6mz0KzMF13u" role="1eOMHV">
+                                <node concept="3uibUv" id="6mz0KzMF13v" role="10QFUM">
+                                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                                </node>
+                                <node concept="37vLTw" id="6mz0KzMF13w" role="10QFUP">
+                                  <ref role="3cqZAo" node="4fSpAVAUjrz" resolve="myModule" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="6mz0KzMF13x" role="2OqNvi">
+                              <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
+                            </node>
+                          </node>
+                          <node concept="3uibUv" id="3XuU3Xrspt0" role="1pMfVU">
+                            <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3XuU3XrsAdj" role="3cqZAp">
+                    <node concept="3SKdUq" id="3XuU3XrsAdl" role="3SKWNk">
+                      <property role="3SKdUp" value="I'd like to have predictable order in project model iteration, as well as generated code, that's why I sort here, not in templates." />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="3XuU3XrssTo" role="3cqZAp">
+                    <node concept="2YIFZM" id="3XuU3Xrst84" role="3clFbG">
+                      <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                      <ref role="37wK5l" to="33ny:~Collections.sort(java.util.List,java.util.Comparator):void" resolve="sort" />
+                      <node concept="37vLTw" id="3XuU3XrstaA" role="37wK5m">
+                        <ref role="3cqZAo" node="3XuU3Xrs5Pr" resolve="generators" />
+                      </node>
+                      <node concept="2ShNRf" id="3XuU3Xrstgs" role="37wK5m">
+                        <node concept="1pGfFk" id="3XuU3Xrs_$t" role="2ShVmc">
+                          <ref role="37wK5l" to="18ew:~SModuleNameComparator.&lt;init&gt;()" resolve="SModuleNameComparator" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="1DcWWT" id="6mz0KzMF13j" role="3cqZAp">
                     <node concept="3clFbS" id="6mz0KzMF13l" role="2LFqv$">
                       <node concept="3clFbF" id="6mz0KzMFkGd" role="3cqZAp">
@@ -2014,20 +2068,8 @@
                         <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="6mz0KzMF13s" role="1DdaDG">
-                      <node concept="1eOMI4" id="6mz0KzMF13t" role="2Oq$k0">
-                        <node concept="10QFUN" id="6mz0KzMF13u" role="1eOMHV">
-                          <node concept="3uibUv" id="6mz0KzMF13v" role="10QFUM">
-                            <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                          </node>
-                          <node concept="37vLTw" id="6mz0KzMF13w" role="10QFUP">
-                            <ref role="3cqZAo" node="4fSpAVAUjrz" resolve="myModule" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="6mz0KzMF13x" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
-                      </node>
+                    <node concept="37vLTw" id="3XuU3Xrs_EG" role="1DdaDG">
+                      <ref role="3cqZAo" node="3XuU3Xrs5Pr" resolve="generators" />
                     </node>
                   </node>
                   <node concept="3clFbF" id="6mz0KzMG8Fq" role="3cqZAp">

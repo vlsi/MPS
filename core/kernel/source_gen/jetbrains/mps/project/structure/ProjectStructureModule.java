@@ -45,6 +45,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.util.SModuleNameComparator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -246,7 +247,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (file != null && moduleDescriptor != null) {
         if (myModule instanceof Language) {
           SNode langNode = new ProjectStructureBuilder((AbstractModule) myModule, this).convertLanguage();
-          for (Generator g : ((Language) myModule).getGenerators()) {
+          ArrayList<Generator> generators = new ArrayList<Generator>(((Language) myModule).getGenerators());
+          // I'd like to have predictable order in project model iteration, as well as generated code, that's why I sort here, not in templates. 
+          Collections.sort(generators, new SModuleNameComparator());
+          for (Generator g : generators) {
             ListSequence.fromList(SLinkOperations.getChildren(langNode, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).addElement(new ProjectStructureBuilder(g, this).convertGenerator());
           }
           modelData.addRootNode(langNode);

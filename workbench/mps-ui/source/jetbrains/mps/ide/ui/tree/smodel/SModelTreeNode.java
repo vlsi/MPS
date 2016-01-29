@@ -18,18 +18,17 @@ package jetbrains.mps.ide.ui.tree.smodel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeTextSource;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -94,7 +93,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   public SModelTreeNode(@NotNull SModel model, @NotNull TreeNodeTextSource<SModelTreeNode> textSource) {
     myModelDescriptor = model;
     myTextSource = textSource;
-    setUserObject(NameUtil.getModelLongName(model));
+    setUserObject(model.getName().getLongName());
     setNodeIdentifier(model.toString());
     Icon icon = IconManager.getIconFor(model);
     setIcon(icon);
@@ -349,18 +348,18 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
         treeModel.insertNodeInto(newChildModel, this, index);
       }
       org.jetbrains.mps.openapi.model.SModel model = getModel();
-      Iterable<SNode> iter = new ConditionalIterable<SNode>(model.getRootNodes(), myNodesCondition);
 
       List<SNode> filteredRoots = new ArrayList<SNode>();
-      for (SNode node : iter) {
+      for (SNode node : new ConditionalIterable<SNode>(model.getRootNodes(), myNodesCondition)) {
         filteredRoots.add(node);
       }
-      List<SNode> sortedRoots = SortUtil.sortNodesByPresentation(filteredRoots);
       Comparator<Object> childrenComparator = getTree().getChildrenComparator();
       if (childrenComparator != null) {
-        Collections.sort(sortedRoots, childrenComparator);
+        Collections.sort(filteredRoots, childrenComparator);
+      } else {
+        Collections.sort(filteredRoots, new SNodePresentationComparator());
       }
-      for (SNode sortedRoot : sortedRoots) {
+      for (SNode sortedRoot : filteredRoots) {
         MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, myNodesCondition);
         MPSTreeNode group = getNodeGroupFor(sortedRoot);
         if (group != null) {

@@ -19,7 +19,9 @@ import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SModuleNameComparator;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -30,6 +32,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @deprecated extract comparators, use them directly where needed and get rid of this class
+ */
+@Deprecated
+@ToRemove(version = 0)
 public class SortUtil {
   public static List<SModel> sortModels(List<SModel> modelDescriptors) {
     List<SModel> sortedModels = new ArrayList<SModel>(modelDescriptors);
@@ -65,17 +72,7 @@ public class SortUtil {
 
   public static List<SModule> sortModules(Collection<SModule> modules) {
     List<SModule> sortedModules = new ArrayList<SModule>(modules);
-    Collections.sort(sortedModules, new Comparator() {
-      @Override
-      public int compare(Object o1, Object o2) {
-        if (o1 == o2) {
-          return 0;
-        }
-        String name1 = ((SModule) o1).getModuleName();
-        String name2 = ((SModule) o2).getModuleName();
-        return name1.compareTo(name2);
-      }
-    });
+    Collections.sort(sortedModules, new SModuleNameComparator());
 
     return sortedModules;
   }
@@ -83,18 +80,6 @@ public class SortUtil {
   public static List<SNode> sortNodes(List<SNode> nodes) {
     List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
     Collections.sort(sortedNodes, new ToStringComparator());
-    return sortedNodes;
-  }
-
-  public static List<SNode> sortNodesByPresentation(List<SNode> nodes) {
-    List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
-    Collections.sort(sortedNodes, new Comparator<SNode>() {
-      @Override
-      public int compare(SNode o1, SNode o2) {
-        if (o1 == null || o2 == null) return 0;
-        return o1.getPresentation().compareTo(o2.getPresentation());
-      }
-    });
     return sortedNodes;
   }
 }
