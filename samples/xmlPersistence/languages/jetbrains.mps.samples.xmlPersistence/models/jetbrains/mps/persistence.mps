@@ -25,6 +25,8 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
+    <import index="kpbf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text.impl(MPS.Core/)" />
+    <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -86,7 +88,11 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534604311" name="jetbrains.mps.baseLanguage.structure.ByteType" flags="in" index="10PrrI" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
+        <child id="1070534760952" name="componentType" index="10Q1$1" />
+      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -171,6 +177,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -2132,36 +2139,49 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6otXYHBgt4F" role="3cqZAp">
-          <node concept="3cpWsn" id="6otXYHBgt4E" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="6otXYHBgt4G" role="1tU5fm">
-              <ref role="3uigEE" to="yy4t:~TextGenerationResult" resolve="TextGenerationResult" />
+        <node concept="3clFbH" id="3zeDBH5idQK" role="3cqZAp" />
+        <node concept="3cpWs8" id="3zeDBH5iea9" role="3cqZAp">
+          <node concept="3cpWsn" id="3zeDBH5ieaa" role="3cpWs9">
+            <property role="TrG5h" value="tu" />
+            <node concept="3uibUv" id="3zeDBH5ieab" role="1tU5fm">
+              <ref role="3uigEE" to="kpbf:~RegularTextUnit" resolve="RegularTextUnit" />
             </node>
-            <node concept="2YIFZM" id="6otXYHBiiM0" role="33vP2m">
-              <ref role="1Pybhc" to="yy4t:~TextGen" resolve="TextGen" />
-              <ref role="37wK5l" to="yy4t:~TextGen.generateText(org.jetbrains.mps.openapi.model.SNode,boolean,boolean,java.lang.StringBuilder[]):jetbrains.mps.textGen.TextGenerationResult" resolve="generateText" />
-              <node concept="37vLTw" id="6otXYHBgt4I" role="37wK5m">
-                <ref role="3cqZAo" node="6otXYHBgt3X" resolve="root" />
+            <node concept="2ShNRf" id="3zeDBH5ieuw" role="33vP2m">
+              <node concept="1pGfFk" id="3zeDBH5ik5y" role="2ShVmc">
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="RegularTextUnit" />
+                <node concept="37vLTw" id="3zeDBH5ik6m" role="37wK5m">
+                  <ref role="3cqZAo" node="6otXYHBgt3X" resolve="root" />
+                </node>
+                <node concept="Xl_RD" id="3zeDBH5ik7P" role="37wK5m">
+                  <property role="Xl_RC" value="dummy.xml" />
+                </node>
               </node>
-              <node concept="3clFbT" id="6otXYHBgt4J" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-              <node concept="3clFbT" id="6otXYHBgt4K" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-              <node concept="10Nm6u" id="6otXYHBgt4L" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3zeDBH5ikvK" role="3cqZAp">
+          <node concept="2OqwBi" id="3zeDBH5ikNS" role="3clFbG">
+            <node concept="37vLTw" id="3zeDBH5ikvI" role="2Oq$k0">
+              <ref role="3cqZAo" node="3zeDBH5ieaa" resolve="tu" />
+            </node>
+            <node concept="liA8E" id="3zeDBH5il8s" role="2OqNvi">
+              <ref role="37wK5l" to="kpbf:~RegularTextUnit.generate():void" resolve="generate" />
             </node>
           </node>
         </node>
         <node concept="3clFbJ" id="6otXYHBgt4M" role="3cqZAp">
-          <node concept="2OqwBi" id="6otXYHBgt8L" role="3clFbw">
-            <node concept="37vLTw" id="6otXYHBgt8K" role="2Oq$k0">
-              <ref role="3cqZAo" node="6otXYHBgt4E" resolve="result" />
+          <node concept="3y3z36" id="3zeDBH5ilTI" role="3clFbw">
+            <node concept="Rm8GO" id="3zeDBH5iml$" role="3uHU7w">
+              <ref role="Rm8GQ" to="ao3:~TextUnit$Status.Generated" resolve="Generated" />
+              <ref role="1Px2BO" to="ao3:~TextUnit$Status" resolve="TextUnit.Status" />
             </node>
-            <node concept="liA8E" id="6otXYHBgt8M" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenerationResult.hasErrors():boolean" resolve="hasErrors" />
+            <node concept="2OqwBi" id="3zeDBH5ilut" role="3uHU7B">
+              <node concept="37vLTw" id="3zeDBH5ilsj" role="2Oq$k0">
+                <ref role="3cqZAo" node="3zeDBH5ieaa" resolve="tu" />
+              </node>
+              <node concept="liA8E" id="3zeDBH5ilzz" role="2OqNvi">
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.getState():jetbrains.mps.text.TextUnit$Status" resolve="getState" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="6otXYHBgt4P" role="3clFbx">
@@ -2172,23 +2192,37 @@
                   <node concept="Xl_RD" id="6otXYHBgt4R" role="37wK5m">
                     <property role="Xl_RC" value="cannot save xml root" />
                   </node>
-                  <node concept="2YIFZM" id="6otXYHBiiAV" role="37wK5m">
-                    <ref role="1Pybhc" to="g3l6:~PersistenceProblem" resolve="PersistenceProblem" />
-                    <ref role="37wK5l" to="g3l6:~PersistenceProblem.fromIMessages(jetbrains.mps.extapi.model.SModelData,org.jetbrains.mps.openapi.model.SModel$Problem$Kind,java.lang.Iterable):java.lang.Iterable" resolve="fromIMessages" />
-                    <node concept="37vLTw" id="6otXYHBgt4T" role="37wK5m">
-                      <ref role="3cqZAo" node="6otXYHBgt3J" resolve="model" />
-                    </node>
-                    <node concept="Rm8GO" id="6otXYHBi3gV" role="37wK5m">
-                      <ref role="1Px2BO" to="mhbf:~SModel$Problem$Kind" resolve="SModel.Problem.Kind" />
-                      <ref role="Rm8GQ" to="mhbf:~SModel$Problem$Kind.Save" resolve="Save" />
-                    </node>
-                    <node concept="2OqwBi" id="6otXYHBgt8R" role="37wK5m">
-                      <node concept="37vLTw" id="6otXYHBgt8Q" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6otXYHBgt4E" resolve="result" />
+                  <node concept="2YIFZM" id="3zeDBH5iqXR" role="37wK5m">
+                    <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
+                    <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                    <node concept="2ShNRf" id="3zeDBH5imBE" role="37wK5m">
+                      <node concept="1pGfFk" id="3zeDBH5ineQ" role="2ShVmc">
+                        <ref role="37wK5l" to="g3l6:~PersistenceProblem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel$Problem$Kind,java.lang.String,java.lang.String,boolean)" resolve="PersistenceProblem" />
+                        <node concept="Rm8GO" id="3zeDBH5inxb" role="37wK5m">
+                          <ref role="1Px2BO" to="mhbf:~SModel$Problem$Kind" resolve="SModel.Problem.Kind" />
+                          <ref role="Rm8GQ" to="mhbf:~SModel$Problem$Kind.Save" resolve="Save" />
+                        </node>
+                        <node concept="3cpWs3" id="3zeDBH5ip2_" role="37wK5m">
+                          <node concept="2OqwBi" id="3zeDBH5ipkD" role="3uHU7w">
+                            <node concept="37vLTw" id="3zeDBH5ipbg" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3zeDBH5ieaa" resolve="tu" />
+                            </node>
+                            <node concept="liA8E" id="3zeDBH5ipxs" role="2OqNvi">
+                              <ref role="37wK5l" to="kpbf:~RegularTextUnit.getState():jetbrains.mps.text.TextUnit$Status" resolve="getState" />
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="3zeDBH5inM1" role="3uHU7B">
+                            <property role="Xl_RC" value="Failed to generate text, status is " />
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="3zeDBH5iqqd" role="37wK5m" />
+                        <node concept="3clFbT" id="3zeDBH5ipNE" role="37wK5m">
+                          <property role="3clFbU" value="true" />
+                        </node>
                       </node>
-                      <node concept="liA8E" id="6otXYHBgt8S" role="2OqNvi">
-                        <ref role="37wK5l" to="yy4t:~TextGenerationResult.problems():java.util.Collection" resolve="problems" />
-                      </node>
+                    </node>
+                    <node concept="3uibUv" id="3zeDBH5itar" role="3PaCim">
+                      <ref role="3uigEE" to="mhbf:~SModel$Problem" resolve="SModel.Problem" />
                     </node>
                   </node>
                 </node>
@@ -2200,20 +2234,15 @@
           <node concept="3cpWsn" id="6otXYHBgt4X" role="3cpWs9">
             <property role="TrG5h" value="content" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="6otXYHBgt4Z" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            <node concept="10Q1$e" id="3zeDBH5irZW" role="1tU5fm">
+              <node concept="10PrrI" id="3zeDBH5irQv" role="10Q1$1" />
             </node>
-            <node concept="10QFUN" id="6otXYHBgt50" role="33vP2m">
-              <node concept="2OqwBi" id="6otXYHBgt8V" role="10QFUP">
-                <node concept="37vLTw" id="6otXYHBgt8U" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6otXYHBgt4E" resolve="result" />
-                </node>
-                <node concept="liA8E" id="6otXYHBgt8W" role="2OqNvi">
-                  <ref role="37wK5l" to="yy4t:~TextGenerationResult.getResult():java.lang.Object" resolve="getResult" />
-                </node>
+            <node concept="2OqwBi" id="3zeDBH5irA7" role="33vP2m">
+              <node concept="37vLTw" id="3zeDBH5ir$i" role="2Oq$k0">
+                <ref role="3cqZAo" node="3zeDBH5ieaa" resolve="tu" />
               </node>
-              <node concept="3uibUv" id="6otXYHBgt52" role="10QFUM">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              <node concept="liA8E" id="3zeDBH5irOY" role="2OqNvi">
+                <ref role="37wK5l" to="kpbf:~RegularTextUnit.getBytes():byte[]" resolve="getBytes" />
               </node>
             </node>
           </node>
@@ -2253,34 +2282,13 @@
             </node>
           </node>
           <node concept="3clFbS" id="6otXYHBgt59" role="2GV8ay">
-            <node concept="3cpWs8" id="6otXYHBgt5b" role="3cqZAp">
-              <node concept="3cpWsn" id="6otXYHBgt5a" role="3cpWs9">
-                <property role="TrG5h" value="writer" />
-                <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="6otXYHBgt5c" role="1tU5fm">
-                  <ref role="3uigEE" to="guwi:~OutputStreamWriter" resolve="OutputStreamWriter" />
-                </node>
-                <node concept="2ShNRf" id="6otXYHBigKR" role="33vP2m">
-                  <node concept="1pGfFk" id="6otXYHBigKS" role="2ShVmc">
-                    <ref role="37wK5l" to="guwi:~OutputStreamWriter.&lt;init&gt;(java.io.OutputStream,java.nio.charset.Charset)" resolve="OutputStreamWriter" />
-                    <node concept="37vLTw" id="6otXYHBgt5e" role="37wK5m">
-                      <ref role="3cqZAo" node="6otXYHBgt53" resolve="stream" />
-                    </node>
-                    <node concept="10M0yZ" id="6otXYHBifXe" role="37wK5m">
-                      <ref role="1PxDUh" to="18ew:~FileUtil" resolve="FileUtil" />
-                      <ref role="3cqZAo" to="18ew:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="6otXYHBgt5g" role="3cqZAp">
               <node concept="2OqwBi" id="6otXYHBgt95" role="3clFbG">
-                <node concept="37vLTw" id="6otXYHBgt94" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6otXYHBgt5a" resolve="writer" />
+                <node concept="37vLTw" id="3zeDBH5is9x" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6otXYHBgt53" resolve="stream" />
                 </node>
                 <node concept="liA8E" id="6otXYHBgt96" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~Writer.write(java.lang.String):void" resolve="write" />
+                  <ref role="37wK5l" to="guwi:~OutputStream.write(byte[]):void" resolve="write" />
                   <node concept="37vLTw" id="6otXYHBgt5i" role="37wK5m">
                     <ref role="3cqZAo" node="6otXYHBgt4X" resolve="content" />
                   </node>
@@ -2289,11 +2297,11 @@
             </node>
             <node concept="3clFbF" id="6otXYHBgt5j" role="3cqZAp">
               <node concept="2OqwBi" id="6otXYHBgt99" role="3clFbG">
-                <node concept="37vLTw" id="6otXYHBgt98" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6otXYHBgt5a" resolve="writer" />
+                <node concept="37vLTw" id="3zeDBH5iscz" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6otXYHBgt53" resolve="stream" />
                 </node>
                 <node concept="liA8E" id="6otXYHBgt9a" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~OutputStreamWriter.flush():void" resolve="flush" />
+                  <ref role="37wK5l" to="guwi:~OutputStream.flush():void" resolve="flush" />
                 </node>
               </node>
             </node>

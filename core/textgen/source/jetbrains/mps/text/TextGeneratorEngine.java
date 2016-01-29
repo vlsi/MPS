@@ -18,14 +18,22 @@ package jetbrains.mps.text;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelReadRunnable;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SnapshotModelData;
+import jetbrains.mps.smodel.TrivialModelDescriptor;
+import jetbrains.mps.text.TextUnit.Status;
 import jetbrains.mps.text.impl.ModelOutline;
+import jetbrains.mps.text.impl.RegularTextUnit2;
+import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.text.rt.TextGenAspectBase;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
-import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
@@ -115,7 +123,7 @@ public final class TextGeneratorEngine {
     }
   }
 
-  private List<TextUnit> breakdownToUnits(@NotNull SModel model) {
+  private static List<TextUnit> breakdownToUnits(@NotNull SModel model) {
     Collection<TextGenAspectDescriptor> tgad = TextGenRegistry.getInstance().getAspects(model);
     ModelOutline rv = new ModelOutline(model);
     for (TextGenAspectDescriptor d : tgad) {
@@ -124,5 +132,38 @@ public final class TextGeneratorEngine {
       }
     }
     return rv.getUnits();
+  }
+
+  /**
+   * PROVISIONAL API INTENDED TO REPLACE TextGen.generateText(). DO NOT USE OUTSIDE OF MPS.
+   * FIXME need better API to deal with outputs other than text
+   * Assumes at least read access to node's repository
+   * @param node
+   * @return either character data of the outcome, or an error message
+   */
+  public static String generateText(SNode node) {
+    // First, try as single root of a model, to give a chance for file descriptors to populate text layout
+    // then, if fail, use the node directly.
+    // FIXME perhaps, TextGenModelOutline deserves a refactoring to tell sequence of SNode instead of SModel?
+    //       we could pass original node then, without need to make a copy in a distinct model
+    final SnapshotModelData modelData = new SnapshotModelData(new SModelReference(null, SModelId.generate(), "textgen"));
+    modelData.addRootNode(CopyUtil.copyAndPreserveId(node));
+    TrivialModelDescriptor model = new TrivialModelDescriptor(modelData);
+    final List<TextUnit> textUnits = breakdownToUnits(model);
+    final TextUnit textUnit;
+    if (textUnits.size() == 1) {
+      textUnit = textUnits.get(0);
+    } else {
+      textUnit = new RegularTextUnit2(node, "dummy.txt", null);
+    }
+
+    textUnit.generate();
+    if (textUnit.getState() == Status.Empty) {
+      return "";
+    }
+    if (textUnit.getState() == Status.Generated) {
+      return new String(textUnit.getBytes(), textUnit.getEncoding());
+    }
+    return "Failed to generate text for node " + node;
   }
 }

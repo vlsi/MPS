@@ -7,8 +7,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.text.TextGeneratorEngine;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -61,8 +60,7 @@ public class Utils {
     return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
   }
   public static String generateCode(SNode node) {
-    TextGenerationResult res = TextGen.generateText(node);
-    return (String) res.getResult();
+    return TextGeneratorEngine.generateText(node);
   }
 
   public static void checkStringStubs(String code, SNode expected) {

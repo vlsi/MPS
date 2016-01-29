@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * Perhaps, parts of SModelBase could move to SModelDescriptorStub, and this class could use SModelDescriptorStub then.
  *
  * FIXME move to [smodel] once SModelBase cease to depend on [kernel] stuff
+ * FIXME why doesn't it support add/remove root operations? Was it intentional, or just overlook?
  * @author Artem Tikhomirov
  */
 public class TrivialModelDescriptor extends SModelBase {

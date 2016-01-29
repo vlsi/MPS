@@ -38,11 +38,10 @@ import java.util.Iterator;
 import java.util.Collections;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.text.impl.RegularTextUnit;
+import jetbrains.mps.text.TextUnit;
 import java.io.OutputStream;
 import java.io.BufferedOutputStream;
-import java.io.OutputStreamWriter;
 
 /**
  * A sample custom persistence implementation.
@@ -255,16 +254,17 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     if (IterableUtil.copyToList(model.getRootNodes()).size() > 1) {
       throw new ModelSaveException("cannot save more than one root into .xml file", Collections.<SModel.Problem>singletonList(new PersistenceProblem(SModel.Problem.Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
     }
-    TextGenerationResult result = TextGen.generateText(root, true, false, null);
-    if (result.hasErrors()) {
-      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(model, SModel.Problem.Kind.Save, result.problems()));
+
+    RegularTextUnit tu = new RegularTextUnit(root, "dummy.xml");
+    tu.generate();
+    if (tu.getState() != TextUnit.Status.Generated) {
+      throw new ModelSaveException("cannot save xml root", Collections.<SModel.Problem>singleton(new PersistenceProblem(SModel.Problem.Kind.Save, "Failed to generate text, status is " + tu.getState(), null, true)));
     }
-    String content = (String) result.getResult();
+    byte[] content = tu.getBytes();
     OutputStream stream = new BufferedOutputStream(source.openOutputStream());
     try {
-      OutputStreamWriter writer = new OutputStreamWriter(stream, FileUtil.DEFAULT_CHARSET);
-      writer.write(content);
-      writer.flush();
+      stream.write(content);
+      stream.flush();
     } finally {
       FileUtil.closeFileSafe(stream);
     }
