@@ -50,6 +50,7 @@ import org.apache.log4j.LogManager;
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
   protected Editor myEditor;
+  protected EditorComponent myEditorComponent;
   protected MPSFileNodeEditor myFileNodeEditor;
   private SNode myBefore;
   private SNode myResult;

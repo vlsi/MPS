@@ -15,7 +15,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -430,6 +433,10 @@
     <property role="34LRSv" value="editor" />
     <property role="1pbfSe" value="1917430008" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="ORe5oE9_um" role="lGtFl">
+      <property role="YLPcu" value="version 3.3" />
+      <property role="YLQ7P" value="use EditorComponent construction instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hPMFPyi">
     <property role="R5$K7" value="false" />
@@ -1014,20 +1021,6 @@
     <property role="34LRSv" value="_" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
-  <node concept="1TIwiD" id="4xJw7BvbXoK">
-    <property role="1pbfSe" value="664753833" />
-    <property role="TrG5h" value="LogEvent" />
-    <property role="3GE5qa" value="log" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4xJw7Bve0T$" role="1TKVEl">
-      <property role="TrG5h" value="level" />
-      <ref role="AX2Wp" node="4xJw7BvdBf3" resolve="Level" />
-    </node>
-    <node concept="1TJgyi" id="4xJw7Bve0TB" role="1TKVEl">
-      <property role="TrG5h" value="message" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="AxPO7" id="4xJw7BvdBf3">
     <property role="3GE5qa" value="log" />
     <property role="TrG5h" value="Level" />
@@ -1063,6 +1056,20 @@
     <node concept="M4N5e" id="4xJw7BvdBg1" role="M5hS2">
       <property role="1uS6qo" value="ALL" />
       <property role="1uS6qv" value="ALL" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4xJw7BvbXoK">
+    <property role="1pbfSe" value="664753833" />
+    <property role="TrG5h" value="LogEvent" />
+    <property role="3GE5qa" value="log" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4xJw7Bve0T$" role="1TKVEl">
+      <property role="TrG5h" value="level" />
+      <ref role="AX2Wp" node="4xJw7BvdBf3" resolve="Level" />
+    </node>
+    <node concept="1TJgyi" id="4xJw7Bve0TB" role="1TKVEl">
+      <property role="TrG5h" value="message" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
