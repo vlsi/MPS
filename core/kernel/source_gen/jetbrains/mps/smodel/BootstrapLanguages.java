@@ -136,6 +136,9 @@ public class BootstrapLanguages {
   public static SModuleReference pluginLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)");
   }
+  public static SModuleReference aspectLanguageRef() {
+    return PersistenceFacade.getInstance().createModuleReference("f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.aspect)");
+  }
   public static SModuleReference dataFlowLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)");
   }
