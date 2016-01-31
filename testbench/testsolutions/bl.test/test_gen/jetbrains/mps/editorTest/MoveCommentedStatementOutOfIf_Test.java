@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class MoveInManyStatementsContainer_Test extends BaseTransformationTest {
-  public MoveInManyStatementsContainer_Test() {
+public class MoveCommentedStatementOutOfIf_Test extends BaseTransformationTest {
+  public MoveCommentedStatementOutOfIf_Test() {
   }
   @Test
-  public void test_MoveInManyStatementsContainer() throws Throwable {
+  public void test_MoveCommentedStatementOutOfIf() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveInManyStatementsContainer_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.MoveCommentedStatementOutOfIf_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,7 +22,7 @@ public class MoveInManyStatementsContainer_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3386991982400366772", "3386991982400368851");
+      initEditor("5938462602860137858", "5938462602860137875");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
     }
   }

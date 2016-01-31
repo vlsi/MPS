@@ -895,6 +895,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myOwner;
   }
 
+  /**
+   * @deprecated since MPS 3.3 use {@link jetbrains.mps.editor.runtime.IntelligentNodeMover}
+   */
+  @Deprecated
   public void moveCurrentUp() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {
@@ -902,6 +906,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  /**
+   * @deprecated since MPS 3.3 use {@link jetbrains.mps.editor.runtime.IntelligentNodeMover}
+   */
+  @Deprecated
   public void moveCurrentDown() {
     Selection selection = getSelectionManager().getSelection();
     if (selection instanceof SingularSelection || selection instanceof MultipleSelection) {

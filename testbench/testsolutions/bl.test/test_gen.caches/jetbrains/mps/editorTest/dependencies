@@ -3846,6 +3846,15 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.editorTest.MoveCommentedStatementOutOfIf_Test" file="MoveCommentedStatementOutOfIf_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.editorTest.MoveCommentedStatementToIf_Test" file="MoveCommentedStatementToIf_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -3882,7 +3891,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.MoveIfByCondition_Test" file="MoveIfByCondition_Test.java">
+  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsContainerDown_Test" file="MoveInManyStatementsContainerDown_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -3891,7 +3900,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsContainer_Test" file="MoveInManyStatementsContainer_Test.java">
+  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsContainerUp_Test" file="MoveInManyStatementsContainerUp_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -3900,7 +3909,16 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsListCommented_Test" file="MoveInManyStatementsListCommented_Test.java">
+  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsListCommentedDown_Test" file="MoveInManyStatementsListCommentedDown_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.MoveInManyStatementsListCommentedUp_Test" file="MoveInManyStatementsListCommentedUp_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -3928,15 +3946,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.MoveInnerClass_Test" file="MoveInnerClass_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.MoveMethodByCenter_Test" file="MoveMethodByCenter_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -4044,7 +4053,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.MoveStatementFromCenter_Test" file="MoveStatementFromCenter_Test.java">
+  <dependency className="jetbrains.mps.editorTest.MoveStatementOutOfIf_Test" file="MoveStatementOutOfIf_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -4113,16 +4122,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.MovingNode_Test" file="MovingNode_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

@@ -7,8 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -26,7 +24,6 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_grwik7_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_grwik7_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_grwik7_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_grwik7_c0(editorContext, node));
@@ -88,12 +85,12 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
     public firstSingleRoleHandler_grwik7_c2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("first");
@@ -103,8 +100,6 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -112,11 +107,9 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no first>";
     }
-
   }
   private EditorCell createConstant_grwik7_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -151,12 +144,12 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
     public secondSingleRoleHandler_grwik7_g2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("second");
@@ -166,8 +159,6 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
-
-
     @Override
     protected EditorCell createEmptyCell() {
       EditorCell editorCell = super.createEmptyCell();
@@ -175,11 +166,9 @@ public class ManyStatementsContainer_Editor extends DefaultNodeEditor {
       installCellInfo(null, editorCell);
       return editorCell;
     }
-
     protected String getNoTargetText() {
       return "<no second>";
     }
-
   }
   private EditorCell createConstant_grwik7_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");

@@ -27,6 +27,7 @@ public class MoveOutOfTheBlock_Test extends BaseTransformationTest {
       this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }
