@@ -2,11 +2,11 @@
 <model ref="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
@@ -58,6 +58,7 @@
     <import index="y8s3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.project(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -86,9 +87,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
@@ -5590,6 +5596,169 @@
         <node concept="_YKpA" id="6YK8y67pns5" role="1tU5fm">
           <node concept="3uibUv" id="6YK8y67pF89" role="_ZDj9">
             <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="6rVxgz$_Gu3">
+    <property role="TrG5h" value="RefactoringSettings" />
+    <node concept="2tJIrI" id="6rVxgz$_JYj" role="jymVt" />
+    <node concept="312cEg" id="6rVxgz$_Omg" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="SAFE_DELETE" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$_NSL" role="1B3o_S" />
+      <node concept="10P_77" id="6rVxgz$_Ojt" role="1tU5fm" />
+      <node concept="3clFbT" id="6rVxgz$_P7y" role="33vP2m">
+        <property role="3clFbU" value="true" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6rVxgz$_Nu8" role="jymVt" />
+    <node concept="2YIFZL" id="6rVxgz$_PB5" role="jymVt">
+      <property role="TrG5h" value="getInstance" />
+      <node concept="3uibUv" id="3iIaw4Wvss6" role="3clF45">
+        <ref role="3uigEE" node="6rVxgz$_Gu3" resolve="RefactoringSettings" />
+      </node>
+      <node concept="3Tm1VV" id="6rVxgz$_PB8" role="1B3o_S" />
+      <node concept="3clFbS" id="6rVxgz$_PB9" role="3clF47">
+        <node concept="3clFbF" id="3iIaw4WvBMM" role="3cqZAp">
+          <node concept="2OqwBi" id="3SnNvqCaJE1" role="3clFbG">
+            <node concept="2YIFZM" id="3oTAX9lRJU_" role="2Oq$k0">
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+            </node>
+            <node concept="liA8E" id="3SnNvqCaJE3" role="2OqNvi">
+              <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+              <node concept="3VsKOn" id="3SnNvqCaJE4" role="37wK5m">
+                <ref role="3VsUkX" node="6rVxgz$_Gu3" resolve="RefactoringSettings" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6rVxgz$_JYw" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getState" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$_JYx" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6rVxgz$_JYz" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3uibUv" id="6rVxgz$_JYA" role="3clF45">
+        <ref role="3uigEE" node="6rVxgz$_Gu3" resolve="RefactoringSettings" />
+      </node>
+      <node concept="3clFbS" id="6rVxgz$_JYB" role="3clF47">
+        <node concept="3clFbF" id="6rVxgz$_KAV" role="3cqZAp">
+          <node concept="Xjq3P" id="6rVxgz$_KAU" role="3clFbG" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6rVxgz$_JYC" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="loadState" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$_JYD" role="1B3o_S" />
+      <node concept="3cqZAl" id="6rVxgz$_JYF" role="3clF45" />
+      <node concept="37vLTG" id="6rVxgz$_JYG" role="3clF46">
+        <property role="TrG5h" value="state" />
+        <node concept="3uibUv" id="6rVxgz$_JYJ" role="1tU5fm">
+          <ref role="3uigEE" node="6rVxgz$_Gu3" resolve="RefactoringSettings" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6rVxgz$_JYK" role="3clF47">
+        <node concept="3clFbF" id="6rVxgz$_Mfw" role="3cqZAp">
+          <node concept="2YIFZM" id="6rVxgz$_MwQ" role="3clFbG">
+            <ref role="37wK5l" to="mz8t:~XmlSerializerUtil.copyBean(java.lang.Object,java.lang.Object):void" resolve="copyBean" />
+            <ref role="1Pybhc" to="mz8t:~XmlSerializerUtil" resolve="XmlSerializerUtil" />
+            <node concept="37vLTw" id="6rVxgz$_N8g" role="37wK5m">
+              <ref role="3cqZAo" node="6rVxgz$_JYG" resolve="state" />
+            </node>
+            <node concept="Xjq3P" id="6rVxgz$_Nst" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6rVxgz$AZv6" role="jymVt" />
+    <node concept="3clFb_" id="6rVxgz$AZBJ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="initComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$AZBK" role="1B3o_S" />
+      <node concept="3cqZAl" id="6rVxgz$AZBM" role="3clF45" />
+      <node concept="3clFbS" id="6rVxgz$AZBO" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="6rVxgz$AZBP" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="disposeComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$AZBQ" role="1B3o_S" />
+      <node concept="3cqZAl" id="6rVxgz$AZBS" role="3clF45" />
+      <node concept="3clFbS" id="6rVxgz$AZBU" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="6rVxgz$AZBV" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getComponentName" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6rVxgz$AZBW" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6rVxgz$AZBY" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+      </node>
+      <node concept="2AHcQZ" id="6rVxgz$AZBZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="6rVxgz$AZC0" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="6rVxgz$AZC3" role="3clF47">
+        <node concept="3clFbF" id="6rVxgz$B07a" role="3cqZAp">
+          <node concept="Xl_RD" id="6rVxgz$B079" role="3clFbG">
+            <property role="Xl_RC" value="Refactoring Settings" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6rVxgz$AZyl" role="jymVt" />
+    <node concept="3Tm1VV" id="6rVxgz$_Gu4" role="1B3o_S" />
+    <node concept="3uibUv" id="6rVxgz$_Ihd" role="EKbjA">
+      <ref role="3uigEE" to="1m72:~PersistentStateComponent" resolve="PersistentStateComponent" />
+      <node concept="3uibUv" id="6rVxgz$_Iz2" role="11_B2D">
+        <ref role="3uigEE" node="6rVxgz$_Gu3" resolve="RefactoringSettings" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="6rVxgz$AZsm" role="EKbjA">
+      <ref role="3uigEE" to="1m72:~ApplicationComponent" resolve="ApplicationComponent" />
+    </node>
+    <node concept="2AHcQZ" id="6rVxgz$_Rw5" role="2AJF6D">
+      <ref role="2AI5Lk" to="1m72:~State" resolve="State" />
+      <node concept="2B6LJw" id="6rVxgz$_REM" role="2B76xF">
+        <ref role="2B6OnR" to="1m72:~State.name()" resolve="name" />
+        <node concept="Xl_RD" id="6rVxgz$_RKV" role="2B70Vg">
+          <property role="Xl_RC" value="MpsRefactoringSettings" />
+        </node>
+      </node>
+      <node concept="2B6LJw" id="6rVxgz$_RMn" role="2B76xF">
+        <ref role="2B6OnR" to="1m72:~State.storages()" resolve="storages" />
+        <node concept="2AHcQZ" id="2es7MPSW6fs" role="2B70Vg">
+          <ref role="2AI5Lk" to="1m72:~Storage" resolve="Storage" />
+          <node concept="2B6LJw" id="2es7MPSW6Mr" role="2B76xF">
+            <ref role="2B6OnR" to="1m72:~Storage.file()" resolve="file" />
+            <node concept="3cpWs3" id="3iIaw4WuPzE" role="2B70Vg">
+              <node concept="Xl_RD" id="3iIaw4WuReP" role="3uHU7w">
+                <property role="Xl_RC" value="/refactoringSettings.xml" />
+              </node>
+              <node concept="10M0yZ" id="2es7MPSW7BJ" role="3uHU7B">
+                <ref role="1PxDUh" to="1m72:~StoragePathMacros" resolve="StoragePathMacros" />
+                <ref role="3cqZAo" to="1m72:~StoragePathMacros.APP_CONFIG" resolve="APP_CONFIG" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

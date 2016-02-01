@@ -109,6 +109,19 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.refactoring.RefactoringSettings" file="RefactoringSettings.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.components.State" />
+    <classNode dependClassName="com.intellij.openapi.components.Storage" />
+    <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializerUtil" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+    <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RefactoringView" file="RefactoringView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
