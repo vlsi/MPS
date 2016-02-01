@@ -979,6 +979,11 @@
     <content url="file://$MODULE_DIR$/../../testbench/modules/testFS">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testFS/solutions/solution1/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testMigration">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements/languages/testMoveElements/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements/languages/testMoveElements/classes_gen" />
@@ -1152,3 +1157,4 @@
     <orderEntry type="module" module-name="execution-api" />
   </component>
 </module>
+

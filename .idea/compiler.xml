@@ -605,6 +605,10 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDepViewer/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testFS/solutions/solution1/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testFS/solutions/solution1/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" includeSubdirectories="true" />
