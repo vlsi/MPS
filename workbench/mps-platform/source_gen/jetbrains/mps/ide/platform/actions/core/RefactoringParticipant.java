@@ -5,6 +5,7 @@ package jetbrains.mps.ide.platform.actions.core;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -45,7 +46,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope);
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
   public static interface Change<InitialDataObject, FinalDataObject> {
     public SearchResults getSearchResults();
@@ -84,11 +85,11 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     public List<RefactoringParticipant.Option> getAvaliableOptions(SRepository repository) {
       return myParticipant.getAvailableOptions(myInitialState, repository);
     }
-    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-      return changes = initChanges(repository, selectedOptions, searchScope);
+    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+      return changes = initChanges(repository, selectedOptions, searchScope, progressMonitor);
     }
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-      return myParticipant.getChanges(myInitialState, repository, selectedOptions, searchScope);
+    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+      return myParticipant.getChanges(myInitialState, repository, selectedOptions, searchScope, progressMonitor);
     }
     public void confirm(FP newNode, final SRepository repository, final RefactoringSession session) {
       final F finalState = this.myParticipant.getDataCollector().afterMove(newNode);

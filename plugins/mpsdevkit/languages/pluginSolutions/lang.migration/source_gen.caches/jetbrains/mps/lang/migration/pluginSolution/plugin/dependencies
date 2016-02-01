@@ -241,6 +241,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" file="MoveNodesContributor.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -278,6 +279,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant" file="UpdateReferencesParticipant.java">
     <classNode dependClassName="java.lang.Object" />
@@ -321,6 +323,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.PersistentRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
   </dependency>
 </dependenciesRoot>
 
