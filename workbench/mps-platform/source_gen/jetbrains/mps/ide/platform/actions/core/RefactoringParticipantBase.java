@@ -6,10 +6,13 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> implements RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
   public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    RefactoringParticipant.Option firstOption = ListSequence.fromList(getAvailableOptions(initialState, repository)).first();
+    progressMonitor.start((firstOption == null ? "" : firstOption.getDescription()), 1);
     List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> result = getChanges(initialState, repository, selectedOptions, searchScope);
     progressMonitor.done();
     return result;
