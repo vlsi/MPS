@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -89,7 +90,7 @@ public class LanguageAspectSupport {
 
   public static Collection<SLanguage> getMainLanguages(SModel model) {
     LanguageAspect oldAspect = getOldAspect(model);
-    if (oldAspect != null) return Collections.singleton(MetaAdapterFactory.getLanguage(oldAspect.getMainLanguage()));
+    if (oldAspect != null) return oldAspect.getMainLanguages();
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect != null) return newAspect.getMainLanguages();
     return Collections.emptyList();

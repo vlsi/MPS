@@ -57,7 +57,6 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="2PMNsNJsb26">
-    <property role="19KtqR" value="true" />
     <property role="TrG5h" value="LanguageAspectDescriptor" />
     <property role="1pbfSe" value="484671058" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />

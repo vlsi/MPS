@@ -16,16 +16,20 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,7 +54,15 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
-  PLUGIN("plugin", BootstrapLanguages.pluginLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Plugin"),
+  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
+    @Override
+    public Collection<SLanguage> getMainLanguages() {
+      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
+      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
+      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
+      return result;
+    }
+  },
 
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
@@ -138,8 +150,15 @@ public enum LanguageAspect {
 
   // FIXME tell it as SLanguage
   // refactor to have constants as fields, not as methods
+  @Deprecated
   public SModuleReference getMainLanguage() {
     return myMainLang;
+  }
+
+  public Collection<SLanguage> getMainLanguages() {
+    ArrayList<SLanguage> res = new ArrayList<SLanguage>();
+    res.add(MetaAdapterFactory.getLanguage(getMainLanguage()));
+    return res;
   }
 
   @Deprecated
