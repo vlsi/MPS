@@ -1,24 +1,24 @@
 <project name="mpsMigration" default="check" basedir="..">
 
-  <property name="test_project" location="${basedir}/testbench/modules/testMigration" />
+  <property name="test_project" location="${basedir}/testbench/modules/testMigration"/>
 
-  <property name="env.JAVA_HOME" value="${java.home}/.." />
-  <property name="jdk.home" value="${env.JAVA_HOME}" />
-  <property name="build.dir" location="build" />
-  <property name="build.tmp" location="${build.dir}/tmp/mpsPlugins" />
-  <property name="artifacts.mps" location="${mps_home}" />
-  <property name="idea_home" location="" />
-  <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
-  <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
-  <property name="artifacts.IDEA" location="${idea_home}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.."/>
+  <property name="jdk.home" value="${env.JAVA_HOME}"/>
+  <property name="build.dir" location="build"/>
+  <property name="build.tmp" location="${build.dir}/tmp/mpsPlugins"/>
+  <property name="artifacts.mps" location="${mps_home}"/>
+  <property name="idea_home" location=""/>
+  <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore"/>
+  <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore"/>
+  <property name="artifacts.IDEA" location="${idea_home}"/>
 
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
-    <pathelement location="${artifacts.mps}/lib/jdom.jar" />
-    <pathelement location="${artifacts.mps}/lib/log4j.jar" />
+    <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar"/>
+    <pathelement location="${artifacts.mps}/lib/jdom.jar"/>
+    <pathelement location="${artifacts.mps}/lib/log4j.jar"/>
   </path>
 
-  <taskdef resource="jetbrains/mps/build/ant/antlib.xml"  classpathref="path.mps.ant.path" />
+  <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path"/>
 
   <target name="check" depends="migrate,check-test-result"/>
 
@@ -29,6 +29,24 @@
   </target>
 
   <target name="check-test-result">
+    <mkdir dir="${basedir}/testbench/testclasses"/>
+    <javac destdir="${basedir}/testbench/testclasses" fork="false" includeantruntime="false" source="1.6" target="1.6">
+      <compilerarg value="-Xlint:none"/>
+      <classpath>
+        <fileset dir="${artifacts.mps}/lib">
+          <include name="**/*.jar" />
+        </fileset>
+        <pathelement path="${jdk.home}/lib/tools.jar" />
+        <fileset dir="${build.tmp}">
+          <include name="mps.class.path.jar" />
+        </fileset>
+        <pathelement path="${basedir}/testbench/testclasses"/>
+      </classpath>
+      <src>
+        <path location="${basedir}/testbench/tests/jetbrains/mps/migration"/>
+      </src>
+    </javac>
+
     <junit fork="true" dir="${mps_home}" showoutput="true">
       <classpath>
         <fileset dir="${artifacts.mps}/lib">
@@ -48,7 +66,7 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
       <jvmarg value="-Dtest_home=${test_project}"/>
-      <test name="jetbrains.mps.migration.TestSingleMigration" />
+      <test name="jetbrains.mps.migration.TestSingleMigration"/>
       <formatter type="xml"/>
     </junit>
   </target>
