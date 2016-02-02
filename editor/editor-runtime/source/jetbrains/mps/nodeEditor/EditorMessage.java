@@ -16,10 +16,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.util.List;
 
 public interface EditorMessage extends SimpleEditorMessage {
@@ -34,6 +34,8 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor);
 
+  boolean showInEditor();
+
   void paint(Graphics g, EditorComponent editorComponent, EditorCell cell);
 
   boolean isBackground();
@@ -43,6 +45,7 @@ public interface EditorMessage extends SimpleEditorMessage {
   List<QuickFixProvider> getIntentionProviders();
 
   public void putUserObject(Object key, Object value);
+
   public Object getUserObject(Object key);
 
 }

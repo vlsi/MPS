@@ -673,7 +673,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
       boolean hasMessages = false;
       for (EditorMessage message : CellMessagesUtil.getMessages(this, EditorMessage.class)) {
-        if (message != null && message.isBackground()) {
+        if (message != null && message.showInEditor() && message.isBackground()) {
           message.paint(g, getEditor(), this);
           hasMessages = true;
         }
@@ -731,7 +731,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     List<EditorMessage> messages = CellMessagesUtil.getMessages(this, EditorMessage.class);
     for (EditorMessage message : messages) {
-      if (message != null && !message.isBackground()) {
+      if (message != null && message.showInEditor() && !message.isBackground()) {
         message.paint(g, getEditor(), this);
       }
     }

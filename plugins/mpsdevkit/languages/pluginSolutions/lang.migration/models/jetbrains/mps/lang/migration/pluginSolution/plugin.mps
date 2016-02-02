@@ -180,6 +180,7 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -6906,6 +6907,17 @@
       <node concept="3Tqbb2" id="5z_gLGew_rc" role="11_B2D" />
       <node concept="3Tqbb2" id="5z_gLGewAuT" role="11_B2D" />
     </node>
+    <node concept="3uibUv" id="4GNx7T6ZVa6" role="1zkMxy">
+      <ref role="3uigEE" to="lfzw:4GNx7T6VEiw" resolve="RefactoringParticipantBase" />
+      <node concept="2pR195" id="4GNx7T6ZX4x" role="11_B2D">
+        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+      </node>
+      <node concept="2pR195" id="4GNx7T6ZX4y" role="11_B2D">
+        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+      </node>
+      <node concept="3Tqbb2" id="4GNx7T6ZX4z" role="11_B2D" />
+      <node concept="3Tqbb2" id="4GNx7T6ZX4$" role="11_B2D" />
+    </node>
   </node>
   <node concept="312cEu" id="3r9sVr9QSkh">
     <property role="TrG5h" value="MoveNodeRefactoringLogParticipant" />
@@ -8839,6 +8851,17 @@
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
     </node>
+    <node concept="3uibUv" id="4GNx7T6Z4U5" role="1zkMxy">
+      <ref role="3uigEE" to="lfzw:4GNx7T6VEiw" resolve="RefactoringParticipantBase" />
+      <node concept="3uibUv" id="4GNx7T6Z7ZY" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3uibUv" id="4GNx7T6Zahn" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3Tqbb2" id="4GNx7T6ZdjJ" role="11_B2D" />
+      <node concept="3Tqbb2" id="4GNx7T6ZfFu" role="11_B2D" />
+    </node>
   </node>
   <node concept="312cEu" id="2aY$7DLGcwD">
     <property role="TrG5h" value="UpdateModelImports" />
@@ -9659,6 +9682,17 @@
       <node concept="3uibUv" id="2aY$7DLLQDX" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
+    </node>
+    <node concept="3uibUv" id="4GNx7T6ZLIE" role="1zkMxy">
+      <ref role="3uigEE" to="lfzw:4GNx7T6VEiw" resolve="RefactoringParticipantBase" />
+      <node concept="3uibUv" id="4GNx7T6ZNMv" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3uibUv" id="4GNx7T6ZOB1" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3Tqbb2" id="4GNx7T6ZPqo" role="11_B2D" />
+      <node concept="3Tqbb2" id="4GNx7T6ZQB4" role="11_B2D" />
     </node>
   </node>
 </model>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.commands;
+package jetbrains.mps.editor;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import java.lang.instrument.Instrumentation;
 
 /**
  * User: shatalin
- * Date: 09/10/14
+ * Date: 29/12/15
  */
-public interface CommandContext {
-  void commandStarted();
+public class Agent {
+  private static Instrumentation ourInstrumentation;
 
-  void commandFinished();
+  public static void premain(String agentArgs, Instrumentation inst) {
+    ourInstrumentation = inst;
+  }
 
-  /**
-   * This method can be used to access contextual node (opened in current editor) to associate undo context with it.
-   *
-   * @return contextual node
-   */
-  @NotNull
-  SNode getContextNode();
+  public static Instrumentation getInstrumentation() {
+    return ourInstrumentation;
+  }
 }

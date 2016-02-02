@@ -19,12 +19,18 @@ package jetbrains.mps.editor.runtime.commands;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
+import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.undo.UndoContext;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * User: shatalin
  * Date: 08/10/14
  */
-public abstract class EditorCommand implements Runnable {
+public abstract class EditorCommand implements Runnable, UndoContext {
   private final CommandContext myCommandContext;
 
   public EditorCommand(EditorContext editorContext) {
@@ -47,6 +53,11 @@ public abstract class EditorCommand implements Runnable {
     } finally {
       myCommandContext.commandFinished();
     }
+  }
+
+  @Override
+  public Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> wrapped) {
+    return Collections.singleton(myCommandContext.getContextNode());
   }
 
   protected abstract void doExecute();

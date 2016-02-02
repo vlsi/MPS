@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -193,16 +192,25 @@ public class EditorManager {
   }
 
   /**
-   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, SNode, List<Pair<SNode, SNodeReference>>)
+   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, ReferencedNodeContext, List<Pair<SNode, SNodeReference>>)
    */
   @Deprecated
   public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context,
       SNode roleAttribute, List<Pair<SNode, SNodeReference>> modifications) {
-    return doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute, modifications);
+    return doCreateRoleAttributeCell(attributeKind, cellWithRole, ReferencedNodeContext.createNodeAttributeContext(roleAttribute), modifications);
+  }
+
+  /**
+   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, ReferencedNodeContext, List<Pair<SNode, SNodeReference>>)
+   */
+  @Deprecated
+  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
+        List<Pair<SNode, SNodeReference>> modifications) {
+    return doCreateRoleAttributeCell(attributeKind, cellWithRole, ReferencedNodeContext.createNodeAttributeContext(roleAttribute), modifications);
   }
 
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
-  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
+  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, ReferencedNodeContext refContext,
       List<Pair<SNode, SNodeReference>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
@@ -225,7 +233,7 @@ public class EditorManager {
       nodeAttributeStack.push(cellWithRole);
     }
     myAttributedCells.addLast(cellWithRole);
-    EditorCell result = createEditorCell(modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
+    EditorCell result = createEditorCell(modifications, refContext);
     myAttributedCells.removeLast();
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
@@ -322,6 +330,7 @@ public class EditorManager {
                 }
               }
             }
+            updater.getCurrentUpdateSession().reuseChildInfo(refContext);
             return oldCell;
           }
         }

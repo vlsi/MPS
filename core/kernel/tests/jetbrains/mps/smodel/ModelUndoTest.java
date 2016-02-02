@@ -19,6 +19,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,10 +44,11 @@ import static org.hamcrest.CoreMatchers.equalTo;
  * Test undo/redo for model modifications.
  * 'Detached' node refers to a node that has been attached to a model at some point and was detached during the command.
  * 'Free' node refers to a free-floating, usually newly created node not yet attached to any model.
- *
+ * <p/>
  * In tests here, we stick to single undo step as it's not our goal to check complete undo mechanism. Rather, we focus on
  * SNode/SModel interaction with UndoHelper/UndoHandler (i.e. how and if commands are added to undo stack), and for that,
  * single undo level is pretty sufficient.
+ *
  * @author Artem Tikhomirov
  */
 public class ModelUndoTest {
@@ -297,6 +299,10 @@ public class ModelUndoTest {
       }
       myUndoStack.push(new UndoUnit(new ArrayList<SNodeUndoableAction>(myActions), this));
       myActions.clear();
+    }
+
+    @Override
+    public void startCommand(UndoContext context) {
     }
 
     /**

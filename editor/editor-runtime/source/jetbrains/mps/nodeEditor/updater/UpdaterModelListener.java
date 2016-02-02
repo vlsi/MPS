@@ -34,7 +34,7 @@ class UpdaterModelListener extends ModelsEventsCollector {
 
   protected void eventsHappened(List<SModelEvent> events) {
     SNode lastSelectedNode = myUpdater.getEditorComponent().getSelectedNode();
-    ModelEventsVisitor eventsAnalyzer = new ModelEventsVisitor(events, myUpdater.getEditorComponent());
+    ModelEventsVisitor eventsAnalyzer = new ModelEventsVisitor(events, myUpdater.getUpdateInfoIndex());
     if (eventsAnalyzer.isPropertyModification() && !myUpdater.requiresUpdate(eventsAnalyzer.getModifiedProperty(), eventsAnalyzer.isPropertyAddedRemoved())) {
       myUpdater.synchronizeCells(eventsAnalyzer.getModifiedProperty());
       relayoutEditor();

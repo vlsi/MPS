@@ -64,6 +64,7 @@
     <import index="tomq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.psi.codeStyle(MPS.IDEA/)" />
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
+    <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -6087,7 +6088,7 @@
     </node>
     <node concept="2tJIrI" id="39r_V8zJ0bb" role="jymVt" />
     <node concept="2YIFZL" id="39r_V8zJHWD" role="jymVt">
-      <property role="TrG5h" value="confirm" />
+      <property role="TrG5h" value="executeRefactoringLog" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2wqpb2$Ov62" role="3clF47">
@@ -6288,6 +6289,11 @@
                 </node>
                 <node concept="37vLTw" id="39r_V8zJH4D" role="37wK5m">
                   <ref role="3cqZAo" node="39r_V8zJzqj" resolve="searchScope" />
+                </node>
+                <node concept="2ShNRf" id="4GNx7T70YqL" role="37wK5m">
+                  <node concept="1pGfFk" id="4GNx7T71mAT" role="2ShVmc">
+                    <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -6696,7 +6702,7 @@
                                     </node>
                                     <node concept="3clFbF" id="39r_V8zKMHq" role="3cqZAp">
                                       <node concept="1rXfSq" id="39r_V8zKMHp" role="3clFbG">
-                                        <ref role="37wK5l" node="39r_V8zJHWD" resolve="confirm" />
+                                        <ref role="37wK5l" node="39r_V8zJHWD" resolve="executeRefactoringLog" />
                                         <node concept="3EllGN" id="39r_V8zKNc7" role="37wK5m">
                                           <node concept="2OqwBi" id="39r_V8zKOhl" role="3ElVtu">
                                             <node concept="37vLTw" id="39r_V8zKO4p" role="2Oq$k0">

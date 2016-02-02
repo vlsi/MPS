@@ -38,10 +38,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
 import java.util.Collection;
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -67,12 +65,13 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
   private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
 
-  private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
+  private UpdateInfoIndex myUpdateInfoIndex;
+  private UpdateInfoNode myCurrentUpdateInfo;
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
       Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> cleanDependentCells, Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> dirtyDependentCells,
-      Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> existenceDependentCells) {
+      Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> existenceDependentCells, UpdateInfoIndex updateInfoIndex) {
     myNode = node;
     myModelModifications = new SModelModificationsCollector(events).getModifications();
     myUpdater = updater;
@@ -82,6 +81,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myCleanDependentCells = cleanDependentCells;
     myDirtyDependentCells = dirtyDependentCells;
     myExistenceDependentCells = existenceDependentCells;
+    myUpdateInfoIndex = updateInfoIndex;
   }
 
   @Override
@@ -132,23 +132,27 @@ public class UpdateSessionImpl implements UpdateSession {
     dependentCells.add(cell);
   }
 
-  public EditorCell performUpdate() {
-    ReferencedNodeContext currentContext = ReferencedNodeContext.createNodeContext(getNode());
-    myContextStack.push(currentContext);
+  Pair<EditorCell, UpdateInfoIndex> performUpdate() {
+    myCurrentUpdateInfo = new UpdateInfoNode(ReferencedNodeContext.createNodeContext(getNode()));
     EditorContext editorContext = getUpdater().getEditorContext();
     editorContext.getCellFactory().pushCellContext();
+
+    Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
       editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
         editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
       }
-      return EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), currentContext,
-          editorContext.isInspector());
+      result.o1 =
+          EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), getCurrentContext(),
+              editorContext.isInspector());
     } finally {
       editorContext.getCellFactory().popCellContext();
-      myContextStack.pop();
+      result.o2 = new UpdateInfoIndex(myCurrentUpdateInfo);
+      myCurrentUpdateInfo = null;
     }
+    return result;
   }
 
   void setInitialEditorHints(String[] initialHints) {
@@ -177,41 +181,44 @@ public class UpdateSessionImpl implements UpdateSession {
     Collection<String> hints = myHintsForNodeMap.get(node.getReference());
     return hints.toArray(new String[hints.size()]);
   }
+
   void setEditorHintsForNodeMap(Map<SNodeReference, Collection<String>> hintsForNodeMap) {
     myHintsForNodeMap = hintsForNodeMap;
   }
 
   @Override
   public EditorCell updateChildNodeCell(final SNode node) {
-    final ReferencedNodeContext currentContext = myContextStack.peek().sameContextButAnotherNode(node);
-    myContextStack.push(currentContext);
+    myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
       return runWithExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
         @Override
         public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
+          return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), getCurrentContext());
         }
       });
     } finally {
-      myContextStack.pop();
+      myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
     }
   }
 
   @Override
   public EditorCell updateRoleAttributeCell(final Class attributeKind, final EditorCell cellWithRole, final SNode roleAttribute) {
-    if (attributeKind != AttributeKind.Reference.class && myContextStack.peek().hasRoles()) {
+    if (attributeKind != AttributeKind.Reference.class && getCurrentContext().hasRoles()) {
       //Suppressing role attribute cell creation upon reference cells.
       return cellWithRole;
     }
+
     final EditorContext editorContext = getUpdater().getEditorContext();
     editorContext.getCellFactory().pushCellContext();
     editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+
+    myCurrentUpdateInfo = myCurrentUpdateInfo.insertNewParent(new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute)));
     try {
       return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
         @Override
         public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
+          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, getCurrentContext(),
               myModelModifications);
         }
       });
@@ -222,13 +229,17 @@ public class UpdateSessionImpl implements UpdateSession {
 
   @Override
   public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
-    ReferencedNodeContext currentContext = myContextStack.peek();
-    myContextStack.push(currentContext.contextWithOneMoreReference(node, currentContext.getNode(), role));
+    ReferencedNodeContext newContext = getCurrentContext().contextWithOneMoreReference(node, getCurrentContext().getNode(), role);
+    myCurrentUpdateInfo = new UpdateInfoNode(newContext, myCurrentUpdateInfo);
     try {
       return update.compute();
     } finally {
-      myContextStack.pop();
+      myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
     }
+  }
+
+  private ReferencedNodeContext getCurrentContext() {
+    return myCurrentUpdateInfo.getContext();
   }
 
   public void registerAsBigCell(EditorCell cell) {
@@ -263,5 +274,11 @@ public class UpdateSessionImpl implements UpdateSession {
         editorContext.getCellFactory().popCellContext();
       }
     }
+  }
+
+  public void reuseChildInfo(ReferencedNodeContext childContext) {
+    UpdateInfoNode updateInfoNode = myUpdateInfoIndex.remove(childContext);
+    assert updateInfoNode != null;
+    myCurrentUpdateInfo = myCurrentUpdateInfo.replace(updateInfoNode);
   }
 }

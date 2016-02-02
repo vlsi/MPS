@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.commands;
+package jetbrains.mps.smodel.undo;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNodeUndoableAction;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.List;
 
 /**
  * User: shatalin
- * Date: 09/10/14
+ * Date: 21/01/16
  */
-public interface CommandContext {
-  void commandStarted();
-
-  void commandFinished();
-
-  /**
-   * This method can be used to access contextual node (opened in current editor) to associate undo context with it.
-   *
-   * @return contextual node
-   */
-  @NotNull
-  SNode getContextNode();
+public interface UndoContext {
+  Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> wrapped);
 }

@@ -25,6 +25,7 @@ import com.intellij.usageView.UsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -35,6 +36,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
+import javax.swing.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -44,7 +46,7 @@ import java.util.Map;
 /**
  * Created by danilla on 11/11/15.
  */
-public class UpdatePsiReferencesMoveParticipant implements MoveNodeRefactoringParticipant<NodePsiData, SNode> {
+public class UpdatePsiReferencesMoveParticipant extends RefactoringParticipantBase<NodePsiData, SNode, SNode, SNode> implements MoveNodeRefactoringParticipant<NodePsiData, SNode> {
   private MPSPsiProvider myPsiProvider;
 
   /*package*/ UpdatePsiReferencesMoveParticipant(MPSPsiProvider psiProvider) {

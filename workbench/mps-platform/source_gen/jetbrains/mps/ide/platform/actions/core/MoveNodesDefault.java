@@ -35,6 +35,12 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -288,15 +294,41 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     }).toListSequence();
 
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> participantStates : MapSequence.fromMap(changes)) {
-          for (IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> participantState : MapSequence.fromMap(participantStates.value())) {
-            participantState.value().findChanges(project.getRepository(), selectedOptions, project.getScope());
+    final Wrappers._boolean cancelled = new Wrappers._boolean(false);
+    ProgressManager.getInstance().run(new Task.Modal(project.getProject(), "Refactoring", true) {
+      public void run(@NotNull ProgressIndicator progressIndicator) {
+        final ProgressMonitorAdapter progressMonitor = new ProgressMonitorAdapter(progressIndicator);
+        project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            int steps = MapSequence.fromMap(changes).select(new ISelector<IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>>, Integer>() {
+              public Integer select(IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> pss) {
+                return MapSequence.fromMap(pss.value()).count();
+              }
+            }).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
+              public Integer combine(Integer s, Integer it) {
+                return it + s;
+              }
+            });
+            progressMonitor.start("Searching for usages", steps);
+outer:
+            for (IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> participantStates : MapSequence.fromMap(changes)) {
+              for (IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> participantState : MapSequence.fromMap(participantStates.value())) {
+                if (progressMonitor.isCanceled()) {
+                  cancelled.value = true;
+                  break outer;
+                }
+                participantState.value().findChanges(project.getRepository(), selectedOptions, project.getScope(), progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
+              }
+            }
+            progressMonitor.done();
           }
-        }
+        });
       }
     });
+
+    if (cancelled.value) {
+      return;
+    }
 
     SearchResults searchResults = new SearchResults();
     final Map<SNodeReference, Boolean> shouldKeep = MapSequence.fromMap(new HashMap<SNodeReference, Boolean>());
