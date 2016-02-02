@@ -16,10 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.util.containers.SortedList;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesListener;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -69,12 +65,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   private Map<EditorCell, List<SimpleEditorMessage>> myMessagesCache = Collections.emptyMap();
   private volatile boolean myRebuildMessagesCache = false;
-  public MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
-    @Override
-    public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
-      clear();
-    }
-  };
   private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private volatile boolean myRebuildIconRenderersCacheFlag = false;
@@ -102,8 +92,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
         }
       }
     });
-
-    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
   /**
@@ -269,17 +257,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  private void clear() {
-    synchronized (myMessagesLock) {
-      if (myMessages.isEmpty()) return;
-      for (SimpleEditorMessage m : new ArrayList<SimpleEditorMessage>(myMessages)) {
-        removeMessage(m);
-      }
-      invalidateMessagesCaches();
-    }
-    repaintAndRebuildEditorMessages();
-  }
-
   public boolean clearForOwner(EditorMessageOwner owner) {
     return clearForOwner(owner, true);
   }
@@ -416,7 +393,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   public void dispose() {
     assert ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread() : "dispose() should be called from EDT only";
     myDisposed = true;
-    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     myEditor.removeRebuildListener(myRebuildListener);
   }
 
