@@ -51,20 +51,24 @@ class UpdateInfoNode {
     myChildren.remove(child);
   }
 
-  private void attachNewParent(UpdateInfoNode parent) {
+  private void attachNewParent(@NotNull UpdateInfoNode parent) {
     assert myParent == null;
     myParent = parent;
     parent.addChild(this);
   }
 
+  @NotNull
   private UpdateInfoNode detachFromParent() {
+    assert myParent != null;
     UpdateInfoNode parent = myParent;
     myParent.removeChild(this);
     myParent = null;
     return parent;
   }
 
+  @NotNull
   UpdateInfoNode replace(@NotNull UpdateInfoNode updateInfoNode) {
+    assert updateInfoNode.getParent() == null;
     if (getParent() != null) {
       updateInfoNode.attachNewParent(detachFromParent());
     }
@@ -77,6 +81,7 @@ class UpdateInfoNode {
     return updateInfoNode;
   }
 
+  @NotNull
   UpdateInfoNode insertNewParent(@NotNull UpdateInfoNode attributeUpdateInfo) {
     if (getParent() != null) {
       attributeUpdateInfo.attachNewParent(detachFromParent());
@@ -85,6 +90,7 @@ class UpdateInfoNode {
     return attributeUpdateInfo;
   }
 
+  @NotNull
   UpdateInfoNode detach() {
     if (getParent() != null) {
       detachFromParent();
