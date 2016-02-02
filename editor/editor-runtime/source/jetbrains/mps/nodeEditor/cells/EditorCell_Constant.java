@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class EditorCell_Constant extends EditorCell_Label implements SynchronizeableEditorCell {
   public static final int DEFAULT_FONT_STYLE = MPSFonts.BOLD;
 
-  protected String myOriginalText;
+  private String myOriginalText;
 
   public EditorCell_Constant(@NotNull EditorContext editorContext, SNode node, String text) {
     this(editorContext, node, text, false);
@@ -61,6 +61,9 @@ public class EditorCell_Constant extends EditorCell_Label implements Synchronize
     return myOriginalText;
   }
 
+  public void setOriginalText(String originalText) {
+    myOriginalText = originalText;
+  }
 
   @Override
   public void synchronizeViewWithModel() {

@@ -890,6 +890,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     return null;
   }
+
   public EditorMessageOwner getHighlightMessagesOwner() {
     return myOwner;
   }
@@ -1041,7 +1042,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new ConcurrentSubtypingCache();
   }
 
-  private String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     if (messages.isEmpty()) {
       return null;
@@ -2022,7 +2023,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private void goByCurrentReference() {
+  public void goByCurrentReference() {
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     getModelAccess().executeCommand(new EditorCommand(getCommandContext()) {
       @Override
@@ -2041,7 +2042,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRepository.getModelAccess();
   }
 
-  private void showCellError() {
+  public void showCellError() {
     final jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
       getModelAccess().runReadAction(new Runnable() {
@@ -3093,6 +3094,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
+  }
+
+  /**
+   * Return true if UI focus "within" this editor component. Means: owned by this component or any child-components
+   * (in case of component cells displayed inside this editor).
+   *
+   * @return true if the focus is inside this EditorComponent
+   */
+  public boolean isActive() {
+    Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+    return hasFocus() || SwingUtilities.getAncestorOfClass(EditorComponent.class, focusOwner) == this;
   }
 
   private class ReferenceUnderliner {

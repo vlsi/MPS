@@ -1121,6 +1121,25 @@
         <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
       </node>
     </node>
+    <node concept="2YIFZL" id="7rHrlSPm5oa" role="jymVt">
+      <property role="TrG5h" value="aspectLanguageRef" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="7rHrlSPm5ob" role="3clF47">
+        <node concept="3clFbF" id="7rHrlSPm5oc" role="3cqZAp">
+          <node concept="37shsh" id="7rHrlSPm5od" role="3clFbG">
+            <node concept="20RdaH" id="7rHrlSPm5vN" role="37shsm">
+              <property role="20Rdg5" value="f159adf4-3c93-40f9-9c5a-1f245a8697af" />
+              <property role="20Rdg7" value="jetbrains.mps.lang.aspect" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7rHrlSPm5of" role="1B3o_S" />
+      <node concept="3uibUv" id="7rHrlSPm5og" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+    </node>
     <node concept="2YIFZL" id="3BEXA8ALnbj" role="jymVt">
       <property role="TrG5h" value="dataFlowLanguageRef" />
       <property role="od$2w" value="false" />

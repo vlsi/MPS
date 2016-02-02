@@ -37,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -156,7 +157,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     return script;
   }
 
-  public static <I, F> void confirm(RefactoringParticipant.PersistentRefactoringParticipant<I, F, ?, ?> participant, SNode initialStateSerialized, SNode finalStateSerialized, SNode selectedOptionsSerialized, final SRepository repository, SearchScope searchScope, final RefactoringSession session) {
+  public static <I, F> void executeRefactoringLog(RefactoringParticipant.PersistentRefactoringParticipant<I, F, ?, ?> participant, SNode initialStateSerialized, SNode finalStateSerialized, SNode selectedOptionsSerialized, final SRepository repository, SearchScope searchScope, final RefactoringSession session) {
     I initialState = participant.deserializeInitialState(initialStateSerialized);
     final F finalState = participant.deserializeFinalState(finalStateSerialized);
     List<RefactoringParticipant.Option> availableOptions = participant.getAvailableOptions(initialState, repository);
@@ -170,7 +171,7 @@ public class MigrationComponent extends AbstractProjectComponent {
         }
       }).toListSequence();
     }
-    ListSequence.fromList(participant.getChanges(initialState, repository, selectedOptions, searchScope)).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
+    ListSequence.fromList(participant.getChanges(initialState, repository, selectedOptions, searchScope, new EmptyProgressMonitor())).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
       public void visit(RefactoringParticipant.Change<I, F> it) {
         it.confirm(finalState, repository, session);
       }
@@ -217,7 +218,7 @@ public class MigrationComponent extends AbstractProjectComponent {
         return new RefactoringPart() {
           public void execute(SModule module) {
             RefactoringSessionImpl session = new RefactoringSessionImpl();
-            confirm(MapSequence.fromMap(participants).get(SPropertyOperations.getString(refactoringPartNode, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant"))), SLinkOperations.getTarget(refactoringPartNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState")), SLinkOperations.getTarget(refactoringPartNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState")), SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), myMpsProject.getRepository(), new ModulesScope(module), session);
+            executeRefactoringLog(MapSequence.fromMap(participants).get(SPropertyOperations.getString(refactoringPartNode, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant"))), SLinkOperations.getTarget(refactoringPartNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState")), SLinkOperations.getTarget(refactoringPartNode, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState")), SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), myMpsProject.getRepository(), new ModulesScope(module), session);
             session.commit();
           }
         };

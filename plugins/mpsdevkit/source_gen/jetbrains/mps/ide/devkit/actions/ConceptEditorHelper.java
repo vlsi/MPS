@@ -15,8 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.LanguageAspect;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -39,9 +40,14 @@ public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
     // [MM] this LanguageAspect usage is reviewed 
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    Language language = ((Language) aspect.getMainLanguage().resolve(MPSModuleRepository.getInstance()));
-    SModel structureModel = language.getStructureModelDescriptor();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
+    for (SLanguage slang : CollectionSequence.fromCollection(aspect.getMainLanguages())) {
+      Language language = ((Language) slang.getSourceModule());
+      if (language == null) {
+        continue;
+      }
+      SModel structureModel = language.getStructureModelDescriptor();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
+    }
     return result;
   }
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
