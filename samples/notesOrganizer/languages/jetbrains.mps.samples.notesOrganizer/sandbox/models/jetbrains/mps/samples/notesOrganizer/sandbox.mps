@@ -58,6 +58,7 @@
     <node concept="1HBdLF" id="7IxbKGmfEBA" role="1HBdMb">
       <property role="TrG5h" value="In-progress" />
       <property role="1y$nXF" value="true" />
+      <ref role="1y$Q8Y" to="z60i:~Color.ORANGE" resolve="ORANGE" />
     </node>
     <node concept="1HBdLF" id="7IxbKGmfEBD" role="1HBdMb">
       <property role="TrG5h" value="Done" />
@@ -104,23 +105,8 @@
     <node concept="1HBdKA" id="7IxbKGmfz9r" role="1HBN5c">
       <ref role="1HBdK_" node="7IxbKGmfvcv" resolve="Critical" />
       <ref role="1HBdMf" node="7IxbKGmfEB$" resolve="Created" />
-      <node concept="1HBdGf" id="7IxbKGmfz9v" role="1HBdNO">
-        <property role="1HBdGe" value="sdsa" />
-      </node>
-      <node concept="1HBdGf" id="7IxbKGmfZYc" role="1HBdNO">
-        <property role="1HBdGe" value="dsfsdfsdf" />
-      </node>
-      <node concept="1HBdGf" id="7IxbKGmfZYf" role="1HBdNO">
-        <property role="1HBdGe" value="sdfsdf" />
-      </node>
-      <node concept="1HBdGf" id="7IxbKGmfZYj" role="1HBdNO">
-        <property role="1HBdGe" value="fdgjl gfdlkjg lkfdjg lkdfjg ldfkjg lkdfj glkfdj glkdf j" />
-      </node>
-      <node concept="1HBdGf" id="7IxbKGmfZYo" role="1HBdNO">
-        <property role="1HBdGe" value="dfgkjdfklgjfdklgjklfdj lkfdjklg dfld" />
-      </node>
       <node concept="1HBdGf" id="7IxbKGmfZYu" role="1HBdNO">
-        <property role="1HBdGe" value="dfgjkfjdg" />
+        <property role="1HBdGe" value="Paint the garage" />
       </node>
       <node concept="1HBdKZ" id="7IxbKGmfz9E" role="1HBdLm">
         <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
@@ -132,17 +118,44 @@
     <node concept="1HBdKA" id="7IxbKGmfZY_" role="1HBN5c">
       <ref role="1HBdK_" node="7IxbKGmfvcv" resolve="Critical" />
       <ref role="1HBdMf" node="7IxbKGmfEBD" resolve="Done" />
-      <node concept="1HBdGf" id="7IxbKGmfZYA" role="1HBdNO">
-        <property role="1HBdGe" value="szdsdsd dsfdsfds" />
-      </node>
       <node concept="1HBdGf" id="3o4bEdk_czl" role="1HBdNO">
-        <property role="1HBdGe" value="dsfdsfdsf sdfdsfdsf" />
+        <property role="1HBdGe" value="Buy a new phone" />
       </node>
       <node concept="1HBdKZ" id="7IxbKGmg5Vv" role="1HBdLm">
         <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
       </node>
       <node concept="1HBdKZ" id="3o4bEdkATQJ" role="1HBdLm">
         <ref role="1HBdKY" node="7IxbKGmfuId" resolve="Work" />
+      </node>
+    </node>
+    <node concept="1HBdKA" id="KF47SF5T30" role="1HBN5c">
+      <ref role="1HBdMf" node="7IxbKGmfEBA" resolve="In-progress" />
+      <ref role="1HBdK_" node="7IxbKGmfvcx" resolve="High" />
+      <node concept="1HBdGf" id="KF47SF5T31" role="1HBdNO">
+        <property role="1HBdGe" value="Mown the lown" />
+      </node>
+      <node concept="1HBdKZ" id="KF47SF5T3c" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
+      </node>
+    </node>
+    <node concept="1HBdKA" id="KF47SF5T3e" role="1HBN5c">
+      <ref role="1HBdMf" node="7IxbKGmfEBM" resolve="Cancelled" />
+      <ref role="1HBdK_" node="7IxbKGmfvcC" resolve="Low" />
+      <node concept="1HBdGf" id="KF47SF5T3f" role="1HBdNO">
+        <property role="1HBdGe" value="Clean the desk" />
+      </node>
+      <node concept="1HBdKZ" id="KF47SF5T3t" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuId" resolve="Work" />
+      </node>
+    </node>
+    <node concept="1HBdKA" id="KF47SF5T3v" role="1HBN5c">
+      <ref role="1HBdMf" node="7IxbKGmfEBH" resolve="Postponed" />
+      <ref role="1HBdK_" node="7IxbKGmfvcx" resolve="High" />
+      <node concept="1HBdGf" id="KF47SF5T3w" role="1HBdNO">
+        <property role="1HBdGe" value="Get a haircut" />
+      </node>
+      <node concept="1HBdKZ" id="KF47SF5T3L" role="1HBdLm">
+        <ref role="1HBdKY" node="7IxbKGmfuIi" resolve="Home" />
       </node>
     </node>
   </node>

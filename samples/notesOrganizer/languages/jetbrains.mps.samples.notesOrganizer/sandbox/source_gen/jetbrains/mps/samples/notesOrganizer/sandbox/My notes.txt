@@ -1,12 +1,27 @@
 NotesMy notes
 
-sdsadsfsdfsdfsdfsdffdgjl gfdlkjg lkfdjg lkdfjg ldfkjg lkdfj glkfdj glkdf jdfgkjdfklgjfdklgjklfdj lkfdjklg dflddfgjkfjdg
+Paint the garage
   Status Created
   Priority Critical
   Category Home Car 
 
-szdsdsd dsfdsfdsdsfdsfdsf sdfdsfdsf
+Buy a new phone
   Status Done
   Priority Critical
   Category Home Work 
+
+Mown the lown
+  Status In-progress
+  Priority High
+  Category Home 
+
+Clean the desk
+  Status Cancelled
+  Priority Low
+  Category Work 
+
+Get a haircut
+  Status Postponed
+  Priority High
+  Category Home 
 
