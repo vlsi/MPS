@@ -4,18 +4,28 @@
 
   <property name="env.JAVA_HOME" value="${java.home}/.."/>
   <property name="jdk.home" value="${env.JAVA_HOME}"/>
+
+  <!--this will be specified by text.xml-->
+  <property name="mps_build_home" location="build/artifacts/mps"/>
+  <property name="test_classes" location="${basedir}/testbench/testclasses"/>
+
+  <!--this is needed by migration task to run, see MPS-23341
+      the section should be removed as soon as the issue is fixed
+  -->
+  <property name="mps_home" location="${mps_build_home}"/>
   <property name="build.dir" location="build"/>
   <property name="build.tmp" location="${build.dir}/tmp/mpsPlugins"/>
-  <property name="artifacts.mps" location="${mps_home}"/>
+  <property name="artifacts.mps" location="${mps_build_home}"/>
   <property name="idea_home" location=""/>
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore"/>
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore"/>
   <property name="artifacts.IDEA" location="${idea_home}"/>
 
+
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar"/>
-    <pathelement location="${artifacts.mps}/lib/jdom.jar"/>
-    <pathelement location="${artifacts.mps}/lib/log4j.jar"/>
+    <pathelement location="${mps_build_home}/lib/ant/lib/ant-mps.jar"/>
+    <pathelement location="${mps_build_home}/lib/jdom.jar"/>
+    <pathelement location="${mps_build_home}/lib/log4j.jar"/>
   </path>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path"/>
@@ -24,41 +34,34 @@
 
   <target name="migrate">
     <migrate project="${test_project}">
-      <macro name="mps_home" path="${mps_home}"/>
+      <macro name="mps_home" path="${mps_build_home}"/>
     </migrate>
   </target>
 
   <target name="check-test-result">
-    <mkdir dir="${basedir}/testbench/testclasses"/>
-    <javac destdir="${basedir}/testbench/testclasses" fork="false" includeantruntime="false" source="1.6" target="1.6">
+    <path id="test_classpath">
+      <fileset dir="${mps_build_home}/lib">
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${build.tmp}">
+        <include name="mps.class.path.jar" />
+      </fileset>
+      <pathelement path="${jdk.home}/lib/tools.jar" />
+      <pathelement path="${test_classes}"/>
+    </path>
+
+    <mkdir dir="${test_classes}"/>
+
+    <javac destdir="${test_classes}" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none"/>
-      <classpath>
-        <fileset dir="${artifacts.mps}/lib">
-          <include name="**/*.jar" />
-        </fileset>
-        <pathelement path="${jdk.home}/lib/tools.jar" />
-        <fileset dir="${build.tmp}">
-          <include name="mps.class.path.jar" />
-        </fileset>
-        <pathelement path="${basedir}/testbench/testclasses"/>
-      </classpath>
+      <classpath refid="test_classpath"/>
       <src>
         <path location="${basedir}/testbench/tests/jetbrains/mps/migration"/>
       </src>
     </javac>
 
-    <junit fork="true" dir="${mps_home}" showoutput="true">
-      <classpath>
-        <fileset dir="${artifacts.mps}/lib">
-          <include name="**/*.jar" />
-        </fileset>
-        <pathelement path="${jdk.home}/lib/tools.jar" />
-        <fileset dir="${build.tmp}">
-          <include name="mps.class.path.jar" />
-        </fileset>
-        <pathelement path="${basedir}/testbench/testclasses"/>
-      </classpath>
-
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
       <jvmarg value="-ea"/>
       <jvmarg value="-Dmps.junit.modules.root=."/>
       <jvmarg value="-Xss1024k"/>
