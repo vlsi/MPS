@@ -24183,6 +24183,12 @@
             <node concept="L2wRC" id="ymnOULBdcb" role="39821P">
               <ref role="L2wRA" node="7Kfy9QB6L5j" resolve="jetbrains.mps.lang.editor.table.runtime" />
             </node>
+            <node concept="L2wRC" id="KF47SF6n4f" role="39821P">
+              <ref role="L2wRA" node="6H0eDxPCdaf" resolve="jetbrains.mps.lang.editor.forms" />
+            </node>
+            <node concept="L2wRC" id="KF47SF6nar" role="39821P">
+              <ref role="L2wRA" node="6H0eDxPCdk4" resolve="jetbrains.mps.lang.editor.forms.runtime" />
+            </node>
           </node>
           <node concept="398223" id="1nhbZIIufVs" role="39821P">
             <node concept="L2wRC" id="1Z_UwmPdNDQ" role="39821P">
