@@ -7,17 +7,56 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> implements RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
-    RefactoringParticipant.Option firstOption = ListSequence.fromList(getAvailableOptions(initialState, repository)).first();
-    progressMonitor.start((firstOption == null ? "" : firstOption.getDescription()), 1);
-    List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> result = getChanges(initialState, repository, selectedOptions, searchScope);
+  public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    RefactoringParticipant.Option firstOption = ListSequence.fromList(getAvailableOptions(initialStates, repository)).first();
+    progressMonitor.start((firstOption == null ? "" : firstOption.getDescription()), ListSequence.fromList(initialStates).count());
+    List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> result = ListSequence.fromList(new ArrayList<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>>(ListSequence.fromList(initialStates).count()));
+    for (InitialDataObject initialState : ListSequence.fromList(initialStates)) {
+      progressMonitor.advance(1);
+      ListSequence.fromList(result).addElement(getChanges(initialState, repository, selectedOptions, searchScope));
+      if (progressMonitor.isCanceled()) {
+        return null;
+      }
+    }
     progressMonitor.done();
     return result;
   }
   public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
     return getChanges(initialState, repository, selectedOptions, searchScope, new EmptyProgressMonitor());
+  }
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    return ListSequence.fromList(getChanges(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository, selectedOptions, searchScope, progressMonitor)).first();
+  }
+
+
+
+
+
+
+  public List<RefactoringParticipant.Option> getAvailableOptions(List<InitialDataObject> initialStates, final SRepository repository) {
+    return ListSequence.fromList(initialStates).translate(new ITranslator2<InitialDataObject, RefactoringParticipant.Option>() {
+      public Iterable<RefactoringParticipant.Option> translate(InitialDataObject initialState) {
+        return getAvailableOptions(initialState, repository);
+      }
+    }).distinct().toListSequence();
+  }
+  public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository) {
+    return getAvailableOptions(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository);
+  }
+  public boolean isApplicable(List<InitialDataObject> initialStates, final SRepository repository) {
+    return ListSequence.fromList(initialStates).any(new IWhereFilter<InitialDataObject>() {
+      public boolean accept(InitialDataObject initialState) {
+        return isApplicable(initialState, repository);
+      }
+    });
+  }
+  public boolean isApplicable(InitialDataObject initialState, SRepository repository) {
+    return isApplicable(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository);
   }
 }
