@@ -32,22 +32,20 @@ public abstract class EditorCell_ComponentBase extends EditorCell_Basic implemen
 
   @Override
   public void setX(int x) {
-    JComponent component = getComponent();
-    component.setLocation(x, component.getY());
     super.setX(x);
+    getComponent().setLocation(getX(), getY());
   }
 
   @Override
   public void setY(int y) {
-    JComponent component = getComponent();
-    component.setLocation(component.getX(), y);
     super.setY(y);
+    getComponent().setLocation(getX(), getY());
   }
 
   @Override
   public void moveTo(int x, int y) {
-    getComponent().setLocation(myX, myY);
     super.moveTo(x, y);
+    getComponent().setLocation(getX(), getY());
   }
 
   @Override
