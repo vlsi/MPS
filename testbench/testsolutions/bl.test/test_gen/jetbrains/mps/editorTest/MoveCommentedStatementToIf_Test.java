@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class MoveRangeToNextMethod_Test extends BaseTransformationTest {
-  public MoveRangeToNextMethod_Test() {
+public class MoveCommentedStatementToIf_Test extends BaseTransformationTest {
+  public MoveCommentedStatementToIf_Test() {
   }
   @Test
-  public void test_MoveRangeToNextMethod() throws Throwable {
+  public void test_MoveCommentedStatementToIf() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveRangeToNextMethod_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.MoveCommentedStatementToIf_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,11 +22,8 @@ public class MoveRangeToNextMethod_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("953450985260255429", "953450985260255526");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      initEditor("5845623209572070750", "5845623209572070763");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

@@ -40,6 +40,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @deprecated since MPS 3.3 use {@link jetbrains.mps.editor.runtime.IntelligentNodeMover}
+ */
+@Deprecated
 class IntelligentNodeMover {
   private static final Logger LOG = LogManager.getLogger(IntelligentNodeMover.class);
 

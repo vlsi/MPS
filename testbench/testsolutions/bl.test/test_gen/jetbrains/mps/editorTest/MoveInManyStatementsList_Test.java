@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class MoveOutOfTheBlock_Test extends BaseTransformationTest {
-  public MoveOutOfTheBlock_Test() {
+public class MoveInManyStatementsList_Test extends BaseTransformationTest {
+  public MoveInManyStatementsList_Test() {
   }
   @Test
-  public void test_MoveOutOfTheBlock() throws Throwable {
+  public void test_MoveInManyStatementsList() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveOutOfTheBlock_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.MoveInManyStatementsList_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,12 +22,9 @@ public class MoveOutOfTheBlock_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6231723267717086110", "6231723267717188957");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      initEditor("5527013591529137625", "7130462290292097990");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

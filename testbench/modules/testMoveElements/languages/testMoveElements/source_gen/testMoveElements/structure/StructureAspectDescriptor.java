@@ -14,23 +14,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptDummyBlock = new ConceptDescriptorBuilder("testMoveElements.structure.DummyBlock", MetaIdFactory.conceptId(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x679b7b3bff651415L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(7465696304914830811L, "statement", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), true, true, false)).children(new String[]{"statement"}, new boolean[]{true}).alias("dummy", "").create();
   /*package*/ final ConceptDescriptor myConceptManyStatements = new ConceptDescriptorBuilder("testMoveElements.structure.ManyStatements", MetaIdFactory.conceptId(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(7130462290291946377L, "list", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false), new ConceptDescriptorBuilder.Link(5527013591529125961L, "list1", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false), new ConceptDescriptorBuilder.Link(5527013591529125963L, "list2", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false), new ConceptDescriptorBuilder.Link(5527013591529125966L, "statement", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), true, true, false)).children(new String[]{"list", "list1", "list2", "statement"}, new boolean[]{false, false, false, true}).create();
+  /*package*/ final ConceptDescriptor myConceptManyStatementsContainer = new ConceptDescriptorBuilder("testMoveElements.structure.ManyStatementsContainer", MetaIdFactory.conceptId(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x2f0103435011b1f2L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(3386991982400352755L, "first", MetaIdFactory.conceptId(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L), false, false, false), new ConceptDescriptorBuilder.Link(3386991982400352761L, "second", MetaIdFactory.conceptId(0xe228eea107ef499cL, 0x88269c47a7e369dbL, 0x4cb3e593ffd97846L), false, false, false)).children(new String[]{"first", "second"}, new boolean[]{false, false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDummyBlock, myConceptManyStatements);
+    return Arrays.asList(myConceptDummyBlock, myConceptManyStatements, myConceptManyStatementsContainer);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptDummyBlock;
       case 1:
         return myConceptManyStatements;
+      case 2:
+        return myConceptManyStatementsContainer;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"testMoveElements.structure.DummyBlock", "testMoveElements.structure.ManyStatements"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"testMoveElements.structure.DummyBlock", "testMoveElements.structure.ManyStatements", "testMoveElements.structure.ManyStatementsContainer"};
 }
