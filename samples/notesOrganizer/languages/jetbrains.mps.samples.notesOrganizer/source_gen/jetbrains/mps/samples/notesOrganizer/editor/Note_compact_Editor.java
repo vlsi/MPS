@@ -5,6 +5,7 @@ package jetbrains.mps.samples.notesOrganizer.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import java.util.Collection;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,6 +38,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet;
 public class Note_compact_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact"});
   @Override
+  @NotNull
   public Collection<String> getContextHints() {
     return myContextHints;
   }
