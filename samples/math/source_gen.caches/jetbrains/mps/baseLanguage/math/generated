@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="66v3ip81wij9fbdgg7q3fmuzuwz0z7p">
+<dependencies version="2" modelHash="-4mg3597p8mqgxp8vsalil33u1o9d7gn">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)" />
@@ -21,7 +21,7 @@
   <dep model="r:9b8daf91-c5ef-4c35-8949-069c5a982883(jetbrains.mps.baseLanguage.math.plugin)" hash="-1c4w7sc9tuwwy7mve31anx8ziou2myy" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="1kfjmmu51hc0e4dzvfnkq4c4mmyhcmk" />
-  <dep model="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" hash="b3wd6p2c5fquejejj7g4ikiiylch2kc" />
+  <dep model="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" hash="-8xhj8fdtnzc1b9akf1eduqgojm1e9vk" />
   <dep model="r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)" hash="b0hl3fhcmqrhz3bi66zvpns9vrq0h6v" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
   <dep model="r:f2cd2392-46a1-427a-8ead-0ef652525e04(jetbrains.mps.baseLanguage.math.actions)" hash="6wcnpl43nvsi98ckk6mfnuj3gjeqavh" />

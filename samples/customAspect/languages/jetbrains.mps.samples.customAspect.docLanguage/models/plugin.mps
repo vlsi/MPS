@@ -20,7 +20,7 @@
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
-        <child id="3433054418424672404" name="mainLanguage" index="3vrhxp" />
+        <child id="3433054418424672404" name="mainLanguages" index="3vrhxp" />
       </concept>
       <concept id="3433054418424678522" name="jetbrains.mps.lang.aspect.structure.LanguageReference" flags="ng" index="3vrm2R" />
     </language>

@@ -512,6 +512,18 @@
     <ref role="13h7C2" to="hypd:5xDtKQA7vSB" resolve="ModelReference" />
     <node concept="13i0hz" id="5qdugmiLBZZ" role="13h7CS">
       <property role="TrG5h" value="getModelReference" />
+      <node concept="2AHcQZ" id="2BHFktfnkV_" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="2BHFktfnkVq" role="lGtFl">
+        <node concept="TZ5HI" id="2BHFktfnkVr" role="3nqlJM">
+          <node concept="TZ5HA" id="2BHFktfnkVs" role="3HnX3l">
+            <node concept="1dT_AC" id="2BHFktfnkY$" role="1dT_Ay">
+              <property role="1dT_AB" value="use #toModelReference() instead, strings are bad way to communicate complex objects" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="5qdugmiLC00" role="1B3o_S" />
       <node concept="17QB3L" id="5qdugmiLC04" role="3clF45" />
       <node concept="3clFbS" id="5qdugmiLC02" role="3clF47">
@@ -532,18 +544,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="2BHFktfnkVq" role="lGtFl">
-        <node concept="TZ5HI" id="2BHFktfnkVr" role="3nqlJM">
-          <node concept="TZ5HA" id="2BHFktfnkVs" role="3HnX3l">
-            <node concept="1dT_AC" id="2BHFktfnkY$" role="1dT_Ay">
-              <property role="1dT_AB" value="use #toModelReference() instead, strings are bad way to communicate complex objects" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2BHFktfnkV_" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="13i0hz" id="2BHFktfnfdc" role="13h7CS">
@@ -865,6 +865,18 @@
     <node concept="13i0hz" id="15qhGW3fE3K" role="13h7CS">
       <property role="TrG5h" value="getModuleReference" />
       <property role="13i0it" value="true" />
+      <node concept="2AHcQZ" id="2BHFktfnki0" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="P$JXv" id="2BHFktfnkhX" role="lGtFl">
+        <node concept="TZ5HI" id="2BHFktfnkhY" role="3nqlJM">
+          <node concept="TZ5HA" id="2BHFktfnkhZ" role="3HnX3l">
+            <node concept="1dT_AC" id="2BHFktfnkjD" role="1dT_Ay">
+              <property role="1dT_AB" value="use toModuleReference() instead, dealing with strings is awful" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="15qhGW3fE3L" role="1B3o_S" />
       <node concept="17QB3L" id="15qhGW3fE3M" role="3clF45" />
       <node concept="3clFbS" id="15qhGW3fE3N" role="3clF47">
@@ -885,18 +897,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="2BHFktfnkhX" role="lGtFl">
-        <node concept="TZ5HI" id="2BHFktfnkhY" role="3nqlJM">
-          <node concept="TZ5HA" id="2BHFktfnkhZ" role="3HnX3l">
-            <node concept="1dT_AC" id="2BHFktfnkjD" role="1dT_Ay">
-              <property role="1dT_AB" value="use toModuleReference() instead, dealing with strings is awful" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2BHFktfnki0" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="13i0hz" id="2BHFktfnkjF" role="13h7CS">

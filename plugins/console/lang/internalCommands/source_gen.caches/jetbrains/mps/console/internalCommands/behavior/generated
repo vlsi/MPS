@@ -9,10 +9,10 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
-  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)" hash="-7pua3x797dwzkdbo6ytgqp6xl3fxhje" />
+  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)" hash="ak81i8t0ucwmajs9mmjgz1allh5f2aw" />
   <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="a9ijtvlxcvonhmaxb5lnqhhh1baeni8" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-9341fmfdoiri34h1n6pyf5y3ep94t8l" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-8ssec03f1jsub65sih2flrrk4f4znn6" />
   <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="-d64arnpyb22ppdn8aal96ijk2285tg6" />
   <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)" hash="-cg2i1s3h3j5otgoz98l3ymthw498dce" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
@@ -68,6 +68,7 @@
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
     <file name="ShowRepositoryCommand_Behavior.java" />
     <file name="ShowRepositoryCommand__BehaviorDescriptor.java" />

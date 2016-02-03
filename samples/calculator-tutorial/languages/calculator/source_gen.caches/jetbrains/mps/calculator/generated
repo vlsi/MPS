@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cjj545sdjsb237ll3jnzzh5prtqq7ao">
+<dependencies version="2" modelHash="-a2qem5okcelfynjsbmaoresmpux8p1p">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)" />
@@ -15,7 +15,7 @@
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
   <dep model="r:450e06fb-ac8b-4ea9-abbf-87478c21328b(jetbrains.mps.calculator.typesystem)" hash="3ywx7q9qys24f43ago5eiay60nvpjiy" />
   <dep model="r:687950c3-88fd-4ead-a0b7-87e8a005fc6f(jetbrains.mps.calculator.plugin)" hash="-aqmjzefo9ucpp23ahf6mzuc6bsdgu9q" />
-  <dep model="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" hash="4zaqn8tik502am4x406mknlqgu99tgs" />
+  <dep model="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" hash="-2rus31197s01ag7fxhxl3pubzh2ayfl" />
   <dep model="r:97129371-9ac5-4a71-bfd5-5b11db119de9(jetbrains.mps.calculator.behavior)" hash="-9qoklehhet4xpd8xcr4orbkwh7ku97g" />
   <dep model="r:9b417160-a560-428b-b721-a26a33b5bd8c(jetbrains.mps.lang.extension.generator.template.main@generator)" hash="-emuxrcp6zrbao3etr3bp7i56o5yyvpx" />
   <dep model="r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)" hash="e742swcxlc0asq496zu1b7luaxyq7wt" />
