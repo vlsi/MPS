@@ -7,10 +7,10 @@
   <imports>
     <import index="6bz1" ref="r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" implicit="true" />
+    <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" implicit="true" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -220,7 +220,7 @@
                   <node concept="3fl2lp" id="4ODFRGrNlh5" role="2Oq$k0">
                     <ref role="3fl3PK" to="6bz1:2lJOBsqvJqh" resolve="Parameter" />
                     <node concept="3B5_sB" id="4ODFRGrNlcv" role="3fl3PI">
-                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="4ODFRGrNl_P" role="2OqNvi">
@@ -272,7 +272,7 @@
                 <node concept="3fl2lp" id="1038ICHumnU" role="2Oq$k0">
                   <ref role="3fl3PK" to="6bz1:2lJOBsqvJqh" resolve="Parameter" />
                   <node concept="3B5_sB" id="1038ICHumnV" role="3fl3PI">
-                    <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                    <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="1038ICHumnW" role="2OqNvi">
