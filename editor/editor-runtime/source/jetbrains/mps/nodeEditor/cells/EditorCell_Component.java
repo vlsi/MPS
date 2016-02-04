@@ -71,12 +71,6 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
   }
 
   @Override
-  public void relayoutImpl() {
-    setWidth(myComponent.getWidth() + myGapLeft + myGapRight);
-    setHeight(myComponent.getHeight());
-  }
-
-  @Override
   public boolean isDrawBorder() {
     return false;
   }

@@ -63,4 +63,11 @@ public abstract class EditorCell_ComponentBase extends EditorCell_Basic implemen
     getEditor().getCellTracker().removeComponentCell(this);
     super.onRemove();
   }
+
+  @Override
+  public void relayoutImpl() {
+    JComponent component = getComponent();
+    setWidth(component.getWidth());
+    setHeight(component.getHeight());
+  }
 }
