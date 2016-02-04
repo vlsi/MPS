@@ -1,0 +1,26 @@
+<project name="getResources" default="getall" basedir="..">
+  <property name="build.dir" location="resources"/>
+  <property name="help.url" value="" />
+  <property name="machelp.url" value="" />
+  <property name="openjdk.url" value="" />
+  <property name="jdk.url" value="" />
+
+  <target name="getall" depends="gethelp, getjdk, getopenjdk"/>
+
+  <target name="gethelp">
+    <mkdir dir="${build.dir}/help/mac" />
+    <get dest="${build.dir}/help/mpshelp.jar" src="${help.url}" />
+    <get dest="${build.dir}/help/mac/mpshelp.jar" src="${machelp.url}" />
+  </target>
+
+  <target name="getopenjdk">
+    <mkdir dir="${build.dir}/openJDK" />
+    <get dest="${build.dir}/openJDK/jdk.tar.gz" src="${openjdk.url}"/>
+  </target>
+
+  <target name="getjdk">
+    <mkdir dir="${build.dir}/JDK" />
+    <get dest="${build.dir}/JDK/jdk.zip" src="${jdk.url}"/>
+  </target>
+
+</project>
