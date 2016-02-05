@@ -43,9 +43,9 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createCollection_185r4c_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_185r4c_b0(editorContext, node));
+    editorCell.setUsesBraces(true);
     return editorCell;
   }
   private EditorCell createCollection_185r4c_a0(EditorContext editorContext, SNode node) {

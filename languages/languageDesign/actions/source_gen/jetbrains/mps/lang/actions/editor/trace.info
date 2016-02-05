@@ -1117,12 +1117,12 @@
       <node id="1138079331366" at="42,28,43,34" concept="6" />
       <node id="1138079331366" at="43,34,44,51" concept="2" />
       <node id="1138079331366" at="44,51,45,40" concept="2" />
-      <node id="1138079331366" at="45,40,46,35" concept="2" />
-      <node id="1138079331366" at="46,35,47,83" concept="0" />
-      <node id="1138079331366" at="46,35,47,83" concept="2" />
-      <node id="1138079331366" at="47,83,48,83" concept="0" />
-      <node id="1138079331366" at="47,83,48,83" concept="2" />
-      <node id="1138079331366" at="48,83,49,22" concept="7" />
+      <node id="1138079331366" at="45,40,46,83" concept="0" />
+      <node id="1138079331366" at="45,40,46,83" concept="2" />
+      <node id="1138079331366" at="46,83,47,83" concept="0" />
+      <node id="1138079331366" at="46,83,47,83" concept="2" />
+      <node id="1138079331366" at="47,83,48,35" concept="2" />
+      <node id="1138079331366" at="48,35,49,22" concept="7" />
       <node id="1138079331366" at="51,90,52,99" concept="6" />
       <node id="1138079331366" at="52,99,53,49" concept="2" />
       <node id="1138079331366" at="53,49,54,34" concept="6" />
@@ -1554,8 +1554,8 @@
       <node id="1177442307246" at="121,0,141,0" concept="5" trace="createProperty_185r4c_a0c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1179533748689" at="178,0,198,0" concept="5" trace="createProperty_185r4c_g0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1138079331366" at="36,79,37,63" />
-      <scope id="1138079331366" at="46,35,47,83" />
-      <scope id="1138079331366" at="47,83,48,83" />
+      <scope id="1138079331366" at="45,40,46,83" />
+      <scope id="1138079331366" at="46,83,47,83" />
       <scope id="1138079331366" at="56,40,57,82" />
       <scope id="1138079331366" at="57,82,58,82" />
       <scope id="1138079331366" at="58,82,59,81" />
