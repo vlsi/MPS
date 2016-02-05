@@ -200,7 +200,8 @@ class EditorSettingsPreferencesPage {
     ActionListener listener = new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        myBlinkingDemo.repaintExternalComponent();
+        // repaint() should be called here since repaintExternalComponent() does not redraw the caret
+        myBlinkingDemo.repaint();
         EditorCell rootCell = myBlinkingDemo.getRootCell();
         if (rootCell != null) {
           rootCell.switchCaretVisible();
