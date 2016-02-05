@@ -45,6 +45,6 @@ public class ChildCellLocator implements CellLocator {
       return null;
     }
 
-    return parentCollection.getChildAt(myChildIndex);
+    return parentCollection.getCellAt(myChildIndex);
   }
 }

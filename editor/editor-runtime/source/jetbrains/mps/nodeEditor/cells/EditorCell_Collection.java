@@ -225,6 +225,13 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return getCellsCount();
   }
 
+  /**
+   * This method returns Cell from internal API. Leaving it here to be able to easily
+   * find those places using internal API.
+   *
+   * @deprecated use getCellAt() instead
+   */
+  @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell getChildAt(int i) {
     return (jetbrains.mps.nodeEditor.cells.EditorCell) getCellAt(i);
   }
@@ -273,11 +280,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public EditorCell getCellAt(int number) {
-    try {
-      return getVisibleChildCells().get(number);
-    } catch (IndexOutOfBoundsException e) {
+    if (number < 0 || number >= getVisibleChildCells().size()) {
       return null;
     }
+    return getVisibleChildCells().get(number);
   }
 
   public void setGridLayout(boolean gridLayout) {
@@ -466,9 +472,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void addEditorCell(EditorCell editorCell) {
-    if (editorCell == null) return;
-    addCell(editorCell);
-    ((EditorCell_Basic) editorCell).setParent(this);
+    if (editorCell == null) {
+      return;
+    }
+    addEditorCellAt(editorCell, getCellsCount());
   }
 
   public boolean containsCell(jetbrains.mps.nodeEditor.cells.EditorCell editorCell) {
@@ -866,10 +873,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  private void addCell(EditorCell cellToAdd) {
-    addEditorCellAt(cellToAdd, usesBraces() ? getCellsCount() - 1 : getCellsCount());
-  }
-
   @Override
   public boolean usesBraces() {
     return isCollapsed() ? false : myUsesBraces;
@@ -906,7 +909,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       size = 2;
     }
     if (getCellsCount() > size) {
-      return getChildAt(shift);
+      return getCellAt(shift);
     }
     return null;
   }
@@ -920,7 +923,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       size = 2;
     }
     if (getCellsCount() > size) {
-      return getChildAt(getCellsCount() - (1 + shift));
+      return getCellAt(getCellsCount() - (1 + shift));
     }
     return null;
   }

@@ -1441,33 +1441,6 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="g_aDGUS" role="3cqZAp">
-            <node concept="2OqwBi" id="h_XJaP3" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagTucm" role="2Oq$k0">
-                <ref role="3cqZAo" node="fXlnoS2" resolve="editorCell" />
-              </node>
-              <node concept="liA8E" id="h_XJaP4" role="2OqNvi">
-                <ref role="37wK5l" to="g51k:~EditorCell_Collection.setUsesBraces(boolean):void" resolve="setUsesBraces" />
-                <node concept="3clFbT" id="5H6jztJ65bv" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
-            <node concept="1W57fq" id="5H6jztJ65bs" role="lGtFl">
-              <node concept="3IZrLx" id="5H6jztJ65bt" role="3IZSJc">
-                <node concept="3clFbS" id="5H6jztJ65bu" role="2VODD2">
-                  <node concept="3clFbF" id="5H6jztJ65bw" role="3cqZAp">
-                    <node concept="2OqwBi" id="5H6jztJ65by" role="3clFbG">
-                      <node concept="30H73N" id="5H6jztJ65bx" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="5H6jztJ65bA" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpc2:g_ayjLd" resolve="usesBraces" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="3DPg8zpyaE0" role="3cqZAp">
             <node concept="2OqwBi" id="3DPg8zpyaE2" role="3clFbG">
               <node concept="37vLTw" id="3GM_nagTAwe" role="2Oq$k0">
@@ -1836,6 +1809,33 @@
               </node>
               <node concept="37vLTw" id="5ajRFTcAO1f" role="2Oq$k0">
                 <ref role="3cqZAo" node="fXlnoS2" resolve="editorCell" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="g_aDGUS" role="3cqZAp">
+            <node concept="2OqwBi" id="h_XJaP3" role="3clFbG">
+              <node concept="37vLTw" id="3GM_nagTucm" role="2Oq$k0">
+                <ref role="3cqZAo" node="fXlnoS2" resolve="editorCell" />
+              </node>
+              <node concept="liA8E" id="h_XJaP4" role="2OqNvi">
+                <ref role="37wK5l" to="g51k:~EditorCell_Collection.setUsesBraces(boolean):void" resolve="setUsesBraces" />
+                <node concept="3clFbT" id="5H6jztJ65bv" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+            <node concept="1W57fq" id="5H6jztJ65bs" role="lGtFl">
+              <node concept="3IZrLx" id="5H6jztJ65bt" role="3IZSJc">
+                <node concept="3clFbS" id="5H6jztJ65bu" role="2VODD2">
+                  <node concept="3clFbF" id="5H6jztJ65bw" role="3cqZAp">
+                    <node concept="2OqwBi" id="5H6jztJ65by" role="3clFbG">
+                      <node concept="30H73N" id="5H6jztJ65bx" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="5H6jztJ65bA" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpc2:g_ayjLd" resolve="usesBraces" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
