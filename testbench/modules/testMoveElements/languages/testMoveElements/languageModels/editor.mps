@@ -2,7 +2,7 @@
 <model ref="r:2de9cc1a-057f-4953-afea-1abb5cfe7f56(testMoveElements.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -31,18 +31,18 @@
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
-      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
+      <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
-      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+      <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
-      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
-      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" index="3F1sOY" />
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" index="3F2HdR" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -185,6 +185,83 @@
       <node concept="3F0ifn" id="6bOvqMpaRAl" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <node concept="3mYdg7" id="6bOvqMpaRAm" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2W10Odg4r81">
+    <ref role="1XX52x" to="kvy4:2W10Odg4r7M" resolve="ManyStatementsContainer" />
+    <node concept="3EZMnI" id="2W10Odg4r83" role="2wV5jI">
+      <node concept="l2Vlx" id="2W10Odg4r84" role="2iSdaV" />
+      <node concept="3F0ifn" id="2W10Odg4r85" role="3EZMnx">
+        <property role="3F0ifm" value="many statements container" />
+      </node>
+      <node concept="3F0ifn" id="2W10Odg4r86" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="2W10Odg4r87" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="2W10Odg4r88" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="2W10Odg4r89" role="3EZMnx">
+        <node concept="l2Vlx" id="2W10Odg4r8a" role="2iSdaV" />
+        <node concept="lj46D" id="2W10Odg4r8b" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="2W10Odg4r8c" role="3EZMnx">
+          <property role="3F0ifm" value="first" />
+        </node>
+        <node concept="3F0ifn" id="2W10Odg4r8d" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="2W10Odg4r8e" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2W10Odg4r8f" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="2W10Odg4r8g" role="3EZMnx">
+          <ref role="1NtTu8" to="kvy4:2W10Odg4r7N" />
+          <node concept="lj46D" id="2W10Odg4r8h" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2W10Odg4r8i" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2W10Odg4r8j" role="3EZMnx">
+          <node concept="ljvvj" id="2W10Odg4r8k" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2W10Odg4r8l" role="3EZMnx">
+          <property role="3F0ifm" value="second" />
+        </node>
+        <node concept="3F0ifn" id="2W10Odg4r8m" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="2W10Odg4r8n" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2W10Odg4r8o" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="2W10Odg4r8p" role="3EZMnx">
+          <ref role="1NtTu8" to="kvy4:2W10Odg4r7T" />
+          <node concept="lj46D" id="2W10Odg4r8q" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2W10Odg4r8r" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="2W10Odg4r8s" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="2W10Odg4r8t" role="3F10Kt">
           <property role="1413C4" value="body-brace" />
         </node>
       </node>

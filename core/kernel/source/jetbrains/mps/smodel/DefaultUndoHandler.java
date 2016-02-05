@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 
 public class DefaultUndoHandler implements UndoHandler {
   @Override
   public void addUndoableAction(SNodeUndoableAction action) {
-
   }
 
   @Override
@@ -41,6 +41,9 @@ public class DefaultUndoHandler implements UndoHandler {
 
   @Override
   public void flushCommand(Project p) {
+  }
 
+  @Override
+  public void startCommand(UndoContext context) {
   }
 }

@@ -312,7 +312,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return Math.max(myArtificialBracesIndent, naturalIndent);
   }
 
-  protected EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout, AbstractCellListHandler handler) {
+  public EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout, AbstractCellListHandler handler) {
     super(editorContext, node);
     myCellLayout = cellLayout;
     myCellListHandler = handler;

@@ -98,6 +98,9 @@
       <implementation-class>jetbrains.mps.ide.generator.GenerationSettings</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.refactoring.RefactoringSettings</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedModelDigest</implementation-class>
     </component>
     <component>

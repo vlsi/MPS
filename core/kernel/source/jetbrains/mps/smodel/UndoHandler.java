@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 
 public interface UndoHandler {
@@ -31,5 +32,8 @@ public interface UndoHandler {
   // register undoable action
   // FIXME why it's not a command listener, so that gets notifications about command start and command end? Won't need
   // neither isInsideUndoableCommand and ModelAccess.isInsideCommand, not this flushCommand.
+  // TODO: remove Project parameter, add project into UndoContext passed to startCommand() method
   void flushCommand(Project p);
+
+  void startCommand(UndoContext context);
 }

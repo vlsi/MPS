@@ -5,37 +5,38 @@ package jetbrains.mps.ide.platform.actions.core;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public interface RecursiveParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, Iterable<RefactoringParticipant.ParticipantState> parents);
+  public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor, Iterable<RefactoringParticipant.ParticipantState> parents);
 
   public static class RecursiveParticipantState<I, F, IP, FP> extends RefactoringParticipant.ParticipantState<I, F, IP, FP> {
     private Iterable<RefactoringParticipant.ParticipantState> myParents;
-    public static <I, F, IP, FP> RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode, Iterable<RefactoringParticipant.ParticipantState> parents) {
-      return new RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP>(participant, oldNode, parents);
+    public static <I, F, IP, FP> RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes, Iterable<RefactoringParticipant.ParticipantState> parents) {
+      return new RecursiveParticipant.RecursiveParticipantState<I, F, IP, FP>(participant, oldNodes, parents);
     }
-    private RecursiveParticipantState(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode, Iterable<RefactoringParticipant.ParticipantState> parents) {
-      super(participant, oldNode);
+    private RecursiveParticipantState(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes, Iterable<RefactoringParticipant.ParticipantState> parents) {
+      super(participant, oldNodes);
       myParents = parents;
     }
     @Override
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
       if (getParticipant() instanceof RecursiveParticipant) {
         if (Sequence.fromIterable(myParents).any(new IWhereFilter<RefactoringParticipant.ParticipantState>() {
           public boolean accept(RefactoringParticipant.ParticipantState parent) {
-            return eq_7nv468_a0a0a0a0a0a0a0a3d_0(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && eq_7nv468_a0a0a0a0a0a0a0a3d(parent.getInitialState(), RecursiveParticipantState.this.getInitialState());
+            return eq_7nv468_a0a0a0a0a0a0a0a3d_0(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && eq_7nv468_a0a0a0a0a0a0a0a3d(parent.getInitialStates(), RecursiveParticipantState.this.getInitialStates());
           }
         })) {
           // todo: checked exception 
           throw new IllegalStateException("infinite recursion detected");
         } else {
-          return ((RecursiveParticipant<I, F, IP, FP>) getParticipant()).getChanges(getInitialState(), repository, selectedOptions, searchScope, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));
+          return ((RecursiveParticipant<I, F, IP, FP>) getParticipant()).getChanges(getInitialStates(), repository, selectedOptions, searchScope, progressMonitor, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));
         }
       } else {
-        return super.initChanges(repository, selectedOptions, searchScope);
+        return super.initChanges(repository, selectedOptions, searchScope, progressMonitor);
       }
     }
     private static boolean eq_7nv468_a0a0a0a0a0a0a0a3d(Object a, Object b) {

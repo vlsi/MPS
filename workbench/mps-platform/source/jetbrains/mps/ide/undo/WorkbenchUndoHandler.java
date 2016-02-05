@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +38,7 @@ import java.util.List;
 public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
   private boolean ourUndoBlocked = false;
   private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
+  private UndoContext myUndoContext = null;
 
   @Override
   public void addUndoableAction(SNodeUndoableAction action) {
@@ -71,6 +73,7 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
   public void flushCommand(Project project) {
     if (project == null || myActions.isEmpty()) {
       myActions.clear();
+      myUndoContext = null;
       return;
     }
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
@@ -79,8 +82,15 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
     }
     UndoManager undoManager = UndoManager.getInstance(ideaProject);
 
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions));
+    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions, myUndoContext));
     myActions = new LinkedList<SNodeUndoableAction>();
+    myUndoContext = null;
+  }
+
+  @Override
+  public void startCommand(UndoContext context) {
+    assert myUndoContext == null;
+    myUndoContext = context;
   }
 
   @Override

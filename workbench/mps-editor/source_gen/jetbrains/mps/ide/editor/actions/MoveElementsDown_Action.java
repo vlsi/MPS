@@ -9,7 +9,13 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.editor.runtime.IntelligentNodeMover;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class MoveElementsDown_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,6 +42,13 @@ public class MoveElementsDown_Action extends BaseAction {
       return false;
     }
     {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      MapSequence.fromMap(_params).put("editorContext", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
       if (editorComponent != null && editorComponent.isInvalid()) {
         editorComponent = null;
@@ -49,7 +62,14 @@ public class MoveElementsDown_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).moveCurrentDown();
-    int x = 1;
+    List<SNode> nodesToMove = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedNodes();
+    if (nodesToMove.size() == 1) {
+      SNode node = nodesToMove.get(0);
+      SNode nodeToMove = IntelligentNodeMover.findNodeToMove(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      if (nodeToMove != null) {
+        nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
+      }
+    }
+    new IntelligentNodeMover(nodesToMove, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).move();
   }
 }

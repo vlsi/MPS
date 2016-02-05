@@ -8,9 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -42,12 +44,25 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     return varDeclaration;
   }
   @Override
-  protected SNode getRootToFindDuplicates(SNode node) {
-    SNode result = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
-    while ((SNodeOperations.getNodeAncestor(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) != null)) {
-      result = SNodeOperations.getNodeAncestor(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
+  public SNode getRootToFindDuplicates(final SNode node) {
+    List<SNode> ancestors = SNodeOperations.getNodeAncestors(node, null, false);
+    SNode statementListContainer = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
+    SNode metaContainer = ListSequence.fromList(ancestors).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ((int) (Integer) BHReflection.invoke(it, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A"))) != ((int) (Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
+      }
+    });
+    int statementListContainerIndex = ListSequence.fromList(ancestors).indexOf(statementListContainer);
+    int metaContainerIndex = ListSequence.fromList(ancestors).indexOf(metaContainer);
+    if (statementListContainerIndex >= 0 && metaContainerIndex >= 0) {
+      ancestors = ListSequence.fromList(ancestors).take(Math.min(statementListContainerIndex, metaContainerIndex)).toListSequence();
+    } else if (statementListContainerIndex < 0 && metaContainerIndex >= 0) {
+      ancestors = ListSequence.fromList(ancestors).take(metaContainerIndex).toListSequence();
+    } else if (statementListContainerIndex >= 0 && metaContainerIndex < 0) {
+      ancestors = ListSequence.fromList(ancestors).take(statementListContainerIndex).toListSequence();
     }
-    return result;
+
+    return Sequence.fromIterable(SNodeOperations.ofConcept(ancestors, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))).last();
   }
   @Override
   public void replaceNode(SNode node, SNode declaration) {

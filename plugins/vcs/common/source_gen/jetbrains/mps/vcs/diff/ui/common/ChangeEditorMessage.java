@@ -83,6 +83,12 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       return !(cell instanceof EditorCell_Collection) && isNameCell(cell) == (myMessageTarget.getTarget() == MessageTargetEnum.PROPERTY && NAME_PROPERTY.equals(myMessageTarget.getRole()));
     }
   }
+
+  @Override
+  public boolean showInEditor() {
+    return myHighlighted;
+  }
+
   @Override
   public void paint(Graphics graphics, EditorComponent editor, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
     if (!(myHighlighted)) {
@@ -118,8 +124,8 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && cell.isBig() || super.acceptCell(cell, component);
   }
   private boolean isNameCell(EditorCell cell) {
-    PropertyAccessor pa = as_myu41h_a0a0a41(check_myu41h_a0a0a41((as_myu41h_a0a0a0a0a41(cell, EditorCell_Property.class))), PropertyAccessor.class);
-    return getNode() == check_myu41h_a0a1a41(pa) && NAME_PROPERTY.equals(check_myu41h_a0a0b0o(pa));
+    PropertyAccessor pa = as_myu41h_a0a0a71(check_myu41h_a0a0a71((as_myu41h_a0a0a0a0a71(cell, EditorCell_Property.class))), PropertyAccessor.class);
+    return getNode() == check_myu41h_a0a1a71(pa) && NAME_PROPERTY.equals(check_myu41h_a0a0b0r(pa));
   }
   private void repaintConflictedMessages(Graphics graphics, EditorCell cell) {
     // This is a workaround for case when any change message is going to be painted over 
@@ -191,7 +197,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     final Wrappers._boolean res = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
       public Boolean invoke() {
-        return res.value = !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0a0a0b0t(getNode(), ChangeEditorMessage.this) == null && !(editor instanceof InspectorEditorComponent);
+        return res.value = !(isDirectCell(getCell(editor))) && check_myu41h_a0a0a0a0a0b0w(getNode(), ChangeEditorMessage.this) == null && !(editor instanceof InspectorEditorComponent);
       }
     }));
     return res.value;
@@ -222,13 +228,13 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      this._7__yield_myu41h_a0a0a0a0a0a02_it = Sequence.fromIterable(invoke(_4_child)).iterator();
+                      this._7__yield_myu41h_a0a0a0a0a0a32_it = Sequence.fromIterable(invoke(_4_child)).iterator();
                     case 8:
-                      if (!(this._7__yield_myu41h_a0a0a0a0a0a02_it.hasNext())) {
+                      if (!(this._7__yield_myu41h_a0a0a0a0a0a32_it.hasNext())) {
                         this.__CP__ = 5;
                         break;
                       }
-                      this._7__yield_myu41h_a0a0a0a0a0a02 = this._7__yield_myu41h_a0a0a0a0a0a02_it.next();
+                      this._7__yield_myu41h_a0a0a0a0a0a32 = this._7__yield_myu41h_a0a0a0a0a0a32_it.next();
                       this.__CP__ = 9;
                       break;
                     case 2:
@@ -240,7 +246,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_myu41h_a0a0a0a0a0a02);
+                      this.yield(_7__yield_myu41h_a0a0a0a0a0a32);
                       return true;
                     case 12:
                       this.__CP__ = 1;
@@ -269,8 +275,8 @@ __switch__:
               }
               private EditorCell _4_child;
               private Iterator<EditorCell> _4_child_it;
-              private EditorCell _7__yield_myu41h_a0a0a0a0a0a02;
-              private Iterator<EditorCell> _7__yield_myu41h_a0a0a0a0a0a02_it;
+              private EditorCell _7__yield_myu41h_a0a0a0a0a0a32;
+              private Iterator<EditorCell> _7__yield_myu41h_a0a0a0a0a0a32_it;
             };
           }
         };
@@ -387,34 +393,34 @@ __switch__:
     public boolean isChangeConflicted(ModelChange change);
   }
   protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
-  private static ModelAccessor check_myu41h_a0a0a41(EditorCell_Property checkedDotOperand) {
+  private static ModelAccessor check_myu41h_a0a0a71(EditorCell_Property checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelAccessor();
     }
     return null;
   }
-  private static SNode check_myu41h_a0a1a41(PropertyAccessor checkedDotOperand) {
+  private static SNode check_myu41h_a0a1a71(PropertyAccessor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }
     return null;
   }
-  private static String check_myu41h_a0a0b0o(PropertyAccessor checkedDotOperand) {
+  private static String check_myu41h_a0a0b0r(PropertyAccessor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPropertyName();
     }
     return null;
   }
-  private static SNode check_myu41h_a0a0a0a0a0b0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
+  private static SNode check_myu41h_a0a0a0a0a0b0w(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }
     return null;
   }
-  private static <T> T as_myu41h_a0a0a41(Object o, Class<T> type) {
+  private static <T> T as_myu41h_a0a0a71(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_myu41h_a0a0a0a0a41(Object o, Class<T> type) {
+  private static <T> T as_myu41h_a0a0a0a0a71(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

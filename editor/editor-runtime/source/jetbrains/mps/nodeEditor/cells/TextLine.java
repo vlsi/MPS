@@ -635,20 +635,25 @@ public class TextLine {
     return getStartTextSelectionPosition() == 0 && getEndTextSelectionPosition() == getText().length();
   }
 
-  public void setCaretByXCoord(int _x) {
+  public void setCaretByXCoord(int x) {
+    setCaretPosition(getCaretPositionByXCoord(x));
+  }
+
+  public int getCaretPositionByXCoord(int _x) {
     int x = _x - getPaddingLeft();
     FontMetrics metrics = getFontMetrics();
     char[] chars = getText().toCharArray();
-    setCaretPosition(myText.length());
+    int caretPosition = myText.length();
     int len = 0;
     for (int i = 0; i < myText.length(); i++) {
       int newLen = metrics.charsWidth(chars, 0, i + 1);
       if (x <= (len + newLen + 1) / 2) {
-        setCaretPosition(i);
+        caretPosition = i;
         break;
       }
       len = newLen;
     }
+    return caretPosition;
   }
 
   public int getCaretPosition() {

@@ -2697,6 +2697,26 @@
       <node concept="10P_77" id="198KyXImE31" role="3clF45" />
       <node concept="3Tm6S6" id="198KyXImE30" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="46DvFP_pJPn" role="jymVt" />
+    <node concept="3clFb_" id="46DvFP_pLL5" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="showInEditor" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="46DvFP_pLL6" role="1B3o_S" />
+      <node concept="10P_77" id="46DvFP_pLL8" role="3clF45" />
+      <node concept="3clFbS" id="46DvFP_pLLa" role="3clF47">
+        <node concept="3cpWs6" id="46DvFP_qemJ" role="3cqZAp">
+          <node concept="37vLTw" id="46DvFP_qfQR" role="3cqZAk">
+            <ref role="3cqZAo" node="mN65zTkQaj" resolve="myHighlighted" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="46DvFP_pLLb" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="46DvFP_pKrW" role="jymVt" />
     <node concept="3clFb_" id="42hl10VHa2c" role="jymVt">
       <property role="TrG5h" value="paint" />
       <node concept="3clFbS" id="42hl10VHa2l" role="3clF47">

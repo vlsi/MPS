@@ -14,8 +14,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class RefactoringAccessImpl extends RefactoringAccessEx implements ApplicationComponent {
+  private static final int MAX_SEARCH_RESULTS = 30000;
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
   @Override
@@ -47,11 +53,22 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
   @Override
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = project.getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
+    refactoringView.showRefactoringView(project, callback, truncateSearchResults(project, searchResults), hasModelsToGenerate, name);
   }
   @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
-    refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
+    refactoringView.showRefactoringView(refactoringContext, callback, truncateSearchResults(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), searchResults), hasModelsToGenerate);
+  }
+  private SearchResults truncateSearchResults(Project project, SearchResults searchResults) {
+    if (searchResults.getSearchResults().size() > MAX_SEARCH_RESULTS) {
+      Messages.showWarningDialog(project, "More than " + MAX_SEARCH_RESULTS + " usages found. Only first " + MAX_SEARCH_RESULTS + " results will be displayed.", "Refactor");
+
+      SearchResults truncatedSearchResults = new SearchResults();
+      truncatedSearchResults.getSearchedNodes().addAll(searchResults.getSearchedNodes());
+      truncatedSearchResults.getSearchResults().addAll(ListSequence.fromList(((List<? extends SearchResult<Object>>) searchResults.getSearchResults())).take(MAX_SEARCH_RESULTS).toListSequence());
+      return truncatedSearchResults;
+    }
+    return searchResults;
   }
 }

@@ -28,6 +28,8 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.undo.DefaultUndoContext;
+import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -515,11 +517,18 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
 
   private int myCommandLevel = 0;
 
-  private void incCommandLevel() {
+  private void incCommandLevel(Runnable command) {
     checkWriteAccess();
     if (myCommandLevel != 0) {
       // LOG.error("command level>0", new Exception());
     } else {
+      UndoContext context;
+      if (command instanceof UndoContext) {
+        context = (UndoContext) command;
+      } else {
+        context = new DefaultUndoContext();
+      }
+      UndoHelper.getInstance().startCommand(context);
       onCommandStarted();
     }
     myCommandLevel++;
@@ -628,7 +637,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          incCommandLevel();
+          incCommandLevel(myRunnable);
           try {
             myRunnable.run();
           } finally {
@@ -669,8 +678,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
           throw re;
         }
         cancelInterrupt(delayedInterrupt);
-      }
-      finally {
+      } finally {
         myWritesScheduled.decrementAndGet();
       }
     }
@@ -707,8 +715,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
         }
         cancelInterrupt(delayedInterrupt);
         return null;
-      }
-      finally {
+      } finally {
         myWritesScheduled.decrementAndGet();
       }
     }
