@@ -39,11 +39,11 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import org.apache.log4j.Level;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.ArrayList;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -323,24 +323,19 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    final Map<SNode, SNode> nodeRoots = MapSequence.fromMap(new HashMap<SNode, SNode>());
-
+    final Wrappers._T<List<SNode>> allNodes = new Wrappers._T<List<SNode>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SNode nodeToMove : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
-          for (SNode descendant : ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToMove, null, true, new SAbstractConcept[]{}))) {
-            MapSequence.fromMap(nodeRoots).put(descendant, nodeToMove);
+        allNodes.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet()).translate(new ITranslator2<SNode, SNode>() {
+          public Iterable<SNode> translate(SNode it) {
+            return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
           }
-        }
+        }));
       }
     });
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
-    performRefactoring(project, "Move nodes", participants, SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet()).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
-      }
-    }).toListSequence(), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringSession>() {
+    performRefactoring(project, "Move nodes", participants, allNodes.value, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringSession>() {
       public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> changes, RefactoringSession refactoringSession) {
         if (initRefactoringSession != null) {
           initRefactoringSession.invoke(refactoringSession);
