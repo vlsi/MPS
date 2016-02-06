@@ -28,8 +28,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTab" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTool" />
+    <classNode dependClassName="jetbrains.mps.console.tool.DialogConsoleTab" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -53,8 +53,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTab" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleTool" />
+    <classNode dependClassName="jetbrains.mps.console.tool.DialogConsoleTab" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

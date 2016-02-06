@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public interface RecursiveParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
-  public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor, Iterable<RefactoringParticipant.ParticipantState> parents);
+  List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor, Iterable<RefactoringParticipant.ParticipantState> parents);
 
   class RecursiveParticipantState<I, F, IP, FP> extends RefactoringParticipant.ParticipantState<I, F, IP, FP> {
     private Iterable<RefactoringParticipant.ParticipantState> myParents;

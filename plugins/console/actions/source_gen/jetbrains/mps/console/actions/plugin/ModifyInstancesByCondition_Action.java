@@ -14,7 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.console.tool.ConsoleTab;
+import jetbrains.mps.console.tool.DialogConsoleTab;
 import jetbrains.mps.console.tool.ConsoleTool;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,7 +60,7 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
+    DialogConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
     SNode command = _quotation_createNode_nwjg5s_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
     tab.insertCommand(command);
     tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(tab.getRoot(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), false, new SAbstractConcept[]{})).getElement(1), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body")));

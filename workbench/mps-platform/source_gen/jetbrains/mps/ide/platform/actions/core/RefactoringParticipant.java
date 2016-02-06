@@ -46,9 +46,9 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     }
   }
 
-  public List<RefactoringParticipant.Option> getAvailableOptions(List<InitialDataObject> initialStates, SRepository repository);
+  List<RefactoringParticipant.Option> getAvailableOptions(List<InitialDataObject> initialStates, SRepository repository);
 
-  public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
+  List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
   static interface Change<InitialDataObject, FinalDataObject> {
     SearchResults getSearchResults();
