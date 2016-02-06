@@ -2,27 +2,27 @@
 <model ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -7684,6 +7684,21 @@
     </node>
     <node concept="tnohg" id="36tV70Zqv$N" role="tncku">
       <node concept="3clFbS" id="36tV70Zqv$O" role="2VODD2">
+        <node concept="3cpWs8" id="3iIaw4WvpVg" role="3cqZAp">
+          <node concept="3cpWsn" id="3iIaw4WvpVh" role="3cpWs9">
+            <property role="TrG5h" value="safeDelete" />
+            <node concept="10P_77" id="3iIaw4WvpVf" role="1tU5fm" />
+            <node concept="2OqwBi" id="3iIaw4Wvs7y" role="33vP2m">
+              <node concept="2YIFZM" id="3iIaw4Wvs0G" role="2Oq$k0">
+                <ref role="37wK5l" to="o2jy:6rVxgz$_PB5" resolve="getInstance" />
+                <ref role="1Pybhc" to="o2jy:6rVxgz$_Gu3" resolve="RefactoringSettings" />
+              </node>
+              <node concept="2OwXpG" id="2pJ4uR1iiBr" role="2OqNvi">
+                <ref role="2Oxat5" to="o2jy:6rVxgz$_Omg" resolve="SAFE_DELETE" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7OWEUve5YvF" role="3cqZAp">
           <node concept="3cpWsn" id="7OWEUve5YvG" role="3cpWs9">
             <property role="TrG5h" value="safeOption" />
@@ -7696,30 +7711,10 @@
                 <node concept="Xl_RD" id="7OWEUve5YvK" role="37wK5m">
                   <property role="Xl_RC" value="Safe Delete" />
                 </node>
-                <node concept="3clFbT" id="7OWEUve5YvL" role="37wK5m">
-                  <property role="3clFbU" value="false" />
+                <node concept="37vLTw" id="3iIaw4WvpVj" role="37wK5m">
+                  <ref role="3cqZAo" node="3iIaw4WvpVh" resolve="safeDelete" />
                 </node>
                 <node concept="3clFbT" id="7OWEUve5YvM" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7OWEUve5YvO" role="3cqZAp">
-          <node concept="3cpWsn" id="7OWEUve5YvP" role="3cpWs9">
-            <property role="TrG5h" value="filesOption" />
-            <node concept="3uibUv" id="7OWEUve5YvQ" role="1tU5fm">
-              <ref role="3uigEE" to="52hy:~DeleteDialog$DeleteOption" resolve="DeleteDialog.DeleteOption" />
-            </node>
-            <node concept="2ShNRf" id="7OWEUve5YvR" role="33vP2m">
-              <node concept="1pGfFk" id="7OWEUve5YvS" role="2ShVmc">
-                <ref role="37wK5l" to="52hy:~DeleteDialog$DeleteOption.&lt;init&gt;(java.lang.String,boolean,boolean)" resolve="DeleteDialog.DeleteOption" />
-                <node concept="Xl_RD" id="7OWEUve5YvT" role="37wK5m">
-                  <property role="Xl_RC" value="Delete Files" />
-                </node>
-                <node concept="3clFbT" id="7OWEUve5YvU" role="37wK5m" />
-                <node concept="3clFbT" id="7OWEUve5YvV" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
               </node>
@@ -7775,6 +7770,27 @@
               </node>
               <node concept="liA8E" id="36tV70Zqv_x" role="2OqNvi">
                 <ref role="37wK5l" to="jkm4:~DialogWrapper.isOK():boolean" resolve="isOK" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3neUomokxGk" role="3cqZAp">
+          <node concept="37vLTI" id="3neUomokz3r" role="3clFbG">
+            <node concept="2OqwBi" id="3neUomokzji" role="37vLTx">
+              <node concept="37vLTw" id="3neUomokzhX" role="2Oq$k0">
+                <ref role="3cqZAo" node="7OWEUve5YvG" resolve="safeOption" />
+              </node>
+              <node concept="2OwXpG" id="3neUomokzl6" role="2OqNvi">
+                <ref role="2Oxat5" to="52hy:~DeleteDialog$DeleteOption.selected" resolve="selected" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3neUomokymY" role="37vLTJ">
+              <node concept="2YIFZM" id="3neUomokyex" role="2Oq$k0">
+                <ref role="37wK5l" to="o2jy:6rVxgz$_PB5" resolve="getInstance" />
+                <ref role="1Pybhc" to="o2jy:6rVxgz$_Gu3" resolve="RefactoringSettings" />
+              </node>
+              <node concept="2OwXpG" id="3neUomoky$e" role="2OqNvi">
+                <ref role="2Oxat5" to="o2jy:6rVxgz$_Omg" resolve="SAFE_DELETE" />
               </node>
             </node>
           </node>

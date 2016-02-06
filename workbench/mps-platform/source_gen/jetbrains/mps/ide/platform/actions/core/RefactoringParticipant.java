@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
@@ -44,9 +46,9 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
     }
   }
 
-  List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
+  public List<RefactoringParticipant.Option> getAvailableOptions(List<InitialDataObject> initialStates, SRepository repository);
 
-  List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
+  public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
   static interface Change<InitialDataObject, FinalDataObject> {
     SearchResults getSearchResults();
@@ -64,40 +66,54 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   class ParticipantState<I, F, IP, FP> {
     private RefactoringParticipant<I, F, IP, FP> myParticipant;
-    private I myInitialState;
-    private List<RefactoringParticipant.Change<I, F>> changes;
-    public List<RefactoringParticipant.Change<I, F>> getChanges() {
+    private List<I> myInitialStates;
+    private List<List<RefactoringParticipant.Change<I, F>>> changes;
+    public List<List<RefactoringParticipant.Change<I, F>>> getChanges() {
       return changes;
     }
     public RefactoringParticipant<I, F, IP, FP> getParticipant() {
       return myParticipant;
     }
-    public I getInitialState() {
-      return myInitialState;
+    public List<I> getInitialStates() {
+      return myInitialStates;
     }
-    public static <I, F, IP, FP> RefactoringParticipant.ParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode) {
+    public static <I, F, IP, FP> RefactoringParticipant.ParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNode) {
       return new RefactoringParticipant.ParticipantState<I, F, IP, FP>(participant, oldNode);
     }
-    public ParticipantState(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode) {
+    public ParticipantState(RefactoringParticipant<I, F, IP, FP> participant, List<IP> oldNodes) {
       this.myParticipant = participant;
-      myInitialState = this.myParticipant.getDataCollector().beforeMove(oldNode);
+      myInitialStates = ListSequence.fromList(oldNodes).select(new ISelector<IP, I>() {
+        public I select(IP oldNode) {
+          return ParticipantState.this.myParticipant.getDataCollector().beforeMove(oldNode);
+        }
+      }).toListSequence();
     }
     public List<RefactoringParticipant.Option> getAvaliableOptions(SRepository repository) {
-      return myParticipant.getAvailableOptions(myInitialState, repository);
+      return myParticipant.getAvailableOptions(myInitialStates, repository);
     }
-    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    public List<List<RefactoringParticipant.Change<I, F>>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
       return changes = initChanges(repository, selectedOptions, searchScope, progressMonitor);
     }
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
-      return myParticipant.getChanges(myInitialState, repository, selectedOptions, searchScope, progressMonitor);
+    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+      return myParticipant.getChanges(myInitialStates, repository, selectedOptions, searchScope, progressMonitor);
     }
-    public void confirm(FP newNode, final SRepository repository, final RefactoringSession session) {
-      final F finalState = this.myParticipant.getDataCollector().afterMove(newNode);
-      ListSequence.fromList(this.changes).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
-        public void visit(RefactoringParticipant.Change<I, F> it) {
-          it.confirm(finalState, repository, session);
+    public void doRefactor(List<FP> newNodes, final SRepository repository, final RefactoringSession session) {
+      {
+        Iterator<List<RefactoringParticipant.Change<I, F>>> nodeChanges_it = ListSequence.fromList(this.changes).iterator();
+        Iterator<FP> newNode_it = ListSequence.fromList(newNodes).iterator();
+        List<RefactoringParticipant.Change<I, F>> nodeChanges_var;
+        FP newNode_var;
+        while (nodeChanges_it.hasNext() && newNode_it.hasNext()) {
+          nodeChanges_var = nodeChanges_it.next();
+          newNode_var = newNode_it.next();
+          final F finalState = this.myParticipant.getDataCollector().afterMove(newNode_var);
+          ListSequence.fromList(nodeChanges_var).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
+            public void visit(RefactoringParticipant.Change<I, F> it) {
+              it.confirm(finalState, repository, session);
+            }
+          });
         }
-      });
+      }
     }
   }
 

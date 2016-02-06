@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.refactoring.RefactoringSettings;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -60,13 +61,14 @@ public class DeleteModels_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
-    DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, true);
+    boolean safeDelete = RefactoringSettings.getInstance().SAFE_DELETE;
+    final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", safeDelete, true);
     DeleteDialog dialog = new DeleteDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?", safeOption);
     dialog.show();
     if (!(dialog.isOK())) {
       return;
     }
+    RefactoringSettings.getInstance().SAFE_DELETE = safeOption.selected;
 
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     modelAccess.executeCommandInEDT(new Runnable() {
