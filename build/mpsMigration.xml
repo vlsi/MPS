@@ -1,9 +1,9 @@
-<project name="mpsMigration" default="check" basedir="..">
-
-  <property name="test_project" location="${basedir}/testbench/modules/testMigration"/>
-
+<project name="mpsMigration" default="checkAll" basedir="..">
   <property name="env.JAVA_HOME" value="${java.home}/.."/>
   <property name="jdk.home" value="${env.JAVA_HOME}"/>
+
+  <property name="project.simpleMigration" location="${basedir}/testbench/modules/testMigration"/>
+  <property name="project.consMigrations" location="${basedir}/testbench/modules/testTwoMigrations"/>
 
   <!--this will be specified by text.xml-->
   <property name="mps_build_home" location="build/artifacts/mps"/>
@@ -21,37 +21,29 @@
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore"/>
   <property name="artifacts.IDEA" location="${idea_home}"/>
 
-
   <path id="path.mps.ant.path">
     <pathelement location="${mps_build_home}/lib/ant/lib/ant-mps.jar"/>
     <pathelement location="${mps_build_home}/lib/jdom.jar"/>
     <pathelement location="${mps_build_home}/lib/log4j.jar"/>
   </path>
 
+  <path id="test_classpath">
+    <fileset dir="${mps_build_home}/lib">
+      <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${build.tmp}">
+      <include name="mps.class.path.jar" />
+    </fileset>
+    <pathelement path="${jdk.home}/lib/tools.jar" />
+    <pathelement path="${test_classes}"/>
+  </path>
+
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path"/>
 
-  <target name="check" depends="migrate,check-test-result"/>
+  <target name="checkAll" depends="compileTestClasses, checkSingleMigration"/>
 
-  <target name="migrate">
-    <migrate project="${test_project}">
-      <macro name="mps_home" path="${mps_build_home}"/>
-    </migrate>
-  </target>
-
-  <target name="check-test-result">
-    <path id="test_classpath">
-      <fileset dir="${mps_build_home}/lib">
-        <include name="**/*.jar" />
-      </fileset>
-      <fileset dir="${build.tmp}">
-        <include name="mps.class.path.jar" />
-      </fileset>
-      <pathelement path="${jdk.home}/lib/tools.jar" />
-      <pathelement path="${test_classes}"/>
-    </path>
-
+  <target name="compileTestClasses">
     <mkdir dir="${test_classes}"/>
-
     <javac destdir="${test_classes}" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none"/>
       <classpath refid="test_classpath"/>
@@ -59,6 +51,12 @@
         <path location="${basedir}/testbench/tests/jetbrains/mps/migration"/>
       </src>
     </javac>
+  </target>
+
+  <target name="checkSingleMigration">
+    <migrate project="${test_project}">
+      <macro name="mps_home" path="${mps_build_home}"/>
+    </migrate>
 
     <junit fork="true" dir="${mps_build_home}" showoutput="true">
       <classpath refid="test_classpath"/>
@@ -68,10 +66,9 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <jvmarg value="-Dtest_home=${test_project}"/>
+      <jvmarg value="-Dtest_home=${project.simpleMigration}"/>
       <test name="jetbrains.mps.migration.TestSingleMigration"/>
       <formatter type="xml"/>
     </junit>
   </target>
-
 </project>
