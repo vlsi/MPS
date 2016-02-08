@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddSingleLineCommentAndPasteText_Test extends BaseTransformationTest {
-  public AddSingleLineCommentAndPasteText_Test() {
-  }
   @Test
   public void test_AddSingleLineCommentAndPasteText() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddSingleLineCommentAndPasteText_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddSingleLineCommentAndPasteText_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4130647685505580331", "4130647685505580338");
-      this.invokeAction("$Copy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
-      this.invokeAction("$Paste");
+      initEditorComponent("4130647685505580331", "4130647685505580338");
+      invokeAction("$Copy");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
+      invokeAction("$Paste");
     }
   }
 }

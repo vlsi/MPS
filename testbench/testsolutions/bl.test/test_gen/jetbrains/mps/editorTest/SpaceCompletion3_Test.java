@@ -11,22 +11,19 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class SpaceCompletion3_Test extends BaseTransformationTest {
-  public SpaceCompletion3_Test() {
-  }
   @Test
   public void test_SpaceCompletion3() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SpaceCompletion3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SpaceCompletion3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("197036899224325302", "197036899224325306");
-      this.typeString("public int foo ");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("197036899224325302", "197036899224325306");
+      typeString("public int foo ");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

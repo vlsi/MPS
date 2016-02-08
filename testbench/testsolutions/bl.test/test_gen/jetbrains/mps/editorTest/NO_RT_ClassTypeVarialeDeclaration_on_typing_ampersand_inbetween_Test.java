@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test extends BaseTransformationTest {
-  public NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test() {
-  }
   @Test
   public void test_NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1528454294471625117", "1528454294471625127");
-      this.typeString("&");
+      initEditorComponent("1528454294471625117", "1528454294471625127");
+      typeString("&");
     }
   }
 }

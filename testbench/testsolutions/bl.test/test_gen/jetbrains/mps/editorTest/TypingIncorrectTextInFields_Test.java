@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class TypingIncorrectTextInFields_Test extends BaseTransformationTest {
-  public TypingIncorrectTextInFields_Test() {
-  }
   @Test
   public void test_TypingIncorrectTextInFields() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.TypingIncorrectTextInFields_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.TypingIncorrectTextInFields_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1622243561473153891", "1622243561473155032");
-      this.typeString("1234");
+      initEditorComponent("1622243561473153891", "1622243561473155032");
+      typeString("1234");
     }
   }
 }

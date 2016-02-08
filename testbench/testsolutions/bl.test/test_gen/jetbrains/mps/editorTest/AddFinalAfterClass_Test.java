@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddFinalAfterClass_Test extends BaseTransformationTest {
-  public AddFinalAfterClass_Test() {
-  }
   @Test
   public void test_AddFinalAfterClass() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddFinalAfterClass_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddFinalAfterClass_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6136581231959461231", "6136581231959461236");
-      this.typeString(" final");
+      initEditorComponent("6136581231959461231", "6136581231959461236");
+      typeString(" final");
     }
   }
 }

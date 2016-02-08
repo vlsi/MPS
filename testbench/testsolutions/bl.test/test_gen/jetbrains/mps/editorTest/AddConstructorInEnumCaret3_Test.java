@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddConstructorInEnumCaret3_Test extends BaseTransformationTest {
-  public AddConstructorInEnumCaret3_Test() {
-  }
   @Test
   public void test_AddConstructorInEnumCaret3() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddConstructorInEnumCaret3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddConstructorInEnumCaret3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3009615984009686288", "3009615984009951202");
-      this.typeString("public constructor ");
+      initEditorComponent("3009615984009686288", "3009615984009951202");
+      typeString("public constructor ");
     }
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class NoNativeInInterface_Test extends BaseTransformationTest {
-  public NoNativeInInterface_Test() {
-  }
   @Test
   public void test_NoNativeInInterface() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.NoNativeInInterface_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.NoNativeInInterface_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4615554537706951351", "4615554537706951358");
-      this.typeString("native");
+      initEditorComponent("4615554537706951351", "4615554537706951358");
+      typeString("native");
     }
   }
 }

@@ -20,32 +20,35 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 public class IntroduceVariableFromWildcards_Test extends BaseTransformationTest {
   @Test
   public void test_IntroduceVariableFromWildcardsTest() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test$TestBody", "test_IntroduceVariableFromWildcardsTest", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.IntroduceVariableFromWildcards_Test$TestBody", "test_IntroduceVariableFromWildcardsTest", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_IntroduceVariableFromWildcardsTest() throws Exception {
-      this.addNodeById("6974242407276767366");
-      this.addNodeById("6974242407276777253");
+      addNodeById("6974242407276767366");
+      addNodeById("6974242407276777253");
       IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();
-      refactoring.init(SNodeOperations.cast(this.getNodeById("6974242407276767373"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
+      refactoring.init(SNodeOperations.cast(getNodeById("6974242407276767373"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
       refactoring.setName("b");
       refactoring.setReplacingAll(true);
       refactoring.doRefactoring();
-      refactoring.init(SNodeOperations.cast(this.getNodeById("6974242407276767385"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
+      refactoring.init(SNodeOperations.cast(getNodeById("6974242407276767385"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
       refactoring.setName("b");
       refactoring.setReplacingAll(true);
       refactoring.doRefactoring();
-      refactoring.init(SNodeOperations.cast(this.getNodeById("6974242407276767398"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
+      refactoring.init(SNodeOperations.cast(getNodeById("6974242407276767398"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), null);
       refactoring.setName("b");
       refactoring.setReplacingAll(true);
       refactoring.doRefactoring();
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6974242407276767367"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6974242407276777254"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-        Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("6974242407276767367"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("6974242407276777254"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
     }
+
+
   }
 }

@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class CompletionSpace_Test extends BaseTransformationTest {
-  public CompletionSpace_Test() {
-  }
   @Test
   public void test_CompletionSpace() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CompletionSpace_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.CompletionSpace_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3586175963764966584", "3586175963764966594");
-      this.typeString("abcD");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("3586175963764966584", "3586175963764966594");
+      typeString("abcD");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
 
     }
   }

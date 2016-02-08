@@ -9,27 +9,24 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveStaticInStaticFieldDelete1_Test extends BaseTransformationTest {
-  public RemoveStaticInStaticFieldDelete1_Test() {
-  }
   @Test
   public void test_RemoveStaticInStaticFieldDelete1() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete1_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RemoveStaticInStaticFieldDelete1_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2738496478053332985", "2738496478053332978");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditorComponent("2738496478053332985", "2738496478053332978");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class ChangeClassifierInClassifierClassExpression_Test extends BaseTransformationTest {
-  public ChangeClassifierInClassifierClassExpression_Test() {
-  }
   @Test
   public void test_ChangeClassifierInClassifierClassExpression() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ChangeClassifierInClassifierClassExpression_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ChangeClassifierInClassifierClassExpression_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6693493688811676727", "6693493688811710583");
-      this.typeString("Double");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("6693493688811676727", "6693493688811710583");
+      typeString("Double");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddEnumCaretFromIncompleteMemberDeclaration_Test extends BaseTransformationTest {
-  public AddEnumCaretFromIncompleteMemberDeclaration_Test() {
-  }
   @Test
   public void test_AddEnumCaretFromIncompleteMemberDeclaration() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddEnumCaretFromIncompleteMemberDeclaration_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.AddEnumCaretFromIncompleteMemberDeclaration_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("346011455438288029", "346011455438288033");
-      this.typeString("publicenum A");
+      initEditorComponent("346011455438288029", "346011455438288033");
+      typeString("publicenum A");
     }
   }
 }

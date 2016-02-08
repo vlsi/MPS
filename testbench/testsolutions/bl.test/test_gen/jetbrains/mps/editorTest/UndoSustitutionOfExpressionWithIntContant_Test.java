@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoSustitutionOfExpressionWithIntContant_Test extends BaseTransformationTest {
-  public UndoSustitutionOfExpressionWithIntContant_Test() {
-  }
   @Test
   public void test_UndoSustitutionOfExpressionWithIntContant() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1954244792706921827", "9094339164685417440");
-      this.typeString("1234");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
+      initEditorComponent("1954244792706921827", "9094339164685417440");
+      typeString("1234");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
 
 
     }

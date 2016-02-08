@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SpaceCompletionInInterface2_Test extends BaseTransformationTest {
-  public SpaceCompletionInInterface2_Test() {
-  }
   @Test
   public void test_SpaceCompletionInInterface2() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SpaceCompletionInInterface2_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SpaceCompletionInInterface2_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("197036899236391056", "197036899236391060");
-      this.typeString("public static final int foo ");
+      initEditorComponent("197036899236391056", "197036899236391060");
+      typeString("public static final int foo ");
     }
   }
 }

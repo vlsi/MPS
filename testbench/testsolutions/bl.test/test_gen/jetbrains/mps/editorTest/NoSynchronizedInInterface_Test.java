@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class NoSynchronizedInInterface_Test extends BaseTransformationTest {
-  public NoSynchronizedInInterface_Test() {
-  }
   @Test
   public void test_NoSynchronizedInInterface() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.NoSynchronizedInInterface_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.NoSynchronizedInInterface_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4615554537706951655", "4615554537706951662");
-      this.typeString("synchronized");
+      initEditorComponent("4615554537706951655", "4615554537706951662");
+      typeString("synchronized");
     }
   }
 }

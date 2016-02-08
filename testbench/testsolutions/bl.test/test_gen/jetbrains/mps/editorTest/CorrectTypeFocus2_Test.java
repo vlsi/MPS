@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CorrectTypeFocus2_Test extends BaseTransformationTest {
-  public CorrectTypeFocus2_Test() {
-  }
   @Test
   public void test_CorrectTypeFocus2() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CorrectTypeFocus2_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.CorrectTypeFocus2_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8551480281493452203", "8551480281493452207");
-      this.typeString("static int foo(");
+      initEditorComponent("8551480281493452203", "8551480281493452207");
+      typeString("static int foo(");
     }
   }
 }

@@ -9,29 +9,26 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CopyStatementToPartiallySelectedStatement_Test extends BaseTransformationTest {
-  public CopyStatementToPartiallySelectedStatement_Test() {
-  }
   @Test
   public void test_CopyStatementToPartiallySelectedStatement() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CopyStatementToPartiallySelectedStatement_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.CopyStatementToPartiallySelectedStatement_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8777381699079285185", "8777381699079285195");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("$Copy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      this.invokeAction("$Paste");
+      initEditorComponent("8777381699079285185", "8777381699079285195");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("$Copy");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      invokeAction("$Paste");
 
     }
   }

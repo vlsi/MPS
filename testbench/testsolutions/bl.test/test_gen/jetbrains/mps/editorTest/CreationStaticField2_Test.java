@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CreationStaticField2_Test extends BaseTransformationTest {
-  public CreationStaticField2_Test() {
-  }
   @Test
   public void test_CreationStaticField2() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CreationStaticField2_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.CreationStaticField2_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3543341247931728994", "3543341247931728998");
-      this.typeString("public static final string a=\"10");
+      initEditorComponent("3543341247931728994", "3543341247931728998");
+      typeString("public static final string a=\"10");
     }
   }
 }

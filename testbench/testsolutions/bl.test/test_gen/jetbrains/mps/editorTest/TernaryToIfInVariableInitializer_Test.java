@@ -9,20 +9,17 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class TernaryToIfInVariableInitializer_Test extends BaseTransformationTest {
-  public TernaryToIfInVariableInitializer_Test() {
-  }
   @Test
   public void test_TernaryToIfInVariableInitializer() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.TernaryToIfInVariableInitializer_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.TernaryToIfInVariableInitializer_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4242233825490051354", "4242233825490051364");
+      initEditorComponent("4242233825490051354", "4242233825490051364");
       invokeIntention("jetbrains.mps.baseLanguage.intentions.ReplaceConditionalWithIf_Intention", myStart.getNode());
     }
   }

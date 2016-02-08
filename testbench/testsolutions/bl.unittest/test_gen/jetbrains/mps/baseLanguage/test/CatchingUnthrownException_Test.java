@@ -15,32 +15,35 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class CatchingUnthrownException_Test extends BaseTransformationTest {
   @Test
   public void test_NodeCaughtExceptionCheck6923385624927429271() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624927429271", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624927429271", true);
   }
   @Test
   public void test_NodeCaughtExceptionCheck6923385624929290516() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624929290516", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624929290516", true);
   }
   @Test
   public void test_ErrorMessagesCheck1220012521451() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_ErrorMessagesCheck1220012521451", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_ErrorMessagesCheck1220012521451", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_NodeCaughtExceptionCheck6923385624927429271() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927429271"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927429271"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451230336"));
     }
     public void test_NodeCaughtExceptionCheck6923385624929290516() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929290516"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929290516"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451231640"));
     }
     public void test_ErrorMessagesCheck1220012521451() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1220012521451"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("1220012521451"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1220012475941"));
     }
+
   }
 }

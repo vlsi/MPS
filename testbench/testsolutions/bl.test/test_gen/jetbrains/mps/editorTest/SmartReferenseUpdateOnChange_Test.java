@@ -15,25 +15,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 @MPSLaunch
 public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
-  public SmartReferenseUpdateOnChange_Test() {
-  }
   @Test
   public void test_SmartReferenseUpdateOnChange() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2345623147105495371", "2345623147105495377");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+      initEditorComponent("2345623147105495371", "2345623147105495377");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      getEditor().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          SNode testNode = SNodeOperations.cast(TestBody.this.getNodeById("2345623147105496859"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-          EditorCell editorCell = TestBody.this.getEditorComponent().findCellWithId(testNode, "ReferencePresentation_91bvrs_a0a0");
+          SNode testNode = SNodeOperations.cast(getNodeById("2345623147105496859"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+          EditorCell editorCell = getEditorComponent().findCellWithId(testNode, "ReferencePresentation_91bvrs_a0a0");
           Assert.assertEquals("SmartReferenseUpdat", ((EditorCell_Label) editorCell).getText());
         }
       });

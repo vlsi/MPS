@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class PasteTextToEndOfLine_Test extends BaseTransformationTest {
-  public PasteTextToEndOfLine_Test() {
-  }
   @Test
   public void test_PasteTextToEndOfLine() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.PasteTextToEndOfLine_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.PasteTextToEndOfLine_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7591654183801453440", "7591654183801453449");
-      this.invokeAction("$Copy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
-      this.invokeAction("$Paste");
+      initEditorComponent("7591654183801453440", "7591654183801453449");
+      invokeAction("$Copy");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
+      invokeAction("$Paste");
     }
   }
 }

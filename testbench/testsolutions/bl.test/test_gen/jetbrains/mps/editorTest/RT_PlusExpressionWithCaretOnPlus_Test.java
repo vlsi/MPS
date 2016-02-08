@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RT_PlusExpressionWithCaretOnPlus_Test extends BaseTransformationTest {
-  public RT_PlusExpressionWithCaretOnPlus_Test() {
-  }
   @Test
   public void test_RT_PlusExpressionWithCaretOnPlus() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.RT_PlusExpressionWithCaretOnPlus_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.RT_PlusExpressionWithCaretOnPlus_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2350996240757380703", "2350996240757380710");
-      this.typeString("+3");
+      initEditorComponent("2350996240757380703", "2350996240757380710");
+      typeString("+3");
     }
   }
 }

@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MoveBlockToBlock_Test extends BaseTransformationTest {
-  public MoveBlockToBlock_Test() {
-  }
   @Test
   public void test_MoveBlockToBlock() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveBlockToBlock_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MoveBlockToBlock_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7130462290292145553", "7130462290292145620");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
+      initEditorComponent("7130462290292145553", "7130462290292145620");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsUp_Action");
     }
   }
 }

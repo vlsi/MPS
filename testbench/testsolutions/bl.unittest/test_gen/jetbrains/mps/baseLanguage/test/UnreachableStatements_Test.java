@@ -15,176 +15,179 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class UnreachableStatements_Test extends BaseTransformationTest {
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929494062", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929494062", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck6923385624927474426() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927474426", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927474426", true);
   }
   @Test
   public void test_ErrorMessagesCheck1216895632608() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck1216895632608", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck1216895632608", true);
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120514171() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120514171", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120514171", true);
   }
   @Test
   public void test_ErrorMessagesCheck2557916264120514158() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2557916264120514158", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2557916264120514158", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8245314650935054824", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8245314650935054824", true);
   }
   @Test
   public void test_ErrorMessagesCheck8245314650935052537() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8245314650935052537", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8245314650935052537", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813176762", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813176762", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813173396() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813173396", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813173396", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813179061() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813179061", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813179061", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813180900() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813180900", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813180900", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813195443() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813195443", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813195443", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813186030() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813186030", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813186030", true);
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120793751() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120793751", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120793751", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813197377() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813197377", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813197377", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813203327() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813203327", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813203327", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck2575419463997245412() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck2575419463997245412", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck2575419463997245412", true);
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997245406() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997245406", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997245406", true);
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997271506() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997271506", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997271506", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929494062"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929494062"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451236689"));
     }
     public void test_NodeUnreachableNodeErrorCheck6923385624927474426() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927474426"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927474426"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("3951985765451221288"));
     }
     public void test_ErrorMessagesCheck1216895632608() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("1216895632608"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("1216895632608"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("1215444211008"));
     }
     public void test_NodeUnreachableCodeCheck2557916264120514171() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2557916264120514171"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2557916264120514171"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("2557916264120512956"));
     }
     public void test_ErrorMessagesCheck2557916264120514158() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2557916264120514158"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2557916264120514158"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("2557916264120512203"));
     }
     public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8245314650935054824"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8245314650935054824"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8245314650935053255"));
     }
     public void test_ErrorMessagesCheck8245314650935052537() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8245314650935052537"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8245314650935052537"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8245314650935052522"));
     }
     public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813176762"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813176762"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813162949"));
     }
     public void test_ErrorMessagesCheck8768955936813173396() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813173396"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813173396"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813157560"));
     }
     public void test_ErrorMessagesCheck8768955936813179061() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813179061"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813179061"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813167653"));
     }
     public void test_ErrorMessagesCheck8768955936813180900() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813180900"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813180900"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813168086"));
     }
     public void test_NodeUnreachableNodeErrorCheck8768955936813195443() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813195443"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813195443"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813168573"));
     }
     public void test_ErrorMessagesCheck8768955936813186030() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813186030"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813186030"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813168547"));
     }
     public void test_NodeUnreachableCodeCheck2557916264120793751() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2557916264120793751"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2557916264120793751"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813182999"));
     }
     public void test_ErrorMessagesCheck8768955936813197377() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813197377"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813197377"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813182979"));
     }
     public void test_ErrorMessagesCheck8768955936813203327() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813203327"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("8768955936813203327"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("8768955936813188064"));
     }
     public void test_NodeUnreachableNodeErrorCheck2575419463997245412() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2575419463997245412"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2575419463997245412"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("2575419463997242568"));
     }
     public void test_ErrorMessagesCheck2575419463997245406() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2575419463997245406"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2575419463997245406"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("2575419463997242549"));
     }
     public void test_ErrorMessagesCheck2575419463997271506() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("2575419463997271506"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("2575419463997271506"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7475692990582180654"));
     }
+
   }
 }

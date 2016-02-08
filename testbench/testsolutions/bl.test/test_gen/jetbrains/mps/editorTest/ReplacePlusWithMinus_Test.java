@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ReplacePlusWithMinus_Test extends BaseTransformationTest {
-  public ReplacePlusWithMinus_Test() {
-  }
   @Test
   public void test_ReplacePlusWithMinus() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ReplacePlusWithMinus_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ReplacePlusWithMinus_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1086097794003869711", "1086097794003869715");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
-      this.typeString("- ");
+      initEditorComponent("1086097794003869711", "1086097794003869715");
+      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      typeString("- ");
     }
   }
 }

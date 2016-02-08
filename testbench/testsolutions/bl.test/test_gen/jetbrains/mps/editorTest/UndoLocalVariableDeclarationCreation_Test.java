@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoLocalVariableDeclarationCreation_Test extends BaseTransformationTest {
-  public UndoLocalVariableDeclarationCreation_Test() {
-  }
   @Test
   public void test_UndoLocalVariableDeclarationCreation() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.UndoLocalVariableDeclarationCreation_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.UndoLocalVariableDeclarationCreation_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3150412412946315207", "3150412412946402831");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.typeString("inti");
-      this.invokeAction("$Undo");
-      this.invokeAction("$Undo");
+      initEditorComponent("3150412412946315207", "3150412412946402831");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      typeString("inti");
+      invokeAction("$Undo");
+      invokeAction("$Undo");
     }
   }
 }

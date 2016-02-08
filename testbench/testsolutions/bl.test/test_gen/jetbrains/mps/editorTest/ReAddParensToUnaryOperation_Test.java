@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ReAddParensToUnaryOperation_Test extends BaseTransformationTest {
-  public ReAddParensToUnaryOperation_Test() {
-  }
   @Test
   public void test_ReAddParensToUnaryOperation() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ReAddParensToUnaryOperation_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ReAddParensToUnaryOperation_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7247988578516371529", "7247988578516371542");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.typeString(")");
+      initEditorComponent("7247988578516371529", "7247988578516371542");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      typeString(")");
     }
   }
 }

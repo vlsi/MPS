@@ -11,24 +11,21 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class LT_DotExpression_with_UnaryMinus_Test extends BaseTransformationTest {
-  public LT_DotExpression_with_UnaryMinus_Test() {
-  }
   @Test
   public void test_LT_DotExpression_with_UnaryMinus() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4507831107788316824", "4507831107788317078");
-      this.typeString("-");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("4507831107788316824", "4507831107788317078");
+      typeString("-");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

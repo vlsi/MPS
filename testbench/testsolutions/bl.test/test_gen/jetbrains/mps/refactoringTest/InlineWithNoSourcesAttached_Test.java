@@ -15,14 +15,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class InlineWithNoSourcesAttached_Test extends BaseTransformationTest {
   @Test
   public void test_InlineWithNoSourcesAttached() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test$TestBody", "test_InlineWithNoSourcesAttached", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test$TestBody", "test_InlineWithNoSourcesAttached", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_InlineWithNoSourcesAttached() throws Exception {
-      this.addNodeById("1230052989307");
-      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230052989317"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
+      addNodeById("1230052989307");
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(getNodeById("1230052989317"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).getErrors() != null);
     }
+
+
   }
 }

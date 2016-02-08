@@ -15,41 +15,44 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class FinalMethodOverriding_Test extends BaseTransformationTest {
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883490516() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883490516", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883490516", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883346737() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883346737", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883346737", true);
   }
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883519854() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883519854", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883519854", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883519712() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883519712", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883519712", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
     public void test_NodeMethodCanNotOverrideFinalCheck7471623575883490516() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7471623575883490516"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("7471623575883490516"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7471623575883489441"));
     }
     public void test_ErrorMessagesCheck7471623575883346737() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7471623575883346737"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("7471623575883346737"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7471623575883288428"));
     }
     public void test_NodeMethodCanNotOverrideFinalCheck7471623575883519854() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7471623575883519854"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("7471623575883519854"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7471623575883519203"));
     }
     public void test_ErrorMessagesCheck7471623575883519712() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7471623575883519712"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("7471623575883519712"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7471623575883519005"));
     }
+
   }
 }

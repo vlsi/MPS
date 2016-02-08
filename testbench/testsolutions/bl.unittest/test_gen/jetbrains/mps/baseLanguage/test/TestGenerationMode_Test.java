@@ -14,14 +14,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class TestGenerationMode_Test extends BaseTransformationTest {
   @Test
   public void test_GenerationMode() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody", "test_GenerationMode", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.TestGenerationMode_Test$TestBody", "test_GenerationMode", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
-      this.addNodeById("7187651930235347759");
-      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(this.getNodeById("7187651930235347762"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
+      addNodeById("7187651930235347759");
+      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(getNodeById("7187651930235347762"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
     }
+
+
   }
 }

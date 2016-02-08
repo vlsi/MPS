@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MethodAddGenericCaret_Test extends BaseTransformationTest {
-  public MethodAddGenericCaret_Test() {
-  }
   @Test
   public void test_MethodAddGenericCaret() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MethodAddGenericCaret_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MethodAddGenericCaret_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6181413376134300553", "6181413376134300559");
-      this.typeString("<T");
+      initEditorComponent("6181413376134300553", "6181413376134300559");
+      typeString("<T");
     }
   }
 }

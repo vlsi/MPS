@@ -11,27 +11,24 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class DeleteCompletion_Test extends BaseTransformationTest {
-  public DeleteCompletion_Test() {
-  }
   @Test
   public void test_DeleteCompletion() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DeleteCompletion_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.DeleteCompletion_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8933061889659412224", "8933061889659412234");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.typeString("aDe");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      this.typeString("abc");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      initEditorComponent("8933061889659412224", "8933061889659412234");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      typeString("aDe");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+      typeString("abc");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

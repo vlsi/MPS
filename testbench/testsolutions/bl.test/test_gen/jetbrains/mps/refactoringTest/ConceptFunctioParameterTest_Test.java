@@ -18,15 +18,18 @@ import junit.framework.Assert;
 public class ConceptFunctioParameterTest_Test extends BaseTransformationTest {
   @Test
   public void test_ConceptFunctioParameterTest() throws Throwable {
-    this.initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
-    this.runTest("jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test$TestBody", "test_ConceptFunctioParameterTest", true);
+    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+    runTest("jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test$TestBody", "test_ConceptFunctioParameterTest", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ConceptFunctioParameterTest() throws Exception {
-      this.addNodeById("1230052406742");
-      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406746"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), SNodeOperations.cast(this.getNodeById("1230052406751"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"))));
+      addNodeById("1230052406742");
+      ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1230052406746"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), SNodeOperations.cast(getNodeById("1230052406751"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"))));
       Assert.assertEquals(1, ListSequence.fromList(analyzer.getInputVariables()).count());
     }
+
+
   }
 }

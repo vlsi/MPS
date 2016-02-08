@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ConflictingRigthTransform_Test extends BaseTransformationTest {
-  public ConflictingRigthTransform_Test() {
-  }
   @Test
   public void test_ConflictingRigthTransform() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ConflictingRigthTransform_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.ConflictingRigthTransform_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5110219550150577774", "5110219550150610467");
-      this.typeString("+");
+      initEditorComponent("5110219550150577774", "5110219550150610467");
+      typeString("+");
     }
   }
 }

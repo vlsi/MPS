@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SplitSingleLineComment3_Test extends BaseTransformationTest {
-  public SplitSingleLineComment3_Test() {
-  }
   @Test
   public void test_SplitSingleLineComment3() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SplitSingleLineComment3_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.SplitSingleLineComment3_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2321301958484597302", "2321301958484597311");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
+      initEditorComponent("2321301958484597302", "2321301958484597311");
+      invokeAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
     }
   }
 }

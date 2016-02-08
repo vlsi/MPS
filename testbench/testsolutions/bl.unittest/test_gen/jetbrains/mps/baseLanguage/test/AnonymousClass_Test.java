@@ -16,32 +16,35 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 public class AnonymousClass_Test extends BaseTransformationTest {
   @Test
   public void test_AnonymousClass() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294() throws Throwable {
-    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294", true);
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_AnonymousClass() throws Exception {
-      this.addNodeById("1217271587076");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1215444376214"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false);
+      addNodeById("1217271587076");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444376214"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false);
     }
+
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927142051"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624927142051"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6090235207266878331"));
     }
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929101294"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929101294"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6090235207266878711"));
     }
+
   }
 }
