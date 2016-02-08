@@ -33,7 +33,7 @@ import java.util.Map;
 
 /**
  * Build trace objects during TextGen process.
- * Replacement for {@link jetbrains.mps.textGen.TraceInfoGenerationUtil}.
+ * Replacement for legacy <code>jetbrains.mps.textGen.TraceInfoGenerationUtil</code>, full of statics
  * @author Artem Tikhomirov
  * @since 3.3
  */

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.text.impl;
 
+import jetbrains.mps.logging.Log4jUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.text.BasicToken;
@@ -24,12 +25,12 @@ import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -52,7 +53,7 @@ public final class TextGenSupport implements TextArea {
 
   public TextGenSupport(@NotNull TextGenContext context) {
     myContext = context;
-    myTraceInfoCollector = TraceInfoGenerationUtil.getTraceInfoCollector((TextGenTransitionContext) context);
+    myTraceInfoCollector = ((TextGenTransitionContext) context).getTraceInfoCollector();
   }
 
   public boolean needPositions() {
@@ -109,7 +110,7 @@ public final class TextGenSupport implements TextArea {
     TextMark m = myContext.getBuffer().popMark();
     final UnitPositionInfo pi = tic.createUnitPosition(m, myContext.getPrimaryInput());
     pi.setUnitName(unitName);
-    TraceInfoGenerationUtil.warnIfUnitNameInvalid(unitName, myContext.getPrimaryInput());
+    warnIfUnitNameInvalid(unitName, myContext.getPrimaryInput());
   }
 
   private TraceInfoCollector getTraceInfoCollector() {
@@ -161,17 +162,24 @@ public final class TextGenSupport implements TextArea {
     ((TextGenTransitionContext) myContext).generateText(node);
   }
 
+  /**
+   * @deprecated encoding shall be part of TextUnit construction (cons arg), not via {@link #setEncoding(String)} operation
+   *             left for compatibility with MPS 3.3 generated code
+   */
+  // FIXME copy of SNodeTextGen.setEncoding()
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public void setEncoding(@Nullable String encoding) {
+    getLegacyBuffer().putUserObject(TextGen.OUTPUT_ENCODING, encoding);
+  }
+
+
   // FIXME copy of SNodeTextGen.foundError()
   public void reportError(String info) {
     String message = info != null ?
         "textgen error: '" + info + "' in " + SNodeOperations.getDebugText(myContext.getPrimaryInput()) :
         "textgen error in " + SNodeOperations.getDebugText(myContext.getPrimaryInput());
     getLegacyBuffer().foundError(message, myContext.getPrimaryInput(), null);
-  }
-
-  // FIXME copy of SNodeTextGen.setEncoding()
-  public void setEncoding(@Nullable String encoding) {
-    getLegacyBuffer().putUserObject(TextGen.OUTPUT_ENCODING, encoding);
   }
 
   // FIXME copy of SNodeTextGen.getReferentPresentation(), slightly modified to drop dead code branches
@@ -217,6 +225,18 @@ public final class TextGenSupport implements TextArea {
   public TextGenBuffer getLegacyBuffer() {
     return ((TextGenTransitionContext) myContext).getLegacyBuffer();
   }
+
+  private void warnIfUnitNameInvalid(String unitName, SNode node) {
+    String modelName = node.getModel().getName().getLongName();
+    if (!(unitName.startsWith(modelName))) {
+      final String msg = String.format("Unit name has to start with model fqName. Fix %s in %s.", unitName, modelName);
+      LogManager.getLogger(getClass()).warn(Log4jUtil.createMessageObject(msg, node));
+    } else if (unitName.length() <= modelName.length() + 1 || unitName.charAt(modelName.length())!= '.' || unitName.indexOf('.', modelName.length()+1) != -1) {
+      String msg = String.format("Unit name has to match \"modelFqName.shortUnitName\" where short unit name does not contain dots. Fix %s in %s", unitName, modelName);
+      LogManager.getLogger(getClass()).warn(Log4jUtil.createMessageObject(msg, node));
+    }
+  }
+
 
   /**
    * Similar to {@link jetbrains.mps.text.TextBuffer#pushTextArea(TextAreaToken)}, except that

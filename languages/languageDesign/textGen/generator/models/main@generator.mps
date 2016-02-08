@@ -3781,7 +3781,7 @@
               <ref role="3cqZAo" node="RqKTrXUk2n" resolve="rv" />
             </node>
             <node concept="liA8E" id="RqKTrXUspL" role="2OqNvi">
-              <ref role="37wK5l" to="kpbf:~RegularTextUnit2.setBufferLayout(jetbrains.mps.text.impl.BufferLayoutConfiguration):void" resolve="setBufferLayout" />
+              <ref role="37wK5l" to="kpbf:~RegularTextUnit.setBufferLayout(jetbrains.mps.text.impl.BufferLayoutConfiguration):void" resolve="setBufferLayout" />
               <node concept="2OqwBi" id="RqKTrXUtc9" role="37wK5m">
                 <node concept="37vLTw" id="RqKTrXUtb8" role="2Oq$k0">
                   <ref role="3cqZAo" node="RqKTrXUsEu" resolve="lb" />

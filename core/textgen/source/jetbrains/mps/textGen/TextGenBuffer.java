@@ -18,25 +18,13 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.text.BasicTextAreaFactory;
-import jetbrains.mps.text.BasicToken;
-import jetbrains.mps.text.BufferSnapshot;
-import jetbrains.mps.text.TextArea;
-import jetbrains.mps.text.TextAreaFactory;
-import jetbrains.mps.text.TextBuffer;
-import jetbrains.mps.text.impl.TextAreaImpl;
-import jetbrains.mps.text.impl.TextBufferImpl;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 
@@ -49,61 +37,15 @@ import java.util.List;
 @Deprecated
 @ToRemove(version = 3.3)
 public final class TextGenBuffer {
-
-  public static final int TOP = 0;
-  public static final int DEFAULT = 1;
-
-  public static final String LINE_SEPARATOR = System.getProperty("line.separator");
-  public static final String SPACES = "                                ";
-
-  private final TextAreaFactory myChunkFactory;
-  private TextBuffer myBuffer;
-
-  private int myPrevBufferKey = -1;
-  private int myCurrBufferKey = -1;
-
   private HashMap myUserObjects = new HashMap();
-  private final int myIndent = 2;
   private boolean myContainsErrors = false;
 
   private List<IMessage> myErrors = new ArrayList<IMessage>();
 
-  TextGenBuffer(boolean fakePositionSupport, StringBuilder[] buffers) {
-    myChunkFactory = buffers == null ? new BasicTextAreaFactory(LINE_SEPARATOR, 2048, ' ', myIndent) : new MyTextAreaFactory(buffers);
-    myBuffer = new TextBufferImpl(myChunkFactory);
-    // let buffer know all its text areas, in the order they used to be here
-    myBuffer.pushTextArea(new BasicToken(TOP)).popTextArea();
-    myBuffer.pushTextArea(new BasicToken(DEFAULT)).popTextArea();
-    if (buffers != null) {
-      for (int i = DEFAULT + 1; i < buffers.length; i++) {
-        myBuffer.pushTextArea(new BasicToken(i)).popTextArea();
-      }
-    }
-    selectPart(DEFAULT);
-  }
-
   /**
    * INTENDED FOR TRANSITION PERIOD ONLY, DO NOT USE
    */
-  TextGenBuffer(boolean fakePositionSupport, TextBuffer buffer) {
-    myChunkFactory = null; // it's unexpected for clients of this TextGenBuffer (merely user object holder) to ask #getBufferText(int)
-    myBuffer = buffer;
-  }
-
-  /*package*/ BufferSnapshot getTextSnapshot() {
-    if (getTopBufferLength() > 0) {
-      // FIXME newlines to separate top from bottom done right, instead of this hack
-      selectPart(TOP);
-      // mimic two newlines added in getText()
-      myBuffer.area().newLine().newLine();
-      selectPart(DEFAULT);
-    }
-    return myBuffer.snapshot(myBuffer.newLayout());
-  }
-
-
-  /*package-local*/ TextBuffer getRealBuffer() {
-    return myBuffer;
+  TextGenBuffer() {
   }
 
   public boolean hasErrors() {
@@ -134,65 +76,5 @@ public final class TextGenBuffer {
 
   public Object getUserObject(Object key) {
     return myUserObjects.get(key);
-  }
-
-  public int getTopBufferLength() {
-    return getBufferLength(TOP);
-  }
-
-  public int getBufferLength(int partId) {
-    return getBufferText(partId).length();
-  }
-
-  private CharSequence getBufferText(int partId) {
-    myBuffer.pushTextArea(new BasicToken(partId));
-    CharSequence rv = myChunkFactory.value(myBuffer.area());
-    myBuffer.popTextArea();
-    return rv;
-  }
-
-  public int selectPart(int partId) {
-    if (myPrevBufferKey == partId) {
-      int rv = myCurrBufferKey;
-      myCurrBufferKey = partId;
-      myPrevBufferKey = -1;
-      myBuffer.popTextArea();
-      return rv;
-    }
-    myPrevBufferKey = myCurrBufferKey;
-    myCurrBufferKey = partId;
-    myBuffer.pushTextArea(new BasicToken(partId));
-    return myPrevBufferKey;
-  }
-
-  // use supplied N buffers for first N TextArea create request, then fail.
-  // original code with index greater than that of original array fails in selectPart
-  private class MyTextAreaFactory implements TextAreaFactory {
-    private final Deque<StringBuilder> myBuffers = new ArrayDeque<StringBuilder>();
-
-    public MyTextAreaFactory(@NotNull StringBuilder[] buffers) {
-      myBuffers.addAll(Arrays.asList(buffers));
-    }
-
-    @NotNull
-    @Override
-    public TextArea create() {
-      if (myBuffers.isEmpty()) {
-        throw new IllegalStateException("No more buffers supplied");
-      }
-      return new TextAreaImpl(myBuffers.removeFirst(), getLineSeparator(), ' ', myIndent);
-    }
-
-    @NotNull
-    @Override
-    public String getLineSeparator() {
-      return LINE_SEPARATOR;
-    }
-
-    @NotNull
-    @Override
-    public CharSequence value(@NotNull TextArea area) {
-      return ((TextAreaImpl) area).value();
-    }
   }
 }

@@ -62,4 +62,13 @@ public final class TextGenTransitionContext implements TextGenContext {
     TextGenTransitionContext ctx = newInput == myInput ? this : new TextGenTransitionContext(newInput, myLegacyBuffer, myBuffer);
     TextGenRegistry.getInstance().getTextGenDescriptor(newInput).generateText(ctx);
   }
+
+
+  void setTraceInfoCollector(TraceInfoCollector tic) {
+    getLegacyBuffer().putUserObject(TraceInfoCollector.class, tic);
+  }
+
+  TraceInfoCollector getTraceInfoCollector() {
+    return (TraceInfoCollector) getLegacyBuffer().getUserObject(TraceInfoCollector.class);
+  }
 }

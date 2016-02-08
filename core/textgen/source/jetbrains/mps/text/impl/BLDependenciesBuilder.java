@@ -48,10 +48,10 @@ public class BLDependenciesBuilder {
       if (tu.getState() == TextUnit.Status.Empty) {
         continue;
       }
-      if (!(tu instanceof CompatibilityTextUnit)) {
+      if (!(tu instanceof RegularTextUnit2)) {
         continue;
       }
-      final Pair<List<String>, List<String>> dependencies = ((CompatibilityTextUnit) tu).getDependencies();
+      final Pair<List<String>, List<String>> dependencies = ((RegularTextUnit2) tu).getDependencies();
       if (dependencies != null) {
         final SNode root = tu.getStartNode();
         modelDependencies.addDependencies(new RootDependencies(

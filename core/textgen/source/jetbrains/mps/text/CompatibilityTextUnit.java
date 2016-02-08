@@ -41,12 +41,6 @@ import java.util.Map;
  */
 @ToRemove(version = 3.3)
 public interface CompatibilityTextUnit extends TextUnit {
-  /**
-   * Pair(dependenciesMap.get(TextGen.DEPENDENCY), dependenciesMap.get(TextGen.EXTENDS))
-   */
-  @Nullable
-  Pair<List<String>,List<String>> getDependencies();
-
   @Nullable
   Map<SNode, TraceablePositionInfo> getPositions();
 

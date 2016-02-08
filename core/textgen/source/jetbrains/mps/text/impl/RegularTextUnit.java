@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,40 +15,57 @@
  */
 package jetbrains.mps.text.impl;
 
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.CompatibilityTextUnit;
+import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.nio.charset.Charset;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 /**
+ * General {@link TextUnit} implementation, intended for direct replacement of legacy TextGen.
+ * At the moment, addresses compatibility with generated TextGen classes, except for pure BL
+ * functionality like dependencies, which are handled in {@link RegularTextUnit2}.
+ *
  * @author Artem Tikhomirov
  */
 public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
   private final SNode myStartNode;
   private final String myFilename;
-  private TextGenerationResult myResult;
+  private final Charset myEncoding;
+  private Status myState = Status.Undefined;
+  private String myOutcome;
+  private BufferLayoutConfiguration myLayoutBuilder;
+  // legacy support for user objects, until we come up with a better approach
+  private TextGenBuffer myLegacyBuffer;
+  // CompatibilityTextUnit stuff
+  private TraceInfoCollector myTraceCollector;
 
   public RegularTextUnit(@NotNull SNode root, @NotNull String filename) {
+    this(root, filename, null);
+  }
+
+  public RegularTextUnit(@NotNull SNode root, @NotNull String filename, @Nullable Charset encoding) {
     myStartNode = root;
     myFilename = filename;
+    myEncoding = encoding;
+    myLayoutBuilder = new BufferLayoutConfiguration();
+  }
+
+  public void setBufferLayout(@NotNull BufferLayoutConfiguration cfg) {
+    myLayoutBuilder = cfg;
   }
 
   @NotNull
@@ -65,82 +82,95 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
 
   @Override
   public void generate() {
-    try {
-      myResult = TextGen.generateText(myStartNode, true, true, null);
-    } catch (Throwable th) {
-      final StringWriter out = new StringWriter();
-      th.printStackTrace(new PrintWriter(out));
-      IMessage m = new Message(MessageKind.ERROR, getClass(), "Text generation failed").setException(th).setHintObject(myStartNode);
-      myResult = new TextGenerationResult(myStartNode, out.toString(), true, Collections.singleton(m), null, null, null, null);
+    if (!TextGenRegistry.getInstance().hasTextGen(myStartNode)) {
+      myState = Status.Empty;
+      return;
     }
+
+    myTraceCollector = new TraceInfoCollector();
+    TextBuffer trueBuffer = new TextBufferImpl();
+    myLayoutBuilder.prepareBuffer(trueBuffer);
+    myLegacyBuffer = TextGen.newUserObjectHolder(getStartNode());
+
+    doGenerate(myLegacyBuffer, trueBuffer);
+
+    final BufferSnapshot textSnapshot = myLayoutBuilder.prepareSnapshot(trueBuffer);
+    myTraceCollector.populatePositions(textSnapshot);
+
+    myOutcome = textSnapshot.getText().toString();
+    if (myLegacyBuffer.hasErrors()) {
+      myState = Status.Failed;
+    } else {
+      myState = Status.Generated;
+    }
+  }
+
+  /**
+   * the only purpose of this protected method is to give {@link RegularTextUnit2} a chance to inject
+   * legacy dependency set into buffer. Once BLDependencies mechanism doesn't rely on legacy buffer, there'd be no need in
+   * {@link RegularTextUnit2} nor this method
+   */
+  protected void doGenerate(TextGenBuffer legacyBuffer, TextBuffer trueBuffer) {
+    TextGenTransitionContext tgContext = new TextGenTransitionContext(myStartNode, legacyBuffer, trueBuffer);
+    tgContext.setTraceInfoCollector(myTraceCollector);
+
+    TextGenSupport tgs = new TextGenSupport(tgContext);
+    tgs.appendNode(myStartNode);
   }
 
   @Override
   public byte[] getBytes() {
-    if (myResult == null) {
+    if (myState == Status.Undefined) {
       throw new IllegalStateException("Shall generate first");
     }
-    if (myResult.getResult() instanceof byte[]) {
-      return (byte[]) myResult.getResult();
+    // compatibility code, when encoding was specified with TextGenSupport.setEncoding (earlier TextGenBuffer.setEncoding)
+    // There's no need in EncodingUti.encode(myOutcome, legacyEncoding) as it's basically identical to String.getBytes()
+    if (myEncoding == null && "binary".equals(getLegacyEncoding())) {
+      return EncodingUtil.decodeBase64(myOutcome);
     }
-    if (myResult.getResult() instanceof String) {
-      return ((String) myResult.getResult()).getBytes(FileUtil.DEFAULT_CHARSET);
-    }
-    throw new IllegalStateException("Unknown TextGen outcome (either byte[] or string expected");
+    return myOutcome.getBytes(getEncoding());
   }
 
   @Override
   public Charset getEncoding() {
-    if (myResult == null) {
-      throw new IllegalStateException("Shall generate first");
+    Charset rv = myEncoding;
+    if (rv == null) {
+      final String encodingString = getLegacyEncoding();
+      if (encodingString != null && Charset.isSupported(encodingString)) {
+        rv = Charset.forName(encodingString);
+      } // else fall through
     }
-    if (myResult.getResult() instanceof byte[]) {
-      return null;
-    }
-    if (myResult.getResult() instanceof String) {
-      return FileUtil.DEFAULT_CHARSET;
-    }
-    // FIXME allow textgen component to affect encoding, e.g. when breaking down to TextUnits
-    throw new IllegalStateException("Unknown TextGen outcome (either byte[] or string expected");
+    return rv == null ? FileUtil.DEFAULT_CHARSET : rv;
   }
 
   @Override
   public Status getState() {
-    if (myResult == null) {
-      return Status.Undefined;
-    }
-    if (myResult.getResult() == TextGen.NO_TEXTGEN) {
-      return Status.Empty;
-    }
-    if (myResult.hasErrors()) {
-      return Status.Failed;
-    }
-    return Status.Generated;
-  }
-
-  @Nullable
-  @Override
-  public Pair<List<String>, List<String>> getDependencies() {
-    if (myResult.hasDependencies()) {
-      return new Pair<List<String>, List<String>>(
-          myResult.getDependencies(TextGen.DEPENDENCY),
-          myResult.getDependencies(TextGen.EXTENDS));
-    }
-    return null;
+    return myState;
   }
 
   @Nullable
   public Map<SNode, TraceablePositionInfo> getPositions() {
-    return myResult.getPositions();
+    return myTraceCollector == null ? null : myTraceCollector.getTracePositions();
   }
 
   @Nullable
   public Map<SNode, ScopePositionInfo> getScopePositions() {
-    return myResult.getScopePositions();
+    return myTraceCollector == null ? null : myTraceCollector.getScopePositions();
   }
 
   @Nullable
   public Map<SNode, UnitPositionInfo> getUnitPositions() {
-    return myResult.getUnitPositions();
+    return myTraceCollector == null ? null : myTraceCollector.getUnitPositions();
+  }
+
+  // obtain encoding specified through TextGenBuffer. New TextGen shall specify encoding at TextUnit's construction time
+  // drop once we release templates that do specify encoding at construction
+  @ToRemove(version = 3.4)
+  private String getLegacyEncoding() {
+    Object rv;
+    if (myLegacyBuffer != null && (rv = myLegacyBuffer.getUserObject(TextGen.OUTPUT_ENCODING)) instanceof String) {
+      return (String) rv;
+    }
+    return null;
   }
 }

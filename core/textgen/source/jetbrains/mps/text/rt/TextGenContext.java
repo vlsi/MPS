@@ -40,5 +40,10 @@ public interface TextGenContext {
   @NotNull
   TextBuffer getBuffer();
 
+  /**
+   * With transition to TextGen capable of generating text from a set of nodes instead of a single one
+   * (see {@link TextGenModelOutline#registerTextUnit(String, SNode...)}), we still need to know the node actual TextGen code runs for.
+   * @return node active node being processed
+   */
   SNode getPrimaryInput();
 }
