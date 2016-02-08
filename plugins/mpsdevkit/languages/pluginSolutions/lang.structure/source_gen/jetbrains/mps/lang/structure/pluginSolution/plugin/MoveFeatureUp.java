@@ -71,7 +71,7 @@ public class MoveFeatureUp extends MoveNodesDefault {
     boolean merge = false;
     if (mergeTarget.value != null) {
       int wantToMerge;
-      wantToMerge = Messages.showYesNoCancelDialog(project.getProject(), "Target concept already has " + myKind + " with the same name. Do you want to merge?", "Do you want to merge?", null);
+      wantToMerge = Messages.showYesNoCancelDialog(project.getProject(), "Target concept already has " + myKind + " with the same name. Do you want to merge?\n" + "You might have to update instances manually in case of value conflicts.", "Do you want to merge?", null);
       if (wantToMerge == Messages.YES) {
         merge = true;
       } else if (wantToMerge == Messages.NO) {

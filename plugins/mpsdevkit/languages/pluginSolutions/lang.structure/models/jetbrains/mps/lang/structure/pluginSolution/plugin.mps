@@ -275,7 +275,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -4495,16 +4495,21 @@
                       <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                     </node>
                   </node>
-                  <node concept="3cpWs3" id="5sZ4VO_Y5MP" role="37wK5m">
-                    <node concept="Xl_RD" id="5sZ4VO_Y5MQ" role="3uHU7w">
-                      <property role="Xl_RC" value=" with the same name. Do you want to merge?" />
+                  <node concept="3cpWs3" id="5dWUYKKFWss" role="37wK5m">
+                    <node concept="Xl_RD" id="5dWUYKKG0S$" role="3uHU7w">
+                      <property role="Xl_RC" value="You might have to update instances manually in case of value conflicts." />
                     </node>
-                    <node concept="3cpWs3" id="5sZ4VO_Y5MR" role="3uHU7B">
-                      <node concept="Xl_RD" id="5sZ4VO_Y5MS" role="3uHU7B">
-                        <property role="Xl_RC" value="Target concept already has " />
+                    <node concept="3cpWs3" id="5sZ4VO_Y5MP" role="3uHU7B">
+                      <node concept="3cpWs3" id="5sZ4VO_Y5MR" role="3uHU7B">
+                        <node concept="Xl_RD" id="5sZ4VO_Y5MS" role="3uHU7B">
+                          <property role="Xl_RC" value="Target concept already has " />
+                        </node>
+                        <node concept="37vLTw" id="5sZ4VO_Y5MT" role="3uHU7w">
+                          <ref role="3cqZAo" node="7tnaD0TfV79" resolve="myKind" />
+                        </node>
                       </node>
-                      <node concept="37vLTw" id="5sZ4VO_Y5MT" role="3uHU7w">
-                        <ref role="3cqZAo" node="7tnaD0TfV79" resolve="myKind" />
+                      <node concept="Xl_RD" id="5sZ4VO_Y5MQ" role="3uHU7w">
+                        <property role="Xl_RC" value=" with the same name. Do you want to merge?\n" />
                       </node>
                     </node>
                   </node>
@@ -6569,7 +6574,7 @@
                                                                   </node>
                                                                 </node>
                                                                 <node concept="liA8E" id="361hHoA2jBs" role="2OqNvi">
-                                                                  <ref role="37wK5l" to="lfzw:5z_gLGerhfs" resolve="confirm" />
+                                                                  <ref role="37wK5l" to="lfzw:5z_gLGerhfs" resolve="doRefactor" />
                                                                   <node concept="2ShNRf" id="29vfC50CDe$" role="37wK5m">
                                                                     <node concept="Tc6Ow" id="29vfC50CDa0" role="2ShVmc">
                                                                       <node concept="3Tqbb2" id="29vfC50CDa1" role="HW$YZ" />
