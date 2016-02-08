@@ -37,6 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -138,6 +139,7 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
     final Map<SNodeReference, List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>> result = MapSequence.fromMap(new HashMap<SNodeReference, List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>>());
     for (SReference ref : CollectionSequence.fromCollection(usages)) {
       final SNodeReference containingNode = ref.getSourceNode().getReference();
+      final SNode movingNode = ref.getTargetNode();
       final SReferenceLink role = ref.getLink();
       final String resolveInfo = SLinkOperations.getResolveInfo(ref);
       final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), ref.getTargetNode()), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
@@ -151,11 +153,12 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
         public boolean needsToPreserveOldNode() {
           return false;
         }
-        public void confirm(final NamedNodeReference finalState, final SRepository repository, RefactoringSession refactoringSession) {
+        public void confirm(final NamedNodeReference finalState, final SRepository repository, final RefactoringSession refactoringSession) {
           refactoringSession.registerChange(new Runnable() {
             public void run() {
               SNode node = containingNode.resolve(repository);
-              if (node == null || (node.getModel() != null)) {
+              MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
+              if (node == null || (MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node) && movingNode != null && movingNode.getModel() != null)) {
                 return;
               }
               node.setReference(role, jetbrains.mps.smodel.SReference.create(role, node, finalState.reference().getModelReference(), finalState.reference().getNodeId(), resolveInfo));
