@@ -39,7 +39,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7618674748894120656(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, 0x69baf85193127f4bL, 0x69baf85193128b70L, "props"));
   }
-  public static Iterable<SNode> sourceNodesQuery_7618674748894122343(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6636694971610732680(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, 0x69baf85193127f4bL, 0x69baf85193128b72L, "ops"));
   }
 }
