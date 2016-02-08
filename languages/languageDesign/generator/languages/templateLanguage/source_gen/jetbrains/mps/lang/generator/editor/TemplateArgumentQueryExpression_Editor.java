@@ -20,8 +20,8 @@ public class TemplateArgumentQueryExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ckxqdd_a");
     editorCell.setBig(true);
-    editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createRefNode_ckxqdd_a0(editorContext, node));
+    editorCell.setUsesBraces(true);
     return editorCell;
   }
   private EditorCell createRefNode_ckxqdd_a0(EditorContext editorContext, SNode node) {

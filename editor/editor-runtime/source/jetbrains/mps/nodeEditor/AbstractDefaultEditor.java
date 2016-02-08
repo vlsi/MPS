@@ -362,7 +362,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private EditorCell getLastCell() {
     EditorCell_Collection collection = collectionStack.peek();
     EditorCell lastCell = collection;
-    if (collection.getChildCount() > 0) {
+    if (collection.getCellsCount() > 0) {
       lastCell = collection.lastCell();
     }
     return lastCell;

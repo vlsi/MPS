@@ -41,10 +41,10 @@ public class ChildCellLocator implements CellLocator {
     }
 
     EditorCell_Collection parentCollection = (EditorCell_Collection) parent;
-    if (myChildIndex < 0 || myChildIndex >= parentCollection.getChildCount()) {
+    if (myChildIndex < 0 || myChildIndex >= parentCollection.getCellsCount()) {
       return null;
     }
 
-    return parentCollection.getChildAt(myChildIndex);
+    return parentCollection.getCellAt(myChildIndex);
   }
 }

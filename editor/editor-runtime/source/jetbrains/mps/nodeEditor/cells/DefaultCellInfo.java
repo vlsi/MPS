@@ -59,7 +59,7 @@ public class DefaultCellInfo implements CellInfo {
       myParentInfo = parent.getCellInfo();
       myIsInList = parent.hasCellListHandler();
       if (myIsInList || myCellId == null) {
-        myCellNumber = parent.getCellNumber(cell);
+        myCellNumber = parent.indexOf(cell);
       }
     }
   }
