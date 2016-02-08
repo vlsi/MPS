@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -214,6 +214,23 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   @Override
   protected void save() {
+    // let facet instances serialize their data into facet descriptors. Would be better to do that for
+    // changed (Tab.isModified()) facets only, but there's no (easy?) way to figure out module facet from a tab, thus
+    // we save all module facets with active descriptors (it's AddFacetTab#apply() responsibility to add facet descriptors
+    // for newly added facets, and to remove descriptors for unchecked facets. This sharing is questionable, perhaps, could do both here).
+    for (SModuleFacet moduleFacet : myModule.getFacets()) {
+      if (!(moduleFacet instanceof ModuleFacetBase)) {
+        // need to find out facet type, otherwise don't care about ModuleFacetBase
+        continue;
+      }
+      final String facetType = ((ModuleFacetBase) moduleFacet).getFacetType();
+      for (ModuleFacetDescriptor facetDescriptor : myModuleDescriptor.getModuleFacetDescriptors()) {
+        if (!facetType.equals(facetDescriptor.getType())) {
+          continue;
+        }
+        moduleFacet.save(facetDescriptor.getMemento());
+      }
+    }
     // todo: !!!
     myModule.setModuleDescriptor(myModuleDescriptor);
     //In case of Generator saving lead to reload of containing Language
@@ -1361,15 +1378,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if (tab != null) {
             // not all facets necessarily feature UI component, but in case they do, let the tab populate facet with updated values.
             // The reason is that apply() for AddFacetsTab comes earlier than apply to any newly added tab (due to natural order of tab addition).
-            // Should not be an issue to apply twice (here and subsequently from MPSPropertiesConfigurable#apply())
+            // Should not be an issue to apply twice (once here and subsequently from MPSPropertiesConfigurable#apply())
             tab.apply();
           }
           Memento memento = new MementoImpl();
+          // XXX do I need to save facet, if there's code in #save() above that would do that anyway?
+          // I can just add facet descriptor for an new tab and rely on #save() to serialize values
           facet.save(memento);
           // some facets may register themselves into descriptors
-          // e.g. due to need to keep actual facet intact (idea plugin facet shall answer
-          // old id for classloading purposes. FIXME instead, facet shall keep both value,
-          // return old but serialize new once. Even in that case, however, this check won't hurt
+          // during apply(). Unless I get rid of that code, next check won't hurt
           boolean alreadyThere = false;
           for (ModuleFacetDescriptor d : moduleFacetDescriptors) {
             if (facet.getFacetType().equals(d.getType())) {
@@ -1384,7 +1401,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           for (Iterator<ModuleFacetDescriptor> it = moduleFacetDescriptors.iterator(); it.hasNext(); ) {
             ModuleFacetDescriptor facetDescriptor = it.next();
             if (facetDescriptor.getType().equals(facet.getFacetType())) {
-              moduleFacetDescriptors.remove(facetDescriptor);
+              it.remove();
               break;
             }
           }

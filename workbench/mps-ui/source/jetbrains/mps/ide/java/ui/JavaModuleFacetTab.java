@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+// FIXME #apply() shall not deal with ModuleDescriptor directly, instead, JavaModuleFacet.save() shall put that there (better yet,
+// to memento, not to be different from other facets, provided we don't use isCompileInMPS and getKind directly from descriptor)
 public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private PathsTableModel myPathsTableModel;
   private LibraryTableModel myLibraryTableModel;

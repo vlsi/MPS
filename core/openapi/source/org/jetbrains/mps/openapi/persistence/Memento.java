@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,10 @@ public interface Memento {
 
   String get(String key);
 
+  /**
+   * @param key <code>null</code> doesn't make sense
+   * @param value <code>null</code> value effectively removes the key
+   */
   void put(String key, String value);
 
   /**

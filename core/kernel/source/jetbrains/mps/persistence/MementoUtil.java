@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,11 @@ import java.util.List;
 public class MementoUtil {
 
   public static void readMemento(Memento memento, Element element) {
-    for (Attribute attr : (List<Attribute>) element.getAttributes()) {
+    for (Attribute attr : element.getAttributes()) {
       String name = attr.getName();
       memento.put(name, attr.getValue());
     }
-    for (Element elem : (List<Element>) element.getChildren()) {
+    for (Element elem : element.getChildren()) {
       Memento child = memento.createChild(elem.getName());
       readMemento(child, elem);
     }
