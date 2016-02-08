@@ -22,12 +22,18 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,9 +57,16 @@ public class GenerateModelsInProcess {
     Iterable<IResource> resources = new ModelsToResources(myModels).resources(false);
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
+    final MessageFeedbackStrategy mfs = new MessageFeedbackStrategy(msgHandler);
+
     final MakeSession makeSession = new MakeSession(ProjectHelper.toMPSProject(myProject), msgHandler, true);
     BuildMakeService makeService = new BuildMakeService();
-    IScriptController controller = new IScriptController.Stub() {
+    IScriptController controller = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub() {
+      @Override
+      public void reportFeedback(IFeedback feedback) {
+        mfs.reportFeedback(feedback);
+      }
+    }) {
       @Override
       public void setup(IPropertiesPool ppool) {
         new jetbrains.mps.internal.make.cfg.TextGenFacetInitializer(makeSession).populate(ppool);
