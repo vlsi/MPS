@@ -44,10 +44,6 @@ import java.util.Set;
     myInvalidationWasPerformed = invalidationWasPerformed;
   }
 
-  public void setCacheWasRebuild(boolean cacheWasRebuild) {
-    myCacheWasRebuilt = cacheWasRebuild;
-  }
-
   public void addNodeToInvalidate(SNode node) {
     myCurrentNodesToInvalidate.add(node);
     setInvalidationWasPerformed(false);
@@ -56,6 +52,9 @@ import java.util.Set;
   @Override
   public void clear() {
     myIsChecked = false;
+    myInvalidationWasPerformed = false;
+    myCacheWasRebuilt = false;
+    myInvalidationResult = false;
   }
 
   public void clearNodeTypes() {
