@@ -10,6 +10,7 @@
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="0" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
+    <use id="9882f4ad-1955-46fe-8269-94189e5dbbf2" name="jetbrains.mps.lang.migration.util" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -20,9 +21,9 @@
     <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="v54s" ref="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" implicit="true" />
@@ -258,6 +259,12 @@
       </concept>
     </language>
     <language id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration">
+      <concept id="3116305438947623353" name="jetbrains.mps.lang.migration.structure.MoveProperty" flags="ng" index="7a1rK" />
+      <concept id="2864063292004102367" name="jetbrains.mps.lang.migration.structure.ReflectionNodeReference" flags="ng" index="2pBcaW">
+        <property id="2864063292004102809" name="nodeName" index="2pBc3U" />
+        <property id="2864063292004103235" name="modelRef" index="2pBcow" />
+        <property id="2864063292004103247" name="nodeId" index="2pBcoG" />
+      </concept>
       <concept id="3220955710218421371" name="jetbrains.mps.lang.migration.structure.LinkPatternVariableReference" flags="ng" index="spIps">
         <reference id="3220955710218421372" name="declaration" index="spIpr" />
       </concept>
@@ -266,6 +273,18 @@
       </concept>
       <concept id="6129256022887940218" name="jetbrains.mps.lang.migration.structure.ListPatternVariableReference" flags="ng" index="2SDVQq">
         <reference id="6129256022887940219" name="declaration" index="2SDVQr" />
+      </concept>
+      <concept id="7431903976166007326" name="jetbrains.mps.lang.migration.structure.MoveNode" flags="ng" index="Z4OXk">
+        <child id="3116305438947564633" name="specialization" index="7agGg" />
+        <child id="7431903976166276375" name="toNode" index="Z5P1t" />
+        <child id="7431903976166276373" name="fromNode" index="Z5P1v" />
+      </concept>
+      <concept id="7431903976166012785" name="jetbrains.mps.lang.migration.structure.DirectNodeReference" flags="ng" index="Z4PCV">
+        <reference id="7431903976166013456" name="target" index="Z4Ptq" />
+      </concept>
+      <concept id="7431903976166443707" name="jetbrains.mps.lang.migration.structure.PureMigrationScript" flags="ng" index="Z5qvL">
+        <property id="7431903976166443708" name="fromVersion" index="Z5qvQ" />
+        <child id="7431903976166447091" name="part" index="Z5rET" />
       </concept>
       <concept id="7527743013695058339" name="jetbrains.mps.lang.migration.structure.NodePatternVariableReference" flags="ng" index="1bNLJ0">
         <reference id="7527743013695058340" name="declaration" index="1bNLJ7" />
@@ -1606,6 +1625,21 @@
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
       <node concept="3uibUv" id="6oJSkzEcNET" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+    </node>
+  </node>
+  <node concept="Z5qvL" id="bBfCfNEM2O">
+    <property role="Z5qvQ" value="1" />
+    <property role="TrG5h" value="ExtensionPoint_name" />
+    <node concept="Z4OXk" id="bBfCfNEM2T" role="Z5rET">
+      <node concept="2pBcaW" id="bBfCfNEM2R" role="Z5P1v">
+        <property role="2pBcoG" value="5911785528834333590" />
+        <property role="2pBcow" value="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" />
+        <property role="2pBc3U" value="extensionName_old" />
+      </node>
+      <node concept="7a1rK" id="bBfCfNEM2Q" role="7agGg" />
+      <node concept="Z4PCV" id="bBfCfNF$2n" role="Z5P1t">
+        <ref role="Z4Ptq" to="tpck:h0TrG11" resolve="name" />
       </node>
     </node>
   </node>
