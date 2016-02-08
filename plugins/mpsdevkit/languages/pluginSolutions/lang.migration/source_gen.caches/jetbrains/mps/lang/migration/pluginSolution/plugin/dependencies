@@ -4,16 +4,11 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalInstancesMigrationStepBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalReferencesMigrationStepBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.LoggableMigrationStepBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveConceptContributor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.RenameReferencesParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateModelImports" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup" file="GoToAddition_ActionGroup.java">
@@ -41,113 +36,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalInstancesMigrationStepBuilder" file="LocalInstancesMigrationStepBuilder.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalReferencesMigrationStepBuilder" file="LocalReferencesMigrationStepBuilder.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MoveNodePart" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LoggableMigrationStepBuilder" file="LoggableMigrationStepBuilder.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MoveNodeSpecialization__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.NodeReferenceUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MigrationScriptBuilder" file="MigrationScriptBuilder.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -164,36 +52,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveConceptContributor" file="MoveConceptContributor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.SpecialiazationPart" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RefactoringRuntime" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant" file="MoveNodeRefactoringLogParticipant.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -243,13 +101,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" file="MoveNodesContributor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />

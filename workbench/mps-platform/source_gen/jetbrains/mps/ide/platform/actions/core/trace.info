@@ -1116,34 +1116,6 @@
       <unit id="5418820454547629216" at="15,0,63,0" name="jetbrains.mps.ide.platform.actions.core.RefactoringParticipantBase" />
     </file>
   </root>
-  <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/5863271989070966884">
-    <file name="MoveRefactoringContributor.java">
-      <node id="7684902257126127778" at="10,0,11,0" concept="8" trace="getDescription#()Ljava/lang/String;" />
-      <node id="6904513989558516796" at="11,0,12,0" concept="8" trace="willBeMoved#(Ljava/util/List;)V" />
-      <node id="7321908258464336688" at="12,0,13,0" concept="8" trace="getAffectedNodes#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-      <node id="2084600659520594544" at="13,0,14,0" concept="8" trace="shouldKeepOldNodes#(Ljava/util/List;)Ljava/util/List;" />
-      <node id="6904513989558522590" at="14,0,15,0" concept="8" trace="isMoved#(Ljava/util/List;)V" />
-      <node id="6904513989558718664" at="15,0,16,0" concept="8" trace="commit#()V" />
-      <node id="5863271989071529753" at="19,0,20,0" concept="8" trace="createContributor#(Ljetbrains/mps/ide/platform/actions/core/MoveContext;)Ljetbrains/mps/ide/platform/actions/core/MoveRefactoringContributor;" />
-      <scope id="7684902257126127778" at="10,0,11,0" />
-      <scope id="6904513989558516796" at="11,0,12,0">
-        <var name="n" id="6904513989558521124" />
-      </scope>
-      <scope id="7321908258464336688" at="12,0,13,0" />
-      <scope id="2084600659520594544" at="13,0,14,0">
-        <var name="movingAsChild" id="2084600659520600168" />
-      </scope>
-      <scope id="6904513989558522590" at="14,0,15,0">
-        <var name="n" id="6904513989558522594" />
-      </scope>
-      <scope id="6904513989558718664" at="15,0,16,0" />
-      <scope id="5863271989071529753" at="19,0,20,0">
-        <var name="c" id="6904513989558737535" />
-      </scope>
-      <unit id="5863271989071529365" at="18,0,21,0" name="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor$MoveNodesBuilderFactory" />
-      <unit id="5863271989070966884" at="9,0,22,0" name="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
-    </file>
-  </root>
   <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/6904513989558712166">
     <file name="MoveContext.java">
       <node id="6904513989558712752" at="8,0,9,0" concept="8" trace="getSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
