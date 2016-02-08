@@ -39,11 +39,10 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import org.apache.log4j.Level;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -326,11 +325,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     final Wrappers._T<List<SNode>> allNodes = new Wrappers._T<List<SNode>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        allNodes.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet()).translate(new ITranslator2<SNode, SNode>() {
-          public Iterable<SNode> translate(SNode it) {
-            return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+        allNodes.value = MapSequence.fromMap(moveMap).translate(new ITranslator2<IMapping<SNode, MoveNodesDefault.NodeProcessor>, SNode>() {
+          public Iterable<SNode> translate(IMapping<SNode, MoveNodesDefault.NodeProcessor> mapping) {
+            return mapping.value().getNodesToSearch(mapping.key());
           }
-        }));
+        }).toListSequence();
       }
     });
 
@@ -388,6 +387,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   public static interface NodeProcessor {
     boolean isValid(List<SNode> nodesToMove);
     boolean isValid(SNode nodeToMove);
+    List<SNode> getNodesToSearch(SNode nodeToMove);
     void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession);
   }
 
@@ -407,6 +407,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
     public boolean isValid(SNode nodeToMove) {
       return myNodeLocation.canInsert(myProject.getRepository(), nodeToMove);
+    }
+    public List<SNode> getNodesToSearch(SNode nodeToMove) {
+      return SNodeOperations.getNodeDescendants(nodeToMove, null, true, new SAbstractConcept[]{});
     }
     public void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession) {
       MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
@@ -446,6 +449,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
     public boolean isValid(SNode nodeToMove) {
       return myTarget.resolve(myProject.getRepository()) != null;
+    }
+    public List<SNode> getNodesToSearch(SNode nodeToMove) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
     }
     public void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession) {
       if (ListSequence.fromList(nodesToMove).count() != 1) {
