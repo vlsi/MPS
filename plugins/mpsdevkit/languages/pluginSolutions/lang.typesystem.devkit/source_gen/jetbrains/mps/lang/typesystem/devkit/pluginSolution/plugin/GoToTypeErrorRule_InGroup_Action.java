@@ -4,20 +4,20 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
-  private Pair<String, String> errorId;
+  private SNodeReference errorId;
   private boolean immediate;
-  public GoToTypeErrorRule_InGroup_Action(Pair<String, String> errorId_par, boolean immediate_par) {
+  public GoToTypeErrorRule_InGroup_Action(SNodeReference errorId_par, boolean immediate_par) {
     super("Go to Rule Which Caused Error", "", ICON);
     this.errorId = errorId_par;
     this.immediate = immediate_par;
@@ -30,7 +30,7 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2);
+    String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ? "Go To Immediate Rule" : "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.getNodeId());
     event.getPresentation().setText(text);
   }
   @Override
@@ -49,20 +49,20 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    GoToTypeErrorRuleUtil.goToRuleById(((MPSProject) MapSequence.fromMap(_params).get("project")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(GoToTypeErrorRule_InGroup_Action.this.errorId);
   }
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
     res.append(super.getActionId());
     res.append("#");
-    res.append(errorId_State((Pair<String, String>) this.errorId));
+    res.append(errorId_State((SNodeReference) this.errorId));
     res.append("!");
     res.append(((Object) this.immediate).toString());
     res.append("!");
     return res.toString();
   }
-  public static String errorId_State(Pair<String, String> object) {
-    return object.o1 + "#" + object.o2;
+  public static String errorId_State(SNodeReference object) {
+    return object.toString();
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,7 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -155,6 +156,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -2038,53 +2040,37 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             public void run() {
               String s = message.getMessage();
               final MPSErrorDialog dialog = new MPSErrorDialog(myEditorContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
-              if (herror.getRuleModel() != null && herror.getRuleId() != null) {
+              if (herror.getRuleNode() != null) {
                 final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
                 final JButton button = new JButton();
-                AbstractAction action = new AbstractAction("Go To Rule") {
+                class ToRuleAction extends AbstractAction {
+                  private final SNodeReference myRule;
+                  private final JDialog myToDispose;
+
+                  public ToRuleAction(String title, SNodeReference rule, JDialog toDispose) {
+                    super(title);
+                    myRule = rule;
+                    myToDispose = toDispose;
+                  }
+
+                  @Override
+                  public void actionPerformed(ActionEvent e) {
+                    new EditorNavigator(getCurrentProject()).shallSelect(true).open(myRule);
+                    myToDispose.dispose();
+                  }
+                };
+                AbstractAction action = new ToRuleAction("Go To Rule", herror.getRuleNode(), dialog) {
                   @Override
                   public void actionPerformed(ActionEvent e) {
                     if (hasAdditionalRuleIds) {
                       JPopupMenu popupMenu = new JPopupMenu();
-                      for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
-                        popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
-                          @Override
-                          public void actionPerformed(ActionEvent e) {
-                            getModelAccess().runWriteInEDT(new Runnable() {
-                              @Override
-                              public void run() {
-                                GoToTypeErrorRuleUtil.goToRuleById(getCurrentProject(), id);
-                                dialog.dispose();
-                              }
-                            });
-                          }
-                        });
+                      for (final SNodeReference id : herror.getAdditionalRulesIds()) {
+                        popupMenu.add(new ToRuleAction("Go To Rule " + id.getNodeId(), id, dialog));
                       }
-                      popupMenu.add(new AbstractAction("Go To Immediate Rule") {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                          getModelAccess().runWriteInEDT(new Runnable() {
-                            @Override
-                            public void run() {
-                              GoToTypeErrorRuleUtil.goToRuleById(getCurrentProject(),
-                                  new Pair<String, String>(herror.getRuleModel(),
-                                      herror.getRuleId())
-                              );
-                              dialog.dispose();
-                            }
-                          });
-                        }
-                      });
+                      popupMenu.add(new ToRuleAction("Go To Immediate Rule", herror.getRuleNode(), dialog));
                       popupMenu.show(button, 0, button.getHeight());
                     } else {
-                      getModelAccess().runWriteInEDT(new Runnable() {
-                        @Override
-                        public void run() {
-                          GoToTypeErrorRuleUtil.goToRuleById(getCurrentProject(), new Pair<String, String>(herror.getRuleModel(),
-                              herror.getRuleId()));
-                          dialog.dispose();
-                        }
-                      });
+                      super.actionPerformed(e);;
                     }
                   }
                 };

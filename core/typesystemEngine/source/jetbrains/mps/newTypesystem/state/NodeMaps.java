@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,18 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class NodeMaps {
   @StateObject
@@ -215,9 +221,7 @@ public class NodeMaps {
     for (QuickFixProvider quickFixProvider : intentionProviders) {
       errorReporter.setIntentionProvider(quickFixProvider);
     }
-    if (info != null) {
-      errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
-    }
+    setAdditionalRulesIds(info, errorReporter);
     // addNodeToError(nodeWithError, errorReporter, info);
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
@@ -238,7 +242,7 @@ public class NodeMaps {
     for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
       errorReporter.setIntentionProvider(quickFixProvider);
     }
-    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
+    setAdditionalRulesIds(equationInfo, errorReporter);
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
@@ -258,7 +262,7 @@ public class NodeMaps {
     for (QuickFixProvider provider : equationInfo.getIntentionProviders()) {
       errorReporter.addIntentionProvider(provider);
     }
-    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
+    setAdditionalRulesIds(equationInfo, errorReporter);
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
@@ -268,5 +272,15 @@ public class NodeMaps {
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrors() {
     return Collections.unmodifiableMap(myNodesToErrors);
+  }
+
+  private static void setAdditionalRulesIds(EquationInfo from, IErrorReporter to) {
+    if (from == null) {
+      return;
+    }
+    for (Pair<String, String> p : from.getAdditionalRulesIds()) {
+      to.addAdditionalRuleId(p.o1, p.o2);
+    }
+
   }
 }

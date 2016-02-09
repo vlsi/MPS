@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +29,7 @@ import java.util.List;
  * Cyril.Konopko, 10.02.2010
  */
 public abstract class AbstractErrorReporter implements IErrorReporter {
-  private List<Pair<String, String>> myAdditionalRuleIds = null;
+  private List<SNodeReference> myAdditionalRuleIds = null;
   private List<QuickFixProvider> myIntentionProviders;
   private final SNodeReference myRuleNode;
 
@@ -79,31 +80,18 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
   public void addAdditionalRuleId(String ruleModel, String ruleId) {
     Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
     if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
+      myAdditionalRuleIds = new ArrayList<SNodeReference>(2);
     }
-    myAdditionalRuleIds.add(pair);
+    final PersistenceFacade pf = PersistenceFacade.getInstance();
+    myAdditionalRuleIds.add(new SNodePointer(pf.createModelReference(ruleModel), pf.createNodeId(ruleId)));
   }
 
   @Override
-  public List<Pair<String, String>> getAdditionalRulesIds() {
-    if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
-    return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-  }
-
-  @Override
-  public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
-    ArrayList<Pair<String, String>> result = new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-    Collections.reverse(result);
-    return result;
-  }
-
-  @Override
-  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
-    if (ids != null && !ids.isEmpty()) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
-    } else {
-      myAdditionalRuleIds = null;
+  public List<SNodeReference> getAdditionalRulesIds() {
+    if (myAdditionalRuleIds == null) {
+      return Collections.emptyList();
     }
+    return Collections.unmodifiableList(myAdditionalRuleIds);
   }
 
   @Nullable

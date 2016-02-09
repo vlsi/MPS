@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,12 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -51,22 +52,11 @@ public class NullErrorReporter implements IErrorReporter {
 
   @Override
   public void addAdditionalRuleId(String ruleModel, String ruleId) {
-
   }
 
   @Override
-  public List<Pair<String, String>> getAdditionalRulesIds() {
-    return null;
-  }
-
-  @Override
-  public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
-    return null;
-  }
-
-  @Override
-  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
-
+  public List<SNodeReference> getAdditionalRulesIds() {
+    return Collections.emptyList();
   }
 
   @Override
