@@ -519,7 +519,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -19585,15 +19585,15 @@
         <node concept="3cpWs8" id="79AZtQxG38Z" role="3cqZAp">
           <node concept="3cpWsn" id="79AZtQxG390" role="3cpWs9">
             <property role="TrG5h" value="toMove" />
-            <node concept="_YKpA" id="79AZtQxG391" role="1tU5fm">
-              <node concept="3uibUv" id="79AZtQxG392" role="_ZDj9">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="6e2QwCfVfLt" role="33vP2m">
               <node concept="2WthIp" id="6e2QwCfVfLw" role="2Oq$k0" />
               <node concept="2XshWL" id="6e2QwCfVfLy" role="2OqNvi">
                 <ref role="2WH_rO" node="6e2QwCfVfuJ" resolve="getObjects" />
+              </node>
+            </node>
+            <node concept="_YKpA" id="79AZtQxG391" role="1tU5fm">
+              <node concept="3uibUv" id="79AZtQxG392" role="_ZDj9">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
           </node>
@@ -19960,15 +19960,15 @@
         <node concept="3cpWs8" id="79AZtQxG38a" role="3cqZAp">
           <node concept="3cpWsn" id="79AZtQxG38b" role="3cpWs9">
             <property role="TrG5h" value="toMove" />
-            <node concept="_YKpA" id="79AZtQxG38c" role="1tU5fm">
-              <node concept="3uibUv" id="79AZtQxG38e" role="_ZDj9">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="6e2QwCfUZAu" role="33vP2m">
               <node concept="2WthIp" id="6e2QwCfUZAx" role="2Oq$k0" />
               <node concept="2XshWL" id="6e2QwCfUZAz" role="2OqNvi">
                 <ref role="2WH_rO" node="6e2QwCfTGpg" resolve="getObjects" />
+              </node>
+            </node>
+            <node concept="_YKpA" id="79AZtQxG38c" role="1tU5fm">
+              <node concept="3uibUv" id="79AZtQxG38e" role="_ZDj9">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
           </node>
@@ -20121,11 +20121,6 @@
         <node concept="3cpWs8" id="79AZtQxG2yZ" role="3cqZAp">
           <node concept="3cpWsn" id="79AZtQxG2z0" role="3cpWs9">
             <property role="TrG5h" value="objects" />
-            <node concept="_YKpA" id="79AZtQxG2z1" role="1tU5fm">
-              <node concept="3uibUv" id="79AZtQxG2z3" role="_ZDj9">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="6e2QwCfVkrS" role="33vP2m">
               <node concept="2OqwBi" id="6e2QwCfVkx2" role="2Oq$k0">
                 <node concept="2ShNRf" id="6e2QwCfVkrT" role="2Oq$k0">
@@ -20148,6 +20143,11 @@
                     <ref role="2WH_rO" node="79AZtQxEvcf" resolve="treeNodes" />
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="_YKpA" id="79AZtQxG2z1" role="1tU5fm">
+              <node concept="3uibUv" id="79AZtQxG2z3" role="_ZDj9">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
           </node>

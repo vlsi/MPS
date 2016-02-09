@@ -2,7 +2,7 @@
 <model ref="r:563c6cb5-48a3-4687-82d5-92941d8180e2(jetbrains.mps.lang.extension.tests.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -90,7 +90,6 @@
     </language>
     <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
       <concept id="3729007189729192406" name="jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration" flags="ng" index="vrV6u">
-        <property id="5911785528834333590" name="extensionName" index="20vvCb" />
         <child id="8029776554053057803" name="objectType" index="luc8K" />
       </concept>
       <concept id="126958800891274162" name="jetbrains.mps.lang.extension.structure.Extension" flags="ig" index="1lYeZD">
@@ -148,13 +147,13 @@
     </node>
   </node>
   <node concept="vrV6u" id="66AaOfxlmO2">
-    <property role="20vvCb" value="testExtensionPoint" />
+    <property role="TrG5h" value="testExtensionPoint" />
     <node concept="3uibUv" id="66AaOfxlmO4" role="luc8K">
       <ref role="3uigEE" node="66AaOfxll3S" resolve="TestObject" />
     </node>
   </node>
   <node concept="vrV6u" id="2hA_2dv2TXx">
-    <property role="20vvCb" value="lazyTestExtensionPoint" />
+    <property role="TrG5h" value="lazyTestExtensionPoint" />
     <node concept="3uibUv" id="2hA_2dv2TXP" role="luc8K">
       <ref role="3uigEE" node="2hA_2dv2TXz" resolve="LazyTestObject" />
     </node>
@@ -185,7 +184,7 @@
     </node>
   </node>
   <node concept="vrV6u" id="3R7uD3D6CzJ">
-    <property role="20vvCb" value="multiExtensionPoint" />
+    <property role="TrG5h" value="multiExtensionPoint" />
     <node concept="3uibUv" id="3R7uD3D6CzL" role="luc8K">
       <ref role="3uigEE" to="wyt6:~String" resolve="String" />
     </node>
