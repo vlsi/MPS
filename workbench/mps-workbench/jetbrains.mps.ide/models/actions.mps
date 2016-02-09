@@ -13172,6 +13172,7 @@
     <property role="2f7twF" value="Refactoring" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model" />
     <property role="1XlLyE" value="true" />
+    <property role="1rdrE6" value="true" />
     <node concept="ftmFs" id="hMfdXE6" role="ftER_">
       <node concept="tCFHf" id="5VIEYrBjNnJ" role="ftvYc">
         <ref role="tCJdB" node="5VIEYrBjMRo" resolve="RenameModel" />
@@ -22489,11 +22490,6 @@
     <property role="2uzpH1" value="Go to Rule" />
     <property role="3GE5qa" value="trace" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="29q6pfyoTm1" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="29q6pfyoTm2" role="1oa70y" />
-    </node>
     <node concept="1QGGSu" id="W9jQfsDuzI" role="3Uehp1">
       <node concept="10M0yZ" id="W9jQfsDX$4" role="3xaMm5">
         <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
@@ -22584,6 +22580,11 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="1DS2jV" id="29q6pfyoTm1" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="29q6pfyoTm2" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="1cJSC$rgvWO" role="1NuT2Z">
       <property role="TrG5h" value="ruleModelAndId" />
@@ -40803,7 +40804,6 @@
     </node>
   </node>
   <node concept="sE7Ow" id="6YK8y67o2Yu">
-    <property role="fJN8o" value="true" />
     <property role="TrG5h" value="MoveModel" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Model" />
@@ -41423,6 +41423,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="CXXzRDChmZ" role="3cqZAp">
+          <node concept="3clFbS" id="CXXzRDChn1" role="3clFbx">
+            <node concept="3cpWs6" id="CXXzRDCiS9" role="3cqZAp">
+              <node concept="3clFbT" id="CXXzRDCj6Y" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="CXXzRDCi4M" role="3clFbw">
+            <node concept="3uibUv" id="CXXzRDCiwD" role="2ZW6by">
+              <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
+            </node>
+            <node concept="2OqwBi" id="CXXzRDChET" role="2ZW6bz">
+              <node concept="2WthIp" id="CXXzRDChEW" role="2Oq$k0" />
+              <node concept="1DTwFV" id="CXXzRDChEY" role="2OqNvi">
+                <ref role="2WH_rO" node="6YK8y67s5oJ" resolve="model" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="6YK8y67soJF" role="3cqZAp">
           <node concept="3cpWsn" id="6YK8y67soJG" role="3cpWs9">
             <property role="TrG5h" value="module" />
@@ -41485,6 +41505,7 @@
       <property role="TrG5h" value="model" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODEL" resolve="MODEL" />
       <node concept="1oajcY" id="6YK8y67s5oK" role="1oa70y" />
+      <node concept="3dZWAM" id="65dH5rmWbr4" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6YK8y67o2Z$" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
