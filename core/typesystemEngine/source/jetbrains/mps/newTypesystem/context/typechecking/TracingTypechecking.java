@@ -19,6 +19,8 @@ import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.state.TargetState;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -36,13 +38,17 @@ public class TracingTypechecking extends BaseTypechecking<TargetState, TargetTyp
     return new TargetTypeheckingComponent(getState(), this);
   }
 
+  @Override
+  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+    // do nothing
+    return false;
+  }
+
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError != null) {
       putError(nodeWithError, errorReporter);
     }
   }
-
-
 
   private void putError(SNode node, IErrorReporter reporter) {
     if (!ErrorReportUtil.shouldReportError(node)) return;

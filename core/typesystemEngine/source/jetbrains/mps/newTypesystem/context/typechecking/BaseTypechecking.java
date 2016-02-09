@@ -41,7 +41,7 @@ import java.util.Set;
  * User: fyodor
  * Date: 11/12/12
  */
-public class BaseTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
+public abstract class BaseTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
 
   protected final SNode myRootNode;
   private final STATE myState;
@@ -140,17 +140,14 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
     return getTypecheckingComponent().isChecked();
   }
 
-  public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
-    // do nothing
+  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext) {
+    applyNonTypesystemRulesToRoot(typeCheckingContext, Cancellable.NEVER);
   }
 
   /**
    * Should return true iff the operation has succeeded and was not cancelled.
    */
-  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
-    // do nothing
-    return false;
-  }
+  public abstract boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c);
 
   /**
    * Returns the list of all node attributes with the attributedNode added as the last.
