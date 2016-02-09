@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,20 @@
  */
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.DumbAware;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import java.util.Arrays;
@@ -89,9 +96,7 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
       e.getPresentation().setEnabled(false);
       e.getPresentation().setVisible(false);
     } else {
-      e.getPresentation().setEnabled(true);
-      e.getPresentation().setVisible(true);
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getModelAccess(e).runReadAction(new Runnable() {
         @Override
         public void run() {
           doUpdate(e);
@@ -106,7 +111,8 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
   }
 
   protected void doUpdate(AnActionEvent e) {
-
+    e.getPresentation().setEnabled(true);
+    e.getPresentation().setVisible(true);
   }
 
   public static void addPlaceToActionList(List<? extends AnAction> actions, ActionPlace place, @Nullable Condition<BaseAction> condition) {
@@ -120,6 +126,16 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
           action.addPlace(place);
         }
       }
+    }
+  }
+
+  // copied from BaseAction.getModelAccess()
+  protected final ModelAccess getModelAccess(AnActionEvent event) {
+    Project project = getEventProject(event);
+    if (project != null) {
+      return ProjectHelper.getModelAccess(project);
+    } else {
+      return MPSModuleRepository.getInstance().getModelAccess();
     }
   }
 }
