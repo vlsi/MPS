@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -190,7 +188,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     return "Favorites";
   }
 
-  private class MyLogicalViewTree extends MPSTree implements NodeNavigationProvider {
+  private class MyLogicalViewTree extends MPSTree {
 
     private final jetbrains.mps.project.Project myProject;
 
@@ -266,14 +264,6 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     @Override
     protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
       return ProjectPaneActionGroups.getActionGroup(node);
-    }
-
-    @Override
-    public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-      SNodeReference navigationTarget = treeNode.getNavigationTarget();
-      if (navigationTarget != null) {
-        new EditorNavigator(myProject).shallFocus(wasClicked).selectIfChild().open(navigationTarget);
-      }
     }
   }
 }
