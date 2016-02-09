@@ -1,0 +1,42 @@
+<project name="buildExe" default="buildExe" basedir="../">
+  <property name="build.distribution" location="${basedir}"/>
+  <loadproperties srcfile="${build.distribution}/build.properties"/>
+
+  <property name="mps-windows.zip" location="${build.distribution}/${mps.build.number}-windows.zip"/>
+  <property name="build.tmp" location="${basedir}/win"/>
+  <property name="build.layout" location="${basedir}"/>
+
+  <condition property="windows">
+    <os family="windows"/>
+  </condition>
+
+  <target name="buildExe" if="windows">
+    <unzip src="${mps-windows.zip}" dest="${build.tmp}"/>
+
+    <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/installer.nsi" tofile="${build.tmp}/installer.nsi"/>
+    <fixcrlf file="${build.tmp}/installer.nsi" eol="dos" eof="asis"/>
+    <replace file="${build.tmp}/installer.nsi" token="$version$" value="${mpsBootstrapCore.version}"/>
+    <replace file="${build.tmp}/installer.nsi" token="$build$" value="${mps.build.number}"/>
+
+    <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${build.tmp}" failonerror="true">
+      <arg file="${build.tmp}/install.nsh"/>
+      <arg file="${build.tmp}/uninstall.nsh"/>
+      <arg file="${build.tmp}/MPS ${mpsBootstrapCore.version}"/>
+      <classpath>
+        <pathelement path="${build.tmp}/MPS ${mpsBootstrapCore.version}/lib/mps-workbench.jar"/>
+        <pathelement path="${build.tmp}/MPS ${mpsBootstrapCore.version}/lib/mps-core.jar"/>
+      </classpath>
+    </java>
+
+    <unzip src="${basedir}/build/tools/nsis.zip" dest="${build.tmp}"/>
+    <copy file="${basedir}/build/resources/mps.ico" tofile="${build.tmp}/installer.ico"/>
+    <copy file="${basedir}/license/mps_license.txt" tofile="${build.tmp}/license.txt"/>
+    <exec executable="${build.tmp}/nsis/makensis.exe" osfamily="windows" failonerror="true">
+      <arg file="${build.tmp}/installer.nsi"/>
+    </exec>
+
+    <copy file="${build.tmp}/${mps.build.number}-windows.exe" todir="${build.layout}"/>
+    <delete dir="${build.tmp}"/>
+  </target>
+
+</project>
