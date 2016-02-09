@@ -307,8 +307,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 22:
         // Concept: Classifier 
         if (myIntentions22 == null) {
-          myIntentions22 = new IntentionFactory[1];
+          myIntentions22 = new IntentionFactory[2];
           myIntentions22[0] = new ChangeStaticInInner_Intention();
+          myIntentions22[1] = new AutoSpacing_Intention();
         }
         return Arrays.asList(myIntentions22);
       case 23:
@@ -458,7 +459,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[92];
+    IntentionFactory[] rv = new IntentionFactory[93];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -551,6 +552,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[89] = new CleanUnmatchedParentheses_Intention();
     rv[90] = new ComputeWholeExpressionValue_Intention();
     rv[91] = new ComputeExpressionValue_Intention();
+    rv[92] = new AutoSpacing_Intention();
     return Arrays.asList(rv);
   }
 }
