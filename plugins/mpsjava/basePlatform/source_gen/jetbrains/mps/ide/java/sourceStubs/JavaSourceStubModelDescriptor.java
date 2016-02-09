@@ -43,9 +43,8 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implements MultiStreamDataSourceListener {
-
   private static Logger LOG = Logger.wrap(LogManager.getLogger(JavaSourceStubModelDescriptor.class));
-
+  private boolean myIsLoadInProgress = false;
   private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
@@ -62,7 +61,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
     for (SLanguage l : CollectionSequence.fromCollection(importedLanguageIds())) {
       model.addLanguage(l);
     }
-    return new ModelLoadResult<SModel>(model, ModelLoadingState.FULLY_LOADED);
+    return new ModelLoadResult<SModel>(model, ModelLoadingState.NO_IMPLEMENTATION);
   }
 
   @Override
@@ -162,6 +161,34 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
         LOG.error("Failed to read java file. " + e.getMessage(), e);
       } catch (JavaParseException e) {
         LOG.error("Failed to parse java file. " + e.getMessage());
+      }
+    }
+  }
+
+  @Override
+  public void load() {
+    if (getLoadingState() == ModelLoadingState.FULLY_LOADED) {
+      return;
+    }
+    synchronized (myLoadLock) {
+      if (myIsLoadInProgress) {
+        return;
+      }
+      ModelLoadingState oldState = getLoadingState();
+      if (oldState == ModelLoadingState.FULLY_LOADED) {
+        // double check 
+        return;
+      }
+      SModel mi = getSModelInternal();
+      try {
+        myIsLoadInProgress = true;
+        mi.enterUpdateMode();
+        JavaParser.tryResolveUnknowns(MapSequence.fromMap(myRootsById).values());
+        setLoadingState(ModelLoadingState.FULLY_LOADED);
+        fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
+      } finally {
+        mi.leaveUpdateMode();
+        myIsLoadInProgress = false;
       }
     }
   }

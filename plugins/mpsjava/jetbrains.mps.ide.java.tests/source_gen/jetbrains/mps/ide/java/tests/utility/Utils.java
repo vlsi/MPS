@@ -146,21 +146,20 @@ public class Utils {
     mr.setModule(getModule());
     mr.setContentRoot(dirPath);
     mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, dirPath);
-
+    mr.attach();
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = md;
-      ListSequence.fromList(models).addElement(m);
+    for (SModel md : Sequence.fromIterable(mr.getModels())) {
+      ListSequence.fromList(models).addElement(md);
     }
 
+    // normalizing 
     for (SModel m : ListSequence.fromList(expected)) {
       for (SNode root : ListSequence.fromList(SModelOperations.roots(m, null))) {
         NodePatcher.removeStatements(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
     }
-
     compare(models, expected);
   }
   public static void checkSourceModel(Project project, String dirPath, SModel expected) {
@@ -259,7 +258,7 @@ public class Utils {
     compare(binModels, srcModelsX);
   }
   public static void compare(Iterable<SModel> leftModels, Iterable<SModel> rightModels) {
-
+    Assert.assertSame("Different number of models: " + Sequence.fromIterable(leftModels).count() + " and " + Sequence.fromIterable(rightModels).count(), Sequence.fromIterable(leftModels).count(), Sequence.fromIterable(rightModels).count());
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(leftModels)) {
       MapSequence.fromMap(leftModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);

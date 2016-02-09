@@ -54,6 +54,10 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -103,7 +107,10 @@
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
@@ -214,6 +221,10 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
+        <child id="1170075728144" name="expression" index="1HWFw0" />
+        <child id="1170075736412" name="block" index="1HWHxc" />
+      </concept>
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -313,6 +324,7 @@
       </concept>
       <concept id="1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" flags="nn" index="2Jqq0_" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1237909114519" name="jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation" flags="nn" index="T8wYR" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
@@ -1110,7 +1122,6 @@
     <node concept="3uibUv" id="4wjoHLPKJu" role="1zkMxy">
       <ref role="3uigEE" to="w1kc:~RegularModelDescriptor" resolve="RegularModelDescriptor" />
     </node>
-    <node concept="2tJIrI" id="3PyP5yK8MhH" role="jymVt" />
     <node concept="Wx3nA" id="5HlCeYoHvYL" role="jymVt">
       <property role="TrG5h" value="LOG" />
       <node concept="2YIFZM" id="17QXLl0fvYI" role="33vP2m">
@@ -1129,7 +1140,17 @@
       </node>
       <node concept="3Tm6S6" id="5HlCeYoHvYN" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="5HlCeYoHzFU" role="jymVt" />
+    <node concept="312cEg" id="7GzQgj592IY" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myIsLoadInProgress" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="7GzQgj590SP" role="1B3o_S" />
+      <node concept="10P_77" id="7GzQgj592$0" role="1tU5fm" />
+      <node concept="3clFbT" id="7GzQgj594pZ" role="33vP2m">
+        <property role="3clFbU" value="false" />
+      </node>
+    </node>
     <node concept="312cEg" id="4YpB5dn3TuL" role="jymVt">
       <property role="TrG5h" value="myRootsPerFile" />
       <node concept="2ShNRf" id="4YpB5dn3Tw0" role="33vP2m">
@@ -1272,8 +1293,8 @@
               <node concept="37vLTw" id="686$TZgrJY1" role="37wK5m">
                 <ref role="3cqZAo" node="lHAw_F0KDp" resolve="model" />
               </node>
-              <node concept="Rm8GO" id="686$TZgrOrt" role="37wK5m">
-                <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+              <node concept="Rm8GO" id="78QPPIlHf5d" role="37wK5m">
+                <ref role="Rm8GQ" to="4it6:~ModelLoadingState.NO_IMPLEMENTATION" resolve="NO_IMPLEMENTATION" />
                 <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
               </node>
               <node concept="3uibUv" id="jzhoHG2$jW" role="1pMfVU">
@@ -2033,6 +2054,169 @@
         <node concept="3uibUv" id="lHAw_Fb9H5" role="1tU5fm">
           <ref role="3uigEE" to="g3l6:~SModelData" resolve="SModelData" />
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5yaWmnNztNg" role="jymVt" />
+    <node concept="3clFb_" id="5yaWmnNzvc4" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="load" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5yaWmnNzvc5" role="1B3o_S" />
+      <node concept="3cqZAl" id="5yaWmnNzvc7" role="3clF45" />
+      <node concept="3clFbS" id="5yaWmnNzvca" role="3clF47">
+        <node concept="3clFbJ" id="7GzQgj58Y2j" role="3cqZAp">
+          <node concept="3clFbS" id="7GzQgj58Y2l" role="3clFbx">
+            <node concept="3cpWs6" id="7GzQgj58Zid" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="7GzQgj58Z1b" role="3clFbw">
+            <node concept="1rXfSq" id="7GzQgj58YgA" role="3uHU7B">
+              <ref role="37wK5l" to="g3l6:~SModelBase.getLoadingState():jetbrains.mps.smodel.loading.ModelLoadingState" resolve="getLoadingState" />
+            </node>
+            <node concept="Rm8GO" id="7GzQgj58YVD" role="3uHU7w">
+              <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+              <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+            </node>
+          </node>
+        </node>
+        <node concept="1HWtB8" id="7GzQgj597Ji" role="3cqZAp">
+          <node concept="3clFbS" id="7GzQgj597Jk" role="1HWHxc">
+            <node concept="3clFbJ" id="152idAkCrCA" role="3cqZAp">
+              <node concept="3clFbS" id="152idAkCrCC" role="3clFbx">
+                <node concept="3cpWs6" id="152idAkCs47" role="3cqZAp" />
+              </node>
+              <node concept="37vLTw" id="7GzQgj59alo" role="3clFbw">
+                <ref role="3cqZAo" node="7GzQgj592IY" resolve="myIsLoadInProgress" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="7GzQgj59k_z" role="3cqZAp">
+              <node concept="3cpWsn" id="7GzQgj59k_$" role="3cpWs9">
+                <property role="TrG5h" value="oldState" />
+                <node concept="3uibUv" id="7GzQgj59k__" role="1tU5fm">
+                  <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                </node>
+                <node concept="1rXfSq" id="7GzQgj59bR_" role="33vP2m">
+                  <ref role="37wK5l" to="g3l6:~SModelBase.getLoadingState():jetbrains.mps.smodel.loading.ModelLoadingState" resolve="getLoadingState" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="7GzQgj59bCV" role="3cqZAp">
+              <node concept="3clFbS" id="7GzQgj59bCX" role="3clFbx">
+                <node concept="3SKdUt" id="7GzQgj59c$h" role="3cqZAp">
+                  <node concept="3SKdUq" id="7GzQgj59c$j" role="3SKWNk">
+                    <property role="3SKdUp" value="double check" />
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="7GzQgj59cFG" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="7GzQgj59c5O" role="3clFbw">
+                <node concept="Rm8GO" id="7GzQgj59csy" role="3uHU7w">
+                  <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                  <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                </node>
+                <node concept="37vLTw" id="7GzQgj59l9g" role="3uHU7B">
+                  <ref role="3cqZAo" node="7GzQgj59k_$" resolve="oldState" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="1kY4WLCKSYd" role="3cqZAp">
+              <node concept="3cpWsn" id="1kY4WLCKSYe" role="3cpWs9">
+                <property role="TrG5h" value="mi" />
+                <node concept="3uibUv" id="1kY4WLCKSYf" role="1tU5fm">
+                  <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+                </node>
+                <node concept="1rXfSq" id="1kY4WLCKTiB" role="33vP2m">
+                  <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                </node>
+              </node>
+            </node>
+            <node concept="2GUZhq" id="1kY4WLCKTBJ" role="3cqZAp">
+              <node concept="3clFbS" id="1kY4WLCKTBL" role="2GV8ay">
+                <node concept="3clFbF" id="152idAkCsl1" role="3cqZAp">
+                  <node concept="37vLTI" id="152idAkCs_Q" role="3clFbG">
+                    <node concept="3clFbT" id="152idAkCsCg" role="37vLTx">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="37vLTw" id="7GzQgj59ayA" role="37vLTJ">
+                      <ref role="3cqZAo" node="7GzQgj592IY" resolve="myIsLoadInProgress" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1kY4WLCKTJv" role="3cqZAp">
+                  <node concept="2OqwBi" id="1kY4WLCKTLW" role="3clFbG">
+                    <node concept="37vLTw" id="1kY4WLCKTJt" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1kY4WLCKSYe" resolve="mi" />
+                    </node>
+                    <node concept="liA8E" id="1kY4WLCKTS_" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~SModel.enterUpdateMode():void" resolve="enterUpdateMode" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1kY4WLCKUor" role="3cqZAp">
+                  <node concept="2YIFZM" id="5eZ0Wn_TyEw" role="3clFbG">
+                    <ref role="37wK5l" to="rkxj:7P16$vxBflg" resolve="tryResolveUnknowns" />
+                    <ref role="1Pybhc" to="rkxj:31WmxQNAJED" resolve="JavaParser" />
+                    <node concept="2OqwBi" id="5eZ0Wn_TyEx" role="37wK5m">
+                      <node concept="37vLTw" id="5eZ0Wn_TyEy" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4YpB5dn4JhS" resolve="myRootsById" />
+                      </node>
+                      <node concept="T8wYR" id="5eZ0Wn_TyEz" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="7GzQgj59nkO" role="3cqZAp">
+                  <node concept="1rXfSq" id="7GzQgj59nkM" role="3clFbG">
+                    <ref role="37wK5l" to="g3l6:~SModelBase.setLoadingState(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="setLoadingState" />
+                    <node concept="Rm8GO" id="7GzQgj59ny9" role="37wK5m">
+                      <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                      <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="7GzQgj59ltL" role="3cqZAp">
+                  <node concept="1rXfSq" id="7GzQgj59ltJ" role="3clFbG">
+                    <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState,jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+                    <node concept="37vLTw" id="7GzQgj59mUV" role="37wK5m">
+                      <ref role="3cqZAo" node="7GzQgj59k_$" resolve="oldState" />
+                    </node>
+                    <node concept="Rm8GO" id="7GzQgj59n9V" role="37wK5m">
+                      <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                      <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="1kY4WLCKTBM" role="2GVbov">
+                <node concept="3clFbF" id="1kY4WLCKTVb" role="3cqZAp">
+                  <node concept="2OqwBi" id="1kY4WLCKTXC" role="3clFbG">
+                    <node concept="37vLTw" id="1kY4WLCKTVa" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1kY4WLCKSYe" resolve="mi" />
+                    </node>
+                    <node concept="liA8E" id="1kY4WLCKU9f" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~SModel.leaveUpdateMode():void" resolve="leaveUpdateMode" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="7GzQgj59aYV" role="3cqZAp">
+                  <node concept="37vLTI" id="7GzQgj59bdJ" role="3clFbG">
+                    <node concept="3clFbT" id="7GzQgj59bg9" role="37vLTx">
+                      <property role="3clFbU" value="false" />
+                    </node>
+                    <node concept="37vLTw" id="7GzQgj59aYT" role="37vLTJ">
+                      <ref role="3cqZAo" node="7GzQgj592IY" resolve="myIsLoadInProgress" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="7GzQgj5983z" role="1HWFw0">
+            <ref role="3cqZAo" to="w1kc:~RegularModelDescriptor.myLoadLock" resolve="myLoadLock" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5yaWmnNzvcb" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="eBzrbPQ0l" role="jymVt" />
