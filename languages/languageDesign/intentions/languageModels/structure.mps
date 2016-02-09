@@ -259,6 +259,7 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/intentionBulb.png" />
     <property role="1pbfSe" value="424618209" />
+    <property role="34LRSv" value="Universal Intention" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="PrWs8" id="6yt8uwrpgn_" role="PzmwI">
       <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
