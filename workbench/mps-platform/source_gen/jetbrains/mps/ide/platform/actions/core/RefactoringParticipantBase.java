@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> implements RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
   public List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
@@ -36,9 +35,6 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
 
 
 
-
-
-
   public List<RefactoringParticipant.Option> getAvailableOptions(List<InitialDataObject> initialStates, final SRepository repository) {
     return ListSequence.fromList(initialStates).translate(new ITranslator2<InitialDataObject, RefactoringParticipant.Option>() {
       public Iterable<RefactoringParticipant.Option> translate(InitialDataObject initialState) {
@@ -48,15 +44,5 @@ public abstract class RefactoringParticipantBase<InitialDataObject, FinalDataObj
   }
   public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository) {
     return getAvailableOptions(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository);
-  }
-  public boolean isApplicable(List<InitialDataObject> initialStates, final SRepository repository) {
-    return ListSequence.fromList(initialStates).any(new IWhereFilter<InitialDataObject>() {
-      public boolean accept(InitialDataObject initialState) {
-        return isApplicable(initialState, repository);
-      }
-    });
-  }
-  public boolean isApplicable(InitialDataObject initialState, SRepository repository) {
-    return isApplicable(ListSequence.fromListAndArray(new ArrayList<InitialDataObject>(), initialState), repository);
   }
 }

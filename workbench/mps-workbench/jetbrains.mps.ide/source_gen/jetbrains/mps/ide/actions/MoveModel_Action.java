@@ -24,26 +24,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant;
+import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
-import java.util.Collections;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SReferenceBase;
 
 public class MoveModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -130,51 +120,37 @@ public class MoveModel_Action extends BaseAction {
       return;
     }
 
-    final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), (AbstractModule) selectedModule.resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), ((SModel) MapSequence.fromMap(_params).get("model")));
-      }
-    });
-    dialog.value.show();
-    final EditableSModel newModel = dialog.value.getResult();
-    if (newModel == null) {
-      return;
-    }
+    UpdateDependentModelsRefactoringParticipant participant = new UpdateDependentModelsRefactoringParticipant();
+    Iterable<? extends RefactoringParticipant<?, ?, SModel, SModel>> participants = new ExtensionPoint<MoveModelRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveModelParticipantEP").getObjects();
 
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(GlobalScope.getInstance(), Collections.singleton(modelReference), new EmptyProgressMonitor());
-        for (SModel usage : SetSequence.fromSet(usages)) {
-          if (SModelStereotype.isUserModel(usage) && usage instanceof EditableSModel) {
-            ((SModelInternal) usage).addModelImport(newModel.getReference(), true);
-            MoveModel_Action.this.updateUsages((EditableSModel) usage, modelReference, newModel.getReference(), _params);
-            ((SModelInternal) usage).deleteModelImport(modelReference);
+    RefactoringProcessor.performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), "Move Model", participants, ListSequence.fromListAndArray(new ArrayList<SModel>(), ((SModel) MapSequence.fromMap(_params).get("model"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SModel, ? super SModel>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SModel, SModel>>, RefactoringSession>() {
+      public _FunctionTypes._return_P1_E0<? extends SModel, ? super SModel> invoke(Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SModel, SModel>> changes, RefactoringSession refactoringSession) {
+
+        final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
+        ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), (AbstractModule) selectedModule.resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), ((SModel) MapSequence.fromMap(_params).get("model")));
           }
+        });
+        dialog.value.show();
+        final EditableSModel newModel = dialog.value.getResult();
+        if (newModel == null) {
+          return null;
         }
-        MoveModel_Action.this.updateUsages(newModel, modelReference, newModel.getReference(), _params);
+
+        UpdateDependentModelsRefactoringParticipant.updateUsages(newModel, modelReference, newModel.getReference());
         DeleteModelHelper.delete(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ((SModel) MapSequence.fromMap(_params).get("model")), true);
+
+        _FunctionTypes._return_P1_E0<? extends SModel, ? super SModel> result = new _FunctionTypes._return_P1_E0<EditableSModel, SModel>() {
+          public EditableSModel invoke(SModel oldModel) {
+            if (oldModel != ((SModel) MapSequence.fromMap(_params).get("model"))) {
+              throw new IllegalStateException();
+            }
+            return newModel;
+          }
+        };
+        return result;
       }
     });
-  }
-  private void updateUsages(EditableSModel usageModel, final SModelReference oldModelReference, final SModelReference newModelReference, final Map<String, Object> _params) {
-    Iterable<SNode> nodes = (Iterable<SNode>) SNodeUtil.getDescendants(usageModel);
-    Sequence.fromIterable(nodes).translate(new ITranslator2<SNode, SReference>() {
-      public Iterable<SReference> translate(SNode it) {
-        return SNodeOperations.getReferences(it);
-      }
-    }).where(new IWhereFilter<SReference>() {
-      public boolean accept(SReference it) {
-        return eq_pp3sda_a0a0a0a0a0a1a7(it.getTargetSModelReference(), oldModelReference);
-      }
-    }).visitAll(new IVisitor<SReference>() {
-      public void visit(SReference it) {
-        ((SReferenceBase) (SReference) it).setTargetSModelReference(newModelReference);
-      }
-    });
-    usageModel.setChanged(true);
-  }
-  private static boolean eq_pp3sda_a0a0a0a0a0a1a7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -14,6 +14,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.platform.actions.core.MoveModelRefactoringParticipant" file="MoveModelRefactoringParticipant.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" file="MoveNodeRefactoringParticipant.java">
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringDataCollector" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -134,7 +138,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />

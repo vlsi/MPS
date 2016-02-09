@@ -11,5 +11,9 @@
       <interface-class>jetbrains.mps.make.IMakeService</interface-class>
       <implementation-class>jetbrains.mps.ide.make.WorkbenchMakeService</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.actions.refactoring.MoveModelExtensionComponent</implementation-class>
+    </component>
   </application-components>
 </components>

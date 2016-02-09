@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.platform.actions.core;
+package jetbrains.mps.ide.actions.refactoring;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.actions.ExtensionDescriptor;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import org.jetbrains.annotations.NotNull;
 
-public class RefactoringActionsExtensionComponent implements ApplicationComponent {
+public class MoveModelExtensionComponent implements ApplicationComponent {
 
   ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
 

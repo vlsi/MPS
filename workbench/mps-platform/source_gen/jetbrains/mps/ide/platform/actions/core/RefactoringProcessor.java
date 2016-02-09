@@ -120,6 +120,9 @@ public class RefactoringProcessor {
           public void run() {
             RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
             final _FunctionTypes._return_P1_E0<? extends S, ? super T> getFinalObject = doRefactor.invoke(changes, refactoringSession);
+            if (getFinalObject == null) {
+              return;
+            }
             for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantChanges : MapSequence.fromMap(changes)) {
               participantChanges.value().doRefactor(ListSequence.fromList(nodes).select(new ISelector<T, S>() {
                 public S select(T it) {
