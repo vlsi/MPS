@@ -24,12 +24,10 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -62,8 +60,8 @@ public abstract class MetaAdapterFactory {
   public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
     SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
     LangKey p = new LangKey(id, langName);
-    ourLanguageIds.putIfAbsent(p, l);
-    return ourLanguageIds.get(p);
+    SLanguage result = ourLanguageIds.putIfAbsent(p, l);
+    return result != null ? result : l;
   }
 
   @NotNull
@@ -86,8 +84,8 @@ public abstract class MetaAdapterFactory {
   public static SConcept getConcept(SConceptId id, String conceptName) {
     SConceptAdapterById c = new SConceptAdapterById(id, conceptName);
     Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    ourConceptIds.putIfAbsent(p, c);
-    return ourConceptIds.get(p);
+    SConcept result = ourConceptIds.putIfAbsent(p, c);
+    return result != null ? result : c;
   }
 
   @NotNull
@@ -105,8 +103,8 @@ public abstract class MetaAdapterFactory {
   public static SInterfaceConcept getInterfaceConcept(SConceptId id, String conceptName) {
     SInterfaceConceptAdapterById c = new SInterfaceConceptAdapterById(id, conceptName);
     Pair<SConceptId, String> p = new Pair<SConceptId, String>(id, conceptName);
-    ourIntfcConceptIds.putIfAbsent(p, c);
-    return ourIntfcConceptIds.get(p);
+    SInterfaceConcept result = ourIntfcConceptIds.putIfAbsent(p, c);
+    return result != null ? result : c;
   }
 
   @NotNull
@@ -124,8 +122,8 @@ public abstract class MetaAdapterFactory {
   public static SProperty getProperty(SPropertyId id, String propName) {
     SPropertyAdapterById c = new SPropertyAdapterById(id, propName);
     Pair<SPropertyId, String> p = new Pair<SPropertyId, String>(id, propName);
-    ourPropertyIds.putIfAbsent(p, c);
-    return ourPropertyIds.get(p);
+    SProperty result = ourPropertyIds.putIfAbsent(p, c);
+    return result != null ? result : c;
   }
 
   @NotNull
@@ -143,8 +141,8 @@ public abstract class MetaAdapterFactory {
   public static SReferenceLink getReferenceLink(SReferenceLinkId id, String refName) {
     SReferenceLinkAdapterById c = new SReferenceLinkAdapterById(id, refName);
     Pair<SReferenceLinkId, String> p = new Pair<SReferenceLinkId, String>(id, refName);
-    ourRefIds.putIfAbsent(p, c);
-    return ourRefIds.get(p);
+    SReferenceLink result = ourRefIds.putIfAbsent(p, c);
+    return result != null ? result : c;
   }
 
   @NotNull
@@ -162,8 +160,8 @@ public abstract class MetaAdapterFactory {
   public static SContainmentLink getContainmentLink(SContainmentLinkId id, String linkName) {
     SContainmentLinkAdapterById c = new SContainmentLinkAdapterById(id, linkName);
     Pair<SContainmentLinkId, String> p = new Pair<SContainmentLinkId, String>(id, linkName);
-    ourLinkIds.putIfAbsent(p, c);
-    return ourLinkIds.get(p);
+    SContainmentLink result = ourLinkIds.putIfAbsent(p, c);
+    return result != null ? result : c;
   }
 
   @NotNull
