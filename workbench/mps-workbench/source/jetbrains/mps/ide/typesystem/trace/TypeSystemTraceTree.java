@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.ui.JBColor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -46,7 +45,8 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -316,20 +316,18 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   public Object getData(@NonNls final String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
     if (currentNode instanceof TypeSystemTraceTreeNode) {
-      final Wrappers._T<Object> _data = new Wrappers._T<Object>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
         @Override
-        public void run() {
-          _data.value = _getData(id);
+        public Object compute() {
+          return _getData(id);
         }
       });
-      return _data.value;
     }
     return null;
   }
 
   private Object _getData(String id) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a13(this.getCurrentNode(), this);
+    AbstractOperation operation = getAssociatedOperation(this.getCurrentNode());
     if (operation == null) {
       return null;
     }
@@ -352,7 +350,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         Object difference = newNode.getUserObject();
@@ -367,7 +365,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         Object fromDiff = fromNode.getUserObject();
@@ -381,15 +379,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
 
   private void showDetails(MPSTreeNode treeNode) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a63(treeNode);
-    myDetailsTree.setOperation(operation);
+    myDetailsTree.setOperation(getAssociatedOperation(treeNode));
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
     List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
     for (MPSTreeNode treeNode : treeNodes) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a73(treeNode);
-      operations.add(operation);
+      operations.add(getAssociatedOperation(treeNode));
     }
     myDetailsTree.setOperations(operations);
   }
@@ -415,8 +411,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
           TreePath toPath = selectionPaths[selectionPaths.length - 1];
           showState((MPSTreeNode) fromPath.getLastPathComponent(), (MPSTreeNode) toPath.getLastPathComponent());
           List<MPSTreeNode> selectedNodes = new ArrayList<MPSTreeNode>();
-          for (int idx = 0; idx < selectionPaths.length; idx++) {
-            selectedNodes.add((MPSTreeNode) selectionPaths[idx].getLastPathComponent());
+          for (TreePath tp : selectionPaths) {
+            selectedNodes.add((MPSTreeNode) tp.getLastPathComponent());
           }
           showDetails(selectedNodes);
         }
@@ -549,20 +545,18 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     public Object getData(@NonNls final String id) {
       MPSTreeNode currentNode = this.getCurrentNode();
       if (currentNode instanceof TypeSystemTraceTreeNode) {
-        final Wrappers._T<Object> _data = new Wrappers._T<Object>();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Object>() {
           @Override
-          public void run() {
-            _data.value = _getData(id);
+          public Object compute() {
+            return _getData(id);
           }
         });
-        return _data.value;
       }
       return null;
     }
 
     private Object _getData(String id) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a6ob(this.getCurrentNode(), this);
+      AbstractOperation operation = getAssociatedOperation(this.getCurrentNode());
       if (operation == null) {
         return null;
       }
@@ -620,30 +614,9 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
   }
 
-  private static Object check_kyyn1p_a0a0a13(MPSTreeNode checkedDotOperand, TypeSystemTraceTree checkedDotThisExpression) {
+  private static AbstractOperation getAssociatedOperation(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a63(MPSTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a1a73(MPSTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a6ob(MPSTreeNode checkedDotOperand, TypeSystemTraceTree.DetailsTree checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
+      return (AbstractOperation) checkedDotOperand.getUserObject();
     }
     return null;
   }

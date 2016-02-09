@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,23 +17,18 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Splitter;
-import com.intellij.openapi.ui.TitlePanel;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.NullErrorReporter;
-import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JComponent;
-import javax.swing.border.Border;
 import java.awt.event.ActionEvent;
 
 public class MyBaseNodeDialog extends BaseNodeDialog {
@@ -44,12 +39,8 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private Splitter myMainComponent;
   private JComponent mySupertypesViewComponent;
 
-  public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
-    this(operationContext.getProject(), node, type, error);
-  }
-
-  public MyBaseNodeDialog(Project mpsProject, SNode node, SNode type, IErrorReporter error) {
-    super(mpsProject, getTitle(node));
+  public MyBaseNodeDialog(Project mpsProject, String title, SNode type, IErrorReporter error) {
+    super(mpsProject, title);
 
     SupertypesViewTool supertypesView = mpsProject.getComponent(SupertypesViewTool.class);
 
@@ -75,10 +66,11 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     return myMainComponent;
   }
 
+  @NotNull
   @Override
   protected Action[] createActions() {
     if(myError != null) {
-      String s = ModelAccess.instance().runReadAction(new Computable<String>() {
+      String s = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String>() {
         public String compute() {
           return myError.reportError();
         }
@@ -87,12 +79,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
       if (myError.getRuleNode() != null) {
         return new Action[]{getOKAction(), new AbstractAction("Go To Rule") {
           public void actionPerformed(ActionEvent e) {
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
-              @Override
-              public void run() {
-                GoToTypeErrorRuleUtil.goToTypeErrorRule(getProject(), myError);
-              }
-            });
+            new EditorNavigator(getProject()).shallSelect(true).open(myError.getRuleNode());
           }
         }};
       }
@@ -117,14 +104,6 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
           myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();
-      }
-    });
-  }
-
-  private static String getTitle(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String compute() {
-        return "Type Explorer [" + node + "]";
       }
     });
   }
