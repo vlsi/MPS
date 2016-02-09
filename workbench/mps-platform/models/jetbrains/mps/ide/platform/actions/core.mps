@@ -756,7 +756,7 @@
             </node>
             <node concept="2OqwBi" id="76O06llYVVL" role="33vP2m">
               <node concept="2O5UvJ" id="76O06llYVVM" role="2Oq$k0">
-                <ref role="2O5UnU" node="76O06llMw9R" resolve="RenameParticipantEP" />
+                <ref role="2O5UnU" node="76O06llMw9R" resolve="RenameNodeParticipantEP" />
               </node>
               <node concept="SfwO_" id="76O06llYVVN" role="2OqNvi" />
             </node>
@@ -6665,7 +6665,7 @@
     </node>
   </node>
   <node concept="vrV6u" id="76O06llMw9R">
-    <property role="TrG5h" value="RenameParticipantEP" />
+    <property role="TrG5h" value="RenameNodeParticipantEP" />
     <node concept="3uibUv" id="76O06llMw9S" role="luc8K">
       <ref role="3uigEE" node="76O06llMwcZ" resolve="RenameNodeRefactoringParticipant" />
       <node concept="3qTvmN" id="76O06llMw9T" role="11_B2D" />
