@@ -248,6 +248,7 @@
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
         <property id="1204991940915" name="caption" index="2f7twF" />
         <property id="1205160838084" name="isInternal" index="2pbKbs" />
+        <property id="1217005992861" name="isInvisibleWhenDisabled" index="1rdrE6" />
         <property id="1213283637680" name="isPopup" index="1XlLyE" />
         <child id="1204991552650" name="modifier" index="2f5YQi" />
         <child id="1207145245948" name="contents" index="ftER_" />
@@ -893,6 +894,7 @@
         <child id="1225621960341" name="index" index="1sKJu8" />
       </concept>
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
@@ -19383,6 +19385,34 @@
     <property role="2uzpH1" value="Add to New Favorites List" />
     <property role="3GE5qa" value="Favorites" />
     <property role="1teQrl" value="true" />
+    <node concept="2XrIbr" id="6e2QwCfVfuJ" role="32lrUH">
+      <property role="TrG5h" value="getObjects" />
+      <node concept="_YKpA" id="6e2QwCfVfuK" role="3clF45">
+        <node concept="3uibUv" id="6e2QwCfVfuL" role="_ZDj9">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6e2QwCfVfuM" role="3clF47">
+        <node concept="3cpWs6" id="6e2QwCfVfuN" role="3cqZAp">
+          <node concept="2OqwBi" id="6e2QwCfVfuO" role="3cqZAk">
+            <node concept="2ShNRf" id="6e2QwCfVfuP" role="2Oq$k0">
+              <node concept="1pGfFk" id="6e2QwCfVfuQ" role="2ShVmc">
+                <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.&lt;init&gt;()" resolve="TreeNodeValueExtractor" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6e2QwCfVfuR" role="2OqNvi">
+              <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.getObjects(java.util.Collection):java.util.List" resolve="getObjects" />
+              <node concept="2OqwBi" id="6e2QwCfVfuS" role="37wK5m">
+                <node concept="2WthIp" id="6e2QwCfVfuT" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6e2QwCfVfuU" role="2OqNvi">
+                  <ref role="2WH_rO" node="2tmN3ZB1SAt" resolve="treeNodes" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1QGGSu" id="6XsdSpi7Jeq" role="3Uehp1">
       <node concept="10M0yZ" id="6XsdSpi7VRb" role="3xaMm5">
         <ref role="1PxDUh" to="z2i8:~AllIcons$General" resolve="AllIcons.General" />
@@ -19560,14 +19590,10 @@
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
-            <node concept="2YIFZM" id="79AZtQxG393" role="33vP2m">
-              <ref role="37wK5l" to="4ay8:~FavoritesUtil.getObjects(java.util.List):java.util.List" resolve="getObjects" />
-              <ref role="1Pybhc" to="4ay8:~FavoritesUtil" resolve="FavoritesUtil" />
-              <node concept="2OqwBi" id="79AZtQxG394" role="37wK5m">
-                <node concept="2WthIp" id="79AZtQxG395" role="2Oq$k0" />
-                <node concept="1DTwFV" id="79AZtQxG396" role="2OqNvi">
-                  <ref role="2WH_rO" node="2tmN3ZB1SAt" resolve="treeNodes" />
-                </node>
+            <node concept="2OqwBi" id="6e2QwCfVfLt" role="33vP2m">
+              <node concept="2WthIp" id="6e2QwCfVfLw" role="2Oq$k0" />
+              <node concept="2XshWL" id="6e2QwCfVfLy" role="2OqNvi">
+                <ref role="2WH_rO" node="6e2QwCfVfuJ" resolve="getObjects" />
               </node>
             </node>
           </node>
@@ -19623,6 +19649,28 @@
     </node>
     <node concept="tkhdA" id="79AZtQxG399" role="tmbBb">
       <node concept="3clFbS" id="79AZtQxG39a" role="2VODD2">
+        <node concept="3clFbF" id="6e2QwCfVfZ5" role="3cqZAp">
+          <node concept="1rXfSq" id="6e2QwCfVfZ3" role="3clFbG">
+            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+            <node concept="2OqwBi" id="6e2QwCfVg2u" role="37wK5m">
+              <node concept="tl45R" id="6e2QwCfVg0K" role="2Oq$k0" />
+              <node concept="liA8E" id="6e2QwCfVgaK" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="6e2QwCfVgbZ" role="37wK5m">
+              <node concept="2OqwBi" id="6e2QwCfVgn7" role="3fr31v">
+                <node concept="2OqwBi" id="6e2QwCfVgcX" role="2Oq$k0">
+                  <node concept="2WthIp" id="6e2QwCfVgd0" role="2Oq$k0" />
+                  <node concept="2XshWL" id="6e2QwCfVgd2" role="2OqNvi">
+                    <ref role="2WH_rO" node="6e2QwCfVfuJ" resolve="getObjects" />
+                  </node>
+                </node>
+                <node concept="1v1jN8" id="6e2QwCfVh6M" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="79AZtQxG39b" role="3cqZAp">
           <node concept="3clFbS" id="79AZtQxG39d" role="3clFbx">
             <node concept="3clFbF" id="79AZtQxG39y" role="3cqZAp">
@@ -19836,6 +19884,34 @@
     <property role="2uzpH1" value="Add to Favorites" />
     <property role="3GE5qa" value="Favorites" />
     <property role="1teQrl" value="true" />
+    <node concept="2XrIbr" id="6e2QwCfTGpg" role="32lrUH">
+      <property role="TrG5h" value="getObjects" />
+      <node concept="_YKpA" id="6e2QwCfUjmS" role="3clF45">
+        <node concept="3uibUv" id="6e2QwCfUjvM" role="_ZDj9">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6e2QwCfTGpi" role="3clF47">
+        <node concept="3cpWs6" id="6e2QwCfUj_n" role="3cqZAp">
+          <node concept="2OqwBi" id="6e2QwCfUXyj" role="3cqZAk">
+            <node concept="2ShNRf" id="6e2QwCfUj_L" role="2Oq$k0">
+              <node concept="1pGfFk" id="6e2QwCfUXwX" role="2ShVmc">
+                <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.&lt;init&gt;()" resolve="TreeNodeValueExtractor" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6e2QwCfUXBl" role="2OqNvi">
+              <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.getObjects(java.util.Collection):java.util.List" resolve="getObjects" />
+              <node concept="2OqwBi" id="6e2QwCfUXGf" role="37wK5m">
+                <node concept="2WthIp" id="6e2QwCfUXDr" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6e2QwCfUXQ8" role="2OqNvi">
+                  <ref role="2WH_rO" node="2tmN3ZB3EL2" resolve="treeNodes" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1DS2jV" id="2tmN3ZB3EL2" role="1NuT2Z">
       <property role="TrG5h" value="treeNodes" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.TREE_NODES" resolve="TREE_NODES" />
@@ -19889,14 +19965,10 @@
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
-            <node concept="2YIFZM" id="79AZtQxG38g" role="33vP2m">
-              <ref role="37wK5l" to="4ay8:~FavoritesUtil.getObjects(java.util.List):java.util.List" resolve="getObjects" />
-              <ref role="1Pybhc" to="4ay8:~FavoritesUtil" resolve="FavoritesUtil" />
-              <node concept="2OqwBi" id="79AZtQxG38h" role="37wK5m">
-                <node concept="2WthIp" id="79AZtQxG38i" role="2Oq$k0" />
-                <node concept="1DTwFV" id="79AZtQxG38j" role="2OqNvi">
-                  <ref role="2WH_rO" node="2tmN3ZB3EL2" resolve="treeNodes" />
-                </node>
+            <node concept="2OqwBi" id="6e2QwCfUZAu" role="33vP2m">
+              <node concept="2WthIp" id="6e2QwCfUZAx" role="2Oq$k0" />
+              <node concept="2XshWL" id="6e2QwCfUZAz" role="2OqNvi">
+                <ref role="2WH_rO" node="6e2QwCfTGpg" resolve="getObjects" />
               </node>
             </node>
           </node>
@@ -19973,6 +20045,28 @@
     </node>
     <node concept="tkhdA" id="2tmN3ZB3EKZ" role="tmbBb">
       <node concept="3clFbS" id="2tmN3ZB3EL0" role="2VODD2">
+        <node concept="3clFbF" id="6e2QwCfUYn0" role="3cqZAp">
+          <node concept="1rXfSq" id="6e2QwCfUYmY" role="3clFbG">
+            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+            <node concept="2OqwBi" id="6e2QwCfUYqa" role="37wK5m">
+              <node concept="tl45R" id="6e2QwCfUYos" role="2Oq$k0" />
+              <node concept="liA8E" id="6e2QwCfUYys" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="6e2QwCfUZtd" role="37wK5m">
+              <node concept="2OqwBi" id="6e2QwCfUZtf" role="3fr31v">
+                <node concept="2OqwBi" id="6e2QwCfUZtg" role="2Oq$k0">
+                  <node concept="2WthIp" id="6e2QwCfUZth" role="2Oq$k0" />
+                  <node concept="2XshWL" id="6e2QwCfUZti" role="2OqNvi">
+                    <ref role="2WH_rO" node="6e2QwCfTGpg" resolve="getObjects" />
+                  </node>
+                </node>
+                <node concept="1v1jN8" id="6e2QwCfUZtj" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="2tmN3ZB3EL5" role="3cqZAp">
           <node concept="2OqwBi" id="2es0rDwcz_F" role="3clFbG">
             <node concept="2OqwBi" id="2tmN3ZB3EL7" role="2Oq$k0">
@@ -20032,13 +20126,27 @@
                 <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
-            <node concept="2YIFZM" id="79AZtQxG2z5" role="33vP2m">
-              <ref role="37wK5l" to="4ay8:~FavoritesUtil.getObjects(java.util.List):java.util.List" resolve="getObjects" />
-              <ref role="1Pybhc" to="4ay8:~FavoritesUtil" resolve="FavoritesUtil" />
-              <node concept="2OqwBi" id="79AZtQxG2z6" role="37wK5m">
-                <node concept="2WthIp" id="79AZtQxG2z7" role="2Oq$k0" />
-                <node concept="1DTwFV" id="79AZtQxG2z8" role="2OqNvi">
-                  <ref role="2WH_rO" node="79AZtQxEvcf" resolve="treeNodes" />
+            <node concept="2OqwBi" id="6e2QwCfVkrS" role="33vP2m">
+              <node concept="2OqwBi" id="6e2QwCfVkx2" role="2Oq$k0">
+                <node concept="2ShNRf" id="6e2QwCfVkrT" role="2Oq$k0">
+                  <node concept="1pGfFk" id="6e2QwCfVkrU" role="2ShVmc">
+                    <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.&lt;init&gt;()" resolve="TreeNodeValueExtractor" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6e2QwCfVk_b" role="2OqNvi">
+                  <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.allowTransients(boolean):jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor" resolve="allowTransients" />
+                  <node concept="3clFbT" id="6e2QwCfVkCW" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="6e2QwCfVkrV" role="2OqNvi">
+                <ref role="37wK5l" to="4ay8:~TreeNodeValueExtractor.getObjects(java.util.Collection):java.util.List" resolve="getObjects" />
+                <node concept="2OqwBi" id="6e2QwCfVkrW" role="37wK5m">
+                  <node concept="2WthIp" id="6e2QwCfVkrX" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="6e2QwCfVkrY" role="2OqNvi">
+                    <ref role="2WH_rO" node="79AZtQxEvcf" resolve="treeNodes" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -20189,6 +20297,7 @@
     <property role="TrG5h" value="FavoritesPopupWrapper" />
     <property role="3GE5qa" value="Favorites" />
     <property role="1XlLyE" value="true" />
+    <property role="1rdrE6" value="true" />
     <node concept="2OiAzN" id="79AZtQxG35J" role="ftER_">
       <node concept="2OiTZ2" id="79AZtQxG35K" role="2Oj6PV">
         <node concept="3clFbS" id="79AZtQxG35L" role="2VODD2">

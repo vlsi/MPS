@@ -4,13 +4,13 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -23,7 +23,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   private static final Icon ICON = null;
   public ShowDifferencesWithModelOnDisk_Action() {
     super("Show Differences with Model on Disk", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
   @Override
@@ -31,12 +31,8 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    setEnabledState(event.getPresentation(), ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

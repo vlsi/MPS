@@ -24,6 +24,7 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   public FavoritesPopupWrapper_ActionGroup() {
     super("FavoritesPopupWrapper", ID);
+    this.setIsAlwaysVisible(false);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
@@ -48,5 +49,9 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   }
   public boolean isStrict() {
     return false;
+  }
+  @Override
+  public boolean hideIfNoVisibleChildren() {
+    return true;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,7 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
-import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,21 +32,6 @@ public abstract class FavoritesRoot<T> {
     if (value instanceof SNodeReference) return new NodeFavoritesRoot(project, (SNodeReference) value);
     if (value instanceof SModelReference) return new ModelFavoritesRoot(project, (SModelReference) value);
     if (value instanceof SModuleReference) return new ModuleFavoritesRoot(project, (SModuleReference) value);
-    return null;
-  }
-
-  /**
-   * Extract an input object suitable for favorites view,
-   * @return null if can't create favorites entry from a given tree element
-   */
-  public static Object extractValue(MPSTreeNode treeNode) {
-    if (treeNode instanceof SNodeTreeNode) {
-      return ((SNodeTreeNode) treeNode).getSNode().getReference();
-    } else if (treeNode instanceof SModelTreeNode) {
-      return ((SModelTreeNode) treeNode).getModel().getReference();
-    } else if (treeNode instanceof ProjectModuleTreeNode) {
-      return ((ProjectModuleTreeNode) treeNode).getModule().getModuleReference();
-    }
     return null;
   }
 

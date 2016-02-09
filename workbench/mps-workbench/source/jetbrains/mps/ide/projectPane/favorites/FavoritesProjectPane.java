@@ -48,7 +48,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -209,7 +208,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         invisibleRoot.setText("There is nothing to display.");
         return invisibleRoot;
       }
-      for (Object o : new ArrayList(objectList)) {
+      for (Object o : objectList.toArray()) {
         FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(myProject, o);
         if (favoritesRoot == null) continue;
         MPSTreeNode newChild = favoritesRoot.createTreeNode();

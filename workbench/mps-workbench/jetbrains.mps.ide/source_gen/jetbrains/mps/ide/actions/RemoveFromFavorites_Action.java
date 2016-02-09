@@ -13,6 +13,7 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
@@ -62,7 +63,7 @@ public class RemoveFromFavorites_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<Object> objects = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+    List<Object> objects = new TreeNodeValueExtractor().allowTransients(true).getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
     MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
     if (favoritesManager == null) {
       return;

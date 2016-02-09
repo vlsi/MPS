@@ -71,6 +71,8 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -93,6 +95,8 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -861,6 +865,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashSet" />
@@ -2634,6 +2639,7 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -3544,6 +3550,5 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 
