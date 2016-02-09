@@ -972,7 +972,7 @@
   </root>
   <root nodeRef="r:ecbd9874-078d-4efd-b8c2-31475fda8f48(jetbrains.mps.lang.migration.pluginSolution.plugin)/5314439508689585911">
     <file name="RenameReferencesParticipant.java">
-      <node id="5314439508689585913" at="35,52,36,62" concept="14" />
+      <node id="5314439508689585913" at="35,52,36,66" concept="14" />
       <node id="5314439508689585918" at="38,57,39,47" concept="9" />
       <node id="5314439508689585936" at="43,0,44,0" concept="12" trace="OPTION" />
       <node id="5314439508689762810" at="45,56,46,39" concept="9" />
@@ -1026,7 +1026,7 @@
       <node id="5314439508689586086" at="80,7,110,26" concept="9" />
       <node id="5314439508689586037" at="62,5,111,5" concept="1" />
       <node id="5314439508689586009" at="59,0,113,0" concept="7" trace="getChanges#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SearchScope;)Ljava/util/List;" />
-      <scope id="5314439508689585913" at="35,52,36,62" />
+      <scope id="5314439508689585913" at="35,52,36,66" />
       <scope id="5314439508689585917" at="38,57,39,47" />
       <scope id="5314439508689760705" at="45,56,46,39" />
       <scope id="5314439508689760713" at="48,42,49,18" />
