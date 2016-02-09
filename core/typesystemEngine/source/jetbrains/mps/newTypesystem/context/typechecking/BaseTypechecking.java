@@ -144,8 +144,12 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
     // do nothing
   }
 
-  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+  /**
+   * Should return true iff the operation has succeeded and was not cancelled.
+   */
+  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     // do nothing
+    return false;
   }
 
   /**

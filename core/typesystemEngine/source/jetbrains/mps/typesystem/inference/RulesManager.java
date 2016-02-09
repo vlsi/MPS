@@ -166,6 +166,7 @@ public class RulesManager {
   }
 
   public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(SNode node) {
+    ensureAllRulesLoaded();
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
     Set<NonTypesystemRule_Runtime> ruleSet;
     ruleSet = myNonTypeSystemRules.getRules(node);
