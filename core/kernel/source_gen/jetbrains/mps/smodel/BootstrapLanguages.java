@@ -64,6 +64,9 @@ public class BootstrapLanguages {
   public static SLanguage getGenContextLang() {
     return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L), "jetbrains.mps.lang.generator.generationContext");
   }
+  public static SLanguage getBaseLang() {
+    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+  }
   public static SLanguage getBaseLangUnitTestLang() {
     return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L), "jetbrains.mps.baseLanguage.unitTest");
   }

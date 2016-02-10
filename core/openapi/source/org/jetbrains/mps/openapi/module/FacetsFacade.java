@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,11 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
+import java.util.Collection;
 import java.util.Set;
 
 public abstract class FacetsFacade {
@@ -36,22 +39,47 @@ public abstract class FacetsFacade {
   public abstract Set<String> getFacetTypes();
 
   /**
-   * For the given set of languages, returns a set of recommended facet types.
+   * @deprecated use {@link #getApplicableFacetTypes(Collection)} instead
    */
+  @Deprecated
+  // ToRemove(version = 3.4)
   public abstract Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages);
+
+  /**
+   * For the given set of languages, returns a set of recommended (see {@link #registerLanguageFacet(SLanguage, String)}) facet types.
+   */
+  public abstract Set<String> getApplicableFacetTypes(Collection<SLanguage> usedLanguages);
+
+  /**
+   * @deprecated use {@link #registerLanguageFacet(SLanguage, String)} instead
+   */
+  @Deprecated
+  // ToRemove(version = 3.4)
+  public abstract void registerLanguageFacet(String language, String facetType);
 
   /**
    *  Associates a facet with a language. Allows MPS to advise a user to turn on the facet for
    *  modules using this language.
    */
-  public abstract void registerLanguageFacet(String language, String facetType);
+  public abstract void registerLanguageFacet(@NotNull SLanguage language, String facetType);
 
+  /**
+   * @deprecated use {@link #unregisterLanguageFacet(SLanguage, String)} instead
+   */
+  @Deprecated
+  // ToRemove(version = 3.4)
   public abstract void unregisterLanguageFacet(String language, String facetType);
 
+  public abstract void unregisterLanguageFacet(@NotNull SLanguage language, String facetType);
+
+  /**
+   * @param facetType facet kind we intend to instantiate
+   * @return factory, if found for the given facet type.
+   */
   @Nullable
   public abstract FacetFactory getFacetFactory(String facetType);
 
-  public abstract void addFactory(String facetType, FacetFactory factory);
+  public abstract void addFactory(@NotNull String facetType, FacetFactory factory);
 
   public abstract void removeFactory(FacetFactory factory);
 

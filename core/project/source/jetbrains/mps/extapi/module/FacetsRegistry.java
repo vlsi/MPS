@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,17 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.util.containers.MultiMap;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 2/27/13
@@ -71,6 +77,25 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
       result.addAll(myLanguageToFacetTypes.get(lang));
     }
     return result;
+  }
+
+  @Override
+  public Set<String> getApplicableFacetTypes(Collection<SLanguage> usedLanguages) {
+    LinkedHashSet<String> langNamespaces = new LinkedHashSet<String>();
+    for (SLanguage l : usedLanguages) {
+      langNamespaces.add(l.getQualifiedName());
+    }
+    return getApplicableFacetTypes(langNamespaces);
+  }
+
+  @Override
+  public void registerLanguageFacet(@NotNull SLanguage language, String facetType) {
+    registerLanguageFacet(language.getQualifiedName(), facetType);
+  }
+
+  @Override
+  public void unregisterLanguageFacet(@NotNull SLanguage language, String facetType) {
+    unregisterLanguageFacet(language.getQualifiedName(), facetType);
   }
 
   @Override
@@ -120,7 +145,7 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
     setUpTestsFacet();
     setUpDumbIdeaFacet();
 
-    registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE_NAMESPACE, JavaModuleFacet.FACET_TYPE);
+    registerLanguageFacet(BootstrapLanguages.getBaseLang(), JavaModuleFacet.FACET_TYPE);
   }
 
   private void setUpJavaFacet() {

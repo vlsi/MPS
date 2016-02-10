@@ -29,7 +29,6 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.ItemRemovable;
-import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
@@ -37,7 +36,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -71,9 +69,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
   private JavaModuleFacetImpl myJavaModuleFacet;
 
-  public JavaModuleFacetTab(JavaModuleFacet javaModuleFacet) {
-    super(((ModuleFacetBase)javaModuleFacet).getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("facet.java.tip"));
-    myJavaModuleFacet = (JavaModuleFacetImpl)javaModuleFacet;
+  public JavaModuleFacetTab(JavaModuleFacetImpl javaModuleFacet) {
+    super(javaModuleFacet.getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("facet.java.tip"));
+    myJavaModuleFacet = javaModuleFacet;
   }
 
   @Override

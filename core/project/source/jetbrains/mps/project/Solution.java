@@ -205,8 +205,8 @@ public class Solution extends ReloadableModuleBase {
   }
 
   @Override
-  protected void collectFacetTypes(Set<String> types) {
-    super.collectFacetTypes(types);
+  protected void collectMandatoryFacetTypes(Set<String> types) {
+    super.collectMandatoryFacetTypes(types);
     types.add(TestsFacet.FACET_TYPE);
   }
 

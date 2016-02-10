@@ -39,6 +39,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   private static final Logger LOG = LogManager.getLogger(JavaModuleFacetImpl.class);
 
   public JavaModuleFacetImpl() {
+    super(FACET_TYPE);
   }
 
   @Override
@@ -54,11 +55,6 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     }
     ModuleDescriptor descriptor = module.getModuleDescriptor();
     return descriptor != null && descriptor.getCompileInMPS();
-  }
-
-  @Override
-  public String getFacetType() {
-    return FACET_TYPE;
   }
 
   @NotNull

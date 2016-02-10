@@ -34,9 +34,8 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
   private SModelReference myPlanModel;
   private ModelGenerationPlan myCachedPlanInstance;
 
-  @Override
-  public String getFacetType() {
-    return FACET_TYPE;
+  public CustomGenerationModuleFacet() {
+    super(FACET_TYPE);
   }
 
   @Override

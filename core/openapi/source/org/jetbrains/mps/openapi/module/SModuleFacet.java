@@ -19,12 +19,23 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 /**
- *  Facets allow to store language-specific settings on a module-level.
+ *  Facets allow to store language or feature-specific settings on a module-level.
  *  Every facet has a language it is associated with.
+ *  Facets are of different {@link #getFacetType() kind}, each module may host at most one facet instance of each kind.
  *  All facets associated with the used languages in a module are automatically instantiated and added to the module.
- *  (see {@link FacetsFacade})
+ *  Facets persist their relevant settings using {@link Memento} which generally ends up in a module descriptor. NOTE, facets shall not depend
+ *  on <code>ModuleFacetDescriptor</code>, their interface to outer world is bound to <code>Memento</code> only.
+ *  For read-only modules, facets are not expected to change/persist settings.
+ *  @see FacetsFacade
  */
 public interface SModuleFacet {
+
+  /**
+   * Identity of the facet, see {@link FacetsFacade#getFacetFactory(String)}
+   * @return kind of the facet
+   */
+  @NotNull
+  String getFacetType();
 
   /**
    * The owning module

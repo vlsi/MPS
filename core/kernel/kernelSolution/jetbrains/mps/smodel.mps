@@ -703,7 +703,7 @@
       </node>
     </node>
     <node concept="2YIFZL" id="4_F$1bfWyDq" role="jymVt">
-      <property role="TrG5h" value="getBaseLangUnitTestLang" />
+      <property role="TrG5h" value="getBaseLang" />
       <node concept="3uibUv" id="4_F$1bfWBaj" role="3clF45">
         <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
       </node>
@@ -711,7 +711,24 @@
       <node concept="3clFbS" id="4_F$1bfWyDu" role="3clF47">
         <node concept="3clFbF" id="4_F$1bfWyKg" role="3cqZAp">
           <node concept="pHN19" id="4_F$1bfWyKe" role="3clFbG">
-            <node concept="2V$Bhx" id="4_F$1bfWyKs" role="2V$M_3">
+            <node concept="2V$Bhx" id="2OV1G3ujrjy" role="2V$M_3">
+              <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
+              <property role="2V$B1Q" value="jetbrains.mps.baseLanguage" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="2OV1G3ujrbs" role="jymVt">
+      <property role="TrG5h" value="getBaseLangUnitTestLang" />
+      <node concept="3uibUv" id="2OV1G3ujrbt" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+      </node>
+      <node concept="3Tm1VV" id="2OV1G3ujrbu" role="1B3o_S" />
+      <node concept="3clFbS" id="2OV1G3ujrbv" role="3clF47">
+        <node concept="3clFbF" id="2OV1G3ujrbw" role="3cqZAp">
+          <node concept="pHN19" id="2OV1G3ujrbx" role="3clFbG">
+            <node concept="2V$Bhx" id="2OV1G3ujrby" role="2V$M_3">
               <property role="2V$B1T" value="f61473f9-130f-42f6-b98d-6c438812c2f6" />
               <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.unitTest" />
             </node>

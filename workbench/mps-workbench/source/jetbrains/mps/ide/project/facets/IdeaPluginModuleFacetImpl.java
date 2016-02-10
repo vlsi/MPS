@@ -34,9 +34,8 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
   private String myClassloadPluginId;
   private String myPersistencePluginId;
 
-  @Override
-  public String getFacetType() {
-    return FACET_TYPE;
+  public IdeaPluginModuleFacetImpl() {
+    super(FACET_TYPE);
   }
 
   @Override

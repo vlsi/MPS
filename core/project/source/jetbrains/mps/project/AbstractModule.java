@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,6 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -527,20 +526,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     updateModelsSet();
   }
 
-  protected void collectFacetTypes(Set<String> types) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) {
-      return;
-    }
-
-    types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
-        new TranslatingIterator<SModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
-          @Override
-          protected String translate(SModuleReference node) {
-            return node.getModuleName();
-          }
-        }));
-
+  /**
+   * For the time being, MPS enforces certain facets for modules (e.g. Java facet is essential for classloading mechanism).
+   * As we move forward with facets story, we likely respect actual facets for the module (e.g. would force Java facet on module creation only)
+   * Need to ensure classloading could deal with modules without Java facet, then can drop these mandatory facets altogether
+   */
+  protected void collectMandatoryFacetTypes(Set<String> types) {
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 
@@ -572,7 +563,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     Set<String> types = new HashSet<String>();
-    collectFacetTypes(types);
+    collectMandatoryFacetTypes(types);
     types.addAll(config.keySet());
 
     for (String facetType : types) {

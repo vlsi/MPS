@@ -82,7 +82,6 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -171,15 +170,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private final List<FacetCheckBox> myCheckBoxes = new ArrayList<FacetCheckBox>();
   private final FacetTabsPersistence myFacetTabsPersistence;
 
-  /**
-   * @deprecated use {@link #ModulePropertiesConfigurable(SModule, MPSProject)} instead.
-   *             We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
-   */
-  @Deprecated
-  public ModulePropertiesConfigurable(SModule module, Project project) {
-    this(module, (MPSProject) project);
-  }
-
+  // We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
   public ModulePropertiesConfigurable(SModule module, MPSProject project) {
     super(project);
     myModule = (AbstractModule) module;
@@ -199,11 +190,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
     }
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
-      if (!(moduleFacet instanceof ModuleFacetBase)) {
-        continue;
-      }
-      ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
-      Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
+      Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacet);
       if (facetTab != null) {
         registerTabs(facetTab);
       }
@@ -219,11 +206,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     // we save all module facets with active descriptors (it's AddFacetTab#apply() responsibility to add facet descriptors
     // for newly added facets, and to remove descriptors for unchecked facets. This sharing is questionable, perhaps, could do both here).
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
-      if (!(moduleFacet instanceof ModuleFacetBase)) {
-        // need to find out facet type, otherwise don't care about ModuleFacetBase
-        continue;
-      }
-      final String facetType = ((ModuleFacetBase) moduleFacet).getFacetType();
+      final String facetType = moduleFacet.getFacetType();
       for (ModuleFacetDescriptor facetDescriptor : myModuleDescriptor.getModuleFacetDescriptors()) {
         if (!facetType.equals(facetDescriptor.getType())) {
           continue;
@@ -1311,37 +1294,30 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void init() {
-      final HashMap<String, ModuleFacetBase> existingFacetTypes = new HashMap<String, ModuleFacetBase>();
+      final HashMap<String, SModuleFacet> existingFacetTypes = new HashMap<String, SModuleFacet>();
       for (final SModuleFacet moduleFacet : myModule.getFacets()) {
-        if (!(moduleFacet instanceof ModuleFacetBase)) continue;
-        existingFacetTypes.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
+        existingFacetTypes.put(moduleFacet.getFacetType(), moduleFacet);
       }
 
-      Set<String> usedLangs = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Set<String>>() {
+      Set<String> applicableFacetTypes = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Set<String>>() {
         @Override
         public Set<String> compute() {
-          HashSet<String> rv = new HashSet<String>();
-          for (SLanguage reference : myModule.getUsedLanguages()) {
-            rv.add(reference.getQualifiedName());
-          }
-          return rv;
+          return FacetsFacade.getInstance().getApplicableFacetTypes(myModule.getUsedLanguages());
         }
       });
-      Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
       for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        ModuleFacetBase sModuleFacet = existingFacetTypes.get(facet);
+        SModuleFacet sModuleFacet = existingFacetTypes.get(facet);
         if (sModuleFacet == null) {
           // i.e. !existingFacetTypes.contains(facet)
-          SModuleFacet newInstance = FacetsFacade.getInstance().getFacetFactory(facet).create();
-          sModuleFacet = (ModuleFacetBase) newInstance;
+          sModuleFacet = FacetsFacade.getInstance().getFacetFactory(facet).create();
         }
-        String facetPresentation = sModuleFacet.getFacetPresentation();
+        String facetPresentation = sModuleFacet instanceof ModuleFacetBase ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() : sModuleFacet.getFacetType();
         String fmt = PropertiesBundle.message("module.facets.checkbox.title");
         facetPresentation = applicableFacetTypes.contains(facet)
             ? String.format(fmt, facetPresentation) : facetPresentation;
         FacetCheckBox checkBox = existingFacetTypes.containsKey(facet)
-            ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(facet, sModuleFacet), facetPresentation)
+            ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(sModuleFacet), facetPresentation)
             : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
 
         myCheckBoxes.add(checkBox);
@@ -1372,7 +1348,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public void apply() {
       for (FacetCheckBox checkBox : myCheckBoxes) {
         Collection<ModuleFacetDescriptor> moduleFacetDescriptors = myModuleDescriptor.getModuleFacetDescriptors();
-        ModuleFacetBase facet = checkBox.getFacet();
+        SModuleFacet facet = checkBox.getFacet();
         if (checkBox.isNewlyCreated()) {
           Tab tab = checkBox.getTab();
           if (tab != null) {
@@ -1417,9 +1393,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private final boolean myExisting;
     private final Tab myAnchorTab;
     private Tab myFacetTab;
-    private ModuleFacetBase myFacet;
+    private SModuleFacet myFacet;
 
-    public FacetCheckBox(@NotNull Tab anchorTab, @NotNull ModuleFacetBase facet, @Nullable Tab tab, @NotNull String label) {
+    public FacetCheckBox(@NotNull Tab anchorTab, @NotNull SModuleFacet facet, @Nullable Tab tab, @NotNull String label) {
       myAnchorTab = anchorTab;
       myCheckBox = new JBCheckBox(label, myExisting = true);
       myCheckBox.addItemListener(this);
@@ -1454,11 +1430,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       if (myCheckBox.isSelected()) {
         if (myFacet == null) {
-          myFacet = (ModuleFacetBase) FacetsFacade.getInstance().getFacetFactory(myFacetType).create();
-          myFacet.setModule(myModule);
+          myFacet = FacetsFacade.getInstance().getFacetFactory(myFacetType).create();
+          if (myFacet instanceof ModuleFacetBase)
+            // XXX why do we need to set module here, and why do we ignore return value?
+            ((ModuleFacetBase) myFacet).setModule(myModule);
         }
         if (myFacetTab == null) {
-          myFacetTab = myFacetTabsPersistence.getFacetTab(myFacetType, myFacet);
+          myFacetTab = myFacetTabsPersistence.getFacetTab(myFacet);
           if (myFacetTab != null) {
             // perhaps, would be better if MPSPropertiesConfigurable is responsible for tab intialization,
             // and keeps track of which one is already initialized to avoid multiple initializations.
@@ -1475,7 +1453,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
     }
 
-    /*package*/ ModuleFacetBase getFacet() {
+    /*package*/ SModuleFacet getFacet() {
       return myFacet;
     }
 

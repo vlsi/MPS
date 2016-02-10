@@ -36217,7 +36217,7 @@
                 <ref role="37wK5l" to="w0gx:~ModuleFacetDescriptor.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.persistence.Memento)" resolve="ModuleFacetDescriptor" />
                 <node concept="2OqwBi" id="6UddvDUqWPk" role="37wK5m">
                   <node concept="liA8E" id="6UddvDUqYaQ" role="2OqNvi">
-                    <ref role="37wK5l" to="cyln:~IdeaPluginModuleFacetImpl.getFacetType():java.lang.String" resolve="getFacetType" />
+                    <ref role="37wK5l" to="31cb:~ModuleFacetBase.getFacetType():java.lang.String" resolve="getFacetType" />
                   </node>
                   <node concept="37vLTw" id="6UddvDUqJOK" role="2Oq$k0">
                     <ref role="3cqZAo" node="6gDspL0DgZq" resolve="facet" />
@@ -36300,7 +36300,7 @@
                 </node>
                 <node concept="2OqwBi" id="6UddvDUrl5g" role="2Oq$k0">
                   <node concept="liA8E" id="6UddvDUrnXI" role="2OqNvi">
-                    <ref role="37wK5l" to="cyln:~IdeaPluginModuleFacetImpl.getFacetType():java.lang.String" resolve="getFacetType" />
+                    <ref role="37wK5l" to="31cb:~ModuleFacetBase.getFacetType():java.lang.String" resolve="getFacetType" />
                   </node>
                   <node concept="37vLTw" id="6UddvDUrkSm" role="2Oq$k0">
                     <ref role="3cqZAo" node="6gDspL0DgZq" resolve="facet" />

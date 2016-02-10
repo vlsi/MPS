@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,26 +44,27 @@ final class FacetTabsPersistence {
   public FacetTabsPersistence initFromEP() {
     FacetTabEP[] extensions = FacetTabEP.EP_NAME.getExtensions(myProject.getProject());
     for (FacetTabEP extension : extensions) {
-      addFacetTab(extension.facetType, extension.getFacetTabFactory());
+      addTabFactory(extension.facetType, extension.getFacetTabFactory());
     }
     return this;
   }
 
   // may become public if there's need to populate this registry not from EP
-  private void addFacetTab(String facetType, @NotNull TabFactory tab) {
+  private void addTabFactory(String facetType, @NotNull TabFactory tab) {
     myFacetTabs.put(facetType, tab);
   }
 
   /**
    * @return newly instantiated or existing tab instance for the given facet, <code>null</code> if facet doesn't need an UI.
-   * FIXME take facetType from moduleFacet (move appropriate method into API).
    */
   @Nullable
-  public Tab getFacetTab(String facetType, SModuleFacet moduleFacet) {
-    if(!myFacetTabs.containsKey(facetType))
+  public Tab getFacetTab(@NotNull SModuleFacet moduleFacet) {
+    if(!myFacetTabs.containsKey(moduleFacet.getFacetType())) {
       return null;
+    }
 
-    TabFactory<SModuleFacet> tabFactory = myFacetTabs.get(facetType);
+    @SuppressWarnings("unchecked")
+    TabFactory<SModuleFacet> tabFactory = myFacetTabs.get(moduleFacet.getFacetType());
     return tabFactory.getTab(moduleFacet);
   }
 }

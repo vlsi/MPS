@@ -223,10 +223,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private List<SModel> getProjectStructureModels() {
     return new ArrayList<SModel>(myModels.values());
   }
+
   @Override
-  protected void collectFacetTypes(Set<String> types) {
+  protected void collectMandatoryFacetTypes(Set<String> set) {
     // none 
   }
+
   @Override
   public SModel resolveInDependencies(SModelId ref) {
     return myModels.get(ref);

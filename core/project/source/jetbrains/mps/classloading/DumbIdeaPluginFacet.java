@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,10 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginModuleFacet {
   private String pluginId;
 
+  public DumbIdeaPluginFacet() {
+    super(FACET_TYPE);
+  }
+
   @Override
   public boolean isValid() {
     return true;
@@ -41,11 +45,6 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginMo
   @Override
   public void load(Memento memento) {
     pluginId = memento.get("pluginId");
-  }
-
-  @Override
-  public String getFacetType() {
-    return FACET_TYPE;
   }
 
   @Override

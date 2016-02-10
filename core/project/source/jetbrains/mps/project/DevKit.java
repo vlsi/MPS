@@ -201,7 +201,7 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  protected void collectFacetTypes(Set<String> types) {
+  protected void collectMandatoryFacetTypes(Set<String> types) {
     // no-op
   }
 }

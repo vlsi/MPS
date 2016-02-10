@@ -1731,33 +1731,35 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="4fSpAVAUj_H" role="jymVt">
-      <property role="TrG5h" value="collectFacetTypes" />
+    <node concept="2tJIrI" id="2OV1G3ujCiy" role="jymVt" />
+    <node concept="3clFb_" id="2OV1G3ujDzN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="collectMandatoryFacetTypes" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
-      <node concept="2AHcQZ" id="4fSpAVAUj_I" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="37vLTG" id="4fSpAVAUj_J" role="3clF46">
-        <property role="TrG5h" value="types" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="4fSpAVAUj_K" role="1tU5fm">
+      <node concept="3Tmbuc" id="2OV1G3ujDzO" role="1B3o_S" />
+      <node concept="3cqZAl" id="2OV1G3ujDzQ" role="3clF45" />
+      <node concept="37vLTG" id="2OV1G3ujDzR" role="3clF46">
+        <property role="TrG5h" value="set" />
+        <node concept="3uibUv" id="2OV1G3ujDzS" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="3uibUv" id="4fSpAVAUj_L" role="11_B2D">
+          <node concept="3uibUv" id="2OV1G3ujDzT" role="11_B2D">
             <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
       </node>
-      <node concept="3clFbS" id="4fSpAVAUj_M" role="3clF47">
+      <node concept="3clFbS" id="2OV1G3ujDzU" role="3clF47">
         <node concept="3SKdUt" id="4fSpAVAUjAJ" role="3cqZAp">
           <node concept="3SKdUq" id="4fSpAVAUjAI" role="3SKWNk">
             <property role="3SKdUp" value="none" />
           </node>
         </node>
       </node>
-      <node concept="3Tmbuc" id="4fSpAVAUj_N" role="1B3o_S" />
-      <node concept="3cqZAl" id="4fSpAVAUj_O" role="3clF45" />
+      <node concept="2AHcQZ" id="2OV1G3ujDzV" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
+    <node concept="2tJIrI" id="2OV1G3ujJS6" role="jymVt" />
     <node concept="3clFb_" id="4fSpAVAUj_P" role="jymVt">
       <property role="TrG5h" value="resolveInDependencies" />
       <property role="DiZV1" value="false" />
