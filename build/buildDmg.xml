@@ -1,0 +1,92 @@
+<project name="buildDmg" default="makeall" basedir="../">
+  <property name="build.distribution" location="${basedir}"/>
+  <loadproperties srcfile="${build.distribution}/build.properties"/>
+
+  <property name="mps-macos.zip" location="${build.distribution}/${mps.build.number}-macos.zip"/>
+  <property name="build.tmp" location="${basedir}/mac"/>
+  <property name="build.layout" location="${basedir}"/>
+
+  <property name="mac.host" value=""/>
+  <property name="mac.user" value=""/>
+  <property name="mac.password" value=""/>
+  <property name="mac.keychain" value="/Users/${mac.user}/Library/Keychains/login.keychain"/>
+
+
+  <target name="makeall" depends="makedmg, makejdkdmg" />
+
+  <target name="makedmg">
+    <antcall target="dmg-mac" inheritall="true">
+      <param name="build.code" value="${mps.build.number}-macos" />
+    </antcall>
+  </target>
+  <target name="makejdkdmg">
+    <antcall target="dmg-mac" inheritall="true">
+      <param name="build.code" value="${mps.build.number}-macos-jdk-bundled" />
+    </antcall>
+  </target>
+
+
+  <target name="dmg-build">
+    <mkdir dir="${build.tmp}"/>
+    <copy file="${basedir}/build/resources/mps.inst.mac.png" tofile="${build.tmp}/${build.code}.png"/>
+    <copy file="${basedir}/build/resources/mps-sign.sh" tofile="${build.tmp}/${build.code}-sign.sh"/>
+    <copy file="${basedir}/build/resources/mps-dmg.sh" tofile="${build.tmp}/${build.code}-dmg.sh"/>
+    <copy file="${basedir}/build/resources/mpsdmg.pl" tofile="${build.tmp}/${build.code}.pl"/>
+
+    <ftp server="${mac.host}" action="send" binary="true" userid="${mac.user}" password="${mac.password}">
+      <fileset file="${build.tmp}/${build.code}.png"/>
+      <fileset file="${build.layout}/${build.code}.zip"/>
+    </ftp>
+    <ftp server="${mac.host}" action="put" chmod="777" binary="false" userid="${mac.user}" password="${mac.password}">
+      <fileset dir="${build.tmp}">
+        <include name="${build.code}-sign.sh"/>
+        <include name="${build.code}-dmg.sh"/>
+        <include name="${build.code}.pl"/>
+      </fileset>
+    </ftp>
+
+    <sshexec host="${mac.host}"
+             username="${mac.user}"
+             password="${mac.password}"
+             trust="yes"
+             command="./${build.code}-sign.sh ${build.code} ${mac.keychain} ${mac.password}"/>
+    <sshexec host="${mac.host}"
+             username="${mac.user}"
+             password="${mac.password}"
+             trust="yes"
+             command="./${build.code}-dmg.sh ${build.code}"/>
+  </target>
+
+
+  <target name="dmg-get" depends="dmg-build">
+    <ftp server="${mac.host}" action="get" binary="true" userid="${mac.user}" password="${mac.password}">
+      <fileset dir="${build.tmp}">
+        <include name="${build.code}.dmg"/>
+      </fileset>
+    </ftp>
+
+    <ftp server="${mac.host}" action="delete" userid="${mac.user}" password="${mac.password}">
+      <fileset dir="${build.layout}">
+        <!--include name="${build.code}.sit"/-->
+        <include name="${build.code}.dmg"/>
+        <include name="${build.code}-sign.sh"/>
+        <include name="${build.code}-dmg.sh"/>
+        <!-- .zip, .png & .pl files removed by mps-sign.sh & mps-dmg.sh scripts -->
+      </fileset>
+    </ftp>
+
+    <fail message=".dmg build failed">
+      <condition>
+        <not>
+          <available file="${build.tmp}/${build.code}.dmg"/>
+        </not>
+      </condition>
+    </fail>
+  </target>
+
+  <target name="dmg-mac" depends="dmg-get">
+    <move file="${build.tmp}/${build.code}.dmg" todir="${build.layout}"/>
+    <delete dir="${build.tmp}"/>
+  </target>
+
+</project>
