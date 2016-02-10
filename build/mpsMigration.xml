@@ -85,7 +85,7 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <jvmarg value="-Dtest_home=${project.simpleMigration}"/>
+      <jvmarg value="-Dtest_home=${project.consMigrations}"/>
       <test name="jetbrains.mps.migration.TestMigrationResult"/>
       <formatter type="xml"/>
     </junit>
