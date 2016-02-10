@@ -156,6 +156,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -317,16 +318,6 @@
       <node concept="3cqZAl" id="C9PExlMB_I" role="3clF45" />
       <node concept="3Tm6S6" id="C9PExlMB3e" role="1B3o_S" />
     </node>
-    <node concept="1DS2jV" id="4KDfkUwMaBL" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="4KDfkUwMaBM" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="4KDfkUwMaBN" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="4KDfkUwMaBO" role="1oa70y" />
-    </node>
     <node concept="2S4$dB" id="7yrT30bWG3K" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="3Tm6S6" id="7yrT30bWG3L" role="1B3o_S" />
@@ -361,7 +352,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6s6llYhnjoY" role="3cqZAp" />
         <node concept="3clFbH" id="C9PExlMuJh" role="3cqZAp" />
         <node concept="1QHqEM" id="C9PExlMwRc" role="3cqZAp">
           <node concept="1QHqEC" id="C9PExlMwRe" role="1QHqEI">
@@ -602,6 +592,13 @@
         <node concept="3clFbH" id="7A30vEn_Vy5" role="3cqZAp" />
         <node concept="2GUZhq" id="5stwRNvK8cj" role="3cqZAp">
           <node concept="3clFbS" id="5stwRNvK8cl" role="2GV8ay">
+            <node concept="3cpWs8" id="7momR791ttZ" role="3cqZAp">
+              <node concept="3cpWsn" id="7momR791tu2" role="3cpWs9">
+                <property role="TrG5h" value="dialogTitle" />
+                <node concept="17QB3L" id="7momR791ttX" role="1tU5fm" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="7momR791vac" role="3cqZAp" />
             <node concept="2LD9aU" id="C9PExlMFfF" role="3cqZAp">
               <node concept="1QHqEC" id="C9PExlMFfH" role="1QHqEI">
                 <node concept="3clFbS" id="C9PExlMFfJ" role="1bW5cS">
@@ -655,6 +652,26 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbF" id="7momR791tOy" role="3cqZAp">
+                    <node concept="37vLTI" id="7momR791tS$" role="3clFbG">
+                      <node concept="37vLTw" id="7momR791tOw" role="37vLTJ">
+                        <ref role="3cqZAo" node="7momR791tu2" resolve="dialogTitle" />
+                      </node>
+                      <node concept="2YIFZM" id="7momR791u7s" role="37vLTx">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="7momR791tUp" role="37wK5m">
+                          <property role="Xl_RC" value="Type Explorer [%s]" />
+                        </node>
+                        <node concept="2OqwBi" id="7momR791unz" role="37wK5m">
+                          <node concept="2WthIp" id="7momR791unA" role="2Oq$k0" />
+                          <node concept="3gHZIF" id="7momR791unC" role="2OqNvi">
+                            <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="C9PExlMFxi" role="ukAjM">
@@ -677,18 +694,15 @@
                 </node>
                 <node concept="2ShNRf" id="4KDfkUwMaCP" role="2Oq$k0">
                   <node concept="1pGfFk" id="4KDfkUwMaCQ" role="2ShVmc">
-                    <ref role="37wK5l" to="gt7e:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
+                    <ref role="37wK5l" to="gt7e:~MyBaseNodeDialog.&lt;init&gt;(jetbrains.mps.project.Project,java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.IErrorReporter)" resolve="MyBaseNodeDialog" />
                     <node concept="2OqwBi" id="4KDfkUwMaCR" role="37wK5m">
                       <node concept="2WthIp" id="4KDfkUwMaCS" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="4KDfkUwMaCT" role="2OqNvi">
-                        <ref role="2WH_rO" node="4KDfkUwMaBL" resolve="context" />
+                      <node concept="1DTwFV" id="7momR791sXF" role="2OqNvi">
+                        <ref role="2WH_rO" node="C9PExlMzf5" resolve="project" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="4KDfkUwMaCU" role="37wK5m">
-                      <node concept="2WthIp" id="4KDfkUwMaCV" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="4KDfkUwMaCW" role="2OqNvi">
-                        <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
-                      </node>
+                    <node concept="37vLTw" id="7momR791vNQ" role="37wK5m">
+                      <ref role="3cqZAo" node="7momR791tu2" resolve="dialogTitle" />
                     </node>
                     <node concept="37vLTw" id="3GM_nagTwCn" role="37wK5m">
                       <ref role="3cqZAo" node="4KDfkUwMaBZ" resolve="type" />

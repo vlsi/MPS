@@ -18,6 +18,11 @@ package jetbrains.mps.util.annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+/**
+ * @deprecated there's single use, does it justify existence of the annotation?
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 @Retention(RetentionPolicy.SOURCE)
 public @interface UseCarefully {
 }

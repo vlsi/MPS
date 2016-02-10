@@ -7,7 +7,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.ConsoleActions" file="ConsoleActions.xml" />
   <dependency className="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" file="ExecuteActionAttachedToCurrentNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Boolean" />

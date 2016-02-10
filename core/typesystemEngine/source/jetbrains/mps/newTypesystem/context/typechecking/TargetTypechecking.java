@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 
 import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.state.TargetState;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -31,5 +33,11 @@ public class TargetTypechecking extends BaseTypechecking<TargetState, TargetType
   @Override
   protected TargetTypeheckingComponent createTypecheckingComponent() {
     return new TargetTypeheckingComponent(getState(), this);
+  }
+
+  @Override
+  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+    // do nothing
+    return false;
   }
 }

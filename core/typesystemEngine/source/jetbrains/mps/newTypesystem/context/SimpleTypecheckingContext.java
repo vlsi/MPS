@@ -57,9 +57,7 @@ public abstract class SimpleTypecheckingContext<
   }
 
   @SuppressWarnings("unchecked")
-  protected TCHECK createTypechecking() {
-    return (TCHECK) new BaseTypechecking<STATE, SimpleTypecheckingComponent<STATE>>(getNode(), getState());
-  }
+  protected abstract TCHECK createTypechecking();
 
   @SuppressWarnings("unchecked")
   protected STATE createState() {

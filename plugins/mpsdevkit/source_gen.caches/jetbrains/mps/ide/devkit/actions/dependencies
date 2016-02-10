@@ -1465,6 +1465,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

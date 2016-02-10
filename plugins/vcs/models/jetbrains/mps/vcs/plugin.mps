@@ -61,6 +61,7 @@
     <import index="drpk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.make(MPS.Platform/)" />
     <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
@@ -88,7 +89,6 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
-        <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <property id="1213273179528" name="description" index="1WHSii" />
@@ -297,6 +297,7 @@
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
+      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -1157,7 +1158,6 @@
     </node>
   </node>
   <node concept="sE7Ow" id="6ySnuJfjgCP">
-    <property role="fJN8o" value="true" />
     <property role="TrG5h" value="ShowDifferencesWithModelOnDisk" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Differences with Model on Disk" />
@@ -1282,33 +1282,42 @@
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDiW" role="1oa70y" />
     </node>
-    <node concept="2ScWuX" id="4VS95Tzvw3f" role="tmbBb">
-      <node concept="3clFbS" id="4VS95Tzvw6K" role="2VODD2">
-        <node concept="3clFbF" id="4VS95Tzv_18" role="3cqZAp">
-          <node concept="1Wc70l" id="4VS95TzvKDW" role="3clFbG">
-            <node concept="2ZW3vV" id="4VS95TzvLjr" role="3uHU7w">
-              <node concept="3uibUv" id="4X_MBffAzvc" role="2ZW6by">
-                <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
-              </node>
-              <node concept="2OqwBi" id="4VS95TzvKRg" role="2ZW6bz">
-                <node concept="2WthIp" id="4VS95TzvKRj" role="2Oq$k0" />
-                <node concept="1DTwFV" id="4VS95TzvKRl" role="2OqNvi">
-                  <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
-                </node>
+    <node concept="tkhdA" id="5YG5KSKXSff" role="tmbBb">
+      <node concept="3clFbS" id="5YG5KSKXSfg" role="2VODD2">
+        <node concept="3clFbF" id="5YG5KSKY1aX" role="3cqZAp">
+          <node concept="1rXfSq" id="5YG5KSKY1aV" role="3clFbG">
+            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+            <node concept="2OqwBi" id="5YG5KSKY2u2" role="37wK5m">
+              <node concept="tl45R" id="5YG5KSKY2oJ" role="2Oq$k0" />
+              <node concept="liA8E" id="5YG5KSKY2Dm" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
               </node>
             </node>
-            <node concept="2ZW3vV" id="4VS95TzvJ7g" role="3uHU7B">
-              <node concept="3uibUv" id="4VS95TzvJs2" role="2ZW6by">
-                <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
-              </node>
-              <node concept="2OqwBi" id="4VS95TzvHDq" role="2ZW6bz">
-                <node concept="liA8E" id="4VS95TzvICV" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+            <node concept="1Wc70l" id="5YG5KSKY0Eg" role="37wK5m">
+              <node concept="2ZW3vV" id="5YG5KSKY0Eh" role="3uHU7w">
+                <node concept="3uibUv" id="5YG5KSKY0Ei" role="2ZW6by">
+                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                 </node>
-                <node concept="2OqwBi" id="4VS95Tzv_12" role="2Oq$k0">
-                  <node concept="2WthIp" id="4VS95Tzv_15" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="4VS95Tzv_17" role="2OqNvi">
+                <node concept="2OqwBi" id="5YG5KSKY0Ej" role="2ZW6bz">
+                  <node concept="2WthIp" id="5YG5KSKY0Ek" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="5YG5KSKY0El" role="2OqNvi">
                     <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ZW3vV" id="5YG5KSKY0Em" role="3uHU7B">
+                <node concept="3uibUv" id="5YG5KSKY0En" role="2ZW6by">
+                  <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
+                </node>
+                <node concept="2OqwBi" id="5YG5KSKY0Eo" role="2ZW6bz">
+                  <node concept="liA8E" id="5YG5KSKY0Ep" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getSource" />
+                  </node>
+                  <node concept="2OqwBi" id="5YG5KSKY0Eq" role="2Oq$k0">
+                    <node concept="2WthIp" id="5YG5KSKY0Er" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="5YG5KSKY0Es" role="2OqNvi">
+                      <ref role="2WH_rO" node="6ySnuJfjgDN" resolve="model" />
+                    </node>
                   </node>
                 </node>
               </node>

@@ -5,11 +5,12 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
@@ -32,18 +33,12 @@ import java.awt.GridBagConstraints;
 import com.intellij.ide.util.PropertiesComponent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.openapi.actionSystem.DataProvider;
 import java.awt.LayoutManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
-import com.intellij.execution.Location;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.plugins.runconfigs.MPSLocation;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
@@ -53,15 +48,15 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final TestTree myTreeComponent;
   private final ProgressLine myProgressLineComponent;
   private final TestToolbarPanel myActionToolComponent;
-  private final Project myProject;
+  private final MPSProject myProject;
   private final FailedTestOccurrenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
   public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
-    myProject = project;
+    myProject = ProjectHelper.fromIdeaProject(project);
     myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
-    myTreeComponent = new TestTree(myTestState, ProjectHelper.toMPSProject(project), this);
+    myTreeComponent = new TestTree(myTestState, myProject, this);
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
     myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
@@ -69,7 +64,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     myProgressLineComponent = new ProgressLine(myTestState);
     myProgressLineComponent.setMinimumSize(new Dimension(0, myProgressLineComponent.getMinimumSize().height));
-    myOutputComponent = new TestOutputComponent(myProject, this, console, myTestState);
+    myOutputComponent = new TestOutputComponent(console, myTestState);
     myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(myTreeComponent, statisticsModel, myOutputComponent));
     myTreeComponent.addMouseListener(new TestTreeRootMouseListener(myTreeComponent, statisticsModel, myOutputComponent));
 
@@ -184,28 +179,26 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     splitter.setProportion(proportion);
   }
-  public static Language getLanguage() {
-    final Wrappers._T<Language> lang = new Wrappers._T<Language>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        lang.value = Language.getLanguageFor(SNodeOperations.getModel(MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase").getDeclarationNode()));
-      }
-    });
-    return lang.value;
-  }
-  public class MyTreePanel extends JPanel implements DataProvider {
+
+  /*package*/ class MyTreePanel extends JPanel implements DataProvider {
     public MyTreePanel(LayoutManager manager) {
       super(manager);
     }
     @Nullable
     @Override
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(Location.LOCATION)) {
+      if (MPSDataKeys.MPS_PROJECT.is(dataId)) {
+        return myProject;
+      }
+      if (MPSDataKeys.NODE.is(dataId)) {
         MPSTreeNode currentNode = myTreeComponent.getCurrentNode();
         if (currentNode == null) {
           return null;
         }
-        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNodePointer());
+        ITestNodeWrapper testWrapper = (ITestNodeWrapper) currentNode.getUserObject();
+        // XXX it's unclear whether we shall assume model read lock here, or obtain it ourselves 
+        // I didn't get the lock here as it's stupid to ask for SNode not inside a lock already. 
+        return testWrapper.getNodePointer().resolve(myProject.getRepository());
       }
       return null;
     }

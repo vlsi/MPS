@@ -17,6 +17,9 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 
 import jetbrains.mps.newTypesystem.context.component.HoleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.HoleState;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 
@@ -53,4 +56,9 @@ public class HoleTypechecking extends BaseTypechecking<HoleState, HoleTypechecki
     }
   }
 
+  @Override
+  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+    // do nothing
+    return false;
+  }
 }

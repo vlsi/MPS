@@ -1,9 +1,26 @@
+/*
+ * Copyright 2003-2016 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.plugins.runconfigs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.impl.FakePsiElement;
+import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -23,49 +40,49 @@ import java.util.List;
 /**
  * FIXME rewrite into several classes instead of this with Object field
  */
-public class MPSPsiElement<T> extends FakePsiElement {
+public class MPSPsiElement extends FakePsiElement {
   private final MPSProject myMPSProject;
   private final SRepository myRepository;
-  private Object myItem; // AP: always a reference to node, model, module OR simply MPSProject
+  private final Object myItem; // AP: always a reference to node, model, module OR simply MPSProject
+  private final boolean myIsTransientElement;
 
   public MPSPsiElement(SNode node, MPSProject project) {
-    this(node.getReference(), project);
-  }
-
-  @Override
-  public PsiFile getContainingFile() {
-    return null;
-  }
-
-  public MPSPsiElement(SNodeReference nRef, MPSProject project) {
-    this(project);
-    myItem = nRef;
+    this(project, node.getReference(), node.getModel() instanceof TransientSModel);
   }
 
   public MPSPsiElement(List<SNode> nodes, MPSProject project) {
-    this(project);
-    myItem = map(nodes, new Mapper<SNode, SNodeReference>() {
+    this(project, map(nodes, new Mapper<SNode, SNodeReference>() {
       @Override
       public SNodeReference value(SNode key) {
-        return new jetbrains.mps.smodel.SNodePointer(key);
+        return key.getReference();
       }
-    });
+    }), false);
   }
 
   public MPSPsiElement(SModel model, MPSProject project) {
-    this(project);
-    myItem = model.getReference();
+    this(project, model.getReference(), model instanceof TransientSModel);
   }
 
   public MPSPsiElement(SModule module, MPSProject project) {
-    this(project);
-    myItem = module.getModuleReference();
+    this(project, module.getModuleReference(), module instanceof TransientSModule);
   }
 
   public MPSPsiElement(@NotNull MPSProject project) {
+    this(project, project, false);
+  }
+
+  private MPSPsiElement(MPSProject project, Object item, boolean isTransient) {
     myMPSProject = project;
     myRepository = project.getRepository();
-    myItem = project;
+    myItem = item;
+    myIsTransientElement = isTransient;
+  }
+
+  /**
+   * @return <code>true</code> when the MPS object wrapped  with this PSI element comes from transient origin (e.g. temporary/transient model)
+   */
+  public boolean isTransientElement() {
+    return myIsTransientElement;
   }
 
   public Object getMPSItem() {
@@ -112,6 +129,11 @@ public class MPSPsiElement<T> extends FakePsiElement {
   }
 
   @Override
+  public PsiFile getContainingFile() {
+    return null;
+  }
+
+  @Override
   public PsiElement getParent() {
     if (!((myItem instanceof SNodeReference))) {
       return null;
@@ -133,7 +155,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
     });
   }
 
-  private <K, V> List<V> map(List<K> list, Mapper<K, V> mapper) {
+  private static <K, V> List<V> map(List<K> list, Mapper<K, V> mapper) {
     List<V> result = new ArrayList<V>();
     for (K k : list) {
       result.add(mapper.value(k));

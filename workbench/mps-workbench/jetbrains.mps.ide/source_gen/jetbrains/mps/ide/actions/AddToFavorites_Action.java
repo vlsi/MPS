@@ -7,14 +7,16 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
+import jetbrains.mps.ide.projectPane.favorites.TreeNodeValueExtractor;
 
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,6 +33,7 @@ public class AddToFavorites_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
+    setEnabledState(event.getPresentation(), !(ListSequence.fromList(AddToFavorites_Action.this.getObjects(_params)).isEmpty()));
     event.getPresentation().setText(AddToFavorites_Action.this.name);
   }
   @Override
@@ -60,7 +63,7 @@ public class AddToFavorites_Action extends BaseAction {
     if (favoritesManager == null) {
       return;
     }
-    List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+    List<Object> toMove = AddToFavorites_Action.this.getObjects(_params);
     FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
     if (pane != null) {
       favoritesManager.removeRoots(pane.getSubId(), toMove);
@@ -75,6 +78,9 @@ public class AddToFavorites_Action extends BaseAction {
     res.append(name_State((String) this.name));
     res.append("!");
     return res.toString();
+  }
+  /*package*/ List<Object> getObjects(final Map<String, Object> _params) {
+    return new TreeNodeValueExtractor().getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
   }
   public static String name_State(String object) {
     return object;

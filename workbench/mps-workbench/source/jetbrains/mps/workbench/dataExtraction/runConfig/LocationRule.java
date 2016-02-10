@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,35 +19,59 @@ import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.awt.Frame;
 import java.util.List;
 
+/**
+ * Provides values for {@link com.intellij.execution.Location#DATA_KEY "Location"} key.
+ */
 public class LocationRule implements GetDataRule {
   @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
-    if (project == null) {
-      IdeFrame frame = (IdeFrame) dataProvider.getData(MPSDataKeys.FRAME.getName());
-      if (frame != null) project = frame.getProject();
+    MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataProvider);
+    if (mpsProject == null) {
+      Project ideaProject = MPSDataKeys.PROJECT.getData(dataProvider);
+      if (ideaProject == null) {
+        Frame frame = MPSDataKeys.FRAME.getData(dataProvider);
+        if (frame instanceof IdeFrame) {
+          ideaProject = ((IdeFrame) frame).getProject();
+        }
+      }
+      if (ideaProject == null) {
+        return null;
+      }
+      mpsProject = ProjectHelper.fromIdeaProject(ideaProject);
+      if (mpsProject == null) {
+        return null;
+      }
     }
-    if (project == null) return null;
-    List<SNode> nodes = (List<SNode>) dataProvider.getData(MPSDataKeys.NODES.getName());
-    if (nodes != null && nodes.size() > 1) return new MPSLocation(project, nodes);
-    SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
-    if (node != null) return new MPSLocation(project, node);
-    SModel model = (SModel) dataProvider.getData(MPSDataKeys.MODEL.getName());
-    if (model != null) return new MPSLocation(project, model);
-    SModule module = (SModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
-    if (module != null) return new MPSLocation(project, module);
-    jetbrains.mps.project.Project mpsProject = (jetbrains.mps.project.Project) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
-    if (mpsProject != null) return new MPSLocation(project, mpsProject);
-    return null;
+    List<SNode> nodes = MPSDataKeys.NODES.getData(dataProvider);
+    if (nodes != null && nodes.size() > 1) {
+      return new MPSLocation(mpsProject, new MPSPsiElement(nodes, mpsProject));
+    }
+    SNode node = MPSDataKeys.NODE.getData(dataProvider);
+    if (node != null) {
+      return new MPSLocation(mpsProject, new MPSPsiElement(node, mpsProject));
+    }
+    SModel model =  MPSDataKeys.MODEL.getData(dataProvider);
+    if (model != null) {
+      return new MPSLocation(mpsProject, new MPSPsiElement(model, mpsProject));
+    }
+    SModule module = MPSDataKeys.MODULE.getData(dataProvider);
+    if (module != null) {
+      return new MPSLocation(mpsProject, new MPSPsiElement(module, mpsProject));
+    }
+    return new MPSLocation(mpsProject, new MPSPsiElement(mpsProject));
   }
 }

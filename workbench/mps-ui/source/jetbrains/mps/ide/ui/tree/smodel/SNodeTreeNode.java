@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -198,24 +197,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     return myNode == null ? null : myNode.getReference();
   }
 
-  @Override
-  public void doubleClick() {
-    NodeNavigationProvider provider = getAncestor(NodeNavigationProvider.class);
-    if (provider != null) {
-      provider.editNode(this, true);
-    }
-  }
-
-  @Override
-  public void autoscroll() {
-    super.autoscroll();
-
-    NodeNavigationProvider provider = getAncestor(NodeNavigationProvider.class);
-    if (provider != null) {
-      provider.editNode(this, false);
-    }
-  }
-
   protected SModel getModelDescriptor() {
     SNode node = getSNode();
     if (node == null) return null;
@@ -257,16 +238,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   }
 
   public interface NodeChildrenProvider {
-
     void populate(SNodeTreeNode treeNode);
-  }
-
-  /**
-   * @deprecated use {@link NodeTargetProvider} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public interface NodeNavigationProvider {
-    void editNode(SNodeTreeNode treeNode, boolean wasClicked);
   }
 }

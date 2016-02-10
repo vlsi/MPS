@@ -7,11 +7,13 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.extapi.model.TransientSModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -25,7 +27,6 @@ import jetbrains.mps.ide.refactoring.ChooseModuleDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -48,7 +49,7 @@ public class MoveModel_Action extends BaseAction {
   private static final Icon ICON = null;
   public MoveModel_Action() {
     super("Move Model", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
   @Override
@@ -58,6 +59,9 @@ public class MoveModel_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) != 1) {
+      return false;
+    }
+    if (((SModel) MapSequence.fromMap(_params).get("model")) instanceof TransientSModel) {
       return false;
     }
     SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
@@ -80,6 +84,9 @@ public class MoveModel_Action extends BaseAction {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
       MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
+        return false;
+      }
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
         return false;
       }
     }

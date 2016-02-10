@@ -17,7 +17,10 @@ package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
+import jetbrains.mps.newTypesystem.context.typechecking.TargetTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -32,7 +35,18 @@ public class InferenceTypecheckingContext extends SimpleTypecheckingContext<Stat
   }
 
   @Override
+  protected BaseTypechecking<State, SimpleTypecheckingComponent<State>> createTypechecking() {
+    return new BaseTypechecking<State, SimpleTypecheckingComponent<State>>(getNode(), getState()) {
+      @Override
+      public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+        // do nothing
+        return false;
+      }
+    };
+  }
+
+  @Override
   protected void applyNonTypesystemRules() {
-    getTypechecking().applyNonTypesystemRulesToRoot(null, this);
+    getTypechecking().applyNonTypesystemRulesToRoot(this);
   }
 }

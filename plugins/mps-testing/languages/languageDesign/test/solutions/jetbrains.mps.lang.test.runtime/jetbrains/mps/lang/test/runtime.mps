@@ -7287,45 +7287,39 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="18jf_F1WDw2" role="3clF47">
-        <node concept="3cpWs8" id="18jf_F1WDw3" role="3cqZAp">
-          <node concept="3cpWsn" id="18jf_F1WDw4" role="3cpWs9">
-            <property role="TrG5h" value="ref" />
-            <node concept="3uibUv" id="18jf_F1WDw5" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
+        <node concept="3clFbJ" id="27e_8zUv47n" role="3cqZAp">
+          <node concept="3clFbS" id="27e_8zUv47p" role="3clFbx">
+            <node concept="3cpWs6" id="27e_8zUv4BB" role="3cqZAp">
+              <node concept="10Nm6u" id="27e_8zUv4FM" role="3cqZAk" />
             </node>
-            <node concept="2ShNRf" id="18jf_F1WDw6" role="33vP2m">
-              <node concept="1pGfFk" id="18jf_F1WDw7" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="SNodePointer" />
-                <node concept="2OqwBi" id="18jf_F1WDw8" role="37wK5m">
-                  <node concept="37vLTw" id="18jf_F1WDw9" role="2Oq$k0">
-                    <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
-                  </node>
-                  <node concept="liA8E" id="18jf_F1WDwa" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleModel():java.lang.String" resolve="getRuleModel" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="18jf_F1WDwb" role="37wK5m">
-                  <node concept="37vLTw" id="18jf_F1WDwc" role="2Oq$k0">
-                    <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
-                  </node>
-                  <node concept="liA8E" id="18jf_F1WDwd" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleId():java.lang.String" resolve="getRuleId" />
-                  </node>
-                </node>
+          </node>
+          <node concept="3clFbC" id="27e_8zUv4qP" role="3clFbw">
+            <node concept="10Nm6u" id="27e_8zUv4vQ" role="3uHU7w" />
+            <node concept="2OqwBi" id="27e_8zUv4h4" role="3uHU7B">
+              <node concept="37vLTw" id="27e_8zUv4c8" role="2Oq$k0">
+                <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
+              </node>
+              <node concept="liA8E" id="27e_8zUv4nq" role="2OqNvi">
+                <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="18jf_F1WDwe" role="3cqZAp">
           <node concept="2OqwBi" id="18jf_F1WDwg" role="3clFbG">
-            <node concept="37vLTw" id="18jf_F1WDwh" role="2Oq$k0">
-              <ref role="3cqZAo" node="18jf_F1WDw4" resolve="ref" />
-            </node>
             <node concept="liA8E" id="18jf_F1WDwi" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SNodePointer.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
               <node concept="2YIFZM" id="18jf_F1WDwj" role="37wK5m">
                 <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
                 <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="27e_8zUv4H8" role="2Oq$k0">
+              <node concept="37vLTw" id="27e_8zUv4H9" role="2Oq$k0">
+                <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
+              </node>
+              <node concept="liA8E" id="27e_8zUv4Ha" role="2OqNvi">
+                <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
               </node>
             </node>
           </node>

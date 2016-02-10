@@ -12,10 +12,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import javax.swing.JOptionPane;
-import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 
 public class ShowExpectedType_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -58,18 +59,19 @@ public class ShowExpectedType_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        type.value = TypeChecker.getInstance().getInequalitiesForHole(((SNode) MapSequence.fromMap(_params).get("node")), false).getExpectedType();
+    MyBaseNodeDialog dialog = new ModelAccessHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess()).runReadAction(new Computable<MyBaseNodeDialog>() {
+      public MyBaseNodeDialog compute() {
+        SNode type = TypeChecker.getInstance().getInequalitiesForHole(((SNode) MapSequence.fromMap(_params).get("node")), false).getExpectedType();
+        if (type == null) {
+          return null;
+        }
+        return new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), String.format("Type Explorer [%s]", ((SNode) MapSequence.fromMap(_params).get("node"))), type, null);
       }
     });
-    if (type.value == null) {
+    if (dialog == null) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "no expected type");
-      return;
+    } else {
+      dialog.show();
     }
-    MyBaseNodeDialog dialog;
-    dialog = new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, null);
-    dialog.show();
   }
 }

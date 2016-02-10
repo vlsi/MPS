@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,10 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -34,7 +31,6 @@ import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
@@ -221,16 +217,11 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   }
 
   @Override
-  public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
-    applyNonTypesystemRulesToRoot(typeCheckingContext, Cancellable.NEVER);
-  }
-
-  @Override
-  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
+  public boolean applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     ITypeErrorComponent oldTypeErrorComponent = myTypeErrorComponent;
     myTypeErrorComponent = myNonTypeSystemComponent;
     try {
-      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode(), c);
+      return myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode(), c);
     } finally {
       myTypeErrorComponent = oldTypeErrorComponent;
     }
@@ -270,7 +261,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       if (key.getModel() == null) {
         LOG.warning("Type system reports error for node without containing root. Node: " + key);
         for (IErrorReporter reporter : reporters) {
-          LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());
+          LOG.warning("This error was reported from: " + reporter.getRuleNode(), reporter.getRuleNode());
         }
         continue;
       }

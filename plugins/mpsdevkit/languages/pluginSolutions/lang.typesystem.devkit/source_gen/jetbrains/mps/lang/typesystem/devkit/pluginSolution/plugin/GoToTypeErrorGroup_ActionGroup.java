@@ -18,6 +18,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.errors.IErrorReporter;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,17 +49,16 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
         return;
       }
       IErrorReporter error = editorComponent.getErrorReporterFor(editorComponent.getSelectedCell());
-      if (error == null || error.getRuleId() == null || error.getRuleModel() == null || error.getAdditionalRulesIds().isEmpty()) {
+      if (error == null || error.getRuleNode() == null || error.getAdditionalRulesIds().isEmpty()) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;
       }
       GoToTypeErrorGroup_ActionGroup.this.enable(event.getPresentation());
       GoToTypeErrorGroup_ActionGroup.this.removeAll();
-      jetbrains.mps.util.Pair<String, String> firstId = new jetbrains.mps.util.Pair<String, String>(error.getRuleModel(), error.getRuleId());
-      for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIds()) {
+      for (SNodeReference id : error.getAdditionalRulesIds()) {
         GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id, false);
       }
-      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(firstId, true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), firstId, true);
+      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(error.getRuleNode(), true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), error.getRuleNode(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
@@ -71,5 +71,9 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
   }
   public boolean isStrict() {
     return false;
+  }
+  @Override
+  public boolean hideIfNoVisibleChildren() {
+    return true;
   }
 }

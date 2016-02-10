@@ -2223,6 +2223,41 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="CXXzRDB7Xu" role="3cqZAp">
+          <node concept="3clFbS" id="CXXzRDB7Xw" role="3clFbx">
+            <node concept="3SKdUt" id="CXXzRDBbci" role="3cqZAp">
+              <node concept="3SKdUq" id="CXXzRDBbck" role="3SKWNk">
+                <property role="3SKdUp" value="Generally, no run configurations for transient elements might be too much - one may desire" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="CXXzRDBc47" role="3cqZAp">
+              <node concept="3SKdUq" id="CXXzRDBc49" role="3SKWNk">
+                <property role="3SKdUp" value="e.g. to run a main class for a transient model. Perhaps, each producer shall decide itself (in isApplicable) whether" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="CXXzRDBcOY" role="3cqZAp">
+              <node concept="3SKdUq" id="CXXzRDBcP0" role="3SKWNk">
+                <property role="3SKdUp" value="to ignore tranient models, however, at the moment I decided to prevent any code execution for transient models for " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="CXXzRDBd96" role="3cqZAp">
+              <node concept="3SKdUq" id="CXXzRDBd97" role="3SKWNk">
+                <property role="3SKdUp" value="the sake of change simplicity." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="CXXzRDB9Pv" role="3cqZAp">
+              <node concept="10Nm6u" id="CXXzRDBadH" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="CXXzRDB8ZN" role="3clFbw">
+            <node concept="37vLTw" id="CXXzRDB8vl" role="2Oq$k0">
+              <ref role="3cqZAo" node="7pREJKpbIi5" resolve="psiElement" />
+            </node>
+            <node concept="liA8E" id="CXXzRDB9FW" role="2OqNvi">
+              <ref role="37wK5l" to="irxm:~MPSPsiElement.isTransientElement():boolean" resolve="isTransientElement" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7pREJKpbIia" role="3cqZAp">
           <node concept="3cpWsn" id="7pREJKpbIib" role="3cpWs9">
             <property role="TrG5h" value="config" />
@@ -2279,10 +2314,10 @@
                               </node>
                             </node>
                             <node concept="3clFbC" id="7pREJKpbIit" role="3clFbw">
-                              <node concept="10Nm6u" id="7pREJKpbIiu" role="3uHU7w" />
                               <node concept="37vLTw" id="3GM_nagTBKU" role="3uHU7B">
                                 <ref role="3cqZAo" node="7pREJKpbIik" resolve="mpsItem" />
                               </node>
+                              <node concept="10Nm6u" id="7pREJKpbIiu" role="3uHU7w" />
                             </node>
                           </node>
                           <node concept="3clFbJ" id="7pREJKpbIiw" role="3cqZAp">
@@ -2304,13 +2339,8 @@
                             <node concept="1rXfSq" id="4hiugqyyOUB" role="3cqZAk">
                               <ref role="37wK5l" node="7pREJKpbIj7" resolve="doCreateConfiguration" />
                               <node concept="10QFUN" id="7pREJKpbIiD" role="37wK5m">
-                                <node concept="2OqwBi" id="7pREJKpbIiE" role="10QFUP">
-                                  <node concept="37vLTw" id="3GM_nagTACZ" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="7pREJKpbIi5" resolve="psiElement" />
-                                  </node>
-                                  <node concept="liA8E" id="7pREJKpbIiG" role="2OqNvi">
-                                    <ref role="37wK5l" to="irxm:~MPSPsiElement.getMPSItem():java.lang.Object" resolve="getMPSItem" />
-                                  </node>
+                                <node concept="37vLTw" id="CXXzRDB5$C" role="10QFUP">
+                                  <ref role="3cqZAo" node="7pREJKpbIik" resolve="mpsItem" />
                                 </node>
                                 <node concept="16syzq" id="7pREJKpbIiH" role="10QFUM">
                                   <ref role="16sUi3" node="7pREJKpbIlw" resolve="T" />

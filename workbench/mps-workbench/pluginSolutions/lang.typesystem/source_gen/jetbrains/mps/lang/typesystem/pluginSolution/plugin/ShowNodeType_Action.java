@@ -7,11 +7,9 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.awt.Frame;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -48,20 +46,6 @@ public class ShowNodeType_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       MapSequence.fromMap(_params).put("node", node);
       if (node == null) {
@@ -91,7 +75,6 @@ public class ShowNodeType_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<IErrorReporter> error = new Wrappers._T<IErrorReporter>();
     final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
-
 
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
@@ -125,15 +108,18 @@ public class ShowNodeType_Action extends BaseAction {
     final Wrappers._T<SModel> tmpModel = new Wrappers._T<SModel>();
 
     try {
+      final Wrappers._T<String> dialogTitle = new Wrappers._T<String>();
+
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
           tmpModel.value = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
           tmpModel.value.addRootNode(type.value);
           TemporaryModels.getInstance().addMissingImports(tmpModel.value);
+          dialogTitle.value = String.format("Type Explorer [%s]", ((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
 
-      new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, error.value).show();
+      new MyBaseNodeDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), dialogTitle.value, type.value, error.value).show();
 
     } finally {
       ModelAccess.instance().runUndoTransparentCommand(new Runnable() {

@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestView;
 import javax.swing.JComponent;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
@@ -38,7 +37,7 @@ public class TestOutputComponent implements TestView {
   private String myFilterClass;
   private String myFilterMethod;
   private final TestRunState myState;
-  public TestOutputComponent(Project project, JComponent parentComponent, ConsoleView console, TestRunState state) {
+  public TestOutputComponent(ConsoleView console, TestRunState state) {
     myConsoleView = console;
     myComponent = myConsoleView.getComponent();
     myState = state;

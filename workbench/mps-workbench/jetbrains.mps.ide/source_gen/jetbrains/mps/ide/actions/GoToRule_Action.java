@@ -7,12 +7,14 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class GoToRule_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Rule;
@@ -31,8 +33,8 @@ public class GoToRule_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -48,6 +50,7 @@ public class GoToRule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    GoToTypeErrorRuleUtil.goToRuleById(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject(), ((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")));
+    PersistenceFacade pf = PersistenceFacade.getInstance();
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(new SNodePointer(pf.createModelReference(((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")).o1), pf.createNodeId(((Pair<String, String>) MapSequence.fromMap(_params).get("ruleModelAndId")).o2)));
   }
 }

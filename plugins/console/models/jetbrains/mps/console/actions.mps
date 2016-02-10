@@ -36,7 +36,6 @@
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
         <property id="1204991940915" name="caption" index="2f7twF" />
-        <property id="1217005992861" name="isInvisibleWhenDisabled" index="1rdrE6" />
         <property id="6368583333374291912" name="isPluginXmlGroup" index="3OnEW4" />
         <child id="1204991552650" name="modifier" index="2f5YQi" />
         <child id="1207145245948" name="contents" index="ftER_" />
@@ -414,9 +413,8 @@
   </node>
   <node concept="tC5Ba" id="2ONldtgyeTV">
     <property role="TrG5h" value="ConsoleExecuteClosureEditorActions" />
-    <property role="3OnEW4" value="true" />
     <property role="2f7twF" value="Execute" />
-    <property role="1rdrE6" value="true" />
+    <property role="3OnEW4" value="true" />
     <node concept="tT9cl" id="3BiqB7gjdUW" role="2f5YQi">
       <ref role="tU$_T" to="ekwn:2Nd7jcMouna" resolve="GoToEditorPopupAddition" />
       <ref role="2f8Tey" to="ekwn:2Nd7jcMounf" resolve="refs" />

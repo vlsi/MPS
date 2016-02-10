@@ -224,6 +224,6 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
 
   @Override
   protected void applyNonTypesystemRules() {
-    getTypechecking().applyNonTypesystemRulesToRoot(null, this);
+    getTypechecking().applyNonTypesystemRulesToRoot(this);
   }
 }

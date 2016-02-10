@@ -13,8 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToTypeErrorRule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,7 +29,7 @@ public class GoToTypeErrorRule_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
-    return !((error == null || error.getRuleId() == null || error.getRuleModel() == null || !(error.getAdditionalRulesIds().isEmpty())));
+    return !((error == null || error.getRuleNode() == null || !(error.getAdditionalRulesIds().isEmpty())));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -63,6 +62,6 @@ public class GoToTypeErrorRule_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
-    GoToTypeErrorRuleUtil.goToRuleById(((MPSProject) MapSequence.fromMap(_params).get("project")), new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(error.getRuleNode());
   }
 }

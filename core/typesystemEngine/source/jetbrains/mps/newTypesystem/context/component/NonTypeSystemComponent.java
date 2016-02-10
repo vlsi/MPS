@@ -283,24 +283,25 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     addDependentNodes(sNode, rule, nodesToDependOn, false);
   }
 
-  public void applyNonTypeSystemRulesToRoot(final TypeCheckingContext typeCheckingContext, final SNode rootNode, final Cancellable c) {
-    if (rootNode == null) return;
-    LanguageScopeExecutor.execWithModelScope(rootNode.getModel(), new Computable<Object>() {
+  // true iff was fully executed (not cancelled)
+  public boolean applyNonTypeSystemRulesToRoot(final TypeCheckingContext typeCheckingContext, final SNode rootNode, final Cancellable c) {
+    if (rootNode == null) return false;
+    return LanguageScopeExecutor.execWithModelScope(rootNode.getModel(), new Computable<Boolean>() {
       @Override
-      public Object compute() {
-        applyRulesToRoot(typeCheckingContext, rootNode, c);
-        return null;
+      public Boolean compute() {
+        return applyRulesToRoot(typeCheckingContext, rootNode, c);
       }
     });
   }
 
-  private void applyRulesToRoot(TypeCheckingContext typeCheckingContext, SNode rootNode, Cancellable c) {
+  // true iff fully executed
+  private boolean applyRulesToRoot(TypeCheckingContext typeCheckingContext, SNode rootNode, Cancellable c) {
     doInvalidate();
     try {
       Queue<SNode> frontier = new LinkedList<SNode>();
       frontier.add(rootNode);
       while (!(frontier.isEmpty())) {
-        if (c.isCancelled()) return;
+        if (c.isCancelled()) return false;
         SNode sNode = frontier.remove();
         if (!TypeSystemUtil.shouldApplyTypeSystemRules(sNode)) {
           continue;
@@ -312,6 +313,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     } finally {
       setInvalidationWasPerformed(false);
     }
+    return true;
   }
 
   private void applyNonTypesystemRulesToNode(final SNode node, final TypeCheckingContext typeCheckingContext) {

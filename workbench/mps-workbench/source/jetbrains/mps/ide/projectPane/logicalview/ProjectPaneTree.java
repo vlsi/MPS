@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -76,7 +75,7 @@ import java.util.List;
  * need move to ProjectPane, as it's project stuff and needs Idea's project Message bus), integration with
  * editor (activation, auto-select/expand), etc.
  */
-public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider, NodeNavigationProvider {
+public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
     @Override
@@ -175,14 +174,6 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       // fall-through
     }
     super.autoscroll(nodeToClick);
-  }
-
-  @Override
-  public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
-    SNodeReference navigationTarget = treeNode.getNavigationTarget();
-    if (navigationTarget != null) {
-      new EditorNavigator(getProject()).shallFocus(wasClicked).selectIfChild().open(navigationTarget);
-    }
   }
 
   @Override

@@ -11,6 +11,7 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup";
   public ModelRefactoring_ActionGroup() {
     super("Refactoring", ID);
+    this.setIsAlwaysVisible(false);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
@@ -19,5 +20,9 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
+  }
+  @Override
+  public boolean hideIfNoVisibleChildren() {
+    return true;
   }
 }

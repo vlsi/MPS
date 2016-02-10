@@ -26,27 +26,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import org.apache.log4j.Level;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Iterator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MoveNodesDefault implements MoveNodesRefactoring {
 
@@ -200,116 +186,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     doMove(project, moveMap, callBack);
   }
 
-  public static <T, S> Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> askParticipantChanges(final MPSProject project, final Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, final List<T> nodes) {
-    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> changes = MapSequence.fromMap(new HashMap<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>());
-    final Wrappers._T<List<RefactoringParticipant.Option>> options = new Wrappers._T<List<RefactoringParticipant.Option>>();
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (RefactoringParticipant<?, ?, T, S> participant : Sequence.fromIterable(participants)) {
-          MapSequence.fromMap(changes).put(participant, RefactoringParticipant.ParticipantState.create(participant, nodes));
-        }
-        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>, RefactoringParticipant.Option>() {
-          public Iterable<RefactoringParticipant.Option> translate(IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> it) {
-            return it.value().getAvaliableOptions(project.getRepository());
-          }
-        }).distinct().sort(new ISelector<RefactoringParticipant.Option, String>() {
-          public String select(RefactoringParticipant.Option it) {
-            return it.getDescription();
-          }
-        }, true).toListSequence();
-      }
-    });
-
-    final List<RefactoringParticipant.Option> selectedOptions = selectParticipants(project, options.value);
-
-    final Wrappers._boolean cancelled = new Wrappers._boolean(false);
-    ProgressManager.getInstance().run(new Task.Modal(project.getProject(), "Refactoring", true) {
-      public void run(@NotNull ProgressIndicator progressIndicator) {
-        final ProgressMonitorAdapter progressMonitor = new ProgressMonitorAdapter(progressIndicator);
-        project.getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            int steps = MapSequence.fromMap(changes).count();
-            progressMonitor.start("Searching for usages", steps);
-            for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantStates : MapSequence.fromMap(changes)) {
-              participantStates.value().findChanges(project.getRepository(), selectedOptions, project.getScope(), progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
-              if (progressMonitor.isCanceled()) {
-                cancelled.value = true;
-                break;
-              }
-            }
-            progressMonitor.done();
-          }
-        });
-      }
-    });
-
-    if (cancelled.value) {
-      return null;
-    }
-    return changes;
-  }
-
-  public static List<RefactoringParticipant.Option> selectParticipants(MPSProject project, final List<RefactoringParticipant.Option> options) {
-    if (ListSequence.fromList(options).isEmpty()) {
-      return options;
-    }
-    List<Integer> selectedOptionIndices = SelectOptionsDialog.selectOptions(project.getProject(), ListSequence.fromList(options).select(new ISelector<RefactoringParticipant.Option, String>() {
-      public String select(RefactoringParticipant.Option it) {
-        return it.getDescription();
-      }
-    }).toListSequence(), "Select Participants", "Select how to update usages:");
-    if (selectedOptionIndices == null) {
-      return null;
-    }
-    return ListSequence.fromList(selectedOptionIndices).select(new ISelector<Integer, RefactoringParticipant.Option>() {
-      public RefactoringParticipant.Option select(Integer i) {
-        return ListSequence.fromList(options).getElement(i);
-      }
-    }).toListSequence();
-  }
-
-  public static <T, S> void performRefactoring(final MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, final List<T> nodes, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends S, ? super T>, ? super Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>>, ? super RefactoringSession> doRefactor) {
-    final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> changes = askParticipantChanges(project, participants, nodes);
-    if (changes == null) {
-      return;
-    }
-
-    SearchResults searchResults = new SearchResults();
-    for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantState : MapSequence.fromMap(changes)) {
-      List<? extends List<? extends RefactoringParticipant.Change<?, ?>>> partivipantChanges = participantState.value().getChanges();
-      for (List<? extends RefactoringParticipant.Change<?, ?>> nodeChanges : ListSequence.fromList(partivipantChanges)) {
-        for (RefactoringParticipant.Change<?, ?> change : ListSequence.fromList(nodeChanges)) {
-          searchResults.addAll(change.getSearchResults());
-        }
-      }
-    }
-
-    RefactoringAccessEx.getInstance().showRefactoringView(project.getProject(), new RefactoringViewAction() {
-      public void performAction(RefactoringViewItem refactoringViewItem) {
-        project.getRepository().getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-            final _FunctionTypes._return_P1_E0<? extends S, ? super T> getFinalObject = doRefactor.invoke(changes, refactoringSession);
-            for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantChanges : MapSequence.fromMap(changes)) {
-              participantChanges.value().doRefactor(ListSequence.fromList(nodes).select(new ISelector<T, S>() {
-                public S select(T it) {
-                  return getFinalObject.invoke(it);
-                }
-              }).toListSequence(), project.getRepository(), refactoringSession);
-            }
-            try {
-              refactoringSession.commit();
-            } catch (RuntimeException exception) {
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("Exception during refactoring: ", exception);
-              }
-            }
-          }
-        });
-        refactoringViewItem.close();
-      }
-    }, searchResults, false, refactoringName);
-  }
 
   public static void doMove(final MPSProject project, final Map<SNode, MoveNodesDefault.NodeProcessor> moveMap, final _FunctionTypes._void_P1_E0<? super RefactoringSession> initRefactoringSession) {
 
@@ -326,16 +202,16 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     final Wrappers._T<List<SNode>> allNodes = new Wrappers._T<List<SNode>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        allNodes.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet()).translate(new ITranslator2<SNode, SNode>() {
-          public Iterable<SNode> translate(SNode it) {
-            return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+        allNodes.value = MapSequence.fromMap(moveMap).translate(new ITranslator2<IMapping<SNode, MoveNodesDefault.NodeProcessor>, SNode>() {
+          public Iterable<SNode> translate(IMapping<SNode, MoveNodesDefault.NodeProcessor> mapping) {
+            return mapping.value().getNodesToSearch(mapping.key());
           }
-        }));
+        }).toListSequence();
       }
     });
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
-    performRefactoring(project, "Move nodes", participants, allNodes.value, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringSession>() {
+    RefactoringProcessor.performRefactoring(project, "Move nodes", participants, allNodes.value, new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringSession>() {
       public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(final Map<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> changes, RefactoringSession refactoringSession) {
         if (initRefactoringSession != null) {
           initRefactoringSession.invoke(refactoringSession);
@@ -388,6 +264,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   public static interface NodeProcessor {
     boolean isValid(List<SNode> nodesToMove);
     boolean isValid(SNode nodeToMove);
+    List<SNode> getNodesToSearch(SNode nodeToMove);
     void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession);
   }
 
@@ -407,6 +284,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
     public boolean isValid(SNode nodeToMove) {
       return myNodeLocation.canInsert(myProject.getRepository(), nodeToMove);
+    }
+    public List<SNode> getNodesToSearch(SNode nodeToMove) {
+      return SNodeOperations.getNodeDescendants(nodeToMove, null, true, new SAbstractConcept[]{});
     }
     public void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession) {
       MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
@@ -447,6 +327,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     public boolean isValid(SNode nodeToMove) {
       return myTarget.resolve(myProject.getRepository()) != null;
     }
+    public List<SNode> getNodesToSearch(SNode nodeToMove) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
+    }
     public void process(List<SNode> nodesToMove, List<SNode> whichOfThemToRemove, RefactoringSession refactoringSession) {
       if (ListSequence.fromList(nodesToMove).count() != 1) {
         throw new IllegalArgumentException();
@@ -465,7 +348,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   }
 
 
-  protected static Logger LOG = LogManager.getLogger(MoveNodesDefault.class);
   private static boolean eq_92fyi8_a0a0a0a0a0a0a4a0a0a0a2a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -25,6 +25,11 @@ import jetbrains.mps.smodel.SModelInternal;
 public class RefactoringRuntime {
 
   public static void changePropertyInstance(SNode node, final SProperty oldProp, final SProperty newProp) {
+    if (node.hasProperty(newProp) && neq_7voxfg_a0a0a0b(node.getProperty(oldProp), node.getProperty(newProp)) || node.getProperty(oldProp) == null) {
+      // merge case 
+      return;
+    }
+
     Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -42,6 +47,11 @@ public class RefactoringRuntime {
   }
 
   public static void changeContainmentLinkInstance(SNode node, final SContainmentLink oldLink, final SContainmentLink newLink) {
+    if (node.getChildren(newLink).iterator().hasNext()) {
+      // merge case 
+      return;
+    }
+
     Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -61,6 +71,11 @@ public class RefactoringRuntime {
   }
 
   public static void changeReferenceLinkInstances(SNode node, final SReferenceLink oldLink, final SReferenceLink newLink) {
+    if (node.getReference(newLink) != null) {
+      // merge case 
+      return;
+    }
+
     Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -98,6 +113,9 @@ public class RefactoringRuntime {
       }
     }
     return SNodeOperations.replaceWithAnother(node, newInstance);
+  }
+  private static boolean neq_7voxfg_a0a0a0b(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static <T> T as_7voxfg_a0a0a0a6a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

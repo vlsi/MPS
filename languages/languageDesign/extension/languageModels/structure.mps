@@ -104,6 +104,9 @@
     <node concept="1TJgyi" id="58aSpRitLIm" role="1TKVEl">
       <property role="TrG5h" value="extensionName" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="bBfCfNEM2P" role="lGtFl">
+        <property role="YLQ7P" value="use INamedConcept.name" />
+      </node>
     </node>
     <node concept="1TJgyj" id="6XJvNHU5VOb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
