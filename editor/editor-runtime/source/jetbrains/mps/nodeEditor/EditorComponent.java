@@ -772,6 +772,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             repaint(editorCell);
           }
         }
+        myLeftHighlighter.repaint();
       }
     });
   }
