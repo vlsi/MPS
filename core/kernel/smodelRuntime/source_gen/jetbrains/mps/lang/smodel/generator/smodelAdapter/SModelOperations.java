@@ -95,7 +95,7 @@ public final class SModelOperations {
     return result;
   }
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     return createNewNode(model, id, new SConceptAdapterByName(conceptFqName));
   }

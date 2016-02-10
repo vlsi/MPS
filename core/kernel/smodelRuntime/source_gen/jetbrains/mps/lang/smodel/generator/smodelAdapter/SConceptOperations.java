@@ -57,8 +57,11 @@ public final class SConceptOperations {
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
     return SModelUtil.findConceptDeclaration(conceptFqName);
   }
+  /**
+   * conceptNode.superConcepts/direct operation was not deprecated in 3.3
+   */
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null || !(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclarationNode))) {
       return Collections.emptyList();
@@ -81,8 +84,11 @@ public final class SConceptOperations {
     }
     return Collections.unmodifiableList(result);
   }
+  /**
+   * conceptNode.superConcepts/all operation was not deprecated in 3.3
+   */
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   public static List<SNode> getAllSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -112,10 +118,12 @@ public final class SConceptOperations {
     }
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
+  /**
+   * conceptNode.subConcepts operation was not deprecated in 3.3
+   */
   @Deprecated
-  @ToRemove(version = 3.3)
+  @ToRemove(version = 3.4)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
-    // not used in MPS 
     return getAllSubConcepts(conceptDeclarationNode, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
   }
   /**
@@ -128,7 +136,7 @@ public final class SConceptOperations {
     return getAllSubConcepts(concept, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
   }
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   private static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<SLanguage> availableLanguages) {
     // remove this method along with getAllSubConcepts(conceptNode, model) 
     if (conceptDeclarationNode == null) {

@@ -20,6 +20,7 @@ public class Concept_GetHierarchy_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_qkpwwr_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

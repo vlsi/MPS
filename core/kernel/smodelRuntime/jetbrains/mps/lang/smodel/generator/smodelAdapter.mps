@@ -2583,7 +2583,14 @@
         <node concept="2B6LJw" id="1EtdPNu8$Ol" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="1EtdPNu8__a" role="2B70Vg">
-            <property role="$nhwW" value="3.2" />
+            <property role="$nhwW" value="3.4" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="5q7UjaiWVyu" role="lGtFl">
+        <node concept="TZ5HA" id="5q7UjaiWVyv" role="TZ5H$">
+          <node concept="1dT_AC" id="5q7UjaiWVyw" role="1dT_Ay">
+            <property role="1dT_AB" value="conceptNode.superConcepts/direct operation was not deprecated in 3.3" />
           </node>
         </node>
       </node>
@@ -2807,8 +2814,16 @@
         <node concept="2B6LJw" id="1EtdPNuce5e" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="1EtdPNuce7o" role="2B70Vg">
-            <property role="$nhwW" value="3.2" />
+            <property role="$nhwW" value="3.4" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="5q7UjaiXizX" role="lGtFl">
+        <node concept="TZ5HA" id="5q7UjaiXizY" role="TZ5H$">
+          <node concept="1dT_AC" id="5q7UjaiXiX9" role="1dT_Ay">
+            <property role="1dT_AB" value="conceptNode.superConcepts/all operation was not deprecated in 3.3" />
+          </node>
+          <node concept="1dT_AC" id="5q7UjaiXizZ" role="1dT_Ay" />
         </node>
       </node>
     </node>
@@ -2971,11 +2986,6 @@
     <node concept="2YIFZL" id="6FS05yMg8nT" role="jymVt">
       <property role="TrG5h" value="getAllSubConcepts" />
       <node concept="3clFbS" id="6FS05yMg8o3" role="3clF47">
-        <node concept="3SKdUt" id="1BC2tkV4BUt" role="3cqZAp">
-          <node concept="3SKdUq" id="1BC2tkV4C06" role="3SKWNk">
-            <property role="3SKdUp" value="not used in MPS" />
-          </node>
-        </node>
         <node concept="3clFbF" id="7bDihFJPaIP" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqysr7N" role="3clFbG">
             <ref role="37wK5l" node="5IkW5anF8Dh" resolve="getAllSubConcepts" />
@@ -3025,8 +3035,16 @@
         <node concept="2B6LJw" id="1EtdPNufF$P" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="1EtdPNufF$Q" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
+            <property role="$nhwW" value="3.4" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="5q7UjaiZamA" role="lGtFl">
+        <node concept="TZ5HA" id="5q7UjaiZamB" role="TZ5H$">
+          <node concept="1dT_AC" id="5q7UjaiZaxk" role="1dT_Ay">
+            <property role="1dT_AB" value="conceptNode.subConcepts operation was not deprecated in 3.3" />
+          </node>
+          <node concept="1dT_AC" id="5q7UjaiZamC" role="1dT_Ay" />
         </node>
       </node>
     </node>
@@ -3282,7 +3300,7 @@
         <node concept="2B6LJw" id="1EtdPNufs8P" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="1EtdPNufsft" role="2B70Vg">
-            <property role="$nhwW" value="3.2" />
+            <property role="$nhwW" value="3.4" />
           </node>
         </node>
       </node>
@@ -4283,7 +4301,7 @@
         <node concept="2B6LJw" id="1EtdPNuh7BT" role="2B76xF">
           <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
           <node concept="3b6qkQ" id="1EtdPNuh7CN" role="2B70Vg">
-            <property role="$nhwW" value="3.2" />
+            <property role="$nhwW" value="3.4" />
           </node>
         </node>
       </node>

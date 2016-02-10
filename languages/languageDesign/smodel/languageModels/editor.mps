@@ -2138,6 +2138,9 @@
     <ref role="1XX52x" to="tp25:hboNAxt" resolve="Concept_GetHierarchy" />
     <node concept="3F0ifn" id="hboS7k5" role="2wV5jI">
       <property role="3F0ifm" value="hierarchy" />
+      <node concept="3nxI2P" id="5q7UjaiXHWM" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
       <node concept="VPxyj" id="hEZKQy6" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
