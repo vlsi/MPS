@@ -1038,11 +1038,17 @@
         <node concept="1HfYo3" id="hPR1pNA" role="1HlULh">
           <node concept="3TQlhw" id="hPR1pNB" role="1Hhtcw">
             <node concept="3clFbS" id="hPR1pNC" role="2VODD2">
-              <node concept="3clFbF" id="hPR1pND" role="3cqZAp">
-                <node concept="2YIFZM" id="4p32Qz$qpJE" role="3clFbG">
-                  <ref role="37wK5l" to="i8bi:1p0X$qFlcxI" resolve="getLinkRole" />
-                  <ref role="1Pybhc" to="i8bi:5zEkxuKh8vS" resolve="AttributeOperations" />
-                  <node concept="pncrf" id="4p32Qz$qpJH" role="37wK5m" />
+              <node concept="3clFbF" id="5q7UjaiTMwJ" role="3cqZAp">
+                <node concept="2OqwBi" id="5q7UjaiTMQX" role="3clFbG">
+                  <node concept="2OqwBi" id="5q7UjaiTM_c" role="2Oq$k0">
+                    <node concept="pncrf" id="5q7UjaiTMwH" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="5q7UjaiTMOP" role="2OqNvi">
+                      <ref role="37wK5l" to="tpcu:1avfQ4BEFo6" resolve="getLink" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5q7UjaiTN0h" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2105,11 +2111,17 @@
         <node concept="1HfYo3" id="hPR1ozw" role="1HlULh">
           <node concept="3TQlhw" id="hPR1ozx" role="1Hhtcw">
             <node concept="3clFbS" id="hPR1ozy" role="2VODD2">
-              <node concept="3clFbF" id="hPR1ozz" role="3cqZAp">
-                <node concept="2YIFZM" id="4p32Qz$qnLA" role="3clFbG">
-                  <ref role="37wK5l" to="i8bi:1p0X$qFlcy1" resolve="getPropertyName" />
-                  <ref role="1Pybhc" to="i8bi:5zEkxuKh8vS" resolve="AttributeOperations" />
-                  <node concept="pncrf" id="4p32Qz$qnLD" role="37wK5m" />
+              <node concept="3clFbF" id="5q7UjaiUsxp" role="3cqZAp">
+                <node concept="2OqwBi" id="5q7UjaiUsRv" role="3clFbG">
+                  <node concept="2OqwBi" id="5q7UjaiUs_Q" role="2Oq$k0">
+                    <node concept="pncrf" id="5q7UjaiUsxn" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="5q7UjaiUsPv" role="2OqNvi">
+                      <ref role="37wK5l" to="tpcu:1avfQ4BBzOo" resolve="getProperty" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5q7UjaiUt0t" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SProperty.getName():java.lang.String" resolve="getName" />
+                  </node>
                 </node>
               </node>
             </node>

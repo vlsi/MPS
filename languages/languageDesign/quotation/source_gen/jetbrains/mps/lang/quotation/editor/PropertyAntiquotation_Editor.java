@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -163,7 +163,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_dqkua3_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return AttributeOperations.getPropertyName(node);
+        return PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(node).getName();
       }
       public void setText(String s) {
       }

@@ -24,17 +24,18 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -342,7 +343,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, 0x746e600f0bda9e9bL, "property"));
   }
   public static SNode sourceNodeQuery_2652588855789575375(final SourceSubstituteMacroNodeContext _context) {
-    return AttributeOperations.getPropertyDeclaration(_context.getNode());
+    return PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(_context.getNode()).getDeclarationNode();
   }
   public static SNode sourceNodeQuery_2652588855790422153(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973eL, "role"));
@@ -351,7 +352,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973eL, "role"));
   }
   public static SNode sourceNodeQuery_2652588855790579732(final SourceSubstituteMacroNodeContext _context) {
-    return AttributeOperations.getLinkDeclaration(_context.getNode());
+    return LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(_context.getNode()).getDeclarationNode();
   }
   public static SNode sourceNodeQuery_5645466361084424830(final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode().getContainmentLink().getDeclarationNode();

@@ -98,8 +98,11 @@ public class AttributeOperations {
   public static List<SNode> getAttributeList(SNode node, IAttributeDescriptor descriptor) {
     return ((node == null) ? null : new AttributeOperations.AttributeList(node, descriptor));
   }
+  /**
+   * used as generation target in 3.3
+   */
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
     SModel model = SNodeOperations.getModel(node);
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));
@@ -108,8 +111,11 @@ public class AttributeOperations {
     SModel model = SNodeOperations.getModel(node);
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConcept));
   }
+  /**
+   * used as generation target in 3.3
+   */
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.4)
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
     SModel model = SNodeOperations.getModel(node);
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(model, null, newConceptFqname));

@@ -17,9 +17,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,15 +42,11 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
 
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     SNode referenceMacro = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), false, false);
-    SNode attributedNode = SNodeOperations.getParent(referenceMacro);
-    String linkRole = AttributeOperations.getLinkRole(referenceMacro);
-    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
-    SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-    SNode targetConcept = SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
-    SNode expectedNodeType = _quotation_createNode_mxwyp3_a0g0a(targetConcept);
+    SAbstractConcept targetConcept = LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(referenceMacro).getTargetConcept();
+    SNode expectedNodeType = _quotation_createNode_mxwyp3_a0c0a(targetConcept.getDeclarationNode());
     // reference may be resolved dynamically? 
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo"))) {
-      return _quotation_createNode_mxwyp3_a0a8a0(targetConcept);
+      return _quotation_createNode_mxwyp3_a0a4a0(targetConcept.getDeclarationNode());
     }
     return expectedNodeType;
   }
@@ -113,14 +107,14 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_mxwyp3_a0g0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mxwyp3_a0c0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_mxwyp3_a0a8a0(Object parameter_1) {
+  private static SNode _quotation_createNode_mxwyp3_a0a4a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

@@ -14,6 +14,7 @@
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -24,9 +25,6 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -182,21 +180,6 @@
   <node concept="1YbPZF" id="hvTAxqV">
     <property role="TrG5h" value="typeof_LinkPatternVariableDeclaration" />
     <node concept="3clFbS" id="hvTAxqW" role="18ibNy">
-      <node concept="3cpWs8" id="hvTEYVA" role="3cqZAp">
-        <node concept="3cpWsn" id="hvTEYVB" role="3cpWs9">
-          <property role="TrG5h" value="linkDeclaration" />
-          <node concept="3Tqbb2" id="hvTEYVC" role="1tU5fm">
-            <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-          </node>
-          <node concept="2YIFZM" id="4p32Qz$qpJA" role="33vP2m">
-            <ref role="37wK5l" to="i8bi:1p0X$qFlc03" resolve="getLinkDeclaration" />
-            <ref role="1Pybhc" to="i8bi:5zEkxuKh8vS" resolve="AttributeOperations" />
-            <node concept="1YBJjd" id="4p32Qz$qpJB" role="37wK5m">
-              <ref role="1YBMHb" node="hvTAxqX" resolve="nodeToCheck" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="1Z5TYs" id="hvTKJUN" role="3cqZAp">
         <node concept="mw_s8" id="hvTKKs4" role="1ZfhKB">
           <node concept="2c44tf" id="hvTKKs5" role="mwGJk">
@@ -204,12 +187,22 @@
               <node concept="2c44tb" id="hvTKLE0" role="lGtFl">
                 <property role="2qtEX8" value="concept" />
                 <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
-                <node concept="2OqwBi" id="hxx$OXv" role="2c44t1">
-                  <node concept="37vLTw" id="3GM_nagTrSt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="hvTEYVB" resolve="linkDeclaration" />
+                <node concept="2OqwBi" id="5q7UjaiT9fS" role="2c44t1">
+                  <node concept="2OqwBi" id="5q7UjaiT930" role="2Oq$k0">
+                    <node concept="2OqwBi" id="5q7UjaiT8kR" role="2Oq$k0">
+                      <node concept="1YBJjd" id="5q7UjaiT8h3" role="2Oq$k0">
+                        <ref role="1YBMHb" node="hvTAxqX" resolve="nodeToCheck" />
+                      </node>
+                      <node concept="2qgKlT" id="5q7UjaiT912" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcu:1avfQ4BEFo6" resolve="getLink" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5q7UjaiT9dO" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SReferenceLink.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
+                    </node>
                   </node>
-                  <node concept="3TrEf2" id="hvTKOj3" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                  <node concept="liA8E" id="5q7UjaiT9lk" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
                   </node>
                 </node>
               </node>
