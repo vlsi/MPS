@@ -8,8 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -19,8 +17,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(GeneratedFinder.class);
@@ -47,16 +43,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   public SNodeReference getDeclarationNode() {
     return FindersManager.getInstance().getDeclarationNode(this);
   }
-  @Override
-  public SNode getNodeToNavigate() {
-    final Wrappers._T<SNode> finderNode = new Wrappers._T<SNode>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        finderNode.value = FindersManager.getInstance().getNodeByFinder(GeneratedFinder.this);
-      }
-    });
-    return finderNode.value;
-  }
+
   @Override
   public boolean canNavigate() {
     return true;
@@ -94,16 +81,4 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return results;
   }
 
-  @Override
-  public SAbstractConcept getSConcept() {
-    // this is needed as in 3.2-generated finders we don't have this method, needed for binary compatibility 
-    // todo remove after 3.3 
-    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(getConcept()));
-  }
-
-  public String getConcept() {
-    // this is needed as in 3.2 we had @Override annotations on the same method in generated classes, needed for binary compatibility 
-    // todo remove after 3.3, use getSConcept 
-    return null;
-  }
 }
