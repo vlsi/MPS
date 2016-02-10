@@ -517,7 +517,7 @@ public class TextLine {
       x--;
     }
     g.setColor(EditorSettings.getInstance().getCaretColor());
-    g.drawRect(x, shiftY, 1, myTextHeight - 1);
+    g.fillRect(x, shiftY, 2, myTextHeight);
   }
 
 
