@@ -47,7 +47,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -307,42 +306,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     dependenciesChanged();
     setChanged();
-  }
-
-  /**
-   * @deprecated set of used languages for a module is derived from used languages of owned models
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void addUsedLanguage(SModuleReference langRef) {
-    // no-op
-  }
-
-  /**
-   * @deprecated set of used language for a module is derived from used languages of owned models
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void removeUsedLanguage(SModuleReference langRef) {
-    // no-op
-  }
-
-  /**
-   * @deprecated set of used language for a module is derived from used languages of owned models
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void addUsedDevkit(SModuleReference devkitRef) {
-    // no-op
-  }
-
-  /**
-   * @deprecated set of used language for a module is derived from used languages of owned models
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void removeUsedDevkit(SModuleReference devkitRef) {
-    // no-op
   }
 
   //----languages & devkits
