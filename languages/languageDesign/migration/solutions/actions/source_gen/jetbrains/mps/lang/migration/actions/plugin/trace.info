@@ -16,23 +16,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.lang.migration.actions.plugin)/4436301628118322512">
     <file name="MigrationGroup_ActionGroup.java">
-      <node id="4436301628118322512" at="10,0,11,0" concept="10" trace="LOG" />
-      <node id="4436301628118322512" at="11,0,12,0" concept="10" trace="ID" />
-      <node id="4436301628118322512" at="12,39,13,32" concept="12" />
-      <node id="4436301628118322512" at="13,32,14,30" concept="2" />
-      <node id="4436301628118322512" at="14,30,15,25" concept="2" />
-      <node id="4436301628118340695" at="16,9,17,125" concept="2" />
-      <node id="4436301628118322512" at="18,27,19,39" concept="2" />
-      <node id="4436301628118322512" at="15,25,20,5" concept="13" />
-      <node id="4436301628118322512" at="12,0,22,0" concept="1" trace="MigrationGroup_ActionGroup#()V" />
-      <scope id="4436301628118322512" at="16,9,17,125" />
-      <scope id="4436301628118322512" at="18,0,19,39">
-        <var name="t" id="4436301628118322512" />
-      </scope>
-      <scope id="4436301628118322512" at="18,27,19,39" />
-      <scope id="4436301628118322512" at="12,39,20,5" />
-      <scope id="4436301628118322512" at="12,0,22,0" />
-      <unit id="4436301628118322512" at="9,0,23,0" name="jetbrains.mps.lang.migration.actions.plugin.MigrationGroup_ActionGroup" />
+      <node id="4436301628118322512" at="8,0,9,0" concept="10" trace="ID" />
+      <node id="4436301628118322512" at="9,39,10,32" concept="12" />
+      <node id="4436301628118322512" at="10,32,11,30" concept="2" />
+      <node id="4436301628118322512" at="11,30,12,25" concept="2" />
+      <node id="4436301628118340695" at="12,25,13,123" concept="2" />
+      <node id="4436301628118322512" at="9,0,15,0" concept="1" trace="MigrationGroup_ActionGroup#()V" />
+      <scope id="4436301628118322512" at="9,39,13,123" />
+      <scope id="4436301628118322512" at="9,0,15,0" />
+      <unit id="4436301628118322512" at="7,0,16,0" name="jetbrains.mps.lang.migration.actions.plugin.MigrationGroup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.lang.migration.actions.plugin)/6845384137766004712">

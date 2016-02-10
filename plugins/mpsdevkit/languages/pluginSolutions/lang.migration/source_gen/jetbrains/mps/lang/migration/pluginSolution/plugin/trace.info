@@ -15,7 +15,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ExtensionDescriptor.java">
@@ -252,23 +251,15 @@
   </root>
   <root nodeRef="r:ecbd9874-078d-4efd-b8c2-31475fda8f48(jetbrains.mps.lang.migration.pluginSolution.plugin)/2864063292004328758">
     <file name="GoToAddition_ActionGroup.java">
-      <node id="2864063292004328758" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="2864063292004328758" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="2864063292004328758" at="12,37,13,30" concept="14" />
-      <node id="2864063292004328758" at="13,30,14,30" concept="3" />
-      <node id="2864063292004328758" at="14,30,15,25" concept="3" />
-      <node id="2864063292004336836" at="16,9,17,118" concept="3" />
-      <node id="2864063292004328758" at="18,27,19,39" concept="3" />
-      <node id="2864063292004328758" at="15,25,20,5" concept="15" />
-      <node id="2864063292004328758" at="12,0,22,0" concept="2" trace="GoToAddition_ActionGroup#()V" />
-      <scope id="2864063292004328758" at="16,9,17,118" />
-      <scope id="2864063292004328758" at="18,0,19,39">
-        <var name="t" id="2864063292004328758" />
-      </scope>
-      <scope id="2864063292004328758" at="18,27,19,39" />
-      <scope id="2864063292004328758" at="12,37,20,5" />
-      <scope id="2864063292004328758" at="12,0,22,0" />
-      <unit id="2864063292004328758" at="9,0,23,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup" />
+      <node id="2864063292004328758" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="2864063292004328758" at="9,37,10,30" concept="14" />
+      <node id="2864063292004328758" at="10,30,11,30" concept="3" />
+      <node id="2864063292004328758" at="11,30,12,25" concept="3" />
+      <node id="2864063292004336836" at="12,25,13,116" concept="3" />
+      <node id="2864063292004328758" at="9,0,15,0" concept="2" trace="GoToAddition_ActionGroup#()V" />
+      <scope id="2864063292004328758" at="9,37,13,116" />
+      <scope id="2864063292004328758" at="9,0,15,0" />
+      <unit id="2864063292004328758" at="7,0,16,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.GoToAddition_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:ecbd9874-078d-4efd-b8c2-31475fda8f48(jetbrains.mps.lang.migration.pluginSolution.plugin)/3228268613620327405">
@@ -722,7 +713,7 @@
       <node id="3947813777275276753" at="253,80,258,28" concept="8" />
       <node id="3947813777275584689" at="261,9,266,24" concept="8" />
       <node id="3947813777275193025" at="74,0,80,0" concept="13" trace="create#(Ljetbrains/mps/ide/platform/actions/core/MoveNodeRefactoringParticipant;)Ljetbrains/mps/lang/migration/pluginSolution/plugin/MoveNodeRefactoringLogParticipant/SerializingParticipantState;" />
-      <node id="3947813777275584689" at="271,22,277,11" concept="16" />
+      <node id="3947813777275584689" at="271,22,277,11" concept="15" />
       <node id="3628660716136490626" at="62,0,69,0" concept="0" trace="get#()Ljava/lang/Iterable;" />
       <node id="3947813777275489528" at="141,26,148,13" concept="6" />
       <node id="1817798995039476850" at="163,91,170,9" concept="6" />

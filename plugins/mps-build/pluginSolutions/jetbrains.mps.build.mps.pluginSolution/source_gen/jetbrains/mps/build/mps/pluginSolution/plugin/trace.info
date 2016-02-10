@@ -262,23 +262,15 @@
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/6937807405124297516">
     <file name="IntentionsEx_ActionGroup.java">
-      <node id="6937807405124297516" at="10,0,11,0" concept="16" trace="LOG" />
-      <node id="6937807405124297516" at="11,0,12,0" concept="16" trace="ID" />
-      <node id="6937807405124297516" at="12,37,13,30" concept="18" />
-      <node id="6937807405124297516" at="13,30,14,30" concept="6" />
-      <node id="6937807405124297516" at="14,30,15,25" concept="6" />
-      <node id="6937807405124297519" at="16,9,17,129" concept="6" />
-      <node id="6937807405124297516" at="18,27,19,39" concept="6" />
-      <node id="6937807405124297516" at="15,25,20,5" concept="19" />
-      <node id="6937807405124297516" at="12,0,22,0" concept="3" trace="IntentionsEx_ActionGroup#()V" />
-      <scope id="6937807405124297516" at="16,9,17,129" />
-      <scope id="6937807405124297516" at="18,0,19,39">
-        <var name="t" id="6937807405124297516" />
-      </scope>
-      <scope id="6937807405124297516" at="18,27,19,39" />
-      <scope id="6937807405124297516" at="12,37,20,5" />
-      <scope id="6937807405124297516" at="12,0,22,0" />
-      <unit id="6937807405124297516" at="9,0,23,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" />
+      <node id="6937807405124297516" at="8,0,9,0" concept="16" trace="ID" />
+      <node id="6937807405124297516" at="9,37,10,30" concept="18" />
+      <node id="6937807405124297516" at="10,30,11,30" concept="6" />
+      <node id="6937807405124297516" at="11,30,12,25" concept="6" />
+      <node id="6937807405124297519" at="12,25,13,127" concept="6" />
+      <node id="6937807405124297516" at="9,0,15,0" concept="3" trace="IntentionsEx_ActionGroup#()V" />
+      <scope id="6937807405124297516" at="9,37,13,127" />
+      <scope id="6937807405124297516" at="9,0,15,0" />
+      <unit id="6937807405124297516" at="7,0,16,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/7162597690968047816">
@@ -6646,23 +6638,15 @@
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/8722937377469659543">
     <file name="ProjectPaneProjectAddition_ActionGroup.java">
-      <node id="8722937377469659543" at="10,0,11,0" concept="16" trace="LOG" />
-      <node id="8722937377469659543" at="11,0,12,0" concept="16" trace="ID" />
-      <node id="8722937377469659543" at="12,51,13,44" concept="18" />
-      <node id="8722937377469659543" at="13,44,14,30" concept="6" />
-      <node id="8722937377469659543" at="14,30,15,25" concept="6" />
-      <node id="8722937377469659546" at="16,9,17,146" concept="6" />
-      <node id="8722937377469659543" at="18,27,19,39" concept="6" />
-      <node id="8722937377469659543" at="15,25,20,5" concept="19" />
-      <node id="8722937377469659543" at="12,0,22,0" concept="3" trace="ProjectPaneProjectAddition_ActionGroup#()V" />
-      <scope id="8722937377469659543" at="16,9,17,146" />
-      <scope id="8722937377469659543" at="18,0,19,39">
-        <var name="t" id="8722937377469659543" />
-      </scope>
-      <scope id="8722937377469659543" at="18,27,19,39" />
-      <scope id="8722937377469659543" at="12,51,20,5" />
-      <scope id="8722937377469659543" at="12,0,22,0" />
-      <unit id="8722937377469659543" at="9,0,23,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" />
+      <node id="8722937377469659543" at="8,0,9,0" concept="16" trace="ID" />
+      <node id="8722937377469659543" at="9,51,10,44" concept="18" />
+      <node id="8722937377469659543" at="10,44,11,30" concept="6" />
+      <node id="8722937377469659543" at="11,30,12,25" concept="6" />
+      <node id="8722937377469659546" at="12,25,13,144" concept="6" />
+      <node id="8722937377469659543" at="9,0,15,0" concept="3" trace="ProjectPaneProjectAddition_ActionGroup#()V" />
+      <scope id="8722937377469659543" at="9,51,13,144" />
+      <scope id="8722937377469659543" at="9,0,15,0" />
+      <unit id="8722937377469659543" at="7,0,16,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.ProjectPaneProjectAddition_ActionGroup" />
     </file>
   </root>
 </debug-info>

@@ -283,23 +283,15 @@
   </root>
   <root nodeRef="r:de44096e-4e5d-49b5-9935-e04d24a272d2(jetbrains.mps.build.mps.testManifest.pluginSolution.plugin)/8645252814069728718">
     <file name="TestBuildProject_ActionGroup.java">
-      <node id="8645252814069728718" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="8645252814069728718" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="8645252814069728718" at="12,41,13,34" concept="14" />
-      <node id="8645252814069728718" at="13,34,14,30" concept="3" />
-      <node id="8645252814069728718" at="14,30,15,25" concept="3" />
-      <node id="8645252814070244912" at="16,9,17,138" concept="3" />
-      <node id="8645252814069728718" at="18,27,19,39" concept="3" />
-      <node id="8645252814069728718" at="15,25,20,5" concept="15" />
-      <node id="8645252814069728718" at="12,0,22,0" concept="2" trace="TestBuildProject_ActionGroup#()V" />
-      <scope id="8645252814069728718" at="16,9,17,138" />
-      <scope id="8645252814069728718" at="18,0,19,39">
-        <var name="t" id="8645252814069728718" />
-      </scope>
-      <scope id="8645252814069728718" at="18,27,19,39" />
-      <scope id="8645252814069728718" at="12,41,20,5" />
-      <scope id="8645252814069728718" at="12,0,22,0" />
-      <unit id="8645252814069728718" at="9,0,23,0" name="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestBuildProject_ActionGroup" />
+      <node id="8645252814069728718" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="8645252814069728718" at="9,41,10,34" concept="14" />
+      <node id="8645252814069728718" at="10,34,11,30" concept="3" />
+      <node id="8645252814069728718" at="11,30,12,25" concept="3" />
+      <node id="8645252814070244912" at="12,25,13,136" concept="3" />
+      <node id="8645252814069728718" at="9,0,15,0" concept="2" trace="TestBuildProject_ActionGroup#()V" />
+      <scope id="8645252814069728718" at="9,41,13,136" />
+      <scope id="8645252814069728718" at="9,0,15,0" />
+      <unit id="8645252814069728718" at="7,0,16,0" name="jetbrains.mps.build.mps.testManifest.pluginSolution.plugin.TestBuildProject_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:de44096e-4e5d-49b5-9935-e04d24a272d2(jetbrains.mps.build.mps.testManifest.pluginSolution.plugin)/8645252814069730936">

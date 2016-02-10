@@ -475,24 +475,16 @@
   </root>
   <root nodeRef="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)/7628537775846372132">
     <file name="ProgressActionsGroup_ActionGroup.java">
-      <node id="7628537775846372132" at="10,0,11,0" concept="10" trace="LOG" />
-      <node id="7628537775846372132" at="11,0,12,0" concept="10" trace="ID" />
-      <node id="7628537775846372132" at="12,45,13,38" concept="11" />
-      <node id="7628537775846372132" at="13,38,14,30" concept="2" />
-      <node id="7628537775846372132" at="14,30,15,25" concept="2" />
-      <node id="7628537775846372137" at="16,9,17,132" concept="2" />
-      <node id="3764589745560987449" at="17,132,18,141" concept="2" />
-      <node id="7628537775846372132" at="19,27,20,39" concept="2" />
-      <node id="7628537775846372132" at="15,25,21,5" concept="13" />
-      <node id="7628537775846372132" at="12,0,23,0" concept="1" trace="ProgressActionsGroup_ActionGroup#()V" />
-      <scope id="7628537775846372132" at="19,0,20,39">
-        <var name="t" id="7628537775846372132" />
-      </scope>
-      <scope id="7628537775846372132" at="19,27,20,39" />
-      <scope id="7628537775846372132" at="16,9,18,141" />
-      <scope id="7628537775846372132" at="12,45,21,5" />
-      <scope id="7628537775846372132" at="12,0,23,0" />
-      <unit id="7628537775846372132" at="9,0,24,0" name="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" />
+      <node id="7628537775846372132" at="8,0,9,0" concept="10" trace="ID" />
+      <node id="7628537775846372132" at="9,45,10,38" concept="11" />
+      <node id="7628537775846372132" at="10,38,11,30" concept="2" />
+      <node id="7628537775846372132" at="11,30,12,25" concept="2" />
+      <node id="7628537775846372137" at="12,25,13,130" concept="2" />
+      <node id="3764589745560987449" at="13,130,14,139" concept="2" />
+      <node id="7628537775846372132" at="9,0,16,0" concept="1" trace="ProgressActionsGroup_ActionGroup#()V" />
+      <scope id="7628537775846372132" at="9,45,14,139" />
+      <scope id="7628537775846372132" at="9,0,16,0" />
+      <unit id="7628537775846372132" at="7,0,17,0" name="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" />
     </file>
   </root>
 </debug-info>

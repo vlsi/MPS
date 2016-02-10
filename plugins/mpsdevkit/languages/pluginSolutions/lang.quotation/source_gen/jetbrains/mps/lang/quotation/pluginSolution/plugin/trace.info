@@ -11,7 +11,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901770">
     <file name="ShowMetaLevel_Action.java">
       <node id="5487985028841901770" at="20,0,21,0" concept="9" trace="ICON" />
@@ -69,23 +68,15 @@
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901793">
     <file name="MetaLevelActions_ActionGroup.java">
-      <node id="5487985028841901793" at="10,0,11,0" concept="9" trace="LOG" />
-      <node id="5487985028841901793" at="11,0,12,0" concept="9" trace="ID" />
-      <node id="5487985028841901793" at="12,41,13,34" concept="10" />
-      <node id="5487985028841901793" at="13,34,14,30" concept="2" />
-      <node id="5487985028841901793" at="14,30,15,25" concept="2" />
-      <node id="5487985028841901796" at="16,9,17,125" concept="2" />
-      <node id="5487985028841901793" at="18,27,19,39" concept="2" />
-      <node id="5487985028841901793" at="15,25,20,5" concept="11" />
-      <node id="5487985028841901793" at="12,0,22,0" concept="1" trace="MetaLevelActions_ActionGroup#()V" />
-      <scope id="5487985028841901793" at="16,9,17,125" />
-      <scope id="5487985028841901793" at="18,0,19,39">
-        <var name="t" id="5487985028841901793" />
-      </scope>
-      <scope id="5487985028841901793" at="18,27,19,39" />
-      <scope id="5487985028841901793" at="12,41,20,5" />
-      <scope id="5487985028841901793" at="12,0,22,0" />
-      <unit id="5487985028841901793" at="9,0,23,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
+      <node id="5487985028841901793" at="8,0,9,0" concept="9" trace="ID" />
+      <node id="5487985028841901793" at="9,41,10,34" concept="10" />
+      <node id="5487985028841901793" at="10,34,11,30" concept="2" />
+      <node id="5487985028841901793" at="11,30,12,25" concept="2" />
+      <node id="5487985028841901796" at="12,25,13,123" concept="2" />
+      <node id="5487985028841901793" at="9,0,15,0" concept="1" trace="MetaLevelActions_ActionGroup#()V" />
+      <scope id="5487985028841901793" at="9,41,13,123" />
+      <scope id="5487985028841901793" at="9,0,15,0" />
+      <unit id="5487985028841901793" at="7,0,16,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/7162597690967660606">

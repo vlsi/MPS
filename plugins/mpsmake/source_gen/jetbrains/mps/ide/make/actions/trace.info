@@ -93,25 +93,17 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2017614408232613001">
     <file name="ProjectCompileActions_ActionGroup.java">
-      <node id="2017614408232613001" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="2017614408232613001" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="2017614408232613001" at="12,46,13,39" concept="14" />
-      <node id="2017614408232613001" at="13,39,14,30" concept="3" />
-      <node id="2017614408232613001" at="14,30,15,25" concept="3" />
-      <node id="2017614408232613003" at="16,9,17,111" concept="3" />
-      <node id="2017614408232613004" at="17,111,18,113" concept="3" />
-      <node id="2017614408232613005" at="18,113,19,109" concept="3" />
-      <node id="2017614408232613001" at="20,27,21,39" concept="3" />
-      <node id="2017614408232613001" at="15,25,22,5" concept="17" />
-      <node id="2017614408232613001" at="12,0,24,0" concept="1" trace="ProjectCompileActions_ActionGroup#()V" />
-      <scope id="2017614408232613001" at="20,0,21,39">
-        <var name="t" id="2017614408232613001" />
-      </scope>
-      <scope id="2017614408232613001" at="20,27,21,39" />
-      <scope id="2017614408232613001" at="16,9,19,109" />
-      <scope id="2017614408232613001" at="12,46,22,5" />
-      <scope id="2017614408232613001" at="12,0,24,0" />
-      <unit id="2017614408232613001" at="9,0,25,0" name="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup" />
+      <node id="2017614408232613001" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="2017614408232613001" at="9,46,10,39" concept="14" />
+      <node id="2017614408232613001" at="10,39,11,30" concept="3" />
+      <node id="2017614408232613001" at="11,30,12,25" concept="3" />
+      <node id="2017614408232613003" at="12,25,13,109" concept="3" />
+      <node id="2017614408232613004" at="13,109,14,111" concept="3" />
+      <node id="2017614408232613005" at="14,111,15,107" concept="3" />
+      <node id="2017614408232613001" at="9,0,17,0" concept="1" trace="ProjectCompileActions_ActionGroup#()V" />
+      <scope id="2017614408232613001" at="9,46,15,107" />
+      <scope id="2017614408232613001" at="9,0,17,0" />
+      <unit id="2017614408232613001" at="7,0,18,0" name="jetbrains.mps.ide.make.actions.ProjectCompileActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2017614408232613007">
@@ -633,38 +625,30 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2355088855588242374">
     <file name="MakeAddition_ActionGroup.java">
-      <node id="2355088855588242374" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="2355088855588242374" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="2355088855588242374" at="12,37,13,22" concept="14" />
-      <node id="2355088855588242374" at="13,22,14,30" concept="3" />
-      <node id="2355088855588242374" at="14,30,15,25" concept="3" />
-      <node id="2355088855588242376" at="16,9,17,51" concept="3" />
-      <node id="2355088855588242377" at="17,51,18,109" concept="3" />
-      <node id="2355088855588242378" at="18,109,19,115" concept="3" />
-      <node id="2355088855588242379" at="19,115,20,106" concept="3" />
-      <node id="2355088855588242380" at="20,106,21,106" concept="3" />
-      <node id="2355088855588242381" at="21,106,22,105" concept="3" />
-      <node id="2355088855588242382" at="22,105,23,107" concept="3" />
-      <node id="675857548158192055" at="23,107,24,103" concept="3" />
-      <node id="459403722178732024" at="24,103,25,106" concept="3" />
-      <node id="6012793257440525008" at="25,106,26,103" concept="3" />
-      <node id="7618679532021831603" at="26,103,27,108" concept="3" />
-      <node id="1815980786160003175" at="27,108,28,105" concept="3" />
-      <node id="274316186080488322" at="28,105,29,104" concept="3" />
-      <node id="5880068183763259075" at="29,104,30,117" concept="3" />
-      <node id="485782669716435455" at="30,117,31,103" concept="3" />
-      <node id="2355088855588242383" at="31,103,32,51" concept="3" />
-      <node id="2355088855588242374" at="33,27,34,39" concept="3" />
-      <node id="2355088855588242374" at="15,25,35,5" concept="17" />
-      <node id="2355088855588242374" at="12,0,37,0" concept="1" trace="MakeAddition_ActionGroup#()V" />
-      <scope id="2355088855588242374" at="33,0,34,39">
-        <var name="t" id="2355088855588242374" />
-      </scope>
-      <scope id="2355088855588242374" at="33,27,34,39" />
-      <scope id="2355088855588242374" at="16,9,32,51" />
-      <scope id="2355088855588242374" at="12,37,35,5" />
-      <scope id="2355088855588242374" at="12,0,37,0" />
-      <unit id="2355088855588242374" at="9,0,38,0" name="jetbrains.mps.ide.make.actions.MakeAddition_ActionGroup" />
+      <node id="2355088855588242374" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="2355088855588242374" at="9,37,10,22" concept="14" />
+      <node id="2355088855588242374" at="10,22,11,30" concept="3" />
+      <node id="2355088855588242374" at="11,30,12,25" concept="3" />
+      <node id="2355088855588242376" at="12,25,13,49" concept="3" />
+      <node id="2355088855588242377" at="13,49,14,107" concept="3" />
+      <node id="2355088855588242378" at="14,107,15,113" concept="3" />
+      <node id="2355088855588242379" at="15,113,16,104" concept="3" />
+      <node id="2355088855588242380" at="16,104,17,104" concept="3" />
+      <node id="2355088855588242381" at="17,104,18,103" concept="3" />
+      <node id="2355088855588242382" at="18,103,19,105" concept="3" />
+      <node id="675857548158192055" at="19,105,20,101" concept="3" />
+      <node id="459403722178732024" at="20,101,21,104" concept="3" />
+      <node id="6012793257440525008" at="21,104,22,101" concept="3" />
+      <node id="7618679532021831603" at="22,101,23,106" concept="3" />
+      <node id="1815980786160003175" at="23,106,24,103" concept="3" />
+      <node id="274316186080488322" at="24,103,25,102" concept="3" />
+      <node id="5880068183763259075" at="25,102,26,115" concept="3" />
+      <node id="485782669716435455" at="26,115,27,101" concept="3" />
+      <node id="2355088855588242383" at="27,101,28,49" concept="3" />
+      <node id="2355088855588242374" at="9,0,30,0" concept="1" trace="MakeAddition_ActionGroup#()V" />
+      <scope id="2355088855588242374" at="9,37,28,49" />
+      <scope id="2355088855588242374" at="9,0,30,0" />
+      <unit id="2355088855588242374" at="7,0,31,0" name="jetbrains.mps.ide.make.actions.MakeAddition_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2355088855588242385">
@@ -1044,25 +1028,17 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/4753172061859438776">
     <file name="JavaModuleActions_ActionGroup.java">
-      <node id="4753172061859438776" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="4753172061859438776" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="4753172061859438776" at="12,42,13,35" concept="14" />
-      <node id="4753172061859438776" at="13,35,14,30" concept="3" />
-      <node id="4753172061859438776" at="14,30,15,25" concept="3" />
-      <node id="4753172061859438778" at="16,9,17,103" concept="3" />
-      <node id="4753172061859438779" at="17,103,18,106" concept="3" />
-      <node id="4753172061859438780" at="18,106,19,104" concept="3" />
-      <node id="4753172061859438776" at="20,27,21,39" concept="3" />
-      <node id="4753172061859438776" at="15,25,22,5" concept="17" />
-      <node id="4753172061859438776" at="12,0,24,0" concept="1" trace="JavaModuleActions_ActionGroup#()V" />
-      <scope id="4753172061859438776" at="20,0,21,39">
-        <var name="t" id="4753172061859438776" />
-      </scope>
-      <scope id="4753172061859438776" at="20,27,21,39" />
-      <scope id="4753172061859438776" at="16,9,19,104" />
-      <scope id="4753172061859438776" at="12,42,22,5" />
-      <scope id="4753172061859438776" at="12,0,24,0" />
-      <unit id="4753172061859438776" at="9,0,25,0" name="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup" />
+      <node id="4753172061859438776" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="4753172061859438776" at="9,42,10,35" concept="14" />
+      <node id="4753172061859438776" at="10,35,11,30" concept="3" />
+      <node id="4753172061859438776" at="11,30,12,25" concept="3" />
+      <node id="4753172061859438778" at="12,25,13,101" concept="3" />
+      <node id="4753172061859438779" at="13,101,14,104" concept="3" />
+      <node id="4753172061859438780" at="14,104,15,102" concept="3" />
+      <node id="4753172061859438776" at="9,0,17,0" concept="1" trace="JavaModuleActions_ActionGroup#()V" />
+      <scope id="4753172061859438776" at="9,42,15,102" />
+      <scope id="4753172061859438776" at="9,0,17,0" />
+      <unit id="4753172061859438776" at="7,0,18,0" name="jetbrains.mps.ide.make.actions.JavaModuleActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/4753172061859438783">
@@ -1481,55 +1457,39 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5332171957773708985">
     <file name="GenerateOptions_ActionGroup.java">
-      <node id="5332171957773708985" at="13,0,14,0" concept="12" trace="LOG" />
-      <node id="5332171957773708985" at="14,0,15,0" concept="12" trace="ID" />
-      <node id="5332171957773708985" at="15,0,16,0" concept="12" trace="LABEL_ID_saveTransientModels" />
-      <node id="5332171957773708985" at="16,40,17,33" concept="14" />
-      <node id="5332171957773708985" at="17,33,18,30" concept="3" />
-      <node id="5332171957773708985" at="18,30,19,25" concept="3" />
-      <node id="3366942412399971106" at="20,9,21,98" concept="3" />
-      <node id="5332171957773708987" at="22,7,23,109" concept="8" />
-      <node id="5332171957773708987" at="23,109,24,66" concept="8" />
-      <node id="5332171957773708987" at="24,66,25,97" concept="3" />
-      <node id="5332171957773708987" at="25,97,26,59" concept="3" />
-      <node id="5332171957773708988" at="27,7,28,118" concept="3" />
-      <node id="5332171957773708985" at="29,27,30,39" concept="3" />
-      <node id="5332171957773708987" at="21,98,27,7" concept="0" />
-      <node id="5332171957773708985" at="19,25,31,5" concept="17" />
-      <node id="5332171957773708985" at="16,0,33,0" concept="1" trace="GenerateOptions_ActionGroup#()V" />
-      <scope id="5332171957773708985" at="29,0,30,39">
-        <var name="t" id="5332171957773708985" />
-      </scope>
-      <scope id="5332171957773708985" at="29,27,30,39" />
-      <scope id="5332171957773708987" at="22,7,26,59">
+      <node id="5332171957773708985" at="11,0,12,0" concept="12" trace="ID" />
+      <node id="5332171957773708985" at="12,0,13,0" concept="12" trace="LABEL_ID_saveTransientModels" />
+      <node id="5332171957773708985" at="13,40,14,33" concept="14" />
+      <node id="5332171957773708985" at="14,33,15,30" concept="3" />
+      <node id="5332171957773708985" at="15,30,16,25" concept="3" />
+      <node id="3366942412399971106" at="16,25,17,96" concept="3" />
+      <node id="5332171957773708987" at="18,5,19,107" concept="8" />
+      <node id="5332171957773708987" at="19,107,20,64" concept="8" />
+      <node id="5332171957773708987" at="20,64,21,95" concept="3" />
+      <node id="5332171957773708987" at="21,95,22,57" concept="3" />
+      <node id="5332171957773708988" at="23,5,24,116" concept="3" />
+      <node id="5332171957773708987" at="17,96,23,5" concept="0" />
+      <node id="5332171957773708985" at="13,0,26,0" concept="1" trace="GenerateOptions_ActionGroup#()V" />
+      <scope id="5332171957773708987" at="18,5,22,57">
         <var name="action" id="5332171957773708987" />
         <var name="manager" id="5332171957773708987" />
       </scope>
-      <scope id="5332171957773708985" at="20,9,28,118" />
-      <scope id="5332171957773708985" at="16,40,31,5" />
-      <scope id="5332171957773708985" at="16,0,33,0" />
-      <unit id="5332171957773708985" at="12,0,34,0" name="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
+      <scope id="5332171957773708985" at="13,40,24,116" />
+      <scope id="5332171957773708985" at="13,0,26,0" />
+      <unit id="5332171957773708985" at="10,0,27,0" name="jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5332171957773708990">
     <file name="SaveTransientModels_ActionGroup.java">
-      <node id="5332171957773708990" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="5332171957773708990" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="5332171957773708990" at="12,44,13,37" concept="14" />
-      <node id="5332171957773708990" at="13,37,14,30" concept="3" />
-      <node id="5332171957773708990" at="14,30,15,25" concept="3" />
-      <node id="5332171957773708994" at="16,9,17,80" concept="3" />
-      <node id="5332171957773708990" at="18,27,19,39" concept="3" />
-      <node id="5332171957773708990" at="15,25,20,5" concept="17" />
-      <node id="5332171957773708990" at="12,0,22,0" concept="1" trace="SaveTransientModels_ActionGroup#()V" />
-      <scope id="5332171957773708990" at="16,9,17,80" />
-      <scope id="5332171957773708990" at="18,0,19,39">
-        <var name="t" id="5332171957773708990" />
-      </scope>
-      <scope id="5332171957773708990" at="18,27,19,39" />
-      <scope id="5332171957773708990" at="12,44,20,5" />
-      <scope id="5332171957773708990" at="12,0,22,0" />
-      <unit id="5332171957773708990" at="9,0,23,0" name="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" />
+      <node id="5332171957773708990" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="5332171957773708990" at="9,44,10,37" concept="14" />
+      <node id="5332171957773708990" at="10,37,11,30" concept="3" />
+      <node id="5332171957773708990" at="11,30,12,25" concept="3" />
+      <node id="5332171957773708994" at="12,25,13,78" concept="3" />
+      <node id="5332171957773708990" at="9,0,15,0" concept="1" trace="SaveTransientModels_ActionGroup#()V" />
+      <scope id="5332171957773708990" at="9,44,13,78" />
+      <scope id="5332171957773708990" at="9,0,15,0" />
+      <unit id="5332171957773708990" at="7,0,16,0" name="jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5880068183762873970">
@@ -2565,34 +2525,26 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515183">
     <file name="Make_ActionGroup.java">
-      <node id="8610665572788515183" at="13,0,14,0" concept="12" trace="LOG" />
-      <node id="8610665572788515183" at="14,0,15,0" concept="12" trace="ID" />
-      <node id="8610665572788515183" at="15,0,16,0" concept="12" trace="LABEL_ID_preview" />
-      <node id="8610665572788515183" at="16,29,17,22" concept="14" />
-      <node id="8610665572788515183" at="17,22,18,30" concept="3" />
-      <node id="8610665572788515183" at="18,30,19,25" concept="3" />
-      <node id="8610665572788515185" at="20,9,21,133" concept="3" />
-      <node id="8610665572788515187" at="21,133,22,131" concept="3" />
-      <node id="8610665572788515189" at="23,7,24,86" concept="8" />
-      <node id="8610665572788515189" at="24,86,25,66" concept="8" />
-      <node id="8610665572788515189" at="25,66,26,97" concept="3" />
-      <node id="8610665572788515189" at="26,97,27,48" concept="3" />
-      <node id="8610665572788515183" at="29,27,30,39" concept="3" />
-      <node id="8610665572788515189" at="22,131,28,7" concept="0" />
-      <node id="8610665572788515183" at="19,25,31,5" concept="17" />
-      <node id="8610665572788515183" at="16,0,33,0" concept="1" trace="Make_ActionGroup#()V" />
-      <scope id="8610665572788515183" at="29,0,30,39">
-        <var name="t" id="8610665572788515183" />
-      </scope>
-      <scope id="8610665572788515183" at="29,27,30,39" />
-      <scope id="8610665572788515189" at="23,7,27,48">
+      <node id="8610665572788515183" at="11,0,12,0" concept="12" trace="ID" />
+      <node id="8610665572788515183" at="12,0,13,0" concept="12" trace="LABEL_ID_preview" />
+      <node id="8610665572788515183" at="13,29,14,22" concept="14" />
+      <node id="8610665572788515183" at="14,22,15,30" concept="3" />
+      <node id="8610665572788515183" at="15,30,16,25" concept="3" />
+      <node id="8610665572788515185" at="16,25,17,131" concept="3" />
+      <node id="8610665572788515187" at="17,131,18,129" concept="3" />
+      <node id="8610665572788515189" at="19,5,20,84" concept="8" />
+      <node id="8610665572788515189" at="20,84,21,64" concept="8" />
+      <node id="8610665572788515189" at="21,64,22,95" concept="3" />
+      <node id="8610665572788515189" at="22,95,23,46" concept="3" />
+      <node id="8610665572788515189" at="18,129,24,5" concept="0" />
+      <node id="8610665572788515183" at="13,0,26,0" concept="1" trace="Make_ActionGroup#()V" />
+      <scope id="8610665572788515189" at="19,5,23,46">
         <var name="action" id="8610665572788515189" />
         <var name="manager" id="8610665572788515189" />
       </scope>
-      <scope id="8610665572788515183" at="20,9,28,7" />
-      <scope id="8610665572788515183" at="16,29,31,5" />
-      <scope id="8610665572788515183" at="16,0,33,0" />
-      <unit id="8610665572788515183" at="12,0,34,0" name="jetbrains.mps.ide.make.actions.Make_ActionGroup" />
+      <scope id="8610665572788515183" at="13,29,24,5" />
+      <scope id="8610665572788515183" at="13,0,26,0" />
+      <unit id="8610665572788515183" at="10,0,27,0" name="jetbrains.mps.ide.make.actions.Make_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515195">
@@ -2655,54 +2607,38 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515222">
     <file name="ProjectMake_ActionGroup.java">
-      <node id="8610665572788515222" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="8610665572788515222" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="8610665572788515222" at="12,36,13,29" concept="14" />
-      <node id="8610665572788515222" at="13,29,14,30" concept="3" />
-      <node id="8610665572788515222" at="14,30,15,25" concept="3" />
-      <node id="8610665572788515225" at="16,9,17,98" concept="3" />
-      <node id="8610665572788515226" at="17,98,18,101" concept="3" />
-      <node id="8610665572788515222" at="19,27,20,39" concept="3" />
-      <node id="8610665572788515222" at="15,25,21,5" concept="17" />
-      <node id="8610665572788515222" at="12,0,23,0" concept="1" trace="ProjectMake_ActionGroup#()V" />
-      <scope id="8610665572788515222" at="19,0,20,39">
-        <var name="t" id="8610665572788515222" />
-      </scope>
-      <scope id="8610665572788515222" at="19,27,20,39" />
-      <scope id="8610665572788515222" at="16,9,18,101" />
-      <scope id="8610665572788515222" at="12,36,21,5" />
-      <scope id="8610665572788515222" at="12,0,23,0" />
-      <unit id="8610665572788515222" at="9,0,24,0" name="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" />
+      <node id="8610665572788515222" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="8610665572788515222" at="9,36,10,29" concept="14" />
+      <node id="8610665572788515222" at="10,29,11,30" concept="3" />
+      <node id="8610665572788515222" at="11,30,12,25" concept="3" />
+      <node id="8610665572788515225" at="12,25,13,96" concept="3" />
+      <node id="8610665572788515226" at="13,96,14,99" concept="3" />
+      <node id="8610665572788515222" at="9,0,16,0" concept="1" trace="ProjectMake_ActionGroup#()V" />
+      <scope id="8610665572788515222" at="9,36,14,99" />
+      <scope id="8610665572788515222" at="9,0,16,0" />
+      <unit id="8610665572788515222" at="7,0,17,0" name="jetbrains.mps.ide.make.actions.ProjectMake_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515227">
     <file name="GlobalMake_ActionGroup.java">
-      <node id="8610665572788515227" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="8610665572788515227" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="8610665572788515227" at="12,35,13,28" concept="14" />
-      <node id="8610665572788515227" at="13,28,14,30" concept="3" />
-      <node id="8610665572788515227" at="14,30,15,25" concept="3" />
-      <node id="8546647817422461963" at="16,9,17,49" concept="3" />
-      <node id="8610665572788515230" at="17,49,18,97" concept="3" />
-      <node id="8610665572788515236" at="18,97,19,100" concept="3" />
-      <node id="8546647817422461959" at="19,100,20,49" concept="3" />
-      <node id="8610665572788515231" at="20,49,21,105" concept="3" />
-      <node id="8610665572788515232" at="21,105,22,108" concept="3" />
-      <node id="8546647817422461961" at="22,108,23,49" concept="3" />
-      <node id="6997441392234452076" at="23,49,24,104" concept="3" />
-      <node id="8610665572788515234" at="24,104,25,107" concept="3" />
-      <node id="8610665572788515235" at="25,107,26,49" concept="3" />
-      <node id="8610665572788515227" at="27,27,28,39" concept="3" />
-      <node id="8610665572788515227" at="15,25,29,5" concept="17" />
-      <node id="8610665572788515227" at="12,0,31,0" concept="1" trace="GlobalMake_ActionGroup#()V" />
-      <scope id="8610665572788515227" at="27,0,28,39">
-        <var name="t" id="8610665572788515227" />
-      </scope>
-      <scope id="8610665572788515227" at="27,27,28,39" />
-      <scope id="8610665572788515227" at="16,9,26,49" />
-      <scope id="8610665572788515227" at="12,35,29,5" />
-      <scope id="8610665572788515227" at="12,0,31,0" />
-      <unit id="8610665572788515227" at="9,0,32,0" name="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
+      <node id="8610665572788515227" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="8610665572788515227" at="9,35,10,28" concept="14" />
+      <node id="8610665572788515227" at="10,28,11,30" concept="3" />
+      <node id="8610665572788515227" at="11,30,12,25" concept="3" />
+      <node id="8546647817422461963" at="12,25,13,47" concept="3" />
+      <node id="8610665572788515230" at="13,47,14,95" concept="3" />
+      <node id="8610665572788515236" at="14,95,15,98" concept="3" />
+      <node id="8546647817422461959" at="15,98,16,47" concept="3" />
+      <node id="8610665572788515231" at="16,47,17,103" concept="3" />
+      <node id="8610665572788515232" at="17,103,18,106" concept="3" />
+      <node id="8546647817422461961" at="18,106,19,47" concept="3" />
+      <node id="6997441392234452076" at="19,47,20,102" concept="3" />
+      <node id="8610665572788515234" at="20,102,21,105" concept="3" />
+      <node id="8610665572788515235" at="21,105,22,47" concept="3" />
+      <node id="8610665572788515227" at="9,0,24,0" concept="1" trace="GlobalMake_ActionGroup#()V" />
+      <scope id="8610665572788515227" at="9,35,22,47" />
+      <scope id="8610665572788515227" at="9,0,24,0" />
+      <unit id="8610665572788515227" at="7,0,25,0" name="jetbrains.mps.ide.make.actions.GlobalMake_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515237">
@@ -2764,55 +2700,39 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515362">
     <file name="TextPreviewGroup_ActionGroup.java">
-      <node id="8610665572788515362" at="13,0,14,0" concept="12" trace="LOG" />
-      <node id="8610665572788515362" at="14,0,15,0" concept="12" trace="ID" />
-      <node id="8610665572788515362" at="15,0,16,0" concept="12" trace="LABEL_ID_other" />
-      <node id="8610665572788515362" at="16,41,17,34" concept="14" />
-      <node id="8610665572788515362" at="17,34,18,30" concept="3" />
-      <node id="8610665572788515362" at="18,30,19,25" concept="3" />
-      <node id="8610665572788515364" at="20,9,21,108" concept="3" />
-      <node id="4045134570814154915" at="22,7,23,96" concept="8" />
-      <node id="4045134570814154915" at="23,96,24,66" concept="8" />
-      <node id="4045134570814154915" at="24,66,25,97" concept="3" />
-      <node id="4045134570814154915" at="25,97,26,60" concept="3" />
-      <node id="8610665572788515362" at="28,27,29,39" concept="3" />
-      <node id="4045134570814154915" at="21,108,27,7" concept="0" />
-      <node id="8610665572788515362" at="19,25,30,5" concept="17" />
-      <node id="8610665572788515362" at="16,0,32,0" concept="1" trace="TextPreviewGroup_ActionGroup#()V" />
-      <scope id="8610665572788515362" at="28,0,29,39">
-        <var name="t" id="8610665572788515362" />
-      </scope>
-      <scope id="8610665572788515362" at="28,27,29,39" />
-      <scope id="4045134570814154915" at="22,7,26,60">
+      <node id="8610665572788515362" at="11,0,12,0" concept="12" trace="ID" />
+      <node id="8610665572788515362" at="12,0,13,0" concept="12" trace="LABEL_ID_other" />
+      <node id="8610665572788515362" at="13,41,14,34" concept="14" />
+      <node id="8610665572788515362" at="14,34,15,30" concept="3" />
+      <node id="8610665572788515362" at="15,30,16,25" concept="3" />
+      <node id="8610665572788515364" at="16,25,17,106" concept="3" />
+      <node id="4045134570814154915" at="18,5,19,94" concept="8" />
+      <node id="4045134570814154915" at="19,94,20,64" concept="8" />
+      <node id="4045134570814154915" at="20,64,21,95" concept="3" />
+      <node id="4045134570814154915" at="21,95,22,58" concept="3" />
+      <node id="4045134570814154915" at="17,106,23,5" concept="0" />
+      <node id="8610665572788515362" at="13,0,25,0" concept="1" trace="TextPreviewGroup_ActionGroup#()V" />
+      <scope id="4045134570814154915" at="18,5,22,58">
         <var name="action" id="4045134570814154915" />
         <var name="manager" id="4045134570814154915" />
       </scope>
-      <scope id="8610665572788515362" at="20,9,27,7" />
-      <scope id="8610665572788515362" at="16,41,30,5" />
-      <scope id="8610665572788515362" at="16,0,32,0" />
-      <unit id="8610665572788515362" at="12,0,33,0" name="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
+      <scope id="8610665572788515362" at="13,41,23,5" />
+      <scope id="8610665572788515362" at="13,0,25,0" />
+      <unit id="8610665572788515362" at="10,0,26,0" name="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515366">
     <file name="NamespaceMake_ActionGroup.java">
-      <node id="8610665572788515366" at="11,0,12,0" concept="12" trace="LOG" />
-      <node id="8610665572788515366" at="12,0,13,0" concept="12" trace="ID" />
-      <node id="8610665572788515366" at="13,38,14,31" concept="14" />
-      <node id="8610665572788515366" at="14,31,15,30" concept="3" />
-      <node id="8610665572788515366" at="15,30,16,25" concept="3" />
-      <node id="8610665572788515368" at="17,9,18,142" concept="3" />
-      <node id="8610665572788515370" at="18,142,19,140" concept="3" />
-      <node id="8610665572788515366" at="20,27,21,39" concept="3" />
-      <node id="8610665572788515366" at="16,25,22,5" concept="17" />
-      <node id="8610665572788515366" at="13,0,24,0" concept="1" trace="NamespaceMake_ActionGroup#()V" />
-      <scope id="8610665572788515366" at="20,0,21,39">
-        <var name="t" id="8610665572788515366" />
-      </scope>
-      <scope id="8610665572788515366" at="20,27,21,39" />
-      <scope id="8610665572788515366" at="17,9,19,140" />
-      <scope id="8610665572788515366" at="13,38,22,5" />
-      <scope id="8610665572788515366" at="13,0,24,0" />
-      <unit id="8610665572788515366" at="10,0,25,0" name="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" />
+      <node id="8610665572788515366" at="9,0,10,0" concept="12" trace="ID" />
+      <node id="8610665572788515366" at="10,38,11,31" concept="14" />
+      <node id="8610665572788515366" at="11,31,12,30" concept="3" />
+      <node id="8610665572788515366" at="12,30,13,25" concept="3" />
+      <node id="8610665572788515368" at="13,25,14,140" concept="3" />
+      <node id="8610665572788515370" at="14,140,15,138" concept="3" />
+      <node id="8610665572788515366" at="10,0,17,0" concept="1" trace="NamespaceMake_ActionGroup#()V" />
+      <scope id="8610665572788515366" at="10,38,15,138" />
+      <scope id="8610665572788515366" at="10,0,17,0" />
+      <unit id="8610665572788515366" at="8,0,18,0" name="jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515373">
@@ -3588,23 +3508,15 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515994">
     <file name="ToolbarMake_ActionGroup.java">
-      <node id="8610665572788515994" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="8610665572788515994" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="8610665572788515994" at="12,36,13,29" concept="14" />
-      <node id="8610665572788515994" at="13,29,14,30" concept="3" />
-      <node id="8610665572788515994" at="14,30,15,25" concept="3" />
-      <node id="8610665572788515997" at="16,9,17,98" concept="3" />
-      <node id="8610665572788515994" at="18,27,19,39" concept="3" />
-      <node id="8610665572788515994" at="15,25,20,5" concept="17" />
-      <node id="8610665572788515994" at="12,0,22,0" concept="1" trace="ToolbarMake_ActionGroup#()V" />
-      <scope id="8610665572788515994" at="16,9,17,98" />
-      <scope id="8610665572788515994" at="18,0,19,39">
-        <var name="t" id="8610665572788515994" />
-      </scope>
-      <scope id="8610665572788515994" at="18,27,19,39" />
-      <scope id="8610665572788515994" at="12,36,20,5" />
-      <scope id="8610665572788515994" at="12,0,22,0" />
-      <unit id="8610665572788515994" at="9,0,23,0" name="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" />
+      <node id="8610665572788515994" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="8610665572788515994" at="9,36,10,29" concept="14" />
+      <node id="8610665572788515994" at="10,29,11,30" concept="3" />
+      <node id="8610665572788515994" at="11,30,12,25" concept="3" />
+      <node id="8610665572788515997" at="12,25,13,96" concept="3" />
+      <node id="8610665572788515994" at="9,0,15,0" concept="1" trace="ToolbarMake_ActionGroup#()V" />
+      <scope id="8610665572788515994" at="9,36,13,96" />
+      <scope id="8610665572788515994" at="9,0,15,0" />
+      <unit id="8610665572788515994" at="7,0,16,0" name="jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515998">

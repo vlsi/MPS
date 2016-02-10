@@ -14,9 +14,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup" file="FindByConditionGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.console.actions.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">
@@ -95,9 +92,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.actions.plugin.TextPreviewGroup_Console_ActionGroup" file="TextPreviewGroup_Console_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
 </dependenciesRoot>

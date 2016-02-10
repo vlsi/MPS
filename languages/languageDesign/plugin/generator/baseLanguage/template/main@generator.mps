@@ -268,9 +268,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
@@ -2202,20 +2199,6 @@
   <node concept="312cEu" id="hwu0LYn">
     <property role="TrG5h" value="MainGeneratedGroup" />
     <property role="3GE5qa" value="Actions.Group" />
-    <node concept="Wx3nA" id="h$$0U2X" role="jymVt">
-      <property role="TrG5h" value="LOG" />
-      <node concept="2YIFZM" id="Hn0$Mvc1FH" role="33vP2m">
-        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-        <node concept="3VsKOn" id="Hn0$Mvc1FI" role="37wK5m">
-          <ref role="3VsUkX" node="hwu0LYn" resolve="MainGeneratedGroup" />
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="h$$0U2Y" role="1B3o_S" />
-      <node concept="3uibUv" id="Hn0$Mvc1F_" role="1tU5fm">
-        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="hyIUFie" role="jymVt">
       <property role="TrG5h" value="ID" />
       <property role="3TUv4t" value="true" />
@@ -2683,47 +2666,17 @@
             <node concept="Xjq3P" id="hDXLW4Q" role="2Oq$k0" />
           </node>
         </node>
-        <node concept="SfApY" id="hDXLW56" role="3cqZAp">
-          <node concept="TDmWw" id="hDXLW57" role="TEbGg">
-            <node concept="3cpWsn" id="hDXLW58" role="TDEfY">
-              <property role="TrG5h" value="t" />
-              <node concept="3uibUv" id="hDXLW59" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="hDXLW5a" role="TDEfX">
-              <node concept="3clFbF" id="hDXLW5b" role="3cqZAp">
-                <node concept="2OqwBi" id="hDXLW5c" role="3clFbG">
-                  <node concept="37vLTw" id="2BHiRxeojXL" role="2Oq$k0">
-                    <ref role="3cqZAo" node="h$$0U2X" resolve="LOG" />
-                  </node>
-                  <node concept="liA8E" id="hDXLW5e" role="2OqNvi">
-                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
-                    <node concept="Xl_RD" id="hDXLW5f" role="37wK5m">
-                      <property role="Xl_RC" value="User group error" />
+        <node concept="3clFbH" id="4lITsQs8ysq" role="3cqZAp">
+          <node concept="1sPUBX" id="1WfddY$XHR9" role="lGtFl">
+            <ref role="v9R2y" node="4lITsQs8yst" resolve="switch_GroupConstruction" />
+            <node concept="3NFfHV" id="4lITsQs8ysu" role="1sPUBK">
+              <node concept="3clFbS" id="4lITsQs8ysv" role="2VODD2">
+                <node concept="3clFbF" id="4lITsQs8ysw" role="3cqZAp">
+                  <node concept="2OqwBi" id="4lITsQs8ysy" role="3clFbG">
+                    <node concept="3TrEf2" id="4lITsQs8ysA" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp4k:h$ftENW" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTz1r" role="37wK5m">
-                      <ref role="3cqZAo" node="hDXLW58" resolve="t" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="hDXLW5h" role="SfCbr">
-            <node concept="3clFbH" id="4lITsQs8ysq" role="3cqZAp">
-              <node concept="1sPUBX" id="1WfddY$XHR9" role="lGtFl">
-                <ref role="v9R2y" node="4lITsQs8yst" resolve="switch_GroupConstruction" />
-                <node concept="3NFfHV" id="4lITsQs8ysu" role="1sPUBK">
-                  <node concept="3clFbS" id="4lITsQs8ysv" role="2VODD2">
-                    <node concept="3clFbF" id="4lITsQs8ysw" role="3cqZAp">
-                      <node concept="2OqwBi" id="4lITsQs8ysy" role="3clFbG">
-                        <node concept="3TrEf2" id="4lITsQs8ysA" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp4k:h$ftENW" />
-                        </node>
-                        <node concept="30H73N" id="4lITsQs8ysx" role="2Oq$k0" />
-                      </node>
-                    </node>
+                    <node concept="30H73N" id="4lITsQs8ysx" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
@@ -3036,68 +2989,43 @@
       </node>
       <node concept="3Tm1VV" id="i2OGNFN" role="1B3o_S" />
       <node concept="3clFbS" id="i2OGNFO" role="3clF47">
-        <node concept="SfApY" id="i2OFEWX" role="3cqZAp">
-          <node concept="TDmWw" id="i2OFEXb" role="TEbGg">
-            <node concept="3cpWsn" id="i2OFEXc" role="TDEfY">
-              <property role="TrG5h" value="t" />
-              <node concept="3uibUv" id="i2OFEXd" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="i2OFEXe" role="TDEfX">
-              <node concept="3clFbF" id="i2OFEXf" role="3cqZAp">
-                <node concept="2OqwBi" id="i2OFEXg" role="3clFbG">
-                  <node concept="37vLTw" id="2BHiRxeorym" role="2Oq$k0">
-                    <ref role="3cqZAo" node="h$$0U2X" resolve="LOG" />
-                  </node>
-                  <node concept="liA8E" id="i2OFEXi" role="2OqNvi">
-                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
-                    <node concept="Xl_RD" id="i2OFEXj" role="37wK5m">
-                      <property role="Xl_RC" value="User group error" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagTxcb" role="37wK5m">
-                      <ref role="3cqZAo" node="i2OFEXc" resolve="t" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="i2OFEWY" role="SfCbr">
-            <node concept="29HgVG" id="i2OFEWZ" role="lGtFl">
-              <node concept="3NFfHV" id="i2OFEX0" role="3NFExx">
-                <node concept="3clFbS" id="i2OFEX1" role="2VODD2">
-                  <node concept="3clFbF" id="i2OFEX2" role="3cqZAp">
-                    <node concept="2OqwBi" id="i2OFEX3" role="3clFbG">
-                      <node concept="2OqwBi" id="i2OFJBn" role="2Oq$k0">
-                        <node concept="3TrEf2" id="i2OFJBs" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp4k:i2Ojau1" />
-                        </node>
-                        <node concept="1PxgMI" id="i2OFJBo" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tp4k:i2OiABj" resolve="UpdateGroupBlock" />
-                          <node concept="2OqwBi" id="i2OFJBp" role="1PxMeX">
-                            <node concept="3TrEf2" id="i2OFJBr" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp4k:h$ftENW" />
-                            </node>
-                            <node concept="30H73N" id="i2OFJBq" role="2Oq$k0" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="i2OFKMD" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:gyVODHa" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="i2OG63v" role="3cqZAp">
           <node concept="2ShNRf" id="i2OG63w" role="3cqZAk">
             <node concept="Tc6Ow" id="i34bX_H" role="2ShVmc">
               <node concept="3uibUv" id="i34bYXR" role="HW$YZ">
                 <ref role="3uigEE" to="7bx7:~BaseAction" resolve="BaseAction" />
+              </node>
+            </node>
+          </node>
+          <node concept="2b32R4" id="2OV1G3upl6W" role="lGtFl">
+            <node concept="3JmXsc" id="2OV1G3upl6Y" role="2P8S$">
+              <node concept="3clFbS" id="2OV1G3upl70" role="2VODD2">
+                <node concept="3clFbF" id="2OV1G3upmmG" role="3cqZAp">
+                  <node concept="2OqwBi" id="2OV1G3upmmI" role="3clFbG">
+                    <node concept="2OqwBi" id="2OV1G3upmmJ" role="2Oq$k0">
+                      <node concept="2OqwBi" id="2OV1G3upmmK" role="2Oq$k0">
+                        <node concept="3TrEf2" id="2OV1G3upmmL" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp4k:i2Ojau1" />
+                        </node>
+                        <node concept="1PxgMI" id="2OV1G3upmmM" role="2Oq$k0">
+                          <ref role="1PxNhF" to="tp4k:i2OiABj" resolve="UpdateGroupBlock" />
+                          <node concept="2OqwBi" id="2OV1G3upmmN" role="1PxMeX">
+                            <node concept="3TrEf2" id="2OV1G3upmmO" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tp4k:h$ftENW" />
+                            </node>
+                            <node concept="30H73N" id="2OV1G3upmmP" role="2Oq$k0" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="2OV1G3upmmQ" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                      </node>
+                    </node>
+                    <node concept="3Tsc0h" id="2OV1G3upmmR" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpee:fzcqZ_x" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

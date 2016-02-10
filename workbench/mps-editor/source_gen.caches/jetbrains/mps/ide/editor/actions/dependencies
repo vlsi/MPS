@@ -620,7 +620,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.editor.actions.MPSEditorActions" file="MPSEditorActions.xml" />
   <dependency className="jetbrains.mps.ide.editor.actions.MoveDown_Action" file="MoveDown_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />

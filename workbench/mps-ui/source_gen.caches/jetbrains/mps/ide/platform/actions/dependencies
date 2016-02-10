@@ -89,6 +89,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.execution.filters.Filter" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.PlatformActions" file="PlatformActions.xml" />
 </dependenciesRoot>
 

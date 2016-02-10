@@ -733,7 +733,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.actions.JavaActions" file="JavaActions.xml" />
   <dependency className="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" file="MakeFieldFinal_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />

@@ -17,7 +17,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/1037422844865376790">
     <file name="GeneratorIDE_CustomApplicationPlugin.java">
       <node id="1037422844865376791" at="10,0,11,0" concept="6" trace="myRootTemplateAnnotator" />
@@ -442,23 +441,15 @@
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/428466863025296807">
     <file name="ShowAsIntentions_ActionGroup.java">
-      <node id="428466863025296807" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="428466863025296807" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="428466863025296807" at="12,41,13,34" concept="15" />
-      <node id="428466863025296807" at="13,34,14,30" concept="5" />
-      <node id="428466863025296807" at="14,30,15,25" concept="5" />
-      <node id="428466863025296810" at="16,9,17,130" concept="5" />
-      <node id="428466863025296807" at="18,27,19,39" concept="5" />
-      <node id="428466863025296807" at="15,25,20,5" concept="17" />
-      <node id="428466863025296807" at="12,0,22,0" concept="3" trace="ShowAsIntentions_ActionGroup#()V" />
-      <scope id="428466863025296807" at="16,9,17,130" />
-      <scope id="428466863025296807" at="18,0,19,39">
-        <var name="t" id="428466863025296807" />
-      </scope>
-      <scope id="428466863025296807" at="18,27,19,39" />
-      <scope id="428466863025296807" at="12,41,20,5" />
-      <scope id="428466863025296807" at="12,0,22,0" />
-      <unit id="428466863025296807" at="9,0,23,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+      <node id="428466863025296807" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="428466863025296807" at="9,41,10,34" concept="15" />
+      <node id="428466863025296807" at="10,34,11,30" concept="5" />
+      <node id="428466863025296807" at="11,30,12,25" concept="5" />
+      <node id="428466863025296810" at="12,25,13,128" concept="5" />
+      <node id="428466863025296807" at="9,0,15,0" concept="3" trace="ShowAsIntentions_ActionGroup#()V" />
+      <scope id="428466863025296807" at="9,41,13,128" />
+      <scope id="428466863025296807" at="9,0,15,0" />
+      <unit id="428466863025296807" at="7,0,16,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/6213885063989783002">

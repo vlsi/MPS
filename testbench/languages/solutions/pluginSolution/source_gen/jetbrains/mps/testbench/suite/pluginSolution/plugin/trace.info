@@ -15,7 +15,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:2697625c-4713-4f72-ac5a-260e305311d8(jetbrains.mps.testbench.suite.pluginSolution.plugin)/5487985028841967992">
     <file name="CollectTests_Action.java">
@@ -99,7 +98,7 @@
       <node id="5487985028841967992" at="65,0,69,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="5487985028841967992" at="51,0,56,0" concept="1" trace="CollectTests_Action#()V" />
       <node id="5487985028841967992" at="60,0,65,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="5487985028841968365" at="104,27,109,9" concept="16" />
+      <node id="5487985028841968365" at="104,27,109,9" concept="15" />
       <node id="24903889607048660" at="118,100,123,7" concept="3" />
       <node id="24903889607109172" at="139,70,144,13" concept="3" />
       <node id="3298469228704896789" at="153,41,158,27" concept="3" />
@@ -274,23 +273,15 @@
   </root>
   <root nodeRef="r:2697625c-4713-4f72-ac5a-260e305311d8(jetbrains.mps.testbench.suite.pluginSolution.plugin)/5487985028841968445">
     <file name="CollectTestsGroup_ActionGroup.java">
-      <node id="5487985028841968445" at="10,0,11,0" concept="12" trace="LOG" />
-      <node id="5487985028841968445" at="11,0,12,0" concept="12" trace="ID" />
-      <node id="5487985028841968445" at="12,42,13,35" concept="14" />
-      <node id="5487985028841968445" at="13,35,14,30" concept="3" />
-      <node id="5487985028841968445" at="14,30,15,25" concept="3" />
-      <node id="5487985028841968448" at="16,9,17,126" concept="3" />
-      <node id="5487985028841968445" at="18,27,19,39" concept="3" />
-      <node id="5487985028841968445" at="15,25,20,5" concept="15" />
-      <node id="5487985028841968445" at="12,0,22,0" concept="1" trace="CollectTestsGroup_ActionGroup#()V" />
-      <scope id="5487985028841968445" at="16,9,17,126" />
-      <scope id="5487985028841968445" at="18,0,19,39">
-        <var name="t" id="5487985028841968445" />
-      </scope>
-      <scope id="5487985028841968445" at="18,27,19,39" />
-      <scope id="5487985028841968445" at="12,42,20,5" />
-      <scope id="5487985028841968445" at="12,0,22,0" />
-      <unit id="5487985028841968445" at="9,0,23,0" name="jetbrains.mps.testbench.suite.pluginSolution.plugin.CollectTestsGroup_ActionGroup" />
+      <node id="5487985028841968445" at="8,0,9,0" concept="12" trace="ID" />
+      <node id="5487985028841968445" at="9,42,10,35" concept="14" />
+      <node id="5487985028841968445" at="10,35,11,30" concept="3" />
+      <node id="5487985028841968445" at="11,30,12,25" concept="3" />
+      <node id="5487985028841968448" at="12,25,13,124" concept="3" />
+      <node id="5487985028841968445" at="9,0,15,0" concept="1" trace="CollectTestsGroup_ActionGroup#()V" />
+      <scope id="5487985028841968445" at="9,42,13,124" />
+      <scope id="5487985028841968445" at="9,0,15,0" />
+      <unit id="5487985028841968445" at="7,0,16,0" name="jetbrains.mps.testbench.suite.pluginSolution.plugin.CollectTestsGroup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:2697625c-4713-4f72-ac5a-260e305311d8(jetbrains.mps.testbench.suite.pluginSolution.plugin)/5487985028841968449">

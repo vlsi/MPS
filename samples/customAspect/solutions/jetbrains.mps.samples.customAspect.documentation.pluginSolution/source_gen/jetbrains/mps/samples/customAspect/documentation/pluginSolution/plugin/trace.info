@@ -11,7 +11,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:81f2d26c-7afe-43c5-850e-0e2c49e4cf00(jetbrains.mps.samples.customAspect.documentation.pluginSolution.plugin)/2897519568668509944">
     <file name="PluginSolution_ApplicationPlugin.java">
       <node id="2897519568668509944" at="9,0,10,0" concept="3" trace="myId" />
@@ -119,23 +118,15 @@
   </root>
   <root nodeRef="r:81f2d26c-7afe-43c5-850e-0e2c49e4cf00(jetbrains.mps.samples.customAspect.documentation.pluginSolution.plugin)/670382098842561432">
     <file name="CodeAddition_ActionGroup.java">
-      <node id="670382098842561432" at="10,0,11,0" concept="9" trace="LOG" />
-      <node id="670382098842561432" at="11,0,12,0" concept="9" trace="ID" />
-      <node id="670382098842561432" at="12,37,13,30" concept="10" />
-      <node id="670382098842561432" at="13,30,14,30" concept="2" />
-      <node id="670382098842561432" at="14,30,15,25" concept="2" />
-      <node id="670382098842561437" at="16,9,17,135" concept="2" />
-      <node id="670382098842561432" at="18,27,19,39" concept="2" />
-      <node id="670382098842561432" at="15,25,20,5" concept="11" />
-      <node id="670382098842561432" at="12,0,22,0" concept="1" trace="CodeAddition_ActionGroup#()V" />
-      <scope id="670382098842561432" at="16,9,17,135" />
-      <scope id="670382098842561432" at="18,0,19,39">
-        <var name="t" id="670382098842561432" />
-      </scope>
-      <scope id="670382098842561432" at="18,27,19,39" />
-      <scope id="670382098842561432" at="12,37,20,5" />
-      <scope id="670382098842561432" at="12,0,22,0" />
-      <unit id="670382098842561432" at="9,0,23,0" name="jetbrains.mps.samples.customAspect.documentation.pluginSolution.plugin.CodeAddition_ActionGroup" />
+      <node id="670382098842561432" at="8,0,9,0" concept="9" trace="ID" />
+      <node id="670382098842561432" at="9,37,10,30" concept="10" />
+      <node id="670382098842561432" at="10,30,11,30" concept="2" />
+      <node id="670382098842561432" at="11,30,12,25" concept="2" />
+      <node id="670382098842561437" at="12,25,13,133" concept="2" />
+      <node id="670382098842561432" at="9,0,15,0" concept="1" trace="CodeAddition_ActionGroup#()V" />
+      <scope id="670382098842561432" at="9,37,13,133" />
+      <scope id="670382098842561432" at="9,0,15,0" />
+      <unit id="670382098842561432" at="7,0,16,0" name="jetbrains.mps.samples.customAspect.documentation.pluginSolution.plugin.CodeAddition_ActionGroup" />
     </file>
   </root>
 </debug-info>

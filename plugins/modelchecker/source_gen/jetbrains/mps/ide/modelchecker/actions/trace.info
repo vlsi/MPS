@@ -17,7 +17,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423272128">
     <file name="Modelchecker_PluginInitializer.java">
@@ -76,86 +75,54 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423276122">
     <file name="ShowModelCheckerTool_ActionGroup.java">
-      <node id="1453248744423276122" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="1453248744423276122" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="1453248744423276122" at="12,45,13,38" concept="15" />
-      <node id="1453248744423276122" at="13,38,14,30" concept="4" />
-      <node id="1453248744423276122" at="14,30,15,25" concept="4" />
-      <node id="1453248744423276124" at="16,9,17,120" concept="4" />
-      <node id="1453248744423276122" at="18,27,19,39" concept="4" />
-      <node id="1453248744423276122" at="15,25,20,5" concept="17" />
-      <node id="1453248744423276122" at="12,0,22,0" concept="2" trace="ShowModelCheckerTool_ActionGroup#()V" />
-      <scope id="1453248744423276122" at="16,9,17,120" />
-      <scope id="1453248744423276122" at="18,0,19,39">
-        <var name="t" id="1453248744423276122" />
-      </scope>
-      <scope id="1453248744423276122" at="18,27,19,39" />
-      <scope id="1453248744423276122" at="12,45,20,5" />
-      <scope id="1453248744423276122" at="12,0,22,0" />
-      <unit id="1453248744423276122" at="9,0,23,0" name="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" />
+      <node id="1453248744423276122" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="1453248744423276122" at="9,45,10,38" concept="15" />
+      <node id="1453248744423276122" at="10,38,11,30" concept="4" />
+      <node id="1453248744423276122" at="11,30,12,25" concept="4" />
+      <node id="1453248744423276124" at="12,25,13,118" concept="4" />
+      <node id="1453248744423276122" at="9,0,15,0" concept="2" trace="ShowModelCheckerTool_ActionGroup#()V" />
+      <scope id="1453248744423276122" at="9,45,13,118" />
+      <scope id="1453248744423276122" at="9,0,15,0" />
+      <unit id="1453248744423276122" at="7,0,16,0" name="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423276126">
     <file name="CheckProject_ActionGroup.java">
-      <node id="1453248744423276126" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="1453248744423276126" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="1453248744423276126" at="12,37,13,30" concept="15" />
-      <node id="1453248744423276126" at="13,30,14,30" concept="4" />
-      <node id="1453248744423276126" at="14,30,15,25" concept="4" />
-      <node id="1453248744423276128" at="16,9,17,108" concept="4" />
-      <node id="1453248744423276126" at="18,27,19,39" concept="4" />
-      <node id="1453248744423276126" at="15,25,20,5" concept="17" />
-      <node id="1453248744423276126" at="12,0,22,0" concept="2" trace="CheckProject_ActionGroup#()V" />
-      <scope id="1453248744423276126" at="16,9,17,108" />
-      <scope id="1453248744423276126" at="18,0,19,39">
-        <var name="t" id="1453248744423276126" />
-      </scope>
-      <scope id="1453248744423276126" at="18,27,19,39" />
-      <scope id="1453248744423276126" at="12,37,20,5" />
-      <scope id="1453248744423276126" at="12,0,22,0" />
-      <unit id="1453248744423276126" at="9,0,23,0" name="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" />
+      <node id="1453248744423276126" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="1453248744423276126" at="9,37,10,30" concept="15" />
+      <node id="1453248744423276126" at="10,30,11,30" concept="4" />
+      <node id="1453248744423276126" at="11,30,12,25" concept="4" />
+      <node id="1453248744423276128" at="12,25,13,106" concept="4" />
+      <node id="1453248744423276126" at="9,0,15,0" concept="2" trace="CheckProject_ActionGroup#()V" />
+      <scope id="1453248744423276126" at="9,37,13,106" />
+      <scope id="1453248744423276126" at="9,0,15,0" />
+      <unit id="1453248744423276126" at="7,0,16,0" name="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423276130">
     <file name="CheckModule_ActionGroup.java">
-      <node id="1453248744423276130" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="1453248744423276130" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="1453248744423276130" at="12,36,13,29" concept="15" />
-      <node id="1453248744423276130" at="13,29,14,30" concept="4" />
-      <node id="1453248744423276130" at="14,30,15,25" concept="4" />
-      <node id="1453248744423276132" at="16,9,17,106" concept="4" />
-      <node id="1453248744423276130" at="18,27,19,39" concept="4" />
-      <node id="1453248744423276130" at="15,25,20,5" concept="17" />
-      <node id="1453248744423276130" at="12,0,22,0" concept="2" trace="CheckModule_ActionGroup#()V" />
-      <scope id="1453248744423276130" at="16,9,17,106" />
-      <scope id="1453248744423276130" at="18,0,19,39">
-        <var name="t" id="1453248744423276130" />
-      </scope>
-      <scope id="1453248744423276130" at="18,27,19,39" />
-      <scope id="1453248744423276130" at="12,36,20,5" />
-      <scope id="1453248744423276130" at="12,0,22,0" />
-      <unit id="1453248744423276130" at="9,0,23,0" name="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup" />
+      <node id="1453248744423276130" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="1453248744423276130" at="9,36,10,29" concept="15" />
+      <node id="1453248744423276130" at="10,29,11,30" concept="4" />
+      <node id="1453248744423276130" at="11,30,12,25" concept="4" />
+      <node id="1453248744423276132" at="12,25,13,104" concept="4" />
+      <node id="1453248744423276130" at="9,0,15,0" concept="2" trace="CheckModule_ActionGroup#()V" />
+      <scope id="1453248744423276130" at="9,36,13,104" />
+      <scope id="1453248744423276130" at="9,0,15,0" />
+      <unit id="1453248744423276130" at="7,0,16,0" name="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423276145">
     <file name="CheckModel_ActionGroup.java">
-      <node id="1453248744423276145" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="1453248744423276145" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="1453248744423276145" at="12,35,13,28" concept="15" />
-      <node id="1453248744423276145" at="13,28,14,30" concept="4" />
-      <node id="1453248744423276145" at="14,30,15,25" concept="4" />
-      <node id="1453248744423276147" at="16,9,17,104" concept="4" />
-      <node id="1453248744423276145" at="18,27,19,39" concept="4" />
-      <node id="1453248744423276145" at="15,25,20,5" concept="17" />
-      <node id="1453248744423276145" at="12,0,22,0" concept="2" trace="CheckModel_ActionGroup#()V" />
-      <scope id="1453248744423276145" at="16,9,17,104" />
-      <scope id="1453248744423276145" at="18,0,19,39">
-        <var name="t" id="1453248744423276145" />
-      </scope>
-      <scope id="1453248744423276145" at="18,27,19,39" />
-      <scope id="1453248744423276145" at="12,35,20,5" />
-      <scope id="1453248744423276145" at="12,0,22,0" />
-      <unit id="1453248744423276145" at="9,0,23,0" name="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" />
+      <node id="1453248744423276145" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="1453248744423276145" at="9,35,10,28" concept="15" />
+      <node id="1453248744423276145" at="10,28,11,30" concept="4" />
+      <node id="1453248744423276145" at="11,30,12,25" concept="4" />
+      <node id="1453248744423276147" at="12,25,13,102" concept="4" />
+      <node id="1453248744423276145" at="9,0,15,0" concept="2" trace="CheckModel_ActionGroup#()V" />
+      <scope id="1453248744423276145" at="9,35,13,102" />
+      <scope id="1453248744423276145" at="9,0,15,0" />
+      <unit id="1453248744423276145" at="7,0,16,0" name="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423276149">
@@ -494,23 +461,15 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1526939793344460684">
     <file name="CheckNamespace_ActionGroup.java">
-      <node id="1526939793344460684" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="1526939793344460684" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="1526939793344460684" at="12,39,13,32" concept="15" />
-      <node id="1526939793344460684" at="13,32,14,30" concept="4" />
-      <node id="1526939793344460684" at="14,30,15,25" concept="4" />
-      <node id="1526939793344460689" at="16,9,17,112" concept="4" />
-      <node id="1526939793344460684" at="18,27,19,39" concept="4" />
-      <node id="1526939793344460684" at="15,25,20,5" concept="17" />
-      <node id="1526939793344460684" at="12,0,22,0" concept="2" trace="CheckNamespace_ActionGroup#()V" />
-      <scope id="1526939793344460684" at="16,9,17,112" />
-      <scope id="1526939793344460684" at="18,0,19,39">
-        <var name="t" id="1526939793344460684" />
-      </scope>
-      <scope id="1526939793344460684" at="18,27,19,39" />
-      <scope id="1526939793344460684" at="12,39,20,5" />
-      <scope id="1526939793344460684" at="12,0,22,0" />
-      <unit id="1526939793344460684" at="9,0,23,0" name="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup" />
+      <node id="1526939793344460684" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="1526939793344460684" at="9,39,10,32" concept="15" />
+      <node id="1526939793344460684" at="10,32,11,30" concept="4" />
+      <node id="1526939793344460684" at="11,30,12,25" concept="4" />
+      <node id="1526939793344460689" at="12,25,13,110" concept="4" />
+      <node id="1526939793344460684" at="9,0,15,0" concept="2" trace="CheckNamespace_ActionGroup#()V" />
+      <scope id="1526939793344460684" at="9,39,13,110" />
+      <scope id="1526939793344460684" at="9,0,15,0" />
+      <unit id="1526939793344460684" at="7,0,16,0" name="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1833497744616771108">
@@ -708,7 +667,7 @@
       <node id="7803242166520189518" at="57,9,62,9" concept="7" />
       <node id="9116864641332345324" at="107,0,112,9" concept="7" />
       <node id="1833497744618435637" at="50,175,56,11" concept="7" />
-      <node id="8404391560346929328" at="81,28,88,9" concept="18" />
+      <node id="8404391560346929328" at="81,28,88,9" concept="17" />
       <node id="8404391560346897574" at="106,12,113,7" concept="0" />
       <node id="8404391560346888528" at="101,0,113,7" concept="7" />
       <node id="1833497744617856788" at="44,240,57,9" concept="6" />
@@ -1102,25 +1061,17 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/5361317699454626937">
     <file name="ToolsInternalEx_ActionGroup.java">
-      <node id="5361317699454626937" at="10,0,11,0" concept="13" trace="LOG" />
-      <node id="5361317699454626937" at="11,0,12,0" concept="13" trace="ID" />
-      <node id="5361317699454626937" at="12,40,13,33" concept="15" />
-      <node id="5361317699454626937" at="13,33,14,29" concept="4" />
-      <node id="5361317699454626937" at="14,29,15,25" concept="4" />
-      <node id="603051750760797676" at="16,9,17,126" concept="4" />
-      <node id="7224745844707401201" at="17,126,18,126" concept="4" />
-      <node id="1833497744619757838" at="18,126,19,131" concept="4" />
-      <node id="5361317699454626937" at="20,27,21,39" concept="4" />
-      <node id="5361317699454626937" at="15,25,22,5" concept="17" />
-      <node id="5361317699454626937" at="12,0,24,0" concept="2" trace="ToolsInternalEx_ActionGroup#()V" />
-      <scope id="5361317699454626937" at="20,0,21,39">
-        <var name="t" id="5361317699454626937" />
-      </scope>
-      <scope id="5361317699454626937" at="20,27,21,39" />
-      <scope id="5361317699454626937" at="16,9,19,131" />
-      <scope id="5361317699454626937" at="12,40,22,5" />
-      <scope id="5361317699454626937" at="12,0,24,0" />
-      <unit id="5361317699454626937" at="9,0,25,0" name="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
+      <node id="5361317699454626937" at="8,0,9,0" concept="13" trace="ID" />
+      <node id="5361317699454626937" at="9,40,10,33" concept="15" />
+      <node id="5361317699454626937" at="10,33,11,29" concept="4" />
+      <node id="5361317699454626937" at="11,29,12,25" concept="4" />
+      <node id="603051750760797676" at="12,25,13,124" concept="4" />
+      <node id="7224745844707401201" at="13,124,14,124" concept="4" />
+      <node id="1833497744619757838" at="14,124,15,129" concept="4" />
+      <node id="5361317699454626937" at="9,0,17,0" concept="2" trace="ToolsInternalEx_ActionGroup#()V" />
+      <scope id="5361317699454626937" at="9,40,15,129" />
+      <scope id="5361317699454626937" at="9,0,17,0" />
+      <unit id="5361317699454626937" at="7,0,18,0" name="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/7162597690968047815">

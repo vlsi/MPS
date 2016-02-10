@@ -70,7 +70,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.platform.actions.MPSVcs" file="MPSVcs.xml" />
   <dependency className="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" file="ReportModelMergeProblem_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />

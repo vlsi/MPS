@@ -62,9 +62,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup" file="CheckModel_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_Action" file="CheckModule_Action.java">
@@ -88,9 +85,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckModule_ActionGroup" file="CheckModule_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_Action" file="CheckNamespace_Action.java">
@@ -117,9 +111,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup" file="CheckNamespace_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action" file="CheckProject_Action.java">
@@ -139,9 +130,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" file="CheckProject_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
@@ -315,9 +303,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" file="ShowModelCheckerTool_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelChecker_Action" file="ShowModelChecker_Action.java">
@@ -335,11 +320,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" file="ToolsInternalEx_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.modelchecker.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

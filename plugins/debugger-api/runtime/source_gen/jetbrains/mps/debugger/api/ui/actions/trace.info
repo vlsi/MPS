@@ -14,7 +14,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="IconContainer.java">
       <unit at="8,0,11,0" name="jetbrains.mps.debugger.api.ui.actions.IconContainer" />
@@ -840,88 +839,72 @@
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532858">
     <file name="DebugRunMenu_ActionGroup.java">
-      <node id="7064627997011532858" at="13,0,14,0" concept="11" trace="LOG" />
-      <node id="7064627997011532858" at="14,0,15,0" concept="11" trace="ID" />
-      <node id="7064627997011532858" at="15,0,16,0" concept="11" trace="LABEL_ID_steps" />
-      <node id="7064627997011532858" at="16,37,17,30" concept="13" />
-      <node id="7064627997011532858" at="17,30,18,30" concept="2" />
-      <node id="7064627997011532858" at="18,30,19,25" concept="2" />
-      <node id="7064627997011532860" at="20,9,21,51" concept="2" />
-      <node id="9154600507441896295" at="22,7,23,92" concept="7" />
-      <node id="9154600507441896295" at="23,92,24,66" concept="7" />
-      <node id="9154600507441896295" at="24,66,25,109" concept="2" />
-      <node id="9154600507441896295" at="25,109,26,56" concept="2" />
-      <node id="7064627997011532864" at="27,7,28,101" concept="2" />
-      <node id="7064627997011532865" at="28,101,29,100" concept="2" />
-      <node id="7064627997011532866" at="29,100,30,113" concept="2" />
-      <node id="7064627997011532867" at="30,113,31,108" concept="2" />
-      <node id="7064627997011532868" at="31,108,32,51" concept="2" />
-      <node id="7064627997011532869" at="32,51,33,111" concept="2" />
-      <node id="7064627997011532870" at="33,111,34,110" concept="2" />
-      <node id="7064627997011532858" at="35,27,36,39" concept="2" />
-      <node id="9154600507441896295" at="21,51,27,7" concept="0" />
-      <node id="7064627997011532858" at="19,25,37,5" concept="14" />
-      <node id="7064627997011532858" at="16,0,39,0" concept="1" trace="DebugRunMenu_ActionGroup#()V" />
-      <scope id="7064627997011532858" at="35,0,36,39">
-        <var name="t" id="7064627997011532858" />
-      </scope>
-      <scope id="7064627997011532858" at="35,27,36,39" />
-      <scope id="9154600507441896295" at="22,7,26,56">
+      <node id="7064627997011532858" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="7064627997011532858" at="12,0,13,0" concept="11" trace="LABEL_ID_steps" />
+      <node id="7064627997011532858" at="13,37,14,30" concept="13" />
+      <node id="7064627997011532858" at="14,30,15,30" concept="2" />
+      <node id="7064627997011532858" at="15,30,16,25" concept="2" />
+      <node id="7064627997011532860" at="16,25,17,49" concept="2" />
+      <node id="9154600507441896295" at="18,5,19,90" concept="7" />
+      <node id="9154600507441896295" at="19,90,20,64" concept="7" />
+      <node id="9154600507441896295" at="20,64,21,107" concept="2" />
+      <node id="9154600507441896295" at="21,107,22,54" concept="2" />
+      <node id="7064627997011532864" at="23,5,24,99" concept="2" />
+      <node id="7064627997011532865" at="24,99,25,98" concept="2" />
+      <node id="7064627997011532866" at="25,98,26,111" concept="2" />
+      <node id="7064627997011532867" at="26,111,27,106" concept="2" />
+      <node id="7064627997011532868" at="27,106,28,49" concept="2" />
+      <node id="7064627997011532869" at="28,49,29,109" concept="2" />
+      <node id="7064627997011532870" at="29,109,30,108" concept="2" />
+      <node id="9154600507441896295" at="17,49,23,5" concept="0" />
+      <node id="7064627997011532858" at="13,0,32,0" concept="1" trace="DebugRunMenu_ActionGroup#()V" />
+      <scope id="9154600507441896295" at="18,5,22,54">
         <var name="action" id="9154600507441896295" />
         <var name="manager" id="9154600507441896295" />
       </scope>
-      <scope id="7064627997011532858" at="20,9,34,110" />
-      <scope id="7064627997011532858" at="16,37,37,5" />
-      <scope id="7064627997011532858" at="16,0,39,0" />
-      <unit id="7064627997011532858" at="12,0,40,0" name="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" />
+      <scope id="7064627997011532858" at="13,37,30,108" />
+      <scope id="7064627997011532858" at="13,0,32,0" />
+      <unit id="7064627997011532858" at="10,0,33,0" name="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7064627997011532872">
     <file name="DebugTool_ActionGroup.java">
-      <node id="7064627997011532872" at="13,0,14,0" concept="11" trace="LOG" />
-      <node id="7064627997011532872" at="14,0,15,0" concept="11" trace="ID" />
-      <node id="7064627997011532872" at="15,0,16,0" concept="11" trace="LABEL_ID_StopAction" />
-      <node id="7064627997011532872" at="16,0,17,0" concept="11" trace="LABEL_ID_MuteAction" />
-      <node id="7064627997011532872" at="17,34,18,27" concept="13" />
-      <node id="7064627997011532872" at="18,27,19,30" concept="2" />
-      <node id="7064627997011532872" at="19,30,20,25" concept="2" />
-      <node id="7064627997011532874" at="21,9,22,48" concept="2" />
-      <node id="7064627997011532875" at="22,48,23,98" concept="2" />
-      <node id="7064627997011532876" at="23,98,24,97" concept="2" />
-      <node id="7064627997011532877" at="25,7,26,94" concept="7" />
-      <node id="7064627997011532877" at="26,94,27,66" concept="7" />
-      <node id="7064627997011532877" at="27,66,28,109" concept="2" />
-      <node id="7064627997011532877" at="28,109,29,53" concept="2" />
-      <node id="7064627997011532878" at="30,7,31,48" concept="2" />
-      <node id="7064627997011532879" at="31,48,32,110" concept="2" />
-      <node id="7064627997011532880" at="32,110,33,105" concept="2" />
-      <node id="7064627997011532881" at="33,105,34,107" concept="2" />
-      <node id="7064627997011532882" at="35,7,36,94" concept="7" />
-      <node id="7064627997011532882" at="36,94,37,66" concept="7" />
-      <node id="7064627997011532882" at="37,66,38,109" concept="2" />
-      <node id="7064627997011532882" at="38,109,39,53" concept="2" />
-      <node id="7064627997011532883" at="40,7,41,48" concept="2" />
-      <node id="7064627997011532872" at="42,27,43,39" concept="2" />
-      <node id="7064627997011532877" at="24,97,30,7" concept="0" />
-      <node id="7064627997011532882" at="34,107,40,7" concept="0" />
-      <node id="7064627997011532872" at="20,25,44,5" concept="14" />
-      <node id="7064627997011532872" at="17,0,46,0" concept="1" trace="DebugTool_ActionGroup#()V" />
-      <scope id="7064627997011532872" at="42,0,43,39">
-        <var name="t" id="7064627997011532872" />
-      </scope>
-      <scope id="7064627997011532872" at="42,27,43,39" />
-      <scope id="7064627997011532877" at="25,7,29,53">
+      <node id="7064627997011532872" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="7064627997011532872" at="12,0,13,0" concept="11" trace="LABEL_ID_StopAction" />
+      <node id="7064627997011532872" at="13,0,14,0" concept="11" trace="LABEL_ID_MuteAction" />
+      <node id="7064627997011532872" at="14,34,15,27" concept="13" />
+      <node id="7064627997011532872" at="15,27,16,30" concept="2" />
+      <node id="7064627997011532872" at="16,30,17,25" concept="2" />
+      <node id="7064627997011532874" at="17,25,18,46" concept="2" />
+      <node id="7064627997011532875" at="18,46,19,96" concept="2" />
+      <node id="7064627997011532876" at="19,96,20,95" concept="2" />
+      <node id="7064627997011532877" at="21,5,22,92" concept="7" />
+      <node id="7064627997011532877" at="22,92,23,64" concept="7" />
+      <node id="7064627997011532877" at="23,64,24,107" concept="2" />
+      <node id="7064627997011532877" at="24,107,25,51" concept="2" />
+      <node id="7064627997011532878" at="26,5,27,46" concept="2" />
+      <node id="7064627997011532879" at="27,46,28,108" concept="2" />
+      <node id="7064627997011532880" at="28,108,29,103" concept="2" />
+      <node id="7064627997011532881" at="29,103,30,105" concept="2" />
+      <node id="7064627997011532882" at="31,5,32,92" concept="7" />
+      <node id="7064627997011532882" at="32,92,33,64" concept="7" />
+      <node id="7064627997011532882" at="33,64,34,107" concept="2" />
+      <node id="7064627997011532882" at="34,107,35,51" concept="2" />
+      <node id="7064627997011532883" at="36,5,37,46" concept="2" />
+      <node id="7064627997011532877" at="20,95,26,5" concept="0" />
+      <node id="7064627997011532882" at="30,105,36,5" concept="0" />
+      <node id="7064627997011532872" at="14,0,39,0" concept="1" trace="DebugTool_ActionGroup#()V" />
+      <scope id="7064627997011532877" at="21,5,25,51">
         <var name="action" id="7064627997011532877" />
         <var name="manager" id="7064627997011532877" />
       </scope>
-      <scope id="7064627997011532882" at="35,7,39,53">
+      <scope id="7064627997011532882" at="31,5,35,51">
         <var name="action" id="7064627997011532882" />
         <var name="manager" id="7064627997011532882" />
       </scope>
-      <scope id="7064627997011532872" at="21,9,41,48" />
-      <scope id="7064627997011532872" at="17,34,44,5" />
-      <scope id="7064627997011532872" at="17,0,46,0" />
-      <unit id="7064627997011532872" at="12,0,47,0" name="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
+      <scope id="7064627997011532872" at="14,34,37,46" />
+      <scope id="7064627997011532872" at="14,0,39,0" />
+      <unit id="7064627997011532872" at="10,0,40,0" name="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/7162597690968011921">
@@ -979,33 +962,25 @@
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/8643693251546855502">
     <file name="AbstractWatchableNodeActions_ActionGroup.java">
-      <node id="8643693251546855502" at="13,0,14,0" concept="11" trace="LOG" />
-      <node id="8643693251546855502" at="14,0,15,0" concept="11" trace="ID" />
-      <node id="8643693251546855502" at="15,0,16,0" concept="11" trace="LABEL_ID_extentions" />
-      <node id="8643693251546855502" at="16,53,17,46" concept="13" />
-      <node id="8643693251546855502" at="17,46,18,30" concept="2" />
-      <node id="8643693251546855502" at="18,30,19,25" concept="2" />
-      <node id="8643693251546857296" at="20,9,21,121" concept="2" />
-      <node id="8894158296385402493" at="22,7,23,113" concept="7" />
-      <node id="8894158296385402493" at="23,113,24,66" concept="7" />
-      <node id="8894158296385402493" at="24,66,25,109" concept="2" />
-      <node id="8894158296385402493" at="25,109,26,72" concept="2" />
-      <node id="8643693251546855502" at="28,27,29,39" concept="2" />
-      <node id="8894158296385402493" at="21,121,27,7" concept="0" />
-      <node id="8643693251546855502" at="19,25,30,5" concept="14" />
-      <node id="8643693251546855502" at="16,0,32,0" concept="1" trace="AbstractWatchableNodeActions_ActionGroup#()V" />
-      <scope id="8643693251546855502" at="28,0,29,39">
-        <var name="t" id="8643693251546855502" />
-      </scope>
-      <scope id="8643693251546855502" at="28,27,29,39" />
-      <scope id="8894158296385402493" at="22,7,26,72">
+      <node id="8643693251546855502" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="8643693251546855502" at="12,0,13,0" concept="11" trace="LABEL_ID_extentions" />
+      <node id="8643693251546855502" at="13,53,14,46" concept="13" />
+      <node id="8643693251546855502" at="14,46,15,30" concept="2" />
+      <node id="8643693251546855502" at="15,30,16,25" concept="2" />
+      <node id="8643693251546857296" at="16,25,17,119" concept="2" />
+      <node id="8894158296385402493" at="18,5,19,111" concept="7" />
+      <node id="8894158296385402493" at="19,111,20,64" concept="7" />
+      <node id="8894158296385402493" at="20,64,21,107" concept="2" />
+      <node id="8894158296385402493" at="21,107,22,70" concept="2" />
+      <node id="8894158296385402493" at="17,119,23,5" concept="0" />
+      <node id="8643693251546855502" at="13,0,25,0" concept="1" trace="AbstractWatchableNodeActions_ActionGroup#()V" />
+      <scope id="8894158296385402493" at="18,5,22,70">
         <var name="action" id="8894158296385402493" />
         <var name="manager" id="8894158296385402493" />
       </scope>
-      <scope id="8643693251546855502" at="20,9,27,7" />
-      <scope id="8643693251546855502" at="16,53,30,5" />
-      <scope id="8643693251546855502" at="16,0,32,0" />
-      <unit id="8643693251546855502" at="12,0,33,0" name="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup" />
+      <scope id="8643693251546855502" at="13,53,23,5" />
+      <scope id="8643693251546855502" at="13,0,25,0" />
+      <unit id="8643693251546855502" at="10,0,26,0" name="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/8643693251546857272">
@@ -1059,25 +1034,17 @@
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/9154600507441896288">
     <file name="DebugStepsMenu_ActionGroup.java">
-      <node id="9154600507441896288" at="10,0,11,0" concept="11" trace="LOG" />
-      <node id="9154600507441896288" at="11,0,12,0" concept="11" trace="ID" />
-      <node id="9154600507441896288" at="12,39,13,32" concept="13" />
-      <node id="9154600507441896288" at="13,32,14,30" concept="2" />
-      <node id="9154600507441896288" at="14,30,15,25" concept="2" />
-      <node id="9154600507441896291" at="16,9,17,105" concept="2" />
-      <node id="9154600507441896292" at="17,105,18,105" concept="2" />
-      <node id="9154600507441896293" at="18,105,19,104" concept="2" />
-      <node id="9154600507441896288" at="20,27,21,39" concept="2" />
-      <node id="9154600507441896288" at="15,25,22,5" concept="14" />
-      <node id="9154600507441896288" at="12,0,24,0" concept="1" trace="DebugStepsMenu_ActionGroup#()V" />
-      <scope id="9154600507441896288" at="20,0,21,39">
-        <var name="t" id="9154600507441896288" />
-      </scope>
-      <scope id="9154600507441896288" at="20,27,21,39" />
-      <scope id="9154600507441896288" at="16,9,19,104" />
-      <scope id="9154600507441896288" at="12,39,22,5" />
-      <scope id="9154600507441896288" at="12,0,24,0" />
-      <unit id="9154600507441896288" at="9,0,25,0" name="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup" />
+      <node id="9154600507441896288" at="8,0,9,0" concept="11" trace="ID" />
+      <node id="9154600507441896288" at="9,39,10,32" concept="13" />
+      <node id="9154600507441896288" at="10,32,11,30" concept="2" />
+      <node id="9154600507441896288" at="11,30,12,25" concept="2" />
+      <node id="9154600507441896291" at="12,25,13,103" concept="2" />
+      <node id="9154600507441896292" at="13,103,14,103" concept="2" />
+      <node id="9154600507441896293" at="14,103,15,102" concept="2" />
+      <node id="9154600507441896288" at="9,0,17,0" concept="1" trace="DebugStepsMenu_ActionGroup#()V" />
+      <scope id="9154600507441896288" at="9,39,15,102" />
+      <scope id="9154600507441896288" at="9,0,17,0" />
+      <unit id="9154600507441896288" at="7,0,18,0" name="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup" />
     </file>
   </root>
 </debug-info>

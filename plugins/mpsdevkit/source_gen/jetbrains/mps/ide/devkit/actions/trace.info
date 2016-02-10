@@ -93,23 +93,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1206195573853570620">
     <file name="StructureAdditions_ActionGroup.java">
-      <node id="1206195573853570620" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1206195573853570620" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1206195573853570620" at="12,43,13,36" concept="16" />
-      <node id="1206195573853570620" at="13,36,14,30" concept="5" />
-      <node id="1206195573853570620" at="14,30,15,25" concept="5" />
-      <node id="1206195573853570622" at="16,9,17,109" concept="5" />
-      <node id="1206195573853570620" at="18,27,19,39" concept="5" />
-      <node id="1206195573853570620" at="15,25,20,5" concept="17" />
-      <node id="1206195573853570620" at="12,0,22,0" concept="3" trace="StructureAdditions_ActionGroup#()V" />
-      <scope id="1206195573853570620" at="16,9,17,109" />
-      <scope id="1206195573853570620" at="18,0,19,39">
-        <var name="t" id="1206195573853570620" />
-      </scope>
-      <scope id="1206195573853570620" at="18,27,19,39" />
-      <scope id="1206195573853570620" at="12,43,20,5" />
-      <scope id="1206195573853570620" at="12,0,22,0" />
-      <unit id="1206195573853570620" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup" />
+      <node id="1206195573853570620" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1206195573853570620" at="9,43,10,36" concept="16" />
+      <node id="1206195573853570620" at="10,36,11,30" concept="5" />
+      <node id="1206195573853570620" at="11,30,12,25" concept="5" />
+      <node id="1206195573853570622" at="12,25,13,107" concept="5" />
+      <node id="1206195573853570620" at="9,0,15,0" concept="3" trace="StructureAdditions_ActionGroup#()V" />
+      <scope id="1206195573853570620" at="9,43,13,107" />
+      <scope id="1206195573853570620" at="9,0,15,0" />
+      <unit id="1206195573853570620" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1234869968490316273">
@@ -264,88 +256,56 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1234869968490316459">
     <file name="GenerationTraceActions_ActionGroup.java">
-      <node id="1234869968490316459" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1234869968490316459" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1234869968490316459" at="12,47,13,40" concept="16" />
-      <node id="1234869968490316459" at="13,40,14,30" concept="5" />
-      <node id="1234869968490316459" at="14,30,15,25" concept="5" />
-      <node id="6830537871214210177" at="16,9,17,114" concept="5" />
-      <node id="1234869968490316461" at="17,114,18,119" concept="5" />
-      <node id="1234869968490316462" at="18,119,19,123" concept="5" />
-      <node id="1234869968490316459" at="20,27,21,39" concept="5" />
-      <node id="1234869968490316459" at="15,25,22,5" concept="17" />
-      <node id="1234869968490316459" at="12,0,24,0" concept="3" trace="GenerationTraceActions_ActionGroup#()V" />
-      <scope id="1234869968490316459" at="20,0,21,39">
-        <var name="t" id="1234869968490316459" />
-      </scope>
-      <scope id="1234869968490316459" at="20,27,21,39" />
-      <scope id="1234869968490316459" at="16,9,19,123" />
-      <scope id="1234869968490316459" at="12,47,22,5" />
-      <scope id="1234869968490316459" at="12,0,24,0" />
-      <unit id="1234869968490316459" at="9,0,25,0" name="jetbrains.mps.ide.devkit.actions.GenerationTraceActions_ActionGroup" />
+      <node id="1234869968490316459" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1234869968490316459" at="9,47,10,40" concept="16" />
+      <node id="1234869968490316459" at="10,40,11,30" concept="5" />
+      <node id="1234869968490316459" at="11,30,12,25" concept="5" />
+      <node id="6830537871214210177" at="12,25,13,112" concept="5" />
+      <node id="1234869968490316461" at="13,112,14,117" concept="5" />
+      <node id="1234869968490316462" at="14,117,15,121" concept="5" />
+      <node id="1234869968490316459" at="9,0,17,0" concept="3" trace="GenerationTraceActions_ActionGroup#()V" />
+      <scope id="1234869968490316459" at="9,47,15,121" />
+      <scope id="1234869968490316459" at="9,0,17,0" />
+      <unit id="1234869968490316459" at="7,0,18,0" name="jetbrains.mps.ide.devkit.actions.GenerationTraceActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1366781238034273697">
     <file name="LanguageNewGenerator_ActionGroup.java">
-      <node id="1366781238034273697" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1366781238034273697" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1366781238034273697" at="12,45,13,38" concept="16" />
-      <node id="1366781238034273697" at="13,38,14,30" concept="5" />
-      <node id="1366781238034273697" at="14,30,15,25" concept="5" />
-      <node id="1366781238034273700" at="16,9,17,110" concept="5" />
-      <node id="1366781238034273697" at="18,27,19,39" concept="5" />
-      <node id="1366781238034273697" at="15,25,20,5" concept="17" />
-      <node id="1366781238034273697" at="12,0,22,0" concept="3" trace="LanguageNewGenerator_ActionGroup#()V" />
-      <scope id="1366781238034273697" at="16,9,17,110" />
-      <scope id="1366781238034273697" at="18,0,19,39">
-        <var name="t" id="1366781238034273697" />
-      </scope>
-      <scope id="1366781238034273697" at="18,27,19,39" />
-      <scope id="1366781238034273697" at="12,45,20,5" />
-      <scope id="1366781238034273697" at="12,0,22,0" />
-      <unit id="1366781238034273697" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
+      <node id="1366781238034273697" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1366781238034273697" at="9,45,10,38" concept="16" />
+      <node id="1366781238034273697" at="10,38,11,30" concept="5" />
+      <node id="1366781238034273697" at="11,30,12,25" concept="5" />
+      <node id="1366781238034273700" at="12,25,13,108" concept="5" />
+      <node id="1366781238034273697" at="9,0,15,0" concept="3" trace="LanguageNewGenerator_ActionGroup#()V" />
+      <scope id="1366781238034273697" at="9,45,13,108" />
+      <scope id="1366781238034273697" at="9,0,15,0" />
+      <unit id="1366781238034273697" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1366781238034273705">
     <file name="LanguageNewActionsEx_ActionGroup.java">
-      <node id="1366781238034273705" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1366781238034273705" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1366781238034273705" at="12,45,13,38" concept="16" />
-      <node id="1366781238034273705" at="13,38,14,30" concept="5" />
-      <node id="1366781238034273705" at="14,30,15,25" concept="5" />
-      <node id="1366781238034273708" at="16,9,17,115" concept="5" />
-      <node id="1366781238034273705" at="18,27,19,39" concept="5" />
-      <node id="1366781238034273705" at="15,25,20,5" concept="17" />
-      <node id="1366781238034273705" at="12,0,22,0" concept="3" trace="LanguageNewActionsEx_ActionGroup#()V" />
-      <scope id="1366781238034273705" at="16,9,17,115" />
-      <scope id="1366781238034273705" at="18,0,19,39">
-        <var name="t" id="1366781238034273705" />
-      </scope>
-      <scope id="1366781238034273705" at="18,27,19,39" />
-      <scope id="1366781238034273705" at="12,45,20,5" />
-      <scope id="1366781238034273705" at="12,0,22,0" />
-      <unit id="1366781238034273705" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
+      <node id="1366781238034273705" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1366781238034273705" at="9,45,10,38" concept="16" />
+      <node id="1366781238034273705" at="10,38,11,30" concept="5" />
+      <node id="1366781238034273705" at="11,30,12,25" concept="5" />
+      <node id="1366781238034273708" at="12,25,13,113" concept="5" />
+      <node id="1366781238034273705" at="9,0,15,0" concept="3" trace="LanguageNewActionsEx_ActionGroup#()V" />
+      <scope id="1366781238034273705" at="9,45,13,113" />
+      <scope id="1366781238034273705" at="9,0,15,0" />
+      <unit id="1366781238034273705" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333709178">
     <file name="BehaviourPopup_ActionGroup.java">
-      <node id="1596727503333709178" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1596727503333709178" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1596727503333709178" at="12,39,13,32" concept="16" />
-      <node id="1596727503333709178" at="13,32,14,30" concept="5" />
-      <node id="1596727503333709178" at="14,30,15,25" concept="5" />
-      <node id="1596727503333709180" at="16,9,17,120" concept="5" />
-      <node id="1596727503333709178" at="18,27,19,39" concept="5" />
-      <node id="1596727503333709178" at="15,25,20,5" concept="17" />
-      <node id="1596727503333709178" at="12,0,22,0" concept="3" trace="BehaviourPopup_ActionGroup#()V" />
-      <scope id="1596727503333709178" at="16,9,17,120" />
-      <scope id="1596727503333709178" at="18,0,19,39">
-        <var name="t" id="1596727503333709178" />
-      </scope>
-      <scope id="1596727503333709178" at="18,27,19,39" />
-      <scope id="1596727503333709178" at="12,39,20,5" />
-      <scope id="1596727503333709178" at="12,0,22,0" />
-      <unit id="1596727503333709178" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" />
+      <node id="1596727503333709178" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1596727503333709178" at="9,39,10,32" concept="16" />
+      <node id="1596727503333709178" at="10,32,11,30" concept="5" />
+      <node id="1596727503333709178" at="11,30,12,25" concept="5" />
+      <node id="1596727503333709180" at="12,25,13,118" concept="5" />
+      <node id="1596727503333709178" at="9,0,15,0" concept="3" trace="BehaviourPopup_ActionGroup#()V" />
+      <scope id="1596727503333709178" at="9,39,13,118" />
+      <scope id="1596727503333709178" at="9,0,15,0" />
+      <unit id="1596727503333709178" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333709182">
@@ -436,24 +396,16 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333822320">
     <file name="BehaviorCodeOverrideImplementMenuGroup_ActionGroup.java">
-      <node id="1596727503333822320" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1596727503333822320" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1596727503333822320" at="12,63,13,56" concept="16" />
-      <node id="1596727503333822320" at="13,56,14,30" concept="5" />
-      <node id="1596727503333822320" at="14,30,15,25" concept="5" />
-      <node id="1596727503333822323" at="16,9,17,138" concept="5" />
-      <node id="1596727503333822324" at="17,138,18,139" concept="5" />
-      <node id="1596727503333822320" at="19,27,20,39" concept="5" />
-      <node id="1596727503333822320" at="15,25,21,5" concept="17" />
-      <node id="1596727503333822320" at="12,0,23,0" concept="3" trace="BehaviorCodeOverrideImplementMenuGroup_ActionGroup#()V" />
-      <scope id="1596727503333822320" at="19,0,20,39">
-        <var name="t" id="1596727503333822320" />
-      </scope>
-      <scope id="1596727503333822320" at="19,27,20,39" />
-      <scope id="1596727503333822320" at="16,9,18,139" />
-      <scope id="1596727503333822320" at="12,63,21,5" />
-      <scope id="1596727503333822320" at="12,0,23,0" />
-      <unit id="1596727503333822320" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
+      <node id="1596727503333822320" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1596727503333822320" at="9,63,10,56" concept="16" />
+      <node id="1596727503333822320" at="10,56,11,30" concept="5" />
+      <node id="1596727503333822320" at="11,30,12,25" concept="5" />
+      <node id="1596727503333822323" at="12,25,13,136" concept="5" />
+      <node id="1596727503333822324" at="13,136,14,137" concept="5" />
+      <node id="1596727503333822320" at="9,0,16,0" concept="3" trace="BehaviorCodeOverrideImplementMenuGroup_ActionGroup#()V" />
+      <scope id="1596727503333822320" at="9,63,14,137" />
+      <scope id="1596727503333822320" at="9,0,16,0" />
+      <unit id="1596727503333822320" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1596727503333822325">
@@ -709,23 +661,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1683977858888863192">
     <file name="GeneratorActions_Delete_ActionGroup.java">
-      <node id="1683977858888863192" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1683977858888863192" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1683977858888863192" at="12,48,13,41" concept="16" />
-      <node id="1683977858888863192" at="13,41,14,30" concept="5" />
-      <node id="1683977858888863192" at="14,30,15,25" concept="5" />
-      <node id="1683977858888863196" at="16,9,17,116" concept="5" />
-      <node id="1683977858888863192" at="18,27,19,39" concept="5" />
-      <node id="1683977858888863192" at="15,25,20,5" concept="17" />
-      <node id="1683977858888863192" at="12,0,22,0" concept="3" trace="GeneratorActions_Delete_ActionGroup#()V" />
-      <scope id="1683977858888863192" at="16,9,17,116" />
-      <scope id="1683977858888863192" at="18,0,19,39">
-        <var name="t" id="1683977858888863192" />
-      </scope>
-      <scope id="1683977858888863192" at="18,27,19,39" />
-      <scope id="1683977858888863192" at="12,48,20,5" />
-      <scope id="1683977858888863192" at="12,0,22,0" />
-      <unit id="1683977858888863192" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
+      <node id="1683977858888863192" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1683977858888863192" at="9,48,10,41" concept="16" />
+      <node id="1683977858888863192" at="10,41,11,30" concept="5" />
+      <node id="1683977858888863192" at="11,30,12,25" concept="5" />
+      <node id="1683977858888863196" at="12,25,13,114" concept="5" />
+      <node id="1683977858888863192" at="9,0,15,0" concept="3" trace="GeneratorActions_Delete_ActionGroup#()V" />
+      <scope id="1683977858888863192" at="9,48,13,114" />
+      <scope id="1683977858888863192" at="9,0,15,0" />
+      <unit id="1683977858888863192" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1744445256079578595">
@@ -1005,24 +949,16 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1744445256079579876">
     <file name="GotoConceptAspect_ActionGroup.java">
-      <node id="1744445256079579876" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1744445256079579876" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1744445256079579876" at="12,42,13,35" concept="16" />
-      <node id="1744445256079579876" at="13,35,14,30" concept="5" />
-      <node id="1744445256079579876" at="14,30,15,25" concept="5" />
-      <node id="1744445256079579882" at="16,9,17,117" concept="5" />
-      <node id="1744445256079579883" at="17,117,18,116" concept="5" />
-      <node id="1744445256079579876" at="19,27,20,39" concept="5" />
-      <node id="1744445256079579876" at="15,25,21,5" concept="17" />
-      <node id="1744445256079579876" at="12,0,23,0" concept="3" trace="GotoConceptAspect_ActionGroup#()V" />
-      <scope id="1744445256079579876" at="19,0,20,39">
-        <var name="t" id="1744445256079579876" />
-      </scope>
-      <scope id="1744445256079579876" at="19,27,20,39" />
-      <scope id="1744445256079579876" at="16,9,18,116" />
-      <scope id="1744445256079579876" at="12,42,21,5" />
-      <scope id="1744445256079579876" at="12,0,23,0" />
-      <unit id="1744445256079579876" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
+      <node id="1744445256079579876" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1744445256079579876" at="9,42,10,35" concept="16" />
+      <node id="1744445256079579876" at="10,35,11,30" concept="5" />
+      <node id="1744445256079579876" at="11,30,12,25" concept="5" />
+      <node id="1744445256079579882" at="12,25,13,115" concept="5" />
+      <node id="1744445256079579883" at="13,115,14,114" concept="5" />
+      <node id="1744445256079579876" at="9,0,16,0" concept="3" trace="GotoConceptAspect_ActionGroup#()V" />
+      <scope id="1744445256079579876" at="9,42,14,114" />
+      <scope id="1744445256079579876" at="9,0,16,0" />
+      <unit id="1744445256079579876" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.GotoConceptAspect_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1936689137035744512">
@@ -1101,23 +1037,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/1936689137035777973">
     <file name="LanguageActionsEx_ActionGroup.java">
-      <node id="1936689137035777973" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="1936689137035777973" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="1936689137035777973" at="12,42,13,35" concept="16" />
-      <node id="1936689137035777973" at="13,35,14,30" concept="5" />
-      <node id="1936689137035777973" at="14,30,15,25" concept="5" />
-      <node id="1936689137035777977" at="16,9,17,112" concept="5" />
-      <node id="1936689137035777973" at="18,27,19,39" concept="5" />
-      <node id="1936689137035777973" at="15,25,20,5" concept="17" />
-      <node id="1936689137035777973" at="12,0,22,0" concept="3" trace="LanguageActionsEx_ActionGroup#()V" />
-      <scope id="1936689137035777973" at="16,9,17,112" />
-      <scope id="1936689137035777973" at="18,0,19,39">
-        <var name="t" id="1936689137035777973" />
-      </scope>
-      <scope id="1936689137035777973" at="18,27,19,39" />
-      <scope id="1936689137035777973" at="12,42,20,5" />
-      <scope id="1936689137035777973" at="12,0,22,0" />
-      <unit id="1936689137035777973" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
+      <node id="1936689137035777973" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="1936689137035777973" at="9,42,10,35" concept="16" />
+      <node id="1936689137035777973" at="10,35,11,30" concept="5" />
+      <node id="1936689137035777973" at="11,30,12,25" concept="5" />
+      <node id="1936689137035777977" at="12,25,13,110" concept="5" />
+      <node id="1936689137035777973" at="9,0,15,0" concept="3" trace="LanguageActionsEx_ActionGroup#()V" />
+      <scope id="1936689137035777973" at="9,42,13,110" />
+      <scope id="1936689137035777973" at="9,0,15,0" />
+      <unit id="1936689137035777973" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2165106376654272257">
@@ -1242,46 +1170,30 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2165106376654390214">
     <file name="IntentionsGroup_ActionGroup.java">
-      <node id="2165106376654390214" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="2165106376654390214" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="2165106376654390214" at="12,40,13,33" concept="16" />
-      <node id="2165106376654390214" at="13,33,14,30" concept="5" />
-      <node id="2165106376654390214" at="14,30,15,25" concept="5" />
-      <node id="2970389781192937374" at="16,9,17,112" concept="5" />
-      <node id="1596727503333827327" at="17,112,18,116" concept="5" />
-      <node id="2165106376654390214" at="19,27,20,39" concept="5" />
-      <node id="2165106376654390214" at="15,25,21,5" concept="17" />
-      <node id="2165106376654390214" at="12,0,23,0" concept="3" trace="IntentionsGroup_ActionGroup#()V" />
-      <scope id="2165106376654390214" at="19,0,20,39">
-        <var name="t" id="2165106376654390214" />
-      </scope>
-      <scope id="2165106376654390214" at="19,27,20,39" />
-      <scope id="2165106376654390214" at="16,9,18,116" />
-      <scope id="2165106376654390214" at="12,40,21,5" />
-      <scope id="2165106376654390214" at="12,0,23,0" />
-      <unit id="2165106376654390214" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.IntentionsGroup_ActionGroup" />
+      <node id="2165106376654390214" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="2165106376654390214" at="9,40,10,33" concept="16" />
+      <node id="2165106376654390214" at="10,33,11,30" concept="5" />
+      <node id="2165106376654390214" at="11,30,12,25" concept="5" />
+      <node id="2970389781192937374" at="12,25,13,110" concept="5" />
+      <node id="1596727503333827327" at="13,110,14,114" concept="5" />
+      <node id="2165106376654390214" at="9,0,16,0" concept="3" trace="IntentionsGroup_ActionGroup#()V" />
+      <scope id="2165106376654390214" at="9,40,14,114" />
+      <scope id="2165106376654390214" at="9,0,16,0" />
+      <unit id="2165106376654390214" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.IntentionsGroup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2191995028863072547">
     <file name="DevKitTools_ActionGroup.java">
-      <node id="2191995028863072547" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="2191995028863072547" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="2191995028863072547" at="12,36,13,29" concept="16" />
-      <node id="2191995028863072547" at="13,29,14,30" concept="5" />
-      <node id="2191995028863072547" at="14,30,15,25" concept="5" />
-      <node id="2191995028863072549" at="16,9,17,98" concept="5" />
-      <node id="2191995028863072552" at="17,98,18,106" concept="5" />
-      <node id="2191995028863072547" at="19,27,20,39" concept="5" />
-      <node id="2191995028863072547" at="15,25,21,5" concept="17" />
-      <node id="2191995028863072547" at="12,0,23,0" concept="3" trace="DevKitTools_ActionGroup#()V" />
-      <scope id="2191995028863072547" at="19,0,20,39">
-        <var name="t" id="2191995028863072547" />
-      </scope>
-      <scope id="2191995028863072547" at="19,27,20,39" />
-      <scope id="2191995028863072547" at="16,9,18,106" />
-      <scope id="2191995028863072547" at="12,36,21,5" />
-      <scope id="2191995028863072547" at="12,0,23,0" />
-      <unit id="2191995028863072547" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
+      <node id="2191995028863072547" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="2191995028863072547" at="9,36,10,29" concept="16" />
+      <node id="2191995028863072547" at="10,29,11,30" concept="5" />
+      <node id="2191995028863072547" at="11,30,12,25" concept="5" />
+      <node id="2191995028863072549" at="12,25,13,96" concept="5" />
+      <node id="2191995028863072552" at="13,96,14,104" concept="5" />
+      <node id="2191995028863072547" at="9,0,16,0" concept="3" trace="DevKitTools_ActionGroup#()V" />
+      <scope id="2191995028863072547" at="9,36,14,104" />
+      <scope id="2191995028863072547" at="9,0,16,0" />
+      <unit id="2191995028863072547" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2191995028863072555">
@@ -1482,23 +1394,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2403997762364994115">
     <file name="GenerateEditorPopup_ActionGroup.java">
-      <node id="2403997762364994115" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="2403997762364994115" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="2403997762364994115" at="12,44,13,37" concept="16" />
-      <node id="2403997762364994115" at="13,37,14,30" concept="5" />
-      <node id="2403997762364994115" at="14,30,15,25" concept="5" />
-      <node id="2403997762364994118" at="16,9,17,121" concept="5" />
-      <node id="2403997762364994115" at="18,27,19,39" concept="5" />
-      <node id="2403997762364994115" at="15,25,20,5" concept="17" />
-      <node id="2403997762364994115" at="12,0,22,0" concept="3" trace="GenerateEditorPopup_ActionGroup#()V" />
-      <scope id="2403997762364994115" at="16,9,17,121" />
-      <scope id="2403997762364994115" at="18,0,19,39">
-        <var name="t" id="2403997762364994115" />
-      </scope>
-      <scope id="2403997762364994115" at="18,27,19,39" />
-      <scope id="2403997762364994115" at="12,44,20,5" />
-      <scope id="2403997762364994115" at="12,0,22,0" />
-      <unit id="2403997762364994115" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.GenerateEditorPopup_ActionGroup" />
+      <node id="2403997762364994115" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="2403997762364994115" at="9,44,10,37" concept="16" />
+      <node id="2403997762364994115" at="10,37,11,30" concept="5" />
+      <node id="2403997762364994115" at="11,30,12,25" concept="5" />
+      <node id="2403997762364994118" at="12,25,13,119" concept="5" />
+      <node id="2403997762364994115" at="9,0,15,0" concept="3" trace="GenerateEditorPopup_ActionGroup#()V" />
+      <scope id="2403997762364994115" at="9,44,13,119" />
+      <scope id="2403997762364994115" at="9,0,15,0" />
+      <unit id="2403997762364994115" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.GenerateEditorPopup_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2403997762364994119">
@@ -2428,26 +2332,18 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2662234144540708008">
     <file name="EditorInternalEx_ActionGroup.java">
-      <node id="2662234144540708008" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="2662234144540708008" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="2662234144540708008" at="12,41,13,34" concept="16" />
-      <node id="2662234144540708008" at="13,34,14,30" concept="5" />
-      <node id="2662234144540708008" at="14,30,15,25" concept="5" />
-      <node id="2662234144540708068" at="16,9,17,108" concept="5" />
-      <node id="2662234144540708059" at="17,108,18,112" concept="5" />
-      <node id="2662234144540708075" at="18,112,19,105" concept="5" />
-      <node id="2662234144540708074" at="19,105,20,119" concept="5" />
-      <node id="2662234144540708008" at="21,27,22,39" concept="5" />
-      <node id="2662234144540708008" at="15,25,23,5" concept="17" />
-      <node id="2662234144540708008" at="12,0,25,0" concept="3" trace="EditorInternalEx_ActionGroup#()V" />
-      <scope id="2662234144540708008" at="21,0,22,39">
-        <var name="t" id="2662234144540708008" />
-      </scope>
-      <scope id="2662234144540708008" at="21,27,22,39" />
-      <scope id="2662234144540708008" at="16,9,20,119" />
-      <scope id="2662234144540708008" at="12,41,23,5" />
-      <scope id="2662234144540708008" at="12,0,25,0" />
-      <unit id="2662234144540708008" at="9,0,26,0" name="jetbrains.mps.ide.devkit.actions.EditorInternalEx_ActionGroup" />
+      <node id="2662234144540708008" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="2662234144540708008" at="9,41,10,34" concept="16" />
+      <node id="2662234144540708008" at="10,34,11,30" concept="5" />
+      <node id="2662234144540708008" at="11,30,12,25" concept="5" />
+      <node id="2662234144540708068" at="12,25,13,106" concept="5" />
+      <node id="2662234144540708059" at="13,106,14,110" concept="5" />
+      <node id="2662234144540708075" at="14,110,15,103" concept="5" />
+      <node id="2662234144540708074" at="15,103,16,117" concept="5" />
+      <node id="2662234144540708008" at="9,0,18,0" concept="3" trace="EditorInternalEx_ActionGroup#()V" />
+      <scope id="2662234144540708008" at="9,41,16,117" />
+      <scope id="2662234144540708008" at="9,0,18,0" />
+      <unit id="2662234144540708008" at="7,0,19,0" name="jetbrains.mps.ide.devkit.actions.EditorInternalEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2662234144540708083">
@@ -3028,24 +2924,16 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786305481">
     <file name="AccessoriesGroupActions_ActionGroup.java">
-      <node id="3465865320786305481" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="3465865320786305481" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="3465865320786305481" at="12,48,13,41" concept="16" />
-      <node id="3465865320786305481" at="13,41,14,30" concept="5" />
-      <node id="3465865320786305481" at="14,30,15,25" concept="5" />
-      <node id="3465865320786305483" at="16,9,17,118" concept="5" />
-      <node id="3465865320786305484" at="17,118,18,118" concept="5" />
-      <node id="3465865320786305481" at="19,27,20,39" concept="5" />
-      <node id="3465865320786305481" at="15,25,21,5" concept="17" />
-      <node id="3465865320786305481" at="12,0,23,0" concept="3" trace="AccessoriesGroupActions_ActionGroup#()V" />
-      <scope id="3465865320786305481" at="19,0,20,39">
-        <var name="t" id="3465865320786305481" />
-      </scope>
-      <scope id="3465865320786305481" at="19,27,20,39" />
-      <scope id="3465865320786305481" at="16,9,18,118" />
-      <scope id="3465865320786305481" at="12,48,21,5" />
-      <scope id="3465865320786305481" at="12,0,23,0" />
-      <unit id="3465865320786305481" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
+      <node id="3465865320786305481" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="3465865320786305481" at="9,48,10,41" concept="16" />
+      <node id="3465865320786305481" at="10,41,11,30" concept="5" />
+      <node id="3465865320786305481" at="11,30,12,25" concept="5" />
+      <node id="3465865320786305483" at="12,25,13,116" concept="5" />
+      <node id="3465865320786305484" at="13,116,14,116" concept="5" />
+      <node id="3465865320786305481" at="9,0,16,0" concept="3" trace="AccessoriesGroupActions_ActionGroup#()V" />
+      <scope id="3465865320786305481" at="9,48,14,116" />
+      <scope id="3465865320786305481" at="9,0,16,0" />
+      <unit id="3465865320786305481" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786305485">
@@ -3464,85 +3352,69 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786328040">
     <file name="LanguageNewCustomPartActions_ActionGroup.java">
-      <node id="3465865320786328040" at="23,0,24,0" concept="14" trace="LOG" />
-      <node id="3465865320786328040" at="24,0,25,0" concept="14" trace="ID" />
-      <node id="3465865320786328040" at="25,0,26,0" concept="6" trace="myPlaces" />
-      <node id="3465865320786328040" at="26,53,27,46" concept="16" />
-      <node id="3465865320786328040" at="27,46,28,30" concept="5" />
-      <node id="3465865320786328040" at="28,30,29,25" concept="5" />
-      <node id="3465865320786328040" at="31,27,32,39" concept="5" />
-      <node id="8911797107063369110" at="35,45,36,84" concept="12" />
-      <node id="8911797107063370508" at="36,84,37,58" concept="12" />
-      <node id="8911797107063369842" at="37,58,38,0" concept="13" />
-      <node id="8911797107063365724" at="38,0,39,62" concept="5" />
-      <node id="8911797107063368453" at="39,62,40,0" concept="13" />
-      <node id="8911797107063319789" at="41,59,42,52" concept="12" />
-      <node id="3465865320786328046" at="42,52,43,165" concept="5" />
-      <node id="8911797107063319386" at="45,80,46,249" concept="5" />
-      <node id="3465865320786328040" at="48,70,49,39" concept="5" />
-      <node id="3465865320786328040" at="52,81,53,109" concept="5" />
-      <node id="3465865320786328040" at="55,29,56,17" concept="11" />
-      <node id="8911797107063319383" at="44,5,47,5" concept="7" />
-      <node id="3465865320786328040" at="47,5,50,5" concept="7" />
-      <node id="3465865320786328040" at="52,0,55,0" concept="9" trace="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
-      <node id="3465865320786328040" at="55,0,58,0" concept="9" trace="isStrict#()Z" />
-      <node id="3465865320786328040" at="29,25,33,5" concept="17" />
-      <node id="3465865320786328043" at="40,0,44,5" concept="7" />
-      <node id="3465865320786328040" at="26,0,35,0" concept="3" trace="LanguageNewCustomPartActions_ActionGroup#()V" />
-      <node id="3465865320786328040" at="35,0,52,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <scope id="3465865320786328040" at="30,9,30,9" />
-      <scope id="3465865320786328040" at="31,0,32,39">
-        <var name="t" id="3465865320786328040" />
-      </scope>
-      <scope id="3465865320786328040" at="31,27,32,39" />
-      <scope id="8911797107063319384" at="45,80,46,249" />
-      <scope id="3465865320786328040" at="48,70,49,39" />
-      <scope id="3465865320786328040" at="52,81,53,109" />
-      <scope id="3465865320786328040" at="55,29,56,17" />
-      <scope id="3465865320786328044" at="41,59,43,165" />
-      <scope id="8911797107063319383" at="44,5,47,5">
+      <node id="3465865320786328040" at="21,0,22,0" concept="14" trace="ID" />
+      <node id="3465865320786328040" at="22,0,23,0" concept="6" trace="myPlaces" />
+      <node id="3465865320786328040" at="23,53,24,46" concept="16" />
+      <node id="3465865320786328040" at="24,46,25,30" concept="5" />
+      <node id="3465865320786328040" at="25,30,26,25" concept="5" />
+      <node id="8911797107063369110" at="28,45,29,84" concept="12" />
+      <node id="8911797107063370508" at="29,84,30,58" concept="12" />
+      <node id="8911797107063369842" at="30,58,31,0" concept="13" />
+      <node id="8911797107063365724" at="31,0,32,62" concept="5" />
+      <node id="8911797107063368453" at="32,62,33,0" concept="13" />
+      <node id="8911797107063319789" at="34,59,35,52" concept="12" />
+      <node id="3465865320786328046" at="35,52,36,165" concept="5" />
+      <node id="8911797107063319386" at="38,80,39,249" concept="5" />
+      <node id="3465865320786328040" at="41,70,42,39" concept="5" />
+      <node id="3465865320786328040" at="45,81,46,109" concept="5" />
+      <node id="3465865320786328040" at="48,29,49,17" concept="11" />
+      <node id="8911797107063319383" at="37,5,40,5" concept="7" />
+      <node id="3465865320786328040" at="40,5,43,5" concept="7" />
+      <node id="3465865320786328040" at="45,0,48,0" concept="9" trace="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
+      <node id="3465865320786328040" at="48,0,51,0" concept="9" trace="isStrict#()Z" />
+      <node id="3465865320786328043" at="33,0,37,5" concept="7" />
+      <node id="3465865320786328040" at="23,0,28,0" concept="3" trace="LanguageNewCustomPartActions_ActionGroup#()V" />
+      <node id="3465865320786328040" at="28,0,45,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="8911797107063319384" at="38,80,39,249" />
+      <scope id="3465865320786328040" at="41,70,42,39" />
+      <scope id="3465865320786328040" at="45,81,46,109" />
+      <scope id="3465865320786328040" at="48,29,49,17" />
+      <scope id="3465865320786328044" at="34,59,36,165" />
+      <scope id="3465865320786328040" at="23,53,26,25" />
+      <scope id="8911797107063319383" at="37,5,40,5">
         <var name="ad" id="8911797107063319389" />
       </scope>
-      <scope id="3465865320786328040" at="47,5,50,5">
+      <scope id="3465865320786328040" at="40,5,43,5">
         <var name="p" id="3465865320786328040" />
       </scope>
-      <scope id="3465865320786328040" at="52,0,55,0">
+      <scope id="3465865320786328040" at="45,0,48,0">
         <var name="cond" id="3465865320786328040" />
         <var name="place" id="3465865320786328040" />
       </scope>
-      <scope id="3465865320786328040" at="55,0,58,0" />
-      <scope id="3465865320786328043" at="40,0,44,5">
+      <scope id="3465865320786328040" at="48,0,51,0" />
+      <scope id="3465865320786328043" at="33,0,37,5">
         <var name="aspect" id="3465865320786328049" />
       </scope>
-      <scope id="3465865320786328040" at="26,53,33,5" />
-      <scope id="3465865320786328040" at="26,0,35,0" />
-      <scope id="3465865320786328040" at="35,45,50,5" />
-      <scope id="3465865320786328040" at="35,0,52,0">
+      <scope id="3465865320786328040" at="23,0,28,0" />
+      <scope id="3465865320786328040" at="28,45,43,5" />
+      <scope id="3465865320786328040" at="28,0,45,0">
         <var name="event" id="3465865320786328040" />
       </scope>
-      <unit id="3465865320786328040" at="22,0,59,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
+      <unit id="3465865320786328040" at="20,0,52,0" name="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/4032646381570777493">
     <file name="NamespaceNewActionsEx_ActionGroup.java">
-      <node id="4032646381570777493" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="4032646381570777493" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="4032646381570777493" at="12,46,13,39" concept="16" />
-      <node id="4032646381570777493" at="13,39,14,30" concept="5" />
-      <node id="4032646381570777493" at="14,30,15,25" concept="5" />
-      <node id="4032646381570777499" at="16,9,17,110" concept="5" />
-      <node id="1870126388449849603" at="17,110,18,108" concept="5" />
-      <node id="4032646381570777493" at="19,27,20,39" concept="5" />
-      <node id="4032646381570777493" at="15,25,21,5" concept="17" />
-      <node id="4032646381570777493" at="12,0,23,0" concept="3" trace="NamespaceNewActionsEx_ActionGroup#()V" />
-      <scope id="4032646381570777493" at="19,0,20,39">
-        <var name="t" id="4032646381570777493" />
-      </scope>
-      <scope id="4032646381570777493" at="19,27,20,39" />
-      <scope id="4032646381570777493" at="16,9,18,108" />
-      <scope id="4032646381570777493" at="12,46,21,5" />
-      <scope id="4032646381570777493" at="12,0,23,0" />
-      <unit id="4032646381570777493" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
+      <node id="4032646381570777493" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="4032646381570777493" at="9,46,10,39" concept="16" />
+      <node id="4032646381570777493" at="10,39,11,30" concept="5" />
+      <node id="4032646381570777493" at="11,30,12,25" concept="5" />
+      <node id="4032646381570777499" at="12,25,13,108" concept="5" />
+      <node id="1870126388449849603" at="13,108,14,106" concept="5" />
+      <node id="4032646381570777493" at="9,0,16,0" concept="3" trace="NamespaceNewActionsEx_ActionGroup#()V" />
+      <scope id="4032646381570777493" at="9,46,14,106" />
+      <scope id="4032646381570777493" at="9,0,16,0" />
+      <unit id="4032646381570777493" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/4403068512914877423">
@@ -3600,24 +3472,16 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657755836">
     <file name="ProjectNewActionsEx_ActionGroup.java">
-      <node id="5883033498657755836" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="5883033498657755836" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="5883033498657755836" at="12,44,13,21" concept="16" />
-      <node id="5883033498657755836" at="13,21,14,30" concept="5" />
-      <node id="5883033498657755836" at="14,30,15,25" concept="5" />
-      <node id="5883033498657755841" at="16,9,17,108" concept="5" />
-      <node id="5883033498657755844" at="17,108,18,106" concept="5" />
-      <node id="5883033498657755836" at="19,27,20,39" concept="5" />
-      <node id="5883033498657755836" at="15,25,21,5" concept="17" />
-      <node id="5883033498657755836" at="12,0,23,0" concept="3" trace="ProjectNewActionsEx_ActionGroup#()V" />
-      <scope id="5883033498657755836" at="19,0,20,39">
-        <var name="t" id="5883033498657755836" />
-      </scope>
-      <scope id="5883033498657755836" at="19,27,20,39" />
-      <scope id="5883033498657755836" at="16,9,18,106" />
-      <scope id="5883033498657755836" at="12,44,21,5" />
-      <scope id="5883033498657755836" at="12,0,23,0" />
-      <unit id="5883033498657755836" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.ProjectNewActionsEx_ActionGroup" />
+      <node id="5883033498657755836" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="5883033498657755836" at="9,44,10,21" concept="16" />
+      <node id="5883033498657755836" at="10,21,11,30" concept="5" />
+      <node id="5883033498657755836" at="11,30,12,25" concept="5" />
+      <node id="5883033498657755841" at="12,25,13,106" concept="5" />
+      <node id="5883033498657755844" at="13,106,14,104" concept="5" />
+      <node id="5883033498657755836" at="9,0,16,0" concept="3" trace="ProjectNewActionsEx_ActionGroup#()V" />
+      <scope id="5883033498657755836" at="9,44,14,104" />
+      <scope id="5883033498657755836" at="9,0,16,0" />
+      <unit id="5883033498657755836" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.ProjectNewActionsEx_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657845915">
@@ -3747,24 +3611,16 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/6252705307027051861">
     <file name="FindLanguageUsages_ActionGroup.java">
-      <node id="6252705307027051861" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="6252705307027051861" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="6252705307027051861" at="12,43,13,36" concept="16" />
-      <node id="6252705307027051861" at="13,36,14,30" concept="5" />
-      <node id="6252705307027051861" at="14,30,15,25" concept="5" />
-      <node id="6252705307027051864" at="16,9,17,114" concept="5" />
-      <node id="6252705307027051865" at="17,114,18,122" concept="5" />
-      <node id="6252705307027051861" at="19,27,20,39" concept="5" />
-      <node id="6252705307027051861" at="15,25,21,5" concept="17" />
-      <node id="6252705307027051861" at="12,0,23,0" concept="3" trace="FindLanguageUsages_ActionGroup#()V" />
-      <scope id="6252705307027051861" at="19,0,20,39">
-        <var name="t" id="6252705307027051861" />
-      </scope>
-      <scope id="6252705307027051861" at="19,27,20,39" />
-      <scope id="6252705307027051861" at="16,9,18,122" />
-      <scope id="6252705307027051861" at="12,43,21,5" />
-      <scope id="6252705307027051861" at="12,0,23,0" />
-      <unit id="6252705307027051861" at="9,0,24,0" name="jetbrains.mps.ide.devkit.actions.FindLanguageUsages_ActionGroup" />
+      <node id="6252705307027051861" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="6252705307027051861" at="9,43,10,36" concept="16" />
+      <node id="6252705307027051861" at="10,36,11,30" concept="5" />
+      <node id="6252705307027051861" at="11,30,12,25" concept="5" />
+      <node id="6252705307027051864" at="12,25,13,112" concept="5" />
+      <node id="6252705307027051865" at="13,112,14,120" concept="5" />
+      <node id="6252705307027051861" at="9,0,16,0" concept="3" trace="FindLanguageUsages_ActionGroup#()V" />
+      <scope id="6252705307027051861" at="9,43,14,120" />
+      <scope id="6252705307027051861" at="9,0,16,0" />
+      <unit id="6252705307027051861" at="7,0,17,0" name="jetbrains.mps.ide.devkit.actions.FindLanguageUsages_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/6252705307027051866">
@@ -4399,23 +4255,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8513716958726604212">
     <file name="TraceActions_ActionGroup.java">
-      <node id="8513716958726604212" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="8513716958726604212" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="8513716958726604212" at="12,37,13,30" concept="16" />
-      <node id="8513716958726604212" at="13,30,14,30" concept="5" />
-      <node id="8513716958726604212" at="14,30,15,25" concept="5" />
-      <node id="8513716958726604216" at="16,9,17,109" concept="5" />
-      <node id="8513716958726604212" at="18,27,19,39" concept="5" />
-      <node id="8513716958726604212" at="15,25,20,5" concept="17" />
-      <node id="8513716958726604212" at="12,0,22,0" concept="3" trace="TraceActions_ActionGroup#()V" />
-      <scope id="8513716958726604212" at="16,9,17,109" />
-      <scope id="8513716958726604212" at="18,0,19,39">
-        <var name="t" id="8513716958726604212" />
-      </scope>
-      <scope id="8513716958726604212" at="18,27,19,39" />
-      <scope id="8513716958726604212" at="12,37,20,5" />
-      <scope id="8513716958726604212" at="12,0,22,0" />
-      <unit id="8513716958726604212" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.TraceActions_ActionGroup" />
+      <node id="8513716958726604212" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="8513716958726604212" at="9,37,10,30" concept="16" />
+      <node id="8513716958726604212" at="10,30,11,30" concept="5" />
+      <node id="8513716958726604212" at="11,30,12,25" concept="5" />
+      <node id="8513716958726604216" at="12,25,13,107" concept="5" />
+      <node id="8513716958726604212" at="9,0,15,0" concept="3" trace="TraceActions_ActionGroup#()V" />
+      <scope id="8513716958726604212" at="9,37,13,107" />
+      <scope id="8513716958726604212" at="9,0,15,0" />
+      <unit id="8513716958726604212" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.TraceActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8586967776370449212">
@@ -4683,23 +4531,15 @@
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8970236339104100147">
     <file name="ShowNodeIn_ActionGroup.java">
-      <node id="8970236339104100147" at="10,0,11,0" concept="14" trace="LOG" />
-      <node id="8970236339104100147" at="11,0,12,0" concept="14" trace="ID" />
-      <node id="8970236339104100147" at="12,35,13,28" concept="16" />
-      <node id="8970236339104100147" at="13,28,14,30" concept="5" />
-      <node id="8970236339104100147" at="14,30,15,25" concept="5" />
-      <node id="8970236339104100149" at="16,9,17,106" concept="5" />
-      <node id="8970236339104100147" at="18,27,19,39" concept="5" />
-      <node id="8970236339104100147" at="15,25,20,5" concept="17" />
-      <node id="8970236339104100147" at="12,0,22,0" concept="3" trace="ShowNodeIn_ActionGroup#()V" />
-      <scope id="8970236339104100147" at="16,9,17,106" />
-      <scope id="8970236339104100147" at="18,0,19,39">
-        <var name="t" id="8970236339104100147" />
-      </scope>
-      <scope id="8970236339104100147" at="18,27,19,39" />
-      <scope id="8970236339104100147" at="12,35,20,5" />
-      <scope id="8970236339104100147" at="12,0,22,0" />
-      <unit id="8970236339104100147" at="9,0,23,0" name="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
+      <node id="8970236339104100147" at="8,0,9,0" concept="14" trace="ID" />
+      <node id="8970236339104100147" at="9,35,10,28" concept="16" />
+      <node id="8970236339104100147" at="10,28,11,30" concept="5" />
+      <node id="8970236339104100147" at="11,30,12,25" concept="5" />
+      <node id="8970236339104100149" at="12,25,13,104" concept="5" />
+      <node id="8970236339104100147" at="9,0,15,0" concept="3" trace="ShowNodeIn_ActionGroup#()V" />
+      <scope id="8970236339104100147" at="9,35,13,104" />
+      <scope id="8970236339104100147" at="9,0,15,0" />
+      <unit id="8970236339104100147" at="7,0,16,0" name="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8970236339104100153">
