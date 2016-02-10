@@ -175,7 +175,7 @@
                       </node>
                     </node>
                     <node concept="Xl_RD" id="1JaIS$2i2AM" role="37wK5m">
-                      <property role="Xl_RC" value="test.txt" />
+                      <property role="Xl_RC" value="result.txt" />
                     </node>
                   </node>
                 </node>

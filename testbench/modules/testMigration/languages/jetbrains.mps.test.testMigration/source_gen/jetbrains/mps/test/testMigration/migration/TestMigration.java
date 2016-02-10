@@ -23,7 +23,7 @@ public class TestMigration extends MigrationScriptBase {
   }
   public SNode execute(final SModule m) {
     try {
-      new File(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("76984b71-9d72-4667-ac35-ed5f78c7f6e3(jetbrains.mps.test.testMigration)"))).getModuleSourceDir().getParent().getParent().getPath(), "test.txt").createNewFile();
+      new File(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("76984b71-9d72-4667-ac35-ed5f78c7f6e3(jetbrains.mps.test.testMigration)"))).getModuleSourceDir().getParent().getParent().getPath(), "result.txt").createNewFile();
     } catch (IOException e) {
     }
     return null;
