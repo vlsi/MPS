@@ -41,6 +41,5 @@
     <orderEntry type="module" module-name="behavior-api" exported="" />
     <orderEntry type="module" module-name="behavior-runtime" exported="" />
     <orderEntry type="module" module-name="behavior-legacy-api" exported="" />
-    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>

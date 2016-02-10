@@ -14914,10 +14914,10 @@
                 <ref role="355D3u" to="tpck:1avfQ4B$JLs" resolve="linkId" />
               </node>
               <node concept="2OqwBi" id="1avfQ4BF_z4" role="37wK5m">
-                <node concept="2YIFZM" id="1avfQ4BF_z5" role="2Oq$k0">
-                  <ref role="37wK5l" to="pa15:~IdHelper.getRefId(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getRefId" />
-                  <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                  <node concept="37vLTw" id="1avfQ4BF_z6" role="37wK5m">
+                <node concept="2YIFZM" id="5q7UjaiRQT_" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAssociation(org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="getAssociation" />
+                  <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                  <node concept="37vLTw" id="5q7UjaiRQTA" role="37wK5m">
                     <ref role="3cqZAo" node="1avfQ4BB76K" resolve="link" />
                   </node>
                 </node>
@@ -14981,10 +14981,10 @@
                 <ref role="355D3u" to="tpck:BpxLfMirm7" resolve="linkId" />
               </node>
               <node concept="2OqwBi" id="Dyw7F7eZ6" role="37wK5m">
-                <node concept="2YIFZM" id="Dyw7F7hdI" role="2Oq$k0">
-                  <ref role="37wK5l" to="pa15:~IdHelper.getLinkId(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getLinkId" />
-                  <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                  <node concept="37vLTw" id="Dyw7F7hdJ" role="37wK5m">
+                <node concept="2YIFZM" id="5q7UjaiRQW_" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getAggregation(org.jetbrains.mps.openapi.language.SContainmentLink):jetbrains.mps.smodel.adapter.ids.SContainmentLinkId" resolve="getAggregation" />
+                  <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                  <node concept="37vLTw" id="5q7UjaiRQWA" role="37wK5m">
                     <ref role="3cqZAo" node="Dyw7F7eZk" resolve="link" />
                   </node>
                 </node>
@@ -15252,10 +15252,10 @@
                 <ref role="355D3u" to="tpck:1avfQ4BzllH" resolve="propertyId" />
               </node>
               <node concept="2OqwBi" id="1avfQ4BFAog" role="37wK5m">
-                <node concept="2YIFZM" id="1avfQ4BFCEC" role="2Oq$k0">
-                  <ref role="37wK5l" to="pa15:~IdHelper.getPropertyId(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getPropertyId" />
-                  <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                  <node concept="37vLTw" id="1avfQ4BFCED" role="37wK5m">
+                <node concept="2YIFZM" id="5q7UjaiRQYs" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getProperty(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.adapter.ids.SPropertyId" resolve="getProperty" />
+                  <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                  <node concept="37vLTw" id="5q7UjaiRQYt" role="37wK5m">
                     <ref role="3cqZAo" node="1avfQ4BFAou" resolve="property" />
                   </node>
                 </node>
