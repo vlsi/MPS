@@ -148,6 +148,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
@@ -197,6 +198,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
@@ -2436,6 +2438,61 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="109zu4DcKs8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doInit" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="109zu4DcKs9" role="1B3o_S" />
+      <node concept="3cqZAl" id="109zu4DcKsb" role="3clF45" />
+      <node concept="37vLTG" id="109zu4DcKsc" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3uibUv" id="109zu4DcKsd" role="1tU5fm">
+          <ref role="3uigEE" to="7e8u:~MPSTreeNode" resolve="MPSTreeNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="109zu4DcKse" role="3clF46">
+        <property role="TrG5h" value="runnable" />
+        <node concept="3uibUv" id="109zu4DcKsf" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="109zu4DcKsg" role="3clF47">
+        <node concept="3clFbF" id="109zu4DcKsl" role="3cqZAp">
+          <node concept="3nyPlj" id="109zu4DcKsk" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTree.doInit(jetbrains.mps.ide.ui.tree.MPSTreeNode,java.lang.Runnable):void" resolve="doInit" />
+            <node concept="37vLTw" id="109zu4DcKsi" role="37wK5m">
+              <ref role="3cqZAo" node="109zu4DcKsc" resolve="node" />
+            </node>
+            <node concept="2ShNRf" id="109zu4DcMcT" role="37wK5m">
+              <node concept="1pGfFk" id="109zu4DcQef" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                <node concept="2OqwBi" id="1TDFu3GjyA1" role="37wK5m">
+                  <node concept="2OqwBi" id="1TDFu3GjygP" role="2Oq$k0">
+                    <node concept="37vLTw" id="1TDFu3Gjxyb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7ctIhG_bUw7" resolve="myProject" />
+                    </node>
+                    <node concept="liA8E" id="1TDFu3GjysG" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1TDFu3GjyEW" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="109zu4DcW8q" role="37wK5m">
+                  <ref role="3cqZAo" node="109zu4DcKse" resolve="runnable" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="109zu4DcKsh" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1TDFu3GjtcG" role="jymVt" />
   </node>
   <node concept="312cEu" id="7ctIhG_bUyf">
     <property role="TrG5h" value="ReferencesFinder" />

@@ -85,6 +85,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
@@ -94,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyUtil" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeMessage" />
@@ -102,6 +104,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelReadRunnable" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

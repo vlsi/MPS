@@ -19,6 +19,7 @@ import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
+import jetbrains.mps.smodel.ModelReadRunnable;
 
 public class DependencyTree extends MPSTree {
   private DependencyViewerScope myScope;
@@ -97,4 +98,9 @@ public class DependencyTree extends MPSTree {
       myParent.updateTargetsView(scope);
     }
   }
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable runnable) {
+    super.doInit(node, new ModelReadRunnable(myProject.getRepository().getModelAccess(), runnable));
+  }
+
 }

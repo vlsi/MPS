@@ -26,6 +26,8 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.ModelReadRunnable;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
@@ -169,5 +171,9 @@ public class DependencyTree extends MPSTree implements DataProvider {
       return current.getModule().resolve(myModule.getRepository());
     }
     return null;
+  }
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable runnable) {
+    super.doInit(node, new ModelReadRunnable(ProjectHelper.getProjectRepository(myProject).getModelAccess(), runnable));
   }
 }
