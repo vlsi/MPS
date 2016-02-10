@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,21 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -109,6 +113,57 @@ public class ModuleDescriptor {
 
   public Collection<ModuleFacetDescriptor> getModuleFacetDescriptors() {
     return myFacets;
+  }
+
+  /**
+   * PROVISIONAL API, DO NOT USE OUTSIDE OF MPS
+   * When facet is added/replaced in a module, we need to register it with persistence (module descriptor).
+   * <p/>
+   * With this methods, we keep facet persistence management in a single place (rather than
+   * <code>facet.save(new Memento())</code> scattered around)
+   */
+  public void addFacetDescriptor(@NotNull SModuleFacet facet) {
+    removeFacetDescriptor(facet);
+    myFacets.add(new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl()));
+  }
+
+  /**
+   * PROVISIONAL API, DO NOT USE OUTSIDE OF MPS
+   * Forget persistence information for the given facet
+   */
+  public void removeFacetDescriptor(@NotNull SModuleFacet facet) {
+    final String facetType = facet.getFacetType();
+    for (Iterator<ModuleFacetDescriptor> it = myFacets.iterator(); it.hasNext(); ) {
+      ModuleFacetDescriptor facetDescriptor = it.next();
+      if (facetType.equals(facetDescriptor.getType())) {
+        it.remove();
+        break;
+      }
+    }
+  }
+
+  /**
+   * PROVISIONAL API, DO NOT USE OUTSIDE OF MPS
+   * Push facet settings into persistence.
+   * If there's no descriptor for the facet, it's ignored (use {@link #addFacetDescriptor(SModuleFacet)} first)
+   * This behavior (no update for missing descriptors) is important as facet removal is three-fold - we remove descriptor first,
+   * while facet at the module still active, then we update persistent values of existing facets, and then reload module with new descriptor.
+   * If we would update missing descriptors, we would effectively resurrect removed descriptors.
+   * <p/>
+   * It's not clear whether this code shall be part of AbstractModule#save or not. It seems reasonable to
+   * push facet settings into persistence on module save, OTOH, the way module settings are edited/updated (i.e. with
+   * changes into descriptor and AbstractModule.setModuleDescriptor() + AM.save(), see ModulePropertiesConfigurable)
+   * makes me feel update in the descriptor, not in the module, is better option (after all, it's ModuleDescriptor that is responsible
+   * for editing of module settings) - it's sort of changes snapshot, applied with a single setModuleDescriptor operation, rather than sequence
+   * of SModule changes.
+   */
+  public void updateFacetDescriptor(@NotNull SModuleFacet facet) {
+    for (ModuleFacetDescriptor facetDescriptor : myFacets) {
+      if (facetDescriptor.getType().equals(facet.getFacetType())) {
+        facet.save(facetDescriptor.getMemento());
+        break;
+      }
+    }
   }
 
   public Collection<Dependency> getDependencies() {

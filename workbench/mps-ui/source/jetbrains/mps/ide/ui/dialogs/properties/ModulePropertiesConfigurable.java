@@ -78,7 +78,6 @@ import jetbrains.mps.ide.ui.finders.LanguageModelImportFinder;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
-import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
@@ -87,7 +86,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
@@ -118,7 +116,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.util.Condition;
@@ -156,7 +153,6 @@ import java.util.Collections;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -206,13 +202,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     // we save all module facets with active descriptors (it's AddFacetTab#apply() responsibility to add facet descriptors
     // for newly added facets, and to remove descriptors for unchecked facets. This sharing is questionable, perhaps, could do both here).
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
-      final String facetType = moduleFacet.getFacetType();
-      for (ModuleFacetDescriptor facetDescriptor : myModuleDescriptor.getModuleFacetDescriptors()) {
-        if (!facetType.equals(facetDescriptor.getType())) {
-          continue;
-        }
-        moduleFacet.save(facetDescriptor.getMemento());
-      }
+      myModuleDescriptor.updateFacetDescriptor(moduleFacet);
     }
     // todo: !!!
     myModule.setModuleDescriptor(myModuleDescriptor);
@@ -1347,7 +1337,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public void apply() {
       for (FacetCheckBox checkBox : myCheckBoxes) {
-        Collection<ModuleFacetDescriptor> moduleFacetDescriptors = myModuleDescriptor.getModuleFacetDescriptors();
         SModuleFacet facet = checkBox.getFacet();
         if (checkBox.isNewlyCreated()) {
           Tab tab = checkBox.getTab();
@@ -1357,30 +1346,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             // Should not be an issue to apply twice (once here and subsequently from MPSPropertiesConfigurable#apply())
             tab.apply();
           }
-          Memento memento = new MementoImpl();
-          // XXX do I need to save facet, if there's code in #save() above that would do that anyway?
-          // I can just add facet descriptor for an new tab and rely on #save() to serialize values
-          facet.save(memento);
-          // some facets may register themselves into descriptors
-          // during apply(). Unless I get rid of that code, next check won't hurt
-          boolean alreadyThere = false;
-          for (ModuleFacetDescriptor d : moduleFacetDescriptors) {
-            if (facet.getFacetType().equals(d.getType())) {
-              alreadyThere = true;
-              break;
-            }
-          }
-          if (!alreadyThere) {
-            moduleFacetDescriptors.add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
-          }
+          myModuleDescriptor.addFacetDescriptor(facet);
         } else if (checkBox.isExistingToRemove()) {
-          for (Iterator<ModuleFacetDescriptor> it = moduleFacetDescriptors.iterator(); it.hasNext(); ) {
-            ModuleFacetDescriptor facetDescriptor = it.next();
-            if (facetDescriptor.getType().equals(facet.getFacetType())) {
-              it.remove();
-              break;
-            }
-          }
+          myModuleDescriptor.removeFacetDescriptor(checkBox.getFacet());
         }
       }
     }
