@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ModuleClassReference;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -130,22 +128,12 @@ public class FindUtils {
   public static IResultProvider makeProvider(Collection<IFinder> finders) {
     UnionNode unionNode = new UnionNode();
     for (IFinder finder : finders) {
-      addChild(unionNode, new FinderNode(finder));
+      unionNode.addChild(new FinderNode(finder));
     }
     return unionNode;
   }
 
   public static IResultProvider makeProvider(IFinder... finders) {
     return makeProvider(Arrays.asList(finders));
-  }
-
-  private static void addChild(BaseNode parent, BaseNode child) {
-    parent.addChild(child);
-    child.setParent(parent);
-  }
-
-  private static void removeChild(BaseNode parent, BaseLeaf child) {
-    parent.removeChild(child);
-    child.setParent(null);
   }
 }

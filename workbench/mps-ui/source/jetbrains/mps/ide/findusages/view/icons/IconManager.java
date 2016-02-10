@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view.icons;
 
-import jetbrains.mps.ide.findusages.model.holders.ConstantHolder;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
@@ -49,8 +48,6 @@ public class IconManager {
       return IdeIcons.SOLUTION_ICON;
     } else if (holder instanceof VoidHolder) {
       return ((VoidHolder) holder).getIcon();
-    } else if (holder instanceof ConstantHolder) {
-      return ((ConstantHolder) holder).getIcon();
     }
     try {
       final Object value = holder.getObject();

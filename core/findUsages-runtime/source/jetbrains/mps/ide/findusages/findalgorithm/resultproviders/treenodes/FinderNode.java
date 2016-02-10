@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +27,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.Computable;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -42,8 +39,6 @@ public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
   private static final String GENERATED_FINDER = "generated_finder";
   private static final String CLASS_NAME = "class_name";
-
-  private static final Logger LOG = LogManager.getLogger(FinderNode.class);
 
   private IFinder myFinder;
 
@@ -62,31 +57,19 @@ public class FinderNode extends BaseLeaf {
     }
   }
 
-  public String getTaskKind() {
-    return "finder";
-  }
-
   @Override
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
-    monitor.start(getTaskName(), myFinder instanceof GeneratedFinder ? 2 : 1);
+    monitor.start(getTaskName(), 2);
     try {
-      // FIXME why do we wrap each finder.find into model read, and not leave it to outer code (in fact, FindUtils run it inside read action, too)?
-      return ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
-        @Override
-        public SearchResults compute() {
-          try {
-            SearchResults results = myFinder.find(query, monitor.subTask(1, SubProgressKind.REPLACING));
-            if (FinderUtils.isAllResultsIsNodes(results)) {
-              FinderUtils.sortNodeResultsByEditorPosition(results);
-              monitor.advance(1);
-            }
-            return results;
-          } catch (Throwable t) {
-            LOG.error(t.getMessage(), t);
-            return new SearchResults();
-          }
-        }
-      });
+      SearchResults results = myFinder.find(query, monitor.subTask(1, SubProgressKind.REPLACING));
+      if (FinderUtils.isAllResultsIsNodes(results)) {
+        FinderUtils.sortNodeResultsByEditorPosition(results);
+        monitor.advance(1);
+      }
+      return results;
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error(t.getMessage(), t);
+      return new SearchResults();
     } finally {
       monitor.done();
     }
@@ -94,7 +77,7 @@ public class FinderNode extends BaseLeaf {
 
   @Override
   public long getEstimatedTime(SearchScope scope) {
-    return 1;
+    return 2;
   }
 
   @Override
