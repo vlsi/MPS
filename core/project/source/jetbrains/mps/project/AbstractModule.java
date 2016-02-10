@@ -157,16 +157,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return result;
   }
 
-
-  /**
-   * @deprecated it's just a short-hand for <code>new SLanguageHierarchy(getUsedLanguages())</code>, it's hardly a justification for a cast to AbstractModule
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Set<SLanguage> getAllUsedLanguages() {
-    return new SLanguageHierarchy(getUsedLanguages()).getExtended();
-  }
-
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
@@ -928,13 +918,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
+    final Set<SLanguage> allUsedLanguages = new SLanguageHierarchy(getUsedLanguages()).getExtended();
     if (!md.hasLanguageVersions()) {
-      for (SLanguage lang : getAllUsedLanguages()) {
+      for (SLanguage lang : allUsedLanguages) {
         newLanguageVersions.put(lang, 0);
       }
       md.setHasLanguageVersions(true);
     } else {
-      for (SLanguage lang : getAllUsedLanguages()) {
+      for (SLanguage lang : allUsedLanguages) {
         if (oldLanguageVersions.containsKey(lang)) {
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
