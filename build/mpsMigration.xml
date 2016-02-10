@@ -40,7 +40,7 @@
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path"/>
 
-  <target name="checkAll" depends="compileTestClasses, checkSingleMigration, checkConsMigration"/>
+  <target name="checkAll" depends="compileTestClasses, checkMigration"/>
 
   <target name="compileTestClasses">
     <mkdir dir="${test_classes}"/>
@@ -53,26 +53,11 @@
     </javac>
   </target>
 
-  <target name="checkSingleMigration">
+  <target name="checkMigration">
     <migrate project="${project.simpleMigration}">
       <macro name="mps_home" path="${mps_build_home}"/>
     </migrate>
 
-    <junit fork="true" dir="${mps_build_home}" showoutput="true">
-      <classpath refid="test_classpath"/>
-      <jvmarg value="-ea"/>
-      <jvmarg value="-Dmps.junit.modules.root=."/>
-      <jvmarg value="-Xss1024k"/>
-      <jvmarg value="-Xmx1200m"/>
-      <jvmarg value="-XX:MaxPermSize=128m"/>
-      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <jvmarg value="-Dtest_home=${project.simpleMigration}"/>
-      <test name="jetbrains.mps.migration.TestMigrationResult"/>
-      <formatter type="xml"/>
-    </junit>
-  </target>
-
-  <target name="checkConsMigration">
     <migrate project="${project.consMigrations}">
       <macro name="mps_home" path="${mps_build_home}"/>
     </migrate>
@@ -85,7 +70,7 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <jvmarg value="-Dtest_home=${project.consMigrations}"/>
+      <jvmarg value="-Dtest_home=${project.simpleMigration},${project.consMigrations}"/>
       <test name="jetbrains.mps.migration.TestMigrationResult"/>
       <formatter type="xml"/>
     </junit>

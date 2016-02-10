@@ -130,7 +130,6 @@
     <ant antfile="build/mpsMigration.xml" inheritAll="true" useNativeBasedir="true">
       <target name="checkAll"/>
       <property name="mps_home" value="${mps_build_home}"/>
-      <property name="test_project" value="${basedir}/testbench/modules/testMigration"/>
     </ant>
   </target>
 

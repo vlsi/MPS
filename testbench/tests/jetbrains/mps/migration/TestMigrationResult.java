@@ -15,15 +15,37 @@
  */
 package jetbrains.mps.migration;
 
+import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
+@RunWith(value = TeamCityParameterizedRunner.class)
 public class TestMigrationResult {
+  private String myTestDir;
+
+  public TestMigrationResult(String testDir) {
+    myTestDir = testDir;
+  }
+
   @Test
-  public void testSingleMigration() {
-    assertTrue(new File(System.getProperty("test_home") + File.separator + "result.txt").exists());
+  public void testMigration() {
+    assertTrue(new File(myTestDir + File.separator + "result.txt").exists());
+  }
+
+  @Parameterized.Parameters
+  public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
+    ArrayList<Object[]> res = new ArrayList<Object[]>();
+    for (String test: System.getProperty("test_home").split(",")){
+      res.add(new Object[]{test});
+    }
+    return res;
   }
 }
