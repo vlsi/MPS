@@ -21,7 +21,7 @@ import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestSingleMigration {
+public class TestMigrationResult {
   @Test
   public void testSingleMigration() {
     assertTrue(new File(System.getProperty("test_home") + File.separator + "result.txt").exists());

@@ -3,7 +3,7 @@
   <property name="jdk.home" value="${env.JAVA_HOME}"/>
 
   <property name="project.simpleMigration" location="${basedir}/testbench/modules/testMigration"/>
-  <property name="project.consMigrations" location="${basedir}/testbench/modules/testTwoMigrations"/>
+  <property name="project.consMigrations" location="${basedir}/testbench/modules/testConsMigrations"/>
 
   <!--this will be specified by text.xml-->
   <property name="mps_build_home" location="build/artifacts/mps"/>
@@ -40,7 +40,7 @@
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path"/>
 
-  <target name="checkAll" depends="compileTestClasses, checkSingleMigration"/>
+  <target name="checkAll" depends="compileTestClasses, checkSingleMigration, checkConsMigration"/>
 
   <target name="compileTestClasses">
     <mkdir dir="${test_classes}"/>
@@ -54,7 +54,7 @@
   </target>
 
   <target name="checkSingleMigration">
-    <migrate project="${test_project}">
+    <migrate project="${project.simpleMigration}">
       <macro name="mps_home" path="${mps_build_home}"/>
     </migrate>
 
@@ -67,7 +67,26 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
       <jvmarg value="-Dtest_home=${project.simpleMigration}"/>
-      <test name="jetbrains.mps.migration.TestSingleMigration"/>
+      <test name="jetbrains.mps.migration.TestMigrationResult"/>
+      <formatter type="xml"/>
+    </junit>
+  </target>
+
+  <target name="checkConsMigration">
+    <migrate project="${project.consMigrations}">
+      <macro name="mps_home" path="${mps_build_home}"/>
+    </migrate>
+
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Dmps.junit.modules.root=."/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1200m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
+      <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+      <jvmarg value="-Dtest_home=${project.simpleMigration}"/>
+      <test name="jetbrains.mps.migration.TestMigrationResult"/>
       <formatter type="xml"/>
     </junit>
   </target>
