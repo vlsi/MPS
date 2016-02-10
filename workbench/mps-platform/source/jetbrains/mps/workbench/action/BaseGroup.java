@@ -26,6 +26,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.ActionPlace;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.util.Condition;
@@ -99,7 +100,11 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
       getModelAccess(e).runReadAction(new Runnable() {
         @Override
         public void run() {
-          doUpdate(e);
+          try {
+            doUpdate(e);
+          } catch (Throwable ex) {
+            Logger.getLogger(BaseGroup.this.getClass()).error("Action group update failed", ex);
+          }
         }
       });
     }

@@ -179,6 +179,5 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

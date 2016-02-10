@@ -45,51 +45,47 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      LanguageMigrations_ActionGroup.this.removeAll();
-      Project project = event.getData(MPSCommonDataKeys.PROJECT);
-      if (project == null) {
-        return;
-      }
-      jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      if (mpsProject == null) {
-        return;
-      }
-      final MigrationManager mm = project.getComponent(MigrationManager.class);
-      if (mm == null) {
-        return;
-      }
-
-      Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
-      {
-        final SearchScope scope = CommandUtil.createScope(mpsProject);
-        QueryExecutionContext context = new QueryExecutionContext() {
-          public SearchScope getDefaultSearchScope() {
-            return scope;
-          }
-        };
-        for (SModule module : Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
-          public boolean accept(SModule it) {
-            return MigrationsUtil.isModuleMigrateable(it);
-          }
-        })) {
-          SetSequence.fromSet(languages).addSequence(SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended()));
-        }
-      }
-      SetSequence.fromSet(languages).visitAll(new IVisitor<SLanguage>() {
-        public void visit(SLanguage it) {
-          for (int ver = 0; ver < it.getLanguageVersion(); ver++) {
-            MigrationScript script = mm.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, ver), true);
-            if (script == null) {
-              continue;
-            }
-            LanguageMigrations_ActionGroup.this.addParameterizedAction(new RunMigration_Action(script), PluginId.getId("jetbrains.mps.migration.component"), script);
-          }
-        }
-      });
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    LanguageMigrations_ActionGroup.this.removeAll();
+    Project project = event.getData(MPSCommonDataKeys.PROJECT);
+    if (project == null) {
+      return;
     }
+    jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    if (mpsProject == null) {
+      return;
+    }
+    final MigrationManager mm = project.getComponent(MigrationManager.class);
+    if (mm == null) {
+      return;
+    }
+
+    Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
+    {
+      final SearchScope scope = CommandUtil.createScope(mpsProject);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      for (SModule module : Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
+          return MigrationsUtil.isModuleMigrateable(it);
+        }
+      })) {
+        SetSequence.fromSet(languages).addSequence(SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended()));
+      }
+    }
+    SetSequence.fromSet(languages).visitAll(new IVisitor<SLanguage>() {
+      public void visit(SLanguage it) {
+        for (int ver = 0; ver < it.getLanguageVersion(); ver++) {
+          MigrationScript script = mm.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, ver), true);
+          if (script == null) {
+            continue;
+          }
+          LanguageMigrations_ActionGroup.this.addParameterizedAction(new RunMigration_Action(script), PluginId.getId("jetbrains.mps.migration.component"), script);
+        }
+      }
+    });
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

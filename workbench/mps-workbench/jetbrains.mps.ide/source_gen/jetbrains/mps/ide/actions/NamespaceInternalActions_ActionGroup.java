@@ -36,32 +36,28 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      NamespaceInternalActions_ActionGroup.this.removeAll();
-      List<TreeNode> selectedNodes = event.getData(MPSCommonDataKeys.TREE_NODES);
-      if (selectedNodes == null) {
+    NamespaceInternalActions_ActionGroup.this.removeAll();
+    List<TreeNode> selectedNodes = event.getData(MPSCommonDataKeys.TREE_NODES);
+    if (selectedNodes == null) {
+      return;
+    }
+    for (TreeNode selectedNode : selectedNodes) {
+      if (!(selectedNode instanceof NamespaceTextNode)) {
         return;
       }
-      for (TreeNode selectedNode : selectedNodes) {
-        if (!(selectedNode instanceof NamespaceTextNode)) {
-          return;
-        }
-      }
-      if (ListSequence.fromList(selectedNodes).count() == 1) {
-        NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
-        DefaultActionGroup newGroup = NamespaceInternalActionsUtil.createNewGroup(node);
-        if (newGroup != null) {
-          NamespaceInternalActions_ActionGroup.this.add(newGroup);
-          NamespaceInternalActions_ActionGroup.this.addSeparator();
-        }
-      }
-      NamespaceInternalActions_ActionGroup.this.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup")));
-      if (ListSequence.fromList(selectedNodes).count() == 1) {
+    }
+    if (ListSequence.fromList(selectedNodes).count() == 1) {
+      NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
+      DefaultActionGroup newGroup = NamespaceInternalActionsUtil.createNewGroup(node);
+      if (newGroup != null) {
+        NamespaceInternalActions_ActionGroup.this.add(newGroup);
         NamespaceInternalActions_ActionGroup.this.addSeparator();
-        NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    }
+    NamespaceInternalActions_ActionGroup.this.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup")));
+    if (ListSequence.fromList(selectedNodes).count() == 1) {
+      NamespaceInternalActions_ActionGroup.this.addSeparator();
+      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

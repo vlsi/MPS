@@ -40,38 +40,34 @@ public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      ViewAs_Group_ActionGroup.this.removeAll();
+    ViewAs_Group_ActionGroup.this.removeAll();
 
-      final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-      if (value == null || !(value instanceof ValueWrapper)) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
+    final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    if (value == null || !(value instanceof ValueWrapper)) {
+      event.getPresentation().setVisible(false);
+      return;
+    }
 
-      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-      if (debugSession == null) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    if (debugSession == null) {
+      event.getPresentation().setVisible(false);
+      return;
+    }
 
-      JavaUiState uiState = (JavaUiState) debugSession.getUiState();
-      final Set<ValueWrapperFactory> factories = SetSequence.fromSet(new HashSet<ValueWrapperFactory>());
-      uiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<ICollectionSequence<ValueWrapperFactory>>() {
-        public ICollectionSequence<ValueWrapperFactory> invoke() {
-          return SetSequence.fromSet(factories).addSequence(SetSequence.fromSet(CustomViewersManagerImpl.getInstanceImpl().getValueWrapperFactories(((ValueWrapper) value).getValue())));
-        }
-      });
+    JavaUiState uiState = (JavaUiState) debugSession.getUiState();
+    final Set<ValueWrapperFactory> factories = SetSequence.fromSet(new HashSet<ValueWrapperFactory>());
+    uiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<ICollectionSequence<ValueWrapperFactory>>() {
+      public ICollectionSequence<ValueWrapperFactory> invoke() {
+        return SetSequence.fromSet(factories).addSequence(SetSequence.fromSet(CustomViewersManagerImpl.getInstanceImpl().getValueWrapperFactories(((ValueWrapper) value).getValue())));
+      }
+    });
 
-      if (SetSequence.fromSet(factories).count() <= 1) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
-      for (ValueWrapperFactory factory : SetSequence.fromSet(factories)) {
-        ViewAs_Group_ActionGroup.this.addParameterizedAction(new ViewAs_Action(factory), PluginId.getId("jetbrains.mps.debugger.java.runtime"), factory);
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    if (SetSequence.fromSet(factories).count() <= 1) {
+      event.getPresentation().setVisible(false);
+      return;
+    }
+    for (ValueWrapperFactory factory : SetSequence.fromSet(factories)) {
+      ViewAs_Group_ActionGroup.this.addParameterizedAction(new ViewAs_Action(factory), PluginId.getId("jetbrains.mps.debugger.java.runtime"), factory);
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

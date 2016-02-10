@@ -37,31 +37,27 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node == null) {
-        GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
-        return;
-      }
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent == null) {
-        GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
-        return;
-      }
-      IErrorReporter error = editorComponent.getErrorReporterFor(editorComponent.getSelectedCell());
-      if (error == null || error.getRuleNode() == null || error.getAdditionalRulesIds().isEmpty()) {
-        GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
-        return;
-      }
-      GoToTypeErrorGroup_ActionGroup.this.enable(event.getPresentation());
-      GoToTypeErrorGroup_ActionGroup.this.removeAll();
-      for (SNodeReference id : error.getAdditionalRulesIds()) {
-        GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id, false);
-      }
-      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(error.getRuleNode(), true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), error.getRuleNode(), true);
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    SNode node = event.getData(MPSCommonDataKeys.NODE);
+    if (node == null) {
+      GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
+      return;
     }
+    EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+    if (editorComponent == null) {
+      GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
+      return;
+    }
+    IErrorReporter error = editorComponent.getErrorReporterFor(editorComponent.getSelectedCell());
+    if (error == null || error.getRuleNode() == null || error.getAdditionalRulesIds().isEmpty()) {
+      GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
+      return;
+    }
+    GoToTypeErrorGroup_ActionGroup.this.enable(event.getPresentation());
+    GoToTypeErrorGroup_ActionGroup.this.removeAll();
+    for (SNodeReference id : error.getAdditionalRulesIds()) {
+      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id, false);
+    }
+    GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(error.getRuleNode(), true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), error.getRuleNode(), true);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

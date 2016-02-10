@@ -34,18 +34,14 @@ public class CreateRootNodeAdapter_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
-      if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
+    List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
+    if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
+      event.getPresentation().setVisible(false);
+      return;
+    }
 
-      if (CreateRootNodeAdapter_ActionGroup.this.getChildrenCount() == 0) {
-        CreateRootNodeAdapter_ActionGroup.this.add(new CreateRootNodeGroup());
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    if (CreateRootNodeAdapter_ActionGroup.this.getChildrenCount() == 0) {
+      CreateRootNodeAdapter_ActionGroup.this.add(new CreateRootNodeGroup());
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

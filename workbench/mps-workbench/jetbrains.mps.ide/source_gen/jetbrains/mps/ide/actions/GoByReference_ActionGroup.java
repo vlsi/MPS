@@ -36,61 +36,57 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      GoByReference_ActionGroup.this.removeAll();
+    GoByReference_ActionGroup.this.removeAll();
 
-      final IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node == null || context == null) {
-        GoByReference_ActionGroup.this.disable(event.getPresentation());
-        return;
+    final IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+    SNode node = event.getData(MPSCommonDataKeys.NODE);
+    if (node == null || context == null) {
+      GoByReference_ActionGroup.this.disable(event.getPresentation());
+      return;
+    }
+
+    Iterable<? extends SReference> refs = node.getReferences();
+    if (!(refs.iterator().hasNext())) {
+      GoByReference_ActionGroup.this.disable(event.getPresentation());
+      return;
+    }
+
+    for (SReference ref : Sequence.fromIterable(refs)) {
+      SNode targetNode = ref.getTargetNode();
+      if (targetNode != null) {
+        String text = "[" + ref.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+        GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(targetNode.getReference(), text), PluginId.getId("jetbrains.mps.ide"), targetNode.getReference(), text);
+        continue;
       }
 
-      Iterable<? extends SReference> refs = node.getReferences();
-      if (!(refs.iterator().hasNext())) {
-        GoByReference_ActionGroup.this.disable(event.getPresentation());
-        return;
-      }
+      final SReference finalRef = ref;
+      final ModelAccess modelAccess = context.getProject().getModelAccess();
+      modelAccess.runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
-      for (SReference ref : Sequence.fromIterable(refs)) {
-        SNode targetNode = ref.getTargetNode();
-        if (targetNode != null) {
-          String text = "[" + ref.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
-          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(targetNode.getReference(), text), PluginId.getId("jetbrains.mps.ide"), targetNode.getReference(), text);
-          continue;
-        }
-
-        final SReference finalRef = ref;
-        final ModelAccess modelAccess = context.getProject().getModelAccess();
-        modelAccess.runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
-
-            modelAccess.executeUndoTransparentCommand(new Runnable() {
-              @Override
-              public void run() {
-                ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());
-              }
-            });
-            String role = finalRef.getRole();
-            SNode sourceNode = finalRef.getSourceNode();
-            SReference newRef = sourceNode.getReference(role);
-            if (newRef == null) {
-              return;
+          modelAccess.executeUndoTransparentCommand(new Runnable() {
+            @Override
+            public void run() {
+              ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());
             }
-            SNode newTarget = finalRef.getTargetNode();
-            if (newTarget == null) {
-              return;
-            }
-
-            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(newTarget.getReference(), text), PluginId.getId("jetbrains.mps.ide"), newTarget.getReference(), text);
+          });
+          String role = finalRef.getRole();
+          SNode sourceNode = finalRef.getSourceNode();
+          SReference newRef = sourceNode.getReference(role);
+          if (newRef == null) {
+            return;
           }
-        });
+          SNode newTarget = finalRef.getTargetNode();
+          if (newTarget == null) {
+            return;
+          }
 
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(newTarget.getReference(), text), PluginId.getId("jetbrains.mps.ide"), newTarget.getReference(), text);
+        }
+      });
+
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

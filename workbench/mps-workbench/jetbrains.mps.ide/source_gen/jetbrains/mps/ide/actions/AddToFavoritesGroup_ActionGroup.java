@@ -36,29 +36,25 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      AddToFavoritesGroup_ActionGroup.this.removeAll();
-      Project project = event.getData(MPSDataKeys.PROJECT);
-      if (project == null) {
-        return;
+    AddToFavoritesGroup_ActionGroup.this.removeAll();
+    Project project = event.getData(MPSDataKeys.PROJECT);
+    if (project == null) {
+      return;
+    }
+    MPSFavoritesManager favoritesManager = project.getComponent(MPSFavoritesManager.class);
+    if (favoritesManager == null) {
+      return;
+    }
+    FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(project);
+    String currentFavoritesList = null;
+    if (pane != null) {
+      currentFavoritesList = pane.getSubId();
+    }
+    for (String name : favoritesManager.getFavoriteNames()) {
+      if (pane != null && EqualUtil.equals(name, currentFavoritesList)) {
+        continue;
       }
-      MPSFavoritesManager favoritesManager = project.getComponent(MPSFavoritesManager.class);
-      if (favoritesManager == null) {
-        return;
-      }
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(project);
-      String currentFavoritesList = null;
-      if (pane != null) {
-        currentFavoritesList = pane.getSubId();
-      }
-      for (String name : favoritesManager.getFavoriteNames()) {
-        if (pane != null && EqualUtil.equals(name, currentFavoritesList)) {
-          continue;
-        }
-        AddToFavoritesGroup_ActionGroup.this.addParameterizedAction(new AddToFavorites_Action(name), PluginId.getId("jetbrains.mps.ide"), name);
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+      AddToFavoritesGroup_ActionGroup.this.addParameterizedAction(new AddToFavorites_Action(name), PluginId.getId("jetbrains.mps.ide"), name);
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

@@ -33,13 +33,9 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      Project project = event.getData(MPSDataKeys.PROJECT);
-      String text = ((FavoritesUtil.isActiveFavorites(project) ? "Send" : "Add")) + " to Favorites";
-      event.getPresentation().setText(text);
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
-    }
+    Project project = event.getData(MPSDataKeys.PROJECT);
+    String text = ((FavoritesUtil.isActiveFavorites(project) ? "Send" : "Add")) + " to Favorites";
+    event.getPresentation().setText(text);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

@@ -39,30 +39,26 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      ScriptsForSelection_ActionGroup.this.removeAll();
-      List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
-      if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
-        event.getPresentation().setVisible(false);
-        return;
-      }
-      event.getPresentation().setVisible(true);
-      MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
-      if (project == null) {
-        event.getPresentation().setEnabled(false);
-        return;
-      }
-      event.getPresentation().setEnabled(true);
-
-      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, true);
-      BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
-      for (AnAction a : catGroup.getChildren(null)) {
-        ScriptsForSelection_ActionGroup.this.add(a);
-      }
-      ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    ScriptsForSelection_ActionGroup.this.removeAll();
+    List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
+    if (ListSequence.fromList(models).count() == 1 && !((ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly())))) {
+      event.getPresentation().setVisible(false);
+      return;
     }
+    event.getPresentation().setVisible(true);
+    MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
+    if (project == null) {
+      event.getPresentation().setEnabled(false);
+      return;
+    }
+    event.getPresentation().setEnabled(true);
+
+    ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, true);
+    BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
+    for (AnAction a : catGroup.getChildren(null)) {
+      ScriptsForSelection_ActionGroup.this.add(a);
+    }
+    ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

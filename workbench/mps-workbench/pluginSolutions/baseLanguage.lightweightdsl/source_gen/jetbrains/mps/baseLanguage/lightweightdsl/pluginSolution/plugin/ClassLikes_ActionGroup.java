@@ -42,33 +42,29 @@ public class ClassLikes_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      SModel model = MPSCommonDataKeys.MODEL.getData(event.getDataContext());
-      if (!(model instanceof DefaultSModelDescriptor)) {
-        return;
+    SModel model = MPSCommonDataKeys.MODEL.getData(event.getDataContext());
+    if (!(model instanceof DefaultSModelDescriptor)) {
+      return;
+    }
+    // FIXME why DefaultSModelDescriptor?! SModelInternal would be enough 
+    Iterable<SLanguage> langs = ((DefaultSModelDescriptor) model).importedLanguageIds();
+    Iterable<SNode> descrs = Sequence.fromIterable(langs).select(new ISelector<SLanguage, SModule>() {
+      public SModule select(SLanguage it) {
+        return it.getSourceModule();
       }
-      // FIXME why DefaultSModelDescriptor?! SModelInternal would be enough 
-      Iterable<SLanguage> langs = ((DefaultSModelDescriptor) model).importedLanguageIds();
-      Iterable<SNode> descrs = Sequence.fromIterable(langs).select(new ISelector<SLanguage, SModule>() {
-        public SModule select(SLanguage it) {
-          return it.getSourceModule();
-        }
-      }).ofType(Language.class).translate(new ITranslator2<Language, SModel>() {
-        public Iterable<SModel> translate(Language it) {
-          return it.getAccessoryModels();
-        }
-      }).translate(new ITranslator2<SModel, SNode>() {
-        public Iterable<SNode> translate(SModel it) {
-          return SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"));
-        }
-      });
+    }).ofType(Language.class).translate(new ITranslator2<Language, SModel>() {
+      public Iterable<SModel> translate(Language it) {
+        return it.getAccessoryModels();
+      }
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SModelOperations.roots(((SModel) it), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"));
+      }
+    });
 
-      ClassLikes_ActionGroup.this.removeAll();
-      for (SNode descr : Sequence.fromIterable(descrs)) {
-        ClassLikes_ActionGroup.this.addParameterizedAction(new NewClassLike_Action(descr), PluginId.getId("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution"), descr);
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    ClassLikes_ActionGroup.this.removeAll();
+    for (SNode descr : Sequence.fromIterable(descrs)) {
+      ClassLikes_ActionGroup.this.addParameterizedAction(new NewClassLike_Action(descr), PluginId.getId("jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution"), descr);
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

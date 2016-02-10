@@ -33,21 +33,17 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      // do not change this to "build" as LanguageAspectDescriptor set can be changed 
-      // the descriptor class should not be held in actions 
+    // do not change this to "build" as LanguageAspectDescriptor set can be changed 
+    // the descriptor class should not be held in actions 
 
-      LanguageNewCustomPartActions_ActionGroup.this.removeAll();
+    LanguageNewCustomPartActions_ActionGroup.this.removeAll();
 
-      for (LanguageAspect aspect : LanguageAspect.values()) {
-        // [MM] this LanguageAspect usage is reviewed 
-        LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), aspect);
-      }
-      for (LanguageAspectDescriptor ad : LanguageAspectSupport.collectAspects()) {
-        LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      // [MM] this LanguageAspect usage is reviewed 
+      LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), aspect);
+    }
+    for (LanguageAspectDescriptor ad : LanguageAspectSupport.collectAspects()) {
+      LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);

@@ -35,25 +35,21 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      ScriptsGlobally_ActionGroup.this.removeAll();
-      event.getPresentation().setVisible(true);
-      MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
-      if (project == null) {
-        event.getPresentation().setEnabled(false);
-        return;
-      }
-      event.getPresentation().setEnabled(true);
-
-      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, false);
-      BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
-      for (AnAction a : catGroup.getChildren(null)) {
-        ScriptsGlobally_ActionGroup.this.add(a);
-      }
-      ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    ScriptsGlobally_ActionGroup.this.removeAll();
+    event.getPresentation().setVisible(true);
+    MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
+    if (project == null) {
+      event.getPresentation().setEnabled(false);
+      return;
     }
+    event.getPresentation().setEnabled(true);
+
+    ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, false);
+    BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
+    for (AnAction a : catGroup.getChildren(null)) {
+      ScriptsGlobally_ActionGroup.this.add(a);
+    }
+    ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

@@ -33,13 +33,9 @@ public class ProjectMigrations_ActionGroup extends GeneratedActionGroup {
     }
   }
   public void doUpdate(AnActionEvent event) {
-    try {
-      ProjectMigrations_ActionGroup.this.removeAll();
-      for (ProjectMigration pm : ListSequence.fromList(ProjectMigrationsRegistry.getInstance().getMigrations())) {
-        ProjectMigrations_ActionGroup.this.addParameterizedAction(new RunProjectMigration_Action(pm), PluginId.getId("jetbrains.mps.migration.component"), pm);
-      }
-    } catch (Throwable t) {
-      LOG.error("User group error", t);
+    ProjectMigrations_ActionGroup.this.removeAll();
+    for (ProjectMigration pm : ListSequence.fromList(ProjectMigrationsRegistry.getInstance().getMigrations())) {
+      ProjectMigrations_ActionGroup.this.addParameterizedAction(new RunProjectMigration_Action(pm), PluginId.getId("jetbrains.mps.migration.component"), pm);
     }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
