@@ -138,8 +138,8 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
       if (childStatement == statement) {
         break;
       }
-      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration")));
+      if (SNodeOperations.isInstanceOf(statement, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))) {
+        ListSequence.fromList(result).addElement(ILocalVariableElement__BehaviorDescriptor.getLocalVariableDeclaration_idi1ItFZH.invoke(SNodeOperations.cast(statement, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))));
       }
     }
 
@@ -149,8 +149,8 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
     List<SNode> result = new ArrayList<SNode>();
 
     for (int num = 0; num < index; num++) {
-      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).getElement(num), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).getElement(num), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration")));
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).getElement(num), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))) {
+        ListSequence.fromList(result).addElement(ILocalVariableElement__BehaviorDescriptor.getLocalVariableDeclaration_idi1ItFZH.invoke(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).getElement(num), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1206e6cc291L, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"))));
       }
     }
 
