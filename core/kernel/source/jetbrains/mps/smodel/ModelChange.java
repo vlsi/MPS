@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,13 +30,6 @@ class ModelChange {
     if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeOperations.getDebugText(
           node));
-    }
-  }
-
-  static void assertLegalChange(SModel model) {
-    // [artem] it's not quite obvious why it's legal to change models that can't fire write events.
-    if (model.canFireEvent() && !ModelAccess.instance().canWrite()) {
-      throw new IllegalModelChangeError("You can change model only inside write actions");
     }
   }
 
