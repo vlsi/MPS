@@ -4,31 +4,24 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import com.intellij.ide.plugins.PluginManager;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
-import org.jetbrains.mps.openapi.persistence.Memento;
-import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import java.util.Iterator;
 import jetbrains.mps.vfs.IFile;
 
 public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   private static final Icon ICON = null;
   public SetPluginIdToCompileInIdeaModules_Action() {
-    super("Set pluginId to compile in idea modules", "", ICON);
+    super("Set pluginId to compile in IDEA modules", "Update module facet to reflect actual plugin id of classloader the module has been loaded with.", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -37,9 +30,21 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     return true;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SRepository projectRepository = ProjectHelper.toMPSProject(event.getProject()).getRepository();
-    for (SModule module : projectRepository.getModules()) {
+    for (SModule module : event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModules()) {
       if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {
         System.out.println("Strange module: " + module.getModuleName());
         continue;
@@ -49,15 +54,15 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
         continue;
       }
 
-      String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(projectRepository.getModelAccess(), module, _params);
+      String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(module, event);
       if (pluginId != null) {
-        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, _params);
+        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, event);
       } else {
-        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, PluginManager.CORE_PLUGIN_ID, _params);
+        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, PluginManager.CORE_PLUGIN_ID, event);
       }
     }
   }
-  /*package*/ String getPluginIdForModule(ModelAccess access, final SModule module, final Map<String, Object> _params) {
+  /*package*/ String getPluginIdForModule(SModule module, final AnActionEvent event) {
     String path = check_ta15vl_a0a0a(((AbstractModule) module).getModuleSourceDir());
     if (path == null) {
       System.out.println("null path for " + module.getModuleName());
@@ -67,11 +72,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     if (!(module instanceof ReloadableModule)) {
       return null;
     }
-    ClassLoader rootClassLoader = new ModelAccessHelper(access).runReadAction(new Computable<ClassLoader>() {
-      public ClassLoader compute() {
-        return ((ReloadableModule) module).getRootClassLoader();
-      }
-    });
+    ClassLoader rootClassLoader = ((ReloadableModule) module).getRootClassLoader();
     if (!(rootClassLoader instanceof PluginClassLoader)) {
       System.out.println("not PluginClassLoader for " + module.getModuleName());
       return null;
@@ -79,23 +80,16 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
 
     return ((PluginClassLoader) rootClassLoader).getPluginId().getIdString();
   }
-  /*package*/ void setPluginId(SModule module, String pluginId, final Map<String, Object> _params) {
+  /*package*/ void setPluginId(SModule module, String pluginId, final AnActionEvent event) {
+    ModuleDescriptor moduleDescriptor = ((AbstractModule) module).getModuleDescriptor();
+    if (moduleDescriptor == null) {
+      return;
+    }
     IdeaPluginModuleFacetImpl facet = new IdeaPluginModuleFacetImpl();
     facet.setModule(module);
     facet.setPluginId(pluginId);
-    Memento memento = new MementoImpl();
-    facet.save(memento);
-    ModuleFacetDescriptor facetDescriptor = new ModuleFacetDescriptor(facet.getFacetType(), memento);
-
-    Iterator<ModuleFacetDescriptor> iterator = ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().iterator();
-    while (iterator.hasNext()) {
-      if (facet.getFacetType().equals(iterator.next().getType())) {
-        iterator.remove();
-        break;
-      }
-    }
-
-    ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().add(facetDescriptor);
+    moduleDescriptor.addFacetDescriptor(facet);
+    moduleDescriptor.updateFacetDescriptor(facet);
     ((AbstractModule) module).save();
   }
   private static String check_ta15vl_a0a0a(IFile checkedDotOperand) {
