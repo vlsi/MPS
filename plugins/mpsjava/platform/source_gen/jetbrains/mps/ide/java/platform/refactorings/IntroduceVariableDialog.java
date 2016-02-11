@@ -20,7 +20,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import java.awt.Insets;
@@ -45,6 +44,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
   protected String getHelpId() {
     return "refactoring.introduceVariable1";
   }
+
   private JPanel createNamePanel() {
     JPanel result = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -54,24 +54,24 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     c.fill = GridBagConstraints.HORIZONTAL;
     c.weightx = 1;
     c.gridx = 1;
-    List<String> expectedNames = this.getRefactoring().getExpectedNames();
-    this.myName = new JComboBox(ListSequence.fromList(expectedNames).toGenericArray(String.class));
-    this.myName.setEditable(true);
-    result.add(this.myName, c);
-    this.myName.addActionListener(new ActionListener() {
+    List<String> expectedNames = getRefactoring().getExpectedNames();
+    myName = new JComboBox(ListSequence.fromList(expectedNames).toGenericArray(String.class));
+    myName.setEditable(true);
+    result.add(myName, c);
+    myName.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
-        IntroduceVariableDialog.this.getRefactoring().setName(((String) IntroduceVariableDialog.this.myName.getSelectedItem()));
+        getRefactoring().setName(((String) myName.getSelectedItem()));
       }
     });
-    this.myName.setSelectedItem(ListSequence.fromList(expectedNames).first());
-    JTextField textField = ((JTextField) this.myName.getEditor().getEditorComponent());
+    myName.setSelectedItem(ListSequence.fromList(expectedNames).first());
+    JTextField textField = ((JTextField) myName.getEditor().getEditorComponent());
     textField.setSelectionStart(0);
     textField.setSelectionEnd(ListSequence.fromList(expectedNames).first().length());
     textField.addKeyListener(new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent p0) {
-        if (p0.getKeyCode() == KeyEvent.VK_ENTER && !(IntroduceVariableDialog.this.myName.isPopupVisible())) {
+        if (p0.getKeyCode() == KeyEvent.VK_ENTER && !(myName.isPopupVisible())) {
           doRefactoringAction();
         }
       }
@@ -90,29 +90,25 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     myIsFinal = new JCheckBox("declare final");
     myPanel.add(myIsFinal, c);
   }
-  public void addVisibilityPanel(final GridBagConstraints c) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        IntroduceVariableDialog.this.myVisibilityPanel = new VisibilityPanel();
-        IntroduceVariableDialog.this.myPanel.add(IntroduceVariableDialog.this.myVisibilityPanel, c);
-      }
-    });
+  public void addVisibilityPanel(GridBagConstraints c) {
+    myVisibilityPanel = new VisibilityPanel();
+    myPanel.add(myVisibilityPanel, c);
   }
   public abstract IntroduceVariableRefactoring getRefactoring();
   protected void doRefactoring() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         IntroduceVariableDialog.this.myResult = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
-        MoveRefactoringUtils.fixImportsFromNode(IntroduceVariableDialog.this.myResult);
+        MoveRefactoringUtils.fixImportsFromNode(myResult);
       }
     });
-    this.myEditorContext.select(this.myResult);
+    myEditorContext.select(myResult);
   }
   public SNode getResult() {
-    return this.myResult;
+    return myResult;
   }
   protected void initPanel() {
-    this.myPanel = new JPanel(new GridBagLayout());
+    myPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.HORIZONTAL;
     c.insets = new Insets(3, 3, 3, 3);
@@ -120,7 +116,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     c.gridy = 0;
     c.weightx = 1;
     c.weighty = 0;
-    this.myPanel.add(this.createNamePanel(), c);
+    myPanel.add(createNamePanel(), c);
   }
   /**
    * This method will be called on pressing "Refactor" button in dialog.
@@ -128,13 +124,13 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
    */
   @Override
   protected void doRefactoringAction() {
-    String name = (String) this.myName.getEditor().getItem();
+    String name = (String) myName.getEditor().getItem();
     IntroduceVariableDialog.this.getRefactoring().setName(name);
     if (myVisibilityPanel != null) {
-      getRefactoring().setVisibilityLevel(this.myVisibilityPanel.getResult());
+      getRefactoring().setVisibilityLevel(myVisibilityPanel.getResult());
     }
     if (myReplaceAll != null) {
-      getRefactoring().setReplacingAll(this.myReplaceAll.isSelected());
+      getRefactoring().setReplacingAll(myReplaceAll.isSelected());
     }
     if (myIsFinal != null) {
       getRefactoring().setIsFinal(myIsFinal.isSelected());
