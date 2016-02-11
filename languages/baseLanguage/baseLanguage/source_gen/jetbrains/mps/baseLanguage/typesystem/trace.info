@@ -10557,8 +10557,8 @@
       <node id="1228303730498" at="22,274,23,143" concept="12" />
       <node id="1228304328715" at="23,143,24,121" concept="6" />
       <node id="1228302284608" at="24,121,25,215" concept="12" />
-      <node id="1228302363834" at="25,215,26,477" concept="12" />
-      <node id="1228302366986" at="26,477,27,193" concept="6" />
+      <node id="1228302363834" at="25,215,26,566" concept="12" />
+      <node id="1228302366986" at="26,566,27,193" concept="6" />
       <node id="1228302110245" at="15,0,18,0" concept="3" trace="ReplaceClassAntiquotationWithClassifierType_QuickFix#()V" />
       <node id="1228302110245" at="18,0,21,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1228302110245" at="21,0,29,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

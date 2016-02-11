@@ -49,7 +49,7 @@ public final class AttachComment1_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      AttributeOperations.createAndAddAttribute(node, new IAttributeDescriptor.AllAttributes(), "jetbrains.mps.samples.attribute.structure.CommentAttribute");
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.AllAttributes(), MetaAdapterFactory.getConcept(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x63feb1ccbe205151L, "jetbrains.mps.samples.attribute.structure.CommentAttribute"));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

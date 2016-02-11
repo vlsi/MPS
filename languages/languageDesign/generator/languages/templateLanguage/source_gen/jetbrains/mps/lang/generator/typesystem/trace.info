@@ -2107,8 +2107,8 @@
       <node id="7312097483936585393" at="14,47,15,134" concept="16" />
       <node id="7312097483936585509" at="17,44,18,42" concept="12" />
       <node id="7312097483936588909" at="20,35,21,241" concept="11" />
-      <node id="7312097483936590134" at="21,241,22,315" concept="5" />
-      <node id="7312097483936588314" at="22,315,23,630" concept="5" />
+      <node id="7312097483936590134" at="21,241,22,404" concept="5" />
+      <node id="7312097483936588314" at="22,404,23,630" concept="5" />
       <node id="7312097483936585393" at="14,0,17,0" concept="3" trace="FixRootTemplateAnnotation_QuickFix#()V" />
       <node id="7312097483936585393" at="17,0,20,0" concept="10" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="7312097483936585393" at="20,0,25,0" concept="10" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -19,7 +19,7 @@ public class FixRootTemplateAnnotation_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     SNode template = SLinkOperations.getTarget(((SNode) FixRootTemplateAnnotation_QuickFix.this.getField("rule")[0]), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x10fd54746ddL, "template"));
-    AttributeOperations.createAndSetAttrbiute(template, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+    AttributeOperations.createAndSetAttrbiute(template, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
     SLinkOperations.setTarget(AttributeOperations.getAttribute(template, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, 0x11017255ccfL, "applicableConcept"), SLinkOperations.getTarget(((SNode) FixRootTemplateAnnotation_QuickFix.this.getField("rule")[0]), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept")));
   }
 }
