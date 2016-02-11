@@ -28,10 +28,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -129,7 +128,6 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
               sm.addModelImport(reference, true);
             }
           }
-          sm.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9882f4ad195546feL, 0x826994189e5dbbf2L), "jetbrains.mps.lang.migration.util"));
           SModelOperations.addRootNode(migrationModel, myRefactoringStep);
           language.setLanguageVersion(languageVersion + 1);
         }
