@@ -12018,6 +12018,44 @@
           </node>
         </node>
         <node concept="3clFbH" id="gx8NcBWl0l" role="3cqZAp" />
+        <node concept="3cpWs8" id="3WRcJ81hHRL" role="3cqZAp">
+          <node concept="3cpWsn" id="3WRcJ81hHRM" role="3cpWs9">
+            <property role="TrG5h" value="isInitializeInFieldAvailable" />
+            <node concept="10P_77" id="3WRcJ81hHRz" role="1tU5fm" />
+            <node concept="2OqwBi" id="3WRcJ81hHRN" role="33vP2m">
+              <node concept="2ShNRf" id="3WRcJ81hHRO" role="2Oq$k0">
+                <node concept="1pGfFk" id="3WRcJ81hHRP" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="3WRcJ81hHRQ" role="37wK5m">
+                    <node concept="37vLTw" id="3WRcJ81hHRR" role="2Oq$k0">
+                      <ref role="3cqZAo" node="8qS5$Sajn" resolve="myEditorContext" />
+                    </node>
+                    <node concept="liA8E" id="3WRcJ81hHRS" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3WRcJ81hHRT" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="3WRcJ81hHRU" role="37wK5m">
+                  <node concept="3clFbS" id="3WRcJ81hHRV" role="1bW5cS">
+                    <node concept="3clFbF" id="3WRcJ81hHRW" role="3cqZAp">
+                      <node concept="2OqwBi" id="3WRcJ81hHRX" role="3clFbG">
+                        <node concept="37vLTw" id="3WRcJ81hHRY" role="2Oq$k0">
+                          <ref role="3cqZAo" node="8qS5$Sa9h" resolve="myRefactoring" />
+                        </node>
+                        <node concept="liA8E" id="3WRcJ81hHRZ" role="2OqNvi">
+                          <ref role="37wK5l" to="89o2:20zKY0o5KLG" resolve="isInitializeInFieldAvailable" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="8qS5$SaaD" role="3cqZAp">
           <node concept="3clFbS" id="8qS5$SaaE" role="3clFbx">
             <node concept="3clFbF" id="8qS5$SaaF" role="3cqZAp">
@@ -12032,17 +12070,6 @@
                   <ref role="3cqZAo" node="8qS5$Saam" resolve="field" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="8qS5$SaaK" role="3clFbw">
-            <node concept="2OqwBi" id="8qS5$SaaL" role="2Oq$k0">
-              <node concept="2OwXpG" id="8qS5$SaaM" role="2OqNvi">
-                <ref role="2Oxat5" node="8qS5$Sa9h" resolve="myRefactoring" />
-              </node>
-              <node concept="Xjq3P" id="8qS5$SaaN" role="2Oq$k0" />
-            </node>
-            <node concept="liA8E" id="8qS5$SaaO" role="2OqNvi">
-              <ref role="37wK5l" to="89o2:20zKY0o5KLG" resolve="isInitializeInFieldAvailable" />
             </node>
           </node>
           <node concept="9aQIb" id="8qS5$SaaP" role="9aQIa">
@@ -12074,6 +12101,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="37vLTw" id="3WRcJ81hIUL" role="3clFbw">
+            <ref role="3cqZAo" node="3WRcJ81hHRM" resolve="isInitializeInFieldAvailable" />
           </node>
         </node>
         <node concept="3clFbF" id="8qS5$Sab1" role="3cqZAp">
@@ -12714,6 +12744,7 @@
     </node>
     <node concept="312cEg" id="8qS5$Sajn" role="jymVt">
       <property role="TrG5h" value="myEditorContext" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tmbuc" id="8qS5$Sajo" role="1B3o_S" />
       <node concept="3uibUv" id="8qS5$Sajp" role="1tU5fm">
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />

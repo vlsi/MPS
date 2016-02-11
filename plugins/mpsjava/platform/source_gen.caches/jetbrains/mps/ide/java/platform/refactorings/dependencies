@@ -216,6 +216,7 @@
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.ButtonGroup" />
@@ -229,6 +230,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.java.platform.refactorings.IntroduceVariableDialog" />
   </dependency>

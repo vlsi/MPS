@@ -26,7 +26,7 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 
 public abstract class IntroduceVariableDialog extends RefactoringDialog {
-  protected EditorContext myEditorContext;
+  protected final EditorContext myEditorContext;
   protected JPanel myPanel;
   protected SNode myResult;
   protected JCheckBox myReplaceAll = null;

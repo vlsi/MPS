@@ -648,40 +648,31 @@
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/2315910000642817012">
     <file name="AbstractIntroduceFieldRefactoring.java">
-      <node id="2315910000642821205" at="16,0,17,0" concept="5" trace="myFieldInitialization" />
-      <node id="2315910000642821211" at="18,75,19,39" concept="4" />
-      <node id="2315910000642821231" at="21,49,22,61" concept="10" />
-      <node id="2315910000642821256" at="26,43,27,532" concept="11" />
-      <node id="2315910000642821269" at="31,7,32,24" concept="11" />
-      <node id="2315910000642821276" at="34,50,35,391" concept="11" />
-      <node id="2315910000642821207" at="18,0,21,0" concept="9" trace="setFieldInitializationPlace#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/FieldInitializationPlace;)V" />
-      <node id="2315910000642821254" at="26,0,29,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2315910000642821272" at="34,0,37,0" concept="15" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2315910000642821240" at="24,25,29,38" concept="4" />
-      <node id="2315910000642821238" at="24,0,31,0" concept="9" trace="run#()V" />
-      <node id="2315910000642821234" at="22,61,31,7" concept="4" />
-      <node id="2315910000642821228" at="21,0,34,0" concept="9" trace="isInitializeInFieldAvailable#()Z" />
-      <scope id="2315910000642821210" at="18,75,19,39" />
-      <scope id="2315910000642821255" at="26,43,27,532" />
-      <scope id="2315910000642821275" at="34,50,35,391" />
-      <scope id="2315910000642821207" at="18,0,21,0">
+      <node id="2315910000642821205" at="14,0,15,0" concept="5" trace="myFieldInitialization" />
+      <node id="2315910000642821211" at="16,75,17,39" concept="4" />
+      <node id="2315910000642821256" at="21,39,22,528" concept="11" />
+      <node id="2315910000642821276" at="26,50,27,391" concept="11" />
+      <node id="2315910000642821207" at="16,0,19,0" concept="9" trace="setFieldInitializationPlace#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/FieldInitializationPlace;)V" />
+      <node id="2315910000642821254" at="21,0,24,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2315910000642821272" at="26,0,29,0" concept="15" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2315910000642821269" at="19,49,24,34" concept="11" />
+      <node id="2315910000642821228" at="19,0,26,0" concept="9" trace="isInitializeInFieldAvailable#()Z" />
+      <scope id="2315910000642821210" at="16,75,17,39" />
+      <scope id="2315910000642821255" at="21,39,22,528" />
+      <scope id="2315910000642821275" at="26,50,27,391" />
+      <scope id="2315910000642821207" at="16,0,19,0">
         <var name="place" id="2315910000642821217" />
       </scope>
-      <scope id="2315910000642821254" at="26,0,29,0">
+      <scope id="2315910000642821254" at="21,0,24,0">
         <var name="it" id="2315910000642821254" />
       </scope>
-      <scope id="2315910000642821272" at="34,0,37,0">
+      <scope id="2315910000642821272" at="26,0,29,0">
         <var name="node" id="2315910000642821289" />
       </scope>
-      <scope id="2315910000642821239" at="24,25,29,38" />
-      <scope id="2315910000642821238" at="24,0,31,0" />
-      <scope id="2315910000642821230" at="21,49,32,24">
-        <var name="result" id="2315910000642821232" />
-      </scope>
-      <scope id="2315910000642821228" at="21,0,34,0" />
-      <unit id="2315910000642821254" at="25,325,29,9" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring$2" />
-      <unit id="2315910000642821238" at="23,45,31,5" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring$1" />
-      <unit id="2315910000642817012" at="15,0,38,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" />
+      <scope id="2315910000642821230" at="19,49,24,34" />
+      <scope id="2315910000642821228" at="19,0,26,0" />
+      <unit id="2315910000642821254" at="20,274,24,5" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring$1" />
+      <unit id="2315910000642817012" at="13,0,30,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" />
     </file>
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/2315910000642826453">
