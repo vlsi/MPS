@@ -45,6 +45,14 @@
       </concept>
     </language>
   </registry>
+  <node concept="1TIwiD" id="5WpmwkrQrRs">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintNodeReferenceExpression" />
+    <property role="34LRSv" value="#printNodeRef" />
+    <property role="R4oN_" value="print reference to the node" />
+    <property role="1pbfSe" value="2062751713" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
   <node concept="1TIwiD" id="7mV0m3L$trF">
     <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="UsagesExpression" />
@@ -55,6 +63,23 @@
     <node concept="1TJgyj" id="7mV0m3L$trG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="node" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mV0m3L$tuv">
+    <property role="3GE5qa" value="bl.expression" />
+    <property role="TrG5h" value="ShowExpression" />
+    <property role="34LRSv" value="#show" />
+    <property role="R4oN_" value="show in usage view" />
+    <property role="1pbfSe" value="1733089535" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="64VftqErvIP" role="PzmwI">
+      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
+    </node>
+    <node concept="1TJgyj" id="6_TW7xVwuxP" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="object" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
@@ -71,6 +96,43 @@
       <property role="20kJfa" value="conceptArg" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tp25:hzMxujR" resolve="IRefConceptArg" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="DM6_$iqV$8">
+    <property role="TrG5h" value="ProjectExpression" />
+    <property role="34LRSv" value="#project" />
+    <property role="3GE5qa" value="bl.expression.query" />
+    <property role="R4oN_" value="the current project" />
+    <property role="1pbfSe" value="484299617" />
+  </node>
+  <node concept="1TIwiD" id="7gnNafF7YMD">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintTextExpression" />
+    <property role="34LRSv" value="#printText" />
+    <property role="R4oN_" value="print as string" />
+    <property role="1pbfSe" value="1597487436" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="4LU9FcrO3Hp">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintNodeExpression" />
+    <property role="34LRSv" value="#printNode" />
+    <property role="R4oN_" value="print node copy" />
+    <property role="1pbfSe" value="1749705228" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
+  <node concept="1TIwiD" id="6M9lfhDDWgw">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="AbstractPrintExpression" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="701425388" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7gnNafF7Ztx" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="object" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="2sF4xi8qX2e">
@@ -180,6 +242,32 @@
     <property role="1pbfSe" value="1308548756" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="3J6h25QeHQy">
+    <property role="3GE5qa" value="bl.expression.query.parameter" />
+    <property role="TrG5h" value="ProjectScope" />
+    <property role="34LRSv" value="project" />
+    <property role="1pbfSe" value="1308548669" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVaDdR">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintExpression" />
+    <property role="34LRSv" value="#print" />
+    <property role="R4oN_" value="smart print depending on content" />
+    <property role="1pbfSe" value="458980369" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+    <node concept="PrWs8" id="64VftqEsbD$" role="PzmwI">
+      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVvrpf">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintSequenceExpression" />
+    <property role="34LRSv" value="#printSequence" />
+    <property role="R4oN_" value="print size with link to usages view" />
+    <property role="1pbfSe" value="453531961" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
+  </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="ModulesScope" />
@@ -236,11 +324,6 @@
       <ref role="PrY4T" node="qgIopN3HO7" resolve="HelpProvider" />
     </node>
   </node>
-  <node concept="PlHQZ" id="qgIopN3HO7">
-    <property role="TrG5h" value="HelpProvider" />
-    <property role="3GE5qa" value="help" />
-    <property role="1pbfSe" value="2040501901" />
-  </node>
   <node concept="1TIwiD" id="3F2FyKbNNqb">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="WithStatement" />
@@ -258,6 +341,39 @@
       <property role="20kJfa" value="scope" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Jke6BA4ffD">
+    <property role="TrG5h" value="BLCommand" />
+    <property role="R4oN_" value="baseLanguage statements" />
+    <property role="34LRSv" value="{" />
+    <property role="1pbfSe" value="837102674" />
+    <property role="3GE5qa" value="bl" />
+    <node concept="1TJgyj" id="1yfzJNJreD_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="qgIopN3HO7">
+    <property role="TrG5h" value="HelpProvider" />
+    <property role="3GE5qa" value="help" />
+    <property role="1pbfSe" value="2040501901" />
+  </node>
+  <node concept="1TIwiD" id="6D0CP__oaBp">
+    <property role="TrG5h" value="BLExpression" />
+    <property role="R4oN_" value="baseLanguage expression" />
+    <property role="1pbfSe" value="811512526" />
+    <property role="3GE5qa" value="bl" />
+    <node concept="1TJgyj" id="6D0CP__oaD2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
     </node>
   </node>
 </model>
