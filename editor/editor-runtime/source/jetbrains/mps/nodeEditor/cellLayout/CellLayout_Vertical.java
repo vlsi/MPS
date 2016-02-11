@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.util.Deque;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -224,7 +225,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
+        Iterator<EditorCell> it = editorCells.iterator(null, false);
+        EditorCell lastCell = it.hasNext() ? it.next() : null;
         if (lastCell != null) {
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }

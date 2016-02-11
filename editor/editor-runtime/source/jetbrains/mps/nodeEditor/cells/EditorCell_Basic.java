@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.TextBuilderImpl;
+import gnu.trove.TIntObjectHashMap;
+import gnu.trove.TIntProcedure;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
@@ -67,7 +69,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -103,7 +104,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
   private TransformationMenuLookup myTransformationMenuLookup;
-  private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
+  private TIntObjectHashMap<CellAction> myActionMap = new TIntObjectHashMap<CellAction>();
 
   private Style myStyle = new StyleImpl();
 
@@ -200,17 +201,24 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public CellAction getAction(CellActionType type) {
-    return myActionMap.get(type);
+    return myActionMap.get(type.ordinal());
   }
 
   @Override
   public Collection<CellActionType> getAvailableActions() {
-    return new HashSet<CellActionType>(myActionMap.keySet());
+    final Collection<CellActionType> result = new ArrayList<CellActionType>(myActionMap.size());
+    myActionMap.forEachKey(new TIntProcedure() {
+      @Override
+      public boolean execute(int value) {
+        return result.add(CellActionType.values()[value]);
+      }
+    });
+    return result;
   }
 
   @Override
   public void setAction(CellActionType type, CellAction action) {
-    myActionMap.put(type, action);
+    myActionMap.put(type.ordinal(), action);
   }
 
   @Override
@@ -1150,13 +1158,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (myParent == null) {
       return null;
     }
-    int index = myParent.indexOf(this);
-    if (index + 1 < myParent.getCellsCount()) {
-      EditorCell nextChild = myParent.getChildAt(index + 1);
-      assert nextChild.getParent() == myParent;
-      return nextChild;
-    }
-    return null;
+
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = myParent.iterator(this, true);
+    return iterator.hasNext() ? (EditorCell) iterator.next() : null;
   }
 
   @Override
@@ -1176,13 +1180,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (myParent == null) {
       return null;
     }
-    int index = myParent.indexOf(this);
-    if (index > 0) {
-      EditorCell prevChild = myParent.getChildAt(index - 1);
-      assert prevChild.getParent() == myParent;
-      return prevChild;
-    }
-    return null;
+
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = myParent.iterator(this, false);
+    return iterator.hasNext() ? (EditorCell) iterator.next() : null;
   }
 
   @Override

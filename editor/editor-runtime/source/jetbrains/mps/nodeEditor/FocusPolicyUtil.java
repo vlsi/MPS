@@ -21,6 +21,8 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
+import java.util.Iterator;
+
 public class FocusPolicyUtil {
   public static boolean hasFocusPolicy(EditorCell cell) {
     return cell.getStyle().get(StyleAttributes.FOCUS_POLICY) != jetbrains.mps.editor.runtime.style.FocusPolicy.NONE;
@@ -50,7 +52,8 @@ public class FocusPolicyUtil {
       }
     }
     while (focusedCell instanceof EditorCell_Collection && ((EditorCell_Collection) focusedCell).isTransparentCollection()) {
-      focusedCell = ((EditorCell_Collection) focusedCell).getCellAt(0);
+      Iterator<EditorCell> it = ((EditorCell_Collection) focusedCell).iterator();
+      focusedCell = it.hasNext() ? it.next() : null;
     }
     return focusedCell;
   }

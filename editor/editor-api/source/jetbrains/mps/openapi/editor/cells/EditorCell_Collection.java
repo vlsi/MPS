@@ -24,6 +24,17 @@ import java.util.Iterator;
  * Date: 12/17/12
  */
 public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> {
+  /**
+   * Return iterator over sub-list of child cells contained inside this collection.
+   *
+   * @param anchor  first cell, returned by this iterator will be next/prev sibling of this anchor cell
+   *                depending on the forward parameter
+   * @param forward parameter specifying direction of the iteration. If true then the direction will be
+   *                from the beginning of this collection to the end of it.
+   * @return iterator over child cells
+   */
+  Iterator<EditorCell> iterator(EditorCell anchor, boolean forward);
+
   Iterator<EditorCell> reverseIterator();
 
   EditorCell firstCell();

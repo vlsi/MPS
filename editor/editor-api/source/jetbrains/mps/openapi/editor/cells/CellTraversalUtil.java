@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -47,18 +48,9 @@ public class CellTraversalUtil {
       return null;
     }
 
-    /**
-     * using parent.indexOf(cell) & parent.getCellAt(siblingIndex) instead of parent.iterator() because of some
-     * optimization implemented in mbeddr code.
-     *
-     * There is a chance for users to implement more efficient parent.indexOf(cell) method (e.g. using map inside)
-     * so this logic will work faster.
-     */
-    int index = parent.indexOf(cell);
-    assert index >= 0 && index < parent.getCellsCount();
-    int siblingIndex = forward ? index + 1 : index - 1;
-    if (siblingIndex >= 0 && siblingIndex < parent.getCellsCount()) {
-      return parent.getCellAt(siblingIndex);
+    Iterator<EditorCell> iterator = parent.iterator(cell, forward);
+    if (iterator.hasNext()) {
+      return iterator.next();
     }
 
     return null;
