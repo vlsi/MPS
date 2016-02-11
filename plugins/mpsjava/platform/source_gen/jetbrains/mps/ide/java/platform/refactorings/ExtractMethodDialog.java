@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -38,8 +37,6 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -77,7 +74,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     myParameters = params;
     myRefactoring = refactoring;
     myExtractIntoOuterContainer = this.myParameters.getAnalyzer().shouldChooseOuterContainer();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myAnalyzeErrors = ExtractMethodFactory.getErrors(ExtractMethodDialog.this.myParameters.getNodesToRefactor());
         init();
@@ -92,7 +89,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     return "refactoring.extractMethod1";
   }
   private void update() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ExtractMethodDialog.this.myErrors = ExtractMethodDialog.this.getMessagesText();
         ExtractMethodDialog.this.myMessagesArea.setText(ExtractMethodDialog.this.myErrors);
@@ -291,7 +288,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     return new CompoundBorder(new TitledBorder(title), new EmptyBorder(5, 5, 5, 5));
   }
   private void setStaticContainer() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ExtractMethodDialog.this.myRefactoring.setStaticContainer(ExtractMethodDialog.this.myStaticTarget);
       }
@@ -299,7 +296,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
   }
   public void chooseStaticContainer() {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myRefactoringModel = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
         model.value = myRefactoringModel;
@@ -314,9 +311,9 @@ public class ExtractMethodDialog extends RefactoringDialog {
     };
     dialog.show();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        myStaticTarget = (dialog.getResult() != null ? ((SNodePointer) dialog.getResult()).resolve(MPSModuleRepository.getInstance()) : null);
+        myStaticTarget = (dialog.getResult() != null ? dialog.getResult().resolve(myContext.getRepository()) : null);
       }
     });
     if (myStaticTarget == null) {
@@ -350,7 +347,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           return;
         }
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      myContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           result.value = myRefactoring.doRefactor();
           myContext.select(result.value);
@@ -408,7 +405,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
         @Override
         public void actionPerformed(ActionEvent p0) {
           chooseStaticContainer();
-          ModelAccess.instance().runReadAction(new Runnable() {
+          myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               if (ExtractMethodDialog.this.myStaticTarget != null) {
                 if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {

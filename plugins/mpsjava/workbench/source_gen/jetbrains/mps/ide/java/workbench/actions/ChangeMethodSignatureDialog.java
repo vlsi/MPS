@@ -5,14 +5,13 @@ package jetbrains.mps.ide.java.workbench.actions;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -37,23 +36,21 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class ChangeMethodSignatureDialog extends RefactoringDialog {
+/*package*/ class ChangeMethodSignatureDialog extends RefactoringDialog {
   private SNode myDeclaration;
   private ChangeMethodSignatureParameters myParameters;
-  private IOperationContext myOperationContext;
   private SModel myTempModel;
   private EmbeddableEditor myEditor;
   private Project myProject;
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
-  public ChangeMethodSignatureDialog(@NotNull com.intellij.openapi.project.Project project, SNode node, IOperationContext operationContext) {
-    super(project, true);
+  public ChangeMethodSignatureDialog(@NotNull MPSProject project, SNode node) {
+    super(project.getProject(), true);
     setTitle("Change Method Signature");
-    this.myProject = ProjectHelper.toMPSProject(project);
-    this.myOperationContext = operationContext;
+    this.myProject = project;
     this.myDeclaration = node;
     // TODO: call this constructor inside read action? 
-    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ChangeMethodSignatureDialog.this.myParameters = new ChangeMethodSignatureParameters(myDeclaration);
       }
@@ -105,7 +102,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
         ModelAccess modelAccess = ChangeMethodSignatureDialog.this.myProject.getRepository().getModelAccess();
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ChangeMethodSignatureDialog.this.myDeclaration, ChangeMethodSignatureDialog.this.myOperationContext, new ProgressMonitorAdapter(indicator));
+            methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ChangeMethodSignatureDialog.this.myDeclaration, new ProgressMonitorAdapter(indicator));
           }
         });
       }
@@ -124,7 +121,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
       myEditor = null;
     }
     if (myTempModel != null) {
-      myProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      myProject.getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           TemporaryModels.getInstance().dispose(myTempModel);
           myTempModel = null;
