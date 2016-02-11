@@ -3448,15 +3448,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="3UdhnxHunCZ" role="3clF47">
-        <node concept="3cpWs8" id="3UdhnxHunD0" role="3cqZAp">
-          <node concept="3cpWsn" id="3UdhnxHunD1" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <node concept="3Tqbb2" id="3UdhnxHunD2" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-            </node>
-            <node concept="10Nm6u" id="3UdhnxHunD3" role="33vP2m" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="3UdhnxHunD4" role="3cqZAp">
           <node concept="9aQIb" id="3UdhnxHunD5" role="9aQIa">
             <node concept="3clFbS" id="3UdhnxHunD6" role="9aQI4">
@@ -3508,12 +3499,13 @@
                     <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
                     <node concept="1bVj0M" id="1KUoCiqb6hN" role="37wK5m">
                       <node concept="3clFbS" id="1KUoCiqb6hO" role="1bW5cS">
-                        <node concept="3clFbF" id="1KUoCiqb6hP" role="3cqZAp">
-                          <node concept="37vLTI" id="1KUoCiqb6hQ" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagTsRS" role="37vLTJ">
-                              <ref role="3cqZAo" node="3UdhnxHunD1" resolve="result" />
+                        <node concept="3cpWs8" id="3UdhnxHunD0" role="3cqZAp">
+                          <node concept="3cpWsn" id="3UdhnxHunD1" role="3cpWs9">
+                            <property role="TrG5h" value="result" />
+                            <node concept="3Tqbb2" id="3UdhnxHunD2" role="1tU5fm">
+                              <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                             </node>
-                            <node concept="2OqwBi" id="1KUoCiqb6hS" role="37vLTx">
+                            <node concept="2OqwBi" id="1KUoCiqb6hS" role="33vP2m">
                               <node concept="37vLTw" id="2BHiRxeukug" role="2Oq$k0">
                                 <ref role="3cqZAo" node="3UdhnxHunmD" resolve="myRefactoring" />
                               </node>
@@ -3597,6 +3589,48 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3clFbJ" id="3UdhnxHunEg" role="3cqZAp">
+                          <node concept="3clFbS" id="3UdhnxHunEh" role="3clFbx">
+                            <node concept="3clFbF" id="3UdhnxHunEi" role="3cqZAp">
+                              <node concept="2OqwBi" id="3UdhnxHunEj" role="3clFbG">
+                                <node concept="2ShNRf" id="3UdhnxHunEk" role="2Oq$k0">
+                                  <node concept="1pGfFk" id="3UdhnxHunEl" role="2ShVmc">
+                                    <ref role="37wK5l" node="3UdhnxHunhy" resolve="ExtractMethodDialog.MyMethodDuplicatesProcessor" />
+                                    <node concept="37vLTw" id="2BHiRxeuRQ1" role="37wK5m">
+                                      <ref role="3cqZAo" node="3UdhnxHunmA" resolve="myContext" />
+                                    </node>
+                                    <node concept="37vLTw" id="3GM_nagTrIZ" role="37wK5m">
+                                      <ref role="3cqZAo" node="3UdhnxHunD1" resolve="result" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="3UdhnxHunEo" role="2OqNvi">
+                                  <ref role="37wK5l" node="3UdhnxHurmN" resolve="process" />
+                                  <node concept="2OqwBi" id="3UdhnxHunEp" role="37wK5m">
+                                    <node concept="2OqwBi" id="3UdhnxHunEq" role="2Oq$k0">
+                                      <node concept="2OwXpG" id="3UdhnxHunEr" role="2OqNvi">
+                                        <ref role="2Oxat5" node="3UdhnxHunmD" resolve="myRefactoring" />
+                                      </node>
+                                      <node concept="Xjq3P" id="3UdhnxHunEs" role="2Oq$k0" />
+                                    </node>
+                                    <node concept="liA8E" id="3UdhnxHunEt" role="2OqNvi">
+                                      <ref role="37wK5l" to="89o2:4uqoEKbfRX2" resolve="getMatches" />
+                                    </node>
+                                  </node>
+                                  <node concept="37vLTw" id="2BHiRxeuTrX" role="37wK5m">
+                                    <ref role="3cqZAo" to="u42p:1t_LRy89k3q" resolve="myProject" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="3UdhnxHunEv" role="3clFbw">
+                            <node concept="37vLTw" id="3GM_nagT$OQ" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3UdhnxHunD1" resolve="result" />
+                            </node>
+                            <node concept="3x8VRR" id="3UdhnxHunEx" role="2OqNvi" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3656,48 +3690,6 @@
         <node concept="3clFbF" id="3UdhnxHunEe" role="3cqZAp">
           <node concept="3nyPlj" id="3UdhnxHunEf" role="3clFbG">
             <ref role="37wK5l" to="u42p:1t_LRy89k4S" resolve="doRefactoringAction" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="3UdhnxHunEg" role="3cqZAp">
-          <node concept="3clFbS" id="3UdhnxHunEh" role="3clFbx">
-            <node concept="3clFbF" id="3UdhnxHunEi" role="3cqZAp">
-              <node concept="2OqwBi" id="3UdhnxHunEj" role="3clFbG">
-                <node concept="2ShNRf" id="3UdhnxHunEk" role="2Oq$k0">
-                  <node concept="1pGfFk" id="3UdhnxHunEl" role="2ShVmc">
-                    <ref role="37wK5l" node="3UdhnxHunhy" resolve="ExtractMethodDialog.MyMethodDuplicatesProcessor" />
-                    <node concept="37vLTw" id="2BHiRxeuRQ1" role="37wK5m">
-                      <ref role="3cqZAo" node="3UdhnxHunmA" resolve="myContext" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagTrIZ" role="37wK5m">
-                      <ref role="3cqZAo" node="3UdhnxHunD1" resolve="result" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="3UdhnxHunEo" role="2OqNvi">
-                  <ref role="37wK5l" node="3UdhnxHurmN" resolve="process" />
-                  <node concept="2OqwBi" id="3UdhnxHunEp" role="37wK5m">
-                    <node concept="2OqwBi" id="3UdhnxHunEq" role="2Oq$k0">
-                      <node concept="2OwXpG" id="3UdhnxHunEr" role="2OqNvi">
-                        <ref role="2Oxat5" node="3UdhnxHunmD" resolve="myRefactoring" />
-                      </node>
-                      <node concept="Xjq3P" id="3UdhnxHunEs" role="2Oq$k0" />
-                    </node>
-                    <node concept="liA8E" id="3UdhnxHunEt" role="2OqNvi">
-                      <ref role="37wK5l" to="89o2:4uqoEKbfRX2" resolve="getMatches" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxeuTrX" role="37wK5m">
-                    <ref role="3cqZAo" to="u42p:1t_LRy89k3q" resolve="myProject" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="3UdhnxHunEv" role="3clFbw">
-            <node concept="37vLTw" id="3GM_nagT$OQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="3UdhnxHunD1" resolve="result" />
-            </node>
-            <node concept="3x8VRR" id="3UdhnxHunEx" role="2OqNvi" />
           </node>
         </node>
       </node>

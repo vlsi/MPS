@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefactoring {
   protected List<SNode> myStatements = new ArrayList<SNode>();
@@ -27,19 +26,15 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     return body;
   }
   @Override
-  public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SNode methodCall = ExtractMethodFromStatementsRefactoring.this.createMethodCall(match, methodDeclaration);
-        SNode callStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
-        SLinkOperations.setTarget(callStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), methodCall);
-        List<SNode> statements = match.getNodes();
-        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
-        for (SNode statement : ListSequence.fromList(statements)) {
-          SNodeOperations.deleteNode(statement);
-        }
-      }
-    });
+  public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
+    SNode methodCall = this.createMethodCall(match, methodDeclaration);
+    SNode callStatement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+    SLinkOperations.setTarget(callStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), methodCall);
+    List<SNode> statements = match.getNodes();
+    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
+    for (SNode statement : ListSequence.fromList(statements)) {
+      SNodeOperations.deleteNode(statement);
+    }
   }
   protected void modifyPartToExtract() {
   }

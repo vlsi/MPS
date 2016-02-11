@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,10 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MethodRefactoringUtils {
   public MethodRefactoringUtils() {
-  }
-  public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext, ProgressMonitor monitor) {
-    List<SNode> results = MethodRefactoringUtils.findOverridingMethods(method, monitor);
-    return results;
   }
   public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
     List<SNode> results = new ArrayList<SNode>();

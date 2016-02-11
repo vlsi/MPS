@@ -332,7 +332,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
    */
   @Override
   protected void doRefactoringAction() {
-    final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
     if (!(myCanRefactor)) {
       JOptionPane.showMessageDialog(myPanel, "Can't refactor\n" + this.myErrors, "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
       return;
@@ -349,19 +348,19 @@ public class ExtractMethodDialog extends RefactoringDialog {
       }
       myContext.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          result.value = myRefactoring.doRefactor();
-          myContext.select(result.value);
+          SNode result = myRefactoring.doRefactor();
+          myContext.select(result);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
             ((SModelInternal) myRefactoringModel).addModelImport(ref, false);
+          }
+          if ((result != null)) {
+            new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result).process(ExtractMethodDialog.this.myRefactoring.getMatches(), myProject);
           }
         }
       });
     }
     super.doRefactoringAction();
-    if ((result.value != null)) {
-      new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result.value).process(this.myRefactoring.getMatches(), myProject);
-    }
   }
   public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {
     private SNode myMethod;
