@@ -7546,32 +7546,17 @@
           </node>
         </node>
         <node concept="3clFbH" id="KOXgj2JqJ" role="3cqZAp" />
-        <node concept="3clFbF" id="1KUoCipvDDI" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCipvDDJ" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvDDK" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3clFbF" id="1KUoCipvDDP" role="3cqZAp">
+          <node concept="2OqwBi" id="1KUoCipvDDQ" role="3clFbG">
+            <node concept="37vLTw" id="1gZbLQrfn0Q" role="2Oq$k0">
+              <ref role="3cqZAo" node="7nrhK3uHd0I" resolve="text" />
             </node>
-            <node concept="liA8E" id="1KUoCipvDDM" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="1KUoCipvDDN" role="37wK5m">
-                <node concept="3clFbS" id="1KUoCipvDDO" role="1bW5cS">
-                  <node concept="3clFbF" id="1KUoCipvDDP" role="3cqZAp">
-                    <node concept="2OqwBi" id="1KUoCipvDDQ" role="3clFbG">
-                      <node concept="37vLTw" id="1gZbLQrfn0Q" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7nrhK3uHd0I" resolve="text" />
-                      </node>
-                      <node concept="liA8E" id="1KUoCipvDDT" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~StringBuffer.append(java.lang.Object):java.lang.StringBuffer" resolve="append" />
-                        <node concept="2OqwBi" id="1KUoCipvDDU" role="37wK5m">
-                          <node concept="Xjq3P" id="1KUoCipvDDV" role="2Oq$k0" />
-                          <node concept="liA8E" id="1KUoCipvDDW" role="2OqNvi">
-                            <ref role="37wK5l" node="7nrhK3uHcZg" resolve="getReturnType" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+            <node concept="liA8E" id="1KUoCipvDDT" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~StringBuffer.append(java.lang.Object):java.lang.StringBuffer" resolve="append" />
+              <node concept="2OqwBi" id="1KUoCipvDDU" role="37wK5m">
+                <node concept="Xjq3P" id="1KUoCipvDDV" role="2Oq$k0" />
+                <node concept="liA8E" id="1KUoCipvDDW" role="2OqNvi">
+                  <ref role="37wK5l" node="7nrhK3uHcZg" resolve="getReturnType" />
                 </node>
               </node>
             </node>

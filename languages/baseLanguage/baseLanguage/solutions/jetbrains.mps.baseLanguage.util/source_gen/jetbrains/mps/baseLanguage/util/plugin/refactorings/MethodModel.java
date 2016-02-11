@@ -11,7 +11,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import javax.swing.event.ChangeEvent;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class MethodModel {
   private SNode myType;
@@ -62,16 +61,12 @@ public class MethodModel {
     return null;
   }
   public String getMethodText() {
-    final StringBuffer text = new StringBuffer();
+    StringBuffer text = new StringBuffer();
     if (this.myIsStatic) {
       text.append("static ");
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        text.append(MethodModel.this.getReturnType());
-      }
-    });
+    text.append(this.getReturnType());
     text.append(" ");
     text.append(this.getName());
     text.append("(");
