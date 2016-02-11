@@ -390,7 +390,6 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineFieldRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" file="InlineMethodModel.java">
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
@@ -404,7 +403,6 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.RetInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />

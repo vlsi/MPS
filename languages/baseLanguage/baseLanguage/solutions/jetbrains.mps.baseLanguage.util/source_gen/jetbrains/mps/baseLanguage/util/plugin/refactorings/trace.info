@@ -1194,102 +1194,97 @@
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/4317009991304269613">
     <file name="InlineMethodModel.java">
-      <node id="4317009991304269722" at="23,0,24,0" concept="5" trace="myMethod" />
-      <node id="4317009991304269725" at="24,0,25,0" concept="5" trace="myCall" />
-      <node id="4317009991304269728" at="25,0,26,0" concept="5" trace="myIsContainsSelfCalls" />
-      <node id="4317009991304269734" at="26,0,27,0" concept="5" trace="myMethodPresentation" />
-      <node id="2034046503361616054" at="30,199,31,198" concept="4" />
-      <node id="2034046503361616039" at="32,16,33,47" concept="4" />
-      <node id="2034046503361616046" at="33,47,34,51" concept="4" />
-      <node id="2034046503361616060" at="35,9,36,133" concept="4" />
-      <node id="2034046503361616068" at="36,133,37,54" concept="4" />
-      <node id="4317009991304269711" at="41,31,42,33" concept="11" />
-      <node id="4317009991304269831" at="44,41,45,32" concept="11" />
-      <node id="4317009991304269837" at="47,44,48,18" concept="11" />
-      <node id="4317009991304297581" at="50,28,51,20" concept="11" />
-      <node id="4317009991304269880" at="54,521,55,35" concept="11" />
-      <node id="4317009991304269896" at="57,41,58,35" concept="11" />
-      <node id="4317009991304269905" at="60,40,61,44" concept="11" />
-      <node id="4317009991304269908" at="62,5,63,16" concept="11" />
-      <node id="4317009991304269924" at="68,80,69,22" concept="11" />
-      <node id="4317009991304269935" at="72,5,73,17" concept="11" />
-      <node id="4317009991304269941" at="75,49,76,227" concept="10" />
-      <node id="4317009991304269961" at="78,50,79,67" concept="10" />
-      <node id="4317009991304269976" at="81,47,82,24" concept="11" />
-      <node id="4317009991304269981" at="83,11,84,46" concept="10" />
-      <node id="4317009991304269995" at="85,55,86,24" concept="11" />
-      <node id="4317009991304269997" at="87,11,88,51" concept="4" />
-      <node id="4317009991304270010" at="91,5,92,17" concept="11" />
-      <node id="2034046503361616036" at="32,14,35,9" concept="0" />
-      <node id="4317009991304269709" at="41,0,44,0" concept="9" trace="isRecusive#()Z" />
-      <node id="4317009991304269827" at="44,0,47,0" concept="9" trace="getMethodPresentation#()Ljava/lang/String;" />
-      <node id="4317009991304269833" at="47,0,50,0" concept="9" trace="getMethodCall#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodCallAdapter;" />
-      <node id="4317009991304297576" at="50,0,53,0" concept="9" trace="getMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4317009991304269878" at="53,29,56,5" concept="8" />
-      <node id="4317009991304269894" at="56,5,59,5" concept="8" />
-      <node id="4317009991304269903" at="59,5,62,5" concept="8" />
-      <node id="4317009991304269922" at="67,49,70,9" concept="8" />
-      <node id="4317009991304269974" at="80,50,83,11" concept="8" />
-      <node id="4317009991304269988" at="84,46,87,11" concept="8" />
-      <node id="4317009991304269920" at="66,134,71,7" concept="8" />
-      <node id="2034046503361616029" at="29,25,35,9" concept="8" />
-      <node id="4317009991304269914" at="65,41,72,5" concept="7" />
-      <node id="2034046503361616027" at="29,0,39,0" concept="9" trace="run#()V" />
-      <node id="4317009991304269910" at="65,0,75,0" concept="9" trace="isContainsSelfCalls#()Z" />
-      <node id="4317009991304269972" at="79,67,89,9" concept="18" />
-      <node id="2034046503361616022" at="27,46,39,7" concept="4" />
-      <node id="4317009991304269874" at="53,0,65,0" concept="9" trace="getErrors#()Ljava/lang/String;" />
-      <node id="4317009991304269956" at="77,86,90,7" concept="8" />
-      <node id="4317009991304269737" at="27,0,41,0" concept="2" trace="InlineMethodModel#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4317009991304269950" at="76,227,91,5" concept="7" />
-      <node id="4317009991304269937" at="75,0,94,0" concept="9" trace="isReturnBreaksExecitionFlow#()Z" />
-      <scope id="2034046503361616053" at="30,199,31,198" />
-      <scope id="4317009991304269710" at="41,31,42,33" />
-      <scope id="4317009991304269830" at="44,41,45,32" />
-      <scope id="4317009991304269836" at="47,44,48,18" />
-      <scope id="4317009991304297579" at="50,28,51,20" />
-      <scope id="4317009991304269879" at="54,521,55,35" />
-      <scope id="4317009991304269895" at="57,41,58,35" />
-      <scope id="4317009991304269904" at="60,40,61,44" />
-      <scope id="4317009991304269923" at="68,80,69,22" />
-      <scope id="4317009991304269975" at="81,47,82,24" />
-      <scope id="4317009991304269994" at="85,55,86,24" />
-      <scope id="2034046503361616037" at="32,16,34,51" />
-      <scope id="4317009991304269709" at="41,0,44,0" />
-      <scope id="4317009991304269827" at="44,0,47,0" />
-      <scope id="4317009991304269833" at="47,0,50,0" />
-      <scope id="4317009991304297576" at="50,0,53,0" />
-      <scope id="4317009991304269921" at="67,49,70,9" />
-      <scope id="4317009991304269919" at="66,134,71,7" />
-      <scope id="4317009991304269914" at="65,41,72,5">
+      <node id="4317009991304269722" at="22,0,23,0" concept="5" trace="myMethod" />
+      <node id="4317009991304269725" at="23,0,24,0" concept="5" trace="myCall" />
+      <node id="4317009991304269728" at="24,0,25,0" concept="5" trace="myIsContainsSelfCalls" />
+      <node id="4317009991304269734" at="25,0,26,0" concept="5" trace="myMethodPresentation" />
+      <node id="2034046503361616054" at="27,195,28,194" concept="4" />
+      <node id="2034046503361616039" at="29,12,30,43" concept="4" />
+      <node id="2034046503361616046" at="30,43,31,47" concept="4" />
+      <node id="2034046503361616060" at="32,5,33,129" concept="4" />
+      <node id="2034046503361616068" at="33,129,34,50" concept="4" />
+      <node id="4317009991304269711" at="36,31,37,33" concept="11" />
+      <node id="4317009991304269831" at="39,41,40,32" concept="11" />
+      <node id="4317009991304269837" at="42,44,43,18" concept="11" />
+      <node id="4317009991304297581" at="45,28,46,20" concept="11" />
+      <node id="4317009991304269880" at="49,521,50,35" concept="11" />
+      <node id="4317009991304269896" at="52,41,53,35" concept="11" />
+      <node id="4317009991304269905" at="55,40,56,44" concept="11" />
+      <node id="4317009991304269908" at="57,5,58,16" concept="11" />
+      <node id="4317009991304269924" at="63,80,64,22" concept="11" />
+      <node id="4317009991304269935" at="67,5,68,17" concept="11" />
+      <node id="4317009991304269941" at="70,49,71,227" concept="10" />
+      <node id="4317009991304269961" at="73,50,74,67" concept="10" />
+      <node id="4317009991304269976" at="76,47,77,24" concept="11" />
+      <node id="4317009991304269981" at="78,11,79,46" concept="10" />
+      <node id="4317009991304269995" at="80,55,81,24" concept="11" />
+      <node id="4317009991304269997" at="82,11,83,51" concept="4" />
+      <node id="4317009991304270010" at="86,5,87,17" concept="11" />
+      <node id="2034046503361616036" at="29,10,32,5" concept="0" />
+      <node id="4317009991304269709" at="36,0,39,0" concept="9" trace="isRecusive#()Z" />
+      <node id="4317009991304269827" at="39,0,42,0" concept="9" trace="getMethodPresentation#()Ljava/lang/String;" />
+      <node id="4317009991304269833" at="42,0,45,0" concept="9" trace="getMethodCall#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodCallAdapter;" />
+      <node id="4317009991304297576" at="45,0,48,0" concept="9" trace="getMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4317009991304269878" at="48,29,51,5" concept="8" />
+      <node id="4317009991304269894" at="51,5,54,5" concept="8" />
+      <node id="4317009991304269903" at="54,5,57,5" concept="8" />
+      <node id="4317009991304269922" at="62,49,65,9" concept="8" />
+      <node id="4317009991304269974" at="75,50,78,11" concept="8" />
+      <node id="4317009991304269988" at="79,46,82,11" concept="8" />
+      <node id="4317009991304269920" at="61,134,66,7" concept="8" />
+      <node id="2034046503361616029" at="26,40,32,5" concept="8" />
+      <node id="4317009991304269914" at="60,41,67,5" concept="7" />
+      <node id="4317009991304269737" at="26,0,36,0" concept="2" trace="InlineMethodModel#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4317009991304269910" at="60,0,70,0" concept="9" trace="isContainsSelfCalls#()Z" />
+      <node id="4317009991304269972" at="74,67,84,9" concept="18" />
+      <node id="4317009991304269874" at="48,0,60,0" concept="9" trace="getErrors#()Ljava/lang/String;" />
+      <node id="4317009991304269956" at="72,86,85,7" concept="8" />
+      <node id="4317009991304269950" at="71,227,86,5" concept="7" />
+      <node id="4317009991304269937" at="70,0,89,0" concept="9" trace="isReturnBreaksExecitionFlow#()Z" />
+      <scope id="2034046503361616053" at="27,195,28,194" />
+      <scope id="4317009991304269710" at="36,31,37,33" />
+      <scope id="4317009991304269830" at="39,41,40,32" />
+      <scope id="4317009991304269836" at="42,44,43,18" />
+      <scope id="4317009991304297579" at="45,28,46,20" />
+      <scope id="4317009991304269879" at="49,521,50,35" />
+      <scope id="4317009991304269895" at="52,41,53,35" />
+      <scope id="4317009991304269904" at="55,40,56,44" />
+      <scope id="4317009991304269923" at="63,80,64,22" />
+      <scope id="4317009991304269975" at="76,47,77,24" />
+      <scope id="4317009991304269994" at="80,55,81,24" />
+      <scope id="2034046503361616037" at="29,12,31,47" />
+      <scope id="4317009991304269709" at="36,0,39,0" />
+      <scope id="4317009991304269827" at="39,0,42,0" />
+      <scope id="4317009991304269833" at="42,0,45,0" />
+      <scope id="4317009991304297576" at="45,0,48,0" />
+      <scope id="4317009991304269921" at="62,49,65,9" />
+      <scope id="4317009991304269919" at="61,134,66,7" />
+      <scope id="4317009991304269914" at="60,41,67,5">
         <var name="call" id="4317009991304269915" />
       </scope>
-      <scope id="2034046503361616028" at="29,25,37,54" />
-      <scope id="4317009991304269913" at="65,41,73,17" />
-      <scope id="4317009991304269973" at="80,50,88,51">
+      <scope id="4317009991304269739" at="26,40,34,50" />
+      <scope id="4317009991304269913" at="60,41,68,17" />
+      <scope id="4317009991304269973" at="75,50,83,51">
         <var name="succ" id="4317009991304269982" />
       </scope>
-      <scope id="2034046503361616027" at="29,0,39,0" />
-      <scope id="4317009991304269877" at="53,29,63,16" />
-      <scope id="4317009991304269910" at="65,0,75,0" />
-      <scope id="4317009991304269960" at="78,50,89,9">
-        <var name="next" id="4317009991304269962" />
-      </scope>
-      <scope id="4317009991304269739" at="27,46,39,7" />
-      <scope id="4317009991304269874" at="53,0,65,0" />
-      <scope id="4317009991304269955" at="77,86,90,7" />
-      <scope id="4317009991304269737" at="27,0,41,0">
+      <scope id="4317009991304269737" at="26,0,36,0">
         <var name="node" id="4317009991304269782" />
       </scope>
-      <scope id="4317009991304269950" at="76,227,91,5">
+      <scope id="4317009991304269877" at="48,29,58,16" />
+      <scope id="4317009991304269910" at="60,0,70,0" />
+      <scope id="4317009991304269960" at="73,50,84,9">
+        <var name="next" id="4317009991304269962" />
+      </scope>
+      <scope id="4317009991304269874" at="48,0,60,0" />
+      <scope id="4317009991304269955" at="72,86,85,7" />
+      <scope id="4317009991304269950" at="71,227,86,5">
         <var name="instruction" id="4317009991304269951" />
       </scope>
-      <scope id="4317009991304269940" at="75,49,92,17">
+      <scope id="4317009991304269940" at="70,49,87,17">
         <var name="program" id="4317009991304269942" />
       </scope>
-      <scope id="4317009991304269937" at="75,0,94,0" />
-      <unit id="2034046503361616027" at="28,45,39,5" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel$1" />
-      <unit id="4317009991304269613" at="22,0,95,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" />
+      <scope id="4317009991304269937" at="70,0,89,0" />
+      <unit id="4317009991304269613" at="21,0,90,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" />
     </file>
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/4812946390332934290">

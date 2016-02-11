@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -45,13 +47,17 @@ public class InlineMethodDialog extends RefactoringDialog {
   private boolean myForAll;
   private final SRepository myEditorRepo;
 
-  public InlineMethodDialog(SNode node, MPSProject project, EditorContext editorContext) {
+  public InlineMethodDialog(final SNode node, MPSProject project, EditorContext editorContext) {
     super(project.getProject(), true);
     myEditorRepo = editorContext.getRepository();
     setTitle("Inline Method");
     setResizable(false);
 
-    myModel = new InlineMethodModel(node);
+    myModel = new ModelAccessHelper(editorContext.getRepository()).runReadAction(new Computable<InlineMethodModel>() {
+      public InlineMethodModel compute() {
+        return new InlineMethodModel(node);
+      }
+    });
     init();
   }
   @Nullable

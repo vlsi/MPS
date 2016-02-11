@@ -6867,16 +6867,40 @@
         <node concept="3clFbH" id="3UdhnxHuoMe" role="3cqZAp" />
         <node concept="3clFbF" id="3UdhnxHuoMf" role="3cqZAp">
           <node concept="37vLTI" id="3UdhnxHuoMg" role="3clFbG">
-            <node concept="2ShNRf" id="3UdhnxHuoMh" role="37vLTx">
-              <node concept="1pGfFk" id="3UdhnxHuoMi" role="2ShVmc">
-                <ref role="37wK5l" to="89o2:3JD6rrJwcYD" resolve="InlineMethodModel" />
-                <node concept="37vLTw" id="2BHiRxgllbx" role="37wK5m">
-                  <ref role="3cqZAo" node="3UdhnxHuoLY" resolve="node" />
-                </node>
-              </node>
-            </node>
             <node concept="37vLTw" id="2BHiRxeunoj" role="37vLTJ">
               <ref role="3cqZAo" node="3UdhnxHuoLR" resolve="myModel" />
+            </node>
+            <node concept="2OqwBi" id="3WRcJ81iAdQ" role="37vLTx">
+              <node concept="2ShNRf" id="3WRcJ81i_3y" role="2Oq$k0">
+                <node concept="1pGfFk" id="3WRcJ81iA8q" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="3WRcJ81iAa9" role="37wK5m">
+                    <node concept="37vLTw" id="3WRcJ81iA8Z" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1nl8jG9LVgd" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="3WRcJ81iAcU" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3WRcJ81iAgI" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="3WRcJ81iAhG" role="37wK5m">
+                  <node concept="3clFbS" id="3WRcJ81iAhH" role="1bW5cS">
+                    <node concept="3clFbF" id="3WRcJ81iAjf" role="3cqZAp">
+                      <node concept="2ShNRf" id="3UdhnxHuoMh" role="3clFbG">
+                        <node concept="1pGfFk" id="3UdhnxHuoMi" role="2ShVmc">
+                          <ref role="37wK5l" to="89o2:3JD6rrJwcYD" resolve="InlineMethodModel" />
+                          <node concept="37vLTw" id="2BHiRxgllbx" role="37wK5m">
+                            <ref role="3cqZAo" node="3UdhnxHuoLY" resolve="node" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
