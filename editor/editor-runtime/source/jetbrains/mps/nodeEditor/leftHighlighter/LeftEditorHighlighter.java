@@ -278,7 +278,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   @Override
-  public void paint(Graphics g) {
+  public void paintComponent(Graphics g) {
     Rectangle clipBounds = g.getClipBounds();
     paintBackgroundAndFoldingLine(g, clipBounds);
     paintTextColumns(g, clipBounds);
