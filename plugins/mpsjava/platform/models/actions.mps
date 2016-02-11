@@ -16439,6 +16439,17 @@
             <node concept="2ShNRf" id="1pHoCUazxey" role="37wK5m">
               <node concept="1pGfFk" id="1pHoCUazxez" role="2ShVmc">
                 <ref role="37wK5l" to="2mml:1pHoCUaw9f_" resolve="DefaultMethodRenderer" />
+                <node concept="2OqwBi" id="3m6U0jmT2Dl" role="37wK5m">
+                  <node concept="2OqwBi" id="3m6U0jmT2wo" role="2Oq$k0">
+                    <node concept="2WthIp" id="3m6U0jmT2wr" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="3m6U0jmT2wt" role="2OqNvi">
+                      <ref role="2WH_rO" node="1pHoCUazjDk" resolve="mpsProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3m6U0jmT2Sw" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="1pHoCUazxeK" role="37wK5m">
@@ -16966,6 +16977,17 @@
             <node concept="2ShNRf" id="1pHoCUazS46" role="37wK5m">
               <node concept="1pGfFk" id="1pHoCUazS47" role="2ShVmc">
                 <ref role="37wK5l" to="2mml:1pHoCUaw9dO" resolve="DefaultNodeRenderer" />
+                <node concept="2OqwBi" id="3m6U0jmPYNG" role="37wK5m">
+                  <node concept="2OqwBi" id="3m6U0jmPYEd" role="2Oq$k0">
+                    <node concept="2WthIp" id="3m6U0jmPYEg" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="3m6U0jmPYEi" role="2OqNvi">
+                      <ref role="2WH_rO" node="1pHoCUazNdM" resolve="mpsProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3m6U0jmPZ3p" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="1pHoCUazS4f" role="37wK5m">
@@ -17051,10 +17073,10 @@
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
       <node concept="1oajcY" id="2rUHgdX3hBC" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="2rUHgdX2y16" role="1NuT2Z">
+    <node concept="1DS2jV" id="3m6U0jmPXc_" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="2rUHgdX2y17" role="1oa70y" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3m6U0jmPXcA" role="1oa70y" />
     </node>
     <node concept="2XrIbr" id="2rUHgdX3hAB" role="32lrUH">
       <property role="TrG5h" value="getFinderName" />
@@ -17125,7 +17147,7 @@
             <node concept="2OqwBi" id="1pHoCUay$Fk" role="37wK5m">
               <node concept="2WthIp" id="1pHoCUay$Fl" role="2Oq$k0" />
               <node concept="1DTwFV" id="1pHoCUay$Fm" role="2OqNvi">
-                <ref role="2WH_rO" node="2rUHgdX2y16" resolve="project" />
+                <ref role="2WH_rO" node="3m6U0jmPXc_" resolve="project" />
               </node>
             </node>
             <node concept="2OqwBi" id="1pHoCUay$Fn" role="37wK5m">

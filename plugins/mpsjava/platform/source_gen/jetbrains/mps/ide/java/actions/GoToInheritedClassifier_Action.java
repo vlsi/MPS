@@ -156,6 +156,6 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     });
     RelativePoint relativePoint = GoToContextMenuUtil.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent());
     String title = "Choose inherited class to navigate to";
-    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(), relativePoint);
+    GoToContextMenuUtil.showMenu(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), title, SetSequence.fromSet(nodes).toListSequence(), new DefaultNodeRenderer(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), relativePoint);
   }
 }

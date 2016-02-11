@@ -14,8 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
@@ -60,7 +59,7 @@ public class GoToOverridingBehaviorMethod_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
@@ -72,7 +71,7 @@ public class GoToOverridingBehaviorMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(CommonDataKeys.PROJECT), GoToOverridingBehaviorMethod_Action.this.getFinderName(event), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), GoToOverridingBehaviorMethod_Action.this.getFinderName(event), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
   private String getFinderName(final AnActionEvent event) {
     return "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder";
