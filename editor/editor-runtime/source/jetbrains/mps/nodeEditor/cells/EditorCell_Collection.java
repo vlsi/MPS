@@ -300,7 +300,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       i++;
     }
     // The cell should be found above, so this exception will not be thrown in standard situation
-    throw new IndexOutOfBoundsException("Size: " + getEditorCells().size() + ", Index: " + number);
+    throw new IndexOutOfBoundsException("Size: " + getVisibleChildCells().size() + ", Index: " + number);
   }
 
   public void setGridLayout(boolean gridLayout) {
@@ -469,6 +469,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (usesBraces() && !isCollapsed()) {
       return new NoBracesIterable();
     } else {
+      // TODO: either return getEditorCells() or use getVisibleChildCells() in all other content-related methods
       return this;
     }
   }
@@ -519,12 +520,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public int getContentCellsCount() {
-    int count = getCellsCount();
-    if (usesBraces()) {
-      return count - 2;
-    } else {
-      return count;
-    }
+    return usesBraces() ? getCellsCount() - 2 : getCellsCount();
   }
 
   @Override
@@ -911,47 +907,50 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public EditorCell firstCell() {
-    return getFirstChild();
+    return getVisibleChildCells().getFirst();
   }
 
   @Override
   public EditorCell lastCell() {
-    return getLastChild();
+    return getVisibleChildCells().getLast();
   }
 
   @Override
   @SuppressWarnings({"UnusedDeclaration"})
   public EditorCell firstContentCell() {
-    Iterator<EditorCell> iterator = getEditorCells().iterator();
-    if (usesBraces()) {
-      if (!iterator.hasNext()) {
-        return null;
-      }
-      iterator.next();
+    if (!usesBraces()) {
+      return firstCell();
     }
 
+    Iterator<EditorCell> iterator = getEditorCells().iterator();
+    if (!iterator.hasNext()) {
+      return null;
+    }
+    iterator.next();
     if (!iterator.hasNext()) {
       return null;
     }
     EditorCell result = iterator.next();
-    return !usesBraces() || iterator.hasNext() ? result : null;
+    return iterator.hasNext() ? result : null;
   }
 
   @Override
   public EditorCell lastContentCell() {
-    Iterator<EditorCell> iterator = getEditorCells().iterator(null, false);
-    if (usesBraces()) {
-      if (!iterator.hasNext()) {
-        return null;
-      }
-      iterator.next();
+    if (!usesBraces()) {
+      return lastCell();
     }
+
+    Iterator<EditorCell> iterator = getEditorCells().iterator(null, false);
+    if (!iterator.hasNext()) {
+      return null;
+    }
+    iterator.next();
 
     if (!iterator.hasNext()) {
       return null;
     }
     EditorCell result = iterator.next();
-    return !usesBraces() || iterator.hasNext() ? result : null;
+    return iterator.hasNext() ? result : null;
   }
 
   @Override
@@ -966,12 +965,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getLastChild() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getVisibleChildCells().getLast();
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) lastCell();
   }
 
   @Override
   public jetbrains.mps.nodeEditor.cells.EditorCell getFirstChild() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getVisibleChildCells().getFirst();
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) firstCell();
   }
 
   public String toString() {
@@ -1032,8 +1031,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     for (EditorCell cell : getEditorCells()) {
       ((SynchronizeableEditorCell) cell).synchronize();
     }
-    for (EditorCell cell : getFoldedCellCollection()) {
-      ((SynchronizeableEditorCell) cell).synchronize();
+    if (hasFoldedCell()) {
+      ((SynchronizeableEditorCell) getFoldedCell()).synchronize();
     }
   }
 
