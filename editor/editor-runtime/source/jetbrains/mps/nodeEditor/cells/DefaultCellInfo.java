@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;

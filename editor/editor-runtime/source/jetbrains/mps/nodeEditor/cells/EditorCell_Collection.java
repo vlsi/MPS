@@ -1223,8 +1223,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
 
     @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
-      jetbrains.mps.nodeEditor.cells.EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
+    public EditorCell findCell(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+      EditorCell cell = myCollectionCellInfo.findCell(editorComponent);
       if (!(cell instanceof EditorCell_Collection)) return null;
       EditorCell_Collection parent = (EditorCell_Collection) cell;
       if (myOpeningBrace) {

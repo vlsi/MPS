@@ -250,7 +250,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private final Object myAdditionalPaintersLock = new Object();
   private boolean myHasUI;
 
-  private Map<EditorCell, Boolean> myCollapseStates = new HashMap<EditorCell, Boolean>();
+  private Map<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean> myCollapseStates = new HashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private CellTracker myCellTracker = new CellTracker();
@@ -1425,7 +1425,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setCollapseState(cell, folded ? Boolean.TRUE : null);
   }
 
-  public void setCollapseState(EditorCell cell, Boolean collapsed) {
+  public void setCollapseState(jetbrains.mps.openapi.editor.cells.EditorCell cell, Boolean collapsed) {
     if (collapsed == null) {
       resetCollapseState(cell);
     } else {
@@ -1436,28 +1436,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void resetCollapseState(EditorCell cell) {
+  public void resetCollapseState(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     myCollapseStates.remove(cell);
   }
 
-  /**
-   * @deprecated since MPS 3.3 use getCollapseStates()
-   */
-  @Deprecated
-  public Set<EditorCell> getFoldedCells() {
-    HashSet<EditorCell> result = new HashSet<EditorCell>();
-    for (Entry<EditorCell, Boolean> foldedState : myCollapseStates.entrySet()) {
-      if (foldedState.getValue()) {
-        result.add(foldedState.getKey());
-      }
-    }
-    return result;
-  }
-
-  public List<Pair<EditorCell, Boolean>> getCollapseStates() {
-    List<Pair<EditorCell, Boolean>> result = new ArrayList<Pair<EditorCell, Boolean>>();
-    for (Entry<EditorCell, Boolean> collapseState : myCollapseStates.entrySet()) {
-      result.add(new Pair<EditorCell, Boolean>(collapseState.getKey(), collapseState.getValue()));
+  public List<Pair<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>> getCollapseStates() {
+    List<Pair<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>> result = new ArrayList<Pair<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>>();
+    for (Entry<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean> collapseState : myCollapseStates.entrySet()) {
+      result.add(new Pair<jetbrains.mps.openapi.editor.cells.EditorCell, Boolean>(collapseState.getKey(), collapseState.getValue()));
     }
     return result;
   }

@@ -239,13 +239,13 @@ public class EditorCell_STHint extends EditorCell_Constant {
     }
 
     @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(jetbrains.mps.nodeEditor.EditorComponent editorComponent) {
+    public EditorCell findCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       return anchorCell != null ? getSTHintCell(anchorCell.getSNode(), editorComponent) : super.findCell(editorComponent);
     }
 
     @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(jetbrains.mps.nodeEditor.EditorComponent editorComponent) {
+    public EditorCell findClosestCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) {
         return super.findCell(editorComponent);
