@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.ide.findusages;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -107,27 +106,9 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return null;
   }
 
-  /**
-   * @deprecated use {@link #getDeclarationNode(GeneratedFinder)}
-   */
-  @Deprecated
-  public SNode getNodeByFinder(ReloadableFinder finder) {
-    checkLoaded();
-    return myNodesByFinder.get(finder.getFinder()).resolve(MPSModuleRepository.getInstance());
-  }
-
   public SNodeReference getDeclarationNode(GeneratedFinder finder) {
     // XXX why not to keep this reference as part of GeneratedFinder? Is a distinct map worth it?
     return myNodesByFinder.get(finder);
-  }
-
-  /**
-   * @deprecated use {@link #getDeclarationNode(GeneratedFinder)}
-   */
-  @Deprecated
-  public SNode getNodeByFinder(GeneratedFinder finder) {
-    checkLoaded();
-    return myNodesByFinder.get(finder).resolve(MPSModuleRepository.getInstance());
   }
 
   private SModuleReference getFinderModule(GeneratedFinder finder) {
@@ -142,6 +123,8 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     load();
   }
 
+  // TODO once BaseFindUsagesDescriptor is refactored to let language aspect manage GeneratedFinder instances and their reload
+  // consider moving SNodeReference of declaration node inside GF itself.
   public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
     SAbstractConcept concept = finder.getSConcept();
     Set<GeneratedFinder> finders = myFinders.get(concept);

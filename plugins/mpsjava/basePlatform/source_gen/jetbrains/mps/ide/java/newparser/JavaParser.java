@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -325,26 +324,20 @@ public class JavaParser {
           continue;
         }
 
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            final SNode theRightNode = subst.invoke();
-            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+        final SNode theRightNode = subst.invoke();
+        SNodeOperations.replaceWithAnother(unkNode, theRightNode);
 
-            // FIXME maybe it's better to re-use auto model import 
-            Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
-              public void visit(StaticReference it) {
-                SModel sourceModel = theRightNode.getModel();
-                SModelReference targetModel = it.getTargetSModelReference();
-                if (!(sourceModel.getReference().equals(targetModel))) {
-                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
+        // FIXME maybe it's better to re-use auto model import 
+        Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
+          public void visit(StaticReference it) {
+            SModel sourceModel = theRightNode.getModel();
+            SModelReference targetModel = it.getTargetSModelReference();
+            if (!(sourceModel.getReference().equals(targetModel))) {
+              ((SModelInternal) sourceModel).addModelImport(targetModel, true);
 
-                }
-              }
-            });
+            }
           }
         });
-
       }
     }
   }

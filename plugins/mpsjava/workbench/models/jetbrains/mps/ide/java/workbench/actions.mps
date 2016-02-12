@@ -53,7 +53,7 @@
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
-    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -671,25 +671,14 @@
             <node concept="2ShNRf" id="5U9rQri5Ge6" role="33vP2m">
               <node concept="1pGfFk" id="5U9rQri5Ge7" role="2ShVmc">
                 <ref role="37wK5l" node="5U9rQri5Ghj" resolve="ChangeMethodSignatureDialog" />
-                <node concept="2OqwBi" id="CJPgsJbAoy" role="37wK5m">
-                  <node concept="2OqwBi" id="CJPgsJb_Zu" role="2Oq$k0">
-                    <node concept="2WthIp" id="CJPgsJb_Zx" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="CJPgsJb_Zz" role="2OqNvi">
-                      <ref role="2WH_rO" node="5U9rQri5GeF" resolve="project" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="CJPgsJbAW4" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                <node concept="2OqwBi" id="CJPgsJb_Zu" role="37wK5m">
+                  <node concept="2WthIp" id="CJPgsJb_Zx" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="CJPgsJb_Zz" role="2OqNvi">
+                    <ref role="2WH_rO" node="5U9rQri5GeF" resolve="project" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTx8E" role="37wK5m">
                   <ref role="3cqZAo" node="5U9rQri5Gd_" resolve="methodToRefactor" />
-                </node>
-                <node concept="2OqwBi" id="5U9rQri5Ged" role="37wK5m">
-                  <node concept="2WthIp" id="5U9rQri5Gee" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5U9rQri5Gef" role="2OqNvi">
-                    <ref role="2WH_rO" node="5U9rQri5GeH" resolve="context" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -817,11 +806,6 @@
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="5U9rQri5GeG" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="5U9rQri5GeH" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="5U9rQri5GeI" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="5U9rQri5GeJ" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -858,13 +842,6 @@
         <ref role="3uigEE" to="89o2:7nrhK3uHcOm" resolve="ChangeMethodSignatureParameters" />
       </node>
       <node concept="3Tm6S6" id="5U9rQri5Gh5" role="1B3o_S" />
-    </node>
-    <node concept="312cEg" id="5U9rQri5Gh7" role="jymVt">
-      <property role="TrG5h" value="myOperationContext" />
-      <node concept="3uibUv" id="5U9rQri5Gh9" role="1tU5fm">
-        <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-      </node>
-      <node concept="3Tm6S6" id="5U9rQri5Gh8" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="5$dYZ5VtZ0B" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -908,8 +885,13 @@
       <node concept="3clFbS" id="5U9rQri5Ghm" role="3clF47">
         <node concept="XkiVB" id="5U9rQri5Ghn" role="3cqZAp">
           <ref role="37wK5l" to="u42p:1t_LRy89k3P" resolve="RefactoringDialog" />
-          <node concept="37vLTw" id="2BHiRxghfX1" role="37wK5m">
-            <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
+          <node concept="2OqwBi" id="1nl8jG9KT1p" role="37wK5m">
+            <node concept="37vLTw" id="2BHiRxghfX1" role="2Oq$k0">
+              <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
+            </node>
+            <node concept="liA8E" id="1nl8jG9KTix" role="2OqNvi">
+              <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+            </node>
           </node>
           <node concept="3clFbT" id="5U9rQri5Ghp" role="37wK5m">
             <property role="3clFbU" value="true" />
@@ -925,31 +907,14 @@
         </node>
         <node concept="3clFbF" id="5wEedBrIrNc" role="3cqZAp">
           <node concept="37vLTI" id="5wEedBrIrTx" role="3clFbG">
-            <node concept="2YIFZM" id="5wEedBrIt$7" role="37vLTx">
-              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-              <node concept="37vLTw" id="5wEedBrIuoI" role="37wK5m">
-                <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
-              </node>
+            <node concept="37vLTw" id="1nl8jG9KSYH" role="37vLTx">
+              <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
             </node>
             <node concept="2OqwBi" id="5wEedBrIs7J" role="37vLTJ">
               <node concept="2OwXpG" id="5wEedBrIs7M" role="2OqNvi">
                 <ref role="2Oxat5" node="5wEedBrIoaZ" resolve="myProject" />
               </node>
               <node concept="Xjq3P" id="5wEedBrIskD" role="2Oq$k0" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5U9rQri5Ghu" role="3cqZAp">
-          <node concept="37vLTI" id="5U9rQri5Ghv" role="3clFbG">
-            <node concept="2OqwBi" id="5U9rQri5Ghx" role="37vLTJ">
-              <node concept="Xjq3P" id="5U9rQri5Ghz" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5U9rQri5Ghy" role="2OqNvi">
-                <ref role="2Oxat5" node="5U9rQri5Gh7" resolve="myOperationContext" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="2BHiRxgmzt$" role="37vLTx">
-              <ref role="3cqZAo" node="5U9rQri5GhZ" resolve="operationContext" />
             </node>
           </node>
         </node>
@@ -1000,15 +965,10 @@
             </node>
             <node concept="2OqwBi" id="5wEedBrIzaB" role="2Oq$k0">
               <node concept="liA8E" id="5wEedBrI$oI" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
-              <node concept="2OqwBi" id="5wEedBrIxgv" role="2Oq$k0">
-                <node concept="liA8E" id="5wEedBrIyDT" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-                <node concept="37vLTw" id="5wEedBrIwD4" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5wEedBrIoaZ" resolve="myProject" />
-                </node>
+              <node concept="37vLTw" id="5wEedBrIwD4" role="2Oq$k0">
+                <ref role="3cqZAo" node="5wEedBrIoaZ" resolve="myProject" />
               </node>
             </node>
           </node>
@@ -1026,20 +986,14 @@
         <node concept="2AHcQZ" id="5U9rQri5GhW" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
-        <node concept="3uibUv" id="5U9rQri5GhV" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <node concept="3uibUv" id="1nl8jG9KSSX" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="5U9rQri5GhX" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="5U9rQri5GhY" role="1tU5fm">
           <ref role="ehGHo" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5U9rQri5GhZ" role="3clF46">
-        <property role="TrG5h" value="operationContext" />
-        <node concept="3uibUv" id="5U9rQri5Gi0" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
         </node>
       </node>
     </node>
@@ -1525,20 +1479,12 @@
                                       </node>
                                       <node concept="2YIFZM" id="5U9rQri5Gj_" role="37vLTx">
                                         <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
-                                        <ref role="37wK5l" to="89o2:7nrhK3uHecQ" resolve="findOverridingMethods" />
+                                        <ref role="37wK5l" to="89o2:7nrhK3uHedz" resolve="findOverridingMethods" />
                                         <node concept="2OqwBi" id="5U9rQri5GjA" role="37wK5m">
                                           <node concept="2OwXpG" id="5U9rQri5GjB" role="2OqNvi">
                                             <ref role="2Oxat5" node="5U9rQri5Gh1" resolve="myDeclaration" />
                                           </node>
                                           <node concept="Xjq3P" id="5U9rQri5GjC" role="2Oq$k0">
-                                            <ref role="1HBi2w" node="5U9rQri5GeR" resolve="ChangeMethodSignatureDialog" />
-                                          </node>
-                                        </node>
-                                        <node concept="2OqwBi" id="5U9rQri5GjD" role="37wK5m">
-                                          <node concept="2OwXpG" id="5U9rQri5GjE" role="2OqNvi">
-                                            <ref role="2Oxat5" node="5U9rQri5Gh7" resolve="myOperationContext" />
-                                          </node>
-                                          <node concept="Xjq3P" id="5U9rQri5GjF" role="2Oq$k0">
                                             <ref role="1HBi2w" node="5U9rQri5GeR" resolve="ChangeMethodSignatureDialog" />
                                           </node>
                                         </node>
@@ -1739,16 +1685,11 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="1xyr94TkfGk" role="2Oq$k0">
-                  <node concept="2OqwBi" id="3wGjY11racG" role="2Oq$k0">
-                    <node concept="liA8E" id="3wGjY11rcEe" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                    <node concept="37vLTw" id="3wGjY11ra17" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5wEedBrIoaZ" resolve="myProject" />
-                    </node>
+                  <node concept="37vLTw" id="3wGjY11ra17" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5wEedBrIoaZ" resolve="myProject" />
                   </node>
                   <node concept="liA8E" id="1xyr94TkfGl" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                   </node>
                 </node>
               </node>
@@ -1765,7 +1706,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3Tm1VV" id="5U9rQri5Ghi" role="1B3o_S" />
     <node concept="3uibUv" id="5U9rQri5Gi1" role="1zkMxy">
       <ref role="3uigEE" to="u42p:1t_LRy89k3m" resolve="RefactoringDialog" />
     </node>

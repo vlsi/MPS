@@ -14,7 +14,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -73,13 +72,6 @@ public class ChangeMethodSignature_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
       MapSequence.fromMap(_params).put("frame", p);
       if (p == null) {
@@ -113,7 +105,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
       methodToRefactor = ((SNode) MapSequence.fromMap(_params).get("method"));
     }
 
-    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), methodToRefactor, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), methodToRefactor);
     dialog.show();
     final List<ChangeMethodSignatureRefactoring> myRefactorings = dialog.getAllRefactorings();
     if (ListSequence.fromList(myRefactorings).isEmpty()) {

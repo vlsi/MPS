@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,13 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ModuleClassReference;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseLeaf;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.IllegalModelAccessError;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -74,13 +72,17 @@ public class FindUtils {
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
     final SearchResults[] results = new SearchResults[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        results[0] = provider.getResults(query, monitor);
-      }
-    });
-    return results[0];
+    try {
+      return provider.getResults(query, monitor);
+    } catch (IllegalModelAccessError ex) {
+      // if there's query without model access, we shall never get here
+      // if the query does need model access, then it's caller's responsibility to ensure one. What would it do with
+      // e.g. SNode result returned, unless there's a lock?
+      //
+      // TODO remove once 3.4 is out and we are sure we've never noticed the error (or have fixed all the defects in invocation of the method)
+      LOG.error("SHALL NOT HAPPEN. If your query needs model access, wrap the call with proper model lock.", ex);
+    }
+    return new SearchResults();
   }
 
   @Deprecated
@@ -130,22 +132,12 @@ public class FindUtils {
   public static IResultProvider makeProvider(Collection<IFinder> finders) {
     UnionNode unionNode = new UnionNode();
     for (IFinder finder : finders) {
-      addChild(unionNode, new FinderNode(finder));
+      unionNode.addChild(new FinderNode(finder));
     }
     return unionNode;
   }
 
   public static IResultProvider makeProvider(IFinder... finders) {
     return makeProvider(Arrays.asList(finders));
-  }
-
-  private static void addChild(BaseNode parent, BaseNode child) {
-    parent.addChild(child);
-    child.setParent(parent);
-  }
-
-  private static void removeChild(BaseNode parent, BaseLeaf child) {
-    parent.removeChild(child);
-    child.setParent(null);
   }
 }

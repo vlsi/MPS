@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,8 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
-import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -33,6 +31,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -85,16 +84,11 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
 
     INSTANCE = this;
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
-        if (availableLanguages != null) {
-          myRulesManager.loadLanguages(availableLanguages);
-        }
-        myLanguageRegistry.addRegistryListener(TypeChecker.this);
-      }
-    });
+    Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
+    if (availableLanguages != null) {
+      myRulesManager.loadLanguages(availableLanguages);
+    }
+    myLanguageRegistry.addRegistryListener(this);
   }
 
   @Override

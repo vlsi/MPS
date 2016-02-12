@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,19 @@ package jetbrains.mps.make.dependencies;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SModuleNameComparator;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class StronglyConnectedModules {
   private static final StronglyConnectedModules INSTANCE = new StronglyConnectedModules();
@@ -90,7 +96,7 @@ public class StronglyConnectedModules {
 
   private static class DefaultModuleDecorator<M extends SModule> implements SModuleDecorator<M> {
     private final M myModule;
-    private final Set<DefaultModuleDecorator> myNext = new LinkedHashSet<DefaultModuleDecorator>();
+    private final Set<SModuleDecorator<M>> myNext = new LinkedHashSet<SModuleDecorator<M>>();
 
     public DefaultModuleDecorator(M module) {
       myModule = module;
@@ -101,14 +107,9 @@ public class StronglyConnectedModules {
       List<SModule> dependency = new ArrayList<SModule>(new GlobalModuleDependenciesManager(myModule).getModules(Deptype.COMPILE));
       List<SModule> dependencyCopy = new ArrayList<SModule>();
       dependencyCopy.addAll(dependency);
-      Collections.sort(dependencyCopy, new Comparator<SModule>() {
-        @Override
-        public int compare(SModule o1, SModule o2) {
-          return o1.getModuleName().compareTo(o2.getModuleName());
-        }
-      });
+      Collections.sort(dependencyCopy, new SModuleNameComparator());
       for (SModule module : dependencyCopy) {
-        DefaultModuleDecorator<M> next = (DefaultModuleDecorator<M>) map.get(module);
+        SModuleDecorator<M> next = map.get(module);
         if (next != null) {
           assert next.getModule() == module;
           myNext.add(next);
@@ -132,12 +133,7 @@ public class StronglyConnectedModules {
     }
 
     public String toString() {
-      return ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return myModule.toString();
-        }
-      });
+      return myModule.getModuleReference().toString();
     }
   }
 }

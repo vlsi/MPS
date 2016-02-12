@@ -15,8 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
@@ -63,7 +62,7 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
@@ -76,7 +75,7 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
   private String getFinderName(final Map<String, Object> _params) {
     return "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder";

@@ -60,10 +60,13 @@ public abstract class BaseNode implements IResultProvider {
 
   public void addChild(BaseNode child) {
     myChildren.add(child);
+    child.setParent(this);
   }
 
   public void removeChild(BaseNode child) {
+    assert child.getParent() == this;
     myChildren.remove(child);
+    child.setParent(null);
   }
 
   public void clearChildren() {

@@ -94,68 +94,6 @@
       <unit id="4221956679901042757" at="23,0,71,0" name="jetbrains.mps.ide.common.FileOpenUtil" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4251154893541678687">
-    <file name="ReadComboBoxEditor.java">
-      <node id="2034046503361624399" at="14,25,15,58" concept="2" />
-      <node id="4251154893541691630" at="19,55,20,28" concept="2" />
-      <node id="4251154893541678690" at="9,0,11,0" concept="1" trace="ReadComboBoxEditor#()V" />
-      <node id="2034046503361624397" at="14,0,17,0" concept="4" trace="run#()V" />
-      <node id="4251154893541691625" at="19,0,22,0" concept="4" trace="setItemInternal#(Ljava/lang/Object;)V" />
-      <node id="2034046503361624393" at="12,46,17,7" concept="2" />
-      <node id="4251154893541678694" at="11,0,19,0" concept="4" trace="setItem#(Ljava/lang/Object;)V" />
-      <scope id="4251154893541678693" at="9,31,9,31" />
-      <scope id="2034046503361624398" at="14,25,15,58" />
-      <scope id="4251154893541691629" at="19,55,20,28" />
-      <scope id="4251154893541678690" at="9,0,11,0" />
-      <scope id="2034046503361624397" at="14,0,17,0" />
-      <scope id="4251154893541691625" at="19,0,22,0">
-        <var name="anObject" id="4251154893541691624" />
-      </scope>
-      <scope id="4251154893541678699" at="12,46,17,7" />
-      <scope id="4251154893541678694" at="11,0,19,0">
-        <var name="anObject" id="4251154893541678697" />
-      </scope>
-      <unit id="2034046503361624397" at="13,45,17,5" name="jetbrains.mps.ide.common.ReadComboBoxEditor$1" />
-      <unit id="4251154893541678687" at="8,0,23,0" name="jetbrains.mps.ide.common.ReadComboBoxEditor" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/4251154893541691639">
-    <file name="ReadComboBoxRenderrer.java">
-      <node id="4251154893541691682" at="15,158,16,71" concept="5" />
-      <node id="2034046503361607503" at="18,25,19,107" concept="2" />
-      <node id="4251154893541691775" at="21,7,22,24" concept="6" />
-      <node id="4251154893541691742" at="24,138,25,92" concept="6" />
-      <node id="4251154893541691642" at="12,0,14,0" concept="1" trace="ReadComboBoxRenderrer#()V" />
-      <node id="2034046503361607501" at="18,0,21,0" concept="4" trace="run#()V" />
-      <node id="4251154893541691728" at="24,0,27,0" concept="4" trace="getListCellRenderretComponentInternal#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <node id="2034046503361607497" at="16,71,21,7" concept="2" />
-      <node id="4251154893541691646" at="14,0,24,0" concept="4" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <scope id="4251154893541691645" at="12,34,12,34" />
-      <scope id="2034046503361607502" at="18,25,19,107" />
-      <scope id="4251154893541691741" at="24,138,25,92" />
-      <scope id="4251154893541691642" at="12,0,14,0" />
-      <scope id="2034046503361607501" at="18,0,21,0" />
-      <scope id="4251154893541691728" at="24,0,27,0">
-        <var name="cellHasFocus" id="4251154893541691761" />
-        <var name="index" id="4251154893541691755" />
-        <var name="isSelected" id="4251154893541691758" />
-        <var name="list" id="4251154893541691733" />
-        <var name="value" id="4251154893541691737" />
-      </scope>
-      <scope id="4251154893541691659" at="15,158,22,24">
-        <var name="result" id="4251154893541691683" />
-      </scope>
-      <scope id="4251154893541691646" at="14,0,24,0">
-        <var name="cellHasFocus" id="4251154893541691657" />
-        <var name="index" id="4251154893541691653" />
-        <var name="isSelected" id="4251154893541691655" />
-        <var name="list" id="4251154893541691649" />
-        <var name="value" id="4251154893541691651" />
-      </scope>
-      <unit id="2034046503361607501" at="17,45,21,5" name="jetbrains.mps.ide.common.ReadComboBoxRenderrer$1" />
-      <unit id="4251154893541691639" at="11,0,28,0" name="jetbrains.mps.ide.common.ReadComboBoxRenderrer" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)/8606486054003576517">
     <file name="LayoutUtil.java">
       <node id="8606486054003576522" at="11,66,12,144" concept="6" />

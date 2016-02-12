@@ -4,9 +4,12 @@ package jetbrains.mps.ide.java.platform.refactorings;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -15,19 +18,17 @@ import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import java.awt.Component;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -44,14 +45,19 @@ public class InlineMethodDialog extends RefactoringDialog {
   private InlineMethodModel myModel;
   private InlineMethodDialog.PreviewAction myPreviewAction;
   private boolean myForAll;
-  private IOperationContext myOperationContext;
-  public InlineMethodDialog(SNode node, Project project, IOperationContext operationContext) {
-    super(project, true);
+  private final SRepository myEditorRepo;
+
+  public InlineMethodDialog(final SNode node, MPSProject project, EditorContext editorContext) {
+    super(project.getProject(), true);
+    myEditorRepo = editorContext.getRepository();
     setTitle("Inline Method");
     setResizable(false);
 
-    myModel = new InlineMethodModel(node);
-    myOperationContext = operationContext;
+    myModel = new ModelAccessHelper(editorContext.getRepository()).runReadAction(new Computable<InlineMethodModel>() {
+      public InlineMethodModel compute() {
+        return new InlineMethodModel(node);
+      }
+    });
     init();
   }
   @Nullable
@@ -84,7 +90,7 @@ public class InlineMethodDialog extends RefactoringDialog {
   }
   public void tryToShow(Component parentComponent) {
     final Wrappers._T<String> errors = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myEditorRepo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         errors.value = myModel.getErrors();
       }
@@ -120,6 +126,7 @@ public class InlineMethodDialog extends RefactoringDialog {
     myPreviewAction = new InlineMethodDialog.PreviewAction();
   }
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{getRefactorAction(), myPreviewAction, getCancelAction()};
   }
@@ -149,10 +156,10 @@ public class InlineMethodDialog extends RefactoringDialog {
       return null;
     }
     final Wrappers._T<SearchResults<SNode>> usages = new Wrappers._T<SearchResults<SNode>>();
-    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "Searching for ussages", true) {
+    ProgressManager.getInstance().run(new Task.Modal(getProject(), "Searching for ussages", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myEditorRepo.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             usages.value = MethodRefactoringUtils.findMethodUsages(myModel.getMethod(), new ProgressMonitorAdapter(indicator));
           }
@@ -161,14 +168,24 @@ public class InlineMethodDialog extends RefactoringDialog {
     });
     return usages.value;
   }
-  private String getProblems(SearchResults<SNode> usages) {
-    InlineMethodRefactoringAnalyzer analyzer;
-    if (myModel.getMethodCall() == null) {
-      analyzer = new InlineMethodRefactoringAnalyzer(myOperationContext, null, myModel.getMethod());
-    } else {
-      analyzer = new InlineMethodRefactoringAnalyzer(myOperationContext, myModel.getMethodCall().getNode(), myModel.getMethod());
-    }
-    return analyzer.findProblems(usages);
+  private String getProblems(final SearchResults<SNode> usages) {
+    final StringBuilder sb = new StringBuilder();
+    ProgressManager.getInstance().run(new Task.Modal(getProject(), "Search for overriding methods", true) {
+      public void run(@NotNull final ProgressIndicator pi) {
+        myEditorRepo.getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            InlineMethodRefactoringAnalyzer analyzer;
+            if (myModel.getMethodCall() == null) {
+              analyzer = new InlineMethodRefactoringAnalyzer(null, myModel.getMethod());
+            } else {
+              analyzer = new InlineMethodRefactoringAnalyzer(myModel.getMethodCall().getNode(), myModel.getMethod());
+            }
+            analyzer.appendProblems(usages, sb, new ProgressMonitorAdapter(pi));
+          }
+        });
+      }
+    });
+    return sb.toString();
   }
   @Nullable
   @Override
@@ -178,7 +195,7 @@ public class InlineMethodDialog extends RefactoringDialog {
     return label;
   }
   private void performRefactoring(final SearchResults<SNode> usages) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myEditorRepo.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         if (usages != null) {
           for (SearchResult<SNode> res : ListSequence.fromList(usages.getSearchResults())) {
@@ -208,7 +225,7 @@ public class InlineMethodDialog extends RefactoringDialog {
             performRefactoring(usages);
           }
         };
-        RefactoringAccessEx.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, usages, false, "refactoring");
+        RefactoringAccessEx.getInstance().showRefactoringView(getProject(), refactoringViewAction, usages, false, "refactoring");
       }
       close(DialogWrapper.OK_EXIT_CODE);
     }

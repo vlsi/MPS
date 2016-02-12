@@ -4,10 +4,9 @@ package jetbrains.mps.ide.editor.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -39,9 +38,8 @@ public class GoToHelper {
   public static boolean hasApplicableFinder(SNode node, String finderClassName) {
     return FindUtils.getFinderByClassName(finderClassName).isApplicable(node);
   }
-  public static void executeFinders(final SNode node, Project project, final String finderClassName, RelativePoint relativePoint) {
+  public static void executeFinders(final SNode node, final MPSProject mpsProject, final String finderClassName, RelativePoint relativePoint) {
     final Wrappers._T<String> caption = new Wrappers._T<String>();
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
 
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -55,7 +53,7 @@ public class GoToHelper {
     });
 
     final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
-    ProgressManager.getInstance().run(new Task.Modal(project, "Searching...", true) {
+    ProgressManager.getInstance().run(new Task.Modal(mpsProject.getProject(), "Searching...", true) {
       @Override
       public void run(@NotNull final ProgressIndicator p) {
         mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -72,6 +70,6 @@ public class GoToHelper {
     });
 
     String title = "Choose overriding method of " + caption.value + "() to navigate to";
-    GoToContextMenuUtil.showMenu(mpsProject, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(), relativePoint);
+    GoToContextMenuUtil.showMenu(mpsProject, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(mpsProject.getRepository()), relativePoint);
   }
 }

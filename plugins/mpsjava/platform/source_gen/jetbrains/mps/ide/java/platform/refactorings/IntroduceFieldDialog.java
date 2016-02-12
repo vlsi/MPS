@@ -14,6 +14,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.awt.GridBagConstraints;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
@@ -48,7 +50,12 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     JRadioButton field = this.createButton(1, FieldInitializationPlace.FIELD, result, group);
     JRadioButton initializer = this.createButton(2, (isStatic ? FieldInitializationPlace.STATICINIT : FieldInitializationPlace.CONSTRUCTOR), result, group);
 
-    if (this.myRefactoring.isInitializeInFieldAvailable()) {
+    boolean isInitializeInFieldAvailable = new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return myRefactoring.isInitializeInFieldAvailable();
+      }
+    });
+    if (isInitializeInFieldAvailable) {
       field.setSelected(true);
     } else {
       field.setEnabled(false);

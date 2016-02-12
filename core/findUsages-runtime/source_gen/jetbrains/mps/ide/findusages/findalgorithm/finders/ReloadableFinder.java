@@ -15,6 +15,9 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+/**
+ * FIXME With proper language aspect, there'd be no need in ReloadableFinder. Language Aspect does all the neccessary classloading management
+ */
 public class ReloadableFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(ReloadableFinder.class);
   private ModuleClassReference<GeneratedFinder> myModuleClassRef;
@@ -105,14 +108,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return FindersManager.getInstance().getDeclarationNode(finder);
   }
-  @Override
-  public SNode getNodeToNavigate() {
-    GeneratedFinder finder = getFinder();
-    if (finder == null) {
-      return null;
-    }
-    return finder.getNodeToNavigate();
-  }
+
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     GeneratedFinder finder = getFinder();
