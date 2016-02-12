@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.util.Iterator;
@@ -36,25 +37,27 @@ class UnmodifiableContainer<T> implements Container<T> {
   }
 
   @Override
-  public T add(T item) {
+  public T add(@NotNull T item) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public T addBefore(T item, T anchor) {
+  public T addBefore(@NotNull T item, T anchor) {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public void remove(T item) {
+  public void remove(@NotNull T item) {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     return new UnmodifiableIterator<T>(myContainer.iterator());
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator(T anchor, boolean forward) {
     return new UnmodifiableIterator<T>(myContainer.iterator(anchor, forward));
@@ -70,6 +73,7 @@ class UnmodifiableContainer<T> implements Container<T> {
     return myContainer.getLast();
   }
 
+  @NotNull
   @Override
   public TreeIterator<T> treeIterator() {
     return new UnmodifiableTreeIterator<T>(myContainer.treeIterator());

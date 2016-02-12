@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.util.Iterator;
@@ -26,19 +28,25 @@ import java.util.Iterator;
 public interface Container<T> extends Iterable<T> {
   int size();
 
-  T add(T item);
+  T add(@NotNull T item);
 
-  T addBefore(T item, T anchor);
+  T addBefore(@NotNull T item, T anchor);
 
-  void remove(T item);
+  void remove(@NotNull T item);
 
+  @NotNull
   Iterator<T> iterator();
 
+  @NotNull
   Iterator<T> iterator(T anchor, boolean forward);
 
+  @Nullable
   T getFirst();
 
+  @Nullable
   T getLast();
 
+  // TODO: remove this iterator, replace it with recursive method call
+  @NotNull
   TreeIterator<T> treeIterator();
 }

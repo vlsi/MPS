@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells.collections;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.TreeIterator;
 
 import java.util.ConcurrentModificationException;
@@ -42,25 +43,27 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   @Override
-  public T add(T item) {
+  public T add(@NotNull T item) {
     return addBefore(item, null);
   }
 
   @Override
-  public T addBefore(T item, T anchor) {
+  public T addBefore(@NotNull T item, T anchor) {
     return addEntryBefore(item, anchor == null ? null : getEntry(anchor)).myItem;
   }
 
   @Override
-  public void remove(T item) {
+  public void remove(@NotNull T item) {
     removeEntry(getEntry(item));
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator() {
     return iterator(null, true);
   }
 
+  @NotNull
   @Override
   public Iterator<T> iterator(T anchor, boolean forward) {
     if (size() == 0) {
@@ -69,6 +72,7 @@ abstract class AbstractContainer<T> implements Container<T> {
     return new ContentsIterator(anchor == null ? null : getEntry(anchor), forward);
   }
 
+  @NotNull
   @Override
   public TreeIterator<T> treeIterator() {
     return new AbstractTreeIterator<T>(iterator()) {
@@ -81,14 +85,12 @@ abstract class AbstractContainer<T> implements Container<T> {
 
   @Override
   public T getFirst() {
-    assert size() > 0;
-    return getFirstEntry().myItem;
+    return size() == 0 ? null : getFirstEntry().myItem;
   }
 
   @Override
   public T getLast() {
-    assert size() > 0;
-    return getLastEntry().myItem;
+    return size() == 0 ? null : getLastEntry().myItem;
   }
 
   Entry<T> getFirstEntry() {
