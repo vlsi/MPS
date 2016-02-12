@@ -41,6 +41,10 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   EditorCell lastCell();
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   int indexOf(EditorCell cell);
 
   EditorCell getCellAt(int index);

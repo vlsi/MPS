@@ -239,6 +239,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return (jetbrains.mps.nodeEditor.cells.EditorCell) getCellAt(i);
   }
 
+  /**
+   * @deprecated since MPS 3.4 not used
+   */
+  @Deprecated
   @Override
   public int indexOf(EditorCell cell) {
     int i = 0;
@@ -488,12 +492,13 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void addEditorCellBefore(EditorCell editorCell, EditorCell anchor) {
-
+    getEditorCells().addBefore(editorCell, anchor);
   }
 
   @Override
   public void addEditorCellAfter(EditorCell editorCell, EditorCell anchor) {
-
+    Iterator<EditorCell> iterator = getEditorCells().iterator(anchor, true);
+    getEditorCells().addBefore(editorCell, iterator.hasNext() ? iterator.next() : null);
   }
 
   @Override

@@ -34,7 +34,7 @@ public class DefaultCellInfo implements CellInfo {
 
   private SNodeReference myNodeReference;
   private String myCellId;
-  private int myCellNumber;
+  private int myCellNumber = 0;
   private boolean myIsInList = false;
 
   protected CellInfo myParentInfo;
@@ -59,7 +59,12 @@ public class DefaultCellInfo implements CellInfo {
       myParentInfo = parent.getCellInfo();
       myIsInList = parent.hasCellListHandler();
       if (myIsInList || myCellId == null) {
-        myCellNumber = parent.indexOf(cell);
+        for (jetbrains.mps.openapi.editor.cells.EditorCell editorCell : parent) {
+          if (editorCell.equals(cell)) {
+            break;
+          }
+          myCellNumber++;
+        }
       }
     }
   }
@@ -147,7 +152,16 @@ public class DefaultCellInfo implements CellInfo {
       if (myCellNumber >= parentCollection.getCellsCount()) {
         return null;
       }
-      EditorCell editorCell = parentCollection.getChildAt(myCellNumber);
+      EditorCell editorCell = null;
+      int i = 0;
+      for (jetbrains.mps.openapi.editor.cells.EditorCell nextCell : parentCollection) {
+        if (i == myCellNumber) {
+          editorCell = (EditorCell) nextCell;
+          break;
+        }
+        i++;
+      }
+      assert editorCell != null;
       // This editorCell should not have any cellId due to corresponding conditions in constructor
       return editorCell.getCellId() == null ? editorCell : null;
     }

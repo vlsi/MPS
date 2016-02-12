@@ -196,8 +196,11 @@ public class EditorCell_STHint extends EditorCell_Constant {
     }
 
     EditorCell_Collection cellCollection = myAnchorCell.getParent();
-    int index = myOldSide == CellSide.RIGHT ? cellCollection.indexOf(myAnchorCell) + 1 : cellCollection.indexOf(myAnchorCell);
-    cellCollection.addEditorCellAt(this, index);
+    if (myOldSide == CellSide.RIGHT) {
+      cellCollection.addEditorCellAfter(this, myAnchorCell);
+    } else {
+      cellCollection.addEditorCellBefore(this, myAnchorCell);
+    }
     return myBigCell;
   }
 
