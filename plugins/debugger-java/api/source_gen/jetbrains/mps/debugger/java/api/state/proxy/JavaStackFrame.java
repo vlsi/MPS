@@ -14,7 +14,7 @@ import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.util.Pair;
 import com.sun.jdi.StackFrame;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.LocalVariable;
 import com.sun.jdi.ObjectReference;
@@ -53,7 +53,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   }
   @Nullable
   public StackFrame getStackFrame() {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     try {
       return getFrame();
     } catch (Throwable t) {
@@ -89,7 +89,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
   }
   private List<JavaLocalVariable> fetchVisibleVariables() throws IncompatibleThreadStateException, AbsentInformationException {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
 
     StackFrame stackFrame = getFrame();
     List<JavaLocalVariable> result = new ArrayList<JavaLocalVariable>();
@@ -101,7 +101,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     return result;
   }
   private IWatchable fetchContextWatchable() throws IncompatibleThreadStateException {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
 
     StackFrame stackFrame = getFrame();
     if (stackFrame != null) {
@@ -119,7 +119,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   }
   @Override
   public IValue getValue(IWatchable watchable) {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     try {
       if (watchable instanceof JavaLocalVariable) {
         JavaLocalVariable localVariable = (JavaLocalVariable) watchable;

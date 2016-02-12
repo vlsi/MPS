@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.AbsentInformationException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.debugger.java.api.ui.Icons;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -76,7 +76,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     return myPresentation;
   }
   private String calculatePresentation() {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     return myThreadReference.name() + " (" + myThreadReference.referenceType().name() + " from group " + myThreadReference.threadGroup().name() + ") : " + JavaThread.getThreadStatusText(myThreadReference.status());
   }
   @Override
@@ -84,7 +84,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     return myCachedIcon;
   }
   private Icon calculateIcon() {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     if (myThreadReference.isAtBreakpoint()) {
       return Icons.THREAD_AT_BREAKPOINT;
     } else

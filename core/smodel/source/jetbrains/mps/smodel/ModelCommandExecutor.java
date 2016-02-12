@@ -85,6 +85,12 @@ public interface ModelCommandExecutor {
    */
   boolean setReadEnabledFlag(boolean flag);
 
+  /**
+   * @deprecated replace with <code>ThreadUtils.isInEDT()</code>
+   *             ModelAccess is about read and write model locks, not about event dispatching
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   boolean isInEDT();
 
   public interface RunnableWithProgress {

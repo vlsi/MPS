@@ -6,7 +6,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import org.jetbrains.annotations.NotNull;
 import com.sun.jdi.Location;
 import com.sun.jdi.AbsentInformationException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 
 public class JavaLocation implements ILocation {
   private final String myFileName;
@@ -14,7 +14,7 @@ public class JavaLocation implements ILocation {
   private final String myRoutineName;
   private final int myLineNumber;
   public JavaLocation(@NotNull Location location) throws AbsentInformationException {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     myFileName = location.sourceName();
     myUnitName = location.declaringType().name();
     myRoutineName = location.method().name();

@@ -15,14 +15,12 @@
     <import index="vjwt" ref="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <import index="pry4" ref="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <import index="frkw" ref="b387285c-3448-452c-b3bb-a3f8de8eaf08/java:com.sun.jdi(JDK-tools/)" />
-    <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging()" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util()" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation()" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations()" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j()" />
     <import index="qgwr" ref="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)" />
     <import index="wtoj" ref="r:42278aae-7cc0-4e00-9041-018f7301c362(jetbrains.mps.debugger.java.api.state.customViewers)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -943,14 +941,9 @@
       <node concept="3clFbS" id="2Jh_PqefK2z" role="3clF47">
         <node concept="1gVbGN" id="Is3U_yNMWw" role="3cqZAp">
           <node concept="3fqX7Q" id="Is3U_yNMWx" role="1gVkn0">
-            <node concept="2OqwBi" id="Is3U_yNMWy" role="3fr31v">
-              <node concept="2YIFZM" id="Is3U_yNMWz" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-              </node>
-              <node concept="liA8E" id="Is3U_yNMW$" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvcwA" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -1050,14 +1043,9 @@
       <node concept="3clFbS" id="6HPXYdN5EZW" role="3clF47">
         <node concept="1gVbGN" id="6HPXYdN5EZX" role="3cqZAp">
           <node concept="3fqX7Q" id="6HPXYdN5EZY" role="1gVkn0">
-            <node concept="2OqwBi" id="6HPXYdN5EZZ" role="3fr31v">
-              <node concept="2YIFZM" id="6HPXYdN5F00" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              </node>
-              <node concept="liA8E" id="6HPXYdN5F01" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvcy8" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -1776,14 +1764,9 @@
       <node concept="3clFbS" id="2Y$mRnICmqd" role="3clF47">
         <node concept="1gVbGN" id="5n7fGGQgbJG" role="3cqZAp">
           <node concept="3fqX7Q" id="5n7fGGQgbJI" role="1gVkn0">
-            <node concept="2OqwBi" id="5n7fGGQgbJ$" role="3fr31v">
-              <node concept="2YIFZM" id="5n7fGGQgbJn" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-              </node>
-              <node concept="liA8E" id="5n7fGGQgbJE" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvdJ7" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -2010,14 +1993,9 @@
       <node concept="3clFbS" id="7I7en9Qj5jK" role="3clF47">
         <node concept="1gVbGN" id="1xqI2oUaa9n" role="3cqZAp">
           <node concept="3fqX7Q" id="1xqI2oUabSi" role="1gVkn0">
-            <node concept="2OqwBi" id="1xqI2oUabSj" role="3fr31v">
-              <node concept="2YIFZM" id="1xqI2oUabSk" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              </node>
-              <node concept="liA8E" id="1xqI2oUabSl" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvdKb" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -2132,14 +2110,9 @@
       <node concept="3clFbS" id="7SN$RPLZvOu" role="3clF47">
         <node concept="1gVbGN" id="7SN$RPLZvOv" role="3cqZAp">
           <node concept="3fqX7Q" id="7SN$RPLZvOw" role="1gVkn0">
-            <node concept="2OqwBi" id="7SN$RPLZvOx" role="3fr31v">
-              <node concept="2YIFZM" id="7SN$RPLZvOy" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              </node>
-              <node concept="liA8E" id="7SN$RPLZvOz" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvdLx" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -2303,14 +2276,9 @@
       <node concept="3clFbS" id="2Y$mRnICmtP" role="3clF47">
         <node concept="1gVbGN" id="1xqI2oUabSn" role="3cqZAp">
           <node concept="3fqX7Q" id="1xqI2oUabSo" role="1gVkn0">
-            <node concept="2OqwBi" id="1xqI2oUabSp" role="3fr31v">
-              <node concept="2YIFZM" id="1xqI2oUabSq" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              </node>
-              <node concept="liA8E" id="1xqI2oUabSr" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRzvdMS" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>
@@ -2853,14 +2821,9 @@
       <node concept="3clFbS" id="3DGS_W7MKYw" role="3clF47">
         <node concept="1gVbGN" id="3DGS_W7MKYx" role="3cqZAp">
           <node concept="3fqX7Q" id="3DGS_W7MKYy" role="1gVkn0">
-            <node concept="2OqwBi" id="3DGS_W7MKYz" role="3fr31v">
-              <node concept="2YIFZM" id="3DGS_W7MKY$" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-              </node>
-              <node concept="liA8E" id="3DGS_W7MKY_" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-              </node>
+            <node concept="2YIFZM" id="5XQGVRztU39" role="3fr31v">
+              <ref role="37wK5l" to="3a50:~ThreadUtils.isInEDT():boolean" resolve="isInEDT" />
+              <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             </node>
           </node>
         </node>

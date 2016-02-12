@@ -13,7 +13,7 @@ import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IThread;
@@ -95,7 +95,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     return myDebugSession.getEventsProcessor().invokeEvaluationUnderProgress(command, getThread().getThread());
   }
   protected synchronized void initializeThreads() {
-    assert !(ModelAccess.instance().isInEDT());
+    assert !(ThreadUtils.isInEDT());
     assert getExecutionState().equals(AbstractDebugSession.ExecutionState.Paused);
 
     for (ThreadReference threadReference : getEventProcessor().getVirtualMachine().allThreads()) {
