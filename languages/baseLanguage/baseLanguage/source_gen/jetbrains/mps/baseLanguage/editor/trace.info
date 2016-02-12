@@ -40379,27 +40379,21 @@
       <node id="6592755968649264219" at="30,57,31,34" concept="5" />
       <node id="6592755968649273435" at="31,34,32,15" concept="12" />
       <node id="3707439673219347656" at="34,5,35,45" concept="5" />
-      <node id="6592755968649635984" at="38,111,39,93" concept="11" />
-      <node id="6592755968649635998" at="40,65,41,69" concept="13" />
-      <node id="6592755968649638019" at="42,5,43,57" concept="12" />
-      <node id="6592755968649635996" at="39,93,42,5" concept="20" />
+      <node id="6365760170193855261" at="38,111,39,115" concept="12" />
+      <node id="6592755968649635473" at="38,0,41,0" concept="15" trace="getNextCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;Ljetbrains/mps/openapi/editor/cells/EditorCell;Z)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6592755968649251854" at="18,55,22,7" concept="9" />
       <node id="6592755968649262965" at="28,69,33,7" concept="9" />
-      <node id="6592755968649635473" at="38,0,45,0" concept="15" trace="getNextCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;Ljetbrains/mps/openapi/editor/cells/EditorCell;Z)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6592755968649650668" at="16,77,34,5" concept="9" />
       <node id="3707439673219332089" at="12,0,37,0" concept="15" trace="setCursorAfterModifierDeleted#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
-      <scope id="6592755968649635997" at="40,65,41,69" />
+      <scope id="6592755968649635476" at="38,111,39,115" />
       <scope id="6592755968649251856" at="19,25,21,34" />
       <scope id="6592755968649262967" at="29,33,32,15" />
-      <scope id="6592755968649635476" at="38,111,43,57">
-        <var name="iterator" id="6592755968649635985" />
-      </scope>
-      <scope id="6592755968649650670" at="17,31,23,13" />
-      <scope id="6592755968649635473" at="38,0,45,0">
+      <scope id="6592755968649635473" at="38,0,41,0">
         <var name="anchorCell" id="6592755968649635831" />
         <var name="forward" id="6592755968649635926" />
         <var name="parent" id="6592755968649635744" />
       </scope>
+      <scope id="6592755968649650670" at="17,31,23,13" />
       <scope id="6592755968649662679" at="24,30,33,7">
         <var name="parentParent" id="6592755968649256211" />
       </scope>
@@ -40413,7 +40407,7 @@
         <var name="editorContext" id="3707439673219332115" />
         <var name="node" id="3707439673219335328" />
       </scope>
-      <unit id="3707439673219332019" at="11,0,46,0" name="jetbrains.mps.baseLanguage.editor.CursorFocusUtils" />
+      <unit id="3707439673219332019" at="11,0,42,0" name="jetbrains.mps.baseLanguage.editor.CursorFocusUtils" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/3726020645866465468">

@@ -107,9 +107,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        Iterator<EditorCell> it = editorCells.iterator(null, false);
-        EditorCell lastCell = it.hasNext() ? it.next() : null;
-        if (lastCell != null) {
+        if (editorCells.getCellsCount() > 0) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }

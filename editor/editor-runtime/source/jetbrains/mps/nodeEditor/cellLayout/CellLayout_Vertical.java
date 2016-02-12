@@ -25,7 +25,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.util.Deque;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -187,9 +186,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    EditorCell editorCell = editorCell_collection.firstCell();
-    if (editorCell == null) return 0;
-    return editorCell.getRightInset();
+    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   @Override
@@ -225,9 +222,8 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        Iterator<EditorCell> it = editorCells.iterator(null, false);
-        EditorCell lastCell = it.hasNext() ? it.next() : null;
-        if (lastCell != null) {
+        if (editorCells.getCellsCount() > 0) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }

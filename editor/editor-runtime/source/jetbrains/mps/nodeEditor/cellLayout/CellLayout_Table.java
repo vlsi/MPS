@@ -243,9 +243,8 @@ public class CellLayout_Table extends AbstractCellLayout {
       case CENTER:
         return Math.max(result, editorCells.getHeight() / 2);
       case LAST:
-        Iterator<EditorCell> it = editorCells.iterator(null, false);
-        EditorCell lastCell = it.hasNext() ? it.next() : null;
-        if (lastCell != null) {
+        if (editorCells.getCellsCount() > 0) {
+          EditorCell lastCell = editorCells.lastCell();
           return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
         }
     }
@@ -255,9 +254,7 @@ public class CellLayout_Table extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    EditorCell editorCell = editorCell_collection.firstCell();
-    if (editorCell != null) return editorCell.getRightInset();
-    else return 0;
+    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   public String toString() {

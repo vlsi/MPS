@@ -209,7 +209,7 @@ public class IntelligentNodeMover {
       EditorCell anchorCell = myEditorContext.getEditorComponent().findNodeCell(getBoundaryNode());
       EditorCell_Collection parentCell = anchorCell.getParent();
       while (parentCell != null) {
-        Iterator<EditorCell> cellIterator = getCellIterator(parentCell, anchorCell);
+        Iterator<EditorCell> cellIterator = parentCell.iterator(anchorCell, myIsForward);
         while (cellIterator.hasNext()) {
           IntelligentNodeMover.PlaceToMove place = findPlaceToMoveInsideCell(cellIterator.next());
           if (place != null) {
@@ -268,16 +268,6 @@ public class IntelligentNodeMover {
     return null;
   }
 
-  private Iterator<EditorCell> getCellIterator(EditorCell_Collection parentCell, EditorCell anchorCell) {
-    Iterator<EditorCell> iterator = (myIsForward ? parentCell.iterator() : parentCell.reverseIterator());
-    while (iterator.hasNext()) {
-      if (iterator.next().equals(anchorCell)) {
-        break;
-      }
-    }
-    return iterator;
-  }
-
   private EditorCell findCellToMoveInsideCell(@NotNull EditorCell parentCell) {
     CellTreeIterable cellIterable = CellTraversalUtil.iterateTree(parentCell, parentCell, myIsForward);
     for (EditorCell cell : cellIterable) {
@@ -308,7 +298,7 @@ public class IntelligentNodeMover {
     return (link instanceof SContainmentLink ? ((SContainmentLink) link) : null);
   }
   private boolean isSimilarLink(@NotNull SContainmentLink link) {
-    return eq_9l6nqc_a0a0a83_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a83(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
+    return eq_9l6nqc_a0a0a53_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a53(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
   }
 
   private static class PlaceToMove {
@@ -357,10 +347,10 @@ public class IntelligentNodeMover {
     }
     return node.getContainmentLink();
   }
-  private static boolean eq_9l6nqc_a0a0a83(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_9l6nqc_a0a0a83_0(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a53_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -163,9 +163,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
 
   @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
-    EditorCell editorCell = editorCell_collection.firstCell();
-    if (editorCell != null) return editorCell.getRightInset();
-    else return 0;
+    return editorCell_collection.getCellsCount() == 0 ? 0 : editorCell_collection.firstCell().getRightInset();
   }
 
   public String toString() {

@@ -47,6 +47,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -412,7 +413,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     myDescent = newDescent;
   }
 
-  // TODO: not used? Remove?
+  /**
+   * @deprecated since MPS 3.4 use getContentCells();
+   */
+  @Deprecated
   public Iterable<EditorCell> contentCells() {
     if (usesBraces()) {
       return new Iterable<EditorCell>() {
@@ -467,7 +471,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   @Override
   public Iterable<EditorCell> getContentCells() {
     if (usesBraces() && !isCollapsed()) {
-      return new NoBracesIterable();
+      return IterableUtil.asIterable(new FilteringIterator<EditorCell>(getEditorCells().iterator()) {
+        @Override
+        protected boolean accept(EditorCell item) {
+          return getEditorCells().getFirst() != item && getEditorCells().getLast() != item;
+        }
+      });
     } else {
       // TODO: either return getEditorCells() or use getVisibleChildCells() in all other content-related methods
       return this;
@@ -1243,18 +1252,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       } else {
         disableBraces();
       }
-    }
-  }
-
-  private class NoBracesIterable implements Iterable<EditorCell> {
-    @Override
-    public Iterator<EditorCell> iterator() {
-      return new FilteringIterator<EditorCell>(getEditorCells().iterator()) {
-        @Override
-        protected boolean accept(EditorCell item) {
-          return getEditorCells().getFirst() != item && getEditorCells().getLast() != item;
-        }
-      };
     }
   }
 }

@@ -6,7 +6,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import java.util.Iterator;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 
 public class CursorFocusUtils {
   public static void setCursorAfterModifierDeleted(EditorContext editorContext, SNode node, boolean backspace) {
@@ -36,10 +36,6 @@ public class CursorFocusUtils {
   }
 
   private static EditorCell getNextCell(EditorCell_Collection parent, EditorCell anchorCell, boolean forward) {
-    Iterator<EditorCell> iterator = (forward ? parent.iterator() : parent.reverseIterator());
-    while (iterator.hasNext() && iterator.next() != anchorCell) {
-      // do nothing, just continue iteration until currentCell found 
-    }
-    return (iterator.hasNext() ? iterator.next() : null);
+    return (forward ? CellTraversalUtil.getNextSibling(anchorCell) : CellTraversalUtil.getPrevSibling(anchorCell));
   }
 }
