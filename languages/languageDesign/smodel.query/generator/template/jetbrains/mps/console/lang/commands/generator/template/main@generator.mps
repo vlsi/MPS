@@ -1140,9 +1140,7 @@
       </node>
     </node>
     <node concept="gft3U" id="4AHaCIo5Xtq" role="jxRDz">
-      <node concept="10Nm6u" id="4AHaCIo5XHq" role="gfFT$">
-        <node concept="29HgVG" id="4AHaCIo5XHF" role="lGtFl" />
-      </node>
+      <node concept="10Nm6u" id="4AHaCIo5XHq" role="gfFT$" />
     </node>
   </node>
   <node concept="jVnub" id="4AHaCIo5XLs">

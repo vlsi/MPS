@@ -7,10 +7,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -46,11 +46,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
-  public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
+  public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean wholeProject, final boolean dirtyOnly, final boolean depClosure) {
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
+        if (wholeProject) {
           modelsToGenerate.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
         } else {
           modelsToGenerate.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SModel>(), models)).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
@@ -102,21 +102,21 @@ public class IdeCommandUtil {
     });
   }
 
-  public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void cleanCaches(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean wholeProject) {
     final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
-    if (models == null && modules == null) {
-      project.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        if (wholeProject) {
           modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
+        } else {
+          modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SModel>(), models)).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+            public Iterable<SModel> translate(SModule it) {
+              return it.getModels();
+            }
+          })));
         }
-      });
-    } else {
-      modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SModel>(), models)).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      })));
-    }
+      }
+    });
     ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
@@ -128,71 +128,71 @@ public class IdeCommandUtil {
     });
   }
 
-  public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+  public static void removeGenSources(final Project project, final Iterable<? extends SModel> models, Iterable<? extends SModule> modules, final boolean wholeProject) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
-    if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(_modules.value).isEmpty()) {
-      project.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          _modules.value = project.getModulesWithGenerators();
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        if (wholeProject) {
+          _modules.value = (Iterable<? extends SModule>) (Iterable<SModule>) project.getProjectModulesWithGenerators();
         }
-      });
-    }
-    Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return SNodeOperations.isGeneratable(it);
-      }
-    }).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel model) {
-        String outputPath = SModuleOperations.getOutputPathFor(model);
-        String cachePath = FileGenerationUtil.getCachesPath(outputPath);
-
-        IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
-        IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
-
-        Iterable<IFile> outputItems = outputDir.getChildren();
-        Sequence.fromIterable(outputItems).where(new IWhereFilter<IFile>() {
-          public boolean accept(IFile it) {
-            return !(it.isDirectory());
+        Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return SNodeOperations.isGeneratable(it);
           }
-        }).visitAll(new IVisitor<IFile>() {
-          public void visit(IFile it) {
-            it.delete();
+        }).visitAll(new IVisitor<SModel>() {
+          public void visit(SModel model) {
+            String outputPath = SModuleOperations.getOutputPathFor(model);
+            String cachePath = FileGenerationUtil.getCachesPath(outputPath);
+
+            IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
+            IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
+
+            Iterable<IFile> outputItems = outputDir.getChildren();
+            Sequence.fromIterable(outputItems).where(new IWhereFilter<IFile>() {
+              public boolean accept(IFile it) {
+                return !(it.isDirectory());
+              }
+            }).visitAll(new IVisitor<IFile>() {
+              public void visit(IFile it) {
+                it.delete();
+              }
+            });
+
+            Iterable<IFile> cachedItems = cachesDir.getChildren();
+            Sequence.fromIterable(cachedItems).where(new IWhereFilter<IFile>() {
+              public boolean accept(IFile it) {
+                return !(it.isDirectory());
+              }
+            }).visitAll(new IVisitor<IFile>() {
+              public void visit(IFile it) {
+                it.delete();
+              }
+            });
+
+            JavaModuleFacet javaFacet = model.getModule().getFacet(JavaModuleFacet.class);
+            if (javaFacet != null) {
+              IFile classesRootPath = check_nf7729_a0a0n0a0a1a0a0e(javaFacet);
+              IFile classesDir = FileGenerationUtil.getDefaultOutputDir(model, classesRootPath);
+              Iterable<IFile> classesItems = classesDir.getChildren();
+              Sequence.fromIterable(classesItems).where(new IWhereFilter<IFile>() {
+                public boolean accept(IFile it) {
+                  return !(it.isDirectory());
+                }
+              }).visitAll(new IVisitor<IFile>() {
+                public void visit(IFile it) {
+                  it.delete();
+                }
+              });
+            }
           }
         });
-
-        Iterable<IFile> cachedItems = cachesDir.getChildren();
-        Sequence.fromIterable(cachedItems).where(new IWhereFilter<IFile>() {
-          public boolean accept(IFile it) {
-            return !(it.isDirectory());
-          }
-        }).visitAll(new IVisitor<IFile>() {
-          public void visit(IFile it) {
-            it.delete();
-          }
-        });
-
-        JavaModuleFacet javaFacet = model.getModule().getFacet(JavaModuleFacet.class);
-        if (javaFacet != null) {
-          IFile classesRootPath = check_nf7729_a0a0n0a0a1a4(javaFacet);
-          IFile classesDir = FileGenerationUtil.getDefaultOutputDir(model, classesRootPath);
-          Iterable<IFile> classesItems = classesDir.getChildren();
-          Sequence.fromIterable(classesItems).where(new IWhereFilter<IFile>() {
-            public boolean accept(IFile it) {
-              return !(it.isDirectory());
-            }
-          }).visitAll(new IVisitor<IFile>() {
-            public void visit(IFile it) {
-              it.delete();
-            }
-          });
-        }
       }
     });
     Sequence.fromIterable(_modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule module) {
         IFile outputDir = module.getOutputPath();
-        IFile testDir = check_nf7729_a0b0a0a2a4(module.getFacet(TestsFacet.class));
-        IFile classesDir = check_nf7729_a0c0a0a2a4(module.getFacet(JavaModuleFacet.class));
+        IFile testDir = check_nf7729_a0b0a0a1a4(module.getFacet(TestsFacet.class));
+        IFile classesDir = check_nf7729_a0c0a0a1a4(module.getFacet(JavaModuleFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           outputDir.delete();
@@ -228,19 +228,19 @@ public class IdeCommandUtil {
     }));
   }
 
-  private static IFile check_nf7729_a0a0n0a0a1a4(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_nf7729_a0a0n0a0a1a0a0e(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
     return null;
   }
-  private static IFile check_nf7729_a0b0a0a2a4(TestsFacet checkedDotOperand) {
+  private static IFile check_nf7729_a0b0a0a1a4(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_nf7729_a0c0a0a2a4(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_nf7729_a0c0a0a1a4(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
