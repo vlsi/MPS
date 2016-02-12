@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,12 +84,9 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.Timer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -99,7 +96,6 @@ import java.util.List;
 
 public class FileViewProjectPane extends AbstractProjectViewPane implements DataProvider {
   private static final Logger LOG = LogManager.getLogger(FileViewProjectPane.class);
-  private static final int DELAY = 10;
   @NonNls
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
@@ -114,8 +110,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
   private VirtualFileAdapter myFileListener;
-  private Timer myTimer;
-  private VcsListener myDirectoryMappingListener;
   private VirtualFileManagerListener myVirtualFileManagerListener;
   private JScrollPane myScrollPane;
 
@@ -144,7 +138,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   @Override
   public void dispose() {
     if (isInitialized()) {
-      myTimer.stop();
       disposeListeners();
     }
     myScrollPane = null;
@@ -160,9 +153,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   public void rebuildTreeLater() {
-    if (!myTimer.isRunning()) {
-      myTimer.restart();
-    }
+    getTree().rebuildLater();
   }
 
   @Override
@@ -179,12 +170,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     myTree = new MPSTree() {
       @Override
       protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-        return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
-          @Override
-          public ActionGroup compute() {
-            return ProjectPaneActionGroups.getActionGroup(node);
-          }
-        });
+        return ProjectPaneActionGroups.getActionGroup(node);
       }
 
       @Override
@@ -223,32 +209,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       }
     });
 
-    myTimer = new Timer(DELAY, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        //why write? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            getTree().rebuildNow();
-          }
-        });
-      }
-    });
-    myTimer.setRepeats(false);
-    myTimer.setInitialDelay(DELAY);
-
-    // Looks like this method can be called from different threads
-    if (ModelAccess.instance().isInEDT()) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          getTree().rebuildNow();
-        }
-      });
-    } else {
-      rebuildTreeLater();
-    }
+    rebuildTreeLater();
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
   }
@@ -257,25 +218,24 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener = new FileStatusChangeListener());
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener = new FileChangesListener());
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
-    myDirectoryMappingListener = new VcsListener() {
+    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener = new ChangeListUpdateListener());
+    myMessageBusConnection = myBus.connect(this);
+    myMessageBusConnection.subscribe(ProjectLevelVcsManager.VCS_CONFIGURATION_CHANGED, new VcsListener() {
       @Override
       public void directoryMappingChanged() {
         rebuildTreeLater();
       }
-    };
-    myProject.getComponent(ProjectLevelVcsManager.class).addVcsListener(myDirectoryMappingListener);
-    ChangeListManager.getInstance(myProject).addChangeListListener(myChangeListListener = new ChangeListUpdateListener());
-    myMessageBusConnection = myBus.connect();
+    });
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
       @Override
-      public void fileOpened(FileEditorManager source, VirtualFile file) {
+      public void fileOpened(@NotNull FileEditorManager source, @NotNull VirtualFile file) {
         if (myProjectView.isAutoscrollFromSource(getId())) {
           selectNode(file, false);
         }
       }
 
       @Override
-      public void selectionChanged(FileEditorManagerEvent event) {
+      public void selectionChanged(@NotNull FileEditorManagerEvent event) {
         if (myProjectView.isAutoscrollFromSource(getId())) {
           VirtualFile newFile = event.getNewFile();
           if (newFile != null) {
@@ -290,7 +250,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
-    myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
     myMessageBusConnection.disconnect();
   }
@@ -299,9 +258,10 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return myScrollPane != null;
   }
 
+  @NotNull
   @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
-    getTree().rebuildLater();
+    rebuildTreeLater();
     return new ActionCallback();
   }
 
