@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,10 +113,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     return myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
-  protected boolean isSharedReadInWriteMode() {
-    return mySharedReadInWriteMode;
-  }
-
   @Override
   public <T> T runReadInWriteAction(final Computable<T> c) {
     checkWriteAccess();
@@ -131,19 +127,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
       mySharedReadInWriteMode = false;
       mySharedReadInWriteLock.writeLock().unlock();
     }
-  }
-
-  public void runReadInWriteWorker(final Runnable r) {
-    if (mySharedReadInWriteMode) {
-      try {
-        mySharedReadInWriteLock.readLock().lock();
-        r.run();
-      } finally {
-        mySharedReadInWriteLock.readLock().unlock();
-      }
-      return;
-    }
-    throw new IllegalStateException();
   }
 
   @Override

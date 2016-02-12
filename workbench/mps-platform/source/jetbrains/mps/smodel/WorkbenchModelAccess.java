@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.undo.DefaultUndoContext;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.repository.CommandListener;
@@ -161,22 +162,11 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
     return r.getResult();
   }
 
+  @ToRemove(version = 3.4)
   @Override
   public void writeFilesInEDT(@NotNull final Runnable action) {
-    // EDT should have IDEA write lock
-    // FIXME this code seems to be outdated or at least deserves a thorough explanation. runReadInWriteAction() does odd tricks with locks and flags
-    runReadInWriteAction(new Computable<Object>() {
-      @Override
-      public Object compute() {
-        if (ApplicationManager.getApplication().isDispatchThread()) {
-          runReadInWriteWorker(action);
-        } else {
-          LOG.error("EDT should have IDEA write lock", new Exception());
-          throw new IllegalStateException();
-        }
-        return null;
-      }
-    });
+    LOG.error("STOP USING ModelAccess.writeFilesInEDT (see javadoc for explanation)", new Throwable());
+    action.run();
   }
 
   private void assertNotWriteFromRead() {

@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.SModuleOperations;
@@ -47,21 +46,18 @@ public final class IconResource__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void generate_id7Mb2akaesv8(@NotNull final SNode __thisNode__) {
-    ModelAccess.instance().writeFilesInEDT(new Runnable() {
-      public void run() {
-        SModel model = SNodeOperations.getModel(__thisNode__);
-        String outputRoot = SModuleOperations.getOutputPathFor(model);
-        IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
-        IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
+  /*package*/ static void generate_id7Mb2akaesv8(@NotNull SNode __thisNode__) {
+    // FIXME I could not find any uses of the method, is it still actual? 
+    SModel model = SNodeOperations.getModel(__thisNode__);
+    String outputRoot = SModuleOperations.getOutputPathFor(model);
+    IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
+    IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
-        // copy 
-        String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
-        IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
+    // copy 
+    String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")));
+    IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
-        IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
-      }
-    });
+    IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
   }
   /*package*/ static boolean isValid_id7Mb2akaestJ(@NotNull SNode __thisNode__) {
     SModule module = SNodeOperations.getModel(__thisNode__).getModule();

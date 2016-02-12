@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,23 @@ public interface ModelCommandExecutor {
    */
   void runWriteInEDT(Runnable r);
 
+  /**
+   * @deprecated initial intention of the method was to allow generator to hold a global (write) lock and allow parallel reads from
+   *             other (presumably, generation) threads. However, it's quite complicated approach, with unclear contract (did
+   *             you know you need to get write lock first, and that other threads intended to read shall use regular runReadAction?),
+   *             and has been replaced since with {@link #setReadEnabledFlag(boolean)}
+   *             which does almost the same, but doesn't hold write lock in the originating thread.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   <T> T runReadInWriteAction(Computable<T> c);
 
+  /**
+   * @deprecated it's impossible to figure out the problem this code tried to address.
+   *             Now it adopts 'cut through' approach, the action would be executed as is and the error logged.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   void writeFilesInEDT(@NotNull final Runnable action);
 
   /**
