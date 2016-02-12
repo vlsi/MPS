@@ -47,6 +47,10 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
   @Deprecated
   int indexOf(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.4 use iterator() methods
+   */
+  @Deprecated
   EditorCell getCellAt(int index);
 
   void addEditorCell(EditorCell editorCell);
@@ -54,6 +58,8 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
   void addEditorCellBefore(EditorCell editorCell, EditorCell anchor);
 
   void addEditorCellAfter(EditorCell editorCell, EditorCell anchor);
+
+  void removeCell(EditorCell editorCell);
 
   /**
    * @deprecated since MPS 3.3 is deprecated. Use addEditorCellAt(EditorCell cellToAdd, int index).
@@ -69,7 +75,9 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
    *
    * @param cellToAdd cell to add
    * @param index     position to add cell
+   * @deprecated since MPS 3.4 use addEditorCellBefore()/addEditorCellAfter() methods
    */
+  @Deprecated
   void addEditorCellAt(EditorCell cellToAdd, int index);
 
   int getCellsCount();
