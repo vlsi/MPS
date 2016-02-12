@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -53,7 +53,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   @Override
   public Editor openNode(@NotNull Project project, @NotNull SNode node, boolean focus, boolean select) {
     if (navigatedToIdea(project, node)) return null;
-    return new MPSEditorOpener(ProjectHelper.toIdeaProject(project)).openNode(node, new ProjectOperationContext(project), focus, select);
+    return new MPSEditorOpener((MPSProject) project).openNode(node, focus, select);
   }
 
   @Override

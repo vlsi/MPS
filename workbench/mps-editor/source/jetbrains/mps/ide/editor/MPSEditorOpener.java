@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorProvider;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -38,7 +37,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.log4j.LogManager;
@@ -49,37 +47,16 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Component;
 
-// FIXME this class is in use by mbeddr, hence we can't just drop deprecated code.
 public class MPSEditorOpener {
-  private static Logger LOG = Logger.wrap(LogManager.getLogger(MPSEditorOpener.class));
   private final MPSProject myProject;
-
-  /**
-   * @deprecated use {@link #MPSEditorOpener(MPSProject)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MPSEditorOpener(@NotNull Project project) {
-    this(project.getComponent(MPSProject.class));
-  }
 
   public MPSEditorOpener(@NotNull MPSProject mpsProject) {
     myProject = mpsProject;
   }
 
   /*package*/ Editor createEditorFor(SNode node) {
-    // FIXME shall refactor EditorOpenHandler API (once I understand why there's open() and why it's not in use anywhere but here
-    return createEditorFor(new ProjectOperationContext(myProject), node);
-  }
-
-  /**
-   * @deprecated <code>IOperationContext</code> has been deprecated. There's no API to replace the call,
-   * generally, {@link jetbrains.mps.openapi.navigation.NavigationSupport#openNode(jetbrains.mps.project.Project, SNode, boolean, boolean)}
-   * should be sufficient.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Editor createEditorFor(IOperationContext operationContext, SNode node) {
+    // FIXME shall refactor EditorOpenHandler API not to take IOperationContext
+    ProjectOperationContext operationContext = new ProjectOperationContext(myProject);
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
       if (handler.canOpen(operationContext, node)) {
         Editor nodeEditor = handler.open(operationContext, node);
@@ -88,16 +65,6 @@ public class MPSEditorOpener {
     }
 
     return new NodeEditor(operationContext, node);
-  }
-
-  /**
-   * Requires: model write, EDT.
-   * @deprecated <code>IOperationContext</code> has been deprecated and is ignored. Use {@link #openNode(SNode, boolean, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    return openNode(node, focus, select);
   }
 
   /**

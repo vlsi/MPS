@@ -27,7 +27,7 @@ import jetbrains.mps.lang.test.runtime.TestRunner;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
@@ -168,16 +168,14 @@ public class EditorTests extends DataMPSFixtureTestCase {
       UIUtil.invokeAndWaitIfNeeded(new Runnable() {
         @Override
         public void run() {
+          final MPSProject mpsProject = ProjectHelper.fromIdeaProject(myModule.getProject());
           ModelAccess.instance().runWriteAction(new Runnable() {
             @Override
             public void run() {
-              final ProjectOperationContext context = new ProjectOperationContext(
-                ProjectHelper.toMPSProject(myModule.getProject()));
-
-              new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
+              new MPSEditorOpener(mpsProject).openNode(myRoot, true, true);
 
               btt.setModelDescriptor(myRoot.getModel());
-              btt.setProject(ProjectHelper.toMPSProject(myModule.getProject()));
+              btt.setProject(mpsProject);
             }
           });
         }
