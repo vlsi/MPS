@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -93,15 +94,21 @@ public class TemplateContainer extends RuleConsequenceProcessor {
     if (fragments.size() > 1) {
       // GeneratorUtilEx.getTemplateFragments() shall not return null
       Iterator<SNode> it = fragments.iterator();
-      SNode templateNode = it.next().getParent();
-      final SNode commonParent = templateNode.getParent();
-      final String role = templateNode.getRoleInParent();
+      SNode fragmentParent = it.next().getParent();
+      assert fragmentParent != null; // free-floating fragment would be odd
+      final SNode commonParent = fragmentParent.getParent();
+      final SContainmentLink role = fragmentParent.getContainmentLink();
       while (it.hasNext()) {
-        templateNode = it.next().getParent();
-        assert templateNode != null; // free-floating fragment would be odd
-        if (commonParent != templateNode.getParent() || !role.equals(templateNode.getRoleInParent())) {
+        fragmentParent = it.next().getParent();
+        assert fragmentParent != null; // free-floating fragment would be odd
+        // it's parent template that specifies context node and its role where these template fragments would get injected into,
+        // thus we check there's no assumption context node is different for fragments, and that they do not assume they may end up in distinct roles.
+        // Technically, provided ITemplateProcessor.apply() would yield something extra but SNode, we could answer with Pair(SContainmentLink,SNode)
+        // and inject TF outcome into different roles (see https://youtrack.jetbrains.com/issue/MPS-23373). However, this would compromise COPY-SRC
+        // idea (it's attached to a distinct role), and we'd need something more general, like <<apply-templates/>> to handle all children
+        if (commonParent != fragmentParent.getParent() || !role.equals(fragmentParent.getContainmentLink())) {
           String msg = "Couldn't process template: all template fragments must reside in the same parent node. Roles: expected %s, met %s";
-          throw new TemplateProcessingFailureException(myTemplateNode, String.format(msg, role, templateNode.getRoleInParent()));
+          throw new TemplateProcessingFailureException(myTemplateNode, String.format(msg, role, fragmentParent.getContainmentLink().getName()));
         }
       }
     }
