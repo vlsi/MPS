@@ -459,13 +459,46 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return new UnmodifiableIterator<EditorCell>(getVisibleChildCells().iterator());
   }
 
+  public Iterator<EditorCell> iterator(EditorCell anchor, boolean forward) {
+    return new UnmodifiableIterator<EditorCell>(getVisibleChildCells().iterator(anchor, forward));
+  }
+
   @Override
   public Iterator<EditorCell> reverseIterator() {
     return new UnmodifiableIterator<EditorCell>(getVisibleChildCells().iterator(null, false));
   }
 
-  public Iterator<EditorCell> iterator(EditorCell anchor, boolean forward) {
-    return new UnmodifiableIterator<EditorCell>(getVisibleChildCells().iterator(anchor, forward));
+  @Override
+  public EditorCell firstCell() {
+    return getVisibleChildCells().getFirst();
+  }
+
+  @Override
+  public EditorCell lastCell() {
+    return getVisibleChildCells().getLast();
+  }
+
+  @Override
+  public void addEditorCell(EditorCell editorCell) {
+    if (editorCell == null) {
+      return;
+    }
+    getEditorCells().add(editorCell);
+  }
+
+  @Override
+  public void addEditorCellBefore(EditorCell editorCell, EditorCell anchor) {
+
+  }
+
+  @Override
+  public void addEditorCellAfter(EditorCell editorCell, EditorCell anchor) {
+
+  }
+
+  @Override
+  public int getCellsCount() {
+    return getVisibleChildCells().size();
   }
 
   @Override
@@ -505,14 +538,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return result;
   }
 
-  @Override
-  public void addEditorCell(EditorCell editorCell) {
-    if (editorCell == null) {
-      return;
-    }
-    getEditorCells().add(editorCell);
-  }
-
   public boolean containsCell(jetbrains.mps.nodeEditor.cells.EditorCell editorCell) {
     for (EditorCell cell : getVisibleChildCells()) {
       if (cell.equals(editorCell)) {
@@ -520,11 +545,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       }
     }
     return false;
-  }
-
-  @Override
-  public int getCellsCount() {
-    return getVisibleChildCells().size();
   }
 
   @Override
@@ -912,16 +932,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         removeBraces();
       }
     }
-  }
-
-  @Override
-  public EditorCell firstCell() {
-    return getVisibleChildCells().getFirst();
-  }
-
-  @Override
-  public EditorCell lastCell() {
-    return getVisibleChildCells().getLast();
   }
 
   @Override
