@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.util.containers.SortedList;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -111,8 +112,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   private void refreshMessagesCache() {
-    assert ModelAccess.instance().isInEDT() : "refreshMessagesCache() should be called from EDT only";
-    assert ModelAccess.instance().canRead() : "refreshMessagesCache() should be called inside model read action only";
+    assert ThreadUtils.isInEDT() : "refreshMessagesCache() should be called from EDT only";
+    assert ThreadUtils.isInEDT() : "refreshMessagesCache() should be called inside model read action only";
     synchronized (myMessagesLock) {
       if (!myRebuildMessagesCache) {
         return;
@@ -305,7 +306,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   private void refreshLeftHighlighterMessages() {
-    assert ModelAccess.instance().isInEDT() : "refreshLeftHighlighterMessages() should be called from EDT only";
+    assert ThreadUtils.isInEDT() : "refreshLeftHighlighterMessages() should be called from EDT only";
     Set<EditorMessageIconRenderer> oldIconRenderers;
     Set<EditorMessageIconRenderer> newIconRenderers;
     synchronized (myMessagesLock) {
@@ -391,7 +392,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void dispose() {
-    assert ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread() : "dispose() should be called from EDT only";
+    assert ThreadUtils.isInEDT() : "dispose() should be called from EDT only";
     myDisposed = true;
     myEditor.removeRebuildListener(myRebuildListener);
   }
@@ -402,7 +403,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   @Deprecated
   public EditorCell getCell(SimpleEditorMessage change) {
     assert !myDisposed;
-    if (ModelAccess.instance().canWrite() && ModelAccess.instance().isInEDT()) {
+    if (ModelAccess.instance().canWrite() && ThreadUtils.isInEDT()) {
       refreshMessagesCache();
     }
     for (Entry<EditorCell, List<SimpleEditorMessage>> e : getMessagesCache().entrySet()) {

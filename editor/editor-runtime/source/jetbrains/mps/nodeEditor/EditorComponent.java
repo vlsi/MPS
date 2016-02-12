@@ -57,6 +57,7 @@ import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -1919,17 +1920,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void rebuildEditorContent() {
-    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
+    LOG.assertLog(ThreadUtils.isInEDT(), "You should do this in EDT");
     getUpdater().update();
     relayout();
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use rebuildEditorContent() instead
-   */
-  @Deprecated
-  public void rebuildEditorContent(final List<SModelEvent> events) {
-    rebuildEditorContent();
   }
 
   private void fireEditorWillBeDisposed() {
