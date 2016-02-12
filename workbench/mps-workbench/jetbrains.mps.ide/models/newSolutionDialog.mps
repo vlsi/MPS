@@ -76,9 +76,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
-        <child id="1182160096073" name="cls" index="YeSDq" />
-      </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -126,9 +123,6 @@
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
-      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
-        <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
-      </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
@@ -172,7 +166,6 @@
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
-        <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
@@ -203,9 +196,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
-      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
-        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
-      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
@@ -2596,73 +2586,18 @@
           </node>
           <node concept="9aQIb" id="68VQjhjTNx9" role="9aQIa">
             <node concept="3clFbS" id="68VQjhjTNxa" role="9aQI4">
-              <node concept="3clFbJ" id="68VQjhjTNxb" role="3cqZAp">
-                <node concept="2OqwBi" id="68VQjhjTNxc" role="3clFbw">
-                  <node concept="2YIFZM" id="68VQjhjTNxd" role="2Oq$k0">
-                    <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                    <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                  </node>
-                  <node concept="liA8E" id="68VQjhjTNxe" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.isInEDT():boolean" resolve="isInEDT" />
-                  </node>
+              <node concept="3SKdUt" id="12k47tw9Hme" role="3cqZAp">
+                <node concept="3SKdUq" id="12k47tw9HmB" role="3SKWNk">
+                  <property role="3SKdUp" value="we assume create happens under proper application write lock, would be odd to manage locks here" />
                 </node>
-                <node concept="9aQIb" id="68VQjhjTNxf" role="9aQIa">
-                  <node concept="3clFbS" id="68VQjhjTNxg" role="9aQI4">
-                    <node concept="3clFbF" id="68VQjhjTNxh" role="3cqZAp">
-                      <node concept="2OqwBi" id="68VQjhjTNxi" role="3clFbG">
-                        <node concept="2YIFZM" id="68VQjhjTNxj" role="2Oq$k0">
-                          <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                          <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                        </node>
-                        <node concept="liA8E" id="68VQjhjTNxk" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.writeFilesInEDT(java.lang.Runnable):void" resolve="writeFilesInEDT" />
-                          <node concept="2ShNRf" id="68VQjhjTNxl" role="37wK5m">
-                            <node concept="YeOm9" id="68VQjhjTNxm" role="2ShVmc">
-                              <node concept="1Y3b0j" id="68VQjhjTNxn" role="YeSDq">
-                                <property role="TrG5h" value="" />
-                                <property role="2bfB8j" value="true" />
-                                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                                <ref role="1Y3XeK" to="wyt6:~Runnable" resolve="Runnable" />
-                                <node concept="3clFb_" id="68VQjhjTNxo" role="jymVt">
-                                  <property role="1EzhhJ" value="false" />
-                                  <property role="TrG5h" value="run" />
-                                  <property role="DiZV1" value="false" />
-                                  <node concept="3Tm1VV" id="68VQjhjTNxp" role="1B3o_S" />
-                                  <node concept="3cqZAl" id="68VQjhjTNxq" role="3clF45" />
-                                  <node concept="3clFbS" id="68VQjhjTNxr" role="3clF47">
-                                    <node concept="3clFbF" id="68VQjhjTNxs" role="3cqZAp">
-                                      <node concept="2OqwBi" id="68VQjhjTNxt" role="3clFbG">
-                                        <node concept="37vLTw" id="3GM_nagTu5k" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="1Yd98ZZnqGu" resolve="modelsDir" />
-                                        </node>
-                                        <node concept="liA8E" id="68VQjhjTNxv" role="2OqNvi">
-                                          <ref role="37wK5l" to="3ju5:~IFile.mkdirs():boolean" resolve="mkdirs" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3tYsUK_RXRI" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+              </node>
+              <node concept="3clFbF" id="68VQjhjTNxx" role="3cqZAp">
+                <node concept="2OqwBi" id="68VQjhjTNxy" role="3clFbG">
+                  <node concept="37vLTw" id="3GM_nagTzay" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1Yd98ZZnqGu" resolve="modelsDir" />
                   </node>
-                </node>
-                <node concept="3clFbS" id="68VQjhjTNxw" role="3clFbx">
-                  <node concept="3clFbF" id="68VQjhjTNxx" role="3cqZAp">
-                    <node concept="2OqwBi" id="68VQjhjTNxy" role="3clFbG">
-                      <node concept="37vLTw" id="3GM_nagTzay" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1Yd98ZZnqGu" resolve="modelsDir" />
-                      </node>
-                      <node concept="liA8E" id="68VQjhjTNx$" role="2OqNvi">
-                        <ref role="37wK5l" to="3ju5:~IFile.mkdirs():boolean" resolve="mkdirs" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="68VQjhjTNx$" role="2OqNvi">
+                    <ref role="37wK5l" to="3ju5:~IFile.mkdirs():boolean" resolve="mkdirs" />
                   </node>
                 </node>
               </node>

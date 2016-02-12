@@ -50,7 +50,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -252,16 +251,8 @@ public class NewModuleUtil {
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory: " + descriptorFile.getParent());
     } else {
-      if (ModelAccess.instance().isInEDT()) {
-        modelsDir.mkdirs();
-      } else {
-        ModelAccess.instance().writeFilesInEDT(new Runnable() {
-          @Override
-          public void run() {
-            modelsDir.mkdirs();
-          }
-        });
-      }
+      // we assume create happens under proper application write lock, would be odd to manage locks here 
+      modelsDir.mkdirs();
     }
 
     //  default descriptorModel roots 
