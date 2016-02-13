@@ -120,7 +120,7 @@ public class SModelUtil_new {
   }
 
   public static String getAlias(SNode conceptDeclaration) {
-    return SPropertyOperations.getString(conceptDeclaration, "conceptAlias");
+    return SNodeUtil.getConceptAlias(conceptDeclaration);
   }
 
   public static boolean isEmptyPropertyValue(String s) {

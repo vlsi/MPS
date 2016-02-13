@@ -3614,18 +3614,18 @@
                             </node>
                             <node concept="3clFbS" id="7X3$Ctw4phE" role="2LFqv$">
                               <node concept="3clFbJ" id="7X3$Ctw4phF" role="3cqZAp">
-                                <node concept="2YIFZM" id="7X3$Ctw4rvQ" role="3clFbw">
+                                <node concept="2YIFZM" id="4wz6$Jeo4Ks" role="3clFbw">
+                                  <ref role="37wK5l" to="cttk:4wz6$Jeo1eV" resolve="hasReferenceMacro" />
                                   <ref role="1Pybhc" to="cttk:1YioXbrr5pb" resolve="SNodeUtil" />
-                                  <ref role="37wK5l" to="cttk:5HuzTX5dzDz" resolve="hasReferenceMacro" />
-                                  <node concept="37vLTw" id="7X3$Ctw4phH" role="37wK5m">
+                                  <node concept="37vLTw" id="4wz6$Jeo4Kt" role="37wK5m">
                                     <ref role="3cqZAo" node="7X3$Ctw4pio" resolve="node" />
                                   </node>
-                                  <node concept="2OqwBi" id="7X3$Ctw4rvT" role="37wK5m">
-                                    <node concept="37vLTw" id="7X3$Ctw4rvS" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="4wz6$Jeo4XN" role="37wK5m">
+                                    <node concept="37vLTw" id="4wz6$Jeo4Ku" role="2Oq$k0">
                                       <ref role="3cqZAo" node="7X3$Ctw4pik" resolve="ref" />
                                     </node>
-                                    <node concept="liA8E" id="7X3$Ctw4rvU" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SReference.getRole():java.lang.String" resolve="getRole" />
+                                    <node concept="liA8E" id="4wz6$Jeo5c5" role="2OqNvi">
+                                      <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                                     </node>
                                   </node>
                                 </node>

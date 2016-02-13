@@ -5,11 +5,11 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -19,11 +19,6 @@ public interface IAttributeDescriptor {
   void update(@NotNull SNode attribute);
   class AttributeDescriptor implements IAttributeDescriptor {
     protected SAbstractConcept myAttributeConcept;
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public AttributeDescriptor(@Nullable String attributeConceptName) {
-      myAttributeConcept = MetaAdapterFactoryByName.getConcept(attributeConceptName);
-    }
     public AttributeDescriptor(@Nullable SAbstractConcept attributeConceptName) {
       myAttributeConcept = attributeConceptName;
     }
@@ -41,23 +36,12 @@ public interface IAttributeDescriptor {
     }
   }
   class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public NodeAttribute(@NotNull String attributeConceptName) {
-      super(attributeConceptName);
-    }
     public NodeAttribute(@NotNull SConcept attributeDeclaration) {
       super(attributeDeclaration);
     }
   }
   class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SReferenceLink myLink;
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
-      super(attributeConceptName);
-      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
-    }
     public LinkAttribute(@NotNull SConcept attributeDeclaration, SReferenceLink link) {
       super(attributeDeclaration);
       myLink = link;
@@ -105,12 +89,6 @@ public interface IAttributeDescriptor {
   }
   class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SProperty myProperty;
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
-      super(attributeConceptName);
-      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
-    }
     public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull SProperty property) {
       super(attributeDeclaration);
       myProperty = property;

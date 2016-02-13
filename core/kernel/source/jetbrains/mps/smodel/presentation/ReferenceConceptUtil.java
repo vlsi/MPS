@@ -63,7 +63,7 @@ public class ReferenceConceptUtil {
       @Override
       public SNode compute() {
         String expectedReferentRole = null;
-        String alias = SPropertyOperations.getString(concept, "conceptAlias");
+        String alias = SNodeUtil.getConceptAlias(concept);
         if (alias != null) {
           // handle pattern 'xxx <{_referent_role_}> yyy'
           final Matcher matcher = SMART_ALIAS.matcher(alias);
@@ -135,7 +135,7 @@ public class ReferenceConceptUtil {
 
   @Deprecated
   public static boolean hasSmartAlias(SNode concept) {
-    String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
+    String conceptAlias = SNodeUtil.getConceptAlias(concept);
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
@@ -148,7 +148,7 @@ public class ReferenceConceptUtil {
 
 @Deprecated
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
-    String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
+    String conceptAlias = SNodeUtil.getConceptAlias(concept);
     // handle pattern 'xxx <{_referent_role_}> yyy'
     final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);
     if (!matcher.matches()) {

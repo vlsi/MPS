@@ -236,7 +236,12 @@ public final class SNodeUtil {
     SNode genuineLinkDeclaration = ((SNode) SModelUtil.getGenuineLinkDeclaration(link));
     return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1");
   }
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static boolean hasReferenceMacro(SNode node, String role) {
+    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);
+  }
+  public static boolean hasReferenceMacro(SNode node, SReferenceLink role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);
   }
   public static boolean isSideTransformInfo(SNode node) {

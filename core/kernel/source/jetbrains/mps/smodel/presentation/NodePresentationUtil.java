@@ -161,7 +161,7 @@ public class NodePresentationUtil {
   }
 
   public static String getAliasOrConceptName(SNode node) {
-    String alias = SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node), "conceptAlias");
+    String alias = SNodeUtil.getConceptAlias(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(node));
     if (alias != null) {
       return alias;
     }

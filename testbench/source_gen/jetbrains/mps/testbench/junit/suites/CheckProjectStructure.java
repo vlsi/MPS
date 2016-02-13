@@ -137,7 +137,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
 
           for (SNode node : SNodeUtil.getDescendants(sm)) {
             for (SReference ref : node.getReferences()) {
-              if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
+              if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getLink())) {
                 continue;
               }
               if (SNodeOperations.getTargetNodeSilently(ref) != null) {
