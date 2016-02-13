@@ -61,7 +61,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      // todo: remove this hack 
+      // todo: remove this hack after removing string constructor 
       if (myLink.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
         myLink = MetaAdapterFactoryByName.getReferenceLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getName());
       }
@@ -80,10 +80,6 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      // todo: remove this hack 
-      if (myLink.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
-        myLink = MetaAdapterFactoryByName.getContainmentLink(attribute.getParent().getConcept().getQualifiedName(), myLink.getName());
-      }
       AttributeOperations.setChildLink(attribute, myLink);
     }
   }
@@ -108,7 +104,7 @@ public interface IAttributeDescriptor {
     }
     @Override
     public void update(@NotNull SNode attribute) {
-      // todo: remove this hack 
+      // todo: remove this hack after removing string constructor 
       if (myProperty.getOwner().getQualifiedName().equals(MetaIdFactory.INVALID_CONCEPT_NAME) && attribute.getParent() != null) {
         myProperty = MetaAdapterFactoryByName.getProperty(attribute.getParent().getConcept().getQualifiedName(), myProperty.getName());
       }
