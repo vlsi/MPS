@@ -9,8 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
@@ -42,8 +42,8 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
-    SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
-    return SPropertyOperations.getBoolean(selectedNodeConcept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
+    SAbstractConcept selectedNodeConcept = SNodeOperations.getConcept(node);
+    return selectedNodeConcept.isAbstract();
   }
   @Override
   public boolean isSurroundWith() {
@@ -51,29 +51,29 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
-    List<SNode> paramList = parameter(node, context);
+    List<SAbstractConcept> paramList = parameter(node, context);
     if (paramList != null) {
-      for (SNode param : paramList) {
+      for (SAbstractConcept param : paramList) {
         ListSequence.fromList(list).addElement(new ReplaceWithConcreteSubconcept_Intention.IntentionImplementation(param));
       }
     }
     return list;
   }
-  private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
+  private List<SAbstractConcept> parameter(final SNode node, final EditorContext editorContext) {
+    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConcept(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SAbstractConcept>() {
+      public boolean accept(SAbstractConcept it) {
+        return !(it.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
       }
     }).toListSequence();
   }
   /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
-    private SNode myParameter;
-    public IntentionImplementation(SNode parameter) {
+    private SAbstractConcept myParameter;
+    public IntentionImplementation(SAbstractConcept parameter) {
       myParameter = parameter;
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Replace with instance of  " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(myParameter) + " concept";
+      return "Replace with instance of  " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SNodeOperations.asNode(myParameter)) + " concept";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

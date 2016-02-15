@@ -218,7 +218,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
             ListSequence.fromList(methods).addElement(method);
           }
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
-            if (ListSequence.fromList(SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(contextBehaviour, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), true)).contains(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")))) {
+            if (Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(SLinkOperations.getTarget(contextBehaviour, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), ((boolean) true))).contains(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")))) {
               ListSequence.fromList(methods).addElement(method);
             }
           }
@@ -229,7 +229,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   /*package*/ static List<SNode> getVirtualConceptMethods_idhEwILHM(@NotNull SNode __thisNode__) {
     List<SNode> methods = new ArrayList<SNode>();
-    for (SNode concept : SConceptOperations.getAllSuperConcepts(__thisNode__, false)) {
+    for (SNode concept : AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, ((boolean) false))) {
       SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getChildren(behaviour, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))) {
@@ -244,7 +244,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   /*package*/ static List<SNode> getNotImplementedConceptMethods_idhEwILIz(@NotNull SNode __thisNode__) {
     List<SNode> abstractMethods = new ArrayList<SNode>();
     List<SNode> implementedMethods = new ArrayList<SNode>();
-    List<SNode> concepts = SConceptOperations.getAllSuperConcepts(__thisNode__, false);
+    List<SNode> concepts = ListSequence.fromListWithValues(new ArrayList<SNode>(), AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, ((boolean) false)));
     ListSequence.fromList(concepts).addElement(__thisNode__);
     for (SNode concept : concepts) {
       SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));

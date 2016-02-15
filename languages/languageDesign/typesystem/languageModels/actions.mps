@@ -229,6 +229,12 @@
         <reference id="1139877738879" name="concept" index="1A0vxQ" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -261,9 +267,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
@@ -652,8 +655,8 @@
       <node concept="tYCnQ" id="htucq5m" role="_1QTJ">
         <ref role="uz4UX" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
         <node concept="CZtCh" id="htucqu1" role="uz6Si">
-          <node concept="3THzug" id="htucr4s" role="D02tZ">
-            <ref role="3qa414" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
+          <node concept="3bZ5Sz" id="4wz6$JeqBpK" role="D02tZ">
+            <ref role="3bZ5Sy" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
           </node>
           <node concept="CZKQA" id="htucqu3" role="D04br">
             <node concept="3clFbS" id="htucqu4" role="2VODD2">
@@ -661,13 +664,13 @@
                 <node concept="3cpWsn" id="htucIGn" role="3cpWs9">
                   <property role="TrG5h" value="subconcepts" />
                   <node concept="_YKpA" id="htucIGo" role="1tU5fm">
-                    <node concept="3THzug" id="htucIGp" role="_ZDj9">
-                      <ref role="3qa414" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
+                    <node concept="3bZ5Sz" id="4wz6$JeqBEc" role="_ZDj9">
+                      <ref role="3bZ5Sy" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="hxx$WTu" role="33vP2m">
-                    <node concept="3TUQnm" id="htucIGr" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
+                    <node concept="35c_gC" id="4wz6$JeqCa$" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
                     </node>
                     <node concept="LSoRf" id="htucIGs" role="2OqNvi">
                       <node concept="1Q6Npb" id="htucIGt" role="1iTxcG" />
@@ -690,8 +693,8 @@
                         <node concept="3clFbS" id="hRzah3e" role="1bW5cS">
                           <node concept="3clFbF" id="hRzah3f" role="3cqZAp">
                             <node concept="2YIFZM" id="7vc5PjWumpf" role="3clFbG">
-                              <ref role="37wK5l" to="w1kc:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isDefaultSubstitutable" />
                               <ref role="1Pybhc" to="w1kc:~SNodeUtil" resolve="SNodeUtil" />
+                              <ref role="37wK5l" to="w1kc:~SNodeUtil.isDefaultSubstitutable(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isDefaultSubstitutable" />
                               <node concept="37vLTw" id="7vc5PjWumHb" role="37wK5m">
                                 <ref role="3cqZAo" node="hRzah3c" resolve="it" />
                               </node>

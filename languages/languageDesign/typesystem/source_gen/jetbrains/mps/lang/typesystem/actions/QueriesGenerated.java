@@ -30,6 +30,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescri
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -128,18 +129,18 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").getDeclarationNode(), _context.getModel());
-          return ListSequence.fromList(subconcepts).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          List<SAbstractConcept> subconcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), _context.getModel());
+          return ListSequence.fromList(subconcepts).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
               return SNodeUtil.isDefaultSubstitutable(it);
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode result = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
