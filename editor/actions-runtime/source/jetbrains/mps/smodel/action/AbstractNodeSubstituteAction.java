@@ -25,6 +25,7 @@ import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -100,6 +101,9 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
   protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
+    }
+    if (myParameterObject instanceof SAbstractConcept) {
+      return NodePresentationUtil.matchingText(((SAbstractConcept) myParameterObject).getDeclarationNode(), referent_presentation, visible);
     }
     return "" + myParameterObject;
   }
