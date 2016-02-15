@@ -80,7 +80,7 @@
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.BaseProjecsTest" file="BaseProjecsTest.java">
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" file="BaseProjectsTest.java">
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -223,7 +223,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseProjecsTest" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.ScopesTest" file="ScopesTest.java">
     <classNode dependClassName="java.lang.InterruptedException" />

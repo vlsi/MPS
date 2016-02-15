@@ -6,7 +6,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 import jetbrains.mps.ide.migration.MigrationManager;
 
-public class NoMigrationsNeededTest extends BaseProjecsTest {
+public class NoMigrationsNeededTest extends BaseProjectsTest {
   public NoMigrationsNeededTest(String projectDir) {
     super(projectDir);
   }

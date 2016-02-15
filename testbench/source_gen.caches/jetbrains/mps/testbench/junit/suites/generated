@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4dt644c5xq3vi50qb9mptno9lgr3l5y">
+<dependencies version="2" modelHash="82e1tzw3q8ffhh23dou4cyycpiuks0q">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
@@ -73,6 +73,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="BaseCheckModulesTest.java" />
   </source>
   <source id="9170334376386362435" name="CheckingTestStatistic" hash="-c4i8h06u5gif1azbt8hiiq3ljgi7wg9">
@@ -98,7 +99,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelsExtractor.java" />
   </source>
   <source id="9170334376387736840" name="AuditTypeSystem" hash="9vzzuon09lq8aqrikbelzl32q7iprrn">
@@ -228,7 +228,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseMpsSuite.java" />
   </source>
-  <source id="7308922687953975578" name="BaseProjecsTest" hash="1te4wt398ncbukq65kp7azj7ikrmpsn">
+  <source id="7308922687953975578" name="BaseProjectsTest" hash="-c71hxyfosqw9ghd382fkzky6ms8xq19">
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
@@ -238,9 +238,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
-    <file name="BaseProjecsTest.java" />
+    <file name="BaseProjectsTest.java" />
   </source>
-  <source id="910232766032176668" name="NoMigrationsNeededTest" hash="dm4qalekas03mnrsvk24ngvx5vafzk7">
+  <source id="910232766032176668" name="NoMigrationsNeededTest" hash="2nee7celqiubr3wg0mpzgw0emsel28r">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NoMigrationsNeededTest.java" />
   </source>

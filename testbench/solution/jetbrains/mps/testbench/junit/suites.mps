@@ -6320,7 +6320,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6lIwBnqiz$q">
-    <property role="TrG5h" value="BaseProjecsTest" />
+    <property role="TrG5h" value="BaseProjectsTest" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
     <property role="3GE5qa" value="checking" />
@@ -6768,14 +6768,14 @@
     <property role="TrG5h" value="NoMigrationsNeededTest" />
     <node concept="3Tm1VV" id="MxMY3aheot" role="1B3o_S" />
     <node concept="3uibUv" id="MxMY3aheDq" role="1zkMxy">
-      <ref role="3uigEE" node="6lIwBnqiz$q" resolve="BaseProjecsTest" />
+      <ref role="3uigEE" node="6lIwBnqiz$q" resolve="BaseProjectsTest" />
     </node>
     <node concept="3clFbW" id="MxMY3aheDZ" role="jymVt">
       <node concept="3cqZAl" id="MxMY3aheE0" role="3clF45" />
       <node concept="3Tm1VV" id="MxMY3aheE1" role="1B3o_S" />
       <node concept="3clFbS" id="MxMY3aheE3" role="3clF47">
         <node concept="XkiVB" id="MxMY3aheE5" role="3cqZAp">
-          <ref role="37wK5l" node="6lIwBnqiz$A" resolve="BaseProjecsTest" />
+          <ref role="37wK5l" node="6lIwBnqiz$A" resolve="BaseProjectsTest" />
           <node concept="37vLTw" id="MxMY3aheE9" role="37wK5m">
             <ref role="3cqZAo" node="MxMY3aheE6" resolve="projectDir" />
           </node>

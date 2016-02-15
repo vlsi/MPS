@@ -22,13 +22,13 @@ import java.io.File;
 import org.junit.After;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
-public class BaseProjecsTest {
+public class BaseProjectsTest {
   private static Environment ourEnv;
 
   private String myProjectDir;
   private Project myProject;
 
-  public BaseProjecsTest(String projectDir) {
+  public BaseProjectsTest(String projectDir) {
     myProjectDir = projectDir;
   }
 
