@@ -288,14 +288,20 @@
     <ref role="1TJDcQ" node="253epK5leq7" resolve="AbstractTypeCastExpression" />
     <node concept="1TJgyj" id="g_PxMaO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="leftExpression" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="leftExpression_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="5PLE6SbpWOr" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression&quot;" />
+      </node>
     </node>
     <node concept="1TJgyj" id="g_PxNly" role="1TKVEi">
-      <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="concept_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <node concept="asaX9" id="5PLE6SbpWSc" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression&quot;" />
+      </node>
     </node>
     <node concept="1TJgyi" id="i1BlNJ7" role="1TKVEl">
       <property role="TrG5h" value="asCast" />
@@ -2417,6 +2423,17 @@
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="253epK5leqc" role="PzmwI">
       <ref role="PrY4T" to="tpee:1wHCnsn58oY" resolve="IBinaryLike" />
+    </node>
+    <node concept="1TJgyj" id="5PLE6SbpWOp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="leftExpression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="5PLE6SbpWS4" role="1TKVEi">
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
   </node>
 </model>

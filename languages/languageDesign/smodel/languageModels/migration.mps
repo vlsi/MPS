@@ -8,6 +8,7 @@
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="9882f4ad-1955-46fe-8269-94189e5dbbf2" name="jetbrains.mps.lang.migration.util" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -182,8 +183,8 @@
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -197,6 +198,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" flags="ng" index="A9Btn">
@@ -208,8 +210,41 @@
       </concept>
     </language>
     <language id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration">
+      <concept id="3116305438947623354" name="jetbrains.mps.lang.migration.structure.MoveContainmentLink" flags="ng" index="7a1rN" />
+      <concept id="3116305438947623351" name="jetbrains.mps.lang.migration.structure.MoveReferenceLink" flags="ng" index="7a1rY" />
+      <concept id="3116305438947553624" name="jetbrains.mps.lang.migration.structure.RefactoringPart" flags="ng" index="7amoh">
+        <property id="3628660716136424362" name="participant" index="hSBgo" />
+        <child id="3628660716136424366" name="finalState" index="hSBgs" />
+        <child id="3628660716136424364" name="initialState" index="hSBgu" />
+      </concept>
+      <concept id="2864063292004102367" name="jetbrains.mps.lang.migration.structure.ReflectionNodeReference" flags="ng" index="2pBcaW">
+        <property id="2864063292004102809" name="nodeName" index="2pBc3U" />
+        <property id="2864063292004103235" name="modelRef" index="2pBcow" />
+        <property id="2864063292004103247" name="nodeId" index="2pBcoG" />
+      </concept>
       <concept id="3220955710218421371" name="jetbrains.mps.lang.migration.structure.LinkPatternVariableReference" flags="ng" index="spIps">
         <reference id="3220955710218421372" name="declaration" index="spIpr" />
+      </concept>
+      <concept id="2015900981881695631" name="jetbrains.mps.lang.migration.structure.RefactoringLog" flags="ng" index="W$Crc">
+        <property id="2015900981881695633" name="fromVersion" index="W$Cri" />
+        <child id="2015900981881695634" name="part" index="W$Crh" />
+        <child id="3597905718825595708" name="options" index="1w76sc" />
+      </concept>
+      <concept id="7431903976166007326" name="jetbrains.mps.lang.migration.structure.MoveNode" flags="ng" index="Z4OXk">
+        <child id="3116305438947564633" name="specialization" index="7agGg" />
+        <child id="7431903976166276375" name="toNode" index="Z5P1t" />
+        <child id="7431903976166276373" name="fromNode" index="Z5P1v" />
+      </concept>
+      <concept id="7431903976166443707" name="jetbrains.mps.lang.migration.structure.PureMigrationScript" flags="ng" index="Z5qvL">
+        <property id="7431903976166443708" name="fromVersion" index="Z5qvQ" />
+        <child id="7431903976166447091" name="part" index="Z5rET" />
+      </concept>
+      <concept id="3597905718825595712" name="jetbrains.mps.lang.migration.structure.RefactoringOptions" flags="ng" index="1w76tK">
+        <child id="3597905718825595718" name="options" index="1w76tQ" />
+      </concept>
+      <concept id="3597905718825595715" name="jetbrains.mps.lang.migration.structure.RefactoringOption" flags="ng" index="1w76tN">
+        <property id="3597905718825595716" name="optionId" index="1w76tO" />
+        <property id="3597905718825650036" name="description" index="1w7ld4" />
       </concept>
       <concept id="5636302460526173897" name="jetbrains.mps.lang.migration.structure.TransformStatement" flags="ng" index="3SqFnK">
         <child id="5636302460526173944" name="postprocess" index="3SqFn1" />
@@ -809,6 +844,73 @@
       <node concept="q3mfm" id="5fE6DchS$ha" role="3clF45">
         <ref role="q3mfh" to="slm6:4F5w8gPXEEe" />
         <ref role="1QQUv3" node="5fE6DchS$h3" resolve="execute" />
+      </node>
+    </node>
+  </node>
+  <node concept="Z5qvL" id="5PLE6SbpWOq">
+    <property role="Z5qvQ" value="2" />
+    <property role="TrG5h" value="SNodeTypeCastExpression" />
+    <node concept="Z4OXk" id="5PLE6SbpWOv" role="Z5rET">
+      <node concept="2pBcaW" id="5PLE6SbpWOt" role="Z5P1v">
+        <property role="2pBcoG" value="1140138123956" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="leftExpression_old" />
+      </node>
+      <node concept="2pBcaW" id="5PLE6SbpWOu" role="Z5P1t">
+        <property role="2pBcoG" value="6733348108486823193" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="leftExpression" />
+      </node>
+      <node concept="7a1rN" id="5PLE6SbpWOs" role="7agGg" />
+    </node>
+    <node concept="Z4OXk" id="5PLE6SbpWSg" role="Z5rET">
+      <node concept="2pBcaW" id="5PLE6SbpWSe" role="Z5P1v">
+        <property role="2pBcoG" value="1140138128738" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="concept_old" />
+      </node>
+      <node concept="2pBcaW" id="5PLE6SbpWSf" role="Z5P1t">
+        <property role="2pBcoG" value="6733348108486823428" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="concept" />
+      </node>
+      <node concept="7a1rY" id="5PLE6SbpWSd" role="7agGg" />
+    </node>
+  </node>
+  <node concept="W$Crc" id="5PLE6SbpWOx">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="W$Cri" value="0" />
+    <property role="TrG5h" value="SNodeTypeCastExpression" />
+    <node concept="1w76tK" id="5PLE6SbpWOy" role="1w76sc">
+      <node concept="1w76tN" id="5PLE6SbpWO$" role="1w76tQ">
+        <property role="1w76tO" value="moveNode.options.updateReferencesParticipant" />
+        <property role="1w7ld4" value="Update references" />
+      </node>
+    </node>
+    <node concept="7amoh" id="5PLE6SbpWO_" role="W$Crh">
+      <property role="hSBgo" value="moveNode.updateReferences" />
+      <node concept="2pBcaW" id="5PLE6SbpWOn" role="hSBgu">
+        <property role="2pBcoG" value="1140138123956" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="leftExpression" />
+      </node>
+      <node concept="2pBcaW" id="5PLE6SbpWOw" role="hSBgs">
+        <property role="2pBcoG" value="6733348108486823193" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="leftExpression" />
+      </node>
+    </node>
+    <node concept="7amoh" id="5PLE6SbpWSa" role="W$Crh">
+      <property role="hSBgo" value="moveNode.updateReferences" />
+      <node concept="2pBcaW" id="5PLE6SbpWS2" role="hSBgu">
+        <property role="2pBcoG" value="1140138128738" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="concept" />
+      </node>
+      <node concept="2pBcaW" id="5PLE6SbpWS5" role="hSBgs">
+        <property role="2pBcoG" value="6733348108486823428" />
+        <property role="2pBcow" value="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+        <property role="2pBc3U" value="concept" />
       </node>
     </node>
   </node>

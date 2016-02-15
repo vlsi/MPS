@@ -368,5 +368,70 @@
       <unit id="6046674668660868156" at="24,0,112,0" name="jetbrains.mps.lang.smodel.migration.MigrateConceptSwitchToSConcept" />
     </file>
   </root>
+  <root nodeRef="r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)/6733348108486823194">
+    <file name="SNodeTypeCastExpression.java">
+      <node id="6733348108486823194" at="20,30,21,36" concept="7" />
+      <node id="6733348108486823194" at="24,33,25,17" concept="7" />
+      <node id="6733348108486823194" at="28,5,29,59" concept="6" />
+      <node id="6733348108486823194" at="31,52,32,23" concept="7" />
+      <node id="6733348108486823199" at="36,41,37,398" concept="7" />
+      <node id="6733348108486823199" at="40,39,41,341" concept="2" />
+      <node id="6733348108486823440" at="45,41,46,398" concept="7" />
+      <node id="6733348108486823440" at="49,39,50,322" concept="2" />
+      <node id="6733348108486823194" at="53,5,54,16" concept="7" />
+      <node id="6733348108486823194" at="56,51,57,146" concept="7" />
+      <node id="6733348108486823194" at="20,0,23,0" concept="5" trace="getCaption#()Ljava/lang/String;" />
+      <node id="6733348108486823194" at="31,0,34,0" concept="5" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="6733348108486823199" at="36,0,39,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6733348108486823199" at="40,0,43,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6733348108486823440" at="45,0,48,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6733348108486823440" at="49,0,52,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6733348108486823194" at="56,0,59,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="6733348108486823194" at="23,0,27,0" concept="5" trace="isRerunnable#()Z" />
+      <node id="6733348108486823194" at="29,59,34,8" concept="6" />
+      <node id="6733348108486823199" at="34,8,43,9" concept="2" />
+      <node id="6733348108486823440" at="43,9,52,9" concept="2" />
+      <node id="6733348108486823194" at="27,41,53,5" concept="0" />
+      <node id="6733348108486823194" at="27,0,56,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6733348108486823194" at="20,30,21,36" />
+      <scope id="6733348108486823194" at="24,33,25,17" />
+      <scope id="6733348108486823194" at="31,52,32,23" />
+      <scope id="6733348108486823199" at="36,41,37,398" />
+      <scope id="6733348108486823199" at="40,39,41,341" />
+      <scope id="6733348108486823440" at="45,41,46,398" />
+      <scope id="6733348108486823440" at="49,39,50,322" />
+      <scope id="6733348108486823194" at="56,51,57,146" />
+      <scope id="6733348108486823194" at="20,0,23,0" />
+      <scope id="6733348108486823194" at="31,0,34,0" />
+      <scope id="6733348108486823199" at="36,0,39,0">
+        <var name="it" id="6733348108486823199" />
+      </scope>
+      <scope id="6733348108486823199" at="40,0,43,0">
+        <var name="node" id="6733348108486823199" />
+      </scope>
+      <scope id="6733348108486823440" at="45,0,48,0">
+        <var name="it" id="6733348108486823440" />
+      </scope>
+      <scope id="6733348108486823440" at="49,0,52,0">
+        <var name="node" id="6733348108486823440" />
+      </scope>
+      <scope id="6733348108486823194" at="56,0,59,0" />
+      <scope id="6733348108486823194" at="23,0,27,0" />
+      <scope id="6733348108486823194" at="28,5,52,9">
+        <var name="context" id="6733348108486823194" />
+        <var name="scope" id="6733348108486823194" />
+      </scope>
+      <scope id="6733348108486823194" at="27,41,54,16" />
+      <scope id="6733348108486823194" at="27,0,56,0">
+        <var name="m" id="6733348108486823194" />
+      </scope>
+      <unit id="6733348108486823194" at="30,42,34,7" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression$1" />
+      <unit id="6733348108486823199" at="35,111,39,7" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression$2" />
+      <unit id="6733348108486823199" at="39,22,43,7" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression$3" />
+      <unit id="6733348108486823440" at="44,111,48,7" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression$4" />
+      <unit id="6733348108486823440" at="48,22,52,7" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression$5" />
+      <unit id="6733348108486823194" at="19,0,60,0" name="jetbrains.mps.lang.smodel.migration.SNodeTypeCastExpression" />
+    </file>
+  </root>
 </debug-info>
 
