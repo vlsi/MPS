@@ -19,16 +19,17 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
@@ -127,8 +128,8 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-          public Iterable<SNode> compute() {
+        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
+          public Iterable<SAbstractConcept> compute() {
             // compilation test for all passed parameters 
             boolean tmpVar = _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
@@ -136,15 +137,15 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
 
-            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild").getDeclarationNode(), _context.getModel())).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return it != MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild").getDeclarationNode();
+            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+              public boolean accept(SAbstractConcept it) {
+                return neq_x583g4_a0a0a0a0a0h0a0a0a0a0c0a0b0g(it, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"));
               }
             });
           }
         }.compute();
         if (queryResult != null) {
-          for (final SNode item : queryResult) {
+          for (final SAbstractConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 // compilation test for all passed parameters 
@@ -157,7 +158,7 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && operationContext != null;
 
                 SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item)));
-                if ((item) == MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1").getDeclarationNode()) {
+                if (eq_x583g4_a0k0a0a0a0a0a0b0c0a0b0g((item), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
                   SLinkOperations.addNewChild(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, 0x7f805f0c2dd46343L, "child1"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x7f805f0c2dd45b4eL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child")));
                 }
                 return result;
@@ -174,7 +175,7 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && operationContext != null;
                 tmpVar = tmpVar && editorContext != null;
 
-                if ((item) == MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2").getDeclarationNode()) {
+                if (eq_x583g4_a0k0b0a0a0a0a0b0c0a0b0g((item), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2"))) {
                   // selecting a custom cell 
                   editorContext.flushEvents();
                   EditorCell createdNodeCell = editorContext.getEditorComponent().findNodeCell(createdNode);
@@ -187,7 +188,7 @@ public class QueriesGenerated {
                     return null;
                   }
                 }
-                if ((item) == MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1").getDeclarationNode()) {
+                if (eq_x583g4_a0l0b0a0a0a0a0b0c0a0b0g((item), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
                   // returning node to select 
                   return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(createdNode, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, 0x7f805f0c2dd46343L, "child1"))).first();
                 }
@@ -203,7 +204,7 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
 
-                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+                return (item).getName();
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -218,7 +219,7 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
 
-                return "Create new instance of concept: " + SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+                return "Create new instance of concept: " + (item).getName();
               }
               public SNode getIconNode(String pattern) {
                 // compilation test for all passed parameters 
@@ -230,7 +231,7 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
 
-                return (item);
+                return SNodeOperations.asNode((item));
               }
               public SNode getActionType(String pattern) {
                 // compilation test for all passed parameters 
@@ -242,8 +243,8 @@ public class QueriesGenerated {
                 tmpVar = tmpVar && _context.getModel() != null;
                 tmpVar = tmpVar && operationContext != null;
 
-                boolean useNodeType = (item) == MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept").getDeclarationNode();
-                return (useNodeType ? _quotation_createNode_qp9nsj_a0k0a0a0_0() : _quotation_createNode_qp9nsj_a0k0a0a0((SNode) (item)));
+                boolean useNodeType = eq_x583g4_a0a9a6a0a0a0a0a1a2a0a1a6((item), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
+                return (useNodeType ? _quotation_createNode_qp9nsj_a0k0a0a0_0() : _quotation_createNode_qp9nsj_a0k0a0a0((SNode) SNodeOperations.asNode((item))));
               }
             });
           }
@@ -540,13 +541,13 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-          public Iterable<SNode> compute() {
-            return SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1").getDeclarationNode(), _context.getModel());
+        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
+          public Iterable<SAbstractConcept> compute() {
+            return SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), _context.getModel());
           }
         }.compute();
         if (queryResult != null) {
-          for (final SNode item : queryResult) {
+          for (final SAbstractConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item)));
@@ -705,17 +706,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905992087904(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), _context.getModel())).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
+              return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item))));
@@ -736,17 +737,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905990459421(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), _context.getModel())).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
+              return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item))));
@@ -813,6 +814,21 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+  private static boolean neq_x583g4_a0a0a0a0a0h0a0a0a0a0c0a0b0g(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean eq_x583g4_a0k0a0a0a0a0a0b0c0a0b0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0k0b0a0a0a0a0b0c0a0b0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0l0b0a0a0a0a0b0c0a0b0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a9a6a0a0a0a0a1a2a0a1a6(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_qp9nsj_a0k0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
