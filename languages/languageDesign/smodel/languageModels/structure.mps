@@ -285,7 +285,7 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value=":" />
     <property role="1pbfSe" value="1971654320" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <ref role="1TJDcQ" node="253epK5leq7" resolve="AbstractTypeCastExpression" />
     <node concept="1TJgyj" id="g_PxMaO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="leftExpression" />
@@ -303,9 +303,6 @@
     </node>
     <node concept="PrWs8" id="1653mnvB2PM" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="PrWs8" id="LxMtFEJ2AE" role="PzmwI">
-      <ref role="PrY4T" to="tpee:1wHCnsn58oY" resolve="IBinaryLike" />
     </node>
   </node>
   <node concept="1TIwiD" id="gAoxUXw">
@@ -2410,6 +2407,17 @@
     <property role="R4oN_" value="children joint with child attributes of certain role" />
     <property role="34LRSv" value="childrenAndChildAttributes" />
     <ref role="1TJDcQ" node="h32TBBB" resolve="Node_GetChildrenOperation" />
+  </node>
+  <node concept="1TIwiD" id="253epK5leq7">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="AbstractTypeCastExpression" />
+    <property role="2_RsDV" value="none" />
+    <property role="1pbfSe" value="647503907" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="253epK5leqc" role="PzmwI">
+      <ref role="PrY4T" to="tpee:1wHCnsn58oY" resolve="IBinaryLike" />
+    </node>
   </node>
 </model>
 
