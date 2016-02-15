@@ -47,12 +47,14 @@ public class MpsIncrementalChangeModelTestCase extends MpsIncrementalSingleModel
   @Override
   protected BuildResult doTestIncrementalBuild(@NotNull ProjectDescriptor projectDescriptor) {
     rebuildAll();
+    change();
+    return makeAll();
+  }
 
+  protected void change() {
     final String modelFile = getModelPath();
     String newContent = getNewModelContent();
     change(modelFile, newContent);
-
-    return makeAll();
   }
 
   private String getNewModelContent() {

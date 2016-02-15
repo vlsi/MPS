@@ -19,6 +19,8 @@ package jetbrains.mps.jps.build;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.io.FileUtilRt;
+import com.intellij.project.model.impl.module.content.JpsSourceFolder;
+import com.intellij.util.Processor;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
@@ -26,28 +28,51 @@ import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
-import jetbrains.mps.project.MPSExtentions;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
+import org.jetbrains.jps.builders.BuildRootDescriptor;
+import org.jetbrains.jps.builders.BuildRootIndex;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
 import org.jetbrains.jps.builders.FileProcessor;
+import org.jetbrains.jps.builders.java.JavaBuilderUtil;
 import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
-import org.jetbrains.jps.incremental.*;
+import org.jetbrains.jps.builders.logging.ProjectBuilderLogger;
+import org.jetbrains.jps.incremental.BuildListener;
+import org.jetbrains.jps.incremental.BuildOperations;
+import org.jetbrains.jps.incremental.BuilderCategory;
+import org.jetbrains.jps.incremental.CompileContext;
+import org.jetbrains.jps.incremental.FSOperations;
+import org.jetbrains.jps.incremental.ModuleBuildTarget;
+import org.jetbrains.jps.incremental.ModuleLevelBuilder;
+import org.jetbrains.jps.incremental.ProjectBuildException;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
+import org.jetbrains.jps.incremental.messages.FileDeletedEvent;
+import org.jetbrains.jps.indices.ModuleExcludeIndex;
+import org.jetbrains.jps.model.java.JavaSourceRootProperties;
+import org.jetbrains.jps.model.java.JavaSourceRootType;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
+import org.jetbrains.jps.util.JpsPathUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import static jetbrains.mps.project.MPSExtentions.*;
+import static jetbrains.mps.project.MPSExtentions.MODEL_HEADER;
 
 /**
  * evgeny, 11/30/12
@@ -92,6 +117,111 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_REFRESH, ""));
     }
     JpsMPSRepositoryFacade.getInstance().dispose();
+  }
+
+  @Override
+  public void chunkBuildStarted(final CompileContext compileContext, final ModuleChunk moduleChunk) {
+    // clean our source gen ourselves in case of rebuild. idea won't do that. android source generating builder does the same
+    // NOTE: it's crucial to do it in chunkBuildStarted(), not in build()
+    // Unfortunately cannot fully recover what's happening if we do it build. But the problem has to do with
+    // the call to BuildFSState.beforeNextRoundStart() which will create a new copy of FilesDelta at the moment when
+    // we haven't yet marked all files as deleted, but when all those have already been recorded as waiting recompilation.
+    // At a later stage jps reuses the saved delta and JavaBuilder tries to recompile all files recorded there, but we have
+    // already actually deleted them and possibly not regenerated some of them (in case of deleting/renaming something in the model)
+
+    // TODO rewrite MPS JPS integration: introduce our own BuildTarget (not reuse ModuleBuildTarget) and define
+    // TODO getOutputRoots() so that it returns our generator output path. This way JPS will clear it upon rebuild
+    if (JavaBuilderUtil.isForcedRecompilationAllJavaModules(compileContext)) {
+      clearGeneratedSources(compileContext, moduleChunk);
+    }
+  }
+
+  private void clearGeneratedSources(final CompileContext compileContext, final ModuleChunk moduleChunk) {
+    for (JpsModule jpsModule : moduleChunk.getModules()) {
+      JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
+      if (extension == null) {
+        continue;
+      }
+      File outputDir = new File(extension.getConfiguration().getGeneratorOutputPath());
+      if (!outputDir.exists()) {
+        continue;
+      }
+      // check that in case it's a module source root then it's marked as generated, only detele of it's true
+      Set<File> sourceRootsToKeep = untouchableSourceRoots(compileContext, jpsModule, moduleChunk.getTargets());
+
+      boolean okToDelete = true;
+      ModuleExcludeIndex moduleIndex = compileContext.getProjectDescriptor().getModuleExcludeIndex();
+      if (!moduleIndex.isExcluded(outputDir)) {
+        // if output root itself is directly or indirectly excluded,
+        // there cannot be any manageable sources under it, even if the output root is located under some source root
+        // so in this case it is safe to delete such root
+        if (JpsPathUtil.isUnder(sourceRootsToKeep, outputDir)) {
+          okToDelete = false;
+        }
+        else {
+          final Set<File> _outRoot = Collections.singleton(outputDir);
+          for (File srcRoot : sourceRootsToKeep) {
+            if (JpsPathUtil.isUnder(_outRoot, srcRoot)) {
+              okToDelete = false;
+              break;
+            }
+          }
+        }
+      }
+
+      if (!okToDelete) {
+        LOG.warn("Not cleaning generator output path "
+          + outputDir.getPath()
+          + " because user files may be there. Either mark it as generated or exclude from module");
+        return;
+      }
+
+      List<String> deleted = new ArrayList<String>();
+      BuildOperations.deleteRecursively(extension.getConfiguration().getGeneratorOutputPath(), deleted, null);
+      compileContext.processMessage(new FileDeletedEvent(deleted));
+      ProjectBuilderLogger logger = compileContext.getLoggingManager().getProjectBuilderLogger();
+      logger.logDeletedFiles(deleted);
+    }
+  }
+
+  /**
+   * Compute source roots that must not be deleted.
+   */
+  private Set<File> untouchableSourceRoots(CompileContext compileContext, JpsModule jpsModule, Set<ModuleBuildTarget> targets) {
+    // jps's IncProjectBuilder.clearOutpus() computes them in the same way. actually, the code is copied from there
+    // note: we could check for extension.getConfiguration().isUseModuleSourceFolder() but we'd rather be more general
+    // as our gen output path may be under a source root, or contrary, include a source root
+    Set<File> result = new HashSet<File>();
+    BuildRootIndex buildRootIndex = compileContext.getProjectDescriptor().getBuildRootIndex();
+    ModuleExcludeIndex moduleIndex = compileContext.getProjectDescriptor().getModuleExcludeIndex();
+    for (ModuleBuildTarget target : targets) {
+      for (BuildRootDescriptor buildRoot : buildRootIndex.getTargetRoots(target, compileContext)) {
+        File buildRootDir = buildRoot.getRootFile();
+        boolean isGenerated = buildRoot.isGenerated();
+        if (!isGenerated) {
+          // check another way to mark sources as generated, that is in module properties (that little spiral icon in the project pane)
+          // for some reason that source root flag doesn't translate into BuildRootDescriptor.isGenerated() == true
+          // this additional check is not copied over from jps code
+          for (JpsModuleSourceRoot sourceRoot : jpsModule.getSourceRoots()) {
+            if (!sourceRoot.getFile().equals(buildRootDir)) {
+              // finding the source root which is exactly our output dir, if any
+              continue;
+            }
+            JavaSourceRootProperties p1 = sourceRoot.getProperties(JavaSourceRootType.SOURCE);
+            JavaSourceRootProperties p2 = sourceRoot.getProperties(JavaSourceRootType.TEST_SOURCE);
+            isGenerated |= p1 != null && p1.isForGeneratedSources();
+            isGenerated |= p2 != null && p2.isForGeneratedSources();
+          }
+        }
+
+        if (!isGenerated) {
+          if (moduleIndex.isInContent(buildRootDir) && !moduleIndex.isExcluded(buildRootDir)) {
+            result.add(buildRootDir);
+          }
+        }
+      }
+    }
+    return result;
   }
 
   @Override
@@ -141,7 +271,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         return status;
       }
       if (sourceGenNotInScope) {
-        compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, "Compile scope is too narrow. MPS generated sources would be out of scope" ));
+        compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, "Compile scope is too narrow. MPS generated sources would be out of scope"));
         return ExitCode.ABORT;
       }
 
@@ -154,7 +284,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       }
 
       final JpsMPSProject project = JpsMPSRepositoryFacade.getInstance().getProject();
-      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext,  outputConsumer);
+      MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext, outputConsumer);
       boolean success = makeMediator.build();
       if (success) {
         status = ExitCode.OK;
