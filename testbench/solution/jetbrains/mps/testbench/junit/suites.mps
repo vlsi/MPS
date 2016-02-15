@@ -52,6 +52,7 @@
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
+    <import index="bim2" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -310,6 +311,9 @@
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
+      </concept>
+      <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
+        <child id="1171983854940" name="condition" index="3vFALc" />
       </concept>
       <concept id="1172073500303" name="jetbrains.mps.baseLanguage.unitTest.structure.Message" flags="ng" index="3_1$Yv">
         <child id="1172073511101" name="message" index="3_1BAH" />
@@ -6410,6 +6414,11 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="MxMY3ahDQ4" role="3cqZAp">
+          <node concept="3SKdUq" id="MxMY3ahDQ6" role="3SKWNk">
+            <property role="3SKdUp" value="todo generalize it when there are more tests" />
+          </node>
+        </node>
         <node concept="3clFbF" id="MxMY3ahqgr" role="3cqZAp">
           <node concept="2OqwBi" id="MxMY3ahqqy" role="3clFbG">
             <node concept="37vLTw" id="MxMY3ahqgp" role="2Oq$k0">
@@ -6784,7 +6793,26 @@
       <property role="TrG5h" value="noMigrationNeeded" />
       <node concept="3cqZAl" id="MxMY3ahnQk" role="3clF45" />
       <node concept="3Tm1VV" id="MxMY3ahnQl" role="1B3o_S" />
-      <node concept="3clFbS" id="MxMY3ahnQm" role="3clF47" />
+      <node concept="3clFbS" id="MxMY3ahnQm" role="3clF47">
+        <node concept="3vFxKo" id="MxMY3ahyy6" role="3cqZAp">
+          <node concept="2OqwBi" id="MxMY3ahvFI" role="3vFALc">
+            <node concept="2OqwBi" id="MxMY3ahv_A" role="2Oq$k0">
+              <node concept="1rXfSq" id="MxMY3ahv$E" role="2Oq$k0">
+                <ref role="37wK5l" node="2SnxzQPEfIr" resolve="getContextProject" />
+              </node>
+              <node concept="liA8E" id="MxMY3ahvCC" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="MxMY3ahvE_" role="37wK5m">
+                  <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="MxMY3ahvIf" role="2OqNvi">
+              <ref role="37wK5l" to="bim2:5SsFeroaac6" resolve="isMigrationRequired" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2AHcQZ" id="MxMY3ahnSu" role="2AJF6D">
         <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>

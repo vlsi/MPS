@@ -35,6 +35,7 @@ public class BaseProjecsTest {
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     EnvironmentConfig defaultConfig = EnvironmentConfig.defaultConfig();
+    // todo generalize it when there are more tests 
     defaultConfig.addPlugin("migrationAssistant", "jetbrains.mps.ide.migration.assistant");
 
     ourEnv = IdeaEnvironment.getOrCreate(defaultConfig);
