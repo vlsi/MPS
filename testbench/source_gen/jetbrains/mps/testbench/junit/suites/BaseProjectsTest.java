@@ -59,7 +59,6 @@ public class BaseProjectsTest {
         if (!(file.getName().equals(".mps"))) {
           return true;
         }
-
         projects.add(new String[]{file.getParent().getPath()});
         return true;
       }
@@ -87,5 +86,9 @@ public class BaseProjectsTest {
 
   public Project getContextProject() {
     return myProject;
+  }
+
+  public String getProjectDir() {
+    return myProjectDir;
   }
 }

@@ -6348,7 +6348,7 @@
         <property role="Xl_RC" value="jetbrains.mps.ide.migration.assistant" />
       </node>
     </node>
-    <node concept="2tJIrI" id="2SnxzQPEmLu" role="jymVt" />
+    <node concept="2tJIrI" id="3WxHuKXmqoV" role="jymVt" />
     <node concept="Wx3nA" id="2SnxzQPEmTF" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
@@ -6369,7 +6369,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="4OGppb3ihjz" role="jymVt" />
+    <node concept="2tJIrI" id="3WxHuKXlTQ6" role="jymVt" />
     <node concept="312cEg" id="6lIwBnqiB7g" role="jymVt">
       <property role="TrG5h" value="myProjectDir" />
       <property role="3TUv4t" value="false" />
@@ -6631,7 +6631,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="2SnxzQPEdxY" role="3cqZAp" />
                 <node concept="3clFbF" id="2SnxzQPEawg" role="3cqZAp">
                   <node concept="2OqwBi" id="2SnxzQPEaFy" role="3clFbG">
                     <node concept="37vLTw" id="2SnxzQPEawe" role="2Oq$k0">
@@ -6645,11 +6644,11 @@
                             <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                           </node>
                           <node concept="2OqwBi" id="2SnxzQPEd4u" role="3g7hyw">
-                            <node concept="2OqwBi" id="3WxHuKXltfa" role="2Oq$k0">
-                              <node concept="37vLTw" id="2SnxzQPEcW8" role="2Oq$k0">
+                            <node concept="2OqwBi" id="3WxHuKXmPjT" role="2Oq$k0">
+                              <node concept="37vLTw" id="3WxHuKXmPjU" role="2Oq$k0">
                                 <ref role="3cqZAo" node="2SnxzQPDZ3X" resolve="file" />
                               </node>
-                              <node concept="liA8E" id="3WxHuKXltvL" role="2OqNvi">
+                              <node concept="liA8E" id="3WxHuKXmPjV" role="2OqNvi">
                                 <ref role="37wK5l" to="jlff:~VirtualFile.getParent():com.intellij.openapi.vfs.VirtualFile" resolve="getParent" />
                               </node>
                             </node>
@@ -6813,6 +6812,21 @@
         <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
       </node>
       <node concept="3Tm1VV" id="6lIwBnqizBw" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="3WxHuKXmPyC" role="jymVt" />
+    <node concept="3clFb_" id="3WxHuKXmPra" role="jymVt">
+      <property role="TrG5h" value="getProjectDir" />
+      <node concept="3uibUv" id="3WxHuKXmPrb" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3Tm1VV" id="3WxHuKXmPrc" role="1B3o_S" />
+      <node concept="3clFbS" id="3WxHuKXmPrd" role="3clF47">
+        <node concept="3clFbF" id="3WxHuKXmPre" role="3cqZAp">
+          <node concept="37vLTw" id="3WxHuKXmPr9" role="3clFbG">
+            <ref role="3cqZAo" node="6lIwBnqiB7g" resolve="myProjectDir" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
