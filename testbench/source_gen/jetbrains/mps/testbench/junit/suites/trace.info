@@ -463,38 +463,6 @@
       <unit id="7308922687953975578" at="26,0,92,0" name="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" />
     </file>
   </root>
-  <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/910232766032176668">
-    <file name="NoMigrationsNeededTest.java">
-      <node id="910232766032177797" at="12,52,13,22" concept="15" />
-      <node id="4549117124866918994" at="20,27,21,109" concept="4" />
-      <node id="5560931320911795726" at="24,38,25,34" concept="4" />
-      <node id="5560931320911795897" at="26,43,27,34" concept="4" />
-      <node id="910232766032177791" at="12,0,15,0" concept="2" trace="NoMigrationsNeededTest#(Ljava/lang/String;)V" />
-      <node id="1592025086120665778" at="20,0,23,0" concept="8" trace="run#()V" />
-      <node id="1592025086120661860" at="18,9,23,9" concept="4" />
-      <node id="1592025086120691459" at="17,35,28,5" concept="16" />
-      <node id="910232766032215442" at="16,0,30,0" concept="8" trace="noMigrationNeeded#()V" />
-      <scope id="910232766032177795" at="12,52,13,22" />
-      <scope id="1592025086120665779" at="20,27,21,109" />
-      <scope id="1592025086120691451" at="24,0,25,34">
-        <var name="e" id="1592025086120691453" />
-      </scope>
-      <scope id="1592025086120691452" at="24,38,25,34" />
-      <scope id="1592025086120691455" at="26,0,27,34">
-        <var name="e" id="1592025086120691457" />
-      </scope>
-      <scope id="1592025086120691456" at="26,43,27,34" />
-      <scope id="910232766032177791" at="12,0,15,0">
-        <var name="projectDir" id="910232766032177798" />
-      </scope>
-      <scope id="1592025086120665778" at="20,0,23,0" />
-      <scope id="1592025086120691460" at="18,9,23,9" />
-      <scope id="910232766032215446" at="17,35,28,5" />
-      <scope id="910232766032215442" at="16,0,30,0" />
-      <unit id="1592025086120665778" at="19,39,23,7" name="jetbrains.mps.testbench.junit.suites.NoMigrationsNeededTest$1" />
-      <unit id="910232766032176668" at="11,0,31,0" name="jetbrains.mps.testbench.junit.suites.NoMigrationsNeededTest" />
-    </file>
-  </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376386357053">
     <file name="BaseCheckModulesTest.java">
       <node id="9170334376386357063" at="27,0,28,0" concept="13" trace="ourContextProject" />
