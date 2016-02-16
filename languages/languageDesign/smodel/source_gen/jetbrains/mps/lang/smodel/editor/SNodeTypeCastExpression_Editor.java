@@ -45,7 +45,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNode_x0l1fn_a0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new SNodeTypeCastExpression_Editor.leftExpressionSingleRoleHandler_x0l1fn_a0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression"), editorContext);
+    SingleRoleCellProvider provider = new SNodeTypeCastExpression_Editor.leftExpressionSingleRoleHandler_x0l1fn_a0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression"), editorContext);
     return provider.createCell();
   }
   private class leftExpressionSingleRoleHandler_x0l1fn_a0 extends SingleRoleCellProvider {
