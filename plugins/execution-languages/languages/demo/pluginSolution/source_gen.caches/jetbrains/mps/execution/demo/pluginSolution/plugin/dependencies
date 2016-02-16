@@ -168,6 +168,5 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

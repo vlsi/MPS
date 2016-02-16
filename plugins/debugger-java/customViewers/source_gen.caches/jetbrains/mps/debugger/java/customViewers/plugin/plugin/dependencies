@@ -206,6 +206,5 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

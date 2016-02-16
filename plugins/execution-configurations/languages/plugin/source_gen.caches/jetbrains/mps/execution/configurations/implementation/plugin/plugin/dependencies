@@ -1096,6 +1096,5 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 
