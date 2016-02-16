@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.migration.test.MigrationTestBody" file="MigrationTestBody.java">
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+  </dependency>
+</dependenciesRoot>
+

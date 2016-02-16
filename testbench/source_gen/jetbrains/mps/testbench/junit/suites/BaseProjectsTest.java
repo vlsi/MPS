@@ -20,9 +20,14 @@ import jetbrains.mps.project.MPSExtentions;
 import org.junit.Before;
 import java.io.File;
 import org.junit.After;
+import com.intellij.ide.impl.ProjectUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseProjectsTest {
+  public static final String MIGRATION_PLUGIN = "migrationAssistant";
+  public static final String MIGRATION_PLUGIN_ID = "jetbrains.mps.ide.migration.assistant";
+
   private static Environment ourEnv;
 
   private String myProjectDir;
@@ -36,7 +41,7 @@ public class BaseProjectsTest {
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     EnvironmentConfig defaultConfig = EnvironmentConfig.defaultConfig();
     // todo generalize it when there are more tests 
-    defaultConfig.addPlugin("migrationAssistant", "jetbrains.mps.ide.migration.assistant");
+    defaultConfig.addPlugin(MIGRATION_PLUGIN, MIGRATION_PLUGIN_ID);
 
     ourEnv = IdeaEnvironment.getOrCreate(defaultConfig);
     ArrayList<Object[]> res = new ArrayList<Object[]>();
@@ -72,7 +77,8 @@ public class BaseProjectsTest {
   @After
   public void closeProject() {
     ourEnv.flushAllEvents();
-    myProject.dispose();
+    ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
+    ourEnv.flushAllEvents();
   }
 
   public Project getContextProject() {
