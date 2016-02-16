@@ -14,10 +14,10 @@ import jetbrains.mps.ide.migration.MigrationManager;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class NoMigrationsNeededTest extends BaseProjectsTest {
-  protected static Logger LOG = LogManager.getLogger(NoMigrationsNeededTest.class);
+public class NoPendingMigrationsTest extends BaseProjectsTest {
+  protected static Logger LOG = LogManager.getLogger(NoPendingMigrationsTest.class);
 
-  public NoMigrationsNeededTest(String projectDir) {
+  public NoPendingMigrationsTest(String projectDir) {
     super(projectDir);
   }
 
