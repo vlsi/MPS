@@ -81,9 +81,6 @@
     <property role="R4oN_" value="show in usage view" />
     <property role="1pbfSe" value="1733089535" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="PrWs8" id="64VftqErvIP" role="PzmwI">
-      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
-    </node>
     <node concept="1TJgyj" id="6_TW7xVwuxP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="object_old" />
@@ -95,6 +92,9 @@
     </node>
     <node concept="asaX9" id="6sWCsGPY13b" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWcp" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="6H$fNdLyE4d">
@@ -119,6 +119,9 @@
     <property role="1pbfSe" value="484299617" />
     <node concept="asaX9" id="6sWCsGPXu2H" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWcr" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="7gnNafF7YMD">
@@ -161,6 +164,9 @@
     </node>
     <node concept="asaX9" id="6sWCsGPXu2M" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWdm" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="2sF4xi8qX2e">
@@ -278,6 +284,9 @@
     <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="asaX9" id="6sWCsGPXu2C" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="2EI1hHj_goG" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="6_TW7xVaDdR">
@@ -398,6 +407,9 @@
     <node concept="asaX9" id="6sWCsGPXu3l" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
+    <node concept="PrWs8" id="7x0bSItOWci" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
   </node>
   <node concept="PlHQZ" id="qgIopN3HO7">
     <property role="TrG5h" value="HelpProvider" />
@@ -418,8 +430,8 @@
         <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.base.structure.BLExpression&quot;" />
       </node>
     </node>
-    <node concept="PrWs8" id="6D0CP__qHGT" role="PzmwI">
-      <ref role="PrY4T" to="tpck:hLJPP0O" resolve="IWrapper" />
+    <node concept="PrWs8" id="7x0bSItOWck" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
     <node concept="asaX9" id="6sWCsGPXu31" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
