@@ -16,7 +16,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.Processor;
-import jetbrains.mps.project.MPSExtentions;
 import org.junit.Before;
 import java.io.File;
 import org.junit.After;
@@ -56,11 +55,11 @@ public class BaseProjectsTest {
           return true;
         }
         // is a project dir? 
-        if (!(file.getName().toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
+        if (!(file.getName().equals(".mps"))) {
           return true;
         }
 
-        projects.add(new String[]{file.getPath()});
+        projects.add(new String[]{file.getParent().getPath()});
         return true;
       }
     });

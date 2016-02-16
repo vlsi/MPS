@@ -6618,24 +6618,18 @@
                   </node>
                   <node concept="3fqX7Q" id="2SnxzQPE1Xz" role="3clFbw">
                     <node concept="2OqwBi" id="2SnxzQPE23f" role="3fr31v">
-                      <node concept="2OqwBi" id="2SnxzQPE23g" role="2Oq$k0">
-                        <node concept="2OqwBi" id="2SnxzQPE23h" role="2Oq$k0">
-                          <node concept="37vLTw" id="2SnxzQPE23i" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2SnxzQPDZ3X" resolve="file" />
-                          </node>
-                          <node concept="liA8E" id="2SnxzQPE23j" role="2OqNvi">
-                            <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
-                          </node>
+                      <node concept="2OqwBi" id="2SnxzQPE23h" role="2Oq$k0">
+                        <node concept="37vLTw" id="2SnxzQPE23i" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2SnxzQPDZ3X" resolve="file" />
                         </node>
-                        <node concept="liA8E" id="2SnxzQPE23k" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
+                        <node concept="liA8E" id="2SnxzQPE23j" role="2OqNvi">
+                          <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
                         </node>
                       </node>
                       <node concept="liA8E" id="2SnxzQPE23l" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                        <node concept="10M0yZ" id="2SnxzQPE23m" role="37wK5m">
-                          <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
-                          <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_MPS_PROJECT" resolve="DOT_MPS_PROJECT" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <node concept="Xl_RD" id="4OGppb3kh7a" role="37wK5m">
+                          <property role="Xl_RC" value=".mps" />
                         </node>
                       </node>
                     </node>
@@ -6655,8 +6649,13 @@
                             <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                           </node>
                           <node concept="2OqwBi" id="2SnxzQPEd4u" role="3g7hyw">
-                            <node concept="37vLTw" id="2SnxzQPEcW8" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2SnxzQPDZ3X" resolve="file" />
+                            <node concept="2OqwBi" id="3WxHuKXltfa" role="2Oq$k0">
+                              <node concept="37vLTw" id="2SnxzQPEcW8" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2SnxzQPDZ3X" resolve="file" />
+                              </node>
+                              <node concept="liA8E" id="3WxHuKXltvL" role="2OqNvi">
+                                <ref role="37wK5l" to="jlff:~VirtualFile.getParent():com.intellij.openapi.vfs.VirtualFile" resolve="getParent" />
+                              </node>
                             </node>
                             <node concept="liA8E" id="2SnxzQPEdhw" role="2OqNvi">
                               <ref role="37wK5l" to="jlff:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
