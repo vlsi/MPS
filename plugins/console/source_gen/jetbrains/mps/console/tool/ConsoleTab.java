@@ -17,14 +17,16 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
@@ -74,10 +76,12 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
         myEditor.selectNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
-        EditorCell lastLeaf = ((EditorCell) myEditor.getSelectedCell()).getLastLeaf();
-        myEditor.changeSelection(lastLeaf);
-        if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label) lastLeaf).end();
+        EditorCell lastLeaf = check_doiu7j_a0b0a0a31(((EditorCell) myEditor.getSelectedCell()));
+        if (lastLeaf != null) {
+          myEditor.changeSelection(lastLeaf);
+          if (lastLeaf instanceof EditorCell_Label) {
+            ((EditorCell_Label) lastLeaf).end();
+          }
         }
       }
     });
@@ -90,7 +94,7 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           myCursor = null;
           TemporaryModels.getInstance().addMissingImports(myModel);
@@ -117,10 +121,13 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", AllIcons.Actions.Clean);
+      super("Clear", "Clear console history", AllIcons.Actions.Clean);
     }
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, "jetbrains.mps.console.base.structure.History"))));
+      SNode currentCommand = SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
+      loadHistory(null);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), currentCommand);
+      myEditor.editNode(myRoot);
       validateImports();
       setSelection();
     }
@@ -187,10 +194,16 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-  protected void loadHistory(final String state) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+  protected void loadHistory(@Nullable final String state) {
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel loadedModel = loadHistoryModel(state);
+        List<SNode> roots = ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.roots(myModel, null));
+        ListSequence.fromList(roots).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SNodeOperations.deleteNode(it);
+          }
+        });
         myRoot = SModelOperations.createNewRootNode(myModel, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, "jetbrains.mps.console.base.structure.ConsoleRoot")));
         if (loadedModel == null || ListSequence.fromList(SModelOperations.roots(loadedModel, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, "jetbrains.mps.console.base.structure.ConsoleRoot"))).isEmpty()) {
           SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, "jetbrains.mps.console.base.structure.History"))));
@@ -212,6 +225,12 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
   public Object getData(@NonNls String id) {
     if (PlatformDataKeys.HELP_ID.is(id)) {
       return "ideaInterface.console";
+    }
+    return null;
+  }
+  private static EditorCell check_doiu7j_a0b0a0a31(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLastLeaf();
     }
     return null;
   }
