@@ -8,7 +8,10 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 
 @MPSLaunch
 public class InternalClassifier_Test extends BaseTransformationTest {
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
+
+
   }
 }

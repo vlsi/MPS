@@ -15,10 +15,17 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SRepository;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.application.ModalityState;
 
 public class OptimizeModuleImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,22 +69,55 @@ public class OptimizeModuleImports_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<String> report = new Wrappers._T<String>("");
-
     final SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
-    repo.getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        OptimizeImportsHelper helper = new OptimizeImportsHelper();
-        for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
-          if (module instanceof Solution) {
-            report.value += helper.optimizeSolutionImports(((Solution) module));
-          } else if (module instanceof Language) {
-            report.value += helper.optimizeLanguageImports(((Language) module));
+    final Task.Modal task = new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Optimizing module imports", true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator);
+        try {
+          int modulesNumber = ((List<SModule>) MapSequence.fromMap(_params).get("modules")).size();
+          monitor.start("Optimizing the imports of the " + modulesNumber + " modules", modulesNumber + 1);
+          WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+            public void run() {
+            }
+          });
+          final OptimizeImportsHelper helper = new OptimizeImportsHelper(repo);
+          for (final SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
+            monitor.step("Optimizing imports of the " + module);
+            repo.getModelAccess().runWriteAction(new Runnable() {
+              public void run() {
+                if (module instanceof Solution) {
+                  report.value += helper.optimizeSolutionImports(((Solution) module));
+                } else if (module instanceof Language) {
+                  report.value += helper.optimizeLanguageImports(((Language) module));
+                }
+              }
+            });
+            monitor.advance(1);
+            if (monitor.isCanceled()) {
+              return;
+            }
           }
+          monitor.step("Saving...");
+          WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+            public void run() {
+              repo.getModelAccess().executeCommand(new Runnable() {
+                public void run() {
+                  repo.saveAll();
+                }
+              });
+            }
+          });
+          monitor.advance(1);
+        } finally {
+          monitor.done();
         }
-
-        repo.saveAll();
       }
-    });
-    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
+    };
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ProgressManager.getInstance().run(task);
+        Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ? "Nothing to optimize" : report.value), "Optimize Imports", Messages.getInformationIcon());
+      }
+    }, ModalityState.defaultModalityState());
   }
 }

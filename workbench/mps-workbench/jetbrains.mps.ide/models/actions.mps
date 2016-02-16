@@ -2,27 +2,27 @@
 <model ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -192,6 +192,8 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language()" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
+    <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -1896,118 +1898,355 @@
         <node concept="3cpWs8" id="hIWP75a" role="3cqZAp">
           <node concept="3cpWsn" id="hIWP75b" role="3cpWs9">
             <property role="TrG5h" value="report" />
+            <property role="3TUv4t" value="false" />
             <node concept="17QB3L" id="hP3nDRg" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="5wEedBrukgh" role="3cqZAp" />
-        <node concept="3cpWs8" id="CJPgsJ1DW2" role="3cqZAp">
-          <node concept="3cpWsn" id="CJPgsJ1DW3" role="3cpWs9">
-            <property role="TrG5h" value="repo" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="CJPgsJ1DVY" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-            </node>
-            <node concept="2OqwBi" id="CJPgsJ1DW4" role="33vP2m">
-              <node concept="liA8E" id="CJPgsJ1DW5" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-              </node>
-              <node concept="2OqwBi" id="CJPgsJ1DW6" role="2Oq$k0">
-                <node concept="2WthIp" id="CJPgsJ1DW7" role="2Oq$k0" />
-                <node concept="1DTwFV" id="CJPgsJ1DW8" role="2OqNvi">
-                  <ref role="2WH_rO" node="hHNVeaJ" resolve="project" />
-                </node>
-              </node>
+            <node concept="Xl_RD" id="3z62ISXYEde" role="33vP2m">
+              <property role="Xl_RC" value="" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5wEedBrukE8" role="3cqZAp">
-          <node concept="2OqwBi" id="5wEedBrus1K" role="3clFbG">
-            <node concept="liA8E" id="5wEedBrutcZ" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
-              <node concept="1bVj0M" id="5wEedBrutdt" role="37wK5m">
-                <node concept="3clFbS" id="5wEedBrutdu" role="1bW5cS">
-                  <node concept="3clFbF" id="hIWP5we" role="3cqZAp">
-                    <node concept="37vLTI" id="hZscTvC" role="3clFbG">
-                      <node concept="2OqwBi" id="3ljdQypyvLT" role="37vLTx">
-                        <node concept="2ShNRf" id="3ljdQypyvLK" role="2Oq$k0">
-                          <node concept="1pGfFk" id="3ljdQypyvLN" role="2ShVmc">
-                            <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;()" resolve="OptimizeImportsHelper" />
+        <node concept="3cpWs8" id="6DRNpvPQ2pb" role="3cqZAp">
+          <node concept="3cpWsn" id="6DRNpvPQ2pc" role="3cpWs9">
+            <property role="TrG5h" value="task" />
+            <node concept="3uibUv" id="6DRNpvPQ2pa" role="1tU5fm">
+              <ref role="3uigEE" to="xygl:~Task$Modal" resolve="Task.Modal" />
+            </node>
+            <node concept="2ShNRf" id="6DRNpvPQ2pd" role="33vP2m">
+              <node concept="YeOm9" id="6DRNpvPQ2pe" role="2ShVmc">
+                <node concept="1Y3b0j" id="6DRNpvPQ2pf" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
+                  <ref role="1Y3XeK" to="xygl:~Task$Modal" resolve="Task.Modal" />
+                  <node concept="3Tm1VV" id="6DRNpvPQ2pg" role="1B3o_S" />
+                  <node concept="3clFb_" id="6DRNpvPQ89S" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="run" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="6DRNpvPQ89T" role="1B3o_S" />
+                    <node concept="3cqZAl" id="6DRNpvPQ89U" role="3clF45" />
+                    <node concept="37vLTG" id="6DRNpvPQ89V" role="3clF46">
+                      <property role="TrG5h" value="indicator" />
+                      <node concept="3uibUv" id="6DRNpvPQ89W" role="1tU5fm">
+                        <ref role="3uigEE" to="xygl:~ProgressIndicator" resolve="ProgressIndicator" />
+                      </node>
+                      <node concept="2AHcQZ" id="6DRNpvPQ89X" role="2AJF6D">
+                        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="6DRNpvPQ89Y" role="3clF47">
+                      <node concept="3cpWs8" id="6DRNpvPQ89Z" role="3cqZAp">
+                        <node concept="3cpWsn" id="6DRNpvPQ8a0" role="3cpWs9">
+                          <property role="TrG5h" value="monitor" />
+                          <node concept="3uibUv" id="6DRNpvPQ8a1" role="1tU5fm">
+                            <ref role="3uigEE" to="mk90:~ProgressMonitorAdapter" resolve="ProgressMonitorAdapter" />
                           </node>
-                        </node>
-                        <node concept="liA8E" id="3ljdQypyvLY" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeProjectImports(jetbrains.mps.project.Project):java.lang.String" resolve="optimizeProjectImports" />
-                          <node concept="2OqwBi" id="3ljdQypyvM0" role="37wK5m">
-                            <node concept="2WthIp" id="3ljdQypyvM1" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="3ljdQypyvM2" role="2OqNvi">
-                              <ref role="2WH_rO" node="hHNVeaJ" resolve="project" />
+                          <node concept="2ShNRf" id="6DRNpvPQ8a2" role="33vP2m">
+                            <node concept="1pGfFk" id="6DRNpvPQ8a3" role="2ShVmc">
+                              <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
+                              <node concept="37vLTw" id="6DRNpvPQ8a4" role="37wK5m">
+                                <ref role="3cqZAo" node="6DRNpvPQ89V" resolve="indicator" />
+                              </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTrwa" role="37vLTJ">
-                        <ref role="3cqZAo" node="hIWP75b" resolve="report" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="2VydZlihQUF" role="3cqZAp">
-                    <node concept="2OqwBi" id="2VydZlihQV2" role="3clFbG">
-                      <node concept="37vLTw" id="CJPgsJ1Ebf" role="2Oq$k0">
-                        <ref role="3cqZAo" node="CJPgsJ1DW3" resolve="repo" />
-                      </node>
-                      <node concept="liA8E" id="2VydZlihQV7" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="3VvwvxwthZP" role="3cqZAp">
-                    <node concept="2OqwBi" id="3VvwvxwthZQ" role="3clFbG">
-                      <node concept="2YIFZM" id="3VvwvxwthZR" role="2Oq$k0">
-                        <ref role="37wK5l" to="3qmy:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                        <ref role="1Pybhc" to="3qmy:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                      </node>
-                      <node concept="liA8E" id="3VvwvxwthZS" role="2OqNvi">
-                        <ref role="37wK5l" to="3qmy:~ClassLoaderManager.reloadAll(org.jetbrains.mps.openapi.util.ProgressMonitor):void" resolve="reloadAll" />
-                        <node concept="2ShNRf" id="1qSnb0zjkGN" role="37wK5m">
-                          <node concept="1pGfFk" id="1qSnb0zjkGO" role="2ShVmc">
-                            <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
+                      <node concept="2GUZhq" id="6C8agxN6F93" role="3cqZAp">
+                        <node concept="3clFbS" id="6C8agxN6F95" role="2GV8ay">
+                          <node concept="3clFbF" id="6DRNpvPQ8ad" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DRNpvPQ8ae" role="3clFbG">
+                              <node concept="37vLTw" id="6DRNpvPQ8af" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="6DRNpvPQ8ag" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.start(java.lang.String,int):void" resolve="start" />
+                                <node concept="Xl_RD" id="6DRNpvPQ8ah" role="37wK5m">
+                                  <property role="Xl_RC" value="Optimizing project imports" />
+                                </node>
+                                <node concept="3cmrfG" id="6DRNpvPQ8aj" role="37wK5m">
+                                  <property role="3cmrfH" value="2" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="6DRNpvPQ8a_" role="3cqZAp">
+                            <node concept="2YIFZM" id="6DRNpvPQ8aA" role="3clFbG">
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <node concept="1bVj0M" id="6DRNpvPQ8aB" role="37wK5m">
+                                <node concept="3clFbS" id="6DRNpvPQ8aC" role="1bW5cS" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="6DRNpvPQ9vH" role="3cqZAp">
+                            <node concept="3cpWsn" id="6DRNpvPQ9vI" role="3cpWs9">
+                              <property role="TrG5h" value="repo" />
+                              <property role="3TUv4t" value="true" />
+                              <node concept="3uibUv" id="6DRNpvPQ9vJ" role="1tU5fm">
+                                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                              </node>
+                              <node concept="2OqwBi" id="6DRNpvPQ9vK" role="33vP2m">
+                                <node concept="liA8E" id="6DRNpvPQ9vL" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                </node>
+                                <node concept="2OqwBi" id="6DRNpvPQ9vM" role="2Oq$k0">
+                                  <node concept="2WthIp" id="6DRNpvPQ9vN" role="2Oq$k0" />
+                                  <node concept="1DTwFV" id="6DRNpvPQ9vO" role="2OqNvi">
+                                    <ref role="2WH_rO" node="hHNVeaJ" resolve="project" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="6DRNpvPQ8al" role="3cqZAp">
+                            <node concept="3cpWsn" id="6DRNpvPQ8am" role="3cpWs9">
+                              <property role="TrG5h" value="helper" />
+                              <node concept="3uibUv" id="6DRNpvPQ8an" role="1tU5fm">
+                                <ref role="3uigEE" to="z1c3:~OptimizeImportsHelper" resolve="OptimizeImportsHelper" />
+                              </node>
+                              <node concept="2ShNRf" id="6DRNpvPQ8ao" role="33vP2m">
+                                <node concept="1pGfFk" id="6DRNpvPQ8ap" role="2ShVmc">
+                                  <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="OptimizeImportsHelper" />
+                                  <node concept="37vLTw" id="6DRNpvPQbJR" role="37wK5m">
+                                    <ref role="3cqZAo" node="6DRNpvPQ9vI" resolve="repo" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="6DRNpvPQ8aD" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DRNpvPQ8aE" role="3clFbG">
+                              <node concept="liA8E" id="6DRNpvPQ8aF" role="2OqNvi">
+                                <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                                <node concept="1bVj0M" id="6DRNpvPQ8aG" role="37wK5m">
+                                  <node concept="3clFbS" id="6DRNpvPQ8aH" role="1bW5cS">
+                                    <node concept="3clFbF" id="6DRNpvPQ8aI" role="3cqZAp">
+                                      <node concept="d57v9" id="6DRNpvPQ8aJ" role="3clFbG">
+                                        <node concept="37vLTw" id="6DRNpvPQ8aK" role="37vLTJ">
+                                          <ref role="3cqZAo" node="hIWP75b" resolve="report" />
+                                        </node>
+                                        <node concept="2OqwBi" id="6DRNpvPQ8aL" role="37vLTx">
+                                          <node concept="37vLTw" id="6DRNpvPQ8aM" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="6DRNpvPQ8am" resolve="helper" />
+                                          </node>
+                                          <node concept="liA8E" id="6DRNpvPQdzY" role="2OqNvi">
+                                            <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeProjectImports(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.util.ProgressMonitor):java.lang.String" resolve="optimizeProjectImports" />
+                                            <node concept="2OqwBi" id="6DRNpvPQdzZ" role="37wK5m">
+                                              <node concept="2WthIp" id="6DRNpvPQd$0" role="2Oq$k0">
+                                                <ref role="32nkFo" node="hGoCYw9" resolve="OptimizeProjectImports" />
+                                              </node>
+                                              <node concept="1DTwFV" id="6DRNpvPQd$1" role="2OqNvi">
+                                                <ref role="2WH_rO" node="hHNVeaJ" resolve="project" />
+                                              </node>
+                                            </node>
+                                            <node concept="2OqwBi" id="6DRNpvPQd$2" role="37wK5m">
+                                              <node concept="37vLTw" id="6DRNpvPQd$3" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                                              </node>
+                                              <node concept="liA8E" id="6DRNpvPQd$4" role="2OqNvi">
+                                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                                                <node concept="3cmrfG" id="6DRNpvPQd$5" role="37wK5m">
+                                                  <property role="3cmrfH" value="1" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="6DRNpvPQ8aR" role="2Oq$k0">
+                                <node concept="liA8E" id="6DRNpvPQ8aS" role="2OqNvi">
+                                  <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                </node>
+                                <node concept="37vLTw" id="6DRNpvPQ8aT" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6DRNpvPQ9vI" resolve="repo" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="6DRNpvPQ8aZ" role="3cqZAp">
+                            <node concept="3clFbS" id="6DRNpvPQ8b0" role="3clFbx">
+                              <node concept="3cpWs6" id="6DRNpvPQ8b1" role="3cqZAp" />
+                            </node>
+                            <node concept="2OqwBi" id="6DRNpvPQ8b2" role="3clFbw">
+                              <node concept="37vLTw" id="6DRNpvPQ8b3" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="6DRNpvPQ8b4" role="2OqNvi">
+                                <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.isCanceled():boolean" resolve="isCanceled" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="6DRNpvPQcKX" role="3cqZAp" />
+                          <node concept="3clFbF" id="6DRNpvPQ8ba" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DRNpvPQ8bb" role="3clFbG">
+                              <node concept="37vLTw" id="6DRNpvPQ8bc" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="6DRNpvPQ8bd" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.step(java.lang.String):void" resolve="step" />
+                                <node concept="Xl_RD" id="6DRNpvPQ8be" role="37wK5m">
+                                  <property role="Xl_RC" value="Saving..." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="6DRNpvPQ8bf" role="3cqZAp">
+                            <node concept="2YIFZM" id="6DRNpvPQ8bg" role="3clFbG">
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <node concept="1bVj0M" id="6DRNpvPQ8bh" role="37wK5m">
+                                <node concept="3clFbS" id="6DRNpvPQ8bi" role="1bW5cS">
+                                  <node concept="3clFbF" id="6DRNpvPQ8bj" role="3cqZAp">
+                                    <node concept="2OqwBi" id="6DRNpvPQ8bk" role="3clFbG">
+                                      <node concept="liA8E" id="6DRNpvPQ8bl" role="2OqNvi">
+                                        <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                                        <node concept="1bVj0M" id="6DRNpvPQ8bm" role="37wK5m">
+                                          <node concept="3clFbS" id="6DRNpvPQ8bn" role="1bW5cS">
+                                            <node concept="3clFbF" id="6DRNpvPQ8bo" role="3cqZAp">
+                                              <node concept="2OqwBi" id="6DRNpvPQ8bp" role="3clFbG">
+                                                <node concept="37vLTw" id="6DRNpvPQ8bq" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="6DRNpvPQ9vI" resolve="repo" />
+                                                </node>
+                                                <node concept="liA8E" id="6DRNpvPQ8br" role="2OqNvi">
+                                                  <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="6DRNpvPQ8bs" role="2Oq$k0">
+                                        <node concept="liA8E" id="6DRNpvPQ8bt" role="2OqNvi">
+                                          <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                        </node>
+                                        <node concept="37vLTw" id="6DRNpvPQ8bu" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="6DRNpvPQ9vI" resolve="repo" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="6DRNpvPQ8bv" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DRNpvPQ8bw" role="3clFbG">
+                              <node concept="37vLTw" id="6DRNpvPQ8bx" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="6DRNpvPQ8by" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.advance(int):void" resolve="advance" />
+                                <node concept="3cmrfG" id="6DRNpvPQdg9" role="37wK5m">
+                                  <property role="3cmrfH" value="1" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="6C8agxN6F96" role="2GVbov">
+                          <node concept="3clFbF" id="6DRNpvPQ8b$" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DRNpvPQ8b_" role="3clFbG">
+                              <node concept="37vLTw" id="6DRNpvPQ8bA" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6DRNpvPQ8a0" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="6DRNpvPQ8bB" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.done():void" resolve="done" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="2OqwBi" id="6DRNpvPQ2pZ" role="37wK5m">
+                    <node concept="2WthIp" id="6DRNpvPQ2q0" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6DRNpvPQ2q1" role="2OqNvi">
+                      <ref role="2WH_rO" node="7z$DRh1uk0H" resolve="ideaProject" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="6DRNpvPQ2q2" role="37wK5m">
+                    <property role="Xl_RC" value="Optimizing project imports" />
+                  </node>
+                  <node concept="3clFbT" id="6DRNpvPQ2q3" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
                 </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="5wEedBrur1b" role="2Oq$k0">
-              <node concept="liA8E" id="5wEedBrurTG" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
-              <node concept="37vLTw" id="CJPgsJ1DW9" role="2Oq$k0">
-                <ref role="3cqZAo" node="CJPgsJ1DW3" resolve="repo" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5wEedBruu2r" role="3cqZAp" />
-        <node concept="3clFbF" id="7z$DRh1uk0$" role="3cqZAp">
-          <node concept="2YIFZM" id="7z$DRh1uk0_" role="3clFbG">
-            <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
-            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-            <node concept="2OqwBi" id="7z$DRh1uk0A" role="37wK5m">
-              <node concept="2WthIp" id="7z$DRh1uk0B" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7z$DRh1uk0I" role="2OqNvi">
-                <ref role="2WH_rO" node="7z$DRh1uk0H" resolve="ideaProject" />
+        <node concept="3clFbF" id="6DRNpvPQe7M" role="3cqZAp">
+          <node concept="2OqwBi" id="6DRNpvPQest" role="3clFbG">
+            <node concept="2YIFZM" id="6DRNpvPQemf" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="6DRNpvPQe$C" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="6DRNpvPQe_w" role="37wK5m">
+                <node concept="3clFbS" id="6DRNpvPQe_x" role="1bW5cS">
+                  <node concept="3clFbF" id="3z62ISXYAGY" role="3cqZAp">
+                    <node concept="2OqwBi" id="3z62ISXYAH0" role="3clFbG">
+                      <node concept="2YIFZM" id="3z62ISXYAH1" role="2Oq$k0">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                        <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
+                      </node>
+                      <node concept="liA8E" id="3z62ISXYAH2" role="2OqNvi">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
+                        <node concept="37vLTw" id="6DRNpvPQ2q4" role="37wK5m">
+                          <ref role="3cqZAo" node="6DRNpvPQ2pc" resolve="task" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7z$DRh1uk0$" role="3cqZAp">
+                    <node concept="2YIFZM" id="7z$DRh1uk0_" role="3clFbG">
+                      <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                      <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                      <node concept="2OqwBi" id="7z$DRh1uk0A" role="37wK5m">
+                        <node concept="2WthIp" id="7z$DRh1uk0B" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="7z$DRh1uk0I" role="2OqNvi">
+                          <ref role="2WH_rO" node="7z$DRh1uk0H" resolve="ideaProject" />
+                        </node>
+                      </node>
+                      <node concept="3K4zz7" id="3z62ISXYEuo" role="37wK5m">
+                        <node concept="Xl_RD" id="3z62ISXYEup" role="3K4E3e">
+                          <property role="Xl_RC" value="Nothing to optimize" />
+                        </node>
+                        <node concept="37vLTw" id="3z62ISXYEuq" role="3K4GZi">
+                          <ref role="3cqZAo" node="hIWP75b" resolve="report" />
+                        </node>
+                        <node concept="2OqwBi" id="3z62ISXYEur" role="3K4Cdx">
+                          <node concept="37vLTw" id="3z62ISXYEus" role="2Oq$k0">
+                            <ref role="3cqZAo" node="hIWP75b" resolve="report" />
+                          </node>
+                          <node concept="liA8E" id="3z62ISXYEut" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <node concept="Xl_RD" id="3z62ISXYEuu" role="37wK5m">
+                              <property role="Xl_RC" value="" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="7z$DRh1uk0E" role="37wK5m">
+                        <property role="Xl_RC" value="Optimize Imports" />
+                      </node>
+                      <node concept="2YIFZM" id="7z$DRh1uk0F" role="37wK5m">
+                        <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
+                        <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
-            </node>
-            <node concept="37vLTw" id="3GM_nagTtvI" role="37wK5m">
-              <ref role="3cqZAo" node="hIWP75b" resolve="report" />
-            </node>
-            <node concept="Xl_RD" id="7z$DRh1uk0E" role="37wK5m">
-              <property role="Xl_RC" value="Optimize Imports" />
-            </node>
-            <node concept="2YIFZM" id="7z$DRh1uk0F" role="37wK5m">
-              <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
-              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <node concept="2YIFZM" id="6DRNpvPRSRc" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+              </node>
             </node>
           </node>
         </node>
@@ -6656,108 +6895,407 @@
     </node>
     <node concept="tnohg" id="hZs6NFp" role="tncku">
       <node concept="3clFbS" id="hZs6NFq" role="2VODD2">
-        <node concept="3cpWs8" id="hZs7hCs" role="3cqZAp">
-          <node concept="3cpWsn" id="hZs7hCt" role="3cpWs9">
+        <node concept="3cpWs8" id="fZRHvh7P0i" role="3cqZAp">
+          <node concept="3cpWsn" id="fZRHvh7P0j" role="3cpWs9">
             <property role="TrG5h" value="report" />
-            <node concept="17QB3L" id="7m$uTO7nmJI" role="1tU5fm" />
+            <property role="3TUv4t" value="true" />
+            <node concept="2ShNRf" id="4wCBdnn6fP6" role="33vP2m">
+              <node concept="1pGfFk" id="4wCBdnn6Omq" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="4wCBdnn6fzr" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5wEedBrtMND" role="3cqZAp">
-          <node concept="2OqwBi" id="5wEedBrtXVY" role="3clFbG">
-            <node concept="liA8E" id="5wEedBrtZ4h" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
-              <node concept="1bVj0M" id="5wEedBrtZ8_" role="37wK5m">
-                <node concept="3clFbS" id="5wEedBrtZ8A" role="1bW5cS">
-                  <node concept="3clFbF" id="3ljdQypylIy" role="3cqZAp">
-                    <node concept="37vLTI" id="3ljdQypylI_" role="3clFbG">
-                      <node concept="2OqwBi" id="3ljdQypyvIb" role="37vLTx">
-                        <node concept="2ShNRf" id="3ljdQypylID" role="2Oq$k0">
-                          <node concept="1pGfFk" id="3ljdQypyvI5" role="2ShVmc">
-                            <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;()" resolve="OptimizeImportsHelper" />
+        <node concept="3cpWs8" id="fZRHvh7P0u" role="3cqZAp">
+          <node concept="3cpWsn" id="fZRHvh7P0v" role="3cpWs9">
+            <property role="TrG5h" value="task" />
+            <node concept="3uibUv" id="fZRHvh7P0w" role="1tU5fm">
+              <ref role="3uigEE" to="xygl:~Task$Modal" resolve="Task.Modal" />
+            </node>
+            <node concept="2ShNRf" id="fZRHvh7P0x" role="33vP2m">
+              <node concept="YeOm9" id="fZRHvh7P0y" role="2ShVmc">
+                <node concept="1Y3b0j" id="fZRHvh7P0z" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="xygl:~Task$Modal" resolve="Task.Modal" />
+                  <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
+                  <node concept="3Tm1VV" id="fZRHvh7P0$" role="1B3o_S" />
+                  <node concept="3clFb_" id="fZRHvh7P0_" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="run" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="fZRHvh7P0A" role="1B3o_S" />
+                    <node concept="3cqZAl" id="fZRHvh7P0B" role="3clF45" />
+                    <node concept="37vLTG" id="fZRHvh7P0C" role="3clF46">
+                      <property role="TrG5h" value="indicator" />
+                      <node concept="3uibUv" id="fZRHvh7P0D" role="1tU5fm">
+                        <ref role="3uigEE" to="xygl:~ProgressIndicator" resolve="ProgressIndicator" />
+                      </node>
+                      <node concept="2AHcQZ" id="fZRHvh7P0E" role="2AJF6D">
+                        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="fZRHvh7P0F" role="3clF47">
+                      <node concept="3cpWs8" id="fZRHvh7P0G" role="3cqZAp">
+                        <node concept="3cpWsn" id="fZRHvh7P0H" role="3cpWs9">
+                          <property role="TrG5h" value="monitor" />
+                          <node concept="3uibUv" id="fZRHvh7P0I" role="1tU5fm">
+                            <ref role="3uigEE" to="mk90:~ProgressMonitorAdapter" resolve="ProgressMonitorAdapter" />
                           </node>
-                        </node>
-                        <node concept="liA8E" id="3ljdQypyvIi" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeModelsImports(java.util.List):java.lang.String" resolve="optimizeModelsImports" />
-                          <node concept="2OqwBi" id="3ljdQypyvIk" role="37wK5m">
-                            <node concept="2WthIp" id="3ljdQypyvIl" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="3ljdQypyvJ7" role="2OqNvi">
-                              <ref role="2WH_rO" node="hZsPrN4" resolve="models" />
+                          <node concept="2ShNRf" id="fZRHvh7P0J" role="33vP2m">
+                            <node concept="1pGfFk" id="fZRHvh7P0K" role="2ShVmc">
+                              <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
+                              <node concept="37vLTw" id="fZRHvh7P0L" role="37wK5m">
+                                <ref role="3cqZAo" node="fZRHvh7P0C" resolve="indicator" />
+                              </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTB4_" role="37vLTJ">
-                        <ref role="3cqZAo" node="hZs7hCt" resolve="report" />
+                      <node concept="2GUZhq" id="6C8agxN6ATJ" role="3cqZAp">
+                        <node concept="3clFbS" id="6C8agxN6ATL" role="2GV8ay">
+                          <node concept="3cpWs8" id="fZRHvh7P0M" role="3cqZAp">
+                            <node concept="3cpWsn" id="fZRHvh7P0N" role="3cpWs9">
+                              <property role="TrG5h" value="modelsNumber" />
+                              <node concept="10Oyi0" id="fZRHvh7P0O" role="1tU5fm" />
+                              <node concept="2OqwBi" id="fZRHvh7P0P" role="33vP2m">
+                                <node concept="2OqwBi" id="fZRHvh7P0Q" role="2Oq$k0">
+                                  <node concept="2WthIp" id="fZRHvh7P0R" role="2Oq$k0" />
+                                  <node concept="1DTwFV" id="fZRHvh7QdJ" role="2OqNvi">
+                                    <ref role="2WH_rO" node="hZsPrN4" resolve="models" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="fZRHvh7P0T" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="6DRNpvPQgnS" role="3cqZAp">
+                            <node concept="3cpWsn" id="6DRNpvPQgnT" role="3cpWs9">
+                              <property role="TrG5h" value="repo" />
+                              <property role="3TUv4t" value="true" />
+                              <node concept="3uibUv" id="6DRNpvPQgnU" role="1tU5fm">
+                                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                              </node>
+                              <node concept="2OqwBi" id="6DRNpvPQgnV" role="33vP2m">
+                                <node concept="liA8E" id="6DRNpvPQgnW" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                </node>
+                                <node concept="2OqwBi" id="6DRNpvPQgnX" role="2Oq$k0">
+                                  <node concept="2WthIp" id="6DRNpvPQgnY" role="2Oq$k0" />
+                                  <node concept="1DTwFV" id="6DRNpvPQgnZ" role="2OqNvi">
+                                    <ref role="2WH_rO" node="5wEedBrtMyq" resolve="project" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7P0U" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7P0V" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7P0W" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7P0X" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.start(java.lang.String,int):void" resolve="start" />
+                                <node concept="3cpWs3" id="7OGkmhG50oB" role="37wK5m">
+                                  <node concept="Xl_RD" id="7OGkmhG50DF" role="3uHU7w">
+                                    <property role="Xl_RC" value=" models" />
+                                  </node>
+                                  <node concept="3cpWs3" id="7OGkmhG4ZH3" role="3uHU7B">
+                                    <node concept="Xl_RD" id="fZRHvh7P0Y" role="3uHU7B">
+                                      <property role="Xl_RC" value="Optimizing imports of " />
+                                    </node>
+                                    <node concept="37vLTw" id="7OGkmhG4ZYF" role="3uHU7w">
+                                      <ref role="3cqZAo" node="fZRHvh7P0N" resolve="modelsNumber" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="3ccJEjee2sm" role="37wK5m">
+                                  <ref role="3cqZAo" node="fZRHvh7P0N" resolve="modelsNumber" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4wCBdnn49vU" role="3cqZAp">
+                            <node concept="2YIFZM" id="4wCBdnn49vW" role="3clFbG">
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <node concept="1bVj0M" id="4wCBdnn49vY" role="37wK5m">
+                                <node concept="3clFbS" id="4wCBdnn49w0" role="1bW5cS" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="fZRHvh7P12" role="3cqZAp">
+                            <node concept="3cpWsn" id="fZRHvh7P13" role="3cpWs9">
+                              <property role="TrG5h" value="helper" />
+                              <node concept="3uibUv" id="fZRHvh7P14" role="1tU5fm">
+                                <ref role="3uigEE" to="z1c3:~OptimizeImportsHelper" resolve="OptimizeImportsHelper" />
+                              </node>
+                              <node concept="2ShNRf" id="fZRHvh7P15" role="33vP2m">
+                                <node concept="1pGfFk" id="fZRHvh7P16" role="2ShVmc">
+                                  <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="OptimizeImportsHelper" />
+                                  <node concept="37vLTw" id="6DRNpvPQhfu" role="37wK5m">
+                                    <ref role="3cqZAo" node="6DRNpvPQgnT" resolve="repo" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4wCBdnn49w2" role="3cqZAp">
+                            <node concept="2OqwBi" id="4wCBdnn49w6" role="3clFbG">
+                              <node concept="liA8E" id="4wCBdnn49w8" role="2OqNvi">
+                                <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                                <node concept="1bVj0M" id="4wCBdnn49wa" role="37wK5m">
+                                  <node concept="3clFbS" id="4wCBdnn49wc" role="1bW5cS">
+                                    <node concept="3cpWs8" id="4wCBdnn6Oxn" role="3cqZAp">
+                                      <node concept="3cpWsn" id="4wCBdnn6Oxo" role="3cpWs9">
+                                        <property role="TrG5h" value="result" />
+                                        <node concept="17QB3L" id="4wCBdnn6QRM" role="1tU5fm" />
+                                        <node concept="2OqwBi" id="4wCBdnn6Oxp" role="33vP2m">
+                                          <node concept="37vLTw" id="4wCBdnn6Oxq" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="fZRHvh7P13" resolve="helper" />
+                                          </node>
+                                          <node concept="liA8E" id="4wCBdnn6Oxr" role="2OqNvi">
+                                            <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeModelsImports(java.util.List,org.jetbrains.mps.openapi.util.ProgressMonitor):java.lang.String" resolve="optimizeModelsImports" />
+                                            <node concept="2OqwBi" id="4wCBdnn6Oxs" role="37wK5m">
+                                              <node concept="2WthIp" id="4wCBdnn6Oxt" role="2Oq$k0">
+                                                <ref role="32nkFo" node="hZs6NFo" resolve="OptimizeModelImports" />
+                                              </node>
+                                              <node concept="1DTwFV" id="4wCBdnn6Oxu" role="2OqNvi">
+                                                <ref role="2WH_rO" node="hZsPrN4" resolve="models" />
+                                              </node>
+                                            </node>
+                                            <node concept="2OqwBi" id="4wCBdnn6Oxv" role="37wK5m">
+                                              <node concept="37vLTw" id="4wCBdnn6Oxw" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                                              </node>
+                                              <node concept="liA8E" id="4wCBdnn6Oxx" role="2OqNvi">
+                                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.subTask(int):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
+                                                <node concept="37vLTw" id="3ccJEjee2Lf" role="37wK5m">
+                                                  <ref role="3cqZAo" node="fZRHvh7P0N" resolve="modelsNumber" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="fZRHvh7P1r" role="3cqZAp">
+                                      <node concept="2OqwBi" id="4wCBdnn6P_f" role="3clFbG">
+                                        <node concept="37vLTw" id="4wCBdnn6Ph6" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="fZRHvh7P0j" resolve="report" />
+                                        </node>
+                                        <node concept="liA8E" id="4wCBdnn6PJP" role="2OqNvi">
+                                          <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                                          <node concept="37vLTw" id="4wCBdnn6Qkq" role="37wK5m">
+                                            <ref role="3cqZAo" node="4wCBdnn6Oxo" resolve="result" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="4wCBdnn49w4" role="2Oq$k0">
+                                <node concept="liA8E" id="4wCBdnn49we" role="2OqNvi">
+                                  <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                </node>
+                                <node concept="37vLTw" id="4wCBdnn49wg" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6DRNpvPQgnT" resolve="repo" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="fZRHvh7P1Z" role="3cqZAp">
+                            <node concept="3clFbS" id="fZRHvh7P20" role="3clFbx">
+                              <node concept="3cpWs6" id="fZRHvh7P21" role="3cqZAp" />
+                            </node>
+                            <node concept="2OqwBi" id="fZRHvh7P22" role="3clFbw">
+                              <node concept="37vLTw" id="fZRHvh7P23" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7P24" role="2OqNvi">
+                                <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.isCanceled():boolean" resolve="isCanceled" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7P2a" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7P2b" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7P2c" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7P2d" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.step(java.lang.String):void" resolve="step" />
+                                <node concept="Xl_RD" id="fZRHvh7P2e" role="37wK5m">
+                                  <property role="Xl_RC" value="Saving..." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7P2f" role="3cqZAp">
+                            <node concept="2YIFZM" id="fZRHvh7P2g" role="3clFbG">
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <node concept="1bVj0M" id="fZRHvh7P2h" role="37wK5m">
+                                <node concept="3clFbS" id="fZRHvh7P2i" role="1bW5cS">
+                                  <node concept="3clFbF" id="fZRHvh7P2j" role="3cqZAp">
+                                    <node concept="2OqwBi" id="fZRHvh7P2k" role="3clFbG">
+                                      <node concept="liA8E" id="fZRHvh7P2l" role="2OqNvi">
+                                        <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                                        <node concept="1bVj0M" id="fZRHvh7P2m" role="37wK5m">
+                                          <node concept="3clFbS" id="fZRHvh7P2n" role="1bW5cS">
+                                            <node concept="3clFbF" id="fZRHvh7P2o" role="3cqZAp">
+                                              <node concept="2OqwBi" id="fZRHvh7P2p" role="3clFbG">
+                                                <node concept="37vLTw" id="fZRHvh7P2q" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="6DRNpvPQgnT" resolve="repo" />
+                                                </node>
+                                                <node concept="liA8E" id="fZRHvh7P2r" role="2OqNvi">
+                                                  <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="fZRHvh7P2s" role="2Oq$k0">
+                                        <node concept="liA8E" id="fZRHvh7P2t" role="2OqNvi">
+                                          <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                        </node>
+                                        <node concept="37vLTw" id="6DRNpvPRQSP" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="6DRNpvPQgnT" resolve="repo" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7P2v" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7P2w" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7P2x" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7P2y" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.advance(int):void" resolve="advance" />
+                                <node concept="3cmrfG" id="6DRNpvPQk4N" role="37wK5m">
+                                  <property role="3cmrfH" value="1" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="6C8agxN6ATM" role="2GVbov">
+                          <node concept="3clFbF" id="fZRHvh7P2$" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7P2_" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7P2A" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7P0H" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7P2B" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.done():void" resolve="done" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="4rJNfg9_n5q" role="3cqZAp">
-                    <node concept="2OqwBi" id="4rJNfg9_n5t" role="3clFbG">
-                      <node concept="2YIFZM" id="4rJNfg9_n5s" role="2Oq$k0">
-                        <ref role="37wK5l" to="w1kc:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
-                        <ref role="1Pybhc" to="w1kc:~SModelRepository" resolve="SModelRepository" />
-                      </node>
-                      <node concept="liA8E" id="4rJNfg9_n5x" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~SModelRepository.saveAll():void" resolve="saveAll" />
-                      </node>
+                  <node concept="2OqwBi" id="fZRHvh7P2C" role="37wK5m">
+                    <node concept="2WthIp" id="fZRHvh7P2D" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="fZRHvh7P2E" role="2OqNvi">
+                      <ref role="2WH_rO" node="7z$DRh1uk0b" resolve="ideaProject" />
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="5wEedBrtWWZ" role="2Oq$k0">
-              <node concept="liA8E" id="5wEedBrtXNU" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
-              <node concept="2OqwBi" id="5wEedBrtP5D" role="2Oq$k0">
-                <node concept="liA8E" id="5wEedBrtWR7" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-                <node concept="2OqwBi" id="5wEedBrtMNz" role="2Oq$k0">
-                  <node concept="2WthIp" id="5wEedBrtMNA" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5wEedBrtMNC" role="2OqNvi">
-                    <ref role="2WH_rO" node="5wEedBrtMyq" resolve="project" />
+                  <node concept="Xl_RD" id="fZRHvh7P2F" role="37wK5m">
+                    <property role="Xl_RC" value="Optimizing model imports" />
+                  </node>
+                  <node concept="3clFbT" id="fZRHvh7P2G" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7z$DRh1uk07" role="3cqZAp">
-          <node concept="2YIFZM" id="7z$DRh1uk09" role="3clFbG">
-            <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
-            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-            <node concept="2OqwBi" id="7z$DRh1uk0c" role="37wK5m">
-              <node concept="2WthIp" id="7z$DRh1uk0d" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7z$DRh1uk0e" role="2OqNvi">
-                <ref role="2WH_rO" node="7z$DRh1uk0b" resolve="ideaProject" />
-              </node>
+        <node concept="3clFbF" id="fZRHvh7P2H" role="3cqZAp">
+          <node concept="2OqwBi" id="fZRHvh7P2I" role="3clFbG">
+            <node concept="2YIFZM" id="fZRHvh7P2J" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
             </node>
-            <node concept="3K4zz7" id="2TidO$LtEmb" role="37wK5m">
-              <node concept="Xl_RD" id="2TidO$LtEml" role="3K4E3e">
-                <property role="Xl_RC" value="Nothing to optimize" />
-              </node>
-              <node concept="37vLTw" id="3GM_nagTywy" role="3K4GZi">
-                <ref role="3cqZAo" node="hZs7hCt" resolve="report" />
-              </node>
-              <node concept="2OqwBi" id="2TidO$LtElv" role="3K4Cdx">
-                <node concept="37vLTw" id="3GM_nagTvfK" role="2Oq$k0">
-                  <ref role="3cqZAo" node="hZs7hCt" resolve="report" />
-                </node>
-                <node concept="liA8E" id="2TidO$LtElH" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="Xl_RD" id="2TidO$LtElM" role="37wK5m">
-                    <property role="Xl_RC" value="" />
+            <node concept="liA8E" id="fZRHvh7P2K" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="fZRHvh7P2L" role="37wK5m">
+                <node concept="3clFbS" id="fZRHvh7P2M" role="1bW5cS">
+                  <node concept="3clFbF" id="fZRHvh7P2N" role="3cqZAp">
+                    <node concept="2OqwBi" id="fZRHvh7P2O" role="3clFbG">
+                      <node concept="2YIFZM" id="fZRHvh7P2P" role="2Oq$k0">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                        <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
+                      </node>
+                      <node concept="liA8E" id="fZRHvh7P2Q" role="2OqNvi">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
+                        <node concept="37vLTw" id="fZRHvh7P2R" role="37wK5m">
+                          <ref role="3cqZAo" node="fZRHvh7P0v" resolve="task" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="fZRHvh7P2S" role="3cqZAp">
+                    <node concept="2YIFZM" id="fZRHvh7P2T" role="3clFbG">
+                      <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                      <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                      <node concept="2OqwBi" id="fZRHvh7P2U" role="37wK5m">
+                        <node concept="2WthIp" id="fZRHvh7P2V" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="fZRHvh7P2W" role="2OqNvi">
+                          <ref role="2WH_rO" node="7z$DRh1uk0b" resolve="ideaProject" />
+                        </node>
+                      </node>
+                      <node concept="3K4zz7" id="fZRHvh7P2X" role="37wK5m">
+                        <node concept="2OqwBi" id="7OGkmhG2gnx" role="3K4GZi">
+                          <node concept="37vLTw" id="fZRHvh7P2Z" role="2Oq$k0">
+                            <ref role="3cqZAo" node="fZRHvh7P0j" resolve="report" />
+                          </node>
+                          <node concept="liA8E" id="7OGkmhG2gtT" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                          </node>
+                        </node>
+                        <node concept="3clFbC" id="7OGkmhG2cQq" role="3K4Cdx">
+                          <node concept="3cmrfG" id="7OGkmhG2gg7" role="3uHU7w">
+                            <property role="3cmrfH" value="0" />
+                          </node>
+                          <node concept="2OqwBi" id="fZRHvh7P30" role="3uHU7B">
+                            <node concept="37vLTw" id="fZRHvh7P31" role="2Oq$k0">
+                              <ref role="3cqZAo" node="fZRHvh7P0j" resolve="report" />
+                            </node>
+                            <node concept="liA8E" id="7OGkmhG2cpo" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~AbstractStringBuilder.length():int" resolve="length" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="fZRHvh7P2Y" role="3K4E3e">
+                          <property role="Xl_RC" value="Nothing to optimize" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="fZRHvh7P34" role="37wK5m">
+                        <property role="Xl_RC" value="Optimize Imports" />
+                      </node>
+                      <node concept="2YIFZM" id="fZRHvh7P35" role="37wK5m">
+                        <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                        <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="Xl_RD" id="7z$DRh1uk0k" role="37wK5m">
-              <property role="Xl_RC" value="Optimize Imports" />
-            </node>
-            <node concept="2YIFZM" id="7z$DRh1uk0n" role="37wK5m">
-              <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
-              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <node concept="2YIFZM" id="fZRHvh7P36" role="37wK5m">
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+                <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
+              </node>
             </node>
           </node>
         </node>
@@ -6858,7 +7396,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5wEedBru80Y" role="3cqZAp" />
         <node concept="3cpWs8" id="CJPgsJ0h4M" role="3cqZAp">
           <node concept="3cpWsn" id="CJPgsJ0h4N" role="3cpWs9">
             <property role="TrG5h" value="repo" />
@@ -6879,47 +7416,325 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5wEedBru8bx" role="3cqZAp">
-          <node concept="2OqwBi" id="5wEedBrudwm" role="3clFbG">
-            <node concept="liA8E" id="5wEedBrueJP" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
-              <node concept="1bVj0M" id="5wEedBrueKj" role="37wK5m">
-                <node concept="3clFbS" id="5wEedBrueKk" role="1bW5cS">
-                  <node concept="3cpWs8" id="3ljdQypyvJV" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ljdQypyvJW" role="3cpWs9">
-                      <property role="TrG5h" value="helper" />
-                      <node concept="3uibUv" id="64_HZElDpMz" role="1tU5fm">
-                        <ref role="3uigEE" to="z1c3:~OptimizeImportsHelper" resolve="OptimizeImportsHelper" />
+        <node concept="3cpWs8" id="fZRHvh7Hn3" role="3cqZAp">
+          <node concept="3cpWsn" id="fZRHvh7Hn4" role="3cpWs9">
+            <property role="TrG5h" value="task" />
+            <node concept="3uibUv" id="fZRHvh7Hn2" role="1tU5fm">
+              <ref role="3uigEE" to="xygl:~Task$Modal" resolve="Task.Modal" />
+            </node>
+            <node concept="2ShNRf" id="fZRHvh7Hn5" role="33vP2m">
+              <node concept="YeOm9" id="fZRHvh7Hn6" role="2ShVmc">
+                <node concept="1Y3b0j" id="fZRHvh7Hn7" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
+                  <ref role="1Y3XeK" to="xygl:~Task$Modal" resolve="Task.Modal" />
+                  <node concept="3Tm1VV" id="fZRHvh7Hn8" role="1B3o_S" />
+                  <node concept="3clFb_" id="fZRHvh7Hn9" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="run" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="fZRHvh7Hna" role="1B3o_S" />
+                    <node concept="3cqZAl" id="fZRHvh7Hnb" role="3clF45" />
+                    <node concept="37vLTG" id="fZRHvh7Hnc" role="3clF46">
+                      <property role="TrG5h" value="indicator" />
+                      <node concept="3uibUv" id="fZRHvh7Hnd" role="1tU5fm">
+                        <ref role="3uigEE" to="xygl:~ProgressIndicator" resolve="ProgressIndicator" />
                       </node>
-                      <node concept="2ShNRf" id="3ljdQypyvJY" role="33vP2m">
-                        <node concept="1pGfFk" id="3ljdQypyvJZ" role="2ShVmc">
-                          <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;()" resolve="OptimizeImportsHelper" />
-                        </node>
+                      <node concept="2AHcQZ" id="fZRHvh7Hne" role="2AJF6D">
+                        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="1DcWWT" id="4zutUupXf$Z" role="3cqZAp">
-                    <node concept="3clFbS" id="4zutUupXf_0" role="2LFqv$">
-                      <node concept="3clFbJ" id="3ljdQypyvK3" role="3cqZAp">
-                        <node concept="3clFbS" id="3ljdQypyvK4" role="3clFbx">
-                          <node concept="3clFbF" id="3ljdQypyvK5" role="3cqZAp">
-                            <node concept="d57v9" id="4zutUupXfAk" role="3clFbG">
-                              <node concept="37vLTw" id="3GM_nagTyEB" role="37vLTJ">
-                                <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
+                    <node concept="3clFbS" id="fZRHvh7Hnf" role="3clF47">
+                      <node concept="3cpWs8" id="fZRHvh7Hng" role="3cqZAp">
+                        <node concept="3cpWsn" id="fZRHvh7Hnh" role="3cpWs9">
+                          <property role="TrG5h" value="monitor" />
+                          <node concept="3uibUv" id="fZRHvh7Hni" role="1tU5fm">
+                            <ref role="3uigEE" to="mk90:~ProgressMonitorAdapter" resolve="ProgressMonitorAdapter" />
+                          </node>
+                          <node concept="2ShNRf" id="fZRHvh7Hnj" role="33vP2m">
+                            <node concept="1pGfFk" id="fZRHvh7Hnk" role="2ShVmc">
+                              <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
+                              <node concept="37vLTw" id="fZRHvh7Hnl" role="37wK5m">
+                                <ref role="3cqZAo" node="fZRHvh7Hnc" resolve="indicator" />
                               </node>
-                              <node concept="2OqwBi" id="4zutUupXfAm" role="37vLTx">
-                                <node concept="37vLTw" id="3GM_nagTxsd" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3ljdQypyvJW" resolve="helper" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2GUZhq" id="6C8agxN50p9" role="3cqZAp">
+                        <node concept="3clFbS" id="6C8agxN50pb" role="2GV8ay">
+                          <node concept="3cpWs8" id="fZRHvh7Hnm" role="3cqZAp">
+                            <node concept="3cpWsn" id="fZRHvh7Hnn" role="3cpWs9">
+                              <property role="TrG5h" value="modulesNumber" />
+                              <node concept="10Oyi0" id="fZRHvh7Hno" role="1tU5fm" />
+                              <node concept="2OqwBi" id="fZRHvh7Hnp" role="33vP2m">
+                                <node concept="2OqwBi" id="fZRHvh7Hnq" role="2Oq$k0">
+                                  <node concept="2WthIp" id="fZRHvh7Hnr" role="2Oq$k0" />
+                                  <node concept="1DTwFV" id="fZRHvh7Hns" role="2OqNvi">
+                                    <ref role="2WH_rO" node="hZsb5Sf" resolve="modules" />
+                                  </node>
                                 </node>
-                                <node concept="liA8E" id="4zutUupXfAo" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeSolutionImports(jetbrains.mps.project.Solution):java.lang.String" resolve="optimizeSolutionImports" />
-                                  <node concept="1eOMI4" id="4zutUupXfAp" role="37wK5m">
-                                    <node concept="10QFUN" id="4zutUupXfAq" role="1eOMHV">
-                                      <node concept="3uibUv" id="4zutUupXfAr" role="10QFUM">
-                                        <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
+                                <node concept="liA8E" id="fZRHvh7Hnt" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7Hnu" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7Hnv" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7Hnw" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7Hnx" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.start(java.lang.String,int):void" resolve="start" />
+                                <node concept="3cpWs3" id="7OGkmhG686M" role="37wK5m">
+                                  <node concept="Xl_RD" id="7OGkmhG68nQ" role="3uHU7w">
+                                    <property role="Xl_RC" value=" modules" />
+                                  </node>
+                                  <node concept="3cpWs3" id="7OGkmhG66zB" role="3uHU7B">
+                                    <node concept="Xl_RD" id="fZRHvh7Hny" role="3uHU7B">
+                                      <property role="Xl_RC" value="Optimizing the imports of the " />
+                                    </node>
+                                    <node concept="37vLTw" id="7OGkmhG67FK" role="3uHU7w">
+                                      <ref role="3cqZAo" node="fZRHvh7Hnn" resolve="modulesNumber" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3cpWs3" id="7OGkmhG69Uh" role="37wK5m">
+                                  <node concept="3cmrfG" id="7OGkmhG6abl" role="3uHU7w">
+                                    <property role="3cmrfH" value="1" />
+                                  </node>
+                                  <node concept="37vLTw" id="fZRHvh7Hn_" role="3uHU7B">
+                                    <ref role="3cqZAo" node="fZRHvh7Hnn" resolve="modulesNumber" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7HnO" role="3cqZAp">
+                            <node concept="2YIFZM" id="fZRHvh7HnP" role="3clFbG">
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <node concept="1bVj0M" id="fZRHvh7HnQ" role="37wK5m">
+                                <node concept="3clFbS" id="fZRHvh7HnR" role="1bW5cS" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="fZRHvh7HnA" role="3cqZAp">
+                            <node concept="3cpWsn" id="fZRHvh7HnB" role="3cpWs9">
+                              <property role="TrG5h" value="helper" />
+                              <node concept="3uibUv" id="fZRHvh7HnC" role="1tU5fm">
+                                <ref role="3uigEE" to="z1c3:~OptimizeImportsHelper" resolve="OptimizeImportsHelper" />
+                              </node>
+                              <node concept="2ShNRf" id="fZRHvh7HnD" role="33vP2m">
+                                <node concept="1pGfFk" id="fZRHvh7HnE" role="2ShVmc">
+                                  <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="OptimizeImportsHelper" />
+                                  <node concept="37vLTw" id="6DRNpvPRSw4" role="37wK5m">
+                                    <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1DcWWT" id="fZRHvh7HnF" role="3cqZAp">
+                            <node concept="3clFbS" id="fZRHvh7HnG" role="2LFqv$">
+                              <node concept="3clFbF" id="fZRHvh7HnH" role="3cqZAp">
+                                <node concept="2OqwBi" id="fZRHvh7HnI" role="3clFbG">
+                                  <node concept="37vLTw" id="fZRHvh7HnJ" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                                  </node>
+                                  <node concept="liA8E" id="fZRHvh7HnK" role="2OqNvi">
+                                    <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.step(java.lang.String):void" resolve="step" />
+                                    <node concept="3cpWs3" id="fZRHvh7HnL" role="37wK5m">
+                                      <node concept="37vLTw" id="fZRHvh7HnM" role="3uHU7w">
+                                        <ref role="3cqZAo" node="fZRHvh7HoD" resolve="module" />
                                       </node>
-                                      <node concept="37vLTw" id="3GM_nagTzRS" role="10QFUP">
-                                        <ref role="3cqZAo" node="4zutUupXf_2" resolve="module" />
+                                      <node concept="Xl_RD" id="fZRHvh7HnN" role="3uHU7B">
+                                        <property role="Xl_RC" value="Optimizing imports of the " />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="fZRHvh7HnS" role="3cqZAp">
+                                <node concept="2OqwBi" id="fZRHvh7HnT" role="3clFbG">
+                                  <node concept="liA8E" id="fZRHvh7HnU" role="2OqNvi">
+                                    <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                                    <node concept="1bVj0M" id="fZRHvh7HnV" role="37wK5m">
+                                      <node concept="3clFbS" id="fZRHvh7HnW" role="1bW5cS">
+                                        <node concept="3clFbJ" id="fZRHvh7HnX" role="3cqZAp">
+                                          <node concept="3clFbS" id="fZRHvh7HnY" role="3clFbx">
+                                            <node concept="3clFbF" id="fZRHvh7HnZ" role="3cqZAp">
+                                              <node concept="d57v9" id="fZRHvh7Ho0" role="3clFbG">
+                                                <node concept="37vLTw" id="fZRHvh7Ho1" role="37vLTJ">
+                                                  <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
+                                                </node>
+                                                <node concept="2OqwBi" id="fZRHvh7Ho2" role="37vLTx">
+                                                  <node concept="37vLTw" id="fZRHvh7Ho3" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="fZRHvh7HnB" resolve="helper" />
+                                                  </node>
+                                                  <node concept="liA8E" id="fZRHvh7Ho4" role="2OqNvi">
+                                                    <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeSolutionImports(jetbrains.mps.project.Solution):java.lang.String" resolve="optimizeSolutionImports" />
+                                                    <node concept="1eOMI4" id="fZRHvh7Ho5" role="37wK5m">
+                                                      <node concept="10QFUN" id="fZRHvh7Ho6" role="1eOMHV">
+                                                        <node concept="3uibUv" id="fZRHvh7Ho7" role="10QFUM">
+                                                          <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
+                                                        </node>
+                                                        <node concept="37vLTw" id="fZRHvh7Ho8" role="10QFUP">
+                                                          <ref role="3cqZAo" node="fZRHvh7HoD" resolve="module" />
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="2ZW3vV" id="fZRHvh7Ho9" role="3clFbw">
+                                            <node concept="3uibUv" id="fZRHvh7Hoa" role="2ZW6by">
+                                              <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
+                                            </node>
+                                            <node concept="37vLTw" id="fZRHvh7Hob" role="2ZW6bz">
+                                              <ref role="3cqZAo" node="fZRHvh7HoD" resolve="module" />
+                                            </node>
+                                          </node>
+                                          <node concept="3eNFk2" id="fZRHvh7Hoc" role="3eNLev">
+                                            <node concept="3clFbS" id="fZRHvh7Hod" role="3eOfB_">
+                                              <node concept="3clFbF" id="fZRHvh7Hoe" role="3cqZAp">
+                                                <node concept="d57v9" id="fZRHvh7Hof" role="3clFbG">
+                                                  <node concept="37vLTw" id="fZRHvh7Hog" role="37vLTJ">
+                                                    <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
+                                                  </node>
+                                                  <node concept="2OqwBi" id="fZRHvh7Hoh" role="37vLTx">
+                                                    <node concept="37vLTw" id="fZRHvh7Hoi" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="fZRHvh7HnB" resolve="helper" />
+                                                    </node>
+                                                    <node concept="liA8E" id="fZRHvh7Hoj" role="2OqNvi">
+                                                      <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeLanguageImports(jetbrains.mps.smodel.Language):java.lang.String" resolve="optimizeLanguageImports" />
+                                                      <node concept="1eOMI4" id="fZRHvh7Hok" role="37wK5m">
+                                                        <node concept="10QFUN" id="fZRHvh7Hol" role="1eOMHV">
+                                                          <node concept="3uibUv" id="fZRHvh7Hom" role="10QFUM">
+                                                            <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                                                          </node>
+                                                          <node concept="37vLTw" id="fZRHvh7Hon" role="10QFUP">
+                                                            <ref role="3cqZAo" node="fZRHvh7HoD" resolve="module" />
+                                                          </node>
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                            <node concept="2ZW3vV" id="fZRHvh7Hoo" role="3eO9$A">
+                                              <node concept="3uibUv" id="fZRHvh7Hop" role="2ZW6by">
+                                                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                                              </node>
+                                              <node concept="37vLTw" id="fZRHvh7Hoq" role="2ZW6bz">
+                                                <ref role="3cqZAo" node="fZRHvh7HoD" resolve="module" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="fZRHvh7Hor" role="2Oq$k0">
+                                    <node concept="liA8E" id="fZRHvh7Hos" role="2OqNvi">
+                                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                    </node>
+                                    <node concept="37vLTw" id="fZRHvh7Hot" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="6qVCI9YuMvj" role="3cqZAp">
+                                <node concept="2OqwBi" id="6qVCI9YuMOj" role="3clFbG">
+                                  <node concept="37vLTw" id="6qVCI9YuMvh" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                                  </node>
+                                  <node concept="liA8E" id="6qVCI9YuMXp" role="2OqNvi">
+                                    <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.advance(int):void" resolve="advance" />
+                                    <node concept="3cmrfG" id="6qVCI9YuNeQ" role="37wK5m">
+                                      <property role="3cmrfH" value="1" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbJ" id="fZRHvh7Hoz" role="3cqZAp">
+                                <node concept="3clFbS" id="fZRHvh7Ho$" role="3clFbx">
+                                  <node concept="3cpWs6" id="fZRHvh7Ho_" role="3cqZAp" />
+                                </node>
+                                <node concept="2OqwBi" id="fZRHvh7HoA" role="3clFbw">
+                                  <node concept="37vLTw" id="fZRHvh7HoB" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                                  </node>
+                                  <node concept="liA8E" id="fZRHvh7HoC" role="2OqNvi">
+                                    <ref role="37wK5l" to="mk90:~ProgressMonitorAdapter.isCanceled():boolean" resolve="isCanceled" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWsn" id="fZRHvh7HoD" role="1Duv9x">
+                              <property role="TrG5h" value="module" />
+                              <node concept="3uibUv" id="fZRHvh7HoE" role="1tU5fm">
+                                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="fZRHvh7HoF" role="1DdaDG">
+                              <node concept="2WthIp" id="fZRHvh7HoG" role="2Oq$k0" />
+                              <node concept="1DTwFV" id="fZRHvh7HoH" role="2OqNvi">
+                                <ref role="2WH_rO" node="hZsb5Sf" resolve="modules" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7HoI" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7HoJ" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7HoK" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7HoL" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.step(java.lang.String):void" resolve="step" />
+                                <node concept="Xl_RD" id="fZRHvh7HoM" role="37wK5m">
+                                  <property role="Xl_RC" value="Saving..." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="fZRHvh7G9C" role="3cqZAp">
+                            <node concept="2YIFZM" id="fZRHvh7Gwi" role="3clFbG">
+                              <ref role="37wK5l" to="9w4s:~WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(java.lang.Runnable):void" resolve="runOrInvokeAndWaitAboveProgress" />
+                              <ref role="1Pybhc" to="9w4s:~WaitForProgressToShow" resolve="WaitForProgressToShow" />
+                              <node concept="1bVj0M" id="fZRHvh7H2B" role="37wK5m">
+                                <node concept="3clFbS" id="fZRHvh7H2C" role="1bW5cS">
+                                  <node concept="3clFbF" id="5wEedBru8bx" role="3cqZAp">
+                                    <node concept="2OqwBi" id="5wEedBrudwm" role="3clFbG">
+                                      <node concept="liA8E" id="5wEedBrueJP" role="2OqNvi">
+                                        <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+                                        <node concept="1bVj0M" id="5wEedBrueKj" role="37wK5m">
+                                          <node concept="3clFbS" id="5wEedBrueKk" role="1bW5cS">
+                                            <node concept="3clFbF" id="fZRHvh7HoV" role="3cqZAp">
+                                              <node concept="2OqwBi" id="fZRHvh7HoW" role="3clFbG">
+                                                <node concept="37vLTw" id="fZRHvh7HoX" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
+                                                </node>
+                                                <node concept="liA8E" id="fZRHvh7HoY" role="2OqNvi">
+                                                  <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="5wEedBrucyV" role="2Oq$k0">
+                                        <node concept="liA8E" id="5wEedBrudoi" role="2OqNvi">
+                                          <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                        </node>
+                                        <node concept="37vLTw" id="CJPgsJ0h4T" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -6927,110 +7742,120 @@
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="2ZW3vV" id="3ljdQypyvKh" role="3clFbw">
-                          <node concept="3uibUv" id="3ljdQypyvKi" role="2ZW6by">
-                            <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
-                          </node>
-                          <node concept="37vLTw" id="3GM_nagTApZ" role="2ZW6bz">
-                            <ref role="3cqZAo" node="4zutUupXf_2" resolve="module" />
-                          </node>
-                        </node>
-                        <node concept="3eNFk2" id="3ljdQypyvKm" role="3eNLev">
-                          <node concept="3clFbS" id="3ljdQypyvKn" role="3eOfB_">
-                            <node concept="3clFbF" id="3ljdQypyvKo" role="3cqZAp">
-                              <node concept="d57v9" id="4zutUupXfAt" role="3clFbG">
-                                <node concept="37vLTw" id="3GM_nagT$jU" role="37vLTJ">
-                                  <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
-                                </node>
-                                <node concept="2OqwBi" id="4zutUupXfAv" role="37vLTx">
-                                  <node concept="37vLTw" id="3GM_nagT$3L" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3ljdQypyvJW" resolve="helper" />
-                                  </node>
-                                  <node concept="liA8E" id="4zutUupXfAx" role="2OqNvi">
-                                    <ref role="37wK5l" to="z1c3:~OptimizeImportsHelper.optimizeLanguageImports(jetbrains.mps.smodel.Language):java.lang.String" resolve="optimizeLanguageImports" />
-                                    <node concept="1eOMI4" id="4zutUupXfAy" role="37wK5m">
-                                      <node concept="10QFUN" id="4zutUupXfAz" role="1eOMHV">
-                                        <node concept="3uibUv" id="4zutUupXfA$" role="10QFUM">
-                                          <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                                        </node>
-                                        <node concept="37vLTw" id="3GM_nagTuI7" role="10QFUP">
-                                          <ref role="3cqZAo" node="4zutUupXf_2" resolve="module" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
+                          <node concept="3clFbF" id="fZRHvh7HoZ" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7Hp0" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7Hp1" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7Hp2" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.advance(int):void" resolve="advance" />
+                                <node concept="3cmrfG" id="7OGkmhG6awJ" role="37wK5m">
+                                  <property role="3cmrfH" value="1" />
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="2ZW3vV" id="3ljdQypyvK$" role="3eO9$A">
-                            <node concept="3uibUv" id="3ljdQypyvK_" role="2ZW6by">
-                              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTsl2" role="2ZW6bz">
-                              <ref role="3cqZAo" node="4zutUupXf_2" resolve="module" />
+                        </node>
+                        <node concept="3clFbS" id="6C8agxN50pc" role="2GVbov">
+                          <node concept="3clFbF" id="fZRHvh7Hp4" role="3cqZAp">
+                            <node concept="2OqwBi" id="fZRHvh7Hp5" role="3clFbG">
+                              <node concept="37vLTw" id="fZRHvh7Hp6" role="2Oq$k0">
+                                <ref role="3cqZAo" node="fZRHvh7Hnh" resolve="monitor" />
+                              </node>
+                              <node concept="liA8E" id="fZRHvh7Hp7" role="2OqNvi">
+                                <ref role="37wK5l" to="mk8z:~ProgressMonitorBase.done():void" resolve="done" />
+                              </node>
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="3cpWsn" id="4zutUupXf_2" role="1Duv9x">
-                      <property role="TrG5h" value="module" />
-                      <node concept="3uibUv" id="4zutUupXf_5" role="1tU5fm">
-                        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                      </node>
+                  </node>
+                  <node concept="2OqwBi" id="fZRHvh7Hp8" role="37wK5m">
+                    <node concept="2WthIp" id="fZRHvh7Hp9" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="fZRHvh7Hpa" role="2OqNvi">
+                      <ref role="2WH_rO" node="7z$DRh1uk0y" resolve="ideaProject" />
                     </node>
-                    <node concept="2OqwBi" id="4zutUupXf_6" role="1DdaDG">
-                      <node concept="2WthIp" id="4zutUupXf_7" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="4zutUupXf_8" role="2OqNvi">
-                        <ref role="2WH_rO" node="hZsb5Sf" resolve="modules" />
+                  </node>
+                  <node concept="Xl_RD" id="fZRHvh7Hpb" role="37wK5m">
+                    <property role="Xl_RC" value="Optimizing module imports" />
+                  </node>
+                  <node concept="3clFbT" id="fZRHvh7Hpc" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1RAax9Dj5hA" role="3cqZAp">
+          <node concept="2OqwBi" id="1RAax9Dj5Gj" role="3clFbG">
+            <node concept="2YIFZM" id="1RAax9Dj5vI" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="1RAax9Dj5XU" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
+              <node concept="1bVj0M" id="5SH8bs7EUj0" role="37wK5m">
+                <node concept="3clFbS" id="5SH8bs7EUj1" role="1bW5cS">
+                  <node concept="3clFbF" id="3z62ISXXusC" role="3cqZAp">
+                    <node concept="2OqwBi" id="3z62ISXXusE" role="3clFbG">
+                      <node concept="2YIFZM" id="3z62ISXXusF" role="2Oq$k0">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.getInstance():com.intellij.openapi.progress.ProgressManager" resolve="getInstance" />
+                        <ref role="1Pybhc" to="xygl:~ProgressManager" resolve="ProgressManager" />
+                      </node>
+                      <node concept="liA8E" id="3z62ISXXusG" role="2OqNvi">
+                        <ref role="37wK5l" to="xygl:~ProgressManager.run(com.intellij.openapi.progress.Task):void" resolve="run" />
+                        <node concept="37vLTw" id="fZRHvh7Hpd" role="37wK5m">
+                          <ref role="3cqZAo" node="fZRHvh7Hn4" resolve="task" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="2VydZlihQPA" role="3cqZAp" />
-                  <node concept="3clFbF" id="2VydZlihQP8" role="3cqZAp">
-                    <node concept="2OqwBi" id="2VydZlihQPv" role="3clFbG">
-                      <node concept="37vLTw" id="CJPgsJ0hL0" role="2Oq$k0">
-                        <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
+                  <node concept="3clFbF" id="7z$DRh1uk0p" role="3cqZAp">
+                    <node concept="2YIFZM" id="7z$DRh1uk0q" role="3clFbG">
+                      <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                      <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                      <node concept="2OqwBi" id="7z$DRh1uk0r" role="37wK5m">
+                        <node concept="2WthIp" id="7z$DRh1uk0s" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="7z$DRh1uk0t" role="2OqNvi">
+                          <ref role="2WH_rO" node="7z$DRh1uk0y" resolve="ideaProject" />
+                        </node>
                       </node>
-                      <node concept="liA8E" id="2VydZlihQP$" role="2OqNvi">
-                        <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
+                      <node concept="3K4zz7" id="3z62ISXYEoN" role="37wK5m">
+                        <node concept="Xl_RD" id="3z62ISXYEoO" role="3K4E3e">
+                          <property role="Xl_RC" value="Nothing to optimize" />
+                        </node>
+                        <node concept="37vLTw" id="3z62ISXYEoP" role="3K4GZi">
+                          <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
+                        </node>
+                        <node concept="2OqwBi" id="3z62ISXYEoQ" role="3K4Cdx">
+                          <node concept="37vLTw" id="3z62ISXYEoR" role="2Oq$k0">
+                            <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
+                          </node>
+                          <node concept="liA8E" id="3z62ISXYEoS" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <node concept="Xl_RD" id="3z62ISXYEoT" role="37wK5m">
+                              <property role="Xl_RC" value="" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="7z$DRh1uk0v" role="37wK5m">
+                        <property role="Xl_RC" value="Optimize Imports" />
+                      </node>
+                      <node concept="2YIFZM" id="7z$DRh1uk0w" role="37wK5m">
+                        <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
+                        <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="2OqwBi" id="5wEedBrucyV" role="2Oq$k0">
-              <node concept="liA8E" id="5wEedBrudoi" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              <node concept="2YIFZM" id="fZRHvh7Jm7" role="37wK5m">
+                <ref role="37wK5l" to="bd8o:~ModalityState.defaultModalityState():com.intellij.openapi.application.ModalityState" resolve="defaultModalityState" />
+                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
               </node>
-              <node concept="37vLTw" id="CJPgsJ0h4T" role="2Oq$k0">
-                <ref role="3cqZAo" node="CJPgsJ0h4N" resolve="repo" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7z$DRh1uk0p" role="3cqZAp">
-          <node concept="2YIFZM" id="7z$DRh1uk0q" role="3clFbG">
-            <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
-            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-            <node concept="2OqwBi" id="7z$DRh1uk0r" role="37wK5m">
-              <node concept="2WthIp" id="7z$DRh1uk0s" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7z$DRh1uk0t" role="2OqNvi">
-                <ref role="2WH_rO" node="7z$DRh1uk0y" resolve="ideaProject" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3GM_nagTxbR" role="37wK5m">
-              <ref role="3cqZAo" node="hZsaXY8" resolve="report" />
-            </node>
-            <node concept="Xl_RD" id="7z$DRh1uk0v" role="37wK5m">
-              <property role="Xl_RC" value="Optimize Imports" />
-            </node>
-            <node concept="2YIFZM" id="7z$DRh1uk0w" role="37wK5m">
-              <ref role="37wK5l" to="jkm4:~Messages.getInformationIcon():javax.swing.Icon" resolve="getInformationIcon" />
-              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
             </node>
           </node>
         </node>
