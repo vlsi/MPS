@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -101,6 +101,10 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -110,10 +114,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -207,8 +208,8 @@
                 <node concept="37vLTI" id="h$J0PxD" role="3clFbG">
                   <node concept="2OqwBi" id="h$J0RsM" role="37vLTx">
                     <node concept="1PxgMI" id="h$J0Quw" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
-                      <node concept="1r4N5L" id="h$J0Q5O" role="1PxMeX" />
+                      <ref role="1m5ApE" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
+                      <node concept="1r4N5L" id="h$J0Q5O" role="1m5AlR" />
                     </node>
                     <node concept="3TrEf2" id="h$J0SGT" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
@@ -229,8 +230,8 @@
                     <ref role="ehGHo" to="tpf8:gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
                   </node>
                   <node concept="1PxgMI" id="6ZLZOmPFOIO" role="33vP2m">
-                    <ref role="1PxNhF" to="tpf8:gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
-                    <node concept="2YIFZM" id="6ZLZOmPFOaB" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpf8:gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
+                    <node concept="2YIFZM" id="6ZLZOmPFOaB" role="1m5AlR">
                       <ref role="37wK5l" to="80j5:~RuleUtil.getSourceNodeQuery(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNodeQuery" />
                       <ref role="1Pybhc" to="80j5:~RuleUtil" resolve="RuleUtil" />
                       <node concept="1r4N5L" id="6ZLZOmPFOaD" role="37wK5m" />
@@ -250,8 +251,8 @@
                             </node>
                             <node concept="2OqwBi" id="35IRynHaVmu" role="37vLTJ">
                               <node concept="1PxgMI" id="35IRynHaVmv" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
-                                <node concept="1r4Lsj" id="35IRynHaVmw" role="1PxMeX" />
+                                <ref role="1m5ApE" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+                                <node concept="1r4Lsj" id="35IRynHaVmw" role="1m5AlR" />
                               </node>
                               <node concept="3TrEf2" id="35IRynHaXbB" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpf8:h031$YD" />
@@ -278,8 +279,8 @@
                             </node>
                             <node concept="2OqwBi" id="35IRynHb0rQ" role="37vLTJ">
                               <node concept="1PxgMI" id="35IRynHb0rR" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpf8:hoxERsl" resolve="IncludeMacro" />
-                                <node concept="1r4Lsj" id="35IRynHb0rS" role="1PxMeX" />
+                                <ref role="1m5ApE" to="tpf8:hoxERsl" resolve="IncludeMacro" />
+                                <node concept="1r4Lsj" id="35IRynHb0rS" role="1m5AlR" />
                               </node>
                               <node concept="3TrEf2" id="35IRynHb2v_" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpf8:hoxEYIP" />
@@ -306,8 +307,8 @@
                             </node>
                             <node concept="2OqwBi" id="35IRynHb0zm" role="37vLTJ">
                               <node concept="1PxgMI" id="35IRynHb0zn" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
-                                <node concept="1r4Lsj" id="35IRynHb0zo" role="1PxMeX" />
+                                <ref role="1m5ApE" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
+                                <node concept="1r4Lsj" id="35IRynHb0zo" role="1m5AlR" />
                               </node>
                               <node concept="3TrEf2" id="35IRynHb4Ll" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpf8:1jRYachIjWP" />
@@ -334,8 +335,8 @@
                             </node>
                             <node concept="2OqwBi" id="35IRynHb0EQ" role="37vLTJ">
                               <node concept="1PxgMI" id="35IRynHb0ER" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpf8:2H5po9pnBer" resolve="TraceMacro" />
-                                <node concept="1r4Lsj" id="35IRynHb0ES" role="1PxMeX" />
+                                <ref role="1m5ApE" to="tpf8:2H5po9pnBer" resolve="TraceMacro" />
+                                <node concept="1r4Lsj" id="35IRynHb0ES" role="1m5AlR" />
                               </node>
                               <node concept="3TrEf2" id="35IRynHb6rh" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tpf8:2H5po9pnBfh" />
@@ -361,8 +362,8 @@
                           </node>
                           <node concept="2OqwBi" id="4QkEfp6rmWj" role="37vLTJ">
                             <node concept="1PxgMI" id="4QkEfp6rmWk" role="2Oq$k0">
-                              <ref role="1PxNhF" to="tpf8:ge9HgZJ" resolve="CopySrcNodeMacro" />
-                              <node concept="1r4Lsj" id="35IRynHaLTs" role="1PxMeX" />
+                              <ref role="1m5ApE" to="tpf8:ge9HgZJ" resolve="CopySrcNodeMacro" />
+                              <node concept="1r4Lsj" id="35IRynHaLTs" role="1m5AlR" />
                             </node>
                             <node concept="3TrEf2" id="4QkEfp6rmWP" role="2OqNvi">
                               <ref role="3Tt5mk" to="tpf8:gZNFE_I" />
@@ -409,8 +410,8 @@
                   </node>
                   <node concept="2OqwBi" id="6MViF47wb9L" role="37vLTx">
                     <node concept="1PxgMI" id="6MViF47wb9J" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpf8:ghWS0B3" resolve="LoopMacro" />
-                      <node concept="1r4N5L" id="6MViF47wb9I" role="1PxMeX" />
+                      <ref role="1m5ApE" to="tpf8:ghWS0B3" resolve="LoopMacro" />
+                      <node concept="1r4N5L" id="6MViF47wb9I" role="1m5AlR" />
                     </node>
                     <node concept="3TrEf2" id="6MViF47wb9P" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf8:gZJn$bn" />

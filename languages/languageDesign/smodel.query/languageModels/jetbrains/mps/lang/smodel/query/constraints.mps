@@ -72,14 +72,15 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
@@ -165,8 +166,8 @@
             <node concept="2OqwBi" id="5YxQmqOAMyh" role="2Oq$k0">
               <node concept="2OqwBi" id="5YxQmqOALgR" role="2Oq$k0">
                 <node concept="1PxgMI" id="5YxQmqOAJ8X" role="2Oq$k0">
-                  <ref role="1PxNhF" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
-                  <node concept="2OqwBi" id="5YxQmqOAH6r" role="1PxMeX">
+                  <ref role="1m5ApE" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
+                  <node concept="2OqwBi" id="5YxQmqOAH6r" role="1m5AlR">
                     <node concept="nLn13" id="5YxQmqOAGBW" role="2Oq$k0" />
                     <node concept="1mfA1w" id="5YxQmqOAHon" role="2OqNvi" />
                   </node>

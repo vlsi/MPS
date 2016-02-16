@@ -96,10 +96,11 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -132,8 +133,8 @@
           <node concept="3cpWs6" id="5zzawu2JLD3" role="3cqZAp">
             <node concept="2OqwBi" id="1hDKT6wB61M" role="3cqZAk">
               <node concept="1PxgMI" id="1hDKT6wB61N" role="2Oq$k0">
-                <ref role="1PxNhF" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
-                <node concept="G0znd" id="6mxDMAOl6_h" role="1PxMeX" />
+                <ref role="1m5ApE" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
+                <node concept="G0znd" id="6mxDMAOl6_h" role="1m5AlR" />
               </node>
               <node concept="2qgKlT" id="1hDKT6wB61P" role="2OqNvi">
                 <ref role="37wK5l" to="5myg:1hDKT6wB3pH" resolve="substituteWith" />

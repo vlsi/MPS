@@ -323,6 +323,10 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -341,8 +345,6 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -832,7 +834,7 @@
     <ref role="1XX52x" to="tp25:g_PxgQB" resolve="SNodeTypeCastExpression" />
     <node concept="3EZMnI" id="g_PxZAw" role="2wV5jI">
       <node concept="3F1sOY" id="g_Py133" role="3EZMnx">
-        <ref role="1NtTu8" to="tp25:g_PxMaO" />
+        <ref role="1NtTu8" to="tp25:5PLE6SbpWOp" />
       </node>
       <node concept="3F0ifn" id="g_Py4wx" role="3EZMnx">
         <property role="3F0ifm" value=":" />
@@ -874,8 +876,8 @@
       </node>
       <node concept="1iCGBv" id="g_PydZ1" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no concept&gt;" />
-        <ref role="1NtTu8" to="tp25:g_PxNly" />
         <ref role="1ERwB7" node="g_PBF3H" resolve="SNodeTypeCastExpression_Concept_Actions" />
+        <ref role="1NtTu8" to="tp25:5PLE6SbpWS4" />
         <node concept="1sVBvm" id="g_PydZ0" role="1sWHZn">
           <node concept="3F0A7n" id="g_Pyfcs" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -907,7 +909,7 @@
                 <node concept="2OqwBi" id="hxx$W4B" role="1P9ThW">
                   <node concept="0IXxy" id="g_PC_5M" role="2Oq$k0" />
                   <node concept="3TrEf2" id="g_PCA5j" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp25:g_PxMaO" />
+                    <ref role="3Tt5mk" to="tp25:5PLE6SbpWOp" />
                   </node>
                 </node>
               </node>
@@ -3483,8 +3485,8 @@
                     <node concept="2OqwBi" id="1Cyzq4PvWnM" role="33vP2m">
                       <node concept="1PxgMI" id="1Cyzq4PvWnN" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1PxNhF" to="tp25:1Cyzq4Pv$D4" resolve="IfInstanceOfStatement" />
-                        <node concept="2OqwBi" id="1Cyzq4PvWnO" role="1PxMeX">
+                        <ref role="1m5ApE" to="tp25:1Cyzq4Pv$D4" resolve="IfInstanceOfStatement" />
+                        <node concept="2OqwBi" id="1Cyzq4PvWnO" role="1m5AlR">
                           <node concept="3GMtW1" id="1Cyzq4PvWnP" role="2Oq$k0" />
                           <node concept="1mfA1w" id="1Cyzq4PvWnQ" role="2OqNvi" />
                         </node>

@@ -6,7 +6,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="289fcc83-6543-41e8-a5ca-768235715ce4" name="jetbrains.mps.lang.generator.generationParameters" version="0" />
     <use id="157a9668-bf58-417b-893e-53d86388dc56" name="jetbrains.mps.transformation.test.outputLang" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -170,6 +170,10 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
@@ -184,10 +188,7 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -230,8 +231,8 @@
             <node concept="2OqwBi" id="hzAIONA" role="3clFbG">
               <node concept="2OqwBi" id="hzAIONB" role="2Oq$k0">
                 <node concept="1PxgMI" id="hzAIONC" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
-                  <node concept="2OqwBi" id="hzAIOND" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
+                  <node concept="2OqwBi" id="hzAIOND" role="1m5AlR">
                     <node concept="30H73N" id="hzAIONE" role="2Oq$k0" />
                     <node concept="2Xjw5R" id="hzAIONF" role="2OqNvi">
                       <node concept="1xLf8o" id="hzAIONG" role="1xVPHs" />
@@ -266,8 +267,8 @@
             <node concept="2OqwBi" id="hzAGd5G" role="3clFbG">
               <node concept="2OqwBi" id="hzAGd5H" role="2Oq$k0">
                 <node concept="1PxgMI" id="hzAGd5I" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
-                  <node concept="2OqwBi" id="hzAGd5J" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
+                  <node concept="2OqwBi" id="hzAGd5J" role="1m5AlR">
                     <node concept="30H73N" id="hzAGd5K" role="2Oq$k0" />
                     <node concept="2Xjw5R" id="hzAGd5L" role="2OqNvi">
                       <node concept="1xLf8o" id="hzAGd5M" role="1xVPHs" />
@@ -302,8 +303,8 @@
             <node concept="2OqwBi" id="hzAG4rj" role="3clFbG">
               <node concept="2OqwBi" id="hzAG4rk" role="2Oq$k0">
                 <node concept="1PxgMI" id="hzAG4rl" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
-                  <node concept="2OqwBi" id="hzAG4rm" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
+                  <node concept="2OqwBi" id="hzAG4rm" role="1m5AlR">
                     <node concept="30H73N" id="hzAG4rn" role="2Oq$k0" />
                     <node concept="2Xjw5R" id="hzAG4ro" role="2OqNvi">
                       <node concept="1xLf8o" id="hzAG4rp" role="1xVPHs" />

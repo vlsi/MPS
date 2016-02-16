@@ -225,6 +225,10 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
@@ -246,10 +250,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -439,8 +440,8 @@
                       </node>
                       <node concept="2OqwBi" id="1VeJpqZqlA6" role="33vP2m">
                         <node concept="1PxgMI" id="1VeJpqZqlA7" role="2Oq$k0">
-                          <ref role="1PxNhF" to="8xvf:5KZfyKsVu1R" resolve="BwfJavaClassPath" />
-                          <node concept="37vLTw" id="2BHiRxglf5K" role="1PxMeX">
+                          <ref role="1m5ApE" to="8xvf:5KZfyKsVu1R" resolve="BwfJavaClassPath" />
+                          <node concept="37vLTw" id="2BHiRxglf5K" role="1m5AlR">
                             <ref role="3cqZAo" node="1VeJpqZql_a" resolve="dep" />
                           </node>
                         </node>
@@ -611,8 +612,8 @@
                     <node concept="3clFbS" id="6pYRYgn7JSb" role="1bW5cS">
                       <node concept="3clFbF" id="6pYRYgn7JSe" role="3cqZAp">
                         <node concept="1PxgMI" id="6pYRYgn7JSi" role="3clFbG">
-                          <ref role="1PxNhF" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
-                          <node concept="37vLTw" id="2BHiRxgm7jD" role="1PxMeX">
+                          <ref role="1m5ApE" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                          <node concept="37vLTw" id="2BHiRxgm7jD" role="1m5AlR">
                             <ref role="3cqZAo" node="6pYRYgn7JSc" resolve="it" />
                           </node>
                         </node>
@@ -1310,8 +1311,8 @@
                                   <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
                                   <node concept="2OqwBi" id="6pYRYgn7KNj" role="37wK5m">
                                     <node concept="1PxgMI" id="5KZfyKsVu57" role="2Oq$k0">
-                                      <ref role="1PxNhF" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
-                                      <node concept="37vLTw" id="2BHiRxgm5GB" role="1PxMeX">
+                                      <ref role="1m5ApE" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
+                                      <node concept="37vLTw" id="2BHiRxgm5GB" role="1m5AlR">
                                         <ref role="3cqZAo" node="6pYRYgn7KN1" resolve="it" />
                                       </node>
                                     </node>
@@ -1345,8 +1346,8 @@
                               <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                               <node concept="2OqwBi" id="6S1jmf0wFjw" role="37wK5m">
                                 <node concept="1PxgMI" id="6S1jmf0wFjs" role="2Oq$k0">
-                                  <ref role="1PxNhF" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
-                                  <node concept="37vLTw" id="3GM_nagT$aJ" role="1PxMeX">
+                                  <ref role="1m5ApE" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
+                                  <node concept="37vLTw" id="3GM_nagT$aJ" role="1m5AlR">
                                     <ref role="3cqZAo" node="6pYRYgn8ex6" resolve="dep" />
                                   </node>
                                 </node>
@@ -1398,8 +1399,8 @@
                                 <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
                                 <node concept="2OqwBi" id="827fHdIOhT" role="37wK5m">
                                   <node concept="1PxgMI" id="827fHdIOhz" role="2Oq$k0">
-                                    <ref role="1PxNhF" to="8xvf:827fHdHPBb" resolve="BwfJavaLibraryReference" />
-                                    <node concept="37vLTw" id="3GM_nagTuE$" role="1PxMeX">
+                                    <ref role="1m5ApE" to="8xvf:827fHdHPBb" resolve="BwfJavaLibraryReference" />
+                                    <node concept="37vLTw" id="3GM_nagTuE$" role="1m5AlR">
                                       <ref role="3cqZAo" node="6pYRYgn8ex6" resolve="dep" />
                                     </node>
                                   </node>
@@ -1442,8 +1443,8 @@
                               </node>
                               <node concept="2OqwBi" id="6S1jmf0wFht" role="33vP2m">
                                 <node concept="1PxgMI" id="6S1jmf0wFhf" role="2Oq$k0">
-                                  <ref role="1PxNhF" to="8xvf:5KZfyKsVu1R" resolve="BwfJavaClassPath" />
-                                  <node concept="37vLTw" id="3GM_nagT$q8" role="1PxMeX">
+                                  <ref role="1m5ApE" to="8xvf:5KZfyKsVu1R" resolve="BwfJavaClassPath" />
+                                  <node concept="37vLTw" id="3GM_nagT$q8" role="1m5AlR">
                                     <ref role="3cqZAo" node="6pYRYgn8ex6" resolve="dep" />
                                   </node>
                                 </node>
@@ -2396,8 +2397,8 @@
                                 <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
                                 <node concept="2OqwBi" id="6pYRYgn7Kh7" role="37wK5m">
                                   <node concept="1PxgMI" id="5KZfyKsVu4L" role="2Oq$k0">
-                                    <ref role="1PxNhF" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
-                                    <node concept="37vLTw" id="3GM_nagTw7q" role="1PxMeX">
+                                    <ref role="1m5ApE" to="8xvf:47XTuiHNzz4" resolve="BwfJavaModuleReference" />
+                                    <node concept="37vLTw" id="3GM_nagTw7q" role="1m5AlR">
                                       <ref role="3cqZAo" node="6pYRYgn7JUc" resolve="ref" />
                                     </node>
                                   </node>

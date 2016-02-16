@@ -6,7 +6,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -277,6 +277,10 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
@@ -300,10 +304,7 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -1527,8 +1528,8 @@
                     <node concept="2OqwBi" id="AVI$K8_Zcu" role="3uHU7w">
                       <node concept="2OqwBi" id="AVI$K8_Zcv" role="2Oq$k0">
                         <node concept="1PxgMI" id="AVI$K8_Zcw" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:fz7vLUo" resolve="VariableReference" />
-                          <node concept="2OqwBi" id="AVI$K8_Zcx" role="1PxMeX">
+                          <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
+                          <node concept="2OqwBi" id="AVI$K8_Zcx" role="1m5AlR">
                             <node concept="pncrf" id="AVI$K8_Zcy" role="2Oq$k0" />
                             <node concept="3TrEf2" id="AVI$K8_Zcz" role="2OqNvi">
                               <ref role="3Tt5mk" to="39kg:5yEI9AszOcW" />
@@ -1585,8 +1586,8 @@
                     <node concept="2OqwBi" id="AVI$K8_Zcd" role="3uHU7w">
                       <node concept="2OqwBi" id="AVI$K8_Zce" role="2Oq$k0">
                         <node concept="1PxgMI" id="AVI$K8_Zcf" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:fz7vLUo" resolve="VariableReference" />
-                          <node concept="2OqwBi" id="AVI$K8_Zcg" role="1PxMeX">
+                          <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
+                          <node concept="2OqwBi" id="AVI$K8_Zcg" role="1m5AlR">
                             <node concept="pncrf" id="AVI$K8_Zch" role="2Oq$k0" />
                             <node concept="3TrEf2" id="AVI$K8_Zci" role="2OqNvi">
                               <ref role="3Tt5mk" to="39kg:5yEI9AszOcW" />

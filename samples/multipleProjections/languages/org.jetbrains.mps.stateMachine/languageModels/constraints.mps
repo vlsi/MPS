@@ -48,13 +48,14 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
@@ -93,8 +94,8 @@
                   <ref role="37wK5l" to="nfvt:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
                 <node concept="1PxgMI" id="5RFOWxSxOqJ" role="2Oq$k0">
-                  <ref role="1PxNhF" to="owg1:EpZY78hngX" resolve="Transition" />
-                  <node concept="21POm0" id="5RFOWxSxOqI" role="1PxMeX" />
+                  <ref role="1m5ApE" to="owg1:EpZY78hngX" resolve="Transition" />
+                  <node concept="21POm0" id="5RFOWxSxOqI" role="1m5AlR" />
                 </node>
               </node>
             </node>
@@ -133,8 +134,8 @@
                   <ref role="37wK5l" to="nfvt:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
                 <node concept="1PxgMI" id="5RFOWxSxDLf" role="2Oq$k0">
-                  <ref role="1PxNhF" to="owg1:EpZY78hngX" resolve="Transition" />
-                  <node concept="21POm0" id="5RFOWxSxDL9" role="1PxMeX" />
+                  <ref role="1m5ApE" to="owg1:EpZY78hngX" resolve="Transition" />
+                  <node concept="21POm0" id="5RFOWxSxDL9" role="1m5AlR" />
                 </node>
               </node>
             </node>

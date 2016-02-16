@@ -184,6 +184,10 @@
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -202,10 +206,7 @@
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1404,8 +1405,8 @@
                         <node concept="3clFbS" id="1d5uNBHnu4g" role="1bW5cS">
                           <node concept="3clFbF" id="1d5uNBHnu4j" role="3cqZAp">
                             <node concept="1PxgMI" id="1d5uNBHnu4l" role="3clFbG">
-                              <ref role="1PxNhF" to="rzqf:6mJVBGGsi5o" resolve="CommandParameterDeclaration" />
-                              <node concept="37vLTw" id="2BHiRxgm1J5" role="1PxMeX">
+                              <ref role="1m5ApE" to="rzqf:6mJVBGGsi5o" resolve="CommandParameterDeclaration" />
+                              <node concept="37vLTw" id="2BHiRxgm1J5" role="1m5AlR">
                                 <ref role="3cqZAo" node="1d5uNBHnu4h" resolve="it" />
                               </node>
                             </node>

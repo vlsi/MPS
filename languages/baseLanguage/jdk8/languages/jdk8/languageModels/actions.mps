@@ -114,13 +114,14 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -210,8 +211,8 @@
                       <node concept="3clFbS" id="7c4zijkr8b$" role="1bW5cS">
                         <node concept="3clFbF" id="7c4zijkr8WX" role="3cqZAp">
                           <node concept="1PxgMI" id="7c4zijkr9Jp" role="3clFbG">
-                            <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                            <node concept="37vLTw" id="7c4zijkr8WW" role="1PxMeX">
+                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
+                            <node concept="37vLTw" id="7c4zijkr8WW" role="1m5AlR">
                               <ref role="3cqZAo" node="7c4zijkr8b_" resolve="it" />
                             </node>
                           </node>

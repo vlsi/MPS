@@ -151,6 +151,10 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
       </concept>
@@ -174,10 +178,7 @@
       <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
         <reference id="1240930444946" name="member" index="3HdYuM" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -615,8 +616,8 @@
                   </node>
                   <node concept="2OqwBi" id="1OSlDLmrFW8" role="37vLTx">
                     <node concept="1PxgMI" id="1OSlDLmrFVS" role="2Oq$k0">
-                      <ref role="1PxNhF" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
-                      <node concept="1r4N5L" id="1OSlDLmrFVD" role="1PxMeX" />
+                      <ref role="1m5ApE" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
+                      <node concept="1r4N5L" id="1OSlDLmrFVD" role="1m5AlR" />
                     </node>
                     <node concept="3TrEf2" id="1OSlDLmrFWe" role="2OqNvi">
                       <ref role="3Tt5mk" to="kdzh:1tWbYFNhzsh" />

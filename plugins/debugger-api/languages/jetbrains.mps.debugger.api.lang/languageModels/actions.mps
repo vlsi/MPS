@@ -123,13 +123,14 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -325,8 +326,8 @@
                     <node concept="2OqwBi" id="2eCkIB4f4lp" role="1Ub_4B">
                       <node concept="2OqwBi" id="2eCkIB4f4lq" role="2Oq$k0">
                         <node concept="1PxgMI" id="2eCkIB4f4lr" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
-                          <node concept="3bvxqY" id="2eCkIB4f4ls" role="1PxMeX" />
+                          <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
+                          <node concept="3bvxqY" id="2eCkIB4f4ls" role="1m5AlR" />
                         </node>
                         <node concept="3TrEf2" id="2eCkIB4f4lt" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:hqOq$gm" />

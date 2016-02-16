@@ -145,14 +145,15 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143512015885" name="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation" flags="nn" index="YCak7" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -265,8 +266,8 @@
               <node concept="1rXfSq" id="4hiugqyzhP_" role="3clFbG">
                 <ref role="37wK5l" node="75uV$1s0VL9" resolve="addElement" />
                 <node concept="1PxgMI" id="75uV$1s0VKz" role="37wK5m">
-                  <ref role="1PxNhF" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
-                  <node concept="37vLTw" id="2BHiRxglB5T" role="1PxMeX">
+                  <ref role="1m5ApE" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
+                  <node concept="37vLTw" id="2BHiRxglB5T" role="1m5AlR">
                     <ref role="3cqZAo" node="75uV$1s0VL7" resolve="element" />
                   </node>
                 </node>
@@ -308,8 +309,8 @@
                     <node concept="2OqwBi" id="75uV$1s0VKO" role="37wK5m">
                       <node concept="2OqwBi" id="75uV$1s0VKP" role="2Oq$k0">
                         <node concept="1PxgMI" id="75uV$1s0VKQ" role="2Oq$k0">
-                          <ref role="1PxNhF" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
-                          <node concept="37vLTw" id="2BHiRxglwaC" role="1PxMeX">
+                          <ref role="1m5ApE" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
+                          <node concept="37vLTw" id="2BHiRxglwaC" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VL7" resolve="element" />
                           </node>
                         </node>
@@ -426,8 +427,8 @@
                       <node concept="1rXfSq" id="4hiugqyz3$s" role="3clFbG">
                         <ref role="37wK5l" node="75uV$1s0VNa" resolve="addAttribute" />
                         <node concept="1PxgMI" id="75uV$1s0VLA" role="37wK5m">
-                          <ref role="1PxNhF" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
-                          <node concept="37vLTw" id="3GM_nagT_bF" role="1PxMeX">
+                          <ref role="1m5ApE" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
+                          <node concept="37vLTw" id="3GM_nagT_bF" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VLM" resolve="attr" />
                           </node>
                         </node>
@@ -540,8 +541,8 @@
                   <node concept="1rXfSq" id="4hiugqyz8pD" role="3clFbG">
                     <ref role="37wK5l" node="75uV$1s0VKd" resolve="add" />
                     <node concept="1PxgMI" id="75uV$1s0VMl" role="37wK5m">
-                      <ref role="1PxNhF" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
-                      <node concept="37vLTw" id="3GM_nagTxhB" role="1PxMeX">
+                      <ref role="1m5ApE" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
+                      <node concept="37vLTw" id="3GM_nagTxhB" role="1m5AlR">
                         <ref role="3cqZAo" node="75uV$1s0VMK" resolve="content" />
                       </node>
                     </node>
@@ -594,8 +595,8 @@
                   <node concept="2OqwBi" id="75uV$1s0VME" role="3uHU7w">
                     <node concept="2OqwBi" id="75uV$1s0VMF" role="2Oq$k0">
                       <node concept="1PxgMI" id="75uV$1s0VMG" role="2Oq$k0">
-                        <ref role="1PxNhF" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
-                        <node concept="37vLTw" id="3GM_nagTwDp" role="1PxMeX">
+                        <ref role="1m5ApE" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
+                        <node concept="37vLTw" id="3GM_nagTwDp" role="1m5AlR">
                           <ref role="3cqZAo" node="75uV$1s0VMK" resolve="content" />
                         </node>
                       </node>
@@ -754,8 +755,8 @@
                       <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                       <node concept="2OqwBi" id="75uV$1s0VNG" role="37wK5m">
                         <node concept="1PxgMI" id="75uV$1s0VNH" role="2Oq$k0">
-                          <ref role="1PxNhF" to="iuxj:2EZ251fZHvY" resolve="XmlCharRefValue" />
-                          <node concept="37vLTw" id="3GM_nagTwkB" role="1PxMeX">
+                          <ref role="1m5ApE" to="iuxj:2EZ251fZHvY" resolve="XmlCharRefValue" />
+                          <node concept="37vLTw" id="3GM_nagTwkB" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
                           </node>
                         </node>
@@ -814,8 +815,8 @@
                         <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                         <node concept="2OqwBi" id="75uV$1s0VO4" role="37wK5m">
                           <node concept="1PxgMI" id="75uV$1s0VO5" role="2Oq$k0">
-                            <ref role="1PxNhF" to="iuxj:5M4a$b5jfOx" resolve="XmlEntityRefValue" />
-                            <node concept="37vLTw" id="3GM_nagTx1T" role="1PxMeX">
+                            <ref role="1m5ApE" to="iuxj:5M4a$b5jfOx" resolve="XmlEntityRefValue" />
+                            <node concept="37vLTw" id="3GM_nagTx1T" role="1m5AlR">
                               <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
                             </node>
                           </node>
@@ -879,8 +880,8 @@
                         <ref role="ehGHo" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
                       </node>
                       <node concept="1PxgMI" id="75uV$1s0VOu" role="33vP2m">
-                        <ref role="1PxNhF" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
-                        <node concept="37vLTw" id="3GM_nagTsRB" role="1PxMeX">
+                        <ref role="1m5ApE" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
+                        <node concept="37vLTw" id="3GM_nagTsRB" role="1m5AlR">
                           <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
                         </node>
                       </node>
@@ -951,8 +952,8 @@
                           </node>
                           <node concept="2OqwBi" id="75uV$1s0VOX" role="3uHU7w">
                             <node concept="1PxgMI" id="75uV$1s0VOY" role="2Oq$k0">
-                              <ref role="1PxNhF" to="iuxj:5M4a$b5jfOs" resolve="XmlValuePart" />
-                              <node concept="2OqwBi" id="75uV$1s0VOZ" role="1PxMeX">
+                              <ref role="1m5ApE" to="iuxj:5M4a$b5jfOs" resolve="XmlValuePart" />
+                              <node concept="2OqwBi" id="75uV$1s0VOZ" role="1m5AlR">
                                 <node concept="37vLTw" id="3GM_nagTt$2" role="2Oq$k0">
                                   <ref role="3cqZAo" node="75uV$1s0VOs" resolve="tv" />
                                 </node>

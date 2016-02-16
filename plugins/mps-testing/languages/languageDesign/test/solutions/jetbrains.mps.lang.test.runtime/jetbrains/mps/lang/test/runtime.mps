@@ -8,7 +8,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -406,6 +406,10 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -429,10 +433,7 @@
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -867,8 +868,8 @@
                         <property role="TrG5h" value="var" />
                         <node concept="2OqwBi" id="4xK2ogVIKJl" role="33vP2m">
                           <node concept="1PxgMI" id="4xK2ogVIKJm" role="2Oq$k0">
-                            <ref role="1PxNhF" to="tp5g:hG8gU8P" resolve="VariableInitialized" />
-                            <node concept="37vLTw" id="4xK2ogVIKJn" role="1PxMeX">
+                            <ref role="1m5ApE" to="tp5g:hG8gU8P" resolve="VariableInitialized" />
+                            <node concept="37vLTw" id="4xK2ogVIKJn" role="1m5AlR">
                               <ref role="3cqZAo" node="4xK2ogVIKI4" resolve="operation" />
                             </node>
                           </node>
@@ -961,8 +962,8 @@
                         <property role="TrG5h" value="var" />
                         <node concept="2OqwBi" id="4xK2ogVIKJU" role="33vP2m">
                           <node concept="1PxgMI" id="4xK2ogVIKJV" role="2Oq$k0">
-                            <ref role="1PxNhF" to="tp5g:hG8gU8P" resolve="VariableInitialized" />
-                            <node concept="37vLTw" id="4xK2ogVIKJW" role="1PxMeX">
+                            <ref role="1m5ApE" to="tp5g:hG8gU8P" resolve="VariableInitialized" />
+                            <node concept="37vLTw" id="4xK2ogVIKJW" role="1m5AlR">
                               <ref role="3cqZAo" node="4xK2ogVIKI4" resolve="operation" />
                             </node>
                           </node>
@@ -3647,8 +3648,8 @@
         <node concept="3clFbF" id="hSdCqsM" role="3cqZAp">
           <node concept="37vLTI" id="hSdCrbY" role="3clFbG">
             <node concept="1PxgMI" id="hSdCsl2" role="37vLTx">
-              <ref role="1PxNhF" to="tp5g:hSLIFSi" resolve="AnonymousCellAnnotation" />
-              <node concept="37vLTw" id="2BHiRxglVwS" role="1PxMeX">
+              <ref role="1m5ApE" to="tp5g:hSLIFSi" resolve="AnonymousCellAnnotation" />
+              <node concept="37vLTw" id="2BHiRxglVwS" role="1m5AlR">
                 <ref role="3cqZAo" node="hSdCgOT" resolve="annotation" />
               </node>
             </node>

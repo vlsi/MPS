@@ -212,6 +212,10 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -229,8 +233,6 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -356,8 +358,8 @@
               <node concept="3clFbS" id="6DMiG0xrh5b" role="1bW5cS">
                 <node concept="3clFbF" id="6DMiG0xrh5c" role="3cqZAp">
                   <node concept="1PxgMI" id="6DMiG0xrh5d" role="3clFbG">
-                    <ref role="1PxNhF" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
-                    <node concept="37vLTw" id="2BHiRxgmwWx" role="1PxMeX">
+                    <ref role="1m5ApE" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
+                    <node concept="37vLTw" id="2BHiRxgmwWx" role="1m5AlR">
                       <ref role="3cqZAo" node="6DMiG0xrh5f" resolve="it" />
                     </node>
                   </node>
@@ -508,8 +510,8 @@
           </node>
           <node concept="1PxgMI" id="5KZfyKsVhwl" role="33vP2m">
             <property role="1BlNFB" value="true" />
-            <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-            <node concept="2OqwBi" id="5KZfyKsVhwm" role="1PxMeX">
+            <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+            <node concept="2OqwBi" id="5KZfyKsVhwm" role="1m5AlR">
               <node concept="1YBJjd" id="5KZfyKsVhwL" role="2Oq$k0">
                 <ref role="1YBMHb" node="5KZfyKsVhwh" resolve="jl" />
               </node>
@@ -730,8 +732,8 @@
                               <node concept="2OqwBi" id="B4taqEA51w" role="3uHU7w">
                                 <node concept="2OqwBi" id="B4taqEA514" role="2Oq$k0">
                                   <node concept="1PxgMI" id="B4taqEA50I" role="2Oq$k0">
-                                    <ref role="1PxNhF" to="3ior:6qcrfIJFt02" resolve="BuildFolderMacro" />
-                                    <node concept="37vLTw" id="2BHiRxghf1$" role="1PxMeX">
+                                    <ref role="1m5ApE" to="3ior:6qcrfIJFt02" resolve="BuildFolderMacro" />
+                                    <node concept="37vLTw" id="2BHiRxghf1$" role="1m5AlR">
                                       <ref role="3cqZAo" node="B4taqEA4ZF" resolve="it" />
                                     </node>
                                   </node>
@@ -999,8 +1001,8 @@
               <ref role="ehGHo" to="3ior:3NagsOfThPf" resolve="BuildString" />
             </node>
             <node concept="1PxgMI" id="1HQQX4XUA80" role="33vP2m">
-              <ref role="1PxNhF" to="3ior:3NagsOfThPf" resolve="BuildString" />
-              <node concept="Q6c8r" id="1HQQX4XUA81" role="1PxMeX" />
+              <ref role="1m5ApE" to="3ior:3NagsOfThPf" resolve="BuildString" />
+              <node concept="Q6c8r" id="1HQQX4XUA81" role="1m5AlR" />
             </node>
           </node>
         </node>
@@ -1032,8 +1034,8 @@
                   <ref role="ehGHo" to="3ior:4gdvEeQyRO3" resolve="BuildTextStringPart" />
                 </node>
                 <node concept="1PxgMI" id="1HQQX4XUAbw" role="33vP2m">
-                  <ref role="1PxNhF" to="3ior:4gdvEeQyRO3" resolve="BuildTextStringPart" />
-                  <node concept="37vLTw" id="3GM_nagT$Mk" role="1PxMeX">
+                  <ref role="1m5ApE" to="3ior:4gdvEeQyRO3" resolve="BuildTextStringPart" />
+                  <node concept="37vLTw" id="3GM_nagT$Mk" role="1m5AlR">
                     <ref role="3cqZAo" node="1HQQX4XUA9d" resolve="last" />
                   </node>
                 </node>

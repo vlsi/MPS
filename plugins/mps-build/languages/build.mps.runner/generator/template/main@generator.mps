@@ -244,6 +244,10 @@
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -255,8 +259,6 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -979,8 +981,8 @@
                             <node concept="3clFbS" id="3pzPpUGjCze" role="1bW5cS">
                               <node concept="3clFbF" id="3pzPpUGjCzf" role="3cqZAp">
                                 <node concept="1PxgMI" id="3pzPpUGjCzg" role="3clFbG">
-                                  <ref role="1PxNhF" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-                                  <node concept="2YIFZM" id="3pzPpUGjCzh" role="1PxMeX">
+                                  <ref role="1m5ApE" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                                  <node concept="2YIFZM" id="3pzPpUGjCzh" role="1m5AlR">
                                     <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
                                     <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
                                     <node concept="37vLTw" id="3pzPpUGjCzi" role="37wK5m">
@@ -1104,8 +1106,8 @@
                       <node concept="1pGfFk" id="3pzPpUGgK73" role="2ShVmc">
                         <ref role="37wK5l" to="tken:3pzPpUFO9wL" resolve="ModulePlugins" />
                         <node concept="1PxgMI" id="3pzPpUGgKnY" role="37wK5m">
-                          <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                          <node concept="2OqwBi" id="3pzPpUGgKnZ" role="1PxMeX">
+                          <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                          <node concept="2OqwBi" id="3pzPpUGgKnZ" role="1m5AlR">
                             <node concept="2Rxl7S" id="3pzPpUGgKo0" role="2OqNvi" />
                             <node concept="30H73N" id="3pzPpUGgKo1" role="2Oq$k0" />
                           </node>
@@ -1128,8 +1130,8 @@
                 <node concept="3clFbF" id="3pzPpUGjs$z" role="3cqZAp">
                   <node concept="1PxgMI" id="3pzPpUGjsWC" role="3clFbG">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                    <node concept="2OqwBi" id="3pzPpUGjsAU" role="1PxMeX">
+                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="2OqwBi" id="3pzPpUGjsAU" role="1m5AlR">
                       <node concept="30H73N" id="3pzPpUGjs$y" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="3pzPpUGjsTS" role="2OqNvi" />
                     </node>

@@ -425,6 +425,10 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -469,8 +473,6 @@
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -1452,8 +1454,8 @@
                   </node>
                   <node concept="1PxgMI" id="1s8OwvM686h" role="33vP2m">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                    <node concept="2OqwBi" id="1s8OwvM686i" role="1PxMeX">
+                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="2OqwBi" id="1s8OwvM686i" role="1m5AlR">
                       <node concept="pncrf" id="1s8OwvM686j" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="1s8OwvM686k" role="2OqNvi" />
                     </node>
@@ -1488,8 +1490,8 @@
                             <node concept="2OqwBi" id="1s8OwvM688p" role="3uHU7w">
                               <node concept="2OqwBi" id="1s8OwvM6883" role="2Oq$k0">
                                 <node concept="1PxgMI" id="1s8OwvM687N" role="2Oq$k0">
-                                  <ref role="1PxNhF" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
-                                  <node concept="37vLTw" id="2BHiRxgm5GW" role="1PxMeX">
+                                  <ref role="1m5ApE" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+                                  <node concept="37vLTw" id="2BHiRxgm5GW" role="1m5AlR">
                                     <ref role="3cqZAo" node="1s8OwvM6876" resolve="it" />
                                   </node>
                                 </node>

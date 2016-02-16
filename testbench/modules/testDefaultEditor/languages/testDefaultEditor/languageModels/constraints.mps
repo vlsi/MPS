@@ -128,14 +128,15 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -258,8 +259,8 @@
                                 <ref role="ehGHo" to="j0bb:O7qdvf4M$T" resolve="Developer" />
                               </node>
                               <node concept="1PxgMI" id="5dui9YbtQBT" role="33vP2m">
-                                <ref role="1PxNhF" to="j0bb:O7qdvf4M$T" resolve="Developer" />
-                                <node concept="37vLTw" id="5dui9YbtQBU" role="1PxMeX">
+                                <ref role="1m5ApE" to="j0bb:O7qdvf4M$T" resolve="Developer" />
+                                <node concept="37vLTw" id="5dui9YbtQBU" role="1m5AlR">
                                   <ref role="3cqZAo" node="5dui9YbtjUp" resolve="developer" />
                                 </node>
                               </node>
@@ -293,8 +294,8 @@
                                 <node concept="3cpWsn" id="5dui9YbtS0I" role="3cpWs9">
                                   <property role="TrG5h" value="teamNode" />
                                   <node concept="1PxgMI" id="5dui9YbtVOt" role="33vP2m">
-                                    <ref role="1PxNhF" to="j0bb:O7qdvf4Jui" resolve="Team" />
-                                    <node concept="37vLTw" id="5dui9YbtVwZ" role="1PxMeX">
+                                    <ref role="1m5ApE" to="j0bb:O7qdvf4Jui" resolve="Team" />
+                                    <node concept="37vLTw" id="5dui9YbtVwZ" role="1m5AlR">
                                       <ref role="3cqZAo" node="5dui9YbtPhy" resolve="team" />
                                     </node>
                                   </node>

@@ -183,6 +183,10 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -206,10 +210,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -920,8 +921,8 @@
               <node concept="3cpWsn" id="4W7TaJQiotP" role="3cpWs9">
                 <property role="TrG5h" value="testInstance" />
                 <node concept="1PxgMI" id="4W7TaJQipNf" role="33vP2m">
-                  <ref role="1PxNhF" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
-                  <node concept="2OqwBi" id="4W7TaJQiplZ" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+                  <node concept="2OqwBi" id="4W7TaJQiplZ" role="1m5AlR">
                     <node concept="LFhST" id="4W7TaJQipyq" role="2OqNvi" />
                     <node concept="otxO1" id="4W7TaJQip7N" role="2Oq$k0" />
                   </node>
@@ -944,8 +945,8 @@
                         <ref role="3Tt5mk" to="tpc2:fGPMmyn" />
                       </node>
                       <node concept="1PxgMI" id="4W7TaJQirSA" role="2Oq$k0">
-                        <ref role="1PxNhF" to="tpc2:fGPMmym" resolve="CellModel_Component" />
-                        <node concept="nLn13" id="4W7TaJQirAU" role="1PxMeX" />
+                        <ref role="1m5ApE" to="tpc2:fGPMmym" resolve="CellModel_Component" />
+                        <node concept="nLn13" id="4W7TaJQirAU" role="1m5AlR" />
                       </node>
                     </node>
                   </node>
@@ -965,8 +966,8 @@
                     <ref role="ehGHo" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
                   </node>
                   <node concept="1PxgMI" id="hEUdEgk" role="33vP2m">
-                    <ref role="1PxNhF" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
-                    <node concept="2OqwBi" id="hEUdC0G" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+                    <node concept="2OqwBi" id="hEUdC0G" role="1m5AlR">
                       <node concept="otxO1" id="hEUdC0H" role="2Oq$k0" />
                       <node concept="LFhST" id="hEUdC0I" role="2OqNvi" />
                     </node>
@@ -981,8 +982,8 @@
                   <node concept="2qgKlT" id="hEUdHEA" role="2OqNvi">
                     <ref role="37wK5l" to="tpcb:hEUcU7K" resolve="isApplicableTo" />
                     <node concept="1PxgMI" id="hEUdItE" role="37wK5m">
-                      <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                      <node concept="nLn13" id="hEUdIbO" role="1PxMeX" />
+                      <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                      <node concept="nLn13" id="hEUdIbO" role="1m5AlR" />
                     </node>
                   </node>
                 </node>

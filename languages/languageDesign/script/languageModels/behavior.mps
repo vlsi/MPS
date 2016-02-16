@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -88,6 +88,10 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -96,10 +100,7 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -140,8 +141,8 @@
       <node concept="3clFbS" id="4uOLjaPRkIX" role="3clF47">
         <node concept="3clFbF" id="4uOLjaPRkIY" role="3cqZAp">
           <node concept="1PxgMI" id="4uOLjaPRkJt" role="3clFbG">
-            <ref role="1PxNhF" to="tp33:5Ls_1gSlNip" resolve="ExtractInterfaceMigration" />
-            <node concept="2OqwBi" id="4uOLjaPRkJa" role="1PxMeX">
+            <ref role="1m5ApE" to="tp33:5Ls_1gSlNip" resolve="ExtractInterfaceMigration" />
+            <node concept="2OqwBi" id="4uOLjaPRkJa" role="1m5AlR">
               <node concept="13iPFW" id="4uOLjaPRkIZ" role="2Oq$k0" />
               <node concept="1mfA1w" id="4uOLjaPRkJg" role="2OqNvi" />
             </node>
@@ -447,8 +448,8 @@
       <node concept="3clFbS" id="1ZdZFkoOe3B" role="3clF47">
         <node concept="3cpWs6" id="1ZdZFkoOezz" role="3cqZAp">
           <node concept="1PxgMI" id="1ZdZFkoOfzJ" role="3cqZAk">
-            <ref role="1PxNhF" to="tp33:J8xZ2l39B4" resolve="PullUpMethod" />
-            <node concept="2OqwBi" id="1ZdZFkoOeB7" role="1PxMeX">
+            <ref role="1m5ApE" to="tp33:J8xZ2l39B4" resolve="PullUpMethod" />
+            <node concept="2OqwBi" id="1ZdZFkoOeB7" role="1m5AlR">
               <node concept="1mfA1w" id="1ZdZFkoOeRs" role="2OqNvi" />
               <node concept="13iPFW" id="1ZdZFkoOezN" role="2Oq$k0" />
             </node>

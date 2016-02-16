@@ -105,11 +105,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -158,8 +159,8 @@
                 <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
               </node>
               <node concept="1PxgMI" id="7jH_x$qzxWb" role="33vP2m">
-                <ref role="1PxNhF" to="tpee:fz3vP1H" resolve="Type" />
-                <node concept="2X3wrD" id="7jH_x$qzxW8" role="1PxMeX">
+                <ref role="1m5ApE" to="tpee:fz3vP1H" resolve="Type" />
+                <node concept="2X3wrD" id="7jH_x$qzxW8" role="1m5AlR">
                   <ref role="2X3Bk0" node="7jH_x$qzxVO" resolve="_concreteInitializerType" />
                 </node>
               </node>

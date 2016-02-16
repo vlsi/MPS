@@ -8,7 +8,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
@@ -432,6 +432,10 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -461,8 +465,6 @@
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -8865,8 +8867,8 @@
               <node concept="37vLTI" id="2mpxNo1gQQf" role="3clFbG">
                 <node concept="1PxgMI" id="7DZ3qL5ROhL" role="37vLTx">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1PxNhF" to="tpee:2zDZ3IzYz_0" resolve="UnresolvedNameReference" />
-                  <node concept="2OqwBi" id="7DZ3qL5ROhM" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpee:2zDZ3IzYz_0" resolve="UnresolvedNameReference" />
+                  <node concept="2OqwBi" id="7DZ3qL5ROhM" role="1m5AlR">
                     <node concept="2WthIp" id="7DZ3qL5ROhN" role="2Oq$k0" />
                     <node concept="1DTwFV" id="7DZ3qL5ROhO" role="2OqNvi">
                       <ref role="2WH_rO" node="30tYQkHUrot" resolve="node" />
@@ -11229,8 +11231,8 @@
                           <node concept="2OqwBi" id="urH2OByZBf" role="3uHU7w">
                             <node concept="2OqwBi" id="urH2OByZBg" role="2Oq$k0">
                               <node concept="1PxgMI" id="urH2OByZBh" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
-                                <node concept="37vLTw" id="urH2OByZBi" role="1PxMeX">
+                                <ref role="1m5ApE" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
+                                <node concept="37vLTw" id="urH2OByZBi" role="1m5AlR">
                                   <ref role="3cqZAo" node="urH2OByZBp" resolve="it" />
                                 </node>
                               </node>

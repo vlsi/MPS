@@ -14,7 +14,7 @@
     <language id="b2d9d19b-9a47-47a4-93f4-0c9390001bf2" fqName="jetbrains.mps.generator.test.xmodel.lang1" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" fqName="jetbrains.mps.lang.generator.plan" version="0" />
-    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="2" />
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="3" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>

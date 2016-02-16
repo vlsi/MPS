@@ -213,6 +213,10 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
         <reference id="1139877738879" name="concept" index="1A0vxQ" />
       </concept>
@@ -230,10 +234,7 @@
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -823,8 +824,8 @@
               </node>
               <node concept="2OqwBi" id="PtBTHM05NP" role="37vLTJ">
                 <node concept="1PxgMI" id="PtBTHM04lS" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpee:fzclF8j" resolve="ExpressionStatement" />
-                  <node concept="2OqwBi" id="PtBTHLZrLS" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpee:fzclF8j" resolve="ExpressionStatement" />
+                  <node concept="2OqwBi" id="PtBTHLZrLS" role="1m5AlR">
                     <node concept="2OqwBi" id="PtBTHLZjMW" role="2Oq$k0">
                       <node concept="2OqwBi" id="PtBTHLZgOI" role="2Oq$k0">
                         <node concept="37vLTw" id="PtBTHLZgEI" role="2Oq$k0">

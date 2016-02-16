@@ -9,7 +9,7 @@
     <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -297,6 +297,10 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -306,10 +310,7 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -708,11 +709,11 @@
             </node>
             <node concept="2OqwBi" id="4NKeWDvIyR7" role="33vP2m">
               <node concept="1PxgMI" id="4NKeWDvIyR8" role="2Oq$k0">
-                <ref role="1PxNhF" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
-                <node concept="2OqwBi" id="4NKeWDvIyR9" role="1PxMeX">
+                <ref role="1m5ApE" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
+                <node concept="2OqwBi" id="4NKeWDvIyR9" role="1m5AlR">
                   <node concept="1PxgMI" id="4NKeWDvIyRa" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpee:hqOqwz4" resolve="DotExpression" />
-                    <node concept="3xONca" id="4NKeWDvIyRb" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
+                    <node concept="3xONca" id="4NKeWDvIyRb" role="1m5AlR">
                       <ref role="3xOPvv" node="4NKeWDvIyTx" resolve="fieldReference" />
                     </node>
                   </node>
@@ -1140,8 +1141,8 @@
             </node>
             <node concept="2OqwBi" id="xJcAfRvq8M" role="33vP2m">
               <node concept="1PxgMI" id="xJcAfRvq8N" role="2Oq$k0">
-                <ref role="1PxNhF" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
-                <node concept="2OqwBi" id="xJcAfRvq8O" role="1PxMeX">
+                <ref role="1m5ApE" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
+                <node concept="2OqwBi" id="xJcAfRvq8O" role="1m5AlR">
                   <node concept="3xONca" id="xJcAfRvq8P" role="2Oq$k0">
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
                   </node>
@@ -1164,8 +1165,8 @@
             </node>
             <node concept="2OqwBi" id="xJcAfRvsFy" role="33vP2m">
               <node concept="1PxgMI" id="xJcAfRvsFz" role="2Oq$k0">
-                <ref role="1PxNhF" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
-                <node concept="2OqwBi" id="xJcAfRvsF$" role="1PxMeX">
+                <ref role="1m5ApE" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
+                <node concept="2OqwBi" id="xJcAfRvsF$" role="1m5AlR">
                   <node concept="3xONca" id="xJcAfRvsF_" role="2Oq$k0">
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
                   </node>

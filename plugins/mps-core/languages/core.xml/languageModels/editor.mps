@@ -297,6 +297,10 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
@@ -315,8 +319,6 @@
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -1507,8 +1509,8 @@
                 <ref role="ehGHo" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
               </node>
               <node concept="1PxgMI" id="5M4a$b5jET4" role="33vP2m">
-                <ref role="1PxNhF" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
-                <node concept="2OqwBi" id="5M4a$b5jET5" role="1PxMeX">
+                <ref role="1m5ApE" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
+                <node concept="2OqwBi" id="5M4a$b5jET5" role="1m5AlR">
                   <node concept="0GJ7k" id="5M4a$b5jET6" role="2Oq$k0" />
                   <node concept="1mfA1w" id="5M4a$b5jET7" role="2OqNvi" />
                 </node>
@@ -1834,8 +1836,8 @@
                 <ref role="ehGHo" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
               </node>
               <node concept="1PxgMI" id="5M4a$b5jrzh" role="33vP2m">
-                <ref role="1PxNhF" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
-                <node concept="2OqwBi" id="5M4a$b5jrzi" role="1PxMeX">
+                <ref role="1m5ApE" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
+                <node concept="2OqwBi" id="5M4a$b5jrzi" role="1m5AlR">
                   <node concept="0GJ7k" id="5M4a$b5jrzj" role="2Oq$k0" />
                   <node concept="1mfA1w" id="5M4a$b5jrzk" role="2OqNvi" />
                 </node>
@@ -2122,8 +2124,8 @@
               </node>
               <node concept="1PxgMI" id="5M4a$b5jCLX" role="33vP2m">
                 <property role="1BlNFB" value="true" />
-                <ref role="1PxNhF" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
-                <node concept="2OqwBi" id="5M4a$b5jCLY" role="1PxMeX">
+                <ref role="1m5ApE" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
+                <node concept="2OqwBi" id="5M4a$b5jCLY" role="1m5AlR">
                   <node concept="0IXxy" id="5M4a$b5jCLZ" role="2Oq$k0" />
                   <node concept="1mfA1w" id="5M4a$b5jCM0" role="2OqNvi" />
                 </node>

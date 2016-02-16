@@ -82,15 +82,16 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -148,8 +149,8 @@
                       <node concept="3clFbF" id="7SUlOxgDrVb" role="3cqZAp">
                         <node concept="2OqwBi" id="7SUlOxgDs4E" role="3clFbG">
                           <node concept="1PxgMI" id="7SUlOxgDrYY" role="2Oq$k0">
-                            <ref role="1PxNhF" to="ktbj:5pu6noS5f54" resolve="Component" />
-                            <node concept="37vLTw" id="7SUlOxgDrVa" role="1PxMeX">
+                            <ref role="1m5ApE" to="ktbj:5pu6noS5f54" resolve="Component" />
+                            <node concept="37vLTw" id="7SUlOxgDrVa" role="1m5AlR">
                               <ref role="3cqZAo" node="7SUlOxgDrrN" resolve="child" />
                             </node>
                           </node>

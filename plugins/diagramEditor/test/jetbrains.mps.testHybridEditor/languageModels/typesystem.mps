@@ -91,11 +91,12 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
-      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -157,8 +158,8 @@
             </node>
             <node concept="2OqwBi" id="L6rm9$nCku" role="2GsD0m">
               <node concept="1PxgMI" id="L6rm9$nC3G" role="2Oq$k0">
-                <ref role="1PxNhF" to="adck:CgolD_s2V1" resolve="Diagram" />
-                <node concept="2OqwBi" id="L6rm9$nB1C" role="1PxMeX">
+                <ref role="1m5ApE" to="adck:CgolD_s2V1" resolve="Diagram" />
+                <node concept="2OqwBi" id="L6rm9$nB1C" role="1m5AlR">
                   <node concept="1YBJjd" id="L6rm9$nAVv" role="2Oq$k0">
                     <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
                   </node>
@@ -240,8 +241,8 @@
             </node>
             <node concept="2OqwBi" id="L6rm9$sgCt" role="2GsD0m">
               <node concept="1PxgMI" id="L6rm9$sgCu" role="2Oq$k0">
-                <ref role="1PxNhF" to="adck:CgolD_s2V1" resolve="Diagram" />
-                <node concept="2OqwBi" id="L6rm9$sgCv" role="1PxMeX">
+                <ref role="1m5ApE" to="adck:CgolD_s2V1" resolve="Diagram" />
+                <node concept="2OqwBi" id="L6rm9$sgCv" role="1m5AlR">
                   <node concept="1YBJjd" id="L6rm9$sgCw" role="2Oq$k0">
                     <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
                   </node>

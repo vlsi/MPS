@@ -77,13 +77,14 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -157,8 +158,8 @@
         <node concept="mw_s8" id="1NmRLF_EL82" role="1ZfhKB">
           <node concept="2OqwBi" id="1NmRLF_EM4J" role="mwGJk">
             <node concept="1PxgMI" id="1NmRLF_EL_I" role="2Oq$k0">
-              <ref role="1PxNhF" to="tb4y:1NmRLF_CnMs" resolve="WrapperType" />
-              <node concept="1YBJjd" id="1NmRLF_EL80" role="1PxMeX">
+              <ref role="1m5ApE" to="tb4y:1NmRLF_CnMs" resolve="WrapperType" />
+              <node concept="1YBJjd" id="1NmRLF_EL80" role="1m5AlR">
                 <ref role="1YBMHb" node="1NmRLF_EBmZ" resolve="zup" />
               </node>
             </node>
@@ -170,8 +171,8 @@
         <node concept="mw_s8" id="1NmRLF_EKPo" role="1ZfhK$">
           <node concept="2OqwBi" id="1NmRLF_EJ8N" role="mwGJk">
             <node concept="1PxgMI" id="1NmRLF_EHCH" role="2Oq$k0">
-              <ref role="1PxNhF" to="tb4y:1NmRLF_CnMs" resolve="WrapperType" />
-              <node concept="1YBJjd" id="1NmRLF_EHk1" role="1PxMeX">
+              <ref role="1m5ApE" to="tb4y:1NmRLF_CnMs" resolve="WrapperType" />
+              <node concept="1YBJjd" id="1NmRLF_EHk1" role="1m5AlR">
                 <ref role="1YBMHb" node="1NmRLF_EBme" resolve="sub" />
               </node>
             </node>

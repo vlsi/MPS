@@ -6,7 +6,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="157a9668-bf58-417b-893e-53d86388dc56" name="jetbrains.mps.transformation.test.outputLang" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -189,6 +189,10 @@
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
       <concept id="1166648550386" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" flags="nn" index="2xF2bX" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
       </concept>
@@ -202,8 +206,6 @@
       <concept id="1144101597970" name="jetbrains.mps.lang.smodel.structure.OperationParm_Root" flags="ng" index="1xLf8o" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -289,8 +291,8 @@
                   </node>
                   <node concept="1PxgMI" id="hzAGYbD" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
-                    <node concept="2OqwBi" id="hzAGYbE" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
+                    <node concept="2OqwBi" id="hzAGYbE" role="1m5AlR">
                       <node concept="2Xjw5R" id="hzAGYbF" role="2OqNvi">
                         <node concept="1xLf8o" id="hzAGYbG" role="1xVPHs" />
                       </node>
@@ -346,8 +348,8 @@
                     <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                   </node>
                   <node concept="1PxgMI" id="hzAGZX6" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpm0:hp5_jEN" resolve="InputRoot" />
-                    <node concept="2OqwBi" id="hzAGZX7" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
+                    <node concept="2OqwBi" id="hzAGZX7" role="1m5AlR">
                       <node concept="2Xjw5R" id="hzAGZX8" role="2OqNvi">
                         <node concept="1xLf8o" id="hzAGZX9" role="1xVPHs" />
                       </node>

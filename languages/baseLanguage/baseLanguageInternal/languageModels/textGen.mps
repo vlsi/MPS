@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -137,14 +137,15 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -380,8 +381,8 @@
                       <ref role="ehGHo" to="tp68:h6eloLH" resolve="InternalClassifierType" />
                     </node>
                     <node concept="1PxgMI" id="hZLb82s" role="33vP2m">
-                      <ref role="1PxNhF" to="tp68:h6eloLH" resolve="InternalClassifierType" />
-                      <node concept="37vLTw" id="3GM_nagTvSN" role="1PxMeX">
+                      <ref role="1m5ApE" to="tp68:h6eloLH" resolve="InternalClassifierType" />
+                      <node concept="37vLTw" id="3GM_nagTvSN" role="1m5AlR">
                         <ref role="3cqZAo" node="hZLaPvc" resolve="type" />
                       </node>
                     </node>
@@ -453,8 +454,8 @@
                       <ref role="1rvKf6" to="dmyu:16OC$NDNpvB" resolve="internalClassifierName" />
                       <node concept="2OqwBi" id="i2NDTXq" role="1ryhcI">
                         <node concept="1PxgMI" id="i2NDTnM" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:g7uibYu" resolve="ClassifierType" />
-                          <node concept="37vLTw" id="3GM_nagTxrm" role="1PxMeX">
+                          <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
+                          <node concept="37vLTw" id="3GM_nagTxrm" role="1m5AlR">
                             <ref role="3cqZAo" node="hZLaPvc" resolve="type" />
                           </node>
                         </node>

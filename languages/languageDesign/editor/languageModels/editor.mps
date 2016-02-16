@@ -481,6 +481,10 @@
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
@@ -534,10 +538,7 @@
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -6837,8 +6838,8 @@
                     <ref role="ehGHo" to="tpc2:fBEZMkn" resolve="CellModel_Collection" />
                   </node>
                   <node concept="1PxgMI" id="heqEb6C" role="33vP2m">
-                    <ref role="1PxNhF" to="tpc2:fBEZMkn" resolve="CellModel_Collection" />
-                    <node concept="2OqwBi" id="hxx_65r" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpc2:fBEZMkn" resolve="CellModel_Collection" />
+                    <node concept="2OqwBi" id="hxx_65r" role="1m5AlR">
                       <node concept="0IXxy" id="heqEay9" role="2Oq$k0" />
                       <node concept="1mfA1w" id="heqEaRG" role="2OqNvi" />
                     </node>
@@ -7759,8 +7760,8 @@
             <node concept="3cpWs6" id="i0pPmWA" role="3cqZAp">
               <node concept="2OqwBi" id="i0pPpGL" role="3cqZAk">
                 <node concept="1PxgMI" id="i0pPoZ$" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                  <node concept="pncrf" id="i0pPnfF" role="1PxMeX" />
+                  <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                  <node concept="pncrf" id="i0pPnfF" role="1m5AlR" />
                 </node>
                 <node concept="2qgKlT" id="i0pPqdz" role="2OqNvi">
                   <ref role="37wK5l" to="tpcb:i0pN94$" resolve="isIndented" />
@@ -7802,8 +7803,8 @@
               </node>
               <node concept="2OqwBi" id="i0vAfA3" role="3clFbw">
                 <node concept="1PxgMI" id="i0vAfA4" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                  <node concept="pncrf" id="i0vAfA5" role="1PxMeX" />
+                  <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                  <node concept="pncrf" id="i0vAfA5" role="1m5AlR" />
                 </node>
                 <node concept="2qgKlT" id="i0vAfA6" role="2OqNvi">
                   <ref role="37wK5l" to="tpcb:i0pLPAc" resolve="isNewLine" />
@@ -7820,8 +7821,8 @@
               </node>
               <node concept="2OqwBi" id="86hwqQpSnC" role="3clFbw">
                 <node concept="1PxgMI" id="86hwqQpSnD" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                  <node concept="pncrf" id="86hwqQpSnE" role="1PxMeX" />
+                  <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                  <node concept="pncrf" id="86hwqQpSnE" role="1m5AlR" />
                 </node>
                 <node concept="2qgKlT" id="86hwqQpSnG" role="2OqNvi">
                   <ref role="37wK5l" to="tpcb:i0pNGlC" resolve="isNewLineChildren" />
@@ -7833,8 +7834,8 @@
                 <node concept="3cpWs6" id="i0vB9vL" role="3cqZAp">
                   <node concept="2OqwBi" id="i0vBbkT" role="3cqZAk">
                     <node concept="1PxgMI" id="i0vBbkU" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                      <node concept="2OqwBi" id="i0vBc3l" role="1PxMeX">
+                      <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                      <node concept="2OqwBi" id="i0vBc3l" role="1m5AlR">
                         <node concept="pncrf" id="i0vBbkV" role="2Oq$k0" />
                         <node concept="1mfA1w" id="i0vBce2" role="2OqNvi" />
                       </node>
@@ -7890,8 +7891,8 @@
             <node concept="3cpWs6" id="i0pVnX$" role="3cqZAp">
               <node concept="2OqwBi" id="i0pVrTu" role="3cqZAk">
                 <node concept="1PxgMI" id="i0pVrft" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-                  <node concept="pncrf" id="i0pVqXo" role="1PxMeX" />
+                  <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                  <node concept="pncrf" id="i0pVqXo" role="1m5AlR" />
                 </node>
                 <node concept="2qgKlT" id="i0pVsrI" role="2OqNvi">
                   <ref role="37wK5l" to="tpcb:i0pUMOG" resolve="isOnNewLine" />

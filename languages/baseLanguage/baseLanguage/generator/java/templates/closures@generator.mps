@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -218,6 +218,10 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -232,10 +236,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -961,8 +962,8 @@
                     <node concept="3clFbS" id="h1UZ6Gr" role="2VODD2">
                       <node concept="3cpWs6" id="h1UZ7Bo" role="3cqZAp">
                         <node concept="1PxgMI" id="4D3RMlPNgfL" role="3cqZAk">
-                          <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                          <node concept="2YIFZM" id="h1UZago" role="1PxMeX">
+                          <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
+                          <node concept="2YIFZM" id="h1UZago" role="1m5AlR">
                             <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                             <ref role="37wK5l" to="tpea:7jRpv62amqk" resolve="find_ContextOwner_ClosureContext_generatedClass" />
                             <node concept="30H73N" id="h1UZbdU" role="37wK5m" />
@@ -1057,8 +1058,8 @@
                       <node concept="3clFbS" id="h1V1kUL" role="2VODD2">
                         <node concept="3cpWs6" id="h1V1lCk" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNgfz" role="3cqZAk">
-                            <ref role="1PxNhF" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-                            <node concept="2YIFZM" id="h1V1pz6" role="1PxMeX">
+                            <ref role="1m5ApE" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                            <node concept="2YIFZM" id="h1V1pz6" role="1m5AlR">
                               <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                               <ref role="37wK5l" to="tpea:7jRpv62amqy" resolve="find_ContextOwner_ClosureContext_generatedClass_constructor" />
                               <node concept="30H73N" id="h1V1qkb" role="37wK5m" />
@@ -1237,8 +1238,8 @@
               <node concept="3clFbS" id="h1UAfjE" role="2VODD2">
                 <node concept="3cpWs6" id="h1UAfJ7" role="3cqZAp">
                   <node concept="1PxgMI" id="4D3RMlPNfXF" role="3cqZAk">
-                    <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                    <node concept="2YIFZM" id="h1UBjcC" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
+                    <node concept="2YIFZM" id="h1UBjcC" role="1m5AlR">
                       <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                       <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
                       <node concept="30H73N" id="h1UBraU" role="37wK5m" />
@@ -1337,8 +1338,8 @@
                       <node concept="3clFbS" id="4D3RMlPNfKS" role="2VODD2">
                         <node concept="3cpWs6" id="4D3RMlPNfKT" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNfXH" role="3cqZAk">
-                            <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                            <node concept="2YIFZM" id="4D3RMlPNfKU" role="1PxMeX">
+                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
+                            <node concept="2YIFZM" id="4D3RMlPNfKU" role="1m5AlR">
                               <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                               <ref role="37wK5l" to="tpea:7jRpv62ampH" resolve="find_EnclosingContextOwner_ClosureContext_generatedClass" />
                               <node concept="30H73N" id="4D3RMlPNfKV" role="37wK5m" />
@@ -1620,8 +1621,8 @@
                       <node concept="3clFbS" id="h1YdtQo" role="2VODD2">
                         <node concept="3cpWs6" id="h1Ydykp" role="3cqZAp">
                           <node concept="1PxgMI" id="4D3RMlPNgf4" role="3cqZAk">
-                            <ref role="1PxNhF" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-                            <node concept="2YIFZM" id="h1Yd$hF" role="1PxMeX">
+                            <ref role="1m5ApE" to="tpee:fz12cDC" resolve="FieldDeclaration" />
+                            <node concept="2YIFZM" id="h1Yd$hF" role="1m5AlR">
                               <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                               <ref role="37wK5l" to="tpea:7jRpv62amrx" resolve="resolve_VariableDeclStmt_Variable_ClosureContext_generatedField" />
                               <node concept="30H73N" id="h1Yd$Qk" role="37wK5m" />
@@ -1760,8 +1761,8 @@
                     <node concept="3clFbS" id="h1UD0NU" role="2VODD2">
                       <node concept="3cpWs6" id="h1UD1IS" role="3cqZAp">
                         <node concept="1PxgMI" id="4D3RMlPNgeU" role="3cqZAk">
-                          <ref role="1PxNhF" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-                          <node concept="2YIFZM" id="h1UD4sg" role="1PxMeX">
+                          <ref role="1m5ApE" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                          <node concept="2YIFZM" id="h1UD4sg" role="1m5AlR">
                             <ref role="1Pybhc" to="tpea:7jRpv62ampB" resolve="_QueriesUtil" />
                             <ref role="37wK5l" to="tpea:7jRpv62amr4" resolve="find_Closure_generatedClosureAdapter_constructor" />
                             <node concept="30H73N" id="h1UD5I4" role="37wK5m" />

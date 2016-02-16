@@ -180,6 +180,10 @@
         <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
@@ -191,8 +195,6 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -485,8 +487,8 @@
                   <node concept="37vLTI" id="2whOjLMt6TI" role="3clFbG">
                     <node concept="1PxgMI" id="3X9rC2XzJeT" role="37vLTx">
                       <property role="1BlNFB" value="true" />
-                      <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                      <node concept="2OqwBi" id="3X9rC2XzJeU" role="1PxMeX">
+                      <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                      <node concept="2OqwBi" id="3X9rC2XzJeU" role="1m5AlR">
                         <node concept="37vLTw" id="2BHiRxglIN1" role="2Oq$k0">
                           <ref role="3cqZAo" node="3X9rC2XzJeg" resolve="artifacts" />
                         </node>
@@ -510,8 +512,8 @@
                     <node concept="37vLTI" id="2whOjLMtdY5" role="3clFbG">
                       <node concept="1PxgMI" id="2whOjLMtdY6" role="37vLTx">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                        <node concept="2OqwBi" id="2whOjLMtdY7" role="1PxMeX">
+                        <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                        <node concept="2OqwBi" id="2whOjLMtdY7" role="1m5AlR">
                           <node concept="37vLTw" id="2BHiRxglcVa" role="2Oq$k0">
                             <ref role="3cqZAo" node="3X9rC2XzJeg" resolve="artifacts" />
                           </node>
@@ -703,8 +705,8 @@
                 </node>
                 <node concept="1PxgMI" id="2whOjLMv7ZX" role="37vLTx">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                  <node concept="2OqwBi" id="2whOjLMv7ZZ" role="1PxMeX">
+                  <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                  <node concept="2OqwBi" id="2whOjLMv7ZZ" role="1m5AlR">
                     <node concept="37vLTw" id="2whOjLMwsxm" role="2Oq$k0">
                       <ref role="3cqZAo" node="2whOjLMwsxi" resolve="currentArtifacts" />
                     </node>
@@ -729,8 +731,8 @@
                       <ref role="37wK5l" to="o3n2:6b4RkXS7ms7" resolve="add" />
                       <node concept="1PxgMI" id="4fCiNXDYt6O" role="37wK5m">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                        <node concept="2YIFZM" id="2whOjLMv80r" role="1PxMeX">
+                        <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                        <node concept="2YIFZM" id="2whOjLMv80r" role="1m5AlR">
                           <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
                           <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
                           <node concept="37vLTw" id="2whOjLMv80n" role="37wK5m">
@@ -763,8 +765,8 @@
                       </node>
                       <node concept="1PxgMI" id="2whOjLMvVXg" role="37vLTx">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                        <node concept="2OqwBi" id="2whOjLMvVXh" role="1PxMeX">
+                        <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                        <node concept="2OqwBi" id="2whOjLMvVXh" role="1m5AlR">
                           <node concept="37vLTw" id="2whOjLMwDq9" role="2Oq$k0">
                             <ref role="3cqZAo" node="2whOjLMwsxi" resolve="currentArtifacts" />
                           </node>
@@ -772,8 +774,8 @@
                             <ref role="37wK5l" to="o3n2:6PrCok1LkPV" resolve="findArtifact" />
                             <node concept="2OqwBi" id="2whOjLMvVXk" role="37wK5m">
                               <node concept="1PxgMI" id="2whOjLMvVXl" role="2Oq$k0">
-                                <ref role="1PxNhF" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
-                                <node concept="37vLTw" id="2whOjLMvVXm" role="1PxMeX">
+                                <ref role="1m5ApE" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
+                                <node concept="37vLTw" id="2whOjLMvVXm" role="1m5AlR">
                                   <ref role="3cqZAo" node="2whOjLMv817" resolve="originalModule" />
                                 </node>
                               </node>
@@ -797,8 +799,8 @@
                             <ref role="37wK5l" to="o3n2:6b4RkXS7ms7" resolve="add" />
                             <node concept="1PxgMI" id="4fCiNXDYw1C" role="37wK5m">
                               <property role="1BlNFB" value="true" />
-                              <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                              <node concept="2YIFZM" id="2whOjLMvVXu" role="1PxMeX">
+                              <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                              <node concept="2YIFZM" id="2whOjLMvVXu" role="1m5AlR">
                                 <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
                                 <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
                                 <node concept="37vLTw" id="2whOjLMvVXv" role="37wK5m">
@@ -892,8 +894,8 @@
                   <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                 </node>
                 <node concept="1PxgMI" id="3umvbTBKBGu" role="33vP2m">
-                  <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                  <node concept="2OqwBi" id="3umvbTBKBGv" role="1PxMeX">
+                  <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                  <node concept="2OqwBi" id="3umvbTBKBGv" role="1m5AlR">
                     <node concept="2Rxl7S" id="3umvbTBKBGw" role="2OqNvi" />
                     <node concept="13iPFW" id="3umvbTBKBGx" role="2Oq$k0" />
                   </node>
@@ -1246,8 +1248,8 @@
             </node>
             <node concept="1PxgMI" id="2TqXzNe_JYh" role="33vP2m">
               <property role="1BlNFB" value="true" />
-              <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-              <node concept="2YIFZM" id="2TqXzNe_JXu" role="1PxMeX">
+              <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+              <node concept="2YIFZM" id="2TqXzNe_JXu" role="1m5AlR">
                 <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
                 <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
                 <node concept="37vLTw" id="3GM_nagTyVb" role="37wK5m">
@@ -1273,8 +1275,8 @@
             </node>
             <node concept="1PxgMI" id="2TqXzNe_6LK" role="33vP2m">
               <property role="1BlNFB" value="true" />
-              <ref role="1PxNhF" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
-              <node concept="2OqwBi" id="2TqXzNe_6HQ" role="1PxMeX">
+              <ref role="1m5ApE" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
+              <node concept="2OqwBi" id="2TqXzNe_6HQ" role="1m5AlR">
                 <node concept="2OqwBi" id="2TqXzNe_6HR" role="2Oq$k0">
                   <node concept="37vLTw" id="3GM_nagTzCv" role="2Oq$k0">
                     <ref role="3cqZAo" node="2TqXzNe_JWX" resolve="originalProject" />
@@ -1316,8 +1318,8 @@
                 </node>
                 <node concept="1PxgMI" id="2TqXzNe_6JJ" role="33vP2m">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1PxNhF" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-                  <node concept="2OqwBi" id="2TqXzNe_6JK" role="1PxMeX">
+                  <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                  <node concept="2OqwBi" id="2TqXzNe_6JK" role="1m5AlR">
                     <node concept="37vLTw" id="2BHiRxgm8bn" role="2Oq$k0">
                       <ref role="3cqZAo" node="3umvbTBQBvq" resolve="artifacts" />
                     </node>

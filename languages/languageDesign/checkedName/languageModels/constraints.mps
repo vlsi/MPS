@@ -61,6 +61,10 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -70,10 +74,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -126,8 +127,8 @@
             <node concept="2OqwBi" id="4cWf37B8p0I" role="3cqZAk">
               <node concept="2OqwBi" id="4cWf37B8p0J" role="2Oq$k0">
                 <node concept="1PxgMI" id="4cWf37B8p0K" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tp25:gzTqbfa" resolve="SNodeType" />
-                  <node concept="2OqwBi" id="4cWf37B8p0L" role="1PxMeX">
+                  <ref role="1m5ApE" to="tp25:gzTqbfa" resolve="SNodeType" />
+                  <node concept="2OqwBi" id="4cWf37B8p0L" role="1m5AlR">
                     <node concept="2OqwBi" id="4cWf37B8p0M" role="2Oq$k0">
                       <node concept="3kakTB" id="4cWf37B8p0N" role="2Oq$k0" />
                       <node concept="3TrEf2" id="4cWf37B8p0O" role="2OqNvi">

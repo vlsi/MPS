@@ -117,6 +117,10 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -124,8 +128,6 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -190,8 +192,8 @@
                 <node concept="2OqwBi" id="4XSronYafm_" role="2Oq$k0">
                   <node concept="1PxgMI" id="4XSronYafmA" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
-                    <node concept="2OqwBi" id="4XSronYafmB" role="1PxMeX">
+                    <ref role="1m5ApE" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
+                    <node concept="2OqwBi" id="4XSronYafmB" role="1m5AlR">
                       <node concept="EsrRn" id="4XSronYafmC" role="2Oq$k0" />
                       <node concept="1mfA1w" id="4XSronYafmD" role="2OqNvi" />
                     </node>
@@ -280,8 +282,8 @@
                         <node concept="2OqwBi" id="NU25MqZGXW" role="3clFbG">
                           <node concept="2OqwBi" id="NU25MqZGz_" role="2Oq$k0">
                             <node concept="1PxgMI" id="NU25MqZGt_" role="2Oq$k0">
-                              <ref role="1PxNhF" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
-                              <node concept="37vLTw" id="NU25MqZGpz" role="1PxMeX">
+                              <ref role="1m5ApE" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
+                              <node concept="37vLTw" id="NU25MqZGpz" role="1m5AlR">
                                 <ref role="3cqZAo" node="NU25MqZEQn" resolve="child" />
                               </node>
                             </node>

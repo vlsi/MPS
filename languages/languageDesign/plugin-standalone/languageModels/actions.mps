@@ -90,13 +90,14 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -131,8 +132,8 @@
                     <ref role="37wK5l" to="tpek:4_LVZ3pBr7M" resolve="staticFields" />
                   </node>
                   <node concept="1PxgMI" id="hRlaacB" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpee:fz12cDA" resolve="ClassConcept" />
-                    <node concept="2OqwBi" id="hRlaacC" role="1PxMeX">
+                    <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    <node concept="2OqwBi" id="hRlaacC" role="1m5AlR">
                       <node concept="2c44tf" id="hRlaacD" role="2Oq$k0">
                         <node concept="3uibUv" id="hRlaacE" role="2c44tc">
                           <ref role="3uigEE" to="3s15:~MPSDataKeys" resolve="MPSDataKeys" />

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -98,13 +98,14 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -179,8 +180,8 @@
                 </node>
                 <node concept="2OqwBi" id="i0uJKld" role="37vLTJ">
                   <node concept="1PxgMI" id="i0uJJnE" role="2Oq$k0">
-                    <ref role="1PxNhF" to="2omo:i0la8a6" resolve="ConstantStringAppendPart" />
-                    <node concept="2Sf5sV" id="i0uJHIA" role="1PxMeX" />
+                    <ref role="1m5ApE" to="2omo:i0la8a6" resolve="ConstantStringAppendPart" />
+                    <node concept="2Sf5sV" id="i0uJHIA" role="1m5AlR" />
                   </node>
                   <node concept="3TrcHB" id="i0uJK_p" role="2OqNvi">
                     <ref role="3TsBF5" to="2omo:i0ldctd" resolve="withIndent" />
@@ -208,8 +209,8 @@
                   </node>
                   <node concept="2OqwBi" id="i0uNre_" role="37vLTJ">
                     <node concept="1PxgMI" id="i0uNpYI" role="2Oq$k0">
-                      <ref role="1PxNhF" to="2omo:i0l9hCC" resolve="NodeAppendPart" />
-                      <node concept="2Sf5sV" id="i0uNpyo" role="1PxMeX" />
+                      <ref role="1m5ApE" to="2omo:i0l9hCC" resolve="NodeAppendPart" />
+                      <node concept="2Sf5sV" id="i0uNpyo" role="1m5AlR" />
                     </node>
                     <node concept="3TrcHB" id="i0uNs64" role="2OqNvi">
                       <ref role="3TsBF5" to="2omo:i0ld1WY" resolve="withIndent" />

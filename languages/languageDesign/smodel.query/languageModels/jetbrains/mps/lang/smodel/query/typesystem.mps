@@ -49,7 +49,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
@@ -146,6 +146,10 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -156,10 +160,7 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -320,8 +321,8 @@
                         <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                       </node>
                       <node concept="1PxgMI" id="5X1VVpPy2J1" role="33vP2m">
-                        <ref role="1PxNhF" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
-                        <node concept="2X3wrD" id="5X1VVpPy2J2" role="1PxMeX">
+                        <ref role="1m5ApE" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
+                        <node concept="2X3wrD" id="5X1VVpPy2J2" role="1m5AlR">
                           <ref role="2X3Bk0" node="5X1VVpPy2Jj" resolve="conceptParameterType" />
                         </node>
                       </node>
@@ -454,8 +455,8 @@
                         <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                         <node concept="2OqwBi" id="7b2SisHTXO4" role="2c44t1">
                           <node concept="1PxgMI" id="7b2SisHTXO5" role="2Oq$k0">
-                            <ref role="1PxNhF" to="tp25:h8chp0G" resolve="RefConcept_Reference" />
-                            <node concept="2OqwBi" id="7b2SisHTXO6" role="1PxMeX">
+                            <ref role="1m5ApE" to="tp25:h8chp0G" resolve="RefConcept_Reference" />
+                            <node concept="2OqwBi" id="7b2SisHTXO6" role="1m5AlR">
                               <node concept="1YBJjd" id="7b2SisHTXO7" role="2Oq$k0">
                                 <ref role="1YBMHb" node="6H$fNdLyEdj" resolve="instancesExpression" />
                               </node>

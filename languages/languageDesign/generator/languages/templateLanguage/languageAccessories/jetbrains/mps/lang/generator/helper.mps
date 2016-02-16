@@ -150,6 +150,10 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
@@ -189,10 +193,7 @@
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1669,8 +1670,8 @@
                   <ref role="3Tt5mk" to="tpf8:h03gUQu" />
                 </node>
                 <node concept="1PxgMI" id="h9Ievya" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
-                  <node concept="37vLTw" id="3GM_nagT$oU" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
+                  <node concept="37vLTw" id="3GM_nagT$oU" role="1m5AlR">
                     <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
                   </node>
                 </node>
@@ -1696,8 +1697,8 @@
                   <ref role="37wK5l" to="tpfh:1$dcvTE6OGV" resolve="getConcept" />
                 </node>
                 <node concept="1PxgMI" id="15RmSSdWLxm" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:1$dcvTE4IIO" resolve="PatternReduction_MappingRule" />
-                  <node concept="37vLTw" id="3GM_nagT_iq" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:1$dcvTE4IIO" resolve="PatternReduction_MappingRule" />
+                  <node concept="37vLTw" id="3GM_nagT_iq" role="1m5AlR">
                     <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
                   </node>
                 </node>
@@ -1713,8 +1714,8 @@
                   <ref role="3Tt5mk" to="tpf8:gZ0HIsK" />
                 </node>
                 <node concept="1PxgMI" id="h9Iezvd" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:gZ0H$p7" resolve="BaseMappingRule" />
-                  <node concept="37vLTw" id="3GM_nagTtMB" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:gZ0H$p7" resolve="BaseMappingRule" />
+                  <node concept="37vLTw" id="3GM_nagTtMB" role="1m5AlR">
                     <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
                   </node>
                 </node>
@@ -1762,8 +1763,8 @@
               <ref role="3Tt5mk" to="tpf8:h0n9lNf" />
             </node>
             <node concept="1PxgMI" id="h9Ifl0f" role="2Oq$k0">
-              <ref role="1PxNhF" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
-              <node concept="37vLTw" id="3GM_nagTAj4" role="1PxMeX">
+              <ref role="1m5ApE" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
+              <node concept="37vLTw" id="3GM_nagTAj4" role="1m5AlR">
                 <ref role="3cqZAo" node="h9Ifa9c" resolve="rootAnnotation" />
               </node>
             </node>
@@ -1799,8 +1800,8 @@
             <node concept="3cpWs6" id="5rc3f3_OhDy" role="3cqZAp">
               <node concept="2OqwBi" id="5rc3f3_Ompw" role="3cqZAk">
                 <node concept="1PxgMI" id="5rc3f3_OkE4" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:QzR6Tht7mj" resolve="TemplateSwitchMacro" />
-                  <node concept="37vLTw" id="5rc3f3_OiGL" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:QzR6Tht7mj" resolve="TemplateSwitchMacro" />
+                  <node concept="37vLTw" id="5rc3f3_OiGL" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1836,8 +1837,8 @@
             <node concept="3cpWs6" id="h9I6uk3" role="3cqZAp">
               <node concept="2OqwBi" id="hxx$UDj" role="3cqZAk">
                 <node concept="1PxgMI" id="h9I6uk5" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:ge9HgZJ" resolve="CopySrcNodeMacro" />
-                  <node concept="37vLTw" id="2BHiRxghfcU" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:ge9HgZJ" resolve="CopySrcNodeMacro" />
+                  <node concept="37vLTw" id="2BHiRxghfcU" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1853,8 +1854,8 @@
             <node concept="3cpWs6" id="h9I6Lke" role="3cqZAp">
               <node concept="2OqwBi" id="hxx_6eo" role="3cqZAk">
                 <node concept="1PxgMI" id="h9I6Lkg" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:geb32N7" resolve="CopySrcListMacro" />
-                  <node concept="37vLTw" id="2BHiRxghdmQ" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:geb32N7" resolve="CopySrcListMacro" />
+                  <node concept="37vLTw" id="2BHiRxghdmQ" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1893,8 +1894,8 @@
                   <ref role="3Tt5mk" to="tpf8:h031$YD" />
                 </node>
                 <node concept="1PxgMI" id="h9I6$Rg" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
-                  <node concept="37vLTw" id="2BHiRxgm6xn" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+                  <node concept="37vLTw" id="2BHiRxgm6xn" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1907,8 +1908,8 @@
             <node concept="3cpWs6" id="h9I6QDE" role="3cqZAp">
               <node concept="2OqwBi" id="hxx$Nve" role="3cqZAk">
                 <node concept="1PxgMI" id="h9I6QDG" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:gvejVYo" resolve="MapSrcListMacro" />
-                  <node concept="37vLTw" id="2BHiRxghitD" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:gvejVYo" resolve="MapSrcListMacro" />
+                  <node concept="37vLTw" id="2BHiRxghitD" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1947,8 +1948,8 @@
                   <ref role="3Tt5mk" to="tpf8:gZJn$bn" />
                 </node>
                 <node concept="1PxgMI" id="h9I6EcG" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:ghWS0B3" resolve="LoopMacro" />
-                  <node concept="37vLTw" id="2BHiRxglf4K" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:ghWS0B3" resolve="LoopMacro" />
+                  <node concept="37vLTw" id="2BHiRxglf4K" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1961,8 +1962,8 @@
             <node concept="3cpWs6" id="6DGMsbSsARx" role="3cqZAp">
               <node concept="2OqwBi" id="6DGMsbSsI_x" role="3cqZAk">
                 <node concept="1PxgMI" id="6DGMsbSsHGU" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:hoxERsl" resolve="IncludeMacro" />
-                  <node concept="37vLTw" id="6DGMsbSsD5Y" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:hoxERsl" resolve="IncludeMacro" />
+                  <node concept="37vLTw" id="6DGMsbSsD5Y" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>
@@ -1988,8 +1989,8 @@
             <node concept="3cpWs6" id="6DGMsbSsWIr" role="3cqZAp">
               <node concept="2OqwBi" id="6DGMsbSt2qr" role="3cqZAk">
                 <node concept="1PxgMI" id="6DGMsbSt1$c" role="2Oq$k0">
-                  <ref role="1PxNhF" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
-                  <node concept="37vLTw" id="6DGMsbSsZem" role="1PxMeX">
+                  <ref role="1m5ApE" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
+                  <node concept="37vLTw" id="6DGMsbSsZem" role="1m5AlR">
                     <ref role="3cqZAo" node="h9I5F3L" resolve="macro" />
                   </node>
                 </node>

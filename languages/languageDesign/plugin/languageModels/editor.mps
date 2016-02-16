@@ -301,6 +301,10 @@
         <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -318,10 +322,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -2494,8 +2495,8 @@
                                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                   <node concept="2OqwBi" id="112RIkgil1t" role="37wK5m">
                                     <node concept="1PxgMI" id="112RIkgil1u" role="2Oq$k0">
-                                      <ref role="1PxNhF" to="tpee:hiABswc" resolve="Annotation" />
-                                      <node concept="2OqwBi" id="112RIkgil1v" role="1PxMeX">
+                                      <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
+                                      <node concept="2OqwBi" id="112RIkgil1v" role="1m5AlR">
                                         <node concept="2c44tf" id="112RIkgil1w" role="2Oq$k0">
                                           <node concept="3uibUv" id="5nlt9wE7MUR" role="2c44tc">
                                             <ref role="3uigEE" to="qq03:~MPSCommonDataKeys$Description" resolve="MPSCommonDataKeys.Description" />
@@ -2630,8 +2631,8 @@
                   <node concept="17QB3L" id="112RIkgil2c" role="1tU5fm" />
                   <node concept="2OqwBi" id="112RIkgil2d" role="33vP2m">
                     <node concept="1PxgMI" id="112RIkgil2e" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpee:f$Xl_Og" resolve="StringLiteral" />
-                      <node concept="2OqwBi" id="112RIkgil2f" role="1PxMeX">
+                      <ref role="1m5ApE" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+                      <node concept="2OqwBi" id="112RIkgil2f" role="1m5AlR">
                         <node concept="37vLTw" id="3GM_nagT$f0" role="2Oq$k0">
                           <ref role="3cqZAo" node="112RIkgil1H" resolve="description" />
                         </node>
@@ -2708,8 +2709,8 @@
                                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                   <node concept="2OqwBi" id="112RIkgil2U" role="37wK5m">
                                     <node concept="1PxgMI" id="112RIkgil2V" role="2Oq$k0">
-                                      <ref role="1PxNhF" to="tpee:hiABswc" resolve="Annotation" />
-                                      <node concept="2OqwBi" id="112RIkgil2W" role="1PxMeX">
+                                      <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
+                                      <node concept="2OqwBi" id="112RIkgil2W" role="1m5AlR">
                                         <node concept="2c44tf" id="112RIkgil2X" role="2Oq$k0">
                                           <node concept="3uibUv" id="5nlt9wE7MUS" role="2c44tc">
                                             <ref role="3uigEE" to="qq03:~MPSCommonDataKeys$Description" resolve="MPSCommonDataKeys.Description" />
@@ -2844,8 +2845,8 @@
                   <node concept="17QB3L" id="112RIkgil3D" role="1tU5fm" />
                   <node concept="2OqwBi" id="112RIkgil3E" role="33vP2m">
                     <node concept="1PxgMI" id="112RIkgil3F" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpee:f$Xl_Og" resolve="StringLiteral" />
-                      <node concept="2OqwBi" id="112RIkgil3G" role="1PxMeX">
+                      <ref role="1m5ApE" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+                      <node concept="2OqwBi" id="112RIkgil3G" role="1m5AlR">
                         <node concept="37vLTw" id="3GM_nagTs9p" role="2Oq$k0">
                           <ref role="3cqZAo" node="112RIkgil3a" resolve="longDescription" />
                         </node>

@@ -12,7 +12,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
     <use id="a5e4de53-46a3-44da-aab3-68fdf1c34ed0" name="jetbrains.mps.console.ideCommands" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -614,7 +614,7 @@
           <node concept="3cpWsn" id="EVT3pKkl$7" role="3cpWs9">
             <property role="TrG5h" value="tab" />
             <node concept="3uibUv" id="EVT3pKkl$8" role="1tU5fm">
-              <ref role="3uigEE" to="qgo0:6ysF3v1jo8G" resolve="ConsoleTab" />
+              <ref role="3uigEE" to="qgo0:6ysF3v1jo8G" resolve="DialogConsoleTab" />
             </node>
             <node concept="2OqwBi" id="EVT3pKkos_" role="33vP2m">
               <node concept="37vLTw" id="YAuj$rVJ1z" role="2Oq$k0">
@@ -779,7 +779,7 @@
           <node concept="3cpWsn" id="2UF8zdtXdD_" role="3cpWs9">
             <property role="TrG5h" value="tab" />
             <node concept="3uibUv" id="2UF8zdtXdDA" role="1tU5fm">
-              <ref role="3uigEE" to="qgo0:6ysF3v1jo8G" resolve="ConsoleTab" />
+              <ref role="3uigEE" to="qgo0:6ysF3v1jo8G" resolve="DialogConsoleTab" />
             </node>
             <node concept="2OqwBi" id="2UF8zdtXdDB" role="33vP2m">
               <node concept="2OqwBi" id="2UF8zdtXdDC" role="2Oq$k0">

@@ -213,6 +213,10 @@
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -238,10 +242,7 @@
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -435,8 +436,8 @@
               <node concept="2OqwBi" id="6DMiG0xr7gk" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xqV89" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xqV7L" role="2Oq$k0">
-                    <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                    <node concept="nLn13" id="6DMiG0xqV6Y" role="1PxMeX" />
+                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="nLn13" id="6DMiG0xqV6Y" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr7fW" role="2OqNvi">
                     <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
@@ -525,8 +526,8 @@
               <node concept="2OqwBi" id="6DMiG0xr7h9" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xr7ha" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xr7hb" role="2Oq$k0">
-                    <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                    <node concept="nLn13" id="6DMiG0xr7hc" role="1PxMeX" />
+                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="nLn13" id="6DMiG0xr7hc" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr7hd" role="2OqNvi">
                     <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
@@ -1486,8 +1487,8 @@
                     <node concept="2OqwBi" id="4RsV8qJGJqr" role="3K4E3e">
                       <node concept="2OqwBi" id="4RsV8qJGJqs" role="2Oq$k0">
                         <node concept="1PxgMI" id="4RsV8qJGJqt" role="2Oq$k0">
-                          <ref role="1PxNhF" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
-                          <node concept="Bn53e" id="4RsV8qJGJqu" role="1PxMeX" />
+                          <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
+                          <node concept="Bn53e" id="4RsV8qJGJqu" role="1m5AlR" />
                         </node>
                         <node concept="3TrEf2" id="4RsV8qJGJqv" role="2OqNvi">
                           <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" />
@@ -1695,8 +1696,8 @@
                     <node concept="2OqwBi" id="4RsV8qJH_Ek" role="3K4E3e">
                       <node concept="2OqwBi" id="4RsV8qJH_El" role="2Oq$k0">
                         <node concept="1PxgMI" id="4RsV8qJH_Em" role="2Oq$k0">
-                          <ref role="1PxNhF" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
-                          <node concept="Bn53e" id="4RsV8qJH_En" role="1PxMeX" />
+                          <ref role="1m5ApE" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
+                          <node concept="Bn53e" id="4RsV8qJH_En" role="1m5AlR" />
                         </node>
                         <node concept="3TrEf2" id="2vaDE4tApLK" role="2OqNvi">
                           <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" />
@@ -1795,8 +1796,8 @@
               <node concept="2OqwBi" id="6DMiG0xr9A6" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xr9A7" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xr9A8" role="2Oq$k0">
-                    <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                    <node concept="nLn13" id="6DMiG0xr9A9" role="1PxMeX" />
+                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="nLn13" id="6DMiG0xr9A9" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr9Aa" role="2OqNvi">
                     <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />

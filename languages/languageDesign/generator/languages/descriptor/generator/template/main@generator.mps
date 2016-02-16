@@ -443,6 +443,10 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -475,10 +479,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1942,8 +1943,8 @@
             </node>
             <node concept="2OqwBi" id="eB6_hfB4tD" role="3uHU7w">
               <node concept="1PxgMI" id="eB6_hfB4tE" role="2Oq$k0">
-                <ref role="1PxNhF" to="hypd:5xDtKQA7vSx" resolve="Generator" />
-                <node concept="2OqwBi" id="eB6_hfB4tF" role="1PxMeX">
+                <ref role="1m5ApE" to="hypd:5xDtKQA7vSx" resolve="Generator" />
+                <node concept="2OqwBi" id="eB6_hfB4tF" role="1m5AlR">
                   <node concept="2OqwBi" id="eB6_hfB4tG" role="2Oq$k0">
                     <node concept="1iwH7S" id="eB6_hfB4tH" role="2Oq$k0" />
                     <node concept="1st3f0" id="eB6_hfB4tI" role="2OqNvi" />
@@ -1970,8 +1971,8 @@
           <node concept="3clFbS" id="1jOtBURDG1H" role="2VODD2">
             <node concept="3clFbF" id="1jOtBURDG1I" role="3cqZAp">
               <node concept="1PxgMI" id="1jOtBURDG1J" role="3clFbG">
-                <ref role="1PxNhF" to="hypd:5xDtKQA7vSv" resolve="Language" />
-                <node concept="2OqwBi" id="1jOtBURDG1K" role="1PxMeX">
+                <ref role="1m5ApE" to="hypd:5xDtKQA7vSv" resolve="Language" />
+                <node concept="2OqwBi" id="1jOtBURDG1K" role="1m5AlR">
                   <node concept="2OqwBi" id="1jOtBURDG1L" role="2Oq$k0">
                     <node concept="1iwH7S" id="1jOtBURDG1M" role="2Oq$k0" />
                     <node concept="1st3f0" id="1jOtBURDG1N" role="2OqNvi" />
@@ -4491,8 +4492,8 @@
         <node concept="3clFbS" id="eB6_hfB1CD" role="2VODD2">
           <node concept="3clFbF" id="eB6_hfB1DP" role="3cqZAp">
             <node concept="1PxgMI" id="eB6_hfB2bW" role="3clFbG">
-              <ref role="1PxNhF" to="hypd:5xDtKQA7vSx" resolve="Generator" />
-              <node concept="2OqwBi" id="eB6_hfB21U" role="1PxMeX">
+              <ref role="1m5ApE" to="hypd:5xDtKQA7vSx" resolve="Generator" />
+              <node concept="2OqwBi" id="eB6_hfB21U" role="1m5AlR">
                 <node concept="2OqwBi" id="eB6_hfB1Yi" role="2Oq$k0">
                   <node concept="1iwH7S" id="eB6_hfB1DO" role="2Oq$k0" />
                   <node concept="1st3f0" id="eB6_hfB205" role="2OqNvi" />
@@ -4548,8 +4549,8 @@
                   <ref role="ehGHo" to="hypd:5xDtKQA7vSv" resolve="Language" />
                 </node>
                 <node concept="1PxgMI" id="eB6_hfBaPH" role="33vP2m">
-                  <ref role="1PxNhF" to="hypd:5xDtKQA7vSv" resolve="Language" />
-                  <node concept="2OqwBi" id="eB6_hfBaPI" role="1PxMeX">
+                  <ref role="1m5ApE" to="hypd:5xDtKQA7vSv" resolve="Language" />
+                  <node concept="2OqwBi" id="eB6_hfBaPI" role="1m5AlR">
                     <node concept="30H73N" id="eB6_hfBaPJ" role="2Oq$k0" />
                     <node concept="1mfA1w" id="eB6_hfBaPK" role="2OqNvi" />
                   </node>
@@ -4940,8 +4941,8 @@
                           <ref role="ehGHo" to="hypd:5xDtKQA7vSv" resolve="Language" />
                         </node>
                         <node concept="1PxgMI" id="eB6_hfBaSK" role="33vP2m">
-                          <ref role="1PxNhF" to="hypd:5xDtKQA7vSv" resolve="Language" />
-                          <node concept="2OqwBi" id="eB6_hfBaSL" role="1PxMeX">
+                          <ref role="1m5ApE" to="hypd:5xDtKQA7vSv" resolve="Language" />
+                          <node concept="2OqwBi" id="eB6_hfBaSL" role="1m5AlR">
                             <node concept="30H73N" id="eB6_hfBaSM" role="2Oq$k0" />
                             <node concept="1mfA1w" id="eB6_hfBaSN" role="2OqNvi" />
                           </node>

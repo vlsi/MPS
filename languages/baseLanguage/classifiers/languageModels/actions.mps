@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -166,6 +166,10 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
@@ -191,10 +195,7 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -259,8 +260,8 @@
               <node concept="3clFbS" id="hz6xowW" role="3clFbx">
                 <node concept="3cpWs6" id="hz6xqSI" role="3cqZAp">
                   <node concept="1PxgMI" id="hz6xrvP" role="3cqZAk">
-                    <ref role="1PxNhF" to="tp4f:hyWqMFP" resolve="IClassifier" />
-                    <node concept="37vLTw" id="3GM_nagTuDA" role="1PxMeX">
+                    <ref role="1m5ApE" to="tp4f:hyWqMFP" resolve="IClassifier" />
+                    <node concept="37vLTw" id="3GM_nagTuDA" role="1m5AlR">
                       <ref role="3cqZAo" node="hz6xmBa" resolve="contextPart" />
                     </node>
                   </node>
@@ -281,8 +282,8 @@
                   <node concept="3cpWs6" id="hz6xtgX" role="3cqZAp">
                     <node concept="2OqwBi" id="hz6xusu" role="3cqZAk">
                       <node concept="1PxgMI" id="hz6xtXc" role="2Oq$k0">
-                        <ref role="1PxNhF" to="tp4f:hyWrxye" resolve="IClassifierPart" />
-                        <node concept="37vLTw" id="3GM_nagTwaB" role="1PxMeX">
+                        <ref role="1m5ApE" to="tp4f:hyWrxye" resolve="IClassifierPart" />
+                        <node concept="37vLTw" id="3GM_nagTwaB" role="1m5AlR">
                           <ref role="3cqZAo" node="hz6xmBa" resolve="contextPart" />
                         </node>
                       </node>
@@ -417,8 +418,8 @@
                     <node concept="2OqwBi" id="hJlXFVF" role="3clFbG">
                       <node concept="2OqwBi" id="hJlXFVG" role="2Oq$k0">
                         <node concept="1PxgMI" id="hJlXFVH" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
-                          <node concept="2OqwBi" id="hJlXFVI" role="1PxMeX">
+                          <ref role="1m5ApE" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
+                          <node concept="2OqwBi" id="hJlXFVI" role="1m5AlR">
                             <node concept="37vLTw" id="3GM_nagTyul" role="2Oq$k0">
                               <ref role="3cqZAo" node="hz6z4ga" resolve="result" />
                             </node>

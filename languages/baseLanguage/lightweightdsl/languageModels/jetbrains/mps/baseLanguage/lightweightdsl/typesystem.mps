@@ -295,6 +295,10 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1227264722563" name="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" flags="nn" index="2YFouu" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -309,10 +313,7 @@
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -638,8 +639,8 @@
             <node concept="mw_s8" id="7T23sO8A6Rk" role="1ZfhKB">
               <node concept="2OqwBi" id="7T23sO8A5JA" role="mwGJk">
                 <node concept="1PxgMI" id="7T23sO8A5tR" role="2Oq$k0">
-                  <ref role="1PxNhF" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
-                  <node concept="2OqwBi" id="7T23sO8A4jj" role="1PxMeX">
+                  <ref role="1m5ApE" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
+                  <node concept="2OqwBi" id="7T23sO8A4jj" role="1m5AlR">
                     <node concept="2OqwBi" id="7T23sO8A4jk" role="2Oq$k0">
                       <node concept="1YBJjd" id="7T23sO8A4jl" role="2Oq$k0">
                         <ref role="1YBMHb" node="7T23sO8A0gj" resolve="localMethodCall" />
@@ -706,12 +707,12 @@
               <ref role="ehGHo" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
             </node>
             <node concept="1PxgMI" id="1Dz4WsDC2Uj" role="33vP2m">
-              <ref role="1PxNhF" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
-              <node concept="2OqwBi" id="1Dz4WsDC13I" role="1PxMeX">
+              <ref role="1m5ApE" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+              <node concept="2OqwBi" id="1Dz4WsDC13I" role="1m5AlR">
                 <node concept="2OqwBi" id="1Dz4WsDBYEF" role="2Oq$k0">
                   <node concept="1PxgMI" id="1Dz4WsDBYu6" role="2Oq$k0">
-                    <ref role="1PxNhF" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
-                    <node concept="Q6c8r" id="1Dz4WsDBYq1" role="1PxMeX" />
+                    <ref role="1m5ApE" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
+                    <node concept="Q6c8r" id="1Dz4WsDBYq1" role="1m5AlR" />
                   </node>
                   <node concept="2qgKlT" id="3m06JgsqjtI" role="2OqNvi">
                     <ref role="37wK5l" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
@@ -730,8 +731,8 @@
               <node concept="37vLTI" id="3m06JgsqAG9" role="3clFbG">
                 <node concept="2OqwBi" id="3m06JgsqBpk" role="37vLTx">
                   <node concept="1PxgMI" id="3m06JgsqBeN" role="2Oq$k0">
-                    <ref role="1PxNhF" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
-                    <node concept="Q6c8r" id="3m06JgsqGET" role="1PxMeX" />
+                    <ref role="1m5ApE" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
+                    <node concept="Q6c8r" id="3m06JgsqGET" role="1m5AlR" />
                   </node>
                   <node concept="3TrEf2" id="3m06JgsqDo4" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpee:fzclF7Z" />
@@ -739,8 +740,8 @@
                 </node>
                 <node concept="2OqwBi" id="3m06Jgsq$al" role="37vLTJ">
                   <node concept="1PxgMI" id="3m06JgsqzYy" role="2Oq$k0">
-                    <ref role="1PxNhF" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
-                    <node concept="37vLTw" id="3m06JgsqG$e" role="1PxMeX">
+                    <ref role="1m5ApE" to="oubp:3geGFOI0X5k" resolve="MethodInstance" />
+                    <node concept="37vLTw" id="3m06JgsqG$e" role="1m5AlR">
                       <ref role="3cqZAo" node="1Dz4WsDBYky" resolve="nodeToReplace" />
                     </node>
                   </node>
@@ -1726,8 +1727,8 @@
                           <node concept="3clFbF" id="4upLbA2VmI7" role="3cqZAp">
                             <node concept="2OqwBi" id="5CNG5xvkNIP" role="3clFbG">
                               <node concept="1PxgMI" id="5CNG5xvkNIQ" role="2Oq$k0">
-                                <ref role="1PxNhF" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
-                                <node concept="37vLTw" id="5CNG5xvkNIR" role="1PxMeX">
+                                <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
+                                <node concept="37vLTw" id="5CNG5xvkNIR" role="1m5AlR">
                                   <ref role="3cqZAo" node="5CNG5xvkNI_" resolve="retType" />
                                 </node>
                               </node>
@@ -1766,8 +1767,8 @@
                     <node concept="3y3z36" id="5CNG5xvkNJ3" role="3uHU7w">
                       <node concept="2OqwBi" id="5CNG5xvkNJ4" role="3uHU7B">
                         <node concept="1PxgMI" id="5CNG5xvkNJ5" role="2Oq$k0">
-                          <ref role="1PxNhF" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
-                          <node concept="2OqwBi" id="5CNG5xvkNJ6" role="1PxMeX">
+                          <ref role="1m5ApE" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
+                          <node concept="2OqwBi" id="5CNG5xvkNJ6" role="1m5AlR">
                             <node concept="37vLTw" id="5CNG5xvkNNe" role="2Oq$k0">
                               <ref role="3cqZAo" node="5CNG5xvkNN5" resolve="method" />
                             </node>
@@ -2074,8 +2075,8 @@
                           </node>
                           <node concept="2OqwBi" id="5CNG5xvkNKQ" role="3uHU7B">
                             <node concept="1PxgMI" id="5CNG5xvkNKR" role="2Oq$k0">
-                              <ref role="1PxNhF" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
-                              <node concept="37vLTw" id="5CNG5xvkNKS" role="1PxMeX">
+                              <ref role="1m5ApE" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
+                              <node concept="37vLTw" id="5CNG5xvkNKS" role="1m5AlR">
                                 <ref role="3cqZAo" node="5CNG5xvkNKc" resolve="actualPar" />
                               </node>
                             </node>
@@ -2125,8 +2126,8 @@
                         <node concept="3clFbC" id="5CNG5xvkNL9" role="3uHU7w">
                           <node concept="2OqwBi" id="5CNG5xvkNLa" role="3uHU7B">
                             <node concept="1PxgMI" id="5CNG5xvkNLb" role="2Oq$k0">
-                              <ref role="1PxNhF" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
-                              <node concept="37vLTw" id="5CNG5xvkNLc" role="1PxMeX">
+                              <ref role="1m5ApE" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
+                              <node concept="37vLTw" id="5CNG5xvkNLc" role="1m5AlR">
                                 <ref role="3cqZAo" node="5CNG5xvkNKc" resolve="actualPar" />
                               </node>
                             </node>
@@ -2186,8 +2187,8 @@
                     </node>
                     <node concept="2OqwBi" id="5CNG5xvkNLz" role="3uHU7B">
                       <node concept="1PxgMI" id="5CNG5xvkNL$" role="2Oq$k0">
-                        <ref role="1PxNhF" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
-                        <node concept="37vLTw" id="5CNG5xvkNL_" role="1PxMeX">
+                        <ref role="1m5ApE" to="oubp:7GXvAHO00L4" resolve="MethodParameterInstance" />
+                        <node concept="37vLTw" id="5CNG5xvkNL_" role="1m5AlR">
                           <ref role="3cqZAo" node="5CNG5xvkNKc" resolve="actualPar" />
                         </node>
                       </node>
@@ -2273,8 +2274,8 @@
                               <node concept="3clFbF" id="4upLbA2Wr6J" role="3cqZAp">
                                 <node concept="2OqwBi" id="5CNG5xvkNM4" role="3clFbG">
                                   <node concept="1PxgMI" id="5CNG5xvkNM5" role="2Oq$k0">
-                                    <ref role="1PxNhF" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
-                                    <node concept="2OqwBi" id="5CNG5xvkNM6" role="1PxMeX">
+                                    <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
+                                    <node concept="2OqwBi" id="5CNG5xvkNM6" role="1m5AlR">
                                       <node concept="37vLTw" id="5CNG5xvkNM7" role="2Oq$k0">
                                         <ref role="3cqZAo" node="5CNG5xvkNJF" resolve="formalPar" />
                                       </node>

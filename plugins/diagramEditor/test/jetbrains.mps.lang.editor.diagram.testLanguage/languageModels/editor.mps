@@ -173,13 +173,14 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -359,8 +360,8 @@
               <node concept="3clFbF" id="4N$3GFO5BVJ" role="3cqZAp">
                 <node concept="37vLTI" id="4N$3GFO5CoA" role="3clFbG">
                   <node concept="1PxgMI" id="4N$3GFO5D6b" role="37vLTx">
-                    <ref role="1PxNhF" to="g85x:4N$3GFO7R8E" resolve="OutputPort" />
-                    <node concept="3Iumb4" id="4N$3GFO5Crn" role="1PxMeX" />
+                    <ref role="1m5ApE" to="g85x:4N$3GFO7R8E" resolve="OutputPort" />
+                    <node concept="3Iumb4" id="4N$3GFO5Crn" role="1m5AlR" />
                   </node>
                   <node concept="2OqwBi" id="4N$3GFO5BWV" role="37vLTJ">
                     <node concept="3cyWnY" id="4N$3GFO5BVI" role="2Oq$k0" />
@@ -373,8 +374,8 @@
               <node concept="3clFbF" id="4N$3GFO5CuU" role="3cqZAp">
                 <node concept="37vLTI" id="4N$3GFO5CYt" role="3clFbG">
                   <node concept="1PxgMI" id="4N$3GFO5Ddm" role="37vLTx">
-                    <ref role="1PxNhF" to="g85x:4N$3GFO7R7M" resolve="InputPort" />
-                    <node concept="3Iumb3" id="4N$3GFO5D1e" role="1PxMeX" />
+                    <ref role="1m5ApE" to="g85x:4N$3GFO7R7M" resolve="InputPort" />
+                    <node concept="3Iumb3" id="4N$3GFO5D1e" role="1m5AlR" />
                   </node>
                   <node concept="2OqwBi" id="4N$3GFO5Cww" role="37vLTJ">
                     <node concept="3cyWnY" id="4N$3GFO5CuS" role="2Oq$k0" />
