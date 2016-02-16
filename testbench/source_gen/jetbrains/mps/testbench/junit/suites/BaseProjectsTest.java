@@ -19,6 +19,7 @@ import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
 import org.junit.After;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 
@@ -76,7 +77,11 @@ public class BaseProjectsTest {
   @After
   public void closeProject() {
     ourEnv.flushAllEvents();
-    ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
+      }
+    });
     ourEnv.flushAllEvents();
   }
 

@@ -4,11 +4,8 @@ package jetbrains.mps.testbench.junit.suites;
 
 import org.junit.Test;
 import javax.swing.SwingUtilities;
-import com.intellij.ide.plugins.PluginManager;
-import com.intellij.openapi.extensions.PluginId;
-import java.lang.reflect.Method;
-import jetbrains.mps.project.Project;
 import junit.framework.Assert;
+import jetbrains.mps.ide.migration.MigrationManager;
 import java.lang.reflect.InvocationTargetException;
 
 public class NoMigrationsNeededTest extends BaseProjectsTest {
@@ -21,14 +18,7 @@ public class NoMigrationsNeededTest extends BaseProjectsTest {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          try {
-            Class<?> euClass = PluginManager.getPlugin(PluginId.getId(BaseProjectsTest.MIGRATION_PLUGIN_ID)).getPluginClassLoader().loadClass("jetbrains.mps.ide.migration.test.MigrationTestBody");
-            Method method = euClass.getMethod("testPassed_NoMigrationsInProject", Project.class);
-            Object result = method.invoke(null, getContextProject());
-            assert (Boolean) result;
-          } catch (Exception e) {
-            Assert.fail(e.getMessage());
-          }
+          Assert.assertFalse(getContextProject().getComponent(MigrationManager.class).isMigrationRequired());
         }
       });
     } catch (InterruptedException e) {

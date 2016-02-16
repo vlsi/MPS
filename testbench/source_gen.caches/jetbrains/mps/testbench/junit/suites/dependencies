@@ -82,6 +82,7 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" file="BaseProjectsTest.java">
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -89,6 +90,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
@@ -220,19 +222,12 @@
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.NoMigrationsNeededTest" file="NoMigrationsNeededTest.java">
-    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseProjectsTest" />
