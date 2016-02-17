@@ -42,6 +42,9 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -57,7 +60,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
 
   private EditorComponent myCurrentEditorComponent;
-  private Editor myEditor;
+  protected Editor myEditor;
   private MPSFileNodeEditor myFileNodeEditor;
   private SNode myBefore;
   private SNode myResult;
@@ -310,11 +313,31 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     ModelAccess.instance().flushEventQueue();
   }
 
-  protected void switchToInspector() {
+  protected void switchToInspector() throws InvocationTargetException, InterruptedException {
     if (!(myCurrentEditorComponent instanceof NodeEditorComponent)) {
       throw new IllegalArgumentException("Impossible to switch to inspector: the component is not a NodeEditorComponent: " + myCurrentEditorComponent);
     }
     myCurrentEditorComponent = ((NodeEditorComponent) myCurrentEditorComponent).getInspector();
+    if (myCurrentEditorComponent.getSelectionManager().getSelection() == null) {
+      selectFirstCellInInspector(myCurrentEditorComponent);
+    }
+  }
+
+  private void selectFirstCellInInspector(EditorComponent myCurrentEditorComponent) {
+    EditorCell toSelect = null;
+    EditorCell rootCell = myCurrentEditorComponent.getRootCell();
+    if (rootCell instanceof EditorCell_Collection) {
+      toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinderUtil.Finder.FIRST_EDITABLE, CellFinderUtil.Finder.FIRST_SELECTABLE_LEAF);
+      if (toSelect == null) {
+        toSelect = rootCell;
+      }
+    } else
+    if (rootCell != null && rootCell.isSelectable()) {
+      toSelect = rootCell;
+    }
+    if (toSelect != null) {
+      myCurrentEditorComponent.changeSelection(toSelect);
+    }
   }
 
   protected void switchBackFromInspector() {

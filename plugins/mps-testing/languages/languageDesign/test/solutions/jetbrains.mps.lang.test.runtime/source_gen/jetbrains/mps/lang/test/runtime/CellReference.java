@@ -40,7 +40,7 @@ public class CellReference {
   }
 
   public EditorComponent setupSelection(NodeEditorComponent editorComponent) {
-    return AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5rZKa_fUiYP.invoke(myAnnotation, editorComponent, myNode, myMap);
+    return AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5g7DxxpaP55.invoke(myAnnotation, editorComponent, myNode, myMap);
   }
 
   public void assertSelectionIsTheSame(EditorComponent editorComponent, Map<SNode, SNode> map) {

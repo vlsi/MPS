@@ -11235,23 +11235,45 @@
     </node>
     <node concept="tnohg" id="2XByp9s_j7i" role="tncku">
       <node concept="3clFbS" id="2XByp9s_j7j" role="2VODD2">
-        <node concept="3clFbF" id="1JbtFBZyfRR" role="3cqZAp">
-          <node concept="2OqwBi" id="1JbtFBZyfRS" role="3clFbG">
-            <node concept="2OqwBi" id="1JbtFBZyfRT" role="2Oq$k0">
-              <node concept="2OqwBi" id="1JbtFBZyfRU" role="2Oq$k0">
-                <node concept="2OqwBi" id="1JbtFBZyfRV" role="2Oq$k0">
-                  <node concept="2WthIp" id="1JbtFBZyfRW" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="1JbtFBZyfRX" role="2OqNvi">
-                    <ref role="2WH_rO" node="2XByp9s_j7g" resolve="editorComponent" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="1JbtFBZyfRY" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
+        <node concept="3cpWs8" id="1R84b4w$jsb" role="3cqZAp">
+          <node concept="3cpWsn" id="1R84b4w$jsc" role="3cpWs9">
+            <property role="TrG5h" value="selectionManager" />
+            <node concept="3uibUv" id="1R84b4w$js6" role="1tU5fm">
+              <ref role="3uigEE" to="lwvz:~SelectionManager" resolve="SelectionManager" />
+            </node>
+            <node concept="2OqwBi" id="1R84b4w$jsd" role="33vP2m">
+              <node concept="2OqwBi" id="1R84b4w$jse" role="2Oq$k0">
+                <node concept="2WthIp" id="1R84b4w$jsf" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1R84b4w$jsg" role="2OqNvi">
+                  <ref role="2WH_rO" node="2XByp9s_j7g" resolve="editorComponent" />
                 </node>
               </node>
-              <node concept="liA8E" id="1JbtFBZyfRZ" role="2OqNvi">
+              <node concept="liA8E" id="1R84b4w$jsh" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1R84b4w$jF8" role="3cqZAp">
+          <node concept="3cpWsn" id="1R84b4w$jF9" role="3cpWs9">
+            <property role="TrG5h" value="selection" />
+            <node concept="3uibUv" id="1R84b4w$jF6" role="1tU5fm">
+              <ref role="3uigEE" to="lwvz:~Selection" resolve="Selection" />
+            </node>
+            <node concept="2OqwBi" id="1R84b4w$jFa" role="33vP2m">
+              <node concept="37vLTw" id="1R84b4w$jFb" role="2Oq$k0">
+                <ref role="3cqZAo" node="1R84b4w$jsc" resolve="selectionManager" />
+              </node>
+              <node concept="liA8E" id="1R84b4w$jFc" role="2OqNvi">
                 <ref role="37wK5l" to="lwvz:~SelectionManager.getSelection():jetbrains.mps.openapi.editor.selection.Selection" resolve="getSelection" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1JbtFBZyfRR" role="3cqZAp">
+          <node concept="2OqwBi" id="1JbtFBZyfRS" role="3clFbG">
+            <node concept="37vLTw" id="1R84b4w$jFd" role="2Oq$k0">
+              <ref role="3cqZAo" node="1R84b4w$jF9" resolve="selection" />
             </node>
             <node concept="liA8E" id="1JbtFBZyfS0" role="2OqNvi">
               <ref role="37wK5l" to="lwvz:~Selection.executeAction(jetbrains.mps.openapi.editor.cells.CellActionType):void" resolve="executeAction" />
