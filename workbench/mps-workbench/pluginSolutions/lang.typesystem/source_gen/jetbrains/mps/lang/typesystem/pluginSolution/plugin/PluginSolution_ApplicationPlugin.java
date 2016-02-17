@@ -19,12 +19,15 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new ConvertInferenceRuleToCheckingRule_Action());
     addAction(new ShowNodeType_Action());
     // groups 
+    addGroup(new ShowAsIntentions_ActionGroup());
     addGroup(new TypesystemActions_ActionGroup());
   }
   public void adjustRegularGroups() {
     insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());

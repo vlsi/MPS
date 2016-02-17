@@ -15,14 +15,12 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   private IntentionFactory[] myIntentions0;
   private IntentionFactory[] myIntentions1;
   private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[4];
-    myId2Index[0] = 0x1117e2f5efaL;
-    myId2Index[1] = 0x111efb6d46fL;
-    myId2Index[2] = 0x11a342c1412L;
-    myId2Index[3] = 0x11db4aad802L;
+    myId2Index = new long[3];
+    myId2Index[0] = 0x111efb6d46fL;
+    myId2Index[1] = 0x11a342c1412L;
+    myId2Index[2] = 0x11db4aad802L;
   }
 
   @Override
@@ -31,34 +29,27 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
     switch (index) {
       case 0:
-        // Concept: InferenceRule 
+        // Concept: MultipleForeachLoop 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new ConvertInferenceRuleToCheckingRule_Intention();
+          myIntentions0[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
         }
         return Arrays.asList(myIntentions0);
       case 1:
-        // Concept: MultipleForeachLoop 
+        // Concept: AbstractInequationStatement 
         if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
+          myIntentions1 = new IntentionFactory[2];
+          myIntentions1[0] = new FlipInequality_Intention();
+          myIntentions1[1] = new MakeInequalityCheckOnly_Intention();
         }
         return Arrays.asList(myIntentions1);
       case 2:
-        // Concept: AbstractInequationStatement 
+        // Concept: MessageStatement 
         if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[2];
-          myIntentions2[0] = new FlipInequality_Intention();
-          myIntentions2[1] = new MakeInequalityCheckOnly_Intention();
+          myIntentions2 = new IntentionFactory[1];
+          myIntentions2[0] = new CreateTypesystemIntention_Intention();
         }
         return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: MessageStatement 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new CreateTypesystemIntention_Intention();
-        }
-        return Arrays.asList(myIntentions3);
       default:
         return null;
     }
@@ -67,12 +58,11 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[5];
-    rv[0] = new ConvertInferenceRuleToCheckingRule_Intention();
-    rv[1] = new CreateTypesystemIntention_Intention();
-    rv[2] = new FlipInequality_Intention();
-    rv[3] = new MakeInequalityCheckOnly_Intention();
-    rv[4] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
+    IntentionFactory[] rv = new IntentionFactory[4];
+    rv[0] = new CreateTypesystemIntention_Intention();
+    rv[1] = new FlipInequality_Intention();
+    rv[2] = new MakeInequalityCheckOnly_Intention();
+    rv[3] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
     return Arrays.asList(rv);
   }
 }

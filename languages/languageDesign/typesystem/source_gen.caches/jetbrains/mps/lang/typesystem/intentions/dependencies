@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention" file="ConvertInferenceRuleToCheckingRule_Intention.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" file="CreateTypesystemIntention_Intention.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -74,7 +49,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />
