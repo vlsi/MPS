@@ -19,6 +19,8 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AttachMappingLabel_Action());
+    addAction(new NewCreateRootRule_Action());
+    addAction(new NewRootMappingRule_Action());
     // groups 
     addGroup(new ShowAsIntentions_ActionGroup());
   }
