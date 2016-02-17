@@ -11,13 +11,12 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoByCurrentReference_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -51,16 +50,6 @@ public class GoByCurrentReference_Action extends BaseAction {
       return false;
     }
     {
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent != null && editorComponent.isInvalid()) {
-        editorComponent = null;
-      }
-      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-      if (editorComponent == null) {
-        return false;
-      }
-    }
-    {
       EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
       MapSequence.fromMap(_params).put("cell", p);
       if (p == null) {
@@ -68,15 +57,8 @@ public class GoByCurrentReference_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -87,6 +69,6 @@ public class GoByCurrentReference_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), targetNode, true, !(SNodeOperations.isRoot(targetNode)));
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallFocus(true).selectIfChild().open(SNodeOperations.getPointer(targetNode));
   }
 }
