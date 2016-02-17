@@ -30,6 +30,10 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -39,20 +43,28 @@ import java.util.Collections;
 import java.util.List;
 
 public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAware {
-
+  @NotNull
   @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     return FilenameIndex.getAllFilenames(project);
   }
 
+  @NotNull
   @Override
-  public NavigationItem[] getItemsByName(String name, final String pattern, final Project project, boolean includeNonProjectItems) {
-    GlobalSearchScope scope = new AllScope();
+  public NavigationItem[] getItemsByName(final String name, final String pattern, final Project project, boolean includeNonProjectItems) {
+    final GlobalSearchScope scope = new AllScope();
 
     Collection<VirtualFile> files;
     try {
-      files = FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
-    }catch (ProcessCanceledException ce){
+      MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
+      assert mpsProject != null;
+      files = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Collection<VirtualFile>>() {
+        @Override
+        public Collection<VirtualFile> compute() {
+           return FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
+        }
+      });
+    } catch (ProcessCanceledException ce){
       files = Collections.emptyList();
     }
 
