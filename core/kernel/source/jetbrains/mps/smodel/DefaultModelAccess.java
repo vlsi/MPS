@@ -20,6 +20,7 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
+import javax.swing.SwingUtilities;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -101,13 +102,23 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runReadInEDT(Runnable r) {
-    runReadAction(r);
+  public void runReadInEDT(final Runnable r) {
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        runReadAction(r);
+      }
+    });
   }
 
   @Override
-  public void runWriteInEDT(Runnable r) {
-    runWriteAction(r);
+  public void runWriteInEDT(final Runnable r) {
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        runWriteAction(r);
+      }
+    });
   }
 
   @Override
