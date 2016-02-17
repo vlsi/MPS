@@ -19,6 +19,7 @@ import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -33,7 +34,7 @@ public class MPSLanguageEditorProvider implements FileEditorProvider {
   @Override
   @NotNull
   public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
-    return new MPSLanguageEditor(project, (MPSLanguageVirtualFile) file);
+    return new MPSLanguageEditor(ProjectHelper.fromIdeaProject(project), (MPSLanguageVirtualFile) file);
   }
 
   @Override

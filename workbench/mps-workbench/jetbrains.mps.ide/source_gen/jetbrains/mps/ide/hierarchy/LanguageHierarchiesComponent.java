@@ -7,11 +7,10 @@ import javax.swing.Scrollable;
 import com.intellij.openapi.actionSystem.DataProvider;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JTextField;
-import jetbrains.mps.project.ModuleContext;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
@@ -38,7 +37,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Dimension;
 import java.awt.Container;
 import javax.swing.JViewport;
@@ -48,7 +46,6 @@ import javax.swing.SwingConstants;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.awt.Font;
@@ -58,15 +55,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.BasicStroke;
 import java.awt.FontMetrics;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.Collections;
 import java.util.Comparator;
 import java.awt.Point;
@@ -76,8 +71,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
   private JPanel myPanel = new JPanel();
-  private Language myLanguage;
-  private IOperationContext myOperationContext;
+  private final Language myLanguage;
+  private final MPSProject myProject;
   private List<LanguageHierarchiesComponent.ConceptContainer> myRoots = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
   private float myScale = 1.0f;
   private boolean mySkipAncestors = true;
@@ -85,9 +80,9 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   private int myHeight = 0;
   private LanguageHierarchiesComponent.ConceptContainer mySelectedConceptContainer;
   public JTextField myScaleField;
-  public LanguageHierarchiesComponent(Language language, IOperationContext context) {
+  public LanguageHierarchiesComponent(Language language, MPSProject project) {
     myLanguage = language;
-    myOperationContext = new ModuleContext(language, context.getProject());
+    myProject = project;
     addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
@@ -242,20 +237,15 @@ outer:
     if (myRoots.isEmpty()) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        int y = 0;
-        int x = 0;
-        int maxWidth = 0;
-        for (LanguageHierarchiesComponent.ConceptContainer root : myRoots) {
-          root.updateSubtreeWidth();
-          maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
-        }
-        myHeight = relayoutChildren(myRoots, x, y, true);
-        myWidth = maxWidth;
-      }
-    });
+    int y = 0;
+    int x = 0;
+    int maxWidth = 0;
+    for (LanguageHierarchiesComponent.ConceptContainer root : myRoots) {
+      root.updateSubtreeWidth();
+      maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
+    }
+    myHeight = relayoutChildren(myRoots, x, y, true);
+    myWidth = maxWidth;
   }
   private int relayoutChildren(List<LanguageHierarchiesComponent.ConceptContainer> currentChildren, int x, int y, boolean vertical) {
     int y_ = y;
@@ -275,7 +265,7 @@ outer:
     return y_;
   }
   public void rebuild() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         mySelectedConceptContainer = null;
@@ -304,14 +294,9 @@ outer:
   protected void paintComponent(final Graphics g) {
     g.setColor(Color.WHITE);
     g.fillRect(0, 0, getWidth(), getHeight());
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (LanguageHierarchiesComponent.ConceptContainer root : myRoots) {
-          root.paintTree(g);
-        }
-      }
-    });
+    for (LanguageHierarchiesComponent.ConceptContainer root : myRoots) {
+      root.paintTree(g);
+    }
   }
   @Override
   public Dimension getPreferredScrollableViewportSize() {
@@ -340,16 +325,8 @@ outer:
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
-      return ModelAccess.instance().runReadAction(new Computable<Object>() {
-        @Override
-        public Object compute() {
-          return getSelectedConcept();
-        }
-      });
-    }
-    if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return myOperationContext;
+    if (MPSCommonDataKeys.NODE.is(dataId)) {
+      return getSelectedConcept();
     }
     return null;
   }
@@ -367,7 +344,6 @@ outer:
     private Font myFont = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(Font.PLAIN, 12.0f);
     private LanguageHierarchiesComponent myComponent;
     private List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
-    private IOperationContext myOperationContext;
     private boolean myIsAbstract = false;
     private String myNamespace;
     private boolean myIsOtherLanguage = false;
@@ -377,7 +353,6 @@ outer:
       if (myIsOtherLanguage) {
         myColor = ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f);
       }
-      myOperationContext = myComponent.myOperationContext;
       myRootable = SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
       myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleName();
@@ -385,25 +360,11 @@ outer:
       addMouseListener(new MouseAdapter() {
         @Override
         public void mousePressed(final MouseEvent e) {
-          Project project = myOperationContext.getProject();
-          final ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
           myComponent.select(ConceptContainer.this);
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
-          } else {
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
-              @Override
-              public void run() {
-                SNode node = getNode();
-                if (node == null) {
-                  return;
-                }
-                projectPane.selectNode(node, false);
-                if (e.getClickCount() == 2) {
-                  NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
-                }
-              }
-            });
+          } else if (e.getClickCount() == 2) {
+            new EditorNavigator(myComponent.myProject).shallFocus(true).shallSelect(true).open(myNodePointer);
           }
         }
         @Override
@@ -415,7 +376,7 @@ outer:
       });
     }
     public SNode getNode() {
-      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      return SNodeOperations.cast(myNodePointer.resolve(myComponent.myProject.getRepository()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     }
     public void paint(Graphics graphics) {
       Graphics2D g = (Graphics2D) graphics;
@@ -448,7 +409,7 @@ outer:
     }
     @NotNull
     public String getText() {
-      return ModelAccess.instance().runReadAction(new Computable<String>() {
+      return new ModelAccessHelper(myComponent.myProject.getModelAccess()).runReadAction(new Computable<String>() {
         @Override
         public String compute() {
           SNode conceptDeclaration = getNode();

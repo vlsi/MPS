@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
@@ -36,20 +37,14 @@ import javax.swing.JComponent;
 import java.beans.PropertyChangeListener;
 
 public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor {
-  public MPSLanguageEditor(final Project project, final MPSLanguageVirtualFile file) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myFile = file;
-        myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
-        myHierarchiesComponent.rebuild();
-      }
-    });
-  }
+  private final MPSLanguageVirtualFile myFile;
+  private final LanguageHierarchiesComponent myHierarchiesComponent;
 
-  private MPSLanguageVirtualFile myFile;
-  //  private LanguageDiagramComponent2 myHierarchiesComponent;
-  private LanguageHierarchiesComponent myHierarchiesComponent;
+  public MPSLanguageEditor(final MPSProject project, final MPSLanguageVirtualFile file) {
+    myFile = file;
+    myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), project);
+    myHierarchiesComponent.rebuild();
+  }
 
   @Override
   @NotNull
