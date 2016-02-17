@@ -20,11 +20,14 @@ import jetbrains.mps.ide.icons.CachingIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.contextAssistant.DefaultContextAssistantManager;
+import jetbrains.mps.nodeEditor.contextAssistant.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
@@ -64,11 +67,19 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private EditorCellFactory myCellFactory;
 
   private CachingIconManager myIconManager;
+  @NotNull
+  private final ContextAssistantManager myContextAssistantManager;
 
   public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository) {
-    myNodeEditorComponent = editorComponent;
+    this(editorComponent, model, repository, new DisabledContextAssistantManager());
+  }
+
+  public EditorContext(@NotNull EditorComponent nodeEditorComponent, @Nullable SModel model, @NotNull SRepository repository,
+      @NotNull ContextAssistantManager contextAssistantManager) {
+    myNodeEditorComponent = nodeEditorComponent;
     myModel = model;
     myRepository = repository;
+    myContextAssistantManager = contextAssistantManager;
   }
 
   public EditorComponent getNodeEditorComponent() {
@@ -426,6 +437,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public SelectionManager getSelectionManager() {
     return myNodeEditorComponent.getSelectionManager();
+  }
+
+  @NotNull
+  @Override
+  public ContextAssistantManager getContextAssistantManager() {
+    return myContextAssistantManager;
   }
 
   public EditorManager getEditorManager() {

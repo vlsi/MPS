@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.intentions.contextAssistant.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:56c9dfde-c44a-4221-a18c-06ba73a42ffb(jetbrains.mps.lang.intentions.contextAssistant.generator.template.main@generator)/2313436515371105324">
+    <file name="QueriesGenerated.java">
+      <node id="6258288120177126286" at="13,112,14,282" concept="0" />
+      <scope id="6258288120177126285" at="13,112,14,282" />
+    </file>
+  </root>
+</debug-info>
+

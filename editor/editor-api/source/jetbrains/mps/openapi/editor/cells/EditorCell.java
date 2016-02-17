@@ -18,8 +18,10 @@ package jetbrains.mps.openapi.editor.cells;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
@@ -180,6 +182,11 @@ public interface EditorCell {
   void setSubstituteInfo(SubstituteInfo info);
 
   SubstituteInfo getSubstituteInfo();
+
+  @Nullable
+  ContextAssistantMenuLookup getContextAssistantMenuLookup();
+
+  void setContextAssistantMenuLookup(@Nullable ContextAssistantMenuLookup contextAssistantMenuLookup);
 
   TextBuilder renderText();
 

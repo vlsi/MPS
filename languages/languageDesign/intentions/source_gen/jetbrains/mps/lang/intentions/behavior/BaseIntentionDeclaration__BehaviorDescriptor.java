@@ -21,10 +21,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,13 +35,14 @@ public final class BaseIntentionDeclaration__BehaviorDescriptor extends BaseBHDe
 
   public static final SMethod<String> getGeneratedName_id5rGvd38DcHL = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rGvd38DcHL").registry(REGISTRY).build();
   public static final SMethod<String> getConceptName_id5rGvd38DcHW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getConceptName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rGvd38DcHW").registry(REGISTRY).build();
+  public static final SMethod<String> getGeneratedId_id2ytFvC$HDcE = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2ytFvC$HDcE").registry(REGISTRY).build();
   public static final SMethod<Boolean> isParameterized_id5rGvd38DcI6 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rGvd38DcI6").registry(REGISTRY).build();
   public static final SMethod<List<PropertyReference>> getPropertiesToCheck_id4cWf37B8oXP = new SMethodBuilder<List<PropertyReference>>(new SJavaCompoundTypeImpl((Class<List<PropertyReference>>) ((Class) Object.class))).name("getPropertiesToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXP").registry(REGISTRY).build();
   public static final SMethod<SNode> getDescendantToCheck_id4cWf37B8oXJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDescendantToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXJ").registry(REGISTRY).build();
   public static final SMethod<SNode> getBaseConcept_id2hxg_BDjKM8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getBaseConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2hxg_BDjKM8").registry(REGISTRY).build();
   public static final SMethod<Void> setBaseConcept_id5r_35Ihc58c = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setBaseConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5r_35Ihc58c").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGeneratedName_id5rGvd38DcHL, getConceptName_id5rGvd38DcHW, isParameterized_id5rGvd38DcI6, getPropertiesToCheck_id4cWf37B8oXP, getDescendantToCheck_id4cWf37B8oXJ, getBaseConcept_id2hxg_BDjKM8, setBaseConcept_id5r_35Ihc58c);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGeneratedName_id5rGvd38DcHL, getConceptName_id5rGvd38DcHW, getGeneratedId_id2ytFvC$HDcE, isParameterized_id5rGvd38DcI6, getPropertiesToCheck_id4cWf37B8oXP, getDescendantToCheck_id4cWf37B8oXJ, getBaseConcept_id2hxg_BDjKM8, setBaseConcept_id5r_35Ihc58c);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -51,6 +52,9 @@ public final class BaseIntentionDeclaration__BehaviorDescriptor extends BaseBHDe
   }
   /*package*/ static String getConceptName_id5rGvd38DcHW(@NotNull SNode __thisNode__) {
     return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept")));
+  }
+  /*package*/ static String getGeneratedId_id2ytFvC$HDcE(@NotNull SNode __thisNode__) {
+    return NameUtil.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedName_id5rGvd38DcHL.invoke(__thisNode__);
   }
   @Deprecated
   /*package*/ static boolean isParameterized_id5rGvd38DcI6(@NotNull SNode __thisNode__) {
@@ -104,14 +108,16 @@ public final class BaseIntentionDeclaration__BehaviorDescriptor extends BaseBHDe
       case 1:
         return (T) ((String) getConceptName_id5rGvd38DcHW(node));
       case 2:
-        return (T) ((Boolean) isParameterized_id5rGvd38DcI6(node));
+        return (T) ((String) getGeneratedId_id2ytFvC$HDcE(node));
       case 3:
-        return (T) ((List<PropertyReference>) getPropertiesToCheck_id4cWf37B8oXP(node));
+        return (T) ((Boolean) isParameterized_id5rGvd38DcI6(node));
       case 4:
-        return (T) ((SNode) getDescendantToCheck_id4cWf37B8oXJ(node));
+        return (T) ((List<PropertyReference>) getPropertiesToCheck_id4cWf37B8oXP(node));
       case 5:
-        return (T) ((SNode) getBaseConcept_id2hxg_BDjKM8(node));
+        return (T) ((SNode) getDescendantToCheck_id4cWf37B8oXJ(node));
       case 6:
+        return (T) ((SNode) getBaseConcept_id2hxg_BDjKM8(node));
+      case 7:
         setBaseConcept_id5r_35Ihc58c(node, (SNode) parameters[0]);
         return null;
       default:

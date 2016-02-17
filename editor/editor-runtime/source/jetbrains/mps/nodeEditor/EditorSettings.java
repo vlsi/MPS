@@ -182,6 +182,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     myState.myHighlightChanges = highlightChanges;
   }
 
+  public boolean isShowContextAssistant() {
+    return myState.myShowContextAssistant;
+  }
+
+  public void setShowContextAssistant(boolean showContextAssistant) {
+    myState.myShowContextAssistant = showContextAssistant;
+  }
+
   public Color getRangeSelectionForegroundColor() {
     return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
   }
@@ -290,6 +298,8 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     private boolean showGrayed = true;
     private boolean show = true;
 
+    private boolean myShowContextAssistant = true;
+
     @Override
     public boolean equals(Object o) {
       if (this == o) return true;
@@ -322,6 +332,10 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
         return false;
       }
 
+      if (myShowContextAssistant != otherState.myShowContextAssistant) {
+        return false;
+      }
+
       return true;
     }
 
@@ -340,6 +354,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (myUseBraces ? 1 : 0);
+      result = 31 * result + (myShowContextAssistant ? 1 : 0);
       return result;
     }
 

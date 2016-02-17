@@ -38,6 +38,9 @@ public class BaseIntentionDeclaration_BehaviorDescriptor extends BaseConcept_Beh
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
     return null;
   }
+  public String virtual_getGeneratedId_2926686622730064682(SNode __thisNode__) {
+    return null;
+  }
   public String virtual_getGeneratedName_6263518417926802289(SNode __thisNode__) {
     return null;
   }

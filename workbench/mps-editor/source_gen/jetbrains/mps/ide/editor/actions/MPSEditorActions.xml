@@ -112,6 +112,9 @@
     <action id="jetbrains.mps.ide.editor.actions.Insert_Action" class="jetbrains.mps.ide.editor.actions.Insert_Action">
       <keyboard-shortcut first-keystroke=" ENTER" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action" class="jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt ENTER" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.LocalEnd_Action" class="jetbrains.mps.ide.editor.actions.LocalEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl RIGHT" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt RIGHT" keymap="Mac OS X" />
@@ -260,6 +263,7 @@
       <reference ref="jetbrains.mps.ide.editor.actions.Find_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.FindNext_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.FindPrevious_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.JumpToContextAssistant_Action" />
       <add-to-group group-id="EditorActions" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">

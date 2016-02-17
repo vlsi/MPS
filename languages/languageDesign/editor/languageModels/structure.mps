@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -147,6 +147,11 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="id" />
       <ref role="20lvS9" node="3K0abI4q_wn" resolve="EditorCellId" />
+    </node>
+    <node concept="1TJgyj" id="3DiRZz_UXt0" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contextAssistantMenu" />
+      <ref role="20lvS9" node="5OVd5tVffW8" resolve="ContextAssistantMenuReference" />
     </node>
     <node concept="1TJgyi" id="gtcu_tw" role="1TKVEl">
       <property role="TrG5h" value="attractsFocus" />
@@ -4356,6 +4361,262 @@
     <property role="1pbfSe" value="1639772758" />
     <property role="3GE5qa" value="QueryFunction" />
     <property role="TrG5h" value="ImagePathProvider" />
+  </node>
+  <node concept="1TIwiD" id="FyOJSsBpEm">
+    <property role="1pbfSe" value="662728084" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistant" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="6tuXwJZljC_">
+    <property role="3GE5qa" value="CellModel" />
+    <property role="TrG5h" value="StubCellModel_ContextAssistant" />
+    <property role="1pbfSe" value="1723084848" />
+    <ref role="1TJDcQ" node="CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="2UyyPhAyIHb">
+    <property role="1pbfSe" value="1792182625" />
+    <property role="3GE5qa" value="CellModel" />
+    <property role="TrG5h" value="CellModel_ContextAssistant" />
+    <property role="34LRSv" value="context assistant menu placeholder" />
+    <ref role="1TJDcQ" node="fBEYTCT" resolve="EditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="1qY_lWSjTnI">
+    <property role="1pbfSe" value="1326328653" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistantExecuteFunction" />
+    <property role="34LRSv" value="handler" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_ContextAssistant" />
+  </node>
+  <node concept="1TIwiD" id="1qY_lWSjTfA">
+    <property role="1pbfSe" value="1326328133" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart_Action" />
+    <property role="34LRSv" value="action" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    <node concept="1TJgyj" id="4VZjoGvneVd" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="textFunction" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_ContextAssistantText" />
+    </node>
+    <node concept="1TJgyj" id="1qY_lWSjTfD" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="executeFunction" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1qY_lWSjTnI" resolve="QueryFunction_ContextAssistantExecuteFunction" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1qY_lWSjJZY">
+    <property role="1pbfSe" value="1326290269" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7l1m754O$tN">
+    <property role="1pbfSe" value="1173119004" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart_Super" />
+    <property role="34LRSv" value="superconcept menu" />
+    <property role="R4oN_" value="superconcept menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+  </node>
+  <node concept="1TIwiD" id="FyOJSsBmSI">
+    <property role="1pbfSe" value="662716716" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistantTargetNode" />
+    <property role="34LRSv" value="targetNode" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_ContextAssistant" />
+  </node>
+  <node concept="1TIwiD" id="4Sf$XywKgZK">
+    <property role="1pbfSe" value="288316472" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuContribution" />
+    <property role="34LRSv" value="Context Assistant Menu Contribution" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4Sf$XywKhEr" role="PzmwI">
+      <ref role="PrY4T" node="4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+    </node>
+    <node concept="PrWs8" id="4Sf$XywKgZU" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1TJgyj" id="5OVd5tVoa2Z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5OVd5tVffW8" resolve="ContextAssistantMenuReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4VZjoGvneVh">
+    <property role="1pbfSe" value="1851538524" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistantText" />
+    <property role="34LRSv" value="text" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_ContextAssistant" />
+  </node>
+  <node concept="PlHQZ" id="4Sf$XywKhwM">
+    <property role="1pbfSe" value="288314358" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="INamedContextAssistantItems" />
+    <node concept="PrWs8" id="4Sf$XywKhwN" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="1qY_lWSjJZW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="items" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1qY_lWSjJNx">
+    <property role="1pbfSe" value="1326289472" />
+    <property role="TrG5h" value="ContextAssistantMenu_Default" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="Context Assistant Default Menu" />
+    <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="ContextAssistantMenu" />
+  </node>
+  <node concept="1TIwiD" id="5OVd5tVffW8">
+    <property role="1pbfSe" value="663211169" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuReference" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5OVd5tVffW9">
+    <property role="1pbfSe" value="663211168" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuReference_Named" />
+    <property role="34LRSv" value="named menu" />
+    <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="ContextAssistantMenuReference" />
+    <node concept="1TJgyj" id="5OVd5tVffWa" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="menu" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4Sf$XywF4VC" resolve="ContextAssistantMenu_Named" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5OVd5tVffWc">
+    <property role="1pbfSe" value="663211165" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuReference_Default" />
+    <property role="34LRSv" value="default menu" />
+    <ref role="1TJDcQ" node="5OVd5tVffW8" resolve="ContextAssistantMenuReference" />
+    <node concept="1TJgyj" id="5OVd5tVffWd" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="FyOJSsBmJy">
+    <property role="1pbfSe" value="662716128" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart_IncludeMenu" />
+    <property role="34LRSv" value="include" />
+    <property role="R4oN_" value="include another menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    <node concept="1TJgyj" id="FyOJSsBmJY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodeFunction" />
+      <ref role="20lvS9" node="FyOJSsBmSI" resolve="QueryFunction_ContextAssistantTargetNode" />
+    </node>
+    <node concept="1TJgyj" id="5OVd5tVfRV_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuReference" />
+      <ref role="20lvS9" node="5OVd5tVffW8" resolve="ContextAssistantMenuReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Sf$XywF4VC">
+    <property role="1pbfSe" value="289676608" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenu_Named" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="Context Assistant Named Menu" />
+    <ref role="1TJDcQ" node="4Sf$XywF3UU" resolve="ContextAssistantMenu" />
+    <node concept="PrWs8" id="4Sf$XywHuAY" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3xbeilB7DBJ">
+    <property role="1pbfSe" value="1620454636" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart_SubMenu" />
+    <property role="34LRSv" value="submenu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    <node concept="1TJgyj" id="4VZjoGvnt2N" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="textFunction" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_ContextAssistantText" />
+    </node>
+    <node concept="1TJgyj" id="3xbeilB7DC2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="items" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Sf$XywF3UU">
+    <property role="1pbfSe" value="289680750" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenu" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1oFY2ohVpGC" role="1TKVEi">
+      <property role="20kJfa" value="conceptDeclaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="PrWs8" id="4Sf$XywF3UV" role="PzmwI">
+      <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
+    </node>
+    <node concept="PrWs8" id="4Sf$XywKhwV" role="PzmwI">
+      <ref role="PrY4T" node="4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1oFY2ohYO0M">
+    <property role="1pbfSe" value="673658968" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistant_node" />
+    <property role="34LRSv" value="node" />
+    <property role="R4oN_" value="function parameter" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="6srdxdH8$17">
+    <property role="1pbfSe" value="734169510" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextAssistantMenuPart_Conditional" />
+    <property role="34LRSv" value="if" />
+    <property role="R4oN_" value="conditional menu part" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    <node concept="1TJgyj" id="6srdxdH8$1d" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6srdxdHd7ks" resolve="QueryFunction_ContextAssistantCondition" />
+    </node>
+    <node concept="1TJgyj" id="6srdxdH8$18" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parts" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6srdxdHd7ks">
+    <property role="1pbfSe" value="732976337" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="QueryFunction_ContextAssistantCondition" />
+    <property role="34LRSv" value="query" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_ContextAssistant" />
   </node>
 </model>
 

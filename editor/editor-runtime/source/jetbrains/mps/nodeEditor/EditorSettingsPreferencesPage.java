@@ -67,6 +67,7 @@ class EditorSettingsPreferencesPage {
   private JCheckBox myPowerSaveModeCheckBox;
   private JCheckBox myAutoQuickFixCheckBox;
   private JCheckBox myUseBraces;
+  private JCheckBox myShowContextAssistant;
   private JSlider myBlinkingRateSlider;
   private final EditorComponent myBlinkingDemo;
   private Timer myTimer;
@@ -154,6 +155,9 @@ class EditorSettingsPreferencesPage {
 
     myAutoQuickFixCheckBox = new JCheckBox("Automatically run reference resolve quick fixes");
     checkboxes.add(myAutoQuickFixCheckBox);
+
+    myShowContextAssistant = new JCheckBox("Show context assistant");
+    checkboxes.add(myShowContextAssistant);
 
     panel.add(checkboxes,
         new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -286,6 +290,7 @@ class EditorSettingsPreferencesPage {
 
         mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
         mySettings.setUseBraces(myUseBraces.isSelected());
+        mySettings.setShowContextAssistant(myShowContextAssistant.isSelected());
 
         mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
         mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
@@ -337,9 +342,10 @@ class EditorSettingsPreferencesPage {
     boolean sameLineSpacing = myLineSpacingField.getText().equals("" + mySettings.getState().getLineSpacing());
     boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
     boolean sameTabs = myFirstSelection.isSelected();
+    boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
-        && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
+        && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs && sameUseContextAssistant);
   }
 
   public void reset() {
@@ -354,6 +360,8 @@ class EditorSettingsPreferencesPage {
     myPowerSaveModeCheckBox.setSelected(mySettings.isPowerSaveMode());
 
     myAutoQuickFixCheckBox.setSelected(mySettings.isAutoQuickFix());
+
+    myShowContextAssistant.setSelected(mySettings.isShowContextAssistant());
 
     myFontSizesComboBox.setSelectedItem("" + mySettings.getState().getFontSize());
 

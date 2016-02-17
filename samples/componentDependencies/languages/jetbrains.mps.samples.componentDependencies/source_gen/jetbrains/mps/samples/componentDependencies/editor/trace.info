@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="18,0,48,0" name="jetbrains.mps.samples.componentDependencies.editor.EditorAspectDescriptorImpl" />
+      <unit at="18,0,49,0" name="jetbrains.mps.samples.componentDependencies.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)/1046366395970105219">

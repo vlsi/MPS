@@ -7,7 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="14,0,46,0" name="testSpaceCompletion.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,47,0" name="testSpaceCompletion.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:06189444-c0d9-4e18-8ce5-a0f3e9b2c913(testSpaceCompletion.editor)/3586175963764954371">

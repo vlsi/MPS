@@ -15,6 +15,12 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.contextAssistant.NamedMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 
 public class CommandHolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -30,6 +36,7 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     CommandHolder_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_nvbf9m_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nvbf9m_b0(editorContext, node));
+    editorCell.addEditorCell(this.createContextAssistant_nvbf9m_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_nvbf9m_a0(EditorContext editorContext, SNode node) {
@@ -66,13 +73,32 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
     }
     @Override
     protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_command");
+      EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
       installCellInfo(null, editorCell);
       return editorCell;
     }
-    protected String getNoTargetText() {
-      return "<no command>";
+    private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_nvbf9m_a1a(editorContext, node);
     }
+    private EditorCell createConstant_nvbf9m_a1a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_nvbf9m_a1a");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+      style.set(StyleAttributes.EDITABLE, 0, true);
+      editorCell.getStyle().putAll(style);
+      editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"), "jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu"));
+      editorCell.setDefaultText("<no command>");
+      return editorCell;
+    }
+  }
+  private EditorCell createContextAssistant_nvbf9m_c0(final EditorContext editorContext, final SNode node) {
+    EditorCell editorCell = new EditorCell_ContextAssistantComponent(editorContext, node);
+    editorCell.setCellId("ContextAssistant_nvbf9m_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
 }

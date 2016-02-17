@@ -17,7 +17,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
@@ -27,6 +29,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,6 +38,8 @@ import java.util.List;
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private EditorsCache myEditorsCache = new EditorsCache();
   private EditorComponentsCache myEditorComponentsCache = new EditorComponentsCache();
+  private DefaultContextAssistantMenusCache myDefaultContextAssistantMenusCache = new DefaultContextAssistantMenusCache();
+  private NamedContextAssistantMenusCache myNamedContextAssistantMenusCache = new NamedContextAssistantMenusCache();
 
   @Override
   public Collection<ConceptEditor> getEditors(final ConceptDescriptor descriptor) {
@@ -60,6 +65,30 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
 
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
     return getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
+  }
+
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDefaultContextAssistantMenus(SAbstractConcept concept) {
+    return myDefaultContextAssistantMenusCache.get(concept);
+  }
+
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+    return Collections.emptyList();
+  }
+
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+    return myNamedContextAssistantMenusCache.get(menuId);
+  }
+
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+    return Collections.emptyList();
   }
 
   @Deprecated
@@ -102,6 +131,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     protected SLanguage getLanguage(Pair<SAbstractConcept, String> key) {
       return key.o1.getLanguage();
     }
+
     @NotNull
     @Override
     protected Collection<ConceptEditorComponent> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, Pair<SAbstractConcept, String> key) {
@@ -110,6 +140,39 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
       }
       return editorDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(key.o1), key.o2);
     }
+  }
 
+  private class DefaultContextAssistantMenusCache extends EditorAspectContributionsCache<SAbstractConcept, ContextAssistantMenu> {
+    public DefaultContextAssistantMenusCache() {
+      super(EditorAspectDescriptorBase.this);
+    }
+
+    @Override
+    protected SLanguage getLanguage(SAbstractConcept key) {
+      return key.getLanguage();
+    }
+
+    @NotNull
+    @Override
+    protected Collection<ContextAssistantMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, SAbstractConcept key) {
+      return descriptor.getDeclaredDefaultContextAssistantMenus(key);
+    }
+  }
+
+  private class NamedContextAssistantMenusCache extends EditorAspectContributionsCache<NamedContextAssistantMenuId, ContextAssistantMenu> {
+    public NamedContextAssistantMenusCache() {
+      super(EditorAspectDescriptorBase.this);
+    }
+
+    @Override
+    protected SLanguage getLanguage(NamedContextAssistantMenuId key) {
+      return key.getConcept().getLanguage();
+    }
+
+    @NotNull
+    @Override
+    protected Collection<ContextAssistantMenu> getDeclaredContributions(EditorAspectDescriptor descriptor, NamedContextAssistantMenuId key) {
+      return descriptor.getDeclaredNamedContextAssistantMenus(key);
+    }
   }
 }

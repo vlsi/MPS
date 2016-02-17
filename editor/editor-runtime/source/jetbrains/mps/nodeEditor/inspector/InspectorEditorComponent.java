@@ -57,7 +57,7 @@ public class InspectorEditorComponent extends EditorComponent {
   @NotNull
   @Override
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new InspectorEditorContext(this, model, repository);
+    return new InspectorEditorContext(this, model, repository, createContextAssistantManager(repository));
   }
 
   @Override

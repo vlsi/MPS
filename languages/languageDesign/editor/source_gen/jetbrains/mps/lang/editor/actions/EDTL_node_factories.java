@@ -55,4 +55,9 @@ public class EDTL_node_factories {
       }
     }
   }
+  public static class NodeFactory_5571273656752866301 implements NodeFactory {
+    public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+      EditorCellModel__BehaviorDescriptor.setSelectable_idi4bRWUe.invoke(newNode, ((boolean) false));
+    }
+  }
 }

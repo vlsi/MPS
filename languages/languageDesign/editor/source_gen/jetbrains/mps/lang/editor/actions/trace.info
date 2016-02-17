@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,42,0" name="jetbrains.mps.lang.editor.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,44,0" name="jetbrains.mps.lang.editor.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="799,53,814,9" name="jetbrains.mps.lang.editor.actions.QueriesGenerated$33" />
@@ -70,11 +70,13 @@
       <node id="1165441621427" at="42,91,43,168" concept="1" />
       <node id="1165441453675" at="44,196,45,376" concept="1" />
       <node id="1239813819483" at="52,359,53,536" concept="1" />
+      <node id="5571273656752866794" at="59,91,60,101" concept="1" />
       <node id="1158948124192" at="18,233,21,7" concept="3" />
       <node id="1239813782084" at="27,103,30,9" concept="3" />
       <node id="1187370382914" at="34,219,37,9" concept="3" />
       <node id="1165441453670" at="43,168,46,7" concept="3" />
       <node id="1239813819481" at="51,204,54,9" concept="3" />
+      <node id="5571273656752866301" at="59,0,62,0" concept="4" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1239813403756" at="50,91,55,7" concept="3" />
       <node id="1158947460472" at="17,0,23,0" concept="4" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1162581464184" at="25,91,31,7" concept="3" />
@@ -87,7 +89,14 @@
       <scope id="1187370382915" at="35,292,36,107" />
       <scope id="1165441453674" at="44,196,45,376" />
       <scope id="1239813819482" at="52,359,53,536" />
+      <scope id="5571273656752866301" at="59,91,60,101" />
       <scope id="1239813403761" at="51,204,54,9" />
+      <scope id="5571273656752866301" at="59,0,62,0">
+        <var name="enclosingNode" id="5571273656752866301" />
+        <var name="model" id="5571273656752866301" />
+        <var name="newNode" id="5571273656752866301" />
+        <var name="sampleNode" id="5571273656752866301" />
+      </scope>
       <scope id="1158947460472" at="17,91,21,7">
         <var name="parentRefCell" id="1158948118953" />
       </scope>
@@ -122,11 +131,12 @@
         <var name="newNode" id="1159287296418" />
         <var name="sampleNode" id="1159287296418" />
       </scope>
+      <unit id="5571273656752866301" at="58,0,63,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories$NodeFactory_5571273656752866301" />
       <unit id="1158947460472" at="16,0,24,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories$NodeFactory_1158947460472" />
       <unit id="1165441265075" at="41,0,49,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories$NodeFactory_1165441265075" />
       <unit id="1239813377368" at="49,0,58,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories$NodeFactory_1239813377368" />
       <unit id="1159287296418" at="24,0,41,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories$NodeFactory_1159287296418" />
-      <unit id="1158947431096" at="15,0,59,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories" />
+      <unit id="1158947431096" at="15,0,64,0" name="jetbrains.mps.lang.editor.actions.EDTL_node_factories" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)/1177585757706">

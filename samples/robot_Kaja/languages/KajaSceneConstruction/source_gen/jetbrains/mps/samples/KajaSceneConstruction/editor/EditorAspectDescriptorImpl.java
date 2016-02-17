@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
@@ -44,5 +46,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
+
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"))) {
+        return Collections.<ContextAssistantMenu>singletonList(new SceneBuildingCommands());
+      }
+    }
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
 
 }

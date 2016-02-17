@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -88,7 +88,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1811,6 +1811,64 @@
                 </node>
               </node>
               <node concept="10Nm6u" id="4El8m9GW1hW" role="3uHU7w" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="4Sf$XywF4nL">
+    <property role="3GE5qa" value="ContextAssistant" />
+    <ref role="1M2myG" to="tpc2:4Sf$XywF3UU" resolve="ContextAssistantMenu_Abstract" />
+    <node concept="2NXJUA" id="4Sf$XywF4nM" role="2NY200">
+      <node concept="3clFbS" id="4Sf$XywF4nN" role="2VODD2">
+        <node concept="3clFbF" id="4Sf$XywF4nO" role="3cqZAp">
+          <node concept="22lmx$" id="4Sf$XywF4nP" role="3clFbG">
+            <node concept="2OqwBi" id="4Sf$XywF4nQ" role="3uHU7B">
+              <node concept="Rm8GO" id="4Sf$XywF4nR" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="4Sf$XywF4nS" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="4Sf$XywF4nT" role="37wK5m">
+                  <node concept="1Q6Npb" id="4Sf$XywF4nU" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="4Sf$XywF4nV" role="3uHU7w">
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <node concept="1Q6Npb" id="4Sf$XywF4nW" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="1qY_lWSjK0n">
+    <property role="3GE5qa" value="ContextAssistant" />
+    <ref role="1M2myG" to="tpc2:1qY_lWSjJNx" resolve="ContextAssistantMenu_Default" />
+    <node concept="EnEH3" id="30jUJZlxTqT" role="1MhHOB">
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
+      <node concept="Eqf_E" id="30jUJZlxTuw" role="EtsB7">
+        <node concept="3clFbS" id="30jUJZlxTux" role="2VODD2">
+          <node concept="3cpWs6" id="30jUJZlxV52" role="3cqZAp">
+            <node concept="3cpWs3" id="30jUJZlxV53" role="3cqZAk">
+              <node concept="Xl_RD" id="30jUJZlxV54" role="3uHU7w">
+                <property role="Xl_RC" value="_ContextAssistantMenu" />
+              </node>
+              <node concept="2OqwBi" id="4Sf$XywBAvQ" role="3uHU7B">
+                <node concept="2OqwBi" id="4Sf$XywBAvR" role="2Oq$k0">
+                  <node concept="EsrRn" id="4Sf$XywBAvS" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="1oFY2oi1h_c" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpc2:1oFY2ohVpGC" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="4Sf$XywBAvU" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

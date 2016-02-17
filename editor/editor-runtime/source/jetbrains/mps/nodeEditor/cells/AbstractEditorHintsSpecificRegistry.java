@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.nodeEditor.LanguageRegistryHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorHintsSpecific;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -135,18 +135,7 @@ public abstract class AbstractEditorHintsSpecificRegistry<T extends EditorHintsS
 
   private List<T> collectApplicableInstances(SAbstractConcept concept) {
     List<T> result = new ArrayList<T>();
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(concept.getLanguage());
-    if (languageRuntime == null) {
-      LOG.warning("No language runtime found for language: " + concept.getLanguage() + ". Entities declared in this language will not be taken into account");
-      return result;
-    }
-    EditorAspectDescriptor aspectDescriptor = null;
-    try {
-      aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
-    } catch (NoClassDefFoundError error) {
-      LOG.error("Failed to get editor aspect descriptor for language: " +
-          languageRuntime.getNamespace() + ". Entities declared in this language will not be taken into account", error);
-    }
+    EditorAspectDescriptor aspectDescriptor = LanguageRegistryHelper.getEditorAspectDescriptor(LanguageRegistry.getInstance(), concept.getLanguage());
     if (aspectDescriptor != null) {
       for (T instance : get(aspectDescriptor, concept)) {
         if (isApplicableInCurrentContext(instance)) {

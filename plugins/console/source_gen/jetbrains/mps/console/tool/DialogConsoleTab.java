@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
@@ -74,7 +75,11 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
         getEditorComponent().selectNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
-        EditorCell lastLeaf = ((EditorCell) getEditorComponent().getSelectedCell()).getLastLeaf();
+        EditorCell lastLeaf = ((EditorCell) getEditorComponent().getSelectedCell()).getLastLeaf(new Condition<EditorCell>() {
+          public boolean met(EditorCell cell) {
+            return cell.isSelectable();
+          }
+        });
         getEditorComponent().changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
           ((EditorCell_Label) lastLeaf).end();
@@ -90,29 +95,32 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          myCursor = null;
-          TemporaryModels.getInstance().addMissingImports(getConsoleModel());
-          if ((SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) == null)) {
-            return;
-          }
-        }
-      });
-      execute(null, new Runnable() {
-        public void run() {
-          myNewCommand = null;
-        }
-      }, new Runnable() {
-        public void run() {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              setSelection();
-            }
-          });
-        }
-      });
+      executeCurrentCommand();
     }
+  }
+  public void executeCurrentCommand() {
+    getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        myCursor = null;
+        TemporaryModels.getInstance().addMissingImports(getConsoleModel());
+        if ((SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) == null)) {
+          return;
+        }
+      }
+    });
+    execute(null, new Runnable() {
+      public void run() {
+        myNewCommand = null;
+      }
+    }, new Runnable() {
+      public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            setSelection();
+          }
+        });
+      }
+    });
   }
 
   private class ClearAction extends BaseAction {

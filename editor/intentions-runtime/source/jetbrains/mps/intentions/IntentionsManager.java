@@ -57,6 +57,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -545,10 +546,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
+  @Nullable
   public IntentionExecutable getIntentionById(SNode node, Editor editor, String id) {
-    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+    return getIntentionById(node, editor.getEditorContext(), id);
+  }
+
+  /**
+   * @return the matching intention, if found <em>and applicable</em>, {@code null} otherwise
+   */
+  @Nullable
+  public IntentionExecutable getIntentionById(SNode node, EditorContext editorContext, String id) {
+    QueryDescriptor query = new QueryDescriptor();
     query.setCurrentNodeOnly(true);
-    Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
+    Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext);
     List<IntentionExecutable> result = new ArrayList<IntentionExecutable>();
     for (Pair<IntentionExecutable, SNode> intention : intentions) {
       if (intention.o1.getDescriptor().getPersistentStateKey().equals(id)) {
@@ -556,8 +566,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
 
-    assert result.size() == 1;
-
-    return result.get(0);
+    assert result.size() <= 1;
+    return result.isEmpty() ? null : result.get(0);
   }
 }

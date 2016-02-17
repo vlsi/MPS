@@ -87,6 +87,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
         return null;
     }
   }
+
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a0c = new String[]{"jetbrains.mps.lang.editor.styleTests.editor.StyleTestElement_EditorComponent", "jetbrains.mps.lang.editor.styleTests.editor.StyleTest_EditorComponent"};
   private static String[] stringSwitchCases_xbvbvu_a0a0f = new String[]{"test-inherited-attribute", "test-simple-attribute"};
 }

@@ -15,7 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,98,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,104,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104840151">
@@ -842,6 +842,39 @@
       <unit id="1227861662670" at="25,0,58,0" name="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1638911550608572439">
+    <file name="ContextAssistantMenu_Default_Constraints.java">
+      <node id="1638911550608572439" at="18,53,19,98" concept="12" />
+      <node id="1638911550608572439" at="22,88,23,123" concept="6" />
+      <node id="1638911550608572439" at="26,37,27,20" concept="7" />
+      <node id="1638911550608572439" at="30,42,31,37" concept="6" />
+      <node id="1638911550608572439" at="31,37,32,361" concept="0" />
+      <node id="3464370922898043202" at="31,37,32,361" concept="7" />
+      <node id="1638911550608572439" at="34,7,35,22" concept="7" />
+      <node id="1638911550608572439" at="18,0,21,0" concept="1" trace="ContextAssistantMenu_Default_Constraints#()V" />
+      <node id="1638911550608572439" at="25,0,29,0" concept="5" trace="hasOwnGetter#()Z" />
+      <node id="1638911550608572439" at="29,0,34,0" concept="5" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1638911550608572439" at="23,123,34,7" concept="2" />
+      <node id="1638911550608572439" at="21,0,37,0" concept="5" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <scope id="1638911550608572439" at="18,53,19,98" />
+      <scope id="1638911550608572439" at="26,37,27,20" />
+      <scope id="3464370922898036641" at="31,37,32,361" />
+      <scope id="1638911550608572439" at="30,42,32,361">
+        <var name="propertyName" id="1638911550608572439" />
+      </scope>
+      <scope id="1638911550608572439" at="18,0,21,0" />
+      <scope id="1638911550608572439" at="25,0,29,0" />
+      <scope id="1638911550608572439" at="29,0,34,0">
+        <var name="node" id="1638911550608572439" />
+      </scope>
+      <scope id="1638911550608572439" at="22,88,35,22">
+        <var name="properties" id="1638911550608572439" />
+      </scope>
+      <scope id="1638911550608572439" at="21,0,37,0" />
+      <unit id="1638911550608572439" at="24,119,34,5" name="jetbrains.mps.lang.editor.constraints.ContextAssistantMenu_Default_Constraints$1" />
+      <unit id="1638911550608572439" at="17,0,38,0" name="jetbrains.mps.lang.editor.constraints.ContextAssistantMenu_Default_Constraints" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1873972548978313577">
     <file name="IStyle_Constraints.java">
       <node id="1873972548978313577" at="32,31,33,98" concept="12" />
@@ -1096,6 +1129,43 @@
         <var name="parentNode" id="5374238436954737026" />
       </scope>
       <unit id="5374238436954737026" at="15,0,38,0" name="jetbrains.mps.lang.editor.constraints.CellModel_NextEditor_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/5624877018226902513">
+    <file name="ContextAssistantMenu_Constraints.java">
+      <node id="5624877018226902513" at="16,45,17,98" concept="12" />
+      <node id="5624877018226902513" at="20,42,21,16" concept="7" />
+      <node id="5624877018226902513" at="24,120,25,55" concept="6" />
+      <node id="5624877018226902513" at="25,55,26,0" concept="9" />
+      <node id="5624877018226902513" at="27,51,28,66" concept="2" />
+      <node id="5624877018226902513" at="29,5,30,0" concept="9" />
+      <node id="5624877018226902513" at="30,0,31,18" concept="7" />
+      <node id="5624877018226902516" at="33,99,34,87" concept="7" />
+      <node id="5624877018226902513" at="36,0,37,0" concept="10" trace="canBeRootBreakingPoint" />
+      <node id="5624877018226902513" at="16,0,19,0" concept="1" trace="ContextAssistantMenu_Constraints#()V" />
+      <node id="5624877018226902513" at="26,0,29,5" concept="4" />
+      <node id="5624877018226902513" at="33,0,36,0" concept="11" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="5624877018226902513" at="19,0,23,0" concept="5" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="5624877018226902513" at="23,0,33,0" concept="5" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="5624877018226902513" at="16,45,17,98" />
+      <scope id="5624877018226902513" at="20,42,21,16" />
+      <scope id="5624877018226902513" at="27,51,28,66" />
+      <scope id="5624877018226902515" at="33,99,34,87" />
+      <scope id="5624877018226902513" at="16,0,19,0" />
+      <scope id="5624877018226902513" at="33,0,36,0">
+        <var name="model" id="5624877018226902513" />
+        <var name="operationContext" id="5624877018226902513" />
+      </scope>
+      <scope id="5624877018226902513" at="19,0,23,0" />
+      <scope id="5624877018226902513" at="24,120,31,18">
+        <var name="result" id="5624877018226902513" />
+      </scope>
+      <scope id="5624877018226902513" at="23,0,33,0">
+        <var name="checkingNodeContext" id="5624877018226902513" />
+        <var name="context" id="5624877018226902513" />
+        <var name="model" id="5624877018226902513" />
+      </scope>
+      <unit id="5624877018226902513" at="15,0,38,0" name="jetbrains.mps.lang.editor.constraints.ContextAssistantMenu_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/5944657839017577715">

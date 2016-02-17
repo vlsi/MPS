@@ -23,6 +23,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantSettings</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.editor.MPSFileNodeEditorProvider</implementation-class>
     </component>
 

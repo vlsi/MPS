@@ -10,6 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
+import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
@@ -99,4 +103,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"))) {
+        return Collections.<ContextAssistantMenu>singletonList(new EmptyLine_ContextAssistantMenu());
+      }
+    }
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+    {
+      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a0f, menuId.getFqName())) {
+          case 0:
+            return Arrays.asList(new ContextAssistantMenu[]{new OtherCommands()});
+          default:
+        }
+      }
+    }
+
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a0f = new String[]{"jetbrains.mps.samples.Kaja.editor.OtherCommands"};
 }

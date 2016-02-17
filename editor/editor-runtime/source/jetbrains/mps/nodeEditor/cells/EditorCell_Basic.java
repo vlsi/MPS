@@ -38,6 +38,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenuLookup;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -51,6 +52,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -99,6 +101,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNode myNode;
   private SNodeId myNodeId;
   private SubstituteInfo mySubstituteInfo;
+  private ContextAssistantMenuLookup myContextAssistantMenuLookup;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
   private Style myStyle = new StyleImpl();
@@ -617,6 +620,15 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public SubstituteInfo getSubstituteInfo() {
     return mySubstituteInfo;
+  }
+
+  @Nullable
+  public ContextAssistantMenuLookup getContextAssistantMenuLookup() {
+    return myContextAssistantMenuLookup;
+  }
+
+  public void setContextAssistantMenuLookup(@Nullable ContextAssistantMenuLookup contextAssistantMenuLookup) {
+    myContextAssistantMenuLookup = contextAssistantMenuLookup;
   }
 
   @Override

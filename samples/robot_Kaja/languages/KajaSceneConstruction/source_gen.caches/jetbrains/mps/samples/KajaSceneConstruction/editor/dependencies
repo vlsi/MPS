@@ -31,6 +31,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -38,12 +39,15 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.BuildWall_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DestroyWall_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DropMark_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.PickMark_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.Position" />
+    <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.SceneBuildingCommands" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
@@ -75,6 +79,22 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.KajaSceneConstruction.editor.SceneBuildingCommands" file="SceneBuildingCommands.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.ActionItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.SubMenuMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
   </dependency>
 </dependenciesRoot>
 

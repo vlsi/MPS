@@ -11,6 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
+import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
@@ -92,4 +96,33 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredDefaultContextAssistantMenus(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"))) {
+        return Collections.<ContextAssistantMenu>singletonList(new BLCommand_ContextAssistantMenu());
+      }
+    }
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+    {
+      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a0g, menuId.getFqName())) {
+          case 0:
+            return Arrays.asList(new ContextAssistantMenu[]{new CommandHolder_Empty_ContextAssistantMenu()});
+          default:
+        }
+      }
+    }
+
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a0g = new String[]{"jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu"};
 }

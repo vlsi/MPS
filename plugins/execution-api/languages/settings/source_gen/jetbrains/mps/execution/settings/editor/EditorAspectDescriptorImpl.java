@@ -101,5 +101,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
+
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a0c = new String[]{"jetbrains.mps.execution.settings.editor.EditorComponent", "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent", "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent"};
 }

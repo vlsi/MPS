@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -79,7 +79,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -845,6 +845,25 @@
                       <ref role="3Tt5mk" to="tpc2:g6iSdeU" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="37WvkG" id="4Ph8XXTfKfX" role="37WGs$">
+      <property role="3mWdv0" value="context assistant is not selectable by default" />
+      <ref role="37XkoT" to="tpc2:2UyyPhAyIHb" resolve="CellModel_ContextAssistant" />
+      <node concept="37Y9Zx" id="4Ph8XXTfKfY" role="37ZfLb">
+        <node concept="3clFbS" id="4Ph8XXTfKfZ" role="2VODD2">
+          <node concept="3clFbF" id="4Ph8XXTfKnE" role="3cqZAp">
+            <node concept="2OqwBi" id="4Ph8XXTfKpY" role="3clFbG">
+              <node concept="1r4Lsj" id="4Ph8XXTfKnD" role="2Oq$k0" />
+              <node concept="2qgKlT" id="4Ph8XXTfK$R" role="2OqNvi">
+                <ref role="37wK5l" to="tpcb:i4bRWUe" resolve="setSelectable" />
+                <node concept="3clFbT" id="4Ph8XXTfKAg" role="37wK5m">
+                  <property role="3clFbU" value="false" />
                 </node>
               </node>
             </node>

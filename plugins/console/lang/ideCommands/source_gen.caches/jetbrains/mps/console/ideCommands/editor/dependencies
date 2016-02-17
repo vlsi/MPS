@@ -92,13 +92,37 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets" file="CommandHolder_Empty_Snippets.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.ActionItemMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.AbsractMake_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ActionCallDeclaredParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.CallActionExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.GlobalStatisticTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelProperties_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelReference_Editor" />
@@ -115,7 +139,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

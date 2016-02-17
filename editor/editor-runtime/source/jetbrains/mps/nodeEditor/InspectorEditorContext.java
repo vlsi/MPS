@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,8 +27,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class InspectorEditorContext extends EditorContext {
   public InspectorEditorContext(EditorComponent editorComponent, @Nullable SModel model,
-      @NotNull SRepository repository) {
-    super(editorComponent, model, repository);
+      @NotNull SRepository repository, ContextAssistantManager contextAssistantManager) {
+    super(editorComponent, model, repository, contextAssistantManager);
   }
 
   @Override

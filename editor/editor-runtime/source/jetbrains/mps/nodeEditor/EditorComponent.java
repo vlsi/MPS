@@ -89,6 +89,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.contextAssistant.DefaultContextAssistantManager;
+import jetbrains.mps.nodeEditor.contextAssistant.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -112,6 +114,7 @@ import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
+import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -2835,7 +2838,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @NotNull
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    return new EditorContext(this, model, repository);
+    return new EditorContext(this, model, repository, createContextAssistantManager(repository));
+  }
+
+  protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
+    if (EditorSettings.getInstance().isShowContextAssistant()) {
+      return new DefaultContextAssistantManager(this, repository);
+    } else {
+      return new DisabledContextAssistantManager();
+    }
   }
 
   boolean isCellSwapInProgress() {

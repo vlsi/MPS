@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="14,0,37,0" name="testOverridingType.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,38,0" name="testOverridingType.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:5cfe4d05-11f0-44dd-9581-f90ebc971306(testOverridingType.editor)/1870027727456321192">

@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="14,0,55,0" name="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,56,0" name="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)/1790427706118304180">

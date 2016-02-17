@@ -25,17 +25,19 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 3:
           return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_1159287296418());
         case 4:
-          return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_1158947460472());
+          return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_5571273656752866301());
         case 5:
-          return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_1239813377368());
+          return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_1158947460472());
         case 6:
-          return Collections.<NodeFactory>singletonList(new StyleClassItem.NodeFactory_1222177342204());
+          return Collections.<NodeFactory>singletonList(new EDTL_node_factories.NodeFactory_1239813377368());
         case 7:
+          return Collections.<NodeFactory>singletonList(new StyleClassItem.NodeFactory_1222177342204());
+        case 8:
           return Collections.<NodeFactory>singletonList(new StyleClassItem.NodeFactory_1222178992987());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AttributeStyleClassItem", "BooleanStyleSheetItem", "CellModel_Alternation", "CellModel_Collection", "CellModel_Property", "CellModel_RefNodeList", "ColorStyleClassItem", "FloatStyleClassItem"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AttributeStyleClassItem", "BooleanStyleSheetItem", "CellModel_Alternation", "CellModel_Collection", "CellModel_ContextAssistant", "CellModel_Property", "CellModel_RefNodeList", "ColorStyleClassItem", "FloatStyleClassItem"};
 }

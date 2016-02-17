@@ -25,6 +25,9 @@ public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_Beh
   public int virtual_getDefaultFontStyle_1221472292001(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
+  public String virtual_getOpeningPrefix_1220340126255(SNode __thisNode__) {
+    return null;
+  }
   public String virtual_getOpeningText_1220339714057(SNode __thisNode__) {
     return null;
   }

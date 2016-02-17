@@ -10,6 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedContextAssistantMenuId;
+import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
@@ -72,4 +76,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  @NotNull
+  @Override
+  public Collection<ContextAssistantMenu> getDeclaredNamedContextAssistantMenus(NamedContextAssistantMenuId menuId) {
+    {
+      SAbstractConcept cncpt = (SAbstractConcept) menuId.getConcept();
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a0e, menuId.getFqName())) {
+          case 0:
+            return Arrays.asList(new ContextAssistantMenu[]{new CommandHolder_Empty_Snippets()});
+          default:
+        }
+      }
+    }
+
+    return Collections.<ContextAssistantMenu>emptyList();
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a0e = new String[]{"jetbrains.mps.console.base.editor.CommandHolder_Empty_ContextAssistantMenu"};
 }

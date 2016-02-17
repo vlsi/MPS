@@ -235,6 +235,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
+
   private static String[] stringSwitchCases_xbvbvu_a0a0c0a0c = new String[]{"jetbrains.mps.lang.generator.editor.BaseMappingRule_premise", "jetbrains.mps.lang.generator.editor.MappingRuleCommonFields"};
   private static String[] stringSwitchCases_xbvbvu_a0a0f0a0c = new String[]{"jetbrains.mps.lang.generator.editor.NodeMacro_label_inspector", "jetbrains.mps.lang.generator.editor.NodeMacro_postfix"};
 }

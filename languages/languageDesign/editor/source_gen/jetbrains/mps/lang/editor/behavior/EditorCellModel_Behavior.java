@@ -66,9 +66,6 @@ public class EditorCellModel_Behavior {
   public static String call_getClosingTag_1220340488560(SNode __thisNode__) {
     return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K(__thisNode__);
   }
-  public static String call_getOpeningPrefix_1220340126255(SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getOpeningPrefix_idhKxW98J(__thisNode__);
-  }
   public static boolean call_getBooleanStyleValue_1237383442523(SNode __thisNode__, SNode styleItem, boolean defaultValue) {
     return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r(__thisNode__, styleItem, defaultValue);
   }
