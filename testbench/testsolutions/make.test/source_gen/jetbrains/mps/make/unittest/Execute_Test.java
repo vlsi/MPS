@@ -432,7 +432,7 @@ public class Execute_Test extends MockTestCase {
         };
         will(Expectations.returnValue(cj));
 
-        exactly(1).of(make).createParameters(with(Expectations.aNonNull(Class.class)));
+        exactly(1).of(make).createParameters((Class<?>) with(Expectations.aNonNull(Class.class)));
         will(Expectations.returnValue(vars));
         exactly(1).of(make).createJob();
         IJob mj = new IJob() {

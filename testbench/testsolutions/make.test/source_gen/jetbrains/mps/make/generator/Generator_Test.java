@@ -20,6 +20,7 @@ import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
@@ -67,7 +68,7 @@ public class Generator_Test extends MockTestCase {
         exactly(1).of(cmon).reportFeedback(with(Expectations.aNonNull(IFeedback.class)));
 
         final IQuery[] query = new IQuery[1];
-        exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
+        exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery<IOption>>() {
           @Override
           public boolean matches(Object o) {
             if (o instanceof IQuery) {
