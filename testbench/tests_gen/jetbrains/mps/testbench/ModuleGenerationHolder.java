@@ -13,9 +13,7 @@ import java.util.HashMap;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.service.AbstractMakeService;
@@ -27,7 +25,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -101,41 +98,27 @@ public class ModuleGenerationHolder {
       optBuilder.strictMode(true).generateInParallel(isParallel, 8);
     }
 
-    final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
-    final Exception[] exceptions = new Exception[1];
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
-        try {
-          final MakeSession session = new MakeSession(project, myMessageHandler, true);
-          final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
-          IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
-            @Override
-            public void setup(IPropertiesPool ppool) {
-              // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
-              // fails if we don't generate one here 
-              new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true).populate(ppool);
-              new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
-                public IFile invoke(String path) {
-                  return tmpFile(path);
-                }
-              }).populate(ppool);
-              new GenerateFacetInitializer(session).setGenerationOptions(optBuilder).populate(ppool);
-            }
-          };
-
-          result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
-        } catch (InterruptedException ex) {
-          exceptions[0] = ex;
-        } catch (ExecutionException ex) {
-          exceptions[0] = ex;
-        }
+    IResult result;
+    IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
+    final MakeSession session = new MakeSession(project, myMessageHandler, true);
+    final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
+    IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
+      @Override
+      public void setup(IPropertiesPool ppool) {
+        // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
+        // fails if we don't generate one here 
+        new TextGenFacetInitializer(session).failNoTextGen(false).generateDebugInfo(true).populate(ppool);
+        new MakeFacetInitializer().setPathToFile(new _FunctionTypes._return_P1_E0<IFile, String>() {
+          public IFile invoke(String path) {
+            return tmpFile(path);
+          }
+        }).populate(ppool);
+        new GenerateFacetInitializer(session).setGenerationOptions(optBuilder).populate(ppool);
       }
-    });
-    if (exceptions[0] != null) {
-      throw exceptions[0];
-    }
-    isSucessful = result.value.isSucessful();
+    };
+
+    result = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(project, module), scr, ctl, new EmptyProgressMonitor()).get();
+    isSucessful = result.isSucessful();
   }
   public boolean isBuildSucessful() {
     return isSucessful;
