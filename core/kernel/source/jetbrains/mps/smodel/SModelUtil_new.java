@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
@@ -26,7 +25,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,16 +39,6 @@ import java.util.List;
 
 public class SModelUtil_new {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
-
-  /**
-   * use SModelUtil
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //not used in MPS
-  public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
-    return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
-  }
 
   public static List<SNode> getConceptAndSuperConcepts(SNode topConcept) {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();

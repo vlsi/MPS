@@ -315,17 +315,6 @@ public class SModel implements SModelData {
 
 //---------listeners--------
 
-  /**
-   * Use {@link #performUndoableAction(SNodeUndoableAction)} directly
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
-    if (!canFireEvent()) return;
-    if (!UndoHelper.getInstance().needRegisterUndo()) return;
-    performUndoableAction(action.compute());
-  }
-
   protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
     if (!canFireEvent()) {
       return;

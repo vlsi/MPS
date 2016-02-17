@@ -20,24 +20,17 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -291,54 +284,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void removeChangeListener(SNodeChangeListener l) {
     getEventDispatch().removeChangeListener(l);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
-    LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SReferenceLink link = ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role);
-    getEventDispatch().fireReferenceChange(node, link, oldValue, newValue);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
-    LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SProperty prop = ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName);
-    getEventDispatch().firePropertyChange(node, prop, oldValue, newValue);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
-    LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
-    getEventDispatch().fireNodeAdd(node, link, child);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
-    LOG.assertLog(!getSModelInternal().isUpdateMode());
-    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
-    getEventDispatch().fireNodeRemove(node, link, child);
   }
 
   public String toString() {
