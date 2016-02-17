@@ -17,12 +17,11 @@
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
     <import index="tpfh" ref="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" />
-    <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
-    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -143,6 +142,9 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -318,6 +320,9 @@
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1145572800087" name="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" flags="nn" index="2Ttrtt" />
@@ -3246,6 +3251,185 @@
           </node>
         </node>
       </node>
+      <node concept="3SKdUt" id="4fnTrxcpxgo" role="3cqZAp">
+        <node concept="3SKdUq" id="4fnTrxcpxgq" role="3SKWNk">
+          <property role="3SKdUp" value="FIXME copy-paste of identical code from InlineTemplateWithContext_RuleConsequence" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="4fnTrxcpv9x" role="3cqZAp">
+        <node concept="3SKdUq" id="4fnTrxcpv9y" role="3SKWNk">
+          <property role="3SKdUp" value="see TemplateContainer#checkAdjacentFragments" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4fnTrxcpv9z" role="3cqZAp">
+        <node concept="3cpWsn" id="4fnTrxcpv9$" role="3cpWs9">
+          <property role="TrG5h" value="commonParent" />
+          <node concept="3Tqbb2" id="4fnTrxcpv9_" role="1tU5fm" />
+          <node concept="10Nm6u" id="4fnTrxcpv9A" role="33vP2m" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4fnTrxcpv9B" role="3cqZAp">
+        <node concept="3cpWsn" id="4fnTrxcpv9C" role="3cpWs9">
+          <property role="TrG5h" value="commonAggregationLink" />
+          <node concept="3uibUv" id="4fnTrxcpv9D" role="1tU5fm">
+            <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+          </node>
+          <node concept="10Nm6u" id="4fnTrxcpv9E" role="33vP2m" />
+        </node>
+      </node>
+      <node concept="1DcWWT" id="4fnTrxcpv9F" role="3cqZAp">
+        <node concept="3clFbS" id="4fnTrxcpv9G" role="2LFqv$">
+          <node concept="3cpWs8" id="4fnTrxcpv9H" role="3cqZAp">
+            <node concept="3cpWsn" id="4fnTrxcpv9I" role="3cpWs9">
+              <property role="TrG5h" value="fragmentParent" />
+              <node concept="3Tqbb2" id="4fnTrxcpv9J" role="1tU5fm" />
+              <node concept="2OqwBi" id="4fnTrxcpv9K" role="33vP2m">
+                <node concept="37vLTw" id="4fnTrxcpv9L" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fnTrxcpva$" resolve="tf" />
+                </node>
+                <node concept="1mfA1w" id="4fnTrxcpv9M" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="4fnTrxcpv9N" role="3cqZAp">
+            <node concept="3cpWsn" id="4fnTrxcpv9O" role="3cpWs9">
+              <property role="TrG5h" value="containmentLink" />
+              <node concept="3uibUv" id="4fnTrxcpv9P" role="1tU5fm">
+                <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+              </node>
+              <node concept="2OqwBi" id="4fnTrxcpv9Q" role="33vP2m">
+                <node concept="2JrnkZ" id="4fnTrxcpv9R" role="2Oq$k0">
+                  <node concept="37vLTw" id="4fnTrxcpv9S" role="2JrQYb">
+                    <ref role="3cqZAo" node="4fnTrxcpv9I" resolve="fragmentParent" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4fnTrxcpv9T" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4fnTrxcpv9U" role="3cqZAp">
+            <node concept="3clFbS" id="4fnTrxcpv9V" role="3clFbx">
+              <node concept="3SKdUt" id="4fnTrxcpv9W" role="3cqZAp">
+                <node concept="3SKdUq" id="4fnTrxcpv9X" role="3SKWNk">
+                  <property role="3SKdUp" value="first fragment - remember its parent and role to use as reference value" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="4fnTrxcpv9Y" role="3cqZAp">
+                <node concept="37vLTI" id="4fnTrxcpv9Z" role="3clFbG">
+                  <node concept="2OqwBi" id="4fnTrxcpva0" role="37vLTx">
+                    <node concept="37vLTw" id="4fnTrxcpva1" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4fnTrxcpv9I" resolve="fragmentParent" />
+                    </node>
+                    <node concept="1mfA1w" id="4fnTrxcpva2" role="2OqNvi" />
+                  </node>
+                  <node concept="37vLTw" id="4fnTrxcpva3" role="37vLTJ">
+                    <ref role="3cqZAo" node="4fnTrxcpv9$" resolve="commonParent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="4fnTrxcpva4" role="3cqZAp">
+                <node concept="37vLTI" id="4fnTrxcpva5" role="3clFbG">
+                  <node concept="37vLTw" id="4fnTrxcpva6" role="37vLTJ">
+                    <ref role="3cqZAo" node="4fnTrxcpv9C" resolve="commonAggregationLink" />
+                  </node>
+                  <node concept="37vLTw" id="4fnTrxcpva7" role="37vLTx">
+                    <ref role="3cqZAo" node="4fnTrxcpv9O" resolve="containmentLink" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="4fnTrxcpva8" role="3clFbw">
+              <node concept="10Nm6u" id="4fnTrxcpva9" role="3uHU7w" />
+              <node concept="37vLTw" id="4fnTrxcpvaa" role="3uHU7B">
+                <ref role="3cqZAo" node="4fnTrxcpv9$" resolve="commonParent" />
+              </node>
+            </node>
+            <node concept="9aQIb" id="4fnTrxcpvab" role="9aQIa">
+              <node concept="3clFbS" id="4fnTrxcpvac" role="9aQI4">
+                <node concept="3clFbJ" id="4fnTrxcpvad" role="3cqZAp">
+                  <node concept="3clFbS" id="4fnTrxcpvae" role="3clFbx">
+                    <node concept="2MkqsV" id="4fnTrxcpvaf" role="3cqZAp">
+                      <node concept="37vLTw" id="4fnTrxcpvag" role="2OEOjV">
+                        <ref role="3cqZAo" node="4fnTrxcpva$" resolve="tf" />
+                      </node>
+                      <node concept="2YIFZM" id="4fnTrxcpvah" role="2MkJ7o">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="4fnTrxcpvai" role="37wK5m">
+                          <property role="Xl_RC" value="Template Fragments shall reside under same parent node" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="4fnTrxcpvaj" role="3clFbw">
+                    <node concept="2OqwBi" id="4fnTrxcpvak" role="3uHU7w">
+                      <node concept="37vLTw" id="4fnTrxcpval" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4fnTrxcpv9I" resolve="fragmentParent" />
+                      </node>
+                      <node concept="1mfA1w" id="4fnTrxcpvam" role="2OqNvi" />
+                    </node>
+                    <node concept="37vLTw" id="4fnTrxcpvan" role="3uHU7B">
+                      <ref role="3cqZAo" node="4fnTrxcpv9$" resolve="commonParent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="4fnTrxcpvao" role="3cqZAp">
+                  <node concept="3clFbS" id="4fnTrxcpvap" role="3clFbx">
+                    <node concept="2MkqsV" id="4fnTrxcpvaq" role="3cqZAp">
+                      <node concept="37vLTw" id="4fnTrxcpvar" role="2OEOjV">
+                        <ref role="3cqZAo" node="4fnTrxcpva$" resolve="tf" />
+                      </node>
+                      <node concept="2YIFZM" id="4fnTrxcpvas" role="2MkJ7o">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="4fnTrxcpvat" role="37wK5m">
+                          <property role="Xl_RC" value="Template Fragments shall use same same containment link" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="17QLQc" id="4fnTrxcpvau" role="3clFbw">
+                    <node concept="37vLTw" id="4fnTrxcpvav" role="3uHU7B">
+                      <ref role="3cqZAo" node="4fnTrxcpv9C" resolve="commonAggregationLink" />
+                    </node>
+                    <node concept="2OqwBi" id="4fnTrxcpvaw" role="3uHU7w">
+                      <node concept="2JrnkZ" id="4fnTrxcpvax" role="2Oq$k0">
+                        <node concept="37vLTw" id="4fnTrxcpvay" role="2JrQYb">
+                          <ref role="3cqZAo" node="4fnTrxcpv9I" resolve="fragmentParent" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="4fnTrxcpvaz" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWsn" id="4fnTrxcpva$" role="1Duv9x">
+          <property role="TrG5h" value="tf" />
+          <node concept="3Tqbb2" id="4fnTrxcpva_" role="1tU5fm">
+            <ref role="ehGHo" to="tpf8:fWrartG" resolve="TemplateFragment" />
+          </node>
+        </node>
+        <node concept="2OqwBi" id="4fnTrxcpvaA" role="1DdaDG">
+          <node concept="2Rf3mk" id="4fnTrxcpvaE" role="2OqNvi">
+            <node concept="1xMEDy" id="4fnTrxcpvaF" role="1xVPHs">
+              <node concept="chp4Y" id="4fnTrxcpvaG" role="ri$Ld">
+                <ref role="cht4Q" to="tpf8:fWrartG" resolve="TemplateFragment" />
+              </node>
+            </node>
+          </node>
+          <node concept="1YBJjd" id="4fnTrxcpwHt" role="2Oq$k0">
+            <ref role="1YBMHb" node="6TsFynOhsd2" resolve="td" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="4fnTrxcpv93" role="3cqZAp" />
     </node>
     <node concept="1YaCAy" id="6TsFynOhsd2" role="1YuTPh">
       <property role="TrG5h" value="td" />
@@ -5412,6 +5596,199 @@
     <node concept="1YaCAy" id="5KqhIBTu39d" role="1YuTPh">
       <property role="TrG5h" value="macro" />
       <ref role="1YaFvo" to="tpf8:geb32N7" resolve="CopySrcListMacro" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4fnTrxcpk3D">
+    <property role="TrG5h" value="check_InlineTemplateWithContext_RuleConsequence" />
+    <property role="3GE5qa" value="rule.consequence" />
+    <node concept="3clFbS" id="4fnTrxcpk3E" role="18ibNy">
+      <node concept="3SKdUt" id="4fnTrxcpxnE" role="3cqZAp">
+        <node concept="3SKdUq" id="4fnTrxcpxnG" role="3SKWNk">
+          <property role="3SKdUp" value="FIXME there's identical code in check_TemplateDeclaration" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="4fnTrxcpsHp" role="3cqZAp">
+        <node concept="3SKdUq" id="4fnTrxcpsHr" role="3SKWNk">
+          <property role="3SKdUp" value="see TemplateContainer#checkAdjacentFragments" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4fnTrxcps5$" role="3cqZAp">
+        <node concept="3cpWsn" id="4fnTrxcps5E" role="3cpWs9">
+          <property role="TrG5h" value="commonParent" />
+          <node concept="3Tqbb2" id="4fnTrxcps5Y" role="1tU5fm" />
+          <node concept="10Nm6u" id="4fnTrxcpsA9" role="33vP2m" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4fnTrxcpsxn" role="3cqZAp">
+        <node concept="3cpWsn" id="4fnTrxcpsxo" role="3cpWs9">
+          <property role="TrG5h" value="commonAggregationLink" />
+          <node concept="3uibUv" id="4fnTrxcpsxp" role="1tU5fm">
+            <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+          </node>
+          <node concept="10Nm6u" id="4fnTrxcpsAF" role="33vP2m" />
+        </node>
+      </node>
+      <node concept="1DcWWT" id="4fnTrxcpplR" role="3cqZAp">
+        <node concept="3clFbS" id="4fnTrxcpplT" role="2LFqv$">
+          <node concept="3cpWs8" id="4fnTrxcpsdt" role="3cqZAp">
+            <node concept="3cpWsn" id="4fnTrxcpsdu" role="3cpWs9">
+              <property role="TrG5h" value="fragmentParent" />
+              <node concept="3Tqbb2" id="4fnTrxcpsds" role="1tU5fm" />
+              <node concept="2OqwBi" id="4fnTrxcpsdv" role="33vP2m">
+                <node concept="37vLTw" id="4fnTrxcpsdw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4fnTrxcpplV" resolve="tf" />
+                </node>
+                <node concept="1mfA1w" id="4fnTrxcpsdx" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="4fnTrxcpsue" role="3cqZAp">
+            <node concept="3cpWsn" id="4fnTrxcpsuf" role="3cpWs9">
+              <property role="TrG5h" value="containmentLink" />
+              <node concept="3uibUv" id="4fnTrxcpsu6" role="1tU5fm">
+                <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+              </node>
+              <node concept="2OqwBi" id="4fnTrxcpsug" role="33vP2m">
+                <node concept="2JrnkZ" id="4fnTrxcpsuh" role="2Oq$k0">
+                  <node concept="37vLTw" id="4fnTrxcpsui" role="2JrQYb">
+                    <ref role="3cqZAo" node="4fnTrxcpsdu" resolve="fragmentParent" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4fnTrxcpsuj" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4fnTrxcpszm" role="3cqZAp">
+            <node concept="3clFbS" id="4fnTrxcpszo" role="3clFbx">
+              <node concept="3SKdUt" id="4fnTrxcpsB8" role="3cqZAp">
+                <node concept="3SKdUq" id="4fnTrxcpsBa" role="3SKWNk">
+                  <property role="3SKdUp" value="first fragment - remember its parent and role to use as reference value" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="4fnTrxcpsBj" role="3cqZAp">
+                <node concept="37vLTI" id="4fnTrxcpsC_" role="3clFbG">
+                  <node concept="2OqwBi" id="4fnTrxcpsE7" role="37vLTx">
+                    <node concept="37vLTw" id="4fnTrxcpsD6" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4fnTrxcpsdu" resolve="fragmentParent" />
+                    </node>
+                    <node concept="1mfA1w" id="4fnTrxcpsIJ" role="2OqNvi" />
+                  </node>
+                  <node concept="37vLTw" id="4fnTrxcpsBh" role="37vLTJ">
+                    <ref role="3cqZAo" node="4fnTrxcps5E" resolve="commonParent" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="4fnTrxcpsJe" role="3cqZAp">
+                <node concept="37vLTI" id="4fnTrxcpsKi" role="3clFbG">
+                  <node concept="37vLTw" id="4fnTrxcpsJc" role="37vLTJ">
+                    <ref role="3cqZAo" node="4fnTrxcpsxo" resolve="commonAggregationLink" />
+                  </node>
+                  <node concept="37vLTw" id="4fnTrxcpsOs" role="37vLTx">
+                    <ref role="3cqZAo" node="4fnTrxcpsuf" resolve="containmentLink" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="4fnTrxcps_e" role="3clFbw">
+              <node concept="10Nm6u" id="4fnTrxcps_v" role="3uHU7w" />
+              <node concept="37vLTw" id="4fnTrxcps$8" role="3uHU7B">
+                <ref role="3cqZAo" node="4fnTrxcps5E" resolve="commonParent" />
+              </node>
+            </node>
+            <node concept="9aQIb" id="4fnTrxcpsAR" role="9aQIa">
+              <node concept="3clFbS" id="4fnTrxcpsAS" role="9aQI4">
+                <node concept="3clFbJ" id="4fnTrxcpsOP" role="3cqZAp">
+                  <node concept="3clFbS" id="4fnTrxcpsOQ" role="3clFbx">
+                    <node concept="2MkqsV" id="4fnTrxcpsVF" role="3cqZAp">
+                      <node concept="37vLTw" id="4fnTrxcpsWS" role="2OEOjV">
+                        <ref role="3cqZAo" node="4fnTrxcpplV" resolve="tf" />
+                      </node>
+                      <node concept="2YIFZM" id="4fnTrxcpsWb" role="2MkJ7o">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="4fnTrxcpsXJ" role="37wK5m">
+                          <property role="Xl_RC" value="Template Fragments shall reside under same parent node" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="4fnTrxcpsQ6" role="3clFbw">
+                    <node concept="2OqwBi" id="4fnTrxcpsRn" role="3uHU7w">
+                      <node concept="37vLTw" id="4fnTrxcpsQn" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4fnTrxcpsdu" resolve="fragmentParent" />
+                      </node>
+                      <node concept="1mfA1w" id="4fnTrxcpsTc" role="2OqNvi" />
+                    </node>
+                    <node concept="37vLTw" id="4fnTrxcpsP1" role="3uHU7B">
+                      <ref role="3cqZAo" node="4fnTrxcps5E" resolve="commonParent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="4fnTrxcpti0" role="3cqZAp">
+                  <node concept="3clFbS" id="4fnTrxcpti2" role="3clFbx">
+                    <node concept="2MkqsV" id="4fnTrxcptuo" role="3cqZAp">
+                      <node concept="37vLTw" id="4fnTrxcptup" role="2OEOjV">
+                        <ref role="3cqZAo" node="4fnTrxcpplV" resolve="tf" />
+                      </node>
+                      <node concept="2YIFZM" id="4fnTrxcptuq" role="2MkJ7o">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="4fnTrxcptur" role="37wK5m">
+                          <property role="Xl_RC" value="Template Fragments shall use same same containment link" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="17QLQc" id="4fnTrxcptn8" role="3clFbw">
+                    <node concept="37vLTw" id="4fnTrxcptWS" role="3uHU7B">
+                      <ref role="3cqZAo" node="4fnTrxcpsxo" resolve="commonAggregationLink" />
+                    </node>
+                    <node concept="2OqwBi" id="4fnTrxcptqz" role="3uHU7w">
+                      <node concept="2JrnkZ" id="4fnTrxcptpz" role="2Oq$k0">
+                        <node concept="37vLTw" id="4fnTrxcptnr" role="2JrQYb">
+                          <ref role="3cqZAo" node="4fnTrxcpsdu" resolve="fragmentParent" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="4fnTrxcpttR" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWsn" id="4fnTrxcpplV" role="1Duv9x">
+          <property role="TrG5h" value="tf" />
+          <node concept="3Tqbb2" id="4fnTrxcppR5" role="1tU5fm">
+            <ref role="ehGHo" to="tpf8:fWrartG" resolve="TemplateFragment" />
+          </node>
+        </node>
+        <node concept="2OqwBi" id="4fnTrxcppm0" role="1DdaDG">
+          <node concept="2OqwBi" id="4fnTrxcppm1" role="2Oq$k0">
+            <node concept="1YBJjd" id="4fnTrxcppm2" role="2Oq$k0">
+              <ref role="1YBMHb" node="4fnTrxcpk3G" resolve="consequence" />
+            </node>
+            <node concept="3TrEf2" id="4fnTrxcppm3" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:7I5RuObTjPJ" />
+            </node>
+          </node>
+          <node concept="2Rf3mk" id="4fnTrxcppm4" role="2OqNvi">
+            <node concept="1xMEDy" id="4fnTrxcppm5" role="1xVPHs">
+              <node concept="chp4Y" id="4fnTrxcppm6" role="ri$Ld">
+                <ref role="cht4Q" to="tpf8:fWrartG" resolve="TemplateFragment" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4fnTrxcpk3G" role="1YuTPh">
+      <property role="TrG5h" value="consequence" />
+      <ref role="1YaFvo" to="tpf8:7I5RuObTjPG" resolve="InlineTemplateWithContext_RuleConsequence" />
     </node>
   </node>
 </model>

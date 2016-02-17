@@ -93,6 +93,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_InlineTemplateWithContext_RuleConsequence_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_LoopMacro_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
