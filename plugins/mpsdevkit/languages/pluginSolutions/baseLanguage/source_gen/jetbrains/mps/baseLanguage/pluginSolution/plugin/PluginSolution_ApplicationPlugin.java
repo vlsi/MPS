@@ -15,11 +15,14 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new CreateMethodDeclaration_Action());
     addAction(new ShowNullDFA_Action());
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
+    addGroup(new ShowAsIntentions_ActionGroup());
   }
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
   }
 }

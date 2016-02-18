@@ -53,10 +53,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   private IntentionFactory[] myIntentions38;
   private IntentionFactory[] myIntentions39;
   private IntentionFactory[] myIntentions40;
-  private IntentionFactory[] myIntentions41;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[42];
+    myId2Index = new long[41];
     myId2Index[0] = 0xf8c108ca66L;
     myId2Index[1] = 0xf8c108ca68L;
     myId2Index[2] = 0xf8c37a7f6eL;
@@ -87,18 +86,17 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     myId2Index[27] = 0x10f3ee082d8L;
     myId2Index[28] = 0x1107e0cb103L;
     myId2Index[29] = 0x114a6be947aL;
-    myId2Index[30] = 0x116b46ac030L;
-    myId2Index[31] = 0x117b744dafeL;
-    myId2Index[32] = 0x117b9245fc5L;
-    myId2Index[33] = 0x118154a6332L;
-    myId2Index[34] = 0x11857355952L;
-    myId2Index[35] = 0x118ceceb41aL;
-    myId2Index[36] = 0x11a59b0fbceL;
-    myId2Index[37] = 0x11d2ea8a339L;
-    myId2Index[38] = 0x120237c2cebL;
-    myId2Index[39] = 0x3399756d2c03d422L;
-    myId2Index[40] = 0x6c6b6a1e379f9404L;
-    myId2Index[41] = 0x6c6b6a1e379f9408L;
+    myId2Index[30] = 0x117b744dafeL;
+    myId2Index[31] = 0x117b9245fc5L;
+    myId2Index[32] = 0x118154a6332L;
+    myId2Index[33] = 0x11857355952L;
+    myId2Index[34] = 0x118ceceb41aL;
+    myId2Index[35] = 0x11a59b0fbceL;
+    myId2Index[36] = 0x11d2ea8a339L;
+    myId2Index[37] = 0x120237c2cebL;
+    myId2Index[38] = 0x3399756d2c03d422L;
+    myId2Index[39] = 0x6c6b6a1e379f9404L;
+    myId2Index[40] = 0x6c6b6a1e379f9408L;
   }
 
   @Override
@@ -363,93 +361,86 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         }
         return Arrays.asList(myIntentions29);
       case 30:
-        // Concept: IOperation 
+        // Concept: Property 
         if (myIntentions30 == null) {
-          myIntentions30 = new IntentionFactory[1];
-          myIntentions30[0] = new CreateMethodDeclaration_Intention();
+          myIntentions30 = new IntentionFactory[3];
+          myIntentions30[0] = new SwitchToCustomPropertyImplementation_Intention();
+          myIntentions30[1] = new SwitchToDefaultPropertyImplementation_Intention();
+          myIntentions30[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
         }
         return Arrays.asList(myIntentions30);
       case 31:
-        // Concept: Property 
+        // Concept: GetAccessor 
         if (myIntentions31 == null) {
-          myIntentions31 = new IntentionFactory[3];
-          myIntentions31[0] = new SwitchToCustomPropertyImplementation_Intention();
-          myIntentions31[1] = new SwitchToDefaultPropertyImplementation_Intention();
-          myIntentions31[2] = new SwitchToCustomConstructorPropertyImplementation_Intention();
+          myIntentions31 = new IntentionFactory[1];
+          myIntentions31[0] = new CreateSetAccessor_Intention();
         }
         return Arrays.asList(myIntentions31);
       case 32:
-        // Concept: GetAccessor 
+        // Concept: InstanceMethodCallOperation 
         if (myIntentions32 == null) {
-          myIntentions32 = new IntentionFactory[1];
-          myIntentions32[0] = new CreateSetAccessor_Intention();
+          myIntentions32 = new IntentionFactory[2];
+          myIntentions32[0] = new ReplaceEqualsWithEquality_Intention();
+          myIntentions32[1] = new FilpEqualsIntention_Intention();
         }
         return Arrays.asList(myIntentions32);
       case 33:
-        // Concept: InstanceMethodCallOperation 
+        // Concept: IMethodCall 
         if (myIntentions33 == null) {
-          myIntentions33 = new IntentionFactory[2];
-          myIntentions33[0] = new ReplaceEqualsWithEquality_Intention();
-          myIntentions33[1] = new FilpEqualsIntention_Intention();
+          myIntentions33 = new IntentionFactory[1];
+          myIntentions33[0] = new AddTypeParameters_Intention();
         }
         return Arrays.asList(myIntentions33);
       case 34:
-        // Concept: IMethodCall 
+        // Concept: ElsifClause 
         if (myIntentions34 == null) {
-          myIntentions34 = new IntentionFactory[1];
-          myIntentions34[0] = new AddTypeParameters_Intention();
+          myIntentions34 = new IntentionFactory[2];
+          myIntentions34[0] = new ElsifSwapWithMain_Intention();
+          myIntentions34[1] = new ConvertElsifToNewIfStatement_Intention();
         }
         return Arrays.asList(myIntentions34);
       case 35:
-        // Concept: ElsifClause 
+        // Concept: ClassCreator 
         if (myIntentions35 == null) {
-          myIntentions35 = new IntentionFactory[2];
-          myIntentions35[0] = new ElsifSwapWithMain_Intention();
-          myIntentions35[1] = new ConvertElsifToNewIfStatement_Intention();
+          myIntentions35 = new IntentionFactory[1];
+          myIntentions35[0] = new ConvertClassCreatorToAnonimous_Intention();
         }
         return Arrays.asList(myIntentions35);
       case 36:
-        // Concept: ClassCreator 
+        // Concept: IBLDeprecatable 
         if (myIntentions36 == null) {
           myIntentions36 = new IntentionFactory[1];
-          myIntentions36[0] = new ConvertClassCreatorToAnonimous_Intention();
+          myIntentions36[0] = new MakeDeprecated_Intention();
         }
         return Arrays.asList(myIntentions36);
       case 37:
-        // Concept: IBLDeprecatable 
+        // Concept: IContainsStatementList 
         if (myIntentions37 == null) {
           myIntentions37 = new IntentionFactory[1];
-          myIntentions37[0] = new MakeDeprecated_Intention();
+          myIntentions37[0] = new AlterStatementListContainer_Intention();
         }
         return Arrays.asList(myIntentions37);
       case 38:
-        // Concept: IContainsStatementList 
+        // Concept: ITryCatchStatement 
         if (myIntentions38 == null) {
           myIntentions38 = new IntentionFactory[1];
-          myIntentions38[0] = new AlterStatementListContainer_Intention();
+          myIntentions38[0] = new UnwrapTryCatch_Intention();
         }
         return Arrays.asList(myIntentions38);
       case 39:
-        // Concept: ITryCatchStatement 
+        // Concept: LocalMethodCall 
         if (myIntentions39 == null) {
           myIntentions39 = new IntentionFactory[1];
-          myIntentions39[0] = new UnwrapTryCatch_Intention();
+          myIntentions39[0] = new SpecifyClass_Intention();
         }
         return Arrays.asList(myIntentions39);
       case 40:
-        // Concept: LocalMethodCall 
+        // Concept: MethodDeclaration 
         if (myIntentions40 == null) {
           myIntentions40 = new IntentionFactory[1];
-          myIntentions40[0] = new SpecifyClass_Intention();
+          myIntentions40[0] = new MakeMethodStatic_Intention();
         }
         return Arrays.asList(myIntentions40);
-      case 41:
-        // Concept: MethodDeclaration 
-        if (myIntentions41 == null) {
-          myIntentions41 = new IntentionFactory[1];
-          myIntentions41[0] = new MakeMethodStatic_Intention();
-        }
-        return Arrays.asList(myIntentions41);
       default:
         return null;
     }
@@ -458,7 +449,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[92];
+    IntentionFactory[] rv = new IntentionFactory[91];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -509,48 +500,47 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[47] = new MakeOneLiner_Intention();
     rv[48] = new MakeMultiLiner_Intention();
     rv[49] = new UsedefaultLayout_Intention();
-    rv[50] = new CreateMethodDeclaration_Intention();
-    rv[51] = new SurroundWithIf_Intention();
-    rv[52] = new SurroundWithIfElse_Intention();
-    rv[53] = new SurroundWithWhile_Intention();
-    rv[54] = new SurroundWithDoWhile_Intention();
-    rv[55] = new SurroundWithFor_Intention();
-    rv[56] = new SurroundStatementsWithForEach_Intention();
-    rv[57] = new SuroundWithTryCatch_Intention();
-    rv[58] = new SurroundWithTryFinally_Intention();
-    rv[59] = new TryCatchFinally_Intention();
-    rv[60] = new SurroundWithSynchronized_Intention();
-    rv[61] = new SurroundWithBrackets_Intention();
-    rv[62] = new MakeFieldTransient_Intention();
-    rv[63] = new SurroundWithParenthesis_Intention();
-    rv[64] = new SurroundWithTypeCast_Intention();
-    rv[65] = new SurroundWithNegation_Intention();
-    rv[66] = new SurroundWithIfClause_Intention();
-    rv[67] = new SurroundWithIfElseClause_Intention();
-    rv[68] = new AddTypeParameters_Intention();
-    rv[69] = new MakeSynchronized_Intention();
-    rv[70] = new ConvertToClosure_Intention();
-    rv[71] = new UnwrapIfThenBlock_Intention();
-    rv[72] = new UnwrapTryCatch_Intention();
-    rv[73] = new RemoveTVDInAnonymousClass_Intention();
-    rv[74] = new SplitIf_Intention();
-    rv[75] = new ConvertIfConditionToTernaryOperator_Intention();
-    rv[76] = new AddModifiers_Intention();
-    rv[77] = new AddOverrideAnnotation_Intention();
-    rv[78] = new AlterStatementListContainer_Intention();
-    rv[79] = new RemoveStaticFieldModifier_Intention();
-    rv[80] = new AddStaticFieldModifier_Intention();
-    rv[81] = new MakeMethodStatic_Intention();
-    rv[82] = new MakeStaticFieldVolatile_Intention();
-    rv[83] = new MakeStaticFieldTransient_Intention();
-    rv[84] = new OrToAndAndBack_Intention();
-    rv[85] = new SwapTernaryBranches_Intention();
-    rv[86] = new SwitchToCustomPropertyImplementation_Intention();
-    rv[87] = new SwitchToDefaultPropertyImplementation_Intention();
-    rv[88] = new SwitchToCustomConstructorPropertyImplementation_Intention();
-    rv[89] = new CleanUnmatchedParentheses_Intention();
-    rv[90] = new ComputeWholeExpressionValue_Intention();
-    rv[91] = new ComputeExpressionValue_Intention();
+    rv[50] = new SurroundWithIf_Intention();
+    rv[51] = new SurroundWithIfElse_Intention();
+    rv[52] = new SurroundWithWhile_Intention();
+    rv[53] = new SurroundWithDoWhile_Intention();
+    rv[54] = new SurroundWithFor_Intention();
+    rv[55] = new SurroundStatementsWithForEach_Intention();
+    rv[56] = new SuroundWithTryCatch_Intention();
+    rv[57] = new SurroundWithTryFinally_Intention();
+    rv[58] = new TryCatchFinally_Intention();
+    rv[59] = new SurroundWithSynchronized_Intention();
+    rv[60] = new SurroundWithBrackets_Intention();
+    rv[61] = new MakeFieldTransient_Intention();
+    rv[62] = new SurroundWithParenthesis_Intention();
+    rv[63] = new SurroundWithTypeCast_Intention();
+    rv[64] = new SurroundWithNegation_Intention();
+    rv[65] = new SurroundWithIfClause_Intention();
+    rv[66] = new SurroundWithIfElseClause_Intention();
+    rv[67] = new AddTypeParameters_Intention();
+    rv[68] = new MakeSynchronized_Intention();
+    rv[69] = new ConvertToClosure_Intention();
+    rv[70] = new UnwrapIfThenBlock_Intention();
+    rv[71] = new UnwrapTryCatch_Intention();
+    rv[72] = new RemoveTVDInAnonymousClass_Intention();
+    rv[73] = new SplitIf_Intention();
+    rv[74] = new ConvertIfConditionToTernaryOperator_Intention();
+    rv[75] = new AddModifiers_Intention();
+    rv[76] = new AddOverrideAnnotation_Intention();
+    rv[77] = new AlterStatementListContainer_Intention();
+    rv[78] = new RemoveStaticFieldModifier_Intention();
+    rv[79] = new AddStaticFieldModifier_Intention();
+    rv[80] = new MakeMethodStatic_Intention();
+    rv[81] = new MakeStaticFieldVolatile_Intention();
+    rv[82] = new MakeStaticFieldTransient_Intention();
+    rv[83] = new OrToAndAndBack_Intention();
+    rv[84] = new SwapTernaryBranches_Intention();
+    rv[85] = new SwitchToCustomPropertyImplementation_Intention();
+    rv[86] = new SwitchToDefaultPropertyImplementation_Intention();
+    rv[87] = new SwitchToCustomConstructorPropertyImplementation_Intention();
+    rv[88] = new CleanUnmatchedParentheses_Intention();
+    rv[89] = new ComputeWholeExpressionValue_Intention();
+    rv[90] = new ComputeExpressionValue_Intention();
     return Arrays.asList(rv);
   }
 }
