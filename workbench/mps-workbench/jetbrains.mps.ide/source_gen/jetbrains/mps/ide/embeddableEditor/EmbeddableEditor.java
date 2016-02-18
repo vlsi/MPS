@@ -21,8 +21,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 public class EmbeddableEditor extends JPanel implements DataProvider {
@@ -94,12 +93,8 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
       } else {
         throw new IllegalStateException("For nodes not from repository edit mode is disabled");
       }
-    } else {
-      nodeModel = SNodeOperations.getModel(node);
     }
-
-    IOperationContext context = new ModuleContext(nodeModel.getModule(), project);
-    return new MPSFileNodeEditor(context, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
+    return new MPSFileNodeEditor((MPSProject) project, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 
   public void disposeEditor() {

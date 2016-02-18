@@ -12,7 +12,6 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
@@ -28,18 +27,19 @@ import java.util.List;
 
 public class IdeaNodeEditor extends NodeEditor {
 
-  public IdeaNodeEditor(IOperationContext context, SNode node) {
-    super(context, node);
+  public IdeaNodeEditor(Project project, SNode node) {
+    super(project, node);
   }
 
   @Override
   public Object getData(@NonNls String dataId) {
-    if (UsageView.USAGE_TARGETS_KEY.getName().equals(dataId)) {
+    if (UsageView.USAGE_TARGETS_KEY.is(dataId)) {
+      assert myProject instanceof MPSProject;
 
       SNodeReference currNodeRef = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
         @Override
         public SNodeReference compute() {
-          SNode node = (SNode) getCurrentEditorComponent().getData(MPSCommonDataKeys.NODE.getName());
+          SNode node = MPSCommonDataKeys.NODE.getData(getCurrentEditorComponent());
           if (node == null) {
             return null;
           }
@@ -47,23 +47,20 @@ public class IdeaNodeEditor extends NodeEditor {
         }
       });
 
-      Project project = getOperationContext().getProject();
-      assert project instanceof MPSProject;
-      return new UsageTarget[]{new NodeUsageTarget(currNodeRef, ((MPSProject) project).getProject())};
+      return new UsageTarget[]{new NodeUsageTarget(currNodeRef, ((MPSProject) myProject).getProject())};
 
-    } else if (LangDataKeys.PSI_ELEMENT_ARRAY.getName().equals(dataId)) {
+    } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
+      assert myProject instanceof MPSProject;
 
       return ModelAccess.instance().runReadAction(new Computable<PsiElement[]>() {
         @Override
         public PsiElement[] compute() {
-          List<SNode> nodes = (List<SNode>) getCurrentEditorComponent().getData(MPSCommonDataKeys.NODES.getName());
+          List<SNode> nodes =  MPSCommonDataKeys.NODES.getData(getCurrentEditorComponent());
           if (nodes == null) {
             return null;
           }
 
-          Project project = getOperationContext().getProject();
-          MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(((MPSProject) project).getProject());
-          assert project instanceof MPSProject;
+          MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(((MPSProject) myProject).getProject());
 
           List<PsiElement> elements = new ArrayList<PsiElement>(nodes.size());
           for (SNode node : nodes) {

@@ -27,6 +27,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -198,7 +199,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   private MPSFileNodeEditor openEditor() {
     assert ThreadUtils.isInEDT();
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
-    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file);
+    return new MPSFileNodeEditor((MPSProject) myProject, file);
   }
 
   protected EditorComponent getEditorComponent() {

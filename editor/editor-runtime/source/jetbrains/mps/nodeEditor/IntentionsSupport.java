@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -268,9 +267,6 @@ public class IntentionsSupport {
   }
 
   private void executeIntention(final IntentionExecutable intention, final SNode node) {
-    Project project = myEditor.getOperationContext().getProject();
-    if (project == null) return;
-
     getModelAccess().executeCommandInEDT(new EditorCommand(myEditor) {
       @Override
       public void doExecute() {

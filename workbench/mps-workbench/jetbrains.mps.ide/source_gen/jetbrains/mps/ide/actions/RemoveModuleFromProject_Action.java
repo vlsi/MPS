@@ -6,10 +6,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -26,7 +25,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
   public RemoveModuleFromProject_Action() {
-    super("Remove from Project", "", ICON);
+    super("Remove from Project...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -36,11 +35,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
-    if (module == null) {
-      return false;
-    }
-    return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(module);
+    return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(((SModule) MapSequence.fromMap(_params).get("module")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,8 +47,8 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
@@ -76,8 +71,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
-    final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
+    final String message = "Are you sure you want to remove selected module from the project? This operation is not undoable.";
     DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {
       {
         setTitle("Remove Module From Project");
@@ -98,7 +92,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     if (!(dialogWrapper.isOK())) {
       return;
     }
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module);
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(((SModule) MapSequence.fromMap(_params).get("module")));
     ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
   }
 }

@@ -13,9 +13,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />

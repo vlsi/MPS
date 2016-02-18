@@ -75,6 +75,7 @@
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2648,11 +2649,12 @@
         <node concept="3cpWs6" id="2i7g4YmNuos" role="3cqZAp">
           <node concept="2ShNRf" id="53DOTa2IKPJ" role="3cqZAk">
             <node concept="1pGfFk" id="53DOTa2JcbE" role="2ShVmc">
-              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile)" resolve="MPSFileNodeEditor" />
-              <node concept="2YIFZM" id="7htxo9QF0Zl" role="37wK5m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="37vLTw" id="5s44y2Lk5iF" role="37wK5m">
+              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile)" resolve="MPSFileNodeEditor" />
+              <node concept="10QFUN" id="6gJxm_KAYwP" role="37wK5m">
+                <node concept="3uibUv" id="6gJxm_KAZu7" role="10QFUM">
+                  <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+                </node>
+                <node concept="37vLTw" id="6gJxm_KAXGe" role="10QFUP">
                   <ref role="3cqZAo" node="hPjx680" resolve="myProject" />
                 </node>
               </node>

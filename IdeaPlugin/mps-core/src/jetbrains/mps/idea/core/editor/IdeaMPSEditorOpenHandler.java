@@ -17,7 +17,7 @@ public class IdeaMPSEditorOpenHandler implements EditorOpenHandler {
 
   @Override
   public Editor open(IOperationContext context, SNode node) {
-    return new IdeaNodeEditor(context, node);
+    return new IdeaNodeEditor(context.getProject(), node);
   }
 
   @Override

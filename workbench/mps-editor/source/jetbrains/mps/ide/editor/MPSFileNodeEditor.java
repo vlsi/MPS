@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.BaseNodeEditor.BaseEditorState;
@@ -33,11 +32,9 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.CommandListenerAdapter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -63,24 +60,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private MPSProject myProject;
   private MPSNodeVirtualFile myFile;
   private boolean myDisposed = false;
-
-  /**
-   * @deprecated IOperationContext has been deprecated
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
-    this((MPSProject) context.getProject(), file);
-  }
-
-  /**
-   * @deprecated use {@link #MPSFileNodeEditor(MPSProject, VirtualFile)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MPSFileNodeEditor(Project project, VirtualFile file) {
-    this(project.getComponent(MPSProject.class), file);
-  }
 
   // do not duplicate code that obtains MPSNodeVirtualFile from regular IDEA VirtualFile
   // in MPSFileNodeEditorProvider and MPSFileNodeEditor
@@ -108,8 +87,10 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     }
   }
 
-  public MPSFileNodeEditor(final MPSProject project, final VirtualFile file) {
+  public MPSFileNodeEditor(@NotNull MPSProject project, @NotNull VirtualFile file) {
     this(project, null);
+    // FIXME MPSNodeVirtualFile is subclass of VirtualFile, how do we ensure proper cons is invoked?
+    assert !(file instanceof MPSNodeVirtualFile);
     final SRepository repository = project.getRepository();
     final NodeFileComputable nodeFileComputable = new NodeFileComputable(repository, file);
     // we expect new models (that may come from the file) could show up in the repository only as a command(repository modification) result
@@ -126,16 +107,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     });
   }
 
-  /**
-   * @deprecated use {@link #MPSFileNodeEditor(MPSProject, MPSNodeVirtualFile)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
-    this(project.getComponent(MPSProject.class), file);
-  }
-
-  public MPSFileNodeEditor(MPSProject project, MPSNodeVirtualFile file) {
+  public MPSFileNodeEditor(@NotNull MPSProject project, MPSNodeVirtualFile file) {
     myProject = project;
     myFile = file;
 

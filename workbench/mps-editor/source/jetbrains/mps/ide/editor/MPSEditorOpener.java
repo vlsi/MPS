@@ -26,7 +26,6 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
@@ -39,7 +38,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -60,11 +58,13 @@ public class MPSEditorOpener {
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
       if (handler.canOpen(operationContext, node)) {
         Editor nodeEditor = handler.open(operationContext, node);
-        if (nodeEditor != null) return nodeEditor;
+        if (nodeEditor != null) {
+          return nodeEditor;
+        }
       }
     }
 
-    return new NodeEditor(operationContext, node);
+    return new NodeEditor(myProject, node);
   }
 
   /**

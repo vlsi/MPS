@@ -32,20 +32,20 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
@@ -102,7 +102,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         public void visitReferenceEvent(SModelReferenceEvent event) {
           SReference reference = event.getReference();
           SNode sourceNode = reference.getSourceNode();
-          if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && "baseMethodDeclaration".equals(reference.getRole())) {
+          if (SNodeOperations.isInstanceOf(sourceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration").equals(reference.getLink())) {
             methodCallDeclarationChanged(SNodeOperations.cast(sourceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")), reResolvedTargets);
           }
         }
@@ -110,7 +110,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         public void visitPropertyEvent(SModelPropertyEvent event) {
           SNode node = event.getNode();
           SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
-          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && "name".equals(event.getPropertyName())) {
+          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name").getName().equals(event.getPropertyName())) {
             methodDeclarationNameChanged(node, reResolvedTargets);
             methodDeclarationSignatureChanged(node, reResolvedTargets);
           }
@@ -127,28 +127,23 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         event.accept(visitor);
       }
     }
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        if (reResolvedTargets.isEmpty()) {
-          return;
-        }
-        Project p = (editorContext != null && editorContext.getOperationContext() != null ? editorContext.getOperationContext().getProject() : null);
-        if (p == null) {
-          return;
-        }
-
-        p.getModelAccess().executeUndoTransparentCommand(new Runnable() {
-          public void run() {
-            for (SNode methodCall : reResolvedTargets.keySet()) {
-              SNode referent = reResolvedTargets.get(methodCall);
-              if (referent != null && SNodeUtil.isAccessible(referent, MPSModuleRepository.getInstance())) {
-                SLinkOperations.setTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), referent);
+    if (!(reResolvedTargets.isEmpty()) && editorContext != null && editorContext.getRepository() != null) {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          final SRepository repo = editorContext.getRepository();
+          repo.getModelAccess().executeUndoTransparentCommand(new Runnable() {
+            public void run() {
+              for (SNode methodCall : reResolvedTargets.keySet()) {
+                SNode referent = reResolvedTargets.get(methodCall);
+                if (referent != null && SNodeUtil.isAccessible(referent, repo)) {
+                  SLinkOperations.setTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), referent);
+                }
               }
             }
-          }
-        });
-      }
-    });
+          });
+        }
+      });
+    }
     return new HashSet<EditorMessage>();
   }
   public void clearCaches() {
@@ -170,8 +165,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {
         reResolvedTargets.put(methodCallNode, newTarget);
       }
-      SNodeReference methodCallPointer = new SNodePointer(methodCallNode);
-      SNodeReference newTargetPointer = new SNodePointer(newTarget);
+      SNodeReference methodCallPointer = SNodeOperations.getPointer(methodCallNode);
+      SNodeReference newTargetPointer = SNodeOperations.getPointer(newTarget);
       myMethodCallsToSetDecls.put(methodCallPointer, newTargetPointer);
       myCheckedMethodCalls.add(methodCallPointer);
       Set<SNodeReference> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetPointer);
@@ -202,7 +197,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodeReference> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
+    Set<SNodeReference> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(SNodeOperations.getPointer(method));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
@@ -211,19 +206,15 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (methodCallPointers == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodeReference>() {
+    return SNodeOperations.ofConcept(SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodeReference>() {
       public boolean accept(SNodeReference it) {
         return it != null;
       }
     }).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
+        return it.resolve(MPSModuleRepository.getInstance());
       }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return it != null;
-      }
-    });
+    }), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
   }
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNodeReference> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getQualifiedName(), method.getName()));
@@ -233,7 +224,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     SNodeReference methodCallPointer = new SNodePointer(methodCall);
-    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).resolve(MPSModuleRepository.getInstance())) {
+    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) == myMethodCallsToSetDecls.get(methodCallPointer).resolve(MPSModuleRepository.getInstance())) {
       return;
     }
     testAndFixMethodCall(methodCall, resolveTargets);

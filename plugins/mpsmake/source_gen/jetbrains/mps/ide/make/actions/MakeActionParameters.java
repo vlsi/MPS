@@ -6,17 +6,15 @@ import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.smodel.Language;
@@ -27,33 +25,7 @@ public class MakeActionParameters {
   private List<SModel> myModels;
   private List<SModule> myModules;
   private boolean myCleanBuild = false;
-  private SModel cmodel;
-  private SModule cmodule;
-  /**
-   * 
-   * @deprecated Use constructor with Project instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public MakeActionParameters(IOperationContext context, Iterable<SModel> models, SModel cmodel, Iterable<SModule> modules, SModule cmodule) {
-    this(context.getProject());
-    List<SModel> list1 = ListSequence.fromList(new ArrayList<SModel>());
-    if (cmodel != null) {
-      ListSequence.fromList(list1).insertElement(0, cmodel);
-    }
-    if (models != null) {
-      ListSequence.fromList(list1).addSequence(Sequence.fromIterable(models));
-    }
-    models(list1);
-    List<SModule> list2 = ListSequence.fromList(new ArrayList<SModule>());
-    if (cmodule != null) {
-      ListSequence.fromList(list2).insertElement(0, cmodule);
-    }
-    if (modules != null) {
-      ListSequence.fromList(list2).addSequence(Sequence.fromIterable(modules));
-    }
-    modules(list2);
-  }
+
   public MakeActionParameters(@NotNull Project project) {
     myProject = project;
   }

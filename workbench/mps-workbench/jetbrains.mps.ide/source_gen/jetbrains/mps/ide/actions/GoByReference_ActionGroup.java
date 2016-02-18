@@ -11,13 +11,13 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.extensions.PluginId;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.annotations.Nullable;
 
 public class GoByReference_ActionGroup extends GeneratedActionGroup {
@@ -31,9 +31,9 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     GoByReference_ActionGroup.this.removeAll();
 
-    final IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     SNode node = event.getData(MPSCommonDataKeys.NODE);
-    if (node == null || context == null) {
+    if (node == null || mpsProject == null) {
       GoByReference_ActionGroup.this.disable(event.getPresentation());
       return;
     }
@@ -47,25 +47,24 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
     for (SReference ref : Sequence.fromIterable(refs)) {
       SNode targetNode = ref.getTargetNode();
       if (targetNode != null) {
-        String text = "[" + ref.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+        String text = "[" + ref.getLink() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
         GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(targetNode.getReference(), text), PluginId.getId("jetbrains.mps.ide"), targetNode.getReference(), text);
         continue;
       }
 
       final SReference finalRef = ref;
-      final ModelAccess modelAccess = context.getProject().getModelAccess();
-      modelAccess.runWriteInEDT(new Runnable() {
+      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
+          String text = "Bad reference: [" + finalRef.getLink() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
-          modelAccess.executeUndoTransparentCommand(new Runnable() {
+          mpsProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
             @Override
             public void run() {
-              ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());
+              ResolverComponent.getInstance().resolve(finalRef, mpsProject.getRepository());
             }
           });
-          String role = finalRef.getRole();
+          SReferenceLink role = finalRef.getLink();
           SNode sourceNode = finalRef.getSourceNode();
           SReference newRef = sourceNode.getReference(role);
           if (newRef == null) {

@@ -516,7 +516,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.actions.MakeActionParameters" file="MakeActionParameters.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -529,12 +528,10 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

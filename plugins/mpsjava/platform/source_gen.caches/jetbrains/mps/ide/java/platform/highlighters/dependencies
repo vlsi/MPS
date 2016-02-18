@@ -70,7 +70,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -93,6 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" file="OverrideMethodsChecker.java">
