@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
@@ -21,10 +20,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
@@ -153,26 +149,8 @@ public class MPSPsiNode extends MPSPsiNodeBase implements MPSPsiRealNode {
 
 
   @Override
-  public void navigate(final boolean requestFocus) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
-        if (node == null) return;
-
-        SModel modelDescriptor = node.getModel();
-        if (modelDescriptor == null) return;
-
-        SModule module = modelDescriptor.getModule();
-        if (module == null) return;
-
-        jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
-        if (project == null) return;
-
-        ModuleContext context = new ModuleContext(module, project);
-        NavigationSupport.getInstance().openNode(context, node, requestFocus, node.getParent() != null);
-      }
-    });
+  public void navigate(boolean requestFocus) {
+    new EditorNavigator(ProjectHelper.toMPSProject(getProject())).shallFocus(requestFocus).selectIfChild().open(getSNodeReference());
   }
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,9 @@ package jetbrains.mps.openapi.navigation;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -51,14 +49,6 @@ public abstract class NavigationSupport implements CoreComponent {
     INSTANCE = null;
   }
 
-  /**
-   * @deprecated use {@link #openNode(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.model.SNode, boolean, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public Editor openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
-    return openNode(context.getProject(), node, focus, select);
-  }
 
   /**
    * Opens node in the editor. Requires: model write, EDT.
@@ -76,15 +66,6 @@ public abstract class NavigationSupport implements CoreComponent {
   public abstract Editor openNode(@NotNull Project mpsProject, @NotNull SNode node, boolean focus, boolean select);
 
   /**
-   * @deprecated use {@link #selectInTree(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.model.SNode, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void selectInTree(@NotNull IOperationContext context, @NotNull SNode node, boolean focus) {
-    selectInTree(context.getProject(), node, focus);
-  }
-
-  /**
    * Opens project tree tool and selects the node. Requires: model read, EDT.
    *
    * @param project where the node is looked up and where it gets revealed
@@ -93,14 +74,6 @@ public abstract class NavigationSupport implements CoreComponent {
    */
   public abstract void selectInTree(@NotNull Project project, @NotNull SNode node, boolean focus);
 
-  /**
-   * @deprecated use {@link #selectInTree(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.model.SModel, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void selectInTree(@NotNull IOperationContext context, @NotNull SModel model, boolean focus) {
-    selectInTree(context.getProject(), model, focus);
-  }
 
   /**
    * Activates project tree tool and selects the model. Requires: model read, EDT.
@@ -110,15 +83,6 @@ public abstract class NavigationSupport implements CoreComponent {
    * @param focus focus on project tree tool
    */
   public abstract void selectInTree(@NotNull Project project, @NotNull SModel model, boolean focus);
-
-  /**
-   * @deprecated use {@link #selectInTree(jetbrains.mps.project.Project, org.jetbrains.mps.openapi.module.SModule, boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
-    selectInTree(context.getProject(), module, focus);
-  }
 
   /**
    * Activates project tree tool and selects the module. Requires: module read, EDT.

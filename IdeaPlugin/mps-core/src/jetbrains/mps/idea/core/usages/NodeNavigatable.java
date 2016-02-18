@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.usages;
 
 
@@ -22,9 +21,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -66,27 +64,16 @@ public abstract class NodeNavigatable implements Navigatable {
       @Override
       public void run() {
         if (canNavigate()) {
+          // FIXME openEditor doesn't require writeInEDT any longer, perhaps, canNavigate() could live without it as well
+          //       Need to check subclasses and uses, whether there's need in openEditor being public, if isValid/canNavigate require idea/model read/write
           openEditor(focus);
         }
       }
     });
   }
 
-  public void openEditor(final boolean focus) {
-    SNode node = myNode.resolve(MPSModuleRepository.getInstance());
-    if (node == null) return;
-
-    SModel modelDescriptor = node.getModel();
-    if (modelDescriptor == null) return;
-
-    SModule module = modelDescriptor.getModule();
-    if (module == null) return;
-
-    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
-    if (project == null) return;
-
-    ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().openNode(context, node, focus, node.getParent() != null);
+  public void openEditor(boolean focus) {
+    new EditorNavigator(ProjectHelper.toMPSProject(myProject)).shallFocus(focus).selectIfChild().open(myNode);
   }
 
   public abstract boolean isValid();
