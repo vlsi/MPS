@@ -54,7 +54,7 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
 
   public AbstractStepComboBoxButton(String text) {
     this();
-    setText(text + " ▼"); // BLACK DOWN-POINTING TRIANGLE (U+25BC)
+    setText(text + " \u25bc"); // BLACK DOWN-POINTING TRIANGLE (U+25BC)
   }
 
   public AbstractStepComboBoxButton() {
