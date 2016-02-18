@@ -1189,6 +1189,28 @@
         <node concept="10Oyi0" id="5IkW5anEKwD" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5IkW5anEKwE" role="3clF47">
+        <node concept="3SKdUt" id="3cX1hHAC_fJ" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHAC_fK" role="3SKWNk">
+            <property role="3SKdUp" value="cast to List&lt;SNode&gt; eliminates out of search scope error in Java8 vs Java6" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3cX1hHAC_fL" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHAC_fM" role="3SKWNk">
+            <property role="3SKdUp" value=" subList() has got implementation in ArrayList class since Java7" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3cX1hHAC_fN" role="3cqZAp">
+          <node concept="3cpWsn" id="3cX1hHAC_fO" role="3cpWs9">
+            <property role="TrG5h" value="this_" />
+            <node concept="3uibUv" id="3cX1hHAC_fP" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="3cX1hHAC_fQ" role="11_B2D">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
+            </node>
+            <node concept="Xjq3P" id="3cX1hHAC_fR" role="33vP2m" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5IkW5anEKwF" role="3cqZAp">
           <node concept="3cpWsn" id="5IkW5anEKwG" role="3cpWs9">
             <property role="TrG5h" value="sublist" />
@@ -1198,13 +1220,18 @@
                 <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
               </node>
             </node>
-            <node concept="1rXfSq" id="4hiugqyz00b" role="33vP2m">
-              <ref role="37wK5l" to="33ny:~AbstractList.subList(int,int):java.util.List" resolve="subList" />
-              <node concept="37vLTw" id="2BHiRxgmrBh" role="37wK5m">
-                <ref role="3cqZAo" node="5IkW5anEKwA" resolve="fromIndex" />
+            <node concept="2OqwBi" id="3cX1hHACBnA" role="33vP2m">
+              <node concept="37vLTw" id="3cX1hHACB1l" role="2Oq$k0">
+                <ref role="3cqZAo" node="3cX1hHAC_fO" resolve="this_" />
               </node>
-              <node concept="37vLTw" id="2BHiRxgmLpQ" role="37wK5m">
-                <ref role="3cqZAo" node="5IkW5anEKwC" resolve="toIndex" />
+              <node concept="liA8E" id="3cX1hHACCIh" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.subList(int,int):java.util.List" resolve="subList" />
+                <node concept="37vLTw" id="3cX1hHACDgU" role="37wK5m">
+                  <ref role="3cqZAo" node="5IkW5anEKwA" resolve="fromIndex" />
+                </node>
+                <node concept="37vLTw" id="3cX1hHACDW0" role="37wK5m">
+                  <ref role="3cqZAo" node="5IkW5anEKwC" resolve="toIndex" />
+                </node>
               </node>
             </node>
           </node>
@@ -1603,6 +1630,28 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3cX1hHACvYr" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHACvYs" role="3SKWNk">
+            <property role="3SKdUp" value="cast to List&lt;SNode&gt; eliminates out of search scope error in Java8 vs Java6" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3cX1hHACvYt" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHACvYu" role="3SKWNk">
+            <property role="3SKdUp" value=" iterator() has got implementation in ArrayList class since Java7" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3cX1hHACvYv" role="3cqZAp">
+          <node concept="3cpWsn" id="3cX1hHACvYw" role="3cpWs9">
+            <property role="TrG5h" value="this_" />
+            <node concept="3uibUv" id="3cX1hHACvYx" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="3cX1hHACvYy" role="11_B2D">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
+            </node>
+            <node concept="Xjq3P" id="3cX1hHACvYz" role="33vP2m" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="4IyDU$7kLrD" role="3cqZAp">
           <node concept="3cpWsn" id="4IyDU$7kLrE" role="3cpWs9">
             <property role="TrG5h" value="e" />
@@ -1613,8 +1662,13 @@
                 <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
               </node>
             </node>
-            <node concept="1rXfSq" id="4hiugqyzeB3" role="33vP2m">
-              <ref role="37wK5l" to="33ny:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
+            <node concept="2OqwBi" id="3cX1hHACxpr" role="33vP2m">
+              <node concept="37vLTw" id="3cX1hHACx6P" role="2Oq$k0">
+                <ref role="3cqZAo" node="3cX1hHACvYw" resolve="this_" />
+              </node>
+              <node concept="liA8E" id="3cX1hHACzIz" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.iterator():java.util.Iterator" resolve="iterator" />
+              </node>
             </node>
           </node>
         </node>
@@ -1710,6 +1764,28 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3cX1hHABUkz" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHABUk_" role="3SKWNk">
+            <property role="3SKdUp" value="cast to List&lt;SNode&gt; eliminates out of search scope error in Java8 vs Java6" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3cX1hHAC9$l" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHAC9$m" role="3SKWNk">
+            <property role="3SKdUp" value=" iterator() has got implementation in ArrayList class since Java7" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3cX1hHABTkK" role="3cqZAp">
+          <node concept="3cpWsn" id="3cX1hHABTkL" role="3cpWs9">
+            <property role="TrG5h" value="this_" />
+            <node concept="3uibUv" id="3cX1hHAClSa" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="3cX1hHACrGu" role="11_B2D">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
+            </node>
+            <node concept="Xjq3P" id="3cX1hHABTJO" role="33vP2m" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="4IyDU$7kLsh" role="3cqZAp">
           <node concept="3cpWsn" id="4IyDU$7kLsi" role="3cpWs9">
             <property role="TrG5h" value="it" />
@@ -1720,8 +1796,13 @@
                 <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
               </node>
             </node>
-            <node concept="1rXfSq" id="4hiugqyz9Jo" role="33vP2m">
-              <ref role="37wK5l" to="33ny:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
+            <node concept="2OqwBi" id="3cX1hHACoc4" role="33vP2m">
+              <node concept="37vLTw" id="3cX1hHACnVj" role="2Oq$k0">
+                <ref role="3cqZAo" node="3cX1hHABTkL" resolve="this_" />
+              </node>
+              <node concept="liA8E" id="3cX1hHACon1" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.iterator():java.util.Iterator" resolve="iterator" />
+              </node>
             </node>
           </node>
         </node>

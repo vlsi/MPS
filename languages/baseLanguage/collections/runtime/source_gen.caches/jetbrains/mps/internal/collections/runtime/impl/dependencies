@@ -228,6 +228,7 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.AbstractSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.HasNextState" />
@@ -239,6 +240,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ListIterator" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </dependency>

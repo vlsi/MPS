@@ -133,6 +133,10 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
@@ -218,6 +222,12 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -1213,11 +1223,18 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3cX1hHABUkz" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHABUk_" role="3SKWNk">
+            <property role="3SKdUp" value="cast to Component eliminates out of search scope error in Java8 vs Java6" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3cX1hHAC8zo" role="3cqZAp">
+          <node concept="3SKdUq" id="3cX1hHAC8zp" role="3SKWNk">
+            <property role="3SKdUp" value=" setLocation() has got implementation in Window class since Java7" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4KDfkUwM996" role="3cqZAp">
           <node concept="2OqwBi" id="4KDfkUwM997" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTyGL" role="2Oq$k0">
-              <ref role="3cqZAo" node="4KDfkUwM98f" resolve="dialog" />
-            </node>
             <node concept="liA8E" id="4KDfkUwM999" role="2OqNvi">
               <ref role="37wK5l" to="z60i:~Component.setLocation(int,int):void" resolve="setLocation" />
               <node concept="37vLTw" id="3GM_nagTuWf" role="37wK5m">
@@ -1225,6 +1242,16 @@
               </node>
               <node concept="37vLTw" id="3GM_nagTwDq" role="37wK5m">
                 <ref role="3cqZAo" node="4KDfkUwM98L" resolve="y" />
+              </node>
+            </node>
+            <node concept="1eOMI4" id="3cX1hHAC6Xj" role="2Oq$k0">
+              <node concept="10QFUN" id="3cX1hHAC6nC" role="1eOMHV">
+                <node concept="3uibUv" id="3cX1hHAC6Kz" role="10QFUM">
+                  <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
+                </node>
+                <node concept="37vLTw" id="3GM_nagTyGL" role="10QFUP">
+                  <ref role="3cqZAo" node="4KDfkUwM98f" resolve="dialog" />
+                </node>
               </node>
             </node>
           </node>

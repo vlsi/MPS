@@ -9767,7 +9767,7 @@
           <node concept="3cpWsn" id="5Ffu4tBUzy6" role="3cpWs9">
             <property role="TrG5h" value="cache" />
             <node concept="3uibUv" id="5Ffu4tBUzy7" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="16syzq" id="5Ffu4tBUzy8" role="11_B2D">
                 <ref role="16sUi3" node="5Ffu4tBUzxr" resolve="T" />
               </node>
@@ -9799,7 +9799,7 @@
                   <ref role="3cqZAo" node="5Ffu4tBUzy6" resolve="cache" />
                 </node>
                 <node concept="liA8E" id="5Ffu4tBUzyk" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
                   <node concept="37vLTw" id="3GM_nagT$iB" role="37wK5m">
                     <ref role="3cqZAo" node="5Ffu4tBUzye" resolve="u" />
                   </node>
@@ -9817,13 +9817,13 @@
                   <ref role="3cqZAo" node="5Ffu4tBUzy6" resolve="cache" />
                 </node>
                 <node concept="liA8E" id="5Ffu4tBUzyr" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~AbstractList.listIterator(int):java.util.ListIterator" resolve="listIterator" />
+                  <ref role="37wK5l" to="33ny:~List.listIterator(int):java.util.ListIterator" resolve="listIterator" />
                   <node concept="2OqwBi" id="5Ffu4tBUzys" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTu$X" role="2Oq$k0">
                       <ref role="3cqZAo" node="5Ffu4tBUzy6" resolve="cache" />
                     </node>
                     <node concept="liA8E" id="5Ffu4tBUzyu" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~ArrayList.size():int" resolve="size" />
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
                     </node>
                   </node>
                 </node>
@@ -11321,7 +11321,7 @@
       <node concept="312cEg" id="5Ffu4tBU$0C" role="jymVt">
         <property role="TrG5h" value="cache" />
         <node concept="3uibUv" id="5Ffu4tBU$0D" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="16syzq" id="5Ffu4tBU$0E" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBU$09" resolve="U" />
           </node>
@@ -11577,7 +11577,7 @@
                           <ref role="3cqZAo" node="5Ffu4tBU$0C" resolve="cache" />
                         </node>
                         <node concept="liA8E" id="5Ffu4tBU$3H" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                          <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
                           <node concept="37vLTw" id="3GM_nagTC0H" role="37wK5m">
                             <ref role="3cqZAo" node="5Ffu4tBU$3B" resolve="o" />
                           </node>
@@ -11596,7 +11596,7 @@
                         <ref role="3cqZAo" node="5Ffu4tBU$0C" resolve="cache" />
                       </node>
                       <node concept="liA8E" id="5Ffu4tBU$3Q" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
+                        <ref role="37wK5l" to="33ny:~List.iterator():java.util.Iterator" resolve="iterator" />
                       </node>
                     </node>
                   </node>
@@ -11618,7 +11618,7 @@
                             <ref role="3cqZAo" node="5Ffu4tBU$0C" resolve="cache" />
                           </node>
                           <node concept="liA8E" id="5Ffu4tBU$41" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~ArrayList.size():int" resolve="size" />
+                            <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
                           </node>
                         </node>
                         <node concept="37vLTw" id="2BHiRxeuL5$" role="3uHU7w">
@@ -11681,7 +11681,7 @@
                       <ref role="3cqZAo" node="5Ffu4tBU$0C" resolve="cache" />
                     </node>
                     <node concept="liA8E" id="5Ffu4tBU$4p" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~ArrayList.clear():void" resolve="clear" />
+                      <ref role="37wK5l" to="33ny:~List.clear():void" resolve="clear" />
                     </node>
                   </node>
                 </node>

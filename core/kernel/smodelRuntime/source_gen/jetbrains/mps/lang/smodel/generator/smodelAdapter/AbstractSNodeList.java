@@ -49,7 +49,10 @@ import jetbrains.mps.util.IterableUtil;
   protected abstract void insertAfter(SNode node, SNode anchorNode);
   @Override
   protected void removeRange(int fromIndex, int toIndex) {
-    List<SNode> sublist = subList(fromIndex, toIndex);
+    // cast to List<SNode> eliminates out of search scope error in Java8 vs Java6 
+    //  subList() has got implementation in ArrayList class since Java7 
+    List<SNode> this_ = this;
+    List<SNode> sublist = this_.subList(fromIndex, toIndex);
     SNode[] nodesToRemove = sublist.toArray(new SNode[sublist.size()]);
     super.removeRange(fromIndex, toIndex);
     for (SNode nextNode : nodesToRemove) {
@@ -99,7 +102,10 @@ import jetbrains.mps.util.IterableUtil;
   public boolean removeAll(Collection<?> collection) {
     // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
     boolean modified = false;
-    Iterator<SNode> e = iterator();
+    // cast to List<SNode> eliminates out of search scope error in Java8 vs Java6 
+    //  iterator() has got implementation in ArrayList class since Java7 
+    List<SNode> this_ = this;
+    Iterator<SNode> e = this_.iterator();
     while (e.hasNext()) {
       if (collection.contains(e.next())) {
         e.remove();
@@ -112,7 +118,10 @@ import jetbrains.mps.util.IterableUtil;
   public boolean retainAll(Collection<?> collection) {
     // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
     boolean modified = false;
-    Iterator<SNode> it = iterator();
+    // cast to List<SNode> eliminates out of search scope error in Java8 vs Java6 
+    //  iterator() has got implementation in ArrayList class since Java7 
+    List<SNode> this_ = this;
+    Iterator<SNode> it = this_.iterator();
     while (it.hasNext()) {
       if (!(collection.contains(it.next()))) {
         it.remove();

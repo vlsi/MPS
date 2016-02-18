@@ -5,8 +5,9 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.AbstractSequence;
 import java.util.Iterator;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.ArrayList;
 
 public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
   private final AbstractSequence<U> input;
@@ -41,7 +42,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     private HasNextState hasNext = HasNextState.UNKNOWN;
     private U next;
     private int countDown;
-    private ArrayList<U> cache;
+    private List<U> cache;
     private PagingIterator() {
     }
     @Override

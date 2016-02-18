@@ -881,11 +881,35 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="ZpMnc7KQbJ" role="3cqZAp">
-            <node concept="1rXfSq" id="4hiugqyzklf" role="3clFbG">
-              <ref role="37wK5l" to="z60i:~Component.setLocation(java.awt.Point):void" resolve="setLocation" />
-              <node concept="37vLTw" id="2BHiRxgm8iq" role="37wK5m">
-                <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
+          <node concept="3SKdUt" id="3cX1hHABUkz" role="3cqZAp">
+            <node concept="3SKdUq" id="3cX1hHABUk_" role="3SKWNk">
+              <property role="3SKdUp" value="cast to Component eliminates out of search scope error in Java8 vs Java6" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="3cX1hHAC9$l" role="3cqZAp">
+            <node concept="3SKdUq" id="3cX1hHAC9$m" role="3SKWNk">
+              <property role="3SKdUp" value=" setLocation() has got implementation in Window class since Java7" />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3cX1hHABTkK" role="3cqZAp">
+            <node concept="3cpWsn" id="3cX1hHABTkL" role="3cpWs9">
+              <property role="TrG5h" value="this_" />
+              <node concept="3uibUv" id="3cX1hHABTkM" role="1tU5fm">
+                <ref role="3uigEE" to="z60i:~Component" resolve="Component" />
+              </node>
+              <node concept="Xjq3P" id="3cX1hHABTJO" role="33vP2m" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="3cX1hHABV6W" role="3cqZAp">
+            <node concept="2OqwBi" id="3cX1hHABVjc" role="3clFbG">
+              <node concept="37vLTw" id="3cX1hHABXM9" role="2Oq$k0">
+                <ref role="3cqZAo" node="3cX1hHABTkL" resolve="this_" />
+              </node>
+              <node concept="liA8E" id="3cX1hHABWPs" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~Component.setLocation(java.awt.Point):void" resolve="setLocation" />
+                <node concept="37vLTw" id="3cX1hHABXgw" role="37wK5m">
+                  <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
+                </node>
               </node>
             </node>
           </node>

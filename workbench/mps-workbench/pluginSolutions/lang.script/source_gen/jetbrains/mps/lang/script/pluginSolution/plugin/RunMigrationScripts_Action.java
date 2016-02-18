@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
+import java.awt.Component;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
@@ -78,7 +79,9 @@ public class RunMigrationScripts_Action extends BaseAction {
     RunMigrationScriptsDialog dialog = new RunMigrationScriptsDialog(((Frame) MapSequence.fromMap(_params).get("frame")), RunMigrationScripts_Action.this.menuBuilder.getAllScripts(), ScriptsActionGroupHelper.getSelectedScripts());
     int x = ((Frame) MapSequence.fromMap(_params).get("frame")).getX() + ((Frame) MapSequence.fromMap(_params).get("frame")).getWidth() / 2 - dialog.getWidth() / 2;
     int y = ((Frame) MapSequence.fromMap(_params).get("frame")).getY() + ((Frame) MapSequence.fromMap(_params).get("frame")).getHeight() / 2 - dialog.getHeight() / 2;
-    dialog.setLocation(x, y);
+    // cast to Component eliminates out of search scope error in Java8 vs Java6 
+    //  setLocation() has got implementation in Window class since Java7 
+    ((Component) dialog).setLocation(x, y);
     dialog.setVisible(true);
     if (dialog.isRunChecked()) {
       AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
