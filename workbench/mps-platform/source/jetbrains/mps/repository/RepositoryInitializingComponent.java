@@ -17,6 +17,7 @@ package jetbrains.mps.repository;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -58,7 +59,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
     final List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
 
     final Application application = ApplicationManager.getApplication();
-    application.invokeLater(new Runnable() {
+    application.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         application.runWriteAction(new Runnable() {
@@ -68,7 +69,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
           }
         });
       }
-    });
+    }, ModalityState.defaultModalityState());
   }
 
   @Override
