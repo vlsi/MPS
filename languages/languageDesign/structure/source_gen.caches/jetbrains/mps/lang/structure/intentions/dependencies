@@ -20,39 +20,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" file="CreateReferenceConcept_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdUtil" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention" file="ForbidIncomingReferencesInSubconcepts_Intention.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -86,7 +53,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.MakeAbstract_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.MakeFinal_Intention" />

@@ -40,9 +40,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 1:
         // Concept: AbstractConceptDeclaration 
         if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[2];
-          myIntentions1[0] = new CreateReferenceConcept_Intention();
-          myIntentions1[1] = new ForbidIncomingReferencesInSubconcepts_Intention();
+          myIntentions1 = new IntentionFactory[1];
+          myIntentions1[0] = new ForbidIncomingReferencesInSubconcepts_Intention();
         }
         return Arrays.asList(myIntentions1);
       case 2:
@@ -60,13 +59,12 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[6];
+    IntentionFactory[] rv = new IntentionFactory[5];
     rv[0] = new AddDeprecatedAnnotation_Intention();
     rv[1] = new MakeRootable_Intention();
-    rv[2] = new CreateReferenceConcept_Intention();
-    rv[3] = new MakeFinal_Intention();
-    rv[4] = new MakeAbstract_Intention();
-    rv[5] = new ForbidIncomingReferencesInSubconcepts_Intention();
+    rv[2] = new MakeFinal_Intention();
+    rv[3] = new MakeAbstract_Intention();
+    rv[4] = new ForbidIncomingReferencesInSubconcepts_Intention();
     return Arrays.asList(rv);
   }
 }

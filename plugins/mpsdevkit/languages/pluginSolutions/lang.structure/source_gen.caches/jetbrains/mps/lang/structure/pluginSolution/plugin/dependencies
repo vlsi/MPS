@@ -24,6 +24,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.CreateReferenceConcept_Action" file="CreateReferenceConcept_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
@@ -364,11 +393,13 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.CreateReferenceConcept_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RefactoringAdditions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForAspect_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForNode_Action" />
@@ -462,6 +493,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_ActionGroup" file="ShowAsIntentions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" file="ShowDefaultHelp_Action.java">
     <classNode dependClassName="com.intellij.ide.actions.ContextHelpAction" />

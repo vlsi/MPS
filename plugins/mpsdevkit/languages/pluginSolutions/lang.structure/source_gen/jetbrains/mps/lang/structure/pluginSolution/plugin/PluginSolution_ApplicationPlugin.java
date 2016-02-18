@@ -20,6 +20,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new CreateReferenceConcept_Action());
     addAction(new RenameConcept_Action());
     addAction(new RenameLink_Action());
     addAction(new RenameProperty_Action());
@@ -29,6 +30,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowHelpForRoot_Action());
     // groups 
     addGroup(new RefactoringAdditions_ActionGroup());
+    addGroup(new ShowAsIntentions_ActionGroup());
     addGroup(new ShowHelp_ActionGroup());
     addGroup(new Structure_ActionGroup());
   }
@@ -38,6 +40,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
