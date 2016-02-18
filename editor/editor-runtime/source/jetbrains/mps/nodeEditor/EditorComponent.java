@@ -3058,8 +3058,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
-    repaint(0, cell.getY(), getWidth() + 1, cell.getHeight() + 1);
+    // The +1 for height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
+    repaint(0, cell.getY(), getWidth(), cell.getHeight() + 1);
   }
 
   @Override
