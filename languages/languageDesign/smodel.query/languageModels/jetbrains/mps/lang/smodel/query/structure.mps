@@ -2,7 +2,7 @@
 <model ref="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -11,6 +11,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -39,6 +42,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -258,6 +262,179 @@
       <property role="20kJfa" value="scope" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4LU9FcrO3Hp">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintNodeExpression_old" />
+    <property role="34LRSv" value="#printNode" />
+    <property role="R4oN_" value="print node copy" />
+    <property role="1pbfSe" value="1749705228" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
+    <node concept="asaX9" id="6sWCsGPXu2R" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7gnNafF7YMD">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintTextExpression_old" />
+    <property role="34LRSv" value="#printText" />
+    <property role="R4oN_" value="print as string" />
+    <property role="1pbfSe" value="1597487436" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
+    <node concept="asaX9" id="6sWCsGPXu36" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4Jke6BA4ffD">
+    <property role="TrG5h" value="BLCommand_old" />
+    <property role="R4oN_" value="baseLanguage statements" />
+    <property role="34LRSv" value="{" />
+    <property role="1pbfSe" value="837102674" />
+    <property role="3GE5qa" value="bl" />
+    <node concept="1TJgyj" id="1yfzJNJreD_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="body_old" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+      <node concept="asaX9" id="6sWCsGPXu3v" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.base.structure.BLCommand&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="6sWCsGPXu3l" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWci" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="DM6_$iqV$8">
+    <property role="TrG5h" value="ProjectExpression_old" />
+    <property role="34LRSv" value="#project" />
+    <property role="3GE5qa" value="bl.expression.query" />
+    <property role="R4oN_" value="the current project" />
+    <property role="1pbfSe" value="484299617" />
+    <node concept="asaX9" id="6sWCsGPXu2H" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWcr" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7mV0m3L$tuv">
+    <property role="3GE5qa" value="bl.expression" />
+    <property role="TrG5h" value="ShowExpression_old" />
+    <property role="34LRSv" value="#show" />
+    <property role="R4oN_" value="show in usage view" />
+    <property role="1pbfSe" value="1733089535" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="6_TW7xVwuxP" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="object_old" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="6sWCsGPY13g" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.ideCommands.structure.ShowExpression&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="6sWCsGPY13b" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWcp" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5WpmwkrQrRs">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintNodeReferenceExpression_old" />
+    <property role="34LRSv" value="#printNodeRef" />
+    <property role="R4oN_" value="print reference to the node" />
+    <property role="1pbfSe" value="2062751713" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
+    <node concept="asaX9" id="6sWCsGPXu2W" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVaDdR">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintExpression_old" />
+    <property role="34LRSv" value="#print" />
+    <property role="R4oN_" value="smart print depending on content" />
+    <property role="1pbfSe" value="458980369" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
+    <node concept="PrWs8" id="64VftqEsbD$" role="PzmwI">
+      <ref role="PrY4T" node="64VftqErqMg" resolve="ExpressionHelpProvider" />
+    </node>
+    <node concept="asaX9" id="6sWCsGPXu3b" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6D0CP__oaBp">
+    <property role="TrG5h" value="BLExpression_old" />
+    <property role="R4oN_" value="baseLanguage expression" />
+    <property role="1pbfSe" value="811512526" />
+    <property role="3GE5qa" value="bl" />
+    <node concept="1TJgyj" id="6D0CP__oaD2" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression_old" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="6sWCsGPXu3q" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.base.structure.BLExpression&quot;" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWck" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="6sWCsGPXu31" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6_TW7xVvrpf">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="PrintSequenceExpression_old" />
+    <property role="34LRSv" value="#printSequence" />
+    <property role="R4oN_" value="print size with link to usages view" />
+    <property role="1pbfSe" value="453531961" />
+    <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
+    <node concept="asaX9" id="6sWCsGPXu3g" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6M9lfhDDWgw">
+    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="TrG5h" value="AbstractPrintExpression_old" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="701425388" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7gnNafF7Ztx" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="object_old" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="6sWCsGPXu3$" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.console.base.structure.AbstractPrintExpression&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="6sWCsGPXu2M" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="7x0bSItOWdm" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3J6h25QeHQy">
+    <property role="3GE5qa" value="bl.expression.query.parameter" />
+    <property role="TrG5h" value="ProjectScope_old" />
+    <property role="34LRSv" value="project" />
+    <property role="1pbfSe" value="1308548669" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <node concept="asaX9" id="6sWCsGPXu2C" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
+    </node>
+    <node concept="PrWs8" id="2EI1hHj_goG" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
 </model>

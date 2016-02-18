@@ -13,6 +13,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
+    <file name="AbstractPrintExpression_old_BehaviorDescriptor.java">
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.AbstractPrintExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="BLCommand_old_BehaviorDescriptor.java">
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.BLCommand_old_BehaviorDescriptor" />
+    </file>
+    <file name="BLExpression_old_BehaviorDescriptor.java">
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.BLExpression_old_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,78,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
     </file>
@@ -49,6 +58,27 @@
     <file name="OperationHelpProvider_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.OperationHelpProvider_BehaviorDescriptor" />
     </file>
+    <file name="PrintExpression_old_BehaviorDescriptor.java">
+      <unit at="12,0,39,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintNodeReferenceExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeReferenceExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintSequenceExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintSequenceExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="PrintTextExpression_old_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintTextExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectExpression_old_BehaviorDescriptor.java">
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectExpression_old_BehaviorDescriptor" />
+    </file>
+    <file name="ProjectScope_old_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectScope_old_BehaviorDescriptor" />
+    </file>
     <file name="QueryExpression_BehaviorDescriptor.java">
       <unit at="15,0,46,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" />
     </file>
@@ -69,6 +99,9 @@
     </file>
     <file name="ScopeParameter_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.ScopeParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ShowExpression_old_BehaviorDescriptor.java">
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.ShowExpression_old_BehaviorDescriptor" />
     </file>
     <file name="UsagesExpression_BehaviorDescriptor.java">
       <unit at="13,0,31,0" name="jetbrains.mps.lang.smodel.query.behavior.UsagesExpression_BehaviorDescriptor" />

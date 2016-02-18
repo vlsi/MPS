@@ -357,40 +357,42 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected SModel loadHistoryModel(String state) {
-    if (state != null) {
-      try {
-        final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
-        ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return !(it.getConcept().isValid());
-          }
-        }).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            if ((SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL, "jetbrains.mps.console.base.structure.HistoryItem"), false, false) != null)) {
-              SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL, "jetbrains.mps.console.base.structure.HistoryItem"), false, false));
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("Unknown concept on loading console history: removing enclosing history item");
-              }
-            } else {
-              loadedModel.value = null;
-              if (LOG.isEnabledFor(Level.ERROR)) {
-                LOG.error("Unknown concept on loading console history: not loading history");
-              }
+    if (state == null) {
+      return null;
+    }
+    try {
+      final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
+      ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(it.getConcept().isValid());
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          if ((SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL, "jetbrains.mps.console.base.structure.HistoryItem"), false, false) != null)) {
+            SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL, "jetbrains.mps.console.base.structure.HistoryItem"), false, false));
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Unknown concept on loading console history: removing enclosing history item");
+            }
+          } else {
+            loadedModel.value = null;
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Unknown concept on loading console history: not loading history");
             }
           }
-        });
-        return loadedModel.value;
-      } catch (RuntimeException e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Console history was not loaded. Maybe you are opening project from previous MPS versions?");
         }
-      } catch (Throwable e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Error on loading console history.", e);
-        }
+      });
+      return loadedModel.value;
+    } catch (RuntimeException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Console history was not loaded. Maybe you are opening project from previous MPS versions?");
       }
+      return null;
+    } catch (Throwable e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Error on loading console history.", e);
+      }
+      return null;
     }
-    return null;
   }
 
   protected ConsoleContext getConsoleContext() {
