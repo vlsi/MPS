@@ -122,6 +122,15 @@ class Memento {
 
     // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
     boolean needsRelayout = restoreErrors(editor);
+
+    // Restore collapse states before restoring selection, otherwise selection inside initially collapsed cells disappears
+    for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
+      needsRelayout = true;
+      EditorCell collection = collapseState.o1.findCell(editor);
+      if (!(collection instanceof EditorCell_Collection)) continue;
+      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
+    }
+
     editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
@@ -129,12 +138,6 @@ class Memento {
       if (((EditorCell_Collection) collection).usesBraces()) {
         ((EditorCell_Collection) collection).enableBraces();
       }
-    }
-    for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
-      needsRelayout = true;
-      EditorCell collection = collapseState.o1.findCell(editor);
-      if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
     }
 
     if (needsRelayout) {
