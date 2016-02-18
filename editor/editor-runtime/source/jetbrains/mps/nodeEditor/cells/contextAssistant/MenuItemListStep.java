@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.ui.popup.ClosableByLeftArrow;
 import jetbrains.mps.openapi.editor.contextAssistant.menu.ActionItem;
 import jetbrains.mps.openapi.editor.contextAssistant.menu.MenuItem;
 import jetbrains.mps.openapi.editor.contextAssistant.menu.SubMenu;
@@ -25,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.List;
 
-class MenuItemListStep extends BaseListPopupStep<MenuItem> {
+class MenuItemListStep extends BaseListPopupStep<MenuItem> implements ClosableByLeftArrow {
   public static final MenuItemListStep EMPTY = new MenuItemListStep(null, Collections.<MenuItem>emptyList());
   private final ActionItemExecutor myActionItemExecutor;
 

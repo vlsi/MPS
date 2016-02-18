@@ -90,7 +90,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.contextAssistant.DefaultContextAssistantManager;
-import jetbrains.mps.nodeEditor.contextAssistant.DisabledContextAssistantManager;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -114,6 +113,7 @@ import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
+import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistant;
 import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
@@ -129,7 +129,6 @@ import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -2842,11 +2841,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected ContextAssistantManager createContextAssistantManager(SRepository repository) {
-    if (EditorSettings.getInstance().isShowContextAssistant()) {
-      return new DefaultContextAssistantManager(this, repository);
-    } else {
-      return new DisabledContextAssistantManager();
-    }
+    return new DefaultContextAssistantManager(this, repository);
   }
 
   boolean isCellSwapInProgress() {
@@ -3069,13 +3064,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   /**
    * Return true if UI focus "within" this editor component. Means: owned by this component or any child-components
-   * (in case of component cells displayed inside this editor).
+   * (in case of component cells displayed inside this editor). Context assistant is a special case: if it is focused,
+   * the editor is considered inactive.
    *
    * @return true if the focus is inside this EditorComponent
    */
   public boolean isActive() {
+    if (isContextAssistantFocused()) return false;
+    if (isFocusOwner()) return true;
+
     Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
-    return hasFocus() || SwingUtilities.getAncestorOfClass(EditorComponent.class, focusOwner) == this;
+    return isAncestorOf(focusOwner);
+  }
+
+  private boolean isContextAssistantFocused() {
+    ContextAssistant activeAssistant = myEditorContext.getContextAssistantManager().getActiveAssistant();
+    return activeAssistant != null && activeAssistant.hasFocus();
   }
 
   private class ReferenceUnderliner {

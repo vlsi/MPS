@@ -31,8 +31,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.DefaultButtonModel;
+import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -67,6 +69,10 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
 
     setFont(UIUtil.getLabelFont());
     setOpaque(true);
+
+    InputMap inputMap = getInputMap();
+    inputMap.put(KeyStroke.getKeyStroke("DOWN"), "pressed");
+    inputMap.put(KeyStroke.getKeyStroke("released DOWN"), "released");
 
     addActionListener(
         new ActionListener() {

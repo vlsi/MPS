@@ -32,6 +32,7 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public class ContextAssistantPanel implements ActionItemExecutor {
   }
 
   public boolean hasFocus() {
-    return myComponent.isFocusOwner();
+    return myComponent.isFocusOwner() || myComponent.isAncestorOf(KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner());
   }
 
   public void focusMenu() {
