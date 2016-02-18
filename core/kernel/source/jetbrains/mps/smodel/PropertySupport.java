@@ -226,6 +226,9 @@ public abstract class PropertySupport {
     public static IntegerPropertySupport INSTANCE = new IntegerPropertySupport();
     @Override
     public boolean canSetValue(String value) {
+      if (value != null && value.startsWith("+")) {
+        return false;
+      }
       try {
         Integer.parseInt(value);
         return true;
