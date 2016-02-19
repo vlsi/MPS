@@ -360,7 +360,6 @@
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
         <child id="6845119683729280452" name="icon" index="27igRh" />
-        <child id="7962467864632399185" name="progressX" index="2gocG4" />
         <child id="7962467864633062782" name="progressHeight" index="2gqIGF" />
         <child id="8108467228800445684" name="dialogImage" index="2t3ecf" />
         <child id="6108265972537182997" name="aboutScreen" index="2EqU2s" />
@@ -16672,12 +16671,12 @@
       </node>
       <node concept="NbPM2" id="5VYK1npNzOH" role="27hAJg">
         <node concept="3Mxwew" id="5VYK1npNzOG" role="3MwsjC">
-          <property role="3MwjfP" value="280" />
+          <property role="3MwjfP" value="393" />
         </node>
       </node>
       <node concept="NbPM2" id="5VYK1npNzOD" role="27hGoL">
         <node concept="3Mxwew" id="5VYK1npNzOC" role="3MwsjC">
-          <property role="3MwjfP" value="1272BB" />
+          <property role="3MwjfP" value="00E184" />
         </node>
       </node>
       <node concept="55IIr" id="5VYK1npK8$T" role="27igRh">
@@ -16864,11 +16863,6 @@
       <node concept="NbPM2" id="7GO0VN9rZvQ" role="2Mmf0a">
         <node concept="3Mxwew" id="7GO0VN9rZvR" role="3MwsjC">
           <property role="3MwjfP" value="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
-        </node>
-      </node>
-      <node concept="NbPM2" id="6U0n_nYUFlV" role="2gocG4">
-        <node concept="3Mxwew" id="6U0n_nYUFlU" role="3MwsjC">
-          <property role="3MwjfP" value="117" />
         </node>
       </node>
       <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
