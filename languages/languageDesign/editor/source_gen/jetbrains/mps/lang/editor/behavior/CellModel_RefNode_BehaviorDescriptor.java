@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
 /**
@@ -23,6 +24,9 @@ public class CellModel_RefNode_BehaviorDescriptor extends CellModel_WithRole_Beh
     return null;
   }
   public String virtual_getRoleForCell_1216377898846(SNode __thisNode__) {
+    return null;
+  }
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
     return null;
   }
   public boolean virtual_isCellIdInitialized_1229948571177(SNode __thisNode__) {

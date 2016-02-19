@@ -62,10 +62,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           default:
         }
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a0f, menuId.getFqName())) {
+          case 0:
+            return Arrays.asList(new ContextAssistantMenu[]{new ParentNamedMenu()});
+          default:
+        }
+      }
     }
 
     return Collections.<ContextAssistantMenu>emptyList();
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a0f = new String[]{"jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu", "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a0f = new String[]{"jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu"};
 }

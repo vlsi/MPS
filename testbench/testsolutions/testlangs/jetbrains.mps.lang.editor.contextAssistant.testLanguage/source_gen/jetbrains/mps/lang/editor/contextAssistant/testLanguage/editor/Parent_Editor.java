@@ -139,12 +139,12 @@ public class Parent_Editor extends DefaultNodeEditor {
       }
     }
     private EditorCell createConstant_vx0ep_a0b1a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<new item>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no items>");
       editorCell.setCellId("Constant_vx0ep_a0b1a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
-      editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu"));
+      editorCell.setContextAssistantMenuLookup(new NamedMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), "jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu"));
       editorCell.setDefaultText("");
       return editorCell;
     }

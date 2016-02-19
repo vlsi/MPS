@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="18,0,72,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="18,0,80,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor)/1966322953445209148">
@@ -47,6 +47,15 @@
         <var name="node" id="1966322953445238754" />
       </scope>
       <unit id="1966322953445238752" at="11,0,23,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.SubconceptOfChild_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor)/4202667662394486071">
+    <file name="ParentNamedMenu.java">
+      <node id="4202667662394486071" at="12,39,13,37" concept="6" />
+      <node id="4202667662394486071" at="11,0,15,0" concept="4" trace="getParts#()Ljava/util/List;" />
+      <scope id="4202667662394486071" at="12,39,13,37" />
+      <scope id="4202667662394486071" at="11,0,15,0" />
+      <unit id="4202667662394486071" at="10,0,16,0" name="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu" />
     </file>
   </root>
   <root nodeRef="r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor)/4963668157153589508">
@@ -253,8 +262,8 @@
       <node id="7235496286125173718" at="143,51,144,36" concept="5" />
       <node id="7235496286125173718" at="144,36,145,107" concept="2" />
       <node id="7235496286125173718" at="145,107,146,42" concept="2" />
-      <node id="7235496286125173718" at="146,42,147,374" concept="2" />
-      <node id="7235496286125173718" at="147,374,148,36" concept="2" />
+      <node id="7235496286125173718" at="146,42,147,381" concept="2" />
+      <node id="7235496286125173718" at="147,381,148,36" concept="2" />
       <node id="7235496286125173718" at="148,36,149,24" concept="6" />
       <node id="2401921116440683101" at="152,109,153,90" concept="5" />
       <node id="2401921116440683101" at="153,90,154,56" concept="2" />

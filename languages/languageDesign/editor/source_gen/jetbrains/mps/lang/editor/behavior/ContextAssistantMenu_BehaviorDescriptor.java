@@ -4,10 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
+import jetbrains.mps.scope.Scope;
 
 /**
  * Will be removed after 3.3
@@ -15,7 +17,7 @@ import java.util.List;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public abstract class ContextAssistantMenu_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IConceptAspect_BehaviorDescriptor, INamedContextAssistantItems_BehaviorDescriptor {
+public abstract class ContextAssistantMenu_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IConceptAspect_BehaviorDescriptor, INamedContextAssistantItems_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept __thisConcept__, SNode candidate) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
@@ -29,6 +31,12 @@ public abstract class ContextAssistantMenu_BehaviorDescriptor extends BaseConcep
     return null;
   }
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
+  }
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
+  }
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
     return null;
   }
   public boolean virtual_isApplicable_7839831476331657915(SNode __thisNode__, SNode candidate) {

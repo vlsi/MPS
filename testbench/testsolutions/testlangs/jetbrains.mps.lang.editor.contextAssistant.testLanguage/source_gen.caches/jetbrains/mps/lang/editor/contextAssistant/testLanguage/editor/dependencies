@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.DefaultMenuContribution" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.NamedMenuContribution" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Parent_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Recursive" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.SubconceptOfChild_ContextAssistantMenu" />
@@ -98,6 +99,13 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.ParentNamedMenu" file="ParentNamedMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.MenuPart" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.contextAssistant.ContextAssistantMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Parent_Editor" file="Parent_Editor.java">
