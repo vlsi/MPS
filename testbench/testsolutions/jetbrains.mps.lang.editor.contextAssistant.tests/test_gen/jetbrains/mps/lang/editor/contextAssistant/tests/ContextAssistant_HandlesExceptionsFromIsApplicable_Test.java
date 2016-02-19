@@ -10,13 +10,13 @@ import jetbrains.mps.openapi.editor.contextAssistant.ContextAssistantManager;
 import junit.framework.Assert;
 
 @MPSLaunch
-public class ContextAssistant_HandlesExceptionsFromCanExecute_Test extends BaseTransformationTest {
-  public ContextAssistant_HandlesExceptionsFromCanExecute_Test() {
+public class ContextAssistant_HandlesExceptionsFromIsApplicable_Test extends BaseTransformationTest {
+  public ContextAssistant_HandlesExceptionsFromIsApplicable_Test() {
   }
   @Test
-  public void test_ContextAssistant_HandlesExceptionsFromCanExecute() throws Throwable {
+  public void test_ContextAssistant_HandlesExceptionsFromIsApplicable() throws Throwable {
     this.initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromCanExecute_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

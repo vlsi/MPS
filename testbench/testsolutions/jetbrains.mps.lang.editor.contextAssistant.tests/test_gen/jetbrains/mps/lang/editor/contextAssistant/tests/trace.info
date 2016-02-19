@@ -90,29 +90,29 @@
     </file>
   </root>
   <root nodeRef="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)/7140355682307235744">
-    <file name="ContextAssistant_HandlesExceptionsFromCanExecute_Test.java">
-      <node id="7140355682307235744" at="17,88,18,131" concept="1" />
-      <node id="7140355682307235744" at="18,131,19,153" concept="1" />
+    <file name="ContextAssistant_HandlesExceptionsFromIsApplicable_Test.java">
+      <node id="7140355682307235744" at="17,90,18,131" concept="1" />
+      <node id="7140355682307235744" at="18,131,19,155" concept="1" />
       <node id="7140355682307235744" at="26,51,27,44" concept="1" />
       <node id="7140355682307405116" at="27,44,28,130" concept="3" />
       <node id="7140355682307400000" at="28,130,29,50" concept="1" />
       <node id="7140355682307405037" at="29,50,30,73" concept="1" />
-      <node id="7140355682307235744" at="14,0,16,0" concept="0" trace="ContextAssistant_HandlesExceptionsFromCanExecute_Test#()V" />
+      <node id="7140355682307235744" at="14,0,16,0" concept="0" trace="ContextAssistant_HandlesExceptionsFromIsApplicable_Test#()V" />
       <node id="7140355682307235744" at="23,0,25,0" concept="0" trace="TestBody#()V" />
-      <node id="7140355682307235744" at="16,0,21,0" concept="2" trace="test_ContextAssistant_HandlesExceptionsFromCanExecute#()V" />
+      <node id="7140355682307235744" at="16,0,21,0" concept="2" trace="test_ContextAssistant_HandlesExceptionsFromIsApplicable#()V" />
       <node id="7140355682307235744" at="25,0,32,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7140355682307235744" at="14,66,14,66" />
+      <scope id="7140355682307235744" at="14,68,14,68" />
       <scope id="7140355682307235744" at="23,23,23,23" />
       <scope id="7140355682307235744" at="14,0,16,0" />
-      <scope id="7140355682307235744" at="17,88,19,153" />
+      <scope id="7140355682307235744" at="17,90,19,155" />
       <scope id="7140355682307235744" at="23,0,25,0" />
       <scope id="7140355682307235744" at="26,51,30,73">
         <var name="contextAssistantManager" id="7140355682307405117" />
       </scope>
       <scope id="7140355682307235744" at="16,0,21,0" />
       <scope id="7140355682307235744" at="25,0,32,0" />
-      <unit id="7140355682307235744" at="21,0,33,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromCanExecute_Test$TestBody" />
-      <unit id="7140355682307235744" at="12,0,34,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromCanExecute_Test" />
+      <unit id="7140355682307235744" at="21,0,33,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody" />
+      <unit id="7140355682307235744" at="12,0,34,0" name="jetbrains.mps.lang.editor.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test" />
     </file>
   </root>
   <root nodeRef="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.contextAssistant.tests@tests)/8865042036543828396">

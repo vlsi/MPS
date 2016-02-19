@@ -215,8 +215,8 @@
     </node>
   </node>
   <node concept="LiM7Y" id="6cnCU_HRlYw">
-    <property role="TrG5h" value="ContextAssistant_HandlesExceptionsFromCanExecute" />
-    <property role="3YCmrE" value="menu items that throw exception in 'can execute' are skipped but the menu is still shown" />
+    <property role="TrG5h" value="ContextAssistant_HandlesExceptionsFromIsApplicable" />
+    <property role="3YCmrE" value="menu items that throw exception in 'isApplicable' are skipped but the menu is still shown" />
     <node concept="1N2y4u" id="6cnCU_HRlYy" role="LiRBU">
       <property role="TrG5h" value="sample" />
       <node concept="1N2y5x" id="6cnCU_HRlY_" role="1N2y4b">
