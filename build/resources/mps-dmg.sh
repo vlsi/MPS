@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage: mps-dmg buildcode
 #   for making buildcode.dmg from buildcode.sit and buildcode.png + buildcode.pl
-EXPLODED=$2.exploded
+EXPLODED=$1.exploded
 test -d ${EXPLODED} && chmod -R u+wx ~/${EXPLODED}/*
 rm -rf ~/${EXPLODED}
 rm -f ~/$1.dmg
