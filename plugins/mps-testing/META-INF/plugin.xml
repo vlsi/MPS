@@ -19,7 +19,7 @@
   <name>MPS Testing</name>
   <category>Custom Languages</category>
   <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
-  <version>3.3.2</version>
+  <version>3.3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="143.1" until-build="144.1"/>
 
