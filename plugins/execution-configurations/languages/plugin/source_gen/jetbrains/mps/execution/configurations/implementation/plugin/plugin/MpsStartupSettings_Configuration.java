@@ -143,9 +143,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
     for (Element child : ListSequence.fromList(element.getChildren())) {
-      if (child instanceof Element) {
-        replacePathMacro((Element) child, project);
-      }
+      replacePathMacro((Element) child, project);
     }
   }
   @Override

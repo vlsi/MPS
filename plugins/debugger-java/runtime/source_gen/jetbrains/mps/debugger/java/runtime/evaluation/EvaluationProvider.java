@@ -35,9 +35,10 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContex
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
   @Nullable
-  private SModuleReference myContainerModule;
+  private SModuleReference myContainerModuleRef;
   private final List<IEvaluationContainer> myWatches = new ArrayList<IEvaluationContainer>();
   private final List<EvaluationProvider.IWatchListener> myWatchListeners = new ArrayList<EvaluationProvider.IWatchListener>();
+
   public EvaluationProvider(@NotNull DebugSession debugSession) {
     myDebugSession = debugSession;
     DebugSessionManagerComponent.getInstance(myDebugSession.getIdeaProject()).addDebugSessionListener(new DebugSessionManagerComponent.DebugSessionAdapter() {
@@ -56,6 +57,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
+
   private synchronized void init() {
     final SRepository repository = myDebugSession.getProject().getRepository();
     assert repository instanceof SRepositoryExt;
@@ -63,28 +65,35 @@ public class EvaluationProvider implements IEvaluationProvider {
       public void run() {
         EvaluationModule module = new EvaluationModule();
         ((SRepositoryExt) repository).registerModule(module, myDebugSession.getProject());
-        myContainerModule = module.getModuleReference();
+        myContainerModuleRef = module.getModuleReference();
       }
     });
   }
+
   private synchronized void dispose() {
     final SRepository repository = myDebugSession.getProject().getRepository();
+    assert myContainerModuleRef != null;
     repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        SModule resolved = myContainerModule.resolve(repository);
-        ((SRepositoryExt) repository).unregisterModule(resolved, myDebugSession.getProject());
-        myContainerModule = null;
+        SModule resolved = myContainerModuleRef.resolve(repository);
+        if (resolved != null) {
+          ((SRepositoryExt) repository).unregisterModule(resolved, myDebugSession.getProject());
+        }
+        myContainerModuleRef = null;
       }
     });
   }
+
   @Override
   public boolean canEvaluate() {
     return myDebugSession.isStepEnabled();
   }
+
   @Override
   public void showEvaluationDialog(Project mpsProject) {
     showEvaluationDialog(mpsProject, ListSequence.fromList(new ArrayList<SNodeReference>()));
   }
+
   @Override
   public void showEvaluationDialog(final Project mpsProject, final List<SNodeReference> selectedNodes) {
     final JavaUiState state = myDebugSession.getUiState();
@@ -102,6 +111,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     }, state.getThread().getThread());
   }
+
   public void showEditWatchDialog(@NotNull com.intellij.openapi.project.Project ideaProject, final IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     final EditWatchDialog editWatchDialog = new EditWatchDialog(ideaProject, this, model);
@@ -113,10 +123,12 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
     editWatchDialog.show();
   }
+
   @Override
   public JComponent createWatchesPanel() {
     return new WatchesPanel(this);
   }
+
   public void addWatch(final IEvaluationContainer evaluationModel) {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -131,6 +143,7 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
+
   public void createWatch() {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -149,29 +162,34 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
+
   public void removeWatch(IEvaluationContainer model) {
     synchronized (myWatches) {
       myWatches.remove(model);
     }
     fireWatchRemoved(model);
   }
+
   public DebugSession getDebugSession() {
     return myDebugSession;
   }
+
   @Nullable
   private synchronized IEvaluationContainer createEvaluationContainer(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
-    if (myContainerModule == null) {
+    if (myContainerModuleRef == null) {
       return null;
     }
-    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isWatch, onNodeSetUp);
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModuleRef, ListSequence.fromList(new ArrayList<SNodeReference>()), isWatch, onNodeSetUp);
   }
+
   @Nullable
   private synchronized IEvaluationContainer createEvaluationContainer(boolean isWatch, List<SNodeReference> selectedNodes, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
-    if (myContainerModule == null) {
+    if (myContainerModuleRef == null) {
       return null;
     }
-    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, selectedNodes, isWatch, onNodeSetUp);
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModuleRef, selectedNodes, isWatch, onNodeSetUp);
   }
+
   public List<IEvaluationContainer> getWatches() {
     List<IEvaluationContainer> watchesCopy = new ArrayList<IEvaluationContainer>();
     synchronized (myWatches) {
@@ -179,6 +197,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return watchesCopy;
   }
+
   private List<EvaluationProvider.IWatchListener> getListeners() {
     List<EvaluationProvider.IWatchListener> listeners = new ArrayList<EvaluationProvider.IWatchListener>();
     synchronized (myWatchListeners) {
@@ -186,26 +205,31 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return listeners;
   }
+
   private void fireWatchAdded(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchAdded(model);
     }
   }
+
   private void fireWatchUpdated(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchUpdated(model);
     }
   }
+
   private void fireWatchRemoved(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchRemoved(model);
     }
   }
+
   public void addWatchListener(@NotNull EvaluationProvider.IWatchListener listener) {
     synchronized (myWatchListeners) {
       myWatchListeners.add(listener);
     }
   }
+
   public void removeWatchListener(@NotNull EvaluationProvider.IWatchListener listener) {
     synchronized (myWatchListeners) {
       myWatchListeners.remove(listener);
