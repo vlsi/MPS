@@ -264,7 +264,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  private void flushEDTEvents() throws InvocationTargetException, InterruptedException {
+  /*package*/ void flushEDTEvents() throws InvocationTargetException, InterruptedException {
     // wait for all events currently in EDT queue 
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override

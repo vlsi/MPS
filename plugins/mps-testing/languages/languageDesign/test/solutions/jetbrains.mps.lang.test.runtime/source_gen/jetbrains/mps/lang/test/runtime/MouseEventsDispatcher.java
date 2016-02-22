@@ -50,6 +50,7 @@ public class MouseEventsDispatcher {
         editorComponent.setSize(editorComponent.getPreferredSize());
       }
     });
+    myEditorTest.flushEDTEvents();
 
     EditorCell rootCell = editorComponent.getRootCell();
     assert rootCell != null;
