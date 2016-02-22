@@ -4,14 +4,12 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -22,12 +20,12 @@ import org.jetbrains.annotations.Nullable;
 public class ChooseModuleDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = "Move Model";
   private ChooseByNamePanel myChooser;
-  private Project myProject;
+  private MPSProject myMPSProject;
   private List<SModuleReference> myModules;
   private SModuleReference selectedModule;
-  public ChooseModuleDialog(@NotNull Project project, List<SModuleReference> modules) {
-    super(project, true);
-    myProject = project;
+  public ChooseModuleDialog(@NotNull MPSProject mpsProject, List<SModuleReference> modules) {
+    super(mpsProject.getProject(), true);
+    myMPSProject = mpsProject;
     myModules = modules;
     setTitle(ChooseModuleDialog.REFACTORING_NAME);
     init();
@@ -38,32 +36,21 @@ public class ChooseModuleDialog extends RefactoringDialog {
     setHorizontalStretch(2.5f);
     setVerticalStretch(2);
 
-    BaseModuleModel goToModuleModel = new BaseModuleModel(ChooseModuleDialog.this.myProject, "module") {
+    final BaseModuleModel goToModuleModel = new BaseModuleModel(myMPSProject) {
       @Override
       public SModuleReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
       @Override
-      public NavigationItem doGetNavigationItem(final SModuleReference modelReference) {
-        return new BaseModuleItem(modelReference) {
-          @Override
-          public void navigate(boolean p0) {
-          }
-        };
-      }
-      @Override
       public SModuleReference[] find(boolean checkBoxState) {
         return ListSequence.fromList(myModules).toGenericArray(SModuleReference.class);
       }
-      @Override
-      public boolean loadInitialCheckBoxState() {
-        return false;
-      }
     };
-    myChooser = MpsPopupFactory.createPanelForPackage(myProject, goToModuleModel, false);
+    myChooser = MpsPopupFactory.createPanelForPackage(getProject(), goToModuleModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object p0) {
+        selectedModule = goToModuleModel.getModelObject(p0);
         doRefactoringAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
@@ -73,20 +60,12 @@ public class ChooseModuleDialog extends RefactoringDialog {
   public JComponent getPreferredFocusedComponent() {
     return myChooser.getPreferredFocusedComponent();
   }
-  @Override
-  protected void doRefactoringAction() {
-    Object item = myChooser.getChosenElement();
-    if (item instanceof BaseModuleItem) {
-      selectedModule = ((BaseModuleItem) item).getModuleReference();
-    }
-    super.doRefactoringAction();
-  }
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myChooser.getPanel();
   }
-  public static SModuleReference getSelectedModule(@NotNull Project project, List<SModuleReference> modules) {
+  public static SModuleReference getSelectedModule(@NotNull MPSProject project, List<SModuleReference> modules) {
     final ChooseModuleDialog dialog = new ChooseModuleDialog(project, modules);
     dialog.show();
     return dialog.selectedModule;

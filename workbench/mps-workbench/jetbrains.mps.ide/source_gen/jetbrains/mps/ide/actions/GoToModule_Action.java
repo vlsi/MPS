@@ -4,28 +4,25 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import com.intellij.navigation.NavigationItem;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
-import jetbrains.mps.workbench.goTo.NavigateCallback;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToModule_Action extends BaseAction {
@@ -40,23 +37,25 @@ public class GoToModule_Action extends BaseAction {
     return true;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Project project = event.getData(PlatformDataKeys.PROJECT);
-    assert project != null;
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-    BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
-      @Override
-      public NavigationItem doGetNavigationItem(final SModuleReference ref) {
-        return new BaseModuleItem(ref) {
-          @Override
-          public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = ProjectPane.getInstance(project);
-            SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-            projectPane.selectModule(module, true);
-          }
-        };
-      }
+    final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
+    final BaseModuleModel goToModuleModel = new BaseModuleModel(mpsProject) {
       @Override
       public SModuleReference[] find(SearchScope scope) {
         List<SModuleReference> modules = new ArrayList<SModuleReference>();
@@ -69,8 +68,23 @@ public class GoToModule_Action extends BaseAction {
         return modules.toArray(new SModuleReference[modules.size()]);
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, GoToModule_Action.this);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModuleModel, GoToModule_Action.this);
 
-    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
+    popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      private SModuleReference myModuleRef;
+      public void elementChosen(Object p0) {
+        myModuleRef = goToModuleModel.getModelObject(p0);
+      }
+
+      @Override
+      public void onClose() {
+        //  execute outside command == false, I assume we are inside EDT + Model Write here 
+        SModule module = (myModuleRef == null ? null : myModuleRef.resolve(mpsProject.getRepository()));
+        if (module == null) {
+          return;
+        }
+        ProjectPane.getInstance(mpsProject).selectModule(module, true);
+      }
+    }, ModalityState.current(), true);
   }
 }

@@ -826,101 +826,76 @@
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/8047970061511915051">
     <file name="ChooseModuleDialog.java">
-      <node id="8047970061511915054" at="23,0,24,0" concept="11" trace="REFACTORING_NAME" />
-      <node id="8047970061511915058" at="24,0,25,0" concept="3" trace="myChooser" />
-      <node id="8047970061511915061" at="25,0,26,0" concept="3" trace="myProject" />
-      <node id="8047970061511915064" at="26,0,27,0" concept="3" trace="myModules" />
-      <node id="8047970061511915068" at="27,0,28,0" concept="3" trace="selectedModule" />
-      <node id="8047970061511915075" at="28,87,29,25" concept="13" />
-      <node id="8047970061511915078" at="29,25,30,24" concept="2" />
-      <node id="8047970061511915082" at="30,24,31,24" concept="2" />
-      <node id="8047970061511915086" at="31,24,32,50" concept="2" />
-      <node id="8047970061511915088" at="32,50,33,11" concept="2" />
-      <node id="8047970061511915100" at="36,25,37,19" concept="2" />
-      <node id="8047970061511915103" at="37,19,38,31" concept="2" />
-      <node id="8047970061511915106" at="38,31,39,26" concept="2" />
-      <node id="8047970061511915109" at="39,26,40,0" concept="10" />
-      <node id="8047970061511974407" at="43,57,44,68" concept="14" />
-      <node id="8047970061511974434" at="55,61,56,87" concept="8" />
-      <node id="8047970061511974445" at="59,49,60,21" concept="8" />
-      <node id="8047970061511915171" at="62,6,63,89" concept="2" />
-      <node id="8047970061511915191" at="66,44,67,30" concept="2" />
-      <node id="8047970061511915197" at="69,60,70,17" concept="2" />
-      <node id="8047970061511915203" at="73,52,74,52" concept="8" />
-      <node id="8047970061511915213" at="77,40,78,47" concept="7" />
-      <node id="8047970061511915221" at="79,41,80,68" concept="2" />
-      <node id="8047970061511915233" at="81,5,82,32" concept="2" />
-      <node id="8047970061511915241" at="86,44,87,32" concept="8" />
-      <node id="8047970061511915249" at="89,110,90,79" concept="7" />
-      <node id="8047970061511915256" at="90,79,91,18" concept="2" />
-      <node id="8047970061511915260" at="91,18,92,33" concept="8" />
-      <node id="8047970061511974422" at="49,0,52,0" concept="6" trace="navigate#(Z)V" />
-      <node id="8047970061511915219" at="78,47,81,5" concept="5" />
-      <node id="8047970061511974401" at="42,0,46,0" concept="6" trace="find#(Lorg/jetbrains/mps/openapi/module/SearchScope;)[Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="8047970061511974431" at="54,0,58,0" concept="6" trace="find#(Z)[Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="8047970061511974442" at="58,0,62,0" concept="6" trace="loadInitialCheckBoxState#()Z" />
-      <node id="8047970061511915185" at="65,0,69,0" concept="6" trace="elementChosen#(Ljava/lang/Object;)V" />
-      <node id="8047970061511915200" at="72,0,76,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <node id="8047970061511974416" at="47,88,52,10" concept="8" />
-      <node id="8047970061511915236" at="84,0,89,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="8047970061511915246" at="89,0,94,0" concept="12" trace="getSelectedModule#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="8047970061511915177" at="63,89,69,60" concept="2" />
-      <node id="8047970061511915071" at="28,0,35,0" concept="1" trace="ChooseModuleDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-      <node id="8047970061511974412" at="46,0,54,0" concept="6" trace="doGetNavigationItem#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lcom/intellij/navigation/NavigationItem;" />
-      <node id="8047970061511915209" at="76,0,84,0" concept="6" trace="doRefactoringAction#()V" />
-      <node id="8047970061511974392" at="40,0,62,6" concept="7" />
-      <node id="8047970061511915096" at="35,0,72,0" concept="6" trace="init#()V" />
-      <scope id="8047970061511974427" at="50,44,50,44" />
-      <scope id="8047970061511974406" at="43,57,44,68" />
-      <scope id="8047970061511974433" at="55,61,56,87" />
-      <scope id="8047970061511974444" at="59,49,60,21" />
-      <scope id="8047970061511915190" at="66,44,67,30" />
-      <scope id="8047970061511915202" at="73,52,74,52" />
-      <scope id="8047970061511915220" at="79,41,80,68" />
-      <scope id="8047970061511915240" at="86,44,87,32" />
-      <scope id="8047970061511974422" at="49,0,52,0">
-        <var name="p0" id="8047970061511974425" />
-      </scope>
-      <scope id="8047970061511915248" at="89,110,92,33">
+      <node id="8047970061511915054" at="21,0,22,0" concept="11" trace="REFACTORING_NAME" />
+      <node id="8047970061511915058" at="22,0,23,0" concept="3" trace="myChooser" />
+      <node id="8047970061511915061" at="23,0,24,0" concept="3" trace="myMPSProject" />
+      <node id="8047970061511915064" at="24,0,25,0" concept="3" trace="myModules" />
+      <node id="8047970061511915068" at="25,0,26,0" concept="3" trace="selectedModule" />
+      <node id="8047970061511915075" at="26,93,27,41" concept="13" />
+      <node id="8047970061511915078" at="27,41,28,30" concept="2" />
+      <node id="8047970061511915082" at="28,30,29,24" concept="2" />
+      <node id="8047970061511915086" at="29,24,30,50" concept="2" />
+      <node id="8047970061511915088" at="30,50,31,11" concept="2" />
+      <node id="8047970061511915100" at="34,25,35,19" concept="2" />
+      <node id="8047970061511915103" at="35,19,36,31" concept="2" />
+      <node id="8047970061511915106" at="36,31,37,26" concept="2" />
+      <node id="8047970061511915109" at="37,26,38,0" concept="10" />
+      <node id="8047970061511974407" at="41,57,42,68" concept="14" />
+      <node id="8047970061511974434" at="45,61,46,87" concept="8" />
+      <node id="8047970061511915171" at="48,6,49,92" concept="2" />
+      <node id="279286349825893179" at="52,44,53,60" concept="2" />
+      <node id="8047970061511915191" at="53,60,54,30" concept="2" />
+      <node id="8047970061511915197" at="56,60,57,17" concept="2" />
+      <node id="8047970061511915203" at="60,52,61,52" concept="8" />
+      <node id="8047970061511915241" at="65,44,66,32" concept="8" />
+      <node id="8047970061511915249" at="68,113,69,79" concept="7" />
+      <node id="8047970061511915256" at="69,79,70,18" concept="2" />
+      <node id="8047970061511915260" at="70,18,71,33" concept="8" />
+      <node id="8047970061511974401" at="40,0,44,0" concept="6" trace="find#(Lorg/jetbrains/mps/openapi/module/SearchScope;)[Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="8047970061511974431" at="44,0,48,0" concept="6" trace="find#(Z)[Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="8047970061511915200" at="59,0,63,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="8047970061511915185" at="51,0,56,0" concept="6" trace="elementChosen#(Ljava/lang/Object;)V" />
+      <node id="8047970061511915236" at="63,0,68,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="8047970061511915246" at="68,0,73,0" concept="12" trace="getSelectedModule#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="8047970061511915071" at="26,0,33,0" concept="1" trace="ChooseModuleDialog#(Ljetbrains/mps/project/MPSProject;Ljava/util/List;)V" />
+      <node id="8047970061511915177" at="49,92,56,60" concept="2" />
+      <node id="8047970061511974392" at="38,0,48,6" concept="7" />
+      <node id="8047970061511915096" at="33,0,59,0" concept="6" trace="init#()V" />
+      <scope id="8047970061511974406" at="41,57,42,68" />
+      <scope id="8047970061511974433" at="45,61,46,87" />
+      <scope id="8047970061511915202" at="60,52,61,52" />
+      <scope id="8047970061511915240" at="65,44,66,32" />
+      <scope id="8047970061511915190" at="52,44,54,30" />
+      <scope id="8047970061511915248" at="68,113,71,33">
         <var name="dialog" id="8047970061511915250" />
       </scope>
-      <scope id="8047970061511974401" at="42,0,46,0">
+      <scope id="8047970061511974401" at="40,0,44,0">
         <var name="scope" id="8047970061511974404" />
       </scope>
-      <scope id="8047970061511974431" at="54,0,58,0">
+      <scope id="8047970061511974431" at="44,0,48,0">
         <var name="checkBoxState" id="8047970061511974439" />
       </scope>
-      <scope id="8047970061511974442" at="58,0,62,0" />
-      <scope id="8047970061511915185" at="65,0,69,0">
+      <scope id="8047970061511915200" at="59,0,63,0" />
+      <scope id="8047970061511915074" at="26,93,31,11" />
+      <scope id="8047970061511915185" at="51,0,56,0">
         <var name="p0" id="8047970061511915188" />
       </scope>
-      <scope id="8047970061511915200" at="72,0,76,0" />
-      <scope id="8047970061511915074" at="28,87,33,11" />
-      <scope id="8047970061511974415" at="47,88,52,10" />
-      <scope id="8047970061511915212" at="77,40,82,32">
-        <var name="item" id="8047970061511915214" />
-      </scope>
-      <scope id="8047970061511915236" at="84,0,89,0" />
-      <scope id="8047970061511915246" at="89,0,94,0">
+      <scope id="8047970061511915236" at="63,0,68,0" />
+      <scope id="8047970061511915246" at="68,0,73,0">
         <var name="modules" id="8047970061511915268" />
         <var name="project" id="8047970061511915265" />
       </scope>
-      <scope id="8047970061511915071" at="28,0,35,0">
+      <scope id="8047970061511915071" at="26,0,33,0">
         <var name="modules" id="8047970061511915093" />
-        <var name="project" id="8047970061511915090" />
+        <var name="mpsProject" id="8047970061511915090" />
       </scope>
-      <scope id="8047970061511974412" at="46,0,54,0">
-        <var name="modelReference" id="8047970061511974429" />
-      </scope>
-      <scope id="8047970061511915209" at="76,0,84,0" />
-      <scope id="8047970061511915099" at="36,25,70,17">
+      <scope id="8047970061511915099" at="34,25,57,17">
         <var name="goToModuleModel" id="8047970061511974393" />
       </scope>
-      <scope id="8047970061511915096" at="35,0,72,0" />
-      <unit id="8047970061511974419" at="48,19,52,9" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog$2" />
-      <unit id="8047970061511915183" at="64,25,69,5" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog$2" />
-      <unit id="8047970061511974396" at="41,42,62,5" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog$1" />
-      <unit id="8047970061511915051" at="22,0,95,0" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog" />
+      <scope id="8047970061511915096" at="33,0,59,0" />
+      <unit id="8047970061511915183" at="50,25,56,5" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog$2" />
+      <unit id="8047970061511974396" at="39,48,48,5" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog$1" />
+      <unit id="8047970061511915051" at="20,0,74,0" name="jetbrains.mps.ide.refactoring.ChooseModuleDialog" />
     </file>
   </root>
 </debug-info>

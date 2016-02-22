@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,25 @@ package jetbrains.mps.workbench.choose.modules;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
 
+  @Deprecated
   public BaseModuleModel(Project project, String entityName) {
     super(project, entityName);
+  }
+
+  public BaseModuleModel(@NotNull jetbrains.mps.project.Project mpsProject) {
+    this(mpsProject, "module");
+  }
+
+  public BaseModuleModel(@NotNull jetbrains.mps.project.Project mpsProject, String entityName) {
+    super(mpsProject, entityName);
   }
 
   @Override
@@ -37,8 +46,8 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReferenc
 
   @Override
   public String doGetFullName(NavigationItem element) {
-    SModuleReference module = ((BaseModuleItem) element).getModuleReference();
-    return getModuleLongName(module);
+    SModuleReference module = getModelObject(element);
+    return module == null ? "" : getModuleLongName(module);
   }
 
   @Override
@@ -47,11 +56,27 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReferenc
   }
 
   private String getModuleLongName(SModuleReference ref) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    final SModule module = ref.resolve(getProject().getRepository());
     if (module instanceof Generator) {
       Generator gen = (Generator) module;
       return gen.getAlias();
     }
     return ref.getModuleName();
+  }
+
+  @Override
+  public NavigationItem doGetNavigationItem(SModuleReference ref) {
+    return new BaseModuleItem(ref);
+  }
+
+  /**
+   * Could have migrated to superclass, although the ultimate goal is to avoid wrap of model objects at all, so that the method effectively no-op
+   * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
+   */
+  public SModuleReference getModelObject(Object item) {
+    if (item instanceof BaseModuleItem) {
+      return ((BaseModuleItem) item).getModuleReference();
+    }
+    return null;
   }
 }

@@ -17,10 +17,16 @@ package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public abstract class BaseModuleItem implements NavigationItem {
+/**
+ * @deprecated see {@link jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem} for reasons.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
+public class BaseModuleItem implements NavigationItem {
   private SModuleReference myModuleReference;
 
   public BaseModuleItem(SModuleReference moduleReference) {
@@ -33,6 +39,7 @@ public abstract class BaseModuleItem implements NavigationItem {
 
   @Override
   public String getName() {
+    // XXX very nice, indeed. BaseModuleModel.doGetObjectName has different idea about module name
     return myModuleReference.getModuleName();
   }
 
@@ -44,11 +51,16 @@ public abstract class BaseModuleItem implements NavigationItem {
 
   @Override
   public boolean canNavigate() {
-    return true;
+    return false;
   }
 
   @Override
   public boolean canNavigateToSource() {
     return false;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    // no-op
   }
 }
