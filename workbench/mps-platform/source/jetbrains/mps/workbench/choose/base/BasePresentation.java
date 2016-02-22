@@ -18,11 +18,17 @@ package jetbrains.mps.workbench.choose.base;
 import com.intellij.navigation.ItemPresentation;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
+/**
+ * @deprecated Uses deprecated API, and there's no reason to push project/repo context down here.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public abstract class BasePresentation implements ItemPresentation {
   @Override
   public String getPresentableText() {

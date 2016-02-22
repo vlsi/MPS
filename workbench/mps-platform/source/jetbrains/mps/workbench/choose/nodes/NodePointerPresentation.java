@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,6 +29,16 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 
+/**
+ * @deprecated the class uses deprecated ModelAccess API, and there's no easy way nor any reason to pass context here
+ *             (after all, if each item bears project/repo plus each item's Presentation object would bear one, isn't it
+ *             just too much? If existing code use this class along with {@link jetbrains.mps.workbench.choose.base.BaseMPSChooseModel},
+ *             then the proper subclassing shall help to get rid of the class (no reason to have distinct NodePointerPresentation when there's
+ *             doGetFullName method to override). If used standalone, consider an ItemPresentation implementation that would record text, location and
+ *             icon values at initialization time.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class NodePointerPresentation extends BasePresentation {
   private final SNodeReference myNode;
   private String myModelName = null;

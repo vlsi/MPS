@@ -4,13 +4,12 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
-import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -19,14 +18,16 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
-  private ChooseByNamePanel myChooser;
-  public NodeChooserDialog(Project project, ChooseByNameModel chooseByNameModel) {
+  private final ChooseByNamePanel myChooser;
+  private SNodeReference myChosenElement;
+
+  public NodeChooserDialog(Project project, final BaseNodePointerModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
 
@@ -34,6 +35,7 @@ public class NodeChooserDialog extends DialogWrapper {
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {
+        myChosenElement = chooseByNameModel.getModelObject(element);
         doOKAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
@@ -44,11 +46,7 @@ public class NodeChooserDialog extends DialogWrapper {
     this(project, new BaseNodePointerModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SNodeReference node) {
-        return new BaseNodePointerItem(node) {
-          @Override
-          public void navigate(boolean requestFocus) {
-          }
-        };
+        return new BaseNodePointerItem(node);
       }
       @Override
       public SNodeReference[] find(boolean checkboxState) {
@@ -58,20 +56,12 @@ public class NodeChooserDialog extends DialogWrapper {
       public SNodeReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
-      @Override
-      public boolean loadInitialCheckBoxState() {
-        return false;
-      }
-      @Override
-      public boolean willOpenEditor() {
-        return false;
-      }
     });
   }
   public NodeChooserDialog(Project project, final List<SNode> nodes) {
     this(project, ListSequence.fromList(nodes).select(new ISelector<SNode, SNodeReference>() {
       public SNodeReference select(SNode it) {
-        return ((SNodeReference) new SNodePointer(it));
+        return SNodeOperations.getPointer(it);
       }
     }));
   }
@@ -82,20 +72,11 @@ public class NodeChooserDialog extends DialogWrapper {
     return myChooser.getPanel();
   }
   @Nullable
-  public SNode getResultNode() {
-    if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
-      return null;
-    }
-    BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
-    return (nodeItem != null ? nodeItem.getNode() : null);
-  }
-  @Nullable
   public SNodeReference getResult() {
     if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
       return null;
     }
-    BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
-    return (nodeItem != null ? nodeItem.getNodePointer() : null);
+    return myChosenElement;
   }
   @Nullable
   @Override

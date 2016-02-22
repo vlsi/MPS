@@ -17,12 +17,18 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public abstract class BaseNodePointerItem implements NavigationItem {
+/**
+ * @deprecated when a MPS-Idea bridge for NavigationItem is needed, use {@link jetbrains.mps.workbench.choose.NodePointerNavigationItem}
+ *             the class has been designed for subclasses of {@link jetbrains.mps.workbench.choose.base.BaseMPSChooseModel} and would cease
+ *             once the model class doesn't need NavigationItem.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
+public class BaseNodePointerItem implements NavigationItem {
   private final SNodeReference myNode;
   private final NodePointerPresentation myNodePointerPresentation;
 
@@ -33,10 +39,6 @@ public abstract class BaseNodePointerItem implements NavigationItem {
 
   public SNodeReference getNodePointer() {
     return myNode;
-  }
-
-  public SNode getNode() {
-    return myNode.resolve(MPSModuleRepository.getInstance());
   }
 
   @Override
@@ -51,12 +53,16 @@ public abstract class BaseNodePointerItem implements NavigationItem {
   }
 
   @Override
+  public void navigate(boolean requestFocus) {
+  }
+
+  @Override
   public boolean canNavigate() {
-    return true;
+    return false;
   }
 
   @Override
   public boolean canNavigateToSource() {
-    return true;
+    return false;
   }
 }

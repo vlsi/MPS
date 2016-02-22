@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.intellij.ide.util.ModuleRendererFactory;
 import com.intellij.ide.util.PlatformModuleRendererFactory.PlatformModuleRenderer;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
@@ -62,7 +63,10 @@ public class MpsRendererFactory extends ModuleRendererFactory {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
-            SModule module = item.getNode().getModel().getModule();
+            // FIXME BaseNodePointerItem used to have getNode(), which did exactly the same.
+            // if it's impossible to access proper context (project/repo) here, then the approach (either idea extpoint or BaseNodePointerItem)
+            // shall be reconsidered.
+            SModule module = item.getNodePointer().resolve(MPSModuleRepository.getInstance()).getModel().getModule();
             if (module instanceof Solution) {
               icon[0] = FileIcons.SOLUTION_ICON;
             } else if (module instanceof Language) {

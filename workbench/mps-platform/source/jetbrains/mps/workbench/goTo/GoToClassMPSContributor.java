@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,82 +13,105 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.workbench.goTo;
 
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.workbench.choose.NodePointerNavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
-import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public class GoToClassMPSContributor implements GotoClassContributor {
   @NotNull
   @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
-    return createModel(project).getNames(includeNonProjectItems);
+    LinkedHashSet<String> rv = new LinkedHashSet<String>();
+    for (NavigationItem item : find(project, includeNonProjectItems)) {
+      rv.add(item.getName());
+    }
+    return rv.toArray(new String[rv.size()]);
   }
 
   @NotNull
   @Override
   public NavigationItem[] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
-    return createModel(project).getElementsByName(name, includeNonProjectItems, pattern);
+    ArrayList<NavigationItem> rv = new ArrayList<NavigationItem>();
+    for (NavigationItem item : find(project, includeNonProjectItems)) {
+      if (name.equals(item.getName())) {
+        rv.add(item);
+      }
+    }
+    return rv.toArray(new NavigationItem[rv.size()]);
   }
 
-  private BaseNodePointerModel createModel(final Project project) {
-    return new BaseNodePointerModel(project, "root") {
+  private List<NodePointerNavigationItem> find(Project project, final boolean includeNonProjectItems) {
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
+    if (mpsProject == null) {
+      return Collections.emptyList();
+    }
+    final List<NodePointerNavigationItem> nodes = new ArrayList<NodePointerNavigationItem>();
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
-      public SNodeReference[] find(SearchScope scope) {
-        final List<SNodeReference> nodes = new ArrayList<SNodeReference>();
-        Iterable<SModel> modelDescriptors = scope.getModels();
-
-        Condition<SNode> cond = new Condition<SNode>() {
-          @Override
-          public boolean met(SNode node) {
-            String name = node.getName();
-            return name != null && name.length() > 0;
-          }
-        };
-
-        for (SModel modelDescriptor : modelDescriptors) {
-          if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
-
-          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getRootNodes(), cond);
-          for (SNode node : iter){
-            ProgressManager.checkCanceled();
-
-            nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
-          }
+      public void run() {
+        if (includeNonProjectItems) {
+          find(new FilteredGlobalScope(), nodes);
+        } else {
+          find(new ModulesScope(mpsProject.getProjectModulesWithGenerators()), nodes);
         }
-        return nodes.toArray(new SNodeReference[nodes.size()]);
       }
+    });
+    return nodes;
+  }
 
+
+  /*package*/ List<NodePointerNavigationItem> find(SearchScope scope, List<NodePointerNavigationItem> nodes) {
+    Iterable<SModel> modelDescriptors = scope.getModels();
+
+    Condition<SNode> cond = new Condition<SNode>() {
       @Override
-      public boolean willOpenEditor() {
-        return true;
+      public boolean met(SNode node) {
+        String name = node.getName();
+        return name != null && name.length() > 0;
       }
     };
+
+    for (SModel modelDescriptor : modelDescriptors) {
+      if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
+
+      for (SNode node : new ConditionalIterable<SNode>(modelDescriptor.getRootNodes(), cond)) {
+        ProgressManager.checkCanceled();
+
+        nodes.add(new NodePointerNavigationItem(node));
+      }
+    }
+    return nodes;
   }
 
   @Override
   public String getQualifiedName(NavigationItem item) {
-    if (item.getPresentation() instanceof NodePointerPresentation) {
-      NodePointerPresentation presentation = (NodePointerPresentation) item.getPresentation();
-      return presentation.getModelName() + getQualifiedNameSeparator() + presentation.getPresentableText();
-    }
-    return null;
+    assert item instanceof NodePointerNavigationItem;
+    NodePointerNavigationItem npItem = (NodePointerNavigationItem) item;
+    final SModelReference modelReference = npItem.getNodePointer().getModelReference();
+    String modelName = modelReference == null ? "" : modelReference.getModelName() + getQualifiedNameSeparator();
+    return modelName + npItem.getPresentableText();
   }
 
   @Override
