@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells.collections;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * User: shatalin
@@ -42,7 +43,7 @@ class EmptyIterator implements Iterator {
 
   @Override
   public Object next() {
-    throw new IllegalArgumentException();
+    throw new NoSuchElementException();
   }
 
   @Override

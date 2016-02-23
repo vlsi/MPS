@@ -41,6 +41,8 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   EditorCell lastCell();
 
+
+  //todo do we need to deprecate?
   /**
    * @deprecated since MPS 3.4 not used
    */

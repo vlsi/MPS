@@ -34,6 +34,7 @@ public class CellContainer extends AbstractContainer<EditorCell> {
   protected Entry<EditorCell> getEntry(EditorCell item) {
     //noinspection unchecked
     Entry<EditorCell> entry = (Entry<EditorCell>) item.getUserObject(this);
+    //todo check AbstractContainer.removeEntry()
     assert entry != null;
     return entry;
   }

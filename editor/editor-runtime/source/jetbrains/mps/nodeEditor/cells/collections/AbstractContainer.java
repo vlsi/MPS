@@ -28,6 +28,7 @@ import java.util.NoSuchElementException;
  */
 abstract class AbstractContainer<T> implements Container<T> {
   private volatile int myModCount = 0;
+  // todo why not to add myLast?
   private Entry<T> myFirst;
   private int mySize = 0;
 
@@ -98,9 +99,12 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   private Entry<T> getLastEntry() {
+    //todo check for myFirst == null or assert size != null
+    //todo see iterator getNextEntry()
     return myFirst.myPrev;
   }
 
+  //todo is it "addItemBefore"?
   protected Entry<T> addEntryBefore(T item, Entry<T> anchor) {
     Entry<T> result = new Entry<T>(item);
     setEntry(item, result);
@@ -135,6 +139,7 @@ abstract class AbstractContainer<T> implements Container<T> {
   }
 
   protected void removeEntry(Entry<T> entry) {
+    //todo cell container will fail here because asserts for null
     if (getEntry(entry.myItem) == null) {
       // entry was already removed from this container
       throw new IllegalArgumentException();
@@ -177,8 +182,10 @@ abstract class AbstractContainer<T> implements Container<T> {
 
     private Entry<T> getNextEntry() {
       if (myCurrentEntry == null) {
+        //todo last entry will fail here if myFirst == null
         return myForward ? getFirstEntry() : getLastEntry();
       }
+      //todo same to myCurrentEntry == myFirst?
       if (!myForward && myCurrentEntry.myPrev == getLastEntry()) {
         return null;
       }
