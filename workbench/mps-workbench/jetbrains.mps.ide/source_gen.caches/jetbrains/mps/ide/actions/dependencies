@@ -1278,7 +1278,7 @@
   <dependency className="jetbrains.mps.ide.actions.GoToModel_Action" file="GoToModel_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopup" />
-    <classNode dependClassName="com.intellij.navigation.NavigationItem" />
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.lang.Object" />
@@ -1293,9 +1293,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.models.BaseModelModel" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.NavigateCallback" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

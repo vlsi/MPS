@@ -40,8 +40,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
 
   @Override
   public String doGetFullName(NavigationItem element) {
-    BaseModelItem navigationItem = (BaseModelItem) element;
-    SModelReference ref = navigationItem.getModelReference();
+    SModelReference ref = getModelObject(element);
     return ref.getModelName();
   }
 
@@ -49,5 +48,21 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
   public String doGetObjectName(SModelReference ref) {
     SModelName modelName = ref.getName();
     return modelName.hasStereotype() ? modelName.getSimpleName() + '@' + modelName.getStereotype() : modelName.getSimpleName();
+  }
+
+  @Override
+  public NavigationItem doGetNavigationItem(SModelReference object) {
+    return new BaseModelItem(object);
+  }
+
+  /**
+   * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
+   * @see jetbrains.mps.workbench.choose.modules.BaseModuleModel#getModelObject(Object)
+   */
+  public SModelReference getModelObject(Object item) {
+    if (item instanceof BaseModelItem) {
+      return ((BaseModelItem) item).getModelReference();
+    }
+    return null;
   }
 }

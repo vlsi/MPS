@@ -10,20 +10,18 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import com.intellij.navigation.NavigationItem;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
-import jetbrains.mps.workbench.goTo.NavigateCallback;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToModel_Action extends BaseAction {
@@ -43,18 +41,7 @@ public class GoToModel_Action extends BaseAction {
     assert mpsProject != null;
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
-      @Override
-      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new BaseModelItem(modelReference) {
-          @Override
-          public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = ProjectPane.getInstance(mpsProject);
-            SModel md = modelReference.resolve(mpsProject.getRepository());
-            projectPane.selectModel(md, true);
-          }
-        };
-      }
+    final BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
       @Override
       public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
@@ -76,6 +63,22 @@ public class GoToModel_Action extends BaseAction {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModelModel, GoToModel_Action.this);
     popup.setShowListForEmptyPattern(true);
 
-    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
+    popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      private SModelReference myModelRef;
+      public void elementChosen(Object p0) {
+        myModelRef = goToModelModel.getModelObject(p0);
+      }
+
+      @Override
+      public void onClose() {
+        if (myModelRef != null) {
+          ProjectPane projectPane = ProjectPane.getInstance(mpsProject);
+          // XXX we are surely in EDT but where from do we get model read? Is it command of the action? In callback, really? 
+          SModel md = myModelRef.resolve(mpsProject.getRepository());
+          projectPane.selectModel(md, true);
+
+        }
+      }
+    }, ModalityState.current(), false);
   }
 }
