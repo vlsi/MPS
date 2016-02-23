@@ -38,6 +38,10 @@ public final class RootNodeElement implements NavigationItem {
     myTarget = target;
   }
 
+  /*package*/ NavigationTarget getTarget() {
+    return myTarget;
+  }
+
   @Override
   public String getName() {
     return myTarget.getPresentation();
