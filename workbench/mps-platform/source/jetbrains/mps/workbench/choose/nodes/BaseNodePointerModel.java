@@ -60,6 +60,11 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
   }
 
   @Override
+  public NavigationItem doGetNavigationItem(SNodeReference object) {
+    return new BaseNodePointerItem(object);
+  }
+
+  @Override
   public boolean willOpenEditor() {
     return false;
   }

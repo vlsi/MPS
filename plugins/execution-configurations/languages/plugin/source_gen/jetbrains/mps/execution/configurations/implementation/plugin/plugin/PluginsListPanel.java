@@ -25,7 +25,6 @@ import java.util.List;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import jetbrains.mps.workbench.choose.NodePointerNavigationItem;
 import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class PluginsListPanel extends ListPanel<SNodeReference> {
@@ -87,9 +86,9 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
       }
 
       @Override
-      public NavigationItem doGetNavigationItem(final SNodeReference nodeReference) {
+      public NavigationItem doGetNavigationItem(SNodeReference nodeReference) {
         SNode node = nodeReference.resolve(getProject().getRepository());
-        return (node == null ? new BaseNodePointerItem(nodeReference) : new NodePointerNavigationItem(node));
+        return (node == null ? super.doGetNavigationItem(nodeReference) : new NodePointerNavigationItem(node));
       }
       @Override
       public SNodeReference[] find(boolean checkboxState) {

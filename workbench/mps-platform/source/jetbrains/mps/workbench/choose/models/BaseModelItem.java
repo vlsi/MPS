@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
  */
 @Deprecated
 @ToRemove(version = 3.4)
-public class BaseModelItem implements NavigationItem {
+/*package*/ class BaseModelItem implements NavigationItem {
   private SModelReference myModelReference;
 
   public BaseModelItem(SModelReference modelReference) {

@@ -10,8 +10,6 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
@@ -44,10 +42,6 @@ public class NodeChooserDialog extends DialogWrapper {
   }
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
     this(project, new BaseNodePointerModel(project) {
-      @Override
-      public NavigationItem doGetNavigationItem(SNodeReference node) {
-        return new BaseNodePointerItem(node);
-      }
       @Override
       public SNodeReference[] find(boolean checkboxState) {
         return Sequence.fromIterable(nodes).toGenericArray(SNodeReference.class);

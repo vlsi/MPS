@@ -7844,7 +7844,7 @@
                       </node>
                       <node concept="37vLTG" id="m2MuEX6oVl" role="3clF46">
                         <property role="TrG5h" value="nodeReference" />
-                        <property role="3TUv4t" value="true" />
+                        <property role="3TUv4t" value="false" />
                         <node concept="3uibUv" id="L4W0vZ$m1Y" role="1tU5fm">
                           <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                         </node>
@@ -7876,12 +7876,10 @@
                         </node>
                         <node concept="3cpWs6" id="fweninVd9P" role="3cqZAp">
                           <node concept="3K4zz7" id="fweninVq6J" role="3cqZAk">
-                            <node concept="2ShNRf" id="fweninVsKR" role="3K4E3e">
-                              <node concept="1pGfFk" id="fweninVzRG" role="2ShVmc">
-                                <ref role="37wK5l" to="r0an:~BaseNodePointerItem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodePointerItem" />
-                                <node concept="37vLTw" id="fweninVA5W" role="37wK5m">
-                                  <ref role="3cqZAo" node="m2MuEX6oVl" resolve="nodeReference" />
-                                </node>
+                            <node concept="3nyPlj" id="5uaEgp6rSPe" role="3K4E3e">
+                              <ref role="37wK5l" to="r0an:~BaseNodePointerModel.doGetNavigationItem(org.jetbrains.mps.openapi.model.SNodeReference):com.intellij.navigation.NavigationItem" resolve="doGetNavigationItem" />
+                              <node concept="37vLTw" id="5uaEgp6rWyS" role="37wK5m">
+                                <ref role="3cqZAo" node="m2MuEX6oVl" resolve="nodeReference" />
                               </node>
                             </node>
                             <node concept="3clFbC" id="fweninVo54" role="3K4Cdx">

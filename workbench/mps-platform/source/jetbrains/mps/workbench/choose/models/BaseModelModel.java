@@ -16,19 +16,11 @@
 package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public BaseModelModel(Project project) {
-    super(project, "model");
-  }
-
   public BaseModelModel(jetbrains.mps.project.Project mpsProject) {
     super(mpsProject, "model");
   }

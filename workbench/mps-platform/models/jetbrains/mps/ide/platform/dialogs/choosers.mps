@@ -489,37 +489,6 @@
                 <node concept="37vLTw" id="2BHiRxgm7H4" role="37wK5m">
                   <ref role="3cqZAo" node="m2MuEX6ocd" resolve="project" />
                 </node>
-                <node concept="3clFb_" id="m2MuEX6oVi" role="jymVt">
-                  <property role="IEkAT" value="false" />
-                  <property role="1EzhhJ" value="false" />
-                  <property role="TrG5h" value="doGetNavigationItem" />
-                  <property role="DiZV1" value="false" />
-                  <node concept="3Tm1VV" id="m2MuEX6oVj" role="1B3o_S" />
-                  <node concept="3uibUv" id="m2MuEX6oVk" role="3clF45">
-                    <ref role="3uigEE" to="qwe6:~NavigationItem" resolve="NavigationItem" />
-                  </node>
-                  <node concept="37vLTG" id="m2MuEX6oVl" role="3clF46">
-                    <property role="TrG5h" value="node" />
-                    <node concept="3uibUv" id="L4W0vZ$m1Y" role="1tU5fm">
-                      <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="m2MuEX6oVn" role="3clF47">
-                    <node concept="3cpWs6" id="m2MuEX6oVp" role="3cqZAp">
-                      <node concept="2ShNRf" id="m2MuEX6oZE" role="3cqZAk">
-                        <node concept="1pGfFk" id="fweninWlIK" role="2ShVmc">
-                          <ref role="37wK5l" to="r0an:~BaseNodePointerItem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="BaseNodePointerItem" />
-                          <node concept="37vLTw" id="2BHiRxgm8EM" role="37wK5m">
-                            <ref role="3cqZAo" node="m2MuEX6oVl" resolve="node" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2AHcQZ" id="m2MuEX6oVo" role="2AJF6D">
-                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                  </node>
-                </node>
                 <node concept="3clFb_" id="m2MuEX6oUR" role="jymVt">
                   <property role="IEkAT" value="false" />
                   <property role="1EzhhJ" value="false" />

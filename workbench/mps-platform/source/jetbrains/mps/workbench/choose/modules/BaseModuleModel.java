@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -25,12 +24,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReference> {
-
-  @Deprecated
-  public BaseModuleModel(Project project, String entityName) {
-    super(project, entityName);
-  }
-
   public BaseModuleModel(@NotNull jetbrains.mps.project.Project mpsProject) {
     this(mpsProject, "module");
   }

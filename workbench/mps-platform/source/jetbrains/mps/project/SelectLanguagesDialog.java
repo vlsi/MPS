@@ -30,7 +30,7 @@ import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SelectLanguagesDialog extends DialogWrapper {
+/*package*/ class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
   private Project myProject;
   private Set<SModuleReference> myCandidates;
