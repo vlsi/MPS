@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Component;
-import jetbrains.mps.ide.editor.actions.ModelImporter;
+import jetbrains.mps.project.ModelImporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.List;

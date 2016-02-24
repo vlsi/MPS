@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.goTo.matcher.CompositeItemProvider;
 import jetbrains.mps.workbench.goTo.matcher.MPSNodeItemProvider;
@@ -43,6 +44,10 @@ public abstract class MpsPopupFactory {
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider(), initialText);
     setCheckboxShortcutFromAction(popup, parentAction);
     return popup;
+  }
+
+  public static ChooseByNamePopup createPackagePopup(MPSProject p, ChooseByNameModel m, @Nullable String initialText) {
+    return ChooseByNamePopup.createPopup(p.getProject(), m, packageProvider(), initialText);
   }
 
   public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {

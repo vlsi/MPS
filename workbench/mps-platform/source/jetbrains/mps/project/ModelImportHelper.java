@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editor.actions;
+package jetbrains.mps.project;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
@@ -38,12 +38,46 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
-// XXX mpsProject shall be cons argument of an instance utility, to avoid long lists of arguments in static methods
-public class ImportHelper {
+/**
+ * Facility to interoperate with user to add a new model dependency to a model.
+ * Responsible to collect user input and to update model internals.
+ * @author Artem Tikhomirov
+ * @since 3.4
+ */
+public class ModelImportHelper {
+  private final MPSProject myProject;
+  private ShortcutSet myShortcut;
+  private String myInitialText;
 
-  public static void addModelImport(final MPSProject mpsProject, final SModule module, final SModel model,
-      @Nullable BaseAction parentAction) {
-    final BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
+  public ModelImportHelper(@NotNull MPSProject project) {
+    myProject = project;
+  }
+
+  /**
+   * Override keyboard shortcut for model pick dialog to switch between global and package scope (e.g. to match that of invoking action).
+   * <p/>
+   * @return <code>this</code> for convenience
+   */
+  public ModelImportHelper setShortcut(@Nullable ShortcutSet shortcut) {
+    myShortcut = shortcut;
+    return this;
+  }
+
+  /**
+   * @param initialText Text to start selection dialog with
+   * @return <code>this</code> for convenience
+   */
+  public ModelImportHelper setInitialText(@Nullable String initialText) {
+    myInitialText = initialText;
+    return this;
+  }
+
+  /**
+   * Ask user to select a model and import it
+   * @param model model to add import to
+   */
+  public void addImport(@NotNull SModel model) {
+    final BaseModelModel goToModelModel = new BaseModelModel(myProject) {
       @Override
       public SModelReference[] find(SearchScope scope) {
         // FIXME identical condition in GoToModel_Action and in GoToModelPlatformAction
@@ -65,24 +99,30 @@ public class ImportHelper {
       }
     };
     goToModelModel.setPromptText("Import model:");
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModelModel, parentAction);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(myProject, goToModelModel, myInitialText);
+    if (myShortcut != null) {
+      popup.setCheckBoxShortcut(myShortcut);
+    }
 
-    popup.invoke(new AddImportCallback(mpsProject, model) {
+    popup.invoke(new AddImportCallback(myProject, model) {
       @Override
       public void elementChosen(Object element) {
         myModelToImport = goToModelModel.getModelObject(element);
       }
     }, ModalityState.current(), false);
+
   }
 
-  public static void addModelImportByRoot(final MPSProject mpsProject, final SModule contextModule, final SModel model,
-      String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
-    final RootChooseModel goToNodeModel = new RootChooseModel(mpsProject);
+  public void addImportByRoot(@NotNull SModel model, final Callback<String> importedRootCallback) {
+    final RootChooseModel goToNodeModel = new RootChooseModel(myProject);
     goToNodeModel.setPromptText("Import model that contains root:");
 
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), goToNodeModel, initialText, parentAction);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(myProject.getProject(), goToNodeModel, myInitialText, null);
+    if (myShortcut != null) {
+      popup.setCheckBoxShortcut(myShortcut);
+    }
 
-    popup.invoke(new AddImportCallback(mpsProject, model) {
+    popup.invoke(new AddImportCallback(myProject, model) {
       private String myRootName;
       @Override
       public void elementChosen(Object element) {
@@ -94,9 +134,10 @@ public class ImportHelper {
       @Override
       public void onClose() {
         super.onClose();
-        callback.importForRootAdded(myRootName);
+        importedRootCallback.call(myRootName);
       }
     }, ModalityState.current(), false);
+
   }
 
   // Callback.elementChosen shall populate myModelToImport
@@ -135,9 +176,5 @@ public class ImportHelper {
         }
       });
     }
-  }
-
-  public static abstract class ModelImportByRootCallback {
-    public abstract void importForRootAdded(String rootName);
   }
 }

@@ -9,10 +9,10 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.ModelImportHelper;
 
 public class AddModelImport_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,13 +38,6 @@ public class AddModelImport_Action extends BaseAction {
       }
     }
     {
-      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("module", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
@@ -58,6 +51,6 @@ public class AddModelImport_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ImportHelper.addModelImport(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
+    new ModelImportHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).setShortcut(getShortcutSet()).addImport(((SModel) MapSequence.fromMap(_params).get("model")));
   }
 }

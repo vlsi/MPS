@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editor.actions;
+package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.AbstractModule;
@@ -91,6 +91,11 @@ public class ModelImporter {
 
     if (moduleToImport instanceof Language && myModel.getModule() instanceof Solution && ((Language) moduleToImport).isAccessoryModel(modelRefToImport)) {
       // this dubious condition traces back to https://youtrack.jetbrains.com/issue/MPS-17337
+      // FIXME discussed with MM, it's just a quick way to fix common scenarios, there's no particular idea behind models in Solutions to get
+      //       used languages, while models in language get module dependency. If we manage to get rid of accessory models (in a way that we
+      //       generate stuff from them, and then reference this generated code), we could drop this. However, it doesn't look feasible
+      //       to throw accessory models in a foreseeable future, nor it is practical (for a modeling environment it's odd to struggle throwing models away),
+      //       and better option is to give a choice here (provided we pop up a dialog anyway) if user meant to use language or to reference model node.
       return new Entry(MetaAdapterByDeclaration.getLanguage((Language) moduleToImport));
     }
     return new Entry(modelRefToImport, moduleToImport.getModuleReference());

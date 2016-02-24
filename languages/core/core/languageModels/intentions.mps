@@ -21,13 +21,12 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
-    <import index="jhqu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor.actions(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -786,11 +785,11 @@
           <node concept="3cpWsn" id="3mbA0wDyIjC" role="3cpWs9">
             <property role="TrG5h" value="mi" />
             <node concept="3uibUv" id="3mbA0wDyIjD" role="1tU5fm">
-              <ref role="3uigEE" to="jhqu:~ModelImporter" resolve="ModelImporter" />
+              <ref role="3uigEE" to="z1c3:~ModelImporter" resolve="ModelImporter" />
             </node>
             <node concept="2ShNRf" id="3mbA0wDyIld" role="33vP2m">
               <node concept="1pGfFk" id="3mbA0wDyILm" role="2ShVmc">
-                <ref role="37wK5l" to="jhqu:~ModelImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImporter" />
+                <ref role="37wK5l" to="z1c3:~ModelImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImporter" />
                 <node concept="2OqwBi" id="3mbA0wDyIP9" role="37wK5m">
                   <node concept="37vLTw" id="3mbA0wDyIML" role="2Oq$k0">
                     <ref role="3cqZAo" node="5zAj$bduWWN" resolve="myNode" />
@@ -815,7 +814,7 @@
                   <ref role="3cqZAo" node="3mbA0wDyIjC" resolve="mi" />
                 </node>
                 <node concept="liA8E" id="3mbA0wDyKb0" role="2OqNvi">
-                  <ref role="37wK5l" to="jhqu:~ModelImporter.prepare(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="prepare" />
+                  <ref role="37wK5l" to="z1c3:~ModelImporter.prepare(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="prepare" />
                   <node concept="37vLTw" id="3mbA0wDyKe9" role="37wK5m">
                     <ref role="3cqZAo" node="3mbA0wDyIaP" resolve="mr" />
                   </node>
@@ -845,7 +844,7 @@
                     <ref role="3cqZAo" node="3mbA0wDyIjC" resolve="mi" />
                   </node>
                   <node concept="liA8E" id="3mbA0wDyKTY" role="2OqNvi">
-                    <ref role="37wK5l" to="jhqu:~ModelImporter.confirmModuleChanges(java.awt.Component):boolean" resolve="confirmModuleChanges" />
+                    <ref role="37wK5l" to="z1c3:~ModelImporter.confirmModuleChanges(java.awt.Component):boolean" resolve="confirmModuleChanges" />
                     <node concept="37vLTw" id="3mbA0wDyL9N" role="37wK5m">
                       <ref role="3cqZAo" node="3mbA0wDyKWh" resolve="parentComponent" />
                     </node>
@@ -862,7 +861,7 @@
               <ref role="3cqZAo" node="3mbA0wDyIjC" resolve="mi" />
             </node>
             <node concept="liA8E" id="3mbA0wDyKzu" role="2OqNvi">
-              <ref role="37wK5l" to="jhqu:~ModelImporter.affectsModuleDependencies():boolean" resolve="affectsModuleDependencies" />
+              <ref role="37wK5l" to="z1c3:~ModelImporter.affectsModuleDependencies():boolean" resolve="affectsModuleDependencies" />
             </node>
           </node>
         </node>
@@ -874,7 +873,7 @@
                   <ref role="3cqZAo" node="3mbA0wDyIjC" resolve="mi" />
                 </node>
                 <node concept="liA8E" id="3mbA0wDyLFJ" role="2OqNvi">
-                  <ref role="37wK5l" to="jhqu:~ModelImporter.execute():void" resolve="execute" />
+                  <ref role="37wK5l" to="z1c3:~ModelImporter.execute():void" resolve="execute" />
                 </node>
               </node>
             </node>
