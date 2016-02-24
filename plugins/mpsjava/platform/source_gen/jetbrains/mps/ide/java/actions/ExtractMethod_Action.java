@@ -20,8 +20,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
@@ -86,7 +85,7 @@ public class ExtractMethod_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
@@ -106,7 +105,7 @@ public class ExtractMethod_Action extends BaseAction {
         params.value.setReturnType(refactoring.value.getMethodType());
       }
     });
-    ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
+    ExtractMethodDialog dialog = new ExtractMethodDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
     dialog.show();
   }
 }

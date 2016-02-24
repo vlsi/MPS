@@ -18180,10 +18180,10 @@
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="8qS5$SbJ7" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="8qS5$SbJ8" role="1NuT2Z">
+    <node concept="1DS2jV" id="3qVnK3VGzBE" role="1NuT2Z">
       <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="8qS5$SbJ9" role="1oa70y" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3qVnK3VGzBF" role="1oa70y" />
     </node>
     <node concept="2ScWuX" id="8qS5$SbJa" role="tmbBb">
       <node concept="3clFbS" id="8qS5$SbJb" role="2VODD2">
@@ -18370,8 +18370,8 @@
                 <ref role="37wK5l" to="tvc:3UdhnxHunBJ" resolve="ExtractMethodDialog" />
                 <node concept="2OqwBi" id="8qS5$SbJU" role="37wK5m">
                   <node concept="2WthIp" id="8qS5$SbJV" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="8qS5$SbJW" role="2OqNvi">
-                    <ref role="2WH_rO" node="8qS5$SbJ8" resolve="project" />
+                  <node concept="1DTwFV" id="3qVnK3VG$bO" role="2OqNvi">
+                    <ref role="2WH_rO" node="3qVnK3VGzBE" resolve="project" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="8qS5$SbJX" role="37wK5m">
