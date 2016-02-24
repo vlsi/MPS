@@ -23,8 +23,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
+import javax.swing.Icon;
 import java.util.Collections;
 
 /**
@@ -32,8 +34,12 @@ import java.util.Collections;
  */
 public class GenerateModelInProcessAction extends AnAction {
 
+  public GenerateModelInProcessAction(@Nullable String name, @Nullable String description, @Nullable Icon icon) {
+    super(name, description, icon);
+  }
+
   public GenerateModelInProcessAction() {
-    super("Generate model", null, FileIcons.MODEL_ICON);
+    this("Generate model", null, FileIcons.MODEL_ICON);
   }
 
   @Override
@@ -43,9 +49,14 @@ public class GenerateModelInProcessAction extends AnAction {
   }
 
   @Override
-  public void actionPerformed(AnActionEvent anActionEvent) {
-    Project project = CommonDataKeys.PROJECT.getData(anActionEvent.getDataContext());
-    SModel model = MPSCommonDataKeys.CONTEXT_MODEL.getData(anActionEvent.getDataContext());
-    new GenerateModelsInProcess(project, Collections.singletonList(model)).generate();
+  public void actionPerformed(AnActionEvent event) {
+    Project project = CommonDataKeys.PROJECT.getData(event.getDataContext());
+    SModel model = MPSCommonDataKeys.CONTEXT_MODEL.getData(event.getDataContext());
+    new GenerateModelsInProcess(project, Collections.singletonList(model)).generate(getMakeConfigrator(event));
+  }
+
+  @Nullable
+  protected MPSMakeConfigurator getMakeConfigrator(AnActionEvent event) {
+    return null;
   }
 }
