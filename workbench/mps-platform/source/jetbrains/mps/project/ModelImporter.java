@@ -16,8 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
