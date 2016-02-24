@@ -1535,6 +1535,66 @@
             </node>
           </node>
         </node>
+        <node concept="SfApY" id="4ojx_DmfO__" role="3cqZAp">
+          <node concept="3clFbS" id="4ojx_DmfO_A" role="SfCbr">
+            <node concept="3clFbF" id="4ojx_Dmf4wn" role="3cqZAp">
+              <node concept="1rXfSq" id="4ojx_Dmf4wl" role="3clFbG">
+                <ref role="37wK5l" node="17A$fe9mbSD" resolve="flushEDTEvents" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="4ojx_DmfO_t" role="TEbGg">
+            <node concept="3clFbS" id="4ojx_DmfO_u" role="TDEfX">
+              <node concept="3clFbF" id="4ojx_DmfRkP" role="3cqZAp">
+                <node concept="37vLTI" id="4ojx_DmfRCT" role="3clFbG">
+                  <node concept="37vLTw" id="4ojx_DmfRGv" role="37vLTx">
+                    <ref role="3cqZAo" node="4ojx_DmfO_v" resolve="e" />
+                  </node>
+                  <node concept="AH0OO" id="4ojx_DmfRom" role="37vLTJ">
+                    <node concept="3cmrfG" id="4ojx_DmfRrS" role="AHEQo">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="37vLTw" id="4ojx_DmfRkO" role="AHHXb">
+                      <ref role="3cqZAo" node="52zUwV2Vtag" resolve="ts" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="4ojx_DmfO_v" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="4ojx_DmfO_w" role="1tU5fm">
+                <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="4ojx_DmfO_x" role="TEbGg">
+            <node concept="3clFbS" id="4ojx_DmfO_y" role="TDEfX">
+              <node concept="3clFbF" id="4ojx_DmfROJ" role="3cqZAp">
+                <node concept="37vLTI" id="4ojx_DmfRXs" role="3clFbG">
+                  <node concept="37vLTw" id="4ojx_DmfS12" role="37vLTx">
+                    <ref role="3cqZAo" node="4ojx_DmfO_z" resolve="e" />
+                  </node>
+                  <node concept="AH0OO" id="4ojx_DmfRSg" role="37vLTJ">
+                    <node concept="3cmrfG" id="4ojx_DmfRWw" role="AHEQo">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="37vLTw" id="4ojx_DmfROI" role="AHHXb">
+                      <ref role="3cqZAo" node="52zUwV2Vtag" resolve="ts" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="4ojx_DmfO_z" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="4ojx_DmfO_$" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4ojx_DmfNHe" role="3cqZAp" />
         <node concept="3clFbJ" id="52zUwV2VAEF" role="3cqZAp">
           <node concept="3clFbS" id="52zUwV2VAEI" role="3clFbx">
             <node concept="YS8fn" id="52zUwV2VD3V" role="3cqZAp">
@@ -1568,6 +1628,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4ojx_DmfHQn" role="3cqZAp" />
         <node concept="3cpWs6" id="hSUN8xT" role="3cqZAp">
           <node concept="2OqwBi" id="hSUN9f5" role="3cqZAk">
             <node concept="2OwXpG" id="hSUN9f6" role="2OqNvi">
@@ -1836,6 +1897,24 @@
                           </node>
                           <node concept="liA8E" id="NIU5cJ2LTu" role="2OqNvi">
                             <ref role="37wK5l" to="dxuu:~JComponent.addNotify():void" resolve="addNotify" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6cRz_pZAozB" role="3cqZAp">
+                        <node concept="2OqwBi" id="4CPWB7q1QOf" role="3clFbG">
+                          <node concept="37vLTw" id="6cRz_pZAoO8" role="2Oq$k0">
+                            <ref role="3cqZAo" node="NIU5cJ2Vc8" resolve="component" />
+                          </node>
+                          <node concept="liA8E" id="4CPWB7q1ROM" role="2OqNvi">
+                            <ref role="37wK5l" to="z60i:~Component.setSize(java.awt.Dimension):void" resolve="setSize" />
+                            <node concept="2OqwBi" id="4CPWB7q1S0M" role="37wK5m">
+                              <node concept="37vLTw" id="6cRz_pZAp3q" role="2Oq$k0">
+                                <ref role="3cqZAo" node="NIU5cJ2Vc8" resolve="component" />
+                              </node>
+                              <node concept="liA8E" id="4CPWB7q1T2k" role="2OqNvi">
+                                <ref role="37wK5l" to="dxuu:~JComponent.getPreferredSize():java.awt.Dimension" resolve="getPreferredSize" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -3348,6 +3427,7 @@
       <node concept="3uibUv" id="17A$fe9mbSH" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
       </node>
+      <node concept="3Tm6S6" id="4ojx_DmeWFm" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="62Gc_ZTkHcs" role="jymVt" />
     <node concept="3clFb_" id="62Gc_ZTkJBT" role="jymVt">
@@ -9578,45 +9658,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4CPWB7q0hkl" role="3cqZAp">
-          <node concept="2YIFZM" id="4CPWB7q0hB_" role="3clFbG">
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <node concept="1bVj0M" id="4CPWB7q0hQF" role="37wK5m">
-              <node concept="3clFbS" id="4CPWB7q0hQG" role="1bW5cS">
-                <node concept="3clFbF" id="4CPWB7q1QIT" role="3cqZAp">
-                  <node concept="2OqwBi" id="4CPWB7q1QOf" role="3clFbG">
-                    <node concept="37vLTw" id="4CPWB7q1QIS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4CPWB7q00tv" resolve="editorComponent" />
-                    </node>
-                    <node concept="liA8E" id="4CPWB7q1ROM" role="2OqNvi">
-                      <ref role="37wK5l" to="z60i:~Component.setSize(java.awt.Dimension):void" resolve="setSize" />
-                      <node concept="2OqwBi" id="4CPWB7q1S0M" role="37wK5m">
-                        <node concept="37vLTw" id="4CPWB7q1RU8" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4CPWB7q00tv" resolve="editorComponent" />
-                        </node>
-                        <node concept="liA8E" id="4CPWB7q1T2k" role="2OqNvi">
-                          <ref role="37wK5l" to="dxuu:~JComponent.getPreferredSize():java.awt.Dimension" resolve="getPreferredSize" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7LS9nM_Bz98" role="3cqZAp">
-          <node concept="2OqwBi" id="7LS9nM_Bz_5" role="3clFbG">
-            <node concept="37vLTw" id="7LS9nM_Bz96" role="2Oq$k0">
-              <ref role="3cqZAo" node="62Gc_ZToOa_" resolve="myEditorTest" />
-            </node>
-            <node concept="liA8E" id="7LS9nM_BM1l" role="2OqNvi">
-              <ref role="37wK5l" node="17A$fe9mbSD" resolve="flushEDTEvents" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="4CPWB7q0gQM" role="3cqZAp" />
         <node concept="3cpWs8" id="5s44y2LhEsg" role="3cqZAp">
           <node concept="3cpWsn" id="5s44y2LhEsh" role="3cpWs9">
             <property role="TrG5h" value="rootCell" />

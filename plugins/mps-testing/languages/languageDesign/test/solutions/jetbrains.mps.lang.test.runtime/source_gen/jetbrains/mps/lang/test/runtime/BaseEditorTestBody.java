@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ThreadUtils;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,7 +27,6 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
@@ -72,9 +72,18 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
       }
     });
+    try {
+      flushEDTEvents();
+    } catch (InvocationTargetException e) {
+      ts[0] = e;
+    } catch (InterruptedException e) {
+      ts[0] = e;
+    }
+
     if (ts[0] != null) {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
+
     return this.myEditor;
   }
 
@@ -99,6 +108,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
           EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
           component.addNotify();
+          component.setSize(component.getPreferredSize());
           component.validate();
         }
         BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
@@ -264,7 +274,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  /*package*/ void flushEDTEvents() throws InvocationTargetException, InterruptedException {
+  private void flushEDTEvents() throws InvocationTargetException, InterruptedException {
     // wait for all events currently in EDT queue 
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
