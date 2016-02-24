@@ -119,10 +119,19 @@ public class ImportHelper {
       if (myModelToImport == null) {
         return;
       }
+
       myProject.getModelAccess().executeCommand(new Runnable() {
         @Override
         public void run() {
-          new ModelImporter(myModel, getFrame()).execute(myModelToImport);
+          final ModelImporter modelImporter = new ModelImporter(myModel);
+          modelImporter.prepare(myModelToImport);
+          boolean confirmed = true;
+          if (modelImporter.affectsModuleDependencies()) {
+            confirmed = modelImporter.confirmModuleChanges(getFrame());
+          }
+          if (confirmed) {
+            modelImporter.execute();
+          }
         }
       });
     }

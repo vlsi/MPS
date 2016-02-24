@@ -13,6 +13,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import java.awt.Component;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class AddMissingDependency_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -53,7 +56,8 @@ public final class AddMissingDependency_Intention extends IntentionDescriptorBas
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      new DependencyHelper(node, editorContext).execute();
+      EditorComponent ec = editorContext.getEditorComponent();
+      new DependencyHelper(node, editorContext).execute((ec instanceof Component ? ((Component) ec) : ProjectHelper.toMainFrame(editorContext.getOperationContext().getProject())));
     }
     @Override
     public IntentionDescriptor getDescriptor() {
