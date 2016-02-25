@@ -43,6 +43,7 @@ public interface ConceptDescriptor {
 
   boolean isFinal(); // since 3.0
 
+  @NotNull
   String getConceptAlias(); // since 3.0
 
   ConceptKind getConceptKind(); // since 3.0

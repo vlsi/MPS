@@ -105,6 +105,10 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
 
         conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
+        if (conceptAlias == null) {
+          conceptAlias = "";
+        }
+
         shortDescription = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
 
         // scope
@@ -345,6 +349,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     return isFinal;
   }
 
+  @NotNull
   @Override
   public String getConceptAlias() {
     return conceptAlias;

@@ -209,6 +209,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
 
+  @NotNull
   @Override
   public String getConceptAlias() {
     reportWarn();
