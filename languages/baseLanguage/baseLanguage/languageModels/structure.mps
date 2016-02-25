@@ -4282,5 +4282,18 @@
     <property role="TrG5h" value="IConditional" />
     <property role="1pbfSe" value="1291154397" />
   </node>
+  <node concept="1TIwiD" id="3vR8Evee0tE">
+    <property role="1pbfSe" value="103754257" />
+    <property role="3GE5qa" value="classifiers.refs" />
+    <property role="TrG5h" value="QualifiedSuperMethodCall" />
+    <property role="34LRSv" value="qualified super" />
+    <ref role="1TJDcQ" node="fBnyPmE" resolve="SuperMethodCall" />
+    <node concept="1TJgyj" id="3vR8Evee0tX" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="classifier" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
+    </node>
+  </node>
 </model>
 
