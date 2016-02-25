@@ -17,12 +17,9 @@ import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class SConceptOperations {
@@ -134,13 +131,12 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
-    Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
+    SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(conceptDeclarationNode);
     List<SNode> result = new ArrayList<SNode>();
-    for (String descendant : descendants) {
-      SNode declaration = SModelUtil.findConceptDeclaration(descendant);
-      Language lang = SModelUtil.getDeclaringLanguage(declaration);
-      if (lang != null && SetSequence.fromSet(availableLanguages).contains(MetaAdapterByDeclaration.getLanguage(lang))) {
-        result.add(declaration);
+    for (SAbstractConcept c : getAllSubConcepts(concept, availableLanguages)) {
+      SNode conceptDecl = c.getDeclarationNode();
+      if (conceptDecl != null) {
+        result.add(conceptDecl);
       }
     }
     return result;
