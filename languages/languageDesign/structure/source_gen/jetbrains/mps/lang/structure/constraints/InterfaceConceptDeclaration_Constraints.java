@@ -35,7 +35,7 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new ConceptsScope(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration").getDeclarationNode());
+        return Scopes.forConcepts(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
       }
     };
   }

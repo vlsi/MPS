@@ -380,13 +380,13 @@
         <var name="childLink" id="6526839980494582579" />
         <var name="selectedCell" id="6526839980494582600" />
       </scope>
-      <unit id="1272170755471711930" at="292,299,296,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$12" />
+      <unit id="1272170755471711930" at="292,279,296,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$12" />
       <unit id="1272170755471744763" at="296,23,300,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$12" />
       <unit id="2808343416323306872" at="338,229,342,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$13" />
-      <unit id="850862791447792328" at="386,299,390,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$16" />
+      <unit id="850862791447792328" at="386,279,390,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$16" />
       <unit id="850862791447792336" at="390,23,394,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$16" />
       <unit id="6526839980494556968" at="432,229,436,5" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$17" />
-      <unit id="850862791450164363" at="479,291,483,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$20" />
+      <unit id="850862791450164363" at="479,271,483,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$20" />
       <unit id="850862791450164371" at="483,23,487,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$20" />
       <unit id="870577895079704586" at="260,75,265,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$11" />
       <unit id="6526839980494582621" at="354,75,359,11" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$15" />
@@ -458,7 +458,7 @@
         <var name="_context" id="850862791448115108" />
         <var name="operationContext" id="850862791448115108" />
       </scope>
-      <unit id="850862791448046073" at="79,301,83,13" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$4" />
+      <unit id="850862791448046073" at="79,281,83,13" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$4" />
       <unit id="850862791448046081" at="83,25,87,13" name="jetbrains.mps.lang.structure.actions.QueriesGenerated$4" />
     </file>
   </root>

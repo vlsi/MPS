@@ -31,6 +31,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -294,6 +295,9 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -332,9 +336,6 @@
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -4966,18 +4967,17 @@
         <node concept="3cpWs8" id="6_gUeurduN6" role="3cqZAp">
           <node concept="3cpWsn" id="6_gUeurduN7" role="3cpWs9">
             <property role="TrG5h" value="conceptsScope" />
-            <node concept="3uibUv" id="6_gUeurduN8" role="1tU5fm">
-              <ref role="3uigEE" to="tpcg:4ar4XJ$vMdY" resolve="ConceptsScope" />
+            <node concept="3uibUv" id="50vK5Yaul0f" role="1tU5fm">
+              <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
             </node>
-            <node concept="2ShNRf" id="6_gUeurdwLX" role="33vP2m">
-              <node concept="1pGfFk" id="6_gUeurdx4b" role="2ShVmc">
-                <ref role="37wK5l" to="tpcg:4ar4XJ$wu7l" resolve="ConceptsScope" />
-                <node concept="37vLTw" id="6_gUeurdxDn" role="37wK5m">
-                  <ref role="3cqZAo" node="6_gUeurcMxr" resolve="accessNode" />
-                </node>
-                <node concept="3TUQnm" id="6_gUeurd$ZN" role="37wK5m">
-                  <ref role="3TV0OU" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-                </node>
+            <node concept="2YIFZM" id="50vK5Yaunsx" role="33vP2m">
+              <ref role="37wK5l" to="tpcg:50vK5YapkBB" resolve="forConcepts" />
+              <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
+              <node concept="37vLTw" id="50vK5YaunDV" role="37wK5m">
+                <ref role="3cqZAo" node="6_gUeurcMxr" resolve="accessNode" />
+              </node>
+              <node concept="35c_gC" id="50vK5YaunS2" role="37wK5m">
+                <ref role="35c_gD" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
               </node>
             </node>
           </node>
@@ -4991,7 +4991,7 @@
                     <ref role="3cqZAo" node="6_gUeurduN7" resolve="conceptsScope" />
                   </node>
                   <node concept="liA8E" id="6_gUeure0H7" role="2OqNvi">
-                    <ref role="37wK5l" to="6xgk:2DmG$ciAhBi" resolve="getAvailableElements" />
+                    <ref role="37wK5l" to="o8zo:3fifI_xCtP7" resolve="getAvailableElements" />
                     <node concept="10Nm6u" id="6_gUeure0Kj" role="37wK5m" />
                   </node>
                 </node>

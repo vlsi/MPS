@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.structure.constraints.ConceptsScope;
+import jetbrains.mps.lang.structure.constraints.Scopes;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
@@ -63,7 +63,7 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ConceptsScope(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").getDeclarationNode());
+            return Scopes.forConcepts(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
           }
         };
       }

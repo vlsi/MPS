@@ -30,7 +30,7 @@ public class DataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new ConceptsScope(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration").getDeclarationNode());
+        return Scopes.forConcepts(_context.getContextNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
       }
     };
   }

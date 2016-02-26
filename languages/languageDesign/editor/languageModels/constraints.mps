@@ -1625,14 +1625,13 @@
       <ref role="1N5Vy1" to="tpc2:gXXX56I" />
       <node concept="13QW63" id="xP3yNycSMT" role="1N6uqs">
         <node concept="3clFbS" id="xP3yNycSMV" role="2VODD2">
-          <node concept="3clFbF" id="xP3yNycSNz" role="3cqZAp">
-            <node concept="2ShNRf" id="xP3yNycSNx" role="3clFbG">
-              <node concept="1pGfFk" id="xP3yNycW0U" role="2ShVmc">
-                <ref role="37wK5l" to="tpcg:2iCqkkxEdE4" resolve="LanguageConceptsScope" />
-                <node concept="1Q6Npb" id="xP3yNydid9" role="37wK5m" />
-                <node concept="35c_gC" id="6bxBVrUg5NJ" role="37wK5m">
-                  <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-                </node>
+          <node concept="3clFbF" id="50vK5YaseUD" role="3cqZAp">
+            <node concept="2YIFZM" id="50vK5YaseYq" role="3clFbG">
+              <ref role="37wK5l" to="tpcg:50vK5Yas08Z" resolve="forLanguageConcepts" />
+              <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
+              <node concept="1Q6Npb" id="50vK5Yasf03" role="37wK5m" />
+              <node concept="35c_gC" id="50vK5Yasf35" role="37wK5m">
+                <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
               </node>
             </node>
           </node>
@@ -1817,35 +1816,6 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="4Sf$XywF4nL">
-    <property role="3GE5qa" value="ContextAssistant" />
-    <ref role="1M2myG" to="tpc2:4Sf$XywF3UU" resolve="ContextAssistantMenu_Abstract" />
-    <node concept="2NXJUA" id="4Sf$XywF4nM" role="2NY200">
-      <node concept="3clFbS" id="4Sf$XywF4nN" role="2VODD2">
-        <node concept="3clFbF" id="4Sf$XywF4nO" role="3cqZAp">
-          <node concept="22lmx$" id="4Sf$XywF4nP" role="3clFbG">
-            <node concept="2OqwBi" id="4Sf$XywF4nQ" role="3uHU7B">
-              <node concept="Rm8GO" id="4Sf$XywF4nR" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="liA8E" id="4Sf$XywF4nS" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                <node concept="2JrnkZ" id="4Sf$XywF4nT" role="37wK5m">
-                  <node concept="1Q6Npb" id="4Sf$XywF4nU" role="2JrQYb" />
-                </node>
-              </node>
-            </node>
-            <node concept="2YIFZM" id="4Sf$XywF4nV" role="3uHU7w">
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <node concept="1Q6Npb" id="4Sf$XywF4nW" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="1M2fIO" id="1qY_lWSjK0n">
     <property role="3GE5qa" value="ContextAssistant" />
     <ref role="1M2myG" to="tpc2:1qY_lWSjJNx" resolve="ContextAssistantMenu_Default" />
@@ -1869,6 +1839,35 @@
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="4Sf$XywF4nL">
+    <property role="3GE5qa" value="ContextAssistant" />
+    <ref role="1M2myG" to="tpc2:4Sf$XywF3UU" resolve="ContextAssistantMenu_Abstract" />
+    <node concept="2NXJUA" id="4Sf$XywF4nM" role="2NY200">
+      <node concept="3clFbS" id="4Sf$XywF4nN" role="2VODD2">
+        <node concept="3clFbF" id="4Sf$XywF4nO" role="3cqZAp">
+          <node concept="22lmx$" id="4Sf$XywF4nP" role="3clFbG">
+            <node concept="2OqwBi" id="4Sf$XywF4nQ" role="3uHU7B">
+              <node concept="Rm8GO" id="4Sf$XywF4nR" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="4Sf$XywF4nS" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="4Sf$XywF4nT" role="37wK5m">
+                  <node concept="1Q6Npb" id="4Sf$XywF4nU" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="4Sf$XywF4nV" role="3uHU7w">
+              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+              <node concept="1Q6Npb" id="4Sf$XywF4nW" role="37wK5m" />
             </node>
           </node>
         </node>

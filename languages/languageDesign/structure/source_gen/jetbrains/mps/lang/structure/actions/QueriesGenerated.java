@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.structure.constraints.ConceptsScope;
+import jetbrains.mps.lang.structure.constraints.Scopes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -76,7 +76,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return Sequence.fromIterable(new ConceptsScope(_context.getParentNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").getDeclarationNode()).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+            return Sequence.fromIterable(Scopes.forConcepts(_context.getParentNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
               }
@@ -289,7 +289,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").getDeclarationNode()).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+          return Sequence.fromIterable(Scopes.forConcepts(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
             }
@@ -383,7 +383,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration").getDeclarationNode()).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+          return Sequence.fromIterable(Scopes.forConcepts(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
             }
@@ -476,7 +476,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return Sequence.fromIterable(new ConceptsScope(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration").getDeclarationNode()).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+          return Sequence.fromIterable(Scopes.forConcepts(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).getAvailableElements("")).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
               return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"));
             }

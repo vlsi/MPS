@@ -245,13 +245,12 @@
                   <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
                   <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
                   <node concept="3Tm1VV" id="2iCqkkxCZH9" role="1B3o_S" />
-                  <node concept="2ShNRf" id="2iCqkkxCZeI" role="37wK5m">
-                    <node concept="1pGfFk" id="2iCqkkxDC_N" role="2ShVmc">
-                      <ref role="37wK5l" to="tpcg:2iCqkkxDKBL" resolve="ConceptsScope" />
-                      <node concept="2rP1CM" id="2iCqkkxF2FM" role="37wK5m" />
-                      <node concept="35c_gC" id="2iCqkkxF2LH" role="37wK5m">
-                        <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-                      </node>
+                  <node concept="2YIFZM" id="50vK5Yau9cQ" role="37wK5m">
+                    <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
+                    <ref role="37wK5l" to="tpcg:50vK5YapkBB" resolve="forConcepts" />
+                    <node concept="2rP1CM" id="50vK5Yau9cR" role="37wK5m" />
+                    <node concept="35c_gC" id="50vK5Yau9cS" role="37wK5m">
+                      <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="2iCqkkxCZLz" role="jymVt">
@@ -371,13 +370,12 @@
                   <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
                   <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
                   <node concept="3Tm1VV" id="1QReUKIIbmF" role="1B3o_S" />
-                  <node concept="2ShNRf" id="1QReUKII9uG" role="37wK5m">
-                    <node concept="1pGfFk" id="1QReUKII9_2" role="2ShVmc">
-                      <ref role="37wK5l" to="tpcg:2iCqkkxDKBL" resolve="ConceptsScope" />
-                      <node concept="2rP1CM" id="1QReUKII9A6" role="37wK5m" />
-                      <node concept="35c_gC" id="1QReUKII9Cr" role="37wK5m">
-                        <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                      </node>
+                  <node concept="2YIFZM" id="50vK5YatxuA" role="37wK5m">
+                    <ref role="37wK5l" to="tpcg:50vK5YapkBB" resolve="forConcepts" />
+                    <ref role="1Pybhc" to="tpcg:6dmIS6MscR9" resolve="Scopes" />
+                    <node concept="2rP1CM" id="1QReUKII9A6" role="37wK5m" />
+                    <node concept="35c_gC" id="1QReUKII9Cr" role="37wK5m">
+                      <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
                     </node>
                   </node>
                   <node concept="3clFb_" id="1QReUKIIbqm" role="jymVt">
