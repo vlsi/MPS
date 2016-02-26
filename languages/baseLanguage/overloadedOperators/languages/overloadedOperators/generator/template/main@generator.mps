@@ -113,7 +113,6 @@
         <reference id="1219952338328" name="applicableConcept" index="aOQi4" />
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
-        <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="1219952894531" name="dropRootRule" index="aQYdv" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
@@ -208,7 +207,6 @@
   </registry>
   <node concept="bUwia" id="5MF4VwFY_A0">
     <property role="TrG5h" value="main" />
-    <property role="3$yP7D" value="true" />
     <node concept="aNPBN" id="6oKb3MdYqO0" role="aQYdv">
       <ref role="aOQi4" to="vgj4:6oKb3MdXML9" resolve="ContainerImport" />
     </node>
