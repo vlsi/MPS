@@ -44,7 +44,6 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       // do we need all these additional dependencies? mb. it's better to use .runcheckingAction() instead? 
       component.addDependency(target);
       component.addDependency(ld);
-      component.addDependency(node);
       component.addDependency(SNodeOperations.getParent(node));
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);

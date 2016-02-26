@@ -244,11 +244,10 @@ public class LanguageErrorsComponent {
   private void processEvent(SModelChildEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
     if (event.isRemoved()) {
-      SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getChild());
+      SetSequence.fromSet(myDependenciesToInvalidate).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
     }
     if (event.isAdded()) {
-      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, false, new SAbstractConcept[]{})));
-      SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
+      SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) event.getChild()), null, true, new SAbstractConcept[]{})));
     }
   }
   private void processEvent(SModelReferenceEvent event) {
