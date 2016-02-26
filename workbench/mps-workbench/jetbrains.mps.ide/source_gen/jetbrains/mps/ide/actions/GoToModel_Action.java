@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToModel_Action extends BaseAction {
@@ -36,11 +37,24 @@ public class GoToModel_Action extends BaseAction {
     return true;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-    assert mpsProject != null;
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
+    final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
     final BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
       @Override
       public SModelReference[] find(SearchScope scope) {
@@ -72,11 +86,7 @@ public class GoToModel_Action extends BaseAction {
       @Override
       public void onClose() {
         if (myModelRef != null) {
-          ProjectPane projectPane = ProjectPane.getInstance(mpsProject);
-          // XXX we are surely in EDT but where from do we get model read? Is it command of the action? In callback, really? 
-          SModel md = myModelRef.resolve(mpsProject.getRepository());
-          projectPane.selectModel(md, true);
-
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModelRef);
         }
       }
     }, ModalityState.current(), false);

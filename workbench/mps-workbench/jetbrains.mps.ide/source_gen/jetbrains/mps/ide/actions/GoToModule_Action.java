@@ -22,7 +22,7 @@ import jetbrains.mps.project.DevKit;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToModule_Action extends BaseAction {
@@ -78,12 +78,9 @@ public class GoToModule_Action extends BaseAction {
 
       @Override
       public void onClose() {
-        //  execute outside command == false, I assume we are inside EDT + Model Write here 
-        SModule module = (myModuleRef == null ? null : myModuleRef.resolve(mpsProject.getRepository()));
-        if (module == null) {
-          return;
+        if (myModuleRef != null) {
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModuleRef);
         }
-        ProjectPane.getInstance(mpsProject).selectModule(module, true);
       }
     }, ModalityState.current(), true);
   }
