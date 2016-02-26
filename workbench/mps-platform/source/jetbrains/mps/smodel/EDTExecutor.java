@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.ThreadUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 
-import javax.swing.SwingUtilities;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 class EDTExecutor {
@@ -167,7 +167,7 @@ class EDTExecutor {
 
             /* start worker */
             workerStarted = true;
-            SwingUtilities.invokeLater(myWorker);
+            ApplicationManager.getApplication().invokeLater(myWorker);
           }
         }
       } catch (Exception e) {
