@@ -11,6 +11,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem;
 
 public class OldCommentAnnotationMigration {
   private SAbstractConcept concept;
@@ -36,6 +43,21 @@ public class OldCommentAnnotationMigration {
         SNodeOperations.deleteNode(comment);
         CommentUtil.commentOut(parent);
       }
+    }
+  }
+  public Iterable<Problem> check() {
+    {
+      final SearchScope scope = CommandUtil.createScope(module);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.asSConcept(concept))).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
+        }
+      });
     }
   }
 }

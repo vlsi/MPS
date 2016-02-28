@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -290,7 +291,7 @@ public class migrateExtension extends MigrationScriptBase {
     }
     return ListSequence.fromList(notMigrated).select(new ISelector<SNode, Problem>() {
       public Problem select(SNode it) {
-        Problem migrated = new NodeWasNotMigrated(it);
+        Problem migrated = new DeprecatedConceptNotMigratedProblem(it);
         return migrated;
       }
     });
