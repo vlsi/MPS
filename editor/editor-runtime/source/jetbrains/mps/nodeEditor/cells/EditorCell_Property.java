@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
  * Created Sep 14, 2003
  */
 public class EditorCell_Property extends EditorCell_Label implements SynchronizeableEditorCell {
-  private ModelAccessor myModelAccessor;
+  private final ModelAccessor myModelAccessor;
   private boolean myCommitInProgress;
   private boolean myCommitInCommand = true;
   private String myLastModelText;
@@ -211,4 +211,19 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }
 
+  @Override
+  public void onAdd() {
+    super.onAdd();
+    if (isTransactional()) {
+      getEditor().getCellTracker().addTransactionalCell(this);
+    }
+  }
+
+  @Override
+  public void onRemove() {
+    if (isTransactional()) {
+      getEditor().getCellTracker().removeTransactionalCell(this);
+    }
+    super.onRemove();
+  }
 }

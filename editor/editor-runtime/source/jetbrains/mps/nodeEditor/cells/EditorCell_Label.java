@@ -464,7 +464,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private void addChangeTextUndoableAction() {
-    UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction());
+    UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction(getSNode()));
   }
 
   @Override
@@ -1080,14 +1080,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
    * flushCommand() method implementation. This method will not add {@link jetbrains.mps.ide.undo.SNodeIdeaUndoableAction}
    * action into IDEA undo stack if it has no own undoable actions.
    * <p/>
-   * This is helpful in case of UI-only modifications performed upon the cells. For example, if textual cell is modified in
-   * order to reproduce invalid value, this value cannot be committed into the model wo will stay in the editor cell/memento
-   * objects. Empty command in this case will add a "mark" in IDEA undo stack, so corresponding editor memento will be restored
-   * on udo/redo of this empty command.
+   * This is helpful in case of UI-only modifications performed upon the cells. For example, if the textual cell is modified
+   * so it represents invalid value. In this case this value cannot be committed into the model and will stay in the editor
+   * cell/memento objects only. Empty command in this case will add a "mark" in IDEA undo stack, so corresponding editor
+   * memento will be restored on udo/redo of this empty command.
    */
-  protected class DummyUndoableAction extends SNodeUndoableAction {
-    protected DummyUndoableAction() {
-      super(getSNode());
+  protected static class DummyUndoableAction extends SNodeUndoableAction {
+    protected DummyUndoableAction(SNode node) {
+      super(node);
     }
 
     @Override
