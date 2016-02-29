@@ -1345,23 +1345,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   // Following methods are used from layout algorythms
-
-  /**
-   * @deprecated not used.
-   */
-  @Deprecated
-  protected void markNeedsRelayout() {
-    myIsNeedRelayout = true;
-  }
-
-  /**
-   * @deprecated not used.
-   */
-  @Deprecated
-  boolean isNeedsRelayout() {
-    return myIsNeedRelayout;
-  }
-
   @Override
   public boolean wasRelayoutRequested() {
     return myIsNeedRelayout;

@@ -15,33 +15,40 @@
  */
 package jetbrains.mps.nodeEditor.text;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
 
 public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   private static final Logger LOG = LogManager.getLogger(TextBuilder.class);
+  private static TextBuilder ourEmptyTextBuilder = null;
 
   private int myWidth = 0;
-
   private List<StringBuffer> myLines = new ArrayList<StringBuffer>();
 
-  private static final TextBuilder ourEmptyTextBuilder = TextBuilder.fromString("");
-
   private TextBuilder() {
-
   }
 
-
+  /**
+   * since MPS 3.3 use getSize() instead
+   *
+   * @return
+   */
+  @Deprecated
   public int getHeight() {
     return myLines.size();
   }
 
   public int getWidth() {
     return myWidth;
+  }
+
+  @Override
+  public int getSize() {
+    return myLines.size();
   }
 
   public String getText() {
@@ -54,91 +61,73 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   }
 
   @Override
-  public int getSize() {
-    return myLines.size();
-  }
-
-  @Override
   public Iterable<StringBuffer> getLines() {
     return myLines;
   }
 
+  /**
+   * since MPS 3.3 use appendToTheRight(TextBuilder builder, boolean insertSpace) passing true as a second parameter
+   *
+   * @return
+   */
+  @Deprecated
   public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder) {
     return appendToTheRight(builder, true);
   }
 
   public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace) {
-    if (builder == ourEmptyTextBuilder) return this;
-    if (this == ourEmptyTextBuilder) return builder;
-    TextBuilder result = new TextBuilder();
+    if (builder.getSize() == 0) {
+      return this;
+    }
+    if (getSize() == 0) {
+      return builder;
+    }
+
     String delim = insertSpace ? " " : "";
     int delimWidth = delim.length();
 
-    result.myWidth = this.myWidth + getWidth(builder) + delimWidth;
+    int newWidth = myWidth + builder.getWidth() + delimWidth;
 
     Iterator<StringBuffer> builderIterator = builder.getLines().iterator();
-    Iterator<StringBuffer> myIterator = getLines().iterator();
-    while (myIterator.hasNext() || builderIterator.hasNext()) {
-      StringBuffer resultLine;
-      if (myIterator.hasNext()) {
-        StringBuffer myCurrentLine = myIterator.next();
-        resultLine = new StringBuffer(myCurrentLine.append(delim));
-      } else {
-        resultLine = makeWhitespaceStringBuffer(this.myWidth + delimWidth);
-      }
-
-
+    for (StringBuffer nextLine : getLines()) {
+      nextLine.append(delim);
       if (builderIterator.hasNext()) {
-        StringBuffer builderCurrentLine = builderIterator.next();
-        resultLine.append(builderCurrentLine);
+        nextLine.append(builderIterator.next());
       }
-      result.myLines.add(resultLine);
     }
-    result.normalizeWidth();
-    return result;
-  }
+    while (builderIterator.hasNext()) {
+      StringBuffer nextLine = new StringBuffer(newWidth);
+      nextLine.append(" ", 0, myWidth + delimWidth + 1);
+      nextLine.append(builderIterator.next());
+      myLines.add(nextLine);
+    }
+    myWidth = newWidth;
 
-  private static int getWidth(jetbrains.mps.openapi.editor.TextBuilder builder) {
-    int maxWidth = 0;
-    for (StringBuffer line : builder.getLines()) {
-      if (line.length() > maxWidth) {
-        maxWidth = line.length();
-      }
-    }
-    return maxWidth;
+    normalizeWidth();
+    return this;
   }
 
   public jetbrains.mps.openapi.editor.TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder) {
-    if (builder == ourEmptyTextBuilder) return this;
-    if (this == ourEmptyTextBuilder) return builder;
-    TextBuilder result = new TextBuilder();
-
-    result.myWidth = Math.max(this.myWidth, getWidth(builder));
-
-    for (StringBuffer sb : this.myLines) {
-      result.myLines.add(new StringBuffer(sb));
+    if (builder.getSize() == 0) {
+      return this;
+    }
+    if (getSize() == 0) {
+      return builder;
     }
 
     for (StringBuffer sb : builder.getLines()) {
-      result.myLines.add(new StringBuffer(sb));
+      myLines.add(new StringBuffer(sb));
     }
 
-    result.normalizeWidth();
-    return result;
+    myWidth = Math.max(this.myWidth, builder.getWidth());
+    normalizeWidth();
+    return this;
   }
 
   private void normalizeWidth() {
     for (StringBuffer s : myLines) {
       while (s.length() < myWidth) s.append(' ');
     }
-  }
-
-  private static StringBuffer makeWhitespaceStringBuffer(int size) {
-    StringBuffer result = new StringBuffer();
-    for (int i = 1; i <= size; i++) {
-      result.append(' ');
-    }
-    return result;
   }
 
   public static TextBuilder fromString(String s) {
@@ -149,11 +138,14 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   }
 
   public static TextBuilder getEmptyTextBuilder() {
+    if (ourEmptyTextBuilder == null) {
+      ourEmptyTextBuilder = new TextBuilder();
+    }
     return ourEmptyTextBuilder;
   }
 
   public static void main(String[] args) {
-    jetbrains.mps.openapi.editor.TextBuilder textBuilder1 = fromString("was").appendToTheRight(fromString("it"))
+    jetbrains.mps.openapi.editor.TextBuilder textBuilder1 = fromString("was").appendToTheRight(fromString("it"), true)
         .appendToTheRight(fromString("a"), true)
         .appendToTheRight(fromString("cat"), true)
         .appendToTheRight(fromString("?"), true);

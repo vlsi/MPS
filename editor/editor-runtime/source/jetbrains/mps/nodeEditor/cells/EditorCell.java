@@ -53,8 +53,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean validate(boolean strict, boolean canActivatePopup);
 
-  TextBuilder renderText();
-
   boolean processMousePressed(MouseEvent e);
 
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);

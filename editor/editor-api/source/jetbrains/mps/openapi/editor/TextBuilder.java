@@ -20,9 +20,46 @@ package jetbrains.mps.openapi.editor;
  * 02 21, 2013
  */
 public interface TextBuilder {
+  /**
+   * @return text rendered from the content of this TextBuilder
+   */
   String getText();
+
+  /**
+   * @return iterator over all lines inside this TextBuilder
+   */
   Iterable<StringBuffer> getLines();
+
+  /**
+   * @return the number of lines inside this TextBuilder
+   */
   int getSize();
-  public TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder);
-  public TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace);
+
+  /**
+   * @return maximum width of lines inside this TextBuilder
+   */
+  int getWidth();
+
+  /**
+   * Append content of the specified TextBuilder to the bottom of this text builder.
+   * Similar to {@link StringBuilder} implementation, this method may modify current
+   * TextBuilder instance
+   *
+   * @param builder the TextBuilder to append to the bottom of this one
+   * @return TextBuilder instance with the result of this operation
+   */
+  TextBuilder appendToTheBottom(TextBuilder builder);
+
+  /**
+   * Append content of the specified TextBuilder to the right of this text builder.
+   * Similar to {@link StringBuilder} implementation, this method may modify current
+   * TextBuilder instance
+   *
+   * @param builder     the TextBuilder to append to the right of this one
+   * @param insertSpace indicates if space symbol should be inserted as a separator
+   *                    between the content of this TextBuilder and the content of
+   *                    the builder parameter
+   * @return TextBuilder instance with the result of this operation
+   */
+  TextBuilder appendToTheRight(TextBuilder builder, boolean insertSpace);
 }

@@ -325,12 +325,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
     }
 
-    myTextLine.relayout();
-    myNullTextLine.relayout();
     if (myNoTextSet && myTextLine.getText().length() == 0) {
+      myNullTextLine.relayout();
       myHeight = myNullTextLine.getHeight();
       myWidth = myNullTextLine.getWidth();
     } else {
+      myTextLine.relayout();
       myHeight = myTextLine.getHeight();
       myWidth = myTextLine.getWidth();
     }
