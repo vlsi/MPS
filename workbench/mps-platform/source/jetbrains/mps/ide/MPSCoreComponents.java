@@ -16,6 +16,7 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.newvfs.ManagingFS;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.core.platform.Platform;
@@ -51,6 +52,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   private Platform myPlatform;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider,
+      ManagingFS fs,
       ModelAccess access,
       UndoHandler handler) {
   }

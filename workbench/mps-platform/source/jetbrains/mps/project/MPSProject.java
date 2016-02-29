@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

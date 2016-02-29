@@ -24,7 +24,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
@@ -41,7 +40,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
-import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.smodel.IOperationContext;
@@ -91,30 +89,18 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
       @Override
       public void run() {
-        runStartupActivity(myPluginLoaderRegistry.getLoadedContributors());
-        myInitialized = true;
+        runStartupActivity();
       }
     });
   }
 
-  private void runStartupActivity(final List<PluginContributor> loadedContributors) {
-    synchronized (myPluginsLock) {
-      myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          if (!myProject.isDisposed()) {
-            final long beginTime = System.nanoTime();
-            LOG.debug(String.format("Loading project plugins from %d contributors", loadedContributors.size()));
-            try {
-              loadPlugins(loadedContributors);
-            } finally {
-              LOG.info(String.format("Loading of %d project plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
-            }
-            register();
-          }
-        }
-      });
+  private void runStartupActivity() {
+    LOG.debug("Running startup activity");
+    if (!myMpsProject.isDisposed()) {
+      register();
+      myInitialized = true;
     }
+    LOG.debug("Finished running startup activity");
   }
 
   @Override
@@ -125,26 +111,11 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   private void runShutDownActivity() {
-    synchronized (myPluginsLock) {
+    LOG.debug("Running shutdown activity");
+    if (!myMpsProject.isDisposed()) {
       unregister();
-      final List<PluginContributor> loadedContributors = myPluginLoaderRegistry.getLoadedContributors();
-      if (ThreadUtils.isInEDT()) {
-        myRepository.getModelAccess().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            final long beginTime = System.nanoTime();
-            LOG.debug(String.format("Unloading project plugins from %d contributors", loadedContributors.size()));
-            try {
-              unloadPlugins(loadedContributors);
-            } finally {
-              LOG.info(String.format("Unloading of %d project plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
-            }
-          }
-        });
-      } else {
-        LOG.warn("Not in EDT: cannot dispose the rest of the project plugins!");
-      }
     }
+    LOG.debug("Finished running shutdown activity");
   }
 
   @Nullable
@@ -390,5 +361,10 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       // could use myMpsProject here, but generally project should come through EditorOpenHandler
       return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context.getProject());
     }
+  }
+
+  @Override
+  public String toString() {
+    return "ProjectPluginManager " + myMpsProject;
   }
 }

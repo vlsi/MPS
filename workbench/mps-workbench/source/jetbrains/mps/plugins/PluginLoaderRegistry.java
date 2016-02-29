@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -29,7 +31,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -38,7 +39,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Represents a single class loading listener to trigger the plugin reload in
@@ -53,18 +53,13 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLoaderRegistry.class);
 
   private final ClassLoaderManager myClassLoaderManager;
-  private final ModelAccess myModelAccess;
   private MPSClassesListener myClassesListener = new MyReloadAdapter();
-  private List<PluginContributor> myLoadedContributors = new ArrayList<PluginContributor>(); // modules
-  private final List<PluginLoader> myPluginLoaders = new CopyOnWriteArrayList<PluginLoader>(); // components
+  private List<PluginContributor> myContributorsToBeLoaded = new ArrayList<PluginContributor>(); // modules to be loaded
+  private List<PluginContributor> myLoadedContributors = new ArrayList<PluginContributor>(); // currently loaded modules; only in EDT changed
+  private final List<PluginLoader> myPluginLoaders = new ArrayList<PluginLoader>(); // components
 
-  public PluginLoaderRegistry(MPSCoreComponents coreComponents) {
+  public PluginLoaderRegistry(MPSCoreComponents coreComponents, Ide_PluginInitializer idePlugin) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
-    myModelAccess = coreComponents.getModuleRepository().getModelAccess();
-  }
-
-  public List<PluginContributor> getLoadedContributors() {
-    return new ArrayList<PluginContributor>(myLoadedContributors);
   }
 
   private static List<PluginContributor> createPluginContributors(Collection<ReloadableModule> modules) {
@@ -91,54 +86,96 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   public void register(@NotNull PluginLoader loader) {
-    myPluginLoaders.add(loader);
+    registerLoader(loader);
   }
 
   public void unregister(@NotNull PluginLoader loader) {
-    myPluginLoaders.remove(loader);
+    unregisterLoader(loader);
   }
 
-  private void unloadPlugins(List<PluginContributor> contributors) {
-    LOG.debug(String.format("Unloading plugins from %d contributors", contributors.size()));
-    if (contributors.isEmpty()) return;
-    final List<PluginContributor> contributorsToUnload = new ArrayList<PluginContributor>(contributors);
-    myModelAccess.runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        long beginTime = System.nanoTime();
-        try {
-          for (final PluginLoader listener : myPluginLoaders) {
-            listener.unloadPlugins(contributorsToUnload);
-          }
-        } finally {
-          LOG.info(String.format("Unloading of %d plugins took %.3f s", contributorsToUnload.size(), (System.nanoTime() - beginTime) / 1e9));
-        }
-      }
-    });
-  }
-
-  private void loadPlugins(final List<PluginContributor> contributors) {
+  private void loadPlugins(List<PluginContributor> contributors) {
     if (contributors.isEmpty()) return;
     final List<PluginContributor> contributorsToLoad = new ArrayList<PluginContributor>(contributors);
-    myModelAccess.runWriteInEDT(new Runnable() {
+    Runnable loadingTask = new Runnable() {
       @Override
       public void run() {
         final long beginTime = System.nanoTime();
-        LOG.debug(String.format("Loading plugins from %d contributors", contributorsToLoad.size()));
+        LOG.info(String.format("Loading plugins from %d contributors", contributorsToLoad.size()));
         try {
           for (final PluginLoader listener : myPluginLoaders) {
             listener.loadPlugins(contributorsToLoad);
           }
         } finally {
           LOG.info(String.format("Loading of %d plugins took %.3f s", contributorsToLoad.size(), (System.nanoTime() - beginTime) / 1e9));
+          myLoadedContributors.addAll(contributorsToLoad);
         }
       }
-    });
+    };
+    ApplicationManager.getApplication().invokeLater(loadingTask);
+  }
+
+  private void unloadPlugins(final List<PluginContributor> contributors) {
+    if (contributors.isEmpty()) return;
+    final List<PluginContributor> contributorsToUnload = new ArrayList<PluginContributor>(contributors);
+    Runnable unloadingTask = new Runnable() {
+      @Override
+      public void run() {
+        long beginTime = System.nanoTime();
+        LOG.info(String.format("Unloading plugins from %d contributors", contributorsToUnload.size()));
+        try {
+          for (final PluginLoader listener : myPluginLoaders) {
+            listener.unloadPlugins(contributorsToUnload);
+          }
+        } finally {
+          LOG.info(String.format("Unloading of %d plugins took %.3f s", contributorsToUnload.size(), (System.nanoTime() - beginTime) / 1e9));
+          myLoadedContributors.removeAll(contributorsToUnload);
+        }
+      }
+    };
+    ApplicationManager.getApplication().invokeLater(unloadingTask);
+  }
+
+  private void registerLoader(final PluginLoader loader) {
+    Runnable loadingTask = new Runnable() {
+      @Override
+      public void run() {
+        final long beginTime = System.nanoTime();
+        LOG.info(String.format("Loading plugins from %d contributors", myLoadedContributors.size()));
+        try {
+          loader.loadPlugins(myLoadedContributors);
+        } finally {
+          LOG.info(String.format("Loading of %d plugins took %.3f s", myLoadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+          myPluginLoaders.add(loader);
+        }
+      }
+    };
+    ApplicationManager.getApplication().invokeLater(loadingTask);
+  }
+
+  private void unregisterLoader(final PluginLoader loader) {
+    Runnable unloadingTask = new Runnable() {
+      @Override
+      public void run() {
+        final long beginTime = System.nanoTime();
+        LOG.info(String.format("Loading plugins from %d contributors", myLoadedContributors.size()));
+        try {
+          loader.unloadPlugins(myLoadedContributors);
+        } finally {
+          LOG.info(String.format("Loading of %d plugins took %.3f s", myLoadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+          myPluginLoaders.remove(loader);
+        }
+      }
+    };
+    if (ThreadUtils.isInEDT()) {
+      unloadingTask.run();
+    } else {
+      LOG.error("NOT in EDT, will not dispose the plugins!");
+    }
   }
 
   private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModule> toUnload) {
     List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
-    for (PluginContributor contributor : myLoadedContributors) {
+    for (PluginContributor contributor : myContributorsToBeLoaded) {
       if (contributor instanceof ModulePluginContributor) {
         if (toUnload.contains(((ModulePluginContributor) contributor).getModule())) {
           toUnloadContributors.add(contributor);
@@ -158,14 +195,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   @Override
   public void initComponent() {
+    assert myPluginLoaders.isEmpty();
     myClassLoaderManager.addClassesHandler(myClassesListener);
-    // invoking loading factories (which are obtained from PluginFactoriesRegistry) at the end of idea app components initialization
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        loadFactories();
-      }
-    });
+    loadFactories();
   }
 
   /**
@@ -173,14 +205,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * They are initialized during the application initialization
    */
   private void loadFactories() {
-    List<PluginContributor> toLoadContributors = new ArrayList<PluginContributor>();
-    for (PluginContributor contributor : getPluginFactoriesRegistryContributors()) {
-      if (!myLoadedContributors.contains(contributor)) {
-        toLoadContributors.add(contributor);
-      }
-    }
-    loadPlugins(toLoadContributors);
-    myLoadedContributors.addAll(toLoadContributors);
+    assert myContributorsToBeLoaded.isEmpty();
+    List<PluginContributor> pluginFactoriesRegistryContributors = getPluginFactoriesRegistryContributors();
+    myContributorsToBeLoaded.addAll(pluginFactoriesRegistryContributors);
+    loadPlugins(pluginFactoriesRegistryContributors);
   }
 
   private static List<PluginContributor> getPluginFactoriesRegistryContributors() {
@@ -216,16 +244,15 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       Set<ReloadableModule> pluginModules = getPluginModules(unloadedModules);
       List<PluginContributor> toUnloadContributors = calcContributorsToUnload(pluginModules);
       unloadPlugins(toUnloadContributors);
-      myLoadedContributors.removeAll(toUnloadContributors);
+      myContributorsToBeLoaded.removeAll(toUnloadContributors);
     }
 
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       Set<ReloadableModule> pluginModules = getPluginModules(loadedModules);
       List<PluginContributor> toLoadContributors = createPluginContributors(pluginModules);
-      loadFactories(); // it is a hack to load ide plugin before others. however there is no guarantee that it is already registered.
       loadPlugins(toLoadContributors);
-      myLoadedContributors.addAll(toLoadContributors);
+      myContributorsToBeLoaded.addAll(toLoadContributors);
     }
 
     private Set<ReloadableModule> getPluginModules(Collection<? extends ReloadableModule> modules) {

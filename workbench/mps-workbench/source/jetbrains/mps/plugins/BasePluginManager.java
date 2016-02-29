@@ -71,7 +71,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   public void loadPlugins(final List<PluginContributor> contributors) {
     ThreadUtils.assertEDT();
     synchronized (myPluginsLock) {
-      LOG.debug("Loading plugins from " + contributors.size() + " contributors");
+      LOG.debug("Loading plugins from " + contributors.size() + " contributors [" + toString() + "]");
       final List<T> plugins = createPlugins(contributors);
       afterPluginsCreated(plugins);
     }
@@ -80,7 +80,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   public void unloadPlugins(final List<PluginContributor> contributors) {
     ThreadUtils.assertEDT();
     synchronized (myPluginsLock) {
-      LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
+      LOG.debug("Unloading plugins from " + contributors.size() + " contributors [" + toString() + "]");
       final List<T> plugins = new ArrayList<T>();
 
       for (PluginContributor contributor : contributors) {
