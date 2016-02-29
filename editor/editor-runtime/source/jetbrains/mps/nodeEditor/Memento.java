@@ -178,8 +178,10 @@ class Memento {
     for (EditorCell_Property transactionalProperty : editor.getCellTracker().getTransactionalCells()) {
       if (transactionalProperty.getModelAccessor() instanceof TransactionalPropertyAccessor) {
         TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) transactionalProperty.getModelAccessor();
-        accessor.resetUncommittedValue();
-        transactionalProperty.synchronize();
+        if (accessor.hasValueToCommit()) {
+          accessor.resetUncommittedValue();
+          transactionalProperty.synchronize();
+        }
       }
     }
 
