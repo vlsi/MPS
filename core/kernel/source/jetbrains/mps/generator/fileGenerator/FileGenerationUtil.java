@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,23 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.io.File;
 
+/**
+ * @deprecated This class doesn't respect overridden output location ({@link jetbrains.mps.extapi.model.GeneratableSModel#isGenerateIntoModelFolder()} nor
+ *             does it tell anything about where to take <code>outputRootDir</code> from (assumes it comes
+ *             from {@link jetbrains.mps.project.SModuleOperations#getOutputRoot(SModel)} while it's common to see invocations of
+ *             {@link #getDefaultOutputDir(SModel, IFile)} with <code>((AbstractModule) module).getOutputPath()</code>
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class FileGenerationUtil {
   private static final String CACHES_SUFFIX = ".caches";
 

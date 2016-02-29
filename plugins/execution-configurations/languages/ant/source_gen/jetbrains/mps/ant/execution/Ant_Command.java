@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,15 +23,10 @@ import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Ant_Command {
   private SNode myTarget_NodeINamedConcept;
@@ -70,7 +67,8 @@ public class Ant_Command {
     return this;
   }
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
-    String targetName = Ant_Command.getTargetName(myTarget_NodeINamedConcept);
+    SNode target = myTarget_NodeINamedConcept;
+    String targetName = SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     return new Ant_Command().setAntLocation_String(myAntLocation_String).setOptions_String(myOptions_String).setTargetName_String(targetName).createProcess(Ant_Command.getGeneratedFileName(project));
   }
   public ProcessHandler createProcess(String antFilePath) throws ExecutionException {
@@ -121,29 +119,10 @@ public class Ant_Command {
       }
     }));
   }
-  private static String getGeneratedFileName(final SNode project) {
-    final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), ((AbstractModule) SNodeOperations.getModel(project).getModule()).getOutputPath());
-        file.value = file.value.getDescendant(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
-      }
-    });
-    return file.value.getPath();
-  }
-  private static String getTargetName(final SNode target) {
-    final Wrappers._T<String> name = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        return name.value = check_11bn_a0a0a0a1a4(target);
-      }
-    }));
-    return name.value;
-  }
-  private static String check_11bn_a0a0a0a1a4(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-    }
-    return null;
+  private static String getGeneratedFileName(SNode project) {
+    IFile file;
+    file = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), ((AbstractModule) SNodeOperations.getModel(project).getModule()).getOutputPath());
+    file = file.getDescendant(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
+    return file.getPath();
   }
 }
