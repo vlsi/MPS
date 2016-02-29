@@ -294,7 +294,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static String jniSignature_id7F81Cd2C7e3(@NotNull SNode __thisNode__) {
     SNode classifier = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-    String fqName = check_hz3823_a0b0o(classifier);
+    String fqName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(classifier);
     if (fqName == null) {
       return "";
     }
@@ -690,12 +690,6 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), null, null, false);
     return quotedNode_1;
-  }
-  private static String check_hz3823_a0b0o(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(checkedDotOperand);
-    }
-    return null;
   }
   private static SNode _quotation_createNode_hz3823_a0a0a1a31a02() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

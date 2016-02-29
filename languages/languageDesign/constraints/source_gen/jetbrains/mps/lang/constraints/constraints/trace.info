@@ -39,7 +39,7 @@
       <node id="1213100797365" at="95,63,96,58" concept="6" />
       <node id="7966406217186699985" at="101,74,102,40" concept="6" />
       <node id="7966406217186709653" at="103,15,104,0" concept="8" />
-      <node id="7966406217186709658" at="104,0,105,113" concept="5" />
+      <node id="7966406217186709658" at="104,0,105,128" concept="5" />
       <node id="7966406217186709841" at="106,38,107,40" concept="6" />
       <node id="7966406217186709654" at="108,15,109,0" concept="8" />
       <node id="7966406217186709901" at="109,0,110,237" concept="6" />
@@ -58,9 +58,9 @@
       <node id="1213100797365" at="41,0,44,0" concept="1" trace="ConceptConstraints_Constraints#()V" />
       <node id="1213100797365" at="51,0,54,5" concept="3" />
       <node id="7966406217186699978" at="100,13,103,15" concept="3" />
-      <node id="7966406217186709806" at="105,113,108,15" concept="3" />
+      <node id="7966406217186709806" at="105,128,108,15" concept="3" />
       <node id="1213100797365" at="144,0,147,0" concept="10" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="7966406217186709794" at="147,73,150,5" concept="3" />
+      <node id="7966406217186709794" at="147,88,150,5" concept="3" />
       <node id="1213100797365" at="44,0,48,0" concept="4" trace="hasOwnCanBeRootMethod#()Z" />
       <node id="1213100797365" at="62,0,66,0" concept="4" trace="hasOwnGetter#()Z" />
       <node id="1213100797365" at="86,0,90,0" concept="4" trace="hasOwnScopeProvider#()Z" />
@@ -69,7 +69,7 @@
       <node id="1213100797365" at="125,0,129,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1213100934016" at="70,29,75,11" concept="3" />
       <node id="1866752856968745870" at="132,0,137,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7966406217186709794" at="147,0,153,0" concept="10" trace="check_guz8cy_a0c0a0#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="7966406217186709794" at="147,0,153,0" concept="10" trace="check_guz8cy_a0c0a0b0a0a0b0a1a0b0e#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1213100797365" at="130,122,137,14" concept="0" />
       <node id="1866752856968733363" at="130,122,137,14" concept="6" />
       <node id="1213100797365" at="68,37,77,9" concept="0" />
@@ -115,7 +115,7 @@
       <scope id="1213100797365" at="94,0,98,0" />
       <scope id="1213100797365" at="117,0,121,0" />
       <scope id="1213100797365" at="125,0,129,0" />
-      <scope id="7966406217186709794" at="147,73,151,16" />
+      <scope id="7966406217186709794" at="147,88,151,16" />
       <scope id="1866752856968745870" at="132,0,137,0">
         <var name="n" id="1866752856968745876" />
       </scope>

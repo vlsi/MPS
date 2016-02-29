@@ -157,7 +157,7 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
     return result.toString();
   }
   /*package*/ static Method getMethod_idhEwIAZT(@NotNull SNode __thisNode__, SModule module) {
-    SModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(__thisNode__));
+    SModule m = check_mtsu90_a0a0wb(SNodeOperations.getModel(__thisNode__));
     if (m != null) {
       Method method = null;
       try {
@@ -201,8 +201,8 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
       return false;
     }
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count(); i++) {
-      String searchedParamType = check_tq0gdw_a0a0b0p(check_tq0gdw_a0a0a1a51(ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
-      String foundParamType = check_tq0gdw_a0b0b0p(check_tq0gdw_a0a1a1a51(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
+      String searchedParamType = Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
+      String foundParamType = Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
       if (searchedParamType == null || foundParamType == null) {
         return false;
       }
@@ -457,33 +457,9 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
+  private static SModule check_mtsu90_a0a0wb(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static String check_tq0gdw_a0a0b0p(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
-    }
-    return null;
-  }
-  private static SNode check_tq0gdw_a0a0a1a51(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
-    }
-    return null;
-  }
-  private static String check_tq0gdw_a0b0b0p(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return Type__BehaviorDescriptor.getErasureSignature_idhEwIzNx.invoke(checkedDotOperand);
-    }
-    return null;
-  }
-  private static SNode check_tq0gdw_a0a1a1a51(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     }
     return null;
   }

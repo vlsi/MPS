@@ -45,7 +45,7 @@ public final class EnumConstantReference__BehaviorDescriptor extends BaseBHDescr
   /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     SNode enumClass = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"));
     SNode e = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"));
-    SModule m = check_p8mh91_a0c0a(SNodeOperations.getModel(e));
+    SModule m = check_216i77_a0c0k(SNodeOperations.getModel(e));
     if (m != null) {
       Enum eClass = null;
       try {
@@ -111,7 +111,7 @@ public final class EnumConstantReference__BehaviorDescriptor extends BaseBHDescr
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SModule check_p8mh91_a0c0a(SModel checkedDotOperand) {
+  private static SModule check_216i77_a0c0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

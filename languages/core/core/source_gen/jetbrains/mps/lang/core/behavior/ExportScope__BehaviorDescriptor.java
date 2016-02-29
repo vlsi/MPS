@@ -65,11 +65,11 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
     return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
   }
   /*package*/ static String getNamespace_id2erkSmBSCAp(@NotNull SAbstractConcept __thisConcept__, SNode node) {
-    SModule module = check_ogf5a0_a0a0e(SNodeOperations.getModel(node));
+    SModule module = check_fshnvk_a0a0q(SNodeOperations.getModel(node));
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
+    return check_fshnvk_a2a61(check_fshnvk_a0c0q(((AbstractModule) module)));
   }
 
   /*package*/ ExportScope__BehaviorDescriptor() {
@@ -124,19 +124,19 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SModule check_ogf5a0_a0a0e(SModel checkedDotOperand) {
+  private static SModule check_fshnvk_a0a0q(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static String check_ogf5a0_a2a4(ModuleDescriptor checkedDotOperand) {
+  private static String check_fshnvk_a2a61(ModuleDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNamespace();
     }
     return null;
   }
-  private static ModuleDescriptor check_ogf5a0_a0c0e(AbstractModule checkedDotOperand) {
+  private static ModuleDescriptor check_fshnvk_a0c0q(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleDescriptor();
     }

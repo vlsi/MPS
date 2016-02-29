@@ -45,7 +45,7 @@ public final class StaticFieldReference__BehaviorDescriptor extends BaseBHDescri
     SNode classifier = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"));
     SNode f = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
 
-    SModule m = check_o8sx3d_a0d0a(SNodeOperations.getModel(f));
+    SModule m = check_abfls_a0d0m(SNodeOperations.getModel(f));
     if (m != null) {
       try {
         final Object c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -132,7 +132,7 @@ public final class StaticFieldReference__BehaviorDescriptor extends BaseBHDescri
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SModule check_o8sx3d_a0d0a(SModel checkedDotOperand) {
+  private static SModule check_abfls_a0d0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
