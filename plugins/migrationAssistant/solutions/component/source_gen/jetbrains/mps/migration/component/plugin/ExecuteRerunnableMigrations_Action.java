@@ -11,8 +11,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.migration.MigrationManagerImpl;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,6 +25,7 @@ import com.intellij.util.WaitForProgressToShow;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -66,7 +66,7 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final MigrationManagerImpl mc = ((MigrationManagerImpl) event.getData(CommonDataKeys.PROJECT).getComponent(MigrationManager.class));
+    final MigrationComponent mc = event.getData(CommonDataKeys.PROJECT).getComponent(MigrationComponent.class);
 
     final List<SModule>[] modules = new List[1];
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -85,7 +85,7 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
             public void run() {
               event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().executeCommand(new Runnable() {
                 public void run() {
-                  Set<SLanguage> languages = new SLanguageHierarchy(module.getUsedLanguages()).getExtended();
+                  Set<SLanguage> languages = new SLanguageHierarchy(LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()), module.getUsedLanguages()).getExtended();
                   Iterable<MigrationScript> scripts = SetSequence.fromSet(languages).translate(new ITranslator2<SLanguage, MigrationScript>() {
                     public Iterable<MigrationScript> translate(final SLanguage it) {
                       return new Iterable<MigrationScript>() {
@@ -128,7 +128,7 @@ __switch__:
                                     this.__CP__ = 2;
                                     break;
                                   case 4:
-                                    this._7_script = mc.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
+                                    this._7_script = mc.fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
                                     this.__CP__ = 8;
                                     break;
                                   case 9:
