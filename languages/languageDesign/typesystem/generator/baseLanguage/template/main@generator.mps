@@ -2056,6 +2056,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hwYVedN" role="3acgRq">
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="hwYVedO" role="1lVwrX">
         <node concept="10Nm6u" id="hwYVedP" role="gfFT$">
@@ -16669,6 +16670,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="VKl2IWe_6$" role="3acgRq">
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="VKl2IWeDlV" role="1lVwrX">
         <ref role="v9R2y" node="VKl2IWe_T5" resolve="reduce_CaretPosition" />
@@ -16694,6 +16696,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="VKl2IWe_ST" role="3acgRq">
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="j$656" id="VKl2IWeDlW" role="1lVwrX">
         <ref role="v9R2y" node="VKl2IWeDky" resolve="reduce_WasSelectedNode" />
