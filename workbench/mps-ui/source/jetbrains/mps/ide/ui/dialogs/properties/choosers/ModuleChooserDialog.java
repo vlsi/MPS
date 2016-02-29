@@ -27,26 +27,11 @@ import java.awt.HeadlessException;
 import java.util.Collection;
 
 class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
-  private final BaseModuleModel myData;
+  private BaseModuleModel myData;
 
   ModuleChooserDialog(Project project, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String title, boolean multiSelection) throws HeadlessException {
     super(project, modules, nonProjectModules, multiSelection);
     setTitle(title == null ? "Choose module" : title);
-    myData = new BaseModuleModel(ProjectHelper.toMPSProject(project)) {
-      @Override
-      public SModuleReference[] find(boolean checkboxState) {
-        if (checkboxState) {
-          return myNonProjectReferences.toArray(new SModuleReference[myNonProjectReferences.size()]);
-        } else {
-          return myReferences.toArray(new SModuleReference[myReferences.size()]);
-        }
-      }
-
-      @Override
-      public SModuleReference[] find(SearchScope scope) {
-        throw new UnsupportedOperationException("must not be used");
-      }
-    };
   }
 
   @Override
@@ -62,6 +47,23 @@ class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
 
   @Override
   protected BaseMPSChooseModel<SModuleReference> getMPSChooseModel() {
+    if (myData == null) {
+      myData = new BaseModuleModel(ProjectHelper.fromIdeaProject(myProject)) {
+        @Override
+        public SModuleReference[] find(boolean checkboxState) {
+          if (checkboxState) {
+            return myNonProjectReferences.toArray(new SModuleReference[myNonProjectReferences.size()]);
+          } else {
+            return myReferences.toArray(new SModuleReference[myReferences.size()]);
+          }
+        }
+
+        @Override
+        public SModuleReference[] find(SearchScope scope) {
+          throw new UnsupportedOperationException("must not be used");
+        }
+      };
+    }
     return myData;
   }
 }

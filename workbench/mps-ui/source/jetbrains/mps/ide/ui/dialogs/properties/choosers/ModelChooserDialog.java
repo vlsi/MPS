@@ -27,27 +27,11 @@ import java.awt.HeadlessException;
 import java.util.List;
 
 class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
-  private final BaseModelModel myData;
+  private BaseModelModel myData;
 
   ModelChooserDialog(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
     super(project, models, nonProjectModels, multiSelection);
     setTitle("Choose model");
-    myData = new BaseModelModel(ProjectHelper.fromIdeaProject(project)) {
-
-      @Override
-      public SModelReference[] find(boolean checkboxState) {
-        if (checkboxState) {
-          return myNonProjectReferences.toArray(new SModelReference[myNonProjectReferences.size()]);
-        } else {
-          return myReferences.toArray(new SModelReference[myReferences.size()]);
-        }
-      }
-
-      @Override
-      public SModelReference[] find(SearchScope scope) {
-        throw new UnsupportedOperationException("must not be used");
-      }
-    };
   }
 
   @Override
@@ -62,6 +46,24 @@ class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
 
   @Override
   protected BaseMPSChooseModel<SModelReference> getMPSChooseModel() {
+    if (myData == null) {
+      myData = new BaseModelModel(ProjectHelper.fromIdeaProject(myProject)) {
+
+        @Override
+        public SModelReference[] find(boolean checkboxState) {
+          if (checkboxState) {
+            return myNonProjectReferences.toArray(new SModelReference[myNonProjectReferences.size()]);
+          } else {
+            return myReferences.toArray(new SModelReference[myReferences.size()]);
+          }
+        }
+
+        @Override
+        public SModelReference[] find(SearchScope scope) {
+          throw new UnsupportedOperationException("must not be used");
+        }
+      };
+    }
     return myData;
   }
 }
