@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.Generator;
@@ -191,7 +192,12 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
           // FIXME compatibility with legacy generators that has been generated with Generator class along with Language RT class
           // under language module. XXX need this unless provide module activator class name in module.xml/module descriptor so that
           // can tell legacy module from a newer one (newer would have activator for Generator module, while legacy had none)
-          rtClass = sourceLanguage.getOwnClass(rtClassName);
+          try {
+            rtClass = sourceLanguage.getOwnClass(rtClassName);
+          } catch (ModuleClassNotFoundException e) {
+            // no error here: Generator might be not compiled yet
+            return null;
+          }
         }
         if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {
           final Class<? extends GeneratorRuntime> aClass = rtClass.asSubclass(GeneratorRuntime.class);
