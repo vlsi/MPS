@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -64,7 +63,7 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_8);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverterWithExpressions(stubsMode) : new FullASTConverter(null));
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;
@@ -314,37 +313,34 @@ public class JavaParser {
       return errorMsg;
     }
   }
+
+  /**
+   * Must be called from a context where 1) nodes are attached to a model 2) model modification is allowed.
+   * E.g. either inside a command or during smodel.SModel.isUpdateMode() == true
+   */
   public static void tryResolveUnknowns(Iterable<SNode> roots) {
     for (SNode node : Sequence.fromIterable(roots)) {
       List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
-
         final SNode unkNode = unk;
         final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
         if (subst == null) {
           continue;
         }
 
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            final SNode theRightNode = subst.invoke();
-            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+        final SNode theRightNode = subst.invoke();
+        SNodeOperations.replaceWithAnother(unkNode, theRightNode);
 
-            // FIXME maybe it's better to re-use auto model import 
-            Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
-              public void visit(StaticReference it) {
-                SModel sourceModel = theRightNode.getModel();
-                SModelReference targetModel = it.getTargetSModelReference();
-                if (!(sourceModel.getReference().equals(targetModel))) {
-                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
-
-                }
-              }
-            });
+        // FIXME maybe it's better to re-use auto model import 
+        Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
+          public void visit(StaticReference it) {
+            SModel sourceModel = theRightNode.getModel();
+            SModelReference targetModel = it.getTargetSModelReference();
+            if (!(sourceModel.getReference().equals(targetModel))) {
+              ((SModelInternal) sourceModel).addModelImport(targetModel, true);
+            }
           }
         });
-
       }
     }
   }

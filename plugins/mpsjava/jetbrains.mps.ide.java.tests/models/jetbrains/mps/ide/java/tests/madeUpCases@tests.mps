@@ -1024,6 +1024,40 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="44G$aAkpSNI" role="1SL9yI">
+      <property role="TrG5h" value="Annotations" />
+      <node concept="3cqZAl" id="44G$aAkpSNJ" role="3clF45" />
+      <node concept="3clFbS" id="44G$aAkpSNN" role="3clF47">
+        <node concept="3clFbF" id="44G$aAkpT3S" role="3cqZAp">
+          <node concept="2YIFZM" id="44G$aAkpTnI" role="3clFbG">
+            <ref role="37wK5l" to="wfc9:70HT6wFrYln" resolve="checkStubModels" />
+            <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
+            <node concept="3cpWs3" id="44G$aAkpTvL" role="37wK5m">
+              <node concept="Xl_RD" id="44G$aAkpTvO" role="3uHU7w">
+                <property role="Xl_RC" value="/plugins/mpsjava/tests/testDirAnnotations" />
+              </node>
+              <node concept="2YIFZM" id="44G$aAkpTs8" role="3uHU7B">
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="44G$aAkpU7F" role="37wK5m">
+              <node concept="Tc6Ow" id="44G$aAkpZtb" role="2ShVmc">
+                <node concept="H_c77" id="44G$aAkpZCV" role="HW$YZ" />
+                <node concept="BaHAS" id="44G$aAkpZQg" role="HW$Y0">
+                  <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations" />
+                  <property role="BaGAP" value="" />
+                </node>
+                <node concept="BaHAS" id="44G$aAkq0qz" role="HW$Y0">
+                  <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations.user" />
+                  <property role="BaGAP" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="66hA68ph_PJ" role="1SL9yI">
       <property role="TrG5h" value="ClassNesting" />
       <node concept="3cqZAl" id="66hA68ph_PK" role="3clF45" />

@@ -1,0 +1,12 @@
+MPS generated files:
+mps-make/makeTests/source_gen.caches/ManifestXml/dependencies
+mps-make/makeTests/source_gen.caches/ManifestXml/generated
+models/ManifestXml/manifest.xml
+models/ManifestXml/trace.info
+End of files
+MPS generated files:
+mps-make/makeTests/source_gen.caches/NonEmptyManifestXml/dependencies
+mps-make/makeTests/source_gen.caches/NonEmptyManifestXml/generated
+models/NonEmptyManifestXml/manifest.xml
+models/NonEmptyManifestXml/trace.info
+End of files
