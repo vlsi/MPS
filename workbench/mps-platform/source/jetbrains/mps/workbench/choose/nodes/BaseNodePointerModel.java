@@ -74,6 +74,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
    * @param item e.g. the one from selection, {@link ChooseByNameBase#getChosenElement()}
    * @return original model element which was used to instantiate UI wrapper.
    */
+  @Override
   public SNodeReference getModelObject(Object item) {
     if (item instanceof BaseNodePointerItem) {
       return ((BaseNodePointerItem) item).getNodePointer();

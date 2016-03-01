@@ -51,6 +51,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
    * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
    * @see jetbrains.mps.workbench.choose.modules.BaseModuleModel#getModelObject(Object)
    */
+  @Override
   public SModelReference getModelObject(Object item) {
     if (item instanceof BaseModelItem) {
       return ((BaseModelItem) item).getModelReference();

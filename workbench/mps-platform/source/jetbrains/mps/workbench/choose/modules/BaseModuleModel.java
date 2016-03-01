@@ -63,9 +63,9 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReferenc
   }
 
   /**
-   * Could have migrated to superclass, although the ultimate goal is to avoid wrap of model objects at all, so that the method effectively no-op
    * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
    */
+  @Override
   public SModuleReference getModelObject(Object item) {
     if (item instanceof BaseModuleItem) {
       return ((BaseModuleItem) item).getModuleReference();

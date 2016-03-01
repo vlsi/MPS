@@ -200,6 +200,12 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   public abstract T[] find(SearchScope scope);
 
+  /**
+   * Translates representation element back to original model entry, reverts {@link #doGetNavigationItem(Object)}
+   * @return <code>null</code> if can't translate back
+   */
+  public abstract T getModelObject(Object element);
+
   //---------------------INTERFACE STUFF------------------------
 
   @Override
