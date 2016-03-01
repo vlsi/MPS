@@ -15,20 +15,22 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationComponent;
+import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
 public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
@@ -51,42 +53,43 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
       if (project == null) {
         return;
       }
-      jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      final jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (mpsProject == null) {
         return;
       }
-      final MigrationManager mm = project.getComponent(MigrationManager.class);
-      if (mm == null) {
+      MigrationComponent migrationComponent = project.getComponent(MigrationComponent.class);
+      if (migrationComponent == null) {
         return;
       }
 
-      Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
-      {
-        final SearchScope scope = CommandUtil.createScope(mpsProject);
-        QueryExecutionContext context = new QueryExecutionContext() {
-          public SearchScope getDefaultSearchScope() {
-            return scope;
+      List<SLanguage> languages = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
+        public Iterable<SLanguage> translate(SModule module) {
+          return new SLanguageHierarchy(LanguageRegistry.getInstance(mpsProject.getRepository()), module.getUsedLanguages()).getExtended();
+        }
+      }).distinct().sort(new ISelector<SLanguage, String>() {
+        public String select(SLanguage it) {
+          return it.getQualifiedName();
+        }
+      }, true).toListSequence();
+
+      for (SLanguage language : languages) {
+        String name = language.getQualifiedName();
+        Icon icon = IconManager.getIconForNamespace(name);
+        DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
+        langRootsGroup.getTemplatePresentation().setIcon(icon);
+
+        for (int ver = 0; ver < language.getLanguageVersion(); ver++) {
+          MigrationScript script = migrationComponent.fetchMigrationScript(new MigrationScriptReference(language, ver), true);
+          if (script == null) {
+            continue;
           }
-        };
-        for (SModule module : Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
-          public boolean accept(SModule it) {
-            return MigrationsUtil.isModuleMigrateable(it);
-          }
-        })) {
-          SetSequence.fromSet(languages).addSequence(SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended()));
+
+          langRootsGroup.add(new RunMigration(script));
+        }
+        if (langRootsGroup.getChildrenCount() > 0) {
+          LanguageMigrations_ActionGroup.this.add(langRootsGroup);
         }
       }
-      SetSequence.fromSet(languages).visitAll(new IVisitor<SLanguage>() {
-        public void visit(SLanguage it) {
-          for (int ver = 0; ver < it.getLanguageVersion(); ver++) {
-            MigrationScript script = mm.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, ver), true);
-            if (script == null) {
-              continue;
-            }
-            LanguageMigrations_ActionGroup.this.addParameterizedAction(new RunMigration_Action(script), PluginId.getId("jetbrains.mps.migration.component"), script);
-          }
-        }
-      });
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
