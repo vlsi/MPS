@@ -335,10 +335,8 @@
       <node id="1259651549063504461" at="52,93,53,104" concept="7" />
       <node id="6436802671382224291" at="53,104,54,54" concept="2" />
       <node id="2690439479784290612" at="55,16,56,49" concept="2" />
-      <node id="8474866949349263017" at="57,9,58,20" concept="2" />
-      <node id="8474866949349262167" at="63,28,64,32" concept="2" />
+      <node id="5785077206510640674" at="57,9,58,44" concept="2" />
       <node id="2690439479784269452" at="55,14,57,9" concept="0" />
-      <node id="8474866949349262171" at="63,0,66,0" concept="6" trace="callSuper#()V" />
       <node id="8084508253880372128" at="35,48,39,11" concept="5" />
       <node id="2482360940803573310" at="19,0,25,0" concept="1" trace="RenameModuleDialog#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/project/AbstractModule;)V" />
       <node id="8084508253880369241" at="33,0,40,9" concept="4" />
@@ -347,9 +345,7 @@
       <node id="8474866949349261733" at="27,40,60,7" concept="2" />
       <node id="100674607554485383" at="26,0,62,0" concept="6" trace="doRefactoringAction#()V" />
       <scope id="2690439479784269453" at="55,16,56,49" />
-      <scope id="8474866949349262166" at="63,28,64,32" />
       <scope id="8084508253880372130" at="36,54,38,19" />
-      <scope id="8474866949349262171" at="63,0,66,0" />
       <scope id="2482360940803573317" at="19,97,23,30" />
       <scope id="8084508253880369243" at="34,77,39,11" />
       <scope id="2482360940803573310" at="19,0,25,0">
@@ -367,14 +363,14 @@
         <var name="smp" id="2690439479784244231" />
         <var name="virtualFolder" id="1259651549063458708" />
       </scope>
-      <scope id="8474866949349261767" at="29,25,58,20">
+      <scope id="8474866949349261767" at="29,25,58,44">
         <var name="fqName" id="100674607554485406" />
       </scope>
       <scope id="8474866949349261750" at="29,0,60,0" />
       <scope id="100674607554485386" at="27,40,60,7" />
       <scope id="100674607554485383" at="26,0,62,0" />
       <unit id="8474866949349261750" at="28,66,60,5" name="jetbrains.mps.ide.refactoring.RenameModuleDialog$1" />
-      <unit id="2482360940803573298" at="15,0,67,0" name="jetbrains.mps.ide.refactoring.RenameModuleDialog" />
+      <unit id="2482360940803573298" at="15,0,63,0" name="jetbrains.mps.ide.refactoring.RenameModuleDialog" />
     </file>
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2864517217433560582">
