@@ -19,19 +19,19 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.awt.Toolkit;
 
 public class PunctuationUtil {
 
   static void addGaps(EditorCell cell, boolean skipLeft, boolean skipRight) {
     if (cell instanceof EditorCell_Collection &&
-      (hasPunctuableLayout((EditorCell_Collection) cell) || cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
+        (hasPunctuableLayout((EditorCell_Collection) cell) || cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
       return;
     }
 
@@ -43,7 +43,7 @@ public class PunctuationUtil {
 
   static int getLeftGap(EditorCell cell) {
     if (cell instanceof EditorCell_Collection &&
-      (hasPunctuableLayout((EditorCell_Collection) cell) || cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
+        (hasPunctuableLayout((EditorCell_Collection) cell) || cell.getStyle().get(StyleAttributes.DRAW_BORDER))) {
       return 0;
     }
 
@@ -52,12 +52,12 @@ public class PunctuationUtil {
 
   private static boolean hasRightGap(EditorCell currentCell) {
     return (!rightCellHasPunctuationLeft(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-      && !hasPunctuationRight(currentCell);
+        && !hasPunctuationRight(currentCell);
   }
 
   public static boolean hasLeftGap(EditorCell currentCell) {
     return (!leftCellHasPunctuationRight(currentCell) || currentCell.getStyle().get(StyleAttributes.DRAW_BORDER))
-      && !hasPunctuationLeft(currentCell);
+        && !hasPunctuationLeft(currentCell);
   }
 
   static boolean leftCellHasPunctuationRight(EditorCell currentCell) {
@@ -121,7 +121,7 @@ public class PunctuationUtil {
       return (int) padding.getValue();
     } else {
       Font f = EditorSettings.getInstance().getDefaultEditorFont();
-      FontMetrics m = Toolkit.getDefaultToolkit().getFontMetrics(f);
+      FontMetrics m = FontRegistry.getInstance().getFontMetrics(f);
       return (int) (padding.getValue() * m.charWidth(' '));
     }
   }

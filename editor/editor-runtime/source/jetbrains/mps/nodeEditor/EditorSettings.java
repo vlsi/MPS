@@ -57,8 +57,13 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Color DEFAULT_SELECTION_FOREGROUND_COLOR = Color.WHITE;
   private static final Color DEFAULT_HYPERLINK_COLOR = Color.BLUE;
 
+  private static EditorSettings ourInstance;
+
   public static EditorSettings getInstance() {
-    return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
+    if (ourInstance == null) {
+      ourInstance = ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
+    }
+    return ourInstance;
   }
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
