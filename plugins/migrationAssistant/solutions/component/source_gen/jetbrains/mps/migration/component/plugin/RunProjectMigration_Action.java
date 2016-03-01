@@ -10,6 +10,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.util.WaitForProgressToShow;
 
 public class RunProjectMigration_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -18,7 +24,7 @@ public class RunProjectMigration_Action extends BaseAction {
     super("Run", "", ICON);
     this.script = script_par;
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -39,11 +45,32 @@ public class RunProjectMigration_Action extends BaseAction {
         return false;
       }
     }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    RunProjectMigration_Action.this.script.execute(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Run Migration", true) {
+      public void run(@NotNull ProgressIndicator progressIndicator) {
+        progressIndicator.setText(RunProjectMigration_Action.this.script.getDescription());
+        progressIndicator.setIndeterminate(true);
+        WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+          public void run() {
+            event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().executeCommand(new Runnable() {
+              public void run() {
+                RunProjectMigration_Action.this.script.execute(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+              }
+            });
+          }
+        });
+      }
+    });
+
   }
   @NotNull
   public String getActionId() {
