@@ -29,6 +29,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.findUsages.CompositeFinder;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -283,6 +284,27 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           showUsageImpl(query, provider);
           forceCancelCloseDialog();
         }
+      }).addExtraAction(new AnActionButton() {
+        {
+          getTemplatePresentation().setIcon(MPSIcons.General.ModelChecker);
+          getTemplatePresentation().setText("Remove unused model imports");
+        }
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          final Set<SModelReference> xmodelRefs = getActualCrossModelReferences();
+
+          boolean anyRemoved = false;
+          for(int row = myImportedModels.getRowCount()-1; row >= 0; row--) {
+            if (!xmodelRefs.contains(myImportedModels.getValueAt(row))) {
+              myImportedModels.removeRow(row);
+              anyRemoved = true;
+            }
+          }
+          if (anyRemoved) {
+            myImportedModels.fireTableDataChanged();
+            importedModelsTable.clearSelection();
+          }
+        }
       });
       decorator.setPreferredSize(new Dimension(500, 150));
 
@@ -363,8 +385,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       }).setRemoveAction(new RemoveEntryAction(usedLangsTable) {
         @Override
         protected boolean confirmRemove(int row) {
-          Object value = myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN);
-          final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
+          final UsedLangsTableModel.Import entry = myUsedLangsTableModel.getValueAt(row);
           boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
             @Override
             public Boolean compute() {
@@ -396,6 +417,32 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageUsagesFinder()));
           showUsageImpl(query, provider);
           forceCancelCloseDialog();
+        }
+      });
+
+      decorator.addExtraAction(new AnActionButton() {
+        {
+          getTemplatePresentation().setIcon(MPSIcons.General.ModelChecker);
+          getTemplatePresentation().setText("Remove unused languages");
+        }
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          myProject.getModelAccess().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              boolean anyRemoved = false;
+              for (int row = myUsedLangsTable.getRowCount() - 1; row >= 0; row--) {
+                if (!myInUseCondition.met(myUsedLangsTableModel.getValueAt(row))) {
+                  myUsedLangsTableModel.removeRow(row);
+                  anyRemoved = true;
+                }
+              }
+              if (anyRemoved) {
+                myUsedLangsTableModel.fireTableDataChanged();
+                myUsedLangsTable.clearSelection();
+              }
+            }
+          });
         }
       });
       return decorator;

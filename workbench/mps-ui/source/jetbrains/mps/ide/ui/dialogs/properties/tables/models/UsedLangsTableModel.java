@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +115,10 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     assert columnIndex == ITEM_COLUMN;
+    return getValueAt(rowIndex);
+  }
+
+  public Import getValueAt(int rowIndex) {
     if (rowIndex >= myLanguageItems.size()) {
       rowIndex -= myLanguageItems.size();
       return new Import(myDevKitItems.get(rowIndex));
