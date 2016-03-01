@@ -335,7 +335,7 @@ public class MigrationComponent extends AbstractProjectComponent {
   }
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
-  private static MigrationScript check_gd1mrb_a0e0s(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0s(MigrationDescriptor checkedDotOperand, Integer current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }

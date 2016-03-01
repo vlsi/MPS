@@ -242,7 +242,7 @@ public class NextPreviousTraverser {
     }
   }
   protected static Logger LOG = LogManager.getLogger(NextPreviousTraverser.class);
-  private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, boolean left) {
+  private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, Boolean left) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(left);
     }

@@ -43,11 +43,11 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModule from = check_bai5av_a0a0a_0(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    SModule from = check_iuftgz_a0a0d(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
     if (!(from instanceof AbstractModule)) {
       return false;
     }
-    return !(from.isReadOnly()) && check_bai5av_a0a0c0a(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    return !(from.isReadOnly()) && check_iuftgz_a0a0c0d(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -102,10 +102,10 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     SafeDeleteModuleDependency_Action.this.removeDependency(_params);
   }
   /*package*/ AbstractModule getModuleFrom(final Map<String, Object> _params) {
-    return (AbstractModule) check_bai5av_a0a0a(as_iuftgz_a0a0a0h(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    return (AbstractModule) check_iuftgz_a0a0h(as_iuftgz_a0a0a0h(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
   }
   /*package*/ SModule getModuleTo(final Map<String, Object> _params) {
-    return check_bai5av_a0a1(as_iuftgz_a0a0a8(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+    return check_iuftgz_a0a8(as_iuftgz_a0a0a8(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
   }
   private void removeDependency(final Map<String, Object> _params) {
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().executeCommand(new Runnable() {
@@ -125,25 +125,25 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     });
     ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).resetAll();
   }
-  private static SModule check_bai5av_a0a0a_0(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a0d(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static DepLink check_bai5av_a0a0c0a(DependencyTreeNode checkedDotOperand) {
+  private static DepLink check_iuftgz_a0a0c0d(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }
     return null;
   }
-  private static SModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a0h(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_bai5av_a0a1(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_iuftgz_a0a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

@@ -30,7 +30,7 @@ public class ShowInLogicalView_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     Iterable<SModule> modules = (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators();
-    return Sequence.fromIterable(modules).contains(check_kgxlnq_a0a1a0(check_kgxlnq_a0a0b0a(((SNode) MapSequence.fromMap(_params).get("node")))));
+    return Sequence.fromIterable(modules).contains(check_fx2sd0_a0a1a3(check_fx2sd0_a0a0b0d(((SNode) MapSequence.fromMap(_params).get("node")))));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -63,13 +63,13 @@ public class ShowInLogicalView_Action extends BaseAction {
     SNode nodeToSelect = (pane.showNodeStructure() ? ((SNode) MapSequence.fromMap(_params).get("node")) : ((SNode) MapSequence.fromMap(_params).get("node")).getContainingRoot());
     pane.selectNode(nodeToSelect, true);
   }
-  private static SModule check_kgxlnq_a0a1a0(SModel checkedDotOperand) {
+  private static SModule check_fx2sd0_a0a1a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_kgxlnq_a0a0b0a(SNode checkedDotOperand) {
+  private static SModel check_fx2sd0_a0a0b0d(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

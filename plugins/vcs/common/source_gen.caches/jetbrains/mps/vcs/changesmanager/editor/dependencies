@@ -76,6 +76,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" file="ChangesStripActionsHelper.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />

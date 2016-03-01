@@ -88,7 +88,7 @@ public final class VariableReference__BehaviorDescriptor extends BaseBHDescripto
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
-      SModule m = check_puvpx4_a0d0a0w(SNodeOperations.getModel(declaration));
+      SModule m = check_gidzrl_a0d0a0e(SNodeOperations.getModel(declaration));
       if (m != null) {
         try {
           final Object c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -223,7 +223,7 @@ public final class VariableReference__BehaviorDescriptor extends BaseBHDescripto
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SModule check_puvpx4_a0d0a0w(SModel checkedDotOperand) {
+  private static SModule check_gidzrl_a0d0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

@@ -88,7 +88,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
           }
         }
         if (scope.isEmpty()) {
-          SNode node = check_r5obsg_a0a0c0a0a1a7(event.getData(MPSCommonDataKeys.NODE));
+          SNode node = check_rkpdtm_a0a0c0a0a1a0(event.getData(MPSCommonDataKeys.NODE));
           if (node != null) {
             scope.add(node);
           }
@@ -97,7 +97,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
     });
     return scope;
   }
-  private static SNode check_r5obsg_a0a0c0a0a1a7(SNode checkedDotOperand) {
+  private static SNode check_rkpdtm_a0a0c0a0a1a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();
     }

@@ -202,7 +202,7 @@ public class ChangesStripActionsHelper {
     CopyPasteUtil.copyNodesToClipboard(nodesToCopy);
     check_ikrecr_a32a11(getPainter(editorContext));
   }
-  private static ChangeGroup check_ikrecr_a0a1(ChangeStripsPainter checkedDotOperand, EditorContext editorContext, boolean next) {
+  private static ChangeGroup check_ikrecr_a0a1(ChangeStripsPainter checkedDotOperand, EditorContext editorContext, Boolean next) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNeighbourChangeGroup(check_ikrecr_a0a0a1(editorContext), next);
     }

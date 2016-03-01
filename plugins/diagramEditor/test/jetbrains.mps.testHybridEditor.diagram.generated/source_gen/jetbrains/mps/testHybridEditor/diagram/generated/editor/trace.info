@@ -1067,10 +1067,10 @@
       <node id="5827780068500780337" at="16,0,20,0" concept="10" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="5827780068500818711" at="28,75,33,7" concept="4" />
       <node id="5827780068500818711" at="63,75,68,7" concept="4" />
-      <node id="5827780068504341202" at="39,0,45,0" concept="10" trace="check_dpv54c_a0a0a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5827780068504348597" at="48,0,54,0" concept="10" trace="check_dpv54c_a0a0a0a0a_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5827780068504341202" at="74,0,80,0" concept="10" trace="check_dpv54c_a0a0a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5827780068504348597" at="83,0,89,0" concept="10" trace="check_dpv54c_a0a0a0a0a_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5827780068504341202" at="39,0,45,0" concept="10" trace="check_dpv54c_a0a0a0a3b#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5827780068504348597" at="48,0,54,0" concept="10" trace="check_dpv54c_a0a0a0a3b_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5827780068504341202" at="74,0,80,0" concept="10" trace="check_dpv54c_a0a0a0a3c#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5827780068504348597" at="83,0,89,0" concept="10" trace="check_dpv54c_a0a0a0a3c_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5827780068500780337" at="28,0,36,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5827780068500780337" at="63,0,71,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="5827780068500780337" at="22,46,23,25" />

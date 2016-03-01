@@ -39,7 +39,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
   public void setParentGroup(PopupPaletteActionGroupAdapter group) {
     myParent = group;
   }
-  private static void check_gh9xft_a2a7(PopupPaletteActionGroupAdapter checkedDotOperand, boolean mySelected, DiagramPaletteToggleAction checkedDotThisExpression) {
+  private static void check_gh9xft_a2a7(PopupPaletteActionGroupAdapter checkedDotOperand, Boolean mySelected, DiagramPaletteToggleAction checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setSelectedAction((mySelected ? checkedDotThisExpression : null));
     }

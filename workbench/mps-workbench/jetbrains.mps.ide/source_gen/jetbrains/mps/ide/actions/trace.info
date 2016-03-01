@@ -1771,8 +1771,8 @@
       <node id="1216124527478" at="21,0,26,0" concept="4" trace="ShowInLogicalView_Action#()V" />
       <node id="1216124527478" at="30,0,35,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="1216124527478" at="60,0,66,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="592728140631273056" at="66,0,72,0" concept="17" trace="check_kgxlnq_a0a1a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="592728140631271444" at="72,0,78,0" concept="17" trace="check_kgxlnq_a0a0b0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="592728140631273056" at="66,0,72,0" concept="17" trace="check_fx2sd0_a0a1a3#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="592728140631271444" at="72,0,78,0" concept="17" trace="check_fx2sd0_a0a0b0d#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1216124527478" at="43,5,50,5" concept="2" />
       <node id="1216124527478" at="50,5,57,5" concept="2" />
       <node id="1216124527478" at="39,0,60,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
@@ -2742,7 +2742,7 @@
       <node id="1419465757272943251" at="93,72,98,7" concept="6" />
       <node id="1419465757272810561" at="114,73,119,11" concept="13" />
       <node id="2325045834927131963" at="121,7,126,7" concept="13" />
-      <node id="2325045834927131976" at="128,0,134,0" concept="17" trace="check_v2o7qu_a0a0a0a2a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="2325045834927131976" at="128,0,134,0" concept="17" trace="check_tbcoj8_a0a0a0a2a7#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="1229266351427" at="59,5,66,5" concept="2" />
       <node id="1229266351427" at="66,5,73,5" concept="2" />
       <node id="1229266351427" at="73,5,80,5" concept="2" />
@@ -3874,7 +3874,7 @@
       <node id="1298565956308924830" at="39,0,43,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1298565956308924830" at="22,0,27,0" concept="4" trace="ShowInDependenciesViewer_Action#()V" />
       <node id="3739225993679519766" at="74,0,80,0" concept="11" trace="run#()V" />
-      <node id="4691887782450490075" at="82,0,88,0" concept="17" trace="check_hezs1a_a0b0a0a0a0a0a#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="4691887782450490075" at="82,0,88,0" concept="17" trace="check_nkoo1o_a0b0a0a0a0a0g#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="1298565956308924830" at="47,5,54,5" concept="2" />
       <node id="1298565956308924830" at="54,5,61,5" concept="2" />
       <node id="1298565956308924830" at="61,5,68,5" concept="2" />
@@ -5446,7 +5446,7 @@
       <node id="2003512433031647898" at="125,204,130,7" concept="9" />
       <node id="2003512433031647932" at="132,113,137,7" concept="9" />
       <node id="2003512433031647960" at="141,0,146,0" concept="11" trace="getClassifierName#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/util/Map;)Ljava/lang/String;" />
-      <node id="1052099677315877728" at="146,0,152,0" concept="17" trace="check_ygbrs1_a0c0a#(Ljava/io/File;)Ljava/lang/String;" />
+      <node id="1052099677315877728" at="146,0,152,0" concept="17" trace="check_xgilk9_a0c0g#(Ljava/io/File;)Ljava/lang/String;" />
       <node id="2003512433031647705" at="61,5,68,5" concept="2" />
       <node id="2003512433031647705" at="68,5,75,5" concept="2" />
       <node id="2003512433031648105" at="86,104,93,11" concept="6" />
@@ -6226,7 +6226,7 @@
       <node id="6134778262076353710" at="92,5,96,5" concept="10" />
       <node id="2589658255268083871" at="23,0,28,0" concept="4" trace="RenameFileOrDirectory_Action#()V" />
       <node id="3812855676554060513" at="77,105,82,13" concept="6" />
-      <node id="9054337399171418880" at="99,0,105,0" concept="17" trace="check_g7rid4_a0b0a#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+      <node id="9054337399171418880" at="99,0,105,0" concept="17" trace="check_m54w02_a0b0f#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
       <node id="2589658255268083871" at="36,5,43,5" concept="2" />
       <node id="2589658255268083871" at="43,5,50,5" concept="2" />
       <node id="2589658255268083871" at="50,5,57,5" concept="2" />
@@ -9327,7 +9327,7 @@
       <node id="5033107305426722313" at="45,0,49,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="5033107305426722313" at="24,0,29,0" concept="4" trace="CutNode_Action#()V" />
       <node id="5033107305426722313" at="62,65,67,7" concept="10" />
-      <node id="8499364961320796581" at="92,0,98,0" concept="17" trace="check_n39602_a1a0a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="8499364961320796581" at="92,0,98,0" concept="17" trace="check_vaf00o_a1a0a3#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="5033107305426722313" at="53,5,60,5" concept="2" />
       <node id="5033107305426732659" at="78,105,85,7" concept="10" />
       <node id="8809415752128061176" at="34,87,42,5" concept="9" />
@@ -10497,7 +10497,7 @@
       <node id="629814680568915653" at="36,75,37,35" concept="6" />
       <node id="629814680568915653" at="37,35,38,40" concept="6" />
       <node id="629814680568915653" at="41,32,42,16" concept="13" />
-      <node id="4592840740430526325" at="45,87,46,152" concept="12" />
+      <node id="4592840740430526325" at="45,87,46,150" concept="12" />
       <node id="6618196938929507303" at="47,44,48,19" concept="13" />
       <node id="4592840740430526387" at="49,5,50,202" concept="13" />
       <node id="629814680568915653" at="53,89,54,85" concept="6" />
@@ -10541,7 +10541,7 @@
       <node id="4592840740430526400" at="155,69,156,47" concept="13" />
       <node id="1238749669243690575" at="158,67,159,47" concept="13" />
       <node id="1238749669243687059" at="161,66,162,47" concept="13" />
-      <node id="6618196938929502262" at="46,152,49,5" concept="10" />
+      <node id="6618196938929502262" at="46,150,49,5" concept="10" />
       <node id="629814680568915653" at="57,95,60,5" concept="10" />
       <node id="629814680568915653" at="63,50,66,7" concept="10" />
       <node id="629814680568915653" at="70,53,73,7" concept="10" />
@@ -10551,7 +10551,7 @@
       <node id="1238749669243681072" at="104,0,107,0" concept="11" trace="getModuleFrom#(Ljava/util/Map;)Ljetbrains/mps/project/AbstractModule;" />
       <node id="1238749669243685190" at="107,0,110,0" concept="11" trace="getModuleTo#(Ljava/util/Map;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="5013162914354630624" at="118,0,121,0" concept="11" trace="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
-      <node id="4592840740430526329" at="128,85,131,5" concept="10" />
+      <node id="4592840740430526329" at="128,83,131,5" concept="10" />
       <node id="4592840740430526399" at="134,85,137,5" concept="10" />
       <node id="1238749669243690574" at="140,83,143,5" concept="10" />
       <node id="1238749669243687058" at="146,82,149,5" concept="10" />
@@ -10564,10 +10564,10 @@
       <node id="629814680568915653" at="35,0,40,0" concept="4" trace="SafeDeleteModuleDependency_Action#()V" />
       <node id="1238749669243667992" at="87,0,92,0" concept="11" trace="compute#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
       <node id="5013162914354630616" at="116,75,121,28" concept="12" />
-      <node id="4592840740430526329" at="128,0,134,0" concept="17" trace="check_bai5av_a0a0a_0#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="4592840740430526399" at="134,0,140,0" concept="17" trace="check_bai5av_a0a0c0a#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Ljetbrains/mps/ide/depanalyzer/DepLink;" />
-      <node id="1238749669243690574" at="140,0,146,0" concept="17" trace="check_bai5av_a0a0a#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="1238749669243687058" at="146,0,152,0" concept="17" trace="check_bai5av_a0a1#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="4592840740430526329" at="128,0,134,0" concept="17" trace="check_iuftgz_a0a0d#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="4592840740430526399" at="134,0,140,0" concept="17" trace="check_iuftgz_a0a0c0d#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Ljetbrains/mps/ide/depanalyzer/DepLink;" />
+      <node id="1238749669243690574" at="140,0,146,0" concept="17" trace="check_iuftgz_a0a0h#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="1238749669243687058" at="146,0,152,0" concept="17" trace="check_iuftgz_a0a8#(Ljetbrains/mps/ide/depanalyzer/DependencyTreeNode;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="629814680568915653" at="60,5,67,5" concept="2" />
       <node id="629814680568915653" at="67,5,74,5" concept="2" />
       <node id="629814680568915653" at="74,5,81,5" concept="2" />
@@ -10634,7 +10634,7 @@
         <var name="_params" id="629814680568915653" />
         <var name="event" id="629814680568915653" />
       </scope>
-      <scope id="4592840740430526329" at="128,85,132,16" />
+      <scope id="4592840740430526329" at="128,83,132,16" />
       <scope id="4592840740430526399" at="134,85,138,16" />
       <scope id="1238749669243690574" at="140,83,144,16" />
       <scope id="1238749669243687058" at="146,82,150,16" />
@@ -10900,7 +10900,7 @@
       <node id="6460492932224949527" at="23,0,28,0" concept="4" trace="SetPluginIdToCompileInIdeaModules_Action#()V" />
       <node id="6460492932225313794" at="57,106,62,7" concept="10" />
       <node id="6460492932224949527" at="36,5,42,5" concept="2" />
-      <node id="5347901971864414320" at="95,0,101,0" concept="17" trace="check_ta15vl_a0a0a#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
+      <node id="5347901971864414320" at="95,0,101,0" concept="17" trace="check_z7ebk9_a0a0f#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
       <node id="7217424793751150315" at="83,0,95,0" concept="11" trace="setPluginId#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
       <node id="6460492932224949527" at="32,0,45,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="6460492932225273356" at="46,96,63,5" concept="9" />

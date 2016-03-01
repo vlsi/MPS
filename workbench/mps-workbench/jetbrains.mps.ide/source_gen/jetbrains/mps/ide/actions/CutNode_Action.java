@@ -36,7 +36,7 @@ public class CutNode_Action extends BaseAction {
       if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
-      if (check_n39602_a1a0a0(SNodeOperations.getModel(node))) {
+      if (check_vaf00o_a1a0a3(SNodeOperations.getModel(node))) {
         return false;
       }
     }
@@ -89,7 +89,7 @@ public class CutNode_Action extends BaseAction {
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
-  private static boolean check_n39602_a1a0a0(SModel checkedDotOperand) {
+  private static boolean check_vaf00o_a1a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

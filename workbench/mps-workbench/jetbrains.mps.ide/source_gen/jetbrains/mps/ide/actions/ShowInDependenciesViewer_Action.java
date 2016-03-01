@@ -73,13 +73,13 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
       public void run() {
         DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-        SModule from = check_hezs1a_a0b0a0a0a0a0a(as_nkoo1o_a0a0b0a0a0a0a0g(treeNode.getParent(), DependencyTreeNode.class));
+        SModule from = check_nkoo1o_a0b0a0a0a0a0g(as_nkoo1o_a0a0b0a0a0a0a0g(treeNode.getParent(), DependencyTreeNode.class));
         SModule to = treeNode.getModule();
         DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
       }
     });
   }
-  private static SModule check_hezs1a_a0b0a0a0a0a0a(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_nkoo1o_a0b0a0a0a0a0g(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

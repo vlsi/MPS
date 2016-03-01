@@ -2879,7 +2879,7 @@
       <node id="4652592318748340954" at="175,12,181,7" concept="1" />
       <node id="4652592318748341034" at="206,0,212,0" concept="11" trace="goToBounds#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
       <node id="4652592318748341140" at="228,0,234,0" concept="3" trace="TheAction#(Z)V" />
-      <node id="4652592318748340849" at="245,0,251,0" concept="17" trace="check_mf966z_a5a51#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Z)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
+      <node id="4652592318748340849" at="245,0,251,0" concept="17" trace="check_mf966z_a5a51#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;Ljava/lang/Boolean;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
       <node id="5577480965331702735" at="251,0,257,0" concept="17" trace="check_mf966z_a0a0a2a0a0b0v#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
       <node id="4652592318748341086" at="257,0,263,0" concept="17" trace="check_mf966z_a0a0a0c0a0a1a12#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
       <node id="4652592318748340598" at="55,0,62,0" concept="11" trace="selectionChanged#(Ljetbrains/mps/openapi/editor/EditorComponent;Ljetbrains/mps/openapi/editor/selection/Selection;Ljetbrains/mps/openapi/editor/selection/Selection;)V" />

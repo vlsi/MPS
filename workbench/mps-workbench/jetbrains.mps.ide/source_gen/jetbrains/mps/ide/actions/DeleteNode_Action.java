@@ -121,11 +121,11 @@ public class DeleteNode_Action extends BaseAction {
     });
     return Sequence.fromIterable(nodeFromPacks).union(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(check_v2o7qu_a0a0a0a2a0(it.getModel()));
+        return !(check_tbcoj8_a0a0a0a2a7(it.getModel()));
       }
     });
   }
-  private static boolean check_v2o7qu_a0a0a0a2a0(SModel checkedDotOperand) {
+  private static boolean check_tbcoj8_a0a0a0a2a7(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

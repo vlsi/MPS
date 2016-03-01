@@ -206,7 +206,7 @@
       <node id="708810380379965773" at="42,164,45,5" concept="6" />
       <node id="121824560294450225" at="14,0,18,0" concept="2" trace="DiagramPaletteToggleAction#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/ui/DiagramPalette;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/openapi/PaletteElement;)V" />
       <node id="121824560294450265" at="23,24,28,7" concept="6" />
-      <node id="708810380379965773" at="42,0,48,0" concept="11" trace="check_gh9xft_a2a7#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/ui/PopupPaletteActionGroupAdapter;ZLjetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/ui/DiagramPaletteToggleAction;)V" />
+      <node id="708810380379965773" at="42,0,48,0" concept="11" trace="check_gh9xft_a2a7#(Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/ui/PopupPaletteActionGroupAdapter;Ljava/lang/Boolean;Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/ui/DiagramPaletteToggleAction;)V" />
       <node id="121824560294450263" at="22,68,29,5" concept="6" />
       <node id="121824560294450255" at="22,0,33,0" concept="7" trace="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
       <scope id="121824560294450252" at="19,50,20,22" />
