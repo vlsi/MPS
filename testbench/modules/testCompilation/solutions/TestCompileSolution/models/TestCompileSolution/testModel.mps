@@ -6,10 +6,10 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="3ei0" ref="a2e9b672-d7f0-4804-bc04-9161af907fda/f:java_stub#a2e9b672-d7f0-4804-bc04-9161af907fda#test(TestCompileSolution/test@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="487m" ref="a2e9b672-d7f0-4804-bc04-9161af907fda/java:test(TestCompileSolution/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -119,19 +119,19 @@
             <property role="TrG5h" value="staticTestValue" />
             <node concept="10Oyi0" id="4ep0Y$Xs$6o" role="1tU5fm" />
             <node concept="2YIFZM" id="4ep0Y$Xs$6r" role="33vP2m">
-              <ref role="37wK5l" to="3ei0:~TestInterface.getStaticTestValue():int" resolve="getStaticTestValue" />
-              <ref role="1Pybhc" to="3ei0:~TestInterface" resolve="TestInterface" />
+              <ref role="37wK5l" to="487m:~TestInterface.getStaticTestValue():int" resolve="getStaticTestValue" />
+              <ref role="1Pybhc" to="487m:~TestInterface" resolve="TestInterface" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="4ep0Y$XsDjg" role="3cqZAp">
           <node concept="2OqwBi" id="4ep0Y$XsDjd" role="3clFbG">
             <node concept="10M0yZ" id="4ep0Y$XsDje" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
             </node>
             <node concept="liA8E" id="4ep0Y$XsDjf" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(int):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(int):void" resolve="println" />
               <node concept="2OqwBi" id="4ep0Y$XsDKT" role="37wK5m">
                 <node concept="2ShNRf" id="4ep0Y$XsDmo" role="2Oq$k0">
                   <node concept="HV5vD" id="4ep0Y$XsDJf" role="2ShVmc">
@@ -156,8 +156,8 @@
         <node concept="3clFbF" id="4ep0Y$Xs_Kl" role="3cqZAp">
           <node concept="3cpWs3" id="4ep0Y$XsCal" role="3clFbG">
             <node concept="3WEljn" id="4ep0Y$Xs_Kk" role="3uHU7B">
-              <ref role="3WFDBg" to="3ei0:~TestInterface" resolve="TestInterface" />
-              <ref role="37wK5l" to="3ei0:~TestInterface.getDefaultTestValue():int" resolve="getDefaultTestValue" />
+              <ref role="3WFDBg" to="487m:~TestInterface" resolve="TestInterface" />
+              <ref role="37wK5l" to="487m:~TestInterface.getDefaultTestValue():int" resolve="getDefaultTestValue" />
             </node>
             <node concept="3cmrfG" id="4ep0Y$XsCCW" role="3uHU7w">
               <property role="3cmrfH" value="1" />
@@ -168,7 +168,7 @@
     </node>
     <node concept="3Tm1VV" id="5EQoU_tECVN" role="1B3o_S" />
     <node concept="3uibUv" id="4ep0Y$Xs$fH" role="EKbjA">
-      <ref role="3uigEE" to="3ei0:~TestInterface" resolve="TestInterface" />
+      <ref role="3uigEE" to="487m:~TestInterface" resolve="TestInterface" />
     </node>
   </node>
 </model>
