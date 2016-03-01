@@ -7,7 +7,7 @@ EXPLODED=$1.exploded
 test -d ${EXPLODED} && chmod -R u+wx ~/${EXPLODED}/*
 rm -rf ~/${EXPLODED}
 rm -f ~/$1.dmg
-rm -f ~/pack.temp.dmg
+rm -f ~/$1.temp.dmg
 
 mkdir ~/${EXPLODED}
 echo "Unzipping $1.zip to ${EXPLODED}..."
@@ -37,6 +37,6 @@ echo "check sign done"
 
 echo "Zipping ${BUILD_NAME} to $1.sit..."
 cd ${EXPLODED}
-ditto -c -k --sequesterRsrc --keepParent "${BUILD_NAME}" ../.sit
+ditto -c -k --sequesterRsrc --keepParent "${BUILD_NAME}" ../$1.sit
 cd ..
 rm -rf ~/${EXPLODED}

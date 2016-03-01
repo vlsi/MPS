@@ -270,6 +270,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----adding different deps
 
+  /**
+   * FIXME module editing is generally done through descriptor and reload. Although I do not mind exposing add/remove methods here, it should be consistent!
+   */
   @Nullable
   public Dependency addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     assertCanChange();

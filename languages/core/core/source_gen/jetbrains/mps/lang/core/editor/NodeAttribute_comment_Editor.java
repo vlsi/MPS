@@ -44,7 +44,7 @@ public class NodeAttribute_comment_Editor extends DefaultNodeEditor {
   }
   private Iterable<String> getEditorHints_fqq7dl_a0(SNode node, EditorContext editorContext) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (check_fqq7dl_a1a0a(node.getContainmentLink())) {
+    if (check_fqq7dl_a1a5(node.getContainmentLink())) {
       ListSequence.fromList(result).addElement("jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment");
     }
     return result;
@@ -64,18 +64,18 @@ public class NodeAttribute_comment_Editor extends DefaultNodeEditor {
   }
   private Iterable<String> getEditorHints_fqq7dl_a0_0(SNode node, EditorContext editorContext) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (check_fqq7dl_a1a0a_0(node.getContainmentLink())) {
+    if (check_fqq7dl_a1a7(node.getContainmentLink())) {
       ListSequence.fromList(result).addElement("jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment");
     }
     return result;
   }
-  private static boolean check_fqq7dl_a1a0a(SContainmentLink checkedDotOperand) {
+  private static boolean check_fqq7dl_a1a5(SContainmentLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     }
     return false;
   }
-  private static boolean check_fqq7dl_a1a0a_0(SContainmentLink checkedDotOperand) {
+  private static boolean check_fqq7dl_a1a7(SContainmentLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     }

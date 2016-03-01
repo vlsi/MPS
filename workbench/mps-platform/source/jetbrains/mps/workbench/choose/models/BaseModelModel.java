@@ -16,19 +16,11 @@
 package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public BaseModelModel(Project project) {
-    super(project, "model");
-  }
-
   public BaseModelModel(jetbrains.mps.project.Project mpsProject) {
     super(mpsProject, "model");
   }
@@ -40,8 +32,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
 
   @Override
   public String doGetFullName(NavigationItem element) {
-    BaseModelItem navigationItem = (BaseModelItem) element;
-    SModelReference ref = navigationItem.getModelReference();
+    SModelReference ref = getModelObject(element);
     return ref.getModelName();
   }
 
@@ -49,5 +40,22 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
   public String doGetObjectName(SModelReference ref) {
     SModelName modelName = ref.getName();
     return modelName.hasStereotype() ? modelName.getSimpleName() + '@' + modelName.getStereotype() : modelName.getSimpleName();
+  }
+
+  @Override
+  public NavigationItem doGetNavigationItem(SModelReference object) {
+    return new BaseModelItem(object);
+  }
+
+  /**
+   * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
+   * @see jetbrains.mps.workbench.choose.modules.BaseModuleModel#getModelObject(Object)
+   */
+  @Override
+  public SModelReference getModelObject(Object item) {
+    if (item instanceof BaseModelItem) {
+      return ((BaseModelItem) item).getModelReference();
+    }
+    return null;
   }
 }

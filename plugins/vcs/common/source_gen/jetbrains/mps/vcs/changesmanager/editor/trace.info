@@ -161,7 +161,7 @@
       <node id="1108966977729720462" at="189,11,194,11" concept="11" />
       <node id="2052504288806114031" at="55,0,61,0" concept="16" trace="goToY#(Ljetbrains/mps/nodeEditor/EditorComponent;I)V" />
       <node id="1108966977729621906" at="142,65,148,7" concept="7" />
-      <node id="5059587158025329570" at="205,0,211,0" concept="16" trace="check_ikrecr_a0a1#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/openapi/editor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
+      <node id="5059587158025329570" at="205,0,211,0" concept="16" trace="check_ikrecr_a0a1#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/Boolean;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
       <node id="6551560157631775303" at="211,0,217,0" concept="16" trace="check_ikrecr_a0a0a1#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5525460315804373580" at="217,0,223,0" concept="16" trace="check_ikrecr_a5a3#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)V" />
       <node id="5525460315804363475" at="223,0,229,0" concept="16" trace="check_ikrecr_a1a5#(Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighterFactory;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/vcs/changesmanager/editor/EditorHighlighter;" />

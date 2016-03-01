@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.scopes;
 
 import com.intellij.openapi.actionSystem.AnAction;
@@ -25,14 +24,16 @@ import com.intellij.psi.PsiFile;
 import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.util.InstanceOfCondition;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.ConditionalIterable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -65,22 +66,20 @@ public class CheckScopesAction extends AnAction {
         int notEqualMembersCount = 0;
 
         SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
-        for (SNode root : descriptor.getRootNodes()) {
-          if (LanguageHierarchyCache.isAssignable(root.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-            PsiClass clazz = getPsiClass(myProject, root);
-            if (clazz == null) {
-              LOG.warn("PsiClass is null for root node: " + root);
-              continue;
-            }
-            long time = System.currentTimeMillis();
-            Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass_New(clazz));
-            ideaTime += System.currentTimeMillis() - time;
-            time = System.currentTimeMillis();
-            Set<String> mpsMembers = new TreeSet<String>(MpsScopesUtil.getMembersSignatures(root));
-            mpsTime += System.currentTimeMillis() - time;
-            if (!checkScopesOnEquality(clazz.getQualifiedName(), ideaMembers, mpsMembers)) {
-              notEqualMembersCount++;
-            }
+        for (SNode root : new ConditionalIterable<SNode>(descriptor.getRootNodes(), new InstanceOfCondition(SNodeUtil.concept_Classifier))) {
+          PsiClass clazz = getPsiClass(myProject, root);
+          if (clazz == null) {
+            LOG.warn("PsiClass is null for root node: " + root);
+            continue;
+          }
+          long time = System.currentTimeMillis();
+          Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass_New(clazz));
+          ideaTime += System.currentTimeMillis() - time;
+          time = System.currentTimeMillis();
+          Set<String> mpsMembers = new TreeSet<String>(MpsScopesUtil.getMembersSignatures(root));
+          mpsTime += System.currentTimeMillis() - time;
+          if (!checkScopesOnEquality(clazz.getQualifiedName(), ideaMembers, mpsMembers)) {
+            notEqualMembersCount++;
           }
         }
         System.out.printf("Not equal members in %d classifiers; idea time %.4f; mps time %.4f%n",

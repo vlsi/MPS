@@ -115,7 +115,7 @@ public class MoveModel_Action extends BaseAction {
         }
       }
     });
-    final SModuleReference selectedModule = ChooseModuleDialog.getSelectedModule(((Project) MapSequence.fromMap(_params).get("project")), modules);
+    final SModuleReference selectedModule = ChooseModuleDialog.getSelectedModule(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), modules);
     if (selectedModule == null) {
       return;
     }

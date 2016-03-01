@@ -14,8 +14,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" file="BaseChooseNodeDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
+  <dependency className="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog" file="ChooseNodeDialog.java">
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.treeStructure.SimpleTree" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -43,10 +42,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.dependency.VisibilityUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -57,6 +54,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.DuplicatesProcessor" file="DuplicatesProcessor.java">
@@ -70,7 +69,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog" file="ExtractMethodDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
@@ -106,7 +104,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.BaseChooseNodeDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.ChooseNodeDialog" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.IconResourceBundle_ExtractMethodIcons" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.MethodDuplicatesProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.ParametersPanel" />
@@ -116,13 +114,16 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.IconContainer" file="IconContainer.java">

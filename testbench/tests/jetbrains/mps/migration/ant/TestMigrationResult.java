@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.migration;
+package jetbrains.mps.migration.ant;
 
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
 import org.junit.Test;

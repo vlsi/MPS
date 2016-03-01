@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
 
-public class ModulePresentation extends BasePresentation {
+/*package*/ class ModulePresentation extends BasePresentation {
   private SModuleReference myModuleReference;
 
   public ModulePresentation(SModuleReference moduleReference) {

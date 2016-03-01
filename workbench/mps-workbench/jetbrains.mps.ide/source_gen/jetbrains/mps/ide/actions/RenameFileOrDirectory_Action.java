@@ -90,13 +90,13 @@ public class RenameFileOrDirectory_Action extends BaseAction {
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Enter valid name", "Error", Messages.getErrorIcon());
       return true;
     }
-    if (check_g7rid4_a0b0a(((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent(), result) != null) {
+    if (check_m54w02_a0b0f(((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent(), result) != null) {
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), result + " already exists", "Error", Messages.getErrorIcon());
       return true;
     }
     return false;
   }
-  private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
+  private static VirtualFile check_m54w02_a0b0f(VirtualFile checkedDotOperand, String result) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.findChild(result);
     }

@@ -666,6 +666,9 @@
     <file name="PublicVisibility_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.behavior.PublicVisibility_BehaviorDescriptor" />
     </file>
+    <file name="QualifiedSuperMethodCall_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.behavior.QualifiedSuperMethodCall_BehaviorDescriptor" />
+    </file>
     <file name="RemAssignmentExpression_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.behavior.RemAssignmentExpression_BehaviorDescriptor" />
     </file>

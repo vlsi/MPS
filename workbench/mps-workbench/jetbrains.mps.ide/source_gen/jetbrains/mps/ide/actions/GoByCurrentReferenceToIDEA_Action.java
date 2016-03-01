@@ -79,7 +79,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    final String projectPath = check_ygbrs1_a0c0a(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
+    final String projectPath = check_xgilk9_a0c0g(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
     new Thread() {
       @Override
       public void run() {
@@ -143,7 +143,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     assert classifier != null;
     return ref.getName().getLongName() + '.' + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  private static String check_ygbrs1_a0c0a(File checkedDotOperand) {
+  private static String check_xgilk9_a0c0g(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }

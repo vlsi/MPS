@@ -63,7 +63,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     }
   }
   /*package*/ String getPluginIdForModule(SModule module, final AnActionEvent event) {
-    String path = check_ta15vl_a0a0a(((AbstractModule) module).getModuleSourceDir());
+    String path = check_z7ebk9_a0a0f(((AbstractModule) module).getModuleSourceDir());
     if (path == null) {
       System.out.println("null path for " + module.getModuleName());
       return null;
@@ -92,7 +92,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     moduleDescriptor.updateFacetDescriptor(facet);
     ((AbstractModule) module).save();
   }
-  private static String check_ta15vl_a0a0a(IFile checkedDotOperand) {
+  private static String check_z7ebk9_a0a0f(IFile checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPath();
     }

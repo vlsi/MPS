@@ -67,7 +67,19 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
+  /**
+   * @see jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel#getModelObject(Object)
+   * @see jetbrains.mps.workbench.choose.modules.BaseModuleModel#getModelObject(Object)
+   */
   @Override
+  public NavigationTarget getModelObject(Object item) {
+    if (item instanceof RootNodeElement) {
+      return ((RootNodeElement) item).getTarget();
+    }
+    return null;
+  }
+
+    @Override
   public boolean willOpenEditor() {
     return true;
   }

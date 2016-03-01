@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,16 @@ package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-public abstract class BaseModelItem implements NavigationItem {
+/**
+ * @deprecated see {@link jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem} for reasons.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
+/*package*/ class BaseModelItem implements NavigationItem {
   private SModelReference myModelReference;
 
   public BaseModelItem(SModelReference modelReference) {
@@ -44,11 +50,16 @@ public abstract class BaseModelItem implements NavigationItem {
 
   @Override
   public boolean canNavigate() {
-    return true;
+    return false;
   }
 
   @Override
   public boolean canNavigateToSource() {
     return false;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    // no-op
   }
 }

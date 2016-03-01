@@ -7,6 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/1883223317720973623">
     <file name="LatticeUtil.java">
@@ -86,11 +87,11 @@
       <node id="6007597446559177553" at="117,5,120,5" concept="4" />
       <node id="6007597446559193329" at="130,51,133,5" concept="4" />
       <node id="6007597446559193336" at="133,5,136,5" concept="4" />
-      <node id="1883223317720980508" at="146,0,149,0" concept="7" trace="isMeet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1883223317720980526" at="149,0,152,0" concept="7" trace="isJoin#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8183958085762408345" at="152,0,155,0" concept="7" trace="isPolymorphic#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1883223317720980544" at="155,0,158,0" concept="7" trace="getMeetArguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1883223317720980584" at="158,0,161,0" concept="7" trace="getJoinArguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="1883223317720980508" at="146,0,149,0" concept="8" trace="isMeet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1883223317720980526" at="149,0,152,0" concept="8" trace="isJoin#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8183958085762408345" at="152,0,155,0" concept="8" trace="isPolymorphic#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1883223317720980544" at="155,0,158,0" concept="8" trace="getMeetArguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="1883223317720980584" at="158,0,161,0" concept="8" trace="getJoinArguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="1883223317720979893" at="28,203,32,15" concept="3" />
       <node id="1883223317721340778" at="46,203,50,15" concept="3" />
       <node id="1883223317721339536" at="27,46,34,13" concept="4" />
@@ -105,15 +106,15 @@
       <node id="1883223317721340765" at="41,192,54,9" concept="3" />
       <node id="1883223317721339522" at="22,34,37,7" concept="4" />
       <node id="1883223317721340762" at="40,34,55,7" concept="4" />
-      <node id="6007597446559172591" at="114,0,130,0" concept="7" trace="joinNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6007597446559193325" at="130,0,146,0" concept="7" trace="meetNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6007597446559172591" at="114,0,130,0" concept="8" trace="joinNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6007597446559193325" at="130,0,146,0" concept="8" trace="meetNodes#(Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1883223317721339522" at="20,56,38,5" concept="0" />
       <node id="1883223317721340762" at="38,5,56,5" concept="0" />
       <node id="1883223317720979933" at="59,230,83,5" concept="4" />
       <node id="4545016991847814864" at="87,230,111,5" concept="4" />
-      <node id="1883223317720979918" at="58,0,86,0" concept="7" trace="join#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1883223317720980152" at="86,0,114,0" concept="7" trace="meet#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1883223317720979806" at="20,0,58,0" concept="7" trace="processMeetsAndJoins#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1883223317720979918" at="58,0,86,0" concept="8" trace="join#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1883223317720980152" at="86,0,114,0" concept="8" trace="meet#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1883223317720979806" at="20,0,58,0" concept="8" trace="processMeetsAndJoins#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1883223317720979779" at="18,24,18,24" />
       <scope id="1883223317720980022" at="62,191,63,232" />
       <scope id="1883223317720980065" at="67,193,68,234" />
@@ -260,7 +261,7 @@
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/2216760464199540788">
     <file name="TypeSystemUtil.java">
       <node id="5611594083653771322" at="10,64,11,215" concept="6" />
-      <node id="2216760464199564580" at="10,0,13,0" concept="7" trace="shouldApplyTypeSystemRules#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2216760464199564580" at="10,0,13,0" concept="8" trace="shouldApplyTypeSystemRules#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="2216760464199564582" at="10,64,11,215" />
       <scope id="2216760464199564580" at="10,0,13,0">
         <var name="node" id="2216760464199564605" />
@@ -270,27 +271,31 @@
   </root>
   <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/6321644624958548836">
     <file name="CoerceUtil.java">
-      <node id="3635379492312128764" at="16,32,17,18" concept="6" />
-      <node id="3635379492312128726" at="18,5,19,470" concept="6" />
-      <node id="5293313440027673886" at="21,69,22,64" concept="6" />
-      <node id="6321644624958548838" at="13,0,15,0" concept="1" trace="CoerceUtil#()V" />
-      <node id="3635379492312128739" at="15,72,18,5" concept="4" />
-      <node id="5293313440027673173" at="21,0,24,0" concept="7" trace="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3635379492312128715" at="15,0,21,0" concept="7" trace="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <scope id="6321644624958548841" at="13,23,13,23" />
-      <scope id="3635379492312128740" at="16,32,17,18" />
-      <scope id="5293313440027673176" at="21,69,22,64" />
-      <scope id="6321644624958548838" at="13,0,15,0" />
-      <scope id="5293313440027673173" at="21,0,24,0">
+      <node id="2067922812369244590" at="15,0,16,0" concept="7" trace="concept_MeetType" />
+      <node id="2067922812369261296" at="16,0,17,0" concept="7" trace="link_MeetType_argument" />
+      <node id="2067922812369256170" at="17,0,18,0" concept="7" trace="concept_JoinType" />
+      <node id="2067922812369265404" at="18,0,19,0" concept="7" trace="link_JoinType_argument" />
+      <node id="3635379492312128764" at="23,32,24,18" concept="6" />
+      <node id="3635379492312128726" at="25,5,26,470" concept="6" />
+      <node id="5293313440027673886" at="28,69,29,64" concept="6" />
+      <node id="6321644624958548838" at="20,0,22,0" concept="1" trace="CoerceUtil#()V" />
+      <node id="3635379492312128739" at="22,72,25,5" concept="4" />
+      <node id="5293313440027673173" at="28,0,31,0" concept="8" trace="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3635379492312128715" at="22,0,28,0" concept="8" trace="canBeCoerced#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <scope id="6321644624958548841" at="20,23,20,23" />
+      <scope id="3635379492312128740" at="23,32,24,18" />
+      <scope id="5293313440027673176" at="28,69,29,64" />
+      <scope id="6321644624958548838" at="20,0,22,0" />
+      <scope id="5293313440027673173" at="28,0,31,0">
         <var name="conceptNode" id="5293313440027673240" />
         <var name="type" id="5293313440027673215" />
       </scope>
-      <scope id="3635379492312128718" at="15,72,19,470" />
-      <scope id="3635379492312128715" at="15,0,21,0">
+      <scope id="3635379492312128718" at="22,72,26,470" />
+      <scope id="3635379492312128715" at="22,0,28,0">
         <var name="conceptFqName" id="3635379492312128724" />
         <var name="type" id="3635379492312128722" />
       </scope>
-      <unit id="6321644624958548836" at="12,0,25,0" name="jetbrains.mps.typesystemEngine.util.CoerceUtil" />
+      <unit id="6321644624958548836" at="14,0,32,0" name="jetbrains.mps.typesystemEngine.util.CoerceUtil" />
     </file>
   </root>
 </debug-info>

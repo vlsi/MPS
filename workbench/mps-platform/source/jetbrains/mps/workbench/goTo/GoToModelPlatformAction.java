@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,25 @@ package jetbrains.mps.workbench.goTo;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.impl.ProjectPaneSelectInTarget;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import com.intellij.navigation.NavigationItem;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.FileSystemModelHelper;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.workbench.FileSystemModelHelper;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
 
@@ -54,44 +53,13 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseModelModel goToModelModel = new BaseModelModel(project) {
-      @Override
-      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new BaseModelItem(modelReference) {
-          @Override
-          public void navigate(boolean requestFocus) {
-            final SModel model = modelReference.resolve(project.getRepository());
-
-            if (model == null) return;
-
-            VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
-              @Override
-              public VirtualFile compute() {
-                return new FileSystemModelHelper(model).getVirtualFile();
-              }
-            });
-
-            if (modelFile == null) return;
-
-            final PsiManager psiManager = PsiManager.getInstance(project.getProject());
-            PsiElement modelElement = psiManager.findFile(modelFile);
-            if (modelElement == null) {
-              modelElement = psiManager.findDirectory(modelFile);
-            }
-            if (modelElement == null) return;
-
-            new ProjectPaneSelectInTarget(project.getProject()).select(modelElement, true);
-          }
-        };
-      }
-
+    final BaseModelModel goToModelModel = new BaseModelModel(project) {
       @Override
       public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
           @Override
           public boolean met(SModel modelDescriptor) {
-            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModel(modelDescriptor);
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
@@ -107,6 +75,46 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project.getProject(), goToModelModel, null);
     popup.setShowListForEmptyPattern(true);
     popup.setCheckBoxShortcut(getShortcutSet());
-    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
+    popup.invoke(new Callback() {
+      private SModelReference myModelReference;
+      @Override
+      public void elementChosen(Object element) {
+        myModelReference = goToModelModel.getModelObject(element);
+      }
+
+      @Override
+      public void onClose() {
+        if (myModelReference == null) {
+          return;
+        }
+        final SModel model = myModelReference.resolve(project.getRepository());
+
+        if (model == null) {
+          return;
+        }
+
+        VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
+          @Override
+          public VirtualFile compute() {
+            return new FileSystemModelHelper(model).getVirtualFile();
+          }
+        });
+
+        if (modelFile == null) {
+          return;
+        }
+
+        final PsiManager psiManager = PsiManager.getInstance(project.getProject());
+        PsiElement modelElement = psiManager.findFile(modelFile);
+        if (modelElement == null) {
+          modelElement = psiManager.findDirectory(modelFile);
+        }
+        if (modelElement == null) {
+          return;
+        }
+
+        new ProjectPaneSelectInTarget(project.getProject()).select(modelElement, true);
+      }
+    }, ModalityState.current(), false);
   }
 }

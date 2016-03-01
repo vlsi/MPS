@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,6 +44,7 @@ import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 
 public final class ProjectTreeFindHelper {
@@ -140,22 +142,27 @@ public final class ProjectTreeFindHelper {
     return (MPSTreeNodeEx) currentTreeNode;
   }
 
-  protected MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
-    if (resultCondition.met(root)) {
-      return root;
-    }
-
-    if (descendCondition.met(root)) {
-      if (!root.isInitialized()) {
-        root.init();
+  @Nullable
+  protected MPSTreeNode findTreeNode(MPSTreeNode start, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
+    // breadth-first to find top-most module (e.g. not the one under 'runtime' dependencies)
+    ArrayDeque<MPSTreeNode> queue = new ArrayDeque<MPSTreeNode>(128);
+    queue.add(start);
+    while (!queue.isEmpty()) {
+      MPSTreeNode tn = queue.removeFirst();
+      if (resultCondition.met(tn)) {
+        return tn;
       }
-      for (MPSTreeNode node : root) {
-        MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
-        if (result != null) {
-          return result;
+
+      if (descendCondition.met(tn)) {
+        if (!tn.isInitialized()) {
+          tn.init();
+        }
+        for (MPSTreeNode node : tn) {
+          queue.addLast(node);
         }
       }
     }
+
     return null;
   }
 

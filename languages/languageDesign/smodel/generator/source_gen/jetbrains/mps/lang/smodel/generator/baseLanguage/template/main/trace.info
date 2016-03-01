@@ -989,11 +989,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1221171785929">
     <file name="QueriesGenerated.java">
-      <node id="1221172066034" at="214,104,215,438" concept="4" />
+      <node id="1221172066034" at="214,104,215,427" concept="4" />
       <node id="1221171909522" at="1687,102,1688,181" concept="4" />
       <node id="1221171995621" at="1690,102,1691,518" concept="4" />
       <node id="3624172675690870850" at="2129,113,2130,254" concept="4" />
-      <scope id="1221172048707" at="214,104,215,438" />
+      <scope id="1221172048707" at="214,104,215,427" />
       <scope id="1221171893349" at="1687,102,1688,181" />
       <scope id="1221171979136" at="1690,102,1691,518" />
       <scope id="3624172675690868627" at="2129,113,2130,254" />

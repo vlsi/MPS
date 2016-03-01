@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.LanguageImportHelper;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -64,14 +64,14 @@ public class MakeDirAModel extends NewModelActionBase {
       return;
     }
 
-    ImportHelper.addLanguageImport(myProject, model.getModule(), model, null,
+    new LanguageImportHelper(ProjectHelper.fromIdeaProject(myProject)).setOnCloseActivity(
       new Runnable() {
         @Override
         public void run() {
-          final ProjectView projectView = ProjectView.getInstance(myProject);
-          projectView.refresh();
+          ProjectView.getInstance(myProject).refresh();
         }
-      });
+      }
+    ).addUsedLanguage(model);
   }
 
   private SModel createModel(final AnActionEvent e) {

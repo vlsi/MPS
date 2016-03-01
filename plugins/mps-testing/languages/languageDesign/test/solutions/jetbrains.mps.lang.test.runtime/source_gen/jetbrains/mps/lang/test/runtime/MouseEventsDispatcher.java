@@ -45,12 +45,6 @@ public class MouseEventsDispatcher {
 
   public Component processMouseEvent(int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     final EditorComponent editorComponent = myEditorTest.getEditorComponent();
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        editorComponent.setSize(editorComponent.getPreferredSize());
-      }
-    });
-
     EditorCell rootCell = editorComponent.getRootCell();
     assert rootCell != null;
 

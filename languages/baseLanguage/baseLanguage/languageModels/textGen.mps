@@ -12551,5 +12551,35 @@
       <ref role="2AI5Lk" to="lhc4:~Immutable" resolve="Immutable" />
     </node>
   </node>
+  <node concept="WtQ9Q" id="3IGVE5mN$y5">
+    <property role="3GE5qa" value="classifiers.refs" />
+    <ref role="WuzLi" to="tpee:3vR8Evee0tE" resolve="QualifiedSuperMethodCall" />
+    <node concept="11bSqf" id="3IGVE5mN$y6" role="11c4hB">
+      <node concept="3clFbS" id="3IGVE5mN$y7" role="2VODD2">
+        <node concept="lc7rE" id="5_deIS4Vt$4" role="3cqZAp">
+          <node concept="1bDJIP" id="3IGVE5mN$yO" role="lcghm">
+            <ref role="1rvKf6" node="6fUw26UhtdA" resolve="blClassifierRef" />
+            <node concept="2OqwBi" id="3IGVE5mN$yP" role="1ryhcI">
+              <node concept="117lpO" id="3IGVE5mN$yQ" role="2Oq$k0" />
+              <node concept="37Cfm0" id="3IGVE5mN$yR" role="2OqNvi">
+                <node concept="1aIX9F" id="3IGVE5mN$yS" role="37CeNk">
+                  <node concept="26LbJo" id="3IGVE5mNB0c" role="1aIX9E">
+                    <ref role="26LbJp" to="tpee:3vR8Evee0tX" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="la8eA" id="3IGVE5mN$yT" role="lcghm">
+            <property role="lacIc" value=".super." />
+          </node>
+          <node concept="1bDJIP" id="5_deIS4Vv_d" role="lcghm">
+            <ref role="1rvKf6" node="hYHLMDp" resolve="methodCall" />
+            <node concept="117lpO" id="5_deIS4Vxcu" role="1ryhcI" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

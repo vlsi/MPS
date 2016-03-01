@@ -4,26 +4,25 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
-import com.intellij.navigation.NavigationItem;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.ConditionalIterable;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
-import jetbrains.mps.workbench.goTo.NavigateCallback;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToModel_Action extends BaseAction {
@@ -38,23 +37,25 @@ public class GoToModel_Action extends BaseAction {
     return true;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-    assert mpsProject != null;
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
-      @Override
-      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new BaseModelItem(modelReference) {
-          @Override
-          public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = ProjectPane.getInstance(mpsProject);
-            SModel md = modelReference.resolve(mpsProject.getRepository());
-            projectPane.selectModel(md, true);
-          }
-        };
-      }
+    final MPSProject mpsProject = ((MPSProject) MapSequence.fromMap(_params).get("project"));
+    final BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
       @Override
       public SModelReference[] find(SearchScope scope) {
         Condition<SModel> cond = new Condition<SModel>() {
@@ -76,6 +77,18 @@ public class GoToModel_Action extends BaseAction {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(mpsProject.getProject(), goToModelModel, GoToModel_Action.this);
     popup.setShowListForEmptyPattern(true);
 
-    popup.invoke(new NavigateCallback(), ModalityState.current(), true);
+    popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      private SModelReference myModelRef;
+      public void elementChosen(Object p0) {
+        myModelRef = goToModelModel.getModelObject(p0);
+      }
+
+      @Override
+      public void onClose() {
+        if (myModelRef != null) {
+          new ProjectPaneNavigator(mpsProject).shallFocus(true).select(myModelRef);
+        }
+      }
+    }, ModalityState.current(), false);
   }
 }

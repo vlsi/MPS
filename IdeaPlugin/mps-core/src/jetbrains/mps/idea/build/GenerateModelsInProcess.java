@@ -32,10 +32,9 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.concurrent.Future;
@@ -52,14 +51,14 @@ public class GenerateModelsInProcess {
     myModels = models;
   }
 
-  public void generate() {
+  public void generate(@Nullable final MPSMakeConfigurator makeConfigurator) {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     Iterable<IResource> resources = new ModelsToResources(myModels).resources(false);
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
     final MessageFeedbackStrategy mfs = new MessageFeedbackStrategy(msgHandler);
 
-    final MakeSession makeSession = new MakeSession(ProjectHelper.toMPSProject(myProject), msgHandler, true);
+    final MakeSession makeSession = new MakeSession(ProjectHelper.fromIdeaProject(myProject), msgHandler, true);
     BuildMakeService makeService = new BuildMakeService();
     IScriptController controller = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub() {
       @Override
@@ -69,8 +68,13 @@ public class GenerateModelsInProcess {
     }) {
       @Override
       public void setup(IPropertiesPool ppool) {
+        // this should always be done
         new jetbrains.mps.internal.make.cfg.TextGenFacetInitializer(makeSession).populate(ppool);
         new JavaCompileFacetInitializer().skipCompilation(true).populate(ppool);
+        // now custom configuration
+        if (makeConfigurator != null) {
+          makeConfigurator.configureProperties(ppool);
+        }
       }
     };
     msgHandler.clear();

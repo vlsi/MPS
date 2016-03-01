@@ -114,6 +114,7 @@
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <property id="7898029224680692134" name="description" index="2n97ot" />
+        <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
@@ -227,6 +228,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="hHiDaBJ" role="3acgRq">
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="hHiDaBK" role="1lVwrX">
         <node concept="10Nm6u" id="hHiDaBL" role="gfFT$">

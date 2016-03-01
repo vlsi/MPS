@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.workbench.choose.nodes;
 
+import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.openapi.navigation.EditorNavigator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -33,30 +33,52 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
     setCheckBoxName("Include &non-&&project models");
   }
 
+  public BaseNodePointerModel(jetbrains.mps.project.Project mpsProject) {
+    super(mpsProject, "node");
+    setCheckBoxName("Include &non-&&project models");
+  }
+
   @Override
   public String doGetFullName(NavigationItem element) {
-    NodePointerPresentation presentation = (NodePointerPresentation) element.getPresentation();
-    assert presentation != null;
-    return presentation.getModelName() + "." + presentation.getPresentableText();
+    final SNodeReference ptr = getModelObject(element);
+    if (ptr == null) {
+      return "<undefined>";
+    }
+    SModelReference modelRef = ptr.getModelReference();
+    String shortName = doGetObjectName(ptr);
+    return (modelRef == null ? shortName : modelRef.getModelName() + SEPARATOR + shortName);
   }
 
   @Override
   public String doGetObjectName(final SNodeReference nodePointer) {
-    SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-    String name = node.getName();
+    SNode node = nodePointer.resolve(getProject().getRepository());
+    String name = node == null ? null : node.getName();
     if (name == null) {
-      return node.toString();
+      return String.valueOf(node);
     }
     return name;
   }
 
   @Override
-  public NavigationItem doGetNavigationItem(SNodeReference node) {
-    return new BaseNodePointerItem(node) {
-      @Override
-      public void navigate(boolean requestFocus) {
-        new EditorNavigator(getProject()).shallFocus(requestFocus).selectIfChild().open(getNodePointer());
-      }
-    };
+  public NavigationItem doGetNavigationItem(SNodeReference object) {
+    return new BaseNodePointerItem(object);
+  }
+
+  @Override
+  public boolean willOpenEditor() {
+    return false;
+  }
+
+  /**
+   * Retrieve original element (parameter T BaseMPSChooseModel&lt;T&gt;) from a wrapper item
+   * @param item e.g. the one from selection, {@link ChooseByNameBase#getChosenElement()}
+   * @return original model element which was used to instantiate UI wrapper.
+   */
+  @Override
+  public SNodeReference getModelObject(Object item) {
+    if (item instanceof BaseNodePointerItem) {
+      return ((BaseNodePointerItem) item).getNodePointer();
+    }
+    return null;
   }
 }

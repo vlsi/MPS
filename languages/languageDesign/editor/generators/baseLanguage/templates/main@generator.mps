@@ -15008,6 +15008,7 @@
     <property role="3GE5qa" value="SNode" />
     <node concept="3aamgX" id="7wGLu2UQx$$" role="3acgRq">
       <property role="2n97ot" value="This rule duplicates similar rule from smodel's mc_main for SNodeOperations to allow this MC to run independently from smodel generator. This is required to ensure MAPPING_nodesOperation runs together with the rest of the editor (otherwise, if steps are separate,CellIdReferenceSelector.id couldn't get resolved)" />
+      <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="gft3U" id="7wGLu2UQVYE" role="1lVwrX">
         <node concept="10Nm6u" id="7wGLu2UQWcg" role="gfFT$">

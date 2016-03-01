@@ -3181,7 +3181,7 @@
       <node id="95073643532950040" at="161,83,162,86" concept="0" />
       <node id="95073643532950040" at="161,83,162,86" concept="2" />
       <node id="95073643532950040" at="162,86,163,22" concept="6" />
-      <node id="6628579460229359380" at="165,98,166,449" concept="6" />
+      <node id="6628579460229359380" at="165,98,166,444" concept="6" />
       <node id="3993089038374473228" at="168,90,169,87" concept="5" />
       <node id="3993089038374473228" at="169,87,170,49" concept="2" />
       <node id="3993089038374473228" at="170,49,171,34" concept="5" />
@@ -3242,8 +3242,8 @@
       <node id="6628579460229413943" at="165,0,168,0" concept="7" trace="renderingCondition_u2jyfv_a1d0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="95073643532950040" at="186,0,189,0" concept="1" trace="parametersListHandler_u2jyfv_b1d0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="95073643532950040" at="211,9,214,9" concept="3" />
-      <node id="6628579460229371301" at="239,79,242,5" concept="3" />
-      <node id="6628579460229362500" at="245,78,248,5" concept="3" />
+      <node id="6628579460229371301" at="239,76,242,5" concept="3" />
+      <node id="6628579460229362500" at="245,76,248,5" concept="3" />
       <node id="95073643532950040" at="59,58,63,5" concept="3" />
       <node id="95073643532950040" at="128,0,132,0" concept="4" trace="createRefNode_u2jyfv_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="95073643532950040" at="189,0,193,0" concept="4" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -3254,8 +3254,8 @@
       <node id="95073643532950040" at="206,134,211,9" concept="3" />
       <node id="95073643532950040" at="141,0,147,0" concept="4" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="95073643532950040" at="198,0,204,0" concept="4" trace="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6628579460229371301" at="239,0,245,0" concept="7" trace="check_u2jyfv_a0a0a1d0#(Ljava/util/List;)Z" />
-      <node id="6628579460229362500" at="245,0,251,0" concept="7" trace="check_u2jyfv_a0a0a0b3a#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="6628579460229371301" at="239,0,245,0" concept="7" trace="check_u2jyfv_a0a0k#(Ljava/util/List;)Z" />
+      <node id="6628579460229362500" at="245,0,251,0" concept="7" trace="check_u2jyfv_a0a0a01#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="95073643532950040" at="147,0,154,0" concept="4" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="95073643532950040" at="158,0,165,0" concept="4" trace="createCollection_u2jyfv_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="95073643532950040" at="178,0,185,0" concept="4" trace="createRefNodeList_u2jyfv_b1d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -3286,7 +3286,7 @@
       <scope id="95073643532950040" at="154,40,155,32" />
       <scope id="95073643532950040" at="160,50,161,83" />
       <scope id="95073643532950040" at="161,83,162,86" />
-      <scope id="6628579460229413944" at="165,98,166,449" />
+      <scope id="6628579460229413944" at="165,98,166,444" />
       <scope id="95073643532950040" at="186,104,187,50" />
       <scope id="95073643532950040" at="212,122,213,139" />
       <scope id="6628579460229371301" at="240,36,241,67" />
@@ -3353,8 +3353,8 @@
       <scope id="95073643532950040" at="198,68,202,23">
         <var name="emptyCell" id="95073643532950040" />
       </scope>
-      <scope id="6628579460229371301" at="239,79,243,17" />
-      <scope id="6628579460229362500" at="245,78,249,16" />
+      <scope id="6628579460229371301" at="239,76,243,17" />
+      <scope id="6628579460229362500" at="245,76,249,16" />
       <scope id="95073643532950040" at="136,0,141,0">
         <var name="child" id="95073643532950040" />
       </scope>

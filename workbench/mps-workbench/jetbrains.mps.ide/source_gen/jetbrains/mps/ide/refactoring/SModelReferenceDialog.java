@@ -4,14 +4,12 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import com.intellij.navigation.NavigationItem;
-import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -22,12 +20,12 @@ import org.jetbrains.annotations.Nullable;
 public class SModelReferenceDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = "Move Concepts";
   private ChooseByNamePanel myChooser;
-  private Project myProject;
+  private MPSProject myMPSProject;
   private List<SModelReference> myModels;
   private SModelReference selectedModel;
-  public SModelReferenceDialog(@NotNull Project project, List<SModelReference> models) {
-    super(project, true);
-    myProject = project;
+  public SModelReferenceDialog(@NotNull MPSProject project, List<SModelReference> models) {
+    super(project.getProject(), true);
+    myMPSProject = project;
     myModels = models;
     setTitle(REFACTORING_NAME);
     init();
@@ -38,32 +36,21 @@ public class SModelReferenceDialog extends RefactoringDialog {
     setHorizontalStretch(2.5f);
     setVerticalStretch(2);
 
-    BaseModelModel goToModelModel = new BaseModelModel(this.myProject) {
+    final BaseModelModel goToModelModel = new BaseModelModel(myMPSProject) {
       @Override
       public SModelReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
       @Override
-      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new BaseModelItem(modelReference) {
-          @Override
-          public void navigate(boolean p0) {
-          }
-        };
-      }
-      @Override
       public SModelReference[] find(boolean checkBoxState) {
         return ListSequence.fromList(myModels).toGenericArray(SModelReference.class);
       }
-      @Override
-      public boolean loadInitialCheckBoxState() {
-        return false;
-      }
     };
-    myChooser = MpsPopupFactory.createPanelForPackage(myProject, goToModelModel, false);
+    myChooser = MpsPopupFactory.createPanelForPackage(getProject(), goToModelModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object p0) {
+        selectedModel = goToModelModel.getModelObject(p0);
         doRefactoringAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
@@ -73,20 +60,14 @@ public class SModelReferenceDialog extends RefactoringDialog {
   public JComponent getPreferredFocusedComponent() {
     return myChooser.getPreferredFocusedComponent();
   }
-  @Override
-  protected void doRefactoringAction() {
-    Object item = myChooser.getChosenElement();
-    if (item instanceof BaseModelItem) {
-      selectedModel = ((BaseModelItem) item).getModelReference();
-    }
-    super.doRefactoringAction();
-  }
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myChooser.getPanel();
   }
-  public static SModelReference getSelectedModel(@NotNull Project project, List<SModelReference> models) {
+  public static SModelReference getSelectedModel(@NotNull MPSProject project, List<SModelReference> models) {
+    // FIXME SModelReferenceDialog just selects a model as its doRefactoringAction does nothing. Perhaps, could be named better 
+    //       (and subclassing RefactoringDialog is misguiding!). Perhaps, could use some standard dialog (see CommonChoosers) 
     final SModelReferenceDialog dialog = new SModelReferenceDialog(project, models);
     dialog.show();
     return dialog.selectedModel;

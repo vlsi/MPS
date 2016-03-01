@@ -9,7 +9,6 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,6 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.ModelImportHelper;
+import jetbrains.mps.util.Callback;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
@@ -49,13 +50,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
@@ -121,8 +115,8 @@ public class AddModelImportByRoot_Action extends BaseAction {
       }
 
     }
-    ImportHelper.addModelImportByRoot(((MPSProject) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
-      public void importForRootAdded(String rootName) {
+    new ModelImportHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).setShortcut(getShortcutSet()).setInitialText(initialText.value).addImportByRoot(((SModel) MapSequence.fromMap(_params).get("model")), new Callback<String>() {
+      public void call(String rootName) {
         String textToMatch = (rootName != null ? rootName : initialText.value);
         if (textToMatch.length() == 0) {
           return;

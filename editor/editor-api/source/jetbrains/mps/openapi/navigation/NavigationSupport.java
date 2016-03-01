@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * Facility to reveal different aspects of an mps project, either in a project tree or in an editor.
  * FIXME it's odd to require external methods to wrap into read/write/EDT if we can do it ourselves here (with project and its model access available)
+ * FIXME it's odd this class lives in [editor-api], why not in platform/ui?
  */
 public abstract class NavigationSupport implements CoreComponent {
   private static NavigationSupport INSTANCE;

@@ -23,6 +23,7 @@ import com.intellij.openapi.module.Module;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by danilla on 21/10/15.
@@ -50,6 +51,11 @@ public class GenerateModuleInProcessAction extends AnAction {
   public void actionPerformed(AnActionEvent anActionEvent) {
     Module module = LangDataKeys.MODULE.getData(anActionEvent.getDataContext());
     Solution solution = ModuleMPSSupport.getInstance().getSolution(module);
-    new GenerateModelsInProcess(module.getProject(), solution.getModels()).generate();
+    new GenerateModelsInProcess(module.getProject(), solution.getModels()).generate(getMakeConfigurator());
+  }
+
+  @Nullable
+  protected MPSMakeConfigurator getMakeConfigurator() {
+    return null;
   }
 }

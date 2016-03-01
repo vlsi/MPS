@@ -92,7 +92,7 @@ public class MoveConcepts extends MoveNodesDefault {
         }).toListSequence();
       }
     });
-    final SModelReference targetModelRef = SModelReferenceDialog.getSelectedModel(project.getProject(), structureModels.value);
+    final SModelReference targetModelRef = SModelReferenceDialog.getSelectedModel(project, structureModels.value);
     if (targetModelRef == null) {
       return;
     }

@@ -29,13 +29,17 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTar
  * that in this class (perhaps, shall subclass RootChooseModel in ImportHelper then?).
  * FIXME It' bad idea to associate particular behavior (here, navigation) with a data model for element chooser.
  */
-public final class RootNodeElement implements NavigationItem {
+/*package*/ final class RootNodeElement implements NavigationItem {
   private final Project myProject;
   private final NavigationTarget myTarget;
 
   public RootNodeElement(Project mpsProject, NavigationTarget target) {
     myProject = mpsProject;
     myTarget = target;
+  }
+
+  /*package*/ NavigationTarget getTarget() {
+    return myTarget;
   }
 
   @Override

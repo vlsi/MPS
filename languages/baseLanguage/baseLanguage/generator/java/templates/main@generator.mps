@@ -291,6 +291,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -307,7 +308,6 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -494,18 +494,18 @@
       <node concept="30G5F_" id="huSeNQj" role="30HLyM">
         <node concept="3clFbS" id="huSeNQk" role="2VODD2">
           <node concept="3clFbF" id="huSeOn3" role="3cqZAp">
-            <node concept="2OqwBi" id="hxiHJ1f" role="3clFbG">
-              <node concept="2OqwBi" id="hxiHJ23" role="2Oq$k0">
+            <node concept="2OqwBi" id="yWCLcv8LHA" role="3clFbG">
+              <node concept="2OqwBi" id="yWCLcv8LmN" role="2Oq$k0">
                 <node concept="2OqwBi" id="hxiHIZf" role="2Oq$k0">
                   <node concept="30H73N" id="huSeOn4" role="2Oq$k0" />
                   <node concept="3TrEf2" id="huSeSOi" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpee:hqOqNr4" />
                   </node>
                 </node>
-                <node concept="3NT_Vc" id="huSeUoG" role="2OqNvi" />
+                <node concept="2yIwOk" id="yWCLcv8LuU" role="2OqNvi" />
               </node>
-              <node concept="3O6GUB" id="huSeVF1" role="2OqNvi">
-                <node concept="chp4Y" id="h_uh2xi" role="3QVz_e">
+              <node concept="3O6GUB" id="yWCLcv8LQ2" role="2OqNvi">
+                <node concept="chp4Y" id="yWCLcv8LUA" role="3QVz_e">
                   <ref role="cht4Q" to="tpee:huS8uEI" resolve="PropertyReference" />
                 </node>
               </node>

@@ -48,7 +48,7 @@
       <compilerarg value="-Xlint:none"/>
       <classpath refid="test_classpath"/>
       <src>
-        <path location="${basedir}/testbench/tests/jetbrains/mps/migration"/>
+        <path location="${basedir}/testbench/tests/jetbrains/mps/migration/ant"/>
       </src>
     </javac>
   </target>
@@ -71,7 +71,7 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
       <jvmarg value="-Dtest_home=${project.simpleMigration},${project.consMigrations}"/>
-      <test name="jetbrains.mps.migration.TestMigrationResult"/>
+      <test name="jetbrains.mps.migration.ant.TestMigrationResult"/>
       <formatter type="xml"/>
     </junit>
   </target>

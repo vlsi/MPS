@@ -1,3 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d6q7wxai5q3iatfpcu4twncblpnm82a" />
+<dependencies version="2" modelHash="-d6q7wxai5q3iatfpcu4twncblpnm82a">
+  <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-1q1r1q8noye4d76be6btakb29omspd4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-7322stybmv6e4tlazp8o0myh6s1g8x4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="duecvw42h0vr1m8g1qrrw1y7g8lv3ei" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-3ztb8qjpzn1ktqbfi09eai8ajzpz52p" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="m6clfiinrksitx27dnjlo1468pro6o" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1scn8f58sb1bot0hmewb2gb9s3vbjiq" />
+  <dep model="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" hash="-74luefz10fwa6qek7dnes5zjghwv4p0" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2hsgvv5f2lfjz0i6lhuijjngem10rfz" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="56mlfs2epc73w4wt5ciqakfndl86jan" />
+  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="-12o87wxb4e6bl9e8o9z56z17xfpx6x8" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-c2z80u464t81104zkgpdk3gnbmqjjhr" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-2gcpplxdt4aw98o8b050bdf4768w6ja" />
+  <common hash="-cxwxgw8v963wsptqo4riva8ke24zm2f" dependsOnNodes="true">
+    <dep root="1262430001741704766" />
+    <dep root="6956295981009368164" />
+    <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
+    <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="AttractsFocusBlock_BehaviorDescriptor.java" />
+    <file name="BehaviorAspectDescriptor.java" />
+    <file name="BinaryExpression_BehaviorDescriptor.java" />
+    <file name="BracesBlock_BehaviorDescriptor.java" />
+    <file name="BracesStubBlock_BehaviorDescriptor.java" />
+    <file name="ClassReference_BehaviorDescriptor.java" />
+    <file name="CollapsedByDefault_BehaviorDescriptor.java" />
+    <file name="CollapsedConditionally_BehaviorDescriptor.java" />
+    <file name="CollapsibleConcept_BehaviorDescriptor.java" />
+    <file name="Composition_BehaviorDescriptor.java" />
+    <file name="DelTestAbstractChild_BehaviorDescriptor.java" />
+    <file name="DelTestChild1_BehaviorDescriptor.java" />
+    <file name="DelTestChildContainer_BehaviorDescriptor.java" />
+    <file name="DelTestRoot_BehaviorDescriptor.java" />
+    <file name="FoldingContainer_BehaviorDescriptor.java" />
+    <file name="IBaseTestBlock_BehaviorDescriptor.java" />
+    <file name="InspectorBlock_BehaviorDescriptor.java" />
+    <file name="IntegerLiteral_BehaviorDescriptor.java" />
+    <file name="NonEmptyProperty_BehaviorDescriptor.java" />
+    <file name="NotEditableVaraileReference_BehaviorDescriptor.java" />
+    <file name="PlusExpression_BehaviorDescriptor.java" />
+    <file name="ReferenceAnnotataion_BehaviorDescriptor.java" />
+    <file name="SideTranformWrapper_BehaviorDescriptor.java" />
+    <file name="SimplePropertyAttribute_BehaviorDescriptor.java" />
+    <file name="SimplePropertyContainer_BehaviorDescriptor.java" />
+    <file name="StubBlock_BehaviorDescriptor.java" />
+    <file name="SubstMiddlewareChild_BehaviorDescriptor.java" />
+    <file name="SubstTestAbstractChild_BehaviorDescriptor.java" />
+    <file name="SubstTestBooleanPropertyChild_BehaviorDescriptor.java" />
+    <file name="SubstTestEnumPropertyChild_BehaviorDescriptor.java" />
+    <file name="SubstTestRoot_BehaviorDescriptor.java" />
+    <file name="TestBlockList_BehaviorDescriptor.java" />
+    <file name="VariableDeclarationBlock_BehaviorDescriptor.java" />
+    <file name="VariableDeclarationReference_BehaviorDescriptor.java" />
+    <file name="VerticalLayoutBlockList_BehaviorDescriptor.java" />
+  </common>
+  <source id="6956295981009368164" name="AttractsFocusBlock_Behavior" hash="dejassw9ojtwip5jfwszgm3m993gf3n">
+    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="AttractsFocusBlock_Behavior.java" />
+    <file name="AttractsFocusBlock__BehaviorDescriptor.java" />
+  </source>
+  <source id="1262430001741704766" name="ReferenceAnnotataion_Behavior" hash="-zqa7iyvir0fknmu86k4rz1n1pf3ohq">
+    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="ReferenceAnnotataion_Behavior.java" />
+    <file name="ReferenceAnnotataion__BehaviorDescriptor.java" />
+  </source>
+</dependencies>
 

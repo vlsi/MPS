@@ -67,7 +67,7 @@
 
     <ftp server="${mac.host}" action="delete" userid="${mac.user}" password="${mac.password}">
       <fileset dir="${build.layout}">
-        <!--include name="${build.code}.sit"/-->
+        <include name="${build.code}.sit"/>
         <include name="${build.code}.dmg"/>
         <include name="${build.code}-sign.sh"/>
         <include name="${build.code}-dmg.sh"/>

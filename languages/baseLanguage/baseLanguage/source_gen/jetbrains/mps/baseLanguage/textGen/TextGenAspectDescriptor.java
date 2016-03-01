@@ -18,7 +18,7 @@ import jetbrains.mps.text.impl.RegularTextUnit2;
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[139];
+    myId2Index = new long[140];
     myId2Index[0] = 0xf8c108ca66L;
     myId2Index[1] = 0xf8c108ca68L;
     myId2Index[2] = 0xf8c37a7f6eL;
@@ -149,15 +149,16 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     myId2Index[127] = 0x19659b074928781eL;
     myId2Index[128] = 0x23cf7b405b3b9761L;
     myId2Index[129] = 0x2724644c0ac833a5L;
-    myId2Index[130] = 0x3b418722717710b4L;
-    myId2Index[131] = 0x3f57ea36bd70a4e1L;
-    myId2Index[132] = 0x483ee9d7f09580d6L;
-    myId2Index[133] = 0x494547eeedc219b9L;
-    myId2Index[134] = 0x57d533a7af15ed3aL;
-    myId2Index[135] = 0x57d533a7af15ed3dL;
-    myId2Index[136] = 0x57d533a7af16ff67L;
-    myId2Index[137] = 0x6c6b6a1e379f9404L;
-    myId2Index[138] = 0x6fea7de6103549b1L;
+    myId2Index[130] = 0x37f722a7ce38076aL;
+    myId2Index[131] = 0x3b418722717710b4L;
+    myId2Index[132] = 0x3f57ea36bd70a4e1L;
+    myId2Index[133] = 0x483ee9d7f09580d6L;
+    myId2Index[134] = 0x494547eeedc219b9L;
+    myId2Index[135] = 0x57d533a7af15ed3aL;
+    myId2Index[136] = 0x57d533a7af15ed3dL;
+    myId2Index[137] = 0x57d533a7af16ff67L;
+    myId2Index[138] = 0x6c6b6a1e379f9404L;
+    myId2Index[139] = 0x6fea7de6103549b1L;
   }
   @Nullable
   @Override
@@ -425,22 +426,24 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       case 129:
         return new DefaultClassCreator_TextGen();
       case 130:
-        return new LongLiteral_TextGen();
+        return new QualifiedSuperMethodCall_TextGen();
       case 131:
-        return new PrimitiveClassExpression_TextGen();
+        return new LongLiteral_TextGen();
       case 132:
-        return new ArrayCloneOperation_TextGen();
+        return new PrimitiveClassExpression_TextGen();
       case 133:
-        return new FloatingPointFloatConstant_TextGen();
+        return new ArrayCloneOperation_TextGen();
       case 134:
-        return new SingleLineComment_TextGen();
+        return new FloatingPointFloatConstant_TextGen();
       case 135:
-        return new TextCommentPart_TextGen();
+        return new SingleLineComment_TextGen();
       case 136:
-        return new StatementCommentPart_TextGen();
+        return new TextCommentPart_TextGen();
       case 137:
-        return new LocalMethodCall_TextGen();
+        return new StatementCommentPart_TextGen();
       case 138:
+        return new LocalMethodCall_TextGen();
+      case 139:
         return new UnaryMinus_TextGen();
       default:
         return null;

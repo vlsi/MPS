@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,31 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editor.actions;
+package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.ListSelectionModel;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SelectLanguagesDialog extends DialogWrapper {
+/*package*/ class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
-  private Project myProject;
-  private Set<SModuleReference> myCandidates;
+  private Set<SLanguage> myCandidates;
 
-  public SelectLanguagesDialog(Project project, Set<SModuleReference> candidates) {
+  public SelectLanguagesDialog(Project project, Set<SLanguage> candidates) {
     super(project);
-    myProject = project;
     myCandidates = candidates;
     setTitle("Import Extended Languages");
     setCancelButtonText("Import None");
@@ -87,38 +93,26 @@ public class SelectLanguagesDialog extends DialogWrapper {
     return myList;
   }
 
-  public Set<SModuleReference> getSelectedModules() {
-    HashSet<SModuleReference> res = new HashSet<SModuleReference>();
+  public Set<SLanguage> getSelectedModules() {
+    HashSet<SLanguage> res = new HashSet<SLanguage>();
     for (Object o : myList.getSelectedValues()) {
-      res.add((SModuleReference) o);
+      res.add((SLanguage) o);
     }
     return res;
   }
 
   private static class MyDefaultListCellRenderer extends DefaultListCellRenderer {
-    public String getItemLabel(Object value) {
-      SModuleReference moduleReference = (SModuleReference) value;
-      final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-      if (module == null) {
-        String moduleName = moduleReference.getModuleName();
-        return (moduleName.equals("") ?
-          "<no name>" :
-          moduleName
-        );
-      }
-      return moduleReference.getModuleName();
+    public String getItemLabel(SLanguage language) {
+      return language.getQualifiedName();
     }
 
     @Override
     public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
       final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-      SModuleReference moduleReference = (SModuleReference) value;
-      if (moduleReference == null) return result;
-      setText(getItemLabel(value));
-      setIcon(FileIcons.PROJECT_LANGUAGE_ICON);
-      final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-      if (module == null && !(isSelected)) {
-        setForeground(Color.RED);
+      if (value instanceof SLanguage) {
+        SLanguage language = (SLanguage) value;
+        setText(getItemLabel(language));
+        setIcon(FileIcons.PROJECT_LANGUAGE_ICON);
       }
       return result;
     }
