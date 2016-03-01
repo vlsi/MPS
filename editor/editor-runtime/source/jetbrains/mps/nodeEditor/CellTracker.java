@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -24,6 +25,7 @@ import java.util.Collections;
 
 public class CellTracker {
   private Set<EditorCell> myCellsWithErrorState = new HashSet<EditorCell>();
+  private Set<EditorCell_Property> myTransactionalCells = new HashSet<EditorCell_Property>();
   private Set<EditorCell_WithComponent> myComponentCells = new HashSet<EditorCell_WithComponent>();
   private Set<EditorCell_Collection> myFoldableCells = new HashSet<EditorCell_Collection>();
 
@@ -37,6 +39,18 @@ public class CellTracker {
 
   public void removeErrorCell(EditorCell cell) {
     myCellsWithErrorState.remove(cell);
+  }
+
+  public Set<EditorCell_Property> getTransactionalCells() {
+    return Collections.unmodifiableSet(myTransactionalCells);
+  }
+
+  public void addTransactionalCell(EditorCell_Property cell) {
+    myTransactionalCells.add(cell);
+  }
+
+  public void removeTransactionalCell(EditorCell_Property cell) {
+    myTransactionalCells.remove(cell);
   }
 
   public Set<EditorCell_WithComponent> getComponentCells() {

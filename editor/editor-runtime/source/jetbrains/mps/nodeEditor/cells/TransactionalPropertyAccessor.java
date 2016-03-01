@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label.DummyUndoableAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable.Base;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,7 +43,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   }
 
   @Override
-  protected String doGetValue() {
+  public String doGetValue() {
     if (myHasValueToCommit) {
       return myUncommittedValue;
     }
@@ -51,8 +51,9 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   }
 
   @Override
-  protected void doSetValue(String newText) {
-    UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(newText, true));
+  public void doSetValue(String newText) {
+    myUncommittedValue = newText;
+    myHasValueToCommit = true;
     myOldValue = super.doGetValue();
   }
 
@@ -64,7 +65,8 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   @Override
   public void resetUncommittedValue() {
     if (myHasValueToCommit) {
-      UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(null, false));
+      myUncommittedValue = null;
+      myHasValueToCommit = false;
     }
   }
 
@@ -77,6 +79,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
         @Override
         public void run() {
           resetUncommittedValue();
+          UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction(getNode()));
         }
       });
 
@@ -99,34 +102,5 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
       return ((EditorCell_Label) myEditorCell).getCommandGroupId();
     }
     return null;
-  }
-
-  protected class ChangeValueUndoableAction extends SNodeUndoableAction {
-    private final String myOldValue;
-    private final boolean myOldHasValue;
-    private final String myNewValue;
-    private final boolean myNewHasValue;
-
-    protected ChangeValueUndoableAction(String text, boolean hasValueToCommit) {
-      super(getNode());
-      myOldValue = myUncommittedValue;
-      myOldHasValue = myHasValueToCommit;
-      myNewValue = myUncommittedValue = text;
-      myNewHasValue = myHasValueToCommit = hasValueToCommit;
-    }
-
-    @Override
-    protected void doUndo() {
-      myUncommittedValue = myOldValue;
-      myHasValueToCommit = myOldHasValue;
-      synchronizeCell();
-    }
-
-    @Override
-    protected void doRedo() {
-      myUncommittedValue = myNewValue;
-      myHasValueToCommit = myNewHasValue;
-      synchronizeCell();
-    }
   }
 }
