@@ -53,6 +53,12 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   boolean validate(boolean strict, boolean canActivatePopup);
 
+  /**
+   * @deprecated since MPS 3.3 {@link jetbrains.mps.openapi.editor.cells.EditorCell#renderText()} should be used
+   */
+  @Deprecated
+  TextBuilder renderText();
+
   boolean processMousePressed(MouseEvent e);
 
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
