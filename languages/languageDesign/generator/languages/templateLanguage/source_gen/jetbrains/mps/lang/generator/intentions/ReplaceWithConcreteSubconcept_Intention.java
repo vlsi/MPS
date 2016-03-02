@@ -9,7 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
@@ -42,7 +42,7 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
-    SAbstractConcept selectedNodeConcept = SNodeOperations.getConcept(node);
+    SConcept selectedNodeConcept = SNodeOperations.getConcept(node);
     return selectedNodeConcept.isAbstract();
   }
   @Override
@@ -51,24 +51,25 @@ public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDesc
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
-    List<SAbstractConcept> paramList = parameter(node, context);
+    List<SConcept> paramList = parameter(node, context);
     if (paramList != null) {
-      for (SAbstractConcept param : paramList) {
+      for (SConcept param : paramList) {
         ListSequence.fromList(list).addElement(new ReplaceWithConcreteSubconcept_Intention.IntentionImplementation(param));
       }
     }
     return list;
   }
-  private List<SAbstractConcept> parameter(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.getConcept(node), SNodeOperations.getModel(node))).where(new IWhereFilter<SAbstractConcept>() {
-      public boolean accept(SAbstractConcept it) {
+  private List<SConcept> parameter(final SNode node, final EditorContext editorContext) {
+    SConcept concept = SNodeOperations.getConcept(node);
+    return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(concept, SNodeOperations.getModel(node))).where(new IWhereFilter<SConcept>() {
+      public boolean accept(SConcept it) {
         return !(it.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
       }
     }).toListSequence();
   }
   /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
-    private SAbstractConcept myParameter;
-    public IntentionImplementation(SAbstractConcept parameter) {
+    private SConcept myParameter;
+    public IntentionImplementation(SConcept parameter) {
       myParameter = parameter;
     }
     @Override

@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -128,8 +128,8 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
-          public Iterable<SAbstractConcept> compute() {
+        Iterable<SConcept> queryResult = new Computable<Iterable<SConcept>>() {
+          public Iterable<SConcept> compute() {
             // compilation test for all passed parameters 
             boolean tmpVar = _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
@@ -137,15 +137,15 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && operationContext != null;
 
-            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-              public boolean accept(SAbstractConcept it) {
+            return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+              public boolean accept(SConcept it) {
                 return neq_x583g4_a0a0a0a0a0h0a0a0a0a0c0a0b0g(it, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"));
               }
             });
           }
         }.compute();
         if (queryResult != null) {
-          for (final SAbstractConcept item : queryResult) {
+          for (final SConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 // compilation test for all passed parameters 
@@ -541,13 +541,13 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
-          public Iterable<SAbstractConcept> compute() {
-            return SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), _context.getModel());
+        Iterable<SConcept> queryResult = new Computable<Iterable<SConcept>>() {
+          public Iterable<SConcept> compute() {
+            return SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), _context.getModel());
           }
         }.compute();
         if (queryResult != null) {
-          for (final SAbstractConcept item : queryResult) {
+          for (final SConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item)));
@@ -706,17 +706,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905992087904(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
-        public Iterable<SAbstractConcept> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-            public boolean accept(SAbstractConcept it) {
+      Iterable<SConcept> parameterObjects = new Computable<Iterable<SConcept>>() {
+        public Iterable<SConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+            public boolean accept(SConcept it) {
               return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SAbstractConcept item : parameterObjects) {
+        for (final SConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item))));
@@ -737,17 +737,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905990459421(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
-        public Iterable<SAbstractConcept> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-            public boolean accept(SAbstractConcept it) {
+      Iterable<SConcept> parameterObjects = new Computable<Iterable<SConcept>>() {
+        public Iterable<SConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+            public boolean accept(SConcept it) {
               return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SAbstractConcept item : parameterObjects) {
+        for (final SConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept((item))));

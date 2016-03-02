@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -34,13 +34,13 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          Iterable<SAbstractConcept> seq = Sequence.<SAbstractConcept>singleton(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef"));
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-            public boolean accept(SAbstractConcept it) {
+          Iterable<SConcept> seq = Sequence.<SConcept>singleton(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef"));
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+            public boolean accept(SConcept it) {
               return !(it.isAbstract());
             }
-          }).subtract(Sequence.fromIterable(seq)).select(new ISelector<SAbstractConcept, SNode>() {
-            public SNode select(SAbstractConcept it) {
+          }).subtract(Sequence.fromIterable(seq)).select(new ISelector<SConcept, SNode>() {
+            public SNode select(SConcept it) {
               return (SNode) SNodeOperations.asNode(it);
             }
           }).toListSequence();

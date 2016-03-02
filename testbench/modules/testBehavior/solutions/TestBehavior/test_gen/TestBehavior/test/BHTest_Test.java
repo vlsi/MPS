@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import BHL6.behavior.C__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import BHL6.behavior.D__BehaviorDescriptor;
 import BHL6.behavior.E__BehaviorDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -292,13 +292,13 @@ public class BHTest_Test extends TestCase {
     Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) C__BehaviorDescriptor.foo_id5mnatV0hxLf.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(nodeC))));
   }
   public void test_virtualStaticBehaviorCall1() throws Exception {
-    SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
+    SConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
     Assert.assertSame(TestResults.POLYMORPHIC_PARENT, C__BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(SNodeOperations.asSConcept(conceptC)));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
     Assert.assertSame(TestResults.POLYMORPHIC_CHILD, C__BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(SNodeOperations.asSConcept(conceptC)));
   }
   public void test_virtualStaticBehaviorCall2() throws Exception {
-    SAbstractConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
+    SConcept conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C");
     Assert.assertSame(TestResults.POLYMORPHIC_PARENT, C__BehaviorDescriptor.nonVirtual_id7zO8mNAVkj1.invoke(SNodeOperations.asSConcept(conceptC)));
     conceptC = MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E");
     Assert.assertSame(TestResults.POLYMORPHIC_CHILD, C__BehaviorDescriptor.nonVirtual_id7zO8mNAVkj1.invoke(SNodeOperations.asSConcept(conceptC)));
@@ -357,7 +357,7 @@ public class BHTest_Test extends TestCase {
   public void test_oldApiBehaviorCallNonVirtual() throws Exception {
     SNode nodeA = createB_a2wy8c_a0a0fc0();
     Object[] params = {};
-    SAbstractConcept conceptA = SNodeOperations.getConcept(nodeA);
+    SConcept conceptA = SNodeOperations.getConcept(nodeA);
     Assert.assertSame((int) BHL7.behavior.A__BehaviorDescriptor.nonVirtualMethod_id5mnatV0hAPp.invoke(nodeA), BehaviorReflection.invokeNonVirtual(Object.class, nodeA, conceptA.getQualifiedName(), "call_nonVirtualMethod_6167444251392503129", params));
   }
   public void test_oldApiBehaviorCallNonVirtualStatic() throws Exception {

@@ -13,7 +13,7 @@
       <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.math.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
-      <unit at="181,56,191,7" name="jetbrains.mps.baseLanguage.math.actions.QueriesGenerated$5" />
+      <unit at="181,48,191,7" name="jetbrains.mps.baseLanguage.math.actions.QueriesGenerated$5" />
       <unit at="194,55,214,11" name="jetbrains.mps.baseLanguage.math.actions.QueriesGenerated$6" />
       <unit at="120,49,143,5" name="jetbrains.mps.baseLanguage.math.actions.QueriesGenerated$3" />
       <unit at="63,49,112,5" name="jetbrains.mps.baseLanguage.math.actions.QueriesGenerated$2" />
@@ -131,7 +131,7 @@
       <node id="963844843316088781" at="171,61,172,88" concept="5" />
       <node id="963844843316088781" at="172,88,173,500" concept="6" />
       <node id="963844843316088781" at="175,7,176,18" concept="6" />
-      <node id="7388416617631603342" at="182,53,183,99" concept="5" />
+      <node id="7388416617631603342" at="182,45,183,83" concept="5" />
       <node id="7388416617631603414" at="185,36,186,58" concept="1" />
       <node id="7388416617631603390" at="188,11,189,24" concept="6" />
       <node id="7255837154369496402" at="195,100,196,196" concept="6" />
@@ -166,7 +166,7 @@
       <node id="963844843316088781" at="159,0,162,0" concept="4" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="963844843316088781" at="162,0,165,0" concept="4" trace="getVisibleMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="963844843316088781" at="165,0,168,0" concept="4" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7388416617631603392" at="184,285,187,13" concept="3" />
+      <node id="7388416617631603392" at="184,278,187,13" concept="3" />
       <node id="7388416617632092630" at="220,0,223,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7388416617632092630#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <node id="4151632368157656034" at="226,30,229,178" concept="0" />
       <node id="4151632368157656034" at="226,30,229,178" concept="0" />
@@ -174,7 +174,7 @@
       <node id="963844843316088781" at="155,0,159,0" concept="4" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="963844843316090106" at="237,231,241,5" concept="0" />
       <node id="963844843316090106" at="237,231,241,5" concept="0" />
-      <node id="7388416617631603370" at="183,99,188,11" concept="2" />
+      <node id="7388416617631603370" at="183,83,188,11" concept="2" />
       <node id="5853558151363197634" at="69,51,75,13" concept="0" />
       <node id="5853558151363197644" at="79,53,85,15" concept="0" />
       <node id="6389121991274660120" at="146,0,152,0" concept="7" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_6389121991274660120#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
@@ -224,7 +224,7 @@
       <scope id="963844843316088781" at="165,0,168,0">
         <var name="pattern" id="963844843316088781" />
       </scope>
-      <scope id="7388416617631603373" at="184,285,187,13" />
+      <scope id="7388416617631603373" at="184,278,187,13" />
       <scope id="7388416617632092630" at="220,0,223,0">
         <var name="_context" id="7388416617632092630" />
         <var name="operationContext" id="7388416617632092630" />
@@ -252,7 +252,7 @@
         <var name="sourceNode" id="963844843316088781" />
       </scope>
       <scope id="963844843316090106" at="237,231,241,5" />
-      <scope id="7388416617631603370" at="183,99,188,11">
+      <scope id="7388416617631603370" at="183,83,188,11">
         <var name="a" id="7388416617631603371" />
       </scope>
       <scope id="6389121991274660120" at="146,0,152,0">

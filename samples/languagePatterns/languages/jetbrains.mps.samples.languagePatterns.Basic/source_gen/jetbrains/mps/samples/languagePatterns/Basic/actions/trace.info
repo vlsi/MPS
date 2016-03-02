@@ -27,13 +27,13 @@
       <node id="1885452693916692488" at="75,313,76,176" concept="1" />
       <node id="1885452693916691023" at="76,176,77,24" concept="5" />
       <node id="1885452693916596127" at="79,42,80,24" concept="5" />
-      <node id="1885452693916616587" at="84,58,85,42" concept="5" />
-      <node id="1885452693916624577" at="89,63,90,87" concept="5" />
+      <node id="1885452693916616587" at="84,50,85,42" concept="5" />
+      <node id="1885452693916624577" at="89,55,90,87" concept="5" />
       <node id="1885452693916831516" at="94,60,95,49" concept="5" />
       <node id="1885452693916596127" at="99,5,100,18" concept="5" />
       <node id="1885452693916596127" at="79,0,82,0" concept="3" trace="hasSubstitute#()Z" />
-      <node id="1885452693916616585" at="84,0,87,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="1885452693916623119" at="89,0,92,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1885452693916616585" at="84,0,87,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+      <node id="1885452693916623119" at="89,0,92,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="1885452693916596127" at="94,0,97,0" concept="3" trace="getDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1885452693916596127" at="74,0,79,0" concept="3" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1885452693916616577" at="82,89,87,15" concept="4" />
@@ -45,8 +45,8 @@
       <node id="1885452693916596127" at="68,93,99,5" concept="0" />
       <node id="1885452693916596127" at="67,0,102,0" concept="6" trace="nodeSubstituteActionsBuilder_ActionsFactory_AbstractRequestDescription_1885452693916596127#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1885452693916596127" at="79,42,80,24" />
-      <scope id="1885452693916616586" at="84,58,85,42" />
-      <scope id="1885452693916623120" at="89,63,90,87" />
+      <scope id="1885452693916616586" at="84,50,85,42" />
+      <scope id="1885452693916623120" at="89,55,90,87" />
       <scope id="1885452693916830602" at="94,60,95,49" />
       <scope id="1885452693916596193" at="74,94,77,24">
         <var name="desc" id="1885452693916692206" />
@@ -86,7 +86,7 @@
         <var name="_context" id="1885452693916596127" />
         <var name="operationContext" id="1885452693916596127" />
       </scope>
-      <unit id="1885452693916616585" at="83,331,87,13" name="jetbrains.mps.samples.languagePatterns.Basic.actions.QueriesGenerated$3" />
+      <unit id="1885452693916616585" at="83,324,87,13" name="jetbrains.mps.samples.languagePatterns.Basic.actions.QueriesGenerated$3" />
       <unit id="1885452693916623119" at="88,115,92,13" name="jetbrains.mps.samples.languagePatterns.Basic.actions.QueriesGenerated$3" />
       <unit id="1885452693916596127" at="73,53,97,9" name="jetbrains.mps.samples.languagePatterns.Basic.actions.QueriesGenerated$2" />
     </file>

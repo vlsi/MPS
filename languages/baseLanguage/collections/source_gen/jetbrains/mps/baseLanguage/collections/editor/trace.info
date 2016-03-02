@@ -13224,59 +13224,59 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/7246115176735615080">
     <file name="replace_withAnotherSequenceType.java">
-      <node id="7246115176735615080" at="23,44,24,116" concept="9" />
-      <node id="3357971920377774942" at="29,120,30,711" concept="6" />
-      <node id="5686963296372576471" at="30,711,31,196" concept="6" />
-      <node id="5686963296372870434" at="33,52,34,36" concept="7" />
-      <node id="7246115176735615083" at="38,155,39,122" concept="7" />
-      <node id="7246115176735615110" at="41,170,42,115" concept="7" />
-      <node id="7246115176735615083" at="44,45,45,19" concept="7" />
-      <node id="7246115176735615083" at="27,0,29,0" concept="1" trace="Type_customReplace_cellMenu_qhej2e_a0#()V" />
-      <node id="7246115176735615080" at="23,0,26,0" concept="1" trace="replace_withAnotherSequenceType#()V" />
-      <node id="5686963296372870424" at="33,0,36,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <node id="7246115176735615083" at="38,0,41,0" concept="5" trace="createReplacementNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7246115176735615083" at="41,0,44,0" concept="5" trace="createReplacementNode_impl#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7246115176735615083" at="44,0,47,0" concept="5" trace="isReferentPresentation#()Z" />
-      <node id="5686963296372576461" at="31,196,36,64" concept="7" />
-      <node id="7246115176735615083" at="29,0,38,0" concept="5" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-      <scope id="7246115176735615083" at="27,52,27,52" />
-      <scope id="7246115176735615080" at="23,44,24,116" />
-      <scope id="5686963296372870425" at="33,52,34,36" />
-      <scope id="7246115176735615083" at="38,155,39,122" />
-      <scope id="7246115176735615087" at="41,170,42,115" />
-      <scope id="7246115176735615083" at="44,45,45,19" />
-      <scope id="7246115176735615083" at="27,0,29,0" />
-      <scope id="7246115176735615080" at="23,0,26,0" />
-      <scope id="5686963296372870424" at="33,0,36,0">
+      <node id="7246115176735615080" at="24,44,25,116" concept="9" />
+      <node id="3357971920377774942" at="30,120,31,711" concept="6" />
+      <node id="5686963296372576471" at="31,711,32,188" concept="6" />
+      <node id="5686963296372870434" at="34,44,35,36" concept="7" />
+      <node id="7246115176735615083" at="39,155,40,122" concept="7" />
+      <node id="7246115176735615110" at="42,170,43,115" concept="7" />
+      <node id="7246115176735615083" at="45,45,46,19" concept="7" />
+      <node id="7246115176735615083" at="28,0,30,0" concept="1" trace="Type_customReplace_cellMenu_qhej2e_a0#()V" />
+      <node id="7246115176735615080" at="24,0,27,0" concept="1" trace="replace_withAnotherSequenceType#()V" />
+      <node id="5686963296372870424" at="34,0,37,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+      <node id="7246115176735615083" at="39,0,42,0" concept="5" trace="createReplacementNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7246115176735615083" at="42,0,45,0" concept="5" trace="createReplacementNode_impl#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7246115176735615083" at="45,0,48,0" concept="5" trace="isReferentPresentation#()Z" />
+      <node id="2698333680010293355" at="32,188,37,27" concept="7" />
+      <node id="7246115176735615083" at="30,0,39,0" concept="5" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+      <scope id="7246115176735615083" at="28,52,28,52" />
+      <scope id="7246115176735615080" at="24,44,25,116" />
+      <scope id="5686963296372870425" at="34,44,35,36" />
+      <scope id="7246115176735615083" at="39,155,40,122" />
+      <scope id="7246115176735615087" at="42,170,43,115" />
+      <scope id="7246115176735615083" at="45,45,46,19" />
+      <scope id="7246115176735615083" at="28,0,30,0" />
+      <scope id="7246115176735615080" at="24,0,27,0" />
+      <scope id="5686963296372870424" at="34,0,37,0">
         <var name="it" id="5686963296372870424" />
       </scope>
-      <scope id="7246115176735615083" at="38,0,41,0">
+      <scope id="7246115176735615083" at="39,0,42,0">
         <var name="editorContext" id="7246115176735615083" />
         <var name="model" id="7246115176735615083" />
         <var name="node" id="7246115176735615083" />
         <var name="operationContext" id="7246115176735615083" />
         <var name="parameterObject" id="7246115176735615083" />
       </scope>
-      <scope id="7246115176735615083" at="41,0,44,0">
+      <scope id="7246115176735615083" at="42,0,45,0">
         <var name="editorContext" id="7246115176735615083" />
         <var name="model" id="7246115176735615083" />
         <var name="node" id="7246115176735615083" />
         <var name="operationContext" id="7246115176735615083" />
         <var name="parameterObject" id="7246115176735615083" />
       </scope>
-      <scope id="7246115176735615083" at="44,0,47,0" />
-      <scope id="7246115176735615085" at="29,120,36,64">
+      <scope id="7246115176735615083" at="45,0,48,0" />
+      <scope id="7246115176735615085" at="30,120,37,27">
         <var name="act" id="5686963296372576472" />
         <var name="others" id="3357971920377774943" />
       </scope>
-      <scope id="7246115176735615083" at="29,0,38,0">
+      <scope id="7246115176735615083" at="30,0,39,0">
         <var name="editorContext" id="7246115176735615083" />
         <var name="node" id="7246115176735615083" />
         <var name="operationContext" id="7246115176735615083" />
       </scope>
-      <unit id="5686963296372870424" at="32,120,36,7" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$1" />
-      <unit id="7246115176735615083" at="26,0,48,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_qhej2e_a0" />
-      <unit id="7246115176735615080" at="22,0,49,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
+      <unit id="5686963296372870424" at="33,158,37,7" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$1" />
+      <unit id="7246115176735615083" at="27,0,49,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_qhej2e_a0" />
+      <unit id="7246115176735615080" at="23,0,50,0" name="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/8293956702609999788">

@@ -213,8 +213,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ac(jetbrains.mps.lang.typesystem.actions)/1175609457861">
     <file name="QueriesGenerated.java">
       <node id="1175609466956" at="129,187,130,93" concept="5" />
-      <node id="1199876270870" at="133,53,134,263" concept="5" />
-      <node id="1227876798671" at="136,56,137,58" concept="6" />
+      <node id="1199876270870" at="133,45,134,256" concept="5" />
+      <node id="1227876798671" at="136,48,137,58" concept="6" />
       <node id="1199876619383" at="145,100,146,122" concept="5" />
       <node id="1199876647027" at="146,122,147,242" concept="5" />
       <node id="1199876674375" at="148,38,149,28" concept="6" />
@@ -228,20 +228,20 @@
       <node id="1175609466956" at="160,67,161,94" concept="5" />
       <node id="1175609466956" at="161,94,162,544" concept="6" />
       <node id="1175609466956" at="167,5,168,18" concept="6" />
-      <node id="1227876798667" at="136,0,139,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1227876798667" at="136,0,139,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="1199876662631" at="147,242,150,15" concept="3" />
-      <node id="1199876206212" at="134,263,139,30" concept="6" />
+      <node id="1199876206212" at="134,256,139,30" concept="6" />
       <node id="1175609466956" at="157,0,164,0" concept="4" trace="isEnabled#()Z" />
       <node id="1175609466956" at="133,0,141,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
       <node id="1175609466956" at="131,5,141,18" concept="5" />
       <node id="1175609466956" at="145,0,157,0" concept="4" trace="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1175609466956" at="143,62,164,13" concept="1" />
+      <node id="1175609466956" at="143,54,164,13" concept="1" />
       <node id="1175609466956" at="142,37,165,9" concept="2" />
       <node id="1175609466956" at="141,18,166,7" concept="3" />
       <node id="1175609466956" at="130,93,167,5" concept="0" />
       <node id="1175609466956" at="130,93,167,5" concept="0" />
       <node id="1175609466956" at="129,0,170,0" concept="8" trace="sideTransform_ActionsFactory_Expression_1175609466956#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
-      <scope id="1227876798670" at="136,56,137,58" />
+      <scope id="1227876798670" at="136,48,137,58" />
       <scope id="1199876662632" at="148,38,149,28" />
       <scope id="1227876798667" at="136,0,139,0">
         <var name="it" id="1227876798667" />
@@ -251,7 +251,7 @@
         <var name="parent" id="1175609466956" />
         <var name="sourceNode" id="1175609466956" />
       </scope>
-      <scope id="1175609466956" at="133,53,139,30">
+      <scope id="1175609466956" at="133,45,139,30">
         <var name="subconcepts" id="1199876270871" />
       </scope>
       <scope id="1175609466956" at="157,0,164,0" />
@@ -265,7 +265,7 @@
         <var name="editorContext" id="1175609466956" />
         <var name="pattern" id="1175609466956" />
       </scope>
-      <scope id="1175609466956" at="143,62,164,13" />
+      <scope id="1175609466956" at="143,54,164,13" />
       <scope id="1175609466956" at="142,37,165,9" />
       <scope id="1175609466956" at="142,37,165,9">
         <var name="item" id="1175609466956" />
@@ -282,7 +282,7 @@
         <var name="operationContext" id="1175609466956" />
       </scope>
       <unit id="1227876798667" at="135,62,139,11" name="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$5" />
-      <unit id="1175609466956" at="132,56,141,7" name="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$4" />
+      <unit id="1175609466956" at="132,48,141,7" name="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$4" />
       <unit id="1175609466956" at="144,55,164,11" name="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$5" />
     </file>
   </root>

@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -33,17 +33,17 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
-          public Iterable<SAbstractConcept> compute() {
-            return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-              public boolean accept(SAbstractConcept it) {
+        Iterable<SConcept> queryResult = new Computable<Iterable<SConcept>>() {
+          public Iterable<SConcept> compute() {
+            return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+              public boolean accept(SConcept it) {
                 return !(it.isAbstract());
               }
             });
           }
         }.compute();
         if (queryResult != null) {
-          for (final SAbstractConcept item : queryResult) {
+          for (final SConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), _context.getCurrentTargetNode());
@@ -154,17 +154,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Heading_642541832611943584(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
-        public Iterable<SAbstractConcept> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-            public boolean accept(SAbstractConcept it) {
+      Iterable<SConcept> parameterObjects = new Computable<Iterable<SConcept>>() {
+        public Iterable<SConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+            public boolean accept(SConcept it) {
               return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SAbstractConcept item : parameterObjects) {
+        for (final SConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L, "jetbrains.mps.samples.Kaja.structure.LogicalExpression").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);
@@ -197,17 +197,17 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
-        public Iterable<SAbstractConcept> compute() {
-          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-            public boolean accept(SAbstractConcept it) {
+      Iterable<SConcept> parameterObjects = new Computable<Iterable<SConcept>>() {
+        public Iterable<SConcept> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+            public boolean accept(SConcept it) {
               return !(it.isAbstract());
             }
           }).toListSequence();
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SAbstractConcept item : parameterObjects) {
+        for (final SConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L, "jetbrains.mps.samples.Kaja.structure.LogicalExpression").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);

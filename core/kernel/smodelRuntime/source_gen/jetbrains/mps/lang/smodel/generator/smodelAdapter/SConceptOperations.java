@@ -15,12 +15,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -123,6 +123,22 @@ public final class SConceptOperations {
   @NotNull
   public static List<SAbstractConcept> getAllSubConcepts(SAbstractConcept concept, SModel model) {
     return getAllSubConcepts(concept, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
+  }
+  /**
+   * Alternative {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations#getAllSubConcepts(SAbstractConcept, SModel) }, tailored for non-interface concepts
+   */
+  @NotNull
+  public static List<SConcept> getAllSubConcepts2(SConcept concept, SModel model) {
+    List<SAbstractConcept> allSubConcepts = getAllSubConcepts(concept, new SLanguageHierarchy(SModelOperations.getAllLanguageImports(model)).getExtended());
+    ArrayList<SConcept> rv = new ArrayList<SConcept>(allSubConcepts.size());
+    for (SAbstractConcept ac : allSubConcepts) {
+      if (ac instanceof SConcept) {
+        rv.add((SConcept) ac);
+      } else {
+        assert false : "SConcept hierarchy could not contain interfaces:" + ac.getQualifiedName();
+      }
+    }
+    return rv;
   }
   @Deprecated
   @ToRemove(version = 3.4)

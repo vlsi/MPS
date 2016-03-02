@@ -12,7 +12,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -40,7 +40,7 @@ public final class GeneratorUtilEx {
     List<SNode> templateFragments = new ArrayList<SNode>();
     LinkedList<SNode> queue = new LinkedList<SNode>();
     queue.addFirst(template);
-    final SAbstractConcept conceptTemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment");
+    final SConcept conceptTemplateFragment = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment");
     while (!(queue.isEmpty())) {
       SNode subnode = queue.removeFirst();
       // do not look for TemplateFragments in subnode's children as TFs couldn't be nested 

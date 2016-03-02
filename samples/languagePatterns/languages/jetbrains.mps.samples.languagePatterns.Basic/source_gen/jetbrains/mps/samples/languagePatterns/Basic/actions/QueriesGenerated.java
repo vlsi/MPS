@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -80,13 +80,13 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(final String pattern, boolean strictly) {
-            Iterable<SAbstractConcept> concreteSubConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
-              public boolean accept(SAbstractConcept it) {
+            Iterable<SConcept> concreteSubConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), _context.getModel())).where(new IWhereFilter<SConcept>() {
+              public boolean accept(SConcept it) {
                 return !(it.isAbstract());
               }
             });
-            return (pattern != null && pattern.length() > 0) && Sequence.fromIterable(concreteSubConcepts).all(new IWhereFilter<SAbstractConcept>() {
-              public boolean accept(SAbstractConcept concept) {
+            return (pattern != null && pattern.length() > 0) && Sequence.fromIterable(concreteSubConcepts).all(new IWhereFilter<SConcept>() {
+              public boolean accept(SConcept concept) {
                 return !(SConceptOperations.conceptAlias(concept).startsWith(pattern));
               }
             });

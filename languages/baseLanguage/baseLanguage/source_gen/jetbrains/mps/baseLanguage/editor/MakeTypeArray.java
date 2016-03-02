@@ -14,7 +14,7 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -69,8 +69,8 @@ public class MakeTypeArray extends KeyMapImpl {
       SLinkOperations.setTarget(varStms, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"), var);
       SLinkOperations.setTarget(var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")), null));
 
-      SAbstractConcept t = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.getModel(varStms))).where(new IWhereFilter<SAbstractConcept>() {
-        public boolean accept(SAbstractConcept it) {
+      SConcept t = ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.getModel(varStms))).where(new IWhereFilter<SConcept>() {
+        public boolean accept(SConcept it) {
           return eq_u3xwmg_a0a0a0a0a0a0h0f1(it.getConceptAlias(), text);
         }
       }).first();
@@ -137,8 +137,8 @@ public class MakeTypeArray extends KeyMapImpl {
       SNode var = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")), null);
       SLinkOperations.setTarget(varStms, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"), var);
 
-      SAbstractConcept t = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.getModel(varStms))).where(new IWhereFilter<SAbstractConcept>() {
-        public boolean accept(SAbstractConcept it) {
+      SConcept t = ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.getModel(varStms))).where(new IWhereFilter<SConcept>() {
+        public boolean accept(SConcept it) {
           return eq_u3xwmg_a0a0a0a0a0a0g0f2(it.getConceptAlias(), text);
         }
       }).first();

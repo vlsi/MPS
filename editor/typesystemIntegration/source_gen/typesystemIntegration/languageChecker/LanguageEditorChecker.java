@@ -57,14 +57,13 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -358,7 +357,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   }
   private class UsedLanguagesChecker extends AbstractConstraintsChecker {
-    private final SAbstractConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
+    private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
     private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
 
     public UsedLanguagesChecker() {

@@ -31,9 +31,10 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -112,33 +113,33 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     public ExponentialOperation_generic_cellMenu_spngij_a0b0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+      List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
       for (SAbstractConcept a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.asSConcept(ListSequence.fromList(ExponentialOperation__BehaviorDescriptor.getAllowedSubstituends_id2D1PBM_bxH0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)))).first()), SNodeOperations.getModel(node)))) {
         if (!(a.isAbstract()) && SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(a), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"))) {
-          ListSequence.fromList(result).addElement((SAbstractConcept) a);
+          ListSequence.fromList(result).addElement((SConcept) a);
         }
       }
       return result;
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
+      this.handleAction_impl((SConcept) parameterObject, node, model, operationContext, editorContext);
     }
-    public void handleAction_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, 0x64b1e972e6443a22L, "expr"))));
     }
     public boolean isReferentPresentation() {
       return false;
     }
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SAbstractConcept) parameterObject);
+      return this.getMatchingText_internal((SConcept) parameterObject);
     }
-    public String getMatchingText_internal(SAbstractConcept parameterObject) {
+    public String getMatchingText_internal(SConcept parameterObject) {
       return (String) ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(parameterObject));
     }
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((SAbstractConcept) parameterObject);
+      return this.getDescriptionText_internal((SConcept) parameterObject);
     }
-    public String getDescriptionText_internal(SAbstractConcept parameterObject) {
+    public String getDescriptionText_internal(SConcept parameterObject) {
       return SConceptOperations.shortDescription(parameterObject);
     }
   }

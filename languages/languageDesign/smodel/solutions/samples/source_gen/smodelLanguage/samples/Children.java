@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Children {
   public void accessToChildren_1(SNode statementList) {
@@ -54,7 +55,7 @@ public class Children {
     SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(SNodeOperations.getConcept(statement)), false, new SAbstractConcept[]{});
     SNodeOperations.getNodeDescendants(statement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), false, new SAbstractConcept[]{});
     SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new SAbstractConcept[]{});
-    SAbstractConcept aConcept = null;
+    SConcept aConcept = null;
     SNodeOperations.getNodeDescendants(statement, SNodeOperations.asSConcept(aConcept), false, new SAbstractConcept[]{});
   }
   public void accessToChildren_4(SNode statement) {

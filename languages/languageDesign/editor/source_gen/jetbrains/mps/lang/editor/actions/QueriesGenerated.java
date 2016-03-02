@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -609,9 +609,9 @@ public class QueriesGenerated {
       SNode outputConcept = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation").getDeclarationNode();
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SAbstractConcept> queryResult = new Computable<Iterable<SAbstractConcept>>() {
-          public Iterable<SAbstractConcept> compute() {
-            List<SAbstractConcept> emptyList = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+        Iterable<SConcept> queryResult = new Computable<Iterable<SConcept>>() {
+          public Iterable<SConcept> compute() {
+            List<SConcept> emptyList = ListSequence.fromList(new ArrayList<SConcept>());
             if (!(SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
               return emptyList;
             }
@@ -620,17 +620,17 @@ public class QueriesGenerated {
               return emptyList;
             }
             final SNode type = TypeChecker.getInstance().getTypeOf(operand);
-            List<SAbstractConcept> list = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), _context.getModel());
+            List<SConcept> list = SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), _context.getModel());
             ListSequence.fromList(list).removeElement(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"));
-            return ListSequence.fromList(list).where(new IWhereFilter<SAbstractConcept>() {
-              public boolean accept(SAbstractConcept it) {
+            return ListSequence.fromList(list).where(new IWhereFilter<SConcept>() {
+              public boolean accept(SConcept it) {
                 return SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x362b8be848e5c49bL, "jetbrains.mps.lang.editor.structure.StyledTextType"));
               }
             }).toListSequence();
           }
         }.compute();
         if (queryResult != null) {
-          for (final SAbstractConcept item : queryResult) {
+          for (final SConcept item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode abstractOperation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);

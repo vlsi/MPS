@@ -43418,7 +43418,7 @@
       <node id="6109303353086865065" at="68,256,69,185" concept="5" />
       <node id="6109303353085304210" at="69,185,70,392" concept="5" />
       <node id="6109303353090628394" at="70,392,71,0" concept="14" />
-      <node id="6109303353088342846" at="73,52,74,72" concept="12" />
+      <node id="6109303353088342846" at="73,44,74,72" concept="12" />
       <node id="6109303353085403483" at="77,22,78,574" concept="5" />
       <node id="301339742879907809" at="81,43,82,204" concept="12" />
       <node id="301339742880007146" at="85,28,86,250" concept="11" />
@@ -43447,7 +43447,7 @@
       <node id="2900530436636705106" at="136,275,137,256" concept="11" />
       <node id="2900530436636705112" at="137,256,138,185" concept="5" />
       <node id="2900530436636705126" at="138,185,139,0" concept="14" />
-      <node id="2900530436636705140" at="141,52,142,72" concept="12" />
+      <node id="2900530436636705140" at="141,44,142,72" concept="12" />
       <node id="2900530436636705152" at="145,22,146,259" concept="5" />
       <node id="2900530436636705181" at="149,43,150,204" concept="12" />
       <node id="2900530436636705192" at="153,28,154,250" concept="11" />
@@ -43467,7 +43467,7 @@
       <node id="6109303353084522744" at="47,62,50,7" concept="9" />
       <node id="6109303353084522744" at="51,49,54,7" concept="9" />
       <node id="6109303353084522744" at="54,7,57,7" concept="9" />
-      <node id="6109303353088342844" at="73,0,76,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="6109303353088342844" at="73,0,76,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="301339742879907807" at="81,0,84,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6109303353084522744" at="94,0,97,0" concept="10" trace="getKeyStroke#()Ljava/lang/String;" />
       <node id="6109303353088342847" at="97,0,100,0" concept="15" trace="eq_u3xwmg_a0a0a0a0a0a0h0f1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -43477,7 +43477,7 @@
       <node id="6109303353084522744" at="116,62,119,7" concept="9" />
       <node id="6109303353084522744" at="120,49,123,7" concept="9" />
       <node id="6109303353084522744" at="123,7,126,7" concept="9" />
-      <node id="2900530436636705138" at="141,0,144,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="2900530436636705138" at="141,0,144,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="2900530436636705179" at="149,0,152,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6109303353084522744" at="164,0,167,0" concept="10" trace="getKeyStroke#()Ljava/lang/String;" />
       <node id="2900530436636705141" at="167,0,170,0" concept="15" trace="eq_u3xwmg_a0a0a0a0a0a0g0f2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -43506,7 +43506,7 @@
       <scope id="6109303353084522744" at="48,34,49,21" />
       <scope id="6109303353084522744" at="52,32,53,21" />
       <scope id="6109303353084522744" at="55,195,56,21" />
-      <scope id="6109303353088342845" at="73,52,74,72" />
+      <scope id="6109303353088342845" at="73,44,74,72" />
       <scope id="301339742880025868" at="77,22,78,574" />
       <scope id="301339742879907808" at="81,43,82,204" />
       <scope id="6109303353084522744" at="94,34,95,18" />
@@ -43517,7 +43517,7 @@
       <scope id="6109303353084522744" at="117,34,118,21" />
       <scope id="6109303353084522744" at="121,32,122,21" />
       <scope id="6109303353084522744" at="124,195,125,21" />
-      <scope id="2900530436636705139" at="141,52,142,72" />
+      <scope id="2900530436636705139" at="141,44,142,72" />
       <scope id="2900530436636705151" at="145,22,146,259" />
       <scope id="2900530436636705180" at="149,43,150,204" />
       <scope id="6109303353084522744" at="164,34,165,18" />
@@ -43627,9 +43627,9 @@
         <var name="node" id="6109303353084522744" />
         <var name="selectedNodes" id="6109303353084522744" />
       </scope>
-      <unit id="6109303353088342844" at="72,265,76,7" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$1" />
+      <unit id="6109303353088342844" at="72,258,76,7" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$1" />
       <unit id="301339742879907807" at="80,270,84,9" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$2" />
-      <unit id="2900530436636705138" at="140,265,144,7" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$1" />
+      <unit id="2900530436636705138" at="140,258,144,7" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$1" />
       <unit id="2900530436636705179" at="148,270,152,9" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$2" />
       <unit id="6109303353084522744" at="35,0,104,0" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$MakeTypeArray_Action0" />
       <unit id="6109303353084522744" at="104,0,174,0" name="jetbrains.mps.baseLanguage.editor.MakeTypeArray$MakeTypeArray_Action1" />

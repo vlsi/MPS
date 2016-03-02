@@ -1457,23 +1457,23 @@
       <node id="226730285127010424" at="606,208,607,93" concept="5" />
       <node id="226730285127010424" at="608,5,609,209" concept="5" />
       <node id="226730285127010424" at="609,209,610,62" concept="5" />
-      <node id="3903367331817991756" at="613,55,614,104" concept="5" />
+      <node id="3903367331817991756" at="613,47,614,88" concept="5" />
       <node id="226730285127012761" at="615,219,616,31" concept="6" />
       <node id="226730285127017420" at="617,13,618,369" concept="5" />
       <node id="226730285127017432" at="619,34,620,31" concept="6" />
       <node id="226730285127017443" at="621,13,622,76" concept="5" />
-      <node id="226730285127399052" at="622,76,623,261" concept="5" />
-      <node id="1511134095826094343" at="623,261,624,215" concept="1" />
-      <node id="226730285127018097" at="626,58,627,206" concept="6" />
+      <node id="226730285127399052" at="622,76,623,254" concept="5" />
+      <node id="1511134095826094343" at="623,254,624,215" concept="1" />
+      <node id="226730285127018097" at="626,50,627,206" concept="6" />
       <node id="226730285127399209" at="635,98,636,135" concept="5" />
       <node id="226730285127012701" at="636,135,637,41" concept="6" />
       <node id="226730285127010424" at="643,5,644,18" concept="6" />
-      <node id="226730285127012743" at="614,104,617,13" concept="3" />
+      <node id="226730285127012743" at="614,88,617,13" concept="3" />
       <node id="226730285127017408" at="618,369,621,13" concept="3" />
-      <node id="226730285127018095" at="626,0,629,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="226730285127018095" at="626,0,629,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
       <node id="226730285127010424" at="635,0,639,0" concept="4" trace="createChildNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="226730285127012720" at="624,215,629,32" concept="6" />
-      <node id="226730285127010424" at="633,59,639,15" concept="1" />
+      <node id="226730285127010424" at="633,51,639,15" concept="1" />
       <node id="226730285127010424" at="632,34,640,11" concept="2" />
       <node id="226730285127010424" at="631,20,641,9" concept="3" />
       <node id="226730285127010424" at="613,0,631,0" concept="4" trace="compute#()Ljava/lang/Iterable;" />
@@ -1484,7 +1484,7 @@
       <node id="226730285127010424" at="606,0,646,0" concept="8" trace="nodeSubstituteActionsBuilder_ActionsFactory_IOperation_226730285127010424#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="226730285127012744" at="615,219,616,31" />
       <scope id="226730285127017409" at="619,34,620,31" />
-      <scope id="226730285127018096" at="626,58,627,206" />
+      <scope id="226730285127018096" at="626,50,627,206" />
       <scope id="226730285127012662" at="635,98,637,41">
         <var name="abstractOperation" id="226730285127399210" />
       </scope>
@@ -1496,12 +1496,12 @@
         <var name="parameterObject" id="226730285127010424" />
         <var name="pattern" id="226730285127010424" />
       </scope>
-      <scope id="226730285127010424" at="633,59,639,15" />
+      <scope id="226730285127010424" at="633,51,639,15" />
       <scope id="226730285127010424" at="632,34,640,11" />
       <scope id="226730285127010424" at="632,34,640,11">
         <var name="item" id="226730285127010424" />
       </scope>
-      <scope id="226730285127010424" at="613,55,629,32">
+      <scope id="226730285127010424" at="613,47,629,32">
         <var name="emptyList" id="3903367331817991757" />
         <var name="list" id="226730285127399053" />
         <var name="operand" id="226730285127017421" />
@@ -1525,7 +1525,7 @@
       </scope>
       <unit id="226730285127018095" at="625,57,629,13" name="jetbrains.mps.lang.editor.actions.QueriesGenerated$25" />
       <unit id="226730285127010424" at="634,57,639,13" name="jetbrains.mps.lang.editor.actions.QueriesGenerated$25" />
-      <unit id="226730285127010424" at="612,53,631,9" name="jetbrains.mps.lang.editor.actions.QueriesGenerated$24" />
+      <unit id="226730285127010424" at="612,45,631,9" name="jetbrains.mps.lang.editor.actions.QueriesGenerated$24" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)/2491174914161947402">
