@@ -25,7 +25,7 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
   public void noMigrationNeeded() {
     VirtualFile projectDir = LocalFileSystem.getInstance().findFileByPath(getProjectDir());
     assert projectDir != null;
-    if (projectDir.findChild(".am") != null) {
+    if (projectDir.findChild(".allow-pending-migrations") != null) {
       LOG.info("Project " + projectDir.getName() + ": migrations are allowed (.am file is present in project dir)");
       return;
     }else{
