@@ -653,6 +653,40 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3clFbJ" id="23AXNbFSwcM" role="3cqZAp">
+                  <node concept="3clFbS" id="23AXNbFSwcO" role="3clFbx">
+                    <node concept="3SKdUt" id="23AXNbFSJOT" role="3cqZAp">
+                      <node concept="3SKdUq" id="23AXNbFSJOV" role="3SKWNk">
+                        <property role="3SKdUp" value="coerce(AnAction[] as ClassifierType) gives Serializable." />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="23AXNbFTEqA" role="3cqZAp">
+                      <node concept="3SKdUq" id="23AXNbFTEqC" role="3SKWNk">
+                        <property role="3SKdUp" value="This gonna fail once we face array of smth that is not ClassifierType (e.g. concept&lt;&gt;[])" />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="23AXNbFVdMV" role="3cqZAp">
+                      <node concept="3SKdUq" id="23AXNbFVdMX" role="3SKWNk">
+                        <property role="3SKdUp" value="and our only hope is that proper generator shows up afterwards." />
+                      </node>
+                    </node>
+                    <node concept="3cpWs6" id="23AXNbFSCI8" role="3cqZAp">
+                      <node concept="37vLTw" id="23AXNbFSEyZ" role="3cqZAk">
+                        <ref role="3cqZAo" node="yWCLcvlvsR" resolve="operationType" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="23AXNbFSzo9" role="3clFbw">
+                    <node concept="37vLTw" id="23AXNbFSxTl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="yWCLcvlvsR" resolve="operationType" />
+                    </node>
+                    <node concept="1mIQ4w" id="23AXNbFS_bm" role="2OqNvi">
+                      <node concept="chp4Y" id="23AXNbFSAWW" role="cj9EA">
+                        <ref role="cht4Q" to="tpee:f_0Q1BR" resolve="ArrayType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="yWCLcviOSb" role="3cqZAp">
                   <node concept="1UaxmW" id="yWCLcviOS8" role="3clFbG">
                     <node concept="1YaCAy" id="yWCLcviVKQ" role="1Ub_4A">
@@ -695,20 +729,53 @@
               <ref role="2rW$FS" node="20K_C3dSCtt" resolve="thisLabel" />
               <node concept="3NFfHV" id="6QWOVrL0D_U" role="3NFExx">
                 <node concept="3clFbS" id="6QWOVrL0D_V" role="2VODD2">
+                  <node concept="3cpWs8" id="23AXNbFW$vD" role="3cqZAp">
+                    <node concept="3cpWsn" id="23AXNbFW$vE" role="3cpWs9">
+                      <property role="TrG5h" value="operandType" />
+                      <node concept="3Tqbb2" id="23AXNbFW$vC" role="1tU5fm" />
+                      <node concept="2OqwBi" id="23AXNbFW$vF" role="33vP2m">
+                        <node concept="2OqwBi" id="23AXNbFW$vG" role="2Oq$k0">
+                          <node concept="30H73N" id="23AXNbFW$vH" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="23AXNbFW$vI" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                          </node>
+                        </node>
+                        <node concept="3JvlWi" id="23AXNbFW$vJ" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="23AXNbFWZQf" role="3cqZAp">
+                    <node concept="3clFbS" id="23AXNbFWZQh" role="3clFbx">
+                      <node concept="3SKdUt" id="23AXNbFXmNw" role="3cqZAp">
+                        <node concept="3SKdUq" id="23AXNbFXmNy" role="3SKWNk">
+                          <property role="3SKdUp" value=" see similar code and corresponding comment of return value" />
+                        </node>
+                      </node>
+                      <node concept="3cpWs6" id="23AXNbFX91j" role="3cqZAp">
+                        <node concept="37vLTw" id="23AXNbFXdrX" role="3cqZAk">
+                          <ref role="3cqZAo" node="23AXNbFW$vE" resolve="operandType" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="23AXNbFWynp" role="3clFbw">
+                      <node concept="37vLTw" id="23AXNbFWTkf" role="2Oq$k0">
+                        <ref role="3cqZAo" node="23AXNbFW$vE" resolve="operandType" />
+                      </node>
+                      <node concept="1mIQ4w" id="23AXNbFWynr" role="2OqNvi">
+                        <node concept="chp4Y" id="23AXNbFWyns" role="cj9EA">
+                          <ref role="cht4Q" to="tpee:f_0Q1BR" resolve="ArrayType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="yWCLcvhrms" role="3cqZAp">
                     <node concept="1UaxmW" id="yWCLcvhrmm" role="3clFbG">
                       <node concept="1YaCAy" id="yWCLcvh$zE" role="1Ub_4A">
                         <property role="TrG5h" value="ct" />
                         <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
                       </node>
-                      <node concept="2OqwBi" id="yWCLcvhwzr" role="1Ub_4B">
-                        <node concept="2OqwBi" id="yWCLcvhtJ$" role="2Oq$k0">
-                          <node concept="30H73N" id="yWCLcvhsCL" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="yWCLcvhvjc" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
-                          </node>
-                        </node>
-                        <node concept="3JvlWi" id="yWCLcvhxOo" role="2OqNvi" />
+                      <node concept="37vLTw" id="23AXNbFW$vK" role="1Ub_4B">
+                        <ref role="3cqZAo" node="23AXNbFW$vE" resolve="operandType" />
                       </node>
                     </node>
                   </node>
@@ -724,15 +791,48 @@
             <node concept="29HgVG" id="1dj6QhaevOM" role="lGtFl">
               <node concept="3NFfHV" id="1dj6QhaevON" role="3NFExx">
                 <node concept="3clFbS" id="1dj6QhaevOO" role="2VODD2">
+                  <node concept="3cpWs8" id="23AXNbFYswL" role="3cqZAp">
+                    <node concept="3cpWsn" id="23AXNbFYswM" role="3cpWs9">
+                      <property role="TrG5h" value="nodeType" />
+                      <node concept="3Tqbb2" id="23AXNbFYswB" role="1tU5fm" />
+                      <node concept="2OqwBi" id="23AXNbFYswN" role="33vP2m">
+                        <node concept="30H73N" id="23AXNbFYswO" role="2Oq$k0" />
+                        <node concept="3JvlWi" id="23AXNbFYswP" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="23AXNbFYl5F" role="3cqZAp">
+                    <node concept="3clFbS" id="23AXNbFYl5G" role="3clFbx">
+                      <node concept="3SKdUt" id="23AXNbFYl5H" role="3cqZAp">
+                        <node concept="3SKdUq" id="23AXNbFYl5I" role="3SKWNk">
+                          <property role="3SKdUp" value=" see similar code and corresponding comment of return value" />
+                        </node>
+                      </node>
+                      <node concept="3cpWs6" id="23AXNbFYl5J" role="3cqZAp">
+                        <node concept="37vLTw" id="23AXNbFYNMr" role="3cqZAk">
+                          <ref role="3cqZAo" node="23AXNbFYswM" resolve="nodeType" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="23AXNbFYl5L" role="3clFbw">
+                      <node concept="37vLTw" id="23AXNbFYLjd" role="2Oq$k0">
+                        <ref role="3cqZAo" node="23AXNbFYswM" resolve="nodeType" />
+                      </node>
+                      <node concept="1mIQ4w" id="23AXNbFYl5N" role="2OqNvi">
+                        <node concept="chp4Y" id="23AXNbFYl5O" role="cj9EA">
+                          <ref role="cht4Q" to="tpee:f_0Q1BR" resolve="ArrayType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="yWCLcviDiL" role="3cqZAp">
                     <node concept="1UaxmW" id="yWCLcviDiI" role="3clFbG">
                       <node concept="1YaCAy" id="yWCLcviIct" role="1Ub_4A">
                         <property role="TrG5h" value="ct" />
                         <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
                       </node>
-                      <node concept="2OqwBi" id="yWCLcviFbo" role="1Ub_4B">
-                        <node concept="30H73N" id="yWCLcviEk_" role="2Oq$k0" />
-                        <node concept="3JvlWi" id="yWCLcviGgV" role="2OqNvi" />
+                      <node concept="37vLTw" id="23AXNbFYswQ" role="1Ub_4B">
+                        <ref role="3cqZAo" node="23AXNbFYswM" resolve="nodeType" />
                       </node>
                     </node>
                   </node>
