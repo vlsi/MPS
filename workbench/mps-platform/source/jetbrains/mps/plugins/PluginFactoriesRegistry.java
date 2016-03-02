@@ -15,15 +15,23 @@
  */
 package jetbrains.mps.plugins;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Dangerous code; must not be used.
+ * Use {@link PluginLoaderRegistry#loadContributors} and {@link PluginLoaderRegistry#unloadContributors} instead
+ */
+@ToRemove(version = 3.3)
+@Deprecated
 public class PluginFactoriesRegistry {
   private static Collection<AbstractPluginFactory> ourPluginFactories = new ArrayList<AbstractPluginFactory>();
 
+  // must NOT be called from reloadable code. Notice that these contributors are never unregistered. Potential memory leak!
   public synchronized static void registerPluginFactory(@NotNull AbstractPluginFactory contributor) {
     ourPluginFactories.add(contributor);
   }
