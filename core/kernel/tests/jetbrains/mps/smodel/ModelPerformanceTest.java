@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,13 @@ import jetbrains.mps.smodel.ModelListenerTest.AccessCountListener3;
 import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
+import jetbrains.mps.testbench.PerformanceMessenger;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -45,6 +47,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ModelPerformanceTest {
   @Rule
   public ErrorCollector myErrors = new ErrorCollector();
+
+  @ClassRule
+  public PerformanceMessenger ourStats = new PerformanceMessenger("ModelReadPerformance.");
 
   private final TestModelAccess myTestModelAccess = new TestModelAccess();
   private final SRepository myTestRepo = new TestRepository(myTestModelAccess);
@@ -76,6 +81,7 @@ public class ModelPerformanceTest {
     m1f.attachTo(myTestRepo);
 
     final long baselineMillis = 500 * 2; // Use twice as much time to account for slow build agents
+    ourStats.report("multiThreadBaselineMillis", baselineMillis);
     final int parallelThreads = 4;
     final CountDownLatch stopLatch = new CountDownLatch(3); // 1 for thread start sync, 1 for results ready sync, 1 for thread stop sync
     CyclicBarrier b = new CyclicBarrier(parallelThreads, new Runnable() {
@@ -92,6 +98,10 @@ public class ModelPerformanceTest {
     boolean finishOk = stopLatch.await(10, TimeUnit.SECONDS);
     if (finishOk) {
       final int expectedNodeCount = 3 * initialNodeCount;
+      // average between different threads, to compare with baseline
+      long averageElapsedMillis = 0;
+      // min and max to see how far from baseline we could go
+      long minElapsedMillis = Long.MAX_VALUE, maxElapsedMillis = 0;
       for (int i = 0; i < parallelThreads; i++) {
         myErrors.checkThat(threads[i].getName(), threads[i].getAllThreadListenerCount(), equalTo(expectedNodeCount * parallelThreads));
         myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount1(), equalTo(expectedNodeCount));
@@ -120,7 +130,19 @@ public class ModelPerformanceTest {
           @Override
           public void describeTo(Description description) { description.appendText(String.format("greater than %d", baselineMillis/4)); }
         });
+        averageElapsedMillis += threads[i].getElapsedMillis();
+        if (threads[i].getElapsedMillis() < minElapsedMillis) {
+          minElapsedMillis = threads[i].getElapsedMillis();
+        }
+        if (threads[i].getElapsedMillis() > maxElapsedMillis) {
+          maxElapsedMillis = threads[i].getElapsedMillis();
+        }
       }
+
+      averageElapsedMillis /= parallelThreads;
+      ourStats.report("multiThreadAverageMillis", averageElapsedMillis);
+      ourStats.report("multiThreadMaxMillis", maxElapsedMillis);
+      ourStats.report("multiThreadMinMillis", minElapsedMillis);
       return;
     }
     for (int i = 0; i < parallelThreads; i++) {
@@ -144,14 +166,19 @@ public class ModelPerformanceTest {
     final int actualNodes = m1f.countModelNodes();
     // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use four times as much time to account for slower build agents
     final long baselineMillis = 200;
+    ourStats.report("singleThreadBaselineMillis", baselineMillis);
     final int testRuns = 10;
     long elapsed = 0;
     for (int i = 0; i < testRuns; i++) {
       final long start = System.nanoTime();
       ModelListenerTest.readTreeNodes(m1.getRootNodes());
       elapsed += System.nanoTime() - start;
+      if (i == 0) {
+        ourStats.report("singleThreadFirstRunMillis", elapsed);
+      }
     }
     long averageMillis = elapsed / 1000000 / testRuns;
+    ourStats.report("singleThreadAvgMillis", averageMillis);
     if (averageMillis > baselineMillis) {
       final String fmt = "Walking model of %d nodes was expected to take less than %d ms. Actual average time for %d runs was %d ms";
       Assert.fail(String.format(fmt, actualNodes, baselineMillis, testRuns, averageMillis));
