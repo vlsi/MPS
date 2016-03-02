@@ -35,40 +35,32 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
+import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
+import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -76,7 +68,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Highlighter implements EditorMessageOwner, ProjectComponent {
+public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
@@ -88,8 +80,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
   private final MyCancellable myCancellable = new MyCancellable();
-  private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter(myCancellable);
-  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
+  private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter();
+  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new MyCommandAdapter();
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -327,16 +319,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  protected void doUpdate(final boolean essentialOnly) {
-    if (ApplicationManager.getApplication() == null || ApplicationManager.getApplication().isDisposed()) {
-      return;
-    }
-    if (IMakeService.INSTANCE.isSessionActive()) {
-      return;
-    }
-    // SwingUtilities.invokeLater(new Runnable() {
-    //   public void run() {
-
+  private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
     final List<SModelEvent> events = new ArrayList<SModelEvent>();
     synchronized (EVENTS_LOCK) {
       events.addAll(myLastEvents);
@@ -372,49 +355,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       }
     });
-    if (checkers.isEmpty() && checkersToRemove.isEmpty()) {
-      return;
-    }
-
-    List<Pair<EditorComponent, Boolean>> input = new ArrayList<Pair<EditorComponent, Boolean>>();
-    HashSet<SNodePointer> visited = new HashSet<SNodePointer>();
-    for (EditorComponent ecomp : activeEditors) {
-      SNodePointer pointer = new SNodePointer(ecomp.getNodeForTypechecking());
-      input.add(new Pair<EditorComponent, Boolean>(ecomp, !visited.contains(pointer)));
-      visited.add(pointer);
-    }
-
-    final boolean[] isUpdated = {false};
-    for (Pair<EditorComponent, Boolean> pair : input) {
-      final EditorComponent editorComponent = pair.o1;
-      final Boolean applyQuickFixes = pair.o2;
-
-      if (myStopThread || myCancellable.isCancelled()) {
-        return;
-      }
-      TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), new Runnable() {
-        @Override
-        public void run() {
-          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false, essentialOnly, applyQuickFixes)) {
-            isUpdated[0] = true;
-          }
-        }
-      });
-    }
-
-    if (myStopThread || myCancellable.isCancelled()) {
-      return;
-    }
-
-    if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
-      final EditorComponent finalInspector = myInspectorTool.getInspector();
-      TypeContextManager.getInstance().runTypecheckingAction(myInspectorTool.getInspector().getTypecheckingContextOwner(), new Runnable() {
-        @Override
-        public void run() {
-          updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0], essentialOnly, false);
-        }
-      });
-    }
+    return new HighlighterUpdateSession(Highlighter.this, myCancellable, essentialOnly, events, checkers, checkersToRemove, activeEditors);
   }
 
   private List<EditorComponent> getActiveEditors() {
@@ -459,55 +400,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers,
-      final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged, final boolean essentialOnly, final boolean applyQuickFixes) {
-    return runUpdateMessagesAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            final SNode editedNode = component.getEditedNode();
-            return editedNode != null && SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
-          }
-        });
-        if (!needsUpdate) return false;
-
-        final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
-        boolean rootWasCheckedOnce = wasCheckedOnce(component);
-        if (!rootWasCheckedOnce) {
-          checkersToRecheck.addAll(checkers);
-        } else {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              if (myStopThread || myCancellable.isCancelled()) return;
-              for (BaseEditorChecker checker : checkers) {
-                if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
-                  checkersToRecheck.add(checker);
-                }
-              }
-            }
-          });
-        }
-
-        if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread || myCancellable.isCancelled()) return false;
-
-        List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
-        Collections.sort(checkersToRecheckList, new PriorityComparator());
-
-        boolean recreateInspectorMessages = mainEditorMessagesChanged || !myInspectorMessagesCreated;
-        if (component instanceof InspectorEditorComponent) {
-          myInspectorMessagesCreated = true;
-        } else {
-          myCheckedOnceEditors.add(component);
-        }
-
-        return updateEditor(component, events, rootWasCheckedOnce, checkersToRecheckList, checkersToRemove, recreateInspectorMessages, applyQuickFixes);
-      }
-    });
-  }
-
   /*
    * Only currently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
    * to createMessages() on next visible (active) editor change
@@ -516,7 +408,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myCheckedOnceEditors.retainAll(allEditorComponents);
   }
 
-  private boolean wasCheckedOnce(EditorComponent editorComponent) {
+  @Override
+  public boolean wasCheckedOnce(EditorComponent editorComponent) {
     return editorComponent instanceof InspectorEditorComponent || myCheckedOnceEditors.contains(editorComponent);
   }
 
@@ -539,148 +432,73 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     });
   }
 
-  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce,
-      List<BaseEditorChecker> checkersToRecheck, Set<BaseEditorChecker> checkersToRemove, boolean recreateInspectorMessages, final boolean applyQuickFixes) {
-    if (editor == null || editor.getRootCell() == null) return false;
-
-    final NodeHighlightManager highlightManager = editor.getHighlightManager();
-    boolean anyMessageChanged = false;
-    for (final BaseEditorChecker checker : checkersToRecheck) {
-      final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-      boolean changed = runLoPrioRead(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          if (myStopThread || myCancellable.isCancelled()) return false;
-
-          SNode node = editor.getEditedNode();
-          if (node == null) return false;
-          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
-            // asking runLoPrioRead() implementation to re-execute this task later:
-            // editor was not updated in accordance with last modelReload event yet.
-            return null;
-          }
-
-          EditorContext editorContext = editor.getEditorContext();
-          IOperationContext operationContext = editor.getOperationContext();
-          if (operationContext.isValid()) {
-            try {
-              messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable, applyQuickFixes));
-              return checker.areMessagesChangedProtected();
-            } catch (IndexNotReadyException ex) {
-              highlightManager.clearForOwner(checker, true);
-              checker.clearProtected(node, editor);
-              throw ex;
-            }
-          }
-
-          return false;
-        }
-      });
-      if (myStopThread) return false;
-
-      if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
-        changed = true;
-      }
-
-      if (changed) {
-        anyMessageChanged = true;
-        highlightManager.clearForOwner(checker, false);
-        for (EditorMessage message : messages) {
-          highlightManager.mark(message);
-        }
-      }
-    }
-    for (final BaseEditorChecker checker : checkersToRemove) {
-      EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
-        @Override
-        public EditorMessageOwner compute() {
-          if (myStopThread) return null;
-          SNode node = editor.getEditedNode();
-          if (node == null) return null;
-          return checker;
-        }
-      });
-      if (myStopThread) return false;
-
-      highlightManager.clearForOwner(owner, false);
-      anyMessageChanged = true;
-    }
-    if (myStopThread) return false;
-
-    if (anyMessageChanged) {
-      highlightManager.repaintAndRebuildEditorMessages();
-      editor.updateStatusBarMessage();
-    }
-
-    return anyMessageChanged;
+  @Override
+  public boolean isStopping() {
+    return myStopThread;
   }
 
-  @NotNull
-  private static <T> T runLoPrioRead(final Computable<T> computable) {
-    assert !ModelAccess.instance().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
-    T result;
-    do {
-      while (IMakeService.INSTANCE.isSessionActive()) {
-        try {
-          Thread.sleep(600);
-        } catch (InterruptedException ignored) {
-        }
-      }
-      result = ModelAccess.instance().runReadAction(new Computable<T>() {
-        @Override
-        public T compute() {
-          if (IMakeService.INSTANCE.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
-          return computable.compute();
-        }
-      });
-    } while (result == null);
-
-    return result;
+  @Override
+  public boolean wereInspectorMessagesCreated() {
+    return myInspectorMessagesCreated;
   }
 
-  private static class MyApplicationAdapter extends ApplicationAdapter {
-    private final MyCancellable myCancellable;
-
-    MyApplicationAdapter(MyCancellable cancellable) {
-      myCancellable = cancellable;
+  @Override
+  public void markCheckedOnce(EditorComponent component) {
+    if (component instanceof InspectorEditorComponent) {
+      myInspectorMessagesCreated = true;
+    } else {
+      myCheckedOnceEditors.add(component);
     }
+  }
 
+  @Override
+  public EditorComponent getInspector() {
+    if (myInspectorTool == null) return null;
+    return myInspectorTool.getInspector();
+  }
+
+  private class MyApplicationAdapter extends ApplicationAdapter {
     @Override
     public void beforeWriteActionStart(Object action) {
-      myCancellable.setCancelRequested(true);
+      pauseUpdater();
     }
 
     @Override
     public void writeActionFinished(Object action) {
-      myCancellable.setCancelRequested(false);
+      resumeUpdater();
     }
   }
 
-  private static class MyCommandAdapter extends com.intellij.openapi.command.CommandAdapter {
-    private final MyCancellable myCancellable;
+  private void pauseUpdater() {
+    myCancellable.setCancelRequested(true);
+  }
 
-    MyCommandAdapter(MyCancellable cancellable) {
-      myCancellable = cancellable;
+  private void resumeUpdater() {
+    myCancellable.setCancelRequested(false);
+  }
+
+  private class MyCommandAdapter extends com.intellij.openapi.command.CommandAdapter {
+    MyCommandAdapter() {
     }
 
     @Override
     public void commandStarted(CommandEvent event) {
-      myCancellable.setCancelRequested(true);
+      pauseUpdater();
     }
 
     @Override
     public void commandFinished(CommandEvent event) {
-      myCancellable.setCancelRequested(false);
+      resumeUpdater();
     }
 
     @Override
     public void undoTransparentActionStarted() {
-      myCancellable.setCancelRequested(true);
+      pauseUpdater();
     }
 
     @Override
     public void undoTransparentActionFinished() {
-      myCancellable.setCancelRequested(false);
+      resumeUpdater();
     }
   }
 
@@ -730,7 +548,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return;
 
           try {
-            doUpdate(!myCommandWatcher.isLargerGracePeriodExpired());
+            boolean essentialOnly = !myCommandWatcher.isLargerGracePeriodExpired();
+            // TODO ApplicationManager.getApplication() checks seem to be leftovers from the time where IMakeService was looked up from ApplicationManager
+            if (ApplicationManager.getApplication() != null && !ApplicationManager.getApplication().isDisposed() && !IMakeService.INSTANCE.isSessionActive()) {
+              HighlighterUpdateSession updateSession = createUpdateSession(essentialOnly);
+              updateSession.doUpdate();
+            }
           } catch (IndexNotReadyException ex) {
             myCheckedOnceEditors.clear();
             myInspectorMessagesCreated = false;
