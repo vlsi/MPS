@@ -517,6 +517,33 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="23AXNbFS9yd" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
+      <node concept="gft3U" id="23AXNbFS9ye" role="1lVwrX">
+        <node concept="3uibUv" id="23AXNbFSgmc" role="gfFT$">
+          <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+        </node>
+      </node>
+      <node concept="30G5F_" id="23AXNbFSfAc" role="30HLyM">
+        <node concept="3clFbS" id="23AXNbFSfAd" role="2VODD2">
+          <node concept="3clFbF" id="23AXNbFSfBi" role="3cqZAp">
+            <node concept="2OqwBi" id="23AXNbFSg0T" role="3clFbG">
+              <node concept="2OqwBi" id="23AXNbFSfFh" role="2Oq$k0">
+                <node concept="30H73N" id="23AXNbFSfBh" role="2Oq$k0" />
+                <node concept="3TrEf2" id="23AXNbFSfRh" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tp25:5MFgGQnlLNJ" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="23AXNbFSgfM" role="2OqNvi">
+                <node concept="chp4Y" id="23AXNbFSgif" role="cj9EA">
+                  <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="5MFgGQnlXt5" role="3acgRq">
       <ref role="30HIoZ" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
       <node concept="gft3U" id="5MFgGQnlXt6" role="1lVwrX">
