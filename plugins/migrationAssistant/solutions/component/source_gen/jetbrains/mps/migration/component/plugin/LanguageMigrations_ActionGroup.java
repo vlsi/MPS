@@ -13,17 +13,16 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationComponent;
+import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -46,31 +45,24 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
     if (project == null) {
       return;
     }
-    jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    final jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     if (mpsProject == null) {
       return;
     }
-    MigrationManager mm = project.getComponent(MigrationManager.class);
-    if (mm == null) {
+    MigrationComponent migrationComponent = project.getComponent(MigrationComponent.class);
+    if (migrationComponent == null) {
       return;
     }
 
-    Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
-    {
-      final SearchScope scope = CommandUtil.createScope(mpsProject);
-      QueryExecutionContext context = new QueryExecutionContext() {
-        public SearchScope getDefaultSearchScope() {
-          return scope;
-        }
-      };
-      for (SModule module : Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
-        public boolean accept(SModule it) {
-          return MigrationsUtil.isModuleMigrateable(it);
-        }
-      })) {
-        SetSequence.fromSet(languages).addSequence(SetSequence.fromSet(new SLanguageHierarchy(LanguageRegistry.getInstance(mpsProject.getRepository()), module.getUsedLanguages()).getExtended()));
+    List<SLanguage> languages = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
+      public Iterable<SLanguage> translate(SModule module) {
+        return new SLanguageHierarchy(LanguageRegistry.getInstance(mpsProject.getRepository()), module.getUsedLanguages()).getExtended();
       }
-    }
+    }).distinct().sort(new ISelector<SLanguage, String>() {
+      public String select(SLanguage it) {
+        return it.getQualifiedName();
+      }
+    }, true).toListSequence();
 
     for (SLanguage language : languages) {
       String name = language.getQualifiedName();
@@ -79,7 +71,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
       langRootsGroup.getTemplatePresentation().setIcon(icon);
 
       for (int ver = 0; ver < language.getLanguageVersion(); ver++) {
-        MigrationScript script = mm.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(language, ver), true);
+        MigrationScript script = migrationComponent.fetchMigrationScript(new MigrationScriptReference(language, ver), true);
         if (script == null) {
           continue;
         }
