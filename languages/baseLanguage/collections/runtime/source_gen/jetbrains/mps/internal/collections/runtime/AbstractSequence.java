@@ -110,22 +110,22 @@ public abstract class AbstractSequence<T> implements ISequence<T>, Iterable<T> {
     return new ConcatingSequence<T>(this, that);
   }
   @Override
-  public ISequence<T> intersect(ISequence<? extends T> that) {
+  public ISequence<T> intersect(ISequence<?> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return NullSequence.instance();
       }
     }
-    return new ComparingSequence<T>(this, that, ComparingSequence.Kind.INTERSECTION);
+    return new ComparingSequence<T>(ComparingSequence.Kind.INTERSECTION, this, that);
   }
   @Override
-  public ISequence<T> subtract(ISequence<? extends T> that) {
+  public ISequence<T> subtract(ISequence<?> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return this;
       }
     }
-    return new ComparingSequence<T>(this, that, ComparingSequence.Kind.SUBSTRACTION);
+    return new ComparingSequence<T>(ComparingSequence.Kind.SUBSTRACTION, this, that);
   }
   @Override
   public ISequence<T> union(ISequence<? extends T> that) {

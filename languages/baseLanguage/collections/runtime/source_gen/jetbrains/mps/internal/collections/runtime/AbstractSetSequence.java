@@ -82,28 +82,12 @@ public abstract class AbstractSetSequence<T> extends AbstractCollectionSequence<
     return set.size();
   }
   @Override
-  public ISequence<T> disjunction(ISequence<? extends T> that) {
-    return super.disjunction(that);
-  }
-  @Override
   public ISequence<T> distinct() {
     return this;
   }
   @Override
-  public ISequence<T> intersect(ISequence<? extends T> that) {
-    return super.intersect(that);
-  }
-  @Override
   public boolean isNotEmpty() {
     return count() > 0;
-  }
-  @Override
-  public ISequence<T> subtract(ISequence<? extends T> that) {
-    return super.subtract(that);
-  }
-  @Override
-  public ISequence<T> union(ISequence<? extends T> that) {
-    return super.union(that);
   }
   @Override
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {

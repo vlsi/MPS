@@ -26,8 +26,8 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
   ISequence<T> tail(int length);
   ISequence<T> page(int skip, int skipplustake);
   ISequence<T> concat(ISequence<? extends T> that);
-  ISequence<T> intersect(ISequence<? extends T> that);
-  ISequence<T> subtract(ISequence<? extends T> that);
+  ISequence<T> intersect(ISequence<?> that);
+  ISequence<T> subtract(ISequence<?> that);
   ISequence<T> union(ISequence<? extends T> that);
   ISequence<T> disjunction(ISequence<? extends T> that);
   ISequence<T> reverse();

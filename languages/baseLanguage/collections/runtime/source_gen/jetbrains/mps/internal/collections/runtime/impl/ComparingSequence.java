@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
   private final ISequence<? extends U> left;
   private final ISequence<? extends U> right;
+  private final ISequence<?> rightGeneric;
   private final ComparingSequence.Kind kind;
   public ComparingSequence(ISequence<? extends U> left, ISequence<? extends U> right, ComparingSequence.Kind kind) {
     if (left == null || right == null) {
@@ -19,8 +20,21 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
     this.left = left;
     this.right = right;
+    this.rightGeneric = right;
     this.kind = kind;
   }
+
+  public ComparingSequence(ComparingSequence.Kind kind, ISequence<? extends U> left, ISequence<?> right) {
+    if (left == null || right == null) {
+      throw new NullPointerException();
+    }
+    assert kind == ComparingSequence.Kind.SUBSTRACTION || kind == ComparingSequence.Kind.INTERSECTION;
+    this.left = left;
+    this.right = null;
+    this.rightGeneric = right;
+    this.kind = kind;
+  }
+
   @Override
   public Iterator<U> iterator() {
     return new ComparingSequence.ComparingIterator();
@@ -35,7 +49,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
   }
   private class ComparingIterator implements Iterator<U> {
-    private CardinalityMap<U> cardMap = new CardinalityMap<U>();
+    private CardinalityMap<Object> cardMap = new CardinalityMap<Object>();
     private List<U> cache;
     private Iterator<? extends U> leftIt;
     private Iterator<? extends U> rightIt;
@@ -74,7 +88,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
       switch (kind) {
         case SUBSTRACTION:
         case INTERSECTION:
-          for (U o : right.toIterable()) {
+          for (Object o : rightGeneric.toIterable()) {
             cardMap.postInc(o);
           }
           leftIt = left.toIterable().iterator();
