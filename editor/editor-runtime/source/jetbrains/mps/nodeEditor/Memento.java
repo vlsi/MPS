@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -62,6 +63,7 @@ class Memento {
   private List<Pair<CellInfo, Boolean>> myCollapseStates = new ArrayList<Pair<CellInfo, Boolean>>();
 
   private List<ErrorMarker> myErrors = new ArrayList<ErrorMarker>();
+  private List<TransactionalPropertyState> myTransactionalProperties = new ArrayList<TransactionalPropertyState>();
   private Point myViewPosition;
   private String[] myEnabledHints = null;
   private SNodeReference myEditedNodeReference;
@@ -87,10 +89,20 @@ class Memento {
       }
 
       collectErrors(nodeEditor);
+      collectTransactionalProperties(nodeEditor);
     }
 
     myViewPosition = nodeEditor.getViewPosition();
     myEnabledHints = nodeEditor.getUpdater().getInitialEditorHints();
+  }
+
+  private void collectTransactionalProperties(EditorComponent editor) {
+    for (EditorCell_Property transactionalCell : editor.getCellTracker().getTransactionalCells()) {
+      TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) transactionalCell.getModelAccessor();
+      if (accessor.hasValueToCommit()) {
+        myTransactionalProperties.add(new TransactionalPropertyState(transactionalCell));
+      }
+    }
   }
 
   private void collectErrors(EditorComponent editor) {
@@ -121,7 +133,7 @@ class Memento {
     editor.getUpdater().flushModelEvents();
 
     // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
-    boolean needsRelayout = restoreErrors(editor);
+    boolean needsRelayout = restoreErrors(editor) | restoreTransactionals(editor);
 
     // Restore collapse states before restoring selection, otherwise selection inside initially collapsed cells disappears
     for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
@@ -164,14 +176,32 @@ class Memento {
     return needsRelayout;
   }
 
+  private boolean restoreTransactionals(EditorComponent editor) {
+    boolean needsRelayout = false;
+    for (EditorCell_Property transactionalProperty : editor.getCellTracker().getTransactionalCells()) {
+      if (transactionalProperty.getModelAccessor() instanceof TransactionalPropertyAccessor) {
+        TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) transactionalProperty.getModelAccessor();
+        if (accessor.hasValueToCommit()) {
+          accessor.resetUncommittedValue();
+          transactionalProperty.synchronize();
+        }
+      }
+    }
+
+    for (TransactionalPropertyState transactionalProperty : myTransactionalProperties) {
+      needsRelayout = transactionalProperty.restore(editor) || needsRelayout;
+    }
+    return needsRelayout;
+  }
+
   public boolean equals(Object object) {
     if (object == this) return true;
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
           EqualUtil.equals(myCollapseStates, m.myCollapseStates) && EqualUtil.equals(myErrors, m.myErrors) &&
-          EqualUtil.equals(myViewPosition, m.myViewPosition) && Arrays.equals(myEnabledHints, m.myEnabledHints) &&
-          EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
+          EqualUtil.equals(myTransactionalProperties, m.myTransactionalProperties) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
+          Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
         return true;
       }
     }
@@ -204,6 +234,7 @@ class Memento {
   private static final String ENABLED_HINTS_ELEMENT = "enabledHintsElement";
   private static final String ENABLED_HINTS_ATTRIBUTE = "enabledHintsAttribute";
   private static final String ERROR_MARKERS = "errorMarkers";
+  private static final String TRANSACTIONAL_PROPERTIES = "transactionalProperties";
   private static final String EDITED_NODE = "currentlyEditedNode";
 
   public void save(Element e) {
@@ -223,6 +254,12 @@ class Memento {
     e.addContent(errorMarkers);
     for (ErrorMarker error : myErrors) {
       error.save(errorMarkers);
+    }
+
+    Element transactionalProperties = new Element(TRANSACTIONAL_PROPERTIES);
+    e.addContent(transactionalProperties);
+    for (TransactionalPropertyState transactionalProperty : myTransactionalProperties) {
+      transactionalProperty.save(transactionalProperties);
     }
 
     boolean success = true;
@@ -274,6 +311,11 @@ class Memento {
     Element errorMarkers = e.getChild(ERROR_MARKERS);
     if (errorMarkers != null) {
       memento.myErrors.addAll(ErrorMarker.loadMarkers(errorMarkers));
+    }
+
+    Element transactionalProperties = e.getChild(TRANSACTIONAL_PROPERTIES);
+    if (transactionalProperties != null) {
+      memento.myTransactionalProperties.addAll(TransactionalPropertyState.load(transactionalProperties));
     }
 
     Element collapsed = e.getChild(COLLAPSED);
@@ -402,6 +444,72 @@ class Memento {
       if (!myCellInfo.equals(that.myCellInfo)) return false;
       if (!myText.equals(that.myText)) return false;
       return !(myModelText != null ? !myModelText.equals(that.myModelText) : that.myModelText != null);
+    }
+
+    @Override
+    public int hashCode() {
+      return myCellInfo.hashCode();
+    }
+  }
+
+  private static class TransactionalPropertyState {
+    private static final String UNCOMMITTED_VALUE = "uncommittedValue";
+    private static final String TRANSACTIONAL_PROPERTY = "transactionalProperty";
+
+    private final String myUncommittedValue;
+    private final CellInfo myCellInfo;
+
+    public TransactionalPropertyState(EditorCell_Property propertyCell) {
+      TransactionalPropertyAccessor accessor = (TransactionalPropertyAccessor) propertyCell.getModelAccessor();
+      assert accessor.hasValueToCommit();
+      myUncommittedValue = accessor.doGetValue();
+      myCellInfo = propertyCell.getCellInfo();
+    }
+
+    private TransactionalPropertyState(Element transactionalElement) {
+      myUncommittedValue = transactionalElement.getAttributeValue(UNCOMMITTED_VALUE);
+      myCellInfo = DefaultCellInfo.loadFrom(transactionalElement);
+    }
+
+    public boolean restore(EditorComponent editor) {
+      EditorCell cell = myCellInfo.findCell(editor);
+      if (!(cell instanceof EditorCell_Property)) {
+        return false;
+      }
+      EditorCell_Property propertyCell = (EditorCell_Property) cell;
+      if (propertyCell.getModelAccessor() instanceof TransactionalPropertyAccessor) {
+        TransactionalPropertyAccessor modelAccessor = (TransactionalPropertyAccessor) propertyCell.getModelAccessor();
+        modelAccessor.doSetValue(myUncommittedValue);
+        propertyCell.synchronize();
+        return true;
+      }
+      return false;
+    }
+
+    public void save(Element transactionalProperties) {
+      Element transactionalElement = new Element(TRANSACTIONAL_PROPERTY);
+      transactionalElement.setAttribute(UNCOMMITTED_VALUE, myUncommittedValue);
+      ((DefaultCellInfo) myCellInfo).saveTo(transactionalElement);
+      transactionalProperties.addContent(transactionalElement);
+    }
+
+    public static List<TransactionalPropertyState> load(Element transactionalProperties) {
+      List<TransactionalPropertyState> result = new ArrayList<TransactionalPropertyState>();
+      for (Element transactionalPropertyElement : transactionalProperties.getChildren(TRANSACTIONAL_PROPERTY)) {
+        result.add(new TransactionalPropertyState(transactionalPropertyElement));
+      }
+      return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      TransactionalPropertyState that = (TransactionalPropertyState) o;
+
+      return myCellInfo.equals(that.myCellInfo) &&
+          (myUncommittedValue == null ? that.myUncommittedValue == null : myUncommittedValue.equals(that.myUncommittedValue));
     }
 
     @Override

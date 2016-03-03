@@ -2,17 +2,17 @@
 <model ref="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
@@ -50,6 +50,8 @@
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
     <import index="n70j" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.checking(MPS.Editor/)" />
+    <import index="rlg8" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.highlighter(MPS.Editor/)" />
+    <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
@@ -237,7 +239,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -290,6 +292,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -1951,20 +1954,37 @@
             <node concept="2OqwBi" id="3JREjbh0Y41" role="37vLTJ">
               <node concept="2WthIp" id="3JREjbh0Y44" role="2Oq$k0" />
               <node concept="2BZ7hE" id="3JREjbh0Y46" role="2OqNvi">
-                <ref role="2WH_rO" node="3JREjbh0XWf" resolve="checker" />
+                <ref role="2WH_rO" node="3JREjbh0XWf" resolve="myChecker" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="__dkv7f$XH" role="3cqZAp">
-          <node concept="2OqwBi" id="__dkv7fAhk" role="3clFbG">
-            <node concept="2OqwBi" id="__dkv7f_1P" role="2Oq$k0">
-              <node concept="1KvdUw" id="__dkv7f$XG" role="2Oq$k0" />
-              <node concept="liA8E" id="__dkv7fAa5" role="2OqNvi">
+        <node concept="3clFbF" id="1c9oVaxlDp5" role="3cqZAp">
+          <node concept="37vLTI" id="1c9oVaxlDv2" role="3clFbG">
+            <node concept="2OqwBi" id="1c9oVaxlDoZ" role="37vLTJ">
+              <node concept="2WthIp" id="1c9oVaxlDp2" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="1c9oVaxlDp4" role="2OqNvi">
+                <ref role="2WH_rO" node="1c9oVaxlD9O" resolve="myHighlighter" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1c9oVaxlDx$" role="37vLTx">
+              <node concept="1KvdUw" id="1c9oVaxlDx_" role="2Oq$k0" />
+              <node concept="liA8E" id="1c9oVaxlDxA" role="2OqNvi">
                 <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="__dkv7fAcr" role="37wK5m">
+                <node concept="3VsKOn" id="1c9oVaxlDxB" role="37wK5m">
                   <ref role="3VsUkX" to="exr9:~Highlighter" resolve="Highlighter" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1c9oVaxlDAn" role="3cqZAp" />
+        <node concept="3clFbF" id="__dkv7f$XH" role="3cqZAp">
+          <node concept="2OqwBi" id="__dkv7fAhk" role="3clFbG">
+            <node concept="2OqwBi" id="1c9oVaxlD_E" role="2Oq$k0">
+              <node concept="2WthIp" id="1c9oVaxlD_H" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="1c9oVaxlD_J" role="2OqNvi">
+                <ref role="2WH_rO" node="1c9oVaxlD9O" resolve="myHighlighter" />
               </node>
             </node>
             <node concept="liA8E" id="__dkv7fAGV" role="2OqNvi">
@@ -1972,7 +1992,26 @@
               <node concept="2OqwBi" id="3JREjbh0YqZ" role="37wK5m">
                 <node concept="2WthIp" id="3JREjbh0Yr2" role="2Oq$k0" />
                 <node concept="2BZ7hE" id="3JREjbh0Yr4" role="2OqNvi">
-                  <ref role="2WH_rO" node="3JREjbh0XWf" resolve="checker" />
+                  <ref role="2WH_rO" node="3JREjbh0XWf" resolve="myChecker" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1c9oVaxlEJR" role="3cqZAp">
+          <node concept="37vLTI" id="1c9oVaxlEOC" role="3clFbG">
+            <node concept="2OqwBi" id="1c9oVaxlEJL" role="37vLTJ">
+              <node concept="2WthIp" id="1c9oVaxlEJO" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="1c9oVaxlEJQ" role="2OqNvi">
+                <ref role="2WH_rO" node="1c9oVaxlEub" resolve="myEditorManager" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1c9oVaxlEQf" role="37vLTx">
+              <node concept="1KvdUw" id="1c9oVaxlEQg" role="2Oq$k0" />
+              <node concept="liA8E" id="1c9oVaxlEQh" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <node concept="3VsKOn" id="1c9oVaxlEQi" role="37wK5m">
+                  <ref role="3VsUkX" to="iwsx:~FileEditorManager" resolve="FileEditorManager" />
                 </node>
               </node>
             </node>
@@ -1981,23 +2020,34 @@
       </node>
     </node>
     <node concept="2BZ0e9" id="3JREjbh0XWf" role="2uRRBA">
-      <property role="TrG5h" value="checker" />
+      <property role="TrG5h" value="myChecker" />
       <node concept="3Tm6S6" id="3JREjbh0XWg" role="1B3o_S" />
       <node concept="3uibUv" id="3JREjbh0XZv" role="1tU5fm">
         <ref role="3uigEE" node="1aVHDCk4S7m" resolve="DSLComponentChecker" />
+      </node>
+    </node>
+    <node concept="2BZ0e9" id="1c9oVaxlD9O" role="2uRRBA">
+      <property role="TrG5h" value="myHighlighter" />
+      <node concept="3Tm6S6" id="1c9oVaxlD9P" role="1B3o_S" />
+      <node concept="3uibUv" id="1c9oVaxlDh1" role="1tU5fm">
+        <ref role="3uigEE" to="exr9:~Highlighter" resolve="Highlighter" />
+      </node>
+    </node>
+    <node concept="2BZ0e9" id="1c9oVaxlEub" role="2uRRBA">
+      <property role="TrG5h" value="myEditorManager" />
+      <node concept="3Tm6S6" id="1c9oVaxlEuc" role="1B3o_S" />
+      <node concept="3uibUv" id="1c9oVaxlEAy" role="1tU5fm">
+        <ref role="3uigEE" to="iwsx:~FileEditorManager" resolve="FileEditorManager" />
       </node>
     </node>
     <node concept="2uRRBN" id="3JREjbh0Yso" role="2uRRB_">
       <node concept="3clFbS" id="3JREjbh0Ysp" role="2VODD2">
         <node concept="3clFbF" id="3JREjbh0Zfb" role="3cqZAp">
           <node concept="2OqwBi" id="3JREjbh0Zfc" role="3clFbG">
-            <node concept="2OqwBi" id="3JREjbh0Zfd" role="2Oq$k0">
-              <node concept="1KvdUw" id="3JREjbh0Zfe" role="2Oq$k0" />
-              <node concept="liA8E" id="3JREjbh0Zff" role="2OqNvi">
-                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="3JREjbh0Zfg" role="37wK5m">
-                  <ref role="3VsUkX" to="exr9:~Highlighter" resolve="Highlighter" />
-                </node>
+            <node concept="2OqwBi" id="1c9oVaxlDCK" role="2Oq$k0">
+              <node concept="2WthIp" id="1c9oVaxlDCN" role="2Oq$k0" />
+              <node concept="2BZ7hE" id="1c9oVaxlDCP" role="2OqNvi">
+                <ref role="2WH_rO" node="1c9oVaxlD9O" resolve="myHighlighter" />
               </node>
             </node>
             <node concept="liA8E" id="3JREjbh0Zfh" role="2OqNvi">
@@ -2005,7 +2055,98 @@
               <node concept="2OqwBi" id="3JREjbh0Zfi" role="37wK5m">
                 <node concept="2WthIp" id="3JREjbh0Zfj" role="2Oq$k0" />
                 <node concept="2BZ7hE" id="3JREjbh0Zfk" role="2OqNvi">
-                  <ref role="2WH_rO" node="3JREjbh0XWf" resolve="checker" />
+                  <ref role="2WH_rO" node="3JREjbh0XWf" resolve="myChecker" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1c9oVaxmfjG" role="3cqZAp" />
+        <node concept="3SKdUt" id="1c9oVaxmfu$" role="3cqZAp">
+          <node concept="3SKdUq" id="1c9oVaxmfuA" role="3SKWNk">
+            <property role="3SKdUp" value="the following code is a qfix for MPS-23439. This code must be removed as soon as MPS-23451 is fixed" />
+          </node>
+        </node>
+        <node concept="2Gpval" id="1c9oVaxlAjo" role="3cqZAp">
+          <node concept="2GrKxI" id="1c9oVaxlAjq" role="2Gsz3X">
+            <property role="TrG5h" value="editor" />
+          </node>
+          <node concept="3clFbS" id="1c9oVaxlAjs" role="2LFqv$">
+            <node concept="3cpWs8" id="1c9oVaxlRIa" role="3cqZAp">
+              <node concept="3cpWsn" id="1c9oVaxlRIb" role="3cpWs9">
+                <property role="TrG5h" value="ec" />
+                <node concept="3uibUv" id="1c9oVaxlRHZ" role="1tU5fm">
+                  <ref role="3uigEE" to="cj4x:~EditorComponent" resolve="EditorComponent" />
+                </node>
+                <node concept="2OqwBi" id="1c9oVaxlRIc" role="33vP2m">
+                  <node concept="2GrUjf" id="1c9oVaxlRId" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="1c9oVaxlAjq" resolve="editor" />
+                  </node>
+                  <node concept="liA8E" id="1c9oVaxlRIe" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~Editor.getCurrentEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getCurrentEditorComponent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="1c9oVaxlRRG" role="3cqZAp">
+              <node concept="3clFbS" id="1c9oVaxlRRI" role="3clFbx">
+                <node concept="3N13vt" id="1c9oVaxlSS2" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="1c9oVaxlRSa" role="3clFbw">
+                <node concept="1eOMI4" id="1c9oVaxlRSc" role="3fr31v">
+                  <node concept="2ZW3vV" id="1c9oVaxlS9c" role="1eOMHV">
+                    <node concept="3uibUv" id="1c9oVaxlSfI" role="2ZW6by">
+                      <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
+                    </node>
+                    <node concept="37vLTw" id="1c9oVaxlRSy" role="2ZW6bz">
+                      <ref role="3cqZAo" node="1c9oVaxlRIb" resolve="ec" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1c9oVaxlSV$" role="3cqZAp">
+              <node concept="2OqwBi" id="1c9oVaxlUbt" role="3clFbG">
+                <node concept="2OqwBi" id="1c9oVaxlTDS" role="2Oq$k0">
+                  <node concept="1eOMI4" id="1c9oVaxlSWj" role="2Oq$k0">
+                    <node concept="10QFUN" id="1c9oVaxlSWk" role="1eOMHV">
+                      <node concept="37vLTw" id="1c9oVaxlSWi" role="10QFUP">
+                        <ref role="3cqZAo" node="1c9oVaxlRIb" resolve="ec" />
+                      </node>
+                      <node concept="3uibUv" id="1c9oVaxlT2$" role="10QFUM">
+                        <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1c9oVaxlUaq" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorComponent.getHighlightManager():jetbrains.mps.nodeEditor.NodeHighlightManager" resolve="getHighlightManager" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1c9oVaxlUei" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~NodeHighlightManager.clearForOwner(jetbrains.mps.openapi.editor.message.EditorMessageOwner,boolean):boolean" resolve="clearForOwner" />
+                  <node concept="2OqwBi" id="1c9oVaxlUx0" role="37wK5m">
+                    <node concept="2WthIp" id="1c9oVaxlUx3" role="2Oq$k0" />
+                    <node concept="2BZ7hE" id="1c9oVaxlUx5" role="2OqNvi">
+                      <ref role="2WH_rO" node="3JREjbh0XWf" resolve="myChecker" />
+                    </node>
+                  </node>
+                  <node concept="3clFbT" id="1c9oVaxlU_3" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="1c9oVaxlKxq" role="2GsD0m">
+            <ref role="37wK5l" to="rlg8:~EditorsHelper.toMPSEditors(java.util.List):java.util.List" resolve="toMPSEditors" />
+            <ref role="1Pybhc" to="rlg8:~EditorsHelper" resolve="EditorsHelper" />
+            <node concept="2YIFZM" id="1c9oVaxlF1j" role="37wK5m">
+              <ref role="37wK5l" to="rlg8:~EditorsHelper.getAllEditors(com.intellij.openapi.fileEditor.FileEditorManager):java.util.List" resolve="getAllEditors" />
+              <ref role="1Pybhc" to="rlg8:~EditorsHelper" resolve="EditorsHelper" />
+              <node concept="2OqwBi" id="1c9oVaxlF1k" role="37wK5m">
+                <node concept="2WthIp" id="1c9oVaxlF1l" role="2Oq$k0" />
+                <node concept="2BZ7hE" id="1c9oVaxlF1m" role="2OqNvi">
+                  <ref role="2WH_rO" node="1c9oVaxlEub" resolve="myEditorManager" />
                 </node>
               </node>
             </node>

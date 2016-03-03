@@ -135,12 +135,11 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.InEditorStructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.UsedLanguagesChecker());
-
-    new RepoListenerRegistrar(projectRepo, myRepositoryListener).attach();
+    new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
   }
   @Override
   protected void doDispose() {
-    new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
+    new RepoListenerRegistrar(myRepository, myRepositoryListener).detach();
     Sequence.fromIterable(MapSequence.fromMap(myEditorComponentToErrorMap).values()).visitAll(new IVisitor<LanguageErrorsComponent>() {
       public void visit(LanguageErrorsComponent it) {
         it.dispose();

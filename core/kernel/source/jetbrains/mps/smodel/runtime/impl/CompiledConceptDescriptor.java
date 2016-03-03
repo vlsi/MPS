@@ -254,6 +254,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     return myFinal;
   }
 
+  @NotNull
   @Override
   public String getConceptAlias() {
     return myConceptAlias;

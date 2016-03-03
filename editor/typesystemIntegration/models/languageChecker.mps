@@ -2,15 +2,15 @@
 <model ref="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -166,7 +166,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -962,16 +962,15 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6qi2OtU3ugS" role="3cqZAp" />
         <node concept="3clFbF" id="YesxdxjnBF" role="3cqZAp">
           <node concept="2OqwBi" id="YesxdxjFkt" role="3clFbG">
-            <node concept="2ShNRf" id="YesxdxjnBB" role="2Oq$k0">
-              <node concept="1pGfFk" id="YesxdxjEUi" role="2ShVmc">
+            <node concept="2ShNRf" id="1NbfySnU48X" role="2Oq$k0">
+              <node concept="1pGfFk" id="1NbfySnU48Y" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                <node concept="37vLTw" id="YesxdxjEUC" role="37wK5m">
-                  <ref role="3cqZAo" node="Yesxdxji0B" resolve="projectRepo" />
+                <node concept="37vLTw" id="1$PlBHFA7Cw" role="37wK5m">
+                  <ref role="3cqZAo" node="YesxdxjMfI" resolve="myRepository" />
                 </node>
-                <node concept="37vLTw" id="YesxdxjEVQ" role="37wK5m">
+                <node concept="37vLTw" id="1NbfySnU490" role="37wK5m">
                   <ref role="3cqZAo" node="6qi2OtU3upc" resolve="myRepositoryListener" />
                 </node>
               </node>
@@ -997,21 +996,21 @@
       <node concept="3cqZAl" id="6qi2OtU3uh1" role="3clF45" />
       <node concept="3Tmbuc" id="3g$f7gtx_Ct" role="1B3o_S" />
       <node concept="3clFbS" id="6qi2OtU3uh3" role="3clF47">
-        <node concept="3clFbF" id="YesxdxjQZ4" role="3cqZAp">
-          <node concept="2OqwBi" id="YesxdxjQZ5" role="3clFbG">
-            <node concept="2ShNRf" id="YesxdxjQZ6" role="2Oq$k0">
-              <node concept="1pGfFk" id="YesxdxjQZ7" role="2ShVmc">
+        <node concept="3clFbF" id="1NbfySnU8wm" role="3cqZAp">
+          <node concept="2OqwBi" id="1NbfySnU8Nh" role="3clFbG">
+            <node concept="liA8E" id="1NbfySnU8UL" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.detach():void" resolve="detach" />
+            </node>
+            <node concept="2ShNRf" id="1$PlBHFA7$C" role="2Oq$k0">
+              <node concept="1pGfFk" id="1$PlBHFA7$D" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                <node concept="37vLTw" id="YesxdxjRL$" role="37wK5m">
+                <node concept="37vLTw" id="1$PlBHFA7Az" role="37wK5m">
                   <ref role="3cqZAo" node="YesxdxjMfI" resolve="myRepository" />
                 </node>
-                <node concept="37vLTw" id="YesxdxjQZ9" role="37wK5m">
+                <node concept="37vLTw" id="1$PlBHFA7$F" role="37wK5m">
                   <ref role="3cqZAo" node="6qi2OtU3upc" resolve="myRepositoryListener" />
                 </node>
               </node>
-            </node>
-            <node concept="liA8E" id="YesxdxjQZa" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.attach():void" resolve="attach" />
             </node>
           </node>
         </node>
@@ -3463,6 +3462,15 @@
     </node>
     <node concept="2tJIrI" id="4InNjD1Ku4y" role="jymVt" />
     <node concept="3clFbW" id="4nkKl$KPUHy" role="jymVt">
+      <node concept="37vLTG" id="15Dv6lKf5Hv" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="15Dv6lKf5Hu" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+        </node>
+        <node concept="2AHcQZ" id="15Dv6lKf73c" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
       <node concept="3Tm1VV" id="4nkKl$KPUHz" role="1B3o_S" />
       <node concept="3cqZAl" id="4nkKl$KPUH$" role="3clF45" />
       <node concept="3clFbS" id="4nkKl$KPUH_" role="3clF47">
@@ -3475,15 +3483,6 @@
               <ref role="3cqZAo" node="15Dv6lKf5Hv" resolve="project" />
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="15Dv6lKf5Hv" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="15Dv6lKf5Hu" role="1tU5fm">
-          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
-        </node>
-        <node concept="2AHcQZ" id="15Dv6lKf73c" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>

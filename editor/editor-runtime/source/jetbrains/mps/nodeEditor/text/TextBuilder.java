@@ -86,7 +86,7 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     String delim = insertSpace ? " " : "";
     int delimWidth = delim.length();
 
-    int newWidth = myWidth + builder.getWidth() + delimWidth;
+    int newWidth = myWidth + getWidth(builder) + delimWidth;
 
     Iterator<StringBuffer> builderIterator = builder.getLines().iterator();
     for (StringBuffer nextLine : getLines()) {
@@ -107,6 +107,23 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     return this;
   }
 
+  /**
+   * @deprecated in MPS 3.4 replace with {@link jetbrains.mps.openapi.editor.TextBuilder#getWidth()} method
+   */
+  @Deprecated
+  private static int getWidth(jetbrains.mps.openapi.editor.TextBuilder builder) {
+    if (builder instanceof TextBuilder) {
+      return ((TextBuilder) builder).getWidth();
+    }
+    int maxWidth = 0;
+    for (StringBuffer line : builder.getLines()) {
+      if (line.length() > maxWidth) {
+        maxWidth = line.length();
+      }
+    }
+    return maxWidth;
+  }
+
   public jetbrains.mps.openapi.editor.TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder) {
     if (builder.getSize() == 0) {
       return this;
@@ -119,7 +136,7 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
       myLines.add(new StringBuffer(sb));
     }
 
-    myWidth = Math.max(this.myWidth, builder.getWidth());
+    myWidth = Math.max(this.myWidth, getWidth(builder));
     normalizeWidth();
     return this;
   }

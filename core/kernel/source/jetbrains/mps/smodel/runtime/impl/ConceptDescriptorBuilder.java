@@ -46,6 +46,7 @@ public class ConceptDescriptorBuilder {
   private String[] parents;
   private boolean isAbstract;
   private boolean isFinal;
+  @NotNull
   private String conceptAlias;
   private String shortDescription;
   private String helpUrl;
@@ -142,7 +143,7 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder alias(String alias, String shortDescription) {
+  public ConceptDescriptorBuilder alias(@NotNull String alias, String shortDescription) {
     this.conceptAlias = alias;
     this.shortDescription = shortDescription;
     return this;

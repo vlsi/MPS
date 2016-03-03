@@ -358,7 +358,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       myCheckersToRemove.clear();
     }
 
-    final List<EditorComponent> allEditorComponents = getAllEditorComponents();
+    final List<EditorComponent> activeEditors = getActiveEditors();
     runUpdateMessagesAction(new Runnable() {
       @Override
       public void run() {
@@ -368,7 +368,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           myCheckedOnceEditors.clear();
           myInspectorMessagesCreated = false;
         } else {
-          cleanupCheckedOnce(allEditorComponents);
+          cleanupCheckedOnce(activeEditors);
         }
       }
     });
@@ -378,7 +378,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     List<Pair<EditorComponent, Boolean>> input = new ArrayList<Pair<EditorComponent, Boolean>>();
     HashSet<SNodePointer> visited = new HashSet<SNodePointer>();
-    for (EditorComponent ecomp : allEditorComponents) {
+    for (EditorComponent ecomp : activeEditors) {
       SNodePointer pointer = new SNodePointer(ecomp.getNodeForTypechecking());
       input.add(new Pair<EditorComponent, Boolean>(ecomp, !visited.contains(pointer)));
       visited.add(pointer);
@@ -417,7 +417,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private List<EditorComponent> getAllEditorComponents() {
+  private List<EditorComponent> getActiveEditors() {
     final List<Editor> list;
     synchronized (ADD_EDITORS_LOCK) {
       list = EditorsHelper.getSelectedEditors(myFileEditorManager);
