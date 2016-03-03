@@ -16,29 +16,31 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.language.ConceptRegistryUtil;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.scope.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getModule;
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
@@ -76,7 +78,8 @@ public class ModelConstraints {
   }
 
   // canBe* section
-  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     SNode currentNode = node;
 
     IOperationContext context = getOperationContext(getModule(node));
@@ -94,12 +97,20 @@ public class ModelConstraints {
     return true;
   }
 
-  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(ancestor.getConcept());
+    return descriptor.canBeAncestor(ancestor, descendant, childConcept, getOperationContext(getModule(ancestor)), checkingNodeContext);
+  }
+
+  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
-  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(concept);
     return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
@@ -167,8 +178,8 @@ public class ModelConstraints {
 
   /**
    * @deprecated shall use {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SReference)} or
-   *    {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.language.SReferenceLink)}
-   *    instead.
+   * {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.language.SReferenceLink)}
+   * instead.
    */
   @NotNull
   @Deprecated
@@ -179,7 +190,8 @@ public class ModelConstraints {
   }
 
   @NotNull
-  private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
+  private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode,
+      @NotNull String role) {
     SConcept concept = referenceNode.getConcept();
     SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept.getDeclarationNode(), role);
     if (scopeReference == null) {
@@ -187,9 +199,10 @@ public class ModelConstraints {
     }
 
     return new OkReferenceDescriptor(
-      concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
-      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), new SNodeLegacy(referenceNode).getRoleLink(), // parameters
-      reference // reference
+        concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
+        reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(),
+        new SNodeLegacy(referenceNode).getRoleLink(), // parameters
+        reference // reference
     );
   }
 
@@ -205,9 +218,9 @@ public class ModelConstraints {
     }
 
     return new OkReferenceDescriptor(
-      MetaAdapterByDeclaration.getInstanceConcept(smartConcept), SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
-      false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
-      null // reference
+        MetaAdapterByDeclaration.getInstanceConcept(smartConcept), SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
+        false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
+        null // reference
     );
   }
 

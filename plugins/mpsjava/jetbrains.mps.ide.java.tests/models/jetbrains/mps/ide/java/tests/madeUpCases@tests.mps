@@ -2,12 +2,12 @@
 <model ref="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -134,7 +134,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1055,6 +1055,40 @@
                       <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="44G$aAkpSNI" role="1SL9yI">
+      <property role="TrG5h" value="Annotations" />
+      <node concept="3cqZAl" id="44G$aAkpSNJ" role="3clF45" />
+      <node concept="3clFbS" id="44G$aAkpSNN" role="3clF47">
+        <node concept="3clFbF" id="44G$aAkpT3S" role="3cqZAp">
+          <node concept="2YIFZM" id="44G$aAkpTnI" role="3clFbG">
+            <ref role="37wK5l" to="wfc9:70HT6wFrYln" resolve="checkStubModels" />
+            <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
+            <node concept="3cpWs3" id="44G$aAkpTvL" role="37wK5m">
+              <node concept="Xl_RD" id="44G$aAkpTvO" role="3uHU7w">
+                <property role="Xl_RC" value="/plugins/mpsjava/tests/testDirAnnotations" />
+              </node>
+              <node concept="2YIFZM" id="44G$aAkpTs8" role="3uHU7B">
+                <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="44G$aAkpU7F" role="37wK5m">
+              <node concept="Tc6Ow" id="44G$aAkpZtb" role="2ShVmc">
+                <node concept="H_c77" id="44G$aAkpZCV" role="HW$YZ" />
+                <node concept="BaHAS" id="44G$aAkpZQg" role="HW$Y0">
+                  <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations" />
+                  <property role="BaGAP" value="" />
+                </node>
+                <node concept="BaHAS" id="44G$aAkq0qz" role="HW$Y0">
+                  <property role="BaHAW" value="jetbrains.mps.ide.java.testMaterial.annotations.user" />
+                  <property role="BaGAP" value="" />
                 </node>
               </node>
             </node>

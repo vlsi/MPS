@@ -6,11 +6,14 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import org.jetbrains.mps.util.Condition;
@@ -42,8 +45,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
-    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept());
-
+    final SConcept nodeConcept = node.getConcept();
+    final SNode nodeConceptNode = SNodeOperations.getConceptDeclaration(node);
+    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(nodeConcept);
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
     if (SNodeOperations.getParent(node) != null) {
@@ -55,9 +59,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), null);
         return;
       }
+      final SNode parent = SNodeOperations.getParent(node);
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeChild(node.getConcept(), SNodeOperations.getParent(node), link, node, checkingNodeContext);
+          return ModelConstraints.canBeChild(nodeConcept, parent, link, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
@@ -67,9 +72,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
 
     if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
+      final SModel model = SNodeOperations.getModel(node);
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeRoot(node.getConcept(), SNodeOperations.getModel(node));
+          return ModelConstraints.canBeRoot(nodeConcept, model);
         }
       });
       if (!(canBeRoot)) {
@@ -82,7 +88,6 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
 
     for (final SNode child : SNodeOperations.getChildren(node)) {
-      component.addDependency(child);
       final SNode childConcept = SNodeOperations.getConceptDeclaration(child);
       final SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
       if (childConcept == null || childLink == null) {
@@ -97,22 +102,25 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
         component.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
       }
+    }
 
-      boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
-        public Boolean invoke() {
-          return ModelConstraints.canBeAncestor(node, child, childConcept, checkingNodeContext);
+    if (nodeConceptNode != null) {
+      for (final Wrappers._T<SNode> ancestor = new Wrappers._T<SNode>(SNodeOperations.getParent(node)); ancestor.value != null; ancestor.value = SNodeOperations.getParent(ancestor.value)) {
+        boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
+            return ModelConstraints.canBeAncestorDirect(ancestor.value, node, nodeConceptNode, checkingNodeContext);
+          }
+        });
+        if (!(canBeAncestor)) {
+          SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
+          component.addError(node, "Bad ancestor for node " + node, rule);
         }
-      });
-      if (!(canBeAncestor)) {
-        SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(child, "Bad ancestor for node " + child, rule);
       }
     }
 
     // Properties validation 
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
-    component.addDependency(concept);
-    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
+    component.addDependency(nodeConceptNode);
+    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(nodeConceptNode);
     for (SNode parentConcept : chs.getConcepts()) {
       component.addDependency(parentConcept);
     }
@@ -139,7 +147,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }));
       if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
-        if ("name".equals(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ("AnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) || "InternalAnonymousClass".equals(SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
+        if ("name".equals(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ("AnonymousClass".equals(SPropertyOperations.getString(nodeConceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) || "InternalAnonymousClass".equals(SPropertyOperations.getString(nodeConceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
           continue;
         }
         // todo find a rule 

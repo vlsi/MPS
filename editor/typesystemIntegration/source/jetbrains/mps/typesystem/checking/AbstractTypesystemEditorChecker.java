@@ -84,7 +84,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
 
   @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
-    return true; //processed in another place
+    return !events.isEmpty(); //processed in another place
   }
 
   @Override

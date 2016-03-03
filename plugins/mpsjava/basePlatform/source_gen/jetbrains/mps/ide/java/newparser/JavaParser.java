@@ -63,7 +63,7 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_8);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverter(stubsMode) : new FullASTConverter(null));
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ? new ASTConverterWithExpressions(stubsMode) : new FullASTConverter(null));
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;
@@ -313,11 +313,15 @@ public class JavaParser {
       return errorMsg;
     }
   }
+
+  /**
+   * Must be called from a context where 1) nodes are attached to a model 2) model modification is allowed.
+   * E.g. either inside a command or during smodel.SModel.isUpdateMode() == true
+   */
   public static void tryResolveUnknowns(Iterable<SNode> roots) {
     for (SNode node : Sequence.fromIterable(roots)) {
       List<SNode> unknowns = SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), false, new SAbstractConcept[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
-
         final SNode unkNode = unk;
         final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
         if (subst == null) {
@@ -334,7 +338,6 @@ public class JavaParser {
             SModelReference targetModel = it.getTargetSModelReference();
             if (!(sourceModel.getReference().equals(targetModel))) {
               ((SModelInternal) sourceModel).addModelImport(targetModel, true);
-
             }
           }
         });
