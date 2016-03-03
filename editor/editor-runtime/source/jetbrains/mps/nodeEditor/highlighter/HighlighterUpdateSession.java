@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -202,7 +201,8 @@ public class HighlighterUpdateSession {
           IOperationContext operationContext = editor.getOperationContext();
           if (operationContext.isValid()) {
             try {
-              messages.addAll(checker.createMessagesProtected(node, myEvents, wasCheckedOnce, editorContext, new CancelOnWriteOrPause(myHighlighter), applyQuickFixes));
+              messages.addAll(checker.createMessagesProtected(node, myEvents, wasCheckedOnce, editorContext,
+                  new HighlighterUpdateSessionCancellable(myHighlighter, editor), applyQuickFixes));
               return checker.areMessagesChangedProtected();
             } catch (IndexNotReadyException ex) {
               highlightManager.clearForOwner(checker, true);
@@ -251,30 +251,5 @@ public class HighlighterUpdateSession {
     }
 
     return anyMessageChanged;
-  }
-
-  /**
-   * Cancels itself if a write action gets scheduled or the highlighter gets paused, and stays cancelled forever.
-   */
-  private static class CancelOnWriteOrPause implements Cancellable {
-    private final IHighlighter myHighlighter;
-    private volatile boolean myCancelRequested = false;
-
-    private CancelOnWriteOrPause(IHighlighter highlighter) {
-      myHighlighter = highlighter;
-    }
-
-    @Override
-    public boolean isCancelled() {
-      if (myCancelRequested) {
-        return true;
-      }
-
-      if (ModelAccess.instance().hasScheduledWrites() || myHighlighter.isPausedOrStopping()) {
-        myCancelRequested = true;
-      }
-
-      return myCancelRequested;
-    }
   }
 }
