@@ -1368,9 +1368,7 @@
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
             <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="3rTF030YdQj" role="37wK5m">
-              <node concept="3clFbS" id="3rTF030YdQs" role="1bW5cS">
-                <node concept="3cpWs6" id="3rTF030YBUl" role="3cqZAp" />
-              </node>
+              <node concept="3clFbS" id="3rTF030YdQs" role="1bW5cS" />
             </node>
           </node>
         </node>

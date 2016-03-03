@@ -186,7 +186,6 @@ public class IdeaEnvironment extends EnvironmentBase {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        return;
       }
     });
     try {

@@ -18,10 +18,11 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
+import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.junit.After;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseProjectsTest {
@@ -70,6 +71,10 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
+    DumbService.getInstance(ProjectHelper.toIdeaProject(myProject)).runWhenSmart(new Runnable() {
+      public void run() {
+      }
+    });
     ourEnv.flushAllEvents();
   }
 

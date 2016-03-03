@@ -6722,6 +6722,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6m9C3b2yzKL" role="3cqZAp">
+          <node concept="2OqwBi" id="6m9C3b2yJ3s" role="3clFbG">
+            <node concept="2YIFZM" id="6m9C3b2yzMx" role="2Oq$k0">
+              <ref role="37wK5l" to="4nm9:~DumbService.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.project.DumbService" resolve="getInstance" />
+              <ref role="1Pybhc" to="4nm9:~DumbService" resolve="DumbService" />
+              <node concept="2YIFZM" id="6m9C3b2yJLe" role="37wK5m">
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                <node concept="37vLTw" id="6m9C3b2yJRP" role="37wK5m">
+                  <ref role="3cqZAo" node="2SnxzQPEmgY" resolve="myProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="6m9C3b2yJ5i" role="2OqNvi">
+              <ref role="37wK5l" to="4nm9:~DumbService.runWhenSmart(java.lang.Runnable):void" resolve="runWhenSmart" />
+              <node concept="1bVj0M" id="6m9C3b2yJbi" role="37wK5m">
+                <node concept="3clFbS" id="6m9C3b2yJbj" role="1bW5cS" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="2SnxzQPEp10" role="3cqZAp">
           <node concept="2OqwBi" id="2SnxzQPEp11" role="3clFbG">
             <node concept="37vLTw" id="2SnxzQPEp15" role="2Oq$k0">
