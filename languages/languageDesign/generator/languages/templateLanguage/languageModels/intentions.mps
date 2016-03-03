@@ -7382,24 +7382,13 @@
     <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="38BcoT" id="13c7lpEyXnn" role="3dlsAV">
       <node concept="3clFbS" id="13c7lpEyXno" role="2VODD2">
-        <node concept="3cpWs8" id="64XCMZk96sq" role="3cqZAp">
-          <node concept="3cpWsn" id="64XCMZk96sr" role="3cpWs9">
-            <property role="TrG5h" value="concept" />
-            <node concept="3bZ5Sz" id="64XCMZk96sp" role="1tU5fm">
-              <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
-            </node>
-            <node concept="2OqwBi" id="64XCMZk96ss" role="33vP2m">
-              <node concept="2Sf5sV" id="64XCMZk96st" role="2Oq$k0" />
-              <node concept="2yIwOk" id="64XCMZk96su" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="13c7lpEz1SZ" role="3cqZAp">
           <node concept="2OqwBi" id="13c7lpEzdEX" role="3clFbG">
             <node concept="2OqwBi" id="13c7lpEzdAy" role="2Oq$k0">
               <node concept="2OqwBi" id="13c7lpEz1T1" role="2Oq$k0">
-                <node concept="37vLTw" id="64XCMZk96sv" role="2Oq$k0">
-                  <ref role="3cqZAo" node="64XCMZk96sr" resolve="concept" />
+                <node concept="2OqwBi" id="Z_z4A27yly" role="2Oq$k0">
+                  <node concept="2Sf5sV" id="Z_z4A27ylz" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="Z_z4A27yl$" role="2OqNvi" />
                 </node>
                 <node concept="LSoRf" id="13c7lpEz1Ta" role="2OqNvi">
                   <node concept="2OqwBi" id="13c7lpEz2Oj" role="1iTxcG">
