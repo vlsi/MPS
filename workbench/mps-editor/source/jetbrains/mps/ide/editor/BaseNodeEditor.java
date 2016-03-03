@@ -57,6 +57,7 @@ public abstract class BaseNodeEditor implements Editor {
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
   protected Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<TaskType, PrioritizedTask>();
+  private boolean mySelected;
 
   public BaseNodeEditor(@NotNull Project mpsProject) {
     myProject = mpsProject;
@@ -130,9 +131,7 @@ public abstract class BaseNodeEditor implements Editor {
 
   @Override
   public void dispose() {
-    if (myEditorComponent != null) {
-      myEditorComponent.dispose();
-    }
+    setEditorComponent(null);
   }
 
   @Override
@@ -164,24 +163,12 @@ public abstract class BaseNodeEditor implements Editor {
       myEditorPanel.remove(myReplace);
       myReplace = null;
     }
-    myEditorComponent = new NodeEditorComponent(myProject.getRepository());
-    JComponent externalComponent = myEditorComponent.getExternalComponent();
-    //HACK to avoid strange gray border in ScrollPane after empty aspect tab
-    if(externalComponent.getComponent(0) instanceof JBScrollPane) {
-      ((JBScrollPane) externalComponent.getComponent(0)).setBorder(new EmptyBorder(JBUI.emptyInsets()));
-      ((JBScrollPane) externalComponent.getComponent(0)).getInsets().set(0, 0, 0, 0);
-    }
-    myEditorPanel.add(externalComponent, BorderLayout.CENTER);
-    myComponent.validate();
+    NodeEditorComponent editorComponent = new NodeEditorComponent(myProject.getRepository());
+    setEditorComponent(editorComponent);
   }
 
   protected void showComponent(JComponent replace) {
-    if (myEditorComponent != null) {
-      myEditorPanel.remove(myEditorComponent.getExternalComponent());
-      myEditorComponent.dispose();
-      myEditorComponent = null;
-      myCurrentlyEditedNode = null;
-    }
+    setEditorComponent(null);
 
     if (myReplace != null) {
       myEditorPanel.remove(myReplace);
@@ -191,6 +178,34 @@ public abstract class BaseNodeEditor implements Editor {
     myReplace = replace;
     myEditorPanel.add(myReplace, BorderLayout.CENTER);
     myComponent.validate();
+  }
+
+  private void pauseOrResumeHighlighter() {
+    myEditorComponent.getHighlighter().setPaused(!mySelected);
+  }
+
+  private void setEditorComponent(NodeEditorComponent editorComponent) {
+    if (myEditorComponent == editorComponent) {
+      return;
+    }
+
+    if (editorComponent == null) {
+      myEditorPanel.remove(myEditorComponent.getExternalComponent());
+      myEditorComponent.dispose();
+      myEditorComponent = null;
+      myCurrentlyEditedNode = null;
+    } else {
+      myEditorComponent = editorComponent;
+      JComponent externalComponent = myEditorComponent.getExternalComponent();
+      //HACK to avoid strange gray border in ScrollPane after empty aspect tab
+      if (externalComponent.getComponent(0) instanceof JBScrollPane) {
+        ((JBScrollPane) externalComponent.getComponent(0)).setBorder(new EmptyBorder(JBUI.emptyInsets()));
+        ((JBScrollPane) externalComponent.getComponent(0)).getInsets().set(0, 0, 0, 0);
+      }
+      myEditorPanel.add(externalComponent, BorderLayout.CENTER);
+      myComponent.validate();
+      pauseOrResumeHighlighter();
+    }
   }
 
   //---state---
@@ -246,6 +261,21 @@ public abstract class BaseNodeEditor implements Editor {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
       }
     });
+  }
+
+  @Override
+  public void selectNotify() {
+    setSelected(true);
+  }
+
+  @Override
+  public void deselectNotify() {
+    setSelected(false);
+  }
+
+  private void setSelected(boolean selected) {
+    mySelected = selected;
+    pauseOrResumeHighlighter();
   }
 
   public abstract static class PrioritizedTask implements Runnable {

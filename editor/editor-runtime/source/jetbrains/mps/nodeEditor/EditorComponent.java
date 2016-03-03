@@ -96,6 +96,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.folding.CollapseAllCellAction;
 import jetbrains.mps.nodeEditor.folding.CollapseRecursivelyCellAction;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.highlighter.EditorHighlighter;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -217,6 +218,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
@@ -363,6 +365,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
+
+  @NotNull
+  private final EditorHighlighter myHighlighter = new EditorHighlighter(this);
 
   public EditorComponent(@NotNull SRepository repository) {
     this(repository, false, false);
@@ -3091,6 +3096,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isContextAssistantFocused() {
     ContextAssistant activeAssistant = myEditorContext.getContextAssistantManager().getActiveAssistant();
     return activeAssistant != null && activeAssistant.hasFocus();
+  }
+
+  @NotNull
+  public EditorHighlighter getHighlighter() {
+    return myHighlighter;
   }
 
   private class ReferenceUnderliner {

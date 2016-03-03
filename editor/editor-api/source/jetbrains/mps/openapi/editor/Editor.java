@@ -46,4 +46,20 @@ public interface Editor {
   EditorState saveState();
 
   void loadState(@NotNull EditorState state);
+
+  /**
+   * <p>
+   * This method is invoked each time when the editor is selected.
+   * This can happen in two cases: editor is selected because the selected file
+   * has been changed or editor for the selected file has been changed.
+   * </p>
+   * <p>(Copied from com.intellij.openapi.fileEditor.FileEditor#selectNotify)</p>
+   */
+  void selectNotify();
+
+  /**
+   * <p>This method is invoked each time when the editor is deselected.</p>
+   * <p>(Copied from com.intellij.openapi.fileEditor.FileEditor#deselectNotify)</p>
+   */
+  void deselectNotify();
 }

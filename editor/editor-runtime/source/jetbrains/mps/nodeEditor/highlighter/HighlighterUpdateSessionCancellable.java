@@ -78,8 +78,8 @@ class HighlighterUpdateSessionCancellable implements Cancellable {
 
   @Nullable
   private String getCancellationReason() {
-    if (myEditorComponent.isDisposed()) {
-      return "editor component is disposed";
+    if (!myEditorComponent.getHighlighter().mayHighlight()) {
+      return "editor component highlighting disabled";
     }
     if (myEditorComponent.getEditedNode() != myNode) {
       return "edited node has changed";
