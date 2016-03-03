@@ -130,12 +130,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -378,9 +372,6 @@
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
-      <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
-        <child id="4611582986551314344" name="requestedType" index="UnYnz" />
-      </concept>
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
@@ -6130,16 +6121,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3SKdUt" id="6l$icTnGdqU" role="3cqZAp">
-                <node concept="3SKdUq" id="6l$icTnGdqW" role="3SKWNk">
-                  <property role="3SKdUp" value="once substract(subconceptOfIATN) which ends up with supertype of SConcept works here (i.e. for the sequence&lt;SConcept&gt;)" />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="6l$icTnGdMg" role="3cqZAp">
-                <node concept="3SKdUq" id="6l$icTnGdMi" role="3SKWNk">
-                  <property role="3SKdUp" value="(e.g. by altering ISequence API to take ISequence&lt;?&gt;), ofType&lt;concept&lt;IOperation&gt;&gt; selector in the next statement could be removed." />
-                </node>
-              </node>
               <node concept="3clFbF" id="6S$8H8crNPk" role="3cqZAp">
                 <node concept="2OqwBi" id="6S$8H8crOFz" role="3clFbG">
                   <node concept="37vLTw" id="6S$8H8crNPi" role="2Oq$k0">
@@ -6151,15 +6132,8 @@
                         <node concept="2OqwBi" id="6S$8H8cslhs" role="2Oq$k0">
                           <node concept="2OqwBi" id="6S$8H8csiXY" role="2Oq$k0">
                             <node concept="2OqwBi" id="6S$8H8csflI" role="2Oq$k0">
-                              <node concept="2OqwBi" id="6qlNrW063wY" role="2Oq$k0">
-                                <node concept="1AzSVQ" id="6S$8H8crQxG" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6S$8H8crjbM" resolve="subconceptOfSeqOp" />
-                                </node>
-                                <node concept="UnYns" id="6qlNrW064at" role="2OqNvi">
-                                  <node concept="3bZ5Sz" id="6qlNrW064w6" role="UnYnz">
-                                    <ref role="3bZ5Sy" to="tpee:hqOqG0K" resolve="IOperation" />
-                                  </node>
-                                </node>
+                              <node concept="1AzSVQ" id="6S$8H8crQxG" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6S$8H8crjbM" resolve="subconceptOfSeqOp" />
                               </node>
                               <node concept="66VNe" id="6S$8H8csgc3" role="2OqNvi">
                                 <node concept="1AzSVQ" id="6S$8H8csin2" role="576Qk">

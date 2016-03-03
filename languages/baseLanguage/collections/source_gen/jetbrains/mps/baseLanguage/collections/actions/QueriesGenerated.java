@@ -252,9 +252,7 @@ public class QueriesGenerated {
               });
             }
           }));
-          // once substract(subconceptOfIATN) which ends up with supertype of SConcept works here (i.e. for the sequence<SConcept>) 
-          // (e.g. by altering ISequence API to take ISequence<?>), ofType<concept<IOperation>> selector in the next statement could be removed. 
-          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSeqOp).ofType(SAbstractConcept.class).subtract(Sequence.fromIterable(subconceptOfSortedSetOp)).subtract(Sequence.fromIterable(subconceptOfSetOp)).subtract(Sequence.fromIterable(subconceptOfSortedMapOp)).subtract(Sequence.fromIterable(subconceptOfMapOp)).subtract(Sequence.fromIterable(subconceptOfIATN)));
+          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSeqOp).subtract(Sequence.fromIterable(subconceptOfSortedSetOp)).subtract(Sequence.fromIterable(subconceptOfSetOp)).subtract(Sequence.fromIterable(subconceptOfSortedMapOp)).subtract(Sequence.fromIterable(subconceptOfMapOp)).subtract(Sequence.fromIterable(subconceptOfIATN)));
 
           return ListSequence.fromList(allApplicable).distinct().select(new ISelector<SAbstractConcept, SNode>() {
             public SNode select(SAbstractConcept it) {
