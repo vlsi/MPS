@@ -18,13 +18,11 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 
 /*package*/ class FindUsagesHelper {
@@ -64,12 +62,12 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        scopeEditor.value = new ScopeEditor(options.value.getOption(ScopeOptions.class), myProject.getRepository());
-        findersEditor.value = new FindersEditor(options.value.getOption(FindersOptions.class), node) {
+        scopeEditor.value = new ScopeEditor(options.value.getScopeOptions(), myProject.getRepository());
+        findersEditor.value = new FindersEditor(options.value.getFindersOptions(), node) {
           public void goToFinder(ReloadableFinder finder) {
           }
         };
-        viewOptionsEditor.value = new ViewOptionsEditor(options.value.getOption(ViewOptions.class));
+        viewOptionsEditor.value = new ViewOptionsEditor(options.value.getViewOptions());
       }
     });
     options.value = new FindUsagesOptions(findersEditor.value.getOptions(), scopeEditor.value.getOptions(), viewOptionsEditor.value.getOptions());
@@ -88,9 +86,9 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
     final Wrappers._T<ViewOptions> viewOptions = new Wrappers._T<ViewOptions>();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        provider.value = options.value.getOption(FindersOptions.class).getResult();
-        query.value = new SearchQuery(operationNode.value, options.value.getOption(ScopeOptions.class).getScope(myProject));
-        viewOptions.value = options.value.getOption(ViewOptions.class);
+        provider.value = options.value.getFindersOptions().getResult();
+        query.value = new SearchQuery(operationNode.value, options.value.getScopeOptions().getScope(myProject));
+        viewOptions.value = options.value.getViewOptions();
       }
     });
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).navigateIfSingle(!(viewOptions.value.myShowOneResult)).forceNewTab(viewOptions.value.myNewTab).notFoundMessage("No usages for that node");

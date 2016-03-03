@@ -95,8 +95,7 @@ public class FindConceptInstances_Action extends BaseAction {
           @Override
           public FindUsagesOptions getDefaultSearchOptions(String concept) {
             FindUsagesOptions findUsagesOptions = container.getDefaultSearchOptions(concept);
-            findUsagesOptions.removeOption(FindersOptions.class);
-            findUsagesOptions.setOption(new FindersOptions(((String) BHReflection.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), SMethodTrimmedId.create("getGeneratedClassLongName", MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "hEwIc4S")))));
+            findUsagesOptions.setFindersOptions(new FindersOptions(((String) BHReflection.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), SMethodTrimmedId.create("getGeneratedClassLongName", MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "hEwIc4S")))));
             return findUsagesOptions;
           }
         };

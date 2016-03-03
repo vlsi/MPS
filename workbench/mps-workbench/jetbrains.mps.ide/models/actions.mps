@@ -23032,10 +23032,7 @@
                               <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                             </node>
                             <node concept="liA8E" id="5F_WwkyOS4l" role="2OqNvi">
-                              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                              <node concept="3VsKOn" id="5F_WwkyOSZQ" role="37wK5m">
-                                <ref role="3VsUkX" to="32gr:~ScopeOptions" resolve="ScopeOptions" />
-                              </node>
+                              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getScopeOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" resolve="getScopeOptions" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="1sZSvV3MCm0" role="37wK5m">
@@ -23067,10 +23064,7 @@
                                 <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                               </node>
                               <node concept="liA8E" id="5F_WwkyPmVg" role="2OqNvi">
-                                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                                <node concept="3VsKOn" id="5F_WwkyPnTj" role="37wK5m">
-                                  <ref role="3VsUkX" to="32gr:~FindersOptions" resolve="FindersOptions" />
-                                </node>
+                                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getFindersOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" resolve="getFindersOptions" />
                               </node>
                             </node>
                             <node concept="37vLTw" id="5F_WwkyOHo2" role="37wK5m">
@@ -23109,10 +23103,7 @@
                               <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                             </node>
                             <node concept="liA8E" id="5F_WwkyOUl_" role="2OqNvi">
-                              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                              <node concept="3VsKOn" id="5F_WwkyOWzP" role="37wK5m">
-                                <ref role="3VsUkX" to="32gr:~ViewOptions" resolve="ViewOptions" />
-                              </node>
+                              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getViewOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions" resolve="getViewOptions" />
                             </node>
                           </node>
                         </node>
@@ -23128,7 +23119,7 @@
           <node concept="37vLTI" id="5F_WwkyNles" role="3clFbG">
             <node concept="2ShNRf" id="5F_WwkyNmTT" role="37vLTx">
               <node concept="1pGfFk" id="5F_WwkyO2uN" role="2ShVmc">
-                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions...)" resolve="FindUsagesOptions" />
+                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions,jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions,jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions)" resolve="FindUsagesOptions" />
                 <node concept="2OqwBi" id="5F_WwkyPvOV" role="37wK5m">
                   <node concept="37vLTw" id="5F_WwkyPuZX" role="2Oq$k0">
                     <ref role="3cqZAo" node="5F_WwkyOzML" resolve="findersEditor" />
@@ -23297,10 +23288,7 @@
                         </node>
                         <node concept="2OqwBi" id="2dWvJ8Rutt6" role="2Oq$k0">
                           <node concept="liA8E" id="2dWvJ8Rutt8" role="2OqNvi">
-                            <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                            <node concept="3VsKOn" id="2dWvJ8Rutt9" role="37wK5m">
-                              <ref role="3VsUkX" to="32gr:~FindersOptions" resolve="FindersOptions" />
-                            </node>
+                            <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getFindersOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" resolve="getFindersOptions" />
                           </node>
                           <node concept="37vLTw" id="3GM_nagTslv" role="2Oq$k0">
                             <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
@@ -23323,10 +23311,7 @@
                                 <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                               </node>
                               <node concept="liA8E" id="2dWvJ8Ruttg" role="2OqNvi">
-                                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                                <node concept="3VsKOn" id="2dWvJ8Rutth" role="37wK5m">
-                                  <ref role="3VsUkX" to="32gr:~ScopeOptions" resolve="ScopeOptions" />
-                                </node>
+                                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getScopeOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" resolve="getScopeOptions" />
                               </node>
                             </node>
                             <node concept="liA8E" id="2dWvJ8Rutti" role="2OqNvi">
@@ -23347,10 +23332,7 @@
                     <node concept="37vLTI" id="2dWvJ8Rutts" role="3clFbG">
                       <node concept="2OqwBi" id="2dWvJ8Ruttt" role="37vLTx">
                         <node concept="liA8E" id="2dWvJ8Ruttv" role="2OqNvi">
-                          <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                          <node concept="3VsKOn" id="2dWvJ8Ruttw" role="37wK5m">
-                            <ref role="3VsUkX" to="32gr:~ViewOptions" resolve="ViewOptions" />
-                          </node>
+                          <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getViewOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions" resolve="getViewOptions" />
                         </node>
                         <node concept="37vLTw" id="3GM_nagTA$i" role="2Oq$k0">
                           <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
@@ -35622,23 +35604,10 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="3clFbF" id="5uM$a1nJNcL" role="3cqZAp">
-                                    <node concept="2OqwBi" id="5uM$a1nJWoL" role="3clFbG">
-                                      <node concept="liA8E" id="5uM$a1nJXHI" role="2OqNvi">
-                                        <ref role="37wK5l" to="rhcb:~FindUsagesOptions.removeOption(java.lang.Class):void" resolve="removeOption" />
-                                        <node concept="3VsKOn" id="5uM$a1nJY_m" role="37wK5m">
-                                          <ref role="3VsUkX" to="32gr:~FindersOptions" resolve="FindersOptions" />
-                                        </node>
-                                      </node>
-                                      <node concept="37vLTw" id="5uM$a1nJNcK" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="5uM$a1nJKQk" resolve="findUsagesOptions" />
-                                      </node>
-                                    </node>
-                                  </node>
                                   <node concept="3clFbF" id="5uM$a1nJZgW" role="3cqZAp">
                                     <node concept="2OqwBi" id="5uM$a1nK0Ce" role="3clFbG">
                                       <node concept="liA8E" id="5uM$a1nK1qO" role="2OqNvi">
-                                        <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setOption(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions):void" resolve="setOption" />
+                                        <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setFindersOptions(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions):void" resolve="setFindersOptions" />
                                         <node concept="2ShNRf" id="5uM$a1nK3j$" role="37wK5m">
                                           <node concept="1pGfFk" id="5uM$a1nK3j_" role="2ShVmc">
                                             <ref role="37wK5l" to="32gr:~FindersOptions.&lt;init&gt;(java.lang.String...)" resolve="FindersOptions" />

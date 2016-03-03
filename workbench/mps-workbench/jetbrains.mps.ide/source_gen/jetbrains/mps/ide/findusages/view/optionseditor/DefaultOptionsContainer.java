@@ -6,15 +6,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.HashMap;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import java.util.List;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
 public class DefaultOptionsContainer {
@@ -30,21 +29,16 @@ public class DefaultOptionsContainer {
   public FindUsagesOptions getDefaultSearchOptions(String concept) {
     FindUsagesOptions result = myDefaultOptions.clone();
     FindersOptions finders = myDefaultFinders.get(concept);
-    result.setOption((finders != null ? finders : createDefaultFindersOption()));
+    result.setFindersOptions((finders != null ? finders : createDefaultFindersOption()));
     return result;
   }
   public void setDefaultSearchOptions(String concept, FindUsagesOptions defaultSearchOptions) {
     myDefaultOptions = defaultSearchOptions.clone();
-    myDefaultOptions.removeOption(FindersOptions.class);
-    myDefaultFinders.put(concept, defaultSearchOptions.getOption(FindersOptions.class));
+    myDefaultFinders.put(concept, defaultSearchOptions.getFindersOptions());
   }
   private FindUsagesOptions createDefaultSearchOptions() {
-    final FindUsagesOptions result = new FindUsagesOptions();
-    ViewOptions viewOptions = new ViewOptions(true, false);
-    result.setOption(viewOptions);
     ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ? ScopeOptions.ScopeType.GLOBAL : ScopeOptions.ScopeType.PROJECT)), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
-    result.setOption(scopeOptions);
-    return result;
+    return new FindUsagesOptions(new FindersOptions(), scopeOptions, new ViewOptions());
   }
   public FindersOptions createDefaultFindersOption() {
     final Wrappers._T<FindersOptions> findersOptions = new Wrappers._T<FindersOptions>();
@@ -73,12 +67,12 @@ public class DefaultOptionsContainer {
     return defaultFindOptionsXML;
   }
   public void readOptions(Element state, MPSProject project) {
-    myDefaultOptions = new FindUsagesOptions();
-    myDefaultFinders.clear();
     try {
       Element soXML = state.getChild(SEARCH_OPTION);
-      myDefaultOptions.read(soXML, project);
-      for (Element findersXML : (List<Element>) state.getChildren(FINDERS_OPTION)) {
+      myDefaultOptions = new FindUsagesOptions(soXML, project);
+
+      myDefaultFinders.clear();
+      for (Element findersXML : state.getChildren(FINDERS_OPTION)) {
         String np = findersXML.getAttributeValue(NODE_ID);
         FindersOptions opt = new FindersOptions();
         opt.read(findersXML, project);

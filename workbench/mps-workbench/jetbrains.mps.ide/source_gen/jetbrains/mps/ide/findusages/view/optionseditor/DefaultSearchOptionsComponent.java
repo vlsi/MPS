@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.startup.StartupManager;
 
-@State(name = "DefaultSearchOptions2", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
+@State(name = "DefaultSearchOptions3", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
 })
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private DefaultOptionsContainer myDefaultOptions = null;

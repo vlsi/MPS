@@ -17,89 +17,90 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
+import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.project.Project;
 import org.jdom.Element;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 
 public class FindUsagesOptions implements Cloneable {
-  private static final String OPTION = "option";
-  private static final String CLASS_NAME = "class_name";
+  public static final String FINDERS = "finders";
+  public static final String SCOPE = "scope";
+  public static final String VIEW = "view";
 
-  private Map<Class, BaseOptions> myOptions = new LinkedHashMap<Class, BaseOptions>();
+  private FindersOptions myFindersOptions = new FindersOptions();
+  private ScopeOptions myScopeOptions = new ScopeOptions();
+  private ViewOptions myViewOptions = new ViewOptions();
+
+  public FindUsagesOptions(@NotNull FindersOptions findersOptions, @NotNull ScopeOptions scopeOptions, @NotNull ViewOptions viewOptions) {
+    myFindersOptions = findersOptions;
+    myScopeOptions = scopeOptions;
+    myViewOptions = viewOptions;
+  }
 
   public FindUsagesOptions(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public FindUsagesOptions(BaseOptions... options) {
-    for (BaseOptions o : options) {
-      myOptions.put(o.getClass(), o);
-    }
+  @NotNull
+  public FindersOptions getFindersOptions() {
+    return myFindersOptions;
   }
 
-  @Override
-  public FindUsagesOptions clone() {
-    List<BaseOptions> optionsCopy = new ArrayList<BaseOptions>(myOptions.size());
-    for (BaseOptions option : myOptions.values()) {
-      optionsCopy.add(option.clone());
-    }
-    return new FindUsagesOptions(optionsCopy.toArray(new BaseOptions[optionsCopy.size()]));
+  public void setFindersOptions(FindersOptions findersOptions) {
+    myFindersOptions = findersOptions;
   }
 
-  public void setOption(BaseOptions options) {
-    myOptions.put(options.getClass(), options);
+  @NotNull
+  public ScopeOptions getScopeOptions() {
+    return myScopeOptions;
   }
 
-  public <T> T getOption(Class<T> optionClass) {
-    return (T) myOptions.get(optionClass);
+  public void setScopeOptions(ScopeOptions scopeOptions) {
+    myScopeOptions = scopeOptions;
   }
 
-  public void removeOption(Class optionClass) {
-    myOptions.remove(optionClass);
+  @NotNull
+  public ViewOptions getViewOptions() {
+    return myViewOptions;
+  }
+
+  public void setViewOptions(ViewOptions viewOptions) {
+    myViewOptions = viewOptions;
   }
 
   public void read(Element element, Project project) throws CantLoadSomethingException {
-    for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
-      String className = optionXML.getAttribute(CLASS_NAME).getValue();
-      try {
-        Object o = Class.forName(className).getConstructor(Element.class, Project.class).newInstance(optionXML, project);
-        myOptions.put(o.getClass(), (BaseOptions) o);
-      } catch (InvocationTargetException e) {
-        if (e.getCause() instanceof CantLoadSomethingException) {
-          throw (CantLoadSomethingException) e.getCause();
-        } else {
-          throwLoadException(e, className);
-        }
-      } catch (ClassNotFoundException e) {
-        throwLoadException(e, className);
-      } catch (IllegalAccessException e) {
-        throwLoadException(e, className);
-      } catch (InstantiationException e) {
-        throwLoadException(e, className);
-      } catch (NoSuchMethodException e) {
-        throwLoadException(e, className);
-      } catch (Throwable t) {
-        throwLoadException(t, className);
-      }
-    }
-  }
+    Element optionXML;
 
-  private void throwLoadException(Throwable t, String className) throws CantLoadSomethingException {
-    throw new CantLoadSomethingException("can't instantiate options " + className, t);
+    optionXML = element.getChild(FINDERS);
+    if (optionXML == null) throw new CantLoadSomethingException("Tag " + FINDERS + " not found");
+    myFindersOptions = new FindersOptions(optionXML, project);
+
+    optionXML = element.getChild(SCOPE);
+    if (optionXML == null) throw new CantLoadSomethingException("Tag " + FINDERS + " not found");
+    myScopeOptions = new ScopeOptions(optionXML, project);
+
+    optionXML = element.getChild(VIEW);
+    if (optionXML == null) throw new CantLoadSomethingException("Tag " + FINDERS + " not found");
+    myViewOptions = new ViewOptions(optionXML, project);
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    for (BaseOptions option : myOptions.values()) {
-      Element optionXML = new Element(OPTION);
-      optionXML.setAttribute(CLASS_NAME, option.getClass().getName());
-      option.write(optionXML, project);
-      element.addContent(optionXML);
-    }
+    writeOption(element, project, FINDERS, myFindersOptions);
+    writeOption(element, project, SCOPE, myScopeOptions);
+    writeOption(element, project, VIEW, myViewOptions);
+  }
+
+  private void writeOption(Element element, Project project, String tagName, IExternalizeable option) throws CantSaveSomethingException {
+    Element optionXML = new Element(tagName);
+    option.write(optionXML, project);
+    element.addContent(optionXML);
+  }
+
+  @Override
+  protected FindUsagesOptions clone() {
+    return new FindUsagesOptions(myFindersOptions, myScopeOptions, myViewOptions);
   }
 }

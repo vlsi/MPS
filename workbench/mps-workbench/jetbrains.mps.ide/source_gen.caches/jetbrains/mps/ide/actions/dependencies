@@ -1065,8 +1065,6 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.APICellAdapter" />

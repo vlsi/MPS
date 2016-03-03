@@ -116,15 +116,13 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -359,7 +357,7 @@
               <ref role="3cqZAo" node="1AxNPWQ_Wk" resolve="result" />
             </node>
             <node concept="liA8E" id="1AxNPWQ_WC" role="2OqNvi">
-              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setOption(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions):void" resolve="setOption" />
+              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setFindersOptions(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions):void" resolve="setFindersOptions" />
               <node concept="3K4zz7" id="4CJNoNwpEHa" role="37wK5m">
                 <node concept="37vLTw" id="3GM_nagTBjD" role="3K4E3e">
                   <ref role="3cqZAo" node="1AxNPWQ_Wq" resolve="finders" />
@@ -420,19 +418,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5fLS3L7zTuo" role="3cqZAp">
-          <node concept="2OqwBi" id="5fLS3L7zTuw" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuvPR" role="2Oq$k0">
-              <ref role="3cqZAo" node="1AxNPWQ_VK" resolve="myDefaultOptions" />
-            </node>
-            <node concept="liA8E" id="5fLS3L7zTuA" role="2OqNvi">
-              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.removeOption(java.lang.Class):void" resolve="removeOption" />
-              <node concept="3VsKOn" id="5fLS3L7zTuC" role="37wK5m">
-                <ref role="3VsUkX" to="32gr:~FindersOptions" resolve="FindersOptions" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1AxNPWQ_WZ" role="3cqZAp">
           <node concept="2OqwBi" id="1AxNPWQ_X0" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeupzd" role="2Oq$k0">
@@ -448,10 +433,7 @@
                   <ref role="3cqZAo" node="1AxNPWQ_WL" resolve="defaultSearchOptions" />
                 </node>
                 <node concept="liA8E" id="1AxNPWQ_X6" role="2OqNvi">
-                  <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getOption(java.lang.Class):java.lang.Object" resolve="getOption" />
-                  <node concept="3VsKOn" id="1AxNPWQ_X7" role="37wK5m">
-                    <ref role="3VsUkX" to="32gr:~FindersOptions" resolve="FindersOptions" />
-                  </node>
+                  <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getFindersOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" resolve="getFindersOptions" />
                 </node>
               </node>
             </node>
@@ -468,53 +450,6 @@
         <ref role="3uigEE" to="rhcb:~FindUsagesOptions" resolve="FindUsagesOptions" />
       </node>
       <node concept="3clFbS" id="1AxNPWQ_Xb" role="3clF47">
-        <node concept="3cpWs8" id="1AxNPWQ_Xc" role="3cqZAp">
-          <node concept="3cpWsn" id="1AxNPWQ_Xd" role="3cpWs9">
-            <property role="TrG5h" value="result" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="1AxNPWQ_Xe" role="1tU5fm">
-              <ref role="3uigEE" to="rhcb:~FindUsagesOptions" resolve="FindUsagesOptions" />
-            </node>
-            <node concept="2ShNRf" id="1AxNPWQ_Xf" role="33vP2m">
-              <node concept="1pGfFk" id="1AxNPWQ_Xg" role="2ShVmc">
-                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions...)" resolve="FindUsagesOptions" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1AxNPWQ_Xr" role="3cqZAp">
-          <node concept="3cpWsn" id="1AxNPWQ_Xs" role="3cpWs9">
-            <property role="TrG5h" value="viewOptions" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="1AxNPWQ_Xt" role="1tU5fm">
-              <ref role="3uigEE" to="32gr:~ViewOptions" resolve="ViewOptions" />
-            </node>
-            <node concept="2ShNRf" id="1AxNPWQ_Xu" role="33vP2m">
-              <node concept="1pGfFk" id="1AxNPWQ_Xv" role="2ShVmc">
-                <ref role="37wK5l" to="32gr:~ViewOptions.&lt;init&gt;(boolean,boolean)" resolve="ViewOptions" />
-                <node concept="3clFbT" id="1AxNPWQ_Xw" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="3clFbT" id="1AxNPWQ_Xx" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1AxNPWQ_Xy" role="3cqZAp">
-          <node concept="2OqwBi" id="1AxNPWQ_Xz" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT$UG" role="2Oq$k0">
-              <ref role="3cqZAo" node="1AxNPWQ_Xd" resolve="result" />
-            </node>
-            <node concept="liA8E" id="1AxNPWQ_X_" role="2OqNvi">
-              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setOption(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions):void" resolve="setOption" />
-              <node concept="37vLTw" id="3GM_nagT_Cw" role="37wK5m">
-                <ref role="3cqZAo" node="1AxNPWQ_Xs" resolve="viewOptions" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1AxNPWQ_XB" role="3cqZAp">
           <node concept="3cpWsn" id="1AxNPWQ_XC" role="3cpWs9">
             <property role="TrG5h" value="scopeOptions" />
@@ -553,22 +488,24 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1AxNPWQ_XN" role="3cqZAp">
-          <node concept="2OqwBi" id="1AxNPWQ_XO" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTtFH" role="2Oq$k0">
-              <ref role="3cqZAo" node="1AxNPWQ_Xd" resolve="result" />
-            </node>
-            <node concept="liA8E" id="1AxNPWQ_XQ" role="2OqNvi">
-              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.setOption(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions):void" resolve="setOption" />
-              <node concept="37vLTw" id="3GM_nagTsw8" role="37wK5m">
+        <node concept="3cpWs6" id="1AxNPWQ_XS" role="3cqZAp">
+          <node concept="2ShNRf" id="6m9C3b2$yyJ" role="3cqZAk">
+            <node concept="1pGfFk" id="6m9C3b2$yyK" role="2ShVmc">
+              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions,jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions,jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions)" resolve="FindUsagesOptions" />
+              <node concept="2ShNRf" id="6m9C3b2$yyL" role="37wK5m">
+                <node concept="1pGfFk" id="6m9C3b2$yyM" role="2ShVmc">
+                  <ref role="37wK5l" to="32gr:~FindersOptions.&lt;init&gt;(java.lang.String...)" resolve="FindersOptions" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="6m9C3b2$yyN" role="37wK5m">
                 <ref role="3cqZAo" node="1AxNPWQ_XC" resolve="scopeOptions" />
               </node>
+              <node concept="2ShNRf" id="6m9C3b2$yyO" role="37wK5m">
+                <node concept="1pGfFk" id="6m9C3b2$yyP" role="2ShVmc">
+                  <ref role="37wK5l" to="32gr:~ViewOptions.&lt;init&gt;()" resolve="ViewOptions" />
+                </node>
+              </node>
             </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="1AxNPWQ_XS" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTsCA" role="3cqZAk">
-            <ref role="3cqZAo" node="1AxNPWQ_Xd" resolve="result" />
           </node>
         </node>
       </node>
@@ -853,28 +790,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="1AxNPWQ_Zd" role="3clF47">
-        <node concept="3clFbF" id="1AxNPWQ_Ze" role="3cqZAp">
-          <node concept="37vLTI" id="1AxNPWQ_Zf" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeu_ER" role="37vLTJ">
-              <ref role="3cqZAo" node="1AxNPWQ_VK" resolve="myDefaultOptions" />
-            </node>
-            <node concept="2ShNRf" id="1AxNPWQ_Zh" role="37vLTx">
-              <node concept="1pGfFk" id="1AxNPWQ_Zi" role="2ShVmc">
-                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions...)" resolve="FindUsagesOptions" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1AxNPWQ_Zj" role="3cqZAp">
-          <node concept="2OqwBi" id="1AxNPWQ_Zk" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuSu3" role="2Oq$k0">
-              <ref role="3cqZAo" node="1AxNPWQ_VB" resolve="myDefaultFinders" />
-            </node>
-            <node concept="liA8E" id="1AxNPWQ_Zm" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~HashMap.clear():void" resolve="clear" />
-            </node>
-          </node>
-        </node>
         <node concept="SfApY" id="1AxNPWQ_Zn" role="3cqZAp">
           <node concept="TDmWw" id="1AxNPWQ_Zo" role="TEbGg">
             <node concept="3clFbS" id="1AxNPWQ_Zp" role="TDEfX">
@@ -945,38 +860,43 @@
               </node>
             </node>
             <node concept="3clFbF" id="1AxNPWQ_ZR" role="3cqZAp">
-              <node concept="2OqwBi" id="1AxNPWQ_ZS" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuw$4" role="2Oq$k0">
+              <node concept="37vLTI" id="6m9C3b2_WRf" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuw$4" role="37vLTJ">
                   <ref role="3cqZAo" node="1AxNPWQ_VK" resolve="myDefaultOptions" />
                 </node>
-                <node concept="liA8E" id="1AxNPWQ_ZU" role="2OqNvi">
-                  <ref role="37wK5l" to="rhcb:~FindUsagesOptions.read(org.jdom.Element,jetbrains.mps.project.Project):void" resolve="read" />
-                  <node concept="37vLTw" id="3GM_nagTwUx" role="37wK5m">
-                    <ref role="3cqZAo" node="1AxNPWQ_ZL" resolve="soXML" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxghfgB" role="37wK5m">
-                    <ref role="3cqZAo" node="1AxNPWQ_Zb" resolve="project" />
+                <node concept="2ShNRf" id="6m9C3b2_Xk6" role="37vLTx">
+                  <node concept="1pGfFk" id="6m9C3b2_Xk7" role="2ShVmc">
+                    <ref role="37wK5l" to="rhcb:~FindUsagesOptions.&lt;init&gt;(org.jdom.Element,jetbrains.mps.project.Project)" resolve="FindUsagesOptions" />
+                    <node concept="37vLTw" id="3GM_nagTwUx" role="37wK5m">
+                      <ref role="3cqZAo" node="1AxNPWQ_ZL" resolve="soXML" />
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxghfgB" role="37wK5m">
+                      <ref role="3cqZAo" node="1AxNPWQ_Zb" resolve="project" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="1DcWWT" id="1AxNPWQ_ZX" role="3cqZAp">
-              <node concept="10QFUN" id="1AxNPWQ_ZY" role="1DdaDG">
-                <node concept="2OqwBi" id="1AxNPWQ_ZZ" role="10QFUP">
-                  <node concept="37vLTw" id="2BHiRxgm6Ca" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1AxNPWQ_Z9" resolve="state" />
-                  </node>
-                  <node concept="liA8E" id="1AxNPWQA01" role="2OqNvi">
-                    <ref role="37wK5l" to="mmaq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
-                    <node concept="37vLTw" id="2BHiRxeoso9" role="37wK5m">
-                      <ref role="3cqZAo" node="1AxNPWQ_VW" resolve="FINDERS_OPTION" />
-                    </node>
-                  </node>
+            <node concept="3clFbH" id="6m9C3b2_Y8f" role="3cqZAp" />
+            <node concept="3clFbF" id="1AxNPWQ_Zj" role="3cqZAp">
+              <node concept="2OqwBi" id="1AxNPWQ_Zk" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuSu3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1AxNPWQ_VB" resolve="myDefaultFinders" />
                 </node>
-                <node concept="3uibUv" id="1AxNPWQA03" role="10QFUM">
-                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                  <node concept="3uibUv" id="1AxNPWQA04" role="11_B2D">
-                    <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+                <node concept="liA8E" id="1AxNPWQ_Zm" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~HashMap.clear():void" resolve="clear" />
+                </node>
+              </node>
+            </node>
+            <node concept="1DcWWT" id="1AxNPWQ_ZX" role="3cqZAp">
+              <node concept="2OqwBi" id="1AxNPWQ_ZZ" role="1DdaDG">
+                <node concept="37vLTw" id="2BHiRxgm6Ca" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1AxNPWQ_Z9" resolve="state" />
+                </node>
+                <node concept="liA8E" id="1AxNPWQA01" role="2OqNvi">
+                  <ref role="37wK5l" to="mmaq:~Element.getChildren(java.lang.String):java.util.List" resolve="getChildren" />
+                  <node concept="37vLTw" id="2BHiRxeoso9" role="37wK5m">
+                    <ref role="3cqZAo" node="1AxNPWQ_VW" resolve="FINDERS_OPTION" />
                   </node>
                 </node>
               </node>
@@ -1080,7 +1000,7 @@
       <node concept="2B6LJw" id="1AxNPWQA2B" role="2B76xF">
         <ref role="2B6OnR" to="1m72:~State.name()" resolve="name" />
         <node concept="Xl_RD" id="1AxNPWQA2C" role="2B70Vg">
-          <property role="Xl_RC" value="DefaultSearchOptions2" />
+          <property role="Xl_RC" value="DefaultSearchOptions3" />
         </node>
       </node>
       <node concept="2B6LJw" id="1AxNPWQA2D" role="2B76xF">

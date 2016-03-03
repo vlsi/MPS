@@ -53,7 +53,7 @@ public class FindUsagesDialog extends DialogWrapper {
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class), mpsProject.getRepository());
+        myScopeEditor = new ScopeEditor(defaultOptions.getScopeOptions(), mpsProject.getRepository());
         myFindersEditor = new MyFindersEditor(defaultOptions, node, project) {
           @Override
           protected void findersListChangedByUser() {
@@ -61,7 +61,7 @@ public class FindUsagesDialog extends DialogWrapper {
             updateOkButton();
           }
         };
-        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
+        myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getViewOptions());
       }
     });
 
@@ -112,7 +112,7 @@ public class FindUsagesDialog extends DialogWrapper {
     private Project myProject;
 
     public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, Project project) {
-      super(defaultOptions.getOption(FindersOptions.class), node);
+      super(defaultOptions.getFindersOptions(), node);
       myProject = project;
     }
 
