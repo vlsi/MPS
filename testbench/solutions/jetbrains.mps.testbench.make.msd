@@ -80,7 +80,6 @@
     <dependency reexport="false">1839bec5-cea6-41df-b9e0-c405ff35c41e(jetbrains.mps.lang.editor.imageGen)</dependency>
     <dependency reexport="false">f9665e4e-baa4-42c6-b97d-c49dfa9f7381(analyzers.test)</dependency>
     <dependency reexport="false">cfb148cb-f798-4362-89a2-56938bf6c92f(jetbrains.mps.lang.editor.forms.tests)</dependency>
-    <dependency reexport="false">39e0eaec-a754-4bf3-b9e5-fb075e13bcc5(jetbrains.mps.lang.editor.contextAssistant.tests)</dependency>
   </dependencies>
   <languageVersions>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="4" />
@@ -140,7 +139,6 @@
     <module reference="4076bab3-4981-4035-94aa-19b6b4c51a84(jetbrains.mps.kernel.tests)" version="0" />
     <module reference="6ed0339f-b777-4ada-9cf7-73354b12f191(jetbrains.mps.lang.actions.test)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-    <module reference="39e0eaec-a754-4bf3-b9e5-fb075e13bcc5(jetbrains.mps.lang.editor.contextAssistant.tests)" version="0" />
     <module reference="779ae18b-ee98-406e-94fd-dec40c78b92f(jetbrains.mps.lang.editor.diagram.tests)" version="0" />
     <module reference="cfb148cb-f798-4362-89a2-56938bf6c92f(jetbrains.mps.lang.editor.forms.tests)" version="0" />
     <module reference="1839bec5-cea6-41df-b9e0-c405ff35c41e(jetbrains.mps.lang.editor.imageGen)" version="0" />
