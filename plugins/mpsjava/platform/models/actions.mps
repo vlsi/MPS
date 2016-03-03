@@ -738,11 +738,6 @@
     <property role="TrG5h" value="PasteAsJavaClass" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class" />
-    <node concept="1DS2jV" id="2vs9_ygEfaW" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDnE" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2vs9_ygEfaX" role="1NuT2Z">
       <property role="TrG5h" value="model" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODEL" resolve="MODEL" />
@@ -769,12 +764,6 @@
                 <node concept="2WthIp" id="2vs9_ygEfb7" role="2Oq$k0" />
                 <node concept="1DTwFV" id="2vs9_ygEfb8" role="2OqNvi">
                   <ref role="2WH_rO" node="2vs9_ygEfaX" resolve="model" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2vs9_ygEfba" role="37wK5m">
-                <node concept="2WthIp" id="2vs9_ygEfbb" role="2Oq$k0" />
-                <node concept="1DTwFV" id="2vs9_ygEfbc" role="2OqNvi">
-                  <ref role="2WH_rO" node="2vs9_ygEfaW" resolve="operationContext" />
                 </node>
               </node>
               <node concept="2OqwBi" id="MCyGswqxdW" role="37wK5m">
@@ -864,11 +853,6 @@
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class Content" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="2vs9_ygEfbe" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDia" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2vs9_ygEfbf" role="1NuT2Z">
       <property role="TrG5h" value="anchorNode" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -905,12 +889,6 @@
                 <node concept="2WthIp" id="2vs9_ygEfbo" role="2Oq$k0" />
                 <node concept="1DTwFV" id="2vs9_ygEfbp" role="2OqNvi">
                   <ref role="2WH_rO" node="2vs9_ygEfbf" resolve="anchorNode" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2vs9_ygEfbq" role="37wK5m">
-                <node concept="2WthIp" id="2vs9_ygEfbr" role="2Oq$k0" />
-                <node concept="1DTwFV" id="2vs9_ygEfbs" role="2OqNvi">
-                  <ref role="2WH_rO" node="2vs9_ygEfbe" resolve="operationContext" />
                 </node>
               </node>
               <node concept="Rm8GO" id="7Wa0aDjKsie" role="37wK5m">
@@ -989,11 +967,6 @@
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Statements" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="2vs9_ygEfbv" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDkL" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2vs9_ygEfbw" role="1NuT2Z">
       <property role="TrG5h" value="anchorNode" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
@@ -1030,12 +1003,6 @@
                 <node concept="2WthIp" id="2vs9_ygEfbD" role="2Oq$k0" />
                 <node concept="1DTwFV" id="2vs9_ygEfbE" role="2OqNvi">
                   <ref role="2WH_rO" node="2vs9_ygEfbw" resolve="anchorNode" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2vs9_ygEfbF" role="37wK5m">
-                <node concept="2WthIp" id="2vs9_ygEfbG" role="2Oq$k0" />
-                <node concept="1DTwFV" id="2vs9_ygEfbH" role="2OqNvi">
-                  <ref role="2WH_rO" node="2vs9_ygEfbv" resolve="operationContext" />
                 </node>
               </node>
               <node concept="Rm8GO" id="7AVMHKfNMbR" role="37wK5m">

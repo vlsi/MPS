@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.MPSProject;
 
@@ -46,12 +45,6 @@ public class PasteAsJavaClass_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
       if (p == null) {
         return false;
@@ -70,6 +63,6 @@ public class PasteAsJavaClass_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new JavaPaster().pasteJavaAsClass(event.getData(MPSCommonDataKeys.MODEL), event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    new JavaPaster().pasteJavaAsClass(event.getData(MPSCommonDataKeys.MODEL), event.getData(MPSCommonDataKeys.MPS_PROJECT));
   }
 }
