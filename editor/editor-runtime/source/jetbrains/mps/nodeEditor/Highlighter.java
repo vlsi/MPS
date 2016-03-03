@@ -48,7 +48,6 @@ import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
-import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -64,7 +63,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -79,9 +77,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
-  private final MyCancellable myCancellable = new MyCancellable();
-  private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter();
-  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new MyCommandAdapter();
+  private volatile boolean myPaused;
+  private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
+  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -355,7 +353,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
         }
       }
     });
-    return new HighlighterUpdateSession(Highlighter.this, myCancellable, essentialOnly, events, checkers, checkersToRemove, activeEditors);
+    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, checkersToRemove, activeEditors);
   }
 
   private List<EditorComponent> getActiveEditors() {
@@ -457,7 +455,20 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return myInspectorTool.getInspector();
   }
 
-  private class MyApplicationAdapter extends ApplicationAdapter {
+  private void pauseUpdater() {
+    myPaused = true;
+  }
+
+  private void resumeUpdater() {
+    myPaused = false;
+  }
+
+  @Override
+  public boolean isPausedOrStopping() {
+    return myPaused || isStopping();
+  }
+
+  private class PauseDuringWriteAction extends ApplicationAdapter {
     @Override
     public void beforeWriteActionStart(Object action) {
       pauseUpdater();
@@ -469,49 +480,41 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  private void pauseUpdater() {
-    myCancellable.setCancelRequested(true);
-  }
-
-  private void resumeUpdater() {
-    myCancellable.setCancelRequested(false);
-  }
-
-  private class MyCommandAdapter extends com.intellij.openapi.command.CommandAdapter {
-    MyCommandAdapter() {
-    }
+  private class PauseDuringCommandOrUndoTransparentAction extends com.intellij.openapi.command.CommandAdapter {
+    private int myLevel = 0;
 
     @Override
     public void commandStarted(CommandEvent event) {
-      pauseUpdater();
+      increaseLevel();
     }
 
     @Override
     public void commandFinished(CommandEvent event) {
-      resumeUpdater();
+      decreaseLevel();
     }
 
     @Override
     public void undoTransparentActionStarted() {
-      pauseUpdater();
+      increaseLevel();
     }
 
     @Override
     public void undoTransparentActionFinished() {
-      resumeUpdater();
-    }
-  }
-
-  private static class MyCancellable implements Cancellable {
-    private AtomicBoolean myCancelRequested = new AtomicBoolean(false);
-
-    void setCancelRequested(boolean cancelRequested) {
-      myCancelRequested.set(cancelRequested);
+      decreaseLevel();
     }
 
-    @Override
-    public boolean isCancelled() {
-      return ModelAccess.instance().hasScheduledWrites() || myCancelRequested.get();
+    private void increaseLevel() {
+      if (myLevel == 0) {
+        pauseUpdater();
+      }
+      myLevel++;
+    }
+
+    private void decreaseLevel() {
+      myLevel--;
+      if (myLevel == 0) {
+        resumeUpdater();
+      }
     }
   }
 
@@ -528,8 +531,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       while (true) {
         try {
           while (true) {
-            while (myCancellable.isCancelled()) {
-              if (myStopThread) {
+            while (isPausedOrStopping()) {
+              if (isStopping()) {
                 return;
               }
               Thread.sleep(DEFAULT_GRACE_PERIOD);
@@ -549,8 +552,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
           try {
             boolean essentialOnly = !myCommandWatcher.isLargerGracePeriodExpired();
-            // TODO ApplicationManager.getApplication() checks seem to be leftovers from the time where IMakeService was looked up from ApplicationManager
-            if (ApplicationManager.getApplication() != null && !ApplicationManager.getApplication().isDisposed() && !IMakeService.INSTANCE.isSessionActive()) {
+            if (!IMakeService.INSTANCE.isSessionActive()) {
               HighlighterUpdateSession updateSession = createUpdateSession(essentialOnly);
               updateSession.doUpdate();
             }
@@ -625,6 +627,4 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       myLastCommandFinished.set(time);
     }
   }
-
-
 }

@@ -48,17 +48,15 @@ import java.util.Set;
 
 public class HighlighterUpdateSession {
   private final IHighlighter myHighlighter;
-  private final Cancellable myCancellable;
   private final boolean myEssentialOnly;
   private final List<SModelEvent> myEvents;
   private final Set<BaseEditorChecker> myCheckers;
   private final Set<BaseEditorChecker> myCheckersToRemove;
   private final List<EditorComponent> myAllEditorComponents;
 
-  public HighlighterUpdateSession(IHighlighter highlighter, Cancellable cancellable, boolean essentialOnly, List<SModelEvent> events,
-      final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, List<EditorComponent> allEditorComponents) {
+  public HighlighterUpdateSession(IHighlighter highlighter, boolean essentialOnly, List<SModelEvent> events, Set<BaseEditorChecker> checkers,
+      final Set<BaseEditorChecker> checkersToRemove, List<EditorComponent> allEditorComponents) {
     myHighlighter = highlighter;
-    myCancellable = cancellable;
     myEssentialOnly = essentialOnly;
     myEvents = events;
     myCheckers = checkers;
@@ -107,7 +105,7 @@ public class HighlighterUpdateSession {
       final EditorComponent editorComponent = pair.o1;
       final Boolean applyQuickFixes = pair.o2;
 
-      if (myHighlighter.isStopping() || myCancellable.isCancelled()) {
+      if (myHighlighter.isPausedOrStopping()) {
         return;
       }
       TypeContextManager.getInstance().runTypecheckingAction(editorComponent.getTypecheckingContextOwner(), new Runnable() {
@@ -120,7 +118,7 @@ public class HighlighterUpdateSession {
       });
     }
 
-    if (myHighlighter.isStopping() || myCancellable.isCancelled()) {
+    if (myHighlighter.isPausedOrStopping()) {
       return;
     }
 
@@ -156,7 +154,7 @@ public class HighlighterUpdateSession {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              if (myHighlighter.isStopping() || myCancellable.isCancelled()) return;
+              if (myHighlighter.isPausedOrStopping()) return;
               for (BaseEditorChecker checker : myCheckers) {
                 if (checker.hasDramaticalEventProtected(myEvents) && (!myEssentialOnly || checker.isEssentialProtected())) {
                   checkersToRecheck.add(checker);
@@ -166,7 +164,7 @@ public class HighlighterUpdateSession {
           });
         }
 
-        if ((checkersToRecheck.isEmpty() && myCheckersToRemove.isEmpty()) || myHighlighter.isStopping() || myCancellable.isCancelled()) return false;
+        if ((checkersToRecheck.isEmpty() && myCheckersToRemove.isEmpty()) || myHighlighter.isPausedOrStopping()) return false;
 
         List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
         Collections.sort(checkersToRecheckList, new PriorityComparator());
@@ -190,7 +188,7 @@ public class HighlighterUpdateSession {
       boolean changed = runLoPrioRead(new Computable<Boolean>() {
         @Override
         public Boolean compute() {
-          if (myHighlighter.isStopping() || myCancellable.isCancelled()) return false;
+          if (myHighlighter.isPausedOrStopping()) return false;
 
           SNode node = editor.getEditedNode();
           if (node == null) return false;
@@ -204,7 +202,7 @@ public class HighlighterUpdateSession {
           IOperationContext operationContext = editor.getOperationContext();
           if (operationContext.isValid()) {
             try {
-              messages.addAll(checker.createMessagesProtected(node, myEvents, wasCheckedOnce, editorContext, myCancellable, applyQuickFixes));
+              messages.addAll(checker.createMessagesProtected(node, myEvents, wasCheckedOnce, editorContext, new CancelOnWriteOrPause(myHighlighter), applyQuickFixes));
               return checker.areMessagesChangedProtected();
             } catch (IndexNotReadyException ex) {
               highlightManager.clearForOwner(checker, true);
@@ -253,5 +251,30 @@ public class HighlighterUpdateSession {
     }
 
     return anyMessageChanged;
+  }
+
+  /**
+   * Cancels itself if a write action gets scheduled or the highlighter gets paused, and stays cancelled forever.
+   */
+  private static class CancelOnWriteOrPause implements Cancellable {
+    private final IHighlighter myHighlighter;
+    private volatile boolean myCancelRequested = false;
+
+    private CancelOnWriteOrPause(IHighlighter highlighter) {
+      myHighlighter = highlighter;
+    }
+
+    @Override
+    public boolean isCancelled() {
+      if (myCancelRequested) {
+        return true;
+      }
+
+      if (ModelAccess.instance().hasScheduledWrites() || myHighlighter.isPausedOrStopping()) {
+        myCancelRequested = true;
+      }
+
+      return myCancelRequested;
+    }
   }
 }

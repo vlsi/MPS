@@ -22,6 +22,14 @@ import org.jetbrains.annotations.Nullable;
  * Interface between {@link HighlighterUpdateSession} and {@link jetbrains.mps.nodeEditor.Highlighter}
  */
 public interface IHighlighter {
+  /**
+   * Indicates whether the highlighter is paused due to some higher priority task such as a pending write action, or due to being stopped.
+   */
+  boolean isPausedOrStopping();
+
+  /**
+   * Indicates whether the highlighter is stopping and will not be restarted. Implies {@link #isPausedOrStopping()}.
+   */
   boolean isStopping();
 
   boolean wereInspectorMessagesCreated();
