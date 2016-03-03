@@ -7,7 +7,6 @@
   </languages>
   <imports>
     <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
-    <import index="kos1" ref="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -944,12 +943,6 @@
         <ref role="16sUi3" node="5Ffu4tBUwDE" resolve="T" />
       </node>
     </node>
-    <node concept="3uibUv" id="5Ffu4tBUwDJ" role="EKbjA">
-      <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-      <node concept="16syzq" id="5Ffu4tBUwDK" role="11_B2D">
-        <ref role="16sUi3" node="5Ffu4tBUwDE" resolve="T" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="5Ffu4tBUwDL" role="jymVt">
       <property role="TrG5h" value="INSTANCE" />
       <property role="3TUv4t" value="true" />
@@ -1496,24 +1489,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5Ffu4tBUwHv" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="5Ffu4tBUwHw" role="jymVt">
-      <property role="TrG5h" value="toDeque" />
-      <node concept="3Tm1VV" id="5Ffu4tBUwHx" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUwHy" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUwHz" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUwDE" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUwH$" role="3clF47">
-        <node concept="3cpWs6" id="5Ffu4tBUwH_" role="3cqZAp">
-          <node concept="Xjq3P" id="5Ffu4tBUwHA" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_SlhA" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
@@ -8773,24 +8748,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_U$2M" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="5Ffu4tBUyt6" role="jymVt">
-      <property role="TrG5h" value="toDeque" />
-      <node concept="3Tm1VV" id="5Ffu4tBUyt7" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUyt8" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUyt9" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUyq_" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUyta" role="3clF47">
-        <node concept="3cpWs6" id="5Ffu4tBUytb" role="3cqZAp">
-          <node concept="Xjq3P" id="5Ffu4tBUytc" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_U$2R" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

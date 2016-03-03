@@ -3,11 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
-    <import index="kos1" ref="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
     <import index="vq2z" ref="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)" />
     <import index="qbve" ref="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
@@ -254,6 +252,12 @@
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -279,38 +283,7 @@
       </concept>
       <concept id="4816492477345855364" name="jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration" flags="ig" index="3_nuBB" />
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
-      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
-        <property id="5858074156537516431" name="text" index="x79VB" />
-      </concept>
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="5383422241790532083" name="tags" index="3nqlJM" />
-      </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
-      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
-        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
-      </concept>
-      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
-        <child id="6962838954693749192" name="tag" index="qph3F" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -325,12 +298,6 @@
     <node concept="3uibUv" id="5Ffu4tBUwHN" role="1zkMxy">
       <ref role="3uigEE" node="2uw4EeXuIsc" resolve="AbstractQueueSequence" />
       <node concept="16syzq" id="5Ffu4tBUwHO" role="11_B2D">
-        <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
-      </node>
-    </node>
-    <node concept="3uibUv" id="5Ffu4tBUwHP" role="EKbjA">
-      <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-      <node concept="16syzq" id="5Ffu4tBUwHQ" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
       </node>
     </node>
@@ -352,31 +319,6 @@
         <property role="1adDun" value="6994676498844479086L" />
       </node>
     </node>
-    <node concept="3clFbW" id="5Ffu4tBUwSj" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <node concept="3Tmbuc" id="5Ffu4tBUwSk" role="1B3o_S" />
-      <node concept="3cqZAl" id="5Ffu4tBUwSl" role="3clF45" />
-      <node concept="37vLTG" id="5Ffu4tBUwSm" role="3clF46">
-        <property role="TrG5h" value="deque" />
-        <node concept="3uibUv" id="5Ffu4tBUwSn" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-          <node concept="16syzq" id="5Ffu4tBUwSo" role="11_B2D">
-            <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUwSp" role="3clF47">
-        <node concept="XkiVB" id="5Ffu4tBUwSq" role="3cqZAp">
-          <ref role="37wK5l" node="2uw4EeXvqBT" resolve="AbstractQueueSequence" />
-          <node concept="37vLTw" id="6gPw0iAQI97" role="37wK5m">
-            <ref role="3cqZAo" node="5Ffu4tBUwSm" resolve="deque" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3YSSV6T$e7b" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="3clFbW" id="3lc436X3LH4" role="jymVt">
       <node concept="3Tm6S6" id="6gPw0iAQmqr" role="1B3o_S" />
       <node concept="3cqZAl" id="3lc436X3LH6" role="3clF45" />
@@ -388,10 +330,6 @@
             <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
           </node>
         </node>
-      </node>
-      <node concept="37vLTG" id="6gPw0iAQsiD" role="3clF46">
-        <property role="TrG5h" value="dummy" />
-        <node concept="10Oyi0" id="6gPw0iAQvwS" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="3lc436X3LHa" role="3clF47">
         <node concept="XkiVB" id="3lc436X3LHb" role="3cqZAp">
@@ -1214,68 +1152,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="5Ffu4tBUwSc" role="jymVt">
-      <property role="TrG5h" value="toDeque" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="5Ffu4tBUwSd" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUwSe" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUwSf" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUwSg" role="3clF47">
-        <node concept="3cpWs8" id="3lc436X6Wy4" role="3cqZAp">
-          <node concept="3cpWsn" id="3lc436X6Wy5" role="3cpWs9">
-            <property role="TrG5h" value="rv" />
-            <node concept="3uibUv" id="3lc436X6Wy3" role="1tU5fm">
-              <ref role="3uigEE" to="kos1:5Ffu4tBUyZm" resolve="LinkedList" />
-              <node concept="16syzq" id="3lc436X8d7k" role="11_B2D">
-                <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="3lc436X6Wy6" role="33vP2m">
-              <node concept="1pGfFk" id="3lc436X6Wy7" role="2ShVmc">
-                <ref role="37wK5l" to="kos1:5Ffu4tBUyZV" resolve="LinkedList" />
-                <node concept="16syzq" id="3lc436X8rwQ" role="1pMfVU">
-                  <ref role="16sUi3" node="5Ffu4tBUwHM" resolve="T" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3lc436X7Q4U" role="3cqZAp">
-          <node concept="2OqwBi" id="3lc436X7B_U" role="3clFbG">
-            <node concept="37vLTw" id="3lc436X7B_V" role="2Oq$k0">
-              <ref role="3cqZAo" node="3lc436X6Wy5" resolve="rv" />
-            </node>
-            <node concept="liA8E" id="3lc436X7B_W" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~LinkedList.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="Xjq3P" id="3lc436X7B_X" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5Ffu4tBUwSh" role="3cqZAp">
-          <node concept="37vLTw" id="3lc436X7YE8" role="3cqZAk">
-            <ref role="3cqZAo" node="3lc436X6Wy5" resolve="rv" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_Sbnc" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="P$JXv" id="3lc436X8yJ6" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X8DZx" role="3nqlJM">
-          <node concept="TZ5HA" id="3lc436X8DZy" role="3HnX3l" />
-        </node>
-        <node concept="x79VA" id="3lc436X8yJ9" role="3nqlJM">
-          <property role="x79VB" value="compatibility collection" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3lc436X8DZz" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="3clFb_" id="5Ffu4tBUwSs" role="jymVt">
       <property role="TrG5h" value="getDeque" />
       <node concept="3Tmbuc" id="5Ffu4tBUwSt" role="1B3o_S" />
@@ -1301,6 +1177,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="Z_z4A2aZTB" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwHY" role="jymVt">
       <property role="TrG5h" value="fromDeque" />
       <property role="IEkAT" value="false" />
@@ -1317,13 +1194,18 @@
       <node concept="37vLTG" id="5Ffu4tBUwI3" role="3clF46">
         <property role="TrG5h" value="deque" />
         <node concept="3uibUv" id="5Ffu4tBUwI4" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
           <node concept="16syzq" id="5Ffu4tBUwI5" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUwI0" resolve="U" />
           </node>
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUwI6" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A2b8Jg" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A2b8Ji" role="3SKWNk">
+            <property role="3SKdUp" value=" change tempaltes to invoke this method and drop fromDequeNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="3YSSV6TzY7H" role="3cqZAp">
           <node concept="1rXfSq" id="3YSSV6T$4S2" role="3cqZAk">
             <ref role="37wK5l" node="3lc436X4uaQ" resolve="fromDequeNew" />
@@ -1332,18 +1214,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="3lc436X4CFv" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4CFw" role="3nqlJM">
-          <node concept="TZ5HA" id="3lc436X4CFx" role="3HnX3l">
-            <node concept="1dT_AC" id="3lc436X4EUJ" role="1dT_Ay">
-              <property role="1dT_AB" value="regenerate to get rid of this method The method will be removed after 3.3" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3lc436X4CFy" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="3AzOW3JTHlL" role="jymVt" />
@@ -1425,9 +1295,6 @@
               </node>
               <node concept="37vLTw" id="3lc436X4BgI" role="37wK5m">
                 <ref role="3cqZAo" node="3lc436X4uaV" resolve="deque" />
-              </node>
-              <node concept="3cmrfG" id="6gPw0iAQPt$" role="37wK5m">
-                <property role="3cmrfH" value="0" />
               </node>
             </node>
           </node>
@@ -1644,14 +1511,12 @@
               <node concept="37vLTw" id="3GM_nagTws6" role="37wK5m">
                 <ref role="3cqZAo" node="5Ffu4tBUwIY" resolve="deque" />
               </node>
-              <node concept="3cmrfG" id="6gPw0iAQVfo" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="Z_z4A2azcY" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwJP" role="jymVt">
       <property role="TrG5h" value="fromDequeAndArray" />
       <property role="IEkAT" value="false" />
@@ -1668,7 +1533,7 @@
       <node concept="37vLTG" id="5Ffu4tBUwJU" role="3clF46">
         <property role="TrG5h" value="deque" />
         <node concept="3uibUv" id="5Ffu4tBUwJV" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
           <node concept="16syzq" id="5Ffu4tBUwJW" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUwJR" resolve="U" />
           </node>
@@ -1683,6 +1548,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUwK0" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A2aF1y" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A2aF1$" role="3SKWNk">
+            <property role="3SKdUp" value=" change templates to invoke this method and remove fromDequeAndArrayNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="3YSSV6T$n48" role="3cqZAp">
           <node concept="1rXfSq" id="3YSSV6T$rp_" role="3cqZAk">
             <ref role="37wK5l" node="3lc436X4UoP" resolve="fromDequeAndArrayNew" />
@@ -1694,18 +1564,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="3lc436X4St8" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4St9" role="3nqlJM">
-          <node concept="TZ5HA" id="3lc436X4Sta" role="3HnX3l">
-            <node concept="1dT_AC" id="3lc436X4UoN" role="1dT_Ay">
-              <property role="1dT_AB" value="regenerate to get rid of this method The method will be removed after 3.3" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3lc436X4Stb" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="3lc436X5a0d" role="jymVt" />
@@ -1844,11 +1702,8 @@
                           <node concept="16syzq" id="3lc436X4UpL" role="1pMfVU">
                             <ref role="16sUi3" node="3lc436X4UoR" resolve="U" />
                           </node>
-                          <node concept="37vLTw" id="3lc436X5IeA" role="37wK5m">
+                          <node concept="37vLTw" id="Z_z4A2bJ83" role="37wK5m">
                             <ref role="3cqZAo" node="3lc436X4UoU" resolve="deque" />
-                          </node>
-                          <node concept="3cmrfG" id="6gPw0iAR0Tv" role="37wK5m">
-                            <property role="3cmrfH" value="0" />
                           </node>
                         </node>
                       </node>
@@ -1998,14 +1853,12 @@
               <node concept="37vLTw" id="3lc436X5MuG" role="37wK5m">
                 <ref role="3cqZAo" node="3lc436X4UoU" resolve="deque" />
               </node>
-              <node concept="3cmrfG" id="6gPw0iAR82T" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="Z_z4A2cu0q" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUwLF" role="jymVt">
       <property role="TrG5h" value="fromDequeWithValues" />
       <property role="IEkAT" value="false" />
@@ -2022,7 +1875,7 @@
       <node concept="37vLTG" id="5Ffu4tBUwLK" role="3clF46">
         <property role="TrG5h" value="deque" />
         <node concept="3uibUv" id="5Ffu4tBUwLL" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
           <node concept="16syzq" id="5Ffu4tBUwLM" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUwLH" resolve="U" />
           </node>
@@ -2040,6 +1893,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUwLR" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A2c$k7" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A2c$k9" role="3SKWNk">
+            <property role="3SKdUp" value="change generators to use this method and drop fromDequeWithValuesNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="3YSSV6T$G4h" role="3cqZAp">
           <node concept="1rXfSq" id="3YSSV6T$L$i" role="3cqZAk">
             <ref role="37wK5l" node="3lc436X5lTM" resolve="fromDequeWithValuesNew" />
@@ -2051,18 +1909,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="3lc436X4MWN" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4MWO" role="3nqlJM">
-          <node concept="TZ5HA" id="3lc436X4MWP" role="3HnX3l">
-            <node concept="1dT_AC" id="3lc436X4OUD" role="1dT_Ay">
-              <property role="1dT_AB" value="regenerate to get rid of this method. The method will be removed after 3.3" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3lc436X4MWQ" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="3lc436X5lTM" role="jymVt">
@@ -2332,9 +2178,6 @@
               </node>
               <node concept="37vLTw" id="3lc436X5Exo" role="37wK5m">
                 <ref role="3cqZAo" node="3lc436X5lU0" resolve="tmp" />
-              </node>
-              <node concept="3cmrfG" id="6gPw0iAReVu" role="37wK5m">
-                <property role="3cmrfH" value="0" />
               </node>
             </node>
           </node>
@@ -3991,14 +3834,8 @@
       </node>
     </node>
     <node concept="3uibUv" id="5Ffu4tBUxdJ" role="3HQHJm">
-      <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
+      <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
       <node concept="16syzq" id="5Ffu4tBUxdK" role="11_B2D">
-        <ref role="16sUi3" node="5Ffu4tBUxdG" resolve="T" />
-      </node>
-    </node>
-    <node concept="3uibUv" id="5Ffu4tBUxdL" role="3HQHJm">
-      <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-      <node concept="16syzq" id="5Ffu4tBUxdM" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxdG" resolve="T" />
       </node>
     </node>
@@ -4094,22 +3931,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUxep" role="3clF47" />
-    </node>
-    <node concept="3clFb_" id="5Ffu4tBUxeq" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="toDeque" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="5Ffu4tBUxer" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUxes" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUxet" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUxdG" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUxeu" role="3clF47" />
-      <node concept="2AHcQZ" id="6gPw0iAZoNM" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUxev" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -4227,7 +4048,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="5Ffu4tBUxf8" role="3HQHJm">
-      <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+      <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
       <node concept="16syzq" id="5Ffu4tBUxf9" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxf5" resolve="T" />
       </node>
@@ -4366,22 +4187,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUxfV" role="3clF47" />
-    </node>
-    <node concept="3clFb_" id="5Ffu4tBUxfW" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="toDeque" />
-      <property role="IEkAT" value="false" />
-      <node concept="3Tm1VV" id="5Ffu4tBUxfX" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUxfY" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUxfZ" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUxf5" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUxg0" role="3clF47" />
-      <node concept="2AHcQZ" id="6gPw0iAZqjH" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUxg1" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -7194,7 +6999,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="5Ffu4tBUxOv" role="3HQHJm">
-      <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+      <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
       <node concept="16syzq" id="5Ffu4tBUxOw" role="11_B2D">
         <ref role="16sUi3" node="5Ffu4tBUxOs" resolve="T" />
       </node>
@@ -10443,31 +10248,6 @@
     <node concept="3uibUv" id="3IIj2tY$mRa" role="EKbjA">
       <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
     </node>
-    <node concept="3clFbW" id="5Ffu4tBUyJy" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <node concept="3Tmbuc" id="5Ffu4tBUyJz" role="1B3o_S" />
-      <node concept="3cqZAl" id="5Ffu4tBUyJ$" role="3clF45" />
-      <node concept="37vLTG" id="5Ffu4tBUyJ_" role="3clF46">
-        <property role="TrG5h" value="list" />
-        <node concept="3uibUv" id="5Ffu4tBUyJA" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUyZm" resolve="LinkedList" />
-          <node concept="16syzq" id="5Ffu4tBUyJB" role="11_B2D">
-            <ref role="16sUi3" node="5Ffu4tBUyzz" resolve="T" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUyJC" role="3clF47">
-        <node concept="XkiVB" id="2uw4EeWNR6z" role="3cqZAp">
-          <ref role="37wK5l" node="6PIyug_WiLa" resolve="AbstractListSequence" />
-          <node concept="37vLTw" id="2BHiRxgmoWT" role="37wK5m">
-            <ref role="3cqZAo" node="5Ffu4tBUyJ_" resolve="list" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6gPw0iATjEs" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="3clFbW" id="2uw4EeX3TG2" role="jymVt">
       <node concept="3Tmbuc" id="2uw4EeX3TG3" role="1B3o_S" />
       <node concept="3cqZAl" id="2uw4EeX3TG4" role="3clF45" />
@@ -10508,10 +10288,6 @@
             <ref role="16sUi3" node="5Ffu4tBUyzz" resolve="T" />
           </node>
         </node>
-      </node>
-      <node concept="37vLTG" id="6gPw0iAVqgx" role="3clF46">
-        <property role="TrG5h" value="dummy" />
-        <node concept="10Oyi0" id="6gPw0iAVw2L" role="1tU5fm" />
       </node>
     </node>
     <node concept="3clFb_" id="5Ffu4tBUyDm" role="jymVt">
@@ -11334,58 +11110,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="5Ffu4tBUyIb" role="jymVt">
-      <property role="TrG5h" value="toDeque" />
-      <node concept="3Tm1VV" id="5Ffu4tBUyIc" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ffu4tBUyId" role="3clF45">
-        <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
-        <node concept="16syzq" id="5Ffu4tBUyIe" role="11_B2D">
-          <ref role="16sUi3" node="5Ffu4tBUyzz" resolve="T" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Ffu4tBUyIf" role="3clF47">
-        <node concept="3cpWs8" id="6gPw0iAXDzg" role="3cqZAp">
-          <node concept="3cpWsn" id="6gPw0iAXDzh" role="3cpWs9">
-            <property role="TrG5h" value="rv" />
-            <node concept="3uibUv" id="6gPw0iAXDza" role="1tU5fm">
-              <ref role="3uigEE" to="kos1:5Ffu4tBUyZm" resolve="LinkedList" />
-              <node concept="16syzq" id="6gPw0iAYEyy" role="11_B2D">
-                <ref role="16sUi3" node="5Ffu4tBUyzz" resolve="T" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="6gPw0iAXDzi" role="33vP2m">
-              <node concept="1pGfFk" id="6gPw0iAXDzj" role="2ShVmc">
-                <ref role="37wK5l" to="kos1:5Ffu4tBUyZV" resolve="LinkedList" />
-                <node concept="16syzq" id="6gPw0iAYl7P" role="1pMfVU">
-                  <ref role="16sUi3" node="5Ffu4tBUyzz" resolve="T" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6gPw0iAZ1LC" role="3cqZAp">
-          <node concept="2OqwBi" id="6gPw0iAZ6A1" role="3clFbG">
-            <node concept="37vLTw" id="6gPw0iAZ1LA" role="2Oq$k0">
-              <ref role="3cqZAo" node="6gPw0iAXDzh" resolve="rv" />
-            </node>
-            <node concept="liA8E" id="6gPw0iAZ78b" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~LinkedList.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="1rXfSq" id="6gPw0iAZjgA" role="37wK5m">
-                <ref role="37wK5l" node="5Ffu4tBUyJn" resolve="getList" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5Ffu4tBUyIg" role="3cqZAp">
-          <node concept="37vLTw" id="6gPw0iAXDzl" role="3cqZAk">
-            <ref role="3cqZAo" node="6gPw0iAXDzh" resolve="rv" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3tYsUK_U$Ob" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="3clFb_" id="2uw4Ef3IaVx" role="jymVt">
       <property role="TrG5h" value="asUnmodifiable" />
       <node concept="3Tm1VV" id="2uw4Ef3IaVy" role="1B3o_S" />
@@ -11788,13 +11512,18 @@
       <node concept="37vLTG" id="5Ffu4tBUyzJ" role="3clF46">
         <property role="TrG5h" value="list" />
         <node concept="3uibUv" id="5Ffu4tBUyzK" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUxOx" resolve="Deque" />
+          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
           <node concept="16syzq" id="5Ffu4tBUyzL" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUyzG" resolve="U" />
           </node>
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUyzM" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A29zYb" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A29zYd" role="3SKWNk">
+            <property role="3SKdUp" value="shall update templates to generate fromLinkedList() again, and then can remove fromLinkedListNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="3YSSV6TCmpj" role="3cqZAp">
           <node concept="1rXfSq" id="3YSSV6TCvtC" role="3cqZAk">
             <ref role="37wK5l" node="6gPw0iAREgp" resolve="fromLinkedListNew" />
@@ -11803,29 +11532,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="6gPw0iARzwB" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iARzwC" role="3nqlJM">
-          <node concept="TZ5HA" id="6gPw0iARzwD" role="3HnX3l">
-            <node concept="1dT_AC" id="6gPw0iAZBXP" role="1dT_Ay">
-              <property role="1dT_AB" value="use " />
-            </node>
-            <node concept="1dT_AA" id="6gPw0iAZBXS" role="1dT_Ay">
-              <node concept="92FcH" id="6gPw0iAZBXY" role="qph3F">
-                <node concept="VXe0Z" id="6gPw0iAZMSV" role="92FcQ">
-                  <ref role="VXe0S" node="6gPw0iAREgp" resolve="fromLinkedListNew" />
-                </node>
-                <node concept="TZ5HA" id="6gPw0iAZBY2" role="2XjZqd" />
-              </node>
-            </node>
-            <node concept="1dT_AC" id="6gPw0iAZBXR" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6gPw0iARzwE" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="6gPw0iAREgp" role="jymVt">
@@ -11926,9 +11632,6 @@
                         <ref role="16sUi3" node="6gPw0iAREgr" resolve="U" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3cmrfG" id="6gPw0iB0gfN" role="37wK5m">
-                    <property role="3cmrfH" value="0" />
                   </node>
                 </node>
               </node>
@@ -12157,14 +11860,12 @@
               <node concept="37vLTw" id="3GM_nagTu30" role="37wK5m">
                 <ref role="3cqZAo" node="5Ffu4tBUy$Q" resolve="list" />
               </node>
-              <node concept="3cmrfG" id="6gPw0iB0HWK" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="Z_z4A2dssN" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUy_I" role="jymVt">
       <property role="TrG5h" value="fromListAndArray" />
       <property role="IEkAT" value="false" />
@@ -12181,7 +11882,7 @@
       <node concept="37vLTG" id="5Ffu4tBUy_N" role="3clF46">
         <property role="TrG5h" value="list" />
         <node concept="3uibUv" id="5Ffu4tBUy_O" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUyZm" resolve="LinkedList" />
+          <ref role="3uigEE" to="33ny:~LinkedList" resolve="LinkedList" />
           <node concept="16syzq" id="5Ffu4tBUy_P" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUy_K" resolve="U" />
           </node>
@@ -12196,6 +11897,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUy_T" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A2dDlf" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A2dDlh" role="3SKWNk">
+            <property role="3SKdUp" value="change templates to invoke this method and drop fromListAndArrayNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="6gPw0iB1qrr" role="3cqZAp">
           <node concept="1rXfSq" id="6gPw0iB1y$_" role="3cqZAk">
             <ref role="37wK5l" node="6gPw0iB0OWG" resolve="fromListAndArrayNew" />
@@ -12207,14 +11913,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="6gPw0iB13Rh" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iB13Ri" role="3nqlJM">
-          <node concept="TZ5HA" id="6gPw0iB13Rj" role="3HnX3l" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6gPw0iB13Rk" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="6gPw0iB0OWG" role="jymVt">
@@ -12354,9 +12052,6 @@
                           </node>
                           <node concept="37vLTw" id="6gPw0iB0OXE" role="37wK5m">
                             <ref role="3cqZAo" node="6gPw0iB0OWL" resolve="list" />
-                          </node>
-                          <node concept="3cmrfG" id="6gPw0iB2jkd" role="37wK5m">
-                            <property role="3cmrfH" value="0" />
                           </node>
                         </node>
                       </node>
@@ -12507,14 +12202,12 @@
               <node concept="37vLTw" id="6gPw0iB0OYz" role="37wK5m">
                 <ref role="3cqZAo" node="6gPw0iB0OWL" resolve="list" />
               </node>
-              <node concept="3cmrfG" id="6gPw0iB2yaq" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="Z_z4A2eym2" role="jymVt" />
     <node concept="2YIFZL" id="5Ffu4tBUyBA" role="jymVt">
       <property role="TrG5h" value="fromListWithValues" />
       <property role="IEkAT" value="false" />
@@ -12531,7 +12224,7 @@
       <node concept="37vLTG" id="5Ffu4tBUyBF" role="3clF46">
         <property role="TrG5h" value="list" />
         <node concept="3uibUv" id="5Ffu4tBUyBG" role="1tU5fm">
-          <ref role="3uigEE" to="kos1:5Ffu4tBUyZm" resolve="LinkedList" />
+          <ref role="3uigEE" to="33ny:~LinkedList" resolve="LinkedList" />
           <node concept="16syzq" id="5Ffu4tBUyBH" role="11_B2D">
             <ref role="16sUi3" node="5Ffu4tBUyBC" resolve="U" />
           </node>
@@ -12549,6 +12242,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ffu4tBUyBM" role="3clF47">
+        <node concept="3SKdUt" id="Z_z4A2eJLS" role="3cqZAp">
+          <node concept="3SKdUq" id="Z_z4A2eJLT" role="3SKWNk">
+            <property role="3SKdUp" value="shall update templates to generate fromLinkedList() again, and then can remove fromListWithValuesNew" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="6gPw0iB3Ddb" role="3cqZAp">
           <node concept="1rXfSq" id="6gPw0iB3KUm" role="3cqZAk">
             <ref role="37wK5l" node="6gPw0iB2BUJ" resolve="fromListWithValuesNew" />
@@ -12560,29 +12258,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="P$JXv" id="6gPw0iB45bB" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iB45bC" role="3nqlJM">
-          <node concept="TZ5HA" id="6gPw0iB45bD" role="3HnX3l">
-            <node concept="1dT_AC" id="6gPw0iB4arN" role="1dT_Ay">
-              <property role="1dT_AB" value="use " />
-            </node>
-            <node concept="1dT_AA" id="6gPw0iB4arQ" role="1dT_Ay">
-              <node concept="92FcH" id="6gPw0iB4arW" role="qph3F">
-                <node concept="VXe0Z" id="6gPw0iB4iCi" role="92FcQ">
-                  <ref role="VXe0S" node="6gPw0iB2BUJ" resolve="fromListWithValuesNew" />
-                </node>
-                <node concept="TZ5HA" id="6gPw0iB4as0" role="2XjZqd" />
-              </node>
-            </node>
-            <node concept="1dT_AC" id="6gPw0iB4arP" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6gPw0iB45bE" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="6gPw0iB2BUJ" role="jymVt">
@@ -12853,9 +12528,6 @@
               </node>
               <node concept="37vLTw" id="6gPw0iB2BWu" role="37wK5m">
                 <ref role="3cqZAo" node="6gPw0iB2BUX" resolve="tmp" />
-              </node>
-              <node concept="3cmrfG" id="6gPw0iB3sM2" role="37wK5m">
-                <property role="3cmrfH" value="0" />
               </node>
             </node>
           </node>

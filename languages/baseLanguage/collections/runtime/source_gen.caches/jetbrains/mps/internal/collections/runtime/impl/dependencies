@@ -106,7 +106,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IDequeSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.impl.NullQueueSequence" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.impl.NullLinkedListSequence" file="NullLinkedListSequence.java">
@@ -118,7 +117,6 @@
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ILinkedList" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.ILinkedListSequence" />

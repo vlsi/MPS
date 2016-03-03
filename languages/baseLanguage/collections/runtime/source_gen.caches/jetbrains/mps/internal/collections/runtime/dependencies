@@ -182,7 +182,6 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.DequeSequence" file="DequeSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -197,12 +196,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence" />
     <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractQueueSequence" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IDequeSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ICollectionSequence" file="ICollectionSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -213,12 +210,11 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IDequeSequence" file="IDequeSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
+    <classNode extendsClassName="java.util.Deque" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IQueueSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IEnumerable" file="IEnumerable.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IEnumerator" />
@@ -231,18 +227,17 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P2_E0" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ILinkedList" file="ILinkedList.java">
+    <classNode extendsClassName="java.util.Deque" />
     <classNode extendsClassName="java.util.List" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ILinkedListSequence" file="ILinkedListSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
-    <classNode extendsClassName="java.util.Queue" />
+    <classNode extendsClassName="java.util.Deque" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.IListSequence" />
-    <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.IListSequence" file="IListSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -349,7 +344,6 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.LinkedListSequence" file="LinkedListSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -367,8 +361,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullLinkedListSequence" />
     <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.AbstractListSequence" />

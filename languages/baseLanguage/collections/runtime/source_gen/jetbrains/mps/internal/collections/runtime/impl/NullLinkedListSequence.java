@@ -5,7 +5,6 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import jetbrains.mps.internal.collections.runtime.ILinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.ILinkedList;
 import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISequence;
@@ -87,10 +86,6 @@ public class NullLinkedListSequence<T> extends NullListSequence<T> implements IL
   @Override
   public T pushElement(T t) {
     return null;
-  }
-  @Override
-  public Deque<T> toDeque() {
-    return this;
   }
   @Override
   public boolean offer(T t) {
