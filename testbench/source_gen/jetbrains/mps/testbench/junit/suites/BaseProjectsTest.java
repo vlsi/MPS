@@ -71,6 +71,7 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
+    ourEnv.flushAllEvents();
     DumbService.getInstance(ProjectHelper.toIdeaProject(myProject)).runWhenSmart(new Runnable() {
       public void run() {
       }
