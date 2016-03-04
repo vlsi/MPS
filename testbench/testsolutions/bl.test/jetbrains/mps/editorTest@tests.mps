@@ -459,6 +459,10 @@
       <concept id="2870455723671203428" name="testDefaultEditor.structure.DefaultPropertyAttribute" flags="ng" index="2vfkox" />
       <concept id="2870455723671203553" name="testDefaultEditor.structure.DefaultNodeAttribute" flags="ng" index="2vfkq$" />
       <concept id="2870455723671203511" name="testDefaultEditor.structure.DefaultReferenceAttribute" flags="ng" index="2vfkrM" />
+      <concept id="6519503956373976538" name="testDefaultEditor.structure.Canvas" flags="ng" index="H5lIk">
+        <child id="6519503956373976545" name="shapes" index="H5lIJ" />
+      </concept>
+      <concept id="6519503956373976539" name="testDefaultEditor.structure.Shape" flags="ng" index="H5lIl" />
       <concept id="938834323431434553" name="testDefaultEditor.structure.Developer" flags="ng" index="32547I">
         <property id="938834323431434575" name="lastName" index="32546o" />
         <property id="938834323431434570" name="sex" index="32546t" />
@@ -52082,6 +52086,52 @@
       <node concept="2HxZob" id="4ChxYeHq8b$" role="3cqZAp">
         <node concept="1iFQzN" id="4ChxYeHq8b_" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5DTV$TRroMW">
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="TrG5h" value="DefaultEditor_NameProperty" />
+    <node concept="3clFbS" id="5DTV$TRroN2" role="LjaKd">
+      <node concept="2HxZob" id="5DTV$TRroN3" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRroN4" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="5DTV$TRrW6P" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRrW6Q" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNT" resolve="MoveLeft" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="5DTV$TRrW6V" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRrW6W" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNT" resolve="MoveLeft" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="5DTV$TRrW73" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRrW74" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNT" resolve="MoveLeft" />
+        </node>
+      </node>
+    </node>
+    <node concept="H5lIk" id="5DTV$TRroN7" role="LiRBU">
+      <node concept="LIFWc" id="5DTV$TRroNk" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_shapes" />
+      </node>
+    </node>
+    <node concept="H5lIk" id="5DTV$TRroNc" role="LiZbd">
+      <node concept="H5lIl" id="5DTV$TRroNm" role="H5lIJ">
+        <node concept="LIFWc" id="5DTV$TRrW6N" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="4" />
+          <property role="p6zMs" value="4" />
+          <property role="LIFWd" value="constant_2" />
         </node>
       </node>
     </node>

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAbstractDeveloper = new ConceptDescriptorBuilder("testDefaultEditor.structure.AbstractDeveloper", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptCanvas = new ConceptDescriptorBuilder("testDefaultEditor.structure.Canvas", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5daL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(6519503956373976545L, "shapes", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5dbL), true, true, false)).children(new String[]{"shapes"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptCompany = new ConceptDescriptorBuilder("testDefaultEditor.structure.Company", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f723L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(938834323431426237L, "team", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L), true, true, false)).children(new String[]{"team"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptDefaultNodeAttribute = new ConceptDescriptorBuilder("testDefaultEditor.structure.DefaultNodeAttribute", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8aee1L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).create();
   /*package*/ final ConceptDescriptor myConceptDefaultPropertyAttribute = new ConceptDescriptorBuilder("testDefaultEditor.structure.DefaultPropertyAttribute", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8ae64L)).super_("jetbrains.mps.lang.core.structure.PropertyAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L)).parents("jetbrains.mps.lang.core.structure.PropertyAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L)).create();
@@ -21,40 +22,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDummyMethod = new ConceptDescriptorBuilder("testDefaultEditor.structure.DummyMethod", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x535e489f8b62af67L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(6007318803034320803L, "statements", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), true, true, false)).children(new String[]{"statements"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptFriend = new ConceptDescriptorBuilder("testDefaultEditor.structure.Friend", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf13be7aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(938834323431472763L, "friend", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L), false)).references("friend").create();
   /*package*/ final ConceptDescriptor myConceptNotSubstitutableDeveloper = new ConceptDescriptorBuilder("testDefaultEditor.structure.NotSubstitutableDeveloper", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9853b871L)).super_("testDefaultEditor.structure.AbstractDeveloper").super_(MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L)).parents("testDefaultEditor.structure.AbstractDeveloper", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).create();
+  /*package*/ final ConceptDescriptor myConceptShape = new ConceptDescriptorBuilder("testDefaultEditor.structure.Shape", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5dbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6519503956374011006L, "name"), new ConceptDescriptorBuilder.Prop(6519503956373976540L, "x"), new ConceptDescriptorBuilder.Prop(6519503956373976542L, "y")).properties("name", "x", "y").create();
   /*package*/ final ConceptDescriptor myConceptTeam = new ConceptDescriptorBuilder("testDefaultEditor.structure.Team", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(938834323431434566L, "isOpenSource")).properties("isOpenSource").childDescriptors(new ConceptDescriptorBuilder.Link(938834323431434551L, "developer", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L), true, true, false), new ConceptDescriptorBuilder.Link(472942194665436037L, "abstractDeveloper", MetaIdFactory.conceptId(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L), true, false, false)).children(new String[]{"developer", "abstractDeveloper"}, new boolean[]{true, false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractDeveloper, myConceptCompany, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptNotSubstitutableDeveloper, myConceptTeam);
+    return Arrays.asList(myConceptAbstractDeveloper, myConceptCanvas, myConceptCompany, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptNotSubstitutableDeveloper, myConceptShape, myConceptTeam);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0q, conceptFqName)) {
       case 0:
         return myConceptAbstractDeveloper;
       case 1:
-        return myConceptCompany;
+        return myConceptCanvas;
       case 2:
-        return myConceptDefaultNodeAttribute;
+        return myConceptCompany;
       case 3:
-        return myConceptDefaultPropertyAttribute;
+        return myConceptDefaultNodeAttribute;
       case 4:
-        return myConceptDefaultReferenceAttribute;
+        return myConceptDefaultPropertyAttribute;
       case 5:
-        return myConceptDeveloper;
+        return myConceptDefaultReferenceAttribute;
       case 6:
-        return myConceptDummyMethod;
+        return myConceptDeveloper;
       case 7:
-        return myConceptFriend;
+        return myConceptDummyMethod;
       case 8:
-        return myConceptNotSubstitutableDeveloper;
+        return myConceptFriend;
       case 9:
+        return myConceptNotSubstitutableDeveloper;
+      case 10:
+        return myConceptShape;
+      case 11:
         return myConceptTeam;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"testDefaultEditor.structure.AbstractDeveloper", "testDefaultEditor.structure.Company", "testDefaultEditor.structure.DefaultNodeAttribute", "testDefaultEditor.structure.DefaultPropertyAttribute", "testDefaultEditor.structure.DefaultReferenceAttribute", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.NotSubstitutableDeveloper", "testDefaultEditor.structure.Team"};
+  private static String[] stringSwitchCases_1htk8d_a0a0q = new String[]{"testDefaultEditor.structure.AbstractDeveloper", "testDefaultEditor.structure.Canvas", "testDefaultEditor.structure.Company", "testDefaultEditor.structure.DefaultNodeAttribute", "testDefaultEditor.structure.DefaultPropertyAttribute", "testDefaultEditor.structure.DefaultReferenceAttribute", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.NotSubstitutableDeveloper", "testDefaultEditor.structure.Shape", "testDefaultEditor.structure.Team"};
 }

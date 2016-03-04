@@ -37,6 +37,8 @@ import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -137,8 +139,12 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private SProperty getNameProperty() {
     SProperty nameProperty = null;
-    int maxPriority = -1;
+    int maxPriority = 0;
     for (SProperty property : getProperties()) {
+      SDataType dataType = property.getType();
+      if (!(dataType instanceof SPrimitiveDataType && ((SPrimitiveDataType) dataType).getType() == SPrimitiveDataType.STRING)) {
+        continue;
+      }
       String propertyName = property.getName();
       int propertyPriority = getPropertyPriority(propertyName);
       if (maxPriority < propertyPriority) {

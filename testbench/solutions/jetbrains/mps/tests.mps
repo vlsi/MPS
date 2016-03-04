@@ -1896,6 +1896,9 @@
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="DefaultEditor_EditStringProperty" />
     </node>
+    <node concept="lpD6D" id="5DTV$TRsdKK" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5DTV$TRroMW" resolve="DefaultEditor_NameProperty" />
+    </node>
     <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="DefaultEditor_ShowReflectiveEditor" />
     </node>

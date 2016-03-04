@@ -11990,6 +11990,31 @@
       <unit id="6517948727589782823" at="10,0,33,0" name="jetbrains.mps.editorTest.PasteStatementBefore_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6519503956374031548">
+    <file name="DefaultEditor_NameProperty_Test.java">
+      <node id="6519503956374031548" at="15,66,16,107" concept="3" />
+      <node id="6519503956374031548" at="16,107,17,107" concept="3" />
+      <node id="6519503956374031548" at="24,51,25,63" concept="3" />
+      <node id="6519503956374031555" at="25,63,26,74" concept="3" />
+      <node id="6519503956374176181" at="26,74,27,76" concept="3" />
+      <node id="6519503956374176187" at="27,76,28,76" concept="3" />
+      <node id="6519503956374176195" at="28,76,29,76" concept="3" />
+      <node id="6519503956374031548" at="12,0,14,0" concept="2" trace="DefaultEditor_NameProperty_Test#()V" />
+      <node id="6519503956374031548" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="6519503956374031548" at="14,0,19,0" concept="6" trace="test_DefaultEditor_NameProperty#()V" />
+      <node id="6519503956374031548" at="23,0,31,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="6519503956374031548" at="12,44,12,44" />
+      <scope id="6519503956374031548" at="21,23,21,23" />
+      <scope id="6519503956374031548" at="12,0,14,0" />
+      <scope id="6519503956374031548" at="15,66,17,107" />
+      <scope id="6519503956374031548" at="21,0,23,0" />
+      <scope id="6519503956374031548" at="14,0,19,0" />
+      <scope id="6519503956374031548" at="24,51,29,76" />
+      <scope id="6519503956374031548" at="23,0,31,0" />
+      <unit id="6519503956374031548" at="19,0,32,0" name="jetbrains.mps.editorTest.DefaultEditor_NameProperty_Test$TestBody" />
+      <unit id="6519503956374031548" at="10,0,33,0" name="jetbrains.mps.editorTest.DefaultEditor_NameProperty_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/654795966042457025">
     <file name="Post_ThisSettingClassConcept_Test.java">
       <node id="654795966042457025" at="15,68,16,107" concept="3" />
