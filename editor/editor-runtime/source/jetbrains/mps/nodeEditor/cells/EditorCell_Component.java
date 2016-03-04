@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -92,7 +93,7 @@ public class EditorCell_Component extends EditorCell_ComponentBase {
 
   @Override
   public TextBuilder renderText() {
-    return TextBuilder.fromString("[JComponent " + myComponent.toString() +  " ]");
+    return new TextBuilderImpl("[JComponent " + myComponent.toString() + " ]");
   }
 
   @Override

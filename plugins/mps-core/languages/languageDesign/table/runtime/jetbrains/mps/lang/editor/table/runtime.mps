@@ -34,6 +34,7 @@
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
+    <import index="hhnx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime(MPS.Editor/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
@@ -6998,9 +6999,10 @@
             <node concept="3uibUv" id="Q643wMuvM4" role="1tU5fm">
               <ref role="3uigEE" to="cj4x:~TextBuilder" resolve="TextBuilder" />
             </node>
-            <node concept="2YIFZM" id="o$_79lOXrZ" role="33vP2m">
-              <ref role="37wK5l" to="eh3q:~TextBuilder.getEmptyTextBuilder():jetbrains.mps.nodeEditor.text.TextBuilder" resolve="getEmptyTextBuilder" />
-              <ref role="1Pybhc" to="eh3q:~TextBuilder" resolve="TextBuilder" />
+            <node concept="2ShNRf" id="4RxguYEVhnC" role="33vP2m">
+              <node concept="1pGfFk" id="4RxguYEVkvF" role="2ShVmc">
+                <ref role="37wK5l" to="hhnx:~TextBuilderImpl.&lt;init&gt;()" resolve="TextBuilderImpl" />
+              </node>
             </node>
           </node>
         </node>

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import gnu.trove.TIntArrayList;
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.style.CellAlign;
 import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -192,9 +193,9 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
-    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = new TextBuilderImpl();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheBottom(editorCell.renderText());
+      result.appendToTheBottom(editorCell.renderText());
     }
     return result;
   }

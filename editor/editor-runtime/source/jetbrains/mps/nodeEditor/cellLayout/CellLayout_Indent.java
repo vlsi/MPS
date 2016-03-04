@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -154,7 +155,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     for (EditorCell editorCell : editorCells) {
       editorCellsSet.add(editorCell);
     }
-    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = new TextBuilderImpl();
     Iterator<EditorCell> iterator = editorCells.iterator();
     if (iterator.hasNext()) {
       boolean newLineAfter = false;
@@ -169,13 +170,13 @@ public class CellLayout_Indent extends AbstractCellLayout {
         }
         if (isOnNewLine(rootCell, current) || newLineAfter) {
           newLineAfter = false;
-          result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString("\n"), true);
+          result.appendToTheRight(new TextBuilderImpl("\n"), true);
           for (int i = 0; i < getIndent(rootCell, current, false); i++) {
-            result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString(EditorCell_Indent.getIndentText()), false);
+            result.appendToTheRight(new TextBuilderImpl(EditorCell_Indent.getIndentText()), false);
           }
         }
 
-        result = result.appendToTheRight(current.renderText(), PunctuationUtil.hasLeftGap(current));
+        result.appendToTheRight(current.renderText(), PunctuationUtil.hasLeftGap(current));
 
         if (isNewLineAfter(rootCell, current)) {
           newLineAfter = true;
