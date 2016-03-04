@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SModelOperations;
@@ -49,21 +48,6 @@ public class PropertyAccessor implements ModelAccessor {
       }
     });
     myRepository = editorContext.getRepository();
-  }
-
-  public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
-    myNode = node;
-    myPropertyName = propertyName;
-    myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel());
-    myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode propertyDeclaration = new SNodeLegacy(myNode).getPropertyDeclaration(myPropertyName);
-        return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
-      }
-    });
-    myRepository = context.getProject().getRepository();
   }
 
   public SNode getNode() {
