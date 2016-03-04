@@ -29,7 +29,7 @@ public class CreatePort_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("2278461409093572745", "2278461409093572838");
-      this.getEditorComponent().getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
+      this.getEditorComponent().getEditorContext().getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts")), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
         }

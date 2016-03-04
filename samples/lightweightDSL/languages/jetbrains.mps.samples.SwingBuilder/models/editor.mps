@@ -298,25 +298,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="3tiTA5Ief9g" role="3cqZAp">
-              <node concept="3cpWsn" id="3tiTA5Ief9h" role="3cpWs9">
-                <property role="TrG5h" value="project" />
-                <node concept="3uibUv" id="3tiTA5Ief50" role="1tU5fm">
-                  <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-                </node>
-                <node concept="2OqwBi" id="3tiTA5Ief9i" role="33vP2m">
-                  <node concept="2OqwBi" id="3tiTA5Ief9j" role="2Oq$k0">
-                    <node concept="1Q80Hx" id="3tiTA5Ief9k" role="2Oq$k0" />
-                    <node concept="liA8E" id="3tiTA5Ief9l" role="2OqNvi">
-                      <ref role="37wK5l" to="cj4x:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="3tiTA5Ief9m" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="3tiTA5IeglX" role="3cqZAp">
               <node concept="3cpWsn" id="3tiTA5IeglY" role="3cpWs9">
                 <property role="TrG5h" value="repository" />
@@ -324,11 +305,9 @@
                   <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
                 </node>
                 <node concept="2OqwBi" id="3tiTA5IeglZ" role="33vP2m">
-                  <node concept="37vLTw" id="3tiTA5Iegm0" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3tiTA5Ief9h" resolve="project" />
-                  </node>
+                  <node concept="1Q80Hx" id="13$TqNLKpwh" role="2Oq$k0" />
                   <node concept="liA8E" id="3tiTA5Iegm1" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>

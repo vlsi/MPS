@@ -13,7 +13,6 @@ import javax.swing.JComponent;
 import javax.swing.JCheckBox;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.awt.event.ActionListener;
@@ -65,8 +64,7 @@ public class Panel_Editor extends DefaultNodeEditor {
   private static JComponent _QueryFunction_JComponent_7uomxw_a1a(final SNode node, final EditorContext editorContext) {
     final JCheckBox box = new JCheckBox("vertical align");
     box.setSelected(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical")));
-    Project project = editorContext.getOperationContext().getProject();
-    SRepository repository = project.getRepository();
+    SRepository repository = editorContext.getRepository();
     final ModelAccess modelAccess = repository.getModelAccess();
     box.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {

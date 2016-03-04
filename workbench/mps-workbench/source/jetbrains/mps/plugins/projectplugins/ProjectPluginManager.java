@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,28 +27,32 @@ import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
+import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.BasePluginManager;
+import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.ide.editor.tabs.TabbedEditor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -359,7 +363,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       }
 
       // could use myMpsProject here, but generally project should come through EditorOpenHandler
-      return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context.getProject());
+      return new TabbedEditor(node.getReference(), tabs, myMpsProject);
     }
   }
 
