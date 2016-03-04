@@ -6,21 +6,20 @@ import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -35,11 +34,20 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
 import com.intellij.openapi.progress.ProgressManager;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class AnnotationHelper {
+  /**
+   * XXX if this is reloadable code (is jetbrains.mps.vcs plugin reloadable?), then what happens with values cached here on reload?
+   */
   private static Set<EditorComponent> ourProgress = SetSequence.fromSet(new HashSet<EditorComponent>());
-  private AnnotationHelper() {
+
+  private final MPSProject myProject;
+
+  public AnnotationHelper(@NotNull MPSProject project) {
+    myProject = project;
   }
+
   @Nullable
   private static AnnotationColumn findAnnotationColumn(@NotNull EditorComponent editorComponent) {
     for (AbstractLeftColumn column : ListSequence.fromList(editorComponent.getLeftEditorHighlighter().getLeftColumns())) {
@@ -49,7 +57,8 @@ public class AnnotationHelper {
     }
     return null;
   }
-  private static boolean annotate(@NotNull final EditorComponent editorComponent, boolean dryRun) {
+
+  private boolean annotate(@NotNull final EditorComponent editorComponent, boolean dryRun) {
     // check if annotation is in progress (always called from ui thread) 
     if (SetSequence.fromSet(ourProgress).contains(editorComponent)) {
       return false;
@@ -64,9 +73,8 @@ public class AnnotationHelper {
       return true;
     }
     final SNode root = editorComponent.getEditedNode();
-    SModel model = check_19hp0u_a0h0d(root);
 
-    DataSource source = model.getSource();
+    DataSource source = check_19hp0u_a0i0i(check_19hp0u_a0a8a8(root));
     IFile iFile;
     if (source instanceof FileDataSource) {
       iFile = ((FileDataSource) source).getFile();
@@ -76,10 +84,9 @@ public class AnnotationHelper {
       return false;
     }
     final VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
-    final Project project = editorComponent.getOperationContext().getProject();
-    final com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
+    final Project ideaProject = myProject.getProject();
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(ideaProject).getVcsFor(file);
-    if (vcs == null || project == null) {
+    if (vcs == null) {
       return false;
     }
 
@@ -125,7 +132,7 @@ public class AnnotationHelper {
         }
 
         if (myFileAnnotation != null) {
-          project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               AnnotationColumn annotationColumn = new AnnotationColumn(leftEditorHighlighter, root, myFileAnnotation, vcs, file);
               leftEditorHighlighter.addLeftColumn(annotationColumn);
@@ -142,13 +149,21 @@ public class AnnotationHelper {
     }
     return true;
   }
-  public static void annotate(EditorComponent editorComponent) {
+
+  public void annotate(EditorComponent editorComponent) {
     annotate(editorComponent, false);
   }
-  public static boolean isAnnotateable(EditorComponent editorComponent) {
+
+  public boolean isAnnotateable(EditorComponent editorComponent) {
     return annotate(editorComponent, true);
   }
-  private static SModel check_19hp0u_a0h0d(SNode checkedDotOperand) {
+  private static DataSource check_19hp0u_a0i0i(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSource();
+    }
+    return null;
+  }
+  private static SModel check_19hp0u_a0a8a8(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

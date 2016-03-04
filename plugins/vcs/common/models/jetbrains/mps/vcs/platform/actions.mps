@@ -2239,14 +2239,26 @@
     <property role="3GE5qa" value="Actions" />
     <node concept="tnohg" id="3WCIgQv3c7U" role="tncku">
       <node concept="3clFbS" id="3WCIgQv3c7V" role="2VODD2">
-        <node concept="3clFbF" id="3WCIgQv3c7W" role="3cqZAp">
-          <node concept="2YIFZM" id="3WCIgQv3c7X" role="3clFbG">
-            <ref role="37wK5l" to="bvbc:AU4szQ5Wsa" resolve="annotate" />
-            <ref role="1Pybhc" to="bvbc:7L8MbJlwgBq" resolve="AnnotationHelper" />
-            <node concept="2OqwBi" id="3WCIgQv3c7Y" role="37wK5m">
-              <node concept="2WthIp" id="3WCIgQv3c7Z" role="2Oq$k0" />
-              <node concept="1DTwFV" id="3WCIgQv3c80" role="2OqNvi">
-                <ref role="2WH_rO" node="3WCIgQv3c81" resolve="editor" />
+        <node concept="3clFbF" id="13$TqNLJytt" role="3cqZAp">
+          <node concept="2OqwBi" id="13$TqNLJzsH" role="3clFbG">
+            <node concept="2ShNRf" id="13$TqNLJyth" role="2Oq$k0">
+              <node concept="1pGfFk" id="13$TqNLJzrg" role="2ShVmc">
+                <ref role="37wK5l" to="bvbc:AU4szQ5WT1" resolve="AnnotationHelper" />
+                <node concept="2OqwBi" id="13$TqNLJzrK" role="37wK5m">
+                  <node concept="2WthIp" id="13$TqNLJzrN" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="13$TqNLJzrP" role="2OqNvi">
+                    <ref role="2WH_rO" node="13$TqNLJqBK" resolve="mpsProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="13$TqNLJzwR" role="2OqNvi">
+              <ref role="37wK5l" to="bvbc:13$TqNLIflz" resolve="annotate" />
+              <node concept="2OqwBi" id="13$TqNLJzxI" role="37wK5m">
+                <node concept="2WthIp" id="13$TqNLJzxL" role="2Oq$k0" />
+                <node concept="1DTwFV" id="13$TqNLJzxN" role="2OqNvi">
+                  <ref role="2WH_rO" node="3WCIgQv3c81" resolve="editor" />
+                </node>
               </node>
             </node>
           </node>
@@ -2258,16 +2270,33 @@
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
       <node concept="1oajcY" id="3WCIgQv3c82" role="1oa70y" />
     </node>
+    <node concept="1DS2jV" id="13$TqNLJqBK" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="13$TqNLJqBL" role="1oa70y" />
+    </node>
     <node concept="2ScWuX" id="3WCIgQv3c83" role="tmbBb">
       <node concept="3clFbS" id="3WCIgQv3c84" role="2VODD2">
         <node concept="3cpWs6" id="3WCIgQv3c85" role="3cqZAp">
-          <node concept="2YIFZM" id="3WCIgQv3c86" role="3cqZAk">
-            <ref role="37wK5l" to="bvbc:AU4szQ5Wsp" resolve="isAnnotateable" />
-            <ref role="1Pybhc" to="bvbc:7L8MbJlwgBq" resolve="AnnotationHelper" />
-            <node concept="2OqwBi" id="3WCIgQv3c87" role="37wK5m">
-              <node concept="2WthIp" id="3WCIgQv3c88" role="2Oq$k0" />
-              <node concept="1DTwFV" id="3WCIgQv3c89" role="2OqNvi">
-                <ref role="2WH_rO" node="3WCIgQv3c81" resolve="editor" />
+          <node concept="2OqwBi" id="13$TqNLJyij" role="3cqZAk">
+            <node concept="2ShNRf" id="13$TqNLJqCR" role="2Oq$k0">
+              <node concept="1pGfFk" id="13$TqNLJyfo" role="2ShVmc">
+                <ref role="37wK5l" to="bvbc:AU4szQ5WT1" resolve="AnnotationHelper" />
+                <node concept="2OqwBi" id="13$TqNLJyg_" role="37wK5m">
+                  <node concept="2WthIp" id="13$TqNLJygC" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="13$TqNLJygE" role="2OqNvi">
+                    <ref role="2WH_rO" node="13$TqNLJqBK" resolve="mpsProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="13$TqNLJylM" role="2OqNvi">
+              <ref role="37wK5l" to="bvbc:13$TqNLIf_0" resolve="isAnnotateable" />
+              <node concept="2OqwBi" id="13$TqNLJyng" role="37wK5m">
+                <node concept="2WthIp" id="13$TqNLJynj" role="2Oq$k0" />
+                <node concept="1DTwFV" id="13$TqNLJynl" role="2OqNvi">
+                  <ref role="2WH_rO" node="3WCIgQv3c81" resolve="editor" />
+                </node>
               </node>
             </node>
           </node>

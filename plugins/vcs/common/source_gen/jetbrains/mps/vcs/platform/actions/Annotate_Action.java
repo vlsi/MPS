@@ -7,9 +7,11 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.annotate.AnnotationHelper;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.MPSProject;
 
 public class Annotate_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -24,7 +26,7 @@ public class Annotate_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return AnnotationHelper.isAnnotateable(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    return new AnnotationHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT)).isAnnotateable(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -44,10 +46,16 @@ public class Annotate_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    AnnotationHelper.annotate(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    new AnnotationHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT)).annotate(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
   }
 }

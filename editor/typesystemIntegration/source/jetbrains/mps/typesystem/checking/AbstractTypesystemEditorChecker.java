@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -155,6 +154,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
     if (intention != null) {
       if (!myOnceExecutedQuickFixes.contains(intention)) {
         myOnceExecutedQuickFixes.add(intention);
+        // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -163,12 +163,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
             int caretX = selectedCell.getCaretX();
             int caretY = selectedCell.getBaseline();
 
-            Project p = editorContext.getOperationContext() != null ? editorContext.getOperationContext().getProject() : null;
-            if (p == null) {
-              return;
-            }
-
-            p.getModelAccess().executeUndoTransparentCommand(new Runnable() {
+            editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 intention.execute(quickFixNode);
