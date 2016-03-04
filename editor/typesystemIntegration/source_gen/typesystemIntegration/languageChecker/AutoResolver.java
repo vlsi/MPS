@@ -16,8 +16,8 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.HashSet;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
@@ -51,14 +51,19 @@ public class AutoResolver extends EditorCheckerAdapter {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
       SetSequence.fromSet(messages).addElement(message);
     }
-    if (isAutofix(SNodeOperations.getModel(rootNode), editorContext.getRepository())) {
+    Set<EditorCell> editorErrorCells = ((EditorComponent) editorContext.getEditorComponent()).getCellTracker().getErrorCells();
+    boolean hasWork = SetSequence.fromSet(badReferences).isNotEmpty() || !(editorErrorCells.isEmpty());
+    if (hasWork && isAutofix(SNodeOperations.getModel(rootNode), editorContext.getRepository())) {
       runAutofix(badReferences, editorContext);
+    } else {
+      myForceAutofix = false;
     }
     return messages;
   }
   private void runAutofix(final Set<SReference> badReferences, final EditorContext editorContext) {
     final EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    final Set<EditorCell> errorCells = SetSequence.fromSetWithValues(new HashSet<EditorCell>(), editorComponent.getCellTracker().getErrorCells());
+    Set<EditorCell> editorErrorCells = editorComponent.getCellTracker().getErrorCells();
+    final Set<EditorCell> errorCells = SetSequence.fromSetWithValues(new HashSet<EditorCell>(), editorErrorCells);
 
     final boolean wasForceAutofix = myForceAutofix;
     myForceAutofix = false;

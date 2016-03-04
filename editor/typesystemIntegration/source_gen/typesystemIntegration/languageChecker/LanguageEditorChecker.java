@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -197,16 +198,21 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   protected boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
+
   @Override
-  protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable, boolean applyQuickFixes) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(TypeCheckingContext typeCheckingContext) {
-        return doCreateMessages(node, list, wasCheckedOnce, editorContext, typeCheckingContext);
+        return doCreateMessages(node, list, wasCheckedOnce, editorContext, typeCheckingContext, cancellable);
       }
     });
   }
-  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext) {
+  @Override
+  protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
+    throw new UnsupportedOperationException("old createMessages() API not supported");
+  }
+  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext, Cancellable cancellable) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
     boolean inspector = editorComponent instanceof InspectorEditorComponent;
@@ -285,7 +291,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
         if (typeCheckingContext != null) {
           typeCheckingContext.setIsNonTypesystemComputation();
         }
-        changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository());
+        changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository(), cancellable);
       } finally {
         if (typeCheckingContext != null) {
           typeCheckingContext.resetIsNonTypesystemComputation();

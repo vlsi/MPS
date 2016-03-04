@@ -9,6 +9,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.Cancellable;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -20,7 +21,7 @@ public class LanguageChecker implements INodeChecker {
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repoitory) {
     LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
-    errorsComponent.check(rootNode, myRules, repoitory);
+    errorsComponent.check(rootNode, myRules, repoitory, Cancellable.NEVER);
     Set<IErrorReporter> result = errorsComponent.getErrors();
     errorsComponent.dispose();
     return result;
