@@ -7,6 +7,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 
 public class EmptyCellLayout extends AbstractCellLayout {
 
@@ -16,6 +17,6 @@ public class EmptyCellLayout extends AbstractCellLayout {
     }
   }
   public TextBuilder doLayoutText(Iterable<EditorCell> iterable) {
-    return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
+    return new TextBuilderImpl();
   }
 }

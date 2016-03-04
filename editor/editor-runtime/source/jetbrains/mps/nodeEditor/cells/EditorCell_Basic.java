@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
@@ -842,7 +843,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public TextBuilder renderText() {
-    return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
+    return new TextBuilderImpl();
   }
 
   @Override

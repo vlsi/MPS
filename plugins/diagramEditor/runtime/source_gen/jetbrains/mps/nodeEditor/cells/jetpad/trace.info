@@ -51,24 +51,24 @@
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/2574029987319042393">
     <file name="EmptyCellLayout.java">
-      <node id="2160802499422808266" at="14,68,15,27" concept="5" />
-      <node id="2574029987323023181" at="18,66,19,75" concept="11" />
-      <node id="2160802499422804284" at="13,58,16,5" concept="7" />
-      <node id="2574029987319054314" at="18,0,21,0" concept="9" trace="doLayoutText#(Ljava/lang/Iterable;)Ljetbrains/mps/openapi/editor/TextBuilder;" />
-      <node id="2574029987319054305" at="13,0,18,0" concept="9" trace="doLayout#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)V" />
-      <scope id="2160802499422804286" at="14,68,15,27" />
-      <scope id="2574029987319054323" at="18,66,19,75" />
-      <scope id="2160802499422804284" at="13,58,16,5">
+      <node id="2160802499422808266" at="15,68,16,27" concept="5" />
+      <node id="5611839108300692857" at="19,66,20,33" concept="11" />
+      <node id="2160802499422804284" at="14,58,17,5" concept="7" />
+      <node id="2574029987319054314" at="19,0,22,0" concept="9" trace="doLayoutText#(Ljava/lang/Iterable;)Ljetbrains/mps/openapi/editor/TextBuilder;" />
+      <node id="2574029987319054305" at="14,0,19,0" concept="9" trace="doLayout#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)V" />
+      <scope id="2160802499422804286" at="15,68,16,27" />
+      <scope id="2574029987319054323" at="19,66,20,33" />
+      <scope id="2160802499422804284" at="14,58,17,5">
         <var name="childCell" id="2160802499422804285" />
       </scope>
-      <scope id="2574029987319054313" at="13,58,16,5" />
-      <scope id="2574029987319054314" at="18,0,21,0">
+      <scope id="2574029987319054313" at="14,58,17,5" />
+      <scope id="2574029987319054314" at="19,0,22,0">
         <var name="iterable" id="2574029987319054318" />
       </scope>
-      <scope id="2574029987319054305" at="13,0,18,0">
+      <scope id="2574029987319054305" at="14,0,19,0">
         <var name="collection" id="2574029987319054309" />
       </scope>
-      <unit id="2574029987319042393" at="11,0,22,0" name="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" />
+      <unit id="2574029987319042393" at="12,0,23,0" name="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" />
     </file>
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/285670992206004280">

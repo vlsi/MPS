@@ -22,6 +22,7 @@ import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
@@ -124,7 +125,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(Collections.<SNode>emptyList(), renderText().getText()));
   }
   private TextBuilder renderText() {
-    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = new TextBuilderImpl();
     for (EditorCell cell : getSelectedCells()) {
       result = result.appendToTheBottom(cell.renderText());
     }

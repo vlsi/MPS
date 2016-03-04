@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.util.Condition;
@@ -52,12 +51,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean isInClipRegion(Graphics g);
 
   boolean validate(boolean strict, boolean canActivatePopup);
-
-  /**
-   * @deprecated since MPS 3.3 {@link jetbrains.mps.openapi.editor.cells.EditorCell#renderText()} should be used
-   */
-  @Deprecated
-  TextBuilder renderText();
 
   boolean processMousePressed(MouseEvent e);
 

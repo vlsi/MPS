@@ -162,8 +162,8 @@
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" file="EmptyCellLayout.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.TextBuilderImpl" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.text.TextBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />

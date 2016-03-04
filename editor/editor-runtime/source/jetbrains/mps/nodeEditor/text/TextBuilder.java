@@ -19,9 +19,14 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @deprecated since MPS 3.4 use {@link jetbrains.mps.editor.runtime.TextBuilderImpl}
+ */
+@Deprecated
 public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   private static final Logger LOG = LogManager.getLogger(TextBuilder.class);
   private static TextBuilder ourEmptyTextBuilder = null;
@@ -61,8 +66,8 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   }
 
   @Override
-  public Iterable<StringBuffer> getLines() {
-    return myLines;
+  public Iterable<CharSequence> getLines() {
+    return Collections.<CharSequence>unmodifiableCollection(myLines);
   }
 
   /**
@@ -86,10 +91,10 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     String delim = insertSpace ? " " : "";
     int delimWidth = delim.length();
 
-    int newWidth = myWidth + getWidth(builder) + delimWidth;
+    int newWidth = myWidth + builder.getWidth() + delimWidth;
 
-    Iterator<StringBuffer> builderIterator = builder.getLines().iterator();
-    for (StringBuffer nextLine : getLines()) {
+    Iterator<CharSequence> builderIterator = builder.getLines().iterator();
+    for (StringBuffer nextLine : myLines) {
       nextLine.append(delim);
       if (builderIterator.hasNext()) {
         nextLine.append(builderIterator.next());
@@ -107,23 +112,6 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     return this;
   }
 
-  /**
-   * @deprecated in MPS 3.4 replace with {@link jetbrains.mps.openapi.editor.TextBuilder#getWidth()} method
-   */
-  @Deprecated
-  private static int getWidth(jetbrains.mps.openapi.editor.TextBuilder builder) {
-    if (builder instanceof TextBuilder) {
-      return ((TextBuilder) builder).getWidth();
-    }
-    int maxWidth = 0;
-    for (StringBuffer line : builder.getLines()) {
-      if (line.length() > maxWidth) {
-        maxWidth = line.length();
-      }
-    }
-    return maxWidth;
-  }
-
   public jetbrains.mps.openapi.editor.TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder) {
     if (builder.getSize() == 0) {
       return this;
@@ -132,11 +120,11 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
       return builder;
     }
 
-    for (StringBuffer sb : builder.getLines()) {
+    for (CharSequence sb : builder.getLines()) {
       myLines.add(new StringBuffer(sb));
     }
 
-    myWidth = Math.max(this.myWidth, getWidth(builder));
+    myWidth = Math.max(this.myWidth, builder.getWidth());
     normalizeWidth();
     return this;
   }

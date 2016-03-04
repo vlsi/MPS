@@ -28,7 +28,7 @@ public interface TextBuilder {
   /**
    * @return iterator over all lines inside this TextBuilder
    */
-  Iterable<StringBuffer> getLines();
+  Iterable<CharSequence> getLines();
 
   /**
    * @return the number of lines inside this TextBuilder
@@ -38,7 +38,7 @@ public interface TextBuilder {
   /**
    * @return maximum width of lines inside this TextBuilder
    */
-//  int getWidth();
+  int getWidth();
 
   /**
    * Append content of the specified TextBuilder to the bottom of this text builder.

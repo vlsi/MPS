@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.editor.runtime.TextBuilderImpl;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -28,8 +29,8 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -686,7 +687,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public TextBuilder renderText() {
-    return TextBuilder.fromString(getRenderedText());
+    return new TextBuilderImpl(getRenderedText());
   }
 
   public int getCharWidth() {
