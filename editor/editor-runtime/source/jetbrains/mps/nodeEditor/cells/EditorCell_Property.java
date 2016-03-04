@@ -97,6 +97,15 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     }
   }
 
+  public boolean hasUncommittedValue() {
+    if (!isTransactional()) {
+      return false;
+    }
+
+    TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
+    return transactionalModelAccessor.hasValueToCommit();
+  }
+
   /**
    * should be executed inside write action
    *

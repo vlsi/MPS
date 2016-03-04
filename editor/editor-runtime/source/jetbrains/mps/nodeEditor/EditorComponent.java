@@ -2922,23 +2922,34 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void commitAll() {
-    getModelAccess().executeCommandInEDT(new Runnable() {
+    final List<EditorCell_Property> cellsToCommit = getCellsToCommit();
+    if (cellsToCommit.isEmpty()) {
+      return;
+    }
+
+    getModelAccess().executeCommand(new Runnable() {
       @Override
       public void run() {
-        doCommitAll(getRootCell());
+        doCommitAll(cellsToCommit);
       }
     });
   }
 
-  private void doCommitAll(jetbrains.mps.openapi.editor.cells.EditorCell current) {
-    if (current instanceof EditorCell_Property) {
-      ((EditorCell_Property) current).commit();
-    }
-    if (current instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) current;
-      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : collection) {
-        doCommitAll(cell);
+  private List<EditorCell_Property> getCellsToCommit() {
+    List<EditorCell_Property> cells = new ArrayList<EditorCell_Property>();
+
+    for (EditorCell_Property cell : getCellTracker().getTransactionalCells()) {
+      if (cell.hasUncommittedValue()) {
+        cells.add(cell);
       }
+    }
+
+    return cells;
+  }
+
+  private void doCommitAll(List<EditorCell_Property> cells) {
+    for (EditorCell_Property cell : cells) {
+      cell.commit();
     }
   }
 
