@@ -7,13 +7,17 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -21,7 +25,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.annotations.Nullable;
@@ -36,6 +39,7 @@ public class IntelligentNodeMover {
   private SContainmentLink myCommonNodesContainmentLink;
   private SNode myCommonNodesParent;
   private boolean wasMoved;
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(IntelligentNodeMover.class));
   public IntelligentNodeMover(@NotNull SNode node, @NotNull EditorContext editorContext, boolean forward) {
     this(CollectionSequence.fromCollectionAndArray(new ArrayList<SNode>(), node), editorContext, forward);
   }
@@ -61,9 +65,15 @@ public class IntelligentNodeMover {
         if (!(myIsValid)) {
           return;
         }
-        IntelligentNodeMover.PlaceToMove findPlaceToMove = findPlaceToMove();
-        if (findPlaceToMove != null) {
-          doMove(findPlaceToMove);
+        IntelligentNodeMover.PlaceToMove placeToMove = findPlaceToMove();
+        if (placeToMove != null) {
+          Iterable<SNode> intersection = ListSequence.fromList(SNodeOperations.getNodeAncestors(placeToMove.myParent, null, false)).intersect(CollectionSequence.fromCollection(myNodesToMove));
+          if (Sequence.fromIterable(intersection).isNotEmpty()) {
+            SNode first = Sequence.fromIterable(intersection).first();
+            LOG.error("Possible creation of cyclic tree. Node [\"" + first + "\"; concept: " + SNodeOperations.getConcept(first) + "; id: " + first.getNodeId() + "] is supposed to be moved inside itself. Moving was cancelled");
+            return;
+          }
+          doMove(placeToMove);
           wasMoved = true;
         }
         if (wasMoved) {
@@ -186,7 +196,7 @@ public class IntelligentNodeMover {
       IntelligentNodeMover.PlaceToMove placeToMoveInsideSibling = findPlaceToMoveInsideCell(siblingCell);
       return (placeToMoveInsideSibling != null ? placeToMoveInsideSibling : new IntelligentNodeMover.PlaceToMove(getNodesCommonParent(), getNodesCommonContainmentLink(), sibling, myIsForward));
     } else {
-      EditorCell anchorCell = myEditorContext.getEditorComponent().findNodeCell(CollectionSequence.fromCollection(myNodesToMove).first());
+      EditorCell anchorCell = myEditorContext.getEditorComponent().findNodeCell(getBoundaryNode());
       EditorCell_Collection parentCell = anchorCell.getParent();
       while (parentCell != null) {
         Iterator<EditorCell> cellIterator = getCellIterator(parentCell, anchorCell);
@@ -291,7 +301,7 @@ public class IntelligentNodeMover {
     return (link instanceof SContainmentLink ? ((SContainmentLink) link) : null);
   }
   private boolean isSimilarLink(@NotNull SContainmentLink link) {
-    return eq_9l6nqc_a0a0a73_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a73(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
+    return eq_9l6nqc_a0a0a83_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a83(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
   }
 
   private static class PlaceToMove {
@@ -341,10 +351,10 @@ public class IntelligentNodeMover {
     }
     return node.getContainmentLink();
   }
-  private static boolean eq_9l6nqc_a0a0a73(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a83(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_9l6nqc_a0a0a73_0(Object a, Object b) {
+  private static boolean eq_9l6nqc_a0a0a83_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -8942,6 +8942,32 @@
       <unit id="5331479185384370996" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5337196445347381882">
+    <file name="MoveBlockAndEmptyStatementOutOfTheBlock_Test.java">
+      <node id="5337196445347381882" at="15,79,16,107" concept="3" />
+      <node id="5337196445347381882" at="16,107,17,120" concept="3" />
+      <node id="5337196445347381882" at="24,51,25,63" concept="3" />
+      <node id="5337196445347381900" at="25,63,26,76" concept="3" />
+      <node id="5337196445347381956" at="26,76,27,76" concept="3" />
+      <node id="5337196445347381964" at="27,76,28,82" concept="3" />
+      <node id="5337196445347381950" at="28,82,29,84" concept="3" />
+      <node id="5337196445347381988" at="29,84,30,74" concept="3" />
+      <node id="5337196445347381882" at="12,0,14,0" concept="2" trace="MoveBlockAndEmptyStatementOutOfTheBlock_Test#()V" />
+      <node id="5337196445347381882" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5337196445347381882" at="14,0,19,0" concept="6" trace="test_MoveBlockAndEmptyStatementOutOfTheBlock#()V" />
+      <node id="5337196445347381882" at="23,0,32,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5337196445347381882" at="12,57,12,57" />
+      <scope id="5337196445347381882" at="21,23,21,23" />
+      <scope id="5337196445347381882" at="12,0,14,0" />
+      <scope id="5337196445347381882" at="15,79,17,120" />
+      <scope id="5337196445347381882" at="21,0,23,0" />
+      <scope id="5337196445347381882" at="14,0,19,0" />
+      <scope id="5337196445347381882" at="24,51,30,74" />
+      <scope id="5337196445347381882" at="23,0,32,0" />
+      <unit id="5337196445347381882" at="19,0,33,0" name="jetbrains.mps.editorTest.MoveBlockAndEmptyStatementOutOfTheBlock_Test$TestBody" />
+      <unit id="5337196445347381882" at="10,0,34,0" name="jetbrains.mps.editorTest.MoveBlockAndEmptyStatementOutOfTheBlock_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088365503481">
     <file name="CutMethodComment_Test.java">
       <node id="537222088365503481" at="15,56,16,107" concept="3" />

@@ -52017,5 +52017,74 @@
       </node>
     </node>
   </node>
+  <node concept="LiM7Y" id="4ChxYeHq89U">
+    <property role="3GE5qa" value="moveElements" />
+    <property role="TrG5h" value="MoveBlockAndEmptyStatementOutOfTheBlock" />
+    <property role="3YCmrE" value="MPS-23424" />
+    <node concept="9aQIb" id="4ChxYeHq89V" role="LiRBU">
+      <node concept="3clFbS" id="4ChxYeHq89W" role="9aQI4">
+        <node concept="9aQIb" id="4ChxYeHq89Z" role="3cqZAp">
+          <node concept="3clFbS" id="4ChxYeHq8a0" role="9aQI4">
+            <node concept="3clFbH" id="4ChxYeHq8a1" role="3cqZAp" />
+            <node concept="9aQIb" id="4ChxYeHq89X" role="3cqZAp">
+              <node concept="3clFbS" id="4ChxYeHq89Y" role="9aQI4" />
+              <node concept="LIFWc" id="4ChxYeHq8aW" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="1" />
+                <property role="p6zMs" value="1" />
+                <property role="LIFWd" value="Constant_319n5h_a0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4ChxYeHq8a3" role="LiZbd">
+      <node concept="3clFbS" id="4ChxYeHq8a4" role="9aQI4">
+        <node concept="9aQIb" id="4ChxYeHq8a5" role="3cqZAp">
+          <node concept="3clFbS" id="4ChxYeHq8a6" role="9aQI4" />
+          <node concept="LIFWc" id="5DTV$TRpRY0" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_319n5h_c0" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="4ChxYeHq8br" role="3cqZAp" />
+        <node concept="9aQIb" id="4ChxYeHq8a7" role="3cqZAp">
+          <node concept="3clFbS" id="4ChxYeHq8a8" role="9aQI4" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="4ChxYeHq8ab" role="LjaKd">
+      <node concept="2HxZob" id="4ChxYeHq8ac" role="3cqZAp">
+        <node concept="1iFQzN" id="4ChxYeHq8ad" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="4ChxYeHq8b4" role="3cqZAp">
+        <node concept="1iFQzN" id="4ChxYeHq8b5" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="4ChxYeHq8bc" role="3cqZAp">
+        <node concept="1iFQzN" id="4ChxYeHq8bd" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="4ChxYeHq8aY" role="3cqZAp">
+        <node concept="1iFQzN" id="4ChxYeHq8aZ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2pEKBmjmchR" resolve="MoveElementsDown" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="4ChxYeHq8b$" role="3cqZAp">
+        <node concept="1iFQzN" id="4ChxYeHq8b_" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

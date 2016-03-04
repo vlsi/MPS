@@ -2932,6 +2932,9 @@
       <ref role="lpD7u" to="ryl9:iYIY04Prpd" resolve="WrapRLConstant" />
     </node>
     <node concept="lpD6D" id="2tTgVY$IfJ0" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4ChxYeHq89U" resolve="MoveBlockAndEmptyStatementOutOfTheBlock" />
+    </node>
+    <node concept="lpD6D" id="5DTV$TRra0K" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6bOvqMpbBLj" resolve="MoveBlockToBlock" />
     </node>
     <node concept="lpD6D" id="6ueBWtFO0n4" role="lpD6w">
