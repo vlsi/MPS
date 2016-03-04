@@ -46,7 +46,6 @@ public class ConceptDescriptorBuilder {
   private String[] parents;
   private boolean isAbstract;
   private boolean isFinal;
-  @NotNull
   private String conceptAlias;
   private String shortDescription;
   private String helpUrl;
@@ -171,7 +170,7 @@ public class ConceptDescriptorBuilder {
         ownProperties.toArray(new PropertyDescriptor[ownProperties.size()]),
         ownReferences.toArray(new ReferenceDescriptor[ownReferences.size()]),
         ownLinks.toArray(new LinkDescriptor[ownLinks.size()]),
-        isAbstract, isFinal,
+        isAbstract || isInterfaceConcept, isFinal,
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope);
