@@ -13,7 +13,6 @@ import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -62,12 +61,18 @@ public class GoToNodeById_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + NameUtil.getModelLongName(((SModel) MapSequence.fromMap(_params).get("contextModel"))), JOptionPane.QUESTION_MESSAGE);
+    String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModel) MapSequence.fromMap(_params).get("contextModel")).getName().getLongName(), JOptionPane.QUESTION_MESSAGE);
     if (value == null) {
       return;
     }
     final String trimmedValue = ((value == null ? null : value.trim()));
-    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(PersistenceFacade.getInstance().createNodeId(trimmedValue));
+    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
+    try {
+      id.value = PersistenceFacade.getInstance().createNodeId(trimmedValue);
+    } catch (IllegalArgumentException ex) {
+      // fine, value is not of default or any recognizable node id format 
+      id.value = null;
+    }
     if (id.value == null) {
       // try new nodeId presentation format 
       try {
