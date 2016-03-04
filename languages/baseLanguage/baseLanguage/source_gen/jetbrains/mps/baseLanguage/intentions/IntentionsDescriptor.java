@@ -195,7 +195,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 10:
         // Concept: Statement 
         if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[12];
+          myIntentions10 = new IntentionFactory[13];
           myIntentions10[0] = new CreateInternalLabel_Intention();
           myIntentions10[1] = new SurroundWithIf_Intention();
           myIntentions10[2] = new SurroundWithIfElse_Intention();
@@ -208,6 +208,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions10[9] = new TryCatchFinally_Intention();
           myIntentions10[10] = new SurroundWithSynchronized_Intention();
           myIntentions10[11] = new SurroundWithBrackets_Intention();
+          myIntentions10[12] = new JoinVariableDeclarationAndInitializer_Intention();
         }
         return Arrays.asList(myIntentions10);
       case 11:
@@ -449,7 +450,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[91];
+    IntentionFactory[] rv = new IntentionFactory[92];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -541,6 +542,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[88] = new CleanUnmatchedParentheses_Intention();
     rv[89] = new ComputeWholeExpressionValue_Intention();
     rv[90] = new ComputeExpressionValue_Intention();
+    rv[91] = new JoinVariableDeclarationAndInitializer_Intention();
     return Arrays.asList(rv);
   }
 }
