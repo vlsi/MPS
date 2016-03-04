@@ -97,7 +97,9 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     }
     while (builderIterator.hasNext()) {
       StringBuffer nextLine = new StringBuffer(newWidth);
-      nextLine.append(" ", 0, myWidth + delimWidth + 1);
+      for (int i = 0; i < myWidth + delimWidth; i++) {
+        nextLine.append(" ");
+      }
       nextLine.append(builderIterator.next());
       myLines.add(nextLine);
     }
