@@ -49,7 +49,7 @@ public class ModelPerformanceTest {
   public ErrorCollector myErrors = new ErrorCollector();
 
   @ClassRule
-  public PerformanceMessenger ourStats = new PerformanceMessenger("ModelReadPerformance.");
+  public static PerformanceMessenger ourStats = new PerformanceMessenger("ModelReadPerformance.");
 
   private final TestModelAccess myTestModelAccess = new TestModelAccess();
   private final SRepository myTestRepo = new TestRepository(myTestModelAccess);
@@ -164,8 +164,8 @@ public class ModelPerformanceTest {
     final TestModelFactory m1f = new TestModelFactory();
     org.jetbrains.mps.openapi.model.SModel m1 = m1f.createModel(10, 25, 15, 5, 4);
     final int actualNodes = m1f.countModelNodes();
-    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use four times as much time to account for slower build agents
-    final long baselineMillis = 200;
+    // 10, 25, 15, 5, 4 == 97760 nodes. It takes about 50 ms to walk this model in avg. I use twice as much time to account for slower build agents
+    final long baselineMillis = 50*2;
     ourStats.report("singleThreadBaselineMillis", baselineMillis);
     final int testRuns = 10;
     long elapsed = 0;
@@ -174,7 +174,7 @@ public class ModelPerformanceTest {
       ModelListenerTest.readTreeNodes(m1.getRootNodes());
       elapsed += System.nanoTime() - start;
       if (i == 0) {
-        ourStats.report("singleThreadFirstRunMillis", elapsed);
+        ourStats.report("singleThreadFirstRunMillis", elapsed / 1000000);
       }
     }
     long averageMillis = elapsed / 1000000 / testRuns;
@@ -184,9 +184,9 @@ public class ModelPerformanceTest {
       Assert.fail(String.format(fmt, actualNodes, baselineMillis, testRuns, averageMillis));
     }
     // guard if it's too fast
-    if (averageMillis < baselineMillis / 10) {
+    if (averageMillis < baselineMillis / 5) {
       final String fmt =
-          "Walking model of %d nodes took less than 10%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
+          "Walking model of %d nodes took less than 20%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
       Assert.fail(String.format(fmt, actualNodes, testRuns, averageMillis, baselineMillis));
     }
   }
