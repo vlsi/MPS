@@ -10,9 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
@@ -43,14 +42,14 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
       return false;
     }
     {
-      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      if (p == null) {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node == null) {
         return false;
       }
     }
     {
-      SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node == null) {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
         return false;
       }
     }
@@ -59,6 +58,6 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNode fun = SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false);
-    GeneratedQueriesOpener.openQueryMethod(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT).getOperationContext(), fun);
+    GeneratedQueriesOpener.openQueryMethod(event.getData(MPSCommonDataKeys.MPS_PROJECT), fun);
   }
 }

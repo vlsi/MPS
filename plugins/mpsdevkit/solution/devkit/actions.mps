@@ -397,7 +397,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -7211,16 +7211,16 @@
     <property role="TrG5h" value="NavigateToGeneratedQuery" />
     <property role="2uzpH1" value="Generated Query" />
     <property role="3GE5qa" value="Goto" />
-    <node concept="1DS2jV" id="gXLcbBbpLC" role="1NuT2Z">
-      <property role="TrG5h" value="editorContext" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
-      <node concept="1oajcY" id="gXLcbBbpLD" role="1oa70y" />
-    </node>
     <node concept="2S4$dB" id="gXLcbBbpLg" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="3Tm6S6" id="gXLcbBbpLh" role="1B3o_S" />
       <node concept="3Tqbb2" id="gXLcbBbpLi" role="1tU5fm" />
       <node concept="1oajcY" id="gXLcbBbpLj" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="13$TqNLK0Dz" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="13$TqNLK0D$" role="1oa70y" />
     </node>
     <node concept="tnohg" id="gXLcbBbpK_" role="tncku">
       <node concept="3clFbS" id="gXLcbBbpKA" role="2VODD2">
@@ -7249,16 +7249,11 @@
         <node concept="3clFbF" id="h7xevQl" role="3cqZAp">
           <node concept="2YIFZM" id="vCs8BC5omO" role="3clFbG">
             <ref role="1Pybhc" to="o6ex:~GeneratedQueriesOpener" resolve="GeneratedQueriesOpener" />
-            <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.openQueryMethod(jetbrains.mps.smodel.IOperationContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="openQueryMethod" />
-            <node concept="2OqwBi" id="vCs8BC5omP" role="37wK5m">
-              <node concept="2OqwBi" id="gXLcbBbpLE" role="2Oq$k0">
-                <node concept="2WthIp" id="gXLcbBbpLF" role="2Oq$k0" />
-                <node concept="1DTwFV" id="gXLcbBbpLG" role="2OqNvi">
-                  <ref role="2WH_rO" node="gXLcbBbpLC" resolve="editorContext" />
-                </node>
-              </node>
-              <node concept="liA8E" id="vCs8BC5omR" role="2OqNvi">
-                <ref role="37wK5l" to="cj4x:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
+            <ref role="37wK5l" to="o6ex:~GeneratedQueriesOpener.openQueryMethod(jetbrains.mps.project.MPSProject,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="openQueryMethod" />
+            <node concept="2OqwBi" id="13$TqNLK14y" role="37wK5m">
+              <node concept="2WthIp" id="13$TqNLK14_" role="2Oq$k0" />
+              <node concept="1DTwFV" id="13$TqNLK14B" role="2OqNvi">
+                <ref role="2WH_rO" node="13$TqNLK0Dz" resolve="mpsProject" />
               </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTsk2" role="37wK5m">

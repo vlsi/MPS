@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,31 +16,27 @@
 package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.ide.navigation.NavigationProvider;
-import jetbrains.mps.project.FileBasedProject;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Method;
 
 public class GeneratedQueriesOpener {
 
-  public static boolean openQueryMethod(IOperationContext context, SNode node) {
-    String modelName = SNodeOperations.getModelLongName(node.getModel());
-
+  public static boolean openQueryMethod(MPSProject project, SNode node) {
     Class cls;
     try {
-      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getReference(), true);
+      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getReference().getModelReference(), true);
     } catch (ClassNotFoundException e) {
       return false;
     }
 
+    final String tail = "_" + node.getNodeId().toString();
     for (Method m : cls.getMethods()) {
-      if (m.getName().endsWith("_" + node.getNodeId().toString())) {
+      if (m.getName().endsWith(tail)) {
         for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-          if (np.openMethod(getProjectPath(context.getProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
+          if (np.openMethod(project.getProjectFile().getAbsolutePath(), cls.getName(), m.getName(), m.getParameterTypes().length)) {
             return true;
           }
         }
@@ -49,10 +45,5 @@ public class GeneratedQueriesOpener {
     }
 
     return false;
-  }
-
-  private static String getProjectPath(Project p) {
-    if (p == null) return null;
-    return ((FileBasedProject) p).getProjectFile().getAbsolutePath();
   }
 }
