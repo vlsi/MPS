@@ -863,12 +863,21 @@
                       <node concept="3clFbS" id="1K00pPgqzj2" role="3clF47">
                         <node concept="3clFbF" id="1KUoCipvyy5" role="3cqZAp">
                           <node concept="2OqwBi" id="1KUoCipvyy6" role="3clFbG">
-                            <node concept="2YIFZM" id="1KUoCipvyy7" role="2Oq$k0">
-                              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                            <node concept="2OqwBi" id="13$TqNLLtUr" role="2Oq$k0">
+                              <node concept="2OqwBi" id="13$TqNLLtjs" role="2Oq$k0">
+                                <node concept="2WthIp" id="13$TqNLLtjv" role="2Oq$k0">
+                                  <ref role="32nkFo" node="1K00pPgqzif" resolve="CleanProject" />
+                                </node>
+                                <node concept="1DTwFV" id="13$TqNLLtjx" role="2OqNvi">
+                                  <ref role="2WH_rO" node="1K00pPgqzjo" resolve="project" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="13$TqNLLueP" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                              </node>
                             </node>
                             <node concept="liA8E" id="1KUoCipvyy8" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                               <node concept="1bVj0M" id="1KUoCipvyy9" role="37wK5m">
                                 <node concept="3clFbS" id="1KUoCipvyya" role="1bW5cS">
                                   <node concept="3cpWs8" id="1KUoCipvyyb" role="3cqZAp">
@@ -935,11 +944,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="1K00pPgqzjm" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDgY" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="1K00pPgqzjn" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />

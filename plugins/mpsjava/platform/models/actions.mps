@@ -1642,16 +1642,6 @@
     <property role="3GE5qa" value="Actions" />
     <property role="72QZ$" value="true" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="60HWYcsjXo3" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="60HWYcsjXo4" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="3Kb8mGRKsn3" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDp6" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="3Kb8mGRKsn5" role="1NuT2Z">
       <property role="TrG5h" value="module" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -2294,11 +2284,6 @@
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="cvGLnZnRlP" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="cvGLnZnRlQ" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="cvGLnZnRlR" role="1oa70y" />
     </node>
     <node concept="tnohg" id="cvGLnZnRlS" role="tncku">
       <node concept="3clFbS" id="cvGLnZnRlT" role="2VODD2">
@@ -23802,11 +23787,6 @@
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="2o0RM2fztWL" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="2o0RM2fztWM" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="2o0RM2fztWN" role="1oa70y" />
     </node>
     <node concept="tnohg" id="2o0RM2fztWO" role="tncku">
       <node concept="3clFbS" id="2o0RM2fztWP" role="2VODD2">

@@ -6,11 +6,10 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -20,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 
@@ -39,12 +37,6 @@ public class CleanProject_Action extends BaseAction {
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (p == null) {
-        return false;
-      }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
@@ -67,7 +59,7 @@ public class CleanProject_Action extends BaseAction {
     ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Cleaning", true) {
       @Override
       public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
           public void run() {
             ModuleMaker maker = new ModuleMaker();
             maker.clean(modulesToBuild, new ProgressMonitorAdapter(indicator));

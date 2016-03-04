@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -64,13 +63,6 @@ public class SubmitToTracker_Action extends BaseAction {
     {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
       MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }

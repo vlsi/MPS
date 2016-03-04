@@ -9,7 +9,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.classpath.ClassPathViewerTool;
 
@@ -37,8 +37,8 @@ public class AnalyzeClasspath_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -47,7 +47,7 @@ public class AnalyzeClasspath_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ClassPathViewerTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(ClassPathViewerTool.class);
+    ClassPathViewerTool tool = ((MPSProject) MapSequence.fromMap(_params).get("project")).getComponent(ClassPathViewerTool.class);
     tool.openToolLater(true);
     tool.analyzeModule(((SModule) MapSequence.fromMap(_params).get("module")));
   }

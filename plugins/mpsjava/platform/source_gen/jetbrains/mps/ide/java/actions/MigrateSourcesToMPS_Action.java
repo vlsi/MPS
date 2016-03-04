@@ -11,9 +11,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -57,20 +55,6 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.MODULE);

@@ -4565,12 +4565,12 @@
             <node concept="2OqwBi" id="7QifpChp2JY" role="33vP2m">
               <node concept="2OqwBi" id="7QifpChp2JZ" role="2Oq$k0">
                 <node concept="2WthIp" id="7QifpChp2K0" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7QifpChp2K1" role="2OqNvi">
-                  <ref role="2WH_rO" node="2jM9X_IgWY3" resolve="context" />
+                <node concept="1DTwFV" id="13$TqNLLaH6" role="2OqNvi">
+                  <ref role="2WH_rO" node="1E3vQRZsd_9" resolve="mpsProject" />
                 </node>
               </node>
               <node concept="liA8E" id="7QifpChp2K2" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c5:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="7QifpChp2K3" role="37wK5m">
                   <ref role="3VsUkX" to="3hg4:~CellExplorerTool" resolve="CellExplorerTool" />
                 </node>
@@ -4599,11 +4599,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="2jM9X_IgWY3" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDjg" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="2jM9X_IgWY4" role="1NuT2Z">
       <property role="TrG5h" value="cell" />
@@ -14145,11 +14140,6 @@
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
       <node concept="1oajcY" id="nMe5u0CZg4" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="nMe5u0CZg5" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="nMe5u0CZg6" role="1oa70y" />
     </node>
     <node concept="tnohg" id="1Sc0ct1qjs2" role="tncku">
       <node concept="3clFbS" id="1Sc0ct1qjs3" role="2VODD2">

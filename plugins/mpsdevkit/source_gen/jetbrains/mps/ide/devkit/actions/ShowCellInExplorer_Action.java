@@ -10,7 +10,6 @@ import java.util.Map;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.wm.ToolWindow;
@@ -46,12 +45,6 @@ public class ShowCellInExplorer_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
       if (p == null) {
         return false;
@@ -83,7 +76,7 @@ public class ShowCellInExplorer_Action extends BaseAction {
     if (runnable == null) {
       return;
     }
-    CellExplorerTool tool = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT).getComponent(CellExplorerTool.class);
+    CellExplorerTool tool = event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(CellExplorerTool.class);
 
     tool.showCell(event.getData(MPSEditorDataKeys.EDITOR_CELL), runnable);
   }

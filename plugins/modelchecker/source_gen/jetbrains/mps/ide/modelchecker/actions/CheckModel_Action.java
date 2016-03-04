@@ -15,8 +15,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -71,13 +69,6 @@ public class CheckModel_Action extends BaseAction {
         return false;
       }
     }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("operationContext", p);
-      if (p == null) {
-        return false;
-      }
-    }
     return true;
   }
   @Override
@@ -95,11 +86,11 @@ public class CheckModel_Action extends BaseAction {
     }
 
     for (SModel model : modelsToCheck.toArray(new SModel[modelsToCheck.size()])) {
-      String name = SNodeOperations.getModelLongName(model);
-      boolean isStub = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
+      String name = model.getName().getLongName();
+      boolean isStub = SModelStereotype.isStubModel(model);
       for (SModel innerModel : Sequence.fromIterable(model.getModule().getModels())) {
-        if (SNodeOperations.getModelLongName(innerModel).startsWith(name + ".")) {
-          if (isStub == SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(innerModel))) {
+        if (innerModel.getName().getLongName().startsWith(name + ".")) {
+          if (isStub == SModelStereotype.isStubModel(innerModel)) {
             modelsToCheck.add(innerModel);
           }
         }

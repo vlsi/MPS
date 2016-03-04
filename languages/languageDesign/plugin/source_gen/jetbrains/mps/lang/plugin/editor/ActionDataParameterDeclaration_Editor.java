@@ -17,9 +17,15 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -28,9 +34,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
@@ -88,6 +91,9 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("key");
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, 0, ActionDataParameterDeclaration_Editor._StyleParameter_QueryFunction_d8l4wt_a0d0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -124,6 +130,9 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+  private static boolean _StyleParameter_QueryFunction_d8l4wt_a0d0(EditorContext editorContext, SNode node) {
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key")));
   }
   private EditorCell createRefNodeList_d8l4wt_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ActionDataParameterDeclaration_Editor.conditionListHandler_d8l4wt_e0(node, "condition", editorContext);

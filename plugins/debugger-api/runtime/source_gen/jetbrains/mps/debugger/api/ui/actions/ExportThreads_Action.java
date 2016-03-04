@@ -13,8 +13,6 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,13 +46,6 @@ public class ExportThreads_Action extends BaseAction {
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
       MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }

@@ -1031,11 +1031,6 @@
         </node>
       </node>
     </node>
-    <node concept="1DS2jV" id="68aArIS9HFw" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDnG" role="1oa70y" />
-    </node>
     <node concept="tkhdA" id="68aArIS9HFx" role="tmbBb">
       <node concept="3clFbS" id="68aArIS9HFy" role="2VODD2">
         <node concept="3cpWs8" id="68aArIS9HFz" role="3cqZAp">

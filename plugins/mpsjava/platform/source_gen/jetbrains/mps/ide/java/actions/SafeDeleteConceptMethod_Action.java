@@ -14,7 +14,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
@@ -58,13 +57,6 @@ public class SafeDeleteConceptMethod_Action extends BaseAction {
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }

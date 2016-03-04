@@ -38,7 +38,11 @@ import java.util.List;
  */
 public class MPSCommonDataKeys extends PlatformDataKeys {
 
-  @Description(description = "operation context")
+  /**
+   * @deprecated IOperationContext has been deprecated and will be removed in the next release
+   */
+  @Description(description = "operation context. IOperationContext has been deprecated and will be removed in the next release")
+  @Deprecated
   public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");

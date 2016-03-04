@@ -85,6 +85,7 @@
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
+        <child id="1223387335081" name="query" index="3n$kyP" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1186414949600" name="jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem" flags="ln" index="VPRnO" />
@@ -116,6 +117,8 @@
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
+      <concept id="1223387125302" name="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" flags="in" index="3nzxsE" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139744628335" name="jetbrains.mps.lang.editor.structure.CellModel_Image" flags="sg" stub="8104358048506731195" index="1u4HXA">
         <child id="1176899909521" name="imagePathProvider" index="4GRq3" />
@@ -1979,6 +1982,26 @@
       </node>
       <node concept="1iCGBv" id="hHDVlkw" role="3EZMnx">
         <ref role="1NtTu8" to="tp4k:hHDUlRP" />
+        <node concept="3nxI2P" id="13$TqNLOStp" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+          <node concept="3nzxsE" id="13$TqNLOSts" role="3n$kyP">
+            <node concept="3clFbS" id="13$TqNLOStt" role="2VODD2">
+              <node concept="3clFbF" id="13$TqNLOSuc" role="3cqZAp">
+                <node concept="2OqwBi" id="13$TqNLOSXa" role="3clFbG">
+                  <node concept="2OqwBi" id="13$TqNLOSyf" role="2Oq$k0">
+                    <node concept="pncrf" id="13$TqNLPvhi" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="13$TqNLOSFJ" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp4k:hHDUlRP" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="13$TqNLOUVa" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcu:hOwoPtR" resolve="isDeprecated" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1sVBvm" id="hHDVlkx" role="1sWHZn">
           <node concept="3F0A7n" id="hHDVlMM" role="2wV5jI">
             <property role="1Intyy" value="true" />

@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class CreateDefaultEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -80,13 +79,6 @@ public class CreateDefaultEditor_Action extends BaseAction {
     {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
       MapSequence.fromMap(_params).put("editorContext", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("operationContext", p);
       if (p == null) {
         return false;
       }

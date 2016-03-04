@@ -2737,12 +2737,12 @@
             <node concept="2OqwBi" id="7F9FiYySOvd" role="33vP2m">
               <node concept="2OqwBi" id="7F9FiYySOve" role="2Oq$k0">
                 <node concept="2WthIp" id="7F9FiYySOvf" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7F9FiYySOvg" role="2OqNvi">
-                  <ref role="2WH_rO" node="7F9FiYySOvx" resolve="context" />
+                <node concept="1DTwFV" id="13$TqNLOOv9" role="2OqNvi">
+                  <ref role="2WH_rO" node="13$TqNLOOiy" resolve="project" />
                 </node>
               </node>
               <node concept="liA8E" id="7F9FiYySOvh" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="7F9FiYySOvi" role="37wK5m">
                   <ref role="3VsUkX" to="jh37:~ClassPathViewerTool" resolve="ClassPathViewerTool" />
                 </node>
@@ -2786,10 +2786,10 @@
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
       <node concept="1oajcY" id="7F9FiYySOvw" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7F9FiYySOvx" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7F9FiYySOvy" role="1oa70y" />
+    <node concept="1DS2jV" id="13$TqNLOOiy" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="13$TqNLOOiz" role="1oa70y" />
     </node>
   </node>
   <node concept="tC5Ba" id="2Y91NYHrHot">
