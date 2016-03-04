@@ -39,10 +39,22 @@ import java.util.List;
 public class MPSCommonDataKeys extends PlatformDataKeys {
 
   /**
-   * @deprecated IOperationContext has been deprecated and will be removed in the next release
+   * DEPRECATED IOperationContext has been deprecated and will be removed in the next release
+   * Can't use @Deprecated annotation not @deprecated tag due to failure to initialize java stub model:
+   *   @Description is nested class in MPSCommonDataKeys, once an attempt to load MPSCommonDataKeys is in process,
+   *   stub loader notices @Deprecated annotation for a field, and asks StaticFieldDeclaration.markDeprecated to update annotation.
+   *   Code looks for existing annotations, and comes across @Description annotation, which is initialized, but doesn't resolve yet
+   *   (nested class has not been initialized/published yet).
+   *
+   *   The reason why even javadoc tag is of no option is that according to http://docs.oracle.com/javase/1.5.0/docs/guide/javadoc/deprecation/deprecation.html
+   *   "Compilers are not required... to issue warnings ..., although the Sun compilers currently do so", and javadoc tag ends up with corresponding modifier
+   *   in the class file.
+   *
+   *   There are various approaches possible, the one taken (no annotation) is the easiest one. Alternatives are: move @Description
+   *   to become top-level; do not use markDeprecated (behaviours for incomplete nodes aren't good) and create annotation in place;
+   *   read nested annotations first and expose them to allow fields/methods resolve them as needed.
    */
   @Description(description = "operation context. IOperationContext has been deprecated and will be removed in the next release")
-  @Deprecated
   public static final DataKey<IOperationContext> OPERATION_CONTEXT = DataKey.create("MPS_IOperationContext");
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
