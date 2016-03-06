@@ -78,6 +78,11 @@
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -151,8 +156,12 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -215,6 +224,7 @@
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
+      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
   </registry>
@@ -429,10 +439,35 @@
                 </node>
                 <node concept="X8dFx" id="6En3ZbjshqC" role="2OqNvi">
                   <node concept="2OqwBi" id="6En3ZbjsgE0" role="25WWJ7">
-                    <node concept="qVDSY" id="6En3ZbjsgE1" role="2Oq$k0">
-                      <node concept="1dO9Bo" id="6En3ZbjsgE2" role="1dOa5D" />
-                      <node concept="chp4Y" id="6En3ZbjsgE3" role="qVDSX">
-                        <ref role="cht4Q" to="lyxe:61oOtBBBIXV" resolve="Node_CopyWithTraceOperation" />
+                    <node concept="2OqwBi" id="61H$Q7rOmGq" role="2Oq$k0">
+                      <node concept="qVDSY" id="6En3ZbjsgE1" role="2Oq$k0">
+                        <node concept="1dO9Bo" id="6En3ZbjsgE2" role="1dOa5D" />
+                        <node concept="chp4Y" id="6En3ZbjsgE3" role="qVDSX">
+                          <ref role="cht4Q" to="lyxe:61oOtBBBIXV" resolve="Node_CopyWithTraceOperation" />
+                        </node>
+                      </node>
+                      <node concept="3zZkjj" id="61H$Q7rO5f0" role="2OqNvi">
+                        <node concept="1bVj0M" id="61H$Q7rO5f2" role="23t8la">
+                          <node concept="3clFbS" id="61H$Q7rO5f3" role="1bW5cS">
+                            <node concept="3clFbF" id="61H$Q7rO5q3" role="3cqZAp">
+                              <node concept="3y3z36" id="61H$Q7rO6tg" role="3clFbG">
+                                <node concept="3B5_sB" id="61H$Q7rO6A5" role="3uHU7w">
+                                  <ref role="3B5MYn" node="7Uml8TvjNgk" resolve="ReplaceNodeOperationsWithGenContextOp" />
+                                </node>
+                                <node concept="2OqwBi" id="61H$Q7rO5zk" role="3uHU7B">
+                                  <node concept="37vLTw" id="61H$Q7rO5q2" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="61H$Q7rO5f4" resolve="it" />
+                                  </node>
+                                  <node concept="2Rxl7S" id="61H$Q7rO5Ro" role="2OqNvi" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="61H$Q7rO5f4" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="61H$Q7rO5f5" role="1tU5fm" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                     <node concept="3$u5V9" id="6En3ZbjshHG" role="2OqNvi">
@@ -473,10 +508,35 @@
                 </node>
                 <node concept="X8dFx" id="6En3Zbjsixs" role="2OqNvi">
                   <node concept="2OqwBi" id="6En3Zbjsixt" role="25WWJ7">
-                    <node concept="qVDSY" id="6En3Zbjsixu" role="2Oq$k0">
-                      <node concept="1dO9Bo" id="6En3Zbjsixv" role="1dOa5D" />
-                      <node concept="chp4Y" id="6En3ZbjsiE3" role="qVDSX">
-                        <ref role="cht4Q" to="lyxe:2gx$rhdCaW7" resolve="NList_CopyWithTraceOperation" />
+                    <node concept="2OqwBi" id="61H$Q7rOnc8" role="2Oq$k0">
+                      <node concept="qVDSY" id="6En3Zbjsixu" role="2Oq$k0">
+                        <node concept="1dO9Bo" id="6En3Zbjsixv" role="1dOa5D" />
+                        <node concept="chp4Y" id="6En3ZbjsiE3" role="qVDSX">
+                          <ref role="cht4Q" to="lyxe:2gx$rhdCaW7" resolve="NList_CopyWithTraceOperation" />
+                        </node>
+                      </node>
+                      <node concept="3zZkjj" id="61H$Q7rOnh4" role="2OqNvi">
+                        <node concept="1bVj0M" id="61H$Q7rOnh5" role="23t8la">
+                          <node concept="3clFbS" id="61H$Q7rOnh6" role="1bW5cS">
+                            <node concept="3clFbF" id="61H$Q7rOnh7" role="3cqZAp">
+                              <node concept="3y3z36" id="61H$Q7rOnh8" role="3clFbG">
+                                <node concept="3B5_sB" id="61H$Q7rOnh9" role="3uHU7w">
+                                  <ref role="3B5MYn" node="7Uml8TvjNgk" resolve="ReplaceNodeOperationsWithGenContextOp" />
+                                </node>
+                                <node concept="2OqwBi" id="61H$Q7rOnha" role="3uHU7B">
+                                  <node concept="37vLTw" id="61H$Q7rOnhb" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="61H$Q7rOnhd" resolve="it" />
+                                  </node>
+                                  <node concept="2Rxl7S" id="61H$Q7rOnhc" role="2OqNvi" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="61H$Q7rOnhd" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="61H$Q7rOnhe" role="1tU5fm" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                     <node concept="3$u5V9" id="6En3Zbjsixx" role="2OqNvi">

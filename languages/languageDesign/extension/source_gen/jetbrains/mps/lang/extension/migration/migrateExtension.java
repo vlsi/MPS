@@ -283,11 +283,31 @@ public class migrateExtension extends MigrationScriptBase {
           return scope;
         }
       };
-      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"))));
-      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL, "jetbrains.mps.lang.extension.structure.ExtensionFunction"))));
-      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L, "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration"))));
-      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, "jetbrains.mps.lang.extension.structure.ExtensionFieldReference"))));
-      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x6f6f7f3b7a178565L, "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter"))));
+      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:30687ffb-4921-4796-841c-e217080d600a(jetbrains.mps.lang.extension.migration)", "4174378934472392928");
+        }
+      }));
+      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL, "jetbrains.mps.lang.extension.structure.ExtensionFunction"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:30687ffb-4921-4796-841c-e217080d600a(jetbrains.mps.lang.extension.migration)", "4174378934472392928");
+        }
+      }));
+      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L, "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:30687ffb-4921-4796-841c-e217080d600a(jetbrains.mps.lang.extension.migration)", "4174378934472392928");
+        }
+      }));
+      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, "jetbrains.mps.lang.extension.structure.ExtensionFieldReference"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:30687ffb-4921-4796-841c-e217080d600a(jetbrains.mps.lang.extension.migration)", "4174378934472392928");
+        }
+      }));
+      ListSequence.fromList(notMigrated).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x6f6f7f3b7a178565L, "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:30687ffb-4921-4796-841c-e217080d600a(jetbrains.mps.lang.extension.migration)", "4174378934472392928");
+        }
+      }));
     }
     return ListSequence.fromList(notMigrated).select(new ISelector<SNode, Problem>() {
       public Problem select(SNode it) {
