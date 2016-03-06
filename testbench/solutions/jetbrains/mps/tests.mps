@@ -521,6 +521,9 @@
     <node concept="lpD6D" id="127aYrrNzxc" role="lpD6w">
       <ref role="lpD7u" to="4o0x:1iKgLyjoN2" resolve="StyleAttributeThreeLayerTest" />
     </node>
+    <node concept="lpD6D" id="5DTV$TRz1F7" role="lpD6w">
+      <ref role="lpD7u" to="4o0x:5DTV$TRyAiR" resolve="StyleOfSingleRoleChild" />
+    </node>
     <node concept="lpD6D" id="7BzI3N6F9wC" role="lpD6w">
       <ref role="lpD7u" to="h8fw:2ZnZLV$gtnW" resolve="AddPropertyAttribute" />
     </node>

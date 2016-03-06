@@ -17,10 +17,12 @@
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="0" />
   </languages>
   <imports>
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="eaoh" ref="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)" />
+    <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <import index="dekf" ref="r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)" implicit="true" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" implicit="true" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
@@ -28,18 +30,29 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
+        <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
+      </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
         <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
+        <child id="1229187707859" name="result" index="LiZbd" />
         <child id="1229187755283" name="code" index="LjaKd" />
       </concept>
       <concept id="1229194968594" name="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" flags="ng" index="LIFWc">
+        <property id="6268941039745498163" name="selectionStart" index="p6zMq" />
+        <property id="6268941039745498165" name="selectionEnd" index="p6zMs" />
         <property id="1229194968596" name="caretPosition" index="LIFWa" />
         <property id="1229194968595" name="cellId" index="LIFWd" />
+        <property id="1932269937152561478" name="useLabelSelection" index="OXtK3" />
+        <property id="1229432188737" name="isLastPosition" index="ZRATv" />
       </concept>
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="5773579205429866751" name="jetbrains.mps.lang.test.structure.EditorComponentExpression" flags="nn" index="369mXd" />
+      <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
+        <reference id="4239542196496929559" name="action" index="1iFR8X" />
+      </concept>
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="6029276237631252951" name="jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression" flags="ng" index="1Z6Ecs">
@@ -137,6 +150,12 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="6519503956375920380" name="jetbrains.mps.lang.editor.editorTest.structure.StyleChild" flags="ng" index="HWV2M" />
+      <concept id="6519503956375920379" name="jetbrains.mps.lang.editor.editorTest.structure.StyleParent" flags="ng" index="HWV2P">
+        <child id="6519503956375920411" name="child" index="HWV5l" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1886,6 +1905,41 @@
       <node concept="LIFWc" id="1iKgLyjoOZ" role="lGtFl">
         <property role="LIFWa" value="0" />
         <property role="LIFWd" value="Collection_s2xmey_a" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5DTV$TRyAiR">
+    <property role="TrG5h" value="StyleOfSingleRoleChild" />
+    <node concept="HWV2P" id="5DTV$TRyG8k" role="LiRBU">
+      <node concept="LIFWc" id="5DTV$TRyZ5D" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_child" />
+      </node>
+    </node>
+    <node concept="HWV2P" id="5DTV$TRyZ5F" role="LiZbd">
+      <node concept="HWV2M" id="5DTV$TRyZ5H" role="HWV5l">
+        <node concept="LIFWc" id="5DTV$TRyZey" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_5qmfq8_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="5DTV$TRyZ5J" role="LjaKd">
+      <node concept="2HxZob" id="5DTV$TRyZ5L" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRyZ5S" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="5DTV$TRyZ8o" role="3cqZAp">
+        <node concept="1iFQzN" id="5DTV$TRyZ8w" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjb" resolve="Home" />
+        </node>
       </node>
     </node>
   </node>

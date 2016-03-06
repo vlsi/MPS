@@ -90,6 +90,12 @@
     <file name="StubBlock_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
     </file>
+    <file name="StyleChild_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StyleChild_BehaviorDescriptor" />
+    </file>
+    <file name="StyleParent_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StyleParent_BehaviorDescriptor" />
+    </file>
     <file name="SubstMiddlewareChild_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SubstMiddlewareChild_BehaviorDescriptor" />
     </file>

@@ -61,6 +61,7 @@
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
+        <child id="1223387335081" name="query" index="3n$kyP" />
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
@@ -87,6 +88,7 @@
       <concept id="1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" flags="ln" index="3mYdg7">
         <property id="1238091709220" name="labelName" index="1413C4" />
       </concept>
+      <concept id="1223387125302" name="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" flags="in" index="3nzxsE" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" flags="sg" stub="8104358048506729356" index="1xolST">
         <property id="1075375595204" name="text" index="1xolSY" />
@@ -174,8 +176,14 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -1195,6 +1203,41 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5DTV$TRy_W2">
+    <ref role="1XX52x" to="68nn:5DTV$TRy_VW" resolve="StyleChild" />
+    <node concept="3F0ifn" id="5DTV$TRy_W4" role="2wV5jI">
+      <property role="3F0ifm" value="child" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="5DTV$TRy_Wc">
+    <ref role="1XX52x" to="68nn:5DTV$TRy_VV" resolve="StyleParent" />
+    <node concept="3EZMnI" id="5DTV$TRy_We" role="2wV5jI">
+      <node concept="3F0ifn" id="5DTV$TRy_Wl" role="3EZMnx">
+        <property role="3F0ifm" value="parent" />
+      </node>
+      <node concept="3F1sOY" id="5DTV$TRy_Wt" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:5DTV$TRy_Wr" />
+        <node concept="pVoyu" id="5DTV$TRy_Z3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+          <node concept="3nzxsE" id="5DTV$TRy_Z6" role="3n$kyP">
+            <node concept="3clFbS" id="5DTV$TRy_Z7" role="2VODD2">
+              <node concept="3clFbF" id="5DTV$TRy_ZJ" role="3cqZAp">
+                <node concept="2OqwBi" id="5DTV$TRyRwl" role="3clFbG">
+                  <node concept="pncrf" id="5DTV$TRyRu7" role="2Oq$k0" />
+                  <node concept="1mIQ4w" id="5DTV$TRyVxR" role="2OqNvi">
+                    <node concept="chp4Y" id="5DTV$TRyV$5" role="cj9EA">
+                      <ref role="cht4Q" to="68nn:5DTV$TRy_VV" resolve="StyleParent" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="5DTV$TRy_Wh" role="2iSdaV" />
     </node>
   </node>
 </model>
