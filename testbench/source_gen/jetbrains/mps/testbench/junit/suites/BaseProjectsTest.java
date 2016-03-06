@@ -20,8 +20,9 @@ import org.junit.Before;
 import java.io.File;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.junit.After;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import org.junit.After;
 import com.intellij.ide.impl.ProjectUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
@@ -76,6 +77,10 @@ public class BaseProjectsTest {
       public void run() {
       }
     });
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
     ourEnv.flushAllEvents();
   }
 
@@ -87,6 +92,10 @@ public class BaseProjectsTest {
         ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
       }
     });
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
     ourEnv.flushAllEvents();
   }
 
