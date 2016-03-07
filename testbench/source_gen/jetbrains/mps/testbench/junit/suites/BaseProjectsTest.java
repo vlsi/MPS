@@ -19,7 +19,6 @@ import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.project.DumbService;
 import org.junit.After;
 import com.intellij.openapi.application.ApplicationManager;
@@ -69,7 +68,6 @@ public class BaseProjectsTest {
     return projects;
   }
 
-  private volatile boolean checkPostStartup = false;
   private volatile boolean checkSmartMode = false;
 
   @Before
@@ -78,18 +76,13 @@ public class BaseProjectsTest {
     ourEnv.flushAllEvents();
 
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
-    StartupManager.getInstance(ideaProject).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        checkPostStartup = true;
-      }
-    });
     DumbService.getInstance(ideaProject).runWhenSmart(new Runnable() {
       public void run() {
         checkSmartMode = true;
       }
     });
 
-    while (!(checkPostStartup) || !(checkSmartMode)) {
+    while (!(checkSmartMode)) {
       ourEnv.flushAllEvents();
     }
   }
