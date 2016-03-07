@@ -6,14 +6,16 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.generator.template.TemplateArgumentContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @Generated
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
-    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "plugin");
+    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "plugin") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c13L, "jetbrains.mps.make.facet.structure.FacetDeclaration"))).isNotEmpty();
   }
   public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".FacetAspectDescriptor";

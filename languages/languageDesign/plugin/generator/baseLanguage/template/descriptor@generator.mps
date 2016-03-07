@@ -26,6 +26,7 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="ba7m" ref="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspect.generator.template.main@generator)" />
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
+    <import index="vvvw" ref="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -50,6 +51,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
@@ -87,6 +89,9 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
+      <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
+        <reference id="1171315804605" name="concept" index="2RRcyH" />
+      </concept>
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
@@ -95,6 +100,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="jVnub" id="2wQ3F8Gfby3">
@@ -105,12 +113,25 @@
       <node concept="30G5F_" id="1na$wSWf3eX" role="30HLyM">
         <node concept="3clFbS" id="1na$wSWf3eY" role="2VODD2">
           <node concept="3clFbF" id="1KHvivZKB6b" role="3cqZAp">
-            <node concept="2OqwBi" id="1KHvivZKB8J" role="3clFbG">
-              <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
-                <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+            <node concept="1Wc70l" id="o4PHK1p0ai" role="3clFbG">
+              <node concept="2OqwBi" id="o4PHK1p1D7" role="3uHU7w">
+                <node concept="2OqwBi" id="o4PHK1p0dH" role="2Oq$k0">
+                  <node concept="v3LJS" id="o4PHK1p0cf" role="2Oq$k0">
+                    <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                  </node>
+                  <node concept="2RRcyG" id="o4PHK1p0h0" role="2OqNvi">
+                    <ref role="2RRcyH" to="vvvw:5$iCEGsO$Kj" resolve="FacetDeclaration" />
+                  </node>
+                </node>
+                <node concept="3GX2aA" id="o4PHK1p47h" role="2OqNvi" />
               </node>
-              <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
-                <ref role="3zA4av" to="bgxn:2LiUEk8oQ$g" resolve="plugin" />
+              <node concept="2OqwBi" id="1KHvivZKB8J" role="3uHU7B">
+                <node concept="v3LJS" id="1KHvivZKB69" role="2Oq$k0">
+                  <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                </node>
+                <node concept="3zA4fs" id="4V9LvgB5R2g" role="2OqNvi">
+                  <ref role="3zA4av" to="bgxn:2LiUEk8oQ$g" resolve="plugin" />
+                </node>
               </node>
             </node>
           </node>
