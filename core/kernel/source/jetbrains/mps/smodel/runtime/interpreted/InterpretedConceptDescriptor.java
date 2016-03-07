@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -243,8 +244,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       }
 
       // properties
-      Map<SPropertyId, PropertyDescriptor> propertiesByIds = new HashMap<SPropertyId, PropertyDescriptor>();
-      Map<String, PropertyDescriptor> propertiesByName = new HashMap<String, PropertyDescriptor>();
+      Map<SPropertyId, PropertyDescriptor> propertiesByIds = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
+      Map<String, PropertyDescriptor> propertiesByName = new LinkedHashMap<String, PropertyDescriptor>();
 
       propertiesByIds.putAll(directPropertiesByIds);
       propertiesByName.putAll(directPropertiesByName);
