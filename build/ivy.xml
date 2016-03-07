@@ -219,8 +219,8 @@
     <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="138.1980">
       <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="gson-2.3.1-sources.jar" rev="${idea.platform.version}">
-      <artifact name="gson-2.3.1-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="gson-2.5-sources.jar" rev="${idea.platform.version}">
+      <artifact name="gson-2.5-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="guava-17.0-sources.jar" rev="${idea.platform.version}">
       <artifact name="guava-17.0-sources.jar" ext="jar"/>
@@ -276,8 +276,8 @@
     <dependency org="lib.src" name="nanoxml.zip" rev="${idea.platform.version}">
       <artifact name="nanoxml.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="netty-all-4.1.0.Beta7-sources.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta7-sources.jar" ext="jar"/>
+    <dependency org="lib.src" name="netty-all-4.1.0.Beta8-sources.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta8-sources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
@@ -306,8 +306,8 @@
     <dependency org="lib.src" name="xpp3-1.1.4-min-src.jar" rev="${idea.platform.version}">
       <artifact name="xpp3-1.1.4-min-src.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="xstream-1.4.3-src.zip" rev="${idea.platform.version}">
-      <artifact name="xstream-1.4.3-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="xstream-distribution-1.4.8-src.zip" rev="${idea.platform.version}">
+      <artifact name="xstream-distribution-1.4.8-src.zip" ext="zip"/>
     </dependency>
 
     <!--
@@ -366,8 +366,8 @@
     <dependency org="lib" name="forms_rt.jar" rev="${idea.platform.version}">
       <artifact name="forms_rt.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="gson-2.3.1.jar" rev="${idea.platform.version}">
-      <artifact name="gson-2.3.1.jar" ext="jar"/>
+    <dependency org="lib" name="gson-2.5.jar" rev="${idea.platform.version}">
+      <artifact name="gson-2.5.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="guava-17.0.jar" rev="${idea.platform.version}">
       <artifact name="guava-17.0.jar" ext="jar"/>
@@ -438,8 +438,8 @@
     <dependency org="lib" name="nanoxml-2.2.3.jar" rev="${idea.platform.version}">
       <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="netty-all-4.1.0.Beta7.jar" rev="${idea.platform.version}">
-      <artifact name="netty-all-4.1.0.Beta7.jar" ext="jar"/>
+    <dependency org="lib" name="netty-all-4.1.0.Beta8.jar" rev="${idea.platform.version}">
+      <artifact name="netty-all-4.1.0.Beta8.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="oromatcher.jar" rev="${idea.platform.version}">
       <artifact name="oromatcher.jar" ext="jar"/>
@@ -501,8 +501,8 @@
     <dependency org="lib" name="xpp3-1.1.4-min.jar" rev="${idea.platform.version}">
       <artifact name="xpp3-1.1.4-min.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="xstream-1.4.3.jar" rev="${idea.platform.version}">
-      <artifact name="xstream-1.4.3.jar" ext="jar"/>
+    <dependency org="lib" name="xstream-1.4.8.jar" rev="${idea.platform.version}">
+      <artifact name="xstream-1.4.8.jar" ext="jar"/>
     </dependency>
     <!--Kotlin-->
     <dependency org="lib" name="kotlin-reflect.jar" rev="${idea.platform.version}">
