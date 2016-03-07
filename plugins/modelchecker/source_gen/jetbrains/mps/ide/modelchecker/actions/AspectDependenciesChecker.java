@@ -116,7 +116,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return CORE;
       } else if (LanguageAspect.INTENTIONS.is(model)) {
         return EDITOR;
-      } else if (LanguageAspect.PLUGIN.is(model)) {
+      } else if (LanguageAspect.is(model, "plugin")) {
         return WORKBENCH;
       } else if (LanguageAspect.REFACTORINGS.is(model)) {
         return CORE;
