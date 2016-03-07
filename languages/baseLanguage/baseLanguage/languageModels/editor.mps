@@ -150,7 +150,9 @@
       </concept>
       <concept id="1136917249679" name="jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction" flags="in" index="2Pz7Y7" />
       <concept id="1136917288805" name="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" flags="in" index="2PzhpH" />
-      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
+        <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
+      </concept>
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -342,6 +344,9 @@
         <child id="1948540814633499358" name="editorContext" index="lBI5i" />
         <child id="1948540814635895774" name="cellSelector" index="lGT1i" />
         <child id="3604384757217586546" name="selectionStart" index="3dN3m$" />
+      </concept>
+      <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
+        <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
@@ -5435,6 +5440,9 @@
           <node concept="pj6Ft" id="i1VeBP0" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
+          <node concept="ljvvj" id="i0HIri8" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
           <node concept="l2Vlx" id="i0NJYCt" role="2czzBx" />
           <node concept="3F0ifn" id="fMVQ5On" role="2czzBI">
             <property role="ilYzB" value="&lt;&lt;enum constants&gt;&gt;" />
@@ -5448,9 +5456,6 @@
             <node concept="2SqB2G" id="6D86BM98Dlu" role="2SqHTX">
               <property role="TrG5h" value="Empty_Enum_Constants" />
             </node>
-          </node>
-          <node concept="ljvvj" id="i0HIri8" role="3F10Kt">
-            <property role="VOm3f" value="true" />
           </node>
           <node concept="lj46D" id="3iusiWZwlAk" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -30493,6 +30498,78 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="325Ffw" id="66zBulVMByi">
+    <property role="3GE5qa" value="classifiers.classifiers" />
+    <property role="TrG5h" value="AddFirstMemberToClass" />
+    <ref role="1chiOs" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="2PxR9H" id="66zBulVMBys" role="2QnnpI">
+      <node concept="2Py5lD" id="66zBulVMByt" role="2PyaAO">
+        <property role="2PWKIS" value="letter" />
+      </node>
+      <node concept="2Py5lD" id="2ALSERcfQ2x" role="2PyaAO">
+        <property role="2PWKIS" value="VK_SPACE" />
+      </node>
+      <node concept="2PzhpH" id="66zBulVMByu" role="2PL9iG">
+        <node concept="3clFbS" id="66zBulVMByv" role="2VODD2">
+          <node concept="3clFbF" id="66zBulVMByD" role="3cqZAp">
+            <node concept="2OqwBi" id="66zBulVMD71" role="3clFbG">
+              <node concept="2OqwBi" id="66zBulVMBEC" role="2Oq$k0">
+                <node concept="0GJ7k" id="66zBulVMByC" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="66zBulVMCnZ" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                </node>
+              </node>
+              <node concept="2DeJg1" id="66zBulVMHPa" role="2OqNvi">
+                <ref role="1A0vxQ" to="tpee:1hodSy9TH5A" resolve="PlaceholderMember" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="PKFIW" id="2ALSERc57W8">
+    <property role="TrG5h" value="ClassifierMembersAdvanced_Component" />
+    <ref role="1XX52x" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="3F2HdR" id="2ALSERc57W9" role="2wV5jI">
+      <ref role="1NtTu8" to="tpee:4EqhHTp4Mw3" />
+      <node concept="3F0ifn" id="2ALSERc57Wa" role="2czzBI">
+        <ref role="34QXea" node="66zBulVMByi" resolve="AddFirstMemberToClass" />
+        <node concept="VPxyj" id="2ALSERc57Wb" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="10DmGV" id="2ALSERc57Wc" role="3F10Kt">
+        <property role="10E5iX" value="indented" />
+      </node>
+      <node concept="lj46D" id="2ALSERc57Wd" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="ljvvj" id="2ALSERc57We" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="pj6Ft" id="2ALSERc57Wf" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="l2Vlx" id="2ALSERc57Wg" role="2czzBx" />
+      <node concept="4$FPG" id="2ALSERc57Wh" role="4_6I_">
+        <node concept="3clFbS" id="2ALSERc57Wi" role="2VODD2">
+          <node concept="3clFbF" id="2ALSERc57Wj" role="3cqZAp">
+            <node concept="2ShNRf" id="2ALSERc57Wk" role="3clFbG">
+              <node concept="3zrR0B" id="2ALSERc57Wl" role="2ShVmc">
+                <node concept="3Tqbb2" id="2ALSERc57Wm" role="3zrR0E">
+                  <ref role="ehGHo" to="tpee:1hodSy9TH5A" resolve="PlaceholderMember" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1PE4EZ" id="2ALSERc7hJJ" role="1PM95z">
+      <ref role="1PE7su" node="3Z61ZaMckgv" resolve="ClassifierMembers_Component" />
     </node>
   </node>
 </model>

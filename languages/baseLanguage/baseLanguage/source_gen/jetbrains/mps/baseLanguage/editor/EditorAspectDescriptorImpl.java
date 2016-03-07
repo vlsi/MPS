@@ -509,13 +509,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
             return Collections.<ConceptEditorComponent>emptyList();
         }
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        if ("jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ClassifierMembersAdvanced_Component());
+        }
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
         if ("jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ClassifierMembers_Component());
         }
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d0a0d, editorComponentId)) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e0a0d, editorComponentId)) {
           case 0:
             return Collections.<ConceptEditorComponent>singletonList(new ConceptFunctionAliased_Component());
           case 1:
@@ -527,7 +532,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
         }
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"))) {
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e0a0d, editorComponentId)) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0f0a0d, editorComponentId)) {
           case 0:
             return Collections.<ConceptEditorComponent>singletonList(new GenericDeclaration_FoldedCodeBlock_Component());
           case 1:
@@ -549,7 +554,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
         }
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0h0a0d, editorComponentId)) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0i0a0d, editorComponentId)) {
           case 0:
             return Collections.<ConceptEditorComponent>singletonList(new IMethodCall_actualArguments());
           case 1:
@@ -588,7 +593,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent", "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_NameCellComponent"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0d0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0e0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_WithAnchor_Component"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0h0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments", "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0e0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.ConceptFunctionAliased_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component", "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0f0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component", "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_WithAnchor_Component"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0i0a0d = new String[]{"jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments", "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments"};
 }
