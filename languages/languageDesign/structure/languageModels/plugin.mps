@@ -3,6 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
+    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,10 +14,36 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconResourceBundle" flags="ng" index="1QGGSo">
+        <child id="8974276187400029886" name="icons" index="1QGGSr" />
+      </concept>
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" flags="ng" index="1QGGSu">
+        <child id="6976585500156684809" name="iconExpression" index="3xaMm5" />
+      </concept>
+      <concept id="8974276187400029895" name="jetbrains.mps.lang.resources.structure.IconResourceReference" flags="nn" index="1QGGTy">
+        <reference id="8974276187400029896" name="declaration" index="1QGGTH" />
+      </concept>
+      <concept id="8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconResourceDeclaration" flags="ng" index="1QGGT_">
+        <child id="8974276187400029889" name="iconExpression" index="1QGGT$" />
+      </concept>
+    </language>
+    <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
+      <concept id="5177162104569058199" name="jetbrains.mps.lang.aspect.structure.HelpURL" flags="ng" index="1sEMCm">
+        <property id="5177162104569058200" name="url" index="1sEMCp" />
+      </concept>
+      <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
+        <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
+        <child id="3433054418425083029" name="icon" index="3vqPLo" />
+        <child id="3433054418424672404" name="mainLanguages" index="3vrhxp" />
+      </concept>
+      <concept id="3433054418424678522" name="jetbrains.mps.lang.aspect.structure.LanguageReference" flags="ng" index="3vrm2R" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -39,6 +67,9 @@
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -142,6 +173,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -151,6 +185,10 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
+      </concept>
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
@@ -1182,6 +1220,33 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4dr7st0kFTN" role="1B3o_S" />
+  </node>
+  <node concept="3vrhyV" id="2LiUEk8oQ$g">
+    <property role="TrG5h" value="structure" />
+    <node concept="3vrm2R" id="2LiUEk8oQ$h" role="3vrhxp">
+      <node concept="2V$Bhx" id="5cAnPGmok3c" role="2V$M_3">
+        <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
+        <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
+      </node>
+    </node>
+    <node concept="1QGGSu" id="4lJsQ5yF4MG" role="3vqPLo">
+      <node concept="1QGGTy" id="4lJsQ5yF4MI" role="3xaMm5">
+        <ref role="1QGGTH" node="4lJsQ5yENiu" resolve="STRUCTUREMODEL" />
+      </node>
+    </node>
+    <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD33/Structure" />
+    </node>
+  </node>
+  <node concept="1QGGSo" id="4lJsQ5yENit">
+    <property role="TrG5h" value="StructureAspect" />
+    <node concept="1QGGT_" id="4lJsQ5yENiu" role="1QGGSr">
+      <property role="TrG5h" value="STRUCTUREMODEL" />
+      <node concept="10M0yZ" id="4lJsQ5yEPWD" role="1QGGT$">
+        <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
+        <ref role="3cqZAo" to="xnls:~IdeIcons.STRUCTURE_MODEL_ICON" resolve="STRUCTURE_MODEL_ICON" />
+      </node>
+    </node>
   </node>
 </model>
 
