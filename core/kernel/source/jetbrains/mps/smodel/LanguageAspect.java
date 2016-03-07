@@ -54,16 +54,6 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
-  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
-    @Override
-    public Collection<SLanguage> getMainLanguages() {
-      ArrayList<SLanguage> result = new ArrayList<SLanguage>();
-      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.pluginLanguageRef()));
-      result.add(MetaAdapterFactory.getLanguage(BootstrapLanguages.aspectLanguageRef()));
-      return result;
-    }
-  },
-
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
   TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
