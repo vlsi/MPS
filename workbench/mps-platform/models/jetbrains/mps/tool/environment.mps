@@ -1352,6 +1352,24 @@
             <ref role="37wK5l" to="79ha:6LlhC3WLEQ3" resolve="checkInitialized" />
           </node>
         </node>
+        <node concept="3clFbF" id="2LiUEk8phSp" role="3cqZAp">
+          <node concept="2OqwBi" id="2LiUEk8phX3" role="3clFbG">
+            <node concept="2YIFZM" id="2LiUEk8phV4" role="2Oq$k0">
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+            </node>
+            <node concept="liA8E" id="2LiUEk8pi9L" role="2OqNvi">
+              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
+              <node concept="1bVj0M" id="2LiUEk8pil4" role="37wK5m">
+                <node concept="3clFbS" id="2LiUEk8pil5" role="1bW5cS" />
+              </node>
+              <node concept="10M0yZ" id="2LiUEk8pitA" role="37wK5m">
+                <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
+                <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4_TMdeLkOnK" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLkOnL" role="3clFbG">
             <node concept="2YIFZM" id="4_TMdeLlH9H" role="2Oq$k0">

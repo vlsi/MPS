@@ -20,6 +20,7 @@ import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -183,6 +184,10 @@ public class IdeaEnvironment extends EnvironmentBase {
   @Override
   public void flushAllEvents() {
     checkInitialized();
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+      }
+    }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {

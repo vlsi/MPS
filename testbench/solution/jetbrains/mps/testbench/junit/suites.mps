@@ -62,6 +62,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="v27p" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.startup(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -73,6 +74,9 @@
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
+        <child id="1076505808688" name="condition" index="2$JKZa" />
+      </concept>
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -6694,6 +6698,25 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6lIwBnqiz_m" role="jymVt" />
+    <node concept="312cEg" id="o4PHK1qW6z" role="jymVt">
+      <property role="34CwA1" value="true" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="checkPostStartup" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="o4PHK1qVU1" role="1B3o_S" />
+      <node concept="10P_77" id="o4PHK1qW6x" role="1tU5fm" />
+      <node concept="3clFbT" id="o4PHK1qWgN" role="33vP2m" />
+    </node>
+    <node concept="312cEg" id="o4PHK1qWl3" role="jymVt">
+      <property role="34CwA1" value="true" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="checkSmartMode" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="o4PHK1qWl4" role="1B3o_S" />
+      <node concept="10P_77" id="o4PHK1qWl5" role="1tU5fm" />
+      <node concept="3clFbT" id="o4PHK1qWl6" role="33vP2m" />
+    </node>
+    <node concept="2tJIrI" id="o4PHK1qWsD" role="jymVt" />
     <node concept="3clFb_" id="2SnxzQPEmzm" role="jymVt">
       <property role="TrG5h" value="openProject" />
       <node concept="3cqZAl" id="2SnxzQPEmzo" role="3clF45" />
@@ -6732,52 +6755,102 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="o4PHK1qV0P" role="3cqZAp" />
+        <node concept="3cpWs8" id="o4PHK1qQiS" role="3cqZAp">
+          <node concept="3cpWsn" id="o4PHK1qQiT" role="3cpWs9">
+            <property role="TrG5h" value="ideaProject" />
+            <node concept="3uibUv" id="o4PHK1qQiQ" role="1tU5fm">
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+            </node>
+            <node concept="2YIFZM" id="o4PHK1qQiU" role="33vP2m">
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+              <node concept="37vLTw" id="o4PHK1qQiV" role="37wK5m">
+                <ref role="3cqZAo" node="2SnxzQPEmgY" resolve="myProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="o4PHK1qQ9h" role="3cqZAp">
+          <node concept="2OqwBi" id="o4PHK1qQDa" role="3clFbG">
+            <node concept="2YIFZM" id="o4PHK1qQgO" role="2Oq$k0">
+              <ref role="37wK5l" to="v27p:~StartupManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.startup.StartupManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="v27p:~StartupManager" resolve="StartupManager" />
+              <node concept="37vLTw" id="o4PHK1qQ$k" role="37wK5m">
+                <ref role="3cqZAo" node="o4PHK1qQiT" resolve="ideaProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="o4PHK1qQGG" role="2OqNvi">
+              <ref role="37wK5l" to="v27p:~StartupManager.registerPostStartupActivity(java.lang.Runnable):void" resolve="registerPostStartupActivity" />
+              <node concept="1bVj0M" id="o4PHK1qQMz" role="37wK5m">
+                <node concept="3clFbS" id="o4PHK1qQM$" role="1bW5cS">
+                  <node concept="3clFbF" id="o4PHK1qWR0" role="3cqZAp">
+                    <node concept="37vLTI" id="o4PHK1qWW3" role="3clFbG">
+                      <node concept="3clFbT" id="o4PHK1qX04" role="37vLTx">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="37vLTw" id="o4PHK1qWQZ" role="37vLTJ">
+                        <ref role="3cqZAo" node="o4PHK1qW6z" resolve="checkPostStartup" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6m9C3b2yzKL" role="3cqZAp">
           <node concept="2OqwBi" id="6m9C3b2yJ3s" role="3clFbG">
             <node concept="2YIFZM" id="6m9C3b2yzMx" role="2Oq$k0">
               <ref role="37wK5l" to="4nm9:~DumbService.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.project.DumbService" resolve="getInstance" />
               <ref role="1Pybhc" to="4nm9:~DumbService" resolve="DumbService" />
-              <node concept="2YIFZM" id="6m9C3b2yJLe" role="37wK5m">
-                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                <node concept="37vLTw" id="6m9C3b2yJRP" role="37wK5m">
-                  <ref role="3cqZAo" node="2SnxzQPEmgY" resolve="myProject" />
-                </node>
+              <node concept="37vLTw" id="o4PHK1qQiW" role="37wK5m">
+                <ref role="3cqZAo" node="o4PHK1qQiT" resolve="ideaProject" />
               </node>
             </node>
             <node concept="liA8E" id="6m9C3b2yJ5i" role="2OqNvi">
               <ref role="37wK5l" to="4nm9:~DumbService.runWhenSmart(java.lang.Runnable):void" resolve="runWhenSmart" />
               <node concept="1bVj0M" id="6m9C3b2yJbi" role="37wK5m">
-                <node concept="3clFbS" id="6m9C3b2yJbj" role="1bW5cS" />
+                <node concept="3clFbS" id="6m9C3b2yJbj" role="1bW5cS">
+                  <node concept="3clFbF" id="o4PHK1qX2h" role="3cqZAp">
+                    <node concept="37vLTI" id="o4PHK1qX2j" role="3clFbG">
+                      <node concept="3clFbT" id="o4PHK1qX2k" role="37vLTx">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="37vLTw" id="o4PHK1qX6D" role="37vLTJ">
+                        <ref role="3cqZAo" node="o4PHK1qWl3" resolve="checkSmartMode" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2LiUEk8phSp" role="3cqZAp">
-          <node concept="2OqwBi" id="2LiUEk8phX3" role="3clFbG">
-            <node concept="2YIFZM" id="2LiUEk8phV4" role="2Oq$k0">
-              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-            </node>
-            <node concept="liA8E" id="2LiUEk8pi9L" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-              <node concept="1bVj0M" id="2LiUEk8pil4" role="37wK5m">
-                <node concept="3clFbS" id="2LiUEk8pil5" role="1bW5cS" />
-              </node>
-              <node concept="10M0yZ" id="2LiUEk8pitA" role="37wK5m">
-                <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
-                <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
+        <node concept="3clFbH" id="o4PHK1qX7W" role="3cqZAp" />
+        <node concept="2$JKZl" id="o4PHK1qXmn" role="3cqZAp">
+          <node concept="3clFbS" id="o4PHK1qXmp" role="2LFqv$">
+            <node concept="3clFbF" id="13OkeoRnN_H" role="3cqZAp">
+              <node concept="2OqwBi" id="13OkeoRnN_I" role="3clFbG">
+                <node concept="37vLTw" id="13OkeoRnN_M" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
+                </node>
+                <node concept="liA8E" id="13OkeoRnN_J" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:3eUNqOk4fPx" resolve="flushAllEvents" />
+                </node>
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="13OkeoRnN_H" role="3cqZAp">
-          <node concept="2OqwBi" id="13OkeoRnN_I" role="3clFbG">
-            <node concept="37vLTw" id="13OkeoRnN_M" role="2Oq$k0">
-              <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
+          <node concept="22lmx$" id="o4PHK1qXHU" role="2$JKZa">
+            <node concept="3fqX7Q" id="o4PHK1qXQB" role="3uHU7w">
+              <node concept="37vLTw" id="o4PHK1qXWM" role="3fr31v">
+                <ref role="3cqZAo" node="o4PHK1qWl3" resolve="checkSmartMode" />
+              </node>
             </node>
-            <node concept="liA8E" id="13OkeoRnN_J" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk4fPx" resolve="flushAllEvents" />
+            <node concept="3fqX7Q" id="o4PHK1qXzh" role="3uHU7B">
+              <node concept="37vLTw" id="o4PHK1qXFB" role="3fr31v">
+                <ref role="3cqZAo" node="o4PHK1qW6z" resolve="checkPostStartup" />
+              </node>
             </node>
           </node>
         </node>
@@ -6826,24 +6899,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2LiUEk8pixu" role="3cqZAp">
-          <node concept="2OqwBi" id="2LiUEk8pixv" role="3clFbG">
-            <node concept="2YIFZM" id="2LiUEk8pixw" role="2Oq$k0">
-              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-            </node>
-            <node concept="liA8E" id="2LiUEk8pixx" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-              <node concept="1bVj0M" id="2LiUEk8pixy" role="37wK5m">
-                <node concept="3clFbS" id="2LiUEk8pixz" role="1bW5cS" />
-              </node>
-              <node concept="10M0yZ" id="2LiUEk8pix$" role="37wK5m">
-                <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
-                <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
               </node>
             </node>
           </node>

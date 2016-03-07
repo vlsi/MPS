@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.tool.environment.IdeaEnvironment" file="IdeaEnvironment.java">
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />

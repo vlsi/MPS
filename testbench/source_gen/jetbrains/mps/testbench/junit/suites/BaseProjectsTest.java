@@ -18,11 +18,11 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
-import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.project.DumbService;
 import org.junit.After;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
@@ -69,19 +69,29 @@ public class BaseProjectsTest {
     return projects;
   }
 
+  private volatile boolean checkPostStartup = false;
+  private volatile boolean checkSmartMode = false;
+
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
     ourEnv.flushAllEvents();
-    DumbService.getInstance(ProjectHelper.toIdeaProject(myProject)).runWhenSmart(new Runnable() {
+
+    com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
+    StartupManager.getInstance(ideaProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        checkPostStartup = true;
       }
     });
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    DumbService.getInstance(ideaProject).runWhenSmart(new Runnable() {
       public void run() {
+        checkSmartMode = true;
       }
-    }, ModalityState.NON_MODAL);
-    ourEnv.flushAllEvents();
+    });
+
+    while (!(checkPostStartup) || !(checkSmartMode)) {
+      ourEnv.flushAllEvents();
+    }
   }
 
   @After
@@ -92,10 +102,6 @@ public class BaseProjectsTest {
         ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
       }
     });
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-      }
-    }, ModalityState.NON_MODAL);
     ourEnv.flushAllEvents();
   }
 
