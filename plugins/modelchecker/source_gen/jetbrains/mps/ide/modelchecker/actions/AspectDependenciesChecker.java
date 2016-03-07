@@ -32,6 +32,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -116,7 +117,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return CORE;
       } else if (LanguageAspect.INTENTIONS.is(model)) {
         return EDITOR;
-      } else if (LanguageAspect.is(model, "plugin")) {
+      } else if (SModuleOperations.isAspect(model, "plugin")) {
         return WORKBENCH;
       } else if (LanguageAspect.REFACTORINGS.is(model)) {
         return CORE;

@@ -104,21 +104,6 @@ public enum LanguageAspect {
     return get(((Language) module)) == sm;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  //was created in 3.3 not to handle multiple problems at the same time. Use isAspectModel() syntax from lang.slanguage instead
-  public static boolean is(SModel sm, String name) {
-    SModule module = sm.getModule();
-    if (!(module instanceof Language)) return false;
-    final String aspectModelName = module.getModuleName() + "." + name;
-    for (SModel md : module.getModels()) {
-      if (aspectModelName.equals(md.getModelName())) {
-        return md == sm;
-      }
-    }
-    return false;
-  }
-
   public SModel get(Language l) {
     return get_internal(l, false);
   }

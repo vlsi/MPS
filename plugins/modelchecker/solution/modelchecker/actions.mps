@@ -47,6 +47,7 @@
     <import index="phxh" ref="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
+    <import index="bgxn" ref="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -345,6 +346,11 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
+      <concept id="2030416617761226491" name="jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation" flags="nn" index="3zA4fs">
+        <reference id="2030416617761226680" name="aspect" index="3zA4av" />
       </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
@@ -3227,14 +3233,12 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2YIFZM" id="o4PHK1os3f" role="3eO9$A">
-                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel,java.lang.String):boolean" resolve="is" />
-                  <ref role="1Pybhc" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                  <node concept="37vLTw" id="o4PHK1osB3" role="37wK5m">
+                <node concept="2OqwBi" id="o4PHK1qAJ1" role="3eO9$A">
+                  <node concept="37vLTw" id="o4PHK1qAdj" role="2Oq$k0">
                     <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                   </node>
-                  <node concept="Xl_RD" id="o4PHK1osFr" role="37wK5m">
-                    <property role="Xl_RC" value="plugin" />
+                  <node concept="3zA4fs" id="o4PHK1qBg5" role="2OqNvi">
+                    <ref role="3zA4av" to="bgxn:2LiUEk8oQ$g" resolve="plugin" />
                   </node>
                 </node>
               </node>
