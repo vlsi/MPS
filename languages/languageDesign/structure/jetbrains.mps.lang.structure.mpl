@@ -132,6 +132,7 @@
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" fqName="jetbrains.mps.lang.resources" version="0" />
     <language id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" fqName="jetbrains.mps.lang.script" version="0" />
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" fqName="jetbrains.mps.lang.sharedConcepts" version="0" />
+    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" fqName="jetbrains.mps.lang.slanguage" version="0" />
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="3" />
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" fqName="jetbrains.mps.lang.smodel.query" version="1" />
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" fqName="jetbrains.mps.lang.structure" version="1" />
