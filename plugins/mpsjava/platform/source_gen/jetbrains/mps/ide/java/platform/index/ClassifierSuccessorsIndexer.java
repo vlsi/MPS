@@ -23,15 +23,16 @@ import com.intellij.util.indexing.FileContent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
@@ -103,39 +104,39 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
     @NotNull
     @Override
     public Map<SNodeEntry, List<SNodeEntry>> map(final FileContent inputData) {
-      final Map<SNodeEntry, List<SNodeEntry>> result = MapSequence.fromMap(new HashMap<SNodeEntry, List<SNodeEntry>>());
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          // todo remove this read after 3.2. Needed to get concept fq name from id in 3.2 
-          SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-          // e.g. model with merge conflict 
-          if (sModel == null) {
-            return;
-          }
+      try {
+        SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+        // e.g. model with merge conflict 
+        if (sModel == null) {
+          return Collections.emptyMap();
+        }
 
-          for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
-            if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-              SNode classNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-              SNode superclass = SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"));
-              if (superclass != null) {
-                safeMap(result, superclass, classNode);
-              }
-              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")))) {
-                safeMap(result, implementedInterface, classNode);
-              }
-              if (SNodeOperations.isInstanceOf(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-                safeMap(result, SNodeOperations.getReference(SNodeOperations.as(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")), classNode);
-              }
-            } else if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-              SNode interfaceNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
-              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
-                safeMap(result, extendedInterface, interfaceNode);
-              }
+        final Map<SNodeEntry, List<SNodeEntry>> result = MapSequence.fromMap(new HashMap<SNodeEntry, List<SNodeEntry>>());
+        for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
+          if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+            SNode classNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+            SNode superclass = SLinkOperations.getTarget(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"));
+            if (superclass != null) {
+              safeMap(result, superclass, classNode);
+            }
+            for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(classNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")))) {
+              safeMap(result, implementedInterface, classNode);
+            }
+            if (SNodeOperations.isInstanceOf(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+              safeMap(result, SNodeOperations.getReference(SNodeOperations.as(classNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")), classNode);
+            }
+          } else if (SNodeOperations.isInstanceOf(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+            SNode interfaceNode = SNodeOperations.as(nextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
+            for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(interfaceNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface")))) {
+              safeMap(result, extendedInterface, interfaceNode);
             }
           }
         }
-      });
-      return result;
+        return result;
+      } catch (Exception ex) {
+        Logger.getLogger(ClassifierSuccessorsIndexer.class).error(String.format("Failed to index model file %s; %s", inputData.getFileName(), ex.getMessage()), ex);
+      }
+      return Collections.emptyMap();
     }
 
     private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SNode classifierType, SNode node) {

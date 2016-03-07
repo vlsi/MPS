@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,8 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FolderModelFactory;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
@@ -182,8 +180,6 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     }
   }
 
-  // FIXME (1) ModelAccess? Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept)?
-  // FIXME (2) modelReference with each root node?! it's the same for all elements in the list!
   private static class MyIndexer extends SingleEntryIndexer<ModelRootsData> {
     private MyIndexer() {
       super(false);
@@ -192,22 +188,17 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     @Override
     protected ModelRootsData computeValue(@NotNull final FileContent inputData) {
       try {
-        return ModelAccess.instance().runReadAction(new Computable<ModelRootsData>() {
-          @Override
-          public ModelRootsData compute() {
-            SModel model = doModelParsing(inputData);
-            if (model == null || SModelStereotype.isStubModel(model)) {
-              // e.g. model with merge conflict
-              // stub models are handled elsewhere
-              return null;
-            }
+        // XXX Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept) not to read as complete SModel?
+        SModel model = doModelParsing(inputData);
+        if (model == null || SModelStereotype.isStubModel(model)) {
+          // e.g. model with merge conflict
+          // stub models are handled elsewhere
+          return null;
+        }
 
-            ModelRootsData data = new ModelRootsData(model);
-            // it looks there's no reason to serialize data for empty model
-            return data.isEmpty() ? null : data;
-          }
-
-        });
+        ModelRootsData data = new ModelRootsData(model);
+        // it looks there's no reason to serialize data for empty model
+        return data.isEmpty() ? null : data;
       } catch (Exception e) {
         LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
       }
