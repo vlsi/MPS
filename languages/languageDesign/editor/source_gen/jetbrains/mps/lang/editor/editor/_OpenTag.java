@@ -43,7 +43,7 @@ public class _OpenTag implements ConceptEditorComponent {
     editorCell.setCellId("ReadOnlyModelAccessor_mtiojs_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(_OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(_OpenTag._StyleParameter_QueryFunction_mtiojs_a0a(editorContext, node)));
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;

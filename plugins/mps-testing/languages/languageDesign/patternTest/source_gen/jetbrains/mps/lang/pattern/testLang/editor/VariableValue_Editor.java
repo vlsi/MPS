@@ -50,6 +50,8 @@ public class VariableValue_Editor extends DefaultNodeEditor {
         editorCell.setRole("variable");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
       editorCell.getStyle().putAll(style);
     }

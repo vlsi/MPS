@@ -69,6 +69,8 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
         editorCell.setRole("name");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
       editorCell.getStyle().putAll(style);

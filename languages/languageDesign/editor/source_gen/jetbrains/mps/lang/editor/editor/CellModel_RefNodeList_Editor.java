@@ -251,6 +251,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
         editorCell.setRole("emptyCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -400,6 +402,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
         editorCell.setRole("emptyCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1019,6 +1023,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
         editorCell.setRole("separatorStyle");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1227,6 +1233,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
         editorCell.setRole("elementMenuDescriptor");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }

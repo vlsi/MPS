@@ -73,12 +73,12 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a2c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a3c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.UNDERLINED, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a4c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.STRIKE_OUT, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a5c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a0c0(editorContext, node)));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a1c0(editorContext, node)));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a2c0(editorContext, node)));
+    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a3c0(editorContext, node));
+    style.set(StyleAttributes.UNDERLINED, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a4c0(editorContext, node));
+    style.set(StyleAttributes.STRIKE_OUT, 0, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a5c0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

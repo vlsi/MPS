@@ -72,6 +72,8 @@ public class GetOperationType_Editor extends DefaultNodeEditor {
         editorCell.setRole("operation");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
       editorCell.getStyle().putAll(style);
     }

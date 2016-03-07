@@ -4,10 +4,14 @@ package jetbrains.mps.console.base.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class ConsoleStyle_StyleSheet {
   public static void apply_ReadOnly(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.READ_ONLY, 1, true);
   }
 

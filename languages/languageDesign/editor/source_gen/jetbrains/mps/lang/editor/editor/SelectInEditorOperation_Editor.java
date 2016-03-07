@@ -87,6 +87,8 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
         editorCell.setRole("editorContext");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       SelectInEditorOperation_editorContextActions.setCellActions(editorCell, myOwnerNode, myEditorContext);
@@ -230,6 +232,8 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
         editorCell.setRole("selectionStart");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
       SelectInEditorOperation_selectionStartActions.setCellActions(editorCell, myOwnerNode, myEditorContext);
@@ -300,6 +304,8 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
         editorCell.setRole("selectionEnd");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
     }

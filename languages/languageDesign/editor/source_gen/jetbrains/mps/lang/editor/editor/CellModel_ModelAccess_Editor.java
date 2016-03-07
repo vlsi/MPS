@@ -52,11 +52,11 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_j8ahcr_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a3b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a4b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.UNDERLINED, 0, CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a5b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a1b0(editorContext, node)));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a2b0(editorContext, node)));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a3b0(editorContext, node)));
+    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a4b0(editorContext, node));
+    style.set(StyleAttributes.UNDERLINED, 0, CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_j8ahcr_a5b0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

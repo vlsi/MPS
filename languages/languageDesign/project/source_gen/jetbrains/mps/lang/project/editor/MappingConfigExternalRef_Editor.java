@@ -70,6 +70,8 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
         editorCell.setRole("generator");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -118,6 +120,8 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
         editorCell.setRole("innerRef");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
       editorCell.getStyle().putAll(style);
     }

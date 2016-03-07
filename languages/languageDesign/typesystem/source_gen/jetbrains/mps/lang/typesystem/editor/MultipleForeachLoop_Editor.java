@@ -152,6 +152,8 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);

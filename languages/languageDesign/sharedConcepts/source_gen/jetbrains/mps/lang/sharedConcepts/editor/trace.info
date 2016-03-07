@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)/1203541329669">
     <file name="SharedStyles_StyleSheet.java">
-      <node id="1203541329669" at="13,83,14,110" concept="0" />
-      <node id="1203541329669" at="14,110,15,62" concept="0" />
-      <node id="1203541329669" at="17,83,18,113" concept="0" />
-      <node id="1203541329669" at="20,93,21,113" concept="0" />
-      <node id="1203541329669" at="21,113,22,62" concept="0" />
-      <node id="1203541329669" at="17,0,20,0" concept="1" trace="apply_ReferenceOnConcept#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="13,0,17,0" concept="1" trace="apply_ReferenceDecorated#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1203541329669" at="20,0,24,0" concept="1" trace="apply_ReferenceOnConceptualFeature#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <scope id="1203541329669" at="17,83,18,113" />
-      <scope id="1203541329669" at="13,83,15,62" />
-      <scope id="1203541329669" at="20,93,22,62" />
-      <scope id="1203541329669" at="17,0,20,0">
+      <node id="1203541329669" at="15,83,16,69" concept="1" />
+      <node id="1203541329669" at="16,69,17,88" concept="1" />
+      <node id="1203541329669" at="17,88,18,110" concept="0" />
+      <node id="1203541329669" at="18,110,19,62" concept="0" />
+      <node id="1203541329669" at="21,83,22,69" concept="1" />
+      <node id="1203541329669" at="22,69,23,88" concept="1" />
+      <node id="1203541329669" at="23,88,24,113" concept="0" />
+      <node id="1203541329669" at="26,93,27,69" concept="1" />
+      <node id="1203541329669" at="27,69,28,88" concept="1" />
+      <node id="1203541329669" at="28,88,29,113" concept="0" />
+      <node id="1203541329669" at="29,113,30,62" concept="0" />
+      <node id="1203541329669" at="21,0,26,0" concept="2" trace="apply_ReferenceOnConcept#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1203541329669" at="15,0,21,0" concept="2" trace="apply_ReferenceDecorated#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1203541329669" at="26,0,32,0" concept="2" trace="apply_ReferenceOnConceptualFeature#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <scope id="1203541329669" at="21,83,24,113">
+        <var name="editorContext" id="1203541329669" />
+        <var name="node" id="1203541329669" />
+      </scope>
+      <scope id="1203541329669" at="15,83,19,62">
+        <var name="editorContext" id="1203541329669" />
+        <var name="node" id="1203541329669" />
+      </scope>
+      <scope id="1203541329669" at="26,93,30,62">
+        <var name="editorContext" id="1203541329669" />
+        <var name="node" id="1203541329669" />
+      </scope>
+      <scope id="1203541329669" at="21,0,26,0">
         <var name="editorCell" id="1203541329669" />
         <var name="style" id="1203541329669" />
       </scope>
-      <scope id="1203541329669" at="13,0,17,0">
+      <scope id="1203541329669" at="15,0,21,0">
         <var name="editorCell" id="1203541329669" />
         <var name="style" id="1203541329669" />
       </scope>
-      <scope id="1203541329669" at="20,0,24,0">
+      <scope id="1203541329669" at="26,0,32,0">
         <var name="editorCell" id="1203541329669" />
         <var name="style" id="1203541329669" />
       </scope>
-      <unit id="1203541329669" at="12,0,26,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
+      <unit id="1203541329669" at="14,0,34,0" name="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
     </file>
   </root>
 </debug-info>

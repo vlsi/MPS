@@ -28,8 +28,8 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlWhitespace_Editor._StyleParameter_QueryFunction_2bpkx8_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, XmlWhitespace_Editor._StyleParameter_QueryFunction_2bpkx8_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlWhitespace_Editor._StyleParameter_QueryFunction_2bpkx8_a0a(editorContext, node));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, XmlWhitespace_Editor._StyleParameter_QueryFunction_2bpkx8_a1a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

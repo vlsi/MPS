@@ -47,6 +47,8 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
       style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);

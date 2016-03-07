@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
@@ -14,11 +16,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class structure_StyleSheet {
   public static void apply_AnnotationNode(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
   public static void apply_Keyword(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);

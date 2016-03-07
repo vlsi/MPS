@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -13,10 +15,14 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class DocumentationCommentStyleSheet_StyleSheet {
   public static void apply_Comment(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
   public static void apply_CommentTag(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_JavaDocTag(styleToPut, editorCell);
@@ -24,6 +30,8 @@ public class DocumentationCommentStyleSheet_StyleSheet {
     }
   }
   public static void apply_CommentHTMLTag(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       DocumentationCommentStyleSheet_StyleSheet.apply_Comment(styleToPut, editorCell);

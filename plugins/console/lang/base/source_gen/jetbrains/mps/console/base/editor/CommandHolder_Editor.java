@@ -64,6 +64,8 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
         editorCell.setRole("command");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.READ_ONLY, 0, false);
       editorCell.getStyle().putAll(style);
     }

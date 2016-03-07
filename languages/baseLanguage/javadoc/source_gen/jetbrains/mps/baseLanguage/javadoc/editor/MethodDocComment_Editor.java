@@ -70,7 +70,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ls0i5e_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0a0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     if (renderingCondition_ls0i5e_a0a0(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
@@ -160,8 +160,8 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_tags");
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_Comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0d0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a1d0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a0d0a(editorContext, node));
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a1d0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -570,6 +570,8 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -609,6 +611,8 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -637,7 +641,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a1f0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, MethodDocComment_Editor._StyleParameter_QueryFunction_ls0i5e_a1f0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

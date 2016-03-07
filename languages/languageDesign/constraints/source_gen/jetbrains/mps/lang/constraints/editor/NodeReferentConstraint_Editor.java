@@ -193,6 +193,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("referentSetHandler");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -262,6 +264,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("keepsReference");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -326,6 +330,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("searchScopeFactory");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
@@ -393,6 +399,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("validator");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
@@ -442,6 +450,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("presentation");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);

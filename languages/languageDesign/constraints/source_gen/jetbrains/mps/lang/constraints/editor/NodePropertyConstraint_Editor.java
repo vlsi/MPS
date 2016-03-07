@@ -182,6 +182,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("propertyGetter");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -235,6 +237,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("propertySetter");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -288,6 +292,8 @@ public class NodePropertyConstraint_Editor extends DefaultNodeEditor {
         editorCell.setRole("propertyValidator");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

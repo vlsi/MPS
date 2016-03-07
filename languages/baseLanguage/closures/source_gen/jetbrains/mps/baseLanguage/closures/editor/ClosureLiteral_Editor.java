@@ -126,7 +126,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9o2gp8_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClosureLiteral_Editor._StyleParameter_QueryFunction_9o2gp8_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClosureLiteral_Editor._StyleParameter_QueryFunction_9o2gp8_a0c0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -153,6 +153,8 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
       if (true) {

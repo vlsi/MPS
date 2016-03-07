@@ -65,6 +65,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("lValue");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SELECTABLE, 0, true);
       editorCell.getStyle().putAll(style);
       AssignmentExpression_LeftArgument_Actions.setCellActions(editorCell, myOwnerNode, myEditorContext);
@@ -155,6 +157,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("rValue");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SELECTABLE, 0, true);
       editorCell.getStyle().putAll(style);
       AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, myOwnerNode, myEditorContext);

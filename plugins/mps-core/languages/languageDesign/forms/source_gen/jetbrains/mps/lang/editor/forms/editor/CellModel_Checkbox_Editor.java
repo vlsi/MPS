@@ -100,6 +100,8 @@ public class CellModel_Checkbox_Editor extends DefaultNodeEditor {
         editorCell.setRole("ui");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
       editorCell.getStyle().putAll(style);
     }

@@ -60,7 +60,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a2b0(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_zgm7s3_a1a(editorContext, node));
@@ -111,6 +111,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         editorCell.setRole("ifTrueCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -163,6 +165,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         editorCell.setRole("ifFalseCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -183,7 +187,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_borderedCollection(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_zgm7s3_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zgm7s3_b2a(editorContext, node));
@@ -234,6 +238,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         editorCell.setRole("ifTrueCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -286,6 +292,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         editorCell.setRole("ifFalseCellModel");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -428,6 +436,8 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
         editorCell.setRole("alternationCondition");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }

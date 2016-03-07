@@ -102,6 +102,8 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("expr");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -153,6 +155,8 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("replaceBlock");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

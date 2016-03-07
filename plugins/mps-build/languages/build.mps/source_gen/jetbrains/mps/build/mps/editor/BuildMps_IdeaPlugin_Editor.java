@@ -180,6 +180,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
         editorCell.setRole("name");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -222,6 +224,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
         editorCell.setRole("containerName");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -264,6 +268,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
         editorCell.setRole("description");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
       editorCell.addKeyMap(new create_IdeaPluginDescription());
@@ -307,6 +313,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
         editorCell.setRole("version");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -340,6 +348,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
         editorCell.setRole("vendor");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

@@ -34,7 +34,7 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ei20sr_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ei20sr_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

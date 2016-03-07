@@ -301,6 +301,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
         editorCell.setRole("contextNodeQuery");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.READ_ONLY, 0, true);
       editorCell.getStyle().putAll(style);
     }

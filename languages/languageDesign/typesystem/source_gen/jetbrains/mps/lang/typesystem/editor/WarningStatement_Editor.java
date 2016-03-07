@@ -190,6 +190,8 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("messageTarget");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -303,6 +305,8 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("foreignMessageSource");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

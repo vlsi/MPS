@@ -65,7 +65,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_head");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_n78otj_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -138,6 +138,8 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
         editorCell.setRole("tail");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
       if (true) {

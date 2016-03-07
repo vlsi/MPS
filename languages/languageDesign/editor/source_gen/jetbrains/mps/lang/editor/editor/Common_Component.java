@@ -106,6 +106,8 @@ public class Common_Component implements ConceptEditorComponent {
         editorCell.setRole("id");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -306,6 +308,8 @@ public class Common_Component implements ConceptEditorComponent {
         editorCell.setRole("menuDescriptor");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }

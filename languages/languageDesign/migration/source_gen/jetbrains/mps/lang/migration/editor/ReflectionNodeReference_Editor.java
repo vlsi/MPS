@@ -81,7 +81,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ktoyyv_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(ReflectionNodeReference_Editor._StyleParameter_QueryFunction_ktoyyv_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(ReflectionNodeReference_Editor._StyleParameter_QueryFunction_ktoyyv_a0c0(editorContext, node)));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

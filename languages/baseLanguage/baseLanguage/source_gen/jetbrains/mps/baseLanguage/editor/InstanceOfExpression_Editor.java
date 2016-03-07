@@ -48,6 +48,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("leftExpression");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SELECTABLE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -90,6 +92,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("classType");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SELECTABLE, 0, true);
       editorCell.getStyle().putAll(style);
     }

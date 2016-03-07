@@ -65,6 +65,8 @@ public class BuildLayout_EchoProperties_Editor extends DefaultNodeEditor {
         editorCell.setRole("fileName");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

@@ -112,6 +112,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
         editorCell.setRole("direction");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -151,6 +153,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
         editorCell.setRole("latticeElementType");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -301,6 +305,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
         editorCell.setRole("initialFunction");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -379,6 +385,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
         editorCell.setRole("mergeFunction");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -457,6 +465,8 @@ public class Analyzer_Editor extends DefaultNodeEditor {
         editorCell.setRole("funFunction");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
