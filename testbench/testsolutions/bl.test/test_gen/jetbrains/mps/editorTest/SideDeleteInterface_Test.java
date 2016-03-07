@@ -22,7 +22,7 @@ public class SideDeleteInterface_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5732053020525161410", "5732053020525161416");
+      initEditor("5732053020525161410", "6423001530896043663");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }

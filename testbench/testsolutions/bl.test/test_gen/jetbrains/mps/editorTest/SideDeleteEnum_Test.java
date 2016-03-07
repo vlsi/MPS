@@ -22,7 +22,7 @@ public class SideDeleteEnum_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5732053020525161956", "5732053020525162620");
+      initEditor("6423001530895850369", "6423001530895851012");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
