@@ -21,12 +21,13 @@ import com.intellij.util.indexing.IndexableSetContributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.Set;
 
 public class MPSIndexableSetContributor extends IndexableSetContributor {
   @Override
   public Set<VirtualFile> getAdditionalRootsToIndex() {
-    return EMPTY_FILE_SET;
+    return Collections.emptySet();
   }
 
   @NotNull
