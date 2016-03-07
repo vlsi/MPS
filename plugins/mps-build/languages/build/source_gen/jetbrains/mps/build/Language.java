@@ -17,13 +17,13 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.build.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.build.intentions.IntentionsDescriptor;
-import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
-import jetbrains.mps.build.plugin.FacetAspectDescriptor;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.build.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.build.typesystem.TypesystemDescriptor;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
+import jetbrains.mps.build.plugin.FacetAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)";
@@ -67,9 +67,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IntentionAspectDescriptor.class) {
       return (T) new IntentionsDescriptor();
     }
-    if (aspectClass == MakeAspectDescriptor.class) {
-      return (T) new FacetAspectDescriptor();
-    }
     if (aspectClass == ScriptAspectDescriptor.class) {
       return (T) new ScriptsDescriptor();
     }
@@ -78,6 +75,11 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.MakeAspectDescriptor")) {
+      if (aspectClass == MakeAspectDescriptor.class) {
+        return (T) new FacetAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }
