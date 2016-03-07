@@ -1001,8 +1001,8 @@
   </node>
   <node concept="AxPO7" id="g_hAjpB">
     <property role="TrG5h" value="CellActionId" />
+    <property role="PDuV0" value="true" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <ref role="Qgau1" node="g_hAjs4" />
     <node concept="M4N5e" id="g_hAjs4" role="M5hS2">
       <property role="1uS6qv" value="right_transform_action_id" />
       <property role="1uS6qo" value="RIGHT_TRANSFORM" />
