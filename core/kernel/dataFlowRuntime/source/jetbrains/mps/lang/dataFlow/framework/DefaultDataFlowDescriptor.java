@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,6 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
-import java.util.Collection;
-import java.util.Collections;
-
-/**
- * Created by simon on 31/03/15.
- */
-public abstract class AbstractDataFlowAspectDescriptor implements DataFlowAspectDescriptor {
-  @Override
-  public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
-    return Collections.emptyList();
-  }
+public class DefaultDataFlowDescriptor extends AbstractDataFlowAspectDescriptor{
 
 }
