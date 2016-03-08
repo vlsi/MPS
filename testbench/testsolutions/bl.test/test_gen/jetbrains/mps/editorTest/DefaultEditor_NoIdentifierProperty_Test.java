@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class DefaultEditor_NameProperty_Test extends BaseTransformationTest {
-  public DefaultEditor_NameProperty_Test() {
+public class DefaultEditor_NoIdentifierProperty_Test extends BaseTransformationTest {
+  public DefaultEditor_NoIdentifierProperty_Test() {
   }
   @Test
-  public void test_DefaultEditor_NameProperty() throws Throwable {
+  public void test_DefaultEditor_NoIdentifierProperty() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DefaultEditor_NameProperty_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_NoIdentifierProperty_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

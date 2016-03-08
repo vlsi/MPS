@@ -52092,7 +52092,7 @@
   </node>
   <node concept="LiM7Y" id="5DTV$TRroMW">
     <property role="3GE5qa" value="defaultEditor" />
-    <property role="TrG5h" value="DefaultEditor_NameProperty" />
+    <property role="TrG5h" value="DefaultEditor_NoIdentifierProperty" />
     <node concept="3clFbS" id="5DTV$TRroN2" role="LjaKd">
       <node concept="2HxZob" id="5DTV$TRroN3" role="3cqZAp">
         <node concept="1iFQzN" id="5DTV$TRroN4" role="3iKnsn">

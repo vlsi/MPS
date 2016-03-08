@@ -283,6 +283,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/source_gen" includeSubdirectories="true" />
@@ -493,12 +495,6 @@
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/languages/jetbrains.mps.samples.notesOrganizer/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/notesOrganizer/solutions/jetbrains.mps.samples.notesOrganizer.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/progressIndicator/solutions/ActionWithProgress/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/generator/source_gen" includeSubdirectories="true" />
@@ -556,8 +552,6 @@
       <directory url="file://$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/generator/source_gen" includeSubdirectories="true" />
@@ -611,10 +605,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDepViewer/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testFS/solutions/solution1/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testFS/solutions/solution1/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testMigration/languages/jetbrains.mps.test.testMigration/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" includeSubdirectories="true" />
@@ -692,22 +682,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceInfo.testWeaving/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions.contextAssistant/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions.contextAssistant/runtime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions.contextAssistant/runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions.contextAssistant/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.contextAssistant.tests/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.contextAssistant.tests/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.extension.testLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.contextAssistant.testLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/languages/actions/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/languages/actions/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
@@ -734,3 +708,4 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
+

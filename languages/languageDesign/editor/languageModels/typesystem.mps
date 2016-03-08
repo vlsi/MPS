@@ -1276,11 +1276,11 @@
       <node concept="3clFbJ" id="1Dzw8XsAubP" role="3cqZAp">
         <node concept="2OqwBi" id="1Dzw8XsAElE" role="3clFbw">
           <node concept="2OqwBi" id="1Dzw8XsAubT" role="2Oq$k0">
-            <node concept="1YBJjd" id="1Dzw8XsAubS" role="2Oq$k0">
-              <ref role="1YBMHb" node="1Dzw8XsAtHq" resolve="cellActionMapItem" />
-            </node>
             <node concept="3TrcHB" id="1Dzw8XsAubX" role="2OqNvi">
               <ref role="3TsBF5" to="tpc2:g_hAc3q" resolve="actionId" />
+            </node>
+            <node concept="1YBJjd" id="1Dzw8XsAubS" role="2Oq$k0">
+              <ref role="1YBMHb" node="1Dzw8XsAtHq" resolve="cellActionMapItem" />
             </node>
           </node>
           <node concept="3t7uKx" id="1Dzw8XsAElI" role="2OqNvi">

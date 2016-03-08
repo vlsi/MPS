@@ -132,11 +132,11 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5011379379534054536(final BaseMappingRuleContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "delete_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "delete_action_id", null);
       }
     }).isNotEmpty() && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "backspace_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "backspace_action_id", null);
       }
     }).isEmpty();
   }
@@ -365,7 +365,7 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_1184071848765(final PropertyMacroContext _context) {
     SNode actionMap = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"));
-    String name = SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "right_transform_action_id")));
+    String name = SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), null)));
     String actionItemId = NameUtil.toValidIdentifier(name);
     return SPropertyOperations.getString(actionMap, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_" + actionItemId;
   }
@@ -990,7 +990,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(generatedClass)).first();
   }
   public static Object referenceMacro_GetReferent_6722182472223421490(final ReferenceMacroContext _context) {
-    return SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "right_transform_action_id")));
+    return SEnumOperations.getEnumMemberName(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "CellActionId"), SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), null)));
   }
   public static Object referenceMacro_GetReferent_1197572720842(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
@@ -1495,14 +1495,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1106598080605870263(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x1134299ee53L, "filter")) != null && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null || ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_next_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_next_action_id", null);
       }
     }).isEmpty());
   }
   public static boolean ifMacro_Condition_1106598080605870336(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x1134299ee53L, "filter")) != null && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null || ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_previous_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_previous_action_id", null);
       }
     }).isEmpty());
   }
@@ -1545,11 +1545,11 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1106598080605870979(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x1134299ee53L, "filter")) != null && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null || ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_next_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_next_action_id", null);
       }
     }).isEmpty() || ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_previous_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "select_previous_action_id", null);
       }
     }).isEmpty());
   }
@@ -2287,7 +2287,7 @@ public class QueriesGenerated {
   public static SNode insertMacro_Query_5011379379534104442(final TemplateQueryContextWithMacro _context) {
     SNode defaultBackspaceActionMapItem = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, 0x10951978d01L, "item"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "delete_action_id", "right_transform_action_id");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "delete_action_id", null);
       }
     }));
     SPropertyOperations.set(defaultBackspaceActionMapItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519879e9L, 0x1095198c0daL, "actionId"), "backspace_action_id");
