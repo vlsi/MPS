@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -56,7 +56,7 @@ public class SideTransformUtil {
 
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node)))) {
-      SModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
+      SModel actionsModelDescriptor = SModuleOperations.getAspect(language, "actions");
       if (actionsModelDescriptor == null) {
         continue;
       }

@@ -31,8 +31,8 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -103,7 +103,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
 
     SModule module = model.getModule();
     if (module instanceof Language) {
-      if (LanguageAspect.ACTIONS.is(model)) {
+      if (SModuleOperations.isAspect(model, "actions")) {
         return EDITOR;
       } else if (SModuleOperations.isAspect(model, "behavior")) {
         return CORE;

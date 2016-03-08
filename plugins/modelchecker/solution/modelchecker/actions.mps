@@ -59,6 +59,7 @@
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="mg3u" ref="r:0799ed23-f21a-4dba-ac61-5b80d66bec13(jetbrains.mps.lang.behavior.plugin)" />
+    <import index="sla8" ref="r:e9b03271-b52a-47ee-a82c-3d061109bb59(jetbrains.mps.lang.actions.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -3098,18 +3099,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="7IH442cVutp" role="3clFbw">
-                <node concept="Rm8GO" id="7IH442cVuii" role="2Oq$k0">
-                  <ref role="Rm8GQ" to="w1kc:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
-                  <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-                <node concept="liA8E" id="7IH442cVuRM" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                  <node concept="37vLTw" id="7IH442cVuYm" role="37wK5m">
-                    <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
-                  </node>
-                </node>
-              </node>
               <node concept="3eNFk2" id="7IH442cVyi1" role="3eNLev">
                 <node concept="3clFbS" id="7IH442cVyi3" role="3eOfB_">
                   <node concept="3cpWs6" id="2tRCcbzc6Sj" role="3cqZAp">
@@ -3363,6 +3352,14 @@
                       <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="qmfyRQPxFh" role="3clFbw">
+                <node concept="37vLTw" id="qmfyRQPxFi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                </node>
+                <node concept="3zA4fs" id="qmfyRQPxFj" role="2OqNvi">
+                  <ref role="3zA4av" to="sla8:2LiUEk8oQ$g" resolve="actions" />
                 </node>
               </node>
             </node>

@@ -16,11 +16,12 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.util.ConditionalIterable;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
@@ -96,7 +97,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
     myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
     for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      SModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
+      SModel actionsModelDescriptor = SModuleOperations.getAspect(language, "actions");
       if (actionsModelDescriptor == null) {
         continue;
       }

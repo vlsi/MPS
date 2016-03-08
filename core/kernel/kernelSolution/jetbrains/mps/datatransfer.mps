@@ -6,6 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
   <imports>
     <import index="tpdg" ref="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions/jetbrains.mps.lang.actions.structure)" />
@@ -24,6 +25,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="48b2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.cleanup(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module()" />
+    <import index="sla8" ref="r:e9b03271-b52a-47ee-a82c-3d061109bb59(jetbrains.mps.lang.actions.plugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -214,6 +216,12 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
+      <concept id="6171083915388330090" name="jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression" flags="ng" index="1qvjxa">
+        <reference id="6171083915388597767" name="aspect" index="1quiSB" />
+        <child id="6171083915388330091" name="lang" index="1qvjxb" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -856,16 +864,10 @@
                 <node concept="3uibUv" id="UJ6EPBf50C" role="1tU5fm">
                   <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
                 </node>
-                <node concept="2OqwBi" id="2u_1aB3BDI4" role="33vP2m">
-                  <node concept="Rm8GO" id="2u_1aB3BDIp" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="w1kc:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
-                    <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                  </node>
-                  <node concept="liA8E" id="2u_1aB3BDIa" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                    <node concept="37vLTw" id="3GM_nagTzCj" role="37wK5m">
-                      <ref role="3cqZAo" node="UJ6EPBf50z" resolve="language" />
-                    </node>
+                <node concept="1qvjxa" id="qmfyRQPmde" role="33vP2m">
+                  <ref role="1quiSB" to="sla8:2LiUEk8oQ$g" resolve="actions" />
+                  <node concept="37vLTw" id="qmfyRQPwBn" role="1qvjxb">
+                    <ref role="3cqZAo" node="UJ6EPBf50z" resolve="language" />
                   </node>
                 </node>
               </node>

@@ -86,7 +86,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModelReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.Module__BehaviorDescriptor" />
