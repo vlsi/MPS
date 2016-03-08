@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -59,7 +59,7 @@ public final class GoToRulesHelper {
     if (language == null) {
       return Collections.emptyList();
     }
-    SModel typesystem = LanguageAspect.TYPESYSTEM.get(language);
+    SModel typesystem = SModuleOperations.getAspect(language, "typesystem");
     if (typesystem == null) {
       return Collections.emptyList();
     }

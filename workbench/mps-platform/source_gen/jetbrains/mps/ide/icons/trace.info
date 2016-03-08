@@ -136,7 +136,6 @@
       <node id="189703917320704845" at="338,102,339,108" concept="3" />
       <node id="189703917320704857" at="339,108,340,98" concept="3" />
       <node id="189703917320704905" at="340,98,341,94" concept="3" />
-      <node id="189703917320704917" at="341,94,342,106" concept="3" />
       <node id="2434140849679604420" at="79,0,81,0" concept="2" trace="IconManager#()V" />
       <node id="2434140849679605222" at="104,12,106,7" concept="0" />
       <node id="2434140849679605246" at="111,12,113,7" concept="0" />
@@ -335,8 +334,8 @@
       </scope>
       <scope id="2434140849679604816" at="270,55,277,33" />
       <scope id="2434140849679604878" at="297,17,304,9" />
+      <scope id="189703917320704822" at="334,10,341,94" />
       <scope id="2434140849679604502" at="138,67,146,16" />
-      <scope id="189703917320704822" at="334,10,342,106" />
       <scope id="2194967571179864535" at="216,88,225,31">
         <var name="stereotype" id="2194967571179864541" />
       </scope>
@@ -428,7 +427,7 @@
         <var name="withoutAdditional" id="2434140849679604483" />
       </scope>
       <unit id="2434140849679604402" at="66,44,78,3" name="jetbrains.mps.ide.icons.IconManager$1" />
-      <unit id="2434140849679604371" at="58,0,345,0" name="jetbrains.mps.ide.icons.IconManager" />
+      <unit id="2434140849679604371" at="58,0,344,0" name="jetbrains.mps.ide.icons.IconManager" />
     </file>
   </root>
   <root nodeRef="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)/2611664513286048195">

@@ -131,7 +131,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return EDITOR;
       } else if (SModuleOperations.isAspect(model, "textGen")) {
         return CORE;
-      } else if (LanguageAspect.TYPESYSTEM.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "typesystem")) {
         return CORE;
       } else {
         return CORE;

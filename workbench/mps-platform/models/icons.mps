@@ -2758,23 +2758,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDel" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDem" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDen" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoq9W" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDep" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDeq" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.TYPESYSTEM_MODEL_ICON" resolve="TYPESYSTEM_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

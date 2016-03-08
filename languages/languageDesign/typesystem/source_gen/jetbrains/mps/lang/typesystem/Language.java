@@ -80,6 +80,11 @@ public class Language extends LanguageRuntime {
         return (T) new jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor")) {
+      if (aspectClass == IHelginsDescriptor.class) {
+        return (T) new TypesystemDescriptor();
+      }
+    }
     return super.createAspect(aspectClass);
   }
 }
