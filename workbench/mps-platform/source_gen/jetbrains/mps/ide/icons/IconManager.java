@@ -335,7 +335,6 @@ public final class IconManager {
     // [MM] this usage of LanguageAspect is reviewed 
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, IdeIcons.BEHAVIOR_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.CONSTRAINTS, IdeIcons.CONSTRAINTS_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEST, IdeIcons.TEST_MODEL_ICON);
   }

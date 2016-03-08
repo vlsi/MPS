@@ -15,10 +15,11 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class Behavior_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Behavior;
@@ -63,7 +64,7 @@ public class Behavior_TabDescriptor extends RelationDescriptor {
       return null;
     }
 
-    SModel aspectModel = LanguageAspect.BEHAVIOR.get(((Language) module));
+    SModel aspectModel = SModuleOperations.getAspect(module, "behavior");
     if (aspectModel == null) {
       return null;
     }

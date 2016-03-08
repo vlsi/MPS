@@ -5,14 +5,13 @@ package jetbrains.mps.lang.behavior.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -52,10 +51,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_4881419546810727153(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return LanguageAspect.BEHAVIOR.is(model) && !(ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).isEmpty());
+    return SModuleOperations.isAspect(model, "behavior") && !(ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))).isEmpty());
   }
   public static boolean createRootRule_Condition_7923290658387314702(final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "behavior");
   }
   public static boolean baseMappingRule_Condition_1144956008583649232(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L, 0x8fa3b96a509fe0aL, "concept")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));

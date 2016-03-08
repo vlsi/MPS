@@ -2690,23 +2690,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDd7" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDd8" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDd9" role="37vLTJ">
-              <node concept="37vLTw" id="7IH442cOkFt" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdb" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdc" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.BEHAVIOR_MODEL_ICON" resolve="BEHAVIOR_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="axXFkGpDdd" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDde" role="3clFbG">
             <node concept="3EllGN" id="axXFkGpDdf" role="37vLTJ">

@@ -127,6 +127,7 @@
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
+    <import index="mg3u" ref="r:0799ed23-f21a-4dba-ac61-5b80d66bec13(jetbrains.mps.lang.behavior.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -9190,23 +9191,10 @@
             <node concept="3uibUv" id="74j1j8ZLwhI" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
-            <node concept="2OqwBi" id="74j1j8ZLwhJ" role="33vP2m">
-              <node concept="Rm8GO" id="74j1j8ZLSQs" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="liA8E" id="74j1j8ZLwhL" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="1eOMI4" id="74j1j8ZLwhM" role="37wK5m">
-                  <node concept="10QFUN" id="74j1j8ZLwhN" role="1eOMHV">
-                    <node concept="37vLTw" id="74j1j8ZLwhO" role="10QFUP">
-                      <ref role="3cqZAo" node="74j1j8ZLwho" resolve="module" />
-                    </node>
-                    <node concept="3uibUv" id="74j1j8ZLwhP" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                    </node>
-                  </node>
-                </node>
+            <node concept="1qvjxa" id="qmfyRQNqY5" role="33vP2m">
+              <ref role="1quiSB" to="mg3u:2LiUEk8oQ$g" resolve="behavior" />
+              <node concept="37vLTw" id="qmfyRQNsPO" role="1qvjxb">
+                <ref role="3cqZAo" node="74j1j8ZLwho" resolve="module" />
               </node>
             </node>
           </node>
