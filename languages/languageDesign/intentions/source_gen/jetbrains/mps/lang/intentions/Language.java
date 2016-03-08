@@ -17,9 +17,9 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.intentions.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.intentions.intentions.IntentionsDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.intentions.typesystem.TypesystemDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)";
@@ -63,11 +63,13 @@ public class Language extends LanguageRuntime {
     if (aspectClass == IntentionAspectDescriptor.class) {
       return (T) new IntentionsDescriptor();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.intentions.structure.StructureAspectDescriptor();
-    }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.intentions.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }
