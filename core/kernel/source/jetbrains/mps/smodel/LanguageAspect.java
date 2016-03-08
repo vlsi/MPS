@@ -50,6 +50,7 @@ public enum LanguageAspect {
   //mostly migrated
   REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
+  //mostly migrated
   SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), null),
 
   //mostly migrated
@@ -73,6 +74,7 @@ public enum LanguageAspect {
 
   TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
 
+  //mostly migrated
   TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
   //mostly migrated
