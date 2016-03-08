@@ -337,7 +337,6 @@ public final class IconManager {
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, IdeIcons.BEHAVIOR_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.CONSTRAINTS, IdeIcons.CONSTRAINTS_MODEL_ICON);
-    MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.EDITOR, IdeIcons.EDITOR_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.TEST, IdeIcons.TEST_MODEL_ICON);
   }
 }

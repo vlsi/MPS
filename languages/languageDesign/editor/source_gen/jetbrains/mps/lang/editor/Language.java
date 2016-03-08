@@ -71,6 +71,11 @@ public class Language extends LanguageRuntime {
         return (T) new DefaultDataFlowDescriptor();
       }
     }
+    if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
+      if (aspectClass == EditorAspectDescriptor.class) {
+        return (T) new EditorAspectDescriptorImpl();
+      }
+    }
     if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
       if (aspectClass == IntentionAspectDescriptor.class) {
         return (T) new IntentionsDescriptor();

@@ -37,6 +37,7 @@ public enum LanguageAspect {
   //mostly migrated
   STRUCTURE("structure", BootstrapLanguages.structureLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Structure"),
 
+  //mostly migrated
   EDITOR("editor", BootstrapLanguages.editorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor"),
 
   ACTIONS("actions", BootstrapLanguages.actionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor+Actions"),

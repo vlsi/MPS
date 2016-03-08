@@ -14,12 +14,13 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class Editor_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Editor;
@@ -53,7 +54,7 @@ public class Editor_TabDescriptor extends RelationDescriptor {
       return nodes;
     }
 
-    SModel aspectModel = LanguageAspect.EDITOR.get(((Language) module));
+    SModel aspectModel = SModuleOperations.getAspect(module, "editor");
     if (aspectModel == null) {
       return nodes;
     }

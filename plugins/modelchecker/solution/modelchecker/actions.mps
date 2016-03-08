@@ -57,6 +57,7 @@
     <import index="n1pe" ref="r:db7af0ad-3d1a-4f64-a9bf-f3dc73570877(jetbrains.mps.lang.script.plugin)" />
     <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
+    <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -3175,16 +3176,12 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="7IH442cV$j4" role="3eO9$A">
-                  <node concept="Rm8GO" id="7IH442cV_p3" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
-                    <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <node concept="2OqwBi" id="qmfyRQJlQP" role="3eO9$A">
+                  <node concept="37vLTw" id="qmfyRQJlQQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                   </node>
-                  <node concept="liA8E" id="7IH442cV$j6" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                    <node concept="37vLTw" id="7IH442cV$j7" role="37wK5m">
-                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
-                    </node>
+                  <node concept="3zA4fs" id="qmfyRQJlQR" role="2OqNvi">
+                    <ref role="3zA4av" to="9anm:2LiUEk8oQ$g" resolve="editor" />
                   </node>
                 </node>
               </node>

@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.LanguageAspect;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -40,7 +39,7 @@ public class TestPackagedLanguage_Test extends TestCase {
   public void test_testEditorModel() throws Exception {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel editor = LanguageAspect.EDITOR.get(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class));
+        SModel editor = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d9a25d3-02b8-4024-afe2-bb9457a02cbf(testPackagedLanguage)"), Language.class), "editor");
         Assert.assertNotNull(editor);
         Assert.assertEquals(ListSequence.fromList(SModelOperations.roots(editor, null)).count(), 1);
       }

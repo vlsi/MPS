@@ -16,8 +16,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -57,7 +56,7 @@ public class ContextAssistantMenuReference_Default_Editor extends DefaultNodeEdi
       return null;
     }
 
-    SModel editorModel = LanguageAspect.EDITOR.get((Language) SNodeOperations.getModel(concept).getModule());
+    SModel editorModel = SModuleOperations.getAspect(SNodeOperations.getModel(concept).getModule(), "editor");
     if (editorModel == null) {
       return null;
     }

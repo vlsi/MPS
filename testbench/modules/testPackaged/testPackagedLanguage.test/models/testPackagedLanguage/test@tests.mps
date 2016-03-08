@@ -25,6 +25,7 @@
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
+    <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -39,10 +40,6 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -264,16 +261,10 @@
                     <property role="3TUv4t" value="false" />
                     <property role="TrG5h" value="editor" />
                     <node concept="H_c77" id="1J9x1z49F0s" role="1tU5fm" />
-                    <node concept="2OqwBi" id="1J9x1z49F0t" role="33vP2m">
-                      <node concept="Rm8GO" id="1J9x1z49F6x" role="2Oq$k0">
-                        <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
-                        <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                      </node>
-                      <node concept="liA8E" id="1J9x1z49F0v" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                        <node concept="3rNLEe" id="1J9x1z49F0w" role="37wK5m">
-                          <property role="3rM5sR" value="2d9a25d3-02b8-4024-afe2-bb9457a02cbf" />
-                        </node>
+                    <node concept="1qvjxa" id="qmfyRQIXuX" role="33vP2m">
+                      <ref role="1quiSB" to="9anm:2LiUEk8oQ$g" resolve="editor" />
+                      <node concept="3rNLEe" id="qmfyRQJj8m" role="1qvjxb">
+                        <property role="3rM5sR" value="2d9a25d3-02b8-4024-afe2-bb9457a02cbf" />
                       </node>
                     </node>
                   </node>

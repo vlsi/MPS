@@ -2724,23 +2724,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDdp" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdq" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdr" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeogq_" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdt" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdu" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.EDITOR_MODEL_ICON" resolve="EDITOR_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="axXFkGpDe9" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDea" role="3clFbG">
             <node concept="3EllGN" id="axXFkGpDeb" role="37vLTJ">
