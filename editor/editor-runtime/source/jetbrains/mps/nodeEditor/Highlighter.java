@@ -69,11 +69,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Object EVENTS_LOCK = new Object();
   private static final Object CHECKERS_LOCK = new Object();
 
-  private static final Object UPDATE_EDITOR_LOCK = new Object();
-
   private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
+
+  private final Object myUpdateEditorLock = new Object();
   private volatile boolean myPaused;
   private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
   private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
@@ -337,14 +337,15 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, checkersToRemove, activeEditors);
   }
 
-  public static void runUpdateMessagesAction(Runnable updateAction) {
-    synchronized (UPDATE_EDITOR_LOCK) {
+  public void runUpdateMessagesAction(Runnable updateAction) {
+    synchronized (myUpdateEditorLock) {
       updateAction.run();
     }
   }
 
-  public static <C> C runUpdateMessagesAction(Computable<C> updateAction) {
-    synchronized (UPDATE_EDITOR_LOCK) {
+  @Override
+  public <C> C runUpdateMessagesAction(Computable<C> updateAction) {
+    synchronized (myUpdateEditorLock) {
       return updateAction.compute();
     }
   }

@@ -133,7 +133,7 @@ public class HighlighterUpdateSession {
   }
 
   private boolean updateEditorComponent(final EditorComponent component, final boolean mainEditorMessagesChanged, final boolean applyQuickFixes) {
-    return Highlighter.runUpdateMessagesAction(new Computable<Boolean>() {
+    return myHighlighter.runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
