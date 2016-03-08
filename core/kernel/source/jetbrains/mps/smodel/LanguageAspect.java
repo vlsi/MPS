@@ -43,6 +43,7 @@ public enum LanguageAspect {
   //mostly migrated
   ACTIONS("actions", BootstrapLanguages.actionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor+Actions"),
 
+  //mostly migrated
   CONSTRAINTS("constraints", BootstrapLanguages.constraintsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Constraints"),
 
   //mostly migrated
@@ -77,6 +78,7 @@ public enum LanguageAspect {
   //mostly migrated
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
+  //mostly migrated
   TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
 
   //mostly migrated

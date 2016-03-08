@@ -18,7 +18,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.migration.MigrationDescriptorImpl" />
@@ -29,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
