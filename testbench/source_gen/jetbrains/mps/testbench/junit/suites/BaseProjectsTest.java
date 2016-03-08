@@ -18,11 +18,11 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.util.Processor;
 import org.junit.Before;
 import java.io.File;
-import com.intellij.openapi.project.DumbService;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import org.junit.After;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.ide.startup.impl.StartupManagerImpl;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.impl.ProjectUtil;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
@@ -72,31 +72,19 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
-    ourEnv.flushAllEvents();
-    DumbService.getInstance(ProjectHelper.toIdeaProject(myProject)).runWhenSmart(new Runnable() {
-      public void run() {
-      }
-    });
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-      }
-    }, ModalityState.NON_MODAL);
-    ourEnv.flushAllEvents();
   }
 
   @After
   public void closeProject() {
-    ourEnv.flushAllEvents();
+    final com.intellij.openapi.project.Project project = ((MPSProject) myProject).getProject();
+    final StartupManagerImpl instance = (StartupManagerImpl) StartupManager.getInstance(project);
+    instance.prepareForNextTest();
+
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        ProjectUtil.closeAndDispose(ProjectHelper.toIdeaProject(myProject));
+        ProjectUtil.closeAndDispose(project);
       }
     });
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-      }
-    }, ModalityState.NON_MODAL);
-    ourEnv.flushAllEvents();
   }
 
   public Project getContextProject() {
