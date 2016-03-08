@@ -528,22 +528,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="35NalRS7uCs" role="3cqZAp">
-          <node concept="3SKdUq" id="35NalRS7uFL" role="3SKWNk">
-            <property role="3SKdUp" value="works not so well on mac -- idea platform problem" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="35NalRS7uns" role="3cqZAp">
-          <node concept="37vLTI" id="35NalRS7uyP" role="3clFbG">
-            <node concept="3clFbT" id="35NalRS7u$A" role="37vLTx">
-              <property role="3clFbU" value="false" />
-            </node>
-            <node concept="10M0yZ" id="35NalRS7uql" role="37vLTJ">
-              <ref role="1PxDUh" to="ab4o:~VfsRootAccess" resolve="VfsRootAccess" />
-              <ref role="3cqZAo" to="ab4o:~VfsRootAccess.SHOULD_PERFORM_ACCESS_CHECK" resolve="SHOULD_PERFORM_ACCESS_CHECK" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="3eUNqOk7Ge1" role="3cqZAp" />
         <node concept="3cpWs8" id="5A5jZrz2zs3" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZrz2zs4" role="3cpWs9">

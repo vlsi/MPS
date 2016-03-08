@@ -5,7 +5,6 @@ package jetbrains.mps.tool.environment;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
-import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.Project;
