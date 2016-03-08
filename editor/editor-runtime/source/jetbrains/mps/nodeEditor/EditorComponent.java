@@ -218,7 +218,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
@@ -334,7 +333,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
-  private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
+  private final NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
   private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
