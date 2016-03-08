@@ -5,6 +5,9 @@ package jetbrains.mps.lang.findUsages;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
+import java.util.Collection;
+import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -36,6 +39,10 @@ public class Language extends LanguageRuntime {
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.lang.structure", "jetbrains.mps.lang.smodel", "jetbrains.mps.lang.checkedName"};
+  }
+  @Override
+  public Collection<TemplateModule> getGenerators() {
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "1759b4cc-455d-49b4-a360-8baf1f5f8bab(jetbrains.mps.lang.findUsages#1197044805809)"));
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

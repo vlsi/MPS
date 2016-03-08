@@ -24,8 +24,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
@@ -184,9 +182,6 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
-  }
-  public static TemplateModel getDescriptor(TemplateModule module) {
-    return new TemplateModelImpl(module);
   }
   private static boolean eq_x583g4_a0a0a0a0a0a0a0a31(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
