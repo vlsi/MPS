@@ -24,7 +24,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
   public TemplateModelImpl(TemplateModule module) {
     super(module);
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mapping_main(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switch_UsagesDescriptor());
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)");
   }
   public String getLongName() {
