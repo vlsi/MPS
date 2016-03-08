@@ -40,7 +40,7 @@ public class QueriesGenerated {
     return SModuleOperations.isAspect(model, "constraints") && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
   }
   public static boolean baseMappingRule_Condition_474635177870323092(final BaseMappingRuleContext _context) {
-    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "actions") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), null)).isNotEmpty();
+    return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "constraints") && ListSequence.fromList(SModelOperations.roots(((SModel) _context.getVariable("model")), null)).isNotEmpty();
   }
   public static Object propertyMacro_GetPropertyValue_1213106242798(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
