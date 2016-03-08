@@ -34,7 +34,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
+import jetbrains.mps.nodeEditor.highlighter.EditorList;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
 import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -57,8 +57,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
-import javax.swing.SwingUtilities;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -72,7 +70,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Object CHECKERS_LOCK = new Object();
 
   private static final Object UPDATE_EDITOR_LOCK = new Object();
-  private static final Object ADD_EDITORS_LOCK = new Object();
 
   private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
@@ -82,7 +79,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
 
   private volatile boolean myStopThread = false;
-  private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
@@ -96,9 +92,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
 
   private MessageBusConnection myMessageBusConnection;
-  private List<Editor> myAdditionalEditors = new ArrayList<Editor>();
-
-  private List<EditorComponent> myAdditionalEditorComponents = new ArrayList<EditorComponent>();
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
@@ -108,7 +101,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
         public void run() {
           myCheckedOnceEditors.clear();
           myInspectorMessagesCreated = false;
-          clearAdditionalEditors();
+          myEditorList.clearAdditionalEditors();
         }
       });
     }
@@ -144,6 +137,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   private Project myProject;
   private CommandWatcher myCommandWatcher = new CommandWatcher();
+  private final EditorList myEditorList;
 
   /*
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
@@ -152,7 +146,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   public Highlighter(@SuppressWarnings("UnusedParameters") MPSProject mpsProject, Project project, FileEditorManager fileEditorManager, InspectorTool inspector,
       MPSCoreComponents coreComponents) {
     myProject = project;
-    myFileEditorManager = fileEditorManager;
+    myEditorList = new EditorList(fileEditorManager);
     myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     myInspectorTool = inspector;
@@ -269,33 +263,19 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   public void addAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
-    synchronized (ADD_EDITORS_LOCK) {
-      myAdditionalEditorComponents.add(additionalEditorComponent);
-    }
+    myEditorList.addAdditionalEditorComponent(additionalEditorComponent);
   }
 
   public void removeAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
-    synchronized (ADD_EDITORS_LOCK) {
-      myAdditionalEditorComponents.remove(additionalEditorComponent);
-    }
+    myEditorList.removeAdditionalEditorComponent(additionalEditorComponent);
   }
 
   public void addAdditionalEditor(Editor additionalEditor) {
-    synchronized (ADD_EDITORS_LOCK) {
-      myAdditionalEditors.add(additionalEditor);
-    }
+    myEditorList.addAdditionalEditor(additionalEditor);
   }
 
   public void removeAdditionalEditor(Editor additionalEditor) {
-    synchronized (ADD_EDITORS_LOCK) {
-      myAdditionalEditors.remove(additionalEditor);
-    }
-  }
-
-  public void clearAdditionalEditors() {
-    synchronized (ADD_EDITORS_LOCK) {
-      myAdditionalEditors.clear();
-    }
+    myEditorList.removeAdditionalEditor(additionalEditor);
   }
 
   public void stopUpdater() {
@@ -339,7 +319,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       myCheckersToRemove.clear();
     }
 
-    final List<EditorComponent> activeEditors = getActiveEditors();
+    final List<EditorComponent> activeEditors = myEditorList.getActiveEditorsInEDT();
+
     runUpdateMessagesAction(new Runnable() {
       @Override
       public void run() {
@@ -354,36 +335,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       }
     });
     return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, checkersToRemove, activeEditors);
-  }
-
-  private List<EditorComponent> getActiveEditors() {
-    final List<Editor> list;
-    synchronized (ADD_EDITORS_LOCK) {
-      list = EditorsHelper.getSelectedEditors(myFileEditorManager);
-      if (!myAdditionalEditors.isEmpty()) {
-        list.addAll(myAdditionalEditors);
-      }
-    }
-    final List<EditorComponent> editorComponents = new ArrayList<EditorComponent>();
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          for (Editor editor : list) {
-            EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              editorComponents.add(editorComponent);
-            }
-          }
-          editorComponents.addAll(myAdditionalEditorComponents);
-        }
-      });
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      e.printStackTrace();
-    }
-    return editorComponents;
   }
 
   public static void runUpdateMessagesAction(Runnable updateAction) {
