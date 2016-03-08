@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public final class VisibilityUtil {
   private VisibilityUtil() {
@@ -61,7 +63,11 @@ public final class VisibilityUtil {
     return false;
   }
   public static String packageName(@NotNull SNode node) {
-    return SModelStereotype.withoutStereotype(SNodeOperations.getModel(node).getReference().getModelName());
+    String modelName = check_v8uv56_a0a0c(check_v8uv56_a0a0a2(check_v8uv56_a0a0a0a2(node)));
+    if (modelName == null) {
+      return "";
+    }
+    return SModelStereotype.withoutStereotype(modelName);
   }
   public static SNode topClassifier(@NotNull SNode node) {
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last();
@@ -97,5 +103,23 @@ public final class VisibilityUtil {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
+  }
+  private static String check_v8uv56_a0a0c(SModelReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelName();
+    }
+    return null;
+  }
+  private static SModelReference check_v8uv56_a0a0a2(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
+  private static SModel check_v8uv56_a0a0a0a2(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.getModel(checkedDotOperand);
+    }
+    return null;
   }
 }
