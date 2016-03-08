@@ -47,10 +47,12 @@ public enum LanguageAspect {
 
   TYPESYSTEM("typesystem", BootstrapLanguages.typesystemLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Typesystem"),
 
+  //mostly migrated
   REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
   SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), null),
 
+  //mostly migrated
   INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
   //mostly migrated
@@ -73,6 +75,7 @@ public enum LanguageAspect {
 
   TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
+  //mostly migrated
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
   public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD32/";
