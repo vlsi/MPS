@@ -2758,23 +2758,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDdv" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdw" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdx" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoic$" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdz" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDd$" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.FIND_USAGES_MODEL_ICON" resolve="FIND_USAGES_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="axXFkGpDd_" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDdA" role="3clFbG">
             <node concept="3EllGN" id="axXFkGpDdB" role="37vLTJ">

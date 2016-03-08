@@ -49,6 +49,7 @@
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="bgxn" ref="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
+    <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -3192,16 +3193,12 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="7IH442cV$kk" role="3eO9$A">
-                  <node concept="Rm8GO" id="7IH442cVAem" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="w1kc:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
-                    <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <node concept="2OqwBi" id="i22eBZRFZA" role="3eO9$A">
+                  <node concept="37vLTw" id="i22eBZRFub" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                   </node>
-                  <node concept="liA8E" id="7IH442cV$km" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                    <node concept="37vLTw" id="7IH442cV$kn" role="37wK5m">
-                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
-                    </node>
+                  <node concept="3zA4fs" id="i22eBZRGwn" role="2OqNvi">
+                    <ref role="3zA4av" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
                   </node>
                 </node>
               </node>

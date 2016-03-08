@@ -34,6 +34,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum LanguageAspect {
+  //mostly migrated
   STRUCTURE("structure", BootstrapLanguages.structureLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Structure"),
 
   EDITOR("editor", BootstrapLanguages.editorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Editor"),
@@ -52,8 +53,10 @@ public enum LanguageAspect {
 
   INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
+  //mostly migrated
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
+  //migrated, uncomment when migration is finished [compatibility] and deprecate this class
 //  PLUGIN("plugin", null, LanguageAspect.CONFLUENCE_BASE + "Plugin"){
 //    @Override
 //    public Collection<SLanguage> getMainLanguages() {

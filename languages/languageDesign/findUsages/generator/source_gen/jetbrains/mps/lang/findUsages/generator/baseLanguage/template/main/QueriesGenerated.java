@@ -8,9 +8,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,7 +31,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_7991477654791680147(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && LanguageAspect.FIND_USAGES.is(model);
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && SModuleOperations.isAspect(model, "findUsages");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "findUsages") && SModelOperations.roots(((SModel) _context.getVariable("model")), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).iterator().hasNext();

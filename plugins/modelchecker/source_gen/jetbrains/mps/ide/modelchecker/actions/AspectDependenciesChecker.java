@@ -113,7 +113,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return CORE;
       } else if (LanguageAspect.EDITOR.is(model)) {
         return EDITOR;
-      } else if (LanguageAspect.FIND_USAGES.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "findUsages")) {
         return CORE;
       } else if (LanguageAspect.INTENTIONS.is(model)) {
         return EDITOR;
