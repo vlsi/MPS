@@ -5,7 +5,7 @@
       <unit at="8,0,12,0" name="jetbrains.mps.lang.plugin.DFABuilders" />
     </file>
     <file name="Language.java">
-      <unit at="30,0,100,0" name="jetbrains.mps.lang.plugin.Language" />
+      <unit at="30,0,104,0" name="jetbrains.mps.lang.plugin.Language" />
     </file>
   </root>
 </debug-info>

@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="17,0,59,0" name="testWrappedType.Language" />
+      <unit at="17,0,63,0" name="testWrappedType.Language" />
     </file>
   </root>
 </debug-info>
