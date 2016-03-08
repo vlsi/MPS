@@ -119,7 +119,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return EDITOR;
       } else if (SModuleOperations.isAspect(model, "plugin")) {
         return WORKBENCH;
-      } else if (LanguageAspect.REFACTORINGS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "refactorings")) {
         return CORE;
       } else if (LanguageAspect.SCRIPTS.is(model)) {
         return CORE;

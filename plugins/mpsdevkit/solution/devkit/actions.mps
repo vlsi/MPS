@@ -122,6 +122,7 @@
     <import index="a0yo" ref="cac2fef0-41a6-4fcd-923f-f893d536b2ab/java:jetbrains.mps.ide.devkit.generator(jetbrains.mps.ide.mpsdevkit/)" />
     <import index="ubtp" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor.impl(MPS.IDEA/)" />
     <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
+    <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -10422,23 +10423,10 @@
             <node concept="3uibUv" id="74j1j8ZMhjZ" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
-            <node concept="2OqwBi" id="74j1j8ZMhk0" role="33vP2m">
-              <node concept="Rm8GO" id="74j1j8ZMhCh" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.REFACTORINGS" resolve="REFACTORINGS" />
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="liA8E" id="74j1j8ZMhk2" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="1eOMI4" id="74j1j8ZMhk3" role="37wK5m">
-                  <node concept="10QFUN" id="74j1j8ZMhk4" role="1eOMHV">
-                    <node concept="37vLTw" id="74j1j8ZMhk5" role="10QFUP">
-                      <ref role="3cqZAo" node="74j1j8ZMhjD" resolve="module" />
-                    </node>
-                    <node concept="3uibUv" id="74j1j8ZMhk6" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                    </node>
-                  </node>
-                </node>
+            <node concept="1qvjxa" id="7XWR6$5gKmK" role="33vP2m">
+              <ref role="1quiSB" to="6sb4:2LiUEk8oQ$g" resolve="refactorings" />
+              <node concept="37vLTw" id="7XWR6$5gKsT" role="1qvjxb">
+                <ref role="3cqZAo" node="74j1j8ZMhjD" resolve="module" />
               </node>
             </node>
           </node>

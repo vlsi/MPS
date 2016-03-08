@@ -2775,23 +2775,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDdL" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDdM" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDdN" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoryi" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDdP" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.REFACTORINGS" resolve="REFACTORINGS" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDdQ" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.REFACTORINGS_MODEL_ICON" resolve="REFACTORINGS_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="axXFkGpDdR" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDdS" role="3clFbG">
             <node concept="3EllGN" id="axXFkGpDdT" role="37vLTJ">

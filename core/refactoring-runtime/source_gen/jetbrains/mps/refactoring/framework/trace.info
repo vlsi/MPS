@@ -96,7 +96,7 @@
       <node id="4792031542972804978" at="47,98,48,72" concept="5" />
       <node id="4792031542972804984" at="49,5,50,27" concept="11" />
       <node id="4792031542972804993" at="52,70,53,59" concept="10" />
-      <node id="4792031542972805100" at="53,59,54,74" concept="10" />
+      <node id="4792031542972805100" at="53,59,54,86" concept="10" />
       <node id="4792031542972805112" at="55,37,56,52" concept="10" />
       <node id="4792031542972805118" at="56,52,57,79" concept="10" />
       <node id="4792031542972805143" at="59,13,60,203" concept="10" />
@@ -207,7 +207,7 @@
       <node id="4792031542972805195" at="97,0,129,0" concept="15" trace="getApplicability#(Ljetbrains/mps/refactoring/framework/IRefactoring;Ljava/util/Collection;)Ljetbrains/mps/refactoring/framework/RefactoringUtil/Applicability;" />
       <node id="4792031542972805132" at="58,225,92,9" concept="19" />
       <node id="4792031542972805124" at="57,79,93,7" concept="7" />
-      <node id="4792031542972805107" at="54,74,94,5" concept="8" />
+      <node id="4792031542972805107" at="54,86,94,5" concept="8" />
       <node id="4792031542972804986" at="52,0,97,0" concept="15" trace="getRefactorings#(Ljetbrains/mps/smodel/Language;)Ljava/util/Set;" />
       <scope id="4792031542972804890" at="34,28,34,28" />
       <scope id="4792031542972805600" at="205,29,205,29" />
