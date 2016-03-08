@@ -126,9 +126,9 @@ public class SNodeFactoryOperations {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       // todo: should we create check like this?
       // no such property in new child : don't copy the attribute
-//          LOG.error("couldn't copy attribute " + attribute.getContainingConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getContainingConcept().getName(), newChild);
+//          LOG.error("couldn't copy attribute " + attribute.getOwner().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getContainingConcept().getName(), newChild);
       // no such link in new child : don't copy the attribute
-//          LOG.error("couldn't copy attribute " + attribute.getContainingConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getContainingConcept().getName(), newChild);
+//          LOG.error("couldn't copy attribute " + attribute.getOwner().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getContainingConcept().getName(), newChild);
 
       SNode newAttribute = CopyUtil.copy(attribute);
       newChild.addChild(attribute.getContainmentLink(), newAttribute);

@@ -1189,52 +1189,52 @@
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602808792">
     <file name="ProblemsDialog.java">
-      <node id="4507335185602808796" at="21,0,22,0" concept="4" trace="myErrors" />
-      <node id="4507335185602808799" at="22,0,23,0" concept="4" trace="myIgnoreAction" />
-      <node id="4507335185602808807" at="23,57,24,25" concept="15" />
-      <node id="4507335185602808810" at="24,25,25,34" concept="3" />
-      <node id="4507335185602808813" at="25,34,26,0" concept="12" />
-      <node id="4507335185602808818" at="26,0,27,22" concept="3" />
-      <node id="4507335185602808822" at="27,22,28,11" concept="3" />
-      <node id="4507335185602808836" at="32,44,33,52" concept="9" />
-      <node id="4507335185602808845" at="33,52,34,82" concept="9" />
-      <node id="4507335185602808853" at="34,82,35,28" concept="3" />
-      <node id="4507335185602808858" at="35,28,36,36" concept="3" />
-      <node id="4507335185602808863" at="36,36,37,27" concept="3" />
-      <node id="4507335185602808868" at="37,27,38,49" concept="3" />
-      <node id="4507335185602808878" at="38,49,39,154" concept="3" />
-      <node id="4507335185602808886" at="39,154,40,50" concept="3" />
-      <node id="4507335185602808894" at="40,50,41,17" concept="10" />
-      <node id="4507335185602808901" at="44,38,45,59" concept="10" />
-      <node id="4507335185602808912" at="48,41,49,33" concept="3" />
-      <node id="4507335185602808930" at="52,50,53,49" concept="3" />
-      <node id="4507335185602808935" at="55,6,56,58" concept="3" />
-      <node id="4507335185602808896" at="43,0,47,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
-      <node id="4507335185602808920" at="51,0,55,0" concept="8" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="4507335185602808914" at="49,33,55,6" concept="3" />
-      <node id="4507335185602808803" at="23,0,30,0" concept="2" trace="ProblemsDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
-      <node id="4507335185602808908" at="47,0,58,0" concept="8" trace="createDefaultActions#()V" />
-      <node id="4507335185602808831" at="30,0,43,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <scope id="4507335185602808900" at="44,38,45,59" />
-      <scope id="4507335185602808925" at="52,50,53,49" />
-      <scope id="4507335185602808896" at="43,0,47,0" />
-      <scope id="4507335185602808920" at="51,0,55,0">
+      <node id="4507335185602808796" at="22,0,23,0" concept="4" trace="myErrors" />
+      <node id="4507335185602808799" at="23,0,24,0" concept="4" trace="myIgnoreAction" />
+      <node id="4507335185602808807" at="24,57,25,25" concept="15" />
+      <node id="4507335185602808810" at="25,25,26,34" concept="3" />
+      <node id="4507335185602808813" at="26,34,27,0" concept="12" />
+      <node id="4507335185602808818" at="27,0,28,22" concept="3" />
+      <node id="4507335185602808822" at="28,22,29,11" concept="3" />
+      <node id="4507335185602808836" at="33,44,34,52" concept="9" />
+      <node id="4507335185602808845" at="34,52,35,82" concept="9" />
+      <node id="4507335185602808853" at="35,82,36,28" concept="3" />
+      <node id="4507335185602808858" at="36,28,37,36" concept="3" />
+      <node id="4507335185602808863" at="37,36,38,27" concept="3" />
+      <node id="4507335185602808868" at="38,27,39,49" concept="3" />
+      <node id="4507335185602808878" at="39,49,40,154" concept="3" />
+      <node id="4507335185602808886" at="40,154,41,50" concept="3" />
+      <node id="4507335185602808894" at="41,50,42,17" concept="10" />
+      <node id="4507335185602808901" at="46,38,47,59" concept="10" />
+      <node id="4507335185602808912" at="50,41,51,33" concept="3" />
+      <node id="4507335185602808930" at="54,50,55,49" concept="3" />
+      <node id="4507335185602808935" at="57,6,58,58" concept="3" />
+      <node id="4507335185602808920" at="53,0,57,0" concept="8" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="4507335185602808896" at="44,0,49,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
+      <node id="4507335185602808914" at="51,33,57,6" concept="3" />
+      <node id="4507335185602808803" at="24,0,31,0" concept="2" trace="ProblemsDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
+      <node id="4507335185602808908" at="49,0,60,0" concept="8" trace="createDefaultActions#()V" />
+      <node id="4507335185602808831" at="31,0,44,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <scope id="4507335185602808900" at="46,38,47,59" />
+      <scope id="4507335185602808925" at="54,50,55,49" />
+      <scope id="4507335185602808920" at="53,0,57,0">
         <var name="event" id="4507335185602808923" />
       </scope>
-      <scope id="4507335185602808806" at="23,57,28,11" />
-      <scope id="4507335185602808803" at="23,0,30,0">
+      <scope id="4507335185602808806" at="24,57,29,11" />
+      <scope id="4507335185602808896" at="44,0,49,0" />
+      <scope id="4507335185602808803" at="24,0,31,0">
         <var name="errors" id="4507335185602808826" />
         <var name="project" id="4507335185602808824" />
       </scope>
-      <scope id="4507335185602808911" at="48,41,56,58" />
-      <scope id="4507335185602808835" at="32,44,41,17">
+      <scope id="4507335185602808911" at="50,41,58,58" />
+      <scope id="4507335185602808835" at="33,44,42,17">
         <var name="area" id="4507335185602808846" />
         <var name="panel" id="4507335185602808837" />
       </scope>
-      <scope id="4507335185602808908" at="47,0,58,0" />
-      <scope id="4507335185602808831" at="30,0,43,0" />
-      <unit id="4507335185602808918" at="50,25,55,5" name="jetbrains.mps.ide.java.platform.refactorings.ProblemsDialog$1" />
-      <unit id="4507335185602808792" at="20,0,59,0" name="jetbrains.mps.ide.java.platform.refactorings.ProblemsDialog" />
+      <scope id="4507335185602808908" at="49,0,60,0" />
+      <scope id="4507335185602808831" at="31,0,44,0" />
+      <unit id="4507335185602808918" at="52,25,57,5" name="jetbrains.mps.ide.java.platform.refactorings.ProblemsDialog$1" />
+      <unit id="4507335185602808792" at="21,0,61,0" name="jetbrains.mps.ide.java.platform.refactorings.ProblemsDialog" />
     </file>
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602808947">
@@ -1964,67 +1964,67 @@
   </root>
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602819743">
     <file name="AskDialog.java">
-      <node id="4507335185602819801" at="15,0,16,0" concept="4" trace="myResult" />
-      <node id="4507335185602819810" at="16,50,17,25" concept="15" />
-      <node id="4507335185602819813" at="17,25,18,19" concept="3" />
-      <node id="4507335185602819816" at="18,19,19,24" concept="3" />
-      <node id="4507335185602819819" at="19,24,20,11" concept="3" />
-      <node id="4507335185602819830" at="22,46,23,25" concept="10" />
-      <node id="4507335185602819839" at="27,44,28,32" concept="9" />
-      <node id="4507335185602819844" at="28,32,29,52" concept="3" />
-      <node id="4507335185602819851" at="29,52,30,17" concept="10" />
-      <node id="4507335185602819858" at="33,38,34,234" concept="10" />
-      <node id="4507335185602819878" at="37,32,38,46" concept="3" />
-      <node id="4507335185602819882" at="38,46,39,27" concept="3" />
-      <node id="4507335185602819745" at="42,0,43,0" concept="4" trace="myValue" />
-      <node id="4507335185602819757" at="43,78,44,18" concept="17" />
-      <node id="4507335185602819759" at="44,18,45,59" concept="3" />
-      <node id="4507335185602819767" at="47,59,48,26" concept="15" />
-      <node id="4507335185602819771" at="48,26,49,22" concept="3" />
-      <node id="4507335185602819784" at="52,48,53,25" concept="3" />
-      <node id="4507335185602819788" at="53,25,54,40" concept="3" />
-      <node id="4507335185602819797" at="63,0,65,0" concept="2" trace="DialogResults#()V" />
-      <node id="4507335185602819826" at="22,0,25,0" concept="8" trace="getResult#()Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;" />
-      <node id="4507335185602819853" at="32,0,36,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
-      <node id="4507335185602819749" at="43,0,47,0" concept="2" trace="AskDialogAction#(Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;Z)V" />
-      <node id="4507335185602819763" at="47,0,51,0" concept="2" trace="AskDialogAction#(Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;)V" />
-      <node id="4507335185602819874" at="36,0,41,0" concept="8" trace="doCancelAction#()V" />
-      <node id="4507335185602819778" at="51,0,56,0" concept="8" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="4507335185602819806" at="16,0,22,0" concept="2" trace="AskDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
-      <node id="4507335185602819834" at="25,0,32,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <scope id="4507335185602819800" at="63,21,63,21" />
-      <scope id="4507335185602819829" at="22,46,23,25" />
-      <scope id="4507335185602819857" at="33,38,34,234" />
-      <scope id="4507335185602819877" at="37,32,39,27" />
-      <scope id="4507335185602819756" at="43,78,45,59" />
-      <scope id="4507335185602819766" at="47,59,49,22" />
-      <scope id="4507335185602819783" at="52,48,54,40" />
-      <scope id="4507335185602819797" at="63,0,65,0" />
-      <scope id="4507335185602819826" at="22,0,25,0" />
-      <scope id="4507335185602819838" at="27,44,30,17">
+      <node id="4507335185602819801" at="16,0,17,0" concept="4" trace="myResult" />
+      <node id="4507335185602819810" at="17,50,18,25" concept="15" />
+      <node id="4507335185602819813" at="18,25,19,19" concept="3" />
+      <node id="4507335185602819816" at="19,19,20,24" concept="3" />
+      <node id="4507335185602819819" at="20,24,21,11" concept="3" />
+      <node id="4507335185602819830" at="23,46,24,25" concept="10" />
+      <node id="4507335185602819839" at="28,44,29,32" concept="9" />
+      <node id="4507335185602819844" at="29,32,30,52" concept="3" />
+      <node id="4507335185602819851" at="30,52,31,17" concept="10" />
+      <node id="4507335185602819858" at="35,38,36,234" concept="10" />
+      <node id="4507335185602819878" at="39,32,40,46" concept="3" />
+      <node id="4507335185602819882" at="40,46,41,27" concept="3" />
+      <node id="4507335185602819745" at="44,0,45,0" concept="4" trace="myValue" />
+      <node id="4507335185602819757" at="45,78,46,18" concept="17" />
+      <node id="4507335185602819759" at="46,18,47,59" concept="3" />
+      <node id="4507335185602819767" at="49,59,50,26" concept="15" />
+      <node id="4507335185602819771" at="50,26,51,22" concept="3" />
+      <node id="4507335185602819784" at="54,48,55,25" concept="3" />
+      <node id="4507335185602819788" at="55,25,56,40" concept="3" />
+      <node id="4507335185602819797" at="65,0,67,0" concept="2" trace="DialogResults#()V" />
+      <node id="4507335185602819826" at="23,0,26,0" concept="8" trace="getResult#()Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;" />
+      <node id="4507335185602819749" at="45,0,49,0" concept="2" trace="AskDialogAction#(Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;Z)V" />
+      <node id="4507335185602819763" at="49,0,53,0" concept="2" trace="AskDialogAction#(Ljetbrains/mps/ide/java/platform/refactorings/AskDialog/DialogResults;)V" />
+      <node id="4507335185602819853" at="33,0,38,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
+      <node id="4507335185602819874" at="38,0,43,0" concept="8" trace="doCancelAction#()V" />
+      <node id="4507335185602819778" at="53,0,58,0" concept="8" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="4507335185602819806" at="17,0,23,0" concept="2" trace="AskDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
+      <node id="4507335185602819834" at="26,0,33,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <scope id="4507335185602819800" at="65,21,65,21" />
+      <scope id="4507335185602819829" at="23,46,24,25" />
+      <scope id="4507335185602819857" at="35,38,36,234" />
+      <scope id="4507335185602819877" at="39,32,41,27" />
+      <scope id="4507335185602819756" at="45,78,47,59" />
+      <scope id="4507335185602819766" at="49,59,51,22" />
+      <scope id="4507335185602819783" at="54,48,56,40" />
+      <scope id="4507335185602819797" at="65,0,67,0" />
+      <scope id="4507335185602819826" at="23,0,26,0" />
+      <scope id="4507335185602819838" at="28,44,31,17">
         <var name="panel" id="4507335185602819840" />
       </scope>
-      <scope id="4507335185602819809" at="16,50,20,11" />
-      <scope id="4507335185602819853" at="32,0,36,0" />
-      <scope id="4507335185602819749" at="43,0,47,0">
+      <scope id="4507335185602819809" at="17,50,21,11" />
+      <scope id="4507335185602819749" at="45,0,49,0">
         <var name="isDefault" id="4507335185602819752" />
         <var name="value" id="4507335185602819750" />
       </scope>
-      <scope id="4507335185602819763" at="47,0,51,0">
+      <scope id="4507335185602819763" at="49,0,53,0">
         <var name="value" id="4507335185602819775" />
       </scope>
-      <scope id="4507335185602819874" at="36,0,41,0" />
-      <scope id="4507335185602819778" at="51,0,56,0">
+      <scope id="4507335185602819853" at="33,0,38,0" />
+      <scope id="4507335185602819874" at="38,0,43,0" />
+      <scope id="4507335185602819778" at="53,0,58,0">
         <var name="event" id="4507335185602819781" />
       </scope>
-      <scope id="4507335185602819806" at="16,0,22,0">
+      <scope id="4507335185602819806" at="17,0,23,0">
         <var name="project" id="4507335185602819821" />
         <var name="text" id="4507335185602819823" />
       </scope>
-      <scope id="4507335185602819834" at="25,0,32,0" />
-      <unit id="4507335185602819791" at="57,0,66,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog$DialogResults" />
-      <unit id="4507335185602819744" at="41,0,57,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog$AskDialogAction" />
-      <unit id="4507335185602819743" at="14,0,67,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog" />
+      <scope id="4507335185602819834" at="26,0,33,0" />
+      <unit id="4507335185602819791" at="59,0,68,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog$DialogResults" />
+      <unit id="4507335185602819744" at="43,0,59,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog$AskDialogAction" />
+      <unit id="4507335185602819743" at="15,0,69,0" name="jetbrains.mps.ide.java.platform.refactorings.AskDialog" />
     </file>
   </root>
 </debug-info>

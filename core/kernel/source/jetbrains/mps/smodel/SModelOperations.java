@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -142,15 +140,6 @@ public class SModelOperations {
   }
 
   /**
-   * @deprecated xxxIds is confusing, use {@link #getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel)} instead
-   */
-  @NotNull
-  @ToRemove(version = 3.3)
-  public static Set<SLanguage> getAllImportedLanguageIds(SModel model) {
-    return getAllLanguageImports(model);
-  }
-
-  /**
    * Tell used languages of a model the way user specified them in model dependencies.
    * Doesn't look at actual model content (i.e. what concept instances are there).
    * <p>
@@ -186,25 +175,6 @@ public class SModelOperations {
       references.add(importElement.getModelReference());
     }
     return Collections.unmodifiableList(references);
-  }
-
-  /**
-   * @deprecated use {@link ModelDependencyScanner#getCrossModelReferences()} instead. This method is poorly named.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
-    Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : SNodeUtil.getDescendants(sModel)) {
-      for (SReference reference : node.getReferences()) {
-        SModelReference targetModel = reference.getTargetSModelReference();
-        if (sModel.getReference().equals(targetModel)) continue;
-        if (targetModel == null || result.contains(targetModel)) continue;
-
-        result.add(targetModel);
-      }
-    }
-    return result;
   }
 
   @NotNull

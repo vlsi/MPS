@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,23 +25,14 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Immutable
 public class SModelPropertyEvent extends SModelEvent {
-  private final String myPropertyName;
+  private final SProperty myProperty;
   private final SNode myNode;
   private final String myOldPropertyValue;
   private final String myNewPropertyValue;
 
   public SModelPropertyEvent(SModel model, SProperty property, SNode node, String oldPropertyValue, String newPropertyValue) {
-    this(model, property.getName(), node, oldPropertyValue, newPropertyValue);
-  }
-
-  /**
-   * @deprecated use {@link #SModelPropertyEvent(org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.language.SProperty, org.jetbrains.mps.openapi.model.SNode, String, String)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModelPropertyEvent(SModel model, String propertyName, SNode node, String oldPropertyValue, String newPropertyValue) {
     super(model);
-    myPropertyName = propertyName;
+    myProperty = property;
     myNode = node;
     myOldPropertyValue = oldPropertyValue;
     myNewPropertyValue = newPropertyValue;
@@ -54,7 +44,7 @@ public class SModelPropertyEvent extends SModelEvent {
   }
 
   public String getPropertyName() {
-    return myPropertyName;
+    return myProperty.getName();
   }
 
   public SNode getNode() {

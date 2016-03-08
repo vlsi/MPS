@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +31,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,7 +38,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static jetbrains.mps.util.SNodeOperations.getDebugText;
 
@@ -49,7 +45,7 @@ import static jetbrains.mps.util.SNodeOperations.getDebugText;
  * As a tribute to legacy code, we do allow access to constant and meta-info objects of a node without read access.
  * It's not encouraged for a new code, though, and might change in future, that's why it's stated here and not in openapi.SNode
  */
-public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
+public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
@@ -107,18 +103,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     } else {
       insertChildBefore(role, child, anchor.getNextSibling());
     }
-  }
-
-  @Override
-  public final void attach(@NotNull SRepository repo) {
-    // final to prevent accidental dependencies to SNodeBase which is scheduled for removal
-    // no-op, its functionality is handles by SNodeOwner
-  }
-
-  @Override
-  public final void detach() {
-    // final to prevent accidental dependencies to SNodeBase which is scheduled for removal
-    // no-op, its functionality is handles by SNodeOwner
   }
 
   protected final void assertCanRead() {
@@ -486,15 +470,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     // and in ChildrenIterator, which I don't want to make non-static, nor don't want to pass SNodeOwner in there right now
     // FIXME revisit uses of this method, re-consider approach. E.g. perhaps SModel shall keep SNodeOwner instance?
     return myOwner;
-  }
-
-  /**
-   * @deprecated use <code>getConcept().getDeclarationNode()</code> instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public org.jetbrains.mps.openapi.model.SNode getConceptDeclarationNode() {
-    return getConcept().getDeclarationNode();
   }
 
   //--------private-------

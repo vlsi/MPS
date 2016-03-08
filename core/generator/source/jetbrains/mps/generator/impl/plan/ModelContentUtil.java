@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -33,12 +32,6 @@ import java.util.Set;
  * evgeny, 4/28/11
  */
 public class ModelContentUtil {
-
-  public static Collection<String> getUsedLanguageNamespacesInTemplateModel(SModel model) {
-    TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
-    templateModelScanner.scan();
-    return templateModelScanner.getTargetLanguages();
-  }
 
   public static Collection<SLanguage> getUsedLanguages(@NotNull SModel model) {
     Set<SLanguage> namespaces = new HashSet<SLanguage>();

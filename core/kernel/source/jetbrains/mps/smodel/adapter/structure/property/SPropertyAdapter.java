@@ -47,12 +47,6 @@ public abstract class SPropertyAdapter implements SProperty {
 
   @NotNull
   @Override
-  public SAbstractConcept getContainingConcept() {
-    return getOwner();
-  }
-
-  @NotNull
-  @Override
   public SAbstractConcept getOwner() {
     SConceptId id = getId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);

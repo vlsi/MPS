@@ -25,7 +25,6 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
@@ -2463,7 +2462,7 @@
                               <ref role="359W_F" to="tpee:fWEKbgp" />
                             </node>
                             <node concept="liA8E" id="13$TqNLKUgo" role="2OqNvi">
-                              <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
+                              <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                             </node>
                           </node>
                           <node concept="liA8E" id="7k6J8c3tiuc" role="2OqNvi">
@@ -2481,7 +2480,7 @@
                                 <ref role="359W_F" to="tpee:g7HQHFn" />
                               </node>
                               <node concept="liA8E" id="13$TqNLKTqV" role="2OqNvi">
-                                <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
+                                <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                               </node>
                             </node>
                             <node concept="liA8E" id="7k6J8c3tiuj" role="2OqNvi">
@@ -2498,7 +2497,7 @@
                                 <ref role="359W_F" to="tpee:gXzkM_H" />
                               </node>
                               <node concept="liA8E" id="13$TqNLKU1f" role="2OqNvi">
-                                <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
+                                <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                               </node>
                             </node>
                             <node concept="liA8E" id="7k6J8c3tiup" role="2OqNvi">
@@ -2540,7 +2539,7 @@
                     <node concept="2OqwBi" id="7k6J8c3tiuA" role="3uHU7w">
                       <node concept="2OqwBi" id="7k6J8c3tiuB" role="2Oq$k0">
                         <node concept="liA8E" id="13$TqNLKUp8" role="2OqNvi">
-                          <ref role="37wK5l" to="c17a:~SConceptFeature.getName():java.lang.String" resolve="getName" />
+                          <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                         </node>
                         <node concept="359W_D" id="13$TqNLKUk2" role="2Oq$k0">
                           <ref role="359W_E" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />

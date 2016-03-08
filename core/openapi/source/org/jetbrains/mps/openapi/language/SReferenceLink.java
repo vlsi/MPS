@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,34 +30,6 @@ public interface SReferenceLink extends SAbstractLink {
   @Deprecated //use SConceptFeature.getPresentableName
   //ToRemove after 3.3
   String getRoleName();
-
-  /**
-   * Return the concept that contains the declaration of this reference.
-   * Note that if you've got some reference from a concept, this method can return its [concept's] ancestor, not
-   * exactly the concept from which you've obtained this reference.
-   * @deprecated use {@link #getOwner()} instead
-   */
-  @NotNull
-  @Deprecated
-  // ToRemove(version = 3.3)
-  SAbstractConcept getContainingConcept();
-
-  /**
-   * The concept for the nodes that this link points to.
-   */
-  @NotNull
-  SAbstractConcept getTargetConcept();
-
-  /**
-   * True for references, false for containment relationships.
-   */
-  @Deprecated
-  boolean isReference();
-
-  /**
-   * This link may contain no elements.
-   */
-  boolean isOptional();
 
   /**
    * Instance nodes can contain more than one target element.

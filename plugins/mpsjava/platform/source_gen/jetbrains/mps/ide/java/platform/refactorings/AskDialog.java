@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.awt.event.ActionEvent;
 
@@ -30,6 +31,7 @@ public class AskDialog extends DialogWrapper {
     return panel;
   }
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{new AskDialog.AskDialogAction(AskDialog.DialogResults.Replace, true), new AskDialog.AskDialogAction(AskDialog.DialogResults.Skip), new AskDialog.AskDialogAction(AskDialog.DialogResults.All), getCancelAction()};
   }

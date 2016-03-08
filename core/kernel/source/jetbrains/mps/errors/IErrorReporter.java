@@ -19,7 +19,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
@@ -30,20 +29,6 @@ public interface IErrorReporter {
 
   @Nullable
   SNodeReference getRuleNode();
-
-  /**
-   * @deprecated use {@link #getRuleNode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public String getRuleId();
-
-  /**
-   * @deprecated use {@link #getRuleNode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public String getRuleModel();
 
   /**
    * replace with alternative that takes SNodeReference to the rule

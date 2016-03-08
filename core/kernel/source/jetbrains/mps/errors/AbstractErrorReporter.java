@@ -100,14 +100,4 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     return myRuleNode;
   }
 
-  @Override
-  public String getRuleId() {
-    return myRuleNode == null ? null : myRuleNode.getNodeId().toString();
-  }
-
-  @Override
-  public String getRuleModel() {
-    return myRuleNode == null ? null : myRuleNode.getModelReference().toString();
-  }
-
 }

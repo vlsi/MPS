@@ -960,7 +960,11 @@
             </node>
             <node concept="3clFbF" id="2GTIO3dzsX6" role="3cqZAp">
               <node concept="1rXfSq" id="2GTIO3dzsX5" role="3clFbG">
-                <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+                <ref role="37wK5l" to="g3l6:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState,jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+                <node concept="Rm8GO" id="3if7C7GZwpm" role="37wK5m">
+                  <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                  <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                </node>
                 <node concept="Rm8GO" id="3if7C7GZwpn" role="37wK5m">
                   <ref role="Rm8GQ" to="4it6:~ModelLoadingState.NOT_LOADED" resolve="NOT_LOADED" />
                   <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />

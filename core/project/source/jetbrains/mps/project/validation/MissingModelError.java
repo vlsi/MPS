@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -40,7 +40,8 @@ public class MissingModelError extends ValidationProblem {
 
   @Override
   public boolean canFix() {
-    return !SModelOperations.getUsedImportedModels(myModel).contains(myReference);
+    final ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).walk(myModel);
+    return !mds.getCrossModelReferences().contains(myReference);
   }
 
   @Override

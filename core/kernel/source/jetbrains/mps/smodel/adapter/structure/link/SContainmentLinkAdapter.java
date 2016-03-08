@@ -64,12 +64,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @NotNull
   @Override
-  public SAbstractConcept getContainingConcept() {
-    return getOwner();
-  }
-
-  @NotNull
-  @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getOwner() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);

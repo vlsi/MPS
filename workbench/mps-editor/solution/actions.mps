@@ -1209,7 +1209,7 @@
                       <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
                     </node>
                     <node concept="liA8E" id="1Oj45PFeNL2" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SContainmentLink.isMultiple():boolean" resolve="isMultiple" />
+                      <ref role="37wK5l" to="c17a:~SAbstractLink.isMultiple():boolean" resolve="isMultiple" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="3M9DpEEa3$t" role="3clFbx">

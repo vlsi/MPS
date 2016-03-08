@@ -21,29 +21,13 @@ import org.jetbrains.annotations.NotNull;
  * Member of a concept, named.
  */
 public interface SConceptFeature extends SNamedElement {
-  /**
-   * Return the concept that contains the declaration of this concept feature.
-   * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
-   * exactly the concept from which you've obtained this property.
-   * @deprecated use {@link #getOwner()} instead
-   */
-  @NotNull
-  @Deprecated
-  // ToRemove(version = 3.3)
-  SAbstractConcept getContainingConcept();
 
   /**
+   * Retrieves concept where the feature has been declared. Note, this concept doesn't necessarily match concept
+   * of the node when this feature has been obtained through node's meta-model accessors, instead, the feature may
+   * originate from one of concept's ancestors.
    * @return concept this feature is declared in
    */
   @NotNull
   SAbstractConcept getOwner();
-
-  /**
-   * Presentation of the member for an end-user. Unlike identity, the name is deemed user-friendly
-   * and shall not be used for persistence.
-   * @return name of the member
-   */
-  @NotNull
-  @Override
-  String getName();
 }

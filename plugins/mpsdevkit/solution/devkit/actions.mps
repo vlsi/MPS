@@ -12592,12 +12592,12 @@
               <node concept="3clFbJ" id="2erTeUVF2fM" role="3cqZAp">
                 <node concept="3clFbS" id="2erTeUVF2fN" role="3clFbx">
                   <node concept="1DcWWT" id="2erTeUVF2fO" role="3cqZAp">
-                    <node concept="2YIFZM" id="3TEgbCBPeZ9" role="1DdaDG">
-                      <ref role="37wK5l" to="w1kc:~SModelOperations.getAllImportedLanguageIds(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllImportedLanguageIds" />
+                    <node concept="2YIFZM" id="1IJSK3U16vW" role="1DdaDG">
+                      <ref role="37wK5l" to="w1kc:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
                       <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-                      <node concept="2OqwBi" id="3TEgbCBPjmQ" role="37wK5m">
-                        <node concept="1beSmn" id="3TEgbCBPhUK" role="2Oq$k0" />
-                        <node concept="I4A8Y" id="3TEgbCBPl3u" role="2OqNvi" />
+                      <node concept="2OqwBi" id="1IJSK3U16vX" role="37wK5m">
+                        <node concept="1beSmn" id="1IJSK3U16vY" role="2Oq$k0" />
+                        <node concept="I4A8Y" id="1IJSK3U16vZ" role="2OqNvi" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="2erTeUVF2fV" role="2LFqv$">

@@ -20,16 +20,12 @@ import jetbrains.mps.smodel.IllegalModelAccessException;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -314,38 +310,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     // intentionally no-op
   }
 
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void fireNodeRead(jetbrains.mps.smodel.SNode node) {
-    myEventDispatch.fireNodeRead(node);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void fireReferenceRead(jetbrains.mps.smodel.SNode node, String role) {
-    SReferenceLink ref = ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role);
-    myEventDispatch.fireReferenceRead(node, ref);
-  }
-
-  /**
-   * It's unlikely subclasses or clients of the class shall forcefully fire events.
-   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.SModelBase contract
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public void firePropertyRead(jetbrains.mps.smodel.SNode node, String propertyName) {
-    SProperty prop = ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName);
-    myEventDispatch.firePropertyRead(node, prop);
-  }
-
   protected final void fireBeforeModelRenamed(SModelReference newName) {
     SModule module = getModule();
     if (module instanceof SModuleBase) {
@@ -358,22 +322,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (module instanceof SModuleBase) {
       ((SModuleBase) module).fireModelRenamed(this, oldName);
     }
-  }
-
-  /**
-   * @deprecated this method used to change state AND to send notifications, now we split these into
-   * independent operations, {@link #setLoadingState(ModelLoadingState)} and {@link #fireModelStateChanged(ModelLoadingState, ModelLoadingState)}
-   */
-  @Override
-  @Deprecated
-  @ToRemove(version = 3.3)
-  protected void fireModelStateChanged(ModelLoadingState newState) {
-    ModelLoadingState oldState = getLoadingState();
-    if (oldState != newState) {
-      // mimic pre-MPS 3.3 behavior, change state on fire
-      setLoadingState(newState);
-    }
-    fireModelStateChanged(oldState, newState);
   }
 
   /**

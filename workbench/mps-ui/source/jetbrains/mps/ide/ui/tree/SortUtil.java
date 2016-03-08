@@ -16,9 +16,6 @@
 package jetbrains.mps.ide.ui.tree;
 
 import jetbrains.mps.extapi.model.TransientSModel;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.Comparing;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SModuleNameComparator;
 import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.util.ToStringComparator;
@@ -49,7 +46,7 @@ public class SortUtil {
     @Override
     public int compare(SModel o, SModel o1) {
       if (o == o1) return 0;
-      int result = Comparing.compare(o.getName().getLongName(), o1.getName().getLongName());
+      int result = SortUtil.compare(o.getName().getLongName(), o1.getName().getLongName());
       if (result != 0) return result;
       String str = o.getName().getStereotype();
       String str1 = o1.getName().getStereotype();
@@ -58,15 +55,15 @@ public class SortUtil {
           String[] part = str.split("_");
           String[] part1 = str1.split("_");
           for (int i = 0; i < part.length; i++) {
-            result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
+            result = SortUtil.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
             if (result != 0) return result;
           }
           return result;
         } catch (NumberFormatException ex) {
-          return Comparing.compare(str, str1);
+          return SortUtil.compare(str, str1);
         }
       } else {
-        return Comparing.compare(str, str1);
+        return SortUtil.compare(str, str1);
       }
     }
   }
@@ -89,5 +86,11 @@ public class SortUtil {
     ArrayList<SNode> rv = new ArrayList<SNode>(nodes);
     Collections.sort(rv, new SNodePresentationComparator());
     return rv;
+  }
+
+  static <T extends Comparable<T>> int compare(final T name1, final T name2) {
+    if (name1 == null) return name2 == null ? 0 : -1;
+    if (name2 == null) return 1;
+    return name1.compareTo(name2);
   }
 }

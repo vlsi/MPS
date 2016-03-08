@@ -91,7 +91,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         }
       }
       if (isNeedRootTemplate) {
-        for (SLanguage lang : SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(node))) {
+        for (SLanguage lang : SModelOperations.getAllLanguageImports(SNodeOperations.getModel(node))) {
           SModule language = lang.getSourceModule();
           if (!(language instanceof Language)) {
             continue;

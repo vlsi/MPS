@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
-import jetbrains.mps.idea.java.Constants.ConceptNames;
 import jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex;
 import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
 import jetbrains.mps.idea.java.util.ClassUtil;
@@ -187,7 +186,7 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     }
 
     FastNodeFinder fastFinder = FastNodeFinderManager.get(model);
-    List<SNode> classes = fastFinder.getNodes(ConceptNames.Classifier, true);
+    List<SNode> classes = fastFinder.getNodes(jetbrains.mps.smodel.SNodeUtil.concept_Classifier, true);
     if (classes.isEmpty()) return;
 
     for (SNode claz : classes) {

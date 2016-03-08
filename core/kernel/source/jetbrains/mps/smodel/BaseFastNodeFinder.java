@@ -96,9 +96,8 @@ public class BaseFastNodeFinder implements FastNodeFinder {
     reset();
   }
 
-  @Override
   @NotNull
-  public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
+  private List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
     myModel.getRootNodes().iterator();
 

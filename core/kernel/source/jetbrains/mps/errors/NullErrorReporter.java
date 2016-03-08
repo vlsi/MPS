@@ -16,7 +16,6 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -31,16 +30,6 @@ import java.util.List;
 public class NullErrorReporter implements IErrorReporter {
   @Override
   public String reportError() {
-    return null;
-  }
-
-  @Override
-  public String getRuleId() {
-    return null;
-  }
-
-  @Override
-  public String getRuleModel() {
     return null;
   }
 

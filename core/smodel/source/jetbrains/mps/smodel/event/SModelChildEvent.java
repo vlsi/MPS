@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,18 +29,9 @@ public class SModelChildEvent extends SModelEvent {
   private final SNode myParent;
   private final SNode myChild;
   private final int myChildIndex;
-  private final String myChildRole;
+  private final SContainmentLink myChildRole;
 
   public SModelChildEvent(SModel model, boolean added, SNode parent, SContainmentLink role, int childIndex, SNode child) {
-    this(model, added, parent, role.getRoleName(), childIndex, child);
-  }
-
-  /**
-   * Use {@link #SModelChildEvent(org.jetbrains.mps.openapi.model.SModel, boolean, org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.language.SContainmentLink, int, org.jetbrains.mps.openapi.model.SNode)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModelChildEvent(SModel model, boolean added, SNode parent, String role, int childIndex, SNode child) {
     super(model);
     myAdded = added;
     myParent = parent;
@@ -76,7 +66,7 @@ public class SModelChildEvent extends SModelEvent {
   }
 
   public String getChildRole() {
-    return myChildRole;
+    return myChildRole.getName();
   }
 
   @Override

@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.ScrollPaneConstants;
 import java.awt.Dimension;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.awt.event.ActionEvent;
 
@@ -41,6 +42,7 @@ public class ProblemsDialog extends DialogWrapper {
     return panel;
   }
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{myIgnoreAction, getCancelAction()};
   }
