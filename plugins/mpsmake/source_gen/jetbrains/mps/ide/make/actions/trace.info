@@ -560,7 +560,7 @@
       <node id="2355088855588242313" at="46,5,47,16" concept="9" />
       <node id="5551197716189780582" at="50,96,51,77" concept="8" />
       <node id="2004991980989693896" at="53,25,54,111" concept="8" />
-      <node id="2696244552125348349" at="56,45,57,52" concept="9" />
+      <node id="2696244552125348349" at="56,45,57,64" concept="9" />
       <node id="2696244552125348361" at="60,44,61,67" concept="9" />
       <node id="8406158885482251121" at="65,7,66,148" concept="3" />
       <node id="2355088855588242313" at="37,95,40,5" concept="6" />
@@ -571,14 +571,14 @@
       <node id="2355088855588242313" at="27,0,32,0" concept="1" trace="BuildAllStructures_Action#()V" />
       <node id="2355088855588242313" at="40,5,46,5" concept="0" />
       <node id="2696244552125348327" at="54,111,63,12" concept="3" />
-      <node id="2034046503361590149" at="53,0,65,0" concept="7" trace="run#()V" />
+      <node id="466063096856561281" at="53,0,65,0" concept="7" trace="run#()V" />
       <node id="2355088855588242313" at="36,0,49,0" concept="7" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="2034046503361590145" at="51,77,65,7" concept="3" />
+      <node id="466063096856561279" at="51,77,65,7" concept="3" />
       <node id="2355088855588242313" at="49,0,68,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="2355088855588242313" at="33,32,34,16" />
       <scope id="2355088855588242313" at="38,53,39,19" />
       <scope id="2355088855588242313" at="43,22,44,21" />
-      <scope id="2696244552125348348" at="56,45,57,52" />
+      <scope id="2696244552125348348" at="56,45,57,64" />
       <scope id="2696244552125348360" at="60,44,61,67" />
       <scope id="2355088855588242313" at="27,38,30,40" />
       <scope id="2696244552125348347" at="56,0,59,0">
@@ -593,10 +593,10 @@
       </scope>
       <scope id="2355088855588242313" at="27,0,32,0" />
       <scope id="2355088855588242313" at="37,95,47,16" />
-      <scope id="2034046503361590150" at="53,25,63,12">
+      <scope id="466063096856561283" at="53,25,63,12">
         <var name="projectModules" id="2004991980989693897" />
       </scope>
-      <scope id="2034046503361590149" at="53,0,65,0" />
+      <scope id="466063096856561281" at="53,0,65,0" />
       <scope id="2355088855588242313" at="36,0,49,0">
         <var name="_params" id="2355088855588242313" />
         <var name="event" id="2355088855588242313" />
@@ -610,7 +610,7 @@
       </scope>
       <unit id="2696244552125348347" at="55,152,59,9" name="jetbrains.mps.ide.make.actions.BuildAllStructures_Action$2" />
       <unit id="2696244552125348359" at="59,21,63,9" name="jetbrains.mps.ide.make.actions.BuildAllStructures_Action$2" />
-      <unit id="2034046503361590149" at="52,84,65,5" name="jetbrains.mps.ide.make.actions.BuildAllStructures_Action$1" />
+      <unit id="466063096856561281" at="52,100,65,5" name="jetbrains.mps.ide.make.actions.BuildAllStructures_Action$1" />
       <unit id="2355088855588242313" at="25,0,69,0" name="jetbrains.mps.ide.make.actions.BuildAllStructures_Action" />
     </file>
   </root>

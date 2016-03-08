@@ -41,6 +41,7 @@ import jetbrains.mps.lang.structure.behavior.ConceptDeclaration__BehaviorDescrip
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -651,7 +652,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7923290658387314672(final SourceSubstituteMacroNodesContext _context) {
     SModel behaviorModel = _context.getOriginalInputModel();
     Language language = Language.getLanguageForLanguageAspect(behaviorModel);
-    SModel structureModel = LanguageAspect.STRUCTURE.get(language);
+    SModel structureModel = SModuleOperations.getAspect(language, "structure");
     return SModelOperations.nodes(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
   public static Iterable<SNode> sourceNodesQuery_4279359955659694569(final SourceSubstituteMacroNodesContext _context) {
