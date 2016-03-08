@@ -2534,13 +2534,23 @@
       <node id="6868777471677432385" at="34,216,35,138" concept="4" />
       <node id="6868777471677432385" at="35,138,36,38" concept="4" />
       <node id="6868777471677432385" at="36,38,37,70" concept="4" />
+      <node id="9161080218840690644" at="42,7,43,29" concept="9" />
+      <node id="9161080218840690644" at="44,45,45,33" concept="9" />
+      <node id="9161080218840690644" at="45,33,46,56" concept="9" />
+      <node id="9161080218840690644" at="46,56,47,66" concept="9" />
+      <node id="9161080218840690644" at="47,66,48,138" concept="4" />
+      <node id="9161080218840690644" at="48,138,49,38" concept="4" />
+      <node id="9161080218840690644" at="49,38,50,70" concept="4" />
       <node id="6868777471677432374" at="17,0,19,0" concept="2" trace="RuleAfterDotExpression#()V" />
       <node id="6868777471677432374" at="24,0,27,0" concept="8" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6868777471677432374" at="19,0,24,0" concept="8" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6868777471677432385" at="30,180,38,9" concept="7" />
+      <node id="9161080218840690644" at="43,29,51,9" concept="7" />
       <node id="6868777471677432385" at="28,345,39,7" concept="1" />
+      <node id="9161080218840690644" at="41,99,52,7" concept="1" />
       <node id="6868777471677432377" at="27,53,40,5" concept="7" />
-      <node id="6868777471677432374" at="27,0,42,0" concept="8" trace="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9161080218840690551" at="40,5,53,5" concept="7" />
+      <node id="6868777471677432374" at="27,0,55,0" concept="8" trace="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="6868777471677432374" at="17,35,17,35" />
       <scope id="6868777471677432374" at="24,50,25,153" />
       <scope id="6868777471677432374" at="17,0,19,0" />
@@ -2557,16 +2567,25 @@
         <var name="instruction" id="6868777471677432385" />
         <var name="position" id="6868777471677432385" />
       </scope>
+      <scope id="9161080218840690644" at="44,45,50,70">
+        <var name="before" id="9161080218840690644" />
+        <var name="instruction" id="9161080218840690644" />
+        <var name="position" id="9161080218840690644" />
+      </scope>
       <scope id="6868777471677432385" at="29,7,38,9">
         <var name="object" id="6868777471677432385" />
       </scope>
+      <scope id="9161080218840690644" at="42,7,51,9">
+        <var name="object" id="9161080218840690644" />
+      </scope>
       <scope id="6868777471677432384" at="28,345,39,7" />
-      <scope id="6868777471677432376" at="27,53,40,5" />
-      <scope id="6868777471677432374" at="27,0,42,0">
+      <scope id="9161080218840690553" at="41,99,52,7" />
+      <scope id="6868777471677432376" at="27,53,53,5" />
+      <scope id="6868777471677432374" at="27,0,55,0">
         <var name="node" id="6868777471677432374" />
         <var name="o" id="6868777471677432374" />
       </scope>
-      <unit id="6868777471677432374" at="16,0,43,0" name="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
+      <unit id="6868777471677432374" at="16,0,56,0" name="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/6868777471677432394">
