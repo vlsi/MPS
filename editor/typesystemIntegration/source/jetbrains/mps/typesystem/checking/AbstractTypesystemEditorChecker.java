@@ -55,6 +55,8 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
   protected boolean myMessagesChanged = false;
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
+  // keep the "dramatical" flag until the next call to createMessages()
+  private boolean myForceDramatical = false;
 
   protected abstract void doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext, SNode rootNode,
       Set<EditorMessage> messages, Cancellable cancellable, boolean applyQuickFixes);
@@ -67,6 +69,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   @Override
   public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable, final boolean applyQuickFixes) {
     myMessagesChanged = false;
+    myForceDramatical = false;
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(final TypeCheckingContext context) {
@@ -84,7 +87,8 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
 
   @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
-    return !events.isEmpty(); //processed in another place
+    myForceDramatical |= !events.isEmpty();
+    return myForceDramatical; //processed in another place
   }
 
   @Override
