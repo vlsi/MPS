@@ -24,7 +24,7 @@ public class TestSimpleAttribute_Editor extends DefaultNodeEditor {
       bigCell.setBig(true);
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestSimpleAttribute_Editor._StyleParameter_QueryFunction_cfre1m_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestSimpleAttribute_Editor._StyleParameter_QueryFunction_cfre1m_a0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

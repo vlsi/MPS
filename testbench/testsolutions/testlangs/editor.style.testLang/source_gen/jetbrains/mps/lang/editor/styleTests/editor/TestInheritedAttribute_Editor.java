@@ -24,7 +24,7 @@ public class TestInheritedAttribute_Editor extends DefaultNodeEditor {
       bigCell.setBig(true);
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestInheritedAttribute_Editor._StyleParameter_QueryFunction_twhn5o_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestInheritedAttribute_Editor._StyleParameter_QueryFunction_twhn5o_a0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

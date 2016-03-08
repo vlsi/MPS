@@ -56,6 +56,8 @@ public class LambdaApplication_Editor extends DefaultNodeEditor {
         editorCell.setRole("function");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
       editorCell.getStyle().putAll(style);
     }

@@ -21,7 +21,7 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_58m68g_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a0a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_58m68g_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_58m68g_b0(editorContext, node));
@@ -41,8 +41,8 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_58m68g_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a1b0(editorContext, node));
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a2b0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_58m68g_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_58m68g_b1a(editorContext, node));
@@ -59,8 +59,8 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "re");
     editorCell.setCellId("Constant_58m68g_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a0a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a1a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a0a1a(editorContext, node));
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), 0, TestConceptWithStyleAttributes_Editor._StyleParameter_QueryFunction_58m68g_a1a1a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

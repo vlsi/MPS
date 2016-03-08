@@ -4,16 +4,20 @@ package jetbrains.mps.lang.editor.styleTests.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class TestStylesheet_StyleSheet {
   public static void apply_priorityStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 1, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0c((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 1, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0c(editorContext, node));
   }
   public static void apply_priorityStyleCopy(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       TestStylesheet_StyleSheet.apply_priorityStyle(styleToPut, editorCell);
@@ -21,9 +25,13 @@ public class TestStylesheet_StyleSheet {
     }
   }
   public static void apply_hugePriorityStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0e((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0e(editorContext, node));
   }
   public static void apply_unapplyPriorityStyleCopy(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       TestStylesheet_StyleSheet.apply_priorityStyleCopy(styleToPut, editorCell);
