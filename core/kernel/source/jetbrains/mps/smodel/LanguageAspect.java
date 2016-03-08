@@ -45,6 +45,7 @@ public enum LanguageAspect {
 
   BEHAVIOR("behavior", BootstrapLanguages.behaviorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Behavior"),
 
+  //mostly migrated
   TYPESYSTEM("typesystem", BootstrapLanguages.typesystemLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Typesystem"),
 
   //mostly migrated
