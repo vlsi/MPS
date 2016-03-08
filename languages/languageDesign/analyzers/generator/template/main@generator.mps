@@ -12,6 +12,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <generationPart ref="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -34,6 +35,7 @@
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
     <import index="lijz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency.modules()" />
+    <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -303,6 +305,11 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
+      <concept id="2030416617761226491" name="jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation" flags="nn" index="3zA4fs">
+        <reference id="2030416617761226680" name="aspect" index="3zA4av" />
       </concept>
     </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
@@ -672,21 +679,6 @@
         <node concept="3clFbS" id="1_Iic4WSp7x" role="2VODD2">
           <node concept="3clFbF" id="1_Iic4WSpdb" role="3cqZAp">
             <node concept="1Wc70l" id="4UrKinLj41h" role="3clFbG">
-              <node concept="2OqwBi" id="52UGxk5rmjK" role="3uHU7B">
-                <node concept="Rm8GO" id="1_Iic4WSpvm" role="2Oq$k0">
-                  <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-                  <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-                <node concept="liA8E" id="52UGxk5rmjM" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                  <node concept="2JrnkZ" id="52UGxk5rmjN" role="37wK5m">
-                    <node concept="2OqwBi" id="52UGxk5rmjO" role="2JrQYb">
-                      <node concept="1iwH7S" id="52UGxk5rmjP" role="2Oq$k0" />
-                      <node concept="1st3f0" id="52UGxk5rmjQ" role="2OqNvi" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="2OqwBi" id="4UrKinLj4g_" role="3uHU7w">
                 <node concept="2OqwBi" id="4UrKinLj5DD" role="2Oq$k0">
                   <node concept="2OqwBi" id="4UrKinLj4gB" role="2Oq$k0">
@@ -698,6 +690,15 @@
                   </node>
                 </node>
                 <node concept="3GX2aA" id="4UrKinLj4gF" role="2OqNvi" />
+              </node>
+              <node concept="2OqwBi" id="1ZE6IpOfUCq" role="3uHU7B">
+                <node concept="2OqwBi" id="1ZE6IpOfVSI" role="2Oq$k0">
+                  <node concept="1iwH7S" id="1ZE6IpOfVRk" role="2Oq$k0" />
+                  <node concept="1st3f0" id="1ZE6IpOfVUL" role="2OqNvi" />
+                </node>
+                <node concept="3zA4fs" id="1ZE6IpOfV6j" role="2OqNvi">
+                  <ref role="3zA4av" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
+                </node>
               </node>
             </node>
           </node>

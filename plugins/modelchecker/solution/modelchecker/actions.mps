@@ -55,6 +55,7 @@
     <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="n1pe" ref="r:db7af0ad-3d1a-4f64-a9bf-f3dc73570877(jetbrains.mps.lang.script.plugin)" />
+    <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -3156,16 +3157,12 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="7IH442cV$hW" role="3eO9$A">
-                  <node concept="Rm8GO" id="7IH442cV_iH" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-                    <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <node concept="2OqwBi" id="1ZE6IpOfUCq" role="3eO9$A">
+                  <node concept="37vLTw" id="1ZE6IpOfU9R" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                   </node>
-                  <node concept="liA8E" id="7IH442cV$hY" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                    <node concept="37vLTw" id="7IH442cV$hZ" role="37wK5m">
-                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
-                    </node>
+                  <node concept="3zA4fs" id="1ZE6IpOfV6j" role="2OqNvi">
+                    <ref role="3zA4av" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
                   </node>
                 </node>
               </node>

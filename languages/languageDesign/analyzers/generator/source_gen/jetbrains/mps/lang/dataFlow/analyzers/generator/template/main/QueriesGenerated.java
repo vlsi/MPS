@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -35,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1832482093173674464(final CreateRootRuleContext _context) {
-    return LanguageAspect.DATA_FLOW.is(_context.getOriginalInputModel()) && ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))).isNotEmpty();
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "dataFlow") && ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))).isNotEmpty();
   }
   public static boolean dropRootRule_Condition_8337746954995362584(final DropRootRuleContext _context) {
     SModule module = _context.getOriginalInputModel().getModule();

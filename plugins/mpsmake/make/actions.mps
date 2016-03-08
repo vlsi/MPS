@@ -91,6 +91,7 @@
     <import index="8okf" ref="r:dbde341a-c09d-4dfc-8b0a-5ed08f460369(jetbrains.mps.lang.intentions.plugin)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="n1pe" ref="r:db7af0ad-3d1a-4f64-a9bf-f3dc73570877(jetbrains.mps.lang.script.plugin)" />
+    <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
@@ -11876,16 +11877,10 @@
                                 <node concept="1bVj0M" id="2lEZ2a4Z6if" role="23t8la">
                                   <node concept="3clFbS" id="2lEZ2a4Z6ig" role="1bW5cS">
                                     <node concept="3clFbF" id="2lEZ2a4Z6ih" role="3cqZAp">
-                                      <node concept="2OqwBi" id="2lEZ2a4Z6ii" role="3clFbG">
-                                        <node concept="Rm8GO" id="2lEZ2a4Z7el" role="2Oq$k0">
-                                          <ref role="Rm8GQ" to="w1kc:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-                                          <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                                        </node>
-                                        <node concept="liA8E" id="2lEZ2a4Z6ik" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                                          <node concept="37vLTw" id="2lEZ2a4Z6in" role="37wK5m">
-                                            <ref role="3cqZAo" node="2lEZ2a4Z6io" resolve="it" />
-                                          </node>
+                                      <node concept="1qvjxa" id="1ZE6IpOfBBP" role="3clFbG">
+                                        <ref role="1quiSB" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
+                                        <node concept="37vLTw" id="1ZE6IpOfCkr" role="1qvjxb">
+                                          <ref role="3cqZAo" node="2lEZ2a4Z6io" resolve="it" />
                                         </node>
                                       </node>
                                     </node>

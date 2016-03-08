@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -75,7 +75,7 @@ public class DataFlowManager implements CoreComponent {
   }
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
+      SModel dfaModel = SModuleOperations.getAspect(l, "dataFlow");
       if (dfaModel != null && dfaModel.getRootNodes().iterator().hasNext()) {
         String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = null;

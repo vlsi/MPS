@@ -89,24 +89,6 @@ public class QueriesGenerated {
     }
     return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
   }
-  public static boolean baseMappingRule_Condition_1832482093174183662(final BaseMappingRuleContext _context) {
-    SModel aspectModel = LanguageAspect.DATA_FLOW.get(((Language) _context.getVariable("langModule")));
-    if (aspectModel == null) {
-      return false;
-    }
-    if (!(aspectModel.getReference().getModelId().toString().equals(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2dL, "uuid"))))) {
-      return false;
-    }
-
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(aspectModel, _context, MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"));
-  }
-  public static boolean baseMappingRule_Condition_1832482093174183705(final BaseMappingRuleContext _context) {
-    SModel aspectModel = LanguageAspect.DATA_FLOW.get(((Language) _context.getVariable("langModule")));
-    if (aspectModel == null) {
-      return false;
-    }
-    return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
-  }
   public static boolean baseMappingRule_Condition_2343938651364814656(final BaseMappingRuleContext _context) {
     SModel aspectModel = LanguageAspect.BEHAVIOR.get(((Language) _context.getVariable("langModule")));
     if (aspectModel == null || !(aspectModel.getRootNodes().iterator().hasNext())) {
@@ -161,9 +143,6 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_5664333325054614813(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")) + ".ActionAspectDescriptorImpl";
-  }
-  public static Object propertyMacro_GetPropertyValue_1832482093174183689(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")) + ".DataFlowAspectDescriptorImpl";
   }
   public static Object propertyMacro_GetPropertyValue_2343938651365291768(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")) + ".BehaviorAspectDescriptor";
@@ -377,7 +356,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_263208052639706738(final TemplateQueryContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2bL, "model"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0zc(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0wc(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")), SModelStereotype.GENERATOR);
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -415,7 +394,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0zc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0wc(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
