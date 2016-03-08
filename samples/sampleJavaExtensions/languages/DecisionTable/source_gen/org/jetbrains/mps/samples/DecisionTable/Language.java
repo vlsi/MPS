@@ -45,8 +45,10 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == BehaviorAspectDescriptor.class) {
-      return (T) new org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
+      if (aspectClass == BehaviorAspectDescriptor.class) {
+        return (T) new org.jetbrains.mps.samples.DecisionTable.behavior.BehaviorAspectDescriptor();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
       if (aspectClass == DataFlowAspectDescriptor.class) {

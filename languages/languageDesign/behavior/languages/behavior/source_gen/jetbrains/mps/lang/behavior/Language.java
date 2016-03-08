@@ -11,8 +11,8 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.lang.behavior.actions.ActionAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.behavior.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
@@ -50,15 +50,19 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == ActionAspectDescriptor.class) {
-      return (T) new ActionAspectDescriptorImpl();
-    }
-    if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.behavior.constraints.ConstraintsAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
+      if (aspectClass == ActionAspectDescriptor.class) {
+        return (T) new ActionAspectDescriptorImpl();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {
       if (aspectClass == BehaviorAspectDescriptor.class) {
         return (T) new jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.behavior.constraints.ConstraintsAspectDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {

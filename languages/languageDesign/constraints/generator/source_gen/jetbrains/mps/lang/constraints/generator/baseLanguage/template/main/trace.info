@@ -234,8 +234,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)/2897519568668637315">
     <file name="QueriesGenerated.java">
-      <node id="474635177870323094" at="42,109,43,201" concept="5" />
-      <scope id="474635177870323093" at="42,109,43,201" />
+      <node id="474635177870323094" at="42,109,43,205" concept="5" />
+      <scope id="474635177870323093" at="42,109,43,205" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)/5934496548013422420">

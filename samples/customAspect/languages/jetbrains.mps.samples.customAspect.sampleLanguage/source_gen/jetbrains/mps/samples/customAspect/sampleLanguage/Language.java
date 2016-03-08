@@ -36,8 +36,10 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.constraints.ConstraintsAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.constraints.ConstraintsAspectDescriptor();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor")) {
       if (aspectClass == DocumentationAspectDescriptor.class) {

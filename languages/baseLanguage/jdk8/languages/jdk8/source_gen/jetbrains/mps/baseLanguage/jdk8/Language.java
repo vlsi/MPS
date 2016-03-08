@@ -39,11 +39,15 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass == ActionAspectDescriptor.class) {
-      return (T) new BaseActionAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {
+      if (aspectClass == ActionAspectDescriptor.class) {
+        return (T) new BaseActionAspectDescriptor();
+      }
     }
-    if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return (T) new jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor")) {
+      if (aspectClass == ConstraintsAspectDescriptor.class) {
+        return (T) new jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
       if (aspectClass == EditorAspectDescriptor.class) {
