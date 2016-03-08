@@ -88,6 +88,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
+    <import index="8okf" ref="r:dbde341a-c09d-4dfc-8b0a-5ed08f460369(jetbrains.mps.lang.intentions.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
@@ -11297,16 +11298,10 @@
                                 <node concept="1bVj0M" id="2lEZ2a4ZU$5" role="23t8la">
                                   <node concept="3clFbS" id="2lEZ2a4ZU$6" role="1bW5cS">
                                     <node concept="3clFbF" id="2lEZ2a4ZU$7" role="3cqZAp">
-                                      <node concept="2OqwBi" id="2lEZ2a4ZU$8" role="3clFbG">
-                                        <node concept="Rm8GO" id="2lEZ2a4ZVwb" role="2Oq$k0">
-                                          <ref role="Rm8GQ" to="w1kc:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
-                                          <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                                        </node>
-                                        <node concept="liA8E" id="2lEZ2a4ZU$a" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                                          <node concept="37vLTw" id="2lEZ2a4ZU$d" role="37wK5m">
-                                            <ref role="3cqZAo" node="2lEZ2a4ZU$e" resolve="it" />
-                                          </node>
+                                      <node concept="1qvjxa" id="7XWR6$5idFp" role="3clFbG">
+                                        <ref role="1quiSB" to="8okf:2LiUEk8oQ$g" resolve="intentions" />
+                                        <node concept="37vLTw" id="7XWR6$5idQj" role="1qvjxb">
+                                          <ref role="3cqZAo" node="2lEZ2a4ZU$e" resolve="it" />
                                         </node>
                                       </node>
                                     </node>

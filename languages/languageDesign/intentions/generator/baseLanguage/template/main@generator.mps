@@ -558,16 +558,12 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="7IH442cVWHG" role="3uHU7w">
-                <node concept="Rm8GO" id="3jb7BNzEtiB" role="2Oq$k0">
-                  <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                  <ref role="Rm8GQ" to="w1kc:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
+              <node concept="2OqwBi" id="7XWR6$5ig8_" role="3uHU7w">
+                <node concept="37vLTw" id="7XWR6$5ig6U" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3jb7BNzEsYC" resolve="model" />
                 </node>
-                <node concept="liA8E" id="7IH442cVX9x" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                  <node concept="37vLTw" id="7IH442cVXlt" role="37wK5m">
-                    <ref role="3cqZAo" node="3jb7BNzEsYC" resolve="model" />
-                  </node>
+                <node concept="3zA4fs" id="7XWR6$5igaO" role="2OqNvi">
+                  <ref role="3zA4av" to="8okf:2LiUEk8oQ$g" resolve="intentions" />
                 </node>
               </node>
             </node>
