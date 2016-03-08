@@ -2432,6 +2432,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myMouseEventHandler != null;
   }
 
+  @NotNull
   public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
