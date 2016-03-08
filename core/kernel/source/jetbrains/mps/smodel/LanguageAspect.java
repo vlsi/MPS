@@ -44,6 +44,7 @@ public enum LanguageAspect {
 
   CONSTRAINTS("constraints", BootstrapLanguages.constraintsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Constraints"),
 
+  //mostly migrated
   BEHAVIOR("behavior", BootstrapLanguages.behaviorLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Behavior"),
 
   //mostly migrated
