@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -66,7 +66,7 @@ public class ScriptsActionGroupHelper {
   public static List<SNode> getMigrationScripts(List<Language> languages) {
     List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
-      SModel m = LanguageAspect.SCRIPTS.get(language);
+      SModel m = SModuleOperations.getAspect(language, "scripts");
       if (m != null) {
         ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"))));
       }
