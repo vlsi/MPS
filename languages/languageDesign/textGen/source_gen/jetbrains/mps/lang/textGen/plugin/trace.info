@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="9,0,18,0" name="jetbrains.mps.lang.textGen.plugin.ExtensionDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)/3193873080290339088">
+    <file name="LanguageAspectsEP_extension.java">
+      <node id="3193873080290339088" at="27,40,28,57" concept="11" />
+      <node id="3193873080290339088" at="32,48,33,25" concept="8" />
+      <node id="3193873080290339088" at="36,73,37,58" concept="7" />
+      <node id="3193873080290339088" at="39,44,40,48" concept="7" />
+      <node id="3193873080290339088" at="40,48,41,122" concept="8" />
+      <node id="3193873080290339088" at="46,55,47,199" concept="8" />
+      <node id="3193873080290339088" at="50,53,51,20" concept="8" />
+      <node id="3193873080290339088" at="54,29,55,20" concept="8" />
+      <node id="3193873080290339088" at="58,34,59,72" concept="8" />
+      <node id="3193873080290339088" at="67,50,68,86" concept="8" />
+      <node id="3193873080290339088" at="71,44,72,43" concept="7" />
+      <node id="3193873080290339088" at="72,43,73,64" concept="7" />
+      <node id="3193873080290339088" at="73,64,74,28" concept="7" />
+      <node id="3193873080290339088" at="75,37,76,58" concept="3" />
+      <node id="3193873080290339088" at="77,16,78,52" concept="3" />
+      <node id="3193873080290339088" at="79,9,80,118" concept="3" />
+      <node id="3193873080290339088" at="83,0,84,0" concept="4" trace="ICON" />
+      <node id="3193873080290339088" at="87,78,88,46" concept="8" />
+      <node id="3193873080290339088" at="77,14,79,9" concept="1" />
+      <node id="3193873080290339088" at="27,0,30,0" concept="2" trace="LanguageAspectsEP_extension#()V" />
+      <node id="3193873080290339088" at="32,0,35,0" concept="6" trace="getPresentableAspectName#()Ljava/lang/String;" />
+      <node id="3193873080290339088" at="67,0,70,0" concept="6" trace="canCreate#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
+      <node id="3193873080290339088" at="87,0,90,0" concept="10" trace="eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3193873080290339088" at="39,0,43,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="3193873080290339088" at="45,0,49,0" concept="6" trace="getMainLanguages#()Ljava/util/Collection;" />
+      <node id="3193873080290339088" at="49,0,53,0" concept="6" trace="getGenerator#()Ljetbrains/mps/smodel/language/LanguageAspectGenerator;" />
+      <node id="3193873080290339088" at="53,0,57,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="3193873080290339088" at="57,0,61,0" concept="6" trace="getHelpUrl#()Ljava/lang/String;" />
+      <node id="3193873080290339088" at="74,28,79,9" concept="5" />
+      <node id="3193873080290339088" at="37,58,43,49" concept="8" />
+      <node id="3193873080290339088" at="35,0,45,0" concept="6" trace="getAspectModels#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/util/Collection;" />
+      <node id="3193873080290339088" at="71,0,82,0" concept="6" trace="create#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="3193873080290339088" at="30,41,85,6" concept="8" />
+      <node id="3193873080290339088" at="30,0,87,0" concept="0" trace="get#()Ljetbrains/mps/smodel/language/LanguageAspectDescriptor;" />
+      <scope id="3193873080290339088" at="27,40,28,57" />
+      <scope id="3193873080290339088" at="32,48,33,25" />
+      <scope id="3193873080290339088" at="46,55,47,199" />
+      <scope id="3193873080290339088" at="50,53,51,20" />
+      <scope id="3193873080290339088" at="54,29,55,20" />
+      <scope id="3193873080290339088" at="58,34,59,72" />
+      <scope id="3193873080290339088" at="67,50,68,86" />
+      <scope id="3193873080290339088" at="75,37,76,58" />
+      <scope id="3193873080290339088" at="77,16,78,52" />
+      <scope id="3193873080290339088" at="87,78,88,46" />
+      <scope id="3193873080290339088" at="39,44,41,122">
+        <var name="fullName" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="27,0,30,0" />
+      <scope id="3193873080290339088" at="32,0,35,0" />
+      <scope id="3193873080290339088" at="67,0,70,0">
+        <var name="language" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="87,0,90,0">
+        <var name="a" id="3193873080290339088" />
+        <var name="b" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="39,0,43,0">
+        <var name="it" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="45,0,49,0" />
+      <scope id="3193873080290339088" at="49,0,53,0" />
+      <scope id="3193873080290339088" at="53,0,57,0" />
+      <scope id="3193873080290339088" at="57,0,61,0" />
+      <scope id="3193873080290339088" at="36,73,43,49">
+        <var name="allModels" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="71,44,80,118">
+        <var name="l" id="3193873080290339088" />
+        <var name="modelRoot" id="3193873080290339088" />
+        <var name="structureModel" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="35,0,45,0">
+        <var name="language" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="71,0,82,0">
+        <var name="language" id="3193873080290339088" />
+      </scope>
+      <scope id="3193873080290339088" at="30,41,85,6" />
+      <scope id="3193873080290339088" at="30,0,87,0" />
+      <unit id="3193873080290339088" at="38,58,43,9" name="jetbrains.mps.lang.textGen.plugin.LanguageAspectsEP_extension$2" />
+      <unit id="3193873080290339088" at="31,15,85,5" name="jetbrains.mps.lang.textGen.plugin.LanguageAspectsEP_extension$1" />
+      <unit id="3193873080290339088" at="26,0,91,0" name="jetbrains.mps.lang.textGen.plugin.LanguageAspectsEP_extension" />
+    </file>
+  </root>
+  <root nodeRef="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)/5003344573136319645">
+    <file name="IconResourceBundle_TextgenAspect.java">
+      <node id="5003344573136319645" at="12,0,13,0" concept="9" trace="INSTANCE" />
+      <node id="5003344573136319645" at="14,5,15,56" concept="3" />
+      <node id="5003344573136319645" at="20,37,21,26" concept="8" />
+      <node id="5003344573136319645" at="23,39,24,26" concept="8" />
+      <node id="5003344573136319645" at="26,64,27,53" concept="8" />
+      <node id="5003344573136319645" at="18,0,20,0" concept="2" trace="IconResourceBundle_TextgenAspect#()V" />
+      <node id="5003344573136319645" at="20,0,23,0" concept="6" trace="getKeys#()Ljava/lang/Iterable;" />
+      <node id="5003344573136319645" at="23,0,26,0" concept="6" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="5003344573136319645" at="26,0,29,0" concept="10" trace="getInstance#()Ljetbrains/mps/lang/textGen/plugin/IconResourceBundle_TextgenAspect;" />
+      <node id="5003344573136319645" at="13,0,18,0" concept="4" trace="icons" />
+      <scope id="5003344573136319645" at="18,45,18,45" />
+      <scope id="5003344573136319645" at="14,5,15,56" />
+      <scope id="5003344573136319645" at="20,37,21,26" />
+      <scope id="5003344573136319645" at="23,39,24,26" />
+      <scope id="5003344573136319645" at="26,64,27,53" />
+      <scope id="5003344573136319645" at="18,0,20,0" />
+      <scope id="5003344573136319645" at="20,0,23,0" />
+      <scope id="5003344573136319645" at="23,0,26,0">
+        <var name="key" id="5003344573136319645" />
+      </scope>
+      <scope id="5003344573136319645" at="26,0,29,0" />
+      <unit id="5003344573136319645" at="13,40,17,3" name="jetbrains.mps.lang.textGen.plugin.IconResourceBundle_TextgenAspect$1" />
+      <unit id="5003344573136319645" at="11,0,30,0" name="jetbrains.mps.lang.textGen.plugin.IconResourceBundle_TextgenAspect" />
+    </file>
+  </root>
+</debug-info>
+
