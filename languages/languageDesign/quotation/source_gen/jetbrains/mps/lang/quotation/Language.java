@@ -8,12 +8,12 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.quotation.typesystem.TypesystemDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.quotation.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -47,14 +47,16 @@ public class Language extends LanguageRuntime {
     if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.quotation.constraints.ConstraintsAspectDescriptor();
     }
-    if (aspectClass == DataFlowAspectDescriptor.class) {
-      return (T) new AbstractDataFlowAspectDescriptor() {};
-    }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
+      if (aspectClass == DataFlowAspectDescriptor.class) {
+        return (T) new DefaultDataFlowDescriptor();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
       if (aspectClass == IntentionAspectDescriptor.class) {

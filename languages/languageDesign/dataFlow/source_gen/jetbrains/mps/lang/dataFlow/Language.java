@@ -13,12 +13,11 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.dataFlow.typesystem.TypesystemDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor;
@@ -59,9 +58,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.dataFlow.constraints.ConstraintsAspectDescriptor();
-    }
-    if (aspectClass == DataFlowAspectDescriptor.class) {
-      return (T) new AbstractDataFlowAspectDescriptor() {};
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();

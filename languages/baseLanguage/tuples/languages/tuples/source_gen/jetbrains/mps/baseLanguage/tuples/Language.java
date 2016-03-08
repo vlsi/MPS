@@ -13,14 +13,14 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.baseLanguage.tuples.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.baseLanguage.tuples.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
-import jetbrains.mps.baseLanguage.tuples.scripts.ScriptsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.tuples.typesystem.TypesystemDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DefaultDataFlowDescriptor;
+import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
+import jetbrains.mps.baseLanguage.tuples.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -59,17 +59,21 @@ public class Language extends LanguageRuntime {
     if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsAspectDescriptor();
     }
-    if (aspectClass == DataFlowAspectDescriptor.class) {
-      return (T) new AbstractDataFlowAspectDescriptor() {};
-    }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == ScriptAspectDescriptor.class) {
-      return (T) new ScriptsDescriptor();
-    }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
+      if (aspectClass == DataFlowAspectDescriptor.class) {
+        return (T) new DefaultDataFlowDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor")) {
+      if (aspectClass == ScriptAspectDescriptor.class) {
+        return (T) new ScriptsDescriptor();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {

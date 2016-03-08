@@ -11,10 +11,10 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.attribute.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.samples.attribute.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "e8e38af6-0cf3-4cc1-baa3-ba261722e8f3(jetbrains.mps.samples.attribute)";
@@ -46,9 +46,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == TextGenAspectDescriptor.class) {
-      return (T) new jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor();
-    }
     if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
       if (aspectClass == IntentionAspectDescriptor.class) {
         return (T) new IntentionsDescriptor();
@@ -57,6 +54,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {
         return (T) new jetbrains.mps.samples.attribute.structure.StructureAspectDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.text.rt.TextGenAspectDescriptor")) {
+      if (aspectClass == TextGenAspectDescriptor.class) {
+        return (T) new jetbrains.mps.samples.attribute.textGen.TextGenAspectDescriptor();
       }
     }
     return super.createAspect(aspectClass);

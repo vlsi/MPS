@@ -8,9 +8,9 @@ import java.util.UUID;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testSubtypingB.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import testSubtypingB.typesystem.TypesystemDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "65611934-24fb-470c-813e-a9df6058b93a(testSubtypingB)";
@@ -38,11 +38,13 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new testSubtypingB.structure.StructureAspectDescriptor();
-    }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new testSubtypingB.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

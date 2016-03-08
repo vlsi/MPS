@@ -13,22 +13,22 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.baseLanguage.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
-import jetbrains.mps.baseLanguage.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
-import jetbrains.mps.baseLanguage.scripts.ScriptsDescriptor;
-import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor;
+import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
+import jetbrains.mps.baseLanguage.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.baseLanguage.findUsages.FindUsagesDescriptor;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.baseLanguage.migration.MigrationDescriptorImpl;
+import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
+import jetbrains.mps.baseLanguage.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)";
@@ -66,20 +66,16 @@ public class Language extends LanguageRuntime {
     if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.constraints.ConstraintsAspectDescriptor();
     }
-    if (aspectClass == DataFlowAspectDescriptor.class) {
-      return (T) new DataFlowAspectDescriptorImpl();
-    }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == ScriptAspectDescriptor.class) {
-      return (T) new ScriptsDescriptor();
-    }
-    if (aspectClass == TextGenAspectDescriptor.class) {
-      return (T) new jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor();
-    }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor")) {
+      if (aspectClass == DataFlowAspectDescriptor.class) {
+        return (T) new DataFlowAspectDescriptorImpl();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor")) {
       if (aspectClass == FindUsageAspectDescriptor.class) {
@@ -94,6 +90,11 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor")) {
       if (aspectClass == MigrationDescriptor.class) {
         return (T) new MigrationDescriptorImpl();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor")) {
+      if (aspectClass == ScriptAspectDescriptor.class) {
+        return (T) new ScriptsDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
