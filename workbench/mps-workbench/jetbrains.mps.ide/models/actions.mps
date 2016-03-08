@@ -2210,7 +2210,7 @@
                       <ref role="3cqZAo" node="6Ls2pCjnnGj" resolve="configurableEditor" />
                     </node>
                     <node concept="liA8E" id="2dRe6woaT1h" role="2OqNvi">
-                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                      <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
                     </node>
                   </node>
                 </node>
@@ -4034,7 +4034,7 @@
                       <node concept="3clFbF" id="3GE7ucjMR9t" role="3cqZAp">
                         <node concept="2OqwBi" id="3GE7ucjMR9N" role="3clFbG">
                           <node concept="liA8E" id="3GE7ucjMR9T" role="2OqNvi">
-                            <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
                           </node>
                           <node concept="37vLTw" id="3GE7ucjMR9u" role="2Oq$k0">
                             <ref role="3cqZAo" node="78MpzK$YNLl" resolve="configurableEditor" />
@@ -6332,7 +6332,7 @@
                             <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
                           </node>
                           <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
-                            <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
                           </node>
                         </node>
                       </node>
