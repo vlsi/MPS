@@ -42,6 +42,7 @@ import java.util.Iterator;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -202,7 +203,7 @@ public class MigrationComponent extends AbstractProjectComponent {
   public RefactoringLog fetchRefactoringLog(RefactoringLogReference scriptReference, boolean silently) {
     Language depModule = (Language) scriptReference.getModule();
     final int current = scriptReference.getFromVersion();
-    SModel migrationModel = LanguageAspect.MIGRATION.get(depModule);
+    SModel migrationModel = SModuleOperations.getAspect(depModule, "migration");
     final SNode log = ListSequence.fromList(SModelOperations.roots(migrationModel, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")) == current;

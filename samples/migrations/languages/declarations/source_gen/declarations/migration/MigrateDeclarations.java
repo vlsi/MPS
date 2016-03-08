@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -54,7 +54,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
-          return !(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(n)));
+          return !(SModuleOperations.isAspect(SNodeOperations.getModel(n), "migration"));
         }
       }).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {

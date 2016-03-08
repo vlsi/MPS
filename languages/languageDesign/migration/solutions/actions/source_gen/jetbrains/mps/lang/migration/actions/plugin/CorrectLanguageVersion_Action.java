@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -51,7 +51,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
     SLanguage slang = MetaAdapterFactory.getLanguage(langId, lang.getModuleName());
 
-    SModel mig = LanguageAspect.MIGRATION.get(lang);
+    SModel mig = SModuleOperations.getAspect(lang, "migration");
     if (mig == null) {
       return slang.getLanguageVersion() != 0;
     }
@@ -105,7 +105,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-    SModel mig = LanguageAspect.MIGRATION.get(lang);
+    SModel mig = SModuleOperations.getAspect(lang, "migration");
     List<SNode> scripts = check_vsqebj_a0c0g(((SModel) mig));
     if (ListSequence.fromList(scripts).isNotEmpty()) {
       int maxFrom = (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {

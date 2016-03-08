@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -135,7 +135,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
   }
 
   public boolean isInTransformPattern(SNode node) {
-    if (!(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(node)))) {
+    if (!(SModuleOperations.isAspect(SNodeOperations.getModel(node), "migration"))) {
       return false;
     }
     SNode enclosingPattern = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false);

@@ -10,7 +10,7 @@
   <root nodeRef="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)/2260648088429212842">
     <file name="Migration_Queries.java">
       <node id="834555255519264203" at="23,56,24,45" concept="3" />
-      <node id="8307323686842278295" at="25,51,26,40" concept="3" />
+      <node id="8307323686842278295" at="25,63,26,40" concept="3" />
       <node id="894677141330371555" at="26,40,27,53" concept="3" />
       <node id="3932724607434525445" at="27,53,28,187" concept="1" />
       <node id="8307323686842171348" at="28,187,29,0" concept="5" />
@@ -57,7 +57,7 @@
         <var name="facade" id="5387853834548107622" />
         <var name="quotedNode_1" id="5387853834548107622" />
       </scope>
-      <scope id="834555255519252395" at="25,51,30,50">
+      <scope id="834555255519252395" at="25,63,30,50">
         <var name="currentVersion" id="894677141330371558" />
         <var name="lang" id="8307323686842278296" />
       </scope>

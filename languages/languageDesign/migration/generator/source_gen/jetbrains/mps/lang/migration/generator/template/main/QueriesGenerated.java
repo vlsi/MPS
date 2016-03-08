@@ -4,10 +4,9 @@ package jetbrains.mps.lang.migration.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.migration.util.MigrationsCheckUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -47,7 +46,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_5179631399463348080(final CreateRootRuleContext _context) {
-    return LanguageAspect.MIGRATION.is(_context.getOriginalInputModel());
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "migration");
   }
   public static boolean baseMappingRule_Condition_5168866961619216887(final BaseMappingRuleContext _context) {
     return MigrationsCheckUtil.hasCycles(_context.getNode());

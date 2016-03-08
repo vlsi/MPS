@@ -125,7 +125,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return CORE;
       } else if (SModuleOperations.isAspect(model, "structure")) {
         return CORE;
-      } else if (LanguageAspect.MIGRATION.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "migration")) {
         return CORE;
       } else if (LanguageAspect.TEST.is(model)) {
         return EDITOR;
