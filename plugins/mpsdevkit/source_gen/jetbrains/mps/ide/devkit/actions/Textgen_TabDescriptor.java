@@ -15,10 +15,11 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class Textgen_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.TextGen;
@@ -60,7 +61,7 @@ public class Textgen_TabDescriptor extends RelationDescriptor {
       return null;
     }
 
-    SModel aspectModel = LanguageAspect.TEXT_GEN.get(((Language) module));
+    SModel aspectModel = SModuleOperations.getAspect(module, "textGen");
     if (aspectModel == null) {
       return null;
     }

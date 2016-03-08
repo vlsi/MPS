@@ -5,14 +5,13 @@ package jetbrains.mps.lang.textGen.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -38,7 +37,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_9221686591909407403(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return LanguageAspect.TEXT_GEN.is(model) && ListSequence.fromList(SModelOperations.roots(model, null)).isNotEmpty();
+    return SModuleOperations.isAspect(model, "textGen") && ListSequence.fromList(SModelOperations.roots(model, null)).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_3741392693833960322(final BaseMappingRuleContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, 0x11f41304578L, "textGenBlock")) != null);

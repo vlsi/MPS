@@ -89,6 +89,7 @@
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="8okf" ref="r:dbde341a-c09d-4dfc-8b0a-5ed08f460369(jetbrains.mps.lang.intentions.plugin)" />
+    <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
@@ -12275,16 +12276,10 @@
                                 <node concept="1bVj0M" id="fe$hSFtIDs" role="23t8la">
                                   <node concept="3clFbS" id="fe$hSFtIDt" role="1bW5cS">
                                     <node concept="3clFbF" id="fe$hSFtIDu" role="3cqZAp">
-                                      <node concept="2OqwBi" id="fe$hSFtIDv" role="3clFbG">
-                                        <node concept="Rm8GO" id="fe$hSFtPaY" role="2Oq$k0">
-                                          <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-                                          <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                                        </node>
-                                        <node concept="liA8E" id="fe$hSFtIDx" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                                          <node concept="37vLTw" id="fe$hSFtIDy" role="37wK5m">
-                                            <ref role="3cqZAo" node="fe$hSFtIDz" resolve="it" />
-                                          </node>
+                                      <node concept="1qvjxa" id="4r4fzRRw0OB" role="3clFbG">
+                                        <ref role="1quiSB" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
+                                        <node concept="37vLTw" id="4r4fzRRw0ZO" role="1qvjxb">
+                                          <ref role="3cqZAo" node="fe$hSFtIDz" resolve="it" />
                                         </node>
                                       </node>
                                     </node>

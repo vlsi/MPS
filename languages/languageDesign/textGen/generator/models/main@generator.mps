@@ -84,10 +84,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -548,16 +544,12 @@
                 </node>
                 <node concept="3GX2aA" id="7ZU0Lz4JBW3" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="7ZU0Lz4JzHc" role="3uHU7B">
-                <node concept="Rm8GO" id="7ZU0Lz4JzaP" role="2Oq$k0">
-                  <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-                  <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              <node concept="2OqwBi" id="4r4fzRRwlfB" role="3uHU7B">
+                <node concept="37vLTw" id="4r4fzRRwle6" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7ZU0Lz4J_hy" resolve="model" />
                 </node>
-                <node concept="liA8E" id="7ZU0Lz4J$8m" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
-                  <node concept="37vLTw" id="7ZU0Lz4J_hA" role="37wK5m">
-                    <ref role="3cqZAo" node="7ZU0Lz4J_hy" resolve="model" />
-                  </node>
+                <node concept="3zA4fs" id="4r4fzRRwlhA" role="2OqNvi">
+                  <ref role="3zA4av" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
                 </node>
               </node>
             </node>

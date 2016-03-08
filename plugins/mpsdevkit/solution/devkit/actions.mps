@@ -124,6 +124,7 @@
     <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="8okf" ref="r:dbde341a-c09d-4dfc-8b0a-5ed08f460369(jetbrains.mps.lang.intentions.plugin)" />
+    <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -10597,23 +10598,10 @@
             <node concept="3uibUv" id="74j1j8ZM4yT" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
-            <node concept="2OqwBi" id="74j1j8ZM4yU" role="33vP2m">
-              <node concept="Rm8GO" id="74j1j8ZM4Ep" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="liA8E" id="74j1j8ZM4yW" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="1eOMI4" id="74j1j8ZM4yX" role="37wK5m">
-                  <node concept="10QFUN" id="74j1j8ZM4yY" role="1eOMHV">
-                    <node concept="37vLTw" id="74j1j8ZM4yZ" role="10QFUP">
-                      <ref role="3cqZAo" node="74j1j8ZM4y_" resolve="module" />
-                    </node>
-                    <node concept="3uibUv" id="74j1j8ZM4z0" role="10QFUM">
-                      <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                    </node>
-                  </node>
-                </node>
+            <node concept="1qvjxa" id="4r4fzRRw0OB" role="33vP2m">
+              <ref role="1quiSB" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
+              <node concept="37vLTw" id="4r4fzRRwkeO" role="1qvjxb">
+                <ref role="3cqZAo" node="74j1j8ZM4y_" resolve="module" />
               </node>
             </node>
           </node>

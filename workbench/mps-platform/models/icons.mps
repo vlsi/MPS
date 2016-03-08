@@ -2792,23 +2792,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="axXFkGpDef" role="3cqZAp">
-          <node concept="37vLTI" id="axXFkGpDeg" role="3clFbG">
-            <node concept="3EllGN" id="axXFkGpDeh" role="37vLTJ">
-              <node concept="37vLTw" id="2BHiRxeoicu" role="3ElQJh">
-                <ref role="3cqZAo" node="axXFkGpDcC" resolve="ourAspectsToIcons" />
-              </node>
-              <node concept="Rm8GO" id="axXFkGpDej" role="3ElVtu">
-                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-              </node>
-            </node>
-            <node concept="10M0yZ" id="axXFkGpDek" role="37vLTx">
-              <ref role="3cqZAo" to="xnls:~IdeIcons.TEXT_GEN_MODEL_ICON" resolve="TEXT_GEN_MODEL_ICON" />
-              <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="axXFkGpDel" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDem" role="3clFbG">
             <node concept="3EllGN" id="axXFkGpDen" role="37vLTJ">
