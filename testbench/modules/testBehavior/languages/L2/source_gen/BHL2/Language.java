@@ -40,8 +40,10 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return ((T) new EditorAspectDescriptorBase());
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new BHL2.structure.StructureAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new BHL2.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

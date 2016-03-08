@@ -6,7 +6,7 @@
     </file>
     <file name="Language.java">
       <unit at="63,21,63,58" name="jetbrains.mps.baseLanguage.regexp.Language$1" />
-      <unit at="26,0,80,0" name="jetbrains.mps.baseLanguage.regexp.Language" />
+      <unit at="26,0,84,0" name="jetbrains.mps.baseLanguage.regexp.Language" />
     </file>
   </root>
 </debug-info>

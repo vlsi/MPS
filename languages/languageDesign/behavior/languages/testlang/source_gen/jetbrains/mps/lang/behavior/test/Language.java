@@ -35,8 +35,10 @@ public class Language extends LanguageRuntime {
     if (aspectClass == BehaviorAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.behavior.test.structure.StructureAspectDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.lang.behavior.test.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

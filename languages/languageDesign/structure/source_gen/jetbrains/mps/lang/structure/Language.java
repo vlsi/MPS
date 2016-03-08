@@ -15,14 +15,16 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.structure.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
-import jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor;
-import jetbrains.mps.intentions.IntentionAspectDescriptor;
-import jetbrains.mps.lang.structure.intentions.IntentionsDescriptor;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.lang.structure.scripts.ScriptsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.structure.typesystem.TypesystemDescriptor;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
+import jetbrains.mps.lang.structure.findUsages.FindUsagesDescriptor;
+import jetbrains.mps.intentions.IntentionAspectDescriptor;
+import jetbrains.mps.lang.structure.intentions.IntentionsDescriptor;
+import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
+import jetbrains.mps.lang.structure.migration.MigrationDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -64,17 +66,26 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == FindUsageAspectDescriptor.class) {
-      return (T) new FindUsagesDescriptor();
-    }
-    if (aspectClass == IntentionAspectDescriptor.class) {
-      return (T) new IntentionsDescriptor();
-    }
     if (aspectClass == ScriptAspectDescriptor.class) {
       return (T) new ScriptsDescriptor();
     }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor")) {
+      if (aspectClass == FindUsageAspectDescriptor.class) {
+        return (T) new FindUsagesDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.intentions.IntentionAspectDescriptor")) {
+      if (aspectClass == IntentionAspectDescriptor.class) {
+        return (T) new IntentionsDescriptor();
+      }
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor")) {
+      if (aspectClass == MigrationDescriptor.class) {
+        return (T) new MigrationDescriptorImpl();
+      }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
       if (aspectClass == StructureAspectDescriptor.class) {

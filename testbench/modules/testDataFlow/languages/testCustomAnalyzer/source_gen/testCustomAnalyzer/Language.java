@@ -10,9 +10,9 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor;
 import testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import testCustomAnalyzer.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import testCustomAnalyzer.typesystem.TypesystemDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b124c25e-1e16-4432-ad5e-0ac0ecae98f5(testCustomAnalyzer)";
@@ -43,11 +43,13 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new testCustomAnalyzer.structure.StructureAspectDescriptor();
-    }
     if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new testCustomAnalyzer.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

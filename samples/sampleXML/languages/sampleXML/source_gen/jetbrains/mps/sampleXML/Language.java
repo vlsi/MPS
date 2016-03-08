@@ -13,8 +13,8 @@ import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.sampleXML.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)";
@@ -49,11 +49,13 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.sampleXML.structure.StructureAspectDescriptor();
-    }
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.sampleXML.textGen.TextGenAspectDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.sampleXML.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

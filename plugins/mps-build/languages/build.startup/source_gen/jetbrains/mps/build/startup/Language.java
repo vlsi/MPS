@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.build.startup.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d5033cee-f632-44b6-b308-89d4fbde34ff(jetbrains.mps.build.startup)";
@@ -48,11 +48,13 @@ public class Language extends LanguageRuntime {
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (aspectClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.build.startup.structure.StructureAspectDescriptor();
-    }
     if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.build.startup.textGen.TextGenAspectDescriptor();
+    }
+    if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
+      if (aspectClass == StructureAspectDescriptor.class) {
+        return (T) new jetbrains.mps.build.startup.structure.StructureAspectDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

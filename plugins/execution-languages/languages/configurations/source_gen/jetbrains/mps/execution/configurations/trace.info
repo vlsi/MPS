@@ -6,7 +6,7 @@
     </file>
     <file name="Language.java">
       <unit at="61,21,61,58" name="jetbrains.mps.execution.configurations.Language$1" />
-      <unit at="24,0,75,0" name="jetbrains.mps.execution.configurations.Language" />
+      <unit at="24,0,77,0" name="jetbrains.mps.execution.configurations.Language" />
     </file>
   </root>
 </debug-info>
