@@ -107,7 +107,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return EDITOR;
       } else if (SModuleOperations.isAspect(model, "behavior")) {
         return CORE;
-      } else if (LanguageAspect.CONSTRAINTS.is(model)) {
+      } else if (SModuleOperations.isAspect(model, "constraints")) {
         return CORE;
       } else if (SModuleOperations.isAspect(model, "dataFlow")) {
         return CORE;

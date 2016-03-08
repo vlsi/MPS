@@ -95,6 +95,7 @@
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="mg3u" ref="r:0799ed23-f21a-4dba-ac61-5b80d66bec13(jetbrains.mps.lang.behavior.plugin)" />
     <import index="sla8" ref="r:e9b03271-b52a-47ee-a82c-3d061109bb59(jetbrains.mps.lang.actions.plugin)" />
+    <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
@@ -10178,16 +10179,10 @@
                                 <node concept="1bVj0M" id="2lEZ2a4Z0RW" role="23t8la">
                                   <node concept="3clFbS" id="2lEZ2a4Z0RX" role="1bW5cS">
                                     <node concept="3clFbF" id="2lEZ2a4Z0RY" role="3cqZAp">
-                                      <node concept="2OqwBi" id="2lEZ2a4Z0RZ" role="3clFbG">
-                                        <node concept="Rm8GO" id="2lEZ2a4Z1O3" role="2Oq$k0">
-                                          <ref role="Rm8GQ" to="w1kc:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
-                                          <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
-                                        </node>
-                                        <node concept="liA8E" id="2lEZ2a4Z0S1" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                                          <node concept="37vLTw" id="2lEZ2a4Z0S4" role="37wK5m">
-                                            <ref role="3cqZAo" node="2lEZ2a4Z0S5" resolve="it" />
-                                          </node>
+                                      <node concept="1qvjxa" id="qmfyRQRe5T" role="3clFbG">
+                                        <ref role="1quiSB" to="beg:2LiUEk8oQ$g" resolve="constraints" />
+                                        <node concept="37vLTw" id="qmfyRQRehi" role="1qvjxb">
+                                          <ref role="3cqZAo" node="2lEZ2a4Z0S5" resolve="it" />
                                         </node>
                                       </node>
                                     </node>
