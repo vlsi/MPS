@@ -28,7 +28,6 @@ import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.SwingUtilities;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -113,7 +112,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   private void refreshMessagesCache() {
     assert ThreadUtils.isInEDT() : "refreshMessagesCache() should be called from EDT only";
-    assert ThreadUtils.isInEDT() : "refreshMessagesCache() should be called inside model read action only";
+    assert myEditor.getRepository().getModelAccess().canRead() : "refreshMessagesCache() should be called inside model read action only";
     synchronized (myMessagesLock) {
       if (!myRebuildMessagesCache) {
         return;
