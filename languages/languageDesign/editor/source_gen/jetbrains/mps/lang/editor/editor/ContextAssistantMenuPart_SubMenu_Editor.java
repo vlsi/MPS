@@ -49,7 +49,7 @@ public class ContextAssistantMenuPart_SubMenu_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createCollection_riuflx_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_riuflx_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);

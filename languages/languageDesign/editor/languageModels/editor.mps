@@ -13427,24 +13427,14 @@
       <node concept="3EZMnI" id="5OVd5tVCkjR" role="3EZMnx">
         <property role="S$Qs1" value="true" />
         <property role="3EXrWe" value="true" />
-        <node concept="pVoyu" id="4KcDARc7HqH" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="4KcDARc7Hst" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="2iRfu4" id="5OVd5tVDRqD" role="2iSdaV" />
-        <node concept="3F1sOY" id="4VZjoGvnt3k" role="3EZMnx">
-          <ref role="1NtTu8" to="tpc2:4VZjoGvnt2N" />
-        </node>
         <node concept="pkWqt" id="5OVd5tVCJXL" role="3EXrW6">
           <node concept="3clFbS" id="5OVd5tVCJXM" role="2VODD2">
             <node concept="3clFbF" id="5OVd5tVCJYQ" role="3cqZAp">
               <node concept="3y3z36" id="5OVd5tVCJYS" role="3clFbG">
                 <node concept="10Nm6u" id="5OVd5tVCJYT" role="3uHU7w" />
                 <node concept="2YIFZM" id="5OVd5tVCJYU" role="3uHU7B">
-                  <ref role="37wK5l" node="5OVd5tVCD6_" resolve="getSimpleString" />
                   <ref role="1Pybhc" node="5OVd5tVCm7F" resolve="ConceptFunctionFoldingUtil" />
+                  <ref role="37wK5l" node="5OVd5tVCD6_" resolve="getSimpleString" />
                   <node concept="2OqwBi" id="5OVd5tVCMdG" role="37wK5m">
                     <node concept="pncrf" id="5OVd5tVCMab" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5OVd5tVCMja" role="2OqNvi">
@@ -13455,6 +13445,16 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="pVoyu" id="4KcDARc7HqH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="4KcDARc7Hst" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRkQZ" id="3B749l8ExoS" role="2iSdaV" />
+        <node concept="3F1sOY" id="4VZjoGvnt3k" role="3EZMnx">
+          <ref role="1NtTu8" to="tpc2:4VZjoGvnt2N" />
         </node>
         <node concept="1HlG4h" id="5OVd5tVCMlC" role="AHCbl">
           <ref role="1k5W1q" to="tpen:4vxLnq9T43C" resolve="FoldedCell" />
