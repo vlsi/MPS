@@ -571,5 +571,57 @@
       <unit id="1265112845350114910" at="25,0,124,0" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell" />
     </file>
   </root>
+  <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/306079339724313756">
+    <file name="Migrate_SetNullActionIdToRightTransform.java">
+      <node id="306079339724313756" at="20,30,21,53" concept="8" />
+      <node id="306079339724313756" at="24,33,25,17" concept="8" />
+      <node id="306079339724322822" at="28,5,29,59" concept="7" />
+      <node id="306079339724322822" at="31,52,32,23" concept="8" />
+      <node id="306079339724332068" at="36,41,37,187" concept="8" />
+      <node id="306079339724348215" at="41,37,42,185" concept="3" />
+      <node id="306079339724313756" at="45,5,46,16" concept="8" />
+      <node id="306079339724313756" at="48,51,49,146" concept="8" />
+      <node id="306079339724313756" at="20,0,23,0" concept="6" trace="getCaption#()Ljava/lang/String;" />
+      <node id="306079339724322822" at="31,0,34,0" concept="6" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="306079339724331675" at="36,0,39,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="306079339724347910" at="41,0,44,0" concept="6" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="306079339724313756" at="48,0,51,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="306079339724313756" at="23,0,27,0" concept="6" trace="isRerunnable#()Z" />
+      <node id="306079339724322822" at="29,59,34,8" concept="7" />
+      <node id="306079339724322824" at="34,8,39,9" concept="7" />
+      <node id="306079339724327540" at="39,9,44,9" concept="3" />
+      <node id="306079339724322822" at="27,41,45,5" concept="1" />
+      <node id="306079339724313756" at="27,0,48,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="306079339724313756" at="20,30,21,53" />
+      <scope id="306079339724313756" at="24,33,25,17" />
+      <scope id="306079339724322822" at="31,52,32,23" />
+      <scope id="306079339724331676" at="36,41,37,187" />
+      <scope id="306079339724347911" at="41,37,42,185" />
+      <scope id="306079339724313756" at="48,51,49,146" />
+      <scope id="306079339724313756" at="20,0,23,0" />
+      <scope id="306079339724322822" at="31,0,34,0" />
+      <scope id="306079339724331675" at="36,0,39,0">
+        <var name="it" id="306079339724331675" />
+      </scope>
+      <scope id="306079339724347910" at="41,0,44,0">
+        <var name="it" id="306079339724347910" />
+      </scope>
+      <scope id="306079339724313756" at="48,0,51,0" />
+      <scope id="306079339724313756" at="23,0,27,0" />
+      <scope id="306079339724322822" at="28,5,44,9">
+        <var name="context" id="306079339724322822" />
+        <var name="mapItemsWithNullId" id="306079339724322825" />
+        <var name="scope" id="306079339724322822" />
+      </scope>
+      <scope id="306079339724313756" at="27,41,46,16" />
+      <scope id="306079339724313756" at="27,0,48,0">
+        <var name="m" id="306079339724313756" />
+      </scope>
+      <unit id="306079339724322822" at="30,42,34,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$1" />
+      <unit id="306079339724331675" at="35,310,39,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$2" />
+      <unit id="306079339724347910" at="40,61,44,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$3" />
+      <unit id="306079339724313756" at="19,0,53,0" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform" />
+    </file>
+  </root>
 </debug-info>
 
