@@ -122,7 +122,7 @@ public enum CellActionId {
   public static CellActionId getDefault() {
     return null;
   }
-  public static CellActionId  parseValue(String value) {
+  public static CellActionId parseValue(String value) {
     if (value == null) {
       return CellActionId.getDefault();
     }
