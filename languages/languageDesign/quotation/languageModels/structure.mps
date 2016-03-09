@@ -8,6 +8,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -304,11 +305,11 @@
     <property role="3GE5qa" value="quotation.generation" />
     <property role="1pbfSe" value="2142713898" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7hIo0WbQDUr" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="property" />
+    <node concept="1TJgyj" id="1pFEQ4ZrQcU" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="propertyIdentity" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+      <ref role="20lvS9" to="tp25:5ZE7FBYZ2ds" resolve="PropertyId" />
     </node>
     <node concept="1TJgyi" id="7hIo0WbQAvT" role="1TKVEl">
       <property role="TrG5h" value="propertyValue" />
