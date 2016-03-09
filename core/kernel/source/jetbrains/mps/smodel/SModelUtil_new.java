@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -56,7 +57,7 @@ public class SModelUtil_new {
   @Deprecated
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
       boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(new SConceptAdapterByName(conceptFqName), model, nodeId, fullNodeStructure);
+    return instantiateConceptDeclaration(MetaAdapterFactoryByName.getConcept(conceptFqName), model, nodeId, fullNodeStructure);
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull SAbstractConcept concept, @Nullable SModel model, SNodeId nodeId,

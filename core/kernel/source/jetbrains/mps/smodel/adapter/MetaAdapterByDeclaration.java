@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -84,7 +85,7 @@ public class MetaAdapterByDeclaration {
       return new SConceptAdapterById(((SInterfaceConceptAdapterById) abstractConcept).getId(), abstractConcept.getQualifiedName());
     }
     if (abstractConcept instanceof SInterfaceConceptAdapterByName) {
-      return new SConceptAdapterByName(abstractConcept.getQualifiedName());
+      return MetaAdapterFactoryByName.getConcept(abstractConcept.getQualifiedName());
     }
     throw new IllegalArgumentException();
   }
