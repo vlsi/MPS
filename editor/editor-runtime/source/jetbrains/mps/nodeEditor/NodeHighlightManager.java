@@ -55,43 +55,24 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private final Object myMessagesLock = new Object();
 
   @NotNull
-  private EditorComponent myEditor;
-  private Set<SimpleEditorMessage> myMessages = new HashSet<SimpleEditorMessage>();
-  private Map<EditorMessageOwner, Set<SimpleEditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<SimpleEditorMessage>>();
-  private ManyToManyMap<SimpleEditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<SimpleEditorMessage, SNode>();
+  private final EditorComponent myEditor;
+  private final Set<SimpleEditorMessage> myMessages = new HashSet<SimpleEditorMessage>();
+  private final Map<EditorMessageOwner, Set<SimpleEditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<SimpleEditorMessage>>();
+  private final ManyToManyMap<SimpleEditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<SimpleEditorMessage, SNode>();
 
   /**
-   * all Caches are synchronized using myMessagesLock
+   * All caches are synchronized using myMessagesLock
    */
   private Map<EditorCell, List<SimpleEditorMessage>> myMessagesCache = Collections.emptyMap();
   private volatile boolean myRebuildMessagesCache = false;
-  private UpdaterListener myRebuildListener;
+  private final UpdaterListener myRebuildListener = new RebuildMessagesOnEditorUpdate();
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private volatile boolean myRebuildIconRenderersCacheFlag = false;
   private boolean myDisposed = false;
 
   public NodeHighlightManager(@NotNull EditorComponent editor) {
     myEditor = editor;
-
-    editor.getUpdater().addListener(myRebuildListener = new UpdaterListenerAdapter() {
-      @Override
-      public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-        assert !myDisposed;
-        boolean needRebuild = getMessagesCache().isEmpty();
-        if (!needRebuild) {
-          for (EditorCell cell : getMessagesCache().keySet()) {
-            if (!myEditor.isValid(cell)) {
-              needRebuild = true;
-              break;
-            }
-          }
-        }
-        if (needRebuild) {
-          invalidateMessagesCaches();
-          repaintAndRebuildEditorMessages();
-        }
-      }
-    });
+    myEditor.getUpdater().addListener(myRebuildListener);
   }
 
   /**
@@ -378,4 +359,28 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor.getUpdater().removeListener(myRebuildListener);
   }
 
+  private class RebuildMessagesOnEditorUpdate extends UpdaterListenerAdapter {
+    @Override
+    public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+      assert !myDisposed;
+      if (needRebuild()) {
+        invalidateMessagesCaches();
+        repaintAndRebuildEditorMessages();
+      }
+    }
+
+    private boolean needRebuild() {
+      if (getMessagesCache().isEmpty()) {
+        return true;
+      }
+
+      for (EditorCell cell : getMessagesCache().keySet()) {
+        if (!myEditor.isValid(cell)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }
 }
