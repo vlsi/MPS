@@ -20,12 +20,10 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.PriorityComparator;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -50,16 +48,14 @@ public class HighlighterUpdateSession {
   private final boolean myEssentialOnly;
   private final List<SModelEvent> myEvents;
   private final Set<BaseEditorChecker> myCheckers;
-  private final Set<BaseEditorChecker> myCheckersToRemove;
   private final List<EditorComponent> myAllEditorComponents;
 
   public HighlighterUpdateSession(IHighlighter highlighter, boolean essentialOnly, List<SModelEvent> events, Set<BaseEditorChecker> checkers,
-      final Set<BaseEditorChecker> checkersToRemove, List<EditorComponent> allEditorComponents) {
+      List<EditorComponent> allEditorComponents) {
     myHighlighter = highlighter;
     myEssentialOnly = essentialOnly;
     myEvents = events;
     myCheckers = checkers;
-    myCheckersToRemove = checkersToRemove;
     myAllEditorComponents = allEditorComponents;
   }
 
@@ -87,7 +83,7 @@ public class HighlighterUpdateSession {
   }
 
   public void doUpdate() {
-    if (myCheckers.isEmpty() && myCheckersToRemove.isEmpty()) {
+    if (myCheckers.isEmpty()) {
       return;
     }
 
@@ -163,7 +159,7 @@ public class HighlighterUpdateSession {
           });
         }
 
-        if ((checkersToRecheck.isEmpty() && myCheckersToRemove.isEmpty()) || myHighlighter.isPausedOrStopping()) return false;
+        if (checkersToRecheck.isEmpty() || myHighlighter.isPausedOrStopping()) return false;
 
         List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
         Collections.sort(checkersToRecheckList, new PriorityComparator());
@@ -227,21 +223,6 @@ public class HighlighterUpdateSession {
           highlightManager.mark(message);
         }
       }
-    }
-    for (final BaseEditorChecker checker : myCheckersToRemove) {
-      EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
-        @Override
-        public EditorMessageOwner compute() {
-          if (myHighlighter.isStopping()) return null;
-          SNode node = editor.getEditedNode();
-          if (node == null) return null;
-          return checker;
-        }
-      });
-      if (myHighlighter.isStopping()) return false;
-
-      highlightManager.clearForOwner(owner, false);
-      anyMessageChanged = true;
     }
     if (myHighlighter.isStopping()) return false;
 

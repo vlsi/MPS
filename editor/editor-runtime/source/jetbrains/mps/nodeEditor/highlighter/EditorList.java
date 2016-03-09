@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.highlighter;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.util.AbstractComputeRunnable;
@@ -88,6 +89,29 @@ public class EditorList {
     return editorComponents;
   }
 
+  public List<EditorComponent> getAllEditors() {
+    ThreadUtils.assertEDT();
+
+    final List<Editor> editors;
+    final List<EditorComponent> editorComponents;
+
+    synchronized (myLock) {
+      editors = new ArrayList<Editor>(myAdditionalEditors);
+      editorComponents = new ArrayList<EditorComponent>(myAdditionalEditorComponents);
+    }
+
+    editorComponents.addAll(EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true));
+
+    for (Editor editor : editors) {
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      if (editorComponent != null) {
+        editorComponents.add(editorComponent);
+      }
+    }
+
+    return editorComponents;
+  }
+
   public void addAdditionalEditorComponent(@NotNull EditorComponent additionalEditorComponent) {
     synchronized (myLock) {
       myAdditionalEditorComponents.add(additionalEditorComponent);
@@ -117,4 +141,5 @@ public class EditorList {
       myAdditionalEditors.clear();
     }
   }
+
 }

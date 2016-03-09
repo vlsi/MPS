@@ -61,13 +61,13 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
   private static final Object EVENTS_LOCK = new Object();
-  private static final Object CHECKERS_LOCK = new Object();
 
   private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
@@ -82,8 +82,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
-  private Set<BaseEditorChecker> myCheckers = new LinkedHashSet<BaseEditorChecker>(3);
-  private Set<BaseEditorChecker> myCheckersToRemove = new LinkedHashSet<BaseEditorChecker>();
+
+  private final List<BaseEditorChecker> myCheckers = new CopyOnWriteArrayList<BaseEditorChecker>();
+
   private volatile boolean myForceUpdateInPowerSaveModeFlag = false;
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
@@ -238,9 +239,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     if (RuntimeFlags.isTestMode()) return;
 
     if (checker != null) {
-      synchronized (CHECKERS_LOCK) {
-        myCheckers.add(checker);
-      }
+      myCheckers.add(checker);
       addPendingAction(new Runnable() {
         @Override
         public void run() {
@@ -251,15 +250,48 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  public void removeChecker(BaseEditorChecker checker) {
+  /**
+   * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. May be called from any thread, the removal
+   * happens asynchronously (so do not add back a checker that has just been removed).
+   * @param checker the checker to remove
+   */
+  public void removeChecker(final BaseEditorChecker checker) {
     if (RuntimeFlags.isTestMode()) return;
+    if (checker == null) return;
 
-    if (checker != null) {
-      synchronized (CHECKERS_LOCK) {
-        myCheckers.remove(checker);
-        myCheckersToRemove.add(checker);
+    // Checker removal is done in three steps:
+    //
+    // 1. In the highlighter thread remove the checker from myCheckers. Although myCheckers may be accessed from any thread, removing it on the highlighter
+    //    thread ensures that from this point on the checker will not be used to create any new messages.
+    //
+    // 2. In EDT (since UI access is required) get a list of all editors that are currently open.
+    //
+    // 3. In the highlighter thread again (actually, any background thread would do), go through the list retrieved in the previous step and remove
+    //    the checker's messages from each editor.
+
+    addPendingAction(new Runnable() {
+      @Override
+      public void run() {
+        if (!myCheckers.remove(checker)) return;
+
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            final List<EditorComponent> editors = myEditorList.getAllEditors();
+            if (editors.isEmpty()) return;
+
+            addPendingAction(new Runnable() {
+              @Override
+              public void run() {
+                for (EditorComponent component : editors) {
+                  component.getHighlightManager().clearForOwner(checker, true);
+                }
+              }
+            });
+          }
+        });
       }
-    }
+    });
   }
 
   public void addAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
@@ -305,18 +337,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
 
     final Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
-    final Set<BaseEditorChecker> checkersToRemove = new LinkedHashSet<BaseEditorChecker>();
-    // to avoid inconsistency between checkers, we collect them from fields here
-    // in the synchronized block and then do not read the fields in this iteration anymore
-    synchronized (CHECKERS_LOCK) {
-      if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
-        // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
-        // explicit update action (available in powerSafeMode only)
-        checkers.addAll(myCheckers);
-        myForceUpdateInPowerSaveModeFlag = false;
-      }
-      checkersToRemove.addAll(myCheckersToRemove);
-      myCheckersToRemove.clear();
+    if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
+      // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
+      // explicit update action (available in powerSafeMode only)
+      checkers.addAll(myCheckers);
+      myForceUpdateInPowerSaveModeFlag = false;
     }
 
     final List<EditorComponent> activeEditors = myEditorList.getActiveEditorsInEDT();
@@ -334,7 +359,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
         }
       }
     });
-    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, checkersToRemove, activeEditors);
+    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, activeEditors);
   }
 
   public void runUpdateMessagesAction(Runnable updateAction) {
@@ -373,10 +398,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
           return;
         }
         myCheckedOnceEditors.remove(editorComponent);
-        synchronized (CHECKERS_LOCK) {
-          for (BaseEditorChecker checker : myCheckers) {
-            checker.resetCheckerStateProtected();
-          }
+        for (BaseEditorChecker checker : myCheckers) {
+          checker.resetCheckerStateProtected();
         }
       }
     });

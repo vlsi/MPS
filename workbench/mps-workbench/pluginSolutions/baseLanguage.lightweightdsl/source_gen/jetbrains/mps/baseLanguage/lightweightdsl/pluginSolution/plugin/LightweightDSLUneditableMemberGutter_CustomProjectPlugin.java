@@ -4,17 +4,11 @@ package jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.nodeEditor.Highlighter;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
-import jetbrains.mps.openapi.editor.EditorComponent;
 
 public class LightweightDSLUneditableMemberGutter_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private DSLComponentChecker myChecker;
   private Highlighter myHighlighter;
-  private FileEditorManager myEditorManager;
   public LightweightDSLUneditableMemberGutter_CustomProjectPlugin() {
   }
   public void doInit(MPSProject project) {
@@ -22,18 +16,8 @@ public class LightweightDSLUneditableMemberGutter_CustomProjectPlugin extends Ba
     LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myHighlighter = project.getComponent(Highlighter.class);
 
     LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myHighlighter.addChecker(LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myChecker);
-    LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myEditorManager = project.getComponent(FileEditorManager.class);
   }
   public void doDispose(MPSProject project) {
     LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myHighlighter.removeChecker(LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myChecker);
-
-    // the following code is a qfix for MPS-23439. This code must be removed as soon as MPS-23451 is fixed 
-    for (Editor editor : ListSequence.fromList(EditorsHelper.toMPSEditors(EditorsHelper.getAllEditors(LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myEditorManager)))) {
-      EditorComponent ec = editor.getCurrentEditorComponent();
-      if (!((ec instanceof jetbrains.mps.nodeEditor.EditorComponent))) {
-        continue;
-      }
-      ((jetbrains.mps.nodeEditor.EditorComponent) ec).getHighlightManager().clearForOwner(LightweightDSLUneditableMemberGutter_CustomProjectPlugin.this.myChecker, false);
-    }
   }
 }
