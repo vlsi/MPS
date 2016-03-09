@@ -321,7 +321,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
-  private UpdaterImpl myUpdater;
+  private UpdaterImpl myUpdater = createUpdater();
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -379,7 +379,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
-    myUpdater = createUpdater();
     myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
     myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
