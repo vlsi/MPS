@@ -28,12 +28,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.goTo.matcher.CompositeItemProvider;
 import jetbrains.mps.workbench.goTo.matcher.MPSNodeItemProvider;
 import jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProvider;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class MpsPopupFactory {
-  private static final FakePsiContext CONTEXT = new FakePsiContext();
-
   public static ChooseByNamePopup createNodePopupWithParentAction(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider());
     setCheckboxShortcutFromAction(popup, parentAction);
@@ -65,11 +62,11 @@ public abstract class MpsPopupFactory {
   }
 
   private static ChooseByNameItemProvider nodeProvider() {
-    return new CompositeItemProvider(new MPSNodeItemProvider(CONTEXT), new DefaultChooseByNameItemProvider(CONTEXT));
+    return new CompositeItemProvider(new MPSNodeItemProvider(null), new DefaultChooseByNameItemProvider(null));
   }
 
   private static ChooseByNameItemProvider packageProvider() {
-    return new CompositeItemProvider(new DefaultChooseByNameItemProvider(CONTEXT), new MPSPackageItemProvider(CONTEXT));
+    return new CompositeItemProvider(new MPSPackageItemProvider(null), new DefaultChooseByNameItemProvider(null));
   }
 
   private static void setCheckboxShortcutFromAction(ChooseByNamePopup popup, @Nullable BaseAction parentAction) {
