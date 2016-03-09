@@ -181,6 +181,7 @@ public abstract class BaseNodeEditor implements Editor {
   }
 
   private void pauseOrResumeHighlighter() {
+    if (myEditorComponent == null) return;
     myEditorComponent.getHighlighter().setPaused(!mySelected);
   }
 
@@ -189,12 +190,18 @@ public abstract class BaseNodeEditor implements Editor {
       return;
     }
 
-    if (editorComponent == null) {
+    if (myEditorComponent != null) {
+      // Remove old editor component
       myEditorPanel.remove(myEditorComponent.getExternalComponent());
       myEditorComponent.dispose();
       myEditorComponent = null;
       myCurrentlyEditedNode = null;
-    } else {
+    }
+
+    myEditorComponent = editorComponent;
+
+    if (myEditorComponent != null) {
+      // Add new editor component
       myEditorComponent = editorComponent;
       JComponent externalComponent = myEditorComponent.getExternalComponent();
       //HACK to avoid strange gray border in ScrollPane after empty aspect tab
@@ -233,14 +240,14 @@ public abstract class BaseNodeEditor implements Editor {
     if (!(state instanceof BaseEditorState)) return;
 
     final BaseEditorState s = (BaseEditorState) state;
-    if (s.myMemento == null || myEditorComponent == null) {
+    final EditorContext editorContext = getEditorContext();
+    if (s.myMemento == null || editorContext == null) {
       return;
     }
-    final EditorContext editorContext = getEditorContext();
     executeInEDT(new PrioritizedTask(TaskType.EDITOR_MEMENTO, myType2TaskMap) {
       @Override
       public void performTask() {
-        if (myEditorComponent.isDisposed()) {
+        if (editorContext.getEditorComponent().isDisposed()) {
           return;
         }
         editorContext.setMemento(s.myMemento);
