@@ -29,6 +29,7 @@
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
+    <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1232,6 +1233,27 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="3kH8Tdv8uRs" role="3cqZAp">
+                        <node concept="3SKdUq" id="3kH8Tdv8uRr" role="3SKWNk">
+                          <property role="3SKdUp" value="We need to wait for all post startup activities to be finished." />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="3kH8Tdv8uRu" role="3cqZAp">
+                        <node concept="3SKdUq" id="3kH8Tdv8uRt" role="3SKWNk">
+                          <property role="3SKdUp" value="As they run in GuiUtils.invokeLaterIfNeeded with ModalityState.NON_MODAL," />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="3kH8Tdv8uRw" role="3cqZAp">
+                        <node concept="3SKdUq" id="3kH8Tdv8uRv" role="3SKWNk">
+                          <property role="3SKdUp" value="it is not guaranteed to be executed before test itself." />
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="3kH8Tdv8_l3" role="3cqZAp">
+                        <node concept="2YIFZM" id="3kH8Tdv8_og" role="3clFbG">
+                          <ref role="37wK5l" to="g1qu:~UIUtil.dispatchAllInvocationEvents():void" resolve="dispatchAllInvocationEvents" />
+                          <ref role="1Pybhc" to="g1qu:~UIUtil" resolve="UIUtil" />
                         </node>
                       </node>
                     </node>

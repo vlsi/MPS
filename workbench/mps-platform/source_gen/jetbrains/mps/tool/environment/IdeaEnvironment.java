@@ -18,6 +18,7 @@ import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.SwingUtilities;
@@ -168,6 +169,10 @@ public class IdeaEnvironment extends EnvironmentBase {
         } catch (Exception e) {
           exc[0] = e;
         }
+        // We need to wait for all post startup activities to be finished. 
+        // As they run in GuiUtils.invokeLaterIfNeeded with ModalityState.NON_MODAL, 
+        // it is not guaranteed to be executed before test itself. 
+        UIUtil.dispatchAllInvocationEvents();
       }
     });
     if (exc[0] != null) {
