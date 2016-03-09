@@ -283,8 +283,14 @@ public class Highlighter implements IHighlighter, ProjectComponent {
             addPendingAction(new Runnable() {
               @Override
               public void run() {
+                long time = System.currentTimeMillis();
                 for (EditorComponent component : editors) {
                   component.getHighlightManager().clearForOwner(checker, true);
+                }
+                if (LOG.isDebugEnabled()) {
+                  long elapsed = System.currentTimeMillis() - time;
+                  LOG.debug(String.format("Removing %s messages from %d editors took %d ms",
+                      checker, editors.size(), elapsed));
                 }
               }
             });
