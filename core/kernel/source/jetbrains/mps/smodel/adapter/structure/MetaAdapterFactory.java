@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -29,6 +30,7 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -93,6 +95,11 @@ public abstract class MetaAdapterFactory {
     return getConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
   }
 
+  public static SConcept getConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
+    final SLanguageId langId = MetaIdHelper.getLanguage(language);
+    return getConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+  }
+
   @NotNull
   @Deprecated //todo: 2 hex values instead of UUID
   public static SConcept getConcept(UUID lang, long concept, String conceptName) {
@@ -112,6 +119,11 @@ public abstract class MetaAdapterFactory {
     return getInterfaceConcept(MetaIdFactory.conceptId(uuidHigh, uuidLow, concept), conceptName);
   }
 
+  public static SInterfaceConcept getInterfaceConcept(@NotNull SLanguage language, long concept, @NotNull String shortConceptName) {
+    final SLanguageId langId = MetaIdHelper.getLanguage(language);
+    return getInterfaceConcept(MetaIdFactory.conceptId(langId, concept), NameUtil.conceptFQNameFromNamespaceAndShortName(language.getQualifiedName(), shortConceptName));
+  }
+
   @NotNull
   @Deprecated //todo: 2 hex values instead of UUID
   public static SInterfaceConcept getInterfaceConcept(UUID lang, long concept, String conceptName) {
@@ -129,6 +141,11 @@ public abstract class MetaAdapterFactory {
   @NotNull
   public static SProperty getProperty(long uuidHigh, long uuidLow, long concept, long prop, String propName) {
     return getProperty(MetaIdFactory.propId(uuidHigh, uuidLow, concept, prop), propName);
+  }
+
+  public static SProperty getProperty(@NotNull SAbstractConcept concept, long prop, String propName) {
+    final SConceptId cid = MetaIdHelper.getConcept(concept);
+    return getProperty(MetaIdFactory.propId(cid, prop), propName);
   }
 
   @NotNull

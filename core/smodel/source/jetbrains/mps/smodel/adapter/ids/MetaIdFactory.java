@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,10 @@ public abstract class MetaIdFactory {
     return new SConceptId(langId(uuidHigh, uuidLow), concept);
   }
 
+  public static SConceptId conceptId(SLanguageId langId, long concept) {
+    return new SConceptId(langId, concept);
+  }
+
   @Deprecated
   public static SPropertyId propId(UUID lang, long concept, long prop) {
     return new SPropertyId(conceptId(lang, concept), prop);
@@ -54,6 +58,10 @@ public abstract class MetaIdFactory {
 
   public static SPropertyId propId(long uuidHigh, long uuidLow, long concept, long prop) {
     return new SPropertyId(conceptId(new UUID(uuidHigh, uuidLow), concept), prop);
+  }
+
+  public static SPropertyId propId(SConceptId concept, long prop) {
+    return new SPropertyId(concept, prop);
   }
 
   @Deprecated

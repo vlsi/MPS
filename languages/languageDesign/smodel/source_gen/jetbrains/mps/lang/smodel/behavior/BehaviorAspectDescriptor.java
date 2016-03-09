@@ -107,6 +107,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myLinkAttributeQualifier__BehaviorDescriptor = new LinkAttributeQualifier__BehaviorDescriptor();
   private final BHDescriptor myPropertyAttributeQualifier__BehaviorDescriptor = new PropertyAttributeQualifier__BehaviorDescriptor();
   private final BHDescriptor mySConceptType__BehaviorDescriptor = new SConceptType__BehaviorDescriptor();
+  private final BHDescriptor myPropertyIdentity__BehaviorDescriptor = new PropertyIdentity__BehaviorDescriptor();
+  private final BHDescriptor myConceptIdentity__BehaviorDescriptor = new ConceptIdentity__BehaviorDescriptor();
+  private final BHDescriptor myConceptId__BehaviorDescriptor = new ConceptId__BehaviorDescriptor();
+  private final BHDescriptor myPropertyId__BehaviorDescriptor = new PropertyId__BehaviorDescriptor();
   private final BHDescriptor myModel_GetModule__BehaviorDescriptor = new Model_GetModule__BehaviorDescriptor();
   private final BHDescriptor myNode_GetSConceptOperation__BehaviorDescriptor = new Node_GetSConceptOperation__BehaviorDescriptor();
   private final BHDescriptor myNode_GetReferencesOperation__BehaviorDescriptor = new Node_GetReferencesOperation__BehaviorDescriptor();
@@ -115,7 +119,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[99];
+    myConceptBehaviorIds = new long[103];
     myConceptBehaviorIds[0] = 0x108f968b3caL;
     myConceptBehaviorIds[1] = 0x108f96cca6fL;
     myConceptBehaviorIds[2] = 0x108f96ea2caL;
@@ -211,10 +215,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[92] = 0x58ea5217b045b9b7L;
     myConceptBehaviorIds[93] = 0x58ea5217b045c9b9L;
     myConceptBehaviorIds[94] = 0x5cab42cd97571ceeL;
-    myConceptBehaviorIds[95] = 0x61168e34226eec71L;
-    myConceptBehaviorIds[96] = 0x6771eac6c5cbe7d2L;
-    myConceptBehaviorIds[97] = 0x798c0d67da9045abL;
-    myConceptBehaviorIds[98] = 0x7b0da3c650be8558L;
+    myConceptBehaviorIds[95] = 0x5fea1eb9fefb4617L;
+    myConceptBehaviorIds[96] = 0x5fea1eb9fefb4642L;
+    myConceptBehaviorIds[97] = 0x5fea1eb9fefb6fe7L;
+    myConceptBehaviorIds[98] = 0x5fea1eb9fefc235cL;
+    myConceptBehaviorIds[99] = 0x61168e34226eec71L;
+    myConceptBehaviorIds[100] = 0x6771eac6c5cbe7d2L;
+    myConceptBehaviorIds[101] = 0x798c0d67da9045abL;
+    myConceptBehaviorIds[102] = 0x7b0da3c650be8558L;
   }
 
   @Deprecated
@@ -419,12 +427,20 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 94:
         return mySConceptType__BehaviorDescriptor;
       case 95:
-        return myModel_GetModule__BehaviorDescriptor;
+        return myPropertyIdentity__BehaviorDescriptor;
       case 96:
-        return myNode_GetSConceptOperation__BehaviorDescriptor;
+        return myConceptIdentity__BehaviorDescriptor;
       case 97:
-        return myNode_GetReferencesOperation__BehaviorDescriptor;
+        return myConceptId__BehaviorDescriptor;
       case 98:
+        return myPropertyId__BehaviorDescriptor;
+      case 99:
+        return myModel_GetModule__BehaviorDescriptor;
+      case 100:
+        return myNode_GetSConceptOperation__BehaviorDescriptor;
+      case 101:
+        return myNode_GetReferencesOperation__BehaviorDescriptor;
+      case 102:
         return myAsNodeOperation__BehaviorDescriptor;
       default:
         return null;

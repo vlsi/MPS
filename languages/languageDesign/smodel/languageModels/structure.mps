@@ -2436,5 +2436,65 @@
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
   </node>
+  <node concept="PlHQZ" id="5ZE7FBYYOon">
+    <property role="1pbfSe" value="1592091856" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="PropertyIdentity" />
+  </node>
+  <node concept="PlHQZ" id="5ZE7FBYYOp2">
+    <property role="1pbfSe" value="1592091899" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ConceptIdentity" />
+  </node>
+  <node concept="1TIwiD" id="5ZE7FBYYQZB">
+    <property role="1pbfSe" value="1592102560" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ConceptId" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5ZE7FBYYQZG" role="1TKVEl">
+      <property role="TrG5h" value="conceptId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5ZE7FBYYRfn" role="1TKVEl">
+      <property role="TrG5h" value="conceptName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5ZE7FBYYTZG" role="1TKVEl">
+      <property role="TrG5h" value="isInterface" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyj" id="5ZE7FBYYQZE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="languageIdentity" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="34EJa6aIcco" resolve="LanguageIdentity" />
+    </node>
+    <node concept="PrWs8" id="5ZE7FBYYQZC" role="PzmwI">
+      <ref role="PrY4T" node="5ZE7FBYYOp2" resolve="ConceptIdentity" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5ZE7FBYZ2ds">
+    <property role="1pbfSe" value="1592148501" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="PropertyId" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5ZE7FBYZ2d$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conceptIdentity" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5ZE7FBYYOp2" resolve="ConceptIdentity" />
+    </node>
+    <node concept="1TJgyi" id="5ZE7FBYZ2dx" role="1TKVEl">
+      <property role="TrG5h" value="propertyId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="5ZE7FBYZ2dv" role="1TKVEl">
+      <property role="TrG5h" value="propertyName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="5ZE7FBYZ2dt" role="PzmwI">
+      <ref role="PrY4T" node="5ZE7FBYYOon" resolve="PropertyIdentity" />
+    </node>
+  </node>
 </model>
 
