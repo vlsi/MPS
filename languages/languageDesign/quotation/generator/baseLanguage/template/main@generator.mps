@@ -33,7 +33,6 @@
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -47,9 +46,6 @@
         <child id="1238857764950" name="tuple" index="1LFl5Q" />
         <child id="1238857834412" name="index" index="1LF_Uc" />
       </concept>
-    </language>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622753914" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" flags="nn" index="1Q79dO" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
@@ -495,13 +491,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -2703,87 +2692,8 @@
     <property role="3GE5qa" value="container" />
     <node concept="3aamgX" id="hqc8hzr" role="3acgRq">
       <ref role="30HIoZ" to="tp3r:hqc44pp" resolve="Quotation" />
-      <node concept="gft3U" id="7kq1ReKp0oO" role="1lVwrX">
-        <node concept="10Nm6u" id="7kq1ReKp0M6" role="gfFT$">
-          <node concept="5jKBG" id="7kq1ReKp0Mg" role="lGtFl">
-            <ref role="v9R2y" node="SVCbzOGqde" resolve="Quotation_to_staticMethodCall" />
-            <node concept="1UUvTB" id="7kq1ReK$Kai" role="v9R3O">
-              <node concept="1UU6SM" id="7kq1ReK$Kak" role="1UU7Ll">
-                <node concept="3clFbS" id="7kq1ReK$Kam" role="2VODD2">
-                  <node concept="3clFbF" id="7kq1ReK$Ki9" role="3cqZAp">
-                    <node concept="30H73N" id="7kq1ReK$Ki8" role="3clFbG" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3NFfHV" id="7kq1ReKp0MH" role="5jGum">
-              <node concept="3clFbS" id="7kq1ReKp0MI" role="2VODD2">
-                <node concept="3SKdUt" id="7kq1ReKp0O$" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0O_" role="3SKWNk">
-                    <property role="3SKdUp" value="Here comes major trick with quotations. They are expected to see input model" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7kq1ReKp0OA" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0OB" role="3SKWNk">
-                    <property role="3SKdUp" value="the same way user did. First attempt to accomplish this was to use 'top-priority' mappings," />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7kq1ReKp0OC" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0OD" role="3SKWNk">
-                    <property role="3SKdUp" value="however, the attempt failed as the number of top-pri mappings grow and they appear in the generation plan" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7kq1ReKp0OE" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0OF" role="3SKWNk">
-                    <property role="3SKdUp" value="in unpredictable order (potentially running before quotations and altering e.g. targets of quotation-hosted " />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7kq1ReKp0OG" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0OH" role="3SKWNk">
-                    <property role="3SKdUp" value="references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here." />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="7kq1ReKp0OK" role="3cqZAp">
-                  <node concept="3cpWsn" id="7kq1ReKp0OL" role="3cpWs9">
-                    <property role="TrG5h" value="originalQuotation" />
-                    <node concept="3Tqbb2" id="7kq1ReKp0OM" role="1tU5fm">
-                      <ref role="ehGHo" to="tp3r:hqc44pp" resolve="Quotation" />
-                    </node>
-                    <node concept="10QFUN" id="7kq1ReKp0ON" role="33vP2m">
-                      <node concept="2YIFZM" id="7kq1ReKp0OO" role="10QFUP">
-                        <ref role="37wK5l" to="fwk:~TracingUtil.getInputNode(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="getInputNode" />
-                        <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
-                        <node concept="30H73N" id="7kq1ReKp0OP" role="37wK5m" />
-                        <node concept="2OqwBi" id="7kq1ReKp0OQ" role="37wK5m">
-                          <node concept="2JrnkZ" id="7kq1ReKp0OR" role="2Oq$k0">
-                            <node concept="2OqwBi" id="7kq1ReKp0OS" role="2JrQYb">
-                              <node concept="1iwH7S" id="7kq1ReKp0OT" role="2Oq$k0" />
-                              <node concept="1st3f0" id="7kq1ReKp0OU" role="2OqNvi" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="7kq1ReKp0OV" role="2OqNvi">
-                            <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3Tqbb2" id="7kq1ReKp0OW" role="10QFUM">
-                        <ref role="ehGHo" to="tp3r:hqc44pp" resolve="Quotation" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7kq1ReKp0OI" role="3cqZAp">
-                  <node concept="3SKdUq" id="7kq1ReKp0OJ" role="3SKWNk">
-                    <property role="3SKdUp" value="There are generators that produce Quotations, we shall use this quotation then, if no original one is available." />
-                  </node>
-                </node>
-                <node concept="3cpWs6" id="7kq1ReKp0Uk" role="3cqZAp">
-                  <node concept="30H73N" id="7Nrs$T2PNJb" role="3cqZAk" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node concept="j$656" id="5ZE7FBYWdOy" role="1lVwrX">
+        <ref role="v9R2y" node="SVCbzOGqde" resolve="Quotation_to_staticMethodCall" />
       </node>
     </node>
     <node concept="3aamgX" id="RRzwLnBq68" role="3acgRq">
@@ -2813,12 +2723,6 @@
     <property role="TrG5h" value="Quotation_to_staticMethodCall" />
     <property role="3GE5qa" value="container" />
     <ref role="3gUMe" to="tp3r:hqc44pp" resolve="Quotation" />
-    <node concept="1N15co" id="7kq1ReKzeIv" role="1s_3oS">
-      <property role="TrG5h" value="transientQuotation" />
-      <node concept="3Tqbb2" id="7kq1ReKzgEe" role="1N15GL">
-        <ref role="ehGHo" to="tp3r:hqc44pp" resolve="Quotation" />
-      </node>
-    </node>
     <node concept="2Tav94" id="SVCbzOGy7b" role="13RCb5">
       <node concept="2TbA4q" id="SVCbzOGzLV" role="2Tav95">
         <ref role="37wK5l" node="SVCbzOGy7c" resolve="_quotation_createNode" />
@@ -2838,6 +2742,15 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3cpWs8" id="5ZE7FBYVo$v" role="3cqZAp">
+                  <node concept="3cpWsn" id="5ZE7FBYVo$w" role="3cpWs9">
+                    <property role="TrG5h" value="quotation" />
+                    <node concept="3Tqbb2" id="5ZE7FBYVo$u" role="1tU5fm">
+                      <ref role="ehGHo" to="tp3r:hqc44pp" resolve="Quotation" />
+                    </node>
+                    <node concept="30H73N" id="5ZE7FBYVz1F" role="33vP2m" />
+                  </node>
+                </node>
                 <node concept="3clFbJ" id="7kq1ReKzi1v" role="3cqZAp">
                   <node concept="3y3z36" id="7kq1ReKzi1w" role="3clFbw">
                     <node concept="10Nm6u" id="7kq1ReKzi1x" role="3uHU7w" />
@@ -2845,11 +2758,8 @@
                       <node concept="3TrEf2" id="7kq1ReKzkCE" role="2OqNvi">
                         <ref role="3Tt5mk" to="tp3r:hqc44pr" />
                       </node>
-                      <node concept="2OqwBi" id="7kq1ReKzjNk" role="2Oq$k0">
-                        <node concept="1iwH7S" id="7kq1ReKzjCb" role="2Oq$k0" />
-                        <node concept="3cR$yn" id="7kq1ReKzkbd" role="2OqNvi">
-                          <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                        </node>
+                      <node concept="37vLTw" id="5ZE7FBYVo$$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5ZE7FBYVo$w" resolve="quotation" />
                       </node>
                     </node>
                   </node>
@@ -2864,11 +2774,8 @@
                             <node concept="3TrEf2" id="7kq1ReKzi1G" role="2OqNvi">
                               <ref role="3Tt5mk" to="tp3r:hqc44pr" />
                             </node>
-                            <node concept="2OqwBi" id="7kq1ReKzkV_" role="2Oq$k0">
-                              <node concept="1iwH7S" id="7kq1ReKzkVA" role="2Oq$k0" />
-                              <node concept="3cR$yn" id="7kq1ReKzkVB" role="2OqNvi">
-                                <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                              </node>
+                            <node concept="37vLTw" id="5ZE7FBYVo$_" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5ZE7FBYVo$w" resolve="quotation" />
                             </node>
                           </node>
                         </node>
@@ -2883,11 +2790,8 @@
                       <node concept="3TrEf2" id="7kq1ReKzi1L" role="2OqNvi">
                         <ref role="3Tt5mk" to="tp3r:2KyHUfrw9K5" />
                       </node>
-                      <node concept="2OqwBi" id="7kq1ReKzljm" role="2Oq$k0">
-                        <node concept="1iwH7S" id="7kq1ReKzljn" role="2Oq$k0" />
-                        <node concept="3cR$yn" id="7kq1ReKzljo" role="2OqNvi">
-                          <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                        </node>
+                      <node concept="37vLTw" id="5ZE7FBYVo$A" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5ZE7FBYVo$w" resolve="quotation" />
                       </node>
                     </node>
                   </node>
@@ -2902,11 +2806,8 @@
                             <node concept="3TrEf2" id="7kq1ReKzi1T" role="2OqNvi">
                               <ref role="3Tt5mk" to="tp3r:2KyHUfrw9K5" />
                             </node>
-                            <node concept="2OqwBi" id="7kq1ReKzl$5" role="2Oq$k0">
-                              <node concept="1iwH7S" id="7kq1ReKzl$6" role="2Oq$k0" />
-                              <node concept="3cR$yn" id="7kq1ReKzl$7" role="2OqNvi">
-                                <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                              </node>
+                            <node concept="37vLTw" id="5ZE7FBYVo$B" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5ZE7FBYVo$w" resolve="quotation" />
                             </node>
                           </node>
                         </node>
@@ -2948,11 +2849,8 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="7kq1ReKzlRp" role="2Oq$k0">
-                      <node concept="1iwH7S" id="7kq1ReKzlRq" role="2Oq$k0" />
-                      <node concept="3cR$yn" id="7kq1ReKzlRr" role="2OqNvi">
-                        <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                      </node>
+                    <node concept="37vLTw" id="5ZE7FBYVo$C" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5ZE7FBYVo$w" resolve="quotation" />
                     </node>
                   </node>
                 </node>
@@ -3158,14 +3056,14 @@
                         <node concept="Xl_RD" id="SVCbzOG$N9" role="3uHU7B">
                           <property role="Xl_RC" value="parameter_" />
                         </node>
-                        <node concept="2YIFZM" id="SVCbzOG$Na" role="3uHU7w">
+                        <node concept="2YIFZM" id="5ZE7FBYVCG$" role="3uHU7w">
                           <ref role="37wK5l" to="wg2h:6wtORYsNMtU" resolve="genQuotationNodeId" />
                           <ref role="1Pybhc" to="wg2h:6wtORYsNMtO" resolve="QuotationUtil" />
-                          <node concept="1iwH7S" id="SVCbzOG$Nb" role="37wK5m" />
-                          <node concept="2OqwBi" id="7Nrs$T2KX_i" role="37wK5m">
-                            <node concept="1iwH7S" id="7Nrs$T2KWMP" role="2Oq$k0" />
-                            <node concept="3cR$yn" id="7Nrs$T2KYIe" role="2OqNvi">
-                              <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
+                          <node concept="1iwH7S" id="5ZE7FBYVCG_" role="37wK5m" />
+                          <node concept="2OqwBi" id="5ZE7FBYW6L3" role="37wK5m">
+                            <node concept="1iwH7S" id="5ZE7FBYW558" role="2Oq$k0" />
+                            <node concept="1bhEwm" id="5ZE7FBYW8sj" role="2OqNvi">
+                              <ref role="1bhEwl" node="5ZE7FBYVITi" resolve="inputNode" />
                             </node>
                           </node>
                         </node>
@@ -3235,8 +3133,8 @@
                           <node concept="1iwH7S" id="SVCbzOGB0g" role="37wK5m" />
                           <node concept="2OqwBi" id="7Nrs$T2KLRk" role="37wK5m">
                             <node concept="1iwH7S" id="7Nrs$T2KL04" role="2Oq$k0" />
-                            <node concept="3cR$yn" id="7Nrs$T2KM4Q" role="2OqNvi">
-                              <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
+                            <node concept="1bhEwm" id="5ZE7FBYWaal" role="2OqNvi">
+                              <ref role="1bhEwl" node="5ZE7FBYVITi" resolve="inputNode" />
                             </node>
                           </node>
                         </node>
@@ -3928,70 +3826,15 @@
           <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
           <node concept="3zFVjK" id="SVCbzOJT21" role="3zH0cK">
             <node concept="3clFbS" id="SVCbzOJT22" role="2VODD2">
-              <node concept="1X3_iC" id="3$ZLRFpRgTR" role="lGtFl">
-                <property role="3V$3am" value="statement" />
-                <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                <node concept="3clFbF" id="3YWZWnqc8pi" role="8Wnug">
-                  <node concept="2OqwBi" id="3YWZWnqc8pC" role="3clFbG">
-                    <node concept="1iwH7S" id="3YWZWnqc8pj" role="2Oq$k0" />
-                    <node concept="2piZGk" id="3YWZWnqc8pH" role="2OqNvi">
-                      <node concept="2OqwBi" id="GdSDg9BAJY" role="2pr8EU">
-                        <node concept="30H73N" id="5Y7fH33iVRx" role="2Oq$k0" />
-                        <node concept="2Rxl7S" id="GdSDg9BAK0" role="2OqNvi" />
-                      </node>
-                      <node concept="3zGtF$" id="SVCbzOJV3Z" role="2piZGb" />
+              <node concept="3clFbF" id="3YWZWnqc8pi" role="3cqZAp">
+                <node concept="2OqwBi" id="3YWZWnqc8pC" role="3clFbG">
+                  <node concept="1iwH7S" id="3YWZWnqc8pj" role="2Oq$k0" />
+                  <node concept="2piZGk" id="3YWZWnqc8pH" role="2OqNvi">
+                    <node concept="2OqwBi" id="GdSDg9BAJY" role="2pr8EU">
+                      <node concept="30H73N" id="5Y7fH33iVRx" role="2Oq$k0" />
+                      <node concept="2Rxl7S" id="GdSDg9BAK0" role="2OqNvi" />
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3SKdUt" id="5Y7fH33k4eH" role="3cqZAp">
-                <node concept="3SKdUq" id="5Y7fH33k4tS" role="3SKWNk">
-                  <property role="3SKdUp" value="This is an ugly temporary solution to ensure method names do not change due to use" />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="5Y7fH33k4Zc" role="3cqZAp">
-                <node concept="3SKdUq" id="5Y7fH33k589" role="3SKWNk">
-                  <property role="3SKdUp" value="of original input node for quotation generation. I just can't afford regenerating 80+" />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="5Y7fH33k5yx" role="3cqZAp">
-                <node concept="3SKdUq" id="5Y7fH33k5Lh" role="3SKWNk">
-                  <property role="3SKdUp" value="models right now, as these changes are unrelated to the task at hand. " />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="5Y7fH33k6bZ" role="3cqZAp">
-                <node concept="3SKdUq" id="5Y7fH33k6rk" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME shall use original code (above) and regenerate once dust settles." />
-                </node>
-              </node>
-              <node concept="3clFbF" id="5Y7fH33jdC5" role="3cqZAp">
-                <node concept="2OqwBi" id="5Y7fH33juW4" role="3clFbG">
-                  <node concept="1eOMI4" id="5Y7fH33juvd" role="2Oq$k0">
-                    <node concept="10QFUN" id="5Y7fH33jrN3" role="1eOMHV">
-                      <node concept="3uibUv" id="5Y7fH33jrYU" role="10QFUM">
-                        <ref role="3uigEE" to="ap4t:~GenerationSessionContext" resolve="GenerationSessionContext" />
-                      </node>
-                      <node concept="1Q79dO" id="5Y7fH33jpxZ" role="10QFUP" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="5Y7fH33jyES" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~GenerationSessionContext.createUniqueName(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="createUniqueName" />
-                    <node concept="3zGtF$" id="5Y7fH33jyQJ" role="37wK5m" />
-                    <node concept="2OqwBi" id="5Y7fH33jPsJ" role="37wK5m">
-                      <node concept="2OqwBi" id="5Y7fH33jONy" role="2Oq$k0">
-                        <node concept="1iwH7S" id="5Y7fH33jOA8" role="2Oq$k0" />
-                        <node concept="3cR$yn" id="5Y7fH33jP7b" role="2OqNvi">
-                          <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                        </node>
-                      </node>
-                      <node concept="2Rxl7S" id="5Y7fH33jQ0W" role="2OqNvi" />
-                    </node>
-                    <node concept="2OqwBi" id="5Y7fH33jQAf" role="37wK5m">
-                      <node concept="1iwH7S" id="5Y7fH33jQls" role="2Oq$k0" />
-                      <node concept="3cR$yn" id="5Y7fH33jQUH" role="2OqNvi">
-                        <ref role="3cRzXn" node="7kq1ReKzeIv" resolve="transientQuotation" />
-                      </node>
-                    </node>
+                    <node concept="3zGtF$" id="SVCbzOJV3Z" role="2piZGb" />
                   </node>
                 </node>
               </node>
@@ -4000,6 +3843,19 @@
         </node>
       </node>
       <node concept="raruj" id="SVCbzOGy7x" role="lGtFl" />
+      <node concept="2jeGV$" id="5ZE7FBYVITi" role="lGtFl">
+        <property role="TrG5h" value="inputNode" />
+        <node concept="2jfdEK" id="5ZE7FBYVITk" role="2jfP_Y">
+          <node concept="3clFbS" id="5ZE7FBYVITm" role="2VODD2">
+            <node concept="3clFbF" id="5ZE7FBYVXYb" role="3cqZAp">
+              <node concept="30H73N" id="5ZE7FBYVXYa" role="3clFbG" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tqbb2" id="5ZE7FBYVXZ2" role="2jfP_h">
+          <ref role="ehGHo" to="tp3r:hqc44pp" resolve="Quotation" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="13MO4I" id="RRzwLnBq6a">

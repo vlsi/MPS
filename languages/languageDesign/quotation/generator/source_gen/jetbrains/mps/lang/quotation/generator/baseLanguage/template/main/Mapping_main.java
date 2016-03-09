@@ -17,8 +17,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.template.TemplateArgumentContext;
 
 @Generated
 public class Mapping_main extends MapConfigBase implements TemplateMappingConfiguration {
@@ -38,13 +36,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = null;
-      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_8438065045294025901(new SourceSubstituteMacroNodeContext(context, callMacro_ief6mt_b0a0a2a1d));
-      TemplateContext context1 = context.subContext(null, callInputNode1);
-      if (callInputNode1 != null) {
-        tlist1 = new Template_Quotation_to_staticMethodCall(((SNode) QueriesGenerated.templateArgumentQuery_8438065045297103508(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0e0b3)))).apply(environment, context1);
-
-      }
+      Collection<SNode> tlist1 = new Template_Quotation_to_staticMethodCall().apply(environment, context);
       return tlist1;
     }
   }
@@ -70,6 +62,4 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       return tlist1;
     }
   }
-  private static SNodePointer callMacro_ief6mt_b0a0a2a1d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8438065045294025872");
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0a0e0b3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8438065045297103506");
 }

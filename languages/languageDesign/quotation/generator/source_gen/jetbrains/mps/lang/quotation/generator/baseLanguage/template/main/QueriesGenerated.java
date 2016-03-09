@@ -15,7 +15,6 @@ import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode__BehaviorDescriptor
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil;
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -113,19 +112,15 @@ public class QueriesGenerated {
     //  the 'node' expression may have been already mapped and unique name created for it 
     String key = "parameterFromExpressions_" + _context.getNode().getNodeId().toString();
     String uniqName = (String) _context.getTransientObject(key);
-    uniqName = (uniqName != null ? uniqName : "parameter_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("transientQuotation"))));
+    uniqName = (uniqName != null ? uniqName : "parameter_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("var:inputNode"))));
     _context.putTransientObject(key, uniqName);
     return uniqName;
   }
   public static Object propertyMacro_GetPropertyValue_1025590056396681226(final PropertyMacroContext _context) {
-    return "quotedNode_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("transientQuotation")));
+    return "quotedNode_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("var:inputNode")));
   }
   public static Object propertyMacro_GetPropertyValue_1025590056397541505(final PropertyMacroContext _context) {
-    // This is an ugly temporary solution to ensure method names do not change due to use 
-    // of original input node for quotation generation. I just can't afford regenerating 80+ 
-    // models right now, as these changes are unrelated to the task at hand.  
-    // FIXME shall use original code (above) and regenerate once dust settles. 
-    return ((GenerationSessionContext) _context.getGenerator().getGeneratorSessionContext()).createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(((SNode) _context.getVariable("transientQuotation"))), ((SNode) _context.getVariable("transientQuotation")));
+    return _context.createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_429601079676709309(final PropertyMacroContext _context) {
     return "p" + ((Integer) _context.getVariable("cv:c"));
@@ -363,16 +358,6 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5645466361084425862(final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode().getContainmentLink().getDeclarationNode();
   }
-  public static SNode sourceNodeQuery_8438065045294025901(final SourceSubstituteMacroNodeContext _context) {
-    // Here comes major trick with quotations. They are expected to see input model 
-    // the same way user did. First attempt to accomplish this was to use 'top-priority' mappings, 
-    // however, the attempt failed as the number of top-pri mappings grow and they appear in the generation plan 
-    // in unpredictable order (potentially running before quotations and altering e.g. targets of quotation-hosted  
-    // references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here. 
-    SNode originalQuotation = (SNode) TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
-    // There are generators that produce Quotations, we shall use this quotation then, if no original one is available. 
-    return _context.getNode();
-  }
   public static SNode sourceNodeQuery_767161977424634934(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"));
   }
@@ -426,9 +411,6 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_5756354288101684824(final SourceSubstituteMacroNodeContext _context) {
     return SModelUtil.getGenuineLinkDeclaration(SLinkOperations.getTarget(((SNode) _context.getVariable("link")), MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, 0x4bb51009d20c8e1cL, "link")));
-  }
-  public static Object templateArgumentQuery_8438065045297103508(final TemplateQueryContext _context) {
-    return _context.getNode();
   }
   public static Object templateArgumentQuery_7091594365016949043(final TemplateQueryContext _context) {
     return SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"));
@@ -522,13 +504,14 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_8438065045296712361(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    if (SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465bL, "modelToCreate")) != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465bL, "modelToCreate")));
+    SNode quotation = _context.getNode();
+    if (SLinkOperations.getTarget(quotation, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465bL, "modelToCreate")) != null) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(quotation, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465bL, "modelToCreate")));
     }
-    if (SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x2c22b7a3db809c05L, "nodeId")) != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x2c22b7a3db809c05L, "nodeId")));
+    if (SLinkOperations.getTarget(quotation, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x2c22b7a3db809c05L, "nodeId")) != null) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(quotation, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x2c22b7a3db809c05L, "nodeId")));
     }
-    for (SNode child : SNodeOperations.getNodeDescendants(((SNode) _context.getVariable("transientQuotation")), MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), false, new SAbstractConcept[]{})) {
+    for (SNode child : SNodeOperations.getNodeDescendants(quotation, MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), false, new SAbstractConcept[]{})) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x1168c104657L, "expression")));
     }
     return result;
@@ -625,6 +608,9 @@ public class QueriesGenerated {
     return !(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression")).isEmpty());
   }
   public static Object insertMacro_varValue_5625022412249398387(final TemplateQueryContext _context) {
+    return _context.getNode();
+  }
+  public static Object insertMacro_varValue_6911370362348301908(final TemplateQueryContext _context) {
     return _context.getNode();
   }
   public static Object insertMacro_varValue_429601079676845415(final TemplateQueryContext _context) {

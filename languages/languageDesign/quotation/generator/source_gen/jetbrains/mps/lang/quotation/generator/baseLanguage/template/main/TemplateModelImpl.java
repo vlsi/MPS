@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
 
 @Generated
 public class TemplateModelImpl extends TemplateModelBase implements TemplateModel {
@@ -49,8 +48,8 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
       return new Template_QuotedNode_to_statementList();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396628814"))) {
-      TemplateUtil.assertTemplateParametersCount(template, 1, arguments.length);
-      return new Template_Quotation_to_staticMethodCall((SNode) arguments[0]);
+      TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
+      return new Template_Quotation_to_staticMethodCall();
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295242"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
