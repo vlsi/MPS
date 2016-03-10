@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Will be removed after 3.3
@@ -13,5 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NamedTupleDeclaration_Behavior {
   public static List<SNode> call_allExtends_3142843783245461132(SNode __thisNode__) {
     return NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc(__thisNode__);
+  }
+  public static void call_markLoadedNodeAsDeprecated_6577771797484298256(SAbstractConcept __thisConcept__, SNode node) {
+    NamedTupleDeclaration__BehaviorDescriptor.markLoadedNodeAsDeprecated_id5H8W9_ECA0g(__thisConcept__, node);
   }
 }

@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.lang.reflect.Method;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Will be removed after 3.3
@@ -42,5 +43,8 @@ public class BaseMethodDeclaration_Behavior {
   }
   public static List<SNode> call_getInferrableTypeVars_6848250892784543828(SNode __thisNode__) {
     return BaseMethodDeclaration__BehaviorDescriptor.getInferrableTypeVars_id5W9RYt5baxk(__thisNode__);
+  }
+  public static void call_markLoadedNodeAsDeprecated_6577771797484584656(SAbstractConcept __thisConcept__, SNode node) {
+    BaseMethodDeclaration__BehaviorDescriptor.markLoadedNodeAsDeprecated_id5H8W9_EDFVg(__thisConcept__, node);
   }
 }

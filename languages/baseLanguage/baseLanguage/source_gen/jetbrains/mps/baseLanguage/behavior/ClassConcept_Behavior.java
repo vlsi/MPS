@@ -42,4 +42,7 @@ public class ClassConcept_Behavior {
   public static SNode call_getContextClass_8008512149545173402(SAbstractConcept __thisConcept__, SNode expr) {
     return ClassConcept__BehaviorDescriptor.getContextClass_id6WzWPTX2$6q(__thisConcept__, expr);
   }
+  public static void call_markLoadedNodeAsDeprecated_6577771797484491543(SAbstractConcept __thisConcept__, SNode node) {
+    ClassConcept__BehaviorDescriptor.markLoadedNodeAsDeprecated_id5H8W9_EDlcn(__thisConcept__, node);
+  }
 }

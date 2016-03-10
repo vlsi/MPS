@@ -1818,6 +1818,45 @@
       </node>
       <node concept="3cqZAl" id="2k6csr7II$z" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="5H8W9_ECA0g" role="13h7CS">
+      <property role="TrG5h" value="markLoadedNodeAsDeprecated" />
+      <property role="2Ki8OM" value="true" />
+      <node concept="3Tm1VV" id="5H8W9_ECA0h" role="1B3o_S" />
+      <node concept="3cqZAl" id="5H8W9_ECBTG" role="3clF45" />
+      <node concept="3clFbS" id="5H8W9_ECA0j" role="3clF47">
+        <node concept="3clFbF" id="7cSr0Cigsw$" role="3cqZAp">
+          <node concept="2OqwBi" id="7cSr0Cigsw_" role="3clFbG">
+            <node concept="2OqwBi" id="7cSr0CigswA" role="2Oq$k0">
+              <node concept="2OqwBi" id="7cSr0CigswB" role="2Oq$k0">
+                <node concept="2OqwBi" id="7cSr0CigswC" role="2Oq$k0">
+                  <node concept="37vLTw" id="5H8W9_ECCgA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5H8W9_ECBTK" resolve="node" />
+                  </node>
+                  <node concept="3CFZ6_" id="7cSr0CigswE" role="2OqNvi">
+                    <node concept="3CFYIy" id="5H8W9_EDAIw" role="3CFYIz">
+                      <ref role="3CFYIx" to="m373:1MQnpZAqBpc" resolve="ClassifierDocComment" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2DeJnY" id="7cSr0CigswG" role="2OqNvi" />
+              </node>
+              <node concept="3Tsc0h" id="7cSr0CigswH" role="2OqNvi">
+                <ref role="3TtcxE" to="m373:4EPKw6tR9BN" />
+              </node>
+            </node>
+            <node concept="2DeJg1" id="7cSr0CigswI" role="2OqNvi">
+              <ref role="1A0vxQ" to="m373:7lVCwDcxZ_$" resolve="DeprecatedBlockDocTag" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5H8W9_ECBTK" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="5H8W9_ECBTJ" role="1tU5fm">
+          <ref role="ehGHo" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="i2uX6v1">
     <ref role="13h7C2" to="cx9y:i2pR1d_" resolve="NamedTupleType" />

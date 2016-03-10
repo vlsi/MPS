@@ -62,8 +62,9 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<String> getRightBracket_id1653mnvAgs3 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRightBracket").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgs3").registry(REGISTRY).build();
   public static final SMethod<Void> markDeprecated_id6Va_BJexupi = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("markDeprecated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Va_BJexupi").registry(REGISTRY).build();
   public static final SMethod<Void> unmarkDeprecated_id6Va_BJex$aE = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unmarkDeprecated").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Va_BJex$aE").registry(REGISTRY).build();
+  public static final SMethod<Void> markLoadedNodeAsDeprecated_id5H8W9_ECA0g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("markLoadedNodeAsDeprecated").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5H8W9_ECA0g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, allExtends_id2ItBWjOSZqc, getExtendedClassifierTypes_id1UeCwxlWKny, isDescendant_checkLoops_id6dL7A1DpKoA, getThisType_id2RtWPFZ12w7, populateMembers_id6r77ob2USUV, getLeftBracket_id1653mnvAgnc, getRightBracket_id1653mnvAgs3, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, allExtends_id2ItBWjOSZqc, getExtendedClassifierTypes_id1UeCwxlWKny, isDescendant_checkLoops_id6dL7A1DpKoA, getThisType_id2RtWPFZ12w7, populateMembers_id6r77ob2USUV, getLeftBracket_id1653mnvAgnc, getRightBracket_id1653mnvAgs3, markDeprecated_id6Va_BJexupi, unmarkDeprecated_id6Va_BJex$aE, markLoadedNodeAsDeprecated_id5H8W9_ECA0g);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -185,6 +186,9 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
     IBLDeprecatable__BehaviorDescriptor.removeDeprecationFromDoc_id63oBH1IM79r.invoke(__thisNode__, AttributeOperations.getAttribute(__thisNode__, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
     AnnotationUtil.detachAnnotation(__thisNode__, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Deprecated"));
   }
+  /*package*/ static void markLoadedNodeAsDeprecated_id5H8W9_ECA0g(@NotNull SAbstractConcept __thisConcept__, SNode node) {
+    SNodeFactoryOperations.addNewChild(SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag")));
+  }
 
   /*package*/ NamedTupleDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
@@ -237,6 +241,9 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
         return (T) ((String) getLeftBracket_id1653mnvAgnc(concept));
       case 7:
         return (T) ((String) getRightBracket_id1653mnvAgs3(concept));
+      case 10:
+        markLoadedNodeAsDeprecated_id5H8W9_ECA0g(concept, (SNode) parameters[0]);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }
