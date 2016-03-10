@@ -49,7 +49,6 @@ import java.util.concurrent.ConcurrentMap;
  * Based on generated structure descriptors
  */
 public class ConceptDescendantsCache implements CoreComponent {
-  private static final Logger LOG = LogManager.getLogger(ConceptDescendantsCache.class);
   private static ConceptDescendantsCache INSTANCE;
 
   private final MPSModuleRepository myModuleRepository;
@@ -196,47 +195,6 @@ public class ConceptDescendantsCache implements CoreComponent {
       return Collections.emptySet();
     }
     return new HashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
-  }
-
-  //-------------to remove-----------
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Set<String> getDescendants(String conceptFqName) {
-    myModuleRepository.getModelAccess().checkReadAccess();
-
-    synchronized (myNotProcessedRuntimes) {
-      if (!myNotProcessedRuntimes.isEmpty()) {
-        loadConcepts(myNotProcessedRuntimes);
-        myNotProcessedRuntimes.clear();
-      }
-    }
-    Set<String> result = new HashSet<String>();
-    collectDescendants(conceptFqName, result);
-    return result;
-  }
-
-  private void collectDescendants(String conceptFqName, Set<String> result) {
-    if (result.contains(conceptFqName)) return;
-    result.add(conceptFqName);
-
-    for (String descendant : getDirectDescendants(conceptFqName)) {
-      collectDescendants(descendant, result);
-    }
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public Set<String> getDirectDescendants(String conceptFqName) {
-    myModuleRepository.getModelAccess().checkReadAccess();
-    Set<SAbstractConcept> fromCache = myDescendantsCache.get(MetaIdHelper.getConcept(MetaAdapterFactoryByName.getTypedConcept_DoNotUse(conceptFqName)));
-    if (fromCache == null) return Collections.emptySet();
-
-    Set<String> result = new HashSet<String>();
-    for (SAbstractConcept cd : fromCache) {
-      result.add(cd.getQualifiedName());
-    }
-    return result;
   }
 
   // Using special Set implementation for storing SConcepts for now. This is because of hasCode() method implementation for sub-classes of SConcept.

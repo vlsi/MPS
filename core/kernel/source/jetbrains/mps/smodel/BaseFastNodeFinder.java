@@ -97,12 +97,13 @@ public class BaseFastNodeFinder implements FastNodeFinder {
   }
 
   @NotNull
-  private List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
+  @Override
+  public List<SNode> getNodes(@NotNull SAbstractConcept concept, boolean includeInherited) {
     // notify 'model nodes read access'
     myModel.getRootNodes().iterator();
 
     if (!myNodeMap.isEmpty()) {
-      return getNodesImpl(conceptFqName, includeInherited);
+      return getNodesImpl(concept, includeInherited);
     }
     synchronized (myNodeMap) {
       if (myNodeMap.isEmpty()) {
@@ -110,25 +111,19 @@ public class BaseFastNodeFinder implements FastNodeFinder {
         all.trimValues(); // merge may reuse lists,
         myNodeMap.merge(all);
       }
-      return getNodesImpl(conceptFqName, includeInherited);
+      return getNodesImpl(concept, includeInherited);
     }
   }
 
   @NotNull
-  @Override
-  public List<SNode> getNodes(@NotNull SAbstractConcept concept, boolean includeInherited) {
-    return getNodes(concept.getQualifiedName(), includeInherited);
-  }
-
-  @NotNull
-  private List<SNode> getNodesImpl(String conceptFQName, boolean includeInherited) {
+  private List<SNode> getNodesImpl(SAbstractConcept concept, boolean includeInherited) {
     if (includeInherited) {
-      Set<String> allDescendantsOfConcept = ConceptDescendantsCache.getInstance().getDescendants(conceptFQName);
+      Set<SAbstractConcept> allDescendantsOfConcept = ConceptDescendantsCache.getInstance().getDescendants(concept);
       final ArrayList<List<SNode>> nodesOfConcept = new ArrayList<List<SNode>>(allDescendantsOfConcept.size());
       int cnt = 0;
       synchronized (myNodeMap) { // utilize the fact values in map are immutable
-        for (String d : allDescendantsOfConcept) {
-          List<SNode> n = myNodeMap.get(d);
+        for (SAbstractConcept d : allDescendantsOfConcept) {
+          List<SNode> n = myNodeMap.get(d.getQualifiedName());
           nodesOfConcept.add(n);
           cnt += n.size();
         }
@@ -140,7 +135,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
       return result;
     } else {
       synchronized (myNodeMap) {
-        return myNodeMap.get(conceptFQName);
+        return myNodeMap.get(concept.getQualifiedName());
       }
     }
   }
