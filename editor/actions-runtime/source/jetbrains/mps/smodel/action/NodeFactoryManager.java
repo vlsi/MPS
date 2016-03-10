@@ -67,7 +67,7 @@ public class NodeFactoryManager {
 
   private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,
       Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
-    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept.getQualifiedName(), model, false);
+    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, null, false);
     if (newNode == null) return null;
     if (nodeConcept instanceof SInterfaceConcept) {
       return newNode;

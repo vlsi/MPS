@@ -51,12 +51,6 @@ public class SModelUtil_new {
     return instantiateConceptDeclaration(MetaAdapterByDeclaration.getConcept(conceptDeclaration), model,null, fullNodeStructure);
   }
 
-  @Deprecated
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId,
-      boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(MetaAdapterFactoryByName.getConcept(conceptFqName), model, nodeId, fullNodeStructure);
-  }
-
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull SAbstractConcept concept, @Nullable SModel model, SNodeId nodeId,
       boolean fullNodeStructure) {
     boolean isNotProjectModel = model == null || !TemporaryModels.isTemporary(model);
