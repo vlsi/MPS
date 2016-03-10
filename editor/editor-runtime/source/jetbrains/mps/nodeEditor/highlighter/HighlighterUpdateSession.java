@@ -198,7 +198,7 @@ public class HighlighterUpdateSession {
           if (operationContext.isValid()) {
             try {
               messages.addAll(checker.createMessagesProtected(node, myEvents, wasCheckedOnce, editorContext,
-                  new HighlighterUpdateSessionCancellable(myHighlighter, editor), applyQuickFixes));
+                  new HighlighterUpdateSessionCancellable(myHighlighter, checker, editor), applyQuickFixes));
               return checker.areMessagesChangedProtected();
             } catch (IndexNotReadyException ex) {
               highlightManager.clearForOwner(checker, true);

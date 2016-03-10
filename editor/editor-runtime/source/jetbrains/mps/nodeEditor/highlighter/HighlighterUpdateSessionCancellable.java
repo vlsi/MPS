@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Cancellable;
 import org.apache.log4j.Logger;
@@ -27,32 +28,46 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Checks for certain events in {@link #isCancelled()}, cancels itself if any such event occurs, and stays cancelled forever afterwards.
  * <p>The following events cause cancellation:</p>
  * <ul>
- *   <li>the editor component is disposed</li>
- *   <li>the editor component highlighting update is disabled</li>
- *   <li>the edited node changes</li>
- *   <li>the highlighter is paused</li>
- *   <li>a write action is scheduled</li>
+ * <li>the editor component is disposed</li>
+ * <li>the editor component highlighting update is disabled</li>
+ * <li>the edited node changes</li>
+ * <li>the highlighter is paused</li>
+ * <li>a write action is scheduled</li>
  * </ul>
  */
 class HighlighterUpdateSessionCancellable implements Cancellable {
   private static final Logger LOG = Logger.getLogger(HighlighterUpdateSessionCancellable.class);
+  private static final long MAX_CHECK_INTERVAL_MS = 200L;
 
   @NotNull
   private final IHighlighter myHighlighter;
+  private final BaseEditorChecker myChecker;
   @NotNull
   private final EditorComponent myEditorComponent;
   private final SNode myNode;
 
   private volatile boolean myCancelRequested = false;
+  private long myLastCheckTime;
 
-  HighlighterUpdateSessionCancellable(@NotNull IHighlighter highlighter, @NotNull EditorComponent editorComponent) {
+  HighlighterUpdateSessionCancellable(@NotNull IHighlighter highlighter, BaseEditorChecker checker, @NotNull EditorComponent editorComponent) {
     myHighlighter = highlighter;
+    myChecker = checker;
     myEditorComponent = editorComponent;
     myNode = myEditorComponent.getEditedNode();
+    myLastCheckTime = System.currentTimeMillis();
   }
 
   @Override
   public boolean isCancelled() {
+    long timeSinceLastCheck = System.currentTimeMillis() - myLastCheckTime;
+    if (timeSinceLastCheck > MAX_CHECK_INTERVAL_MS && LOG.isDebugEnabled()) {
+      Throwable stackTrace = new Throwable();
+      stackTrace.fillInStackTrace();
+      LOG.debug(String.format("Checker %s: long time since last cancellation check (%d ms > threshold %d ms). Stack trace:",
+          myChecker, timeSinceLastCheck, MAX_CHECK_INTERVAL_MS), stackTrace);
+    }
+    myLastCheckTime += timeSinceLastCheck;
+
     if (myCancelRequested) {
       return true;
     }
