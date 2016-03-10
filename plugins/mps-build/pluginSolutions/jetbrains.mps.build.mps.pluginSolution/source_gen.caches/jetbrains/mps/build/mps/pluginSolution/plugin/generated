@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eiy739dvvsyf0iwnt5b9qpgoeknh5bs">
+<dependencies version="2" modelHash="-85hu5k267brjcpnvwh54ufpjoj7iltp">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.navigation(MPS.Editor/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
@@ -54,7 +54,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="81hj1mua86hzuytkqop7skprohxw986" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-424s16478i43l6jr2damk7gdqpyx68n" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="4pnqxrcdt3h175e4cfqlzxflh3gl5um" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="c1s2kamngj83xm25e7z3l5ws6dv1ele" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-wyl67yczs1fev5dntomuqp7ffpgxzb" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="c3tv6v2r4kfvburnpn0pk581ddo0qsa" />
   <dep model="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)" hash="-991bkg7rd4nwtp4wuti1jqp839kza4h" />
@@ -349,7 +349,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GenerateBuildWizard.java" />
   </source>
-  <source id="8722937377469658290" name="BuildGeneratorImpl" hash="bibgruv8f3f1htah8jeckz0iutpk2i6">
+  <source id="8722937377469658290" name="BuildGeneratorImpl" hash="-7jtj41fabh2h97i585mv0wlvu20ueub">
     <dep root="8722937377469654773" />
     <dep root="8722937377469655854" />
     <dep root="8722937377469657759" />
