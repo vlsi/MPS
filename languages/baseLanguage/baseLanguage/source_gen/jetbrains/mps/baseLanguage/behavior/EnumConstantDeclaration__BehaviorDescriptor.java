@@ -62,7 +62,7 @@ public final class EnumConstantDeclaration__BehaviorDescriptor extends BaseBHDes
 
   /*package*/ static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     SNode enumClass = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
-    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(enumClass);
+    return (enumClass != null ? ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(enumClass) : new ArrayList<SNode>());
   }
   /*package*/ static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
