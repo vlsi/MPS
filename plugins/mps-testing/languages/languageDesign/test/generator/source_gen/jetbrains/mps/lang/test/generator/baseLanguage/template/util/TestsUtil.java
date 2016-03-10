@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.apache.log4j.Logger;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.FileBasedProject;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -14,16 +16,17 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescripto
 import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
 import java.io.File;
 
-public class TestsUtil {
-  public TestsUtil() {
+public final class TestsUtil {
+  private TestsUtil() {
   }
 
   public static String getProjectPath(SModel model, IOperationContext operationContext) {
-    String projectPath = TestInfo__BehaviorDescriptor.getProjectPath_id4qWC2JVrBcn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo").getDeclarationNode()), model);
+    String projectPath = TestInfo__BehaviorDescriptor.getProjectPath_id4qWC2JVrBcn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo")), model);
     if (projectPath != null) {
       return projectPath;
     }
-    String url = check_6yh4up_a0c0c(check_6yh4up_a0a2a2(((FileBasedProject) operationContext.getProject())));
+    Logger.getLogger(TestsUtil.class).error(String.format("Model %s (from %s) doesn't specify TestInfo and relies on deprecated way to locate an active project, please FIX!", SModelOperations.getModelName(model), model.getSource()));
+    String url = check_6yh4up_a0d0c(check_6yh4up_a0a3a2(((FileBasedProject) operationContext.getProject())));
     if (url != null) {
       return MacrosFactory.getGlobal().shrinkPath(url);
     }
@@ -31,15 +34,15 @@ public class TestsUtil {
   }
 
   public static String getTestBodyClassName(SNode testCase) {
-    return ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(testCase) + "$" + NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()));
+    return ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(testCase) + "$" + NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")));
   }
-  private static String check_6yh4up_a0c0c(File checkedDotOperand) {
+  private static String check_6yh4up_a0d0c(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
     return null;
   }
-  private static File check_6yh4up_a0a2a2(FileBasedProject checkedDotOperand) {
+  private static File check_6yh4up_a0a3a2(FileBasedProject checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProjectFile();
     }
