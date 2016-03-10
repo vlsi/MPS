@@ -5,9 +5,6 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -20,32 +17,10 @@ public abstract class SimpleRoleScope extends Scope {
   private final SNode myNode;
   private final SContainmentLink myLink;
   private final SAbstractConcept concept;
-  /**
-   * 
-   * @deprecated use SContainmentLink variant
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SimpleRoleScope(SNode node, SNode link, String conceptFqName) {
-    this.myNode = node;
-    this.myLink = MetaAdapterByDeclaration.getContainmentLink(link);
-    this.concept = MetaAdapterFactoryByName.getTypedConcept_DoNotUse(conceptFqName);
-  }
   public SimpleRoleScope(SNode node, SContainmentLink link, SAbstractConcept concept) {
     this.myNode = node;
     this.myLink = link;
     this.concept = concept;
-  }
-  /**
-   * 
-   * @deprecated use SContainmentLink variant
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SimpleRoleScope(SNode node, SNode link) {
-    this.myNode = node;
-    this.myLink = MetaAdapterByDeclaration.getContainmentLink(link);
-    this.concept = null;
   }
   public SimpleRoleScope(SNode node, SContainmentLink link) {
     this.myNode = node;
@@ -108,19 +83,6 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
   public abstract String getName(SNode child);
-  /**
-   * 
-   * @deprecated use SContainmentLink variant, to remove after 3.3
-   */
-  @Deprecated
-  public static SimpleRoleScope forNamedElements(SNode node, SNode linkDeclaration) {
-    return new SimpleRoleScope(node, linkDeclaration) {
-      @Override
-      public String getName(SNode child) {
-        return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      }
-    };
-  }
   public static SimpleRoleScope forNamedElements(SNode node, SContainmentLink linkDeclaration) {
     return new SimpleRoleScope(node, linkDeclaration) {
       @Override

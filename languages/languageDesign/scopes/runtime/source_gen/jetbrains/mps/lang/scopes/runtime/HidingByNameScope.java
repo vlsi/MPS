@@ -5,11 +5,8 @@ package jetbrains.mps.lang.scopes.runtime;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Set;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,22 +24,6 @@ public class HidingByNameScope extends Scope {
   private final Scope scope;
   private final Scope parentScope;
   private final Set<String> names;
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public HidingByNameScope(String hidingRootConceptFQName, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
-    this((SNode) SModelUtil.findConceptDeclaration(hidingRootConceptFQName), kind, scope, parentScope);
-  }
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public HidingByNameScope(String hidingRootConceptFQName, String kindConceptFQName, @NotNull Scope scope, @NotNull Scope parentScope) {
-    this((SNode) SModelUtil.findConceptDeclaration(hidingRootConceptFQName), ((SNode) SModelUtil.findConceptDeclaration(kindConceptFQName)), scope, parentScope);
-  }
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public HidingByNameScope(SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
-    this(((SAbstractConcept) MetaAdapterByDeclaration.getConcept(hidingRoot)), ((SAbstractConcept) MetaAdapterByDeclaration.getConcept(kind)), scope, parentScope);
-  }
 
   public HidingByNameScope(SAbstractConcept hidingConcept, SAbstractConcept kind, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 

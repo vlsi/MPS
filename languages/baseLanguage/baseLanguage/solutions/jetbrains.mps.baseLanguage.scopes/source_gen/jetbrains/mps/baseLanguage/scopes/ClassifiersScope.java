@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.scope.ModelPlusImportedScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -17,30 +17,11 @@ public class ClassifiersScope extends FilteringScope {
   private boolean myInlcudeAncestors;
   private SNode myClassifier;
   private SModel myModel;
-  /**
-   * 
-   * @deprecated use concept/../ variant, remove after 3.3
-   */
-  @Deprecated
-  public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
-    super(new ModelPlusImportedScope(model, false, conceptFqName));
-    myModel = model;
-    myInlcudeAncestors = includeAncestors;
-    myClassifier = clas;
-  }
   public ClassifiersScope(SModel model, SNode clas, SAbstractConcept concept, boolean includeAncestors) {
     super(new ModelPlusImportedScope(model, false, concept));
     myModel = model;
     myInlcudeAncestors = includeAncestors;
     myClassifier = clas;
-  }
-  /**
-   * 
-   * @deprecated use concept/../ variant, remove after 3.3
-   */
-  @Deprecated
-  public ClassifiersScope(SModel model, SNode clas, String conceptFqName) {
-    this(model, clas, conceptFqName, false);
   }
   public ClassifiersScope(SModel model, SNode clas, SAbstractConcept concept) {
     this(model, clas, concept, false);

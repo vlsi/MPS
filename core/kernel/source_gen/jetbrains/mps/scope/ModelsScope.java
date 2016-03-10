@@ -7,9 +7,6 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.language.ConceptRegistryUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -23,21 +20,6 @@ public class ModelsScope extends Scope {
   private final boolean myRootsOnly;
   private final SAbstractConcept myTargetConcept;
   private final Set<SModel> myModels;
-  /**
-   * 
-   * @deprecated use concept/../ variant, remove after 3.3
-   */
-  @Deprecated
-  public ModelsScope(Iterable<SModel> models, boolean rootsOnly, String targetConcept) {
-    myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
-    myRootsOnly = rootsOnly;
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(targetConcept);
-    if (cd == null) {
-      myTargetConcept = MetaAdapterFactoryByName.getConcept(targetConcept);
-    } else {
-      myTargetConcept = (cd.isInterfaceConcept() ? MetaAdapterFactoryByName.getInterfaceConcept(targetConcept) : MetaAdapterFactoryByName.getConcept(targetConcept));
-    }
-  }
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, SAbstractConcept targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
     myRootsOnly = rootsOnly;

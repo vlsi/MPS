@@ -20,6 +20,7 @@
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -37,6 +38,9 @@
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -392,13 +396,15 @@
                 <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
                 <node concept="2ShNRf" id="76efOMRD5cz" role="37wK5m">
                   <node concept="1pGfFk" id="76efOMRD5c_" role="2ShVmc">
-                    <ref role="37wK5l" to="o8zo:7ipADkTfyJc" resolve="ModelPlusImportedScope" />
+                    <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
                     <node concept="1Q6Npb" id="76efOMRD5cA" role="37wK5m" />
                     <node concept="3clFbT" id="76efOMRD5cC" role="37wK5m">
                       <property role="3clFbU" value="false" />
                     </node>
-                    <node concept="2OqwBi" id="76efOMRD5f5" role="37wK5m">
-                      <node concept="2OqwBi" id="76efOMRD5eD" role="2Oq$k0">
+                    <node concept="2YIFZM" id="4uR$YhVBmBP" role="37wK5m">
+                      <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                      <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                      <node concept="2OqwBi" id="76efOMRD5eD" role="37wK5m">
                         <node concept="2OqwBi" id="76efOMRD5ed" role="2Oq$k0">
                           <node concept="37vLTw" id="3GM_nagTzDY" role="2Oq$k0">
                             <ref role="3cqZAo" node="76efOMRD5cI" resolve="lval" />
@@ -410,9 +416,6 @@
                         <node concept="3TrEf2" id="76efOMRD5eJ" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpce:fA0lvVK" />
                         </node>
-                      </node>
-                      <node concept="2qgKlT" id="76efOMRD5fa" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                       </node>
                     </node>
                   </node>
