@@ -6,6 +6,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem" file="DeprecatedConceptMemberNotMigratedProblem.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem" file="DeprecatedConceptNotMigratedProblem.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor" file="MigrationDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -76,6 +90,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" file="NotMigratedNode.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.Problem" file="Problem.java">
     <classNode dependClassName="java.lang.String" />

@@ -24,6 +24,9 @@ public class PureMigrationScript_BehaviorDescriptor extends BaseConcept_Behavior
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
     return null;
   }
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
+  }
   public SNode virtual_getProducedData_8585153554445933384(SNode __thisNode__) {
     return null;
   }

@@ -12,6 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/3309033097909944438">
     <file name="MigrationDescriptor.java">
       <node id="3309033097909944439" at="8,0,10,0" concept="6" trace="getScript#(I)Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
@@ -399,6 +400,87 @@
       <unit id="5168866961623885799" at="21,0,100,0" name="jetbrains.mps.lang.migration.runtime.base.MoveNodePart" />
     </file>
   </root>
+  <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5462094956389870823">
+    <file name="DeprecatedConceptMemberNotMigratedProblem.java">
+      <node id="5462094956389873499" at="11,0,12,0" concept="3" trace="myConceptMember" />
+      <node id="5462094956389920414" at="12,0,13,0" concept="3" trace="myCmKind" />
+      <node id="5462094956389870828" at="13,99,14,18" concept="12" />
+      <node id="5462094956389875530" at="14,18,15,36" concept="2" />
+      <node id="5462094956389921364" at="15,36,16,22" concept="2" />
+      <node id="5462094956389870836" at="18,30,19,94" concept="8" />
+      <node id="5462094956389940174" at="23,83,24,42" concept="12" />
+      <node id="5462094956389935177" at="28,104,29,45" concept="12" />
+      <node id="5462094956389942007" at="33,98,34,43" concept="12" />
+      <node id="7680625225105629993" at="38,78,39,112" concept="8" />
+      <node id="7680625225105650709" at="41,99,42,126" concept="8" />
+      <node id="7680625225105651203" at="44,93,45,122" concept="8" />
+      <node id="5462094956389870832" at="18,0,21,0" concept="6" trace="getMessage#()Ljava/lang/String;" />
+      <node id="5462094956389940170" at="23,0,26,0" concept="1" trace="DeprecatedPropertyNotMigratedProblem#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;)V" />
+      <node id="5462094956389928475" at="28,0,31,0" concept="1" trace="DeprecatedContainmentLinkNotMigratedProblem#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
+      <node id="5462094956389942003" at="33,0,36,0" concept="1" trace="DeprecatedReferenceLinkNotMigratedProblem#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)V" />
+      <node id="7680625225105625300" at="38,0,41,0" concept="11" trace="deprecatedProperty#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SProperty;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
+      <node id="7680625225105650701" at="41,0,44,0" concept="11" trace="deprecatedContainmentLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
+      <node id="7680625225105651195" at="44,0,47,0" concept="11" trace="deprecatedReferenceLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
+      <node id="5462094956389870824" at="13,0,18,0" concept="1" trace="DeprecatedConceptMemberNotMigratedProblem#(Lorg/jetbrains/mps/openapi/model/SNode;nullLjava/lang/String;)V" />
+      <scope id="5462094956389870835" at="18,30,19,94" />
+      <scope id="5462094956389940173" at="23,83,24,42" />
+      <scope id="5462094956389928478" at="28,104,29,45" />
+      <scope id="5462094956389942006" at="33,98,34,43" />
+      <scope id="7680625225105625304" at="38,78,39,112" />
+      <scope id="7680625225105650708" at="41,99,42,126" />
+      <scope id="7680625225105651202" at="44,93,45,122" />
+      <scope id="5462094956389870827" at="13,99,16,22" />
+      <scope id="5462094956389870832" at="18,0,21,0" />
+      <scope id="5462094956389940170" at="23,0,26,0">
+        <var name="property" id="5462094956389940180" />
+        <var name="reason" id="5462094956389940178" />
+      </scope>
+      <scope id="5462094956389928475" at="28,0,31,0">
+        <var name="containmentLink" id="5462094956389935485" />
+        <var name="reason" id="5462094956389928489" />
+      </scope>
+      <scope id="5462094956389942003" at="33,0,36,0">
+        <var name="reason" id="5462094956389942011" />
+        <var name="referenceLink" id="5462094956389942013" />
+      </scope>
+      <scope id="7680625225105625300" at="38,0,41,0">
+        <var name="property" id="7680625225105629902" />
+        <var name="reason" id="7680625225105629900" />
+      </scope>
+      <scope id="7680625225105650701" at="41,0,44,0">
+        <var name="containmentLink" id="7680625225105650704" />
+        <var name="reason" id="7680625225105650702" />
+      </scope>
+      <scope id="7680625225105651195" at="44,0,47,0">
+        <var name="reason" id="7680625225105651196" />
+        <var name="referenceLink" id="7680625225105651198" />
+      </scope>
+      <scope id="5462094956389870824" at="13,0,18,0">
+        <var name="cmKind" id="5462094956389877365" />
+        <var name="conceptMember" id="5462094956389872055" />
+        <var name="reason" id="5462094956389870830" />
+      </scope>
+      <unit id="5462094956389940169" at="22,0,27,0" name="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem$DeprecatedPropertyNotMigratedProblem" />
+      <unit id="5462094956389928468" at="27,0,32,0" name="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem$DeprecatedContainmentLinkNotMigratedProblem" />
+      <unit id="5462094956389942002" at="32,0,37,0" name="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem$DeprecatedReferenceLinkNotMigratedProblem" />
+      <unit id="5462094956389870823" at="10,0,48,0" name="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem" />
+    </file>
+  </root>
+  <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5462094956390120585">
+    <file name="NotMigratedNode.java">
+      <node id="5462094956390124181" at="8,40,9,18" concept="12" />
+      <node id="5462094956389870848" at="11,31,12,31" concept="8" />
+      <node id="5462094956390124175" at="8,0,11,0" concept="1" trace="NotMigratedNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5462094956390123665" at="11,0,14,0" concept="6" trace="getCategory#()Ljava/lang/String;" />
+      <scope id="5462094956390124179" at="8,40,9,18" />
+      <scope id="5462094956390123669" at="11,31,12,31" />
+      <scope id="5462094956390124175" at="8,0,11,0">
+        <var name="reason" id="5462094956390124182" />
+      </scope>
+      <scope id="5462094956390123665" at="11,0,14,0" />
+      <unit id="5462094956390120585" at="7,0,15,0" name="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
+    </file>
+  </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/7153805464405087853">
     <file name="MigrationScriptBase.java">
       <node id="6816167251982668451" at="23,0,24,0" concept="3" trace="myDC" />
@@ -609,6 +691,21 @@
       <unit id="1758937410078926548" at="68,0,95,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase$SNodePlacePointer$ChildPointer" />
       <unit id="1758937410078918834" at="64,0,119,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase$SNodePlacePointer" />
       <unit id="7153805464405087853" at="22,0,178,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
+    </file>
+  </root>
+  <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/7363351619057170612">
+    <file name="DeprecatedConceptNotMigratedProblem.java">
+      <node id="7363351619057174881" at="8,60,9,18" concept="12" />
+      <node id="7363351619057172407" at="11,30,12,92" concept="8" />
+      <node id="7363351619057173712" at="8,0,11,0" concept="1" trace="DeprecatedConceptNotMigratedProblem#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7363351619057171143" at="11,0,14,0" concept="6" trace="getMessage#()Ljava/lang/String;" />
+      <scope id="7363351619057173716" at="8,60,9,18" />
+      <scope id="7363351619057171147" at="11,30,12,92" />
+      <scope id="7363351619057173712" at="8,0,11,0">
+        <var name="reason" id="7363351619057174172" />
+      </scope>
+      <scope id="7363351619057171143" at="11,0,14,0" />
+      <unit id="7363351619057170612" at="7,0,15,0" name="jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem" />
     </file>
   </root>
 </debug-info>

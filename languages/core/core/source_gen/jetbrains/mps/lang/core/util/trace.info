@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
@@ -10,111 +11,157 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:57494669-3aca-4a91-9957-81c283ecd636(jetbrains.mps.lang.core.util)/699163291708709104">
     <file name="OldCommentContainerMigration.java">
-      <node id="699163291708710763" at="18,0,19,0" concept="2" trace="concept" />
-      <node id="699163291708711014" at="19,0,20,0" concept="2" trace="module" />
-      <node id="699163291708710770" at="20,99,21,27" concept="1" />
-      <node id="699163291708711021" at="21,27,22,25" concept="1" />
-      <node id="699163291708768670" at="27,51,28,33" concept="7" />
-      <node id="699163291708768679" at="31,50,32,134" concept="7" />
-      <node id="699163291708900118" at="35,62,36,311" concept="6" />
-      <node id="699163291708907119" at="37,63,38,29" concept="6" />
-      <node id="699163291708912685" at="39,75,40,70" concept="1" />
-      <node id="699163291708913033" at="40,70,41,31" concept="1" />
-      <node id="699163291708944393" at="43,75,44,48" concept="1" />
-      <node id="699163291708776078" at="46,7,47,42" concept="1" />
-      <node id="699163291708768668" at="27,0,30,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-      <node id="699163291708768677" at="31,0,34,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="699163291708923525" at="42,9,45,9" concept="3" />
-      <node id="699163291708709132" at="20,0,24,0" concept="0" trace="OldCommentContainerMigration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="699163291708888460" at="38,29,42,9" concept="3" />
-      <node id="699163291708768656" at="25,25,34,7" concept="6" />
-      <node id="4672844534978797291" at="36,311,46,7" concept="4" />
-      <node id="699163291708773954" at="34,7,48,5" concept="3" />
-      <node id="699163291708711473" at="25,0,50,0" concept="5" trace="migrate#()V" />
-      <scope id="699163291708768669" at="27,51,28,33" />
-      <scope id="699163291708768678" at="31,50,32,134" />
-      <scope id="699163291708923527" at="43,75,44,48" />
-      <scope id="699163291708709136" at="20,99,22,25" />
-      <scope id="699163291708888464" at="39,75,41,31" />
-      <scope id="699163291708768668" at="27,0,30,0">
+      <node id="699163291708710763" at="25,0,26,0" concept="3" trace="concept" />
+      <node id="699163291708711014" at="26,0,27,0" concept="3" trace="module" />
+      <node id="699163291708710770" at="27,99,28,27" concept="2" />
+      <node id="699163291708711021" at="28,27,29,25" concept="2" />
+      <node id="699163291708768670" at="34,51,35,33" concept="8" />
+      <node id="699163291708768679" at="38,50,39,134" concept="8" />
+      <node id="699163291708900118" at="42,62,43,311" concept="7" />
+      <node id="699163291708907119" at="44,63,45,29" concept="7" />
+      <node id="699163291708912685" at="46,75,47,70" concept="2" />
+      <node id="699163291708913033" at="47,70,48,31" concept="2" />
+      <node id="699163291708944393" at="50,75,51,48" concept="2" />
+      <node id="699163291708776078" at="53,7,54,42" concept="2" />
+      <node id="5462094956390036025" at="58,5,59,64" concept="7" />
+      <node id="5462094956390036025" at="61,52,62,23" concept="8" />
+      <node id="5462094956390045240" at="66,41,67,73" concept="8" />
+      <node id="699163291708768668" at="34,0,37,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
+      <node id="699163291708768677" at="38,0,41,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="699163291708923525" at="49,9,52,9" concept="4" />
+      <node id="5462094956390036025" at="61,0,64,0" concept="6" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="5462094956390044206" at="66,0,69,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
+      <node id="699163291708709132" at="27,0,31,0" concept="1" trace="OldCommentContainerMigration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="699163291708888460" at="45,29,49,9" concept="4" />
+      <node id="5462094956390036025" at="59,64,64,8" concept="7" />
+      <node id="5462094956390036333" at="64,8,69,9" concept="8" />
+      <node id="699163291708768656" at="32,25,41,7" concept="7" />
+      <node id="4672844534978797291" at="43,311,53,7" concept="5" />
+      <node id="5462094956390036025" at="57,36,70,5" concept="0" />
+      <node id="699163291708773954" at="41,7,55,5" concept="4" />
+      <node id="5462094956390028616" at="57,0,72,0" concept="6" trace="check#()Ljava/lang/Iterable;" />
+      <node id="699163291708711473" at="32,0,57,0" concept="6" trace="migrate#()V" />
+      <scope id="699163291708768669" at="34,51,35,33" />
+      <scope id="699163291708768678" at="38,50,39,134" />
+      <scope id="699163291708923527" at="50,75,51,48" />
+      <scope id="5462094956390036025" at="61,52,62,23" />
+      <scope id="5462094956390044207" at="66,41,67,73" />
+      <scope id="699163291708709136" at="27,99,29,25" />
+      <scope id="699163291708888464" at="46,75,48,31" />
+      <scope id="699163291708768668" at="34,0,37,0">
         <var name="it" id="699163291708768668" />
       </scope>
-      <scope id="699163291708768677" at="31,0,34,0">
+      <scope id="699163291708768677" at="38,0,41,0">
         <var name="it" id="699163291708768677" />
       </scope>
-      <scope id="699163291708923525" at="42,9,45,9">
+      <scope id="699163291708923525" at="49,9,52,9">
         <var name="commentedNode" id="699163291708923526" />
       </scope>
-      <scope id="699163291708709132" at="20,0,24,0">
+      <scope id="5462094956390036025" at="61,0,64,0" />
+      <scope id="5462094956390044206" at="66,0,69,0">
+        <var name="it" id="5462094956390044206" />
+      </scope>
+      <scope id="699163291708709132" at="27,0,31,0">
         <var name="concept" id="699163291708709158" />
         <var name="module" id="699163291708709182" />
       </scope>
-      <scope id="699163291708888460" at="38,29,42,9">
+      <scope id="699163291708888460" at="45,29,49,9">
         <var name="commentedNode" id="699163291708888462" />
       </scope>
-      <scope id="4672844534978797293" at="37,63,45,9">
+      <scope id="4672844534978797293" at="44,63,52,9">
         <var name="next" id="699163291708907122" />
       </scope>
-      <scope id="699163291708773958" at="35,62,47,42">
+      <scope id="5462094956390036025" at="58,5,69,9">
+        <var name="context" id="5462094956390036025" />
+        <var name="scope" id="5462094956390036025" />
+      </scope>
+      <scope id="699163291708773958" at="42,62,54,42">
         <var name="commentedNodes" id="699163291708900119" />
       </scope>
-      <scope id="699163291708773954" at="34,7,48,5">
+      <scope id="5462094956390028617" at="57,36,70,5" />
+      <scope id="699163291708773954" at="41,7,55,5">
         <var name="comment" id="699163291708773956" />
       </scope>
-      <scope id="699163291708711476" at="25,25,48,5">
+      <scope id="5462094956390028616" at="57,0,72,0" />
+      <scope id="699163291708711476" at="32,25,55,5">
         <var name="oldComments" id="699163291708768657" />
       </scope>
-      <scope id="699163291708711473" at="25,0,50,0" />
-      <unit id="699163291708768668" at="26,111,30,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$1" />
-      <unit id="699163291708768677" at="30,21,34,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$2" />
-      <unit id="699163291708709104" at="17,0,51,0" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration" />
+      <scope id="699163291708711473" at="32,0,57,0" />
+      <unit id="699163291708768668" at="33,111,37,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$1" />
+      <unit id="699163291708768677" at="37,21,41,5" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$2" />
+      <unit id="5462094956390036025" at="60,42,64,7" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$3" />
+      <unit id="5462094956390044206" at="65,172,69,7" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration$4" />
+      <unit id="699163291708709104" at="24,0,74,0" name="jetbrains.mps.lang.core.util.OldCommentContainerMigration" />
     </file>
   </root>
   <root nodeRef="r:57494669-3aca-4a91-9957-81c283ecd636(jetbrains.mps.lang.core.util)/699163291708945644">
     <file name="OldCommentAnnotationMigration.java">
-      <node id="699163291708945645" at="16,0,17,0" concept="2" trace="concept" />
-      <node id="699163291708945648" at="17,0,18,0" concept="2" trace="module" />
-      <node id="699163291708945655" at="18,100,19,27" concept="1" />
-      <node id="699163291708945661" at="19,27,20,25" concept="1" />
-      <node id="699163291708945692" at="25,51,26,33" concept="7" />
-      <node id="699163291708945701" at="29,50,30,134" concept="7" />
-      <node id="699163291708954330" at="33,62,34,56" concept="6" />
-      <node id="699163291708945743" at="35,27,36,44" concept="1" />
-      <node id="699163291708962078" at="36,44,37,39" concept="1" />
-      <node id="699163291708945690" at="25,0,28,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-      <node id="699163291708945699" at="29,0,32,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="699163291708945651" at="18,0,22,0" concept="0" trace="OldCommentAnnotationMigration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="699163291708955429" at="34,56,38,7" concept="4" />
-      <node id="699163291708945726" at="32,7,39,5" concept="3" />
-      <node id="699163291708945676" at="23,25,32,7" concept="6" />
-      <node id="699163291708945674" at="23,0,41,0" concept="5" trace="migrate#()V" />
-      <scope id="699163291708945691" at="25,51,26,33" />
-      <scope id="699163291708945700" at="29,50,30,134" />
-      <scope id="699163291708945654" at="18,100,20,25" />
-      <scope id="699163291708955431" at="35,27,37,39" />
-      <scope id="699163291708945690" at="25,0,28,0">
+      <node id="699163291708945645" at="23,0,24,0" concept="3" trace="concept" />
+      <node id="699163291708945648" at="24,0,25,0" concept="3" trace="module" />
+      <node id="699163291708945655" at="25,100,26,27" concept="2" />
+      <node id="699163291708945661" at="26,27,27,25" concept="2" />
+      <node id="699163291708945692" at="32,51,33,33" concept="8" />
+      <node id="699163291708945701" at="36,50,37,134" concept="8" />
+      <node id="699163291708954330" at="40,62,41,56" concept="7" />
+      <node id="699163291708945743" at="42,27,43,44" concept="2" />
+      <node id="699163291708962078" at="43,44,44,39" concept="2" />
+      <node id="5462094956390365227" at="49,5,50,64" concept="7" />
+      <node id="5462094956390365227" at="52,52,53,23" concept="8" />
+      <node id="5462094956390365238" at="57,41,58,73" concept="8" />
+      <node id="699163291708945690" at="32,0,35,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
+      <node id="699163291708945699" at="36,0,39,0" concept="6" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="5462094956390365227" at="52,0,55,0" concept="6" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="5462094956390365236" at="57,0,60,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
+      <node id="699163291708945651" at="25,0,29,0" concept="1" trace="OldCommentAnnotationMigration#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="699163291708955429" at="41,56,45,7" concept="5" />
+      <node id="5462094956390365227" at="50,64,55,8" concept="7" />
+      <node id="5462094956390365229" at="55,8,60,9" concept="8" />
+      <node id="699163291708945726" at="39,7,46,5" concept="4" />
+      <node id="699163291708945676" at="30,25,39,7" concept="7" />
+      <node id="5462094956390365227" at="48,36,61,5" concept="0" />
+      <node id="5462094956390360412" at="48,0,63,0" concept="6" trace="check#()Ljava/lang/Iterable;" />
+      <node id="699163291708945674" at="30,0,48,0" concept="6" trace="migrate#()V" />
+      <scope id="699163291708945691" at="32,51,33,33" />
+      <scope id="699163291708945700" at="36,50,37,134" />
+      <scope id="5462094956390365227" at="52,52,53,23" />
+      <scope id="5462094956390365237" at="57,41,58,73" />
+      <scope id="699163291708945654" at="25,100,27,25" />
+      <scope id="699163291708955431" at="42,27,44,39" />
+      <scope id="699163291708945690" at="32,0,35,0">
         <var name="it" id="699163291708945690" />
       </scope>
-      <scope id="699163291708945699" at="29,0,32,0">
+      <scope id="699163291708945699" at="36,0,39,0">
         <var name="it" id="699163291708945699" />
       </scope>
-      <scope id="699163291708945651" at="18,0,22,0">
+      <scope id="5462094956390365227" at="52,0,55,0" />
+      <scope id="5462094956390365236" at="57,0,60,0">
+        <var name="it" id="5462094956390365236" />
+      </scope>
+      <scope id="699163291708945651" at="25,0,29,0">
         <var name="concept" id="699163291708945667" />
         <var name="module" id="699163291708945670" />
       </scope>
-      <scope id="699163291708945728" at="33,62,38,7">
+      <scope id="699163291708945728" at="40,62,45,7">
         <var name="parent" id="699163291708954331" />
       </scope>
-      <scope id="699163291708945726" at="32,7,39,5">
+      <scope id="699163291708945726" at="39,7,46,5">
         <var name="comment" id="699163291708945727" />
       </scope>
-      <scope id="699163291708945675" at="23,25,39,5">
+      <scope id="5462094956390365227" at="49,5,60,9">
+        <var name="context" id="5462094956390365227" />
+        <var name="scope" id="5462094956390365227" />
+      </scope>
+      <scope id="5462094956390360416" at="48,36,61,5" />
+      <scope id="5462094956390360412" at="48,0,63,0" />
+      <scope id="699163291708945675" at="30,25,46,5">
         <var name="oldComments" id="699163291708945677" />
       </scope>
-      <scope id="699163291708945674" at="23,0,41,0" />
-      <unit id="699163291708945690" at="24,111,28,5" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$1" />
-      <unit id="699163291708945699" at="28,21,32,5" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$2" />
-      <unit id="699163291708945644" at="15,0,42,0" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration" />
+      <scope id="699163291708945674" at="30,0,48,0" />
+      <unit id="699163291708945690" at="31,111,35,5" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$1" />
+      <unit id="699163291708945699" at="35,21,39,5" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$2" />
+      <unit id="5462094956390365227" at="51,42,55,7" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$3" />
+      <unit id="5462094956390365236" at="56,172,60,7" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration$4" />
+      <unit id="699163291708945644" at="22,0,64,0" name="jetbrains.mps.lang.core.util.OldCommentAnnotationMigration" />
     </file>
   </root>
 </debug-info>

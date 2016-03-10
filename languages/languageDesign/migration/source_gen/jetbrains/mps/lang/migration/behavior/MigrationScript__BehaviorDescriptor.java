@@ -37,7 +37,6 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<SNode> getProducedData_id7s$_UJMVDH8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getProducedData").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7s$_UJMVDH8").registry(REGISTRY).build();
   public static final SMethod<Boolean> isRerunnable_id1JWcQ2Vfe4u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isRerunnable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1JWcQ2Vfe4u").registry(REGISTRY).build();
   public static final SMethod<SNode> getMethod_id6d7r2Fq2j7f = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6d7r2Fq2j7f").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
   public static final SMethod<String> getClassName_id5Fumpqe4XH$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Fumpqe4XH$").registry(REGISTRY).build();
   public static final SMethod<Boolean> hasData_idw$qRK82$4u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasData").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("w$qRK82$4u").registry(REGISTRY).build();
   public static final SMethod<String> getGeneratedClassName_id7w5LXrJJkLe = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedClassName").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7w5LXrJJkLe").registry(REGISTRY).build();
@@ -45,7 +44,7 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Integer> fromVersion_id4uVwhQyFcnl = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("fromVersion").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFcnl").registry(REGISTRY).build();
   public static final SMethod<Boolean> isVersionSet_id4uVwhQyFpOe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isVersionSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFpOe").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getProducedData_id7s$_UJMVDH8, isRerunnable_id1JWcQ2Vfe4u, getMethod_id6d7r2Fq2j7f, getPresentation_idhEwIMiw, getClassName_id5Fumpqe4XH$, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getProducedData_id7s$_UJMVDH8, isRerunnable_id1JWcQ2Vfe4u, getMethod_id6d7r2Fq2j7f, getClassName_id5Fumpqe4XH$, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -68,9 +67,6 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static SNode getMethod_id6d7r2Fq2j7f(@NotNull SNode __thisNode__, SNode md) {
     return SNodeOperations.cast(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(md, __thisNode__)).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
-  }
-  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    return String.format("%03d", SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"))) + "_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   /*package*/ static String getClassName_id5Fumpqe4XH$(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -129,16 +125,14 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
       case 5:
         return (T) ((SNode) getMethod_id6d7r2Fq2j7f(node, (SNode) parameters[0]));
       case 6:
-        return (T) ((String) getPresentation_idhEwIMiw(node));
-      case 7:
         return (T) ((String) getClassName_id5Fumpqe4XH$(node));
-      case 8:
+      case 7:
         return (T) ((Boolean) hasData_idw$qRK82$4u(node));
-      case 10:
+      case 9:
         return (T) ((SNode) getDescriptor_idUBgfI9eMAt(node));
-      case 11:
+      case 10:
         return (T) ((Integer) fromVersion_id4uVwhQyFcnl(node));
-      case 12:
+      case 11:
         return (T) ((Boolean) isVersionSet_id4uVwhQyFpOe(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -152,7 +146,7 @@ public final class MigrationScript__BehaviorDescriptor extends BaseBHDescriptor 
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 9:
+      case 8:
         return (T) ((String) getGeneratedClassName_id7w5LXrJJkLe(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
