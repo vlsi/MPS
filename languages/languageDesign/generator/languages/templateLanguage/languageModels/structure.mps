@@ -15,6 +15,7 @@
     <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="tpf3" ref="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -1784,15 +1785,15 @@
     <property role="TrG5h" value="GeneratorInternal_PropertyDescriptor" />
     <property role="1pbfSe" value="419823863" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2ttmdhV3Ee$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="propertyIdentity" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp25:5ZE7FBYZ2ds" resolve="PropertyId" />
+    </node>
     <node concept="1TJgyi" id="7hIo0WbQAvT" role="1TKVEl">
       <property role="TrG5h" value="propertyValue" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="7hIo0WbQDUr" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="property" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="21N1KFSDbKE">
