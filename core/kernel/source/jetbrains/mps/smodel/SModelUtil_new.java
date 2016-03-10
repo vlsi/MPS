@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -49,6 +50,9 @@ public class SModelUtil_new {
     return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, fullNodeStructure);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
+  //maybe 3.3,not used by generated code
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model,
       boolean fullNodeStructure) {
     return instantiateConceptDeclaration(conceptFqName, model, null, fullNodeStructure);

@@ -1772,6 +1772,18 @@
         <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
       </node>
     </node>
+    <node concept="Wx3nA" id="7r2v6u$nG9M" role="jymVt">
+      <property role="TrG5h" value="concept_RuntimeHoleType" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="7r2v6u$nG9N" role="1B3o_S" />
+      <node concept="35c_gC" id="7r2v6u$nG9O" role="33vP2m">
+        <property role="B6XcY" value="true" />
+        <ref role="35c_gD" to="tpd4:hTCw0t1" resolve="RuntimeHoleType" />
+      </node>
+      <node concept="3uibUv" id="7r2v6u$nG9P" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6QovVGOGfeO" role="jymVt" />
     <node concept="Wx3nA" id="2iMJRNxJZUa" role="jymVt">
       <property role="TrG5h" value="link_ConceptDeclaration_extends" />

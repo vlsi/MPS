@@ -78,6 +78,7 @@ public final class SNodeUtil {
   public static final SInterfaceConcept concept_ImplementationPart = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L, "jetbrains.mps.lang.core.structure.ImplementationPart");
   public static final SInterfaceConcept concept_ImplementationWithStubPart = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L, "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
   public static final SConcept concept_RuntimeTypeVariable = BootstrapAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
+  public static final SConcept concept_RuntimeHoleType = BootstrapAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e68800741L, "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType");
 
   public static final SReferenceLink link_ConceptDeclaration_extends = BootstrapAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends");
   public static final SContainmentLink link_ConceptDeclaration_implements = BootstrapAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");

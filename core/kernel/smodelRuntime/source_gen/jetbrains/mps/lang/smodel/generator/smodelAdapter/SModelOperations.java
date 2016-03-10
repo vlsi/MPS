@@ -99,6 +99,7 @@ public final class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
+    //this by-name usage is reviewed
     return createNewNode(model, id, MetaAdapterFactoryByName.getConcept(conceptFqName));
   }
   public static SNode createNewNode(SModel model, SNodeId id, SAbstractConcept concept) {

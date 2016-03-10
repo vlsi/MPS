@@ -19,6 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -39,8 +40,7 @@ public class HoleState extends State {
 
   public void initHole(SNode hole) {
     SNode holeVar = typeOf(hole, null);
-    SNode holeType = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",
-      null, false);
+    SNode holeType = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_RuntimeHoleType, null, null, false);
     getNodeMaps().addNodeToType(hole, holeVar, null);
     getEquations().addEquation(holeVar, holeType, null);
     myHole = hole;
@@ -69,7 +69,7 @@ public class HoleState extends State {
 
   @Override
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
-    if (myHole!=null && myHole == node) {
+    if (myHole != null && myHole == node) {
       return;
     }
     super.applyRuleToNode(node, rule, status);
