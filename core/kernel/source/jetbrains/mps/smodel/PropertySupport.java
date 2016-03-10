@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -120,6 +119,7 @@ public abstract class PropertySupport {
     return value;
   }
 
+  @NotNull
   public static PropertySupport getPropertySupport(@NotNull final SProperty property) {
     SDataType dataType = property.getType();
     if (dataType != null) {
@@ -143,6 +143,7 @@ public abstract class PropertySupport {
     return DefaultPropertySupport.INSTANCE;
   }
 
+  @NotNull
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
       @Override

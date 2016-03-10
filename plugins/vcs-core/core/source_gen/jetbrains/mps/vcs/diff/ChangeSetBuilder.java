@@ -69,10 +69,7 @@ public class ChangeSetBuilder {
   public void buildForProperty(SNode oldNode, SNode newNode, SProperty property) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(RuntimeFlags.isMergeDriverMode())) {
-      SNode propertyDeclaration = property.getDeclarationNode();
-      if (propertyDeclaration != null) {
-        propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-      }
+      propertySupport = PropertySupport.getPropertySupport(property);
     }
     String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(property));
     String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(property));
@@ -292,8 +289,8 @@ public class ChangeSetBuilder {
   public static ChangeSetBuilder createBuilder(ChangeSet changeSet) {
     return new ChangeSetBuilder((ChangeSetImpl) changeSet);
   }
-  private static class DefaultPropertySupport extends PropertySupport {
-    private DefaultPropertySupport() {
+  /*package*/ static class DefaultPropertySupport extends PropertySupport {
+    /*package*/ DefaultPropertySupport() {
     }
     @Override
     protected boolean canSetValue(String string) {

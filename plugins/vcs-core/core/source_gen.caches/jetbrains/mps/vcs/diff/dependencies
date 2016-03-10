@@ -130,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.StructChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.StructChangeSetImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />

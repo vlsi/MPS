@@ -236,16 +236,9 @@ outer:
   }
 
   private static boolean equalsProperty(SNode n1, SNode n2, SProperty property) {
-    PropertySupport propertySupport = new PropertySupport() {
-      protected boolean canSetValue(String string) {
-        return true;
-      }
-    };
+    PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(RuntimeFlags.isMergeDriverMode())) {
-      SNode propertyDeclaration = property.getDeclarationNode();
-      if (propertyDeclaration != null) {
-        propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
-      }
+      propertySupport = PropertySupport.getPropertySupport(property);
     }
     String n1PresentableValue = propertySupport.fromInternalValue(n1.getProperty(property));
     String n2PresentableValue = propertySupport.fromInternalValue(n2.getProperty(property));
