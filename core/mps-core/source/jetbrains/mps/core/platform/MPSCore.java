@@ -46,7 +46,6 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeAccessUtilImpl;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
@@ -85,7 +84,6 @@ public final class MPSCore extends ComponentPluginBase {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     myPersistenceFacade = init(new PersistenceRegistry());
     init(new FacetsRegistry());
-    init(new ConceptRepository());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());
