@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
@@ -38,6 +39,7 @@ import java.util.Set;
 /**
  * Base implementation for FastNodeFinder, thread-aware and map update ready.
  * Doesn't track model changes. Model implementation agnostic, doesn't rely on internal SModel implementation
+ *
  * @author Artem Tikhomirov
  */
 public class BaseFastNodeFinder implements FastNodeFinder {
@@ -123,7 +125,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
       int cnt = 0;
       synchronized (myNodeMap) { // utilize the fact values in map are immutable
         for (SAbstractConcept d : allDescendantsOfConcept) {
-          List<SNode> n = myNodeMap.get(d.getQualifiedName());
+          List<SNode> n = myNodeMap.get(d);
           nodesOfConcept.add(n);
           cnt += n.size();
         }
@@ -135,7 +137,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
       return result;
     } else {
       synchronized (myNodeMap) {
-        return myNodeMap.get(concept.getQualifiedName());
+        return myNodeMap.get(concept);
       }
     }
   }
@@ -150,6 +152,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
       myNodeInput = root;
       myModelInput = null;
     }
+
     ConceptNodeMapBuilder(SModel model) {
       assert model != null;
       myModelInput = model;
@@ -178,23 +181,23 @@ public class BaseFastNodeFinder implements FastNodeFinder {
    * Simple wrap of Map('concept name' to concept instances).
    */
   protected static final class ConceptInstanceMap {
-    private final Map<String, ArrayList<SNode>> myNodes = new HashMap<String, ArrayList<SNode>>();
+    private final Map<SAbstractConcept, ArrayList<SNode>> myNodes = new HashMap<SAbstractConcept, ArrayList<SNode>>();
 
     /**
      * this method doesn't expect root to be added twice to the same map (to keep impl simple)
      */
     public void add(SNode root) {
-      String conceptFqName = root.getConcept().getQualifiedName();
-      ArrayList<SNode> set = myNodes.get(conceptFqName);
+      SConcept concept = root.getConcept();
+      ArrayList<SNode> set = myNodes.get(concept);
       if (set == null) {
-        myNodes.put(conceptFqName, set = new ArrayList<SNode>());
+        myNodes.put(concept, set = new ArrayList<SNode>());
       }
       set.add(root);
     }
 
     public void trimValues() {
       for (ArrayList<SNode> v : myNodes.values()) {
-          v.trimToSize();
+        v.trimToSize();
       }
     }
   }
@@ -204,10 +207,10 @@ public class BaseFastNodeFinder implements FastNodeFinder {
    * Collections of instances are immutable
    */
   private static final class ConceptNodeMap {
-    private final Map<String, List<SNode>> myNodes = new THashMap<String, List<SNode>>();
+    private final Map<SAbstractConcept, List<SNode>> myNodes = new THashMap<SAbstractConcept, List<SNode>>();
 
     public void forget(ConceptInstanceMap other) {
-      for (String cn : other.myNodes.keySet()) {
+      for (SAbstractConcept cn : other.myNodes.keySet()) {
         assert myNodes.containsKey(cn); // other shall be subset of this map
         List<SNode> nodes = myNodes.get(cn);
         LinkedHashSet<SNode> newNodes = new LinkedHashSet<SNode>(nodes);
@@ -221,7 +224,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
     }
 
     public void merge(ConceptInstanceMap other) {
-      for (String cn : other.myNodes.keySet()) {
+      for (SAbstractConcept cn : other.myNodes.keySet()) {
         List<SNode> nodes = myNodes.get(cn);
         if (nodes == null) {
           myNodes.put(cn, other.myNodes.get(cn));
@@ -233,7 +236,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
       }
     }
 
-    public List<SNode> get(String conceptFQName) {
+    public List<SNode> get(SAbstractConcept conceptFQName) {
       List<SNode> n = myNodes.get(conceptFQName);
       return n == null ? Collections.<SNode>emptyList() : n;
     }
@@ -254,6 +257,7 @@ public class BaseFastNodeFinder implements FastNodeFinder {
   protected class ChangeTracker implements SNodeChangeListener {
     public ChangeTracker() {
     }
+
     @Override
     public void nodeAdded(@NotNull SNodeAddEvent event) {
       added(event.getChild());
