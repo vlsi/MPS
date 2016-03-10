@@ -37,7 +37,11 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
  * {@link jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter} covers transition from string to meta-object within SConcept scope.
  * To get SLanguage or SConcept/SInterfaceConcept, there's no other alternative at the moment but to use static methods of this class.
  */
+@Deprecated //use MetaAdapterFactory instead
+@ToRemove(version = 3.4)
 public class MetaAdapterFactoryByName {
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SLanguage getLanguage(String langName) {
     return new SLanguageAdapterByName(langName);
   }
@@ -49,6 +53,8 @@ public class MetaAdapterFactoryByName {
     return new SConceptAdapterByName(conceptName);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SInterfaceConcept getInterfaceConcept(String conceptName) {
     return new SInterfaceConceptAdapterByName(conceptName);
   }
@@ -56,6 +62,8 @@ public class MetaAdapterFactoryByName {
   /**
    * Generally, this method shall not be used directly. Consider using {@link jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter#convertProperty(String)} instead
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SProperty getProperty(String conceptName, String propName) {
     return new SPropertyAdapterByName(conceptName, propName);
   }
@@ -63,6 +71,8 @@ public class MetaAdapterFactoryByName {
   /**
    * Generally, this method shall not be used directly. Consider using {@link jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter#convertAssociation(String)} instead
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SReferenceLink getReferenceLink(String conceptName, String refName) {
     return new SReferenceLinkAdapterByName(conceptName, refName);
   }
@@ -70,6 +80,8 @@ public class MetaAdapterFactoryByName {
   /**
    * Generally, this method shall not be used directly. Consider using {@link jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter#convertAggregation(String)}} instead
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SContainmentLink getContainmentLink(String conceptName, String linkName) {
     return new SContainmentLinkAdapterByName(conceptName, linkName);
   }
