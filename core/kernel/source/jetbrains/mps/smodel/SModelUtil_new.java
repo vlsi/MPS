@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -47,15 +48,7 @@ public class SModelUtil_new {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, fullNodeStructure);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  //maybe 3.3,not used by generated code
-  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model,
-      boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(conceptFqName, model, null, fullNodeStructure);
+    return instantiateConceptDeclaration(MetaAdapterByDeclaration.getConcept(conceptDeclaration), model,null, fullNodeStructure);
   }
 
   @Deprecated
