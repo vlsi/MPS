@@ -19,6 +19,12 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -31,7 +37,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     {
@@ -68,6 +74,34 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
       });
     }
     return null;
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:2cad94ae-7a5e-484a-a104-c211cb3b0451(jetbrains.mps.baseLanguage.javadoc.migration)", "4787009421625779235");
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
+        }
+      }).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new NotMigratedNode(it) {
+            public String getMessage() {
+              return "Deprecated annotation with empty text was not migrated";
+            }
+          });
+        }
+      });
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);

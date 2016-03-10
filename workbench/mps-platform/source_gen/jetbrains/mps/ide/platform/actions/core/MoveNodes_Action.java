@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -36,7 +37,10 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository())) {
+    // if old refactoring is overrided we should execute other action instead 
+    boolean oldRefactoringApplicable = RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "MoveNodes"), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
+
+    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()) && oldRefactoringApplicable) {
       MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
       event.getPresentation().setText(refactoring.getName());
       event.getPresentation().setEnabled(true);

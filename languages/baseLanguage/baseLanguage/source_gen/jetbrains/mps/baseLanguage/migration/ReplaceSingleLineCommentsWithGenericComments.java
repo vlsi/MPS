@@ -18,6 +18,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScriptBase {
@@ -26,7 +33,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
@@ -62,6 +69,22 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
       }
     });
     return null;
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"))).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
+        }
+      });
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 1);

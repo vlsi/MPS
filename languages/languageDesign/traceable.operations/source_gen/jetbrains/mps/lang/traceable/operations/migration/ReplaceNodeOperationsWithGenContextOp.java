@@ -20,6 +20,14 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -35,7 +43,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     {
@@ -113,6 +121,37 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
       });
     }
     return null;
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x6058d1d9e79eef7bL, "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:b19397cd-8ff5-4952-b32f-ca4bf390ff99(jetbrains.mps.lang.traceable.operations.migration)", "9121571065746633748");
+        }
+      }).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
+        }
+      }));
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, 0x242191b44da0af07L, "jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.getContainingRoot(it) != SNodeOperations.getNode("r:b19397cd-8ff5-4952-b32f-ca4bf390ff99(jetbrains.mps.lang.traceable.operations.migration)", "9121571065746633748");
+        }
+      }).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
+        }
+      }));
+      return result;
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xeba1dbb30bc44ce9L, 0xa18405c9135353beL, "jetbrains.mps.lang.traceable.operations"), 0);
