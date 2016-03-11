@@ -28,7 +28,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -130,18 +129,6 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("No usages for that method");
     UsagesViewTool.showUsages(myProject, FindUtils.makeProvider(finders), searchQuery, opt);
-  }
-  @Override
-  public void showConceptNode(final String fqName) throws RemoteException {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode concept = SModelUtil.findConceptDeclaration(fqName);
-        NavigationSupport.getInstance().openNode(mpsProject, concept, true, false);
-        FrameUtil.activateFrame(getMainFrame());
-      }
-    });
   }
   @Override
   public void showClassUsages(final String fqName) throws RemoteException {
