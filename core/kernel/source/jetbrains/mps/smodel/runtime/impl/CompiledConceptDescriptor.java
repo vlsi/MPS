@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -154,8 +155,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initPropertyNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    Map<SPropertyId, PropertyDescriptor> propsMap = new HashMap<SPropertyId, PropertyDescriptor>();
-    HashMap<String, PropertyDescriptor> propByNameMap = new HashMap<String, PropertyDescriptor>();
+    Map<SPropertyId, PropertyDescriptor> propsMap = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
+    Map<String, PropertyDescriptor> propByNameMap = new LinkedHashMap<String, PropertyDescriptor>();
     for (PropertyDescriptor p : myOwnProperties) {
       propsMap.put(p.getId(), p);
       propByNameMap.put(p.getName(), p);

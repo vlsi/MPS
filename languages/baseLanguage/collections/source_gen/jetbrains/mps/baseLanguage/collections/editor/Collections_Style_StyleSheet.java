@@ -4,19 +4,27 @@ package jetbrains.mps.baseLanguage.collections.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class Collections_Style_StyleSheet {
   public static void apply_Operation(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
   }
   public static void apply_AngleBracket(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
   }
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
@@ -26,6 +34,8 @@ public class Collections_Style_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);

@@ -145,6 +145,8 @@ public class AbstractFunctionType_Editor extends DefaultNodeEditor {
         editorCell.setRole("resultType");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
       editorCell.getStyle().putAll(style);
     }

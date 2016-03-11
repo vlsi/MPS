@@ -95,7 +95,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("staticModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0d0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0d0(editorContext, node));
     editorCell.getStyle().putAll(style);
     DeleteStaticInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -115,7 +115,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0e0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.EDITABLE, 0, StaticFieldDeclaration_Editor._StyleParameter_QueryFunction_t6d1qn_a0e0(editorContext, node));
     editorCell.getStyle().putAll(style);
     DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -258,6 +258,8 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("initializer");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
     }

@@ -60,6 +60,8 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("statement");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       editorCell.getStyle().putAll(style);
     }

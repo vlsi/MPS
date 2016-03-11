@@ -120,7 +120,7 @@ public enum CellActionId {
     return list;
   }
   public static CellActionId getDefault() {
-    return CellActionId.RIGHT_TRANSFORM;
+    return null;
   }
   public static CellActionId parseValue(String value) {
     if (value == null) {

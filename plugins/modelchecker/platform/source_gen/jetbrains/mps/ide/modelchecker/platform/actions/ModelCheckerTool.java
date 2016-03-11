@@ -43,7 +43,8 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
   public void checkModelsAndShowResult(List<SModel> models, SpecificChecker... checkers) {
     ModelCheckerViewer newViewer = createViewerForTab();
     ModelCheckerIssueFinder finder;
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    assert mpsProject != null;
     if (checkers == null || checkers.length == 0) {
       finder = new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(mpsProject));
     } else {

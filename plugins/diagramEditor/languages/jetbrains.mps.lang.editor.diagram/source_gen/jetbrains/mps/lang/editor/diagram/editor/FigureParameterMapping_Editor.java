@@ -50,7 +50,7 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0(editorContext, node));
     style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
     FigureParameterMappingName_Actions.setCellActions(editorCell, node, editorContext);

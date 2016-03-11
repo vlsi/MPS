@@ -83,6 +83,8 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
         editorCell.setRole("applicability");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
       editorCell.getStyle().putAll(style);
     }

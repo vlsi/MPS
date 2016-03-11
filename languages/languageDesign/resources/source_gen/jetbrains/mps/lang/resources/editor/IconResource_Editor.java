@@ -220,7 +220,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_path");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -65,6 +65,8 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
         editorCell.setRole("path");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
     }

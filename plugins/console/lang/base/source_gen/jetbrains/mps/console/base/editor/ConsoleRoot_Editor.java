@@ -125,6 +125,8 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
         editorCell.setRole("commandHolder");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       {
         Style styleToPut = new StyleImpl();
         ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);

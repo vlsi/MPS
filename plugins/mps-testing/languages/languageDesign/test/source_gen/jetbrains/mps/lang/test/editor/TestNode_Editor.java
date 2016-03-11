@@ -54,6 +54,8 @@ public class TestNode_Editor extends DefaultNodeEditor {
         editorCell.setRole("nodeToCheck");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
       editorCell.getStyle().putAll(style);
     }

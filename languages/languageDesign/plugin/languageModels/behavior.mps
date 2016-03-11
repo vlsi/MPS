@@ -33,6 +33,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="mjwp" ref="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)" implicit="true" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" implicit="true" />
@@ -73,6 +74,12 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -88,9 +95,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
-        <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
@@ -1226,15 +1230,15 @@
               <ref role="37wK5l" node="hEwJa82" resolve="getGeneratedName" />
             </node>
             <node concept="3cpWs3" id="hEwJa8k" role="3uHU7B">
+              <node concept="1Xhbcc" id="4TdgF7enZlU" role="3uHU7w">
+                <property role="1XhdNS" value="." />
+              </node>
               <node concept="2OqwBi" id="4TdgF7enZid" role="3uHU7B">
                 <node concept="2OqwBi" id="4TdgF7enYW6" role="2Oq$k0">
                   <node concept="13iPFW" id="4TdgF7enYQg" role="2Oq$k0" />
                   <node concept="I4A8Y" id="4TdgF7enZ6A" role="2OqNvi" />
                 </node>
                 <node concept="LkI2h" id="4TdgF7enZj$" role="2OqNvi" />
-              </node>
-              <node concept="1Xhbcc" id="4TdgF7enZlU" role="3uHU7w">
-                <property role="1XhdNS" value="." />
               </node>
             </node>
           </node>
@@ -1948,6 +1952,9 @@
       <property role="13i0iv" value="true" />
       <property role="TrG5h" value="getType" />
       <property role="13i0it" value="true" />
+      <node concept="2AHcQZ" id="2LlaKqPVwCt" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
       <node concept="3Tm1VV" id="112RIkggjzE" role="1B3o_S" />
       <node concept="3clFbS" id="112RIkggjzG" role="3clF47" />
       <node concept="3Tqbb2" id="112RIkggjAm" role="3clF45">
@@ -1958,6 +1965,9 @@
       <property role="13i0iv" value="true" />
       <property role="TrG5h" value="getFieldDeclaration" />
       <property role="13i0it" value="true" />
+      <node concept="2AHcQZ" id="2LlaKqPVwEC" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
       <node concept="3Tm1VV" id="112RIkgil0i" role="1B3o_S" />
       <node concept="3Tqbb2" id="112RIkgil0l" role="3clF45">
         <ref role="ehGHo" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
@@ -2080,28 +2090,8 @@
             </node>
           </node>
         </node>
-        <node concept="YS8fn" id="112RIkgikZ6" role="3cqZAp">
-          <node concept="2ShNRf" id="112RIkgikZ8" role="YScLw">
-            <node concept="1pGfFk" id="112RIkgikZa" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-              <node concept="3cpWs3" id="112RIkgikZc" role="37wK5m">
-                <node concept="2OqwBi" id="112RIkgikZl" role="3uHU7w">
-                  <node concept="2OqwBi" id="112RIkgikZg" role="2Oq$k0">
-                    <node concept="13iPFW" id="112RIkgikZf" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="112RIkgikZk" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="112RIkgikZp" role="2OqNvi">
-                    <ref role="37wK5l" to="tpcu:hEwIMiw" resolve="getPresentation" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="112RIkgikZb" role="3uHU7B">
-                  <property role="Xl_RC" value="Action parameter has wrong type: " />
-                </node>
-              </node>
-            </node>
-          </node>
+        <node concept="3cpWs6" id="2LlaKqPU_F8" role="3cqZAp">
+          <node concept="10Nm6u" id="2LlaKqPU_Js" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tqbb2" id="112RIkgil0m" role="3clF45">

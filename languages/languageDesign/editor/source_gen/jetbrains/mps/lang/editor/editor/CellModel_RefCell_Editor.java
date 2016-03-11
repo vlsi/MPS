@@ -148,6 +148,8 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
         editorCell.setRole("editorComponent");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.DRAW_BORDER, 0, true);
       editorCell.getStyle().putAll(style);
     }

@@ -123,7 +123,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ueqr71_c0a");
     Style style = new StyleImpl();
     structure_StyleSheet.apply_Keyword(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.EDITABLE, 0, ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a(editorContext, node));
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

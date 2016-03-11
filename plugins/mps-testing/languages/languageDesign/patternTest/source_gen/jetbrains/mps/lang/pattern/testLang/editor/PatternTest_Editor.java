@@ -109,6 +109,8 @@ public class PatternTest_Editor extends DefaultNodeEditor {
         editorCell.setRole("pattern");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -152,6 +154,8 @@ public class PatternTest_Editor extends DefaultNodeEditor {
         editorCell.setRole("nodeToMatch");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -201,6 +205,8 @@ public class PatternTest_Editor extends DefaultNodeEditor {
         editorCell.setRole("matches");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

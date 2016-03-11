@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -13641,6 +13641,35 @@
       <node concept="2iRkQZ" id="1qY_lWSjNP4" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="6srdxdH8$2a">
+    <property role="3GE5qa" value="ContextAssistant" />
+    <ref role="1XX52x" to="tpc2:6srdxdH8$17" resolve="ContextAssistantMenuPart_Conditional" />
+    <node concept="3EZMnI" id="6srdxdH8$2c" role="2wV5jI">
+      <node concept="PMmxH" id="6srdxdH8$2j" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="6srdxdH8$2o" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:6srdxdH8$1d" />
+      </node>
+      <node concept="3F0ifn" id="6srdxdH8ZYO" role="3EZMnx">
+        <property role="3F0ifm" value="then" />
+      </node>
+      <node concept="l2Vlx" id="6srdxdH8$2f" role="2iSdaV" />
+      <node concept="3F2HdR" id="6srdxdH8$2w" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:6srdxdH8$18" />
+        <node concept="l2Vlx" id="6srdxdH8$2y" role="2czzBx" />
+        <node concept="pVoyu" id="6srdxdH8ZV9" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="6srdxdH8ZWQ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="6srdxdH8ZYA" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="24kQdi" id="FyOJSsBNKy">
     <property role="3GE5qa" value="ContextAssistant" />
     <ref role="1XX52x" to="tpc2:FyOJSsBmJy" resolve="ContextAssistantMenuPart_IncludeMenu" />
@@ -13834,35 +13863,6 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="pj6Ft" id="4Sf$XywKhql" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="6srdxdH8$2a">
-    <property role="3GE5qa" value="ContextAssistant" />
-    <ref role="1XX52x" to="tpc2:6srdxdH8$17" resolve="ContextAssistantMenuPart_Conditional" />
-    <node concept="3EZMnI" id="6srdxdH8$2c" role="2wV5jI">
-      <node concept="PMmxH" id="6srdxdH8$2j" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F1sOY" id="6srdxdH8$2o" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:6srdxdH8$1d" />
-      </node>
-      <node concept="3F0ifn" id="6srdxdH8ZYO" role="3EZMnx">
-        <property role="3F0ifm" value="then" />
-      </node>
-      <node concept="l2Vlx" id="6srdxdH8$2f" role="2iSdaV" />
-      <node concept="3F2HdR" id="6srdxdH8$2w" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:6srdxdH8$18" />
-        <node concept="l2Vlx" id="6srdxdH8$2y" role="2czzBx" />
-        <node concept="pVoyu" id="6srdxdH8ZV9" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="pj6Ft" id="6srdxdH8ZWQ" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="6srdxdH8ZYA" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>

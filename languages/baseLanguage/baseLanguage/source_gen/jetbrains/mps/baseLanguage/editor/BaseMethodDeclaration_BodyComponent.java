@@ -47,7 +47,7 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     editorCell.setCellId("Constant_fao2ea_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0a0(editorContext, node));
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -75,7 +75,9 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0b0(editorContext, node));
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
     }

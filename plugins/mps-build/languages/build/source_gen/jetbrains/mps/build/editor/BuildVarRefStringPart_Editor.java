@@ -42,7 +42,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_macro(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -108,7 +108,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_macro(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1c0(editorContext, node));
     editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

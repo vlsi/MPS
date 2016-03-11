@@ -65,6 +65,8 @@ public class MethodInstance_Editor extends DefaultNodeEditor {
         editorCell.setRole("returnType");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.READ_ONLY, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -162,6 +164,7 @@ public class MethodInstance_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      SNode node = getOwner();
       editorCell.getStyle().putAll(style);
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
@@ -232,6 +235,8 @@ public class MethodInstance_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       {
         Style styleToPut = new StyleImpl();
         LightweightDsl_Styles_StyleSheet.apply_MethodInstance(styleToPut, editorCell);

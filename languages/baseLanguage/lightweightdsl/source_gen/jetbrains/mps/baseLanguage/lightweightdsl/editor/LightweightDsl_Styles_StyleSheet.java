@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.lightweightdsl.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -11,6 +13,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class LightweightDsl_Styles_StyleSheet {
   public static void apply_MethodInstance(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.SELECTABLE, 1, true);
     style.set(StyleAttributes.READ_ONLY, 1, true);
     style.set(StyleAttributes.TEXT_COLOR, 1, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));

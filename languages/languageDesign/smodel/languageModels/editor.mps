@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1452,6 +1452,7 @@
   <node concept="24kQdi" id="gYxFcbA">
     <property role="3GE5qa" value="operation.model" />
     <ref role="1XX52x" to="tp25:gYxF2fM" resolve="Model_CreateNewRootNodeOperation" />
+    <node concept="B$lHz" id="6mz0KzMD$Ov" role="6VMZX" />
     <node concept="3EZMnI" id="gYxFf1a" role="2wV5jI">
       <node concept="PMmxH" id="hzC8rJp" role="3EZMnx">
         <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
@@ -1516,7 +1517,6 @@
       </node>
       <node concept="l2Vlx" id="i0NEeNl" role="2iSdaV" />
     </node>
-    <node concept="B$lHz" id="6mz0KzMD$Ov" role="6VMZX" />
   </node>
   <node concept="24kQdi" id="h2Rg574">
     <property role="3GE5qa" value="operation.node" />

@@ -51,6 +51,8 @@ public class _Component_Visibility implements ConceptEditorComponent {
         editorCell.setRole("visibility");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
       editorCell.getStyle().putAll(style);
     }

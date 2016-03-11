@@ -45,7 +45,7 @@ public class _CloseTag implements ConceptEditorComponent {
     editorCell.setCellId("ReadOnlyModelAccessor_abi8e8_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(_CloseTag._StyleParameter_QueryFunction_abi8e8_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(_CloseTag._StyleParameter_QueryFunction_abi8e8_a0a(editorContext, node)));
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
     return editorCell;

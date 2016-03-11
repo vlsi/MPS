@@ -114,6 +114,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         editorCell.setRole("start");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.NULL_TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
       editorCell.getStyle().putAll(style);
     }
@@ -156,6 +158,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
         editorCell.setRole("end");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.NULL_TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
       editorCell.getStyle().putAll(style);

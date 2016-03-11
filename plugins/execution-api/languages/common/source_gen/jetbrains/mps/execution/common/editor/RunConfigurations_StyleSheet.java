@@ -4,6 +4,8 @@ package jetbrains.mps.execution.common.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -13,19 +15,27 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class RunConfigurations_StyleSheet {
   public static void apply_lessThen(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
   }
   public static void apply_greaterThen(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
   }
   public static void apply_operation(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
   public static void apply_leftOperationBrace(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
@@ -36,6 +46,8 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
   }
   public static void apply_rightOperationBrace(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
@@ -45,6 +57,8 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
   }
   public static void apply_constructorParameter(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(styleToPut, editorCell);
@@ -53,6 +67,8 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
   public static void apply_conceptFunctionHeader(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
   }

@@ -78,6 +78,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d9420cL, "jetbrains.mps.lang.editor.editorTest.structure.StubBlock"))) {
         return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efcL, "jetbrains.mps.lang.editor.editorTest.structure.StyleChild"))) {
+        return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efbL, "jetbrains.mps.lang.editor.editorTest.structure.StyleParent"))) {
+        return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"))) {
         return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
       }

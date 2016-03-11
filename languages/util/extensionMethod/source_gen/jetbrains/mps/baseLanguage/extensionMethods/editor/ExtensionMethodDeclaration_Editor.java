@@ -83,6 +83,8 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
     }

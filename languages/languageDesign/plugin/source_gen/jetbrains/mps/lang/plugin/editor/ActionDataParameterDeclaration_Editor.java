@@ -92,7 +92,7 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setRole("key");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, 0, ActionDataParameterDeclaration_Editor._StyleParameter_QueryFunction_d8l4wt_a0d0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.STRIKE_OUT, 0, ActionDataParameterDeclaration_Editor._StyleParameter_QueryFunction_d8l4wt_a0d0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

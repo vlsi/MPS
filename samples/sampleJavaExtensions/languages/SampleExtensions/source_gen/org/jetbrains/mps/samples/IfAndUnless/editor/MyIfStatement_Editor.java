@@ -67,6 +67,8 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("condition");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(16119260)));
       editorCell.getStyle().putAll(style);
     }
@@ -100,6 +102,8 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);

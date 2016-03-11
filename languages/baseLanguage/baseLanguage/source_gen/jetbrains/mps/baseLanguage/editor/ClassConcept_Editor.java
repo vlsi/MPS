@@ -225,6 +225,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         editorCell.setRole("superclass");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_3_RTransform");
       editorCell.getStyle().putAll(style);
       _ClassConcept_Extends_Delete.setCellActions(editorCell, myOwnerNode, myEditorContext);
@@ -355,8 +357,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_uj0cpq_a11a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a0a11a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a1a11a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a0a11a(editorContext, node));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, ClassConcept_Editor._StyleParameter_QueryFunction_uj0cpq_a1a11a(editorContext, node));
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -571,6 +573,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         editorCell.setRole("staticInitializer");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.POSITION_CHILDREN, 0, "next-line");
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
@@ -627,6 +631,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         editorCell.setRole("classInitializer");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -779,6 +785,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         editorCell.setRole("instanceInitializer");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -1037,6 +1045,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      SNode node = getOwner();
       editorCell.getStyle().putAll(style);
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));

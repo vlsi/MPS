@@ -101,6 +101,8 @@ public class SNodeCreatorAndInitializer_Editor extends DefaultNodeEditor {
         editorCell.setRole("prototype");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
     }

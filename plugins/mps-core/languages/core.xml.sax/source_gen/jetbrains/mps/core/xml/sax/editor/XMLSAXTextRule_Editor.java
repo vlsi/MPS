@@ -56,6 +56,8 @@ public class XMLSAXTextRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("handler");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
     }

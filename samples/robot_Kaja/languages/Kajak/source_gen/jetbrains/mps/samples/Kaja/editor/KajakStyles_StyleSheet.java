@@ -4,6 +4,8 @@ package jetbrains.mps.samples.Kaja.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -13,6 +15,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class KajakStyles_StyleSheet {
   public static void apply_Command(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);

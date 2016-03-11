@@ -46,7 +46,7 @@ public class CategoryReference_Editor extends DefaultNodeEditor {
       editorCell.setRole("target");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CategoryReference_Editor._StyleParameter_QueryFunction_dzi49r_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CategoryReference_Editor._StyleParameter_QueryFunction_dzi49r_a0a0(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -124,7 +124,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_8l0in6_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_8l0in6_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_8l0in6_a0c0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -151,6 +151,8 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
       if (true) {

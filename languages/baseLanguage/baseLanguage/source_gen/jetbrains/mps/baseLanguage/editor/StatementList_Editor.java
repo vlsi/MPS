@@ -34,7 +34,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_u338ov_a0(editorContext, node));
     return editorCell;
@@ -48,7 +48,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_statement");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     StatementList_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());

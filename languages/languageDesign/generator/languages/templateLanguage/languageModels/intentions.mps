@@ -9,7 +9,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -7381,6 +7381,9 @@
     <property role="TrG5h" value="ReplaceWithConcreteSubconcept" />
     <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="38BcoT" id="13c7lpEyXnn" role="3dlsAV">
+      <node concept="3bZ5Sz" id="4wz6$JequD8" role="3ddBve">
+        <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
       <node concept="3clFbS" id="13c7lpEyXno" role="2VODD2">
         <node concept="3clFbF" id="13c7lpEz1SZ" role="3cqZAp">
           <node concept="2OqwBi" id="13c7lpEzdEX" role="3clFbG">
@@ -7438,9 +7441,6 @@
           </node>
         </node>
       </node>
-      <node concept="3bZ5Sz" id="4wz6$JequD8" role="3ddBve">
-        <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      </node>
     </node>
     <node concept="2SaL7w" id="13c7lpEz2Xq" role="2ZfVeh">
       <node concept="3clFbS" id="13c7lpEz2Xr" role="2VODD2">
@@ -7467,8 +7467,8 @@
               <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
             </node>
             <node concept="2OqwBi" id="13c7lpEz2Yk" role="33vP2m">
-              <node concept="2Sf5sV" id="13c7lpEz2Yl" role="2Oq$k0" />
               <node concept="2yIwOk" id="4wz6$JeqAOY" role="2OqNvi" />
+              <node concept="2Sf5sV" id="13c7lpEz2Yl" role="2Oq$k0" />
             </node>
           </node>
         </node>

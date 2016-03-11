@@ -132,6 +132,8 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
         editorCell.setRole("type");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -252,6 +254,8 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
         editorCell.setRole("methods");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -303,6 +307,8 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
         editorCell.setRole("presentation");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -354,6 +360,8 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
         editorCell.setRole("isMethodCurrent");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

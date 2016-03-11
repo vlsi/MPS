@@ -233,6 +233,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("variable");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);
       DeleteFirstForLoopVar.setCellActions(editorCell, myOwnerNode, myEditorContext);
@@ -476,6 +478,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
         editorCell.setRole("body");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);

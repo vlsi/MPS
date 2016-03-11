@@ -46,7 +46,7 @@ public class ContextAssistantMenuReference_Default_Editor extends DefaultNodeEdi
   private EditorCell createComponent_ps2hza_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, ContextAssistantMenuReference_Default_Editor._StyleParameter_QueryFunction_ps2hza_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, 0, ContextAssistantMenuReference_Default_Editor._StyleParameter_QueryFunction_ps2hza_a0a0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ContextAssistantMenuReference_Default_Editor.ReplaceWith_ContextAssistantMenuReference_cellMenu_ps2hza_a0a0()}));
     return editorCell;

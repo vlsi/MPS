@@ -42,7 +42,7 @@ public class XmlText_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlText_Editor._StyleParameter_QueryFunction_crdhdg_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlText_Editor._StyleParameter_QueryFunction_crdhdg_a0a0(editorContext, node));
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlText_Editor.ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0()}));

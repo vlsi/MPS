@@ -225,6 +225,8 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
         editorCell.setRole("initializer");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
     }

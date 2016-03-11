@@ -76,6 +76,8 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("left");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
@@ -140,6 +142,8 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("right");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);

@@ -27,7 +27,7 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
-    style.set(StyleAttributes.STRIKE_OUT, 0, ConceptFunctionParameter_Editor._StyleParameter_QueryFunction_q0ga01_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.STRIKE_OUT, 0, ConceptFunctionParameter_Editor._StyleParameter_QueryFunction_q0ga01_a1a(editorContext, node));
     style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;

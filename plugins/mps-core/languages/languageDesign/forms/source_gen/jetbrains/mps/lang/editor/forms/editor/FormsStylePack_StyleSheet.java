@@ -4,11 +4,15 @@ package jetbrains.mps.lang.editor.forms.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class FormsStylePack_StyleSheet {
   public static void apply_KeyWord(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = StyleRegistry.getInstance().getStyle("KEYWORD");
       if (styleToPut == null) {

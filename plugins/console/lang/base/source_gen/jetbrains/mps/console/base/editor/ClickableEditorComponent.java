@@ -36,8 +36,8 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("CEC_property_text");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.UNDERLINED, 0, ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a0a(editorContext, node)));
+    style.set(StyleAttributes.UNDERLINED, 0, ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a1a(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

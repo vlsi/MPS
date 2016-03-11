@@ -521,6 +521,9 @@
     <node concept="lpD6D" id="127aYrrNzxc" role="lpD6w">
       <ref role="lpD7u" to="4o0x:1iKgLyjoN2" resolve="StyleAttributeThreeLayerTest" />
     </node>
+    <node concept="lpD6D" id="5DTV$TRz1F7" role="lpD6w">
+      <ref role="lpD7u" to="4o0x:5DTV$TRyAiR" resolve="StyleOfSingleRoleChild" />
+    </node>
     <node concept="lpD6D" id="7BzI3N6F9wC" role="lpD6w">
       <ref role="lpD7u" to="h8fw:2ZnZLV$gtnW" resolve="AddPropertyAttribute" />
     </node>
@@ -1896,6 +1899,9 @@
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="DefaultEditor_EditStringProperty" />
     </node>
+    <node concept="lpD6D" id="5DTV$TRsdKK" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5DTV$TRroMW" resolve="DefaultEditor_NoIdentifierProperty" />
+    </node>
     <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="DefaultEditor_ShowReflectiveEditor" />
     </node>
@@ -2932,6 +2938,9 @@
       <ref role="lpD7u" to="ryl9:iYIY04Prpd" resolve="WrapRLConstant" />
     </node>
     <node concept="lpD6D" id="2tTgVY$IfJ0" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4ChxYeHq89U" resolve="MoveBlockAndEmptyStatementOutOfTheBlock" />
+    </node>
+    <node concept="lpD6D" id="5DTV$TRra0K" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6bOvqMpbBLj" resolve="MoveBlockToBlock" />
     </node>
     <node concept="lpD6D" id="6ueBWtFO0n4" role="lpD6w">

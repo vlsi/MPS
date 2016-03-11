@@ -1520,6 +1520,14 @@
                     <property role="2bfB8j" value="true" />
                     <ref role="1Y3XeK" to="xygl:~Task$Modal" resolve="Task.Modal" />
                     <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
+                    <node concept="2OqwBi" id="3m6U0jmPvRF" role="37wK5m">
+                      <node concept="37vLTw" id="2BHiRxghfNU" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2rUHgdX3hbE" resolve="mpsProject" />
+                      </node>
+                      <node concept="liA8E" id="3m6U0jmPw8e" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                      </node>
+                    </node>
                     <node concept="3Tm1VV" id="2rUHgdX2y2f" role="1B3o_S" />
                     <node concept="3clFb_" id="2rUHgdX2y2g" role="jymVt">
                       <property role="TrG5h" value="run" />
@@ -1618,14 +1626,6 @@
                       <node concept="3Tm1VV" id="2rUHgdX2y2h" role="1B3o_S" />
                       <node concept="2AHcQZ" id="3tYsUK_UnZx" role="2AJF6D">
                         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="3m6U0jmPvRF" role="37wK5m">
-                      <node concept="37vLTw" id="2BHiRxghfNU" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2rUHgdX3hbE" resolve="mpsProject" />
-                      </node>
-                      <node concept="liA8E" id="3m6U0jmPw8e" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="2rUHgdX2y2X" role="37wK5m">

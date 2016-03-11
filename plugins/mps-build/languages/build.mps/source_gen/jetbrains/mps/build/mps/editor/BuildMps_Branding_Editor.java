@@ -160,6 +160,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("codename");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -308,6 +310,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("company");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -398,6 +402,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("buildDate");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -471,6 +477,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("splashScreen");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -513,6 +521,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("textColor");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -634,6 +644,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("progressY");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -715,6 +727,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("aboutScreen");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -789,6 +803,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("icon16");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -831,6 +847,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("icon32");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -873,6 +891,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("icon32opaque");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1045,6 +1065,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("dialogImage");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1110,6 +1132,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("shortName");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1152,6 +1176,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("fullName");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1204,6 +1230,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("welcomeLogo");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1256,6 +1284,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("plugins");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1289,6 +1319,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("updateWebsite");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1332,6 +1364,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("help");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1374,6 +1408,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("documentation");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1416,6 +1452,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("support");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1458,6 +1496,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("feedbackUrl");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1500,6 +1540,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("whatsnew");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1533,6 +1575,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("keymap");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1575,6 +1619,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("thirdparty");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -1678,6 +1724,8 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
         editorCell.setRole("stats");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

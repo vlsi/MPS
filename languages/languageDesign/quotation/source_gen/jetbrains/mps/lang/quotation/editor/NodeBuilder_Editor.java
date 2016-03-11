@@ -72,6 +72,8 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
         editorCell.setRole("quotedNode");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
       editorCell.getStyle().putAll(style);
     }

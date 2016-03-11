@@ -4,63 +4,85 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 
 public class Styles_StyleSheet {
   public static void apply_rootCellModelStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a(editorContext, node));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a(editorContext, node));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a(editorContext, node));
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
   public static void apply_style(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
   public static void apply_reference(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
   }
   public static void apply_item(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
   public static void apply_header(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
   public static void apply_property(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
   public static void apply_bordered(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
   public static void apply_borderedCollection(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
   public static void apply_tag(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.MATCHING_LABEL, 0, "tag");
   }
   public static void apply_attributedCellLabel(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.UNDERLINED, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j(editorContext, node));
   }
   public static void apply_string(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = StyleRegistry.getInstance().getStyle("STRING");
       if (styleToPut == null) {
@@ -70,10 +92,14 @@ public class Styles_StyleSheet {
     }
   }
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
@@ -89,6 +115,8 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
@@ -97,6 +125,8 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
   public static void apply_RightParen(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
@@ -105,6 +135,8 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_LeftParen(styleToPut, editorCell);
@@ -113,6 +145,8 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
   public static void apply_KeyWord(Style style, EditorCell editorCell) {
+    SNode node = (editorCell == null ? null : editorCell.getSNode());
+    EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
     {
       Style styleToPut = StyleRegistry.getInstance().getStyle("KEYWORD");
       if (styleToPut == null) {

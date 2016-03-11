@@ -183,6 +183,8 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("instance");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
     }

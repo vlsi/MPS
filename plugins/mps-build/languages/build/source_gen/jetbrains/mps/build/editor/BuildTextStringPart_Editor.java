@@ -66,7 +66,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_string(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a1a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a1a0a(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -97,7 +97,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text_1");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_string(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a0a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a0a0a(editorContext, node)));
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

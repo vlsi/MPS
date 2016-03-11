@@ -34,7 +34,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no content>");
     editorCell.setCellId("Error_91idit_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlContent_Editor._StyleParameter_QueryFunction_91idit_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, XmlContent_Editor._StyleParameter_QueryFunction_91idit_a0a0(editorContext, node));
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

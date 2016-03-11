@@ -80,6 +80,8 @@ public class BuildMps_BrandingCompany_Editor extends DefaultNodeEditor {
         editorCell.setRole("name");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
@@ -122,6 +124,8 @@ public class BuildMps_BrandingCompany_Editor extends DefaultNodeEditor {
         editorCell.setRole("url");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }

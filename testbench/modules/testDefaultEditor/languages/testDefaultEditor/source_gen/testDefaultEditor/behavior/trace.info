@@ -4,6 +4,9 @@
     <file name="AbstractDeveloper_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="testDefaultEditor.behavior.AbstractDeveloper_BehaviorDescriptor" />
     </file>
+    <file name="Canvas_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="testDefaultEditor.behavior.Canvas_BehaviorDescriptor" />
+    </file>
     <file name="Company_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="testDefaultEditor.behavior.Company_BehaviorDescriptor" />
     </file>
@@ -27,6 +30,9 @@
     </file>
     <file name="NotSubstitutableDeveloper_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" />
+    </file>
+    <file name="Shape_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="testDefaultEditor.behavior.Shape_BehaviorDescriptor" />
     </file>
     <file name="Team_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="testDefaultEditor.behavior.Team_BehaviorDescriptor" />

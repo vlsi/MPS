@@ -64,13 +64,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
-    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.UNDERLINED, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a6b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.STRIKE_OUT, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a7b0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0(editorContext, node)));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0(editorContext, node)));
+    style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0(editorContext, node)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0(editorContext, node)));
+    style.set(StyleAttributes.FONT_STYLE, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0(editorContext, node));
+    style.set(StyleAttributes.UNDERLINED, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a6b0(editorContext, node));
+    style.set(StyleAttributes.STRIKE_OUT, 0, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a7b0(editorContext, node));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -40,7 +40,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     editorCell.setCellId("TYPE_VARIABLES_ANCHOR");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, _GenericDeclaration_TypeVariables_WithAnchor_Component._StyleParameter_QueryFunction_525l3g_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, _GenericDeclaration_TypeVariables_WithAnchor_Component._StyleParameter_QueryFunction_525l3g_a1a0(editorContext, node));
     style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);

@@ -8942,6 +8942,32 @@
       <unit id="5331479185384370996" at="10,0,30,0" name="jetbrains.mps.editorTest.LT_PlusExpressionRArgument_with_Plus_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5337196445347381882">
+    <file name="MoveBlockAndEmptyStatementOutOfTheBlock_Test.java">
+      <node id="5337196445347381882" at="15,79,16,107" concept="3" />
+      <node id="5337196445347381882" at="16,107,17,120" concept="3" />
+      <node id="5337196445347381882" at="24,51,25,63" concept="3" />
+      <node id="5337196445347381900" at="25,63,26,76" concept="3" />
+      <node id="5337196445347381956" at="26,76,27,76" concept="3" />
+      <node id="5337196445347381964" at="27,76,28,82" concept="3" />
+      <node id="5337196445347381950" at="28,82,29,84" concept="3" />
+      <node id="5337196445347381988" at="29,84,30,74" concept="3" />
+      <node id="5337196445347381882" at="12,0,14,0" concept="2" trace="MoveBlockAndEmptyStatementOutOfTheBlock_Test#()V" />
+      <node id="5337196445347381882" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="5337196445347381882" at="14,0,19,0" concept="6" trace="test_MoveBlockAndEmptyStatementOutOfTheBlock#()V" />
+      <node id="5337196445347381882" at="23,0,32,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5337196445347381882" at="12,57,12,57" />
+      <scope id="5337196445347381882" at="21,23,21,23" />
+      <scope id="5337196445347381882" at="12,0,14,0" />
+      <scope id="5337196445347381882" at="15,79,17,120" />
+      <scope id="5337196445347381882" at="21,0,23,0" />
+      <scope id="5337196445347381882" at="14,0,19,0" />
+      <scope id="5337196445347381882" at="24,51,30,74" />
+      <scope id="5337196445347381882" at="23,0,32,0" />
+      <unit id="5337196445347381882" at="19,0,33,0" name="jetbrains.mps.editorTest.MoveBlockAndEmptyStatementOutOfTheBlock_Test$TestBody" />
+      <unit id="5337196445347381882" at="10,0,34,0" name="jetbrains.mps.editorTest.MoveBlockAndEmptyStatementOutOfTheBlock_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/537222088365503481">
     <file name="CutMethodComment_Test.java">
       <node id="537222088365503481" at="15,56,16,107" concept="3" />
@@ -11962,6 +11988,31 @@
       <scope id="6517948727589782823" at="23,0,31,0" />
       <unit id="6517948727589782823" at="19,0,32,0" name="jetbrains.mps.editorTest.PasteStatementBefore_Test$TestBody" />
       <unit id="6517948727589782823" at="10,0,33,0" name="jetbrains.mps.editorTest.PasteStatementBefore_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6519503956374031548">
+    <file name="DefaultEditor_NoIdentifierProperty_Test.java">
+      <node id="6519503956374031548" at="15,74,16,107" concept="3" />
+      <node id="6519503956374031548" at="16,107,17,115" concept="3" />
+      <node id="6519503956374031548" at="24,51,25,63" concept="3" />
+      <node id="6519503956374031555" at="25,63,26,74" concept="3" />
+      <node id="6519503956374176181" at="26,74,27,76" concept="3" />
+      <node id="6519503956374176187" at="27,76,28,76" concept="3" />
+      <node id="6519503956374176195" at="28,76,29,76" concept="3" />
+      <node id="6519503956374031548" at="12,0,14,0" concept="2" trace="DefaultEditor_NoIdentifierProperty_Test#()V" />
+      <node id="6519503956374031548" at="21,0,23,0" concept="2" trace="TestBody#()V" />
+      <node id="6519503956374031548" at="14,0,19,0" concept="6" trace="test_DefaultEditor_NoIdentifierProperty#()V" />
+      <node id="6519503956374031548" at="23,0,31,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="6519503956374031548" at="12,52,12,52" />
+      <scope id="6519503956374031548" at="21,23,21,23" />
+      <scope id="6519503956374031548" at="12,0,14,0" />
+      <scope id="6519503956374031548" at="15,74,17,115" />
+      <scope id="6519503956374031548" at="21,0,23,0" />
+      <scope id="6519503956374031548" at="14,0,19,0" />
+      <scope id="6519503956374031548" at="24,51,29,76" />
+      <scope id="6519503956374031548" at="23,0,31,0" />
+      <unit id="6519503956374031548" at="19,0,32,0" name="jetbrains.mps.editorTest.DefaultEditor_NoIdentifierProperty_Test$TestBody" />
+      <unit id="6519503956374031548" at="10,0,33,0" name="jetbrains.mps.editorTest.DefaultEditor_NoIdentifierProperty_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/654795966042457025">

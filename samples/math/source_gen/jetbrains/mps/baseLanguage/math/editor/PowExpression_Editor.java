@@ -90,6 +90,8 @@ public class PowExpression_Editor extends DefaultNodeEditor {
         editorCell.setRole("exponent");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUPERSCRIPT);
       editorCell.getStyle().putAll(style);
       delete_exponent.setCellActions(editorCell, myOwnerNode, myEditorContext);

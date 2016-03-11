@@ -108,6 +108,8 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         editorCell.setRole("richChild");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -195,6 +197,8 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         editorCell.setRole("compactChild");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -280,6 +284,8 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         editorCell.setRole("conditionallyProjectedChild");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
@@ -401,6 +407,8 @@ public class MultipleEditorsTestRefNodeRoot_Editor extends DefaultNodeEditor {
         editorCell.setRole("conditionallyRichOrCompactChild");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);

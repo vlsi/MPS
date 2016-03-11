@@ -67,8 +67,8 @@ public class ListOfDrawCommands_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_elj39_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ListOfDrawCommands_Editor._StyleParameter_QueryFunction_elj39_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, ListOfDrawCommands_Editor._StyleParameter_QueryFunction_elj39_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ListOfDrawCommands_Editor._StyleParameter_QueryFunction_elj39_a0c0(editorContext, node));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, ListOfDrawCommands_Editor._StyleParameter_QueryFunction_elj39_a1c0(editorContext, node));
     style.set(StyleAttributes.MATCHING_LABEL, 0, "Commands_brace");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

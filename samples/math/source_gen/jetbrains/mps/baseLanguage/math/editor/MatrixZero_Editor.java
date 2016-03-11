@@ -71,6 +71,8 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
         editorCell.setRole("rows");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
       editorCell.getStyle().putAll(style);
     }
@@ -117,6 +119,8 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
         editorCell.setRole("columns");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
       editorCell.getStyle().putAll(style);
     }
@@ -196,6 +200,8 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
         editorCell.setRole("rows");
       }
       Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
       editorCell.getStyle().putAll(style);
     }
