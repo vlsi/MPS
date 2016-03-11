@@ -23,6 +23,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,9 +47,10 @@ public class HUtil {
   }
 
   @Deprecated
-  @ToRemove(version = 3.3)
+  @ToRemove(version = 3.4)
+  //can't remove in 3.3 as coerce statement is still generated into it
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
-    return new ConceptMatchingPattern(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(conceptFQName)));
+    return new ConceptMatchingPattern(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
 
   public static IMatchingPattern createMatchingPatternByConcept(SConcept concept) {
