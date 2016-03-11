@@ -2464,6 +2464,16 @@
       </node>
       <node concept="3Tm1VV" id="5IkW5anF8AF" role="1B3o_S" />
       <node concept="3clFbS" id="5IkW5anF8AK" role="3clF47">
+        <node concept="3SKdUt" id="5VcKDTTjLUy" role="3cqZAp">
+          <node concept="3SKdUq" id="5VcKDTTjLU$" role="3SKWNk">
+            <property role="3SKdUp" value="can't remove before 3.4 as it is used in generated code" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5VcKDTTjLPL" role="3cqZAp">
+          <node concept="3SKdUq" id="5VcKDTTjLPN" role="3SKWNk">
+            <property role="3SKdUp" value="this usage of by-name is reviewed" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="5IkW5anF8AL" role="3cqZAp">
           <node concept="2YIFZM" id="5IkW5anF8AM" role="3cqZAk">
             <ref role="1Pybhc" to="urda:~SModelUtil" resolve="SModelUtil" />
@@ -2471,6 +2481,18 @@
             <node concept="37vLTw" id="2BHiRxglPhj" role="37wK5m">
               <ref role="3cqZAo" node="5IkW5anF8AH" resolve="conceptFqName" />
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5VcKDTTjLLf" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="5VcKDTTjLLg" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="5VcKDTTjLLh" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="5VcKDTTjLLi" role="2B70Vg">
+            <property role="$nhwW" value="3.4" />
           </node>
         </node>
       </node>
