@@ -50,6 +50,7 @@ public class HUtil {
   @ToRemove(version = 3.4)
   //can't remove in 3.3 as coerce statement is still generated into it
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
+    //this usage of by-name is reviewed
     return new ConceptMatchingPattern(MetaAdapterFactoryByName.getConcept(conceptFQName));
   }
 

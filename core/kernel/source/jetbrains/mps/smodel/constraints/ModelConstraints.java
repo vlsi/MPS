@@ -61,22 +61,6 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //no usages in MPS
-  // is it possible: replace node -> node with concept conceptFqName?
-  public static boolean canBeReplaced(@NotNull SNode node, @NotNull String conceptFqName) {
-    if (node.getModel() != null && node.getParent() == null) {
-      return canBeRoot(conceptFqName, node.getModel(), null);
-    }
-
-    SNode parent = node.getParent();
-    assert parent != null;
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
-
-    return canBeParent(parent, concept, new SNodeLegacy(node).getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
-  }
-
   // canBe* section
   public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept,
       @Nullable CheckingNodeContext checkingNodeContext) {
