@@ -110,9 +110,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
-        <child id="1182160096073" name="cls" index="YeSDq" />
-      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -180,7 +177,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -266,9 +263,6 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
-      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
-        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
-      </concept>
     </language>
     <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
       <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
@@ -2905,13 +2899,8 @@
                         <ref role="16sUi3" node="1_Iic4WUltd" resolve="T" />
                       </node>
                       <node concept="2ShNRf" id="1_Iic4WUlt5" role="10QFUP">
-                        <node concept="YeOm9" id="CCosYF3mU6" role="2ShVmc">
-                          <node concept="1Y3b0j" id="CCosYF3mU9" role="YeSDq">
-                            <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="1fjm:~AbstractDataFlowAspectDescriptor" resolve="AbstractDataFlowAspectDescriptor" />
-                            <ref role="37wK5l" to="1fjm:~AbstractDataFlowAspectDescriptor.&lt;init&gt;()" resolve="AbstractDataFlowAspectDescriptor" />
-                            <node concept="3Tm1VV" id="CCosYF3mUa" role="1B3o_S" />
-                          </node>
+                        <node concept="1pGfFk" id="5MCOPSq4M2g" role="2ShVmc">
+                          <ref role="37wK5l" to="1fjm:~DataFlowAspectDescriptorBase.&lt;init&gt;()" resolve="DataFlowAspectDescriptorBase" />
                         </node>
                       </node>
                     </node>
