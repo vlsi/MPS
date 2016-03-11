@@ -22,12 +22,4 @@ public interface IApplicableTo2Concepts {
   SAbstractConcept getApplicableConcept1();
 
   SAbstractConcept getApplicableConcept2();
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  String getApplicableConceptFQName1();
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  String getApplicableConceptFQName2();
 }

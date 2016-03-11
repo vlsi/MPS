@@ -22,17 +22,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public abstract class AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   @Override
-  //body is needed for compatibility only
-  public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName());
-  }
-
-  @Override
-  public String getApplicableConceptFQName() {
-    return null;
-  }
-
-  @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(false, null);
   }

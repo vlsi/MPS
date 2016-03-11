@@ -85,6 +85,7 @@ public class MetaAdapterByDeclaration {
       return new SConceptAdapterById(((SInterfaceConceptAdapterById) abstractConcept).getId(), abstractConcept.getQualifiedName());
     }
     if (abstractConcept instanceof SInterfaceConceptAdapterByName) {
+      //this usage of by-name is reviewed
       return MetaAdapterFactoryByName.getConcept(abstractConcept.getQualifiedName());
     }
     throw new IllegalArgumentException();

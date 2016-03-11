@@ -65,58 +65,28 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
     return new IsApplicableStatus(b, null);
   }
 
-  //body is needed for compatibility purposes only
-  public SAbstractConcept getApplicableSubtypeConcept(){
-     return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableSubtypeConceptFQName());
-  }
-
-  //body is needed for compatibility purposes only
-  public SAbstractConcept getApplicableSupertypeConcept(){
-    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableSupertypeConceptFQName());
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public String getApplicableSubtypeConceptFQName(){
-    return null;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public String getApplicableSupertypeConceptFQName(){
-    return null;
-  }
-
   @Override
   public boolean isApplicable1(SNode node) {
     return isApplicableSubtype(node);
   }
 
-  @Override
-  public boolean isApplicable2(SNode node) {
-    return isApplicableSupertype(node);
-  }
+  public abstract SAbstractConcept getApplicableSubtypeConcept();
+
+  public abstract SAbstractConcept getApplicableSupertypeConcept();
 
   @Override
-  //todo remove body after 3.3, needed for compatibility only
   public SAbstractConcept getApplicableConcept1() {
     return getApplicableSubtypeConcept();
   }
 
   @Override
-  //todo remove body after 3.3, needed for compatibility only
   public SAbstractConcept getApplicableConcept2() {
     return getApplicableSupertypeConcept();
   }
 
   @Override
-  public String getApplicableConceptFQName1() {
-    return getApplicableSubtypeConceptFQName();
-  }
-
-  @Override
-  public String getApplicableConceptFQName2() {
-    return getApplicableSupertypeConceptFQName();
+  public boolean isApplicable2(SNode node) {
+    return isApplicableSupertype(node);
   }
 
   //todo generate this method

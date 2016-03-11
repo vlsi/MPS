@@ -19,11 +19,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * @author fyodor on 14.05.2015.
- */
 public abstract class AbstractSubstituteType_Runtime implements SubstituteType_Runtime {
-
   @Override
   public TypeSubstitution substitution(SNode ruleNode, SNode termType, TypeCheckingContext typeCheckingContext, IsApplicableStatus applicableStatus) {
     return null;
@@ -34,8 +30,4 @@ public abstract class AbstractSubstituteType_Runtime implements SubstituteType_R
     return new IsApplicableStatus(false, null);
   }
 
-  @Override
-  public String getApplicableConceptFQName() {
-    return null;
-  }
 }

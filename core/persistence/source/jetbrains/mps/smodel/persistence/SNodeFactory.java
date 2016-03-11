@@ -40,6 +40,7 @@ public class SNodeFactory {
     return new SNode(toConcept(conceptQualifiedName));
   }
   private static SConcept toConcept(String conceptQualifiedName) {
+    //this usage of by-name is reviewed
     return MetaAdapterFactoryByName.getConcept(InternUtil.intern(conceptQualifiedName));
   }
 }

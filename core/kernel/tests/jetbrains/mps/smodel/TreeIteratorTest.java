@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
@@ -109,31 +110,31 @@ public class TreeIteratorTest {
   public void testTreeFilterIterator() {
     // except node2
     ArrayList<SNode> aaa = new ArrayList<SNode>();
-    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(child2)); it.hasNext();) {
+    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(child2)); it.hasNext(); ) {
       aaa.add(it.next());
     }
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "I", "J"), names(aaa));
     // except node3 (last non-leaf)
     aaa = new ArrayList<SNode>();
-    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(child3)); it.hasNext();) {
+    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(child3)); it.hasNext(); ) {
       aaa.add(it.next());
     }
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H"), names(aaa));
     // except start node itself
     aaa = new ArrayList<SNode>();
-    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(start)); it.hasNext();) {
+    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(start)); it.hasNext(); ) {
       aaa.add(it.next());
     }
     Assert.assertTrue(aaa.isEmpty());
     // except last node (last leaf and the last one of complete iteration)
     aaa = new ArrayList<SNode>();
-    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(lastNode)); it.hasNext();) {
+    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(lastNode)); it.hasNext(); ) {
       aaa.add(it.next());
     }
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I"), names(aaa));
     // except node which is not from the sub-tree
     aaa = new ArrayList<SNode>();
-    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(topNode)); it.hasNext();) {
+    for (Iterator<SNode> it = new TreeFilterIterator<SNode>(new DescendantsTreeIterator(start), new NodeFilter(topNode)); it.hasNext(); ) {
       aaa.add(it.next());
     }
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"), names(aaa));
@@ -148,7 +149,7 @@ public class TreeIteratorTest {
   }
 
   private static SNode newNode(String name) {
-    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(MetaAdapterFactoryByName.getConcept("Mock"));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(MetaAdapterFactory.getConcept(0, 0, 0, "Mock"));
     node.setProperty(SNodeUtil.property_INamedConcept_name, name);
     // SNode.toString doesn't like SNode when there's no complete MPS - can't get node's concept. Alias helps to make it feel better.
     node.setProperty(SNodeUtil.property_BaseConcept_alias, name);

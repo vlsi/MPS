@@ -19,9 +19,5 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public interface IApplicableToConcept {
-  @Deprecated
-  @ToRemove(version = 3.3)
-  String getApplicableConceptFQName();
-
   SAbstractConcept getApplicableConcept();
 }

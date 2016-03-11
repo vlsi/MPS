@@ -34,17 +34,6 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return Collections.emptyList();
   }
 
-  @Override
-  //body is needed for compatibility only
-  public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName());
-  }
-
-  @Override
-  public String getApplicableConceptFQName() {
-    return null;
-  }
-
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return null;
   }

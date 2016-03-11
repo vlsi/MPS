@@ -21,18 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public abstract class AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
-  @Override
-  //body is needed for compatibility only
-  public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName());
-  }
-
-  @Override
-  public String getApplicableConceptFQName() {
-    return null;
-  }
-
   @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(false, null);
