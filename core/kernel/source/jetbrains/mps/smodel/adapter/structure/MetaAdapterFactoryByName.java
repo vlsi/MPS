@@ -85,14 +85,4 @@ public class MetaAdapterFactoryByName {
   public static SContainmentLink getContainmentLink(String conceptName, String linkName) {
     return new SContainmentLinkAdapterByName(conceptName, linkName);
   }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //not used in MPS
-  //this is to use only for compatibility reasons between 3.2 and 3.3. This code does not run normally at all
-  public static SAbstractConcept getTypedConcept_DoNotUse(String conceptName) {
-    final ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
-    if (cd instanceof IllegalConceptDescriptor) return MetaAdapterFactoryByName.getConcept(conceptName);
-    return MetaAdapterFactory.getAbstractConcept(cd);
-  }
 }

@@ -135,6 +135,7 @@ class GenerationSession {
       if (additionalLanguages != null && !additionalLanguages.isEmpty()) {
         extraLanguages = new ArrayList<SLanguage>(additionalLanguages.size());
         for (String l : additionalLanguages) {
+          //this usage of by-name is reviewed
           extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
         }
       }
