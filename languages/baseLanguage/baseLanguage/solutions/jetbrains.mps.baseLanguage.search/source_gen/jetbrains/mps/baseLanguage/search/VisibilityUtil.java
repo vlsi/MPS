@@ -61,7 +61,8 @@ public final class VisibilityUtil {
     return false;
   }
   public static String packageName(@NotNull SNode node) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(node));
+    String packageName = SModelOperations.getModelName(SNodeOperations.getModel(node));
+    return (packageName != null ? packageName : "");
   }
   public static SNode topClassifier(@NotNull SNode node) {
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).last();
