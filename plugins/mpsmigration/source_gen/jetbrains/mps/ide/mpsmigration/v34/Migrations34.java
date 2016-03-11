@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class Migrations34 implements ApplicationComponent {
-  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new CleanSourcesMigration()};
+  private final ProjectMigration[] myMigrations = new ProjectMigration[]{new CleanExportsMigration()};
 
   public void initComponent() {
     for (ProjectMigration pm : myMigrations) {
