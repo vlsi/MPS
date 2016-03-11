@@ -11,9 +11,9 @@ import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -38,7 +38,7 @@ public class typeof_GetExtensionObjectsOperation_InferenceRule extends AbstractI
         public void run() {
           SNode objectType = null;
           {
-            IMatchingPattern pattern_gzb1x_b0d0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.extension.structure.ExtensionPointType");
+            IMatchingPattern pattern_gzb1x_b0d0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, "jetbrains.mps.lang.extension.structure.ExtensionPointType"));
             SNode coercedNode_gzb1x_b0d0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(operandType), pattern_gzb1x_b0d0);
             if (coercedNode_gzb1x_b0d0 != null) {
               objectType = SLinkOperations.getTarget(SLinkOperations.getTarget(coercedNode_gzb1x_b0d0, MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, 0x2c10fa62142eb539L, "extensionPoint")), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x6f6f7f3b7a17bd0bL, "objectType"));

@@ -160,8 +160,8 @@
   <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/7915630211773498575">
     <file name="typeof_DownCastToLowLevel_InferenceRule.java">
       <node id="7915630211773500854" at="22,5,23,355" concept="5" />
-      <node id="7915630211773498589" at="26,11,27,159" concept="5" />
-      <node id="7915630211773498589" at="27,159,28,159" concept="5" />
+      <node id="7915630211773498589" at="26,11,27,247" concept="5" />
+      <node id="7915630211773498589" at="27,247,28,159" concept="5" />
       <node id="7915630211773498604" at="30,15,31,70" concept="5" />
       <node id="7915630211773498604" at="31,70,32,225" concept="5" />
       <node id="7915630211773498604" at="32,225,33,450" concept="2" />

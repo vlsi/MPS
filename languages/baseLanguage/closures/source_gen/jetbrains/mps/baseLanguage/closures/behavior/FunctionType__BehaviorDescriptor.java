@@ -251,7 +251,7 @@ with_throws:
   }
   /*package*/ static SNode getNormalizedSequenceParameterReturnType_idhEwIOpc(@NotNull SNode __thisNode__) {
     {
-      IMatchingPattern pattern_ksvwin_a0o = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+      IMatchingPattern pattern_ksvwin_a0o = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType"));
       SNode coercedNode_ksvwin_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType")), pattern_ksvwin_a0o);
       if (coercedNode_ksvwin_a0o != null) {
         return SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_ksvwin_a0o, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"))))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));

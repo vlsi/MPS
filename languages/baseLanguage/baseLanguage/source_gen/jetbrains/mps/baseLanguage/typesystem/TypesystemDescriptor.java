@@ -1451,7 +1451,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       {
-        IMatchingPattern pattern_r12mo3_a0a7 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+        IMatchingPattern pattern_r12mo3_a0a7 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
         SNode coercedNode_r12mo3_a0a7 = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftOperandType, pattern_r12mo3_a0a7);
         if (coercedNode_r12mo3_a0a7 != null) {
           return coercedNode_r12mo3_a0a7;

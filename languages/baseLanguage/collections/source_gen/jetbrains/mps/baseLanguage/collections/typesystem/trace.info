@@ -6253,8 +6253,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1228229118221">
     <file name="typeof_DowncastExpression_InferenceRule.java">
       <node id="1228231553787" at="23,5,24,337" concept="9" />
-      <node id="1228231671615" at="27,11,28,139" concept="9" />
-      <node id="1228231671615" at="28,139,29,165" concept="9" />
+      <node id="1228231671615" at="27,11,28,221" concept="9" />
+      <node id="1228231671615" at="28,221,29,165" concept="9" />
       <node id="1228231787457" at="31,15,32,62" concept="9" />
       <node id="1228231787457" at="32,62,33,219" concept="9" />
       <node id="1228231787457" at="33,219,34,334" concept="4" />
@@ -9627,8 +9627,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1240319956157">
     <file name="check_container_creator_not_primitive_array_NonTypesystemRule.java">
-      <node id="1240320006906" at="25,5,26,136" concept="9" />
-      <node id="1240320006906" at="26,136,27,303" concept="9" />
+      <node id="1240320006906" at="25,5,26,218" concept="9" />
+      <node id="1240320006906" at="26,218,27,303" concept="9" />
       <node id="1240320024069" at="29,370,30,62" concept="9" />
       <node id="1240320024069" at="30,62,31,404" concept="9" />
       <node id="1240320006906" at="33,12,34,7" concept="0" />

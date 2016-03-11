@@ -154,7 +154,7 @@ with_meet:
       ListSequence.fromList(visitedClassifiers).addElement(SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
       for (SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
-          IMatchingPattern pattern_zgotlq_a0d0e0h = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          IMatchingPattern pattern_zgotlq_a0d0e0h = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           SNode coercedNode_zgotlq_a0d0e0h = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_zgotlq_a0d0e0h);
           if (coercedNode_zgotlq_a0d0e0h != null) {
             ListSequence.fromList(concretes).addElement(coercedNode_zgotlq_a0d0e0h);

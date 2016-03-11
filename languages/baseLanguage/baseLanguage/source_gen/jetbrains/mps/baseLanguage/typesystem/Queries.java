@@ -44,7 +44,7 @@ public class Queries {
     }
     SNode type = leastCommonSupertypes.iterator().next();
     {
-      IMatchingPattern pattern_j6k1pf_e0c = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+      IMatchingPattern pattern_j6k1pf_e0c = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
       SNode coercedNode_j6k1pf_e0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, pattern_j6k1pf_e0c);
       if (coercedNode_j6k1pf_e0c != null) {
         return coercedNode_j6k1pf_e0c;

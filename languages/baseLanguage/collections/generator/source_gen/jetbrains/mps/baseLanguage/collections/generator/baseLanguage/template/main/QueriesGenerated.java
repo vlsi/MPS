@@ -677,7 +677,7 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
     {
-      IMatchingPattern pattern_x583g4_c0pg = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      IMatchingPattern pattern_x583g4_c0pg = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       SNode coercedNode_x583g4_c0pg = TypeChecker.getInstance().getRuntimeSupport().coerce_(componentType, pattern_x583g4_c0pg);
       if (coercedNode_x583g4_c0pg != null) {
         return SLinkOperations.getTarget(coercedNode_x583g4_c0pg, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

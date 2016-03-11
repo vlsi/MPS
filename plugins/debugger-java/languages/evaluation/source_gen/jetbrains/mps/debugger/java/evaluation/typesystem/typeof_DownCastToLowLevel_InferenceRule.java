@@ -24,7 +24,7 @@ public class typeof_DownCastToLowLevel_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.whenConcrete(e, new Runnable() {
         public void run() {
           {
-            IMatchingPattern pattern_pc09cd_a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType");
+            IMatchingPattern pattern_pc09cd_a0a0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"));
             SNode coercedNode_pc09cd_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(e), pattern_pc09cd_a0a0);
             if (coercedNode_pc09cd_a0a0 != null) {
               {

@@ -32,7 +32,7 @@ public class typeof_AbstractUnaryNumberOperation_InferenceRule extends AbstractI
       typeCheckingContext.whenConcrete(exprType, new Runnable() {
         public void run() {
           {
-            IMatchingPattern pattern_lpfp9b_a0b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
+            IMatchingPattern pattern_lpfp9b_a0b0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
             SNode coercedNode_lpfp9b_a0b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(exprType), pattern_lpfp9b_a0b0);
             if (coercedNode_lpfp9b_a0b0 != null) {
               {

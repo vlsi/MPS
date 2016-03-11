@@ -53,7 +53,7 @@ public final class RunConfigurationExecutor__BehaviorDescriptor extends BaseBHDe
   @Nullable
   /*package*/ static SNode getCommand_id5pE1_aqZ2LK(@NotNull SNode __thisNode__) {
     {
-      IMatchingPattern pattern_wnz9gp_a0d = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.CommandProcessType");
+      IMatchingPattern pattern_wnz9gp_a0d = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, "jetbrains.mps.execution.commands.structure.CommandProcessType"));
       SNode coercedNode_wnz9gp_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), pattern_wnz9gp_a0d);
       if (coercedNode_wnz9gp_a0d != null) {
         if ((SLinkOperations.getTarget(coercedNode_wnz9gp_a0d, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, 0x87f99370d7e1ea4L, "commandDeclaration")) != null)) {

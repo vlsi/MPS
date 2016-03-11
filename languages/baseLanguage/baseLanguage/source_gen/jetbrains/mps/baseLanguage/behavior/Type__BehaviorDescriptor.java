@@ -130,7 +130,7 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   /*package*/ static SNode getClassExpression_idhEwIzOd(@NotNull SNode __thisNode__) {
     {
-      IMatchingPattern pattern_smb55n_a0n = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      IMatchingPattern pattern_smb55n_a0n = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       SNode coercedNode_smb55n_a0n = TypeChecker.getInstance().getRuntimeSupport().coerce_(__thisNode__, pattern_smb55n_a0n);
       if (coercedNode_smb55n_a0n != null) {
         return _quotation_createNode_smb55n_a0a2a0a31(SLinkOperations.getTarget(coercedNode_smb55n_a0n, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));

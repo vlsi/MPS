@@ -147,8 +147,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)/1205853960046">
     <file name="check_IMemberOperation_NonTypesystemRule.java">
       <node id="1225121628861" at="26,124,27,133" concept="6" />
-      <node id="1205921883368" at="28,5,29,157" concept="6" />
-      <node id="1205921883368" at="29,157,30,122" concept="6" />
+      <node id="1205921883368" at="28,5,29,240" concept="6" />
+      <node id="1205921883368" at="29,240,30,122" concept="6" />
       <node id="1205921883388" at="33,11,34,64" concept="6" />
       <node id="1205921883388" at="34,64,35,259" concept="6" />
       <node id="1205921883368" at="38,12,39,7" concept="0" />

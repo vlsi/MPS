@@ -303,7 +303,7 @@ public class QueriesGenerated {
             return false;
           }
           {
-            IMatchingPattern pattern_e0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
+            IMatchingPattern pattern_e0a0a = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
             SNode coercedNode_e0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, pattern_e0a0a);
             if (coercedNode_e0a0a != null) {
               return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SLinkOperations.getTarget(coercedNode_e0a0a, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135")));

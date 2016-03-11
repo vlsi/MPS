@@ -55,7 +55,7 @@ public final class SelectInEditorOperation__BehaviorDescriptor extends BaseBHDes
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
     if (kind == MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration").getDeclarationNode() || kind == MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId").getDeclarationNode()) {
       {
-        IMatchingPattern pattern_wbtxu4_a0a0c = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
+        IMatchingPattern pattern_wbtxu4_a0a0c = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
         SNode coercedNode_wbtxu4_a0a0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__)), pattern_wbtxu4_a0a0c);
         if (coercedNode_wbtxu4_a0a0c != null) {
           if (kind == MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration").getDeclarationNode()) {
