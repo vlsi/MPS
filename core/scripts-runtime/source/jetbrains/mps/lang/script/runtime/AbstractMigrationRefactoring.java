@@ -34,17 +34,7 @@ public abstract class AbstractMigrationRefactoring {
 
   public abstract String getAdditionalInfo();
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //this method is needed for binary compatibility with 3.2-generated code
-  public String getFqNameOfConceptToSearchInstances(){
-    return null;
-  }
-
-  //todo remove body of this method after 3.3 - needed only for binary compatibility with 3.2
-  public SAbstractConcept getApplicableConcept(){
-    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(getFqNameOfConceptToSearchInstances()));
-  }
+  public abstract SAbstractConcept getApplicableConcept();
 
   public abstract boolean isApplicableInstanceNode(SNode instanceNode);
 

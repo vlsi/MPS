@@ -60,21 +60,6 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     SetSequence.fromSet(myCreators).removeElement(MapSequence.fromMap(myAddedByConceptCreators).get(fqName));
     MapSequence.fromMap(myAddedByConceptCreators).removeKey(fqName);
   }
-  @Deprecated
-  public void addBreakpointCreator(final Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> oldCreator) {
-    Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
-      public Boolean invoke(SNode c, SNode n) {
-        return oldCreator._0().invoke(c);
-      }
-    }, oldCreator._1());
-    SetSequence.fromSet(myCreators).addElement(creator);
-    MapSequence.fromMap(myOldToNewCreatorMap).put(oldCreator, creator);
-  }
-  @Deprecated
-  public void removeBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> oldCreator) {
-    SetSequence.fromSet(myCreators).removeElement(MapSequence.fromMap(myOldToNewCreatorMap).get(oldCreator));
-    MapSequence.fromMap(myOldToNewCreatorMap).removeKey(oldCreator);
-  }
   public void addCreator(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
     SetSequence.fromSet(myCreators).addElement(creator);
   }
