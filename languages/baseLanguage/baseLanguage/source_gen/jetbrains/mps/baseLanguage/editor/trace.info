@@ -23,7 +23,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,600,0" name="jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,603,0" name="jetbrains.mps.baseLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)/1073416106125">

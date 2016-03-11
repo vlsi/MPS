@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.TextField_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.Transformers_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

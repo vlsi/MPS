@@ -18,6 +18,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.editor.RefTestMethod_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.editor.RefTestParamRef_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.editor.RefTestParam_Editor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

@@ -59,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.OutputNode_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.OutputRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.editor.TwoVarStatement_Editor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

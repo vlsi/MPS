@@ -251,6 +251,7 @@
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_Editor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

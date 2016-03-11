@@ -45,6 +45,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathVarReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

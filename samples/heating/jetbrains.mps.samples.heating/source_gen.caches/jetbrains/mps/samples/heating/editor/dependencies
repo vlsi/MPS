@@ -126,6 +126,7 @@
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.Slot_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.editor.SpecificDay_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
