@@ -14,6 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class SNodeTypeCastExpression extends MigrationScriptBase {
@@ -22,7 +28,7 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     {
@@ -52,6 +58,107 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
       });
     }
     return null;
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      final QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return Sequence.fromClosure(new ISequenceClosure<Problem>() {
+        public Iterable<Problem> iterable() {
+          return new Iterable<Problem>() {
+            public Iterator<Problem> iterator() {
+              return new YieldingIterator<Problem>() {
+                private int __CP__ = 0;
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this._2__yield_ccrblf_a0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                          public boolean accept(SNode it) {
+                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"));
+                          }
+                        }).where(new IWhereFilter<SNode>() {
+                          public boolean accept(SNode it) {
+                            return it.getChildren(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression_old")).iterator().hasNext();
+                          }
+                        }).select(new ISelector<SNode, Problem>() {
+                          public Problem select(SNode it) {
+                            return DeprecatedConceptMemberNotMigratedProblem.deprecatedContainmentLink(it, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression_old"));
+                          }
+                        })).iterator();
+                      case 3:
+                        if (!(this._2__yield_ccrblf_a0a0c0a0d_it.hasNext())) {
+                          this.__CP__ = 5;
+                          break;
+                        }
+                        this._2__yield_ccrblf_a0a0c0a0d = this._2__yield_ccrblf_a0a0c0a0d_it.next();
+                        this.__CP__ = 4;
+                        break;
+                      case 5:
+                        this._6__yield_ccrblf_b0a0c0a0d_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                          public boolean accept(SNode it) {
+                            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"));
+                          }
+                        }).where(new IWhereFilter<SNode>() {
+                          public boolean accept(SNode it) {
+                            return it.getReference(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x10975873562L, "concept_old")) != null;
+                          }
+                        }).select(new ISelector<SNode, Problem>() {
+                          public Problem select(SNode it) {
+                            return DeprecatedConceptMemberNotMigratedProblem.deprecatedReferenceLink(it, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x10975873562L, "concept_old"));
+                          }
+                        })).iterator();
+                      case 7:
+                        if (!(this._6__yield_ccrblf_b0a0c0a0d_it.hasNext())) {
+                          this.__CP__ = 1;
+                          break;
+                        }
+                        this._6__yield_ccrblf_b0a0c0a0d = this._6__yield_ccrblf_b0a0c0a0d_it.next();
+                        this.__CP__ = 8;
+                        break;
+                      case 6:
+                        this.__CP__ = 3;
+                        this.yield(_2__yield_ccrblf_a0a0c0a0d);
+                        return true;
+                      case 9:
+                        this.__CP__ = 7;
+                        this.yield(_6__yield_ccrblf_b0a0c0a0d);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 4:
+                        this.__CP__ = 6;
+                        break;
+                      case 8:
+                        this.__CP__ = 9;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+                private Problem _2__yield_ccrblf_a0a0c0a0d;
+                private Iterator<Problem> _2__yield_ccrblf_a0a0c0a0d_it;
+                private Problem _6__yield_ccrblf_b0a0c0a0d;
+                private Iterator<Problem> _6__yield_ccrblf_b0a0c0a0d_it;
+              };
+            }
+          };
+        }
+      });
+    }
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 2);

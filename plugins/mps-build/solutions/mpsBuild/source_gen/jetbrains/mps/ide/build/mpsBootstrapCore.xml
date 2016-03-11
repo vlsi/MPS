@@ -4077,14 +4077,10 @@
         <module file="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/jetbrains.mps.baseLanguage.overloadedOperators.mpl" />
         <module file="${mps_home}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.libs.msd" />
         <module file="${mps_home}/languages/baseLanguage/varVariable/jetbrains.mps.baseLanguage.varVariable.mpl" bootstrap="true" />
-        <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/jetbrains.mps.build.mps.runner.runtime.msd" />
         <module file="${mps_home}/core/tool/environment/jetbrains.mps.core.tool.environment.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
         <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
-        <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
-        <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" />
-        <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
         <module file="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/jetbrains.mps.lang.editor.imageGen.mpl" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/plan/jetbrains.mps.lang.generator.plan.mpl" />
@@ -4101,7 +4097,12 @@
         <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
         <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
-      <chunk />
+      <chunk>
+        <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/jetbrains.mps.build.mps.runner.runtime.msd" />
+        <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
+        <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" />
+        <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
+      </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
@@ -12309,6 +12310,10 @@
     <delete dir="${mps_home}/languages/baseLanguage/doubleDispatch/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/varVariable/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-editor/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-platform/source_gen" />
+    <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/migration/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/plugin/generator/source_gen" />
