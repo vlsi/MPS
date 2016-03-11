@@ -5,7 +5,6 @@
       <unit at="8,0,12,0" name="jetbrains.mps.samples.Kaja.DFABuilders" />
     </file>
     <file name="Language.java">
-      <unit at="52,21,52,58" name="jetbrains.mps.samples.Kaja.Language$1" />
       <unit at="22,0,69,0" name="jetbrains.mps.samples.Kaja.Language" />
     </file>
   </root>
