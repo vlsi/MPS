@@ -118,7 +118,7 @@ public class CreateGroupsBuilder {
     private final RelationDescriptor myDescriptor;
 
     public CreateAction(SNode concept, RelationDescriptor descriptor) {
-      super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConcept(concept));
       myConcept = concept;
       myDescriptor = descriptor;
     }

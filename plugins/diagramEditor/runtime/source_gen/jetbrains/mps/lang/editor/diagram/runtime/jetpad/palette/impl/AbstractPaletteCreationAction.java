@@ -10,7 +10,6 @@ import jetbrains.jetpad.projectional.view.ViewTrait;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -32,7 +31,7 @@ public abstract class AbstractPaletteCreationAction implements PaletteToggleActi
     SNode iconNode = mySubstituteAction.getIconNode("");
     if (iconNode != null) {
 
-      icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((mySubstituteAction.isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
+      icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((mySubstituteAction.isReferentPresentation()))) ? IconManager.getIconForConcept(((SNode) iconNode)) : IconManager.getIconFor(iconNode));
     } else {
       icon = IdeIcons.DEFAULT_ICON;
     }

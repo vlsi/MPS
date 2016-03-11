@@ -335,6 +335,9 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
@@ -1923,11 +1926,11 @@
               </node>
               <node concept="3clFbF" id="75MLXfcuTfk" role="3cqZAp">
                 <node concept="37vLTI" id="75MLXfcuTfl" role="3clFbG">
-                  <node concept="2YIFZM" id="75MLXfc_3Jz" role="37vLTx">
-                    <ref role="37wK5l" to="sn11:277Nzj6qTH$" resolve="getIconForConceptFQName" />
+                  <node concept="2YIFZM" id="5VcKDTTlVkc" role="37vLTx">
+                    <ref role="37wK5l" to="sn11:277Nzj6qTGh" resolve="getIconForConcept" />
                     <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <node concept="Xl_RD" id="75MLXfcAm6q" role="37wK5m">
-                      <property role="Xl_RC" value="jetbrains.mps.testHybridEditor.structure.ConnectorInstance" />
+                    <node concept="3B5_sB" id="5VcKDTTlW7W" role="37wK5m">
+                      <ref role="3B5MYn" to="adck:22C1ebGh1km" resolve="ConnectorInstance" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="75MLXfcuTfo" role="37vLTJ">

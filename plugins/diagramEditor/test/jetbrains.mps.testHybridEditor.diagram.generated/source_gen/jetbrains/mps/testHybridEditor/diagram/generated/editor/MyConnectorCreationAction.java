@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -15,7 +16,6 @@ import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,7 +32,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myText = "Connector";
-        myIcon = IconManager.getIconForConceptFQName("jetbrains.mps.testHybridEditor.structure.ConnectorInstance");
+        myIcon = IconManager.getIconForConcept(SNodeOperations.getNode("r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)", "2353136177974088982"));
       }
     });
   }

@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -36,7 +35,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
     myCallback = setNodePositionCallback;
 
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink)});
-    myIcon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(childNodeConcept));
+    myIcon = IconManager.getIconForConcept(((SNode) childNodeConcept));
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();
