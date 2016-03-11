@@ -100,38 +100,6 @@ public class ModelConstraints {
     return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
   }
 
-  /**
-   * @deprecated use {@link #canBeChild(SAbstractConcept, SNode, SNode, SNode, CheckingNodeContext)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //no usages in MPS
-  public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
-    SModule module = getModule(parentNode);
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
-    return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName), getOperationContext(module), checkingNodeContext);
-  }
-
-  /**
-   * @deprecated use {@link #canBeRoot(SAbstractConcept, SModel)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  //no usages in MPS
-  public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    // todo: use concept descriptor here?
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
-    if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) || !SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
-      if (checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(new jetbrains.mps.smodel.SNodePointer(concept));
-      }
-      return false;
-    }
-
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(conceptFqName);
-    return descriptor.canBeRoot(model, getOperationContext(getModule(model)), checkingNodeContext);
-  }
-
   public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
     if (concept.isAbstract()) {
       return false;
