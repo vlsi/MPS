@@ -530,5 +530,99 @@
     <property role="TrG5h" value="StyleChild" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="1G0RFWHdw6$">
+    <property role="1pbfSe" value="1211555939" />
+    <property role="TrG5h" value="InitContainer" />
+    <property role="3GE5qa" value="init" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1G0RFWHdw6A" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1G0RFWHdw6_">
+    <property role="1pbfSe" value="1211555940" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitChildWithDirectCycle_card1" />
+    <property role="34LRSv" value="card1_direct_cycle" />
+    <ref role="1TJDcQ" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    <node concept="1TJgyj" id="1G0RFWHdw6D" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="subChild" />
+      <ref role="20lvS9" node="1G0RFWHdw6_" resolve="InitChildWithDirectCycle_card1" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1G0RFWHdw6C">
+    <property role="1pbfSe" value="1211555943" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitAbstractChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7zh3gS0K_$U">
+    <property role="1pbfSe" value="2039703112" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitChildWithDirectCycle_card1n" />
+    <property role="34LRSv" value="card1n_direct_cycle" />
+    <ref role="1TJDcQ" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    <node concept="1TJgyj" id="7zh3gS0K_$V" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1..n" />
+      <property role="20kJfa" value="subChild" />
+      <ref role="20lvS9" node="7zh3gS0K_$U" resolve="InitChildWithDirectCycle_card1n" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7zh3gS0L1TI">
+    <property role="1pbfSe" value="2039819132" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitChildWithIndirectCycle_card1" />
+    <property role="34LRSv" value="card1_indirect_cycle" />
+    <ref role="1TJDcQ" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    <node concept="1TJgyj" id="7zh3gS0L1TJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="subChild" />
+      <ref role="20lvS9" node="7zh3gS0L1TK" resolve="InitGrandChildWithIndirectCycle_card1" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7zh3gS0L1TK">
+    <property role="1pbfSe" value="2039819134" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitGrandChildWithIndirectCycle_card1" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7zh3gS0L1TL" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="subchild" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7zh3gS0L1TI" resolve="InitChildWithIndirectCycle_card1" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7zh3gS0L8ip">
+    <property role="1pbfSe" value="2039845287" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitChildWithIndirectCycle_card1n" />
+    <property role="34LRSv" value="card1n_indirect_cycle" />
+    <ref role="1TJDcQ" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    <node concept="1TJgyj" id="7zh3gS0L8iq" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1..n" />
+      <property role="20kJfa" value="subChild" />
+      <ref role="20lvS9" node="7zh3gS0L8it" resolve="InitGrandChildWithIndirectCycle_card1n" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7zh3gS0L8it">
+    <property role="1pbfSe" value="2039845291" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitGrandChildWithIndirectCycle_card1n" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7zh3gS0L8iu" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="subchild" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="7zh3gS0L8ip" resolve="InitChildWithIndirectCycle_card1n" />
+    </node>
+  </node>
 </model>
 

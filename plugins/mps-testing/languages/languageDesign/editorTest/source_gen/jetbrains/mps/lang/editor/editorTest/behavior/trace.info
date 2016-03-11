@@ -60,6 +60,30 @@
     <file name="IBaseTestBlock_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
     </file>
+    <file name="InitAbstractChild_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitAbstractChild_BehaviorDescriptor" />
+    </file>
+    <file name="InitChildWithDirectCycle_card1_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithDirectCycle_card1_BehaviorDescriptor" />
+    </file>
+    <file name="InitChildWithDirectCycle_card1n_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithDirectCycle_card1n_BehaviorDescriptor" />
+    </file>
+    <file name="InitChildWithIndirectCycle_card1_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithIndirectCycle_card1_BehaviorDescriptor" />
+    </file>
+    <file name="InitChildWithIndirectCycle_card1n_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithIndirectCycle_card1n_BehaviorDescriptor" />
+    </file>
+    <file name="InitContainer_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitContainer_BehaviorDescriptor" />
+    </file>
+    <file name="InitGrandChildWithIndirectCycle_card1_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitGrandChildWithIndirectCycle_card1_BehaviorDescriptor" />
+    </file>
+    <file name="InitGrandChildWithIndirectCycle_card1n_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitGrandChildWithIndirectCycle_card1n_BehaviorDescriptor" />
+    </file>
     <file name="InspectorBlock_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />
     </file>

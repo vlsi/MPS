@@ -77,6 +77,7 @@
     <import index="hcvu" ref="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)" />
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
+    <import index="1xvu" ref="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -457,6 +458,18 @@
     </node>
     <node concept="lpD6D" id="3jzt7MeEPmJ" role="lpD6w">
       <ref role="lpD7u" to="hcvu:9Jk7l7ZQgT" resolve="ManuallyExpandedCell_UnrelatedModelChange" />
+    </node>
+    <node concept="lpD6D" id="7zh3gS0LeLx" role="lpD6w">
+      <ref role="lpD7u" to="1xvu:1nCPqFM58sy" resolve="ChildWithDirectCycle_card1" />
+    </node>
+    <node concept="lpD6D" id="7zh3gS0LeP8" role="lpD6w">
+      <ref role="lpD7u" to="1xvu:7zh3gS0L1PW" resolve="ChildWithDirectCycle_card1n" />
+    </node>
+    <node concept="lpD6D" id="7zh3gS0LeSL" role="lpD6w">
+      <ref role="lpD7u" to="1xvu:7zh3gS0L8df" resolve="ChildWithIndirectCycle_card1" />
+    </node>
+    <node concept="lpD6D" id="7zh3gS0LeWs" role="lpD6w">
+      <ref role="lpD7u" to="1xvu:7zh3gS0LeDd" resolve="ChildWithIndirectCycle_card1n" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />

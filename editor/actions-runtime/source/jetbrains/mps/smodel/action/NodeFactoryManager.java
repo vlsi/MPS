@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.smodel.action;
 
+import gnu.trove.THashSet;
+import gnu.trove.TObjectHashingStrategy;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -36,8 +41,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
 import java.util.Collection;
+import java.util.Set;
 
 public class NodeFactoryManager {
+  private static Logger LOG = LogManager.getLogger(NodeFactoryManager.class);
+
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
     SAbstractLink linkDeclaration = enclosingNode.getConcept().getLink(linkRole);
     SModel model = enclosingNode.getModel();
@@ -54,6 +62,11 @@ public class NodeFactoryManager {
   }
 
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
+    return createNode(nodeConcept, sampleNode, enclosingNode, model, createConceptsSet());
+  }
+
+  private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,
+      Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
     SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept.getQualifiedName(), model, false);
     if (newNode == null) return null;
     if (nodeConcept instanceof SInterfaceConcept) {
@@ -65,21 +78,25 @@ public class NodeFactoryManager {
     }
     nodeConcept = newNode.getConcept(); // XXX is it possible to get another concept on creation?
     setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model);
-    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model);
+    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
     return newNode;
   }
 
-  private static void createNodeStructure(SAbstractConcept nodeConcept,
-      SNode newNode, SNode sampleNode, SNode enclosingNode,
-      SModel model) {
+  private static void createNodeStructure(SAbstractConcept nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model,
+      Set<SAbstractConcept> visitedNonOptionalChildConcepts) {
     for (SAbstractLink linkDeclaration : nodeConcept.getLinks()) {
       if (linkDeclaration.isReference() || linkDeclaration.isOptional()) {
         continue;
       }
       SAbstractConcept targetConcept = linkDeclaration.getTargetConcept();
-      if (targetConcept != null && !newNode.getChildren(linkDeclaration.getRole()).iterator().hasNext()) {
-        SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model);
-        newNode.addChild(linkDeclaration.getRole(), childNode);
+      if (!newNode.getChildren(linkDeclaration.getRole()).iterator().hasNext()) {
+        if (!visitedNonOptionalChildConcepts.contains(targetConcept)) {
+          visitedNonOptionalChildConcepts.add(targetConcept);
+          SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
+          newNode.addChild(linkDeclaration.getRole(), childNode);
+        } else {
+          LOG.error("Cyclic containment found while initializing node: " + newNode.getNodeId() + ", containment link: " + linkDeclaration.getName());
+        }
       }
     }
   }
@@ -112,5 +129,21 @@ public class NodeFactoryManager {
 
   private static SConcept asSConcept(SNode nodeConcept) {
     return MetaAdapterByDeclaration.getInstanceConcept(nodeConcept);
+  }
+
+  private static Set<SAbstractConcept> createConceptsSet() {
+    return new THashSet<SAbstractConcept>(new ConceptHashingStrategy());
+  }
+
+  private static class ConceptHashingStrategy implements TObjectHashingStrategy<SAbstractConcept> {
+    @Override
+    public int computeHashCode(SAbstractConcept concept) {
+      return MetaIdHelper.getConcept(concept).hashCode();
+    }
+
+    @Override
+    public boolean equals(SAbstractConcept concept1, SAbstractConcept concept2) {
+      return concept1.equals(concept2);
+    }
   }
 }
