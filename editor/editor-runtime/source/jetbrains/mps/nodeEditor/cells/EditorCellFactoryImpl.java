@@ -203,10 +203,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     @NotNull
     @Override
     protected Collection<ConceptEditor> get(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
-      if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
-        return ((EditorAspectDescriptorBase) aspectDescriptor).getEditors(concept);
-      }
-      return aspectDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
+      return aspectDescriptor.getEditors(concept);
     }
   }
 
@@ -221,10 +218,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     @NotNull
     @Override
     protected Collection<ConceptEditorComponent> get(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
-      if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
-        return ((EditorAspectDescriptorBase) aspectDescriptor).getEditorComponents(concept, myEditorComponentId);
-      }
-      return aspectDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), myEditorComponentId);
+      return aspectDescriptor.getEditorComponents(concept, myEditorComponentId);
     }
   }
 
