@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
+import javax.swing.Icon;
 
 /**
  * Will be removed after 3.3
@@ -16,6 +17,9 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 public class MigrationScript_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IMigrationUnit_BehaviorDescriptor, AutoInitDSLClass_BehaviorDescriptor {
   public int virtual_fromVersion_5168866961621042645(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);
+  }
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode __thisNode__) {
+    return null;
   }
   public SNode virtual_getDescriptor_1055884086724995485(SNode __thisNode__) {
     return null;
