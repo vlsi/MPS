@@ -49,6 +49,7 @@
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="tp41" ref="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -2704,6 +2705,9 @@
                 <ref role="3cqZAo" node="7IH442cXGYh" resolve="aspectModel" />
               </node>
               <node concept="1iwH7S" id="1_Iic4WUlrO" role="37wK5m" />
+              <node concept="35c_gC" id="75fuNknez0j" role="37wK5m">
+                <ref role="35c_gD" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
+              </node>
               <node concept="35c_gC" id="1_Iic4WUlrP" role="37wK5m">
                 <ref role="35c_gD" to="bj1v:nUEAIXlVr8" resolve="Rule" />
               </node>
