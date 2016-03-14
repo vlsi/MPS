@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -123,9 +122,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
 
   //this method MUST NOT call any concept methods (not to get into infinite recursion)
   private boolean isConceptDeclaration(SConcept concept) {
-    if (concept instanceof SConceptAdapterByName) {
-      return concept.equals(SNodeUtil.concept_ConceptDeclaration) || concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
-    } else if (concept instanceof SConceptAdapterById) {
+    if (concept instanceof SConceptAdapterById) {
       SConceptId id = ((SConceptAdapterById) concept).getId();
       return id.equals(SNodeUtil.conceptId_ConceptDeclaration) || id.equals(SNodeUtil.conceptId_InterfaceConceptDeclaration);
     } else {

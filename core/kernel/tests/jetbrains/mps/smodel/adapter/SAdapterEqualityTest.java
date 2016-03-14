@@ -17,17 +17,11 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import org.junit.Test;
 
 import java.util.UUID;

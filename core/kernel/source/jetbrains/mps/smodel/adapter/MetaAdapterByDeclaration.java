@@ -22,9 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -83,10 +81,6 @@ public class MetaAdapterByDeclaration {
     }
     if (abstractConcept instanceof SInterfaceConceptAdapterById) {
       return new SConceptAdapterById(((SInterfaceConceptAdapterById) abstractConcept).getId(), abstractConcept.getQualifiedName());
-    }
-    if (abstractConcept instanceof SInterfaceConceptAdapterByName) {
-      //this usage of by-name is reviewed
-      return MetaAdapterFactoryByName.getConcept(abstractConcept.getQualifiedName());
     }
     throw new IllegalArgumentException();
   }

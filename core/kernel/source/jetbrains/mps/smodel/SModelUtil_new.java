@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -48,7 +47,7 @@ public class SModelUtil_new {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
-    return instantiateConceptDeclaration(MetaAdapterByDeclaration.getConcept(conceptDeclaration), model,null, fullNodeStructure);
+    return instantiateConceptDeclaration(MetaAdapterByDeclaration.getConcept(conceptDeclaration), model, null, fullNodeStructure);
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull SAbstractConcept concept, @Nullable SModel model, SNodeId nodeId,
@@ -63,7 +62,8 @@ public class SModelUtil_new {
 
     SConcept concreteConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
 
-    jetbrains.mps.smodel.SNode newNode = nodeId == null ? new jetbrains.mps.smodel.SNode(concreteConcept) : new jetbrains.mps.smodel.SNode(concreteConcept, nodeId);
+    jetbrains.mps.smodel.SNode newNode =
+        nodeId == null ? new jetbrains.mps.smodel.SNode(concreteConcept) : new jetbrains.mps.smodel.SNode(concreteConcept, nodeId);
     // create the node structure
     if (fullNodeStructure &&
         isNotProjectModel) { //project models can be created and used
