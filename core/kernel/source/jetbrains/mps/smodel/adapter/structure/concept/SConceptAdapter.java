@@ -71,9 +71,4 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
     }
     return res;
   }
-
-  @Override
-  public int hashCode() {
-    return 0;
-  }
 }

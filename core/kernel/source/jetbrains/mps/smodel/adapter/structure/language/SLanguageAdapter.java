@@ -117,9 +117,4 @@ public abstract class SLanguageAdapter implements SLanguage {
   public String toString() {
     return myLanguageFqName;
   }
-
-  @Override
-  public int hashCode() {
-    return 0;
-  }
 }

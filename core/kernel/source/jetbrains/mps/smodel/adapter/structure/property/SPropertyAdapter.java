@@ -70,11 +70,6 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
-  public int hashCode() {
-    return 0;
-  }
-
-  @Override
   public SDataType getType() {
     // TODO reimplement using ConceptDescriptor
     SNode propertyNode = getDeclarationNode();

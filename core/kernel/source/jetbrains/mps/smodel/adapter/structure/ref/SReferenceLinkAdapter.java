@@ -158,8 +158,4 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     return myName;
   }
 
-  @Override
-  public int hashCode() {
-    return 0;
-  }
 }
