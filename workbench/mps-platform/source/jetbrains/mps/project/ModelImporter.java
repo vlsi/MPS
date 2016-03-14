@@ -126,10 +126,10 @@ public class ModelImporter {
       if (!e.affectsModule()) {
         continue;
       }
-      sb.append(String.format("Model <b>%s</b> is owned by module <b>%s</b> which is not imported.<br>\n", e.myModelToImport.getName(), e.myModuleDep.getModuleName()));
+      sb.append(String.format("Model <b>%s</b> is owned by module <b>%s</b> which is not imported.<br/>", e.myModelToImport.getName(), e.myModuleDep.getModuleName()));
     }
 
-    final String msg = String.format("<html>%s<br>\nDo you want to add module imports automatically?</html>", sb.toString());
+    final String msg = String.format("<html>%s<br/>Do you want to add module imports automatically?</html>", sb.toString());
     // ok / cancel is much better than yes/no. One would read 'no' as 'no module imports, but proceed with model import',
     // while 'cancel' suggests whole operation would stop, an it's the way rest of the code behaves
     int res = JOptionPane.showConfirmDialog(parentComponent, msg, "Module import", JOptionPane.OK_CANCEL_OPTION);
