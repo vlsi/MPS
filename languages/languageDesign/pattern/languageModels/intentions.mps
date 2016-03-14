@@ -17,6 +17,8 @@
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="cavf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.legacy(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -310,6 +312,35 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1Tx3V$IDZi3" role="3cqZAp">
+          <node concept="3cpWsn" id="1Tx3V$IDZi4" role="3cpWs9">
+            <property role="TrG5h" value="p" />
+            <node concept="3uibUv" id="1Tx3V$IDZhP" role="1tU5fm">
+              <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+            </node>
+            <node concept="2OqwBi" id="1Tx3V$IDZi5" role="33vP2m">
+              <node concept="1eOMI4" id="1Tx3V$IDZi6" role="2Oq$k0">
+                <node concept="10QFUN" id="1Tx3V$IDZi7" role="1eOMHV">
+                  <node concept="2OqwBi" id="1Tx3V$IDZi8" role="10QFUP">
+                    <node concept="37vLTw" id="1Tx3V$IDZi9" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7ET0Sy01puP" resolve="cellNode" />
+                    </node>
+                    <node concept="2yIwOk" id="1Tx3V$IDZia" role="2OqNvi" />
+                  </node>
+                  <node concept="3uibUv" id="1Tx3V$IDZib" role="10QFUM">
+                    <ref role="3uigEE" to="cavf:~ConceptMetaInfoConverter" resolve="ConceptMetaInfoConverter" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1Tx3V$IDZic" role="2OqNvi">
+                <ref role="37wK5l" to="cavf:~ConceptMetaInfoConverter.convertProperty(java.lang.String):org.jetbrains.mps.openapi.language.SProperty" resolve="convertProperty" />
+                <node concept="37vLTw" id="1Tx3V$IDZid" role="37wK5m">
+                  <ref role="3cqZAo" node="336$5uCs9zX" resolve="propertyName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7ET0Sy01puW" role="3cqZAp">
           <node concept="2OqwBi" id="7ET0Sy01pv9" role="3clFbG">
             <node concept="2OqwBi" id="7ET0Sy01puY" role="2Oq$k0">
@@ -320,8 +351,8 @@
                 <node concept="3CFTII" id="7ET0Sy01pv4" role="3CFYIz">
                   <ref role="3CFTIH" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
                   <node concept="25Kdxt" id="7ET0Sy01pv6" role="3CFTIG">
-                    <node concept="37vLTw" id="3GM_nagTAkU" role="25KhWn">
-                      <ref role="3cqZAo" node="336$5uCs9zX" resolve="propertyName" />
+                    <node concept="37vLTw" id="1Tx3V$IDZtE" role="25KhWn">
+                      <ref role="3cqZAo" node="1Tx3V$IDZi4" resolve="p" />
                     </node>
                   </node>
                 </node>

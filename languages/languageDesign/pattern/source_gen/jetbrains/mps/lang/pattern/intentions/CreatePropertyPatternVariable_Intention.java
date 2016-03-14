@@ -17,6 +17,9 @@ import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -63,7 +66,8 @@ public final class CreatePropertyPatternVariable_Intention extends IntentionDesc
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
       SNode cellNode = cell.getSNode();
-      SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
+      SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(cellNode)).convertProperty(propertyName);
+      SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

@@ -14,8 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class _PatternExpression_KeyMap extends KeyMapImpl {
   public _PatternExpression_KeyMap() {
@@ -173,8 +176,10 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
-      String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
-      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
+      PropertyAccessor acc = (PropertyAccessor) cell.getModelAccessor();
+      String propertyName = (acc).getPropertyName();
+      SProperty p = ((ConceptMetaInfoConverter) cell.getSNode().getConcept()).convertProperty(propertyName);
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
     }
     public String getKeyStroke() {
       return " $";
@@ -347,16 +352,17 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
         return;
       }
       String role = selectedCell.getRole();
+      SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(contextNode)).convertAssociation(role);
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
-        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
+        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref), null);
         return;
       }
-      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null) {
-        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
+      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref)) != null) {
+        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref), null);
       } else {
-        SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")));
+        SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")));
       }
     }
     public String getKeyStroke() {

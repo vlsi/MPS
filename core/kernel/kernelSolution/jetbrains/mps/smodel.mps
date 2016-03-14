@@ -33,6 +33,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspect.plugin)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="cavf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.legacy(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3188,6 +3189,35 @@
       <node concept="10P_77" id="5HuzTX5dzDB" role="3clF45" />
       <node concept="3Tm1VV" id="5HuzTX5dzD_" role="1B3o_S" />
       <node concept="3clFbS" id="5HuzTX5dzDA" role="3clF47">
+        <node concept="3cpWs8" id="1Tx3V$IExzc" role="3cqZAp">
+          <node concept="3cpWsn" id="1Tx3V$IExzd" role="3cpWs9">
+            <property role="TrG5h" value="ref" />
+            <node concept="3uibUv" id="1Tx3V$IExzb" role="1tU5fm">
+              <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+            </node>
+            <node concept="2OqwBi" id="1Tx3V$IExze" role="33vP2m">
+              <node concept="1eOMI4" id="1Tx3V$IExzf" role="2Oq$k0">
+                <node concept="10QFUN" id="1Tx3V$IExzg" role="1eOMHV">
+                  <node concept="2OqwBi" id="1Tx3V$IExzh" role="10QFUP">
+                    <node concept="37vLTw" id="1Tx3V$IExzi" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5HuzTX5dzDC" resolve="node" />
+                    </node>
+                    <node concept="2yIwOk" id="1Tx3V$IExzj" role="2OqNvi" />
+                  </node>
+                  <node concept="3uibUv" id="1Tx3V$IExzk" role="10QFUM">
+                    <ref role="3uigEE" to="cavf:~ConceptMetaInfoConverter" resolve="ConceptMetaInfoConverter" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1Tx3V$IExzl" role="2OqNvi">
+                <ref role="37wK5l" to="cavf:~ConceptMetaInfoConverter.convertAssociation(java.lang.String):org.jetbrains.mps.openapi.language.SReferenceLink" resolve="convertAssociation" />
+                <node concept="37vLTw" id="1Tx3V$IExzm" role="37wK5m">
+                  <ref role="3cqZAo" node="5HuzTX5dzDE" resolve="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5HuzTX5dzDH" role="3cqZAp">
           <node concept="2OqwBi" id="5HuzTX5dzLS" role="3clFbG">
             <node concept="2OqwBi" id="5HuzTX5dzDJ" role="2Oq$k0">
@@ -3198,8 +3228,8 @@
                 <node concept="3CFYIw" id="5HuzTX5dzDP" role="3CFYIz">
                   <ref role="3CFYIJ" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
                   <node concept="25Kdxt" id="5HuzTX5dzDR" role="3CFYM5">
-                    <node concept="37vLTw" id="2BHiRxgm9gm" role="25KhWn">
-                      <ref role="3cqZAo" node="5HuzTX5dzDE" resolve="role" />
+                    <node concept="37vLTw" id="1Tx3V$IExDc" role="25KhWn">
+                      <ref role="3cqZAo" node="1Tx3V$IExzd" resolve="ref" />
                     </node>
                   </node>
                 </node>

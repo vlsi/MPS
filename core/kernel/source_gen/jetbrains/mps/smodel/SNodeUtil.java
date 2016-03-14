@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
@@ -240,7 +241,8 @@ public final class SNodeUtil {
   @Deprecated
   @ToRemove(version = 3.4)
   public static boolean hasReferenceMacro(SNode node, String role) {
-    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);
+    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(role);
+    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref)) != null);
   }
   public static boolean hasReferenceMacro(SNode node, SReferenceLink role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);

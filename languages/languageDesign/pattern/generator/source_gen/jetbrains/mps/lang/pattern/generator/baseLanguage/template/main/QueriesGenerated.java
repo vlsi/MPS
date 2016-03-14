@@ -313,9 +313,8 @@ public class QueriesGenerated {
     return AttributeOperations.getAttribute(mainNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), refRole)) == null;
   }
   public static boolean ifMacro_Condition_7207007552736227810(final IfMacroContext _context) {
-    String refRole = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x79ac26fe422b8688L, "referenceLinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-    SNode mainNode = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a4198b58L, "mainNode"));
-    return AttributeOperations.getAttribute(mainNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), refRole)) != null;
+    SReferenceLink ref = MetaAdapterByDeclaration.getReferenceLink(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x79ac26fe422b8688L, "referenceLinkDeclaration")));
+    return AttributeOperations.getAttribute(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a4198b58L, "mainNode")), new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref)) != null;
   }
   public static boolean ifMacro_Condition_6283201779507549554(final IfMacroContext _context) {
     SNode attribute = Sequence.fromIterable(AttributeOperations.getNodeAttributes(_context.getNode())).first();

@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -82,16 +84,17 @@ public final class CreatePropertyAntiquotation_Intention extends IntentionDescri
       }
       EditorCell_Property editorCell_Property = (EditorCell_Property) selectedCell;
       String propertyName = ((PropertyAccessor) editorCell_Property.getModelAccessor()).getPropertyName();
+      SProperty p = ((ConceptMetaInfoConverter) selectedCell.getSNode().getConcept()).convertProperty(propertyName);
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
-        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName), null);
+        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), p), null);
         return;
       }
-      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName)) != null) {
-        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName), null);
+      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), p)) != null) {
+        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), p), null);
       } else {
-        SNode propertyAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")));
+        SNode propertyAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")));
         if (selectedCell.isSingleNodeCell()) {
           SPropertyOperations.set(propertyAntiquotation, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x5a0ec74a8bd5aeb2L, "label"), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }

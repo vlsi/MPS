@@ -17,6 +17,8 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.generator.helper.EditingUtil;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -62,7 +64,8 @@ public final class AddTestReferenceAnnotation_Intention extends IntentionDescrip
       EditorCell cell = editorContext.getSelectedCell();
       String linkRole = EditingUtil.getEditedLinkRole(cell);
       SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
+      SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
+      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

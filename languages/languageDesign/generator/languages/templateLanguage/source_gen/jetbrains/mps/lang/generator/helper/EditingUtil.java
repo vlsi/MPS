@@ -4,18 +4,18 @@ package jetbrains.mps.lang.generator.helper;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -45,7 +45,8 @@ public final class EditingUtil {
     if (propertyName == null) {
       return false;
     }
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), propertyName)) == null;
+    SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propertyName);
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), p)) == null;
   }
   public static boolean isReferenceMacroApplicable(SNode node, EditorCell cell) {
     if (cell == null) {
@@ -59,7 +60,8 @@ public final class EditingUtil {
       return false;
     }
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-    return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole)) == null;
+    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
+    return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref)) == null;
   }
   public static boolean isAnyMacroApplicable(SNode node) {
     // not inside 'root template annotation' 
@@ -114,10 +116,10 @@ public final class EditingUtil {
       }
     }
     String propertyName = EditingUtil.getEditedPropertyName(cell);
-    SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro")));
-    SProperty metaProperty = SNodeOperations.getConcept(node).getProperty(propertyName);
-    if (metaProperty != null) {
-      PropertyAttribute__BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(propertyMacro, metaProperty);
+    SProperty p = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propertyName);
+    SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro"), p), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro")));
+    if (p != null) {
+      PropertyAttribute__BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(propertyMacro, p);
     }
     return propertyMacro;
   }
@@ -130,10 +132,10 @@ public final class EditingUtil {
         EditingUtil.createTemplateFragment(referentNode);
       }
     }
-    SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
-    SAbstractLink link = SNodeOperations.getConcept(node).getLink(linkRole);
-    if (link instanceof SReferenceLink) {
-      LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(referenceMacro, (SReferenceLink) link);
+    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
+    SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
+    if (ref != null) {
+      LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(referenceMacro, ref);
     }
     return referenceMacro;
   }
