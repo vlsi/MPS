@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.findUsages.DFABuilders" file="DFABuilders.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.Language" file="Language.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptorBase" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.constraints.ConstraintsAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.findUsages.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.typesystem.TypesystemDescriptor" />

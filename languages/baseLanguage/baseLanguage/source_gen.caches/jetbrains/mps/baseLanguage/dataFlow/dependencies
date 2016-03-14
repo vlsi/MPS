@@ -176,6 +176,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow" />
@@ -228,6 +230,16 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.PrefixIncrementExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsExpression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleNotEqualsExpression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
@@ -243,6 +255,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.VariableDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.VariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
