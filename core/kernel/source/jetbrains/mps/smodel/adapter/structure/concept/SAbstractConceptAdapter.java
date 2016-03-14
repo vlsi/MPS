@@ -273,34 +273,19 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public SProperty convertProperty(String propertyName) {
-    SProperty prop = MetaAdapterFactoryByName.getProperty(getQualifiedName(), propertyName);
-    SPropertyId id = ((SPropertyAdapter) prop).getId();
-    if (id.equals(MetaIdFactory.INVALID_PROP_ID)) {
-      return prop;
-    }
-    return MetaAdapterFactory.getProperty(id, propertyName);
+    return MetaAdapterFactoryByName.getProperty(getQualifiedName(), propertyName);
   }
 
   @NotNull
   @Override
   public SReferenceLink convertAssociation(String role) {
-    SReferenceLink link = MetaAdapterFactoryByName.getReferenceLink(getQualifiedName(), role);
-    SReferenceLinkId id = ((SReferenceLinkAdapter) link).getRoleId();
-    if (id.equals(MetaIdFactory.INVALID_REF_ID)) {
-      return link;
-    }
-    return MetaAdapterFactory.getReferenceLink(id, role);
+    return MetaAdapterFactoryByName.getReferenceLink(getQualifiedName(), role);
   }
 
   @NotNull
   @Override
   public SContainmentLink convertAggregation(String role) {
-    SContainmentLink link = MetaAdapterFactoryByName.getContainmentLink(getQualifiedName(), role);
-    SContainmentLinkId id = ((SContainmentLinkAdapter) link).getRoleId();
-    if (id.equals(MetaIdFactory.INVALID_LINK_ID)) {
-      return link;
-    }
-    return MetaAdapterFactory.getContainmentLink(id, role);
+    return MetaAdapterFactoryByName.getContainmentLink(getQualifiedName(), role);
   }
 
   @Override
