@@ -4450,12 +4450,11 @@
             <node concept="37vLTw" id="3Hd_QmE5avn" role="37wK5m">
               <ref role="3cqZAo" node="8W0anMXJsg" resolve="id" />
             </node>
-            <node concept="2ShNRf" id="3Hd_QmE5aQb" role="37wK5m">
-              <node concept="1pGfFk" id="3Hd_QmE5hbI" role="2ShVmc">
-                <ref role="37wK5l" to="vxxo:~SConceptAdapterByName.&lt;init&gt;(java.lang.String)" resolve="SConceptAdapterByName" />
-                <node concept="37vLTw" id="3Hd_QmE5hpu" role="37wK5m">
-                  <ref role="3cqZAo" node="8W0anMXGZW" resolve="conceptFqName" />
-                </node>
+            <node concept="2YIFZM" id="588q4nQKxrz" role="37wK5m">
+              <ref role="37wK5l" to="2k9e:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+              <ref role="1Pybhc" to="2k9e:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+              <node concept="37vLTw" id="588q4nQKxtH" role="37wK5m">
+                <ref role="3cqZAo" node="8W0anMXGZW" resolve="conceptFqName" />
               </node>
             </node>
           </node>

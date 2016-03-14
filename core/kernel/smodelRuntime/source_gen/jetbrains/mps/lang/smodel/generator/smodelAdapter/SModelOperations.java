@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -97,7 +97,7 @@ public final class SModelOperations {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
-    return createNewNode(model, id, new SConceptAdapterByName(conceptFqName));
+    return createNewNode(model, id, MetaAdapterFactoryByName.getConcept(conceptFqName));
   }
   public static SNode createNewNode(SModel model, SNodeId id, SAbstractConcept concept) {
     if (concept == null) {

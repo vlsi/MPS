@@ -46,6 +46,15 @@ public interface IAttributeDescriptor {
       super(attributeDeclaration);
       myLink = link;
     }
+    /**
+     * strings can be passed from user-written code
+     */
+    @Deprecated
+    @ToRemove(version = 3.2)
+    public LinkAttribute(@NotNull SConcept attributeDeclaration, String linkRole) {
+      super(attributeDeclaration);
+      myLink = MetaAdapterFactoryByName.getReferenceLink(MetaIdFactory.INVALID_CONCEPT_NAME, linkRole);
+    }
     @Override
     public boolean match(@NotNull SNode attribute) {
       return super.match(attribute) && (myLink == null || myLink.equals(AttributeOperations.getLink(attribute)));
@@ -79,6 +88,15 @@ public interface IAttributeDescriptor {
     public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull SProperty property) {
       super(attributeDeclaration);
       myProperty = property;
+    }
+    /**
+     * strings can be passed from user-written code
+     */
+    @Deprecated
+    @ToRemove(version = 3.2)
+    public PropertyAttribute(@NotNull SConcept attributeDeclaration, @NotNull String propertyName) {
+      super(attributeDeclaration);
+      myProperty = MetaAdapterFactoryByName.getProperty(MetaIdFactory.INVALID_CONCEPT_NAME, propertyName);
     }
     @Override
     public boolean match(@NotNull SNode attribute) {
