@@ -17,7 +17,9 @@ package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -46,9 +48,17 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SContainmentLink)) return false;
-    return (obj instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) obj).myRoleId) :
-        myName.equals(((SContainmentLinkAdapter) obj).myName);
+    if (!(obj instanceof SContainmentLinkAdapterById)) return false;
+    SContainmentLinkId otherId = ((SContainmentLinkAdapterById) obj).myRoleId;
+    SContainmentLinkId invalid = MetaIdFactory.INVALID_LINK_ID;
+    if (!myRoleId.equals(invalid)) return myRoleId.equals(otherId);
+    if (!otherId.equals(invalid)) return false;
+    return myName.equals(((SContainmentLinkAdapterById) obj).myName);
+  }
+
+  @Override
+  public int hashCode() {
+    return (int)myRoleId.getIdValue();
   }
 
   @NotNull

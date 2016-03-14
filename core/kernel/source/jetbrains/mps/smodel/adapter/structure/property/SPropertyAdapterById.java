@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -50,9 +52,17 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SProperty)) return  false;
-    return (obj instanceof SPropertyAdapterById) ? myPropertyId.equals(((SPropertyAdapterById) obj).myPropertyId) :
-        myPropertyName.equals(((SPropertyAdapter) obj).myPropertyName);
+    if (!(obj instanceof SPropertyAdapterById)) return false;
+    SPropertyId otherId = ((SPropertyAdapterById) obj).myPropertyId;
+    SPropertyId invalid = MetaIdFactory.INVALID_PROP_ID;
+    if (!myPropertyId.equals(invalid)) return myPropertyId.equals(otherId);
+    if (!otherId.equals(invalid)) return false;
+    return myPropertyName.equals(((SPropertyAdapterById) obj).myPropertyName);
+  }
+
+  @Override
+  public int hashCode() {
+    return (int) myPropertyId.getIdValue();
   }
 
   @NotNull

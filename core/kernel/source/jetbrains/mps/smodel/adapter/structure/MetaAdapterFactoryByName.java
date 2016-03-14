@@ -81,7 +81,7 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SProperty getProperty(String conceptName, String propName) {
-    for (SProperty p: getAnyConcept(conceptName).getProperties()){
+    for (SProperty p : getAnyConcept(conceptName).getProperties()) {
       if (p.getName().equals(propName)) return p;
     }
     return new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, propName);
@@ -93,7 +93,7 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SReferenceLink getReferenceLink(String conceptName, String refName) {
-    for (SReferenceLink r: getAnyConcept(conceptName).getReferenceLinks()){
+    for (SReferenceLink r : getAnyConcept(conceptName).getReferenceLinks()) {
       if (r.getName().equals(refName)) return r;
     }
     return new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, refName);
@@ -105,7 +105,7 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SContainmentLink getContainmentLink(String conceptName, String linkName) {
-    for (SContainmentLink l: getAnyConcept(conceptName).getContainmentLinks()){
+    for (SContainmentLink l : getAnyConcept(conceptName).getContainmentLinks()) {
       if (l.getName().equals(linkName)) return l;
     }
     return new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, linkName);

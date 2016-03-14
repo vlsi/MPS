@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -45,9 +47,17 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SReferenceLinkAdapter)) return false;
-    return (obj instanceof SReferenceLinkAdapterById) ? myRoleId.equals(((SReferenceLinkAdapterById) obj).myRoleId) :
-        myName.equals(((SReferenceLinkAdapter) obj).myName);
+    if (!(obj instanceof SReferenceLinkAdapterById)) return false;
+    SReferenceLinkId otherId = ((SReferenceLinkAdapterById) obj).myRoleId;
+    SReferenceLinkId invalid = MetaIdFactory.INVALID_REF_ID;
+    if (!myRoleId.equals(invalid)) return myRoleId.equals(otherId);
+    if (!otherId.equals(invalid)) return false;
+    return myName.equals(((SReferenceLinkAdapterById) obj).myName);
+  }
+
+  @Override
+  public int hashCode() {
+    return (int) myRoleId.getIdValue();
   }
 
   @NotNull

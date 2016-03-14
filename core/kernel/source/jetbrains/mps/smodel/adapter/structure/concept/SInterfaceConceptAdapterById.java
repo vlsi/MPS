@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
@@ -44,9 +45,17 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SInterfaceConcept)) return  false;
-    return (obj instanceof SInterfaceConceptAdapterById) ? myConceptId.equals(((SInterfaceConceptAdapterById) obj).myConceptId) : myFqName.equals(
-        ((SInterfaceConceptAdapter) obj).myFqName);
+    if (!(obj instanceof SInterfaceConceptAdapterById)) return false;
+    SConceptId otherId = ((SInterfaceConceptAdapterById) obj).myConceptId;
+    SConceptId invalid = MetaIdFactory.INVALID_CONCEPT_ID;
+    if (!myConceptId.equals(invalid)) return myConceptId.equals(otherId);
+    if (!otherId.equals(invalid)) return false;
+    return myFqName.equals(((SInterfaceConceptAdapterById) obj).myFqName);
+  }
+
+  @Override
+  public int hashCode() {
+    return (int) myConceptId.getIdValue();
   }
 
   @Override

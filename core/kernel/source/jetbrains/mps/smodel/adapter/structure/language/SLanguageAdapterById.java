@@ -18,7 +18,10 @@ package jetbrains.mps.smodel.adapter.structure.language;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
@@ -57,8 +60,17 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SLanguage)) return  false;
-    return ( obj instanceof SLanguageAdapterById) ? myLanguage.equals(((SLanguageAdapterById) obj).myLanguage) : myLanguageFqName.equals(((SLanguageAdapter) obj).myLanguageFqName);
+    if (!(obj instanceof SLanguageAdapterById)) return false;
+    SLanguageId otherId = ((SLanguageAdapterById) obj).myLanguage;
+    SLanguageId invalid = MetaIdFactory.INVALID_LANGUAGE_ID;
+    if (!myLanguage.equals(invalid)) return myLanguage.equals(otherId);
+    if (!otherId.equals(invalid)) return false;
+    return myLanguageFqName.equals(((SLanguageAdapterById) obj).myLanguageFqName);
+  }
+
+  @Override
+  public int hashCode() {
+    return myLanguage.getIdValue().hashCode();
   }
 
   @Override
