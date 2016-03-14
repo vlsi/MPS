@@ -15,15 +15,25 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -32,6 +42,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * {@link jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter} covers transition from string to meta-object within SConcept scope.
@@ -43,20 +54,31 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SLanguage getLanguage(String langName) {
-    return new SLanguageAdapterByName(langName);
+    for (SLanguage l : LanguageRegistry.getInstance().getAllLanguages()) {
+      if (l.getQualifiedName().equals(langName)) return l;
+    }
+    return new SLanguageAdapterById(MetaIdFactory.INVALID_LANGUAGE_ID, langName);
   }
 
   @Deprecated
   @ToRemove(version = 3.3)
   //no usages in MPS except SModelUtil.findConceptDeclaration
   public static SConcept getConcept(String conceptName) {
-    return new SConceptAdapterByName(conceptName);
+    SLanguage l = getLanguage(NameUtil.namespaceFromConceptFQName(conceptName));
+    for (SAbstractConcept c : l.getConcepts()) {
+      if (c.getQualifiedName().equals(conceptName) && (c instanceof SConcept)) return ((SConcept) c);
+    }
+    return new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, conceptName);
   }
 
   @Deprecated
   @ToRemove(version = 3.4)
   public static SInterfaceConcept getInterfaceConcept(String conceptName) {
-    return new SInterfaceConceptAdapterByName(conceptName);
+    SLanguage l = getLanguage(NameUtil.namespaceFromConceptFQName(conceptName));
+    for (SAbstractConcept c : l.getConcepts()) {
+      if (c.getQualifiedName().equals(conceptName) && (c instanceof SInterfaceConcept)) return ((SInterfaceConcept) c);
+    }
+    return new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, conceptName);
   }
 
   /**
@@ -65,7 +87,10 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SProperty getProperty(String conceptName, String propName) {
-    return new SPropertyAdapterByName(conceptName, propName);
+    for (SProperty p: getAnyConcept(conceptName).getProperties()){
+      if (p.getName().equals(propName)) return p;
+    }
+    return new SPropertyAdapterById(MetaIdFactory.INVALID_PROP_ID, propName);
   }
 
   /**
@@ -74,7 +99,10 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SReferenceLink getReferenceLink(String conceptName, String refName) {
-    return new SReferenceLinkAdapterByName(conceptName, refName);
+    for (SReferenceLink r: getAnyConcept(conceptName).getReferenceLinks()){
+      if (r.getName().equals(refName)) return r;
+    }
+    return new SReferenceLinkAdapterById(MetaIdFactory.INVALID_REF_ID, refName);
   }
 
   /**
@@ -83,6 +111,18 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SContainmentLink getContainmentLink(String conceptName, String linkName) {
-    return new SContainmentLinkAdapterByName(conceptName, linkName);
+    for (SContainmentLink l: getAnyConcept(conceptName).getContainmentLinks()){
+      if (l.getName().equals(linkName)) return l;
+    }
+    return new SContainmentLinkAdapterById(MetaIdFactory.INVALID_LINK_ID, linkName);
   }
+
+  private static SAbstractConcept getAnyConcept(String conceptName) {
+    SLanguage l = getLanguage(NameUtil.namespaceFromConceptFQName(conceptName));
+    for (SAbstractConcept c : l.getConcepts()) {
+      if (c.getQualifiedName().equals(conceptName)) return c;
+    }
+    return new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, conceptName);
+  }
+
 }
