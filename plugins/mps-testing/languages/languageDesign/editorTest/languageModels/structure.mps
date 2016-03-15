@@ -624,5 +624,27 @@
       <ref role="20lvS9" node="7zh3gS0L8ip" resolve="InitChildWithIndirectCycle_card1n" />
     </node>
   </node>
+  <node concept="1TIwiD" id="65R1r9DR6pO">
+    <property role="1pbfSe" value="883725274" />
+    <property role="TrG5h" value="SelectionContainer" />
+    <property role="3GE5qa" value="selection" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="65R1r9DR89l" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="children" />
+      <ref role="20lvS9" node="65R1r9DR89h" resolve="SelectionChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="65R1r9DR89h">
+    <property role="1pbfSe" value="883718141" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="SelectionChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="65R1r9DR89i" role="1TKVEl">
+      <property role="TrG5h" value="flag" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
 </model>
 

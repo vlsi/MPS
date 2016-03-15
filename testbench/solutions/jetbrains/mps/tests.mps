@@ -501,6 +501,12 @@
     <node concept="lpD6D" id="4K24hY0tGH_" role="lpD6w">
       <ref role="lpD7u" to="tzu1:4K24hY0tE8Y" resolve="SelectUpWithNodeRangeSelection" />
     </node>
+    <node concept="lpD6D" id="1A4CnbRjOo9" role="lpD6w">
+      <ref role="lpD7u" to="tzu1:5krAT4QI5YR" resolve="SelectNext_InChildListWithFilter" />
+    </node>
+    <node concept="lpD6D" id="1A4CnbRjOrS" role="lpD6w">
+      <ref role="lpD7u" to="tzu1:65R1r9DR62d" resolve="SelectPrevious_InChildListWithFilter" />
+    </node>
     <node concept="lpD6D" id="2m_lP2P61DB" role="lpD6w">
       <ref role="lpD7u" to="tzu1:FQ3Fx4QO5g" resolve="Up" />
     </node>

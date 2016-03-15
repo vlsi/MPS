@@ -194,6 +194,50 @@
       <unit id="5476958923832863137" at="10,0,32,0" name="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/6132666365585678263">
+    <file name="SelectNext_InChildListWithFilter_Test.java">
+      <node id="6132666365585678263" at="15,72,16,117" concept="1" />
+      <node id="6132666365585678263" at="16,117,17,129" concept="1" />
+      <node id="6132666365585678263" at="24,51,25,63" concept="1" />
+      <node id="6132666365585679324" at="25,63,26,78" concept="1" />
+      <node id="6132666365585678263" at="12,0,14,0" concept="0" trace="SelectNext_InChildListWithFilter_Test#()V" />
+      <node id="6132666365585678263" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="6132666365585678263" at="14,0,19,0" concept="2" trace="test_SelectNext_InChildListWithFilter#()V" />
+      <node id="6132666365585678263" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6132666365585678263" at="12,50,12,50" />
+      <scope id="6132666365585678263" at="21,23,21,23" />
+      <scope id="6132666365585678263" at="12,0,14,0" />
+      <scope id="6132666365585678263" at="15,72,17,129" />
+      <scope id="6132666365585678263" at="21,0,23,0" />
+      <scope id="6132666365585678263" at="24,51,26,78" />
+      <scope id="6132666365585678263" at="14,0,19,0" />
+      <scope id="6132666365585678263" at="23,0,28,0" />
+      <unit id="6132666365585678263" at="19,0,29,0" name="jetbrains.mps.lang.editor.selection.test.SelectNext_InChildListWithFilter_Test$TestBody" />
+      <unit id="6132666365585678263" at="10,0,30,0" name="jetbrains.mps.lang.editor.selection.test.SelectNext_InChildListWithFilter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7023088407745945741">
+    <file name="SelectPrevious_InChildListWithFilter_Test.java">
+      <node id="7023088407745945741" at="15,76,16,117" concept="1" />
+      <node id="7023088407745945741" at="16,117,17,133" concept="1" />
+      <node id="7023088407745945741" at="24,51,25,63" concept="1" />
+      <node id="6132666365585678809" at="25,63,26,82" concept="1" />
+      <node id="7023088407745945741" at="12,0,14,0" concept="0" trace="SelectPrevious_InChildListWithFilter_Test#()V" />
+      <node id="7023088407745945741" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="7023088407745945741" at="14,0,19,0" concept="2" trace="test_SelectPrevious_InChildListWithFilter#()V" />
+      <node id="7023088407745945741" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7023088407745945741" at="12,54,12,54" />
+      <scope id="7023088407745945741" at="21,23,21,23" />
+      <scope id="7023088407745945741" at="12,0,14,0" />
+      <scope id="7023088407745945741" at="15,76,17,133" />
+      <scope id="7023088407745945741" at="21,0,23,0" />
+      <scope id="7023088407745945741" at="24,51,26,82" />
+      <scope id="7023088407745945741" at="14,0,19,0" />
+      <scope id="7023088407745945741" at="23,0,28,0" />
+      <unit id="7023088407745945741" at="19,0,29,0" name="jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test$TestBody" />
+      <unit id="7023088407745945741" at="10,0,30,0" name="jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7023440913657702620">
     <file name="GoToReference_Test.java">
       <node id="7023440913657702620" at="17,53,18,117" concept="1" />

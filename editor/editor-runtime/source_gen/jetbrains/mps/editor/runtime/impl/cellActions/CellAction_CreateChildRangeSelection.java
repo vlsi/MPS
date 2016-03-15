@@ -34,7 +34,9 @@ public class CellAction_CreateChildRangeSelection extends AbstractCellAction {
     if (selectedCell != null && selectedCell.isBig()) {
       newSelection = newSelection.enlargeSelection(myNext);
     }
-    myEditorContext.getSelectionManager().pushSelection(newSelection);
-    newSelection.ensureVisible();
+    if (newSelection != null) {
+      myEditorContext.getSelectionManager().pushSelection(newSelection);
+      newSelection.ensureVisible();
+    }
   }
 }

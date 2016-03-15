@@ -102,6 +102,12 @@
     <file name="ReferenceAnnotataion_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
     </file>
+    <file name="SelectionChild_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SelectionChild_BehaviorDescriptor" />
+    </file>
+    <file name="SelectionContainer_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SelectionContainer_BehaviorDescriptor" />
+    </file>
     <file name="SideTranformWrapper_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
     </file>

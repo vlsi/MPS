@@ -71,10 +71,12 @@
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
-    <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <import index="zu0" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.util(Testbench/)" />
+    <import index="l9ag" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit(Testbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2254,6 +2256,17 @@
       <node concept="3cqZAl" id="4cFHg$8nt7y" role="3clF45" />
       <node concept="3Tm1VV" id="4cFHg$8nt7z" role="1B3o_S" />
       <node concept="3clFbS" id="4cFHg$8nt7$" role="3clF47">
+        <node concept="3cpWs8" id="4Zaa5llGHNy" role="3cqZAp">
+          <node concept="3cpWsn" id="4Zaa5llGHNz" role="3cpWs9">
+            <property role="TrG5h" value="appender" />
+            <node concept="3uibUv" id="4Zaa5llGVPt" role="1tU5fm">
+              <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+            </node>
+            <node concept="1rXfSq" id="4Zaa5llGHN$" role="33vP2m">
+              <ref role="37wK5l" node="8$1$D__C$O" resolve="installAppender" />
+            </node>
+          </node>
+        </node>
         <node concept="2GUZhq" id="1l3HexGi0xp" role="3cqZAp">
           <node concept="3clFbS" id="1l3HexGi0xr" role="2GV8ay">
             <node concept="3clFbF" id="4cFHg$8nt7N" role="3cqZAp">
@@ -2277,8 +2290,48 @@
                 <ref role="37wK5l" node="2luRcJo$68D" resolve="dispose" />
               </node>
             </node>
+            <node concept="3clFbF" id="4Zaa5llGVx0" role="3cqZAp">
+              <node concept="2OqwBi" id="4Zaa5llGVBx" role="3clFbG">
+                <node concept="37vLTw" id="4Zaa5llGVwY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+                <node concept="liA8E" id="4Zaa5llGVHg" role="2OqNvi">
+                  <ref role="37wK5l" to="zu0:~CachingAppender.sealEvents():void" resolve="sealEvents" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="4Zaa5llGW3M" role="3cqZAp">
+              <node concept="3clFbS" id="4Zaa5llGW3O" role="3clFbx">
+                <node concept="YS8fn" id="4Zaa5llGWB9" role="3cqZAp">
+                  <node concept="2ShNRf" id="4Zaa5llGWG2" role="YScLw">
+                    <node concept="1pGfFk" id="4Zaa5llGYtw" role="2ShVmc">
+                      <ref role="37wK5l" to="l9ag:~UncleanTestExecutionException.&lt;init&gt;(jetbrains.mps.testbench.util.Output...)" resolve="UncleanTestExecutionException" />
+                      <node concept="37vLTw" id="4Zaa5llGZ_7" role="37wK5m">
+                        <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4Zaa5llGWop" role="3clFbw">
+                <node concept="37vLTw" id="4Zaa5llGWi7" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+                <node concept="liA8E" id="4Zaa5llGWuh" role="2OqNvi">
+                  <ref role="37wK5l" to="zu0:~CachingAppender.isNotEmpty():boolean" resolve="isNotEmpty" />
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="3clFbS" id="1l3HexGi0xs" role="2GVbov">
+            <node concept="3clFbF" id="4Zaa5llGI7C" role="3cqZAp">
+              <node concept="1rXfSq" id="4Zaa5llGI7D" role="3clFbG">
+                <ref role="37wK5l" node="8$1$D__LNI" resolve="uninstallAppender" />
+                <node concept="37vLTw" id="4Zaa5llGI7E" role="37wK5m">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="5QS$Mto5BI4" role="3cqZAp">
               <node concept="3cpWsn" id="5QS$Mto5BI5" role="3cpWs9">
                 <property role="TrG5h" value="ts" />
@@ -3595,6 +3648,91 @@
       </node>
       <node concept="3uibUv" id="62Gc_ZTkJCm" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8$1$D__xrN" role="jymVt" />
+    <node concept="3clFb_" id="8$1$D__C$O" role="jymVt">
+      <property role="TrG5h" value="installAppender" />
+      <node concept="3uibUv" id="4Zaa5llGRA$" role="3clF45">
+        <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+      </node>
+      <node concept="3Tm6S6" id="8$1$D__DFg" role="1B3o_S" />
+      <node concept="3clFbS" id="8$1$D__C$S" role="3clF47">
+        <node concept="3cpWs8" id="8$1$D__UDs" role="3cqZAp">
+          <node concept="3cpWsn" id="8$1$D__UDt" role="3cpWs9">
+            <property role="TrG5h" value="rootLogger" />
+            <node concept="3uibUv" id="8$1$D__UDr" role="1tU5fm">
+              <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+            <node concept="2YIFZM" id="8$1$D__UG0" role="33vP2m">
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
+              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4Zaa5llGLDy" role="3cqZAp">
+          <node concept="3cpWsn" id="4Zaa5llGLDz" role="3cpWs9">
+            <property role="TrG5h" value="appender" />
+            <node concept="3uibUv" id="4Zaa5llGLD$" role="1tU5fm">
+              <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+            </node>
+            <node concept="2ShNRf" id="4Zaa5llGMXo" role="33vP2m">
+              <node concept="1pGfFk" id="4Zaa5llGMXn" role="2ShVmc">
+                <ref role="37wK5l" to="zu0:~CachingAppender.&lt;init&gt;(org.apache.log4j.Level)" resolve="CachingAppender" />
+                <node concept="10M0yZ" id="4Zaa5llGNfa" role="37wK5m">
+                  <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
+                  <ref role="3cqZAo" to="q7tw:~Level.ERROR" resolve="ERROR" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="8$1$D_A_$G" role="3cqZAp">
+          <node concept="2OqwBi" id="8$1$D_A_C_" role="3clFbG">
+            <node concept="37vLTw" id="8$1$D_A_$E" role="2Oq$k0">
+              <ref role="3cqZAo" node="8$1$D__UDt" resolve="rootLogger" />
+            </node>
+            <node concept="liA8E" id="8$1$D_A_FT" role="2OqNvi">
+              <ref role="37wK5l" to="q7tw:~Category.addAppender(org.apache.log4j.Appender):void" resolve="addAppender" />
+              <node concept="37vLTw" id="4Zaa5llGOvi" role="37wK5m">
+                <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="8$1$D_ADpR" role="3cqZAp">
+          <node concept="37vLTw" id="4Zaa5llGQo1" role="3cqZAk">
+            <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8$1$D__K_y" role="jymVt" />
+    <node concept="3clFb_" id="8$1$D__LNI" role="jymVt">
+      <property role="TrG5h" value="uninstallAppender" />
+      <node concept="3cqZAl" id="8$1$D__LNK" role="3clF45" />
+      <node concept="3Tm6S6" id="8$1$D__MUf" role="1B3o_S" />
+      <node concept="3clFbS" id="8$1$D__LNM" role="3clF47">
+        <node concept="3clFbF" id="8$1$D_AFt1" role="3cqZAp">
+          <node concept="2OqwBi" id="8$1$D_AFtM" role="3clFbG">
+            <node concept="2YIFZM" id="8$1$D_AFt3" role="2Oq$k0">
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
+              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+            <node concept="liA8E" id="8$1$D_AFzq" role="2OqNvi">
+              <ref role="37wK5l" to="q7tw:~Category.removeAppender(org.apache.log4j.Appender):void" resolve="removeAppender" />
+              <node concept="37vLTw" id="8$1$D_AFDI" role="37wK5m">
+                <ref role="3cqZAo" node="8$1$D_AEud" resolve="appender" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="8$1$D_AEud" role="3clF46">
+        <property role="TrG5h" value="appender" />
+        <node concept="3uibUv" id="4Zaa5llGSOc" role="1tU5fm">
+          <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="hPMdj4f" role="1B3o_S" />

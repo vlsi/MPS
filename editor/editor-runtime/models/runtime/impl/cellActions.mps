@@ -1501,32 +1501,42 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1pK1G3R8jZp" role="3cqZAp">
-          <node concept="2OqwBi" id="1pK1G3R8jZq" role="3clFbG">
-            <node concept="2OqwBi" id="1pK1G3R8jZr" role="2Oq$k0">
-              <node concept="37vLTw" id="65en6WkZK6E" role="2Oq$k0">
-                <ref role="3cqZAo" node="65en6WkZHVN" resolve="myEditorContext" />
-              </node>
-              <node concept="liA8E" id="1pK1G3R8jZt" role="2OqNvi">
-                <ref role="37wK5l" to="cj4x:~EditorContext.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
+        <node concept="3clFbJ" id="4Zaa5llHw4e" role="3cqZAp">
+          <node concept="3clFbS" id="4Zaa5llHw4g" role="3clFbx">
+            <node concept="3clFbF" id="1pK1G3R8jZp" role="3cqZAp">
+              <node concept="2OqwBi" id="1pK1G3R8jZq" role="3clFbG">
+                <node concept="2OqwBi" id="1pK1G3R8jZr" role="2Oq$k0">
+                  <node concept="37vLTw" id="65en6WkZK6E" role="2Oq$k0">
+                    <ref role="3cqZAo" node="65en6WkZHVN" resolve="myEditorContext" />
+                  </node>
+                  <node concept="liA8E" id="1pK1G3R8jZt" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~EditorContext.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1pK1G3R8jZu" role="2OqNvi">
+                  <ref role="37wK5l" to="lwvz:~SelectionManager.pushSelection(jetbrains.mps.openapi.editor.selection.Selection):void" resolve="pushSelection" />
+                  <node concept="37vLTw" id="1pK1G3R8jZv" role="37wK5m">
+                    <ref role="3cqZAo" node="1pK1G3R8jZg" resolve="newSelection" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="liA8E" id="1pK1G3R8jZu" role="2OqNvi">
-              <ref role="37wK5l" to="lwvz:~SelectionManager.pushSelection(jetbrains.mps.openapi.editor.selection.Selection):void" resolve="pushSelection" />
-              <node concept="37vLTw" id="1pK1G3R8jZv" role="37wK5m">
-                <ref role="3cqZAo" node="1pK1G3R8jZg" resolve="newSelection" />
+            <node concept="3clFbF" id="1pK1G3R8jZw" role="3cqZAp">
+              <node concept="2OqwBi" id="1pK1G3R8jZx" role="3clFbG">
+                <node concept="37vLTw" id="1pK1G3R8jZy" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1pK1G3R8jZg" resolve="newSelection" />
+                </node>
+                <node concept="liA8E" id="1pK1G3R8jZz" role="2OqNvi">
+                  <ref role="37wK5l" to="b8lf:~NodeRangeSelection.ensureVisible():void" resolve="ensureVisible" />
+                </node>
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="1pK1G3R8jZw" role="3cqZAp">
-          <node concept="2OqwBi" id="1pK1G3R8jZx" role="3clFbG">
-            <node concept="37vLTw" id="1pK1G3R8jZy" role="2Oq$k0">
+          <node concept="3y3z36" id="4Zaa5llHweM" role="3clFbw">
+            <node concept="37vLTw" id="4Zaa5llHw9v" role="3uHU7B">
               <ref role="3cqZAo" node="1pK1G3R8jZg" resolve="newSelection" />
             </node>
-            <node concept="liA8E" id="1pK1G3R8jZz" role="2OqNvi">
-              <ref role="37wK5l" to="b8lf:~NodeRangeSelection.ensureVisible():void" resolve="ensureVisible" />
-            </node>
+            <node concept="10Nm6u" id="4Zaa5llHwiK" role="3uHU7w" />
           </node>
         </node>
       </node>
