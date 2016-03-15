@@ -146,8 +146,7 @@ public class NewRootAction extends AnAction {
         Set<SLanguage> modelLanguages = SModelOperations.getAllLanguageImports(model);
         for (SLanguage language : modelLanguages) {
           for (SAbstractConcept concept : language.getConcepts()) {
-            String conceptFqName = concept.getQualifiedName();
-            if (ModelConstraints.canBeRoot(conceptFqName, model, null)) {
+            if (ModelConstraints.canBeRoot(concept, model, null)) {
               myConceptFqNameToNodePointerMap.put(conceptFqName, concept);
             }
           }
