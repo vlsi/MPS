@@ -27,8 +27,44 @@ import java.util.Collection;
  * Date: 4/8/13
  */
 public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
+  @Deprecated
   Collection<ConceptEditor> getEditors(ConceptDescriptor concept);
+  @Deprecated
   Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor concept, String editorComponentId);
+
+  /**
+   * Returns the editors defined for a concept together with any additions contributed by extending languages.
+   * @param concept the concept
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<ConceptEditor> getEditors(SAbstractConcept concept);
+
+  /**
+   * Returns the editors defined for a concept that are declared in this language.
+   * @param concept the concept
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept);
+
+  /**
+   * Returns the editors components defined for a concept and id together with any additions contributed by extending languages.
+   * @param concept the concept
+   * @param editorComponentId id of the editor component
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<ConceptEditorComponent> getEditorComponents(SAbstractConcept concept, String editorComponentId);
+
+  /**
+   * Returns the editors components defined for a concept that are declared in this language.
+   * @param concept the concept
+   * @param editorComponentId id of the editor component
+   * @return a non-null but possibly empty collection
+   */
+  @NotNull
+  Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId);
 
   /**
    * Returns the default context assistant menu for a concept (if defined), together with any additions contributed by extending languages.

@@ -49,6 +49,7 @@
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="tp41" ref="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -109,9 +110,6 @@
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
-      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
-        <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -180,7 +178,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -266,9 +264,6 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
-      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
-        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
-      </concept>
     </language>
     <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
       <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
@@ -2710,6 +2705,9 @@
                 <ref role="3cqZAo" node="7IH442cXGYh" resolve="aspectModel" />
               </node>
               <node concept="1iwH7S" id="1_Iic4WUlrO" role="37wK5m" />
+              <node concept="35c_gC" id="75fuNknez0j" role="37wK5m">
+                <ref role="35c_gD" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
+              </node>
               <node concept="35c_gC" id="1_Iic4WUlrP" role="37wK5m">
                 <ref role="35c_gD" to="bj1v:nUEAIXlVr8" resolve="Rule" />
               </node>
@@ -2905,13 +2903,8 @@
                         <ref role="16sUi3" node="1_Iic4WUltd" resolve="T" />
                       </node>
                       <node concept="2ShNRf" id="1_Iic4WUlt5" role="10QFUP">
-                        <node concept="YeOm9" id="CCosYF3mU6" role="2ShVmc">
-                          <node concept="1Y3b0j" id="CCosYF3mU9" role="YeSDq">
-                            <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="1fjm:~AbstractDataFlowAspectDescriptor" resolve="AbstractDataFlowAspectDescriptor" />
-                            <ref role="37wK5l" to="1fjm:~AbstractDataFlowAspectDescriptor.&lt;init&gt;()" resolve="AbstractDataFlowAspectDescriptor" />
-                            <node concept="3Tm1VV" id="CCosYF3mUa" role="1B3o_S" />
-                          </node>
+                        <node concept="1pGfFk" id="5MCOPSq4M2g" role="2ShVmc">
+                          <ref role="37wK5l" to="1fjm:~DataFlowAspectDescriptorBase.&lt;init&gt;()" resolve="DataFlowAspectDescriptorBase" />
                         </node>
                       </node>
                     </node>

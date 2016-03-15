@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="14,0,68,0" name="jetbrains.mps.samples.lambdaCalculus.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,70,0" name="jetbrains.mps.samples.lambdaCalculus.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:293510ad-7298-4276-86d7-1873781733f1(jetbrains.mps.samples.lambdaCalculus.editor)/1564819815921013157">

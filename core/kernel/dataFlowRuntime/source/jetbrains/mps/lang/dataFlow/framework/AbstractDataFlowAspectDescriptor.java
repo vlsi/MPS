@@ -15,13 +15,19 @@
  */
 package jetbrains.mps.lang.dataFlow.framework;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 import java.util.Collections;
 
 /**
- * Created by simon on 31/03/15.
+ * @author simon
+ * @deprecated since MPS 3.4 use {@link DataFlowAspectDescriptorBase}
  */
+
+@Deprecated
 public abstract class AbstractDataFlowAspectDescriptor implements DataFlowAspectDescriptor {
+  @NotNull
   @Override
   public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
     return Collections.emptyList();

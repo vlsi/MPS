@@ -77,6 +77,7 @@
     <classNode dependClassName="jetbrains.mps.samples.heating.tabular.editor.HeatingPlan_tabular_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.heating.tabular.editor.Slot_tabular_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />

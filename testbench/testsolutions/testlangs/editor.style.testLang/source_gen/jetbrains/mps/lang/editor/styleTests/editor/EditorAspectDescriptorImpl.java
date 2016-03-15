@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.styleTests.editor;
 
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import jetbrains.mps.openapi.editor.descriptor.StyleAttributeProvider;
+import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -18,6 +19,7 @@ import jetbrains.mps.editor.runtime.style.InheritableStyleAttribute;
 import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements StyleAttributeProvider {
+  @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -49,6 +51,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<ConceptEditor>emptyList();
   }
 
+  @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);

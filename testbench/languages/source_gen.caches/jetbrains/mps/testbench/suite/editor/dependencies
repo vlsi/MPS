@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.editor.ModuleSuite_Editor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.editor.SolutionRef_Editor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.editor.TestCaseRef_Editor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

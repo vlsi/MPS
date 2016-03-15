@@ -22,6 +22,11 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
+/**
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class DataFlowManager implements CoreComponent {
   private static DataFlowManager INSTANCE;
   private final ClassLoaderManager myManager;
@@ -34,6 +39,7 @@ public class DataFlowManager implements CoreComponent {
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
 
+  @Deprecated
   public DataFlowManager(MPSModuleRepository moduleRepository, ClassLoaderManager manager) {
     myManager = manager;
   }
@@ -58,9 +64,10 @@ public class DataFlowManager implements CoreComponent {
     checkLoaded();
     return new MPSProgramBuilder(this).buildProgram(node);
   }
-  /*package*/ DataFlowBuilder getBuilderFor(String conceptName) {
+
+  /*package*/ DataFlowBuilder getBuilderFor(String concept) {
     checkLoaded();
-    return this.myBuilders.get(conceptName);
+    return this.myBuilders.get(concept);
   }
   private void clear() {
     myBuilders.clear();

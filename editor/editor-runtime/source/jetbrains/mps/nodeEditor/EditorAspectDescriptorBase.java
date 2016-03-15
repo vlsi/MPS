@@ -42,29 +42,35 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private NamedContextAssistantMenusCache myNamedContextAssistantMenusCache = new NamedContextAssistantMenusCache();
 
   @Override
+  @Deprecated
   public Collection<ConceptEditor> getEditors(final ConceptDescriptor descriptor) {
     return new ArrayList<ConceptEditor>();
   }
 
   @Override
+  @Deprecated
   public Collection<ConceptEditorComponent> getEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId) {
     return new ArrayList<ConceptEditorComponent>();
   }
 
+  @NotNull
   public Collection<ConceptEditor> getEditors(final SAbstractConcept concept) {
     return myEditorsCache.get(concept);
   }
 
+  @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(final SAbstractConcept concept) {
-    return getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
+    return new ArrayList<ConceptEditor>();
   }
 
+  @NotNull
   public Collection<ConceptEditorComponent> getEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
     return myEditorComponentsCache.get(new Pair<SAbstractConcept, String>(concept, editorComponentId));
   }
 
+  @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(final SAbstractConcept concept, final String editorComponentId) {
-    return getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
+    return new ArrayList<ConceptEditorComponent>();
   }
 
   @NotNull
@@ -115,10 +121,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     @NotNull
     @Override
     protected Collection<ConceptEditor> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, SAbstractConcept concept) {
-      if (editorDescriptor instanceof EditorAspectDescriptorBase) {
-        return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditors(concept);
-      }
-      return editorDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
+      return editorDescriptor.getDeclaredEditors(concept);
     }
   }
 
@@ -135,10 +138,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     @NotNull
     @Override
     protected Collection<ConceptEditorComponent> getDeclaredContributions(EditorAspectDescriptor editorDescriptor, Pair<SAbstractConcept, String> key) {
-      if (editorDescriptor instanceof EditorAspectDescriptorBase) {
-        return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditorComponents(key.o1, key.o2);
-      }
-      return editorDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(key.o1), key.o2);
+      return editorDescriptor.getDeclaredEditorComponents(key.o1, key.o2);
     }
   }
 

@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Button_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Label_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

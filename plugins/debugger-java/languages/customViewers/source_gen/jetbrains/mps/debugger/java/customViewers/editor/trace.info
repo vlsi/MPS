@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.debugger.java.customViewers.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,52,0" name="jetbrains.mps.debugger.java.customViewers.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:5b646244-9348-4892-8868-7e2e5cb2c7d9(jetbrains.mps.debugger.java.customViewers.editor)/1842653058274900916">

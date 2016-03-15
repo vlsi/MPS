@@ -8,6 +8,7 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import java.util.Arrays;
 import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -18,6 +19,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("rich", "Use colourful presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"), new ConceptEditorHintImpl("compact", "Use compact presentation of child nodes", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"), new ConceptEditorHintImpl("unsupported", "Use presentation which is not supported in testLanguage", true, "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.unsupported"));
+  @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -49,6 +51,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<ConceptEditor>emptyList();
   }
 
+  @NotNull
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
