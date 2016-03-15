@@ -85,6 +85,8 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   @Override
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
+    //this check is better to be moved to isValid as soon as we have ids in AbstractConceptAdapter
+    if (myConceptId.equals(MetaIdFactory.INVALID_CONCEPT_ID)) return null;
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
