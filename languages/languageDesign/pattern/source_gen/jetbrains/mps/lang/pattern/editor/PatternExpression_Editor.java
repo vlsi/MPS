@@ -15,8 +15,9 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -30,7 +31,7 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addKeyMap(new _PatternExpression_KeyMap());
     editorCell.addEditorCell(this.createConstant_aufgi_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_aufgi_b0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_aufgi_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aufgi_c0(editorContext, node));
     return editorCell;
   }
@@ -46,12 +47,26 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_aufgi_b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new PatternExpression_Editor.patternNodeSingleRoleHandler_aufgi_b0(node, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"), editorContext);
+  private EditorCell createAlternation_aufgi_b0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = PatternExpression_Editor.renderingCondition_aufgi_a1a(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createRefNode_aufgi_a1a(editorContext, node);
+    } else {
+      editorCell = this.createRefNode_aufgi_a1a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+  private static boolean renderingCondition_aufgi_a1a(SNode node, EditorContext editorContext) {
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode")) != null;
+  }
+  private EditorCell createRefNode_aufgi_a1a(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new PatternExpression_Editor.patternNodeSingleRoleHandler_aufgi_a1a(node, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"), editorContext);
     return provider.createCell();
   }
-  private class patternNodeSingleRoleHandler_aufgi_b0 extends SingleRoleCellProvider {
-    public patternNodeSingleRoleHandler_aufgi_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class patternNodeSingleRoleHandler_aufgi_a1a extends SingleRoleCellProvider {
+    public patternNodeSingleRoleHandler_aufgi_a1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -80,6 +95,42 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
     }
     protected String getNoTargetText() {
       return "<no patternNode>";
+    }
+  }
+  private EditorCell createRefNode_aufgi_a1a_0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new PatternExpression_Editor.patternSingleRoleHandler_aufgi_a1a(node, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern"), editorContext);
+    return provider.createCell();
+  }
+  private class patternSingleRoleHandler_aufgi_a1a extends SingleRoleCellProvider {
+    public patternSingleRoleHandler_aufgi_a1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("pattern");
+      }
+      Style style = new StyleImpl();
+      SNode node = myOwnerNode;
+      EditorContext editorContext = myEditorContext;
+      style.set(StyleAttributes.DRAW_BRACKETS, 0, false);
+      style.set(StyleAttributes.DRAW_BORDER, 0, true);
+      editorCell.getStyle().putAll(style);
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_pattern");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no pattern>";
     }
   }
   private EditorCell createConstant_aufgi_c0(EditorContext editorContext, SNode node) {

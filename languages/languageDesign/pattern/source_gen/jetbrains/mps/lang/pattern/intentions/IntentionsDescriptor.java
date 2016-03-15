@@ -27,7 +27,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 0:
         // Concept: PatternExpression 
         if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[7];
+          myIntentions0 = new IntentionFactory[8];
           myIntentions0[0] = new CreatePatternVariable_Intention();
           myIntentions0[1] = new CreatePropertyPatternVariable_Intention();
           myIntentions0[2] = new CreateListPattern_Intention();
@@ -35,6 +35,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions0[4] = new CreateAsPattern_Intention();
           myIntentions0[5] = new CreateActionAsPattern_Intention();
           myIntentions0[6] = new CreateOrPattern_Intention();
+          myIntentions0[7] = new ConvertPatternNodeToQuotation_Intention();
         }
         return Arrays.asList(myIntentions0);
       default:
@@ -45,7 +46,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[7];
+    IntentionFactory[] rv = new IntentionFactory[8];
     rv[0] = new CreatePatternVariable_Intention();
     rv[1] = new CreatePropertyPatternVariable_Intention();
     rv[2] = new CreateListPattern_Intention();
@@ -53,6 +54,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[4] = new CreateAsPattern_Intention();
     rv[5] = new CreateActionAsPattern_Intention();
     rv[6] = new CreateOrPattern_Intention();
+    rv[7] = new ConvertPatternNodeToQuotation_Intention();
     return Arrays.asList(rv);
   }
 }

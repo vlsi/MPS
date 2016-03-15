@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.classloading.ModulesReloadTest.class,
     jetbrains.mps.classloading.ModulesReloadTestStress.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
+    jetbrains.mps.lang.pattern.ValueExtractorTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
