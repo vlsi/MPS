@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import org.apache.log4j.Logger;
@@ -138,7 +139,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         }
         continue;
       }
-      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));
+      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, MetaAdapterByDeclaration.getProperty(p)));
       final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
       boolean canSetValue = (propertyDescriptor == null ? false : component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {

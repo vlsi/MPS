@@ -43,6 +43,7 @@
     <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1547,14 +1548,18 @@
                     <ref role="37wK5l" to="w1kc:~PropertySupport.fromInternalValue(java.lang.String):java.lang.String" resolve="fromInternalValue" />
                     <node concept="2YIFZM" id="5CFnob0Pb9Z" role="37wK5m">
                       <ref role="1Pybhc" to="mhbf:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-                      <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String" resolve="getProperty" />
+                      <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty):java.lang.String" resolve="getProperty" />
                       <node concept="2JrnkZ" id="5CFnob0Pba0" role="37wK5m">
                         <node concept="37vLTw" id="2BHiRxglEs4" role="2JrQYb">
                           <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTzkj" role="37wK5m">
-                        <ref role="3cqZAo" node="6qi2OtU3uv6" resolve="propertyName" />
+                      <node concept="2YIFZM" id="2E$Vnjo5Bze" role="37wK5m">
+                        <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.getProperty(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
+                        <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                        <node concept="2GrUjf" id="2E$Vnjo5Cjm" role="37wK5m">
+                          <ref role="2Gs0qQ" node="6qi2OtU3uuX" resolve="p" />
+                        </node>
                       </node>
                     </node>
                   </node>
