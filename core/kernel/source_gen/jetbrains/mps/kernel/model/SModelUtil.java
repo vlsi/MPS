@@ -4,6 +4,7 @@ package jetbrains.mps.kernel.model;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -31,7 +31,15 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class SModelUtil {
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
-    return MetaAdapterFactoryByName.getConcept(conceptFQName).getDeclarationNode();
+    SAbstractConcept concept = MetaAdapterFactoryByName.getConcept(conceptFQName);
+    if (concept.isValid()) {
+      return concept.getDeclarationNode();
+    }
+    concept = MetaAdapterFactoryByName.getInterfaceConcept(conceptFQName);
+    if (concept.isValid()) {
+      return concept.getDeclarationNode();
+    }
+    return null;
   }
   public static Language getDeclaringLanguage(final SNode concept) {
     if (concept == null) {

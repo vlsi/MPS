@@ -133,6 +133,8 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <property id="4467513934994662257" name="forceMultiLine" index="TyiWK" />
+        <property id="4467513934994662256" name="forceOneLine" index="TyiWL" />
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -318,19 +320,85 @@
       <property role="TrG5h" value="findConceptDeclaration" />
       <node concept="3Tm1VV" id="62y0BjDULGJ" role="1B3o_S" />
       <node concept="3clFbS" id="62y0BjDULGK" role="3clF47">
-        <node concept="3cpWs6" id="3Aaa4srPGlk" role="3cqZAp">
-          <node concept="2OqwBi" id="3Aaa4srPNrI" role="3cqZAk">
-            <node concept="2YIFZM" id="3Aaa4srPM89" role="2Oq$k0">
+        <node concept="3cpWs8" id="7ycvnvOAqe9" role="3cqZAp">
+          <node concept="3cpWsn" id="7ycvnvOAqea" role="3cpWs9">
+            <property role="TrG5h" value="concept" />
+            <node concept="3uibUv" id="7ycvnvOArRZ" role="1tU5fm">
+              <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
+            </node>
+            <node concept="2YIFZM" id="7ycvnvOAqeb" role="33vP2m">
               <ref role="37wK5l" to="2k9e:~MetaAdapterFactoryByName.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
               <ref role="1Pybhc" to="2k9e:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
-              <node concept="37vLTw" id="3Aaa4srPMjK" role="37wK5m">
+              <node concept="37vLTw" id="7ycvnvOAqec" role="37wK5m">
                 <ref role="3cqZAo" node="62y0BjDULGU" resolve="conceptFQName" />
               </node>
             </node>
-            <node concept="liA8E" id="3Aaa4srPNFz" role="2OqNvi">
-              <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7ycvnvOArMn" role="3cqZAp">
+          <property role="TyiWK" value="false" />
+          <property role="TyiWL" value="true" />
+          <node concept="3clFbS" id="7ycvnvOArMp" role="3clFbx">
+            <node concept="3cpWs6" id="7ycvnvOAsdq" role="3cqZAp">
+              <node concept="2OqwBi" id="7ycvnvOAsdr" role="3cqZAk">
+                <node concept="37vLTw" id="7ycvnvOAsds" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7ycvnvOAqea" resolve="concept" />
+                </node>
+                <node concept="liA8E" id="7ycvnvOAsdt" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                </node>
+              </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="7ycvnvOAsbY" role="3clFbw">
+            <node concept="37vLTw" id="7ycvnvOAsbZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="7ycvnvOAqea" resolve="concept" />
+            </node>
+            <node concept="liA8E" id="7ycvnvOAsc0" role="2OqNvi">
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7ycvnvOAsrr" role="3cqZAp">
+          <node concept="37vLTI" id="7ycvnvOAsy5" role="3clFbG">
+            <node concept="37vLTw" id="7ycvnvOAsrp" role="37vLTJ">
+              <ref role="3cqZAo" node="7ycvnvOAqea" resolve="concept" />
+            </node>
+            <node concept="2YIFZM" id="7ycvnvOAsCc" role="37vLTx">
+              <ref role="37wK5l" to="2k9e:~MetaAdapterFactoryByName.getInterfaceConcept(java.lang.String):org.jetbrains.mps.openapi.language.SInterfaceConcept" resolve="getInterfaceConcept" />
+              <ref role="1Pybhc" to="2k9e:~MetaAdapterFactoryByName" resolve="MetaAdapterFactoryByName" />
+              <node concept="37vLTw" id="7ycvnvOAsCd" role="37wK5m">
+                <ref role="3cqZAo" node="62y0BjDULGU" resolve="conceptFQName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7ycvnvOAsFE" role="3cqZAp">
+          <property role="TyiWK" value="false" />
+          <property role="TyiWL" value="true" />
+          <node concept="3clFbS" id="7ycvnvOAsFF" role="3clFbx">
+            <node concept="3cpWs6" id="7ycvnvOAsFG" role="3cqZAp">
+              <node concept="2OqwBi" id="7ycvnvOAsFH" role="3cqZAk">
+                <node concept="37vLTw" id="7ycvnvOAsFI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7ycvnvOAqea" resolve="concept" />
+                </node>
+                <node concept="liA8E" id="7ycvnvOAsFJ" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7ycvnvOAsFK" role="3clFbw">
+            <node concept="37vLTw" id="7ycvnvOAsFL" role="2Oq$k0">
+              <ref role="3cqZAo" node="7ycvnvOAqea" resolve="concept" />
+            </node>
+            <node concept="liA8E" id="7ycvnvOAsFM" role="2OqNvi">
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.isValid():boolean" resolve="isValid" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="7ycvnvOAsW2" role="3cqZAp">
+          <node concept="10Nm6u" id="7ycvnvOAt4C" role="3cqZAk" />
         </node>
       </node>
       <node concept="37vLTG" id="62y0BjDULGU" role="3clF46">
