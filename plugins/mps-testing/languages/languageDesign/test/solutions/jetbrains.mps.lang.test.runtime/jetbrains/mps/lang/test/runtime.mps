@@ -3687,6 +3687,14 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4xJw7BvfGkh" role="3cqZAp">
+          <node concept="1rXfSq" id="4xJw7BvfGkf" role="3clFbG">
+            <ref role="37wK5l" node="4xJw7BvfwE8" resolve="populateExpectedEvents" />
+            <node concept="37vLTw" id="4xJw7BvfHke" role="37wK5m">
+              <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="8$1$D_A_$G" role="3cqZAp">
           <node concept="2OqwBi" id="8$1$D_A_C_" role="3clFbG">
             <node concept="37vLTw" id="8$1$D_A_$E" role="2Oq$k0">
@@ -3705,6 +3713,21 @@
             <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4xJw7BvfqWP" role="jymVt" />
+    <node concept="3clFb_" id="4xJw7BvfwE8" role="jymVt">
+      <property role="TrG5h" value="populateExpectedEvents" />
+      <node concept="37vLTG" id="4xJw7BvfEgT" role="3clF46">
+        <property role="TrG5h" value="appender" />
+        <node concept="3uibUv" id="4xJw7BvfFda" role="1tU5fm">
+          <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="4xJw7BvfwEa" role="3clF45" />
+      <node concept="3Tmbuc" id="4xJw7Bvfy29" role="1B3o_S" />
+      <node concept="3clFbS" id="4xJw7BvfwEc" role="3clF47">
+        <node concept="3clFbH" id="4xJw7BvfFdN" role="3cqZAp" />
       </node>
     </node>
     <node concept="2tJIrI" id="8$1$D__K_y" role="jymVt" />

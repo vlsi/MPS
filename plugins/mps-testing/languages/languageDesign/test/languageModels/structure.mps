@@ -19,6 +19,14 @@
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
@@ -519,6 +527,12 @@
       <property role="20kJfa" value="code" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="1TJgyj" id="4xJw7BvbXxC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logEvents" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="4xJw7BvbXoK" resolve="LogEvent" />
+    </node>
     <node concept="PrWs8" id="hSLj42s" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -999,6 +1013,57 @@
     <property role="TrG5h" value="UntypedExpression" />
     <property role="34LRSv" value="_" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="4xJw7BvbXoK">
+    <property role="1pbfSe" value="664753833" />
+    <property role="TrG5h" value="LogEvent" />
+    <property role="3GE5qa" value="log" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4xJw7Bve0T$" role="1TKVEl">
+      <property role="TrG5h" value="level" />
+      <ref role="AX2Wp" node="4xJw7BvdBf3" resolve="Level" />
+    </node>
+    <node concept="1TJgyi" id="4xJw7Bve0TB" role="1TKVEl">
+      <property role="TrG5h" value="message" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="4xJw7BvdBf3">
+    <property role="3GE5qa" value="log" />
+    <property role="TrG5h" value="Level" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="4xJw7BvdBf4" role="M5hS2">
+      <property role="1uS6qv" value="OFF" />
+      <property role="1uS6qo" value="OFF" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBf5" role="M5hS2">
+      <property role="1uS6qo" value="FATAL" />
+      <property role="1uS6qv" value="FATAL" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBfa" role="M5hS2">
+      <property role="1uS6qo" value="ERROR" />
+      <property role="1uS6qv" value="ERROR" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBfh" role="M5hS2">
+      <property role="1uS6qo" value="WARN" />
+      <property role="1uS6qv" value="WARN" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBfq" role="M5hS2">
+      <property role="1uS6qo" value="INFO" />
+      <property role="1uS6qv" value="INFO" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBf_" role="M5hS2">
+      <property role="1uS6qo" value="DEBUG" />
+      <property role="1uS6qv" value="DEBUG" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBfM" role="M5hS2">
+      <property role="1uS6qo" value="TRACE" />
+      <property role="1uS6qv" value="TRACE" />
+    </node>
+    <node concept="M4N5e" id="4xJw7BvdBg1" role="M5hS2">
+      <property role="1uS6qo" value="ALL" />
+      <property role="1uS6qv" value="ALL" />
+    </node>
   </node>
 </model>
 

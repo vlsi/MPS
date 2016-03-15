@@ -11,10 +11,14 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="5219531754069546544" name="jetbrains.mps.lang.test.structure.LogEvent" flags="ng" index="2ng5p9">
+        <property id="5219531754070085220" name="level" index="2nlSSt" />
+      </concept>
       <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
+        <child id="5219531754069547112" name="logEvents" index="2ng5wh" />
         <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
         <child id="1229187707859" name="result" index="LiZbd" />
         <child id="1229187755283" name="code" index="LjaKd" />
@@ -75,43 +79,11 @@
       </concept>
     </language>
   </registry>
-  <node concept="LiM7Y" id="1nCPqFM58sy">
-    <property role="TrG5h" value="ChildWithDirectCycle_card1" />
-    <node concept="QdHWr" id="1nCPqFM58tT" role="LiRBU">
-      <node concept="LIFWc" id="1nCPqFM58wv" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_child" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="1nCPqFM58ua" role="LjaKd">
-      <node concept="2TK7Tu" id="1nCPqFM58wg" role="3cqZAp">
-        <property role="2TTd_B" value="card1_direct_" />
-      </node>
-      <node concept="2HxZob" id="1nCPqFM58u8" role="3cqZAp">
-        <node concept="1iFQzN" id="1nCPqFM58ue" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-    </node>
-    <node concept="QdHWr" id="1nCPqFM58wx" role="LiZbd">
-      <node concept="QdHWq" id="1nCPqFM58wD" role="QdHWp">
-        <node concept="QdHWq" id="1nCPqFM58wE" role="QdHWm">
-          <node concept="LIFWc" id="1nCPqFM58wH" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="0" />
-            <property role="p6zMs" value="0" />
-            <property role="LIFWd" value="empty_subChild" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="7zh3gS0L1PW">
     <property role="TrG5h" value="ChildWithDirectCycle_card1n" />
+    <node concept="2ng5p9" id="4xJw7Bvgd_T" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+    </node>
     <node concept="QdHWr" id="7zh3gS0L1PX" role="LiRBU">
       <node concept="LIFWc" id="7zh3gS0L1PY" role="lGtFl">
         <property role="ZRATv" value="true" />
@@ -147,6 +119,9 @@
   </node>
   <node concept="LiM7Y" id="7zh3gS0L8df">
     <property role="TrG5h" value="ChildWithIndirectCycle_card1" />
+    <node concept="2ng5p9" id="4xJw7Bvgd_W" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+    </node>
     <node concept="QdHWr" id="7zh3gS0L8dg" role="LiRBU">
       <node concept="LIFWc" id="7zh3gS0L8dh" role="lGtFl">
         <property role="ZRATv" value="true" />
@@ -184,6 +159,9 @@
   </node>
   <node concept="LiM7Y" id="7zh3gS0LeDd">
     <property role="TrG5h" value="ChildWithIndirectCycle_card1n" />
+    <node concept="2ng5p9" id="4xJw7Bvgd_Z" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+    </node>
     <node concept="QdHWr" id="7zh3gS0LeDe" role="LiRBU">
       <node concept="LIFWc" id="7zh3gS0LeDf" role="lGtFl">
         <property role="ZRATv" value="true" />
@@ -250,6 +228,44 @@
           <property role="p6zMq" value="41" />
           <property role="p6zMs" value="41" />
           <property role="LIFWd" value="Constant_1x4hsi_a0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1nCPqFM58sy">
+    <property role="TrG5h" value="ChildWithDirectCycle_card1" />
+    <node concept="2ng5p9" id="4xJw7BvgdnC" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+    </node>
+    <node concept="QdHWr" id="1nCPqFM58tT" role="LiRBU">
+      <node concept="LIFWc" id="1nCPqFM58wv" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_child" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="1nCPqFM58ua" role="LjaKd">
+      <node concept="2TK7Tu" id="1nCPqFM58wg" role="3cqZAp">
+        <property role="2TTd_B" value="card1_direct_" />
+      </node>
+      <node concept="2HxZob" id="1nCPqFM58u8" role="3cqZAp">
+        <node concept="1iFQzN" id="1nCPqFM58ue" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+    <node concept="QdHWr" id="1nCPqFM58wx" role="LiZbd">
+      <node concept="QdHWq" id="1nCPqFM58wD" role="QdHWp">
+        <node concept="QdHWq" id="1nCPqFM58wE" role="QdHWm">
+          <node concept="LIFWc" id="1nCPqFM58wH" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="empty_subChild" />
+          </node>
         </node>
       </node>
     </node>

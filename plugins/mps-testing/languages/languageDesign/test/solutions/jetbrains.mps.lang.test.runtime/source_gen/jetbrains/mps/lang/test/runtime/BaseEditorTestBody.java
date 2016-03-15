@@ -314,8 +314,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   private CachingAppender installAppender() {
     Logger rootLogger = Logger.getRootLogger();
     CachingAppender appender = new CachingAppender(Level.ERROR);
+    populateExpectedEvents(appender);
     rootLogger.addAppender(appender);
     return appender;
+  }
+
+  protected void populateExpectedEvents(CachingAppender appender) {
+
   }
 
   private void uninstallAppender(CachingAppender appender) {

@@ -250,10 +250,12 @@
       <node id="6965998111421763798" at="310,21,311,53" concept="6" />
       <node id="154255203839224412" at="314,45,315,47" concept="11" />
       <node id="5749452221266991714" at="315,47,316,64" concept="11" />
-      <node id="154255203839400236" at="316,64,317,37" concept="6" />
-      <node id="154255203839415927" at="317,37,318,20" concept="12" />
-      <node id="154255203839424321" at="321,60,322,52" concept="6" />
-      <node id="1225981767950" at="324,0,325,0" concept="15" trace="LOG" />
+      <node id="5219531754070525201" at="316,64,317,37" concept="6" />
+      <node id="154255203839400236" at="317,37,318,37" concept="6" />
+      <node id="154255203839415927" at="318,37,319,20" concept="12" />
+      <node id="5219531754070520691" at="322,67,323,0" concept="14" />
+      <node id="154255203839424321" at="326,60,327,52" concept="6" />
+      <node id="1225981767950" at="329,0,330,0" concept="15" trace="LOG" />
       <node id="6650621825958233745" at="59,0,61,0" concept="3" trace="BaseEditorTestBody#()V" />
       <node id="5279737977595951625" at="62,72,65,5" concept="1" />
       <node id="5279737977595951625" at="62,72,65,5" concept="9" />
@@ -278,7 +280,8 @@
       <node id="6270156512830082688" at="269,0,272,0" concept="10" trace="run#()V" />
       <node id="6965998111421732014" at="291,0,294,0" concept="10" trace="getCurrentEditor#()Lcom/intellij/openapi/fileEditor/FileEditor;" />
       <node id="6753309438432862264" at="304,7,307,5" concept="9" />
-      <node id="154255203839188206" at="321,0,324,0" concept="10" trace="uninstallAppender#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="5219531754070477448" at="322,0,325,0" concept="10" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="154255203839188206" at="326,0,329,0" concept="10" trace="uninstallAppender#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="2034046503373002993" at="94,9,98,9" concept="9" />
       <node id="1289877718943972918" at="278,0,282,0" concept="10" trace="run#()V" />
       <node id="1455266293622514787" at="69,25,74,9" concept="20" />
@@ -290,10 +293,10 @@
       <node id="1455266293622521439" at="297,25,302,9" concept="20" />
       <node id="1455266293622515883" at="191,29,197,13" concept="20" />
       <node id="1289877718943972913" at="276,50,282,7" concept="6" />
-      <node id="154255203839150388" at="314,0,320,0" concept="10" trace="installAppender#()Ljetbrains/mps/testbench/util/CachingAppender;" />
       <node id="1229267022350" at="111,0,118,0" concept="10" trace="findCellReference#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/runtime/CellReference;" />
       <node id="6753309438432936151" at="168,27,175,11" concept="20" />
       <node id="1455266293622521435" at="297,0,304,0" concept="10" trace="run#()V" />
+      <node id="154255203839150388" at="314,0,321,0" concept="10" trace="installAppender#()Ljetbrains/mps/testbench/util/CachingAppender;" />
       <node id="1455266293622514783" at="68,0,76,0" concept="10" trace="run#()V" />
       <node id="1455266293622515881" at="191,0,199,0" concept="10" trace="run#()V" />
       <node id="1532267208578178835" at="168,0,177,0" concept="10" trace="run#()V" />
@@ -377,7 +380,8 @@
       </scope>
       <scope id="1455266293622521446" at="300,31,301,20" />
       <scope id="6753309438432862266" at="305,24,306,80" />
-      <scope id="154255203839188210" at="321,60,322,52" />
+      <scope id="5219531754070477452" at="322,67,323,0" />
+      <scope id="154255203839188210" at="326,60,327,52" />
       <scope id="6650621825958233745" at="59,0,61,0" />
       <scope id="2034046503373002994" at="95,34,97,135" />
       <scope id="1455266293622515884" at="192,17,194,38" />
@@ -415,14 +419,13 @@
       <scope id="6270156512830248812" at="248,77,251,17" />
       <scope id="6270156512830082688" at="269,0,272,0" />
       <scope id="6965998111421732014" at="291,0,294,0" />
-      <scope id="154255203839188206" at="321,0,324,0">
+      <scope id="5219531754070477448" at="322,0,325,0">
+        <var name="appender" id="5219531754070516793" />
+      </scope>
+      <scope id="154255203839188206" at="326,0,329,0">
         <var name="appender" id="154255203839420301" />
       </scope>
       <scope id="1289877718943972918" at="278,0,282,0" />
-      <scope id="154255203839150392" at="314,45,318,20">
-        <var name="appender" id="5749452221266991715" />
-        <var name="rootLogger" id="154255203839224413" />
-      </scope>
       <scope id="1455266293622514786" at="69,25,74,9" />
       <scope id="1229267022353" at="111,55,116,197">
         <var name="annotations" id="1229267128018" />
@@ -432,8 +435,11 @@
         <var name="intention" id="6270156512830248808" />
       </scope>
       <scope id="1455266293622521438" at="297,25,302,9" />
+      <scope id="154255203839150392" at="314,45,319,20">
+        <var name="appender" id="5749452221266991715" />
+        <var name="rootLogger" id="154255203839224413" />
+      </scope>
       <scope id="1455266293622515882" at="191,29,197,13" />
-      <scope id="154255203839150388" at="314,0,320,0" />
       <scope id="1229267022350" at="111,0,118,0">
         <var name="node" id="1229267105849" />
       </scope>
@@ -449,6 +455,7 @@
         <var name="event" id="6270156512830083344" />
       </scope>
       <scope id="1455266293622521435" at="297,0,304,0" />
+      <scope id="154255203839150388" at="314,0,321,0" />
       <scope id="1455266293622514783" at="68,0,76,0" />
       <scope id="1455266293622515881" at="191,0,199,0" />
       <scope id="1532267208578178835" at="168,0,177,0" />
@@ -529,7 +536,7 @@
       <unit id="2034046503373002970" at="88,50,108,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$2" />
       <unit id="1455266293622715440" at="123,41,143,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$3" />
       <unit id="6270156512830248027" at="239,32,259,5" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody$6" />
-      <unit id="1225981767950" at="50,0,326,0" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+      <unit id="1225981767950" at="50,0,331,0" name="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/1226949310940">

@@ -48,6 +48,7 @@
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
+      <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
@@ -2229,6 +2230,29 @@
         </node>
         <node concept="2iRfu4" id="2Jo3M8QDg87" role="2iSdaV" />
       </node>
+      <node concept="3F0ifn" id="4xJw7Bvdbub" role="3EZMnx" />
+      <node concept="3EZMnI" id="4xJw7BvdcfP" role="3EZMnx">
+        <node concept="VPM3Z" id="4xJw7BvdcfR" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="l2Vlx" id="4xJw7BvdcfU" role="2iSdaV" />
+        <node concept="3F0ifn" id="4xJw7Bvd2sj" role="3EZMnx">
+          <property role="3F0ifm" value="Expected log events:" />
+          <node concept="ljvvj" id="4xJw7Bvd2sk" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="4xJw7Bvd2sl" role="3EZMnx">
+          <ref role="1NtTu8" to="tp5g:4xJw7BvbXxC" />
+          <node concept="l2Vlx" id="4xJw7Bvd2sm" role="2czzBx" />
+          <node concept="lj46D" id="4xJw7Bvd2sn" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="4xJw7Bvd2so" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="hSLIMXg">
@@ -3046,6 +3070,27 @@
     <ref role="1XX52x" to="tp5g:71GR8EvPDc$" resolve="UntypedExpression" />
     <node concept="3F0ifn" id="71GR8EvPDcZ" role="2wV5jI">
       <property role="3F0ifm" value="_" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4xJw7Bve2nw">
+    <property role="3GE5qa" value="log" />
+    <ref role="1XX52x" to="tp5g:4xJw7BvbXoK" resolve="LogEvent" />
+    <node concept="3EZMnI" id="4xJw7Bve2rx" role="2wV5jI">
+      <node concept="3F0ifn" id="4xJw7Bve2uC" role="3EZMnx">
+        <property role="3F0ifm" value="log level:" />
+      </node>
+      <node concept="l2Vlx" id="4xJw7Bve2ry" role="2iSdaV" />
+      <node concept="3F0A7n" id="4xJw7Bve2tF" role="3EZMnx">
+        <ref role="1NtTu8" to="tp5g:4xJw7Bve0T$" resolve="level" />
+      </node>
+      <node concept="3F0ifn" id="4xJw7Bve2rz" role="3EZMnx">
+        <property role="3F0ifm" value="message:" />
+      </node>
+      <node concept="3F0A7n" id="4xJw7Bve2r$" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;&lt;any text&gt;&gt;" />
+        <property role="1O74Pk" value="true" />
+        <ref role="1NtTu8" to="tp5g:4xJw7Bve0TB" resolve="message" />
+      </node>
     </node>
   </node>
 </model>
