@@ -47,6 +47,11 @@
       </concept>
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="7454474523886895180" name="jetbrains.mps.lang.editor.editorTest.structure.InitGrandChild" flags="ng" index="o2tPp" />
+      <concept id="7454474523886895179" name="jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren" flags="ng" index="o2tPu">
+        <child id="7454474523886895189" name="ch2" index="o2tP0" />
+        <child id="7454474523886895181" name="ch1" index="o2tPo" />
+      </concept>
       <concept id="1945799951702688165" name="jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1" flags="ng" index="QdHWq">
         <child id="1945799951702688169" name="subChild" index="QdHWm" />
       </concept>
@@ -210,6 +215,41 @@
               <property role="LIFWd" value="empty_subChild" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6tNBhlZu$1U">
+    <property role="TrG5h" value="ChildWithTwoGrandChildrenInDifferentRoles" />
+    <node concept="QdHWr" id="6tNBhlZu$1V" role="LiRBU">
+      <node concept="LIFWc" id="6tNBhlZuP_r" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_child" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6tNBhlZu$1X" role="LjaKd">
+      <node concept="2TK7Tu" id="6tNBhlZu$1Y" role="3cqZAp">
+        <property role="2TTd_B" value="two_same_" />
+      </node>
+      <node concept="2HxZob" id="6tNBhlZu$1Z" role="3cqZAp">
+        <node concept="1iFQzN" id="6tNBhlZu$20" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+    <node concept="QdHWr" id="6tNBhlZu$21" role="LiZbd">
+      <node concept="o2tPu" id="6tNBhlZuPcc" role="QdHWp">
+        <node concept="o2tPp" id="6tNBhlZuPcd" role="o2tPo" />
+        <node concept="o2tPp" id="6tNBhlZuPce" role="o2tP0" />
+        <node concept="LIFWc" id="6tNBhlZuPcl" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="41" />
+          <property role="p6zMs" value="41" />
+          <property role="LIFWd" value="Constant_1x4hsi_a0" />
         </node>
       </node>
     </node>

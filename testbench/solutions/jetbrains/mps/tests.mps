@@ -471,6 +471,9 @@
     <node concept="lpD6D" id="7zh3gS0LeWs" role="lpD6w">
       <ref role="lpD7u" to="1xvu:7zh3gS0LeDd" resolve="ChildWithIndirectCycle_card1n" />
     </node>
+    <node concept="lpD6D" id="6tNBhlZuPPN" role="lpD6w">
+      <ref role="lpD7u" to="1xvu:6tNBhlZu$1U" resolve="ChildWithTwoGrandCjhildrenIndifferentRoles" />
+    </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
     </node>

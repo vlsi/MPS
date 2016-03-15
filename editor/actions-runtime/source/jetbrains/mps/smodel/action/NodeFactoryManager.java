@@ -92,8 +92,12 @@ public class NodeFactoryManager {
       if (!newNode.getChildren(linkDeclaration.getRole()).iterator().hasNext()) {
         if (!visitedNonOptionalChildConcepts.contains(targetConcept)) {
           visitedNonOptionalChildConcepts.add(targetConcept);
-          SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
-          newNode.addChild(linkDeclaration.getRole(), childNode);
+          try {
+            SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, visitedNonOptionalChildConcepts);
+            newNode.addChild(linkDeclaration.getRole(), childNode);
+          } finally {
+            visitedNonOptionalChildConcepts.remove(targetConcept);
+          }
         } else {
           LOG.error("Cyclic containment found while initializing node: " + newNode.getNodeId() + ", containment link: " + linkDeclaration.getName());
         }

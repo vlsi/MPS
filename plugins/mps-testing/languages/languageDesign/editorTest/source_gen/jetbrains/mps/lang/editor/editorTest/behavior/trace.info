@@ -75,6 +75,9 @@
     <file name="InitChildWithIndirectCycle_card1n_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithIndirectCycle_card1n_BehaviorDescriptor" />
     </file>
+    <file name="InitChildWithTwoSameConceptChildren_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitChildWithTwoSameConceptChildren_BehaviorDescriptor" />
+    </file>
     <file name="InitContainer_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitContainer_BehaviorDescriptor" />
     </file>
@@ -83,6 +86,9 @@
     </file>
     <file name="InitGrandChildWithIndirectCycle_card1n_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitGrandChildWithIndirectCycle_card1n_BehaviorDescriptor" />
+    </file>
+    <file name="InitGrandChild_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitGrandChild_BehaviorDescriptor" />
     </file>
     <file name="InspectorBlock_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />

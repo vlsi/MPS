@@ -646,5 +646,30 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6tNBhlZu$1b">
+    <property role="1pbfSe" value="420618912" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitChildWithTwoSameConceptChildren" />
+    <property role="34LRSv" value="two_same_children" />
+    <ref role="1TJDcQ" node="1G0RFWHdw6C" resolve="InitAbstractChild" />
+    <node concept="1TJgyj" id="6tNBhlZu$1d" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ch1" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6tNBhlZu$1c" resolve="InitGrandChild" />
+    </node>
+    <node concept="1TJgyj" id="6tNBhlZu$1l" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ch2" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6tNBhlZu$1c" resolve="InitGrandChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6tNBhlZu$1c">
+    <property role="1pbfSe" value="420618911" />
+    <property role="3GE5qa" value="init" />
+    <property role="TrG5h" value="InitGrandChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 
