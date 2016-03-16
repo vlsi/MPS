@@ -48,7 +48,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;

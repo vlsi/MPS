@@ -37,7 +37,7 @@ import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.editor.QueriesUtil;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 
 public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {

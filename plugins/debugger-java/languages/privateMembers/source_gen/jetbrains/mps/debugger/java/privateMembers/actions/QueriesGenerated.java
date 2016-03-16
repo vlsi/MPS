@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
