@@ -557,15 +557,7 @@
               </node>
               <node concept="2ShNRf" id="qrAFe9kp5s" role="2Oq$k0">
                 <node concept="1pGfFk" id="qrAFe9kp5t" role="2ShVmc">
-                  <ref role="37wK5l" to="aplb:qrAFe9j8zl" resolve="MPSProgramBuilder" />
-                  <node concept="1eOMI4" id="qrAFe9qTCk" role="37wK5m">
-                    <node concept="10QFUN" id="qrAFe9qTCl" role="1eOMHV">
-                      <node concept="10Nm6u" id="qrAFe9qTCj" role="10QFUP" />
-                      <node concept="3uibUv" id="qrAFe9qTCh" role="10QFUM">
-                        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-                      </node>
-                    </node>
-                  </node>
+                  <ref role="37wK5l" to="aplb:4mpxoQud1f6" resolve="MPSProgramBuilder" />
                 </node>
               </node>
             </node>
