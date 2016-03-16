@@ -16,6 +16,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -430,8 +431,8 @@
                     </node>
                     <node concept="3fqX7Q" id="4RXh7QRr0Jl" role="3uHU7w">
                       <node concept="2YIFZM" id="4RXh7QRr0Jg" role="3fr31v">
-                        <ref role="37wK5l" to="5h2r:2Jvt1sWfuvb" resolve="isVisible" />
-                        <ref role="1Pybhc" to="5h2r:2Jvt1sWfuv6" resolve="VisibilityUtil" />
+                        <ref role="1Pybhc" to="fnmy:2Jvt1sWfuv6" resolve="VisibilityUtil" />
+                        <ref role="37wK5l" to="fnmy:2Jvt1sWfuvb" resolve="isVisible" />
                         <node concept="3GMtW1" id="4RXh7QRr0Jh" role="37wK5m" />
                         <node concept="1PxgMI" id="4RXh7QRr0Jj" role="37wK5m">
                           <ref role="1m5ApE" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />

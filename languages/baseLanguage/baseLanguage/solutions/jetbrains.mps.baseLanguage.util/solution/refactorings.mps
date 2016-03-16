@@ -45,6 +45,7 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util()" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
+    <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -18656,18 +18657,33 @@
               </node>
             </node>
             <node concept="3clFbJ" id="7nrhK3uHfb8" role="3cqZAp">
-              <node concept="3fqX7Q" id="7nrhK3uHfbY" role="3clFbw">
-                <node concept="2YIFZM" id="obAI1mhUdu" role="3fr31v">
-                  <ref role="37wK5l" to="5h2r:2Jvt1sWfuvb" resolve="isVisible" />
-                  <ref role="1Pybhc" to="5h2r:2Jvt1sWfuv6" resolve="VisibilityUtil" />
-                  <node concept="2OqwBi" id="obAI1mhUdv" role="37wK5m">
-                    <node concept="2OwXpG" id="obAI1mhUdw" role="2OqNvi">
-                      <ref role="2Oxat5" node="7nrhK3uHfcj" resolve="myMethodCall" />
-                    </node>
-                    <node concept="Xjq3P" id="obAI1mhUdx" role="2Oq$k0" />
-                  </node>
-                  <node concept="2GrUjf" id="obAI1mhUdy" role="37wK5m">
+              <node concept="1Wc70l" id="1NN0TAOHIkO" role="3clFbw">
+                <node concept="2OqwBi" id="1NN0TAOHIGr" role="3uHU7B">
+                  <node concept="2GrUjf" id="1NN0TAOHIyS" role="2Oq$k0">
                     <ref role="2Gs0qQ" node="7nrhK3uHfaX" resolve="node" />
+                  </node>
+                  <node concept="1mIQ4w" id="1NN0TAOHIS8" role="2OqNvi">
+                    <node concept="chp4Y" id="1NN0TAOHJ18" role="cj9EA">
+                      <ref role="cht4Q" to="tpee:h9B3isZ" resolve="IVisible" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3fqX7Q" id="7nrhK3uHfbY" role="3uHU7w">
+                  <node concept="2YIFZM" id="obAI1mhUdu" role="3fr31v">
+                    <ref role="1Pybhc" to="5h2r:2Jvt1sWfuv6" resolve="VisibilityUtil" />
+                    <ref role="37wK5l" to="5h2r:2Jvt1sWfuvb" resolve="isVisible" />
+                    <node concept="2OqwBi" id="obAI1mhUdv" role="37wK5m">
+                      <node concept="2OwXpG" id="obAI1mhUdw" role="2OqNvi">
+                        <ref role="2Oxat5" node="7nrhK3uHfcj" resolve="myMethodCall" />
+                      </node>
+                      <node concept="Xjq3P" id="obAI1mhUdx" role="2Oq$k0" />
+                    </node>
+                    <node concept="1PxgMI" id="1NN0TAOHLqy" role="37wK5m">
+                      <ref role="1m5ApE" to="tpee:h9B3isZ" resolve="IVisible" />
+                      <node concept="2GrUjf" id="obAI1mhUdy" role="1m5AlR">
+                        <ref role="2Gs0qQ" node="7nrhK3uHfaX" resolve="node" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

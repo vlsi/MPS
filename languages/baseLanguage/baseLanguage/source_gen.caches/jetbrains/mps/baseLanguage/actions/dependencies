@@ -213,7 +213,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.MemberDeclarationRefactoringUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifiersScope" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

@@ -23,7 +23,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_DeleteDot" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
