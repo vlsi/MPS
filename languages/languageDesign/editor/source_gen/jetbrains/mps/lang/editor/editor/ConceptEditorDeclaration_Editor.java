@@ -110,6 +110,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      SNode node = getOwner();
       style.set(StyleAttributes.PUNCTUATION_LEFT, false);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       editorCell.getStyle().putAll(style);
