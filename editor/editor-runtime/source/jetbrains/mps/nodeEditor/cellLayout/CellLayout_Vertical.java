@@ -239,6 +239,9 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   @Override
   public void requestRelayout(EditorCell_Collection editorCells) {
     super.requestRelayout(editorCells);
+    if (editorCells.wasRelayoutRequested()) {
+      return;
+    }
     if (myGridLayout) {
       for (EditorCell childCell : editorCells) {
         if (childCell instanceof EditorCell_Collection) {
