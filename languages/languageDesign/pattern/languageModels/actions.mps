@@ -10,6 +10,7 @@
   <imports>
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -153,20 +154,25 @@
               <node concept="3clFbF" id="2vRmfyWrkjc" role="3cqZAp">
                 <node concept="37vLTI" id="4dzCQkRGiSu" role="3clFbG">
                   <node concept="Cj7Ep" id="4dzCQkRGiSx" role="37vLTx" />
-                  <node concept="2OqwBi" id="4dzCQkRGiSp" role="37vLTJ">
-                    <node concept="2OqwBi" id="4dzCQkRGiSk" role="2Oq$k0">
-                      <node concept="2OqwBi" id="2vRmfyWrkje" role="2Oq$k0">
-                        <node concept="37vLTw" id="3GM_nagTytR" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2vRmfyWrkhN" resolve="orPattern" />
+                  <node concept="2OqwBi" id="4tPQHKlnLHx" role="37vLTJ">
+                    <node concept="2OqwBi" id="4dzCQkRGiSp" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4dzCQkRGiSk" role="2Oq$k0">
+                        <node concept="2OqwBi" id="2vRmfyWrkje" role="2Oq$k0">
+                          <node concept="37vLTw" id="3GM_nagTytR" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2vRmfyWrkhN" resolve="orPattern" />
+                          </node>
+                          <node concept="3Tsc0h" id="2vRmfyWrkji" role="2OqNvi">
+                            <ref role="3TtcxE" to="tp3t:2vRmfyWqGFe" />
+                          </node>
                         </node>
-                        <node concept="3Tsc0h" id="2vRmfyWrkji" role="2OqNvi">
-                          <ref role="3TtcxE" to="tp3t:2vRmfyWqGFe" />
-                        </node>
+                        <node concept="1uHKPH" id="4dzCQkRGiSo" role="2OqNvi" />
                       </node>
-                      <node concept="1uHKPH" id="4dzCQkRGiSo" role="2OqNvi" />
+                      <node concept="3TrEf2" id="4tPQHKlnLz8" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                      </node>
                     </node>
-                    <node concept="3TrEf2" id="4dzCQkRGiSt" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp3t:4dzCQkRGb9h" />
+                    <node concept="3TrEf2" id="4tPQHKlnLOd" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp3r:hqc44pq" />
                     </node>
                   </node>
                 </node>

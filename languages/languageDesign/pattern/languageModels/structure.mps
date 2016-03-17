@@ -44,7 +44,6 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
-        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -263,13 +262,6 @@
     <property role="2_RsDV" value="none" />
     <property role="1pbfSe" value="2064930229" />
     <ref role="1TJDcQ" node="gyDMOuh" resolve="PatternExpression" />
-    <node concept="1TJgyj" id="4dzCQkRGb9h" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20ksaX" node="gyDMOui" />
-      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3GJnBG73j5W">
     <property role="TrG5h" value="OrPatternVariableReference" />
