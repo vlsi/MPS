@@ -56,7 +56,7 @@ public final class PureMigrationScript__BehaviorDescriptor extends BaseBHDescrip
     return null;
   }
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    return String.format("%03d", ((int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(__thisNode__))) + "_" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return ((String) IMigrationUnit__BehaviorDescriptor.getVersionedName_id5T5Tgcp0u0A.invoke(__thisNode__));
   }
 
   /*package*/ PureMigrationScript__BehaviorDescriptor() {
