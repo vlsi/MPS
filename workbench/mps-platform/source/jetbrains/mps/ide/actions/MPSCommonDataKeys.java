@@ -43,7 +43,7 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   @Description(description = "current MPS project")
   public static final DataKey<MPSProject> MPS_PROJECT = DataKey.create("MPS_MPSProject");
 
-  @Description(description = "selected node (null if multiple or no selection")
+  @Description(description = "selected node (null if multiple or no selection)")
   public static final DataKey<SNode> NODE = DataKey.create("MPS_SNode");
   @Description(description = "selected nodes")
   public static final DataKey<List<SNode>> NODES = DataKey.create("MPS_SNode_List");
