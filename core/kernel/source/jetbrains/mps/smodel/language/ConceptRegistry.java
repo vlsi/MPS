@@ -19,20 +19,26 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.core.aspects.behaviour.BehaviorRegistryImpl;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.HashMap;
+import java.util.Map;
 
 // TODO avoid singleton by creating a new ComponentPlugin instance with smodel-related components (it is not CoreComponent in fact)
 public class ConceptRegistry implements CoreComponent, LanguageRegistryListener {
-  private static final Logger LOG = LogManager.getLogger(ConceptRegistry.class);
+  private static Map<String, SAbstractConcept> myConceptByNameCache;
 
   private final LanguageRegistry myLanguageRegistry;
   private final StructureRegistry myStructureRegistry;
@@ -120,11 +126,34 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
   /**
    * Use {@link jetbrains.mps.smodel.language.ConceptRegistryUtil#getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept)}
-   *     if you got SConcept
+   * if you got SConcept
    */
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
     return myConstraintsRegistry.getConstraintsDescriptor(conceptId);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.4)
+  //this method is here for compatibility purposes.
+  //remve as soon as there's no need in optimizing by-name stuff
+  synchronized public SAbstractConcept getConceptByName(String conceptName) {
+    if (myConceptByNameCache==null) {
+      myConceptByNameCache = new HashMap<String, SAbstractConcept>();
+      for (SLanguage l : LanguageRegistry.getInstance().getAllLanguages()) {
+        for (SAbstractConcept c : l.getConcepts()) {
+          myConceptByNameCache.put(c.getQualifiedName(),c);
+        }
+      }
+    }
+
+    SAbstractConcept cached = myConceptByNameCache.get(conceptName);
+    if (cached!=null) return cached;
+    return new InvalidConcept(conceptName);
+  }
+
+  synchronized private void clearConceptsCache() {
+    myConceptByNameCache = null;
   }
 
   @Override
@@ -139,5 +168,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     myStructureRegistry.clear();
     myBehaviorRegistry.clear();
     myConstraintsRegistry.clear();
+    clearConceptsCache();
   }
 }
