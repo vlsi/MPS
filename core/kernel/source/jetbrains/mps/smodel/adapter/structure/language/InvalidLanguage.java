@@ -19,60 +19,52 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
-public final class SLanguageAdapterById extends SLanguageAdapter {
-  private final SLanguageId myLanguage;
-
-  public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
+/**
+ * See InvalidConcept doc
+ */
+public final class InvalidLanguage extends SLanguageAdapter {
+  public InvalidLanguage(@NotNull String fqName) {
     super(fqName);
-    this.myLanguage = language;
   }
 
   @NotNull
   public SLanguageId getId() {
-    return myLanguage;
+    return MetaIdFactory.INVALID_LANGUAGE_ID;
   }
 
   @Override
   @NotNull
   public String getQualifiedName() {
-    LanguageRuntime ld = getLanguageDescriptor();
-    if (ld == null) {
       return myLanguageFqName;
-    }
-    return ld.getNamespace();
   }
 
   @Override
   @Nullable
   public LanguageRuntime getLanguageDescriptor() {
-    LanguageRegistry languageRegistry = LanguageRegistry.getInstance();
-    return languageRegistry == null ? null : languageRegistry.getLanguage(myLanguage);
+    return null;
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SLanguageAdapterById)) return false;
-    SLanguageId otherId = ((SLanguageAdapterById) obj).myLanguage;
-    return myLanguage.equals(otherId);
+    if (!(obj instanceof InvalidLanguage)) return false;
+    String otherId = ((InvalidLanguage) obj).myLanguageFqName;
+    return myLanguageFqName.equals(otherId);
   }
 
   @Override
   public int hashCode() {
-    return myLanguage.getIdValue().hashCode();
+    return myLanguageFqName.hashCode();
   }
 
   @Override
   @Nullable
   public Language getSourceModule() {
-    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getIdValue())));
+    return null;
   }
 }

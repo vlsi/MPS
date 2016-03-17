@@ -49,10 +49,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   public boolean equals(Object obj) {
     if (!(obj instanceof SReferenceLinkAdapterById)) return false;
     SReferenceLinkId otherId = ((SReferenceLinkAdapterById) obj).myRoleId;
-    SReferenceLinkId invalid = MetaIdFactory.INVALID_REF_ID;
-    if (!myRoleId.equals(invalid)) return myRoleId.equals(otherId);
-    if (!otherId.equals(invalid)) return false;
-    return myName.equals(((SReferenceLinkAdapterById) obj).myName);
+    return myRoleId.equals(otherId);
   }
 
   @Override

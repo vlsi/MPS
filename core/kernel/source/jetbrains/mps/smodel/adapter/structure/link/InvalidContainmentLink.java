@@ -19,74 +19,64 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.concept.InvalidConcept;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
-  private final SContainmentLinkId myRoleId;
-  private final boolean myIsBootstrap;
+/**
+ * See InvalidConcept doc
+ */
+public final class InvalidContainmentLink extends SContainmentLinkAdapter {
+  @Nullable
+  private final String myConcept;
 
-  public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String name) {
-    this(roleId, name, false);
-  }
-
-  /**
-   * @param bootstrap see BOOTSTRAP META OBJECTS javadoc for {@link jetbrains.mps.smodel.adapter.BootstrapAdapterFactory}
-   */
-  public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String name, boolean bootstrap) {
+  public InvalidContainmentLink(@Nullable String concept, @NotNull String name) {
     super(name);
-    myRoleId = roleId;
-    myIsBootstrap = bootstrap;
+    myConcept = concept;
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SContainmentLinkAdapterById)) return false;
-    SContainmentLinkId otherId = ((SContainmentLinkAdapterById) obj).myRoleId;
-    return myRoleId.equals(otherId);
+    if (!(obj instanceof InvalidContainmentLink)) return false;
+    String otherId = ((InvalidContainmentLink) obj).myName;
+    return myName.equals(otherId);
   }
 
   @Override
   public int hashCode() {
-    return (int)myRoleId.getIdValue();
+    return myName.hashCode();
   }
 
   @NotNull
   public SContainmentLinkId getRoleId() {
-    return myRoleId;
+    return MetaIdFactory.INVALID_LINK_ID;
   }
 
   @Override
   public String getRoleName() {
-    if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {
       return myName;
-    }
-    LinkDescriptor d = getLinkDescriptor();
-    if (d == null) {
-      //invalid property, needed for propertyRead event in SNode until event is rewritten
-      return myName;
-    }
-    return d.getName();
   }
 
   @Override
   @Nullable
   public LinkDescriptor getLinkDescriptor() {
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
-    if (cd == null) return null;
-    return cd.getLinkDescriptor(myRoleId);
+    return null;
   }
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    SModel model = cnode.getModel();
-    return model.getNode(new SNodeId.Regular(myRoleId.getIdValue()));
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
+    return new InvalidConcept(myConcept);
   }
 }

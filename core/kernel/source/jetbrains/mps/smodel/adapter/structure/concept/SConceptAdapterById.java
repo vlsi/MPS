@@ -58,10 +58,7 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   public boolean equals(Object obj) {
     if (!(obj instanceof SConceptAdapterById)) return false;
     SConceptId otherId = ((SConceptAdapterById) obj).myConceptId;
-    SConceptId invalid = MetaIdFactory.INVALID_CONCEPT_ID;
-    if (!myConceptId.equals(invalid)) return myConceptId.equals(otherId);
-    if (!otherId.equals(invalid)) return false;
-    return myFqName.equals(((SConceptAdapterById) obj).myFqName);
+    return myConceptId.equals(otherId);
   }
 
   @Override

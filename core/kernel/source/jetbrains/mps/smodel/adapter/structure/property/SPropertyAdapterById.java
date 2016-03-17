@@ -54,10 +54,7 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
   public boolean equals(Object obj) {
     if (!(obj instanceof SPropertyAdapterById)) return false;
     SPropertyId otherId = ((SPropertyAdapterById) obj).myPropertyId;
-    SPropertyId invalid = MetaIdFactory.INVALID_PROP_ID;
-    if (!myPropertyId.equals(invalid)) return myPropertyId.equals(otherId);
-    if (!otherId.equals(invalid)) return false;
-    return myPropertyName.equals(((SPropertyAdapterById) obj).myPropertyName);
+    return myPropertyId.equals(otherId);
   }
 
   @Override

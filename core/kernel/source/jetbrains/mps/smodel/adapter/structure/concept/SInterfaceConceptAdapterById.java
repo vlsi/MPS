@@ -47,10 +47,7 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
   public boolean equals(Object obj) {
     if (!(obj instanceof SInterfaceConceptAdapterById)) return false;
     SConceptId otherId = ((SInterfaceConceptAdapterById) obj).myConceptId;
-    SConceptId invalid = MetaIdFactory.INVALID_CONCEPT_ID;
-    if (!myConceptId.equals(invalid)) return myConceptId.equals(otherId);
-    if (!otherId.equals(invalid)) return false;
-    return myFqName.equals(((SInterfaceConceptAdapterById) obj).myFqName);
+    return myConceptId.equals(otherId);
   }
 
   @Override
