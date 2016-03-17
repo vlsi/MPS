@@ -25,8 +25,11 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -55,16 +58,16 @@ import java.util.Collections;
  * The common idea is that on every client request it looks for the proper {@link ConceptDescriptor}
  * in the special registry and redirects the client request to it.
  * So it has only an id (string or smth else) as its state.
- *
+ * <p/>
  * One calls the SAbstractConcept instance <\it>valid</\it> if and only if its {@link ConceptDescriptor} is present
  * ({@link #getConceptDescriptor()} != null).
- *
+ * <p/>
  * Whenever the descriptor is absent (the concept instance is NOT valid) the "fail-safe" behavior is provided:
  * please look at each method individually to acknowledge the contract.
- *
+ * <p/>
  * NB: If a client of this API wants to distinguish the case when the concept is invalid, he/she
  * needs to use the method {@link #isValid()}. (!)
- *
+ * <p/>
  * Currently a lot of "hacks" introduced to fix some common cases (e.g. not valid concept still is a subconcept of the BaseConcept).
  * Also there is an editor issue when an instance of abstract concept (interface concept) might be created.
  * (E.g. the method {@link #isSubConceptOf(SAbstractConcept)} works not as expected for such concepts)
@@ -160,9 +163,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     if (cd == null) return null;
 
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
-    if (d == null) {
-      return MetaAdapterFactoryByName.getProperty(myFqName, name);
-    }
+    if (d == null) return new InvalidProperty(myFqName, name);
+
     SPropertyId pid = d.getId();
     return MetaAdapterFactory.getProperty(pid, name);
   }
@@ -273,19 +275,28 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
   @NotNull
   @Override
   public SProperty convertProperty(String propertyName) {
-    return MetaAdapterFactoryByName.getProperty(getQualifiedName(), propertyName);
+    for (SProperty p : getProperties()) {
+      if (p.getName().equals(propertyName)) return p;
+    }
+    return new InvalidProperty(getQualifiedName(),propertyName);
   }
 
   @NotNull
   @Override
   public SReferenceLink convertAssociation(String role) {
-    return MetaAdapterFactoryByName.getReferenceLink(getQualifiedName(), role);
+    for (SReferenceLink r : getReferenceLinks()) {
+      if (r.getName().equals(role)) return r;
+    }
+    return new InvalidReferenceLink(getQualifiedName(), role);
   }
 
   @NotNull
   @Override
   public SContainmentLink convertAggregation(String role) {
-    return MetaAdapterFactoryByName.getContainmentLink(getQualifiedName(), role);
+    for (SContainmentLink l : getContainmentLinks()) {
+      if (l.getName().equals(role)) return l;
+    }
+    return new InvalidContainmentLink(getQualifiedName(), role);
   }
 
   @Override

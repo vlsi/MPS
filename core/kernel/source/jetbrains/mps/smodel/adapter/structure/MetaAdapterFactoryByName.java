@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -100,10 +101,9 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SProperty getProperty(String conceptName, String propName) {
-    for (SProperty p : getAnyConcept(conceptName).getProperties()) {
-      if (p.getName().equals(propName)) return p;
-    }
-    return new InvalidProperty(conceptName, propName);
+    SAbstractConcept c = getAnyConcept(conceptName);
+    if (!c.isValid()) return new InvalidProperty(conceptName, propName);
+    return ((ConceptMetaInfoConverter) c).convertProperty(propName);
   }
 
   /**
@@ -112,10 +112,9 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SReferenceLink getReferenceLink(String conceptName, String refName) {
-    for (SReferenceLink r : getAnyConcept(conceptName).getReferenceLinks()) {
-      if (r.getName().equals(refName)) return r;
-    }
-    return new InvalidReferenceLink(conceptName, refName);
+    SAbstractConcept c = getAnyConcept(conceptName);
+    if (!c.isValid()) return new InvalidReferenceLink(conceptName, refName);
+    return ((ConceptMetaInfoConverter) c).convertAssociation(refName);
   }
 
   /**
@@ -124,10 +123,9 @@ public class MetaAdapterFactoryByName {
   @Deprecated
   @ToRemove(version = 3.4)
   public static SContainmentLink getContainmentLink(String conceptName, String linkName) {
-    for (SContainmentLink l : getAnyConcept(conceptName).getContainmentLinks()) {
-      if (l.getName().equals(linkName)) return l;
-    }
-    return new InvalidContainmentLink(conceptName, linkName);
+    SAbstractConcept c = getAnyConcept(conceptName);
+    if (!c.isValid()) return new InvalidContainmentLink(conceptName, linkName);
+    return ((ConceptMetaInfoConverter) c).convertAggregation(linkName);
   }
 
   private static SAbstractConcept getAnyConcept(String conceptName) {
@@ -141,7 +139,7 @@ public class MetaAdapterFactoryByName {
         return c;
       }
     }
-    return new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, conceptName);
+    return new InvalidConcept(conceptName);
   }
 
 }
