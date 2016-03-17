@@ -43,7 +43,6 @@
     <import index="7jhi" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern(MPS.Core/)" />
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="kdru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.crossmodel()" />
-    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter()" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
@@ -34600,6 +34599,15 @@
       <node concept="j$656" id="5Ex$JzqhbBJ" role="1lVwrX">
         <ref role="v9R2y" node="4UbAqfvNMQo" resolve="reduce_TemplateArgumentParameterExpr" />
         <node concept="Xl_RD" id="5Ex$JzqhbBK" role="v9R3O">
+          <property role="Xl_RC" value="_context" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6EEe6Z2XWhU" role="3acgRq">
+      <ref role="30HIoZ" to="tpf8:3PJ9groyE0C" resolve="TemplateArgumentVariableRefExpression" />
+      <node concept="j$656" id="6EEe6Z2XWsd" role="1lVwrX">
+        <ref role="v9R2y" node="3PJ9groBV8Y" resolve="reduce_TemplateArgumentVariableRefExpression" />
+        <node concept="Xl_RD" id="6EEe6Z2XXTT" role="v9R3O">
           <property role="Xl_RC" value="_context" />
         </node>
       </node>
