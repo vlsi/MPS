@@ -42,6 +42,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -69,6 +71,9 @@ public class QueriesGenerated {
   }
   public static boolean baseMappingRule_Condition_9046399079000793963(final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")) != null;
+  }
+  public static boolean baseMappingRule_Condition_5149262387754509133(final BaseMappingRuleContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")) == null;
   }
   public static boolean baseMappingRule_Condition_1949222934982321284(final BaseMappingRuleContext _context) {
     // under OrPattern, OrPatternVariableReference are reduced to capture() 
@@ -266,7 +271,7 @@ public class QueriesGenerated {
     return SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
   }
   public static Object referenceMacro_GetReferent_1949222934982668942(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause")), "disjunctToMatcher");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.as(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause")), "disjunctToMatcher");
   }
   public static Object referenceMacro_GetReferent_1949222934982502679(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "disjunctToPatternNode");
@@ -343,7 +348,7 @@ public class QueriesGenerated {
     // (PatternExpression|OrPatternClause)->Quotation->topNode 
     return _context.getNode() == ((SNode) _context.getVariable("topNode")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause")));
   }
-  public static boolean ifMacro_Condition_1949222934982451320(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8716610941203990450(final IfMacroContext _context) {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("tail"))).isNotEmpty();
   }
   public static SNode sourceNodeQuery_6930688547477853548(final SourceSubstituteMacroNodeContext _context) {
@@ -413,19 +418,23 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
   public static SNode sourceNodeQuery_1949222934982326306(final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.getParent(_context.getNode());
+    // OrPatternVariableReference is an Expression, not a NodeAttribute, 
+    // thus we need accessor to this node, not its parent (as we do for Attributes) 
+    return _context.getNode();
   }
   public static SNode sourceNodeQuery_1949222934982505748(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:disjunctClause"))).first();
   }
+  public static SNode sourceNodeQuery_1949222934982452091(final SourceSubstituteMacroNodeContext _context) {
+    // OrPattern is parent of OrPatternClause being processed, 
+    // and is the one we shall navigate matcher to, if it's used in place for a node. 
+    // however, the right way is to use it as attribute, thus we account for both cases 
+    SNode orPattern = SNodeOperations.getParent(_context.getNode());
+    return (SNodeOperations.isAttribute(orPattern) ? SNodeOperations.getParent(orPattern) : orPattern);
+  }
   public static SNode sourceNodeQuery_1949222934982455123(final SourceSubstituteMacroNodeContext _context) {
     // handle next clause, pass the tail stripped of this value to the next level 
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("tail"))).first();
-  }
-  public static SNode sourceNodeQuery_1949222934982452091(final SourceSubstituteMacroNodeContext _context) {
-    // OrPattern is parent of OrPatternClause being processed, 
-    // and is the one we shall navigate matcher for 
-    return SNodeOperations.getParent(_context.getNode());
   }
   public static SNode sourceNodeQuery_5149262387754026894(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
@@ -595,6 +604,8 @@ public class QueriesGenerated {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), false, new SAbstractConcept[]{});
   }
   public static Iterable<SNode> sourceNodesQuery_1949222934982395853(final SourceSubstituteMacroNodesContext _context) {
+    // NOTE: DO NOT TRY TO SET MappingLabel here, leave it at nested, as we need  
+    // LocalVariableDeclaration, not LVDStatement as  
     return ((Iterable<SNode>) _context.getVariable("var:disjunctionPatterns"));
   }
   public static Iterable<SNode> sourceNodesQuery_1949222934982712250(final SourceSubstituteMacroNodesContext _context) {
@@ -615,7 +626,20 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1949222934982630106(final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getNodeDescendantsWhereConceptInList(((SNode) _context.getVariable("var:quotedNode")), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference")}, false, new SAbstractConcept[]{});
+    // under OrPattern, they use OrPatternVariableReference to capture values instead of PatternVariableDeclaration used elsewhere 
+    // (declarations are owned by OrPattern instance). Don't blame me, this is the way someone else think is smart 
+
+    // We don't go deeper than OrPattern as there's distinct handling for OrPatternClause (which effectively excludes PVD under OrPattern) 
+    // Since it ends here, in this template, we look for OrPatternVariableReference right away. 
+    List<SNode> d = SNodeOperations.getNodeDescendantsWhereConceptInList(((SNode) _context.getVariable("var:quotedNode")), new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference")}, false, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")});
+    Iterable<SNode> orPattern = SNodeOperations.getNodeDescendants(((SNode) _context.getVariable("var:quotedNode")), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, new SAbstractConcept[]{});
+    return ListSequence.fromList(d).union(Sequence.fromIterable(orPattern));
+  }
+  public static void mapSrcMacro_post_mapper_7200657253306790908(final MapSrcMacroPostProcContext _context) {
+    // FIXME this is a hack to address Quotation's peculiarity that it tries to 
+    // find original node when instantiating a quoted node, and instead of BooleanConstant 
+    // instantiates OrPatternVariableReference 
+    TracingUtil.putInput(_context.getOutputNode(), null);
   }
   public static void mappingScript_CodeBlock_5106400022613501236(final MappingScriptContext _context) {
     //  this is a workaround for generator limitation: at the moment, attribute drop rules are 
@@ -623,7 +647,27 @@ public class QueriesGenerated {
     List<SNode> attr = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"))));
     ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"))));
-    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"))));
+    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")));
+      }
+    }));
+    // OrPattern requires special handling as though they are attributes, sometime they are used directly as nodes and if we drop them from the pattern, 
+    // it couldn't navigate containingLink of the OrPattern node as it has no idea about it. Thus we replace it with bogus node. 
+    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isAttribute(it);
+      }
+    }));
+    ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isAttribute(it));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
+      }
+    });
     ListSequence.fromList(attr).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNodeOperations.deleteNode(it);

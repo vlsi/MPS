@@ -34,7 +34,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c2();
-      GeneratedMatchingPattern pattern = new PatternNew_a0b0c2_3(_quotation_createNode_xihehy_a0a0b0c2());
+      GeneratedMatchingPattern pattern = new PatternNew_a0b0c2_2(_quotation_createNode_xihehy_a0a0b0c2());
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {

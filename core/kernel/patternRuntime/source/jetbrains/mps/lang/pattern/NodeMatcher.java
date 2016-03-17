@@ -148,6 +148,12 @@ public class NodeMatcher {
   }
 
   private boolean matchStructure(SNode pattern, SNode against) {
+    if (myPatternVarName != null && myChildExtractors == null && myPropertyToVariableName == null && myReferenceToVariableName == null) {
+      // FIXME if it's a mere accessor to a node to capture it, do not check concept match. Though IMO it's a defect in original implementation,
+      // it's left here for the time being to get existing tests pass before I fix them with a distinct change
+      // The case is "if (#v1) { #v2 }", where v2 attributes ExpressionStatement, and input comes as an empty Statement.
+      return true;
+    }
     if (!against.getConcept().isSubConceptOf(pattern.getConcept())) {
       return false;
     }
