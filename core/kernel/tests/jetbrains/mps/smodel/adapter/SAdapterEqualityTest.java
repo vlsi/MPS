@@ -42,95 +42,61 @@ public class SAdapterEqualityTest {
   public void testLanguageEquality() {
     SLanguageId id = MetaIdFactory.langId(1, 1);
     SLanguageId id2 = MetaIdFactory.langId(2, 2);
-    SLanguageId invId = MetaIdFactory.INVALID_LANGUAGE_ID;
 
-    //regular
     assertTrue(new SLanguageAdapterById(id, "name1").equals(new SLanguageAdapterById(id, "name2")));
-    assertTrue(new SLanguageAdapterById(id, "name").equals(new SLanguageAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SLanguageAdapterById(invId, "name1").equals(new SLanguageAdapterById(invId, "name2")));
-    assertFalse(new SLanguageAdapterById(invId, "name").equals(new SLanguageAdapterById(id, "name")));
+    assertFalse(new SLanguageAdapterById(id, "name").equals(new SLanguageAdapterById(id2, "name")));
   }
 
   @Test
   public void testConceptEquality() {
     SConceptId id = MetaIdFactory.conceptId(1, 1, 1);
     SConceptId id2 = MetaIdFactory.conceptId(2, 2, 2);
-    SConceptId invId = MetaIdFactory.INVALID_CONCEPT_ID;
 
-    //regular
     assertTrue(new SConceptAdapterById(id, "name1").equals(new SConceptAdapterById(id, "name2")));
-    assertTrue(new SConceptAdapterById(id, "name").equals(new SConceptAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SConceptAdapterById(invId, "name1").equals(new SConceptAdapterById(invId, "name2")));
-    assertFalse(new SConceptAdapterById(invId, "name").equals(new SConceptAdapterById(id, "name")));
+    assertFalse(new SConceptAdapterById(id, "name").equals(new SConceptAdapterById(id2, "name")));
   }
 
   @Test
   public void testInterfaceConceptEquality() {
     SConceptId id = MetaIdFactory.conceptId(1, 1, 1);
     SConceptId id2 = MetaIdFactory.conceptId(2, 2, 2);
-    SConceptId invId = MetaIdFactory.INVALID_CONCEPT_ID;
 
-    //regular
     assertTrue(new SInterfaceConceptAdapterById(id, "name1").equals(new SInterfaceConceptAdapterById(id, "name2")));
-    assertTrue(new SInterfaceConceptAdapterById(id, "name").equals(new SInterfaceConceptAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SInterfaceConceptAdapterById(invId, "name1").equals(new SInterfaceConceptAdapterById(invId, "name2")));
-    assertFalse(new SInterfaceConceptAdapterById(invId, "name").equals(new SInterfaceConceptAdapterById(id, "name")));
+    assertFalse(new SInterfaceConceptAdapterById(id, "name").equals(new SInterfaceConceptAdapterById(id2, "name")));
   }
 
   @Test
   public void testInterfaceConceptInEquality() {
-    assertFalse(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
-    assertFalse(new SConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name").equals(new SInterfaceConceptAdapterById(MetaIdFactory.INVALID_CONCEPT_ID, "name")));
+    SConceptId id = MetaIdFactory.conceptId(1, 1, 1);
+
+    assertFalse(new SInterfaceConceptAdapterById(id, "name").equals(new SConceptAdapterById(id, "name")));
+    assertFalse(new SConceptAdapterById(id, "name").equals(new SInterfaceConceptAdapterById(id, "name")));
   }
 
   @Test
   public void testPropertyEquality() {
     SPropertyId id = MetaIdFactory.propId(1, 1, 1, 1);
     SPropertyId id2 = MetaIdFactory.propId(2, 2, 2, 2);
-    SPropertyId invId = MetaIdFactory.INVALID_PROP_ID;
 
-    //regular
     assertTrue(new SPropertyAdapterById(id, "name1").equals(new SPropertyAdapterById(id, "name2")));
-    assertTrue(new SPropertyAdapterById(id, "name").equals(new SPropertyAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SPropertyAdapterById(invId, "name1").equals(new SPropertyAdapterById(invId, "name2")));
-    assertFalse(new SPropertyAdapterById(invId, "name").equals(new SPropertyAdapterById(id, "name")));
+    assertFalse(new SPropertyAdapterById(id, "name").equals(new SPropertyAdapterById(id2, "name")));
   }
 
   @Test
   public void testRefEquality() {
     SReferenceLinkId id = MetaIdFactory.refId(1, 1, 1, 1);
     SReferenceLinkId id2 = MetaIdFactory.refId(2, 2, 2, 2);
-    SReferenceLinkId invId = MetaIdFactory.INVALID_REF_ID;
 
-    //regular
     assertTrue(new SReferenceLinkAdapterById(id, "name1").equals(new SReferenceLinkAdapterById(id, "name2")));
-    assertTrue(new SReferenceLinkAdapterById(id, "name").equals(new SReferenceLinkAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SReferenceLinkAdapterById(invId, "name1").equals(new SReferenceLinkAdapterById(invId, "name2")));
-    assertFalse(new SReferenceLinkAdapterById(invId, "name").equals(new SReferenceLinkAdapterById(id, "name")));
+    assertFalse(new SReferenceLinkAdapterById(id, "name").equals(new SReferenceLinkAdapterById(id2, "name")));
   }
 
   @Test
   public void testLinkEquality() {
     SContainmentLinkId id = MetaIdFactory.linkId(1, 1, 1, 1);
     SContainmentLinkId id2 = MetaIdFactory.linkId(2, 2, 2, 2);
-    SContainmentLinkId invId = MetaIdFactory.INVALID_LINK_ID;
 
-    //regular
     assertTrue(new SContainmentLinkAdapterById(id, "name1").equals(new SContainmentLinkAdapterById(id, "name2")));
-    assertTrue(new SContainmentLinkAdapterById(id, "name").equals(new SContainmentLinkAdapterById(id2, "name")));
-
-    //invalids
-    assertFalse(new SContainmentLinkAdapterById(invId, "name1").equals(new SContainmentLinkAdapterById(invId, "name2")));
-    assertFalse(new SContainmentLinkAdapterById(invId, "name").equals(new SContainmentLinkAdapterById(id, "name")));
+    assertFalse(new SContainmentLinkAdapterById(id, "name").equals(new SContainmentLinkAdapterById(id2, "name")));
   }
 }
