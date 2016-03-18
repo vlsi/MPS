@@ -1,6 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.build.sandbox.testExternalBuild.buildTest" file="buildTest.xml" />
-  <dependency className="jetbrains.mps.build.sandbox.testExternalBuild.buildTest2" file="buildTest2.xml" />
-</dependenciesRoot>
+<dependenciesRoot />
 
