@@ -17517,78 +17517,28 @@
     <property role="3GE5qa" value="definition.rule.subtyping" />
     <node concept="3aamgX" id="hMfCNKB" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tpd4:h6sgdYK" resolve="AbstractSubtypingRule" />
+      <ref role="30HIoZ" to="tpd4:h6sgANa" resolve="SubtypingRule" />
       <node concept="gft3U" id="hMfIF44" role="1lVwrX">
-        <node concept="3uibUv" id="hMfIN3Q" role="gfFT$">
+        <node concept="3uibUv" id="4pmOwR3UdeP" role="gfFT$">
+          <ref role="3uigEE" to="qurh:~SubtypingRule_Runtime" resolve="SubtypingRule_Runtime" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="4pmOwR3UaPl" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tpd4:hjaFuhR" resolve="ComparisonRule" />
+      <node concept="gft3U" id="4pmOwR3UaPm" role="1lVwrX">
+        <node concept="3uibUv" id="4pmOwR3Udfs" role="gfFT$">
+          <ref role="3uigEE" to="qurh:~ComparisonRule_Runtime" resolve="ComparisonRule_Runtime" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="4pmOwR3UaVs" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tpd4:h6sgdYK" resolve="AbstractSubtypingRule" />
+      <node concept="gft3U" id="4pmOwR3UaVt" role="1lVwrX">
+        <node concept="3uibUv" id="4pmOwR3UaVu" role="gfFT$">
           <ref role="3uigEE" to="qurh:~AbstractSubtypingRule_Runtime" resolve="AbstractSubtypingRule_Runtime" />
-          <node concept="1ZhdrF" id="hMfJNLI" role="lGtFl">
-            <property role="2qtEX8" value="classifier" />
-            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
-            <node concept="3$xsQk" id="hMfJP17" role="3$ytzL">
-              <node concept="3clFbS" id="hMfJP18" role="2VODD2">
-                <node concept="3clFbJ" id="hMfJP1c" role="3cqZAp">
-                  <node concept="2OqwBi" id="hMfJP1d" role="3clFbw">
-                    <node concept="30H73N" id="hMfJP1e" role="2Oq$k0" />
-                    <node concept="1mIQ4w" id="hMfJP1f" role="2OqNvi">
-                      <node concept="chp4Y" id="hMfJP1g" role="cj9EA">
-                        <ref role="cht4Q" to="tpd4:h6sgANa" resolve="SubtypingRule" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="hMfJP1h" role="3clFbx">
-                    <node concept="3cpWs6" id="hMfJP1i" role="3cqZAp">
-                      <node concept="2OqwBi" id="hMfJP1j" role="3cqZAk">
-                        <node concept="2c44tf" id="hMfJP1k" role="2Oq$k0">
-                          <node concept="3uibUv" id="hMfJP1l" role="2c44tc">
-                            <ref role="3uigEE" to="qurh:~SubtypingRule_Runtime" resolve="SubtypingRule_Runtime" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="hMfJP1m" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:g7uigIF" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="hMfJP1n" role="3cqZAp">
-                  <node concept="3clFbS" id="hMfJP1o" role="3clFbx">
-                    <node concept="3cpWs6" id="hMfJP1p" role="3cqZAp">
-                      <node concept="2OqwBi" id="hMfJP1q" role="3cqZAk">
-                        <node concept="2c44tf" id="hMfJP1r" role="2Oq$k0">
-                          <node concept="3uibUv" id="hMfJP1s" role="2c44tc">
-                            <ref role="3uigEE" to="qurh:~ComparisonRule_Runtime" resolve="ComparisonRule_Runtime" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="hMfJP1t" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:g7uigIF" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="hMfJP1u" role="3clFbw">
-                    <node concept="30H73N" id="hMfJP1v" role="2Oq$k0" />
-                    <node concept="1mIQ4w" id="hMfJP1w" role="2OqNvi">
-                      <node concept="chp4Y" id="hMfJP1x" role="cj9EA">
-                        <ref role="cht4Q" to="tpd4:hjaFuhR" resolve="ComparisonRule" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="hMfJP1y" role="3cqZAp">
-                  <node concept="2OqwBi" id="hMfJP1z" role="3clFbG">
-                    <node concept="2c44tf" id="hMfJP1$" role="2Oq$k0">
-                      <node concept="3uibUv" id="hMfJP1_" role="2c44tc">
-                        <ref role="3uigEE" to="qurh:~AbstractSubtypingRule_Runtime" resolve="AbstractSubtypingRule_Runtime" />
-                      </node>
-                    </node>
-                    <node concept="3TrEf2" id="hMfJP1A" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:g7uigIF" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
