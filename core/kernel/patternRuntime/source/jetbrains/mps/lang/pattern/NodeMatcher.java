@@ -177,7 +177,7 @@ public final class NodeMatcher {
       SReference r2 = against.getReference(r.getLink());
       SNodeReference actualTarget = r2 == null ? null : r2.getTargetNodeReference();
       if (ref2var.containsKey(r.getLink())) {
-        getValues().put(ref2var.get(r.getLink()), actualTarget);
+        getValues().put(ref2var.get(r.getLink()), actualTarget, r2 == null ? null : r2.getTargetNode());
       } else {
         final SNodeReference expectedTarget = r.getTargetNodeReference();
         if (!expectedTarget.equals(actualTarget)) {

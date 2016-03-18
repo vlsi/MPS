@@ -127,7 +127,11 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
     // NOTE, shall tolerate null repo unless every single piece of code that expects StaticReference of a newly created node
     // hanging in the air to resolve. @see StaticReference#getTargetSModel
-    return SModelRepository.getInstance().getModelDescriptor(this);
+    if (SModelRepository.getInstance() != null) {
+      // could be null in tests
+      return SModelRepository.getInstance().getModelDescriptor(this);
+    }
+    return null;
   }
 
   @Override

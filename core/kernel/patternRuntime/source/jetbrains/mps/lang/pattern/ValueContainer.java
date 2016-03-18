@@ -42,7 +42,10 @@ public final class ValueContainer {
     myValues.put(variableName, value);
   }
 
-  public void put(String variableName, SNodeReference target) {
+  public void put(String variableName, SNodeReference targetRef, SNode target) {
+    // in tests, we can't set real nodes (due to SReference implementation rigidness)
+    // hence we keep extra node ptr.
+    myValues.put("SNodeReference:" + variableName, targetRef);
     myValues.put(variableName, target);
   }
 
@@ -61,8 +64,17 @@ public final class ValueContainer {
   }
 
   @Nullable
-  public SNodeReference getRefTarget(String variableName) {
-    Object v = myValues.get(variableName);
+  public SNode getRefTarget(String variableName) {
+    // although could have been replaced with getNode(), I'd like to keep
+    // distinct accessor for link pattern variables, just in case I'd need it later.
+    return getNode(variableName);
+  }
+
+  /**
+   * For testing purposes
+   */
+  /*package*/ SNodeReference getRefTargetPointer(String variableName) {
+    Object v = myValues.get("SNodeReference:" + variableName);
     return v instanceof SNodeReference ? (SNodeReference) v : null;
   }
 

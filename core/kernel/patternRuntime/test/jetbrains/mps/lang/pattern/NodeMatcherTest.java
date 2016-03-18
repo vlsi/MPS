@@ -181,8 +181,8 @@ public class NodeMatcherTest {
 
     final boolean matched = top.match(patternNode, actualNode);
     myErrors.checkThat("Shall match", matched, Matchers.equalTo(true));
-    myErrors.checkThat(vc.getRefTarget("r1"), Matchers.equalTo(targetNodeRef));
-    myErrors.checkThat(vc.getRefTarget("r2"), Matchers.equalTo(targetNodeRef));
+    myErrors.checkThat(vc.getRefTargetPointer("r1"), Matchers.equalTo(targetNodeRef));
+    myErrors.checkThat(vc.getRefTargetPointer("r2"), Matchers.equalTo(targetNodeRef));
   }
 
   @Test
