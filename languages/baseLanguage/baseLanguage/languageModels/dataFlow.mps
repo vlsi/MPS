@@ -138,6 +138,7 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
+      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -236,20 +237,16 @@
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="2879868312062962308" name="jetbrains.mps.lang.pattern.structure.OrPattern" flags="ng" index="2rBv9W">
         <child id="2879868312062970574" name="clause" index="2rBp8Q" />
-        <child id="4264731254635442558" name="variable" index="W8AW5" />
       </concept>
       <concept id="4413230749907733332" name="jetbrains.mps.lang.pattern.structure.ActionAsPattern" flags="ng" index="_azEC">
         <child id="4413230749907733337" name="action" index="_azE_" />
         <child id="8990057180226016446" name="position" index="2X4kRx" />
       </concept>
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
-      </concept>
-      <concept id="4264731254635442556" name="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference" flags="nn" index="W8AW7">
-        <reference id="4264731254635442557" name="declaration" index="W8AW6" />
       </concept>
       <concept id="3133930811460119173" name="jetbrains.mps.lang.pattern.structure.PatternVariableReference" flags="nn" index="3kLDZM">
         <reference id="3133930811460119174" name="variable" index="3kLDZL" />
@@ -4798,40 +4795,49 @@
     <property role="TrG5h" value="RuleAssertNotNull" />
     <property role="3GE5qa" value="nullable" />
     <ref role="3IfaGV" node="5XiNbvoyw3$" resolve="Nullable" />
-    <node concept="2ZIVRk" id="4Y5m61$KwSG" role="2ZI6Zx">
-      <node concept="2DMOqp" id="4Y5m61$KwSH" role="2ZIUrP">
-        <node concept="1gVbGN" id="4Y5m61$KwSI" role="2DMOqq">
-          <node concept="2rBv9W" id="4Y5m61$Ky5f" role="1gVkn0">
-            <node concept="2DMOqr" id="4Y5m61$Ky5l" role="W8AW5">
-              <property role="2DMOqs" value="p" />
-            </node>
-            <node concept="1OOL4P" id="4Y5m61$Ky5g" role="2rBp8Q">
-              <node concept="3y3z36" id="6KmSCxQKiWx" role="2DMOqq">
-                <node concept="W8AW7" id="6KmSCxQKiWy" role="3uHU7B">
-                  <ref role="W8AW6" node="4Y5m61$Ky5l" resolve="#p" />
-                </node>
-                <node concept="10Nm6u" id="6KmSCxQKiWz" role="3uHU7w" />
-              </node>
-            </node>
-            <node concept="1OOL4P" id="4Y5m61$Ky5h" role="2rBp8Q">
-              <node concept="3y3z36" id="6KmSCxQKiW$" role="2DMOqq">
-                <node concept="10Nm6u" id="6KmSCxQKiW_" role="3uHU7B" />
-                <node concept="W8AW7" id="6KmSCxQKiWA" role="3uHU7w">
-                  <ref role="W8AW6" node="4Y5m61$Ky5l" resolve="#p" />
-                </node>
-              </node>
-            </node>
-            <node concept="_azEC" id="1iKpmYxrlUU" role="lGtFl">
-              <property role="2DMOqs" value="action_var_5730083271929373007" />
-              <node concept="3s5BLU" id="1iKpmYxrlUX" role="2X4kRx" />
-              <node concept="2qeTo9" id="1iKpmYxrmcQ" role="_azE_">
-                <node concept="2qfb11" id="1iKpmYxrmcT" role="2qf8f6">
-                  <ref role="2qfb1S" node="5XiNbvoyw3J" resolve="notNull" />
-                  <node concept="3kLDZM" id="1iKpmYxrmcV" role="2qfb10">
-                    <ref role="3kLDZL" node="4Y5m61$Ky5l" resolve="#p" />
+    <node concept="2ZIVRk" id="24Vo$dbcuKH" role="2ZI6Zx">
+      <node concept="2DMOqp" id="24Vo$dbcuKI" role="2ZIUrP">
+        <node concept="2c44tf" id="24Vo$dbcuKJ" role="HM535">
+          <node concept="1gVbGN" id="24Vo$dbcuKK" role="2c44tc">
+            <node concept="33vP2n" id="24Vo$dbcuKL" role="1gVkn0">
+              <node concept="_azEC" id="24Vo$dbcuKM" role="lGtFl">
+                <property role="2DMOqs" value="action_var_2394615668041443703" />
+                <node concept="2qeTo9" id="24Vo$dbcuKN" role="_azE_">
+                  <node concept="3s5BLY" id="24Vo$dbcuKO" role="IgiVj" />
+                  <node concept="2qfb11" id="24Vo$dbcuKP" role="2qf8f6">
+                    <ref role="2qfb1S" node="5XiNbvoyw3J" resolve="notNull" />
+                    <node concept="3kLDZM" id="24Vo$dbcuKQ" role="2qfb10">
+                      <ref role="3kLDZL" node="24Vo$dbcuL4" resolve="#p" />
+                    </node>
                   </node>
                 </node>
-                <node concept="3s5BLY" id="1iKpmYxrmcS" role="IgiVj" />
+                <node concept="3s5BLU" id="24Vo$dbcuKR" role="2X4kRx" />
+              </node>
+              <node concept="2rBv9W" id="24Vo$dbcuKS" role="lGtFl">
+                <node concept="1OOL4P" id="24Vo$dbcuKT" role="2rBp8Q">
+                  <node concept="2c44tf" id="24Vo$dbcuKU" role="HM535">
+                    <node concept="3y3z36" id="24Vo$dbcuKV" role="2c44tc">
+                      <node concept="33vP2n" id="24Vo$dbcuKW" role="3uHU7B">
+                        <node concept="2DMOqr" id="24Vo$dbcuKX" role="lGtFl">
+                          <property role="2DMOqs" value="p" />
+                        </node>
+                      </node>
+                      <node concept="10Nm6u" id="24Vo$dbcuKY" role="3uHU7w" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1OOL4P" id="24Vo$dbcuKZ" role="2rBp8Q">
+                  <node concept="2c44tf" id="24Vo$dbcuL0" role="HM535">
+                    <node concept="3y3z36" id="24Vo$dbcuL1" role="2c44tc">
+                      <node concept="10Nm6u" id="24Vo$dbcuL2" role="3uHU7B" />
+                      <node concept="33vP2n" id="24Vo$dbcuL3" role="3uHU7w">
+                        <node concept="2DMOqr" id="24Vo$dbcuL4" role="lGtFl">
+                          <property role="2DMOqs" value="p" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

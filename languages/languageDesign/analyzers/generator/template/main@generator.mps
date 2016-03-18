@@ -212,10 +212,6 @@
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
-      <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
-        <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
-        <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
-      </concept>
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -321,7 +317,6 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -1724,42 +1719,13 @@
       </node>
       <node concept="3Tm1VV" id="5420fVrpJ4c" role="1B3o_S" />
       <node concept="3clFbS" id="5420fVrpJ4d" role="3clF47">
-        <node concept="3clFbF" id="5420fVrpJ4e" role="3cqZAp">
-          <node concept="35c_gC" id="5420fVrpJ4f" role="3clFbG">
-            <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-            <node concept="xERo3" id="5420fVrq6Tz" role="lGtFl">
-              <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
-              <node concept="3NFfHV" id="5420fVrq75D" role="xEYEz">
-                <node concept="3clFbS" id="5420fVrq75E" role="2VODD2">
-                  <node concept="3clFbF" id="5420fVrq77d" role="3cqZAp">
-                    <node concept="2OqwBi" id="5420fVrq7sr" role="3clFbG">
-                      <node concept="2OqwBi" id="5420fVrq77g" role="2Oq$k0">
-                        <node concept="2OqwBi" id="5420fVrq77h" role="2Oq$k0">
-                          <node concept="2OqwBi" id="5420fVrq77i" role="2Oq$k0">
-                            <node concept="1PxgMI" id="5420fVrq77j" role="2Oq$k0">
-                              <ref role="1m5ApE" to="bj1v:2S_HFuhBwHz" resolve="PatternCondition" />
-                              <node concept="2OqwBi" id="5420fVrq77k" role="1m5AlR">
-                                <node concept="30H73N" id="5420fVrq77l" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="5420fVrq77m" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="bj1v:2S_HFuhBt_m" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="5420fVrq77n" role="2OqNvi">
-                              <ref role="3Tt5mk" to="bj1v:2S_HFuhBx12" />
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="5420fVrq77o" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp3t:gyDMOui" />
-                          </node>
-                        </node>
-                        <node concept="2yIwOk" id="5420fVrq77p" role="2OqNvi" />
-                      </node>
-                      <node concept="FGMqu" id="5420fVrq7E8" role="2OqNvi" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+        <node concept="3cpWs6" id="24Vo$dbcCcM" role="3cqZAp">
+          <node concept="2OqwBi" id="24Vo$dbcClK" role="3cqZAk">
+            <node concept="37vLTw" id="24Vo$dbcCiX" role="2Oq$k0">
+              <ref role="3cqZAo" node="3OYWvKo5tAi" resolve="myPattern" />
+            </node>
+            <node concept="liA8E" id="24Vo$dbcCrE" role="2OqNvi">
+              <ref role="37wK5l" to="7jhi:~GeneratedMatchingPattern.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
             </node>
           </node>
         </node>

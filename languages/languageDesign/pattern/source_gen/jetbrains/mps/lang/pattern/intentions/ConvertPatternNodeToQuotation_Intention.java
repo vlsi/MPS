@@ -53,7 +53,7 @@ public final class ConvertPatternNodeToQuotation_Intention extends IntentionDesc
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert Legacy Expression to Use Quotations";
+      return "Convert Pattern to Use Quotations";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

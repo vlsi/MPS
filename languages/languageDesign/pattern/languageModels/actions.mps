@@ -88,6 +88,8 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -95,8 +97,9 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
-        <child id="1140131861877" name="replacementNode" index="1P9ThW" />
+      <concept id="6407023681583040688" name="jetbrains.mps.lang.smodel.structure.AllAttributeQualifier" flags="ng" index="3CFTEB" />
+      <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
+        <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -114,6 +117,10 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
     </language>
   </registry>
@@ -142,10 +149,15 @@
                 </node>
               </node>
               <node concept="3clFbF" id="2vRmfyWrkhD" role="3cqZAp">
-                <node concept="2OqwBi" id="2vRmfyWrkhF" role="3clFbG">
-                  <node concept="Cj7Ep" id="2vRmfyWrkhE" role="2Oq$k0" />
-                  <node concept="1P9Npp" id="2vRmfyWrkhJ" role="2OqNvi">
-                    <node concept="37vLTw" id="3GM_nagT_79" role="1P9ThW">
+                <node concept="2OqwBi" id="24Vo$dbcOLF" role="3clFbG">
+                  <node concept="2OqwBi" id="24Vo$dbcOrW" role="2Oq$k0">
+                    <node concept="Cj7Ep" id="2vRmfyWrkhE" role="2Oq$k0" />
+                    <node concept="3CFZ6_" id="24Vo$dbcOvn" role="2OqNvi">
+                      <node concept="3CFTEB" id="24Vo$dbcOx3" role="3CFYIz" />
+                    </node>
+                  </node>
+                  <node concept="TSZUe" id="24Vo$dbcQ9p" role="2OqNvi">
+                    <node concept="37vLTw" id="24Vo$dbcQfM" role="25WWJ7">
                       <ref role="3cqZAo" node="2vRmfyWrkhN" resolve="orPattern" />
                     </node>
                   </node>
@@ -153,7 +165,13 @@
               </node>
               <node concept="3clFbF" id="2vRmfyWrkjc" role="3cqZAp">
                 <node concept="37vLTI" id="4dzCQkRGiSu" role="3clFbG">
-                  <node concept="Cj7Ep" id="4dzCQkRGiSx" role="37vLTx" />
+                  <node concept="2OqwBi" id="24Vo$dbcQPJ" role="37vLTx">
+                    <node concept="2OqwBi" id="24Vo$dbcQxS" role="2Oq$k0">
+                      <node concept="Cj7Ep" id="4dzCQkRGiSx" role="2Oq$k0" />
+                      <node concept="2yIwOk" id="24Vo$dbcQGk" role="2OqNvi" />
+                    </node>
+                    <node concept="LFhST" id="24Vo$dbcR2$" role="2OqNvi" />
+                  </node>
                   <node concept="2OqwBi" id="4tPQHKlnLHx" role="37vLTJ">
                     <node concept="2OqwBi" id="4dzCQkRGiSp" role="2Oq$k0">
                       <node concept="2OqwBi" id="4dzCQkRGiSk" role="2Oq$k0">
