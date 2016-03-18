@@ -2,14 +2,14 @@
 <model ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
@@ -71,11 +71,13 @@
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
-    <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
+    <import index="l9ag" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit(Testbench/)" />
+    <import index="zu0" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.util(Testbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -235,7 +237,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -549,15 +551,15 @@
               <ref role="3uigEE" to="1fjm:~Program" resolve="Program" />
             </node>
             <node concept="2OqwBi" id="hG88CcJ" role="33vP2m">
+              <node concept="2ShNRf" id="qrAFe9kp5s" role="2Oq$k0">
+                <node concept="1pGfFk" id="qrAFe9kp5t" role="2ShVmc">
+                  <ref role="37wK5l" to="aplb:4mpxoQud1f6" resolve="MPSProgramBuilder" />
+                </node>
+              </node>
               <node concept="liA8E" id="hG88Dgq" role="2OqNvi">
                 <ref role="37wK5l" to="1fjm:~StructuralProgramBuilder.buildProgram(java.lang.Object):jetbrains.mps.lang.dataFlow.framework.Program" resolve="buildProgram" />
                 <node concept="37vLTw" id="2BHiRxgm8Jr" role="37wK5m">
                   <ref role="3cqZAo" node="hG87Lh4" resolve="node" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="qrAFe9kp5s" role="2Oq$k0">
-                <node concept="1pGfFk" id="qrAFe9kp5t" role="2ShVmc">
-                  <ref role="37wK5l" to="aplb:4mpxoQud1f6" resolve="MPSProgramBuilder" />
                 </node>
               </node>
             </node>
@@ -2336,6 +2338,17 @@
       <node concept="3cqZAl" id="4cFHg$8nt7y" role="3clF45" />
       <node concept="3Tm1VV" id="4cFHg$8nt7z" role="1B3o_S" />
       <node concept="3clFbS" id="4cFHg$8nt7$" role="3clF47">
+        <node concept="3cpWs8" id="4Zaa5llGHNy" role="3cqZAp">
+          <node concept="3cpWsn" id="4Zaa5llGHNz" role="3cpWs9">
+            <property role="TrG5h" value="appender" />
+            <node concept="3uibUv" id="4Zaa5llGVPt" role="1tU5fm">
+              <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+            </node>
+            <node concept="1rXfSq" id="4Zaa5llGHN$" role="33vP2m">
+              <ref role="37wK5l" node="8$1$D__C$O" resolve="installAppender" />
+            </node>
+          </node>
+        </node>
         <node concept="2GUZhq" id="1l3HexGi0xp" role="3cqZAp">
           <node concept="3clFbS" id="1l3HexGi0xr" role="2GV8ay">
             <node concept="3clFbF" id="4cFHg$8nt7N" role="3cqZAp">
@@ -2359,8 +2372,48 @@
                 <ref role="37wK5l" node="2luRcJo$68D" resolve="dispose" />
               </node>
             </node>
+            <node concept="3clFbF" id="4Zaa5llGVx0" role="3cqZAp">
+              <node concept="2OqwBi" id="4Zaa5llGVBx" role="3clFbG">
+                <node concept="37vLTw" id="4Zaa5llGVwY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+                <node concept="liA8E" id="4Zaa5llGVHg" role="2OqNvi">
+                  <ref role="37wK5l" to="zu0:~CachingAppender.sealEvents():void" resolve="sealEvents" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="4Zaa5llGW3M" role="3cqZAp">
+              <node concept="3clFbS" id="4Zaa5llGW3O" role="3clFbx">
+                <node concept="YS8fn" id="4Zaa5llGWB9" role="3cqZAp">
+                  <node concept="2ShNRf" id="4Zaa5llGWG2" role="YScLw">
+                    <node concept="1pGfFk" id="4Zaa5llGYtw" role="2ShVmc">
+                      <ref role="37wK5l" to="l9ag:~UncleanTestExecutionException.&lt;init&gt;(jetbrains.mps.testbench.util.Output...)" resolve="UncleanTestExecutionException" />
+                      <node concept="37vLTw" id="4Zaa5llGZ_7" role="37wK5m">
+                        <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4Zaa5llGWop" role="3clFbw">
+                <node concept="37vLTw" id="4Zaa5llGWi7" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+                <node concept="liA8E" id="4Zaa5llGWuh" role="2OqNvi">
+                  <ref role="37wK5l" to="zu0:~CachingAppender.isNotEmpty():boolean" resolve="isNotEmpty" />
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="3clFbS" id="1l3HexGi0xs" role="2GVbov">
+            <node concept="3clFbF" id="4Zaa5llGI7C" role="3cqZAp">
+              <node concept="1rXfSq" id="4Zaa5llGI7D" role="3clFbG">
+                <ref role="37wK5l" node="8$1$D__LNI" resolve="uninstallAppender" />
+                <node concept="37vLTw" id="4Zaa5llGI7E" role="37wK5m">
+                  <ref role="3cqZAo" node="4Zaa5llGHNz" resolve="appender" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="5QS$Mto5BI4" role="3cqZAp">
               <node concept="3cpWsn" id="5QS$Mto5BI5" role="3cpWs9">
                 <property role="TrG5h" value="ts" />
@@ -3370,6 +3423,7 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
+      <node concept="3Tm6S6" id="4ojx_DmeWFm" role="1B3o_S" />
       <node concept="3clFbS" id="17A$fe9mbSI" role="3clF47">
         <node concept="3SKdUt" id="17A$fe9mbSJ" role="3cqZAp">
           <node concept="3SKdUq" id="17A$fe9mbSK" role="3SKWNk">
@@ -3428,7 +3482,6 @@
       <node concept="3uibUv" id="17A$fe9mbSH" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
       </node>
-      <node concept="3Tm6S6" id="4ojx_DmeWFm" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="62Gc_ZTkHcs" role="jymVt" />
     <node concept="3clFb_" id="62Gc_ZTkJBT" role="jymVt">
@@ -3678,6 +3731,114 @@
       </node>
       <node concept="3uibUv" id="62Gc_ZTkJCm" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8$1$D__xrN" role="jymVt" />
+    <node concept="3clFb_" id="8$1$D__C$O" role="jymVt">
+      <property role="TrG5h" value="installAppender" />
+      <node concept="3uibUv" id="4Zaa5llGRA$" role="3clF45">
+        <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+      </node>
+      <node concept="3Tm6S6" id="8$1$D__DFg" role="1B3o_S" />
+      <node concept="3clFbS" id="8$1$D__C$S" role="3clF47">
+        <node concept="3cpWs8" id="8$1$D__UDs" role="3cqZAp">
+          <node concept="3cpWsn" id="8$1$D__UDt" role="3cpWs9">
+            <property role="TrG5h" value="rootLogger" />
+            <node concept="3uibUv" id="8$1$D__UDr" role="1tU5fm">
+              <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+            <node concept="2YIFZM" id="8$1$D__UG0" role="33vP2m">
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
+              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4Zaa5llGLDy" role="3cqZAp">
+          <node concept="3cpWsn" id="4Zaa5llGLDz" role="3cpWs9">
+            <property role="TrG5h" value="appender" />
+            <node concept="3uibUv" id="4Zaa5llGLD$" role="1tU5fm">
+              <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+            </node>
+            <node concept="2ShNRf" id="4Zaa5llGMXo" role="33vP2m">
+              <node concept="1pGfFk" id="4Zaa5llGMXn" role="2ShVmc">
+                <ref role="37wK5l" to="zu0:~CachingAppender.&lt;init&gt;(org.apache.log4j.Level)" resolve="CachingAppender" />
+                <node concept="10M0yZ" id="4Zaa5llGNfa" role="37wK5m">
+                  <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
+                  <ref role="3cqZAo" to="q7tw:~Level.ERROR" resolve="ERROR" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4xJw7BvfGkh" role="3cqZAp">
+          <node concept="1rXfSq" id="4xJw7BvfGkf" role="3clFbG">
+            <ref role="37wK5l" node="4xJw7BvfwE8" resolve="populateExpectedEvents" />
+            <node concept="37vLTw" id="4xJw7BvfHke" role="37wK5m">
+              <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="8$1$D_A_$G" role="3cqZAp">
+          <node concept="2OqwBi" id="8$1$D_A_C_" role="3clFbG">
+            <node concept="37vLTw" id="8$1$D_A_$E" role="2Oq$k0">
+              <ref role="3cqZAo" node="8$1$D__UDt" resolve="rootLogger" />
+            </node>
+            <node concept="liA8E" id="8$1$D_A_FT" role="2OqNvi">
+              <ref role="37wK5l" to="q7tw:~Category.addAppender(org.apache.log4j.Appender):void" resolve="addAppender" />
+              <node concept="37vLTw" id="4Zaa5llGOvi" role="37wK5m">
+                <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="8$1$D_ADpR" role="3cqZAp">
+          <node concept="37vLTw" id="4Zaa5llGQo1" role="3cqZAk">
+            <ref role="3cqZAo" node="4Zaa5llGLDz" resolve="appender" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4xJw7BvfqWP" role="jymVt" />
+    <node concept="3clFb_" id="4xJw7BvfwE8" role="jymVt">
+      <property role="TrG5h" value="populateExpectedEvents" />
+      <node concept="37vLTG" id="4xJw7BvfEgT" role="3clF46">
+        <property role="TrG5h" value="appender" />
+        <node concept="3uibUv" id="4xJw7BvfFda" role="1tU5fm">
+          <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="4xJw7BvfwEa" role="3clF45" />
+      <node concept="3Tmbuc" id="4xJw7Bvfy29" role="1B3o_S" />
+      <node concept="3clFbS" id="4xJw7BvfwEc" role="3clF47">
+        <node concept="3clFbH" id="4xJw7BvfFdN" role="3cqZAp" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="8$1$D__K_y" role="jymVt" />
+    <node concept="3clFb_" id="8$1$D__LNI" role="jymVt">
+      <property role="TrG5h" value="uninstallAppender" />
+      <node concept="3cqZAl" id="8$1$D__LNK" role="3clF45" />
+      <node concept="3Tm6S6" id="8$1$D__MUf" role="1B3o_S" />
+      <node concept="3clFbS" id="8$1$D__LNM" role="3clF47">
+        <node concept="3clFbF" id="8$1$D_AFt1" role="3cqZAp">
+          <node concept="2OqwBi" id="8$1$D_AFtM" role="3clFbG">
+            <node concept="2YIFZM" id="8$1$D_AFt3" role="2Oq$k0">
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
+              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+            <node concept="liA8E" id="8$1$D_AFzq" role="2OqNvi">
+              <ref role="37wK5l" to="q7tw:~Category.removeAppender(org.apache.log4j.Appender):void" resolve="removeAppender" />
+              <node concept="37vLTw" id="8$1$D_AFDI" role="37wK5m">
+                <ref role="3cqZAo" node="8$1$D_AEud" resolve="appender" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="8$1$D_AEud" role="3clF46">
+        <property role="TrG5h" value="appender" />
+        <node concept="3uibUv" id="4Zaa5llGSOc" role="1tU5fm">
+          <ref role="3uigEE" to="zu0:~CachingAppender" resolve="CachingAppender" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="hPMdj4f" role="1B3o_S" />
@@ -7390,19 +7551,19 @@
         </node>
         <node concept="3clFbF" id="18jf_F1WDwe" role="3cqZAp">
           <node concept="2OqwBi" id="18jf_F1WDwg" role="3clFbG">
-            <node concept="liA8E" id="18jf_F1WDwi" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-              <node concept="2YIFZM" id="18jf_F1WDwj" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="27e_8zUv4H8" role="2Oq$k0">
               <node concept="37vLTw" id="27e_8zUv4H9" role="2Oq$k0">
                 <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
               </node>
               <node concept="liA8E" id="27e_8zUv4Ha" role="2OqNvi">
                 <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
+              </node>
+            </node>
+            <node concept="liA8E" id="18jf_F1WDwi" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+              <node concept="2YIFZM" id="18jf_F1WDwj" role="37wK5m">
+                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
               </node>
             </node>
           </node>

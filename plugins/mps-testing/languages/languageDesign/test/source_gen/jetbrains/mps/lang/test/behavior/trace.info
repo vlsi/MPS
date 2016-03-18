@@ -94,6 +94,9 @@
     <file name="InvokeIntentionStatement_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.InvokeIntentionStatement_BehaviorDescriptor" />
     </file>
+    <file name="LogEvent_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.LogEvent_BehaviorDescriptor" />
+    </file>
     <file name="MPSActionReference_BehaviorDescriptor.java">
       <unit at="12,0,24,0" name="jetbrains.mps.lang.test.behavior.MPSActionReference_BehaviorDescriptor" />
     </file>

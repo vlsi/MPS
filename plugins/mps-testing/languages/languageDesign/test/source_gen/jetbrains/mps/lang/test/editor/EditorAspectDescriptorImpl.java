@@ -62,6 +62,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, "jetbrains.mps.lang.test.structure.InvokeIntentionStatement"))) {
         return Collections.<ConceptEditor>singletonList(new InvokeIntentionStatement_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L, "jetbrains.mps.lang.test.structure.LogEvent"))) {
+        return Collections.<ConceptEditor>singletonList(new LogEvent_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L, "jetbrains.mps.lang.test.structure.MPSActionReference"))) {
         return Collections.<ConceptEditor>singletonList(new MPSActionReference_Editor());
       }

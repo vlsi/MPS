@@ -113,6 +113,12 @@
       </concept>
     </language>
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
+      <concept id="7023088407745947252" name="jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer" flags="ng" index="8EQf6">
+        <child id="7023088407745954389" name="children" index="8ESvB" />
+      </concept>
+      <concept id="7023088407745954385" name="jetbrains.mps.lang.editor.editorTest.structure.SelectionChild" flags="ng" index="8ESvz">
+        <property id="7023088407745954386" name="flag" index="8ESvw" />
+      </concept>
       <concept id="2399036385470202575" name="jetbrains.mps.lang.editor.editorTest.structure.ClassReference" flags="ng" index="3AuPgI">
         <reference id="2399036385470202794" name="class" index="3AuPlb" />
       </concept>
@@ -1027,6 +1033,64 @@
       <node concept="yd1bK" id="65Sh$Mnx1Fe" role="3cqZAp">
         <node concept="pLAjd" id="65Sh$Mnx1Fg" role="yd6KS">
           <property role="pLAjf" value="VK_DELETE" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="65R1r9DR62d">
+    <property role="TrG5h" value="SelectPrevious_InChildListWithFilter" />
+    <property role="3GE5qa" value="nextPrev" />
+    <node concept="8EQf6" id="5krAT4QHW_S" role="LiRBU">
+      <node concept="8ESvz" id="5krAT4QI5UJ" role="8ESvB">
+        <property role="8ESvw" value="true" />
+        <node concept="LIFWc" id="5krAT4QI5YW" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_eh75ji_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="5krAT4QI67r" role="LjaKd">
+      <node concept="2HxZob" id="5krAT4QI67p" role="3cqZAp">
+        <node concept="1iFQzN" id="5krAT4QI67v" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdp" resolve="SelectPrevious" />
+        </node>
+      </node>
+    </node>
+    <node concept="8EQf6" id="5krAT4QI6$U" role="LiZbd">
+      <node concept="8ESvz" id="5krAT4QI6$V" role="8ESvB">
+        <property role="8ESvw" value="true" />
+        <node concept="LIFWc" id="5krAT4QI6$W" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_eh75ji_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="5krAT4QI5YR">
+    <property role="TrG5h" value="SelectNext_InChildListWithFilter" />
+    <property role="3GE5qa" value="nextPrev" />
+    <node concept="8EQf6" id="5krAT4QI5YS" role="LiRBU">
+      <node concept="8ESvz" id="5krAT4QI5YT" role="8ESvB">
+        <property role="8ESvw" value="true" />
+        <node concept="LIFWc" id="5krAT4QI5YU" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_eh75ji_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="5krAT4QI6fu" role="LjaKd">
+      <node concept="2HxZob" id="5krAT4QI6fs" role="3cqZAp">
+        <node concept="1iFQzN" id="5krAT4QI6fy" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3E$GKBvNxdm" resolve="SelectNext" />
+        </node>
+      </node>
+    </node>
+    <node concept="8EQf6" id="5krAT4QI6$O" role="LiZbd">
+      <node concept="8ESvz" id="5krAT4QI6$P" role="8ESvB">
+        <property role="8ESvw" value="true" />
+        <node concept="LIFWc" id="5krAT4QI6$Q" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_eh75ji_a" />
         </node>
       </node>
     </node>

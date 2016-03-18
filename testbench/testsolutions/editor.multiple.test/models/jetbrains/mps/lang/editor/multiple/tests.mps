@@ -1529,22 +1529,22 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="1PhFbPjmtSF" role="3cqZAp">
+                <node concept="2OqwBi" id="1PhFbPjmwyH" role="3clFbG">
+                  <node concept="2OqwBi" id="1PhFbPjmtYU" role="2Oq$k0">
+                    <node concept="37vLTw" id="1PhFbPjmtSD" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1PhFbPjmf16" resolve="component" />
+                    </node>
+                    <node concept="liA8E" id="1PhFbPjmwxQ" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1PhFbPjmwDf" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorContext.flushEvents():void" resolve="flushEvents" />
+                  </node>
+                </node>
+              </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbF" id="1PhFbPjmtSF" role="3cqZAp">
-        <node concept="2OqwBi" id="1PhFbPjmwyH" role="3clFbG">
-          <node concept="2OqwBi" id="1PhFbPjmtYU" role="2Oq$k0">
-            <node concept="37vLTw" id="1PhFbPjmtSD" role="2Oq$k0">
-              <ref role="3cqZAo" node="1PhFbPjmf16" resolve="component" />
-            </node>
-            <node concept="liA8E" id="1PhFbPjmwxQ" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-            </node>
-          </node>
-          <node concept="liA8E" id="1PhFbPjmwDf" role="2OqNvi">
-            <ref role="37wK5l" to="exr9:~EditorContext.flushEvents():void" resolve="flushEvents" />
           </node>
         </node>
       </node>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/1578746599575947042">
+    <file name="ChildWithDirectCycle_card1_Test.java">
+      <node id="1578746599575947042" at="17,66,18,112" concept="1" />
+      <node id="1578746599575947042" at="18,112,19,118" concept="1" />
+      <node id="1578746599575947042" at="26,51,27,63" concept="1" />
+      <node id="1578746599575947280" at="27,63,28,39" concept="1" />
+      <node id="1578746599575947144" at="28,39,29,76" concept="1" />
+      <node id="1578746599575947042" at="32,69,33,53" concept="1" />
+      <node id="1578746599575947042" at="14,0,16,0" concept="0" trace="ChildWithDirectCycle_card1_Test#()V" />
+      <node id="1578746599575947042" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="1578746599575947042" at="31,0,35,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="1578746599575947042" at="16,0,21,0" concept="2" trace="test_ChildWithDirectCycle_card1#()V" />
+      <node id="1578746599575947042" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1578746599575947042" at="14,44,14,44" />
+      <scope id="1578746599575947042" at="23,23,23,23" />
+      <scope id="1578746599575947042" at="32,69,33,53" />
+      <scope id="1578746599575947042" at="14,0,16,0" />
+      <scope id="1578746599575947042" at="17,66,19,118" />
+      <scope id="1578746599575947042" at="23,0,25,0" />
+      <scope id="1578746599575947042" at="26,51,29,76" />
+      <scope id="1578746599575947042" at="31,0,35,0">
+        <var name="appender" id="1578746599575947042" />
+      </scope>
+      <scope id="1578746599575947042" at="16,0,21,0" />
+      <scope id="1578746599575947042" at="25,0,31,0" />
+      <unit id="1578746599575947042" at="21,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test$TestBody" />
+      <unit id="1578746599575947042" at="12,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/7454474523886895226">
+    <file name="ChildWithTwoGrandChildrenInDifferentRoles_Test.java">
+      <node id="7454474523886895226" at="15,81,16,112" concept="1" />
+      <node id="7454474523886895226" at="16,112,17,133" concept="1" />
+      <node id="7454474523886895226" at="24,51,25,63" concept="1" />
+      <node id="7454474523886895230" at="25,63,26,35" concept="1" />
+      <node id="7454474523886895231" at="26,35,27,76" concept="1" />
+      <node id="7454474523886895226" at="12,0,14,0" concept="0" trace="ChildWithTwoGrandChildrenInDifferentRoles_Test#()V" />
+      <node id="7454474523886895226" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="7454474523886895226" at="14,0,19,0" concept="2" trace="test_ChildWithTwoGrandChildrenInDifferentRoles#()V" />
+      <node id="7454474523886895226" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7454474523886895226" at="12,59,12,59" />
+      <scope id="7454474523886895226" at="21,23,21,23" />
+      <scope id="7454474523886895226" at="12,0,14,0" />
+      <scope id="7454474523886895226" at="15,81,17,133" />
+      <scope id="7454474523886895226" at="21,0,23,0" />
+      <scope id="7454474523886895226" at="24,51,27,76" />
+      <scope id="7454474523886895226" at="14,0,19,0" />
+      <scope id="7454474523886895226" at="23,0,29,0" />
+      <unit id="7454474523886895226" at="19,0,30,0" name="jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test$TestBody" />
+      <unit id="7454474523886895226" at="10,0,31,0" name="jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/8705753908477435260">
+    <file name="ChildWithDirectCycle_card1n_Test.java">
+      <node id="8705753908477435260" at="17,67,18,112" concept="1" />
+      <node id="8705753908477435260" at="18,112,19,119" concept="1" />
+      <node id="8705753908477435260" at="26,51,27,63" concept="1" />
+      <node id="8705753908477435264" at="27,63,28,40" concept="1" />
+      <node id="8705753908477435265" at="28,40,29,76" concept="1" />
+      <node id="8705753908477435260" at="32,69,33,53" concept="1" />
+      <node id="8705753908477435260" at="14,0,16,0" concept="0" trace="ChildWithDirectCycle_card1n_Test#()V" />
+      <node id="8705753908477435260" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="8705753908477435260" at="31,0,35,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477435260" at="16,0,21,0" concept="2" trace="test_ChildWithDirectCycle_card1n#()V" />
+      <node id="8705753908477435260" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8705753908477435260" at="14,45,14,45" />
+      <scope id="8705753908477435260" at="23,23,23,23" />
+      <scope id="8705753908477435260" at="32,69,33,53" />
+      <scope id="8705753908477435260" at="14,0,16,0" />
+      <scope id="8705753908477435260" at="17,67,19,119" />
+      <scope id="8705753908477435260" at="23,0,25,0" />
+      <scope id="8705753908477435260" at="26,51,29,76" />
+      <scope id="8705753908477435260" at="31,0,35,0">
+        <var name="appender" id="8705753908477435260" />
+      </scope>
+      <scope id="8705753908477435260" at="16,0,21,0" />
+      <scope id="8705753908477435260" at="25,0,31,0" />
+      <unit id="8705753908477435260" at="21,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test$TestBody" />
+      <unit id="8705753908477435260" at="12,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/8705753908477461327">
+    <file name="ChildWithIndirectCycle_card1_Test.java">
+      <node id="8705753908477461327" at="17,68,18,112" concept="1" />
+      <node id="8705753908477461327" at="18,112,19,120" concept="1" />
+      <node id="8705753908477461327" at="26,51,27,63" concept="1" />
+      <node id="8705753908477461331" at="27,63,28,41" concept="1" />
+      <node id="8705753908477461332" at="28,41,29,76" concept="1" />
+      <node id="8705753908477461327" at="32,69,33,53" concept="1" />
+      <node id="8705753908477461327" at="14,0,16,0" concept="0" trace="ChildWithIndirectCycle_card1_Test#()V" />
+      <node id="8705753908477461327" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="8705753908477461327" at="31,0,35,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477461327" at="16,0,21,0" concept="2" trace="test_ChildWithIndirectCycle_card1#()V" />
+      <node id="8705753908477461327" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8705753908477461327" at="14,46,14,46" />
+      <scope id="8705753908477461327" at="23,23,23,23" />
+      <scope id="8705753908477461327" at="32,69,33,53" />
+      <scope id="8705753908477461327" at="14,0,16,0" />
+      <scope id="8705753908477461327" at="17,68,19,120" />
+      <scope id="8705753908477461327" at="23,0,25,0" />
+      <scope id="8705753908477461327" at="26,51,29,76" />
+      <scope id="8705753908477461327" at="31,0,35,0">
+        <var name="appender" id="8705753908477461327" />
+      </scope>
+      <scope id="8705753908477461327" at="16,0,21,0" />
+      <scope id="8705753908477461327" at="25,0,31,0" />
+      <unit id="8705753908477461327" at="21,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test$TestBody" />
+      <unit id="8705753908477461327" at="12,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/8705753908477487693">
+    <file name="ChildWithIndirectCycle_card1n_Test.java">
+      <node id="8705753908477487693" at="17,69,18,112" concept="1" />
+      <node id="8705753908477487693" at="18,112,19,121" concept="1" />
+      <node id="8705753908477487693" at="26,51,27,63" concept="1" />
+      <node id="8705753908477487697" at="27,63,28,42" concept="1" />
+      <node id="8705753908477487698" at="28,42,29,76" concept="1" />
+      <node id="8705753908477487693" at="32,69,33,53" concept="1" />
+      <node id="8705753908477487693" at="14,0,16,0" concept="0" trace="ChildWithIndirectCycle_card1n_Test#()V" />
+      <node id="8705753908477487693" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="8705753908477487693" at="31,0,35,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477487693" at="16,0,21,0" concept="2" trace="test_ChildWithIndirectCycle_card1n#()V" />
+      <node id="8705753908477487693" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8705753908477487693" at="14,47,14,47" />
+      <scope id="8705753908477487693" at="23,23,23,23" />
+      <scope id="8705753908477487693" at="32,69,33,53" />
+      <scope id="8705753908477487693" at="14,0,16,0" />
+      <scope id="8705753908477487693" at="17,69,19,121" />
+      <scope id="8705753908477487693" at="23,0,25,0" />
+      <scope id="8705753908477487693" at="26,51,29,76" />
+      <scope id="8705753908477487693" at="31,0,35,0">
+        <var name="appender" id="8705753908477487693" />
+      </scope>
+      <scope id="8705753908477487693" at="16,0,21,0" />
+      <scope id="8705753908477487693" at="25,0,31,0" />
+      <unit id="8705753908477487693" at="21,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test$TestBody" />
+      <unit id="8705753908477487693" at="12,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test" />
+    </file>
+  </root>
+</debug-info>
+

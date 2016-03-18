@@ -53,6 +53,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"))) {
         return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1"))) {
+        return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n"))) {
+        return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren"))) {
+        return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a4L, "jetbrains.mps.lang.editor.editorTest.structure.InitContainer"))) {
+        return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L, "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock"))) {
         return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
       }
@@ -67,6 +79,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"))) {
         return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"))) {
+        return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc6674L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer"))) {
+        return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper"))) {
         return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());

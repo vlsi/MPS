@@ -39,9 +39,9 @@ public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransform
               component.rebuildEditorContent();
             }
           });
+          component.getEditorContext().flushEvents();
         }
       });
-      component.getEditorContext().flushEvents();
       rootCell = component.getInspector().getRootCell();
       assert rootCell instanceof EditorCell_Label && ((EditorCell_Label) rootCell).getText().equals("compact");
     }

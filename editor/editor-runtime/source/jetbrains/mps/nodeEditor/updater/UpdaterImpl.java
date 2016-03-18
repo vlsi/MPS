@@ -96,7 +96,9 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   private void doUpdate(List<SModelEvent> events) {
-    LOG.assertLog(ThreadUtils.isInEDT(), "This method should be called in EDT");
+    if (!ThreadUtils.isInEDT()) {
+      LOG.error("This method should be called in EDT", new Throwable());
+    }
     if (myDisposed) {
       return;
     }
@@ -152,7 +154,9 @@ public class UpdaterImpl implements Updater, CommandContext {
   @Override
   public void flushModelEvents() {
     assert !myDisposed;
-    LOG.assertLog(ThreadUtils.isInEDT(), "This method should be called in EDT");
+    if (!ThreadUtils.isInEDT()) {
+      LOG.error("This method should be called in EDT", new Throwable());
+    }
     myModelListenersController.flush();
   }
 

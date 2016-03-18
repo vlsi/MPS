@@ -22,6 +22,8 @@ import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Map;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.testbench.util.CachingAppender;
+import jetbrains.mps.testbench.junit.UncleanTestExecutionException;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -43,6 +45,7 @@ import javax.swing.SwingUtilities;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Logger;
+import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 
 public abstract class BaseEditorTestBody extends BaseTestBody {
@@ -160,11 +163,17 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   public void testMethod() throws Throwable {
+    CachingAppender appender = installAppender();
     try {
       this.testMethodImpl();
       this.checkAssertion();
       dispose();
+      appender.sealEvents();
+      if (appender.isNotEmpty()) {
+        throw new UncleanTestExecutionException(appender);
+      }
     } finally {
+      uninstallAppender(appender);
       final Throwable[] ts = new Throwable[1];
       myProject.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
@@ -311,6 +320,22 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     // some actions (Copy/Paste) are running one more command later 
     flushEDTEvents();
     undoManager.setEditorProvider(oldEditorProvider);
+  }
+
+  private CachingAppender installAppender() {
+    Logger rootLogger = Logger.getRootLogger();
+    CachingAppender appender = new CachingAppender(Level.ERROR);
+    populateExpectedEvents(appender);
+    rootLogger.addAppender(appender);
+    return appender;
+  }
+
+  protected void populateExpectedEvents(CachingAppender appender) {
+
+  }
+
+  private void uninstallAppender(CachingAppender appender) {
+    Logger.getRootLogger().removeAppender(appender);
   }
   protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }

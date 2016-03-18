@@ -29,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEditorComponentExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.EditorComponentExpression", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x501fdfb2963ab0ffL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).alias("editor component", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptEditorExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.EditorExpression", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d7249a7dbL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).alias("editor", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptEditorOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.EditorOperation", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11daf16c21cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).abstract_().staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptEditorTestCase = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.EditorTestCase", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IMethodLike").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL), MetaIdFactory.conceptId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1883175908513350760L, "description")).properties("description").childDescriptors(new ConceptDescriptorBuilder.Link(1229187676388L, "nodeToEdit", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false), new ConceptDescriptorBuilder.Link(1229187707859L, "result", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, false, false), new ConceptDescriptorBuilder.Link(1229187755283L, "code", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), true, false, false)).children(new String[]{"nodeToEdit", "result", "code"}, new boolean[]{false, false, false}).create();
+  /*package*/ final ConceptDescriptor myConceptEditorTestCase = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.EditorTestCase", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.lang.core.structure.ISuppressErrors", "jetbrains.mps.lang.core.structure.ImplementationPart", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IMethodLike").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L), MetaIdFactory.conceptId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL), MetaIdFactory.conceptId(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1883175908513350760L, "description")).properties("description").childDescriptors(new ConceptDescriptorBuilder.Link(1229187676388L, "nodeToEdit", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false, false, false), new ConceptDescriptorBuilder.Link(1229187707859L, "result", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), true, false, false), new ConceptDescriptorBuilder.Link(1229187755283L, "code", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), true, false, false), new ConceptDescriptorBuilder.Link(5219531754069547112L, "logEvents", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L), true, true, false)).children(new String[]{"nodeToEdit", "result", "code", "logEvents"}, new boolean[]{false, false, false, true}).create();
   /*package*/ final ConceptDescriptor myConceptExpressionContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ExpressionContainer", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x254649f227ff5d72L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(2685915532175039859L, "expression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("{ expr }", "expression container (used inside test nodes)").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptIChecksRules = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.IChecksRules", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6ef97f30L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptINodeAnnotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.INodeAnnotation", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e0d52da47L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).create();
@@ -37,6 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIRuleReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.IRuleReference", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL)).interface_().referenceDescriptors(new ConceptDescriptorBuilder.Ref(8333855927540250453L, "declaration", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false)).references("declaration").create();
   /*package*/ final ConceptDescriptor myConceptInvokeActionStatement = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.InvokeActionStatement", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x614c5660cccba06bL)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).childDescriptors(new ConceptDescriptorBuilder.Link(1101347953350127927L, "actionReference", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899bf4L), false, false, false)).children(new String[]{"actionReference"}, new boolean[]{false}).alias("invoke action", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptInvokeIntentionStatement = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.InvokeIntentionStatement", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1225989811227L, "intention", MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL), false)).references("intention").alias("invoke intention", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptLogEvent = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.LogEvent", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5219531754070085220L, "level"), new ConceptDescriptorBuilder.Prop(5219531754070085223L, "message")).properties("level", "message").create();
   /*package*/ final ConceptDescriptor myConceptMPSActionReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.MPSActionReference", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ad5e12a687a89d9L)).super_("jetbrains.mps.lang.test.structure.ActionReference").super_(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899bf4L)).parents("jetbrains.mps.lang.test.structure.ActionReference").parentIds(MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xf48c620dd899bf4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(4239542196496929559L, "action", MetaIdFactory.conceptId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L), false)).references("action").alias("->", "").create();
   /*package*/ final ConceptDescriptor myConceptMockAnnotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.MockAnnotation", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e6f14cfccL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).create();
   /*package*/ final ConceptDescriptor myConceptModelExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.test.structure.ModelExpression", MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d53b20b9cL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).alias("model", "").staticScope(StaticScope.NONE).create();
@@ -81,13 +82,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractNodeAssert, myConceptAbstractNodeErrorCheckOperation, myConceptAbstractNodeRuleCheckOperation, myConceptAbstractNodeWarningCheckOperation, myConceptActionReference, myConceptAnonymousCellAnnotation, myConceptAssertMatch, myConceptBootstrapActionReference, myConceptCheckDataFlowOperation, myConceptCheckNodeDataflow, myConceptCheckNodeForErrorMessagesOperation, myConceptCheckNodeForErrors, myConceptDragMouseStatement, myConceptEditorComponentExpression, myConceptEditorExpression, myConceptEditorOperation, myConceptEditorTestCase, myConceptExpressionContainer, myConceptIChecksRules, myConceptINodeAnnotation, myConceptIReferenceAttachable, myConceptIRuleReference, myConceptInvokeActionStatement, myConceptInvokeIntentionStatement, myConceptMPSActionReference, myConceptMockAnnotation, myConceptModelExpression, myConceptNodeCheckOperation, myConceptNodeConstraintsErrorCheckOperation, myConceptNodeConstraintsWarningCheckOperation, myConceptNodeErrorCheckOperation, myConceptNodeExpectedTypeCheckOperation, myConceptNodeOperationsContainer, myConceptNodePropertiesContainer, myConceptNodeReachable, myConceptNodeRuleCheckOperation, myConceptNodeTypeCheckOperation, myConceptNodeTypeSetCheckOperation, myConceptNodeTypeSystemErrorCheckOperation, myConceptNodeTypeSystemRuleCheckOperation, myConceptNodeTypeSystemWarningCheckOperation, myConceptNodeUnknownErrorCheckOperation, myConceptNodeUnknownWarningCheckOperation, myConceptNodeUnreachable, myConceptNodeWarningCheckOperation, myConceptNodesTestCase, myConceptNodesTestMethod, myConceptPressKeyStatement, myConceptPressMouseStatement, myConceptProjectExpression, myConceptReportErrorStatementReference, myConceptScopesExpectedNode, myConceptScopesTest, myConceptSimpleNodeTest, myConceptSwitchToInspector, myConceptTestInfo, myConceptTestNode, myConceptTestNodeAnnotation, myConceptTestNodeReference, myConceptTypeKeyStatement, myConceptUnknownRuleReference, myConceptUntypedExpression, myConceptVariableAlive, myConceptVariableInitialized, myConceptWarningStatementReference);
+    return Arrays.asList(myConceptAbstractNodeAssert, myConceptAbstractNodeErrorCheckOperation, myConceptAbstractNodeRuleCheckOperation, myConceptAbstractNodeWarningCheckOperation, myConceptActionReference, myConceptAnonymousCellAnnotation, myConceptAssertMatch, myConceptBootstrapActionReference, myConceptCheckDataFlowOperation, myConceptCheckNodeDataflow, myConceptCheckNodeForErrorMessagesOperation, myConceptCheckNodeForErrors, myConceptDragMouseStatement, myConceptEditorComponentExpression, myConceptEditorExpression, myConceptEditorOperation, myConceptEditorTestCase, myConceptExpressionContainer, myConceptIChecksRules, myConceptINodeAnnotation, myConceptIReferenceAttachable, myConceptIRuleReference, myConceptInvokeActionStatement, myConceptInvokeIntentionStatement, myConceptLogEvent, myConceptMPSActionReference, myConceptMockAnnotation, myConceptModelExpression, myConceptNodeCheckOperation, myConceptNodeConstraintsErrorCheckOperation, myConceptNodeConstraintsWarningCheckOperation, myConceptNodeErrorCheckOperation, myConceptNodeExpectedTypeCheckOperation, myConceptNodeOperationsContainer, myConceptNodePropertiesContainer, myConceptNodeReachable, myConceptNodeRuleCheckOperation, myConceptNodeTypeCheckOperation, myConceptNodeTypeSetCheckOperation, myConceptNodeTypeSystemErrorCheckOperation, myConceptNodeTypeSystemRuleCheckOperation, myConceptNodeTypeSystemWarningCheckOperation, myConceptNodeUnknownErrorCheckOperation, myConceptNodeUnknownWarningCheckOperation, myConceptNodeUnreachable, myConceptNodeWarningCheckOperation, myConceptNodesTestCase, myConceptNodesTestMethod, myConceptPressKeyStatement, myConceptPressMouseStatement, myConceptProjectExpression, myConceptReportErrorStatementReference, myConceptScopesExpectedNode, myConceptScopesTest, myConceptSimpleNodeTest, myConceptSwitchToInspector, myConceptTestInfo, myConceptTestNode, myConceptTestNodeAnnotation, myConceptTestNodeReference, myConceptTypeKeyStatement, myConceptUnknownRuleReference, myConceptUntypedExpression, myConceptVariableAlive, myConceptVariableInitialized, myConceptWarningStatementReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0rc, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0sc, conceptFqName)) {
       case 0:
         return myConceptAbstractNodeAssert;
       case 1:
@@ -137,90 +138,92 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 23:
         return myConceptInvokeIntentionStatement;
       case 24:
-        return myConceptMPSActionReference;
+        return myConceptLogEvent;
       case 25:
-        return myConceptMockAnnotation;
+        return myConceptMPSActionReference;
       case 26:
-        return myConceptModelExpression;
+        return myConceptMockAnnotation;
       case 27:
-        return myConceptNodeCheckOperation;
+        return myConceptModelExpression;
       case 28:
-        return myConceptNodeConstraintsErrorCheckOperation;
+        return myConceptNodeCheckOperation;
       case 29:
-        return myConceptNodeConstraintsWarningCheckOperation;
+        return myConceptNodeConstraintsErrorCheckOperation;
       case 30:
-        return myConceptNodeErrorCheckOperation;
+        return myConceptNodeConstraintsWarningCheckOperation;
       case 31:
-        return myConceptNodeExpectedTypeCheckOperation;
+        return myConceptNodeErrorCheckOperation;
       case 32:
-        return myConceptNodeOperationsContainer;
+        return myConceptNodeExpectedTypeCheckOperation;
       case 33:
-        return myConceptNodePropertiesContainer;
+        return myConceptNodeOperationsContainer;
       case 34:
-        return myConceptNodeReachable;
+        return myConceptNodePropertiesContainer;
       case 35:
-        return myConceptNodeRuleCheckOperation;
+        return myConceptNodeReachable;
       case 36:
-        return myConceptNodeTypeCheckOperation;
+        return myConceptNodeRuleCheckOperation;
       case 37:
-        return myConceptNodeTypeSetCheckOperation;
+        return myConceptNodeTypeCheckOperation;
       case 38:
-        return myConceptNodeTypeSystemErrorCheckOperation;
+        return myConceptNodeTypeSetCheckOperation;
       case 39:
-        return myConceptNodeTypeSystemRuleCheckOperation;
+        return myConceptNodeTypeSystemErrorCheckOperation;
       case 40:
-        return myConceptNodeTypeSystemWarningCheckOperation;
+        return myConceptNodeTypeSystemRuleCheckOperation;
       case 41:
-        return myConceptNodeUnknownErrorCheckOperation;
+        return myConceptNodeTypeSystemWarningCheckOperation;
       case 42:
-        return myConceptNodeUnknownWarningCheckOperation;
+        return myConceptNodeUnknownErrorCheckOperation;
       case 43:
-        return myConceptNodeUnreachable;
+        return myConceptNodeUnknownWarningCheckOperation;
       case 44:
-        return myConceptNodeWarningCheckOperation;
+        return myConceptNodeUnreachable;
       case 45:
-        return myConceptNodesTestCase;
+        return myConceptNodeWarningCheckOperation;
       case 46:
-        return myConceptNodesTestMethod;
+        return myConceptNodesTestCase;
       case 47:
-        return myConceptPressKeyStatement;
+        return myConceptNodesTestMethod;
       case 48:
-        return myConceptPressMouseStatement;
+        return myConceptPressKeyStatement;
       case 49:
-        return myConceptProjectExpression;
+        return myConceptPressMouseStatement;
       case 50:
-        return myConceptReportErrorStatementReference;
+        return myConceptProjectExpression;
       case 51:
-        return myConceptScopesExpectedNode;
+        return myConceptReportErrorStatementReference;
       case 52:
-        return myConceptScopesTest;
+        return myConceptScopesExpectedNode;
       case 53:
-        return myConceptSimpleNodeTest;
+        return myConceptScopesTest;
       case 54:
-        return myConceptSwitchToInspector;
+        return myConceptSimpleNodeTest;
       case 55:
-        return myConceptTestInfo;
+        return myConceptSwitchToInspector;
       case 56:
-        return myConceptTestNode;
+        return myConceptTestInfo;
       case 57:
-        return myConceptTestNodeAnnotation;
+        return myConceptTestNode;
       case 58:
-        return myConceptTestNodeReference;
+        return myConceptTestNodeAnnotation;
       case 59:
-        return myConceptTypeKeyStatement;
+        return myConceptTestNodeReference;
       case 60:
-        return myConceptUnknownRuleReference;
+        return myConceptTypeKeyStatement;
       case 61:
-        return myConceptUntypedExpression;
+        return myConceptUnknownRuleReference;
       case 62:
-        return myConceptVariableAlive;
+        return myConceptUntypedExpression;
       case 63:
-        return myConceptVariableInitialized;
+        return myConceptVariableAlive;
       case 64:
+        return myConceptVariableInitialized;
+      case 65:
         return myConceptWarningStatementReference;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0rc = new String[]{"jetbrains.mps.lang.test.structure.AbstractNodeAssert", "jetbrains.mps.lang.test.structure.AbstractNodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.AbstractNodeRuleCheckOperation", "jetbrains.mps.lang.test.structure.AbstractNodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.ActionReference", "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.DragMouseStatement", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorOperation", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.IChecksRules", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.IReferenceAttachable", "jetbrains.mps.lang.test.structure.IRuleReference", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemRuleCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.NodesTestMethod", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.PressMouseStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.UnknownRuleReference", "jetbrains.mps.lang.test.structure.UntypedExpression", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
+  private static String[] stringSwitchCases_1htk8d_a0a0sc = new String[]{"jetbrains.mps.lang.test.structure.AbstractNodeAssert", "jetbrains.mps.lang.test.structure.AbstractNodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.AbstractNodeRuleCheckOperation", "jetbrains.mps.lang.test.structure.AbstractNodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.ActionReference", "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.DragMouseStatement", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorOperation", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.IChecksRules", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.IReferenceAttachable", "jetbrains.mps.lang.test.structure.IRuleReference", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.LogEvent", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemRuleCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.NodesTestMethod", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.PressMouseStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.UnknownRuleReference", "jetbrains.mps.lang.test.structure.UntypedExpression", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
 }
