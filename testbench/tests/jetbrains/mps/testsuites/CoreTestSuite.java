@@ -45,7 +45,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.classloading.ModulesReloadTest.class,
     jetbrains.mps.classloading.ModulesReloadTestStress.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
-    jetbrains.mps.lang.pattern.ValueExtractorTest.class,
+    jetbrains.mps.lang.pattern.NodeMatcherTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,

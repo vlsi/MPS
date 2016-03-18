@@ -37,7 +37,7 @@ import java.util.Map;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class NodeMatcher {
+public final class NodeMatcher {
   private final ChildMatcher myParent;
   private final ValueContainer myValues;
   private Map<SProperty, String> myPropertyToVariableName;
@@ -152,6 +152,8 @@ public class NodeMatcher {
       // FIXME if it's a mere accessor to a node to capture it, do not check concept match. Though IMO it's a defect in original implementation,
       // it's left here for the time being to get existing tests pass before I fix them with a distinct change
       // The case is "if (#v1) { #v2 }", where v2 attributes ExpressionStatement, and input comes as an empty Statement.
+      // After some consideration and discussion, it seems we need to cover both scenarios (explicitly picked by user when
+      // pattern variable is assigned), and this alternative shall remain default for compatibility with existing code.
       return true;
     }
     if (!against.getConcept().isSubConceptOf(pattern.getConcept())) {

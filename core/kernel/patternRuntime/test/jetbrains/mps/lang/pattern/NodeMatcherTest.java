@@ -28,7 +28,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -36,9 +35,10 @@ import org.junit.rules.ErrorCollector;
 import java.util.List;
 
 /**
+ * Tests for lang.pattern runtime code, namely {@link NodeMatcher} and {@link ChildMatcher}.
  * @author Artem Tikhomirov
  */
-public class ValueExtractorTest {
+public class NodeMatcherTest {
   /*package*/ static SConcept ourConcept1 = BootstrapAdapterFactory.getConcept(1, 2, 3, "C1");
   /*package*/ static SConcept ourConcept2 = BootstrapAdapterFactory.getConcept(1, 2, 7, "C2");
   /*package*/ static SContainmentLink ourC1Child1 = BootstrapAdapterFactory.getContainmentLink(1, 2, 3, 4, "L1");
@@ -253,9 +253,10 @@ public class ValueExtractorTest {
 
     final boolean matched = top.match(patternNode, actualNode);
     myErrors.checkThat("Shall match", matched, Matchers.equalTo(true));
-    myErrors.checkThat(vc.getList("list"), Matchers.notNullValue());
-    if (vc.getList("list") != null) {
-      myErrors.checkThat(vc.getList("list").size(), Matchers.equalTo(3));
+    final List<SNode> listValue = vc.getList("list");
+    myErrors.checkThat(listValue, Matchers.notNullValue());
+    if (listValue != null) {
+      myErrors.checkThat(listValue.size(), Matchers.equalTo(3));
     }
     myErrors.checkThat(vc.getNode("firstChild"), Matchers.equalTo(actualChild));
     myErrors.checkThat(vc.getNode("TopNodeVar"), Matchers.equalTo(actualNode));
@@ -268,31 +269,41 @@ public class ValueExtractorTest {
     for pattern nodes that are captured as a whole.
    */
   @Test
-  @Ignore
   public void testDisjunction() {
+    // third child in pattern nodes is to overcome bypass in NodeMatcher#matchStructure()
+    // which grabs a node marked with variable as is, and doesn't compare its attributes.
+    // Since we grab first child as 'cld' and use mismatched property value to check match fails,
+    // this bypass avoids property match and the test fails.
     final SProperty p = SNodeUtil.property_INamedConcept_name;
     final SNode pattern1Node = newNode(ourConcept1);
     final SNode pattern1Child = newNode(ourConcept1);
     pattern1Node.addChild(ourC1Child1, pattern1Child);
+    pattern1Child.addChild(ourC1Child1, newNode(ourConcept1));
     pattern1Child.setProperty(p, "First");
 
     final SNode pattern2Node = newNode(ourConcept1);
-    pattern2Node.addChild(ourC1Child2, newNode(ourConcept2));
+    final SNode pattern2Child = newNode(ourConcept2);
+    pattern2Node.addChild(ourC1Child2, pattern2Child);
+    pattern2Child.addChild(ourC1Child2, newNode(ourConcept2));
     pattern2Node.setProperty(p, "Second");
 
     ValueContainer vc = new ValueContainer();
     final NodeMatcher top = new NodeMatcher(vc);
-    top.disjunct(pattern1Node, new NodeMatcher(vc).capture("top"));
-    top.disjunct(pattern2Node, new NodeMatcher(vc).capture("top"));
+    // extra child().done() after capture('cld') is to avoid aforementioned bypass.
+    top.disjunct(pattern1Node, new NodeMatcher(vc).child(ourC1Child1).at(0).capture("cld").child(ourC1Child1).done().done().done());
+    top.disjunct(pattern2Node, new NodeMatcher(vc).child(ourC1Child2).at(0).capture("cld").child(ourC1Child2).done().done().done());
 
 
     SNode sample1Node = newNode(ourConcept1);
     SNode sample1Child = newNode(ourConcept1);
     sample1Node.addChild(ourC1Child1, sample1Child);
+    sample1Child.addChild(ourC1Child1, newNode(ourConcept1));
     sample1Child.setProperty(p, "First");
 
     SNode sample2Node = newNode(ourConcept1);
-    sample2Node.addChild(ourC1Child2, newNode(ourConcept2));
+    SNode sample2Child = newNode(ourConcept2);
+    sample2Node.addChild(ourC1Child2, sample2Child);
+    sample2Child.addChild(ourC1Child2, newNode(ourConcept2));
     sample2Node.setProperty(p, "Second");
 
     SNode sample3Node = newNode(ourConcept2);
@@ -302,30 +313,31 @@ public class ValueExtractorTest {
     SNode sample4Node = newNode(ourConcept1);
     final SNode sample4Child = newNode(ourConcept2);
     sample4Node.addChild(ourC1Child1, sample4Child);
+    sample3Node.addChild(ourC1Child1, newNode(ourConcept2));
     // matching property values to ensure we check complete structure
-    sample4Node.setProperty(p, "First");
-    sample4Child.setProperty(p, "Second");
+    sample4Child.setProperty(p, "First");
+    sample4Node.setProperty(p, "Second");
 
     // we pretend OrPattern is attached to the topmost node, fakePatternNode would be instance
     // of quotation node OrPattern attribute was attached to.
     final SNode fakePatternNode = newNode(ourConcept2);
     myErrors.checkThat(top.match(fakePatternNode, sample1Node), Matchers.equalTo(true));
-    myErrors.checkThat(vc.getNode("top"), Matchers.equalTo(sample1Node));
+    myErrors.checkThat(vc.getNode("cld"), Matchers.equalTo(sample1Child));
     sample1Child.setProperty(p, "mismatch");
     myErrors.checkThat(top.match(fakePatternNode, sample1Node), Matchers.equalTo(false));
     //
     myErrors.checkThat(top.match(fakePatternNode, sample2Node), Matchers.equalTo(true));
-    myErrors.checkThat(vc.getNode("top"), Matchers.equalTo(sample2Node));
+    myErrors.checkThat(vc.getNode("cld"), Matchers.equalTo(sample2Child));
     sample2Node.setProperty(p, "mismatch");
     myErrors.checkThat(top.match(fakePatternNode, sample2Node), Matchers.equalTo(false));
     //
     vc.reset(new ValueContainer());
     myErrors.checkThat(top.match(fakePatternNode, sample3Node), Matchers.equalTo(false));
-    myErrors.checkThat(vc.getNode("top"), Matchers.nullValue());
+    myErrors.checkThat(vc.getNode("cld"), Matchers.nullValue());
     //
     vc.reset(new ValueContainer());
     myErrors.checkThat(top.match(fakePatternNode, sample4Node), Matchers.equalTo(false));
-    myErrors.checkThat(vc.getNode("top"), Matchers.nullValue());
+    myErrors.checkThat(vc.getNode("cld"), Matchers.nullValue());
   }
 
   private static SNode newNode(SConcept c) {

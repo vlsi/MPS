@@ -31,7 +31,7 @@ import java.util.Set;
  * @author Artem Tikhomirov
  * @since 3.4
  */
-public class ChildMatcher {
+public final class ChildMatcher {
   private final NodeMatcher myParent;
   // FIXME some sort of sparse array would be great
   private Map<Integer, NodeMatcher> myIndexToExtractor;
