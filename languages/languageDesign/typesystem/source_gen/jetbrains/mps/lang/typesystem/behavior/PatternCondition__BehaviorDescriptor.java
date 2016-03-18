@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +35,7 @@ public final class PatternCondition__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   /*package*/ static SNode getApplicableConcept_idhEwIszL(@NotNull SNode __thisNode__) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode")));
+    return SNodeOperations.asNode(PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern"))));
   }
 
   /*package*/ PatternCondition__BehaviorDescriptor() {

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Will be removed after 3.3
@@ -19,6 +20,9 @@ public class PatternExpression_Behavior {
   }
   public static List<SNode> call_getOwnVariables_8288845019109059987(SNode __thisNode__) {
     return PatternExpression__BehaviorDescriptor.getOwnVariables_id7c7Ta3MgIQj(__thisNode__);
+  }
+  public static SAbstractConcept call_getQuotedNodeConcept_5187569781989334116(SNode __thisNode__) {
+    return PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$(__thisNode__);
   }
   public static boolean call_hasVariable_4855904478357073120(SNode __thisNode__) {
     return PatternExpression__BehaviorDescriptor.hasVariable_id4dzCQkRGUNw(__thisNode__);

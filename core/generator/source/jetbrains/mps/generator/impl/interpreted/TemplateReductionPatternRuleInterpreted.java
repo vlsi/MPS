@@ -45,7 +45,7 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
   private PatternRuleQuery myQuery;
 
   public TemplateReductionPatternRuleInterpreted(SNode ruleNode) {
-    super(new SNodePointer(ruleNode), RuleUtil.getPatternReductionRulePatternNode(ruleNode).getConcept(), false);
+    super(new SNodePointer(ruleNode), RuleUtil.getPatternReductionRulePatternNodeConcept(ruleNode), false);
     myRuleNode = ruleNode;
     myRuleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
     final SNode rc = RuleUtil.getPatternReductionRuleConsequence(ruleNode);

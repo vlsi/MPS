@@ -35,6 +35,7 @@ import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.generator.impl.CrossModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -1116,7 +1117,7 @@ public class QueriesGenerated {
     return name;
   }
   public static Object referenceMacro_GetReferent_3615289984453653130(final ReferenceMacroContext _context) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode")));
+    return SNodeOperations.asNode(PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern"))));
   }
   public static Object referenceMacro_GetReferent_9191117361655049707(final ReferenceMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a12ebb8L, "ruleConsequence")));

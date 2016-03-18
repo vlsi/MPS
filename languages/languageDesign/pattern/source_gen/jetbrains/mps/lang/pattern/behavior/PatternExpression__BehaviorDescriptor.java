@@ -22,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -33,9 +34,10 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
   public static final SMethod<List<SNode>> getVariables_id4dzCQkRGUKX = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGUKX").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getUniqueVariables_id4dzCQkRGULU = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getUniqueVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGULU").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getOwnVariables_id7c7Ta3MgIQj = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7c7Ta3MgIQj").registry(REGISTRY).build();
+  public static final SMethod<SAbstractConcept> getQuotedNodeConcept_id4vXWNHn1_L$ = new SMethodBuilder<SAbstractConcept>(new SJavaCompoundTypeImpl((Class<SAbstractConcept>) ((Class) Object.class))).name("getQuotedNodeConcept").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4vXWNHn1_L$").registry(REGISTRY).build();
   public static final SMethod<Boolean> hasVariable_id4dzCQkRGUNw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasVariable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGUNw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, hasVariable_id4dzCQkRGUNw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, getQuotedNodeConcept_id4vXWNHn1_L$, hasVariable_id4dzCQkRGUNw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -69,6 +71,10 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
     }
     return result;
   }
+  /*package*/ static SAbstractConcept getQuotedNodeConcept_id4vXWNHn1_L$(@NotNull SNode __thisNode__) {
+    // concept of the quoteed (pattern) node 
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")) != null ? SNodeOperations.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x7d8b4408504314cdL, "pattern")), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"))) : SNodeOperations.getConcept(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"))));
+  }
   /*package*/ static boolean hasVariable_id4dzCQkRGUNw(@NotNull SNode __thisNode__) {
     return false;
   }
@@ -96,6 +102,8 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
       case 2:
         return (T) ((List<SNode>) getOwnVariables_id7c7Ta3MgIQj(node));
       case 3:
+        return (T) ((SAbstractConcept) getQuotedNodeConcept_id4vXWNHn1_L$(node));
+      case 4:
         return (T) ((Boolean) hasVariable_id4dzCQkRGUNw(node));
       default:
         throw new BHMethodNotFoundException(this, method);

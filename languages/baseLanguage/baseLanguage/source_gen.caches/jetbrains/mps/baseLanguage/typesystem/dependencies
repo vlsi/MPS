@@ -625,6 +625,10 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_14nt18qsy45so" file="Pattern_14nt18qsy45so.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.PrimitiveArraySupertypes_SubtypingRule" file="PrimitiveArraySupertypes_SubtypingRule.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -4483,6 +4487,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IGenericType__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_14nt18qsy45so" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -4496,6 +4501,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
@@ -4503,6 +4509,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.int_boxing_SubtypingRule" file="int_boxing_SubtypingRule.java">

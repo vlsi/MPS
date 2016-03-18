@@ -115,6 +115,7 @@
     <module reference="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" version="0" />
     <module reference="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" version="0" />
     <module reference="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" version="0" />
+    <module reference="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" version="0" />
     <module reference="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" version="0" />

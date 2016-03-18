@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
@@ -41,7 +42,7 @@ public final class TransformStatement__BehaviorDescriptor extends BaseBHDescript
   }
 
   /*package*/ static SNode getPatternConcept_id4SSaNAQl5wN(@NotNull SNode __thisNode__) {
-    return SNodeOperations.asNode(SNodeOperations.getConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529eeeL, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"))));
+    return (SNode) SNodeOperations.asNode(PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529eeeL, "pattern"))));
   }
   /*package*/ static SNode getQuotationConcept_id4SSaNAQlbzK(@NotNull SNode __thisNode__) {
     if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529ef0L, "consequence")), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"))))) {

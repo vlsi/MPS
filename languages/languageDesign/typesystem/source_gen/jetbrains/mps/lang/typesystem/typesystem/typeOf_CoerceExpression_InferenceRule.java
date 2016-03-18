@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -25,7 +26,7 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
     if (SNodeOperations.isInstanceOf(pattern, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference"))) {
       concept = SLinkOperations.getTarget(SNodeOperations.cast(pattern, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, 0x1117e2ab6c9L, "concept"));
     } else if (SNodeOperations.isInstanceOf(pattern, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition"))) {
-      concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(pattern, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode")));
+      concept = SNodeOperations.asNode(PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(SNodeOperations.cast(pattern, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern"))));
     } else {
       return;
     }

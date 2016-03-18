@@ -28,6 +28,9 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
@@ -64,7 +67,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
-      GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a2(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+      GeneratedMatchingPattern pattern_e5spwb_a0 = new Pattern_14nt18qsy45so(_quotation_createNode_nn7be_a0a0a0a0c(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
       SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
       if (coercedNode_e5spwb_a0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -165,7 +168,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
-      GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a3(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+      GeneratedMatchingPattern pattern_e5spwb_a0 = new Pattern_14nt18qsy45so(_quotation_createNode_nn7be_a0a0a0a0b0d(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
       SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
       if (coercedNode_e5spwb_a0 != null) {
         Map<SNode, SNode> subsLeft = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -266,74 +269,18 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     public void performActions(Object o) {
     }
   }
-  public static class Pattern_nn7be_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
-    public Pattern_nn7be_a0a0a0a2(Object parameter_e5spwb_a0a0a0a) {
-      this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_e5spwb_a0a0a.getConcept()))) {
-          return false;
-        }
-        {
-          SNode referent;
-          referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) != referent) {
-            return false;
-          }
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return true;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_nn7be_a0a0a0a0c(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
+    return quotedNode_2;
   }
-  public static class Pattern_nn7be_a0a0a0a1a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
-    public Pattern_nn7be_a0a0a0a1a3(Object parameter_e5spwb_a0a0a0a) {
-      this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_e5spwb_a0a0a.getConcept()))) {
-          return false;
-        }
-        {
-          SNode referent;
-          referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) != referent) {
-            return false;
-          }
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return true;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_nn7be_a0a0a0a0b0d(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

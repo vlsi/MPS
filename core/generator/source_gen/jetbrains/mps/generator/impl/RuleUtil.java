@@ -14,12 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
@@ -251,8 +251,8 @@ public final class RuleUtil {
     }
     return null;
   }
-  public static SNode getPatternReductionRulePatternNode(SNode reductionRule) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"));
+  public static SAbstractConcept getPatternReductionRulePatternNodeConcept(SNode reductionRule) {
+    return ((SAbstractConcept) (SAbstractConcept) BHReflection.invoke(SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern")), SMethodTrimmedId.create("getQuotedNodeConcept", MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), "4vXWNHn1_L$")));
   }
   public static String[] getTemplateDeclarationParameterNames(SNode template) {
     List<SNode> params = SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"));

@@ -15,10 +15,10 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)/1196515055991">
     <file name="typeof_PatternExpression_InferenceRule.java">
-      <node id="1196515055993" at="22,130,23,49" concept="5" />
-      <node id="1223981705727" at="24,5,25,60" concept="5" />
-      <node id="1223981705727" at="25,60,26,197" concept="5" />
-      <node id="1223981705727" at="26,197,27,486" concept="2" />
+      <node id="1196515055993" at="22,130,23,33" concept="5" />
+      <node id="1223981705727" at="24,5,25,44" concept="5" />
+      <node id="1223981705727" at="25,44,26,197" concept="5" />
+      <node id="1223981705727" at="26,197,27,994" concept="2" />
       <node id="1196515055991" at="30,50,31,157" concept="6" />
       <node id="1196515055991" at="33,68,34,102" concept="0" />
       <node id="1196515055991" at="33,68,34,102" concept="6" />
@@ -34,7 +34,7 @@
       <node id="1196515055991" at="30,0,33,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1196515055991" at="33,0,36,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1196515055991" at="36,0,39,0" concept="4" trace="overrides#()Z" />
-      <node id="1223981705727" at="23,49,28,5" concept="0" />
+      <node id="1223981705727" at="23,33,28,5" concept="0" />
       <node id="1196515055998" at="39,0,46,0" concept="7" trace="_quotation_createNode_v5k4nc_a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196515055991" at="22,0,30,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1196515055991" at="20,51,20,51" />
@@ -43,7 +43,7 @@
       <scope id="1196515055991" at="36,30,37,17" />
       <scope id="1196515055991" at="20,0,22,0" />
       <scope id="1196515055998" at="41,30,43,196" />
-      <scope id="1223981705727" at="24,5,27,486">
+      <scope id="1223981705727" at="24,5,27,994">
         <var name="_info_12389875345" id="1223981705727" />
         <var name="_nodeToCheck_1029348928467" id="1223981705727" />
       </scope>
@@ -57,7 +57,7 @@
         <var name="quotedNode_2" id="1196515055998" />
       </scope>
       <scope id="1196515055992" at="22,130,28,5">
-        <var name="patternExpression1" id="1196515055994" />
+        <var name="pe" id="1196515055994" />
       </scope>
       <scope id="1196515055998" at="39,0,46,0">
         <var name="parameter_1" id="1196515055998" />

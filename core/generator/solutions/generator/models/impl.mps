@@ -31,6 +31,7 @@
     <import index="r99j" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -3667,10 +3668,8 @@
       </node>
     </node>
     <node concept="2YIFZL" id="1wehcMpUyjV" role="jymVt">
-      <property role="TrG5h" value="getPatternReductionRulePatternNode" />
-      <node concept="3Tqbb2" id="1wehcMpUyjW" role="3clF45">
-        <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      </node>
+      <property role="TrG5h" value="getPatternReductionRulePatternNodeConcept" />
+      <node concept="3bZ5Sz" id="4vXWNHn1Inv" role="3clF45" />
       <node concept="3Tm1VV" id="1wehcMpUyjX" role="1B3o_S" />
       <node concept="3clFbS" id="1wehcMpUyjY" role="3clF47">
         <node concept="3clFbF" id="1wehcMpUyjZ" role="3cqZAp">
@@ -3683,8 +3682,8 @@
                 <ref role="3Tt5mk" to="tpf8:1$dcvTE4S$q" />
               </node>
             </node>
-            <node concept="3TrEf2" id="3Ic$I9I8qQ9" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+            <node concept="2qgKlT" id="4vXWNHn1Izz" role="2OqNvi">
+              <ref role="37wK5l" to="tp2b:4vXWNHn1_L$" resolve="getQuotedNodeConcept" />
             </node>
           </node>
         </node>

@@ -28,6 +28,7 @@
     <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -889,23 +890,25 @@
         <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
       </node>
       <node concept="3clFbS" id="4SSaNAQl5wQ" role="3clF47">
-        <node concept="3clFbF" id="4SSaNAQl5NV" role="3cqZAp">
-          <node concept="2OqwBi" id="4SSaNAQkWZk" role="3clFbG">
-            <node concept="2OqwBi" id="4SSaNAQkW_9" role="2Oq$k0">
-              <node concept="2OqwBi" id="4SSaNAQkVQ8" role="2Oq$k0">
-                <node concept="2OqwBi" id="4SSaNAQkV1R" role="2Oq$k0">
-                  <node concept="13iPFW" id="4SSaNAQl5Tm" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="4SSaNAQkVyZ" role="2OqNvi">
+        <node concept="3clFbF" id="4vXWNHn2TNa" role="3cqZAp">
+          <node concept="10QFUN" id="4vXWNHn2UI1" role="3clFbG">
+            <node concept="2OqwBi" id="4vXWNHn2UlK" role="10QFUP">
+              <node concept="2OqwBi" id="4vXWNHn2U9a" role="2Oq$k0">
+                <node concept="2OqwBi" id="4vXWNHn2TRT" role="2Oq$k0">
+                  <node concept="13iPFW" id="4vXWNHn2TN8" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="4vXWNHn2TZv" role="2OqNvi">
                     <ref role="3Tt5mk" to="53vh:4SSaNAQkDVI" />
                   </node>
                 </node>
-                <node concept="3TrEf2" id="4SSaNAQkWmE" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                <node concept="2qgKlT" id="4vXWNHn2UkE" role="2OqNvi">
+                  <ref role="37wK5l" to="tp2b:4vXWNHn1_L$" resolve="getQuotedNodeConcept" />
                 </node>
               </node>
-              <node concept="2yIwOk" id="1avfQ4BEvV_" role="2OqNvi" />
+              <node concept="FGMqu" id="4vXWNHn2Uoc" role="2OqNvi" />
             </node>
-            <node concept="FGMqu" id="4SSaNAQkXxW" role="2OqNvi" />
+            <node concept="3Tqbb2" id="4vXWNHn2UI2" role="10QFUM">
+              <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+            </node>
           </node>
         </node>
       </node>

@@ -21,6 +21,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import javax.swing.AbstractAction;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
@@ -97,7 +99,7 @@ public final class GoToRulesHelper {
       return SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference")), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, 0x1117e2ab6c9L, "concept"));
     } else
     if (SNodeOperations.isInstanceOf(applicableNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition"))) {
-      return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, 0x1117e2ccbe9L, "pattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode")));
+      return ((SNode) BHReflection.invoke(SNodeOperations.cast(applicableNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition")), SMethodTrimmedId.create("getApplicableConcept", null, "hEwIszL")));
     } else {
       return null;
     }

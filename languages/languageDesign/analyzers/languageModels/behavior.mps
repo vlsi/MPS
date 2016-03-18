@@ -18,6 +18,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -125,6 +126,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -145,7 +147,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -466,11 +467,11 @@
                   <ref role="3Tt5mk" to="bj1v:2S_HFuhBx12" />
                 </node>
               </node>
-              <node concept="3TrEf2" id="3OYWvKo5066" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+              <node concept="2qgKlT" id="4vXWNHn2486" role="2OqNvi">
+                <ref role="37wK5l" to="tp2b:4vXWNHn1_L$" resolve="getQuotedNodeConcept" />
               </node>
             </node>
-            <node concept="3NT_Vc" id="3OYWvKo5067" role="2OqNvi" />
+            <node concept="FGMqu" id="4vXWNHn24bY" role="2OqNvi" />
           </node>
         </node>
       </node>

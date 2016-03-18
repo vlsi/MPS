@@ -143,7 +143,7 @@
       <node id="5535664898596391458" at="247,192,248,345" concept="11" />
       <node id="5535664898596391473" at="249,199,250,345" concept="11" />
       <node id="5535664898596391478" at="251,5,252,16" concept="11" />
-      <node id="1733398552130495743" at="254,79,255,341" concept="11" />
+      <node id="1733398552130495743" at="254,97,255,458" concept="11" />
       <node id="1733398552130495337" at="257,79,258,197" concept="10" />
       <node id="1733398552130495353" at="258,197,259,72" concept="10" />
       <node id="1733398552130495399" at="260,45,261,64" concept="10" />
@@ -236,7 +236,7 @@
       <node id="4290966046185279528" at="229,0,232,0" concept="15" trace="getSwitchDefaultConsequence#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7126105700439180901" at="232,0,235,0" concept="15" trace="getSwitch_NullInputMessage#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1733398552130495898" at="235,0,238,0" concept="15" trace="getPatternReductionRuleConsequence#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1733398552130495739" at="254,0,257,0" concept="15" trace="getPatternReductionRulePatternNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1733398552130495739" at="254,0,257,0" concept="15" trace="getPatternReductionRulePatternNodeConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1733398552130495409" at="261,64,264,7" concept="8" />
       <node id="1733398552130495438" at="265,169,268,7" concept="8" />
       <node id="5686285592101711011" at="272,0,275,0" concept="15" trace="getIfMacro_ConditionFunction#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -326,7 +326,7 @@
       <scope id="6414589636559833985" at="241,199,242,349" />
       <scope id="5535664898596391457" at="247,192,248,345" />
       <scope id="5535664898596391472" at="249,199,250,345" />
-      <scope id="1733398552130495742" at="254,79,255,341" />
+      <scope id="1733398552130495742" at="254,97,255,458" />
       <scope id="1733398552130495410" at="262,26,263,20" />
       <scope id="1733398552130495439" at="266,30,267,20" />
       <scope id="5686285592101711014" at="272,65,273,178" />

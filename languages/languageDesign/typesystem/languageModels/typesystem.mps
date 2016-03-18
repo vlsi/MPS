@@ -22,6 +22,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" />
+    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -264,6 +265,7 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -765,8 +767,8 @@
           <node concept="3clFbS" id="i2zYXJ$" role="3eOfB_">
             <node concept="3clFbF" id="i2zYXJ_" role="3cqZAp">
               <node concept="37vLTI" id="i2zYXJA" role="3clFbG">
-                <node concept="2OqwBi" id="i2zYXJB" role="37vLTx">
-                  <node concept="2OqwBi" id="i2zYXJC" role="2Oq$k0">
+                <node concept="2OqwBi" id="4vXWNHn2ZAM" role="37vLTx">
+                  <node concept="2OqwBi" id="4vXWNHn2Zod" role="2Oq$k0">
                     <node concept="2OqwBi" id="i2zYXJD" role="2Oq$k0">
                       <node concept="1PxgMI" id="i2zYXJE" role="2Oq$k0">
                         <ref role="1m5ApE" to="tpd4:h5Yb3TC" resolve="PatternCondition" />
@@ -778,11 +780,11 @@
                         <ref role="3Tt5mk" to="tpd4:h5YbcJD" />
                       </node>
                     </node>
-                    <node concept="3TrEf2" id="i2zYXJH" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                    <node concept="2qgKlT" id="4vXWNHn2Z_m" role="2OqNvi">
+                      <ref role="37wK5l" to="tp2b:4vXWNHn1_L$" resolve="getQuotedNodeConcept" />
                     </node>
                   </node>
-                  <node concept="3NT_Vc" id="i2zYXJI" role="2OqNvi" />
+                  <node concept="FGMqu" id="4vXWNHn2ZGw" role="2OqNvi" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagT_qJ" role="37vLTJ">
                   <ref role="3cqZAo" node="h9Ui5Tx" resolve="concept" />
