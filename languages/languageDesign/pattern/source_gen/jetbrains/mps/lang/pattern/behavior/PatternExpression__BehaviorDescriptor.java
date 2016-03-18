@@ -8,12 +8,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
@@ -30,20 +30,16 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> getMetaLevelChange_idbc0iGlxcsE = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMetaLevelChange").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("bc0iGlxcsE").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getVariables_id4dzCQkRGUKX = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGUKX").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getUniqueVariables_id4dzCQkRGULU = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getUniqueVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGULU").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getOwnVariables_id7c7Ta3MgIQj = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7c7Ta3MgIQj").registry(REGISTRY).build();
   public static final SMethod<Boolean> hasVariable_id4dzCQkRGUNw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasVariable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4dzCQkRGUNw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMetaLevelChange_idbc0iGlxcsE, getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, hasVariable_id4dzCQkRGUNw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariables_id4dzCQkRGUKX, getUniqueVariables_id4dzCQkRGULU, getOwnVariables_id7c7Ta3MgIQj, hasVariable_id4dzCQkRGUNw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static int getMetaLevelChange_idbc0iGlxcsE(@NotNull SNode __thisNode__) {
-    return -1;
-  }
   /*package*/ static List<SNode> getVariables_id4dzCQkRGUKX(@NotNull SNode __thisNode__) {
     List<SNode> variables = new ArrayList<SNode>();
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})));
@@ -94,14 +90,12 @@ public final class PatternExpression__BehaviorDescriptor extends BaseBHDescripto
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Integer) getMetaLevelChange_idbc0iGlxcsE(node));
-      case 1:
         return (T) ((List<SNode>) getVariables_id4dzCQkRGUKX(node));
-      case 2:
+      case 1:
         return (T) ((List<SNode>) getUniqueVariables_id4dzCQkRGULU(node));
-      case 3:
+      case 2:
         return (T) ((List<SNode>) getOwnVariables_id7c7Ta3MgIQj(node));
-      case 4:
+      case 3:
         return (T) ((Boolean) hasVariable_id4dzCQkRGUNw(node));
       default:
         throw new BHMethodNotFoundException(this, method);

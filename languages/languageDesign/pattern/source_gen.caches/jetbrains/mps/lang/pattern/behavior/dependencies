@@ -203,11 +203,9 @@
   <dependency className="jetbrains.mps.lang.pattern.behavior.PatternExpression_BehaviorDescriptor" file="PatternExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
@@ -218,7 +216,6 @@
   <dependency className="jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor" file="PatternExpression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

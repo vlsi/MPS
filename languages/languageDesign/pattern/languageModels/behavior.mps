@@ -9,7 +9,6 @@
   </languages>
   <imports>
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
@@ -24,9 +23,7 @@
         <child id="1225194240801" name="constructor" index="13h7CW" />
       </concept>
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
-      <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
-        <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
-      </concept>
+      <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz" />
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -49,7 +46,6 @@
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -82,9 +78,6 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
-      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
-        <property id="1068580320021" name="value" index="3cmrfH" />
-      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -214,19 +207,6 @@
   </node>
   <node concept="13h7C7" id="tFmMdBryNH">
     <ref role="13h7C2" to="tp3t:gyDMOuh" resolve="PatternExpression" />
-    <node concept="13i0hz" id="bc0iGlx_PU" role="13h7CS">
-      <property role="TrG5h" value="getMetaLevelChange" />
-      <ref role="13i0hy" to="tpcu:bc0iGlxcsE" resolve="getMetaLevelChange" />
-      <node concept="3clFbS" id="bc0iGlx_PX" role="3clF47">
-        <node concept="3cpWs6" id="bc0iGlx_Q2" role="3cqZAp">
-          <node concept="3cmrfG" id="bc0iGlx_Q4" role="3cqZAk">
-            <property role="3cmrfH" value="-1" />
-          </node>
-        </node>
-      </node>
-      <node concept="10Oyi0" id="bc0iGlx_Q0" role="3clF45" />
-      <node concept="3Tm1VV" id="bc0iGlx_Q1" role="1B3o_S" />
-    </node>
     <node concept="13i0hz" id="4dzCQkRGUKX" role="13h7CS">
       <property role="TrG5h" value="getVariables" />
       <node concept="3Tm1VV" id="4dzCQkRGUKY" role="1B3o_S" />
