@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench;
 
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.BaseMpsTest;
@@ -87,11 +88,40 @@ public abstract class ProjectTestBase extends BaseMpsTest {
 
   @Test
   public void reopenMPSProject2() {
+    // TODO: why need to create empty project if any way existing project going to be opened?
+
     getEnvironment().createEmptyProject();
     Project mpsProject = getEnvironment().openProject(new File(PathManager.getHomePath()));
+
+    testWait();
+
     mpsProject.dispose();
+
+    testWait();
+
     getEnvironment().createEmptyProject();
     mpsProject = getEnvironment().openProject(new File(PathManager.getHomePath()));
+
+    testWait();
+
     mpsProject.dispose();
+
+    testWait();
+  }
+
+  private void testWait() {
+    // TODO: get rid of this HACK
+    // Waits for every thing will be finished before doing something next step
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    UIUtil.invokeAndWaitIfNeeded(new Runnable() {
+      @Override
+      public void run() {
+        UIUtil.dispatchAllInvocationEvents();
+      }
+    });
   }
 }
