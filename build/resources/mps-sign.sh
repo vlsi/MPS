@@ -1,19 +1,29 @@
 #!/bin/bash
 # usage: mps-sign buildcode keychain password
-#   for signing buildcode.zip and getting buildcode.sit
+#   input: buildcode.zip, [buildcode-jdk.tar.gz], [buildcode-Info.plist]; output: signed buildcode.sit
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 EXPLODED=$1.exploded
 test -d ${EXPLODED} && chmod -R u+wx ~/${EXPLODED}/*
 rm -rf ~/${EXPLODED}
-rm -f ~/$1.dmg
-rm -f ~/$1.temp.dmg
 
 mkdir ~/${EXPLODED}
 echo "Unzipping $1.zip to ${EXPLODED}..."
 unzip -q $1.zip -d ~/${EXPLODED}/
-rm $1.zip
+#rm $1.zip
 BUILD_NAME=$(ls ~/${EXPLODED}/)
+
+if [ -f ~/$1-Info.plist ]; then
+  echo "Modifying Info.plist"
+  cp ~/$1-Info.plist ~/${EXPLODED}/"$BUILD_NAME"/Contents/Info.plist
+fi
+if [ -f ~/$1-jdk.tar.gz ]; then
+  echo "Copying JDK: ~/$1-jdk.tar.gz to ~/${EXPLODED}/"$BUILD_NAME"/Contents"
+  cd ~/${EXPLODED}/"$BUILD_NAME"/Contents
+  tar xvf ~/$1-jdk.tar.gz --exclude='._jdk'
+  echo "JDK has been copied"
+  cd ~
+fi
 
 HELP_FILE=`ls ~/${EXPLODED}/"$BUILD_NAME"/Contents/Resources/ | grep -i help`
 HELP_DIR=~/${EXPLODED}/"$BUILD_NAME"/Contents/Resources/"$HELP_FILE"/Contents/Resources/English.lproj/
@@ -39,4 +49,5 @@ echo "Zipping ${BUILD_NAME} to $1.sit..."
 cd ${EXPLODED}
 ditto -c -k --sequesterRsrc --keepParent "${BUILD_NAME}" ../$1.sit
 cd ..
+
 rm -rf ~/${EXPLODED}

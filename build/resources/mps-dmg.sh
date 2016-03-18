@@ -45,7 +45,6 @@ hdiutil detach ${device}
 echo "Compressing r/w disk image to ~/$1.dmg..."
 hdiutil convert ~/$1.temp.dmg -quiet -format UDZO -imagekey zlib-level=9 -o ~/$1.dmg
 rm -f ~/$1.temp.dmg
-rm -f ~/$1.pl
 
 hdiutil internet-enable -no ~/$1.dmg
 rm -rf ~/${EXPLODED}
