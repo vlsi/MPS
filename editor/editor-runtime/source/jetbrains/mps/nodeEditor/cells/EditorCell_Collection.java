@@ -1083,6 +1083,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public void requestRelayout() {
+    if (wasRelayoutRequested()) {
+      return;
+    }
     super.requestRelayout();
     getCellLayout().requestRelayout(this);
   }
