@@ -38,7 +38,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_i79cpz_a0a0c2();
-      GeneratedMatchingPattern pattern = new PatternNew_a0b0c2_1(_quotation_createNode_i79cpz_a0a0b0c2());
+      GeneratedMatchingPattern pattern = new Pattern_bvqxbpascp7q(_quotation_createNode_i79cpz_a0a0b0c2());
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {

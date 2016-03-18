@@ -78,6 +78,13 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -5324,12 +5331,108 @@
       <property role="2qtEX9" value="name" />
       <node concept="3zFVjK" id="7Qbh0xggWRz" role="3zH0cK">
         <node concept="3clFbS" id="7Qbh0xggWR$" role="2VODD2">
+          <node concept="3clFbJ" id="4MsJhMdkTTR" role="3cqZAp">
+            <node concept="3clFbS" id="4MsJhMdkTTT" role="3clFbx">
+              <node concept="3cpWs8" id="4MsJhMdkUpI" role="3cqZAp">
+                <node concept="3cpWsn" id="4MsJhMdkUpJ" role="3cpWs9">
+                  <property role="TrG5h" value="nodeId" />
+                  <node concept="3uibUv" id="4MsJhMdkUpE" role="1tU5fm">
+                    <ref role="3uigEE" to="mhbf:~SNodeId" resolve="SNodeId" />
+                  </node>
+                  <node concept="2OqwBi" id="4MsJhMdkUpK" role="33vP2m">
+                    <node concept="2YIFZM" id="4MsJhMdkUpL" role="2Oq$k0">
+                      <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
+                      <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
+                      <node concept="30H73N" id="4MsJhMdkUpM" role="37wK5m" />
+                    </node>
+                    <node concept="liA8E" id="4MsJhMdkUpN" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3SKdUt" id="4MsJhMdl142" role="3cqZAp">
+                <node concept="3SKdUq" id="4MsJhMdl144" role="3SKWNk">
+                  <property role="3SKdUp" value=" TemplateUtil or similar class deserves dedicated method to give compact node id/node's unique value" />
+                </node>
+              </node>
+              <node concept="3cpWs8" id="4MsJhMdkUwq" role="3cqZAp">
+                <node concept="3cpWsn" id="4MsJhMdkUwt" role="3cpWs9">
+                  <property role="TrG5h" value="tail" />
+                  <node concept="17QB3L" id="4MsJhMdkUwn" role="1tU5fm" />
+                  <node concept="3K4zz7" id="4MsJhMdkZvS" role="33vP2m">
+                    <node concept="2OqwBi" id="4MsJhMdl0wB" role="3K4GZi">
+                      <node concept="37vLTw" id="4MsJhMdl0b6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4MsJhMdkUpJ" resolve="nodeId" />
+                      </node>
+                      <node concept="liA8E" id="4MsJhMdl0_A" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                      </node>
+                    </node>
+                    <node concept="2ZW3vV" id="4MsJhMdkUH8" role="3K4Cdx">
+                      <node concept="3uibUv" id="4MsJhMdkZrD" role="2ZW6by">
+                        <ref role="3uigEE" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
+                      </node>
+                      <node concept="37vLTw" id="4MsJhMdkUEd" role="2ZW6bz">
+                        <ref role="3cqZAo" node="4MsJhMdkUpJ" resolve="nodeId" />
+                      </node>
+                    </node>
+                    <node concept="2YIFZM" id="4MsJhMdl1uF" role="3K4E3e">
+                      <ref role="1Pybhc" to="wyt6:~Long" resolve="Long" />
+                      <ref role="37wK5l" to="wyt6:~Long.toString(long,int):java.lang.String" resolve="toString" />
+                      <node concept="2OqwBi" id="4MsJhMdkZWz" role="37wK5m">
+                        <node concept="1eOMI4" id="4MsJhMdkZyA" role="2Oq$k0">
+                          <node concept="10QFUN" id="4MsJhMdkZyz" role="1eOMHV">
+                            <node concept="3uibUv" id="4MsJhMdkZPX" role="10QFUM">
+                              <ref role="3uigEE" to="w1kc:~SNodeId$Regular" resolve="SNodeId.Regular" />
+                            </node>
+                            <node concept="37vLTw" id="4MsJhMdkZSq" role="10QFUP">
+                              <ref role="3cqZAo" node="4MsJhMdkUpJ" resolve="nodeId" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="4MsJhMdl08m" role="2OqNvi">
+                          <ref role="37wK5l" to="w1kc:~SNodeId$Regular.getId():long" resolve="getId" />
+                        </node>
+                      </node>
+                      <node concept="10M0yZ" id="4MsJhMdl23E" role="37wK5m">
+                        <ref role="1PxDUh" to="wyt6:~Character" resolve="Character" />
+                        <ref role="3cqZAo" to="wyt6:~Character.MAX_RADIX" resolve="MAX_RADIX" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="4MsJhMdkU6r" role="3cqZAp">
+                <node concept="3cpWs3" id="4MsJhMdl2wn" role="3cqZAk">
+                  <node concept="37vLTw" id="4MsJhMdl2zQ" role="3uHU7w">
+                    <ref role="3cqZAo" node="4MsJhMdkUwt" resolve="tail" />
+                  </node>
+                  <node concept="Xl_RD" id="4MsJhMdkU9m" role="3uHU7B">
+                    <property role="Xl_RC" value="Pattern_" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4MsJhMdkU3h" role="3clFbw">
+              <node concept="10Nm6u" id="4MsJhMdkU4R" role="3uHU7w" />
+              <node concept="2YIFZM" id="4MsJhMdkU08" role="3uHU7B">
+                <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
+                <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
+                <node concept="30H73N" id="4MsJhMdkU1u" role="37wK5m" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="7Qbh0xggWSI" role="3cqZAp">
             <node concept="2OqwBi" id="7Qbh0xggXdy" role="3clFbG">
               <node concept="1iwH7S" id="7Qbh0xggWSH" role="2Oq$k0" />
               <node concept="2piZGk" id="7Qbh0xggXeK" role="2OqNvi">
                 <node concept="Xl_RD" id="7Qbh0xggXfO" role="2piZGb">
-                  <property role="Xl_RC" value="PatternNew_" />
+                  <property role="Xl_RC" value="Pattern_" />
+                </node>
+                <node concept="2OqwBi" id="4MsJhMdl2MD" role="2pr8EU">
+                  <node concept="30H73N" id="4MsJhMdl2G1" role="2Oq$k0" />
+                  <node concept="2Rxl7S" id="4MsJhMdl2WY" role="2OqNvi" />
                 </node>
               </node>
             </node>

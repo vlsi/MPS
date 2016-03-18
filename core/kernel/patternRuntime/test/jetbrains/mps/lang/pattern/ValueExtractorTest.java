@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -262,7 +263,12 @@ public class ValueExtractorTest {
     myErrors.checkThat(vc.getProperty("ChildName"), Matchers.equalTo("ActualChildOne"));
   }
 
+  /*
+    Turned off unless we decide whether it's right to check child concept/properties
+    for pattern nodes that are captured as a whole.
+   */
   @Test
+  @Ignore
   public void testDisjunction() {
     final SProperty p = SNodeUtil.property_INamedConcept_name;
     final SNode pattern1Node = newNode(ourConcept1);
