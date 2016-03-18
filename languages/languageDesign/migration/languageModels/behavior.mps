@@ -27,6 +27,7 @@
     <import index="5jto" ref="r:5dd063a0-3217-40ce-84a4-0ef961abad0b(jetbrains.mps.lang.migration.util)" />
     <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -649,6 +650,34 @@
         </node>
       </node>
       <node concept="10P_77" id="4uVwhQyFspC" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="7cvir6UD0sZ" role="13h7CS">
+      <property role="TrG5h" value="getPresentation" />
+      <property role="2Ki8OM" value="false" />
+      <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
+      <node concept="3clFbS" id="7cvir6UD0t1" role="3clF47">
+        <node concept="3clFbF" id="3BBZ1T1H1T7" role="3cqZAp">
+          <node concept="BsUDl" id="3BBZ1T1H1T6" role="3clFbG">
+            <ref role="37wK5l" node="5T5Tgcp0u0A" resolve="getVersionedName" />
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="7cvir6UD5kh" role="3clF45" />
+      <node concept="3Tm1VV" id="7cvir6UD5ki" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="3BBZ1T1Gt5L" role="13h7CS">
+      <property role="TrG5h" value="getAdditionalIcon" />
+      <property role="2Ki8OM" value="false" />
+      <ref role="13i0hy" to="tpcu:4mxbjAOAE$e" resolve="getAdditionalIcon" />
+      <node concept="3clFbS" id="3BBZ1T1Gt5N" role="3clF47">
+        <node concept="3clFbF" id="3BBZ1T1GSJD" role="3cqZAp">
+          <node concept="10Nm6u" id="3BBZ1T1GSJC" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3BBZ1T1GSu0" role="1B3o_S" />
+      <node concept="3uibUv" id="3BBZ1T1GZw_" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
     </node>
     <node concept="13hLZK" id="7fCCGqboPK$" role="13h7CW">
       <node concept="3clFbS" id="7fCCGqboPK_" role="2VODD2" />
@@ -2167,6 +2196,20 @@
         <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
       </node>
     </node>
+    <node concept="13i0hz" id="3BBZ1T1H1VI" role="13h7CS">
+      <property role="TrG5h" value="getPresentation" />
+      <property role="2Ki8OM" value="false" />
+      <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
+      <node concept="3clFbS" id="3BBZ1T1H1VK" role="3clF47">
+        <node concept="3clFbF" id="3BBZ1T1H209" role="3cqZAp">
+          <node concept="BsUDl" id="3BBZ1T1H208" role="3clFbG">
+            <ref role="37wK5l" node="5T5Tgcp0u0A" resolve="getVersionedName" />
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="3BBZ1T1H1Yj" role="3clF45" />
+      <node concept="3Tm1VV" id="3BBZ1T1H1Yk" role="1B3o_S" />
+    </node>
   </node>
   <node concept="13h7C7" id="6szrkDoc2JG">
     <property role="3GE5qa" value="refactoring.reference" />
@@ -2290,8 +2333,7 @@
       <node concept="3clFbS" id="7s$_UJMVDHc" role="3clF47" />
     </node>
     <node concept="13i0hz" id="5T5Tgcp0u0A" role="13h7CS">
-      <property role="TrG5h" value="getPresentation" />
-      <ref role="13i0hy" to="tpcu:hEwIMiw" resolve="getPresentation" />
+      <property role="TrG5h" value="getVersionedName" />
       <node concept="3clFbS" id="5T5Tgcp0u0D" role="3clF47">
         <node concept="3clFbF" id="4dfQzC1x$Eb" role="3cqZAp">
           <node concept="3cpWs3" id="4dfQzC1yrmx" role="3clFbG">
