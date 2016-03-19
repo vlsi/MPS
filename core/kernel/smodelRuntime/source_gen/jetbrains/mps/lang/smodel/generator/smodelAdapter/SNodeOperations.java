@@ -578,7 +578,7 @@ public class SNodeOperations {
     }
     return node;
   }
-  public static SAbstractConcept castConcept(SAbstractConcept concept, SAbstractConcept castTo) {
+  public static <T extends SAbstractConcept> T castConcept(T concept, SAbstractConcept castTo) {
     if (concept == null) {
       return null;
     }
