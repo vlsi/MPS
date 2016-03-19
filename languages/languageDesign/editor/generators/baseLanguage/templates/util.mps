@@ -88,7 +88,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -185,6 +185,12 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -203,12 +209,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -784,8 +784,8 @@
                   <node concept="37vLTw" id="7XYaZQUrZI4" role="37wK5m">
                     <ref role="3cqZAo" node="7XYaZQUp1qd" resolve="refPresentation" />
                   </node>
-                  <node concept="3TUQnm" id="7XYaZQUs1OV" role="37wK5m">
-                    <ref role="3TV0OU" to="tpc2:hgVPRjw" resolve="AutoDeletableStyleClassItem" />
+                  <node concept="35c_gC" id="5nUWeBpboTZ" role="37wK5m">
+                    <ref role="35c_gD" to="tpc2:hgVPRjw" resolve="AutoDeletableStyleClassItem" />
                   </node>
                 </node>
               </node>
@@ -836,8 +836,8 @@
                   <node concept="37vLTw" id="7XYaZQURLC9" role="37wK5m">
                     <ref role="3cqZAo" node="7XYaZQURLC0" resolve="refPresentation" />
                   </node>
-                  <node concept="3TUQnm" id="7XYaZQURLCa" role="37wK5m">
-                    <ref role="3TV0OU" to="tpc2:hgVPRjw" resolve="AutoDeletableStyleClassItem" />
+                  <node concept="35c_gC" id="5nUWeBpboNP" role="37wK5m">
+                    <ref role="35c_gD" to="tpc2:hgVPRjw" resolve="AutoDeletableStyleClassItem" />
                   </node>
                 </node>
               </node>
@@ -1033,8 +1033,8 @@
       </node>
       <node concept="37vLTG" id="7XYaZQUrFab" role="3clF46">
         <property role="TrG5h" value="styleClassConcept" />
-        <node concept="3THzug" id="7XYaZQUrFq5" role="1tU5fm">
-          <ref role="3qa414" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+        <node concept="3bZ5Sz" id="5nUWeBpboE1" role="1tU5fm">
+          <ref role="3bZ5Sy" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
         </node>
       </node>
       <node concept="10P_77" id="7XYaZQUr_a3" role="3clF45" />

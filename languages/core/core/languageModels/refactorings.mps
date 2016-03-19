@@ -177,10 +177,12 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -796,11 +798,14 @@
                                         <node concept="1PxgMI" id="56WrVy7azTh" role="2Oq$k0">
                                           <property role="1BlNFB" value="true" />
                                           <ref role="1m5ApE" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-                                          <node concept="2OqwBi" id="56WrVy7azTj" role="1m5AlR">
-                                            <node concept="37vLTw" id="56WrVy7azTk" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="56WrVy7azTo" resolve="node" />
+                                          <node concept="2OqwBi" id="5nUWeBpfVEs" role="1m5AlR">
+                                            <node concept="2OqwBi" id="56WrVy7azTj" role="2Oq$k0">
+                                              <node concept="37vLTw" id="56WrVy7azTk" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="56WrVy7azTo" resolve="node" />
+                                              </node>
+                                              <node concept="2yIwOk" id="5nUWeBpfVch" role="2OqNvi" />
                                             </node>
-                                            <node concept="3NT_Vc" id="56WrVy7azTl" role="2OqNvi" />
+                                            <node concept="FGMqu" id="5nUWeBpfW7G" role="2OqNvi" />
                                           </node>
                                         </node>
                                         <node concept="3TrcHB" id="56WrVy7azTn" role="2OqNvi">

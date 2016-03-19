@@ -15,12 +15,13 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -48,30 +49,30 @@ public final class SetExportAnnotation_Intention extends IntentionDescriptorBase
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
-    List<SNode> paramList = parameter(node, context);
+    List<SConcept> paramList = parameter(node, context);
     if (paramList != null) {
-      for (SNode param : paramList) {
+      for (SConcept param : paramList) {
         ListSequence.fromList(list).addElement(new SetExportAnnotation_Intention.IntentionImplementation(param));
       }
     }
     return list;
   }
-  private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    SNode[] all = {null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aebaL, "jetbrains.mps.lang.core.structure.ExportScopeModule").getDeclarationNode(), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb6L, "jetbrains.mps.lang.core.structure.ExportScopePublic").getDeclarationNode(), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, "jetbrains.mps.lang.core.structure.ExportScopeNamespace").getDeclarationNode()};
-    return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return it != jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"))));
+  private List<SConcept> parameter(final SNode node, final EditorContext editorContext) {
+    SConcept[] all = {null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aebaL, "jetbrains.mps.lang.core.structure.ExportScopeModule"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb6L, "jetbrains.mps.lang.core.structure.ExportScopePublic"), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x239b5385a7e2aeb7L, "jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
+    return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SConcept>() {
+      public boolean accept(SConcept it) {
+        return it != jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConcept(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"))));
       }
     }).toListSequence();
   }
   /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
-    private SNode myParameter;
-    public IntentionImplementation(SNode parameter) {
+    private SConcept myParameter;
+    public IntentionImplementation(SConcept parameter) {
       myParameter = parameter;
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((myParameter == null) ? "Remove @export() Annotation" : "Set " + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + " Annotation");
+      return ((myParameter == null) ? "Remove @export() Annotation" : "Set " + SConceptOperations.conceptAlias(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.castConcept(myParameter, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"))) + " Annotation");
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

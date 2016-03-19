@@ -203,6 +203,7 @@
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
       </concept>
+      <concept id="1761385620274348152" name="jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression" flags="nn" index="2CBFar" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -4999,21 +5000,21 @@
         <node concept="3cpWs8" id="hbu8nEy" role="3cqZAp">
           <node concept="3cpWsn" id="hbu8nEz" role="3cpWs9">
             <property role="TrG5h" value="exprConc" />
-            <node concept="3THzug" id="hbu8nE$" role="1tU5fm">
-              <ref role="3qa414" to="tpee:fz3vP1J" resolve="Expression" />
+            <node concept="3bZ5Sz" id="5nUWeBp5giq" role="1tU5fm">
+              <ref role="3bZ5Sy" to="tpee:fz3vP1J" resolve="Expression" />
             </node>
-            <node concept="3TUQnm" id="2XA_ayKxqNF" role="33vP2m">
-              <ref role="3TV0OU" to="tpee:fz3vP1J" resolve="Expression" />
+            <node concept="35c_gC" id="5nUWeBp5gnB" role="33vP2m">
+              <ref role="35c_gD" to="tpee:fz3vP1J" resolve="Expression" />
             </node>
           </node>
         </node>
         <node concept="3cpWs8" id="hbu8w2d" role="3cqZAp">
           <node concept="3cpWsn" id="hbu8w2e" role="3cpWs9">
             <property role="TrG5h" value="bExprConc" />
-            <node concept="3THzug" id="hbu8w2f" role="1tU5fm">
-              <ref role="3qa414" to="tpee:fJuHJVf" resolve="BinaryOperation" />
+            <node concept="3bZ5Sz" id="5nUWeBp5ggU" role="1tU5fm">
+              <ref role="3bZ5Sy" to="tpee:fJuHJVf" resolve="BinaryOperation" />
             </node>
-            <node concept="1PxgMI" id="hbu8qqx" role="33vP2m">
+            <node concept="2CBFar" id="5nUWeBp5fW8" role="33vP2m">
               <ref role="1m5ApE" to="tpee:fJuHJVf" resolve="BinaryOperation" />
               <node concept="37vLTw" id="2XA_ayKxrC8" role="1m5AlR">
                 <ref role="3cqZAo" node="hbu8nEz" resolve="exprConc" />
