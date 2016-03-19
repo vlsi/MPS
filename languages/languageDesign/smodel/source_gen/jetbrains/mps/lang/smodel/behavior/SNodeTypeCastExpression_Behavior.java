@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 @Deprecated
 public class SNodeTypeCastExpression_Behavior {
+  @Deprecated
   public static boolean call_isSNodeCast_1238686302573(SNode __thisNode__) {
     return SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H(__thisNode__);
   }

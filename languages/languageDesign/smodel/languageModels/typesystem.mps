@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -100,7 +100,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -11839,6 +11839,63 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1xLGIeL0kLb">
+    <property role="TrG5h" value="typeof_SConceptTypeCastExpression" />
+    <node concept="3clFbS" id="1xLGIeL0kLc" role="18ibNy">
+      <node concept="1Z5TYs" id="1xLGIeL0kLs" role="3cqZAp">
+        <node concept="mw_s8" id="1xLGIeL0kLt" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1xLGIeL0kLu" role="mwGJk">
+            <node concept="1YBJjd" id="1xLGIeL0kLv" role="1Z2MuG">
+              <ref role="1YBMHb" node="1xLGIeL0kM1" resolve="expr" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1xLGIeL0kLw" role="1ZfhKB">
+          <node concept="2c44tf" id="1xLGIeL0kLx" role="mwGJk">
+            <node concept="3bZ5Sz" id="1xLGIeL0l40" role="2c44tc">
+              <node concept="2c44tb" id="1xLGIeL0l56" role="lGtFl">
+                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6677504323281689838/6677504323281689839" />
+                <property role="2qtEX8" value="conceptDeclaraton" />
+                <node concept="2OqwBi" id="1xLGIeL0kL$" role="2c44t1">
+                  <node concept="1YBJjd" id="1xLGIeL0kL_" role="2Oq$k0">
+                    <ref role="1YBMHb" node="1xLGIeL0kM1" resolve="expr" />
+                  </node>
+                  <node concept="3TrEf2" id="1xLGIeL0kLA" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp25:5PLE6SbpWS4" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1ZoVOM" id="1xLGIeL0kLS" role="3cqZAp">
+        <node concept="mw_s8" id="1xLGIeL0kLV" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1xLGIeL0kLW" role="mwGJk">
+            <node concept="1YBJjd" id="1xLGIeL0kLX" role="1Z2MuG">
+              <ref role="1YBMHb" node="1xLGIeL0kM1" resolve="expr" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1xLGIeL0kLh" role="1ZfhKB">
+          <node concept="1Z2H0r" id="1xLGIeL0kLi" role="mwGJk">
+            <node concept="2OqwBi" id="1xLGIeL0kLj" role="1Z2MuG">
+              <node concept="1YBJjd" id="1xLGIeL0kLk" role="2Oq$k0">
+                <ref role="1YBMHb" node="1xLGIeL0kM1" resolve="expr" />
+              </node>
+              <node concept="3TrEf2" id="1xLGIeL0kLl" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:5PLE6SbpWOp" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1xLGIeL0kM1" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="tp25:1xLGIeKVK1S" resolve="SConceptTypeCastExpression" />
     </node>
   </node>
 </model>

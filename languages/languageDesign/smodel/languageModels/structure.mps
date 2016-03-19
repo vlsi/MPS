@@ -2496,5 +2496,17 @@
       <ref role="PrY4T" node="5ZE7FBYYOon" resolve="PropertyIdentity" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1xLGIeKVK1S">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="SConceptTypeCastExpression" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value=":" />
+    <property role="1pbfSe" value="916409509" />
+    <ref role="1TJDcQ" node="253epK5leq7" resolve="AbstractTypeCastExpression" />
+    <node concept="PrWs8" id="1xLGIeKVK1Y" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

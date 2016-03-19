@@ -148,7 +148,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="hCKoso8">
-    <ref role="3_znuS" to="tp25:g_PxgQB" resolve="SNodeTypeCastExpression" />
+    <ref role="3_znuS" to="tp25:253epK5leq7" resolve="AbstractTypeCastExpression" />
     <node concept="3__wT9" id="hCKoso9" role="3_A6iZ">
       <node concept="3clFbS" id="hCKosoa" role="2VODD2">
         <node concept="3AgYrR" id="hCKotuv" role="3cqZAp">

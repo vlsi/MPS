@@ -20,6 +20,10 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
       boolean matchedCase = false;
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression"))) {
+        matchedCase = true;
+        return Collections.<IDataFlowBuilder>singletonList(new AbstractTypeCastExpression_DataFlow());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045a3b2L, "jetbrains.mps.lang.smodel.structure.AttributeAccess"))) {
         matchedCase = true;
         return Collections.<IDataFlowBuilder>singletonList(new AttributeAccess_DataFlow());
@@ -67,10 +71,6 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"))) {
         matchedCase = true;
         return Collections.<IDataFlowBuilder>singletonList(new SNodeOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new SNodeTypeCastExpression_DataFlow());
       }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"))) {
         matchedCase = true;

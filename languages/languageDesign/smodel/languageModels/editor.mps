@@ -876,7 +876,7 @@
       </node>
       <node concept="1iCGBv" id="g_PydZ1" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no concept&gt;" />
-        <ref role="1ERwB7" node="g_PBF3H" resolve="SNodeTypeCastExpression_Concept_Actions" />
+        <ref role="1ERwB7" node="g_PBF3H" resolve="AbstractTypeCastExpression_Concept_Actions" />
         <ref role="1NtTu8" to="tp25:5PLE6SbpWS4" />
         <node concept="1sVBvm" id="g_PydZ0" role="1sWHZn">
           <node concept="3F0A7n" id="g_Pyfcs" role="2wV5jI">
@@ -895,8 +895,8 @@
     </node>
   </node>
   <node concept="1h_SRR" id="g_PBF3H">
-    <property role="TrG5h" value="SNodeTypeCastExpression_Concept_Actions" />
-    <ref role="1h_SK9" to="tp25:g_PxgQB" resolve="SNodeTypeCastExpression" />
+    <property role="TrG5h" value="AbstractTypeCastExpression_Concept_Actions" />
+    <ref role="1h_SK9" to="tp25:253epK5leq7" resolve="AbstractTypeCastExpression" />
     <node concept="1hA7zw" id="g_PC3Q9" role="1h_SK8">
       <property role="1hHO97" value="replace type case with left expression" />
       <property role="1hAc7j" value="delete_action_id" />
@@ -5565,6 +5565,38 @@
         </node>
       </node>
       <node concept="2iRkQZ" id="4dU69VRpoSL" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1xLGIeL0ksn">
+    <ref role="1XX52x" to="tp25:1xLGIeKVK1S" resolve="SConceptTypeCastExpression" />
+    <node concept="3EZMnI" id="1xLGIeL0kso" role="2wV5jI">
+      <node concept="3F1sOY" id="1xLGIeL0ksp" role="3EZMnx">
+        <ref role="1NtTu8" to="tp25:5PLE6SbpWOp" />
+      </node>
+      <node concept="3F0ifn" id="1xLGIeL0ksq" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="VPM3Z" id="1xLGIeL0ksr" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="1iCGBv" id="1xLGIeL0ksF" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no concept&gt;" />
+        <ref role="1NtTu8" to="tp25:5PLE6SbpWS4" />
+        <ref role="1ERwB7" node="g_PBF3H" resolve="AbstractTypeCastExpression_Concept_Actions" />
+        <node concept="1sVBvm" id="1xLGIeL0ksG" role="1sWHZn">
+          <node concept="3F0A7n" id="1xLGIeL0ksH" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="VechU" id="1xLGIeL0ksI" role="3F10Kt">
+              <property role="Vb096" value="DARK_MAGENTA" />
+            </node>
+            <node concept="3$7jql" id="1xLGIeL0ksJ" role="3F10Kt">
+              <property role="3$6WeP" value="0.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="1xLGIeL0ksK" role="2iSdaV" />
     </node>
   </node>
 </model>

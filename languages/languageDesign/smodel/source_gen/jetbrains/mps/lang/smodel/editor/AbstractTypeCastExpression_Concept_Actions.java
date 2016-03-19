@@ -11,14 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class SNodeTypeCastExpression_Concept_Actions {
+public class AbstractTypeCastExpression_Concept_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new SNodeTypeCastExpression_Concept_Actions.SNodeTypeCastExpression_Concept_Actions_DELETE(node));
-    editorCell.setAction(CellActionType.BACKSPACE, new SNodeTypeCastExpression_Concept_Actions.SNodeTypeCastExpression_Concept_Actions_BACKSPACE(node));
+    editorCell.setAction(CellActionType.DELETE, new AbstractTypeCastExpression_Concept_Actions.AbstractTypeCastExpression_Concept_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new AbstractTypeCastExpression_Concept_Actions.AbstractTypeCastExpression_Concept_Actions_BACKSPACE(node));
   }
-  public static class SNodeTypeCastExpression_Concept_Actions_DELETE extends AbstractCellAction {
+  public static class AbstractTypeCastExpression_Concept_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public SNodeTypeCastExpression_Concept_Actions_DELETE(SNode node) {
+    public AbstractTypeCastExpression_Concept_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
     public String getDescriptionText() {
@@ -31,9 +31,9 @@ public class SNodeTypeCastExpression_Concept_Actions {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression")));
     }
   }
-  public static class SNodeTypeCastExpression_Concept_Actions_BACKSPACE extends AbstractCellAction {
+  public static class AbstractTypeCastExpression_Concept_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public SNodeTypeCastExpression_Concept_Actions_BACKSPACE(SNode node) {
+    public AbstractTypeCastExpression_Concept_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
     public String getDescriptionText() {

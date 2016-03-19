@@ -26,10 +26,10 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
@@ -562,6 +562,8 @@ public class SNodeOperations {
     }
     return node;
   }
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SNode castConcept(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;
@@ -576,6 +578,22 @@ public class SNodeOperations {
     }
     return node;
   }
+  public static SAbstractConcept castConcept(SAbstractConcept concept, SAbstractConcept castTo) {
+    if (concept == null) {
+      return null;
+    }
+    if (!(concept.isSubConceptOf(castTo))) {
+      String message = "Can't cast concept: " + concept.toString() + " to concept: " + castTo;
+      if (ourCastExceptionsEnabled) {
+        throw new NodeCastException(message);
+      } else {
+        LOG.warning(message);
+      }
+    }
+    return concept;
+  }
+  @Deprecated
+  @ToRemove(version = 3.4)
   public static SNode asConcept(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;

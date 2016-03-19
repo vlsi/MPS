@@ -1011,6 +1011,48 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="1xLGIeL0llV" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:1xLGIeKVK1S" resolve="SConceptTypeCastExpression" />
+      <node concept="gft3U" id="1xLGIeL0llW" role="1lVwrX">
+        <node concept="2YIFZM" id="1xLGIeL0llX" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:3oBWDt4Z_Zw" resolve="castConcept" />
+          <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
+          <node concept="10Nm6u" id="1xLGIeL0llY" role="37wK5m">
+            <node concept="29HgVG" id="1xLGIeL0llZ" role="lGtFl">
+              <node concept="3NFfHV" id="1xLGIeL0lm0" role="3NFExx">
+                <node concept="3clFbS" id="1xLGIeL0lm1" role="2VODD2">
+                  <node concept="3cpWs6" id="1xLGIeL0lmd" role="3cqZAp">
+                    <node concept="2OqwBi" id="1xLGIeL0lme" role="3cqZAk">
+                      <node concept="30H73N" id="1xLGIeL0lmf" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1xLGIeL0lmg" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp25:5PLE6SbpWOp" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="10Nm6u" id="1xLGIeL0lmh" role="37wK5m">
+            <node concept="xERo3" id="1xLGIeL0lmi" role="lGtFl">
+              <ref role="xH3mL" node="5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
+              <node concept="3NFfHV" id="1xLGIeL0lmj" role="xEYEz">
+                <node concept="3clFbS" id="1xLGIeL0lmk" role="2VODD2">
+                  <node concept="3clFbF" id="1xLGIeL0lmw" role="3cqZAp">
+                    <node concept="2OqwBi" id="1xLGIeL0lmx" role="3clFbG">
+                      <node concept="30H73N" id="1xLGIeL0lmy" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1xLGIeL0lmz" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tp25:5PLE6SbpWS4" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="h0CykLn" role="3acgRq">
       <ref role="30HIoZ" to="tp25:gEJrngP" resolve="SemanticDowncastExpression" />
       <node concept="gft3U" id="h8hwbmC" role="1lVwrX">

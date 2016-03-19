@@ -27,9 +27,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   private IntentionFactory[] myIntentions12;
   private IntentionFactory[] myIntentions13;
   private IntentionFactory[] myIntentions14;
+  private IntentionFactory[] myIntentions15;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[15];
+    myId2Index = new long[16];
     myId2Index[0] = 0xf8cc56b217L;
     myId2Index[1] = 0xf940dabe4aL;
     myId2Index[2] = 0xfbbff03700L;
@@ -39,12 +40,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     myId2Index[6] = 0x1099887af60L;
     myId2Index[7] = 0x10a61caab68L;
     myId2Index[8] = 0x10c25fb076aL;
-    myId2Index[9] = 0x110f9b63680L;
-    myId2Index[10] = 0x110f9eb64c6L;
-    myId2Index[11] = 0x11d88b27d15L;
-    myId2Index[12] = 0x3c7a9d8c8d63d4f3L;
-    myId2Index[13] = 0x48e6e2695189e59aL;
-    myId2Index[14] = 0x73bd24cca4f91254L;
+    myId2Index[9] = 0x110f3e65fdcL;
+    myId2Index[10] = 0x110f9b63680L;
+    myId2Index[11] = 0x110f9eb64c6L;
+    myId2Index[12] = 0x11d88b27d15L;
+    myId2Index[13] = 0x3c7a9d8c8d63d4f3L;
+    myId2Index[14] = 0x48e6e2695189e59aL;
+    myId2Index[15] = 0x73bd24cca4f91254L;
   }
 
   @Override
@@ -90,8 +92,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 5:
         // Concept: SNodeTypeCastExpression 
         if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[1];
+          myIntentions5 = new IntentionFactory[2];
           myIntentions5[0] = new ChangeAsCast_Intention();
+          myIntentions5[1] = new ConvertCastToSConceptType_Intention();
         }
         return Arrays.asList(myIntentions5);
       case 6:
@@ -116,47 +119,54 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         }
         return Arrays.asList(myIntentions8);
       case 9:
-        // Concept: ConceptNodeType 
+        // Concept: Node_GetConceptOperation 
         if (myIntentions9 == null) {
           myIntentions9 = new IntentionFactory[1];
-          myIntentions9[0] = new ConceptNodeType2SConceptType_Intention();
+          myIntentions9[0] = new ConvertConceptNodeToSCOncept_Intention();
         }
         return Arrays.asList(myIntentions9);
       case 10:
-        // Concept: ConceptRefExpression 
+        // Concept: ConceptNodeType 
         if (myIntentions10 == null) {
           myIntentions10 = new IntentionFactory[1];
-          myIntentions10[0] = new ConceptRef2Concept_Intention();
+          myIntentions10[0] = new ConceptNodeType2SConceptType_Intention();
         }
         return Arrays.asList(myIntentions10);
       case 11:
-        // Concept: LinkRefExpression 
+        // Concept: ConceptRefExpression 
         if (myIntentions11 == null) {
           myIntentions11 = new IntentionFactory[1];
-          myIntentions11[0] = new LinkRef2Link_Intention();
+          myIntentions11[0] = new ConceptRef2Concept_Intention();
         }
         return Arrays.asList(myIntentions11);
       case 12:
-        // Concept: CheckedModuleReference 
+        // Concept: LinkRefExpression 
         if (myIntentions12 == null) {
           myIntentions12 = new IntentionFactory[1];
-          myIntentions12[0] = new ReplaceWithUncheckedRef_Intention();
+          myIntentions12[0] = new LinkRef2Link_Intention();
         }
         return Arrays.asList(myIntentions12);
       case 13:
-        // Concept: LinkNameRefExpression 
+        // Concept: CheckedModuleReference 
         if (myIntentions13 == null) {
           myIntentions13 = new IntentionFactory[1];
-          myIntentions13[0] = new LinkName2Link_Intention();
+          myIntentions13[0] = new ReplaceWithUncheckedRef_Intention();
         }
         return Arrays.asList(myIntentions13);
       case 14:
-        // Concept: ConceptFqNameRefExpression 
+        // Concept: LinkNameRefExpression 
         if (myIntentions14 == null) {
           myIntentions14 = new IntentionFactory[1];
-          myIntentions14[0] = new ConceptName2Concept_Intention();
+          myIntentions14[0] = new LinkName2Link_Intention();
         }
         return Arrays.asList(myIntentions14);
+      case 15:
+        // Concept: ConceptFqNameRefExpression 
+        if (myIntentions15 == null) {
+          myIntentions15 = new IntentionFactory[1];
+          myIntentions15[0] = new ConceptName2Concept_Intention();
+        }
+        return Arrays.asList(myIntentions15);
       default:
         return null;
     }
@@ -165,7 +175,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[15];
+    IntentionFactory[] rv = new IntentionFactory[17];
     rv[0] = new AddSNodeCastStatement_Intention();
     rv[1] = new ReplaceConceptIsWithConceptEquals_Intention();
     rv[2] = new Replace_ListType_withNodeListType_Intention();
@@ -181,6 +191,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[12] = new ConceptName2Concept_Intention();
     rv[13] = new ConceptNodeType2SConceptType_Intention();
     rv[14] = new ReplaceWithUncheckedRef_Intention();
+    rv[15] = new ConvertCastToSConceptType_Intention();
+    rv[16] = new ConvertConceptNodeToSCOncept_Intention();
     return Arrays.asList(rv);
   }
 }
