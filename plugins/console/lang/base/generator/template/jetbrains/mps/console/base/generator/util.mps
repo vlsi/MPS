@@ -2,10 +2,8 @@
 <model ref="r:57b4df63-43a4-47af-aeca-e2ea21da25f1(jetbrains.mps.console.base.generator.util)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -82,7 +80,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -154,10 +152,12 @@
               <node concept="1Yb3XT" id="zYDcsy_2Lb" role="1Ub_4A">
                 <property role="TrG5h" value="seqType" />
                 <node concept="2DMOqp" id="zYDcsy_2Lc" role="1YbcFS">
-                  <node concept="A3Dl8" id="zYDcsy_2Ld" role="2DMOqq">
-                    <node concept="33vP2l" id="zYDcsy_2Le" role="A3Ik2">
-                      <node concept="2DMOqr" id="zYDcsy_2Lf" role="lGtFl">
-                        <property role="2DMOqs" value="elementType" />
+                  <node concept="2c44tf" id="IAUo05lA2A" role="HM535">
+                    <node concept="A3Dl8" id="zYDcsy_2Ld" role="2c44tc">
+                      <node concept="33vP2l" id="zYDcsy_2Le" role="A3Ik2">
+                        <node concept="2DMOqr" id="zYDcsy_2Lf" role="lGtFl">
+                          <property role="2DMOqs" value="elementType" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -308,10 +308,12 @@
               <node concept="1Yb3XT" id="1rQJladTp9W" role="1Ub_4A">
                 <property role="TrG5h" value="seqType" />
                 <node concept="2DMOqp" id="1rQJladTp9X" role="1YbcFS">
-                  <node concept="A3Dl8" id="1rQJladTp9Y" role="2DMOqq">
-                    <node concept="33vP2l" id="1rQJladTpZX" role="A3Ik2">
-                      <node concept="2DMOqr" id="1rQJladTq4D" role="lGtFl">
-                        <property role="2DMOqs" value="elementType" />
+                  <node concept="2c44tf" id="IAUo05lA5$" role="HM535">
+                    <node concept="A3Dl8" id="1rQJladTp9Y" role="2c44tc">
+                      <node concept="33vP2l" id="1rQJladTpZX" role="A3Ik2">
+                        <node concept="2DMOqr" id="1rQJladTq4D" role="lGtFl">
+                          <property role="2DMOqs" value="elementType" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -462,10 +464,12 @@
               <node concept="1Yb3XT" id="zYDcsyB0a2" role="1Ub_4A">
                 <property role="TrG5h" value="seqType" />
                 <node concept="2DMOqp" id="zYDcsyB0a3" role="1YbcFS">
-                  <node concept="A3Dl8" id="zYDcsyB0a4" role="2DMOqq">
-                    <node concept="33vP2l" id="zYDcsyB0a5" role="A3Ik2">
-                      <node concept="2DMOqr" id="zYDcsyB0a6" role="lGtFl">
-                        <property role="2DMOqs" value="elementType" />
+                  <node concept="2c44tf" id="IAUo05lA8y" role="HM535">
+                    <node concept="A3Dl8" id="zYDcsyB0a4" role="2c44tc">
+                      <node concept="33vP2l" id="zYDcsyB0a5" role="A3Ik2">
+                        <node concept="2DMOqr" id="zYDcsyB0a6" role="lGtFl">
+                          <property role="2DMOqs" value="elementType" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -606,10 +610,12 @@
               <node concept="1Yb3XT" id="3dtxsUtxXXt" role="1Ub_4A">
                 <property role="TrG5h" value="seqType" />
                 <node concept="2DMOqp" id="3dtxsUtxXXu" role="1YbcFS">
-                  <node concept="A3Dl8" id="3dtxsUtxXXv" role="2DMOqq">
-                    <node concept="33vP2l" id="3dtxsUtxXXw" role="A3Ik2">
-                      <node concept="2DMOqr" id="3dtxsUtxXXx" role="lGtFl">
-                        <property role="2DMOqs" value="elementType" />
+                  <node concept="2c44tf" id="IAUo05lAbw" role="HM535">
+                    <node concept="A3Dl8" id="3dtxsUtxXXv" role="2c44tc">
+                      <node concept="33vP2l" id="3dtxsUtxXXw" role="A3Ik2">
+                        <node concept="2DMOqr" id="3dtxsUtxXXx" role="lGtFl">
+                          <property role="2DMOqs" value="elementType" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -756,10 +762,12 @@
               <node concept="1Yb3XT" id="3dtxsUtyzwj" role="1Ub_4A">
                 <property role="TrG5h" value="seqType" />
                 <node concept="2DMOqp" id="3dtxsUtyzwk" role="1YbcFS">
-                  <node concept="A3Dl8" id="3dtxsUtyzwl" role="2DMOqq">
-                    <node concept="33vP2l" id="3dtxsUtyzwm" role="A3Ik2">
-                      <node concept="2DMOqr" id="3dtxsUtyzwn" role="lGtFl">
-                        <property role="2DMOqs" value="elementType" />
+                  <node concept="2c44tf" id="IAUo05lAeu" role="HM535">
+                    <node concept="A3Dl8" id="3dtxsUtyzwl" role="2c44tc">
+                      <node concept="33vP2l" id="3dtxsUtyzwm" role="A3Ik2">
+                        <node concept="2DMOqr" id="3dtxsUtyzwn" role="lGtFl">
+                          <property role="2DMOqs" value="elementType" />
+                        </node>
                       </node>
                     </node>
                   </node>

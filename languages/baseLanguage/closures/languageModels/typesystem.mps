@@ -4,6 +4,7 @@
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -187,7 +188,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -5173,8 +5174,10 @@
     <node concept="1Yb3XT" id="3BInSoF5DOP" role="35pZ6h">
       <property role="TrG5h" value="object" />
       <node concept="2DMOqp" id="3BInSoF5DOQ" role="1YbcFS">
-        <node concept="3uibUv" id="3BInSoF5DP4" role="2DMOqq">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        <node concept="2c44tf" id="IAUo05kNaX" role="HM535">
+          <node concept="3uibUv" id="3BInSoF5DP4" role="2c44tc">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
         </node>
       </node>
     </node>
