@@ -381,7 +381,6 @@
     </node>
   </node>
   <node concept="2DaZZR" id="7b04BvPXWY3" />
-  <node concept="2DaZZR" id="6dAEaqvagLL" />
   <node concept="tC5Ba" id="7$e6lgA3BAn">
     <property role="TrG5h" value="ProjectPaneProjectAddition" />
     <node concept="ftmFs" id="7$e6lgA3BAo" role="ftER_">
