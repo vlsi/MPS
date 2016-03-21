@@ -36,14 +36,15 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 @Generated
@@ -435,7 +436,8 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886876(final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    SNode originalNode = TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
+    SRepository repo = _context.getOriginalInputModel().getRepository();
+    SNode originalNode = TracingUtil.getInputNode(_context.getNode(), repo);
     if (originalNode == null) {
       originalNode = _context.getNode();
     }
@@ -472,7 +474,11 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_ReferenceDescriptor")));
-      SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a480044dL, "targetModel"), ((SModelReference) ref.getTargetSModelReference()).update().toString());
+      //  try to make reference up-to-date, not like it was recorded in the model file (e.g. may have outdated name) 
+      // This is merely to replace smodel.SModelReference.update() call which used to be here, I'm not 100% confident there's any reason to update references this way 
+      SModel targetModel = ref.getTargetSModelReference().resolve(repo);
+      final PersistenceFacade pf = PersistenceFacade.getInstance();
+      SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a480044dL, "targetModel"), pf.asString((targetModel == null ? ref.getTargetSModelReference() : targetModel.getReference())));
       SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973eL, "role"), (SNode) ref.getLink().getDeclarationNode());
       if (targetNode != null) {
         SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973fL, "targetNodeId"), targetNode.getNodeId().toString());
