@@ -7,7 +7,7 @@
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -139,7 +139,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -332,6 +332,11 @@
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="4589968773278056990" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef" flags="nn" index="3EVhDp">
         <reference id="4589968773278063829" name="patternVarDecl" index="3EVgii" />
+      </concept>
+    </language>
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1697,17 +1702,19 @@
     </node>
     <node concept="1N7XDa" id="5KZfyKsWzlP" role="1N6$md">
       <node concept="2DMOqp" id="5KZfyKsWzlQ" role="1N7Fz$">
-        <node concept="2pNNFK" id="5KZfyKsWzlS" role="2DMOqq">
-          <property role="2pNNFO" value="src" />
-          <node concept="2pNNFK" id="5KZfyKsWzlT" role="3o6s8t">
-            <property role="qg3DV" value="true" />
-            <property role="2pNNFO" value="pathelement" />
-            <node concept="2pNUuL" id="5KZfyKsWzlU" role="2pNNFR">
-              <property role="2pNUuO" value="path" />
-              <node concept="2pMdtt" id="5KZfyKsWzlV" role="2pMdts">
-                <property role="2pMdty" value="ad" />
-                <node concept="2DMOqr" id="5KZfyKsWzlW" role="lGtFl">
-                  <property role="2DMOqs" value="pathvalue" />
+        <node concept="2c44tf" id="7oTZmjkCr6X" role="HM535">
+          <node concept="2pNNFK" id="5KZfyKsWzlS" role="2c44tc">
+            <property role="2pNNFO" value="src" />
+            <node concept="2pNNFK" id="5KZfyKsWzlT" role="3o6s8t">
+              <property role="qg3DV" value="true" />
+              <property role="2pNNFO" value="pathelement" />
+              <node concept="2pNUuL" id="5KZfyKsWzlU" role="2pNNFR">
+                <property role="2pNUuO" value="path" />
+                <node concept="2pMdtt" id="5KZfyKsWzlV" role="2pMdts">
+                  <property role="2pMdty" value="ad" />
+                  <node concept="2DMOqr" id="5KZfyKsWzlW" role="lGtFl">
+                    <property role="2DMOqs" value="pathvalue" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1763,17 +1770,19 @@
     </node>
     <node concept="1N7XDa" id="7wpYgMyVmoF" role="1N6$md">
       <node concept="2DMOqp" id="7wpYgMyVmoG" role="1N7Fz$">
-        <node concept="2pNNFK" id="7wpYgMyVmoH" role="2DMOqq">
-          <property role="2pNNFO" value="path" />
-          <node concept="2pNNFK" id="7wpYgMyVmoI" role="3o6s8t">
-            <property role="qg3DV" value="true" />
-            <property role="2pNNFO" value="pathelement" />
-            <node concept="2pNUuL" id="7wpYgMyVmoJ" role="2pNNFR">
-              <property role="2pNUuO" value="location" />
-              <node concept="2pMdtt" id="7wpYgMyVmoK" role="2pMdts">
-                <property role="2pMdty" value="ad" />
-                <node concept="2DMOqr" id="7wpYgMyVmoL" role="lGtFl">
-                  <property role="2DMOqs" value="pathvalue" />
+        <node concept="2c44tf" id="7oTZmjkCr6Z" role="HM535">
+          <node concept="2pNNFK" id="7wpYgMyVmoH" role="2c44tc">
+            <property role="2pNNFO" value="path" />
+            <node concept="2pNNFK" id="7wpYgMyVmoI" role="3o6s8t">
+              <property role="qg3DV" value="true" />
+              <property role="2pNNFO" value="pathelement" />
+              <node concept="2pNUuL" id="7wpYgMyVmoJ" role="2pNNFR">
+                <property role="2pNUuO" value="location" />
+                <node concept="2pMdtt" id="7wpYgMyVmoK" role="2pMdts">
+                  <property role="2pMdty" value="ad" />
+                  <node concept="2DMOqr" id="7wpYgMyVmoL" role="lGtFl">
+                    <property role="2DMOqs" value="pathvalue" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1829,17 +1838,19 @@
     </node>
     <node concept="1N7XDa" id="6S1jmf0xojg" role="1N6$md">
       <node concept="2DMOqp" id="6S1jmf0xojh" role="1N7Fz$">
-        <node concept="2pNNFK" id="6S1jmf0xoji" role="2DMOqq">
-          <property role="2pNNFO" value="classpath" />
-          <node concept="2pNNFK" id="6S1jmf0xojj" role="3o6s8t">
-            <property role="qg3DV" value="true" />
-            <property role="2pNNFO" value="pathelement" />
-            <node concept="2pNUuL" id="6S1jmf0xojk" role="2pNNFR">
-              <property role="2pNUuO" value="path" />
-              <node concept="2pMdtt" id="6S1jmf0xojl" role="2pMdts">
-                <property role="2pMdty" value="ad" />
-                <node concept="2DMOqr" id="6S1jmf0xojm" role="lGtFl">
-                  <property role="2DMOqs" value="pathvalue" />
+        <node concept="2c44tf" id="7oTZmjkCr6W" role="HM535">
+          <node concept="2pNNFK" id="6S1jmf0xoji" role="2c44tc">
+            <property role="2pNNFO" value="classpath" />
+            <node concept="2pNNFK" id="6S1jmf0xojj" role="3o6s8t">
+              <property role="qg3DV" value="true" />
+              <property role="2pNNFO" value="pathelement" />
+              <node concept="2pNUuL" id="6S1jmf0xojk" role="2pNNFR">
+                <property role="2pNUuO" value="path" />
+                <node concept="2pMdtt" id="6S1jmf0xojl" role="2pMdts">
+                  <property role="2pMdty" value="ad" />
+                  <node concept="2DMOqr" id="6S1jmf0xojm" role="lGtFl">
+                    <property role="2DMOqs" value="pathvalue" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1895,17 +1906,19 @@
     </node>
     <node concept="1N7XDa" id="6S1jmf0xCZW" role="1N6$md">
       <node concept="2DMOqp" id="6S1jmf0xCZX" role="1N7Fz$">
-        <node concept="2pNNFK" id="6S1jmf0xCZY" role="2DMOqq">
-          <property role="2pNNFO" value="classpath" />
-          <node concept="2pNNFK" id="6S1jmf0xCZZ" role="3o6s8t">
-            <property role="qg3DV" value="true" />
-            <property role="2pNNFO" value="path" />
-            <node concept="2pNUuL" id="6S1jmf0xD00" role="2pNNFR">
-              <property role="2pNUuO" value="refid" />
-              <node concept="2pMdtt" id="6S1jmf0xD01" role="2pMdts">
-                <property role="2pMdty" value="ad" />
-                <node concept="2DMOqr" id="6S1jmf0xD02" role="lGtFl">
-                  <property role="2DMOqs" value="idvalue" />
+        <node concept="2c44tf" id="7oTZmjkCr6Y" role="HM535">
+          <node concept="2pNNFK" id="6S1jmf0xCZY" role="2c44tc">
+            <property role="2pNNFO" value="classpath" />
+            <node concept="2pNNFK" id="6S1jmf0xCZZ" role="3o6s8t">
+              <property role="qg3DV" value="true" />
+              <property role="2pNNFO" value="path" />
+              <node concept="2pNUuL" id="6S1jmf0xD00" role="2pNNFR">
+                <property role="2pNUuO" value="refid" />
+                <node concept="2pMdtt" id="6S1jmf0xD01" role="2pMdts">
+                  <property role="2pMdty" value="ad" />
+                  <node concept="2DMOqr" id="6S1jmf0xD02" role="lGtFl">
+                    <property role="2DMOqs" value="idvalue" />
+                  </node>
                 </node>
               </node>
             </node>

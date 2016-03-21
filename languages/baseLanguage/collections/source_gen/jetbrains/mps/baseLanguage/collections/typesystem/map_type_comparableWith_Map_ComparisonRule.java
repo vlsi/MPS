@@ -9,13 +9,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SReference;
 
 public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -32,7 +28,7 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
   }
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new map_type_comparableWith_Map_ComparisonRule.Pattern_yoc8ci_a0a0a0a5();
+      GeneratedMatchingPattern pattern = new Pattern_fub4a0g7(_quotation_createNode_yoc8ci_a0a0a0a0f());
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -45,63 +41,17 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
   public SAbstractConcept getApplicableConcept2() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
-  public static class Pattern_yoc8ci_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_KEY;
-    /*package*/ SNode patternVar_VALUE;
-    public Pattern_yoc8ci_a0a0a0a5() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_a1tqv3_a0a = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_a1tqv3_a0a.getConcept()))) {
-          return false;
-        }
-        {
-          SNodeReference pointer = SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0b0a0a0a0f;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_a1tqv3_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
-            return false;
-          }
-        }
-        {
-          SContainmentLink childRole_a1tqv3_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_a1tqv3_a0a, childRole_a1tqv3_, 2))) {
-            return false;
-          }
-          {
-            SNode childVar_a1tqv3_a0a0 = IterableUtil.get(nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_), 0);
-            this.patternVar_KEY = childVar_a1tqv3_a0a0;
-          }
-          {
-            SNode childVar_a1tqv3_b0a0 = IterableUtil.get(nodeToMatch_a1tqv3_a0a.getChildren(childRole_a1tqv3_), 1);
-            this.patternVar_VALUE = childVar_a1tqv3_b0a0;
-          }
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_KEY = (SNode) pattern.getFieldValue("patternVar_KEY");
-        patternVar_VALUE = (SNode) pattern.getFieldValue("patternVar_VALUE");
-      }
-    }
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_KEY".equals(fieldName)) {
-        return patternVar_KEY;
-      }
-      if ("patternVar_VALUE".equals(fieldName)) {
-        return patternVar_VALUE;
-      }
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_yoc8ci_a0a0a0a0f() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)"), facade.createNodeId("~Map")));
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), null, null, false);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_2);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), null, null, false);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
+    return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0b0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)", "~Map");
 }

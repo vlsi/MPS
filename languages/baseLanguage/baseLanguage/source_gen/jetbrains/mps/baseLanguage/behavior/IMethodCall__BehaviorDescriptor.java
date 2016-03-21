@@ -30,11 +30,9 @@ import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
 public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
@@ -77,7 +75,7 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         }
         final SNode methodClassifier = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         {
-          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new IMethodCall__BehaviorDescriptor.Pattern_rhcdro_a0a0a5a2a1a81(methodClassifier);
+          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new Pattern_1ouf0mjhz0oob(_quotation_createNode_fq0410_a0a0a0f0c0b0b(methodClassifier));
           SNode coercedNode_fq0410_f0c0b0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0b);
           if (coercedNode_fq0410_f0c0b0b != null) {
             SNode resultType;
@@ -206,59 +204,15 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_rhcdro_a0a0a5a2a1a81 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ List<SNode> patternVar_param;
-    /*package*/ SNode patternVar_ignore;
-    /*package*/ Object AntiquotationField_fq0410_a0a0a5a2a1a1;
-    public Pattern_rhcdro_a0a0a5a2a1a81(Object parameter_fq0410_a0a0a5a2a1a1) {
-      this.AntiquotationField_fq0410_a0a0a5a2a1a1 = parameter_fq0410_a0a0a5a2a1a1;
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_fq0410_a0a5a2a1a1 = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_fq0410_a0a5a2a1a1.getConcept()))) {
-          return false;
-        }
-        {
-          SNode referent;
-          referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) != referent) {
-            return false;
-          }
-        }
-        {
-          SContainmentLink childRole_fq0410_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
-          this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
-          for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
-            ListSequence.fromList(this.patternVar_param).addElement(childVar);
-          }
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return true;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_param = (List<SNode>) pattern.getFieldValue("patternVar_param");
-        patternVar_ignore = (SNode) pattern.getFieldValue("patternVar_ignore");
-      }
-    }
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_param".equals(fieldName)) {
-        return patternVar_param;
-      }
-      if ("patternVar_ignore".equals(fieldName)) {
-        return patternVar_ignore;
-      }
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_fq0410_a0a0a0f0c0b0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), null, null, false);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_3);
+    return quotedNode_2;
   }
   private static SNode _quotation_createNode_fq0410_a0a1a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -5,7 +5,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -188,7 +188,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -344,6 +344,9 @@
       <concept id="1217282130234" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel" flags="nn" index="1FEO0x" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      </concept>
       <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
         <reference id="5455284157994012188" name="link" index="2pIpSl" />
       </concept>
@@ -4500,23 +4503,25 @@
               <node concept="1Yb3XT" id="irgVYo7Sxo" role="DmFtg">
                 <property role="TrG5h" value="staticMethodCall" />
                 <node concept="2DMOqp" id="irgVYo7Sxq" role="1YbcFS">
-                  <node concept="36biLy" id="irgVYo7SMU" role="2DMOqq">
-                    <node concept="1PxgMI" id="irgVYo82YQ" role="36biLW">
-                      <ref role="1m5ApE" to="tpck:4uZwTti3_$T" resolve="Attribute" />
-                      <node concept="3jrphi" id="irgVYo82YW" role="lGtFl">
-                        <property role="2qtEX8" value="concept" />
-                        <property role="3jrwYG" value="concept" />
-                        <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2396822768958367367/6733348108486823428" />
-                        <node concept="2DMOqv" id="irgVYo82YX" role="lGtFl" />
-                      </node>
-                      <node concept="2YIFZM" id="irgVYo82YR" role="1m5AlR">
-                        <ref role="37wK5l" to="qurh:~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copyIfNecessary" />
-                        <ref role="1Pybhc" to="qurh:~HUtil" resolve="HUtil" />
-                        <node concept="33vP2n" id="irgVYo82YS" role="37wK5m">
-                          <node concept="2DMOqv" id="irgVYo82YT" role="lGtFl">
-                            <node concept="2DMOqr" id="irgVYo82YU" role="lGtFl">
-                              <property role="2DMOqs" value="expr" />
-                              <node concept="2DMOqv" id="irgVYo82YV" role="lGtFl" />
+                  <node concept="2c44tf" id="7oTZmjkCr6C" role="HM535">
+                    <node concept="36biLy" id="irgVYo7SMU" role="2c44tc">
+                      <node concept="1PxgMI" id="irgVYo82YQ" role="36biLW">
+                        <ref role="1m5ApE" to="tpck:4uZwTti3_$T" resolve="Attribute" />
+                        <node concept="3jrphi" id="irgVYo82YW" role="lGtFl">
+                          <property role="2qtEX8" value="concept" />
+                          <property role="3jrwYG" value="concept" />
+                          <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2396822768958367367/6733348108486823428" />
+                          <node concept="2DMOqv" id="irgVYo82YX" role="lGtFl" />
+                        </node>
+                        <node concept="2YIFZM" id="irgVYo82YR" role="1m5AlR">
+                          <ref role="37wK5l" to="qurh:~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copyIfNecessary" />
+                          <ref role="1Pybhc" to="qurh:~HUtil" resolve="HUtil" />
+                          <node concept="33vP2n" id="irgVYo82YS" role="37wK5m">
+                            <node concept="2DMOqv" id="irgVYo82YT" role="lGtFl">
+                              <node concept="2DMOqr" id="irgVYo82YU" role="lGtFl">
+                                <property role="2DMOqs" value="expr" />
+                                <node concept="2DMOqv" id="irgVYo82YV" role="lGtFl" />
+                              </node>
                             </node>
                           </node>
                         </node>

@@ -18,8 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -59,7 +57,7 @@ public class typeof_OfConceptOperation_InferenceRule extends AbstractInferenceRu
           public void run() {
             SNode resultConcept;
             {
-              GeneratedMatchingPattern pattern_f4q3w2_b0b0d0 = new typeof_OfConceptOperation_InferenceRule.Pattern_nf8bul_a0a0a1a0a0b0a1a1a3a1();
+              GeneratedMatchingPattern pattern_f4q3w2_b0b0d0 = new Pattern_js7wmyu14mtm(_quotation_createNode_nf8bul_a0a0a0b0b0d0b());
               SNode coercedNode_f4q3w2_b0b0d0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(requestedConceptType), pattern_f4q3w2_b0b0d0);
               if (coercedNode_f4q3w2_b0b0d0 != null) {
                 resultConcept = ((SNode) pattern_f4q3w2_b0b0d0.getFieldValue("patternVar_concept"));
@@ -108,40 +106,6 @@ public class typeof_OfConceptOperation_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-  public static class Pattern_nf8bul_a0a0a1a0a0b0a1a1a3a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_concept;
-    public Pattern_nf8bul_a0a0a1a0a0b0a1a1a3a1() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_f4q3w2_a0a1a1a3a = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType").equals(nodeToMatch_f4q3w2_a0a1a1a3a.getConcept()))) {
-          return false;
-        }
-        patternVar_concept = nodeToMatch_f4q3w2_a0a1a1a3a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, 0x5cab42cd97571cefL, "conceptDeclaraton"));
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
-      }
-    }
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_concept".equals(fieldName)) {
-        return patternVar_concept;
-      }
-      return null;
-    }
-    public void performActions(Object o) {
-    }
-  }
   private static SNode _quotation_createNode_nf8bul_a0b0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -159,6 +123,12 @@ public class typeof_OfConceptOperation_InferenceRule extends AbstractInferenceRu
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_nf8bul_a0a0d0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"), null, null, false);
+    return quotedNode_1;
+  }
+  private static SNode _quotation_createNode_nf8bul_a0a0a0b0b0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType"), null, null, false);

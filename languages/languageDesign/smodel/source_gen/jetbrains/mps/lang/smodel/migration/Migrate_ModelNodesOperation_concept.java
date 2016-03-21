@@ -29,10 +29,9 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
@@ -45,7 +44,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
   }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Migrate_ModelNodesOperation_concept.Pattern_vs95qi_a0a0a0a2();
+      final GeneratedMatchingPattern pattern = new Pattern_o1m83rbme29w(_quotation_createNode_vs95qi_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -127,39 +126,12 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0);
   }
 
-  public static class Pattern_vs95qi_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_concept;
-    public Pattern_vs95qi_a0a0a0a2() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_vs95qi_a0a0f = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation").equals(nodeToMatch_vs95qi_a0a0f.getConcept()))) {
-          return false;
-        }
-        patternVar_concept = nodeToMatch_vs95qi_a0a0f.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
-      }
-    }
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_concept".equals(fieldName)) {
-        return patternVar_concept;
-      }
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_vs95qi_a0a0a5() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation"), null, null, false);
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"), SReference.create(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"), quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1133920641626")));
+    return quotedNode_1;
   }
   private static SNode _quotation_createNode_vs95qi_a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

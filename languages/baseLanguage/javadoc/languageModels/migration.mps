@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
@@ -131,7 +131,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -297,7 +297,9 @@
       <node concept="3clFbS" id="49IRVjgsYgK" role="3clF47">
         <node concept="3SqFnK" id="49IRVjgsZ7E" role="3cqZAp">
           <node concept="2DMOqp" id="49IRVjgsZ7F" role="3SqFnn">
-            <node concept="TZ5HI" id="49IRVjgt0qN" role="2DMOqq" />
+            <node concept="2c44tf" id="7oTZmjkCraU" role="HM535">
+              <node concept="TZ5HI" id="49IRVjgt0qN" role="2c44tc" />
+            </node>
           </node>
           <node concept="3SqKpS" id="49IRVjgt1aE" role="3SqFn9">
             <node concept="2c44tf" id="49IRVjgt1aG" role="2SEiMu">

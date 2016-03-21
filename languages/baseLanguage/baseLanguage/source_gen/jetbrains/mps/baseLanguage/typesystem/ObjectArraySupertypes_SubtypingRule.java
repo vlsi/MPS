@@ -12,16 +12,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -36,7 +29,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new ObjectArraySupertypes_SubtypingRule.Pattern_gqfgxi_a0a0a0a4();
+      GeneratedMatchingPattern pattern = new Pattern_ff3zxskt(_quotation_createNode_gqfgxi_a0a0a0a0e());
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -44,53 +37,6 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
   public boolean isWeak() {
     return false;
-  }
-  public static class Pattern_gqfgxi_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_gqfgxi_a0a0a0a4() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_mvbroc_a0a = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType").equals(nodeToMatch_mvbroc_a0a.getConcept()))) {
-          return false;
-        }
-        {
-          SContainmentLink childRole_mvbroc_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_mvbroc_a0a, childRole_mvbroc_, 1))) {
-            return false;
-          }
-          {
-            SNode childVar_mvbroc_a0a0 = IterableUtil.get(nodeToMatch_mvbroc_a0a.getChildren(childRole_mvbroc_), 0);
-            {
-              SNode nodeToMatch_mvbroc_a0a0 = childVar_mvbroc_a0a0;
-              if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_mvbroc_a0a0.getConcept()))) {
-                return false;
-              }
-              {
-                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0b0a0a0a0e;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
-                  return false;
-                }
-              }
-            }
-          }
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-    public void performActions(Object o) {
-    }
   }
   private static SNode _quotation_createNode_gqfgxi_a0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -113,5 +59,14 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Cloneable")));
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0b0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object");
+  private static SNode _quotation_createNode_gqfgxi_a0a0a0a0e() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), null, null, false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
+    quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_2, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Object")));
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType"), quotedNode_2);
+    return quotedNode_1;
+  }
 }

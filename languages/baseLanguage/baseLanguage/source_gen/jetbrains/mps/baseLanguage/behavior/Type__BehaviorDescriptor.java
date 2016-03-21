@@ -35,8 +35,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -143,7 +141,7 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean isSupersetOf_idhKBOZqh(@NotNull SNode __thisNode__, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0o = new Type__BehaviorDescriptor.Pattern_whj271_a0a0a0a34(__thisNode__);
+      GeneratedMatchingPattern pattern_smb55n_a0o = new Pattern_fknugtqb(_quotation_createNode_smb55n_a0a0a0a0o(__thisNode__));
       SNode coercedNode_smb55n_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0o);
       if (coercedNode_smb55n_a0o != null) {
         return true;
@@ -268,39 +266,19 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static class Pattern_whj271_a0a0a0a34 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField_smb55n_a0a0a0a41;
-    public Pattern_whj271_a0a0a0a34(Object parameter_smb55n_a0a0a0a41) {
-      this.AntiquotationField_smb55n_a0a0a0a41 = parameter_smb55n_a0a0a0a41;
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_smb55n_a0a0a41 = nodeToMatch;
-        if (!(MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_smb55n_a0a0a41))) {
-          return false;
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return true;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-    public void performActions(Object o) {
-    }
-  }
   private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier"), (SNode) parameter_1);
+    return quotedNode_2;
+  }
+  private static SNode _quotation_createNode_smb55n_a0a0a0a0o(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = (SNode) parameter_1;
+    if (quotedNode_2 != null) {
+    }
     return quotedNode_2;
   }
 }

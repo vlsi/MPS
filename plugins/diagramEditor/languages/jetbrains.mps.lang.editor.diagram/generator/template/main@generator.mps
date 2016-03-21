@@ -5,7 +5,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
@@ -297,7 +297,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037783" name="jetbrains.mps.lang.pattern.structure.WildcardPattern" flags="ng" index="2DMOqv" />
     </language>
@@ -7911,10 +7911,12 @@
                   <node concept="1Yb3XT" id="6IvYjBzED8V" role="3KnVwV">
                     <property role="TrG5h" value="type" />
                     <node concept="2DMOqp" id="6IvYjBzED8X" role="1YbcFS">
-                      <node concept="3uibUv" id="6IvYjBzEDNA" role="2DMOqq">
-                        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                        <node concept="33vP2l" id="6IvYjBzEDYk" role="11_B2D">
-                          <node concept="2DMOqv" id="6IvYjBzEE90" role="lGtFl" />
+                      <node concept="2c44tf" id="7oTZmjkCr7G" role="HM535">
+                        <node concept="3uibUv" id="6IvYjBzEDNA" role="2c44tc">
+                          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                          <node concept="33vP2l" id="6IvYjBzEDYk" role="11_B2D">
+                            <node concept="2DMOqv" id="6IvYjBzEE90" role="lGtFl" />
+                          </node>
                         </node>
                       </node>
                     </node>

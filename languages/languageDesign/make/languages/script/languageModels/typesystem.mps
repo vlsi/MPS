@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
@@ -84,7 +84,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -213,8 +213,10 @@
     <node concept="1Yb3XT" id="230qvwa_sSn" role="3bfgSz">
       <property role="TrG5h" value="res" />
       <node concept="2DMOqp" id="230qvwa_sSo" role="1YbcFS">
-        <node concept="3uibUv" id="24rWPsEm3Kc" role="2DMOqq">
-          <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+        <node concept="2c44tf" id="7oTZmjkCr9r" role="HM535">
+          <node concept="3uibUv" id="24rWPsEm3Kc" role="2c44tc">
+            <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+          </node>
         </node>
       </node>
     </node>
@@ -851,8 +853,10 @@
     <node concept="1Yb3XT" id="5_MlBAZRFfy" role="1YuTPh">
       <property role="TrG5h" value="classifierType" />
       <node concept="2DMOqp" id="5_MlBAZS0Yx" role="1YbcFS">
-        <node concept="3uibUv" id="5_MlBAZS0Yy" role="2DMOqq">
-          <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+        <node concept="2c44tf" id="7oTZmjkCr9q" role="HM535">
+          <node concept="3uibUv" id="5_MlBAZS0Yy" role="2c44tc">
+            <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+          </node>
         </node>
       </node>
     </node>

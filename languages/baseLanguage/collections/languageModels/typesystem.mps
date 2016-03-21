@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="3" />
@@ -175,7 +175,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -2395,11 +2395,13 @@
     <node concept="1Yb3XT" id="h9LxIvZ" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <node concept="2DMOqp" id="h9LxIw0" role="1YbcFS">
-        <node concept="3uibUv" id="h9LxIw1" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="33vP2l" id="h9LxIw2" role="11_B2D">
-            <node concept="2DMOqr" id="h9LxIw3" role="lGtFl">
-              <property role="2DMOqs" value="elemType" />
+        <node concept="2c44tf" id="7oTZmjkCr2T" role="HM535">
+          <node concept="3uibUv" id="h9LxIw1" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+            <node concept="33vP2l" id="h9LxIw2" role="11_B2D">
+              <node concept="2DMOqr" id="h9LxIw3" role="lGtFl">
+                <property role="2DMOqs" value="elemType" />
+              </node>
             </node>
           </node>
         </node>
@@ -2427,11 +2429,13 @@
     <node concept="1Yb3XT" id="h9UOfPA" role="1YuTPh">
       <property role="TrG5h" value="iterableClassifierType" />
       <node concept="2DMOqp" id="h9UOfPB" role="1YbcFS">
-        <node concept="3uibUv" id="h9UOhcy" role="2DMOqq">
-          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-          <node concept="33vP2l" id="h9UOhG2" role="11_B2D">
-            <node concept="2DMOqr" id="h9UOik6" role="lGtFl">
-              <property role="2DMOqs" value="p" />
+        <node concept="2c44tf" id="7oTZmjkCr2I" role="HM535">
+          <node concept="3uibUv" id="h9UOhcy" role="2c44tc">
+            <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+            <node concept="33vP2l" id="h9UOhG2" role="11_B2D">
+              <node concept="2DMOqr" id="h9UOik6" role="lGtFl">
+                <property role="2DMOqs" value="p" />
+              </node>
             </node>
           </node>
         </node>
@@ -2844,16 +2848,18 @@
     <node concept="1Yb3XT" id="hrSgJmG" role="1YuTPh">
       <property role="TrG5h" value="mapType" />
       <node concept="2DMOqp" id="hrSgJmH" role="1YbcFS">
-        <node concept="3uibUv" id="hrSgK$N" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-          <node concept="33vP2l" id="hrSgKWj" role="11_B2D">
-            <node concept="2DMOqr" id="hrSgLH$" role="lGtFl">
-              <property role="2DMOqs" value="keyType" />
+        <node concept="2c44tf" id="7oTZmjkCr31" role="HM535">
+          <node concept="3uibUv" id="hrSgK$N" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+            <node concept="33vP2l" id="hrSgKWj" role="11_B2D">
+              <node concept="2DMOqr" id="hrSgLH$" role="lGtFl">
+                <property role="2DMOqs" value="keyType" />
+              </node>
             </node>
-          </node>
-          <node concept="33vP2l" id="hrSgMg1" role="11_B2D">
-            <node concept="2DMOqr" id="hrSgMHc" role="lGtFl">
-              <property role="2DMOqs" value="valueType" />
+            <node concept="33vP2l" id="hrSgMg1" role="11_B2D">
+              <node concept="2DMOqr" id="hrSgMHc" role="lGtFl">
+                <property role="2DMOqs" value="valueType" />
+              </node>
             </node>
           </node>
         </node>
@@ -5640,11 +5646,13 @@
     <node concept="1Yb3XT" id="hQmXTo$" role="1YuTPh">
       <property role="TrG5h" value="set" />
       <node concept="2DMOqp" id="hQmXTo_" role="1YbcFS">
-        <node concept="3uibUv" id="hQmXY2s" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="33vP2l" id="hQmXYp_" role="11_B2D">
-            <node concept="2DMOqr" id="hQmY2e6" role="lGtFl">
-              <property role="2DMOqs" value="elementType" />
+        <node concept="2c44tf" id="7oTZmjkCr2N" role="HM535">
+          <node concept="3uibUv" id="hQmXY2s" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="33vP2l" id="hQmXYp_" role="11_B2D">
+              <node concept="2DMOqr" id="hQmY2e6" role="lGtFl">
+                <property role="2DMOqs" value="elementType" />
+              </node>
             </node>
           </node>
         </node>
@@ -5672,10 +5680,12 @@
     <node concept="1Yb3XT" id="hQmZpWK" role="1YuTPh">
       <property role="TrG5h" value="set" />
       <node concept="2DMOqp" id="hQmZpWL" role="1YbcFS">
-        <node concept="2hMVRd" id="hQmZrOr" role="2DMOqq">
-          <node concept="33vP2l" id="hQmZrOs" role="2hN53Y">
-            <node concept="2DMOqr" id="hQmZsg5" role="lGtFl">
-              <property role="2DMOqs" value="elementType" />
+        <node concept="2c44tf" id="7oTZmjkCr2L" role="HM535">
+          <node concept="2hMVRd" id="hQmZrOr" role="2c44tc">
+            <node concept="33vP2l" id="hQmZrOs" role="2hN53Y">
+              <node concept="2DMOqr" id="hQmZsg5" role="lGtFl">
+                <property role="2DMOqs" value="elementType" />
+              </node>
             </node>
           </node>
         </node>
@@ -6673,11 +6683,13 @@
     <node concept="1Yb3XT" id="i0uUUIS" role="1YuTPh">
       <property role="TrG5h" value="iterator" />
       <node concept="2DMOqp" id="i0uUUIT" role="1YbcFS">
-        <node concept="3uibUv" id="i0uUXnd" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
-          <node concept="33vP2l" id="i0uV2LD" role="11_B2D">
-            <node concept="2DMOqr" id="i0uV342" role="lGtFl">
-              <property role="2DMOqs" value="p" />
+        <node concept="2c44tf" id="7oTZmjkCr2Y" role="HM535">
+          <node concept="3uibUv" id="i0uUXnd" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
+            <node concept="33vP2l" id="i0uV2LD" role="11_B2D">
+              <node concept="2DMOqr" id="i0uV342" role="lGtFl">
+                <property role="2DMOqs" value="p" />
+              </node>
             </node>
           </node>
         </node>
@@ -7193,11 +7205,13 @@
     <node concept="1Yb3XT" id="i0wzpwF" role="1YuTPh">
       <property role="TrG5h" value="enumerator" />
       <node concept="2DMOqp" id="i0wzpwG" role="1YbcFS">
-        <node concept="3uibUv" id="i0wzrI7" role="2DMOqq">
-          <ref role="3uigEE" to="urs3:5Ffu4tBUxgb" resolve="IEnumerator" />
-          <node concept="33vP2l" id="i0wzwE0" role="11_B2D">
-            <node concept="2DMOqr" id="i0wzwL$" role="lGtFl">
-              <property role="2DMOqs" value="p" />
+        <node concept="2c44tf" id="7oTZmjkCr2Q" role="HM535">
+          <node concept="3uibUv" id="i0wzrI7" role="2c44tc">
+            <ref role="3uigEE" to="urs3:5Ffu4tBUxgb" resolve="IEnumerator" />
+            <node concept="33vP2l" id="i0wzwE0" role="11_B2D">
+              <node concept="2DMOqr" id="i0wzwL$" role="lGtFl">
+                <property role="2DMOqs" value="p" />
+              </node>
             </node>
           </node>
         </node>
@@ -8537,16 +8551,18 @@
     <node concept="1Yb3XT" id="i34MyW5" role="1YuTPh">
       <property role="TrG5h" value="sortedMap" />
       <node concept="2DMOqp" id="i34MyW6" role="1YbcFS">
-        <node concept="3uibUv" id="i34MBKv" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~SortedMap" resolve="SortedMap" />
-          <node concept="33vP2l" id="i34MDLo" role="11_B2D">
-            <node concept="2DMOqr" id="i34MEIJ" role="lGtFl">
-              <property role="2DMOqs" value="KEY" />
+        <node concept="2c44tf" id="7oTZmjkCr2M" role="HM535">
+          <node concept="3uibUv" id="i34MBKv" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~SortedMap" resolve="SortedMap" />
+            <node concept="33vP2l" id="i34MDLo" role="11_B2D">
+              <node concept="2DMOqr" id="i34MEIJ" role="lGtFl">
+                <property role="2DMOqs" value="KEY" />
+              </node>
             </node>
-          </node>
-          <node concept="33vP2l" id="i34MFFM" role="11_B2D">
-            <node concept="2DMOqr" id="i34MFZH" role="lGtFl">
-              <property role="2DMOqs" value="VALUE" />
+            <node concept="33vP2l" id="i34MFFM" role="11_B2D">
+              <node concept="2DMOqr" id="i34MFZH" role="lGtFl">
+                <property role="2DMOqs" value="VALUE" />
+              </node>
             </node>
           </node>
         </node>
@@ -8617,11 +8633,13 @@
     <node concept="1Yb3XT" id="i34NwMs" role="1YuTPh">
       <property role="TrG5h" value="sortedSet" />
       <node concept="2DMOqp" id="i34NwMt" role="1YbcFS">
-        <node concept="3uibUv" id="i34NyJ7" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~SortedSet" resolve="SortedSet" />
-          <node concept="33vP2l" id="i34NyYn" role="11_B2D">
-            <node concept="2DMOqr" id="i34NzBq" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2Z" role="HM535">
+          <node concept="3uibUv" id="i34NyJ7" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~SortedSet" resolve="SortedSet" />
+            <node concept="33vP2l" id="i34NyYn" role="11_B2D">
+              <node concept="2DMOqr" id="i34NzBq" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>
@@ -8981,16 +8999,18 @@
     <node concept="1Yb3XT" id="i3ATO_n" role="1YuTPh">
       <property role="TrG5h" value="ignore" />
       <node concept="2DMOqp" id="i3ATO_o" role="1YbcFS">
-        <node concept="3uibUv" id="i3ATR20" role="2DMOqq">
-          <ref role="3uigEE" to="urs3:5Ffu4tBUyxI" resolve="IMapping" />
-          <node concept="33vP2l" id="i3ATRiA" role="11_B2D">
-            <node concept="2DMOqr" id="i3ATR$t" role="lGtFl">
-              <property role="2DMOqs" value="KEY" />
+        <node concept="2c44tf" id="7oTZmjkCr2K" role="HM535">
+          <node concept="3uibUv" id="i3ATR20" role="2c44tc">
+            <ref role="3uigEE" to="urs3:5Ffu4tBUyxI" resolve="IMapping" />
+            <node concept="33vP2l" id="i3ATRiA" role="11_B2D">
+              <node concept="2DMOqr" id="i3ATR$t" role="lGtFl">
+                <property role="2DMOqs" value="KEY" />
+              </node>
             </node>
-          </node>
-          <node concept="33vP2l" id="i3ATRTE" role="11_B2D">
-            <node concept="2DMOqr" id="i3ATSaG" role="lGtFl">
-              <property role="2DMOqs" value="VALUE" />
+            <node concept="33vP2l" id="i3ATRTE" role="11_B2D">
+              <node concept="2DMOqr" id="i3ATSaG" role="lGtFl">
+                <property role="2DMOqs" value="VALUE" />
+              </node>
             </node>
           </node>
         </node>
@@ -9402,11 +9422,13 @@
     <node concept="1Yb3XT" id="i4btM3o" role="3bfgSz">
       <property role="TrG5h" value="classifierSetType" />
       <node concept="2DMOqp" id="i4btM3p" role="1YbcFS">
-        <node concept="3uibUv" id="i4btNKi" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="33vP2l" id="i4btO15" role="11_B2D">
-            <node concept="2DMOqr" id="i4btOvx" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2J" role="HM535">
+          <node concept="3uibUv" id="i4btNKi" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+            <node concept="33vP2l" id="i4btO15" role="11_B2D">
+              <node concept="2DMOqr" id="i4btOvx" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>
@@ -9430,16 +9452,18 @@
     <node concept="1Yb3XT" id="i4bv536" role="3bfgSz">
       <property role="TrG5h" value="classifierMapType" />
       <node concept="2DMOqp" id="i4bv537" role="1YbcFS">
-        <node concept="3uibUv" id="i4bv6Z9" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-          <node concept="33vP2l" id="i4bvnNd" role="11_B2D">
-            <node concept="2DMOqr" id="i4bvo5d" role="lGtFl">
-              <property role="2DMOqs" value="KEY" />
+        <node concept="2c44tf" id="7oTZmjkCr2H" role="HM535">
+          <node concept="3uibUv" id="i4bv6Z9" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+            <node concept="33vP2l" id="i4bvnNd" role="11_B2D">
+              <node concept="2DMOqr" id="i4bvo5d" role="lGtFl">
+                <property role="2DMOqs" value="KEY" />
+              </node>
             </node>
-          </node>
-          <node concept="33vP2l" id="i4bvokG" role="11_B2D">
-            <node concept="2DMOqr" id="i4bvoBC" role="lGtFl">
-              <property role="2DMOqs" value="VALUE" />
+            <node concept="33vP2l" id="i4bvokG" role="11_B2D">
+              <node concept="2DMOqr" id="i4bvoBC" role="lGtFl">
+                <property role="2DMOqs" value="VALUE" />
+              </node>
             </node>
           </node>
         </node>
@@ -9463,11 +9487,13 @@
     <node concept="1Yb3XT" id="i4bvgNk" role="3bfgSz">
       <property role="TrG5h" value="classifierIterableType" />
       <node concept="2DMOqp" id="i4bvgNl" role="1YbcFS">
-        <node concept="3uibUv" id="i4bvi9C" role="2DMOqq">
-          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-          <node concept="33vP2l" id="i4bvmrR" role="11_B2D">
-            <node concept="2DMOqr" id="i4bvmGk" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2F" role="HM535">
+          <node concept="3uibUv" id="i4bvi9C" role="2c44tc">
+            <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+            <node concept="33vP2l" id="i4bvmrR" role="11_B2D">
+              <node concept="2DMOqr" id="i4bvmGk" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>
@@ -9534,11 +9560,13 @@
     <node concept="1Yb3XT" id="2_eu1aS9KG5" role="3bfgSz">
       <property role="TrG5h" value="classQueueType" />
       <node concept="2DMOqp" id="2_eu1aS9KG6" role="1YbcFS">
-        <node concept="3uibUv" id="2_eu1aS9KG8" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
-          <node concept="33vP2l" id="2_eu1aS9KG9" role="11_B2D">
-            <node concept="2DMOqr" id="2_eu1aS9KGa" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT_TYPE" />
+        <node concept="2c44tf" id="7oTZmjkCr2P" role="HM535">
+          <node concept="3uibUv" id="2_eu1aS9KG8" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
+            <node concept="33vP2l" id="2_eu1aS9KG9" role="11_B2D">
+              <node concept="2DMOqr" id="2_eu1aS9KGa" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT_TYPE" />
+              </node>
             </node>
           </node>
         </node>
@@ -9606,11 +9634,13 @@
     <node concept="1Yb3XT" id="2_eu1aS9KGC" role="1YuTPh">
       <property role="TrG5h" value="classQueueType" />
       <node concept="2DMOqp" id="2_eu1aS9KGD" role="1YbcFS">
-        <node concept="3uibUv" id="2_eu1aS9KGF" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
-          <node concept="33vP2l" id="2_eu1aS9KGG" role="11_B2D">
-            <node concept="2DMOqr" id="2_eu1aS9KGH" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT_TYPE" />
+        <node concept="2c44tf" id="7oTZmjkCr2V" role="HM535">
+          <node concept="3uibUv" id="2_eu1aS9KGF" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Queue" resolve="Queue" />
+            <node concept="33vP2l" id="2_eu1aS9KGG" role="11_B2D">
+              <node concept="2DMOqr" id="2_eu1aS9KGH" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT_TYPE" />
+              </node>
             </node>
           </node>
         </node>
@@ -9668,11 +9698,13 @@
     <node concept="1Yb3XT" id="5T$hED6VAKd" role="3bfgSz">
       <property role="TrG5h" value="classQueueType" />
       <node concept="2DMOqp" id="5T$hED6VAKe" role="1YbcFS">
-        <node concept="3uibUv" id="5T$hED6VAKf" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
-          <node concept="33vP2l" id="5T$hED6VAKg" role="11_B2D">
-            <node concept="2DMOqr" id="5T$hED6VAKh" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT_TYPE" />
+        <node concept="2c44tf" id="7oTZmjkCr2W" role="HM535">
+          <node concept="3uibUv" id="5T$hED6VAKf" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
+            <node concept="33vP2l" id="5T$hED6VAKg" role="11_B2D">
+              <node concept="2DMOqr" id="5T$hED6VAKh" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT_TYPE" />
+              </node>
             </node>
           </node>
         </node>
@@ -9768,11 +9800,13 @@
     <node concept="1Yb3XT" id="5T$hED6VZ92" role="3bfgSz">
       <property role="TrG5h" value="classQueueType" />
       <node concept="2DMOqp" id="5T$hED6VZ93" role="1YbcFS">
-        <node concept="3uibUv" id="5T$hED6VZ94" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
-          <node concept="33vP2l" id="5T$hED6VZ95" role="11_B2D">
-            <node concept="2DMOqr" id="5T$hED6VZ96" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT_TYPE" />
+        <node concept="2c44tf" id="7oTZmjkCr2U" role="HM535">
+          <node concept="3uibUv" id="5T$hED6VZ94" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Deque" resolve="Deque" />
+            <node concept="33vP2l" id="5T$hED6VZ95" role="11_B2D">
+              <node concept="2DMOqr" id="5T$hED6VZ96" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT_TYPE" />
+              </node>
             </node>
           </node>
         </node>
@@ -10184,11 +10218,13 @@
     <node concept="1Yb3XT" id="i4buT_9" role="3bfgSz">
       <property role="TrG5h" value="classifierListType" />
       <node concept="2DMOqp" id="i4buT_a" role="1YbcFS">
-        <node concept="3uibUv" id="i4buV1M" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="33vP2l" id="i4bvpCq" role="11_B2D">
-            <node concept="2DMOqr" id="i4bvpQM" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2R" role="HM535">
+          <node concept="3uibUv" id="i4buV1M" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+            <node concept="33vP2l" id="i4bvpCq" role="11_B2D">
+              <node concept="2DMOqr" id="i4bvpQM" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>
@@ -11622,10 +11658,12 @@
     <node concept="1Yb3XT" id="29gksf3BG$9" role="1YuTPh">
       <property role="TrG5h" value="subType" />
       <node concept="2DMOqp" id="29gksf3BG$a" role="1YbcFS">
-        <node concept="_YKpA" id="29gksf3BG$b" role="2DMOqq">
-          <node concept="33vP2l" id="29gksf3BG$c" role="_ZDj9">
-            <node concept="2DMOqr" id="29gksf3BG$e" role="lGtFl">
-              <property role="2DMOqs" value="sub" />
+        <node concept="2c44tf" id="7oTZmjkCr2S" role="HM535">
+          <node concept="_YKpA" id="29gksf3BG$b" role="2c44tc">
+            <node concept="33vP2l" id="29gksf3BG$c" role="_ZDj9">
+              <node concept="2DMOqr" id="29gksf3BG$e" role="lGtFl">
+                <property role="2DMOqs" value="sub" />
+              </node>
             </node>
           </node>
         </node>
@@ -11634,11 +11672,13 @@
     <node concept="1Yb3XT" id="29gksf3BG$f" role="35pZ6h">
       <property role="TrG5h" value="superType" />
       <node concept="2DMOqp" id="29gksf3BG$g" role="1YbcFS">
-        <node concept="_YKpA" id="29gksf3BG$h" role="2DMOqq">
-          <node concept="3qUE_q" id="29gksf3BG$j" role="_ZDj9">
-            <node concept="33vP2l" id="29gksf3BG$k" role="3qUE_r">
-              <node concept="2DMOqr" id="29gksf3BG$l" role="lGtFl">
-                <property role="2DMOqs" value="super" />
+        <node concept="2c44tf" id="7oTZmjkCr2O" role="HM535">
+          <node concept="_YKpA" id="29gksf3BG$h" role="2c44tc">
+            <node concept="3qUE_q" id="29gksf3BG$j" role="_ZDj9">
+              <node concept="33vP2l" id="29gksf3BG$k" role="3qUE_r">
+                <node concept="2DMOqr" id="29gksf3BG$l" role="lGtFl">
+                  <property role="2DMOqs" value="super" />
+                </node>
               </node>
             </node>
           </node>
@@ -12032,11 +12072,13 @@
     <node concept="1Yb3XT" id="6PNZ_l7J1X6" role="3bfgSz">
       <property role="TrG5h" value="cct" />
       <node concept="2DMOqp" id="6PNZ_l7J1X7" role="1YbcFS">
-        <node concept="3uibUv" id="6PNZ_l7J1X9" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-          <node concept="33vP2l" id="6PNZ_l7J1Xa" role="11_B2D">
-            <node concept="2DMOqr" id="6PNZ_l7J1Xb" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2E" role="HM535">
+          <node concept="3uibUv" id="6PNZ_l7J1X9" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+            <node concept="33vP2l" id="6PNZ_l7J1Xa" role="11_B2D">
+              <node concept="2DMOqr" id="6PNZ_l7J1Xb" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>
@@ -12060,10 +12102,12 @@
     <node concept="1Yb3XT" id="6PNZ_l7J1Xo" role="35pZ6h">
       <property role="TrG5h" value="superType" />
       <node concept="2DMOqp" id="6PNZ_l7J1Xp" role="1YbcFS">
-        <node concept="3vKaQO" id="6PNZ_l7J1Xq" role="2DMOqq">
-          <node concept="33vP2l" id="6PNZ_l7J1Xr" role="3O5elw">
-            <node concept="2DMOqr" id="6PNZ_l7J1Xs" role="lGtFl">
-              <property role="2DMOqs" value="SUPER" />
+        <node concept="2c44tf" id="7oTZmjkCr30" role="HM535">
+          <node concept="3vKaQO" id="6PNZ_l7J1Xq" role="2c44tc">
+            <node concept="33vP2l" id="6PNZ_l7J1Xr" role="3O5elw">
+              <node concept="2DMOqr" id="6PNZ_l7J1Xs" role="lGtFl">
+                <property role="2DMOqs" value="SUPER" />
+              </node>
             </node>
           </node>
         </node>
@@ -12126,10 +12170,12 @@
     <node concept="1Yb3XT" id="6PNZ_l7J1Xj" role="1YuTPh">
       <property role="TrG5h" value="subType" />
       <node concept="2DMOqp" id="6PNZ_l7J1Xk" role="1YbcFS">
-        <node concept="3vKaQO" id="6PNZ_l7J1Xl" role="2DMOqq">
-          <node concept="33vP2l" id="6PNZ_l7J1Xm" role="3O5elw">
-            <node concept="2DMOqr" id="6PNZ_l7J1Xn" role="lGtFl">
-              <property role="2DMOqs" value="SUB" />
+        <node concept="2c44tf" id="7oTZmjkCr2G" role="HM535">
+          <node concept="3vKaQO" id="6PNZ_l7J1Xl" role="2c44tc">
+            <node concept="33vP2l" id="6PNZ_l7J1Xm" role="3O5elw">
+              <node concept="2DMOqr" id="6PNZ_l7J1Xn" role="lGtFl">
+                <property role="2DMOqs" value="SUB" />
+              </node>
             </node>
           </node>
         </node>
@@ -12688,11 +12734,13 @@
     <node concept="1Yb3XT" id="2Erqbc5AkkI" role="1YuTPh">
       <property role="TrG5h" value="ct" />
       <node concept="2DMOqp" id="2Erqbc5AkkJ" role="1YbcFS">
-        <node concept="3uibUv" id="2Erqbc5AkkL" role="2DMOqq">
-          <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-          <node concept="33vP2l" id="2Erqbc5AkkM" role="11_B2D">
-            <node concept="2DMOqr" id="2Erqbc5AkkN" role="lGtFl">
-              <property role="2DMOqs" value="ELEMENT" />
+        <node concept="2c44tf" id="7oTZmjkCr2X" role="HM535">
+          <node concept="3uibUv" id="2Erqbc5AkkL" role="2c44tc">
+            <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+            <node concept="33vP2l" id="2Erqbc5AkkM" role="11_B2D">
+              <node concept="2DMOqr" id="2Erqbc5AkkN" role="lGtFl">
+                <property role="2DMOqs" value="ELEMENT" />
+              </node>
             </node>
           </node>
         </node>

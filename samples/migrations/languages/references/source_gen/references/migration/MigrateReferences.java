@@ -20,8 +20,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -36,7 +34,7 @@ public class MigrateReferences extends MigrationScriptBase {
   }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a2();
+      final GeneratedMatchingPattern pattern = new Pattern_9d9f5o1sz0ui(_quotation_createNode_w5820p_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -77,39 +75,11 @@ public class MigrateReferences extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0);
   }
 
-  public static class Pattern_w5820p_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode patternVar_comp;
-    public Pattern_w5820p_a0a0a0a2() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_w5820p_a0a0f = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef").equals(nodeToMatch_w5820p_a0a0f.getConcept()))) {
-          return false;
-        }
-        patternVar_comp = nodeToMatch_w5820p_a0a0f.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_comp = (SNode) pattern.getFieldValue("patternVar_comp");
-      }
-    }
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_comp".equals(fieldName)) {
-        return patternVar_comp;
-      }
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_w5820p_a0a0a5() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef"), null, null, false);
+    return quotedNode_1;
   }
   private static SNode _quotation_createNode_w5820p_a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

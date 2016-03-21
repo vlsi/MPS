@@ -4,7 +4,7 @@
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
@@ -250,7 +250,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -9073,11 +9073,13 @@
           <node concept="1Yb3XT" id="i1G_ze5" role="3KnVwV">
             <property role="TrG5h" value="iterable" />
             <node concept="2DMOqp" id="i1G_ze6" role="1YbcFS">
-              <node concept="3uibUv" id="i1G_ze7" role="2DMOqq">
-                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                <node concept="33vP2l" id="i1G_ze8" role="11_B2D">
-                  <node concept="2DMOqr" id="i1G_ze9" role="lGtFl">
-                    <property role="2DMOqs" value="elem" />
+              <node concept="2c44tf" id="7oTZmjkCqYK" role="HM535">
+                <node concept="3uibUv" id="i1G_ze7" role="2c44tc">
+                  <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                  <node concept="33vP2l" id="i1G_ze8" role="11_B2D">
+                    <node concept="2DMOqr" id="i1G_ze9" role="lGtFl">
+                      <property role="2DMOqs" value="elem" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -9233,11 +9235,13 @@
               <node concept="1Yb3XT" id="i1G8Amq" role="1Ub_4A">
                 <property role="TrG5h" value="iterable" />
                 <node concept="2DMOqp" id="i1G8Amr" role="1YbcFS">
-                  <node concept="3uibUv" id="i1G8Ams" role="2DMOqq">
-                    <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                    <node concept="33vP2l" id="i1G8Amt" role="11_B2D">
-                      <node concept="2DMOqr" id="i1G8Amu" role="lGtFl">
-                        <property role="2DMOqs" value="elem" />
+                  <node concept="2c44tf" id="7oTZmjkCqYT" role="HM535">
+                    <node concept="3uibUv" id="i1G8Ams" role="2c44tc">
+                      <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                      <node concept="33vP2l" id="i1G8Amt" role="11_B2D">
+                        <node concept="2DMOqr" id="i1G8Amu" role="lGtFl">
+                          <property role="2DMOqs" value="elem" />
+                        </node>
                       </node>
                     </node>
                   </node>

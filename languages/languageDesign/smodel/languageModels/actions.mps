@@ -79,7 +79,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -130,7 +130,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1137418540378" name="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" flags="ng" index="3jrphi">
         <property id="1137418571428" name="varName" index="3jrwYG" />
@@ -2932,12 +2932,14 @@
                       <node concept="1Yb3XT" id="4JdgAL_63zh" role="1Ub_4A">
                         <property role="TrG5h" value="seqType" />
                         <node concept="2DMOqp" id="4JdgAL_63zi" role="1YbcFS">
-                          <node concept="A3Dl8" id="4JdgAL_63zj" role="2DMOqq">
-                            <node concept="3Tqbb2" id="4JdgAL_63zk" role="A3Ik2">
-                              <node concept="3jrphi" id="4JdgAL_63zl" role="lGtFl">
-                                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
-                                <property role="2qtEX8" value="concept" />
-                                <property role="3jrwYG" value="concept" />
+                          <node concept="2c44tf" id="7oTZmjkCr7Y" role="HM535">
+                            <node concept="A3Dl8" id="4JdgAL_63zj" role="2c44tc">
+                              <node concept="3Tqbb2" id="4JdgAL_63zk" role="A3Ik2">
+                                <node concept="3jrphi" id="4JdgAL_63zl" role="lGtFl">
+                                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                                  <property role="2qtEX8" value="concept" />
+                                  <property role="3jrwYG" value="concept" />
+                                </node>
                               </node>
                             </node>
                           </node>

@@ -4,7 +4,7 @@
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="1d2b03a4-7404-4a1e-939c-9c1c316327e7" name="declarations" version="1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -68,7 +68,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -192,16 +192,18 @@
       <node concept="3clFbS" id="14sMr$jSWp1" role="3clF47">
         <node concept="3SqFnK" id="14sMr$jSTSr" role="3cqZAp">
           <node concept="2DMOqp" id="14sMr$jSTSt" role="3SqFnn">
-            <node concept="zN$3a" id="14sMr$jSU1k" role="2DMOqq">
-              <node concept="zNDsQ" id="14sMr$jSUfH" role="zNDsR">
-                <node concept="2EdB8i" id="14sMr$jSUg0" role="lGtFl">
-                  <property role="2DMOqs" value="deps" />
+            <node concept="2c44tf" id="7oTZmjkCqYt" role="HM535">
+              <node concept="zN$3a" id="14sMr$jSU1k" role="2c44tc">
+                <node concept="zNDsQ" id="14sMr$jSUfH" role="zNDsR">
+                  <node concept="2EdB8i" id="14sMr$jSUg0" role="lGtFl">
+                    <property role="2DMOqs" value="deps" />
+                  </node>
                 </node>
-              </node>
-              <node concept="2DMOqt" id="14sMr$jSU1A" role="lGtFl">
-                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-                <property role="2qtEX9" value="name" />
-                <property role="2DMOqu" value="name" />
+                <node concept="2DMOqt" id="14sMr$jSU1A" role="lGtFl">
+                  <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                  <property role="2qtEX9" value="name" />
+                  <property role="2DMOqu" value="name" />
+                </node>
               </node>
             </node>
           </node>

@@ -2,7 +2,7 @@
 <model ref="r:31e73d62-e873-4ed6-bd22-16d8721ebfa3(jetbrains.mps.debugger.api.lang.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -68,7 +68,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -424,8 +424,10 @@
     <node concept="1Yb3XT" id="7dWYa4zdbZ8" role="3bfgSz">
       <property role="TrG5h" value="idebugger" />
       <node concept="2DMOqp" id="7dWYa4zdbZ9" role="1YbcFS">
-        <node concept="3uibUv" id="7dWYa4zdbZb" role="2DMOqq">
-          <ref role="3uigEE" to="1l1h:3SnNvqCaJaH" resolve="IDebugger" />
+        <node concept="2c44tf" id="7oTZmjkCraQ" role="HM535">
+          <node concept="3uibUv" id="7dWYa4zdbZb" role="2c44tc">
+            <ref role="3uigEE" to="1l1h:3SnNvqCaJaH" resolve="IDebugger" />
+          </node>
         </node>
       </node>
     </node>

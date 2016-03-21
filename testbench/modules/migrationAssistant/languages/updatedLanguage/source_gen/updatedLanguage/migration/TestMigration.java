@@ -20,8 +20,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TestMigration extends MigrationScriptBase {
   public String getCaption() {
@@ -33,7 +33,7 @@ public class TestMigration extends MigrationScriptBase {
   }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a0a2();
+      final GeneratedMatchingPattern pattern = new Pattern_29burpp34sfb(_quotation_createNode_53jq1q_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -76,30 +76,10 @@ public class TestMigration extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xa59395ba5d944758L, 0xa87cb11e086d5491L, "updatedLanguage"), 0);
   }
 
-  public static class Pattern_53jq1q_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_53jq1q_a0a0a0a2() {
-    }
-    public SConcept getConcept() {
-      return MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept");
-    }
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_53jq1q_a0a0f = nodeToMatch;
-        if (!(MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept").equals(nodeToMatch_53jq1q_a0a0f.getConcept()))) {
-          return false;
-        }
-      }
-      return true;
-    }
-    public boolean hasAntiquotations() {
-      return false;
-    }
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-    public void performActions(Object o) {
-    }
+  private static SNode _quotation_createNode_53jq1q_a0a0a5() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept"), null, null, false);
+    return quotedNode_1;
   }
 }

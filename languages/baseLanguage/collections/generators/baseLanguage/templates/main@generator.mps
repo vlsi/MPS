@@ -7,7 +7,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
@@ -212,7 +212,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -1788,8 +1788,10 @@
                   <node concept="1Yb3XT" id="5xWE0JTx$qY" role="1Ub_4A">
                     <property role="TrG5h" value="ignored" />
                     <node concept="2DMOqp" id="5xWE0JTx$qZ" role="1YbcFS">
-                      <node concept="3uibUv" id="5xWE0JTx$r0" role="2DMOqq">
-                        <ref role="3uigEE" to="urs3:5Ffu4tBUx5R" resolve="ISequence" />
+                      <node concept="2c44tf" id="7oTZmjkCr62" role="HM535">
+                        <node concept="3uibUv" id="5xWE0JTx$r0" role="2c44tc">
+                          <ref role="3uigEE" to="urs3:5Ffu4tBUx5R" resolve="ISequence" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -4988,8 +4990,10 @@
                 <node concept="1Yb3XT" id="h_G6Zwy" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="h_G6Zwz" role="1YbcFS">
-                    <node concept="3uibUv" id="h_G70n2" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUyv1" resolve="IListSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr5Z" role="HM535">
+                      <node concept="3uibUv" id="h_G70n2" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUyv1" resolve="IListSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5099,8 +5103,10 @@
                 <node concept="1Yb3XT" id="h_G71KD" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="h_G71KE" role="1YbcFS">
-                    <node concept="3uibUv" id="h_G72Ch" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBU$6H" resolve="IMapSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr5W" role="HM535">
+                      <node concept="3uibUv" id="h_G72Ch" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBU$6H" resolve="IMapSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5304,8 +5310,10 @@
                 <node concept="1Yb3XT" id="hQEUbRj" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="hQEUbRk" role="1YbcFS">
-                    <node concept="3uibUv" id="hQEUDvl" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUzXL" resolve="ISetSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr5X" role="HM535">
+                      <node concept="3uibUv" id="hQEUDvl" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUzXL" resolve="ISetSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6116,8 +6124,10 @@
                 <node concept="1Yb3XT" id="i0weSlp" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="i0weSlq" role="1YbcFS">
-                    <node concept="3uibUv" id="2bZlHyq4IsI" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUxge" resolve="IEnumerator.Iterator" />
+                    <node concept="2c44tf" id="7oTZmjkCr63" role="HM535">
+                      <node concept="3uibUv" id="2bZlHyq4IsI" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUxge" resolve="IEnumerator.Iterator" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6200,8 +6210,10 @@
                 <node concept="1Yb3XT" id="i34ge$h" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="i34ge$i" role="1YbcFS">
-                    <node concept="3uibUv" id="i34gity" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUxjT" resolve="ISortedMapSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr66" role="HM535">
+                      <node concept="3uibUv" id="i34gity" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUxjT" resolve="ISortedMapSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6371,8 +6383,10 @@
                 <node concept="1Yb3XT" id="i34RmjS" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="i34RmjT" role="1YbcFS">
-                    <node concept="3uibUv" id="i34Rvfq" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBU$ag" resolve="ISortedSetSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr64" role="HM535">
+                      <node concept="3uibUv" id="i34Rvfq" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBU$ag" resolve="ISortedSetSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6542,8 +6556,10 @@
                 <node concept="1Yb3XT" id="4K7GLnSRwye" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="4K7GLnSRwyf" role="1YbcFS">
-                    <node concept="3uibUv" id="4K7GLnSRwz8" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUzWH" resolve="IQueueSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr61" role="HM535">
+                      <node concept="3uibUv" id="4K7GLnSRwz8" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUzWH" resolve="IQueueSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -6764,8 +6780,10 @@
                 <node concept="1Yb3XT" id="1ACtMffq_K6" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="1ACtMffq_K7" role="1YbcFS">
-                    <node concept="3uibUv" id="1ACtMffqAfl" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUx$w" resolve="ICollectionSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr65" role="HM535">
+                      <node concept="3uibUv" id="1ACtMffqAfl" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUx$w" resolve="ICollectionSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -7327,8 +7345,10 @@
                 <node concept="1Yb3XT" id="2Uq2TE8YNhM" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="2Uq2TE8YNhN" role="1YbcFS">
-                    <node concept="3uibUv" id="2Uq2TE8YNiG" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUxf3" resolve="IDequeSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr5Y" role="HM535">
+                      <node concept="3uibUv" id="2Uq2TE8YNiG" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUxf3" resolve="IDequeSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -12097,8 +12117,10 @@
                 <node concept="1Yb3XT" id="9rLP7kASVh" role="1Ub_4A">
                   <property role="TrG5h" value="ignored" />
                   <node concept="2DMOqp" id="9rLP7kASVi" role="1YbcFS">
-                    <node concept="3uibUv" id="9rLP7kAT5z" role="2DMOqq">
-                      <ref role="3uigEE" to="urs3:5Ffu4tBUxdE" resolve="ILinkedListSequence" />
+                    <node concept="2c44tf" id="7oTZmjkCr60" role="HM535">
+                      <node concept="3uibUv" id="9rLP7kAT5z" role="2c44tc">
+                        <ref role="3uigEE" to="urs3:5Ffu4tBUxdE" resolve="ILinkedListSequence" />
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="eba1dbb3-0bc4-4ce9-a184-05c9135353be" name="jetbrains.mps.lang.traceable.operations" version="1" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -89,7 +89,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" flags="ng" index="2DMOqr">
         <property id="1136720037780" name="varName" index="2DMOqs" />
@@ -128,6 +128,9 @@
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      </concept>
       <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
         <reference id="5455284157994012188" name="link" index="2pIpSl" />
       </concept>
@@ -257,16 +260,18 @@
       <node concept="3clFbS" id="7Uml8TvjNgw" role="3clF47">
         <node concept="3SqFnK" id="7Uml8TvjPig" role="3cqZAp">
           <node concept="2DMOqp" id="7Uml8TvjPii" role="3SqFnn">
-            <node concept="2OqwBi" id="7Uml8TvjPiS" role="2DMOqq">
-              <node concept="33vP2n" id="7Uml8TvjPiT" role="2Oq$k0">
-                <node concept="2DMOqr" id="7Uml8TvjPmP" role="lGtFl">
-                  <property role="2DMOqs" value="operand" />
-                  <property role="TrG5h" value="#aoperand" />
+            <node concept="2c44tf" id="7oTZmjkCrb3" role="HM535">
+              <node concept="2OqwBi" id="7Uml8TvjPiS" role="2c44tc">
+                <node concept="33vP2n" id="7Uml8TvjPiT" role="2Oq$k0">
+                  <node concept="2DMOqr" id="7Uml8TvjPmP" role="lGtFl">
+                    <property role="2DMOqs" value="operand" />
+                    <property role="TrG5h" value="#aoperand" />
+                  </node>
                 </node>
-              </node>
-              <node concept="1B$H19" id="7Uml8TvjPrO" role="2OqNvi">
-                <node concept="2DMOqr" id="7Uml8TvjP$J" role="lGtFl">
-                  <property role="2DMOqs" value="operation" />
+                <node concept="1B$H19" id="7Uml8TvjPrO" role="2OqNvi">
+                  <node concept="2DMOqr" id="7Uml8TvjP$J" role="lGtFl">
+                    <property role="2DMOqs" value="operation" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -340,10 +345,12 @@
         </node>
         <node concept="3SqFnK" id="5zq8XZ50Ysb" role="3cqZAp">
           <node concept="2DMOqp" id="5zq8XZ50Ysd" role="3SqFnn">
-            <node concept="1DwjUN" id="5zq8XZ50Yx1" role="2DMOqq">
-              <node concept="33vP2n" id="5zq8XZ50Yx2" role="1DwjUS">
-                <node concept="2DMOqr" id="5zq8XZ50YxX" role="lGtFl">
-                  <property role="2DMOqs" value="args" />
+            <node concept="2c44tf" id="7oTZmjkCrb2" role="HM535">
+              <node concept="1DwjUN" id="5zq8XZ50Yx1" role="2c44tc">
+                <node concept="33vP2n" id="5zq8XZ50Yx2" role="1DwjUS">
+                  <node concept="2DMOqr" id="5zq8XZ50YxX" role="lGtFl">
+                    <property role="2DMOqs" value="args" />
+                  </node>
                 </node>
               </node>
             </node>

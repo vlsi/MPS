@@ -4,7 +4,7 @@
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="1d2b03a4-7404-4a1e-939c-9c1c316327e7" name="declarations" version="1" />
     <use id="16100485-31ac-4899-9112-2289e22843dd" name="references" version="1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
@@ -71,7 +71,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
       <concept id="1137418540378" name="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" flags="ng" index="3jrphi">
         <property id="1137418571428" name="varName" index="3jrwYG" />
@@ -217,11 +217,13 @@
             </node>
           </node>
           <node concept="2DMOqp" id="14sMr$jTeWa" role="3SqFnn">
-            <node concept="zNBHt" id="7Cx8$vCcio$" role="2DMOqq">
-              <node concept="3jrphi" id="7Cx8$vCciqB" role="lGtFl">
-                <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540647757/7709929535540733594" />
-                <property role="2qtEX8" value="target" />
-                <property role="3jrwYG" value="comp" />
+            <node concept="2c44tf" id="7oTZmjkCr7O" role="HM535">
+              <node concept="zNBHt" id="7Cx8$vCcio$" role="2c44tc">
+                <node concept="3jrphi" id="7Cx8$vCciqB" role="lGtFl">
+                  <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540647757/7709929535540733594" />
+                  <property role="2qtEX8" value="target" />
+                  <property role="3jrwYG" value="comp" />
+                </node>
               </node>
             </node>
           </node>
