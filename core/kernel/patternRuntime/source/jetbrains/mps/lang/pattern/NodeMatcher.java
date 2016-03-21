@@ -161,7 +161,9 @@ public final class NodeMatcher {
     }
     // properties
     Map<SProperty, String> prop2var = myPropertyToVariableName == null ? Collections.<SProperty,String>emptyMap() : myPropertyToVariableName;
-    for (SProperty p : pattern.getProperties()) {
+    ArrayList<SProperty> propsToCheck = new ArrayList<SProperty>(prop2var.keySet());
+    propsToCheck.addAll(IterableUtil.asCollection(pattern.getProperties()));
+    for (SProperty p : propsToCheck) {
       if (prop2var.containsKey(p)) {
         getValues().put(prop2var.get(p), against.getProperty(p));
       } else {
@@ -173,13 +175,19 @@ public final class NodeMatcher {
     //
     // references
     final Map<SReferenceLink, String> ref2var = myReferenceToVariableName == null ? Collections.<SReferenceLink, String>emptyMap() : myReferenceToVariableName;
+    ArrayList<SReferenceLink> refsToCheck = new ArrayList<SReferenceLink>(ref2var.keySet());
     for (SReference r : pattern.getReferences()) {
-      SReference r2 = against.getReference(r.getLink());
+      refsToCheck.add(r.getLink());
+    }
+    for (SReferenceLink r : refsToCheck) {
+      SReference r2 = against.getReference(r);
       SNodeReference actualTarget = r2 == null ? null : r2.getTargetNodeReference();
-      if (ref2var.containsKey(r.getLink())) {
-        getValues().put(ref2var.get(r.getLink()), actualTarget, r2 == null ? null : r2.getTargetNode());
+      if (ref2var.containsKey(r)) {
+        getValues().put(ref2var.get(r), actualTarget, r2 == null ? null : r2.getTargetNode());
       } else {
-        final SNodeReference expectedTarget = r.getTargetNodeReference();
+        final SReference expectedReference = pattern.getReference(r);
+        assert expectedReference != null : "otherwise how did it get into refsToCheck";
+        final SNodeReference expectedTarget = expectedReference.getTargetNodeReference();
         if (!expectedTarget.equals(actualTarget)) {
           return false;
         }
@@ -196,6 +204,7 @@ public final class NodeMatcher {
       }
     }
     final Map<SContainmentLink, ChildMatcher> ce = myChildExtractors == null ? Collections.<SContainmentLink,ChildMatcher>emptyMap() : myChildExtractors;
+    knownChildRoles.addAll(ce.keySet());
     final ChildMatcher defaultChildExtractor = new ChildMatcher(this);
     for (SContainmentLink l : knownChildRoles) {
       ChildMatcher childExtractor = ce.get(l);

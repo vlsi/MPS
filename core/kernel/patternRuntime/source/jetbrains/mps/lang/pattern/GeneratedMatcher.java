@@ -33,7 +33,9 @@ public class GeneratedMatcher extends GeneratedMatchingPattern {
   protected final NodeMatcher myTopMatcher;
 
   protected GeneratedMatcher(@NotNull SNode patternNode, boolean hasAntiquotations) {
-    assert patternNode.getModel() == null : "we don't want to deal with model access to pattern node, expect it to hang in the air";
+    // There are dubious uses of quoted 'this' as pattern e.g. in Type behaviors (e.g. Type.isSupersetOf), hence can't assert pattern is free-floating.
+    // Perhaps, those in need of quoted this shall be explicit to create a copy for pattern needs?
+//    assert patternNode.getModel() == null : "we don't want to deal with model access to pattern node, expect it to hang in the air";
     myPatternNode = patternNode;
     myHasAntiquotations = hasAntiquotations;
     myTopMatcher = new NodeMatcher(myValues);
