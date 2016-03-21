@@ -952,11 +952,11 @@
       <node id="1654804677203434363" at="38,62,39,63" concept="7" />
       <node id="1654804677203434363" at="39,63,40,30" concept="7" />
       <node id="1654804677203434363" at="40,30,41,227" concept="3" />
-      <node id="1654804677203434363" at="41,227,42,431" concept="3" />
-      <node id="1654804677203434363" at="42,431,43,24" concept="8" />
+      <node id="1654804677203434363" at="41,227,42,435" concept="3" />
+      <node id="1654804677203434363" at="42,435,43,24" concept="8" />
       <node id="1654804677203434347" at="17,0,19,0" concept="2" trace="comparable_IndexedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434363" at="40,30,42,431" concept="0" />
-      <node id="1654804677203434363" at="40,30,42,431" concept="0" />
+      <node id="1654804677203434363" at="40,30,42,435" concept="0" />
+      <node id="1654804677203434363" at="40,30,42,435" concept="0" />
       <node id="1654804677203434347" at="19,0,22,0" concept="6" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
       <node id="1654804677203434347" at="22,0,25,0" concept="6" trace="isWeak#()Z" />
       <node id="1654804677203434347" at="25,0,28,0" concept="6" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -972,7 +972,7 @@
       <scope id="1654804677203434347" at="32,51,33,163" />
       <scope id="1654804677203434347" at="35,51,36,154" />
       <scope id="1654804677203434347" at="17,0,19,0" />
-      <scope id="1654804677203434363" at="40,30,42,431" />
+      <scope id="1654804677203434363" at="40,30,42,435" />
       <scope id="1654804677203434347" at="19,0,22,0">
         <var name="node1" id="1654804677203434347" />
         <var name="node2" id="1654804677203434347" />
@@ -1008,11 +1008,11 @@
       <node id="1654804677203434378" at="38,62,39,63" concept="7" />
       <node id="1654804677203434378" at="39,63,40,30" concept="7" />
       <node id="1654804677203434378" at="40,30,41,227" concept="3" />
-      <node id="1654804677203434378" at="41,227,42,431" concept="3" />
-      <node id="1654804677203434378" at="42,431,43,24" concept="8" />
+      <node id="1654804677203434378" at="41,227,42,435" concept="3" />
+      <node id="1654804677203434378" at="42,435,43,24" concept="8" />
       <node id="1654804677203434372" at="17,0,19,0" concept="2" trace="comparable_NamedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434378" at="40,30,42,431" concept="0" />
-      <node id="1654804677203434378" at="40,30,42,431" concept="0" />
+      <node id="1654804677203434378" at="40,30,42,435" concept="0" />
+      <node id="1654804677203434378" at="40,30,42,435" concept="0" />
       <node id="1654804677203434372" at="19,0,22,0" concept="6" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
       <node id="1654804677203434372" at="22,0,25,0" concept="6" trace="isWeak#()Z" />
       <node id="1654804677203434372" at="25,0,28,0" concept="6" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -1028,7 +1028,7 @@
       <scope id="1654804677203434372" at="32,51,33,161" />
       <scope id="1654804677203434372" at="35,51,36,154" />
       <scope id="1654804677203434372" at="17,0,19,0" />
-      <scope id="1654804677203434378" at="40,30,42,431" />
+      <scope id="1654804677203434378" at="40,30,42,435" />
       <scope id="1654804677203434372" at="19,0,22,0">
         <var name="node1" id="1654804677203434372" />
         <var name="node2" id="1654804677203434372" />

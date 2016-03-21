@@ -76,11 +76,11 @@
       <node id="9152904044274518120" at="37,61,38,63" concept="4" />
       <node id="9152904044274518120" at="38,63,39,30" concept="4" />
       <node id="9152904044274518120" at="39,30,40,227" concept="2" />
-      <node id="9152904044274518120" at="40,227,41,431" concept="2" />
-      <node id="9152904044274518120" at="41,431,42,24" concept="5" />
+      <node id="9152904044274518120" at="40,227,41,435" concept="2" />
+      <node id="9152904044274518120" at="41,435,42,24" concept="5" />
       <node id="9152904044274516047" at="19,0,21,0" concept="1" trace="typeof_TextMacro_InferenceRule#()V" />
-      <node id="9152904044274518120" at="39,30,41,431" concept="0" />
-      <node id="9152904044274518120" at="39,30,41,431" concept="0" />
+      <node id="9152904044274518120" at="39,30,41,435" concept="0" />
+      <node id="9152904044274518120" at="39,30,41,435" concept="0" />
       <node id="9152904044274516047" at="28,0,31,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="9152904044274516047" at="31,0,34,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="9152904044274516047" at="34,0,37,0" concept="3" trace="overrides#()Z" />
@@ -92,7 +92,7 @@
       <scope id="9152904044274516047" at="31,68,32,102" />
       <scope id="9152904044274516047" at="34,30,35,17" />
       <scope id="9152904044274516047" at="19,0,21,0" />
-      <scope id="9152904044274518120" at="39,30,41,431" />
+      <scope id="9152904044274518120" at="39,30,41,435" />
       <scope id="9152904044274518113" at="22,5,25,310">
         <var name="_info_12389875345" id="9152904044274518113" />
         <var name="_nodeToCheck_1029348928467" id="9152904044274518113" />
