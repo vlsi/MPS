@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.SModelModificationsCollector;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
@@ -213,7 +214,23 @@ public class UpdateSessionImpl implements UpdateSession {
     editorContext.getCellFactory().pushCellContext();
     editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
 
-    myCurrentUpdateInfo = myCurrentUpdateInfo.insertNewParent(new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute)));
+    final boolean isNodeAttribute = attributeKind == Node.class;
+    if (isNodeAttribute) {
+      // Special case:
+      // - replacing currentUpdateInfo with new one for node attribute
+      // - attaching currentUpdateInfo as child for new UpdateInfo for node attribute
+      //
+      // This is necessary to correctly reflect cell structure in UpdateInfo tree: node attribute cell is a parent cell of node cell.
+      //
+      // We should handle it here because of the current logic in {@link EditorManager#createEditorCell()} method: it first creates cell
+      // for the node itself and then handle attribute cell creation. Better approach: first create new cell for node attribute & handle node
+      // cell creation only at the moment we process [>attributed cell<] cell in attribute's editor. In this case such hack will not
+      // be necessary: UpdateInfo, representing attributed node, will be created as a part of child cell creation for attribute's cell (UpdateInfo).
+      myCurrentUpdateInfo = myCurrentUpdateInfo.insertNewParent(new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute)));
+    } else {
+      myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(roleAttribute), myCurrentUpdateInfo);
+    }
+
     try {
       return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
         @Override
@@ -224,6 +241,9 @@ public class UpdateSessionImpl implements UpdateSession {
       });
     } finally {
       editorContext.getCellFactory().popCellContext();
+      if (!isNodeAttribute) {
+        myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
+      }
     }
   }
 
