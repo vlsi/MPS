@@ -58,6 +58,9 @@
     <file name="AnalyzerRunnerType_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerRunnerType_BehaviorDescriptor" />
     </file>
+    <file name="AnalyzerTypeAnnotation_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerTypeAnnotation_BehaviorDescriptor" />
+    </file>
     <file name="Analyzer_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="jetbrains.mps.lang.dataFlow.analyzers.behavior.Analyzer_BehaviorDescriptor" />
     </file>
