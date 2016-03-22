@@ -83,10 +83,11 @@ public abstract class ProjectTestBase extends BaseMpsTest {
   @Test
   public void reopenMPSProject() {
     Project mpsProject = getEnvironment().openProject(new File(PathManager.getHomePath()));
+    testWait();
     mpsProject.dispose();
   }
 
-  @Test
+  //@Test //turn off test
   public void reopenMPSProject2() {
     // TODO: why need to create empty project if any way existing project going to be opened?
 
