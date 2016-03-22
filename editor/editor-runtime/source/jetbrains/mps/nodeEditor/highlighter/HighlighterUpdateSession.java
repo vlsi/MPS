@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.PriorityComparator;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -129,7 +128,8 @@ public class HighlighterUpdateSession {
   }
 
   private boolean updateEditorComponent(final EditorComponent component, final boolean mainEditorMessagesChanged, final boolean applyQuickFixes) {
-    return myHighlighter.runUpdateMessagesAction(new Computable<Boolean>() {
+    final HighlighterEditorTracker editorTracker = myHighlighter.getEditorTracker();
+    return editorTracker.runUpdateMessagesAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         boolean needsUpdate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
@@ -142,7 +142,7 @@ public class HighlighterUpdateSession {
         if (!needsUpdate) return false;
 
         final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
-        boolean rootWasCheckedOnce = myHighlighter.wasCheckedOnce(component);
+        boolean rootWasCheckedOnce = editorTracker.wasCheckedOnce(component);
         if (!rootWasCheckedOnce) {
           checkersToRecheck.addAll(myCheckers);
         } else {
@@ -164,8 +164,8 @@ public class HighlighterUpdateSession {
         List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
         Collections.sort(checkersToRecheckList, new PriorityComparator());
 
-        boolean recreateInspectorMessages = mainEditorMessagesChanged || !myHighlighter.wereInspectorMessagesCreated();
-        myHighlighter.markCheckedOnce(component);
+        boolean recreateInspectorMessages = mainEditorMessagesChanged || !editorTracker.wereInspectorMessagesCreated();
+        editorTracker.markCheckedOnce(component);
 
         return updateEditor(component, rootWasCheckedOnce, checkersToRecheckList, recreateInspectorMessages, applyQuickFixes);
       }
@@ -212,7 +212,7 @@ public class HighlighterUpdateSession {
       });
       if (myHighlighter.isStopping()) return false;
 
-      if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
+      if (myHighlighter.getEditorTracker().isInspector(editor) && recreateInspectorMessages) {
         changed = true;
       }
 

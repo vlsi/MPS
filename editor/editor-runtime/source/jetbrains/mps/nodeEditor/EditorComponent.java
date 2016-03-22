@@ -2492,7 +2492,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     };
     if (highlighter != null) {
-      highlighter.runUpdateMessagesAction(updateAction);
+      highlighter.myEditorTracker.runUpdateMessagesAction(updateAction);
     } else {
       updateAction.run();
     }
