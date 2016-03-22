@@ -39,7 +39,7 @@ import java.util.Collections;
  * It will be ok if we throw an exception from methods except isValid sometimes. This can be done when we'll be able
  * to handle missing languages correctly in every subsystem
  */
-public class InvalidConcept extends SAbstractConceptAdapter implements SConcept, SInterfaceConcept, SAbstractConceptAdapterById {
+public class InvalidConcept extends SAbstractConceptAdapter implements SConcept, SInterfaceConcept {
   public InvalidConcept(@NotNull String fqname) {
     super(fqname);
   }
