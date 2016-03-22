@@ -121,14 +121,8 @@
     <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_CustomProjectPlugin" file="LightweightDSLUneditableMemberGutter_CustomProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.DSLComponentChecker" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.highlighter.EditorsHelper" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
   </dependency>

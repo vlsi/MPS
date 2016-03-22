@@ -43,6 +43,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
+import com.intellij.util.ExceptionUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
@@ -470,8 +471,13 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     if (selectedValues.length > 0) {
       StringBuilder sb = new StringBuilder();
       for (Object o : myList.getSelectedValues()) {
-        sb.append(((IMessage) o).getText());
+        IMessage message = (IMessage) o;
+        sb.append(message.getText());
         sb.append("\n");
+
+        if (message.getException() != null) {
+          sb.append(ExceptionUtil.getThrowableText(message.getException()));
+        }
       }
       group.add(new CopyToClipboardAction("Copy Text").setTextToCopy(sb.toString()));
       Object hintObj;

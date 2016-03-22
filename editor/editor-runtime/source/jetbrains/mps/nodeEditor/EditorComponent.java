@@ -218,7 +218,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
@@ -322,7 +321,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
-  private UpdaterImpl myUpdater;
+  private UpdaterImpl myUpdater = createUpdater();
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -334,7 +333,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
-  private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
+  private final NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
   private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
@@ -380,7 +379,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
-    myUpdater = createUpdater();
     myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
     myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
@@ -2476,7 +2474,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void update() {
-    Highlighter.runUpdateMessagesAction(new Runnable() {
+    final Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
+    Runnable updateAction = new Runnable() {
       @Override
       public void run() {
         getModelAccess().runReadAction(new Runnable() {
@@ -2484,7 +2483,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           public void run() {
             //TODO: check if it's necessary to clear updater caches here?..
             rebuildAfterReloadModel();
-            Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
             if (highlighter != null) {
               highlighter.resetCheckedState(EditorComponent.this);
             }
@@ -2492,7 +2490,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         });
       }
-    });
+    };
+    if (highlighter != null) {
+      highlighter.runUpdateMessagesAction(updateAction);
+    } else {
+      updateAction.run();
+    }
   }
 
   public void processKeyPressed(final KeyEvent keyEvent) {
