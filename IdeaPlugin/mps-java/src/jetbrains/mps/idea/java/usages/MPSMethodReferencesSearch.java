@@ -38,8 +38,8 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -120,7 +120,7 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
           for (SReference sref : usageNode.getReferences()) {
             SNode refTarget = sref.getTargetNode();
             if (refTarget == null) continue;
-            if (refTarget.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+            if (refTarget.getConcept().isSubConceptOf(MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
               // supposedly our reference
               String role = sref.getRole();
 

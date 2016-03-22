@@ -11,8 +11,7 @@ import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiClass;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -43,13 +42,13 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
             }
             public SConcept getConcept() {
               if (psiClaz.isAnnotationType()) {
-                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Annotation);
+                return (SConcept) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation");
               } else if (psiClaz.isInterface()) {
-                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Interface);
+                return (SConcept) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
               } else if (psiClaz.isEnum()) {
-                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_EnumClass);
+                return (SConcept) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass");
               } else {
-                return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
+                return (SConcept) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }
             public SNodeReference getNodeReference() {

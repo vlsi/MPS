@@ -20,10 +20,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -46,10 +46,9 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
 
   private boolean isJavaMethod(final SNode node) {
     SConcept concept = node.getConcept();
-    SConceptRepository repo = SConceptRepository.getInstance();
-    return concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))
-      || concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))
-      || concept.isSubConceptOf(repo.getConcept("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+    return concept.isSubConceptOf(MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))
+      || concept.isSubConceptOf(MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))
+      || concept.isSubConceptOf(MetaAdapterFactoryByName.getConcept("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
   }
 
   @Override

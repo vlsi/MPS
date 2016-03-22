@@ -24,8 +24,9 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dj18" ref="~IDEA IC/java:com.intellij.psi(IDEA IC/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring()" implicit="true" />
+    <import index="2k9e" ref="~mps-core-jar/java:jetbrains.mps.smodel.adapter.structure(mps-core-jar/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring()" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="qwe6" ref="~IDEA IC/java:com.intellij.navigation(IDEA IC/)" implicit="true" />
   </imports>
@@ -69,9 +70,6 @@
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -201,6 +199,9 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -208,8 +209,8 @@
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -434,18 +435,8 @@
                                             <node concept="3uibUv" id="3if7C7H0gv6" role="10QFUM">
                                               <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                             </node>
-                                            <node concept="2OqwBi" id="7GJnXJjB7bc" role="10QFUP">
-                                              <node concept="2YIFZM" id="3if7C7H0gGz" role="2Oq$k0">
-                                                <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                                                <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
-                                              </node>
-                                              <node concept="liA8E" id="7GJnXJjB7be" role="2OqNvi">
-                                                <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                                                <node concept="10M0yZ" id="7GJnXJjB7bf" role="37wK5m">
-                                                  <ref role="1PxDUh" to="w1kc:~BootstrapLanguages" resolve="BootstrapLanguages" />
-                                                  <ref role="3cqZAo" to="w1kc:~BootstrapLanguages.concept_baseLanguage_Annotation" resolve="concept_baseLanguage_Annotation" />
-                                                </node>
-                                              </node>
+                                            <node concept="35c_gC" id="6HyKXeV7ARn" role="10QFUP">
+                                              <ref role="35c_gD" to="tpee:hiABswc" resolve="Annotation" />
                                             </node>
                                           </node>
                                         </node>
@@ -465,18 +456,8 @@
                                               <node concept="3uibUv" id="3if7C7H0hp9" role="10QFUM">
                                                 <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                               </node>
-                                              <node concept="2OqwBi" id="7GJnXJjB7bL" role="10QFUP">
-                                                <node concept="liA8E" id="7GJnXJjB7bM" role="2OqNvi">
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                                                  <node concept="10M0yZ" id="7GJnXJjB7bN" role="37wK5m">
-                                                    <ref role="1PxDUh" to="w1kc:~BootstrapLanguages" resolve="BootstrapLanguages" />
-                                                    <ref role="3cqZAo" to="w1kc:~BootstrapLanguages.concept_baseLanguage_Interface" resolve="concept_baseLanguage_Interface" />
-                                                  </node>
-                                                </node>
-                                                <node concept="2YIFZM" id="7GJnXJjB7bO" role="2Oq$k0">
-                                                  <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                                                </node>
+                                              <node concept="35c_gC" id="6HyKXeV7B4D" role="10QFUP">
+                                                <ref role="35c_gD" to="tpee:g7HP654" resolve="Interface" />
                                               </node>
                                             </node>
                                           </node>
@@ -497,18 +478,8 @@
                                               <node concept="3uibUv" id="3if7C7H0hQv" role="10QFUM">
                                                 <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                               </node>
-                                              <node concept="2OqwBi" id="7GJnXJjB7cm" role="10QFUP">
-                                                <node concept="liA8E" id="7GJnXJjB7cn" role="2OqNvi">
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                                                  <node concept="10M0yZ" id="7GJnXJjB7co" role="37wK5m">
-                                                    <ref role="1PxDUh" to="w1kc:~BootstrapLanguages" resolve="BootstrapLanguages" />
-                                                    <ref role="3cqZAo" to="w1kc:~BootstrapLanguages.concept_baseLanguage_EnumClass" resolve="concept_baseLanguage_EnumClass" />
-                                                  </node>
-                                                </node>
-                                                <node concept="2YIFZM" id="7GJnXJjB7cp" role="2Oq$k0">
-                                                  <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                                                </node>
+                                              <node concept="35c_gC" id="6HyKXeV7Bjo" role="10QFUP">
+                                                <ref role="35c_gD" to="tpee:fKQs72_" resolve="EnumClass" />
                                               </node>
                                             </node>
                                           </node>
@@ -521,18 +492,8 @@
                                               <node concept="3uibUv" id="3if7C7H0i5h" role="10QFUM">
                                                 <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
                                               </node>
-                                              <node concept="2OqwBi" id="7GJnXJjB7cV" role="10QFUP">
-                                                <node concept="liA8E" id="7GJnXJjB7cW" role="2OqNvi">
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                                                  <node concept="10M0yZ" id="7GJnXJjB7cX" role="37wK5m">
-                                                    <ref role="1PxDUh" to="w1kc:~BootstrapLanguages" resolve="BootstrapLanguages" />
-                                                    <ref role="3cqZAo" to="w1kc:~BootstrapLanguages.concept_baseLanguage_ClassConcept" resolve="concept_baseLanguage_ClassConcept" />
-                                                  </node>
-                                                </node>
-                                                <node concept="2YIFZM" id="7GJnXJjB7cY" role="2Oq$k0">
-                                                  <ref role="37wK5l" to="c17a:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                                                  <ref role="1Pybhc" to="c17a:~SConceptRepository" resolve="SConceptRepository" />
-                                                </node>
+                                              <node concept="35c_gC" id="6HyKXeV7Bz0" role="10QFUP">
+                                                <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
                                               </node>
                                             </node>
                                           </node>
