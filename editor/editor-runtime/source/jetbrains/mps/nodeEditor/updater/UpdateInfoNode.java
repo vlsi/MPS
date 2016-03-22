@@ -17,7 +17,10 @@ package jetbrains.mps.nodeEditor.updater;
 
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.memory.MemoryAnalyzer;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,6 +31,8 @@ import java.util.Collections;
  * Date: 22/12/15
  */
 class UpdateInfoNode {
+  private static final Logger LOG = LogManager.getLogger(UpdateInfoNode.class);
+
   private final ReferencedNodeContext myContext;
   private UpdateInfoNode myParent;
   private final Collection<UpdateInfoNode> myChildren = new ArrayList<UpdateInfoNode>();
@@ -73,6 +78,21 @@ class UpdateInfoNode {
       updateInfoNode.attachNewParent(detachFromParent());
     }
     if (updateInfoNode.getContext().isNodeAttribute()) {
+      SNode attributedNode = updateInfoNode.getContext().getNode().getParent();
+      if (attributedNode != null) {
+        for (UpdateInfoNode childInfo : updateInfoNode.getChildren()) {
+          if (childInfo.getContext().getNode() == attributedNode) {
+            LOG.error("Invalid child UpdateInfoNode (node: " + attributedNode + "<" + attributedNode.getConcept() +
+                ">) present in UpdateInfoNode for node attribute: (node: " + updateInfoNode.getContext().getNode() + "<" +
+                updateInfoNode.getContext().getNode().getConcept() + ">)", new Throwable());
+          }
+        }
+      } else {
+        LOG.error(
+            "Attributed node expected, but is null (node: " + updateInfoNode.getContext().getNode() + "<" + updateInfoNode.getContext().getNode().getConcept() +
+                ">", new Throwable());
+      }
+
       for (UpdateInfoNode childInfo : new ArrayList<UpdateInfoNode>(getChildren())) {
         childInfo.detachFromParent();
         childInfo.attachNewParent(updateInfoNode);
