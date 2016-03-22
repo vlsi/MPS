@@ -69,10 +69,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
-  //the second parameter is needed because there is a time dependency -
-  //MPSProject must be disposed after TransientModelsModule for
-  //the module's models to be disposed
-
   public TransientModelsModule(@NotNull SModule original, @NotNull TransientModelsProvider component) {
     assert !(original instanceof TransientModelsModule) :
         "create TransientModelsModule based on another TransientModelsModule with name " + original.getModuleName();

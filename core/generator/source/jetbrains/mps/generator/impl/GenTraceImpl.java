@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SNodePointer;
@@ -137,7 +138,12 @@ public class GenTraceImpl implements GenerationTrace {
         return p;
       }
     }
-    return null;
+    if (inputNode.getModel() instanceof TransientSModel || inputNode.getModel() == null) {
+      return null;
+    }
+    // we may start with node from original model (TransientModelsProvider gives GenTrace for SModelReference either of original or transient model)
+    // in this case, start from the very first phase, and assume clone of original model into @0 kept node id.
+    return mySequence;
   }
 
   private Phase findPhaseForOutput(SNode node) {

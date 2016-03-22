@@ -9,10 +9,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.extapi.model.TransientSModel;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
 
@@ -30,10 +31,12 @@ public class ShowGenerationTraceback_Action extends BaseAction {
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     GenerationTracerViewTool tool = event.getData(CommonDataKeys.PROJECT).getComponent(GenerationTracerViewTool.class);
-    if ((event.getData(MPSCommonDataKeys.NODE) == null) || tool == null) {
+    SNode n = event.getData(MPSCommonDataKeys.NODE);
+    if ((n == null) || !(SNodeOperations.getModel(n) instanceof TransientSModel) || tool == null) {
       disable(event.getPresentation());
+    } else {
+      setEnabledState(event.getPresentation(), tool.hasTracebackData(SNodeOperations.getModel(n).getReference()));
     }
-    setEnabledState(event.getPresentation(), tool.hasTracebackData(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)).getReference()));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

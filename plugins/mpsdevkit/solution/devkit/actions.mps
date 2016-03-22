@@ -4792,35 +4792,39 @@
               <node concept="3w_OXm" id="5VaWw4exXR8" role="2OqNvi" />
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="5VaWw4eycVt" role="3cqZAp">
-          <node concept="1rXfSq" id="5VaWw4eycVr" role="3clFbG">
-            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
-            <node concept="2OqwBi" id="5VaWw4eyddE" role="37wK5m">
-              <node concept="tl45R" id="5VaWw4eyd9$" role="2Oq$k0" />
-              <node concept="liA8E" id="5VaWw4eye5A" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="5VaWw4eye7_" role="37wK5m">
-              <node concept="37vLTw" id="5VaWw4eye7A" role="2Oq$k0">
-                <ref role="3cqZAo" node="5oSeKmCevcV" resolve="tool" />
-              </node>
-              <node concept="liA8E" id="5VaWw4eye7B" role="2OqNvi">
-                <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTraceInputData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTraceInputData" />
-                <node concept="2OqwBi" id="5VaWw4eye7C" role="37wK5m">
-                  <node concept="liA8E" id="5VaWw4eye7D" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+          <node concept="9aQIb" id="1ksPXMTW5e" role="9aQIa">
+            <node concept="3clFbS" id="1ksPXMTW5f" role="9aQI4">
+              <node concept="3clFbF" id="5VaWw4eycVt" role="3cqZAp">
+                <node concept="1rXfSq" id="5VaWw4eycVr" role="3clFbG">
+                  <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+                  <node concept="2OqwBi" id="5VaWw4eyddE" role="37wK5m">
+                    <node concept="tl45R" id="5VaWw4eyd9$" role="2Oq$k0" />
+                    <node concept="liA8E" id="5VaWw4eye5A" role="2OqNvi">
+                      <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                    </node>
                   </node>
-                  <node concept="2JrnkZ" id="5VaWw4eye7E" role="2Oq$k0">
-                    <node concept="2OqwBi" id="5VaWw4eye7F" role="2JrQYb">
-                      <node concept="2OqwBi" id="2Ex1te_vRFY" role="2Oq$k0">
-                        <node concept="2WthIp" id="2Ex1te_vRG1" role="2Oq$k0" />
-                        <node concept="3gHZIF" id="2Ex1te_vRG3" role="2OqNvi">
-                          <ref role="2WH_rO" node="5VaWw4ey5cG" resolve="node" />
+                  <node concept="2OqwBi" id="5VaWw4eye7_" role="37wK5m">
+                    <node concept="37vLTw" id="5VaWw4eye7A" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5oSeKmCevcV" resolve="tool" />
+                    </node>
+                    <node concept="liA8E" id="5VaWw4eye7B" role="2OqNvi">
+                      <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTraceInputData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTraceInputData" />
+                      <node concept="2OqwBi" id="5VaWw4eye7C" role="37wK5m">
+                        <node concept="liA8E" id="5VaWw4eye7D" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                        </node>
+                        <node concept="2JrnkZ" id="5VaWw4eye7E" role="2Oq$k0">
+                          <node concept="2OqwBi" id="5VaWw4eye7F" role="2JrQYb">
+                            <node concept="2OqwBi" id="2Ex1te_vRFY" role="2Oq$k0">
+                              <node concept="2WthIp" id="2Ex1te_vRG1" role="2Oq$k0" />
+                              <node concept="3gHZIF" id="2Ex1te_vRG3" role="2OqNvi">
+                                <ref role="2WH_rO" node="5VaWw4ey5cG" resolve="node" />
+                              </node>
+                            </node>
+                            <node concept="I4A8Y" id="5VaWw4eye7J" role="2OqNvi" />
+                          </node>
                         </node>
                       </node>
-                      <node concept="I4A8Y" id="5VaWw4eye7J" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
@@ -4921,6 +4925,18 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="fZiNr5L7sO" role="3cqZAp">
+          <node concept="3cpWsn" id="fZiNr5L7sP" role="3cpWs9">
+            <property role="TrG5h" value="n" />
+            <node concept="3Tqbb2" id="fZiNr5L7sL" role="1tU5fm" />
+            <node concept="2OqwBi" id="fZiNr5L7sQ" role="33vP2m">
+              <node concept="2WthIp" id="fZiNr5L7sR" role="2Oq$k0" />
+              <node concept="3gHZIF" id="fZiNr5L7sS" role="2OqNvi">
+                <ref role="2WH_rO" node="14z8V6nEsaz" resolve="node" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="14z8V6nEs9K" role="3cqZAp">
           <node concept="22lmx$" id="5VaWw4ewdHX" role="3clFbw">
             <node concept="3clFbC" id="5VaWw4ewhVD" role="3uHU7w">
@@ -4929,14 +4945,26 @@
                 <ref role="3cqZAo" node="5oSeKmCenEV" resolve="tool" />
               </node>
             </node>
-            <node concept="2OqwBi" id="14z8V6nEs9N" role="3uHU7B">
-              <node concept="2OqwBi" id="14z8V6nEs9O" role="2Oq$k0">
-                <node concept="2WthIp" id="14z8V6nEs9P" role="2Oq$k0" />
-                <node concept="3gHZIF" id="5VaWw4ew6Pp" role="2OqNvi">
-                  <ref role="2WH_rO" node="14z8V6nEsaz" resolve="node" />
+            <node concept="22lmx$" id="84RMp4OicN" role="3uHU7B">
+              <node concept="3fqX7Q" id="84RMp4Oj8$" role="3uHU7w">
+                <node concept="2ZW3vV" id="84RMp4Oj8A" role="3fr31v">
+                  <node concept="3uibUv" id="84RMp4Oj8B" role="2ZW6by">
+                    <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
+                  </node>
+                  <node concept="2OqwBi" id="84RMp4Oj8C" role="2ZW6bz">
+                    <node concept="37vLTw" id="fZiNr5L7sT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="fZiNr5L7sP" resolve="n" />
+                    </node>
+                    <node concept="I4A8Y" id="84RMp4Oj8G" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
-              <node concept="3w_OXm" id="5VaWw4ew71$" role="2OqNvi" />
+              <node concept="2OqwBi" id="14z8V6nEs9N" role="3uHU7B">
+                <node concept="37vLTw" id="fZiNr5L7sU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="fZiNr5L7sP" resolve="n" />
+                </node>
+                <node concept="3w_OXm" id="5VaWw4ew71$" role="2OqNvi" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="14z8V6nEs9S" role="3clFbx">
@@ -4952,35 +4980,36 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="5VaWw4eyg_X" role="3cqZAp">
-          <node concept="1rXfSq" id="5VaWw4eyg_V" role="3clFbG">
-            <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
-            <node concept="2OqwBi" id="5VaWw4exCVZ" role="37wK5m">
-              <node concept="tl45R" id="5VaWw4exCQL" role="2Oq$k0" />
-              <node concept="liA8E" id="5VaWw4exDNV" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="14z8V6nEsao" role="37wK5m">
-              <node concept="37vLTw" id="5oSeKmCepEN" role="2Oq$k0">
-                <ref role="3cqZAo" node="5oSeKmCenEV" resolve="tool" />
-              </node>
-              <node concept="liA8E" id="14z8V6nEsaq" role="2OqNvi">
-                <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTracebackData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTracebackData" />
-                <node concept="2OqwBi" id="2n9zn0CqNgv" role="37wK5m">
-                  <node concept="liA8E" id="2n9zn0CqNgw" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+          <node concept="9aQIb" id="1ksPXMTVCp" role="9aQIa">
+            <node concept="3clFbS" id="1ksPXMTVCq" role="9aQI4">
+              <node concept="3clFbF" id="5VaWw4eyg_X" role="3cqZAp">
+                <node concept="1rXfSq" id="5VaWw4eyg_V" role="3clFbG">
+                  <ref role="37wK5l" to="7bx7:~BaseAction.setEnabledState(com.intellij.openapi.actionSystem.Presentation,boolean):void" resolve="setEnabledState" />
+                  <node concept="2OqwBi" id="5VaWw4exCVZ" role="37wK5m">
+                    <node concept="tl45R" id="5VaWw4exCQL" role="2Oq$k0" />
+                    <node concept="liA8E" id="5VaWw4exDNV" role="2OqNvi">
+                      <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                    </node>
                   </node>
-                  <node concept="2JrnkZ" id="2n9zn0CqNgx" role="2Oq$k0">
-                    <node concept="2OqwBi" id="2n9zn0CqNgy" role="2JrQYb">
-                      <node concept="2OqwBi" id="2n9zn0CqNgz" role="2Oq$k0">
-                        <node concept="2WthIp" id="2n9zn0CqNg$" role="2Oq$k0" />
-                        <node concept="3gHZIF" id="2n9zn0CqNg_" role="2OqNvi">
-                          <ref role="2WH_rO" node="14z8V6nEsaz" resolve="node" />
+                  <node concept="2OqwBi" id="14z8V6nEsao" role="37wK5m">
+                    <node concept="37vLTw" id="5oSeKmCepEN" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5oSeKmCenEV" resolve="tool" />
+                    </node>
+                    <node concept="liA8E" id="14z8V6nEsaq" role="2OqNvi">
+                      <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTracebackData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTracebackData" />
+                      <node concept="2OqwBi" id="2n9zn0CqNgv" role="37wK5m">
+                        <node concept="liA8E" id="2n9zn0CqNgw" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                        </node>
+                        <node concept="2JrnkZ" id="2n9zn0CqNgx" role="2Oq$k0">
+                          <node concept="2OqwBi" id="2n9zn0CqNgy" role="2JrQYb">
+                            <node concept="37vLTw" id="fZiNr5L7sV" role="2Oq$k0">
+                              <ref role="3cqZAo" node="fZiNr5L7sP" resolve="n" />
+                            </node>
+                            <node concept="I4A8Y" id="2n9zn0CqNgA" role="2OqNvi" />
+                          </node>
                         </node>
                       </node>
-                      <node concept="I4A8Y" id="2n9zn0CqNgA" role="2OqNvi" />
                     </node>
                   </node>
                 </node>

@@ -22,10 +22,8 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -209,10 +207,15 @@ public class TransientModelsProvider {
 
   @Nullable
   public GenerationTrace getTrace(@NotNull SModelReference model) {
-    // FIXME need a better way to find the trace. Use of SModelRepository is likely bad.
-    SModel m = SModelRepository.getInstance().getModelDescriptor(model);
-    if (m != null && (m.getModule() instanceof TransientModelsModule)) {
-      return ((TransientModelsModule) m.getModule()).getTrace(model);
+    for (TransientModelsModule m : myModuleMap.values()) {
+      if (m.hasPublished() ) {
+        // not quite sure there's strong reason to check if module has anything published,
+        // although we are likely to navigate from trace to transient models and would need them published
+        GenerationTrace trace = m.getTrace(model);
+        if (trace != null) {
+          return trace;
+        }
+      }
     }
     return null;
   }

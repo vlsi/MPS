@@ -32,8 +32,9 @@ public class ShowGenerationTrace_Action extends BaseAction {
     GenerationTracerViewTool tool = event.getData(CommonDataKeys.PROJECT).getComponent(GenerationTracerViewTool.class);
     if ((event.getData(MPSCommonDataKeys.NODE) == null) || tool == null) {
       disable(event.getPresentation());
+    } else {
+      setEnabledState(event.getPresentation(), tool.hasTraceInputData(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)).getReference()));
     }
-    setEnabledState(event.getPresentation(), tool.hasTraceInputData(SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)).getReference()));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
