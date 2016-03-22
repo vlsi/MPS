@@ -164,7 +164,8 @@ public class ModelPersistence {
       return handler.getResult();
     } catch (Exception ex) {
       Throwable th = ex.getCause() == null ? ex : ex.getCause();
-      throw new ModelReadException(String.format("Failed to load model: %s", th.getMessage()), th, header);
+      final String causeText = th.getMessage() == null ? th.getClass().getSimpleName() : th.getMessage();
+      throw new ModelReadException(String.format("Failed to load model: %s", causeText), th, header);
     }
   }
 

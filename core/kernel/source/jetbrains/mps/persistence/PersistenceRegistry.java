@@ -141,11 +141,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public SModelId createModelId(String text) {
     int colon = text.indexOf(':');
     if (colon == -1) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(String.format("No model id factory designator (':') in %s", text));
     }
-    SModelIdFactory factory = myModelIdFactory.get(text.substring(0, colon));
+    final String factoryDesignator = text.substring(0, colon);
+    SModelIdFactory factory = myModelIdFactory.get(factoryDesignator);
     if (factory == null) {
-      return null;
+      throw new IllegalArgumentException(String.format("Unknown model id factory '%s' in %s", factoryDesignator, text));
     }
     return factory.create(text.substring(colon + 1));
   }
