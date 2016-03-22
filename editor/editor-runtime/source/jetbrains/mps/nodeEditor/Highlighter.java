@@ -35,6 +35,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorList;
+import jetbrains.mps.nodeEditor.highlighter.HighlighterEventCollector;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
 import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -45,9 +46,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -68,7 +67,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
-  private static final Object EVENTS_LOCK = new Object();
 
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
@@ -86,7 +84,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private final List<BaseEditorChecker> myCheckers = new CopyOnWriteArrayList<BaseEditorChecker>();
 
   private volatile boolean myForceUpdateInPowerSaveModeFlag = false;
-  private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private boolean myInspectorMessagesCreated = false;
   private InspectorTool myInspectorTool;
@@ -107,29 +104,17 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       });
     }
   };
-  private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (RuntimeFlags.isTestMode()) return;
-      synchronized (EVENTS_LOCK) {
-        myLastEvents.addAll(events);
-      }
-    }
-  };
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
-      synchronized (EVENTS_LOCK) {
-        for (SModel sModel : replacedModels) {
-          myLastEvents.add(new SModelReplacedEvent(sModel));
-          if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
-            continue;
-          }
-          for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-            if (editorComponent.getEditorContext().getModel() != null &&
-                editorComponent.getEditorContext().getModel().getReference().equals(sModel.getReference())) {
-              myCheckedOnceEditors.remove(editorComponent);
-            }
+      for (SModel sModel : replacedModels) {
+        if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
+          continue;
+        }
+        for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+          if (editorComponent.getEditorContext().getModel() != null &&
+              editorComponent.getEditorContext().getModel().getReference().equals(sModel.getReference())) {
+            myCheckedOnceEditors.remove(editorComponent);
           }
         }
       }
@@ -139,6 +124,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private Project myProject;
   private CommandWatcher myCommandWatcher = new CommandWatcher();
   private final EditorList myEditorList;
+  private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
 
   /*
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
@@ -160,7 +146,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       return;
     }
     myClassLoaderManager.addClassesHandler(myClassesListener);
-    myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
+    myEventCollector.startListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
     SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
@@ -197,7 +183,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
-    myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
+    myEventCollector.stopListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
@@ -332,11 +318,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
-    final List<SModelEvent> events = new ArrayList<SModelEvent>();
-    synchronized (EVENTS_LOCK) {
-      events.addAll(myLastEvents);
-      myLastEvents.clear();
-    }
+    final List<SModelEvent> events = myEventCollector.drainEvents();
 
     final Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
