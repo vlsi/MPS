@@ -613,14 +613,17 @@ __switch__:
                 if ((boolean) IMethodLike__BehaviorDescriptor.implicitThrows_id4kX30tnJ9kz.invoke(methodLike)) {
                   ListSequence.fromList(throwTypes).clear();
                 } else {
-                  for (final SNode thr : IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(methodLike)) {
-                    ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
-                      public boolean accept(SNode tt) {
-                        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
-                      }
-                    });
+                  List<SNode> methodThrowableTypes = IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(methodLike);
+                  if (methodThrowableTypes != null) {
+                    for (final SNode thr : methodThrowableTypes) {
+                      ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                        public boolean accept(SNode tt) {
+                          return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
+                        }
+                      });
+                    }
+                    useQuickfix = true;
                   }
-                  useQuickfix = true;
                 }
               }
               break;
