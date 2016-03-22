@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,9 +50,6 @@ public class GenTraceImpl implements GenerationTrace {
 
   @Override
   public void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
-    if (output.isEmpty()) {
-      return;
-    }
     myCurrent.add(input, output, templateNode);
   }
 
@@ -164,12 +161,12 @@ public class GenTraceImpl implements GenerationTrace {
   /*package*/ static final class Element {
     @Nullable
     public final SNodeId input;
-    @NotNull
+    @Nullable
     public final SNodeId output;
     @NotNull
     public final SNodeReference template;
 
-    public Element(@Nullable SNodeId in, @NotNull SNodeId out, @NotNull SNodeReference with) {
+    public Element(@Nullable SNodeId in, @Nullable SNodeId out, @NotNull SNodeReference with) {
       input = in;
       output = out;
       template = with;
@@ -194,8 +191,13 @@ public class GenTraceImpl implements GenerationTrace {
     public void add(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
       inputIndex = outputIndex = null;
       if (myTraceLock.tryAcquire()) {
-        for (SNodeId n : output) {
-          myTrace.add(new Element(input, n, templateNode));
+        if (output.isEmpty()) {
+          assert input != null : "Trace node deletion without input node?";
+          myTrace.add(new Element(input, null, templateNode));
+        } else {
+          for (SNodeId n : output) {
+            myTrace.add(new Element(input, n, templateNode));
+          }
         }
         drainAdditionQueue();
         myTraceLock.release();
@@ -234,7 +236,14 @@ public class GenTraceImpl implements GenerationTrace {
         }
         rv.addAll(changes);
       }
-      return rv.isEmpty() ? Collections.<Element>emptyList() : rv;
+      if (rv.isEmpty()) {
+        return Collections.<Element>emptyList();
+      }
+      // tracer records output nodes, which means trace for outer rule/macro usually comes *after* trace for inner elements
+      // with reverse here, we try to restore 'natural' order (as deemed by few our colleagues), starting from most distant
+      // template element and down to most specific.
+      Collections.reverse(rv);
+      return rv;
     }
 
     private static Collection<Element> findByAncestor(Map<SNodeId, Collection<Element>> index, SNode node) {

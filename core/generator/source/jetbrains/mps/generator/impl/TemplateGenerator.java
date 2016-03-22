@@ -850,6 +850,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (TemplateDropRootRule dropRootRule : rules) {
         if (myEnv.getQueryExecutor().isApplicable(dropRootRule, tc)) {
           drop(inputRootNode, dropRootRule);
+          myEnv.getTrace().trace(inputRootNode.getNodeId(), Collections.<SNodeId>emptyList(), dropRootRule.getRuleNode());
           return true;
         }
       }

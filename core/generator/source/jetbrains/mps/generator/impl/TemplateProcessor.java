@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.MapSrcProcessor.MapSrcMacroProcessorInterpreted;
@@ -398,6 +399,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       if (newInputNodes.isEmpty()) {
         return Collections.emptyList();
       }
+      final GenerationTrace trace = templateContext.getEnvironment().getTrace();
       String counterVarName = RuleUtil.getLoopMacroCounterVarName(macro);
       ArrayList<SNode> outputNodes = new ArrayList<SNode>();
       int i = 0;
@@ -410,6 +412,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         List<SNode> _outputNodes = nextMacro(ctx);
         outputNodes.addAll(_outputNodes);
         i++;
+        trace.trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), getMacroNodeRef());
       }
       return outputNodes;
     }
