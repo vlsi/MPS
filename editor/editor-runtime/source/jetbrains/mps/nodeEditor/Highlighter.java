@@ -61,6 +61,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -69,7 +70,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
   private static final Object EVENTS_LOCK = new Object();
 
-  private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
 
@@ -90,7 +90,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private boolean myInspectorMessagesCreated = false;
   private InspectorTool myInspectorTool;
-  private List<Runnable> myPendingActions = new ArrayList<Runnable>();
+  private final ConcurrentLinkedQueue<Runnable> myPendingActions = new ConcurrentLinkedQueue<Runnable>();
 
   private MessageBusConnection myMessageBusConnection;
 
@@ -221,17 +221,13 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private void addPendingAction(Runnable r) {
-    synchronized (PENDING_LOCK) {
-      myPendingActions.add(r);
-    }
+    myPendingActions.offer(r);
   }
 
   private void processPendingActions() {
-    synchronized (PENDING_LOCK) {
-      for (Runnable r : myPendingActions) {
-        r.run();
-      }
-      myPendingActions.clear();
+    Runnable r;
+    while ((r = myPendingActions.poll()) != null) {
+      r.run();
     }
   }
 
