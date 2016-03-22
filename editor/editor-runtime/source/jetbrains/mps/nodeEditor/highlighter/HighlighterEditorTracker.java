@@ -92,8 +92,4 @@ public class HighlighterEditorTracker {
   public synchronized <C> C runUpdateMessagesAction(Computable<C> updateAction) {
     return updateAction.compute();
   }
-
-  public synchronized void runUpdateMessagesAction(Runnable updateAction) {
-    updateAction.run();
-  }
 }

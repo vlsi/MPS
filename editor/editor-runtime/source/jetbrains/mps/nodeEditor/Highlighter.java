@@ -79,7 +79,10 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   private final List<BaseEditorChecker> myCheckers = new CopyOnWriteArrayList<BaseEditorChecker>();
 
-  private volatile boolean myForceUpdateInPowerSaveModeFlag = false;
+  /**
+   * Whether to force running all checkers in power-save mode. Accessed from the highlighter thread only, therefore non-volatile.
+   */
+  private boolean myForceUpdateInPowerSaveModeFlag = false;
   private InspectorTool myInspectorTool;
   private final ConcurrentLinkedQueue<Runnable> myPendingActions = new ConcurrentLinkedQueue<Runnable>();
 
@@ -328,8 +331,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, activeEditors);
   }
 
-  public void resetCheckedState(final EditorComponent editorComponent) {
-    myEditorTracker.runUpdateMessagesAction(new Runnable() {
+  public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
+    addPendingAction(new Runnable() {
       @Override
       public void run() {
         myForceUpdateInPowerSaveModeFlag = true;
