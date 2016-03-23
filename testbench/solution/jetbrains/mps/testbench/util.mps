@@ -292,7 +292,7 @@
           <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
           <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
           <node concept="Xl_RD" id="4_TMdeLkODh" role="37wK5m">
-            <property role="Xl_RC" value="(AWT\\-.*)|(Image Fetch.*)|(Progress Cancel Checker)|(Flushing thread)|(Keep\\-Alive.*)|(Finalizer.*)|(MPS interrupting thread)|(caret blinker.*)|(ApplicationImpl.*)|(AnimatorThread)|(Executor)|(ChangesManager command queue)|(TimerQueue)|(Change List.*)|(Reference.*)|(Periodic task.*)|(Java2D.*)|(LowMemoryWatcher janitor)|(Timer\\-.*)|(FS Sync.*)|(timed reference disposer)|(Alarm pool\\(own\\))|(Alarm pool\\(shared\\))|(Poller SunPKCS11-Darwin)|(MPS interrupt.*)|(process reaper)|(RefCountingStorage.*)|(Encoding detection thread)" />
+            <property role="Xl_RC" value="(AWT\\-.*)|(Image Fetch.*)|(Progress Cancel Checker)|(Flushing thread)|(Keep\\-Alive.*)|(Finalizer.*)|(MPS interrupting thread)|(caret blinker.*)|(ApplicationImpl.*)|(AnimatorThread)|(Executor)|(ChangesManager command queue)|(TimerQueue)|(Change List.*)|(Reference.*)|(Periodic task.*)|(Java2D.*)|(LowMemoryWatcher janitor)|(Timer\\-.*)|(FS Sync.*)|(timed reference disposer)|(Alarm pool\\(own\\))|(Alarm pool\\(shared\\))|(Poller SunPKCS11-Darwin)|(MPS interrupt.*)|(process reaper)|(RefCountingStorage.*)|(Encoding detection thread)|(ProcessWaitFor: git(\\.exe)?)|(BaseDataReader: error stream of git(\\.exe)?)|(BaseDataReader: output stream of git(\\.exe)?)" />
           </node>
         </node>
         <node concept="3uibUv" id="4_TMdeLkODe" role="1tU5fm">
