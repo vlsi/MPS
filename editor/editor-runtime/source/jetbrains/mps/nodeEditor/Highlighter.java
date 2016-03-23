@@ -33,11 +33,14 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorList;
+import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorTracker;
+import jetbrains.mps.nodeEditor.highlighter.HighlighterEventCollector;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
 import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
@@ -45,11 +48,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelReplacedEvent;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -57,23 +56,20 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Highlighter implements IHighlighter, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(Highlighter.class);
-  private static final Object EVENTS_LOCK = new Object();
 
-  private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
 
-  private final Object myUpdateEditorLock = new Object();
   private volatile boolean myPaused;
   private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
   private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
@@ -83,14 +79,14 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
 
-  private final List<BaseEditorChecker> myCheckers = new CopyOnWriteArrayList<BaseEditorChecker>();
+  private final List<EditorChecker> myCheckers = new CopyOnWriteArrayList<EditorChecker>();
 
-  private volatile boolean myForceUpdateInPowerSaveModeFlag = false;
-  private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
-  private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
-  private boolean myInspectorMessagesCreated = false;
+  /**
+   * Whether to force running all checkers in power-save mode. Accessed from the highlighter thread only, therefore non-volatile.
+   */
+  private boolean myForceUpdateInPowerSaveModeFlag = false;
   private InspectorTool myInspectorTool;
-  private List<Runnable> myPendingActions = new ArrayList<Runnable>();
+  private final ConcurrentLinkedQueue<Runnable> myPendingActions = new ConcurrentLinkedQueue<Runnable>();
 
   private MessageBusConnection myMessageBusConnection;
 
@@ -100,38 +96,20 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       addPendingAction(new Runnable() {
         @Override
         public void run() {
-          myCheckedOnceEditors.clear();
-          myInspectorMessagesCreated = false;
+          myEditorTracker.markEverythingUnchecked();
           myEditorList.clearAdditionalEditors();
         }
       });
     }
   };
-  private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (RuntimeFlags.isTestMode()) return;
-      synchronized (EVENTS_LOCK) {
-        myLastEvents.addAll(events);
-      }
-    }
-  };
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
-      synchronized (EVENTS_LOCK) {
-        for (SModel sModel : replacedModels) {
-          myLastEvents.add(new SModelReplacedEvent(sModel));
-          if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
-            continue;
-          }
-          for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-            if (editorComponent.getEditorContext().getModel() != null &&
-                editorComponent.getEditorContext().getModel().getReference().equals(sModel.getReference())) {
-              myCheckedOnceEditors.remove(editorComponent);
-            }
-          }
+      for (SModel sModel : replacedModels) {
+        if (!jetbrains.mps.util.SNodeOperations.isRegistered(sModel)) {
+          continue;
         }
+        myEditorTracker.markEditorsOfModelUnchecked(sModel);
       }
     }
   };
@@ -139,6 +117,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private Project myProject;
   private CommandWatcher myCommandWatcher = new CommandWatcher();
   private final EditorList myEditorList;
+  private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
+  private final HighlighterEditorTracker myEditorTracker = new HighlighterEditorTracker();
 
   /*
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
@@ -160,7 +140,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
       return;
     }
     myClassLoaderManager.addClassesHandler(myClassesListener);
-    myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
+    myEventCollector.startListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
     SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
@@ -172,11 +152,11 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
       @Override
       public void editorComponentDisposed(@NotNull final EditorComponent editorComponent) {
-        if (editorComponent == myInspectorTool.getInspector()) {
+        if (myEditorTracker.isInspector(editorComponent)) {
           addPendingAction(new Runnable() {
             @Override
             public void run() {
-              myInspectorMessagesCreated = false;
+              myEditorTracker.markInspectorUnchecked();
             }
           });
         }
@@ -197,7 +177,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
-    myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
+    myEventCollector.stopListening(myGlobalSModelEventsManager, SModelRepository.getInstance());
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
@@ -221,43 +201,57 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private void addPendingAction(Runnable r) {
-    synchronized (PENDING_LOCK) {
-      myPendingActions.add(r);
-    }
+    myPendingActions.offer(r);
   }
 
   private void processPendingActions() {
-    synchronized (PENDING_LOCK) {
-      for (Runnable r : myPendingActions) {
-        r.run();
-      }
-      myPendingActions.clear();
+    Runnable r;
+    while ((r = myPendingActions.poll()) != null) {
+      r.run();
     }
   }
 
-  public void addChecker(BaseEditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+  public void addChecker(BaseEditorChecker legacyChecker) {
+    if (legacyChecker == null) return;
+    addChecker(new LegacyEditorCheckerAdapter(legacyChecker));
+  }
 
-    if (checker != null) {
-      myCheckers.add(checker);
-      addPendingAction(new Runnable() {
-        @Override
-        public void run() {
-          myCheckedOnceEditors.clear();
-          myInspectorMessagesCreated = false;
-        }
-      });
+  public void addChecker(@NotNull final EditorChecker checker) {
+    if (RuntimeFlags.isTestMode()) return;
+    addPendingAction(new Runnable() {
+      @Override
+      public void run() {
+        myCheckers.add(checker);
+        myEditorTracker.markEverythingUnchecked();
+      }
+    });
+  }
+
+  private LegacyEditorCheckerAdapter findCheckerByLegacyChecker(BaseEditorChecker legacyChecker) {
+    for (EditorChecker current : myCheckers) {
+      if (current instanceof LegacyEditorCheckerAdapter && ((LegacyEditorCheckerAdapter) current).getChecker() == legacyChecker) {
+        return ((LegacyEditorCheckerAdapter) current);
+      }
     }
+
+    return null;
   }
 
   /**
    * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. May be called from any thread, the removal
    * happens asynchronously (so do not add back a checker that has just been removed).
-   * @param checker the checker to remove
+   * @param legacyChecker the checker to remove
    */
-  public void removeChecker(final BaseEditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+  public void removeChecker(@NotNull final BaseEditorChecker legacyChecker) {
+    final EditorChecker checker = findCheckerByLegacyChecker(legacyChecker);
+
     if (checker == null) return;
+
+    removeChecker(checker);
+  }
+
+  public void removeChecker(@NotNull final EditorChecker checker) {
+    if (RuntimeFlags.isTestMode()) return;
 
     // Checker removal is done in three steps:
     //
@@ -285,7 +279,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
               public void run() {
                 long time = System.currentTimeMillis();
                 for (EditorComponent component : editors) {
-                  component.getHighlightManager().clearForOwner(checker, true);
+                  component.getHighlightManager().clearForOwner(checker.getEditorMessageOwner(), true);
                 }
                 if (LOG.isDebugEnabled()) {
                   long elapsed = System.currentTimeMillis() - time;
@@ -336,13 +330,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
-    final List<SModelEvent> events = new ArrayList<SModelEvent>();
-    synchronized (EVENTS_LOCK) {
-      events.addAll(myLastEvents);
-      myLastEvents.clear();
-    }
+    processEvents();
 
-    final Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
+    final Set<EditorChecker> checkers = new LinkedHashSet<EditorChecker>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
       // explicit update action (available in powerSafeMode only)
@@ -352,60 +342,27 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
     final List<EditorComponent> activeEditors = myEditorList.getActiveEditorsInEDT();
 
-    runUpdateMessagesAction(new Runnable() {
-      @Override
-      public void run() {
-        if (EditorSettings.getInstance().isPowerSaveMode()) {
-          // if we are in powerSaveMode then next editor checkers execution should
-          // recheck all editors completely
-          myCheckedOnceEditors.clear();
-          myInspectorMessagesCreated = false;
-        } else {
-          cleanupCheckedOnce(activeEditors);
-        }
-      }
-    });
-    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, activeEditors);
-  }
-
-  public void runUpdateMessagesAction(Runnable updateAction) {
-    synchronized (myUpdateEditorLock) {
-      updateAction.run();
+    if (EditorSettings.getInstance().isPowerSaveMode()) {
+      // if we are in powerSaveMode then next editor checkers execution should
+      // recheck all editors completely
+      myEditorTracker.markEverythingUnchecked();
+    } else {
+      myEditorTracker.markOnlyEditorsChecked(activeEditors);
     }
+    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, checkers, activeEditors);
   }
 
-  @Override
-  public <C> C runUpdateMessagesAction(Computable<C> updateAction) {
-    synchronized (myUpdateEditorLock) {
-      return updateAction.compute();
-    }
-  }
-
-  /*
-   * Only currently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
-   * to createMessages() on next visible (active) editor change
-   */
-  private void cleanupCheckedOnce(List<EditorComponent> allEditorComponents) {
-    myCheckedOnceEditors.retainAll(allEditorComponents);
-  }
-
-  @Override
-  public boolean wasCheckedOnce(EditorComponent editorComponent) {
-    return editorComponent instanceof InspectorEditorComponent || myCheckedOnceEditors.contains(editorComponent);
-  }
-
-  public void resetCheckedState(final EditorComponent editorComponent) {
-    runUpdateMessagesAction(new Runnable() {
+  public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
+    addPendingAction(new Runnable() {
       @Override
       public void run() {
         myForceUpdateInPowerSaveModeFlag = true;
-        if (editorComponent instanceof InspectorEditorComponent) {
-          myInspectorMessagesCreated = false;
+        myEditorTracker.markUnchecked(editorComponent);
+        if (myEditorTracker.isInspector(editorComponent)) {
           return;
         }
-        myCheckedOnceEditors.remove(editorComponent);
-        for (BaseEditorChecker checker : myCheckers) {
-          checker.resetCheckerStateProtected();
+        for (EditorChecker checker : myCheckers) {
+          checker.forceAutofix(editorComponent);
         }
       }
     });
@@ -416,24 +373,33 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     return myStopThread;
   }
 
+  @NotNull
   @Override
-  public boolean wereInspectorMessagesCreated() {
-    return myInspectorMessagesCreated;
-  }
-
-  @Override
-  public void markCheckedOnce(EditorComponent component) {
-    if (component instanceof InspectorEditorComponent) {
-      myInspectorMessagesCreated = true;
-    } else {
-      myCheckedOnceEditors.add(component);
-    }
+  public HighlighterEditorTracker getEditorTracker() {
+    return myEditorTracker;
   }
 
   @Override
   public EditorComponent getInspector() {
     if (myInspectorTool == null) return null;
     return myInspectorTool.getInspector();
+  }
+
+  /**
+   * Feeds events collected at this point to all registered checkers for processing. Must be called on the highlighter thread because the collection of all
+   * checkers is accessed.
+   */
+  private void processEvents() {
+    assert Thread.currentThread() == myThread : "This method should be called on the highlighter thread";
+
+    List<SModelEvent> events = myEventCollector.drainEvents();
+    if (events.isEmpty()) {
+      return;
+    }
+
+    for (EditorChecker checker : myCheckers) {
+      checker.processEvents(events);
+    }
   }
 
   private void pauseUpdater() {
@@ -538,8 +504,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
               updateSession.doUpdate();
             }
           } catch (IndexNotReadyException ex) {
-            myCheckedOnceEditors.clear();
-            myInspectorMessagesCreated = false;
+            myEditorTracker.markEverythingUnchecked();
           }
           processPendingActions();
           if (myStopThread) {

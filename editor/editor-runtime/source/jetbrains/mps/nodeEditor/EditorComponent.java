@@ -2475,27 +2475,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public void update() {
     final Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
-    Runnable updateAction = new Runnable() {
+    getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            //TODO: check if it's necessary to clear updater caches here?..
-            rebuildAfterReloadModel();
-            if (highlighter != null) {
-              highlighter.resetCheckedState(EditorComponent.this);
-            }
-            rebuildEditorContent();
-          }
-        });
+        //TODO: check if it's necessary to clear updater caches here?..
+        rebuildAfterReloadModel();
+        if (highlighter != null) {
+          highlighter.resetCheckedStateInBackground(EditorComponent.this);
+        }
+        rebuildEditorContent();
       }
-    };
-    if (highlighter != null) {
-      highlighter.runUpdateMessagesAction(updateAction);
-    } else {
-      updateAction.run();
-    }
+    });
   }
 
   public void processKeyPressed(final KeyEvent keyEvent) {

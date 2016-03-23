@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
 
 import java.util.Comparator;
 
-public class PriorityComparator implements Comparator<BaseEditorChecker> {
+public class PriorityComparator implements Comparator<EditorChecker> {
   @Override
-  public int compare(BaseEditorChecker o1, BaseEditorChecker o2) {
-    if (o1.isLaterThanProtected(o2)) {
+  public int compare(EditorChecker o1, EditorChecker o2) {
+    if (o1.isLaterThan(o2)) {
       return 1;
     }
-    if (o2.isLaterThanProtected(o1)) {
+    if (o2.isLaterThan(o1)) {
       return -1;
     }
     return 0;

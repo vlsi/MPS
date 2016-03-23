@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -33,13 +33,8 @@ public interface IHighlighter {
    */
   boolean isStopping();
 
-  boolean wereInspectorMessagesCreated();
-
-  void markCheckedOnce(EditorComponent component);
-
-  <C> C runUpdateMessagesAction(Computable<C> updateAction);
-
-  boolean wasCheckedOnce(EditorComponent component);
+  @NotNull
+  HighlighterEditorTracker getEditorTracker();
 
   @Nullable
   EditorComponent getInspector();
