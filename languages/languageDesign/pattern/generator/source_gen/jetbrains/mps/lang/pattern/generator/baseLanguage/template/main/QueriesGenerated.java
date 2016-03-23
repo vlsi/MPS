@@ -56,6 +56,12 @@ public class QueriesGenerated {
   public static boolean dropAttr_Condition_6930688547477897339(final TemplateQueryContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
+  public static boolean dropAttr_Condition_2056074660033127916(final TemplateQueryContext _context) {
+    return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
+  }
+  public static boolean dropAttr_Condition_2056074660033131216(final TemplateQueryContext _context) {
+    return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
+  }
   public static boolean dropAttr_Condition_6930688547477945952(final TemplateQueryContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
@@ -648,23 +654,8 @@ public class QueriesGenerated {
     TracingUtil.putInput(_context.getOutputNode(), null);
   }
   public static void mappingScript_CodeBlock_5106400022613501236(final MappingScriptContext _context) {
-    //  this is a workaround for generator limitation: at the moment, attribute drop rules are 
-    // processed for transformed elements only (not for nodes barely copied), hence we delete attributes already processed here 
-    List<SNode> attr = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"))));
-    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"))));
-    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")));
-      }
-    }));
     // OrPattern requires special handling as though they are attributes, sometime they are used directly as nodes and if we drop them from the pattern, 
     // it couldn't navigate containingLink of the OrPattern node as it has no idea about it. Thus we replace it with bogus node. 
-    ListSequence.fromList(attr).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isAttribute(it);
-      }
-    }));
     ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
@@ -672,11 +663,6 @@ public class QueriesGenerated {
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
-      }
-    });
-    ListSequence.fromList(attr).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SNodeOperations.deleteNode(it);
       }
     });
   }
