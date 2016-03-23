@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditorList {
+public class HighlighterEditorList {
   /**
    * Synchronizes access to the editor and editor components lists.
    */
@@ -36,7 +36,7 @@ public class EditorList {
 
   private final FileEditorManager myFileEditorManager;
 
-  public EditorList(FileEditorManager fileEditorManager) {
+  public HighlighterEditorList(FileEditorManager fileEditorManager) {
     myFileEditorManager = fileEditorManager;
   }
 

@@ -36,7 +36,7 @@ import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
 import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.nodeEditor.highlighter.EditorList;
+import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorList;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorTracker;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEventCollector;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterUpdateSession;
@@ -116,7 +116,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
 
   private Project myProject;
   private CommandWatcher myCommandWatcher = new CommandWatcher();
-  private final EditorList myEditorList;
+  private final HighlighterEditorList myEditorList;
   private final HighlighterEventCollector myEventCollector = new HighlighterEventCollector();
   private final HighlighterEditorTracker myEditorTracker = new HighlighterEditorTracker();
 
@@ -127,7 +127,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   public Highlighter(@SuppressWarnings("UnusedParameters") MPSProject mpsProject, Project project, FileEditorManager fileEditorManager, InspectorTool inspector,
       MPSCoreComponents coreComponents) {
     myProject = project;
-    myEditorList = new EditorList(fileEditorManager);
+    myEditorList = new HighlighterEditorList(fileEditorManager);
     myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     myInspectorTool = inspector;
