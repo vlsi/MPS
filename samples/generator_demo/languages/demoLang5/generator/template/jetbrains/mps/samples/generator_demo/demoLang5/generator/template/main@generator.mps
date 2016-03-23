@@ -136,9 +136,7 @@
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
-        <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
-      </concept>
+      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj">
         <reference id="1200916687663" name="labelDeclaration" index="2sdACS" />
       </concept>
@@ -284,9 +282,7 @@
   <node concept="312cEu" id="hSiXu$m">
     <property role="TrG5h" value="DemoApp" />
     <node concept="3Tm1VV" id="hSiXu$n" role="1B3o_S" />
-    <node concept="n94m4" id="hSiXu$o" role="lGtFl">
-      <ref role="n9lRv" to="dghb:hP5YayQ" resolve="Document" />
-    </node>
+    <node concept="n94m4" id="hSiXu$o" role="lGtFl" />
     <node concept="3clFbW" id="4$J9ZLeYT5e" role="jymVt">
       <node concept="3cqZAl" id="4$J9ZLeYT5f" role="3clF45" />
       <node concept="3Tm1VV" id="4$J9ZLeYT5g" role="1B3o_S" />

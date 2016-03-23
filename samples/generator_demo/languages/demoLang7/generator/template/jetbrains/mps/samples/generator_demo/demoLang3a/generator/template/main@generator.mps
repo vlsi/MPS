@@ -99,9 +99,7 @@
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
-      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
-        <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
-      </concept>
+      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
@@ -216,9 +214,7 @@
   <node concept="312cEu" id="hS9mpQT">
     <property role="TrG5h" value="DemoApp" />
     <node concept="3Tm1VV" id="hS9mpQU" role="1B3o_S" />
-    <node concept="n94m4" id="hS9mpQV" role="lGtFl">
-      <ref role="n9lRv" to="e3ke:38QROcrvLHj" resolve="XMLDocument" />
-    </node>
+    <node concept="n94m4" id="hS9mpQV" role="lGtFl" />
     <node concept="2YIFZL" id="hS9mpR3" role="jymVt">
       <property role="TrG5h" value="main" />
       <node concept="3cqZAl" id="hS9mpR4" role="3clF45" />
