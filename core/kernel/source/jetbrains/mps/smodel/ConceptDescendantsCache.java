@@ -38,6 +38,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -111,7 +112,8 @@ public class ConceptDescendantsCache implements CoreComponent {
 
     for (SConceptId id : pids) {
       SAbstractConcept parentConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
-      Set<SAbstractConcept> descendants = createConceptsSet(getDirectDescendants(parentConcept));
+      //linked guarantees iteration order
+      Set<SAbstractConcept> descendants = new LinkedHashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.add(MetaAdapterFactory.getAbstractConcept(concept));
       myDescendantsCache.put(MetaIdHelper.getConcept(parentConcept), Collections.unmodifiableSet(descendants));
     }
@@ -124,7 +126,8 @@ public class ConceptDescendantsCache implements CoreComponent {
 
     for (SConceptId id : pids) {
       SAbstractConcept parentConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
-      Set<SAbstractConcept> descendants = createConceptsSet(getDirectDescendants(parentConcept));
+      //linked guarantees iteration order
+      Set<SAbstractConcept> descendants = new LinkedHashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.remove(MetaAdapterFactory.getAbstractConcept(concept));
       myDescendantsCache.put(MetaIdHelper.getConcept(parentConcept), Collections.unmodifiableSet(descendants));
     }
@@ -158,6 +161,7 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   /**
    * Collect all descendant concepts
+   * Iteration order is guaranteed to be stable
    *
    * @param concept concept to start from
    * @return non-empty set of descendant concepts including the one supplied.
@@ -169,7 +173,8 @@ public class ConceptDescendantsCache implements CoreComponent {
         myNotProcessedRuntimes.clear();
       }
     }
-    Set<SAbstractConcept> result = createConceptsSet();
+    //note that linked here guarantees the iteration order
+    Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
     collectDescendants(concept, result);
     return result;
   }
@@ -195,33 +200,5 @@ public class ConceptDescendantsCache implements CoreComponent {
       return Collections.emptySet();
     }
     return new HashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
-  }
-
-  // Using special Set implementation for storing SConcepts for now. This is because of hasCode() method implementation for sub-classes of SConcept.
-  // Currently all implementors return 0 from the hashCode() method, so default HashSet() is unefficient.
-  // TODO: concert all usages of this method to new HashSet<SAbstractConcept>() together at the moment we reimplement SConcept.hasCode() method properly.
-  private Set<SAbstractConcept> createConceptsSet() {
-    return new THashSet<SAbstractConcept>(new ConceptHashingStrategy());
-  }
-
-  // Using special Set implementation for storing SConcepts for now. This is because of hasCode() method implementation for sub-classes of SConcept.
-  // Currently all implementors return 0 from the hashCode() method, so default HashSet() is unefficient.
-  // TODO: concert all usages of this method to new HashSet<SAbstractConcept>() together at the moment we reimplement SConcept.hasCode() method properly.
-  private Set<SAbstractConcept> createConceptsSet(Collection<SAbstractConcept> initialCollection) {
-    THashSet<SAbstractConcept> result = new THashSet<SAbstractConcept>(new ConceptHashingStrategy());
-    result.addAll(initialCollection);
-    return result;
-  }
-
-  private static class ConceptHashingStrategy implements TObjectHashingStrategy<SAbstractConcept> {
-    @Override
-    public int computeHashCode(SAbstractConcept concept) {
-      return MetaIdHelper.getConcept(concept).hashCode();
-    }
-
-    @Override
-    public boolean equals(SAbstractConcept concept1, SAbstractConcept concept2) {
-      return concept1.equals(concept2);
-    }
   }
 }
