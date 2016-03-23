@@ -37,7 +37,6 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -107,7 +106,6 @@ public final class MPSCore extends ComponentPluginBase {
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
-    init(new LanguageHierarchyCache(myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, modelRepository));
     init(new DescriptorModelComponent(myModuleRepository, new LanguageDescriptorModelProvider(myClassLoaderManager), new GeneratorDescriptorModelProvider()));
