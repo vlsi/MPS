@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ final class TraceNodeUI {
     myText = null;
   }
 
-  public String getText() {
+  public String getText(SRepository repo) {
     if (myText != null) {
       return myText;
     }
@@ -63,8 +63,18 @@ final class TraceNodeUI {
       }
       return "<unknown>";
     }
-    SNode n = myTargetNode.resolve(MPSModuleRepository.getInstance());
+    SNode n = myTargetNode.resolve(repo);
     if (n == null) {
+      // GenTrace records additions and deletions as <no node id> at corresponding side, here
+      // we check whether it's the node we simply can't access now, or it's consciously recorded addition/removal
+      if (myTargetNode.getNodeId() == null) {
+        if (myKind == Kind.INPUT) {
+          return "<no input>";
+        } else if (myKind == Kind.OUTPUT) {
+          return "<no output>";
+        }
+        // fall-through
+      }
       return myTargetNode.toString();
     }
     // TODO initialize myText once in the cons

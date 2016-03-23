@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,10 +48,10 @@ final class GenerationTracerTree extends MPSTree {
     return create(myRootTracerNode);
   }
 
-  private static MPSTreeNode create(TraceNodeUI n) {
+  private MPSTreeNode create(TraceNodeUI n) {
     MPSTreeNode treeNode = new MPSTreeNode(n);
     treeNode.setNodeIdentifier(n.getNodeIdentifier());
-    treeNode.setText(n.getText());
+    treeNode.setText(n.getText(myProject.getRepository()));
     final SNodeReference target = n.getNavigateTarget();
     if (target != null && target.getModelReference() != null) {
       treeNode.setAdditionalText(target.getModelReference().getModelName());
