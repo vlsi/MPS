@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

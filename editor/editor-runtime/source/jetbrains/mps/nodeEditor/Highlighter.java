@@ -33,6 +33,8 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.nodeEditor.checking.EditorChecker;
+import jetbrains.mps.nodeEditor.checking.LegacyEditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorList;
 import jetbrains.mps.nodeEditor.highlighter.HighlighterEditorTracker;
@@ -77,7 +79,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
 
-  private final List<BaseEditorChecker> myCheckers = new CopyOnWriteArrayList<BaseEditorChecker>();
+  private final List<EditorChecker> myCheckers = new CopyOnWriteArrayList<EditorChecker>();
 
   /**
    * Whether to force running all checkers in power-save mode. Accessed from the highlighter thread only, therefore non-volatile.
@@ -209,28 +211,47 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     }
   }
 
-  public void addChecker(BaseEditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+  public void addChecker(BaseEditorChecker legacyChecker) {
+    if (legacyChecker == null) return;
+    addChecker(new LegacyEditorCheckerAdapter(legacyChecker));
+  }
 
-    if (checker != null) {
-      myCheckers.add(checker);
-      addPendingAction(new Runnable() {
-        @Override
-        public void run() {
-          myEditorTracker.markEverythingUnchecked();
-        }
-      });
+  public void addChecker(@NotNull final EditorChecker checker) {
+    if (RuntimeFlags.isTestMode()) return;
+    addPendingAction(new Runnable() {
+      @Override
+      public void run() {
+        myCheckers.add(checker);
+        myEditorTracker.markEverythingUnchecked();
+      }
+    });
+  }
+
+  private LegacyEditorCheckerAdapter findCheckerByLegacyChecker(BaseEditorChecker legacyChecker) {
+    for (EditorChecker current : myCheckers) {
+      if (current instanceof LegacyEditorCheckerAdapter && ((LegacyEditorCheckerAdapter) current).getChecker() == legacyChecker) {
+        return ((LegacyEditorCheckerAdapter) current);
+      }
     }
+
+    return null;
   }
 
   /**
    * Removes a checker from the set of active checkers. Also removes its messages from any known open editors. May be called from any thread, the removal
    * happens asynchronously (so do not add back a checker that has just been removed).
-   * @param checker the checker to remove
+   * @param legacyChecker the checker to remove
    */
-  public void removeChecker(final BaseEditorChecker checker) {
-    if (RuntimeFlags.isTestMode()) return;
+  public void removeChecker(@NotNull final BaseEditorChecker legacyChecker) {
+    final EditorChecker checker = findCheckerByLegacyChecker(legacyChecker);
+
     if (checker == null) return;
+
+    removeChecker(checker);
+  }
+
+  public void removeChecker(@NotNull final EditorChecker checker) {
+    if (RuntimeFlags.isTestMode()) return;
 
     // Checker removal is done in three steps:
     //
@@ -258,7 +279,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
               public void run() {
                 long time = System.currentTimeMillis();
                 for (EditorComponent component : editors) {
-                  component.getHighlightManager().clearForOwner(checker, true);
+                  component.getHighlightManager().clearForOwner(checker.getEditorMessageOwner(), true);
                 }
                 if (LOG.isDebugEnabled()) {
                   long elapsed = System.currentTimeMillis() - time;
@@ -309,9 +330,9 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   }
 
   private HighlighterUpdateSession createUpdateSession(boolean essentialOnly) {
-    final List<SModelEvent> events = myEventCollector.drainEvents();
+    processEvents();
 
-    final Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
+    final Set<EditorChecker> checkers = new LinkedHashSet<EditorChecker>();
     if (!EditorSettings.getInstance().isPowerSaveMode() || myForceUpdateInPowerSaveModeFlag) {
       // calling checkers only if we are not in powerSafeMode or updateEditorFlag was set by
       // explicit update action (available in powerSafeMode only)
@@ -328,7 +349,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     } else {
       myEditorTracker.markOnlyEditorsChecked(activeEditors);
     }
-    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, events, checkers, activeEditors);
+    return new HighlighterUpdateSession(Highlighter.this, essentialOnly, checkers, activeEditors);
   }
 
   public void resetCheckedStateInBackground(final EditorComponent editorComponent) {
@@ -340,8 +361,8 @@ public class Highlighter implements IHighlighter, ProjectComponent {
         if (myEditorTracker.isInspector(editorComponent)) {
           return;
         }
-        for (BaseEditorChecker checker : myCheckers) {
-          checker.resetCheckerStateProtected();
+        for (EditorChecker checker : myCheckers) {
+          checker.forceAutofix(editorComponent);
         }
       }
     });
@@ -362,6 +383,23 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   public EditorComponent getInspector() {
     if (myInspectorTool == null) return null;
     return myInspectorTool.getInspector();
+  }
+
+  /**
+   * Feeds events collected at this point to all registered checkers for processing. Must be called on the highlighter thread because the collection of all
+   * checkers is accessed.
+   */
+  private void processEvents() {
+    assert Thread.currentThread() == myThread : "This method should be called on the highlighter thread";
+
+    List<SModelEvent> events = myEventCollector.drainEvents();
+    if (events.isEmpty()) {
+      return;
+    }
+
+    for (EditorChecker checker : myCheckers) {
+      checker.processEvents(events);
+    }
   }
 
   private void pauseUpdater() {

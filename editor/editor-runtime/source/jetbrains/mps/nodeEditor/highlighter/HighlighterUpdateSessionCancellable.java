@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Cancellable;
 import org.apache.log4j.Logger;
@@ -41,7 +40,7 @@ class HighlighterUpdateSessionCancellable implements Cancellable {
 
   @NotNull
   private final IHighlighter myHighlighter;
-  private final BaseEditorChecker myChecker;
+  private final String myCheckerName;
   @NotNull
   private final EditorComponent myEditorComponent;
   private final SNode myNode;
@@ -49,9 +48,9 @@ class HighlighterUpdateSessionCancellable implements Cancellable {
   private volatile boolean myCancelRequested = false;
   private long myLastCheckTime;
 
-  HighlighterUpdateSessionCancellable(@NotNull IHighlighter highlighter, BaseEditorChecker checker, @NotNull EditorComponent editorComponent) {
+  HighlighterUpdateSessionCancellable(@NotNull IHighlighter highlighter, String checkerName, @NotNull EditorComponent editorComponent) {
     myHighlighter = highlighter;
-    myChecker = checker;
+    myCheckerName = checkerName;
     myEditorComponent = editorComponent;
     myNode = myEditorComponent.getEditedNode();
     myLastCheckTime = System.currentTimeMillis();
@@ -64,7 +63,7 @@ class HighlighterUpdateSessionCancellable implements Cancellable {
       Throwable stackTrace = new Throwable();
       stackTrace.fillInStackTrace();
       LOG.debug(String.format("Checker %s: long time since last cancellation check (%d ms > threshold %d ms). Stack trace:",
-          myChecker, timeSinceLastCheck, MAX_CHECK_INTERVAL_MS), stackTrace);
+          myCheckerName, timeSinceLastCheck, MAX_CHECK_INTERVAL_MS), stackTrace);
     }
     myLastCheckTime += timeSinceLastCheck;
 
