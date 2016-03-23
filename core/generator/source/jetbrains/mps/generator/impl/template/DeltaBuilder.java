@@ -206,6 +206,11 @@ public abstract class DeltaBuilder {
     return getCurrentRoot() != null;
   }
 
+  /**
+   * @param replacedNode node in the input model to be replaced with nodes from <code>subTree</code>
+   * @param roleInParent node's containment
+   * @param subTree new nodes to put into model, can be empty to indicate node removal.
+   */
   public void registerSubTree(@NotNull SNode replacedNode, @NotNull SContainmentLink roleInParent, @NotNull Collection<SNode> subTree) {
     if (getNestedCopyRoots().isEmpty()) {
       assert getCurrentRoot() != null;

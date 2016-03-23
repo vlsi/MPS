@@ -767,11 +767,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     QueryExecutionContext queryExecutor = ctx.getEnvironment().getQueryExecutor();
-    L1: for (SNode attr : input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute)) {
-      for (TemplateDropAttributeRule dropRule : getRuleManager().getDropAttributeRules(attr)) {
-        if (queryExecutor.isApplicable(dropRule, ctx)) {
-          continue L1;
-        }
+    for (SNode attr : input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute)) {
+      if (checkDropNodeAttribute(ctx.subContext(attr))) {
+        continue;
       }
       for (SNode output : outputNodes) {
         // use of CopyUtil mandates references to attributes won't resolve magically (i.e. by matched node id)
@@ -779,6 +777,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         output.addChild(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute, CopyUtil.copy(attr));
       }
     }
+  }
+
+  boolean checkDropNodeAttribute(@NotNull TemplateContext ctx) throws GenerationFailureException {
+    final SNode attr = ctx.getInput();
+    assert jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute.equals(attr.getContainmentLink());
+    QueryExecutionContext queryExecutor = ctx.getEnvironment().getQueryExecutor();
+    for (TemplateDropAttributeRule dropRule : getRuleManager().getDropAttributeRules(attr)) {
+      if (queryExecutor.isApplicable(dropRule, ctx)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -857,6 +867,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return false;
     }
 
+    protected final boolean checkAttributeDropRules(SNode attributeNode) throws GenerationFailureException {
+      final DefaultTemplateContext tc = new DefaultTemplateContext(myEnv, attributeNode, null);
+      return myEnv.getGenerator().checkDropNodeAttribute(tc);
+    }
+
     protected abstract void drop(SNode inputRootNode, TemplateDropRootRule rule);
 
     public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
@@ -902,7 +917,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private static class PartialCopyFacility extends  NodeCopyFacility {
+  private static class PartialCopyFacility extends NodeCopyFacility {
     private final DeltaBuilder myDeltaBuilder;
 
     public PartialCopyFacility(@NotNull TemplateExecutionEnvironmentImpl env, @NotNull DeltaBuilder deltaBuilder) {
@@ -942,7 +957,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           myDeltaBuilder.registerSubTree(inputChildNode, childRole, outputChildNodes);
           myIsChanged = true;
         } else {
-          visitInputNode(inputChildNode);
+          if (jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute.equals(childRole) && checkAttributeDropRules(inputChildNode)) {
+            myDeltaBuilder.registerSubTree(inputChildNode, childRole, Collections.<SNode>emptyList());
+            myIsChanged = true;
+          } else {
+            visitInputNode(inputChildNode);
+          }
         }
     }
     }
@@ -1076,6 +1096,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             outputNode.addChild(childRole, outputChildNode);
           }
         } else {
+          if (jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute.equals(childRole) && checkAttributeDropRules(inputChildNode)) {
+            // attribute conforms to drop rule, ignore and do not copy.
+            continue;
+          }
           outputNode.addChild(childRole, copyInputNode(inputChildNode));
         }
       }
