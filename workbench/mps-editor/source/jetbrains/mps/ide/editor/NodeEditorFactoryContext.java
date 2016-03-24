@@ -13,37 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.idea.core.editor;
+package jetbrains.mps.ide.editor;
 
-import jetbrains.mps.ide.editor.NodeEditorFactoryBase;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * danilla 5/17/13
+/*
+ * It's not public unless there's need to use it elsewhere.
  */
-public class IdeaMPSEditorOpenHandler extends NodeEditorFactoryBase {
-  private final Project myProject;
+/*package-local*/ final class NodeEditorFactoryContext implements NodeEditorFactory.Context {
+  private final SNode myNode;
 
-  public IdeaMPSEditorOpenHandler(Project project) {
-    myProject = project;
+  public NodeEditorFactoryContext(@NotNull SNode node) {
+    myNode = node;
   }
 
+  @NotNull
   @Override
-  public boolean canCreate(@NotNull Context context) {
-    return true;
-  }
-
-  @Override
-  public Editor create(@NotNull Context context) {
-    return new IdeaNodeEditor(myProject, context.getNode());
-  }
-
-  @Override
-  public SNode getBaseNode(@NotNull SNode node) {
-    // FIXME: what's this?
-    return node;
+  public SNode getNode() {
+    return myNode;
   }
 }

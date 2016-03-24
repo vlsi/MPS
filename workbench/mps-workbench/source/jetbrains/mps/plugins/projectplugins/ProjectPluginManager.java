@@ -24,14 +24,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
 import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
-import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginLoaderRegistry;
@@ -40,7 +38,6 @@ import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -49,10 +46,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -72,8 +68,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
 
-  private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
-
   private PluginsState myState = new PluginsState();
   private Project myProject;
   private jetbrains.mps.project.Project myMpsProject;
@@ -81,7 +75,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private boolean myInitialized = false;
   private final List<PluginReloadingListener> myReloadingListeners = new CopyOnWriteArrayList<PluginReloadingListener>();
 
-  public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry, StartupModuleMaker moduleMaker, FileEditorManager manager) {
+  public ProjectPluginManager(@NotNull Project project, jetbrains.mps.project.Project mpsProject, PluginLoaderRegistry pluginLoaderRegistry, @SuppressWarnings("unused") StartupModuleMaker moduleMaker, FileEditorManager manager) {
     super(mpsProject.getRepository(), pluginLoaderRegistry);
     myProject = project;
     myMpsProject = mpsProject;
@@ -128,8 +122,8 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseTool> tools = plugin.getTools();
         for (BaseTool tool : tools) {
-          if (tool.getClass().getName().equals(toolClass.getName())) {
-            return (T) tool;
+          if (toolClass.isInstance(tool)) {
+            return toolClass.cast(tool);
           }
         }
       }
@@ -142,8 +136,8 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
       for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
-          if (component.getClass().getName().equals(componentClass.getName())) {
-            return (T) component;
+          if (componentClass.isInstance(component)) {
+            return componentClass.cast(component);
           }
         }
       }
@@ -163,7 +157,8 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   public static List<RelationDescriptor> getApplicableTabs(Project p, SNode node) {
     List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
-    List<RelationDescriptor> tabs = p.getComponent(ProjectPluginManager.class).getTabDescriptors();
+    final ProjectPluginManager ppm = p.getComponent(ProjectPluginManager.class);
+    List<RelationDescriptor> tabs = ppm == null ? Collections.<RelationDescriptor>emptyList() : ppm.getTabDescriptors();
     for (RelationDescriptor tab : tabs) {
       if (tab.isApplicable(node)) {
         result.add(tab);
@@ -239,10 +234,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   @Override
   protected void disposePlugin(BaseProjectPlugin plugin) {
     plugin.dispose();
-  }
-
-  public EditorOpenHandler getEditorOpenHandler() {
-    return myTabsHandler;
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -327,44 +318,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
         }
       }
     });
-  }
-
-  private class TabsMPSEditorOpenHandler implements EditorOpenHandler {
-    @Override
-    public SNode getBaseNode(IOperationContext context, SNode node) {
-      for (RelationDescriptor d : getTabDescriptors()) {
-        SNode baseNode = d.getBaseNode(node);
-        if (baseNode == node) {
-          LOG.error("Editor tabs should not return node as a base node of itself: " + d.getClass().getName());
-          continue;
-        }
-        if (baseNode != null) return baseNode;
-      }
-      return null;
-    }
-
-    @Override
-    public boolean canOpen(IOperationContext context, SNode node) {
-      for (RelationDescriptor d : getTabDescriptors()) {
-        if (!d.isApplicable(node)) continue;
-        if (!d.getNodes(node).isEmpty()) return true;
-      }
-      return false;
-    }
-
-    @Override
-    public Editor open(IOperationContext context, final SNode node) {
-      Set<RelationDescriptor> tabs = new HashSet<RelationDescriptor>();
-
-      for (RelationDescriptor d : getTabDescriptors()) {
-        if (d.isApplicable(node)) {
-          tabs.add(d);
-        }
-      }
-
-      // could use myMpsProject here, but generally project should come through EditorOpenHandler
-      return new TabbedEditor(node.getReference(), tabs, myMpsProject);
-    }
   }
 
   @Override

@@ -18,8 +18,15 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated Has been replaced with {@link NodeEditorFactory}
+ *             Remove extension point from MPSEditor.xml when this class ceases to exist.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public interface EditorOpenHandler {
 
   public static final ExtensionPointName<EditorOpenHandler> EP_OPEN_HANDLERS =

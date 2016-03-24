@@ -33,9 +33,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -45,6 +44,9 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Component;
 
+/**
+ * Front-end both to create Editor for node and to open an editor based on node's file (which eventually ends up with creation of node's Editor)
+ */
 public class MPSEditorOpener {
   private final MPSProject myProject;
 
@@ -53,7 +55,24 @@ public class MPSEditorOpener {
   }
 
   /*package*/ Editor createEditorFor(SNode node) {
-    // FIXME shall refactor EditorOpenHandler API not to take IOperationContext
+    NodeEditorFactoryContext ctx = new NodeEditorFactoryContext(node);
+    for (NodeEditorFactory f : NodeEditorFactory.EXT_POINT.getExtensions(myProject.getProject())) {
+      if (f.canCreate(ctx)) {
+        Editor nodeEditor = f.create(ctx);
+        if (nodeEditor != null) {
+          return nodeEditor;
+        }
+      }
+    }
+    Editor nodeEditor = legacyCreateEditorFor(node);
+    if (nodeEditor != null) {
+      return nodeEditor;
+    }
+    return new NodeEditor(myProject, node);
+  }
+
+  @ToRemove(version = 3.4)
+  private Editor legacyCreateEditorFor(SNode node) {
     ProjectOperationContext operationContext = new ProjectOperationContext(myProject);
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
       if (handler.canOpen(operationContext, node)) {
@@ -63,8 +82,7 @@ public class MPSEditorOpener {
         }
       }
     }
-
-    return new NodeEditor(myProject, node);
+    return null;
   }
 
   /**
@@ -82,7 +100,9 @@ public class MPSEditorOpener {
   private Editor doOpenNode(final SNode node, final boolean focus, boolean select) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
-    if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
+    if (!SNodeUtil.isAccessible(node, myProject.getRepository())) {
+      return null;
+    }
     final Editor nodeEditor = openEditor(node.getContainingRoot(), false);
 
     if ((nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
@@ -121,10 +141,11 @@ public class MPSEditorOpener {
   private Editor openEditor(final SNode root, boolean focus) {
     SNode baseNode = null;
 
-    IOperationContext context = new ProjectOperationContext(myProject); // FIXME compatibility with EditorOpenHandler
-    for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
-      baseNode = handler.getBaseNode(context, root);
-      if (baseNode != null) break;
+    for (NodeEditorFactory handler : NodeEditorFactory.EXT_POINT.getExtensions(myProject.getProject())) {
+      baseNode = handler.getBaseNode(root);
+      if (baseNode != null) {
+        break;
+      }
     }
 
     if (baseNode == null) {
@@ -151,13 +172,13 @@ public class MPSEditorOpener {
 
   private void checkVirtualFileBaseNode(SNode baseNode, MPSNodeVirtualFile file) {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " +
-        new SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
+        new SNodePointer(baseNode).resolve(myProject.getRepository());
   }
 
   private void checkBaseNodeIsValid(SNode root, SNode baseNode) {
     assert baseNode.getModel() != null : "BaseNode is not registered";
     SNodeReference sNodePointer = new SNodePointer(baseNode);
-    SNode node = sNodePointer.resolve(MPSModuleRepository.getInstance());
+    SNode node = sNodePointer.resolve(myProject.getRepository());
     assert node != null : "Unable to get Node by SNodeReference: " + sNodePointer + " (baseNode = " + baseNode + ", root = " + root + ")";
     assert node.getModel() != null : "Returned node is not registered (" + node + "|" + baseNode + ")";
   }
@@ -237,4 +258,5 @@ public class MPSEditorOpener {
     getInspector().inspect(node, fileEditor, editorComponent.getEditorHintsForNode(node));
     return true;
   }
+
 }

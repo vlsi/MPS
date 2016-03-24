@@ -108,8 +108,6 @@
 
   <extensions defaultExtensionNs="jetbrains.mps">
     <nodeStructureViewProvider implementation="jetbrains.mps.idea.java.psi.structureView.MPSStructureViewFactory"/>
-
-    <!--<editorOpenHandler implementation="jetbrains.mps.idea.core.editor.IdeaMPSEditorOpenHandler" id="default"/>-->
   </extensions>
 
 </idea-plugin>

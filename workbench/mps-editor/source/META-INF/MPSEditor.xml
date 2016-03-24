@@ -4,6 +4,9 @@
   <extensionPoints>
     <extensionPoint qualifiedName="jetbrains.mps.editorOpenHandler"
                     interface="jetbrains.mps.ide.editor.EditorOpenHandler"/>
+    <extensionPoint qualifiedName="jetbrains.mps.NodeEditorFactory"
+                    area="IDEA_PROJECT"
+                    interface="jetbrains.mps.ide.editor.NodeEditorFactory"/>
     <extensionPoint qualifiedName="jetbrains.mps.nodeStructureViewProvider"
                     interface="jetbrains.mps.ide.editor.NodeStructureViewProvider"/>
     <extensionPoint qualifiedName="com.intellij.mps.editorWarningsProvider"
