@@ -54,12 +54,6 @@
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
-      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
-        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
-      </concept>
-      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
-        <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -267,9 +261,6 @@
       </concept>
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7" />
-      <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
-        <child id="1145567471833" name="createdType" index="2T96Bj" />
-      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -1663,63 +1654,6 @@
         <node concept="3bZ5Sz" id="3IB1iu7nctQ" role="1tU5fm">
           <ref role="3bZ5Sy" to="tpee:g7pOWCK" resolve="Classifier" />
         </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="2OMUUnQwXUh" role="jymVt">
-      <property role="TrG5h" value="getStatementsFromJavaText" />
-      <node concept="3clFbS" id="2OMUUnQwXUk" role="3clF47">
-        <node concept="3SKdUt" id="ZSPCHZFQCa" role="3cqZAp">
-          <node concept="3SKdUq" id="ZSPCHZG0R9" role="3SKWNk">
-            <property role="3SKdUp" value="Now it's just a stub. The client wants the nodes to be in a model," />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="ZSPCHZGlgj" role="3cqZAp">
-          <node concept="3SKdUq" id="ZSPCHZGvqQ" role="3SKWNk">
-            <property role="3SKdUp" value="it means we would have to create some fake model..." />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="ZSPCHZGDCt" role="3cqZAp">
-          <node concept="3SKdUq" id="ZSPCHZGES4" role="3SKWNk">
-            <property role="3SKdUp" value="It all is needed when pasting text into model and converting it to nodes on the fly." />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="ZSPCHZGPeg" role="3cqZAp">
-          <node concept="3SKdUq" id="ZSPCHZGQs8" role="3SKWNk">
-            <property role="3SKdUp" value="We have turned off this functionality" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="2OMUUnQxb4w" role="3cqZAp">
-          <node concept="2ShNRf" id="2OMUUnQxb8c" role="3cqZAk">
-            <node concept="2T8Vx0" id="2OMUUnQxb8e" role="2ShVmc">
-              <node concept="2I9FWS" id="2OMUUnQxb8f" role="2T96Bj" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2I9FWS" id="2OMUUnQwXUl" role="3clF45" />
-      <node concept="37vLTG" id="2OMUUnQwXUm" role="3clF46">
-        <property role="TrG5h" value="javaCode" />
-        <node concept="17QB3L" id="2OMUUnQwXUn" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="2OMUUnQwXUo" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="2OMUUnQwXUq" role="1tU5fm" />
-      </node>
-      <node concept="3Tm1VV" id="2OMUUnQwXUj" role="1B3o_S" />
-      <node concept="37vLTG" id="2OMUUnQwXUr" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="2OMUUnQxb3k" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="MCyGswqxs7" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="MCyGswqxs8" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="ZSPCHZG0Rw" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2YIFZL" id="4UmDqAIX2IV" role="jymVt">

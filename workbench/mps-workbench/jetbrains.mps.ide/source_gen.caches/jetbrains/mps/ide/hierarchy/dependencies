@@ -52,7 +52,6 @@
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.usageView.UsageViewBundle" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -73,9 +72,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.util.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

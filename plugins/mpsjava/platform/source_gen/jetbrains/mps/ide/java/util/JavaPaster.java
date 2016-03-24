@@ -29,8 +29,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
 public class JavaPaster {
@@ -165,14 +163,6 @@ public class JavaPaster {
       ListSequence.fromList(SNodeOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).insertElement(index, member);
     }
     return true;
-  }
-  @Deprecated
-  public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
-    // Now it's just a stub. The client wants the nodes to be in a model, 
-    // it means we would have to create some fake model... 
-    // It all is needed when pasting text into model and converting it to nodes on the fly. 
-    // We have turned off this functionality 
-    return new ArrayList<SNode>();
   }
   public static boolean areDataAvailableInClipboard() {
     Transferable trf = CopyPasteManagerEx.getInstanceEx().getContents();

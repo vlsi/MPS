@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,6 @@ package jetbrains.mps.ide.ui.tree;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -75,17 +73,6 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     super(userObject);
   }
 
-  /**
-   * @deprecated use cons without IOperationContext parameter
-   * @param userObject
-   * @param operationContext <em>ignored</em>
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public MPSTreeNode(Object userObject, IOperationContext operationContext) {
-    super(userObject);
-  }
-
   @Override
   @SuppressWarnings("unchecked")
   public Iterator<MPSTreeNode> iterator() {
@@ -105,17 +92,16 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   /**
    *  returns the closest ancestor (nodes or the containing tree) which implements the given class
    */
-  @SuppressWarnings("unchecked")
-  public <T> T getAncestor(@Nullable Class<T> cls) {
+  public <T> T getAncestor(@NotNull Class<T> cls) {
     TreeNode parent = getParent();
     while (parent != null) {
       if (cls.isInstance(parent)) {
-        return (T) parent;
+        return cls.cast(parent);
       }
       parent = parent.getParent();
     }
     if (myTree != null && cls.isInstance(myTree)) {
-      return (T) myTree;
+      return cls.cast(myTree);
     }
     return null;
   }

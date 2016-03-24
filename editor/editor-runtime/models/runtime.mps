@@ -2296,24 +2296,6 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbF" id="1nhYb0FOxHJ" role="3cqZAp">
-                          <node concept="2OqwBi" id="1nhYb0FOxHK" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagTwN1" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1nhYb0FOxHF" resolve="chooser" />
-                            </node>
-                            <node concept="liA8E" id="1nhYb0FOxHM" role="2OqNvi">
-                              <ref role="37wK5l" to="etl3:~TreeFileChooser.setContext(jetbrains.mps.smodel.IOperationContext):void" resolve="setContext" />
-                              <node concept="2OqwBi" id="1nhYb0FOxHN" role="37wK5m">
-                                <node concept="37vLTw" id="2BHiRxgm9Ae" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1nhYb0FOxGh" resolve="context" />
-                                </node>
-                                <node concept="liA8E" id="1nhYb0FOxHP" role="2OqNvi">
-                                  <ref role="37wK5l" to="cj4x:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                         <node concept="3clFbJ" id="1nhYb0FOxHQ" role="3cqZAp">
                           <node concept="1Wc70l" id="1nhYb0FOxHR" role="3clFbw">
                             <node concept="3y3z36" id="1nhYb0FOxHS" role="3uHU7B">

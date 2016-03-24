@@ -69,7 +69,6 @@ public class EditorUtil {
         JFrame frame = (root instanceof JFrame ? (JFrame) root : null);
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setMode((files ? TreeFileChooser.MODE_FILES : TreeFileChooser.MODE_DIRECTORIES));
-        chooser.setContext(context.getOperationContext());
         if (baseFile != null && baseFile.exists()) {
           chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
         }

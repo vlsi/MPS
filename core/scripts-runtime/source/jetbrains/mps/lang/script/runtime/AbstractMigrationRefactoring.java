@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,10 @@
  */
 package jetbrains.mps.lang.script.runtime;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractMigrationRefactoring {
-  @Deprecated
-  public AbstractMigrationRefactoring(IOperationContext context) {
-  }
 
   public AbstractMigrationRefactoring() {
   }

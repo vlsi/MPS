@@ -35,8 +35,6 @@ import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.DataProvider;
 import org.jetbrains.annotations.NonNls;
@@ -195,15 +193,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
       }
     });
-  }
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.ide.hierarchy.AbstractHierarchyView#showItemInHierarchy(SNode) } instead
-   */
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public void showItemInHierarchy(SNode node, IOperationContext _context) {
-    showItemInHierarchy(node);
   }
   protected boolean isTreeInfinite() {
     return false;
