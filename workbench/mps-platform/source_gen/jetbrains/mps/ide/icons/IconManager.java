@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
@@ -134,13 +135,13 @@ public final class IconManager {
     }
     return result;
   }
-  public static Icon getIconForConcept(SNode concept) {
-    while (concept != null) {
-      Icon icon = getIconForConcept(concept, SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
+  private static Icon getIconForConcept(SNode conceptDeclaration) {
+    while (conceptDeclaration != null) {
+      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath")));
       if (icon != null) {
         return icon;
       }
-      concept = SLinkOperations.getTarget(concept, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
+      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
     }
     return null;
   }
@@ -158,7 +159,29 @@ public final class IconManager {
     return null;
   }
   public static Icon getIcon(SAbstractConcept concept) {
-    return getIconForConcept(((SNode) concept.getDeclarationNode()));
+    return getIconForConceptFQName(concept.getQualifiedName());
+  }
+  /**
+   * 
+   * @deprecated use#getIcon(SAbstractConcept) instead
+   */
+  @Deprecated
+  public static Icon getIconForConceptFQName(String conceptFQName) {
+    SNode acd = SModelUtil.findConceptDeclaration(conceptFQName);
+    SNode cd = null;
+    Icon icon = null;
+    if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
+      cd = SNodeOperations.cast(acd, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      icon = getIconForConcept(cd);
+    }
+    if (icon == null) {
+      if (cd != null && jetbrains.mps.util.SNodeOperations.isRoot(cd)) {
+        return IdeIcons.DEFAULT_ROOT_ICON;
+      } else {
+        return IdeIcons.DEFAULT_NODE_ICON;
+      }
+    }
+    return icon;
   }
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
