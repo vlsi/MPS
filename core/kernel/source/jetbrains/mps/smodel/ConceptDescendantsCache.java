@@ -33,6 +33,8 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -192,6 +194,26 @@ public class ConceptDescendantsCache implements CoreComponent {
     for (SAbstractConcept descendant : getDirectDescendants(concept)) {
       collectDescendants(descendant, result);
     }
+  }
+
+  //-------------to remove-----------
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public Set<String> getDescendants(String conceptFqName) {
+    SAbstractConcept c = MetaAdapterFactoryByName.getInterfaceConcept(conceptFqName);
+    if (c==null){
+      c = MetaAdapterFactoryByName.getConcept(conceptFqName);
+    }
+    if (c==null){
+      return Collections.emptySet();
+    }
+
+    LinkedHashSet<String> res = new LinkedHashSet<String>();
+    for (SAbstractConcept ac:getDescendants(c)){
+      res.add(ac.getQualifiedName());
+    }
+    return res;
   }
 
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
