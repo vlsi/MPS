@@ -89,5 +89,8 @@ public class DefaultOptionsContainer {
       myDefaultFinders.clear();
       LOG.error("error reading options", e);
     }
+    if (myDefaultOptions.getOption(ScopeOptions.class) == null || myDefaultOptions.getOption(ViewOptions.class) == null) {
+      myDefaultOptions = createDefaultSearchOptions();
+    }
   }
 }

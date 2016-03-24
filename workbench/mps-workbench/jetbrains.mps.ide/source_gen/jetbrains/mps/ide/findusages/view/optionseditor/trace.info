@@ -119,8 +119,10 @@
       <node id="28859145781927898" at="87,44,88,54" concept="1" />
       <node id="28859145781927907" at="88,54,89,31" concept="1" />
       <node id="28859145781927911" at="89,31,90,44" concept="1" />
+      <node id="2885897346531735430" at="92,122,93,54" concept="1" />
       <node id="28859145781927689" at="28,0,30,0" concept="0" trace="DefaultOptionsContainer#()V" />
       <node id="2034046503361591515" at="52,0,55,0" concept="5" trace="run#()V" />
+      <node id="2885897346531727807" at="91,5,94,5" concept="4" />
       <node id="28859145781927724" at="36,0,41,0" concept="5" trace="setDefaultSearchOptions#(Ljava/lang/String;Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;)V" />
       <node id="2034046503361591511" at="50,89,55,7" concept="1" />
       <node id="28859145781927693" at="30,0,36,0" concept="5" trace="getDefaultSearchOptions#(Ljava/lang/String;)Ljetbrains/mps/ide/findusages/view/optionseditor/FindUsagesOptions;" />
@@ -131,13 +133,14 @@
       <node id="28859145781927814" at="59,72,72,5" concept="9" />
       <node id="28859145781927895" at="77,29,91,5" concept="9" />
       <node id="28859145781927802" at="58,0,75,0" concept="5" trace="writeOptions#(Ljetbrains/mps/project/MPSProject;)Lorg/jdom/Element;" />
-      <node id="28859145781927878" at="75,0,93,0" concept="5" trace="readOptions#(Lorg/jdom/Element;Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="28859145781927878" at="75,0,96,0" concept="5" trace="readOptions#(Lorg/jdom/Element;Ljetbrains/mps/project/MPSProject;)V" />
       <scope id="28859145781927692" at="28,36,28,36" />
       <scope id="2034046503361591516" at="52,25,53,111" />
       <scope id="28859145781927815" at="70,0,71,43">
         <var name="e" id="28859145781927823" />
       </scope>
       <scope id="28859145781927816" at="70,44,71,43" />
+      <scope id="2885897346531727809" at="92,122,93,54" />
       <scope id="28859145781927689" at="28,0,30,0" />
       <scope id="28859145781927731" at="36,95,39,88" />
       <scope id="2034046503361591515" at="52,0,55,0" />
@@ -188,16 +191,16 @@
       <scope id="28859145781927807" at="58,51,73,33">
         <var name="defaultFindOptionsXML" id="28859145781927809" />
       </scope>
-      <scope id="28859145781927885" at="75,62,91,5" />
       <scope id="28859145781927802" at="58,0,75,0">
         <var name="project" id="28859145781927805" />
       </scope>
-      <scope id="28859145781927878" at="75,0,93,0">
+      <scope id="28859145781927885" at="75,62,94,5" />
+      <scope id="28859145781927878" at="75,0,96,0">
         <var name="project" id="28859145781927883" />
         <var name="state" id="28859145781927881" />
       </scope>
       <unit id="2034046503361591515" at="51,45,55,5" name="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer$1" />
-      <unit id="28859145781927653" at="20,0,94,0" name="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
+      <unit id="28859145781927653" at="20,0,97,0" name="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
     </file>
   </root>
 </debug-info>
