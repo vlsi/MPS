@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
+import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -34,7 +40,7 @@ public class MPSErrorDialog extends JDialog {
   private List<JButton> myButtons = new ArrayList<JButton>();
   private boolean myIsInitialized = false;
   private JTextField myField;
-  private Frame myOwnerFrame;
+  private final Window myOwner;
   private String myErrorString;
   private KeyListener myEscapeListener = new KeyAdapter() {
     @Override
@@ -50,17 +56,17 @@ public class MPSErrorDialog extends JDialog {
     this(frame, error, title, true);
   }
 
-  public MPSErrorDialog(Frame frame, String error, String title, boolean initializeUI) throws HeadlessException {
-    super(frame, title, true);
-    init(frame, error);
+  public MPSErrorDialog(Window window, String error, String title, boolean initializeUI) throws HeadlessException {
+    super(window, title, Dialog.DEFAULT_MODALITY_TYPE);
+    myOwner = window;
+    init(error);
     if (initializeUI) {
       initializeUI();
       setVisible(true);
     }
   }
 
-  private void init(Frame frame, String error) {
-    myOwnerFrame = frame;
+  private void init(String error) {
     myErrorString = error;
     setLayout(new BorderLayout());
     myField = new JTextField(error);
@@ -93,8 +99,8 @@ public class MPSErrorDialog extends JDialog {
     add(panel, BorderLayout.SOUTH);
     pack();
     setResizable(false);
-    setLocation(myOwnerFrame.getX() + (myOwnerFrame.getWidth() - this.getWidth()) / 2,
-      myOwnerFrame.getY() + (myOwnerFrame.getHeight() - this.getHeight()) / 2);
+    setLocation(myOwner.getX() + (myOwner.getWidth() - this.getWidth()) / 2,
+        myOwner.getY() + (myOwner.getHeight() - this.getHeight()) / 2);
     myIsInitialized = true;
   }
 

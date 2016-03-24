@@ -193,6 +193,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -2038,7 +2039,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             @Override
             public void run() {
               String s = message.getMessage();
-              final MPSErrorDialog dialog = new MPSErrorDialog(myEditorContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
+              final Window window = SwingUtilities.windowForComponent(EditorComponent.this);
+              final MPSErrorDialog dialog = new MPSErrorDialog(window, s, message.getStatus().getPresentation(), false);
               if (herror.getRuleNode() != null) {
                 final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
                 final JButton button = new JButton();

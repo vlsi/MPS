@@ -172,12 +172,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     };
   }
 
-  public final Frame getMainFrame() {
-    Project project = getOperationContext().getProject();
-    if (project == null) return null;
-    return ProjectHelper.toMainFrame(project);
-  }
-
   /**
    * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().updateRootCell()
    */
