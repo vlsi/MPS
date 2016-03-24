@@ -37,7 +37,7 @@ public final class ConvertCastToSConceptType_Intention extends IntentionDescript
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !((boolean) SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H.invoke(node)) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x12067573bc7L, "asCast")));
+    return (!((boolean) SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H.invoke(node)) || !((boolean) SNodeTypeCastExpression__BehaviorDescriptor.hasValidType_id3$jHpAYjQYh.invoke(node))) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x12067573bc7L, "asCast")));
   }
   @Override
   public boolean isSurroundWith() {
@@ -54,7 +54,7 @@ public final class ConvertCastToSConceptType_Intention extends IntentionDescript
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert to concept<...>";
+      return "Convert to concept<...> Cast";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

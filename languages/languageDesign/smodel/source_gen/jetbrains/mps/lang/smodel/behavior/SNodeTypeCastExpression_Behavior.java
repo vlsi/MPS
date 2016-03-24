@@ -14,4 +14,8 @@ public class SNodeTypeCastExpression_Behavior {
   public static boolean call_isSNodeCast_1238686302573(SNode __thisNode__) {
     return SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H(__thisNode__);
   }
+  @Deprecated
+  public static boolean call_hasValidType_4112830556646895505(SNode __thisNode__) {
+    return SNodeTypeCastExpression__BehaviorDescriptor.hasValidType_id3$jHpAYjQYh(__thisNode__);
+  }
 }

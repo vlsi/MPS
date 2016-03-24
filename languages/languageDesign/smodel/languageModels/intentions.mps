@@ -27,6 +27,7 @@
       <concept id="1194033889146" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1XNTG" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -2196,7 +2197,7 @@
       <node concept="3clFbS" id="1xLGIeL0MD_" role="2VODD2">
         <node concept="3clFbF" id="1xLGIeL0N1m" role="3cqZAp">
           <node concept="Xl_RD" id="1xLGIeL0N1l" role="3clFbG">
-            <property role="Xl_RC" value="Convert to concept&lt;...&gt;" />
+            <property role="Xl_RC" value="Convert to concept&lt;...&gt; Cast" />
           </node>
         </node>
       </node>
@@ -2278,11 +2279,23 @@
                 </node>
               </node>
             </node>
-            <node concept="3fqX7Q" id="1xLGIeL0OW4" role="3uHU7B">
-              <node concept="2OqwBi" id="1xLGIeL0OW6" role="3fr31v">
-                <node concept="2Sf5sV" id="1xLGIeL0OW7" role="2Oq$k0" />
-                <node concept="2qgKlT" id="1xLGIeL0OW8" role="2OqNvi">
-                  <ref role="37wK5l" to="tpeu:i1Btg5H" resolve="isSNodeCast" />
+            <node concept="1eOMI4" id="3$jHpAYjR_1" role="3uHU7B">
+              <node concept="22lmx$" id="3$jHpAYjRBR" role="1eOMHV">
+                <node concept="3fqX7Q" id="3$jHpAYjSog" role="3uHU7w">
+                  <node concept="2OqwBi" id="3$jHpAYjSoi" role="3fr31v">
+                    <node concept="2Sf5sV" id="3$jHpAYjSoj" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="3$jHpAYjSok" role="2OqNvi">
+                      <ref role="37wK5l" to="tpeu:3$jHpAYjQYh" resolve="hasValidType" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3fqX7Q" id="1xLGIeL0OW4" role="3uHU7B">
+                  <node concept="2OqwBi" id="1xLGIeL0OW6" role="3fr31v">
+                    <node concept="2Sf5sV" id="1xLGIeL0OW7" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="1xLGIeL0OW8" role="2OqNvi">
+                      <ref role="37wK5l" to="tpeu:i1Btg5H" resolve="isSNodeCast" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

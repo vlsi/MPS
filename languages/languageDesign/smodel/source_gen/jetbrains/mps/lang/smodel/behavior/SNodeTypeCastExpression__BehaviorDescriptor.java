@@ -30,9 +30,10 @@ public final class SNodeTypeCastExpression__BehaviorDescriptor extends BaseBHDes
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> isSNodeCast_idi1Btg5H = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSNodeCast").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1Btg5H").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasValidType_id3$jHpAYjQYh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasValidType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$jHpAYjQYh").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isSNodeCast_idi1Btg5H, getPresentation_idhEwIMiw);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isSNodeCast_idi1Btg5H, hasValidType_id3$jHpAYjQYh, getPresentation_idhEwIMiw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -40,7 +41,12 @@ public final class SNodeTypeCastExpression__BehaviorDescriptor extends BaseBHDes
   @Deprecated
   /*package*/ static boolean isSNodeCast_idi1Btg5H(@NotNull SNode __thisNode__) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression")));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0a1a0(), false)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0b0a());
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0b0a(), false));
+  }
+  @Deprecated
+  /*package*/ static boolean hasValidType_id3$jHpAYjQYh(@NotNull SNode __thisNode__) {
+    SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression")));
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a1a1());
   }
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     return (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x12067573bc7L, "asCast")) ? "as" : ":");
@@ -65,6 +71,8 @@ public final class SNodeTypeCastExpression__BehaviorDescriptor extends BaseBHDes
       case 0:
         return (T) ((Boolean) isSNodeCast_idi1Btg5H(node));
       case 1:
+        return (T) ((Boolean) hasValidType_id3$jHpAYjQYh(node));
+      case 2:
         return (T) ((String) getPresentation_idhEwIMiw(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -94,13 +102,13 @@ public final class SNodeTypeCastExpression__BehaviorDescriptor extends BaseBHDes
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_cjhknp_b0a0a1a0() {
+  private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
+  private static SNode _quotation_createNode_cjhknp_b0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);

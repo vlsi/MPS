@@ -39,7 +39,7 @@ public class ConceptNodeCheck extends MigrationScriptBase {
       };
       return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !((boolean) SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H.invoke(it));
+          return !((boolean) SNodeTypeCastExpression__BehaviorDescriptor.isSNodeCast_idi1Btg5H.invoke(it)) || !((boolean) SNodeTypeCastExpression__BehaviorDescriptor.hasValidType_id3$jHpAYjQYh.invoke(it));
         }
       }).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
