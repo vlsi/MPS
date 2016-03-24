@@ -70,46 +70,6 @@
       <unit id="4952318787899710481" at="15,0,49,0" name="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
     </file>
   </root>
-  <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/6774261846361407465">
-    <file name="ExtractComponentUtil.java">
-      <node id="6774261846361407470" at="26,86,27,227" concept="9" />
-      <node id="6774261846361407478" at="27,227,28,174" concept="9" />
-      <node id="6774261846361407489" at="29,32,30,13" concept="10" />
-      <node id="6352952732699797846" at="31,5,32,0" concept="12" />
-      <node id="6774261846361407496" at="34,25,35,54" concept="9" />
-      <node id="6774261846361407502" at="35,54,36,257" concept="9" />
-      <node id="6774261846361407508" at="36,257,37,172" concept="4" />
-      <node id="6774261846361407515" at="37,172,38,291" concept="4" />
-      <node id="6774261846361407524" at="38,291,39,201" concept="4" />
-      <node id="6774261846361407533" at="39,201,40,241" concept="9" />
-      <node id="6774261846361407539" at="40,241,41,184" concept="4" />
-      <node id="6774261846361407546" at="41,184,42,60" concept="4" />
-      <node id="6774261846361407556" at="24,0,26,0" concept="3" trace="ExtractComponentUtil#()V" />
-      <node id="6774261846361407487" at="28,174,31,5" concept="7" />
-      <node id="6352952732699815143" at="34,0,44,0" concept="8" trace="run#()V" />
-      <node id="6352952732699800571" at="32,0,44,7" concept="4" />
-      <node id="6774261846361407466" at="26,0,46,0" concept="14" trace="extractComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <scope id="6774261846361407559" at="24,33,24,33" />
-      <scope id="6774261846361407488" at="29,32,30,13" />
-      <scope id="6774261846361407556" at="24,0,26,0" />
-      <scope id="6352952732699815144" at="34,25,42,60">
-        <var name="component" id="6774261846361407503" />
-        <var name="model" id="6774261846361407497" />
-        <var name="toReplace" id="6774261846361407534" />
-      </scope>
-      <scope id="6352952732699815143" at="34,0,44,0" />
-      <scope id="6774261846361407469" at="26,86,44,7">
-        <var name="componentName" id="6774261846361407479" />
-        <var name="container" id="6774261846361407471" />
-      </scope>
-      <scope id="6774261846361407466" at="26,0,46,0">
-        <var name="editorContext" id="6774261846361407553" />
-        <var name="node" id="6774261846361407551" />
-      </scope>
-      <unit id="6352952732699815143" at="33,70,44,5" name="jetbrains.mps.editor.runtime.ExtractComponentUtil$1" />
-      <unit id="6774261846361407465" at="23,0,47,0" name="jetbrains.mps.editor.runtime.ExtractComponentUtil" />
-    </file>
-  </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/7398401354080376432">
     <file name="HeadlessEditorComponent.java">
       <node id="2783516043530875038" at="19,70,20,43" concept="15" />

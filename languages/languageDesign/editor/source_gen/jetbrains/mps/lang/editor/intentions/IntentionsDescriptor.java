@@ -63,7 +63,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 1:
         // Concept: EditorCellModel 
         if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[11];
+          myIntentions1 = new IntentionFactory[10];
           myIntentions1[0] = new SurroundWithVerticalCollection_Intention();
           myIntentions1[1] = new SurroundWithHorizontalCollection_Intention();
           myIntentions1[2] = new AddNewLine_Intention();
@@ -74,7 +74,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions1[7] = new RemoveOnNewLine_Intention();
           myIntentions1[8] = new AddRemoveNewLineForChildren_Intention();
           myIntentions1[9] = new SurroundWithIndentCollection_Intention();
-          myIntentions1[10] = new ExtractComponent_Intention();
         }
         return Arrays.asList(myIntentions1);
       case 2:
@@ -180,7 +179,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[30];
+    IntentionFactory[] rv = new IntentionFactory[29];
     rv[0] = new SurroundWithVerticalCollection_Intention();
     rv[1] = new SurroundWithHorizontalCollection_Intention();
     rv[2] = new ColorQuery_Intention();
@@ -207,10 +206,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[23] = new SurroundWithIndentCollection_Intention();
     rv[24] = new ChangePropertyWithNonEmpty_Intention();
     rv[25] = new ChangeNonEmptyProperty_Intention();
-    rv[26] = new ExtractComponent_Intention();
-    rv[27] = new GenerateMultiLineDefaultEditor_Intention();
-    rv[28] = new GenerateSingleLineDefaultEditor_Intention();
-    rv[29] = new AddDominance_Intention();
+    rv[26] = new GenerateMultiLineDefaultEditor_Intention();
+    rv[27] = new GenerateSingleLineDefaultEditor_Intention();
+    rv[28] = new AddDominance_Intention();
     return Arrays.asList(rv);
   }
 }
