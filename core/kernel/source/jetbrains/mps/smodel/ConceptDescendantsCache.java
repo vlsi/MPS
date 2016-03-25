@@ -58,7 +58,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   private final LanguageRegistry myLanguageRegistry;
 
   private final Map<LanguageRuntime, Set<ConceptDescriptor>> myLoadedLanguageToConceptsMap = new HashMap<LanguageRuntime, Set<ConceptDescriptor>>();
-  final Set<LanguageRuntime> myNotProcessedRuntimes = new HashSet<LanguageRuntime>();
+  final Set<LanguageRuntime> myNotProcessedRuntimes = new LinkedHashSet<LanguageRuntime>();
   private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
     @Override
     public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {

@@ -42,7 +42,7 @@ public class CollectionUtil {
   }
 
   public static <T, F extends T> Set<F> filter(Class<F> cls, Set<? extends T> s) {
-    Set<F> result = new HashSet<F>();
+    Set<F> result = new LinkedHashSet<F>();
     for (T t : s) {
       if (cls.isInstance(t)) {
         result.add(cls.cast(t));
