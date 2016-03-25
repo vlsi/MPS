@@ -221,6 +221,6 @@ public class ConceptDescendantsCache implements CoreComponent {
     if (structureDescriptor == null) {
       return Collections.emptySet();
     }
-    return new HashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
+    return new LinkedHashSet<ConceptDescriptor>(structureDescriptor.getDescriptors());
   }
 }
