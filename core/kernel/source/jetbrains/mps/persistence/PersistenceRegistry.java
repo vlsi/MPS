@@ -61,7 +61,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
   private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
   private Set<FolderModelFactory> myFolderModelFactories = new LinkedHashSet<FolderModelFactory>();
-  private ModelEnvironmentInfo myModelEnvironmentInfo = new ModelEnvironmentInfoImpl();
 
   private boolean isDisabled = false;
 
@@ -281,14 +280,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Set<NavigationParticipant> getNavigationParticipants() {
     return myNavigationParticipants;
-  }
-
-  public ModelEnvironmentInfo getModelEnvironmentInfo() {
-    return myModelEnvironmentInfo;
-  }
-
-  public void setModelEnvironmentInfo(ModelEnvironmentInfo modelEnvironmentInfo) {
-    myModelEnvironmentInfo = modelEnvironmentInfo != null ? modelEnvironmentInfo : new ModelEnvironmentInfoImpl();
   }
 
   @Override

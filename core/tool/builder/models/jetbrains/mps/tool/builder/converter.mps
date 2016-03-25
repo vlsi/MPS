@@ -9,11 +9,9 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
-    <import index="lw3o" ref="r:a93003f4-7d63-4e70-8444-bbb232bbf8f2(jetbrains.mps.persistence)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence()" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util()" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
@@ -220,22 +218,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3vvhEQxYuy5" role="3cqZAp">
-          <node concept="2OqwBi" id="3vvhEQxYw8P" role="3clFbG">
-            <node concept="2YIFZM" id="3vvhEQxYvKF" role="2Oq$k0">
-              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-            </node>
-            <node concept="liA8E" id="3vvhEQxYwzF" role="2OqNvi">
-              <ref role="37wK5l" to="pa15:~PersistenceRegistry.setModelEnvironmentInfo(jetbrains.mps.persistence.ModelEnvironmentInfo):void" resolve="setModelEnvironmentInfo" />
-              <node concept="2ShNRf" id="3vvhEQxYwUh" role="37wK5m">
-                <node concept="1pGfFk" id="3vvhEQxY$Pc" role="2ShVmc">
-                  <ref role="37wK5l" to="lw3o:3vvhEQxVnos" resolve="LightModelEnvironmentInfoImpl" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="2GUZhq" id="35PnRaEYmqv" role="3cqZAp">
           <node concept="3clFbS" id="6NgXkpAWLJe" role="2GV8ay">
             <node concept="1DcWWT" id="6NgXkpAWLJf" role="3cqZAp">
@@ -285,18 +267,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="35PnRaEYmqy" role="2GVbov">
-            <node concept="3clFbF" id="3vvhEQxYAoI" role="3cqZAp">
-              <node concept="2OqwBi" id="3vvhEQxYAoJ" role="3clFbG">
-                <node concept="liA8E" id="3vvhEQxYAoK" role="2OqNvi">
-                  <ref role="37wK5l" to="pa15:~PersistenceRegistry.setModelEnvironmentInfo(jetbrains.mps.persistence.ModelEnvironmentInfo):void" resolve="setModelEnvironmentInfo" />
-                  <node concept="10Nm6u" id="3vvhEQxYCGK" role="37wK5m" />
-                </node>
-                <node concept="2YIFZM" id="3vvhEQxYAoN" role="2Oq$k0">
-                  <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-                  <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="Y1BBlvzL4q" role="3cqZAp">
               <node concept="2OqwBi" id="Y1BBlvzLp6" role="3clFbG">
                 <node concept="37vLTw" id="Y1BBlvzL4o" role="2Oq$k0">

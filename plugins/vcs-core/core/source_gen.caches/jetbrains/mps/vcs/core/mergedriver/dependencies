@@ -145,9 +145,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.persistence.LightModelEnvironmentInfoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.MetaModelInfoProvider" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />

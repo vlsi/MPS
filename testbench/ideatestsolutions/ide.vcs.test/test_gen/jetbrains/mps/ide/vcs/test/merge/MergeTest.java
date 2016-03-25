@@ -4,8 +4,6 @@ package jetbrains.mps.ide.vcs.test.merge;
 
 import org.junit.BeforeClass;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import org.junit.AfterClass;
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,12 +45,10 @@ public class MergeTest extends ChangesTestBase {
   public static void setUpClass() {
     MergeTest.ourMergeDriverModeWas = RuntimeFlags.isMergeDriverMode();
     RuntimeFlags.setMergeDriverMode(true);
-    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
   }
 
   @AfterClass
   public static void tearDownClass() {
-    PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
     RuntimeFlags.setMergeDriverMode(MergeTest.ourMergeDriverModeWas);
   }
 

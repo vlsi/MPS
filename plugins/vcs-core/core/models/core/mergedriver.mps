@@ -14,7 +14,6 @@
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
     <import index="bfxj" ref="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" />
     <import index="ur19" ref="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" />
-    <import index="lw3o" ref="r:a93003f4-7d63-4e70-8444-bbb232bbf8f2(jetbrains.mps.persistence)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io()" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
@@ -2821,33 +2820,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2TzypFyLJeo" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJep" role="3cpWs9">
-            <property role="TrG5h" value="persistenceEnv" />
-            <node concept="3uibUv" id="2TzypFyLJeq" role="1tU5fm">
-              <ref role="3uigEE" to="lw3o:3vvhEQxVnmX" resolve="LightModelEnvironmentInfoImpl" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJer" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJes" role="2ShVmc">
-                <ref role="37wK5l" to="lw3o:3vvhEQxVnos" resolve="LightModelEnvironmentInfoImpl" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2JwJPkdz_4e" role="3cqZAp">
-          <node concept="2OqwBi" id="2JwJPkdzNUp" role="3clFbG">
-            <node concept="liA8E" id="2JwJPkd$1wQ" role="2OqNvi">
-              <ref role="37wK5l" to="pa15:~PersistenceRegistry.setModelEnvironmentInfo(jetbrains.mps.persistence.ModelEnvironmentInfo):void" resolve="setModelEnvironmentInfo" />
-              <node concept="37vLTw" id="2JwJPkd$kUd" role="37wK5m">
-                <ref role="3cqZAo" node="2TzypFyLJep" resolve="persistenceEnv" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="2JwJPkdzJPU" role="2Oq$k0">
-              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="2TzypFyLJew" role="3cqZAp" />
         <node concept="3cpWs8" id="13cOvvwIR9g" role="3cqZAp">
           <node concept="3cpWsn" id="13cOvvwIR9j" role="3cpWs9">
@@ -3163,47 +3135,6 @@
                     <ref role="3cqZAo" node="2TzypFyLJeb" resolve="latestContent" />
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="2TzypFyLJgk" role="3cqZAp">
-          <node concept="3clFbS" id="2TzypFyLJgl" role="3clFbx">
-            <node concept="34ab3g" id="2TzypFyLJgm" role="3cqZAp">
-              <property role="35gtTG" value="error" />
-              <node concept="2YIFZM" id="2TzypFyLJgn" role="34bqiv">
-                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                <node concept="Xl_RD" id="2TzypFyLJgo" role="37wK5m">
-                  <property role="Xl_RC" value="%s: Inconsistent structure ids or import versions" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuwwt" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJdS" resolve="myModelName" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="2TzypFyLJgq" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqyzf9$" role="3cqZAk">
-                <ref role="37wK5l" node="2TzypFyLJiU" resolve="backup" />
-                <node concept="37vLTw" id="2BHiRxgm69s" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJe5" resolve="baseContent" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm8pN" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJe8" resolve="localContent" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm9Tz" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJeb" resolve="latestContent" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="2TzypFyLJgv" role="3clFbw">
-            <node concept="2OqwBi" id="2TzypFyLJgw" role="3fr31v">
-              <node concept="37vLTw" id="3GM_nagT$1X" role="2Oq$k0">
-                <ref role="3cqZAo" node="2TzypFyLJep" resolve="persistenceEnv" />
-              </node>
-              <node concept="liA8E" id="2TzypFyLJgy" role="2OqNvi">
-                <ref role="37wK5l" to="lw3o:3vvhEQxVnuj" resolve="isConsistent" />
               </node>
             </node>
           </node>

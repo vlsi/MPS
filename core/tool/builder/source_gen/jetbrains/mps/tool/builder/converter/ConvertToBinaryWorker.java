@@ -7,8 +7,6 @@ import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -30,13 +28,11 @@ public class ConvertToBinaryWorker {
   public void convert(final Map<String, String> map, final Boolean stripImplementation) {
     final Platform platform = PlatformFactory.initPlatform(PlatformOptionsBuilder.PERSISTENCE);
     RuntimeFlags.setMergeDriverMode(true);
-    PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     try {
       for (Map.Entry<String, String> entry : map.entrySet()) {
         convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
       }
     } finally {
-      PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
       platform.dispose();
     }
   }

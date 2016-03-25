@@ -14,14 +14,6 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.persistence.LightModelEnvironmentInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -111,70 +103,8 @@ public class ReadHelper {
   public String readName(String s) {
     return s;
   }
-  public static void conceptRead(SNode node) {
-    LightModelEnvironmentInfo info = getInfo();
-    if (info == null) {
-      return;
-    }
-    info.conceptRead(node, check_9mlqpu_b0a2a61(SNodeOperations.getConcept(node).getDeclarationNode()), StaticScope.GLOBAL, ConceptKind.NORMAL);
-  }
-  public static void roleRead(SNode node, String role) {
-    LightModelEnvironmentInfo info = getInfo();
-    if (info == null) {
-      return;
-    }
-    if (SNodeOperations.getParent(node) == null) {
-      return;
-    }
-    info.nodeRoleRead(node, check_9mlqpu_b0a3a71(((ConceptMetaInfoConverter) SNodeOperations.getConcept(SNodeOperations.getParent(node))).convertAggregation(role).getDeclarationNode()), false);
-  }
-  public static void propertyRead(SNode node, String propName) {
-    LightModelEnvironmentInfo info = getInfo();
-    if (info == null) {
-      return;
-    }
-    info.propertyNameRead(node, propName, check_9mlqpu_c0a2a81(((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propName).getDeclarationNode()));
-  }
-  public static void referenceRead(SReference ref) {
-    LightModelEnvironmentInfo info = getInfo();
-    if (info == null) {
-      return;
-    }
-    info.referenceRoleRead(ref, check_9mlqpu_b0a2a91(((ConceptMetaInfoConverter) ref.getSourceNode().getConcept()).convertAssociation(ref.getRole()).getDeclarationNode()));
-  }
-  private static LightModelEnvironmentInfo getInfo() {
-    return as_9mlqpu_a0a0u(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
-  }
-
   public static String decode(String s) {
     return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
   protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
-  private static SNodeReference check_9mlqpu_b0a2a61(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-  private static SNodeReference check_9mlqpu_b0a3a71(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-  private static SNodeReference check_9mlqpu_c0a2a81(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-  private static SNodeReference check_9mlqpu_b0a2a91(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-  private static <T> T as_9mlqpu_a0a0u(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
 }

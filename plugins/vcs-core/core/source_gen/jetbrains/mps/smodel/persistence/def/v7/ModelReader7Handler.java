@@ -347,7 +347,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         String role = (String) child.getUserObject("role");
         result.addChild(role, child);
         child.putUserObject("role", null);
-        ReadHelper.roleRead(child, role);
       }
     }
   }
@@ -360,7 +359,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       boolean needLazy = my_toStateParam != ModelLoadingState.FULLY_LOADED;
       String readType = my_helperField.readType(attrs.getValue("type"));
       jetbrains.mps.smodel.SNode result = (needLazy ? SNodeFactory.newLazy(readType) : SNodeFactory.newRegular(readType));
-      ReadHelper.conceptRead(result);
       return result;
     }
     @Override
@@ -418,7 +416,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if (child[1] != null) {
         String pname = my_helperField.readName(child[0]);
         result.setProperty(pname, child[1]);
-        ReadHelper.propertyRead(result, pname);
       }
     }
     private void handleChild_286176397450364288(Object resultObject, Object value) throws SAXException {
@@ -435,7 +432,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       StaticReference ref = new StaticReference(my_helperField.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
 
       result.setReference(ref.getRole(), ref);
-      ReadHelper.referenceRead(ref);
     }
     private void handleChild_286176397450364333(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
@@ -443,7 +439,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       String role = (String) child.getUserObject("role");
       result.addChild((role), child);
       child.putUserObject("role", null);
-      ReadHelper.roleRead(child, role);
     }
   }
   public class PropertyElementHandler extends ModelReader7Handler.ElementHandler {

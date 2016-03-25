@@ -303,7 +303,9 @@ public class BlameDialog extends DialogWrapper {
   }
 
   public void loadState(MyState state) {
-    if (state == null) return;
+    if (state == null) {
+      return;
+    }
     if (state.isAnonymous()) {
       myAnonymousRadio.setSelected(true);
     } else {

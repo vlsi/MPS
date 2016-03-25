@@ -343,7 +343,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       String conceptName = my_helperField.readType(attrs.getValue("type"));
       jetbrains.mps.smodel.SNode result = (interfaceNode ? SNodeFactory.newInterface(conceptName) : SNodeFactory.newRegular(conceptName));
-      ReadHelper.conceptRead(result);
       return result;
     }
     @Override
@@ -416,7 +415,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       if (child[1] != null) {
         String pname = my_helperField.readName(child[0]);
         result.setProperty(pname, child[1]);
-        ReadHelper.propertyRead(result, pname);
       }
     }
     private void handleChild_286176397450364288(Object resultObject, Object value) throws SAXException {
@@ -432,7 +430,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       StaticReference ref = new StaticReference(my_helperField.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
       result.setReference(ref.getRole(), ref);
-      ReadHelper.referenceRead(ref);
     }
     private void handleChild_286176397450364333(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
@@ -441,7 +438,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         String role = (String) child.getUserObject("role");
         result.addChild(role, child);
         child.putUserObject("role", null);
-        ReadHelper.roleRead(child, role);
       }
     }
     private void handleChild_1910945748545948896(Object resultObject, Object value) throws SAXException {
@@ -453,7 +449,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         if (stubConcept != null) {
           jetbrains.mps.smodel.SNode childNode = SNodeFactory.newRegular(stubConcept);
           result.addChild(child._0(), childNode);
-          ReadHelper.roleRead(childNode, child._0());
           return;
         }
       }

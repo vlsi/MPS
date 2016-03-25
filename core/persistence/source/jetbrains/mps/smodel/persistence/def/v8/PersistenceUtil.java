@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,9 @@ package jetbrains.mps.smodel.persistence.def.v8;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.persistence.def.WriteHelper;
-import jetbrains.mps.smodel.persistence.def.v9.Indexer9;
+import jetbrains.mps.smodel.persistence.def.ReadHelper;
 import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.util.Consumer;
 
 public class PersistenceUtil {
   public static void index(char[] data, Callback consumer) {
@@ -62,7 +60,7 @@ public class PersistenceUtil {
         if (e > offset && e + 1 < end && chars[e] == '.') {
           offset = e + 1;
         }
-        String nodeId = WriteHelper.decode(JDOMUtil.unescapeText(new String(chars, offset, end - offset)));
+        String nodeId = ReadHelper.decode(JDOMUtil.unescapeText(new String(chars, offset, end - offset)));
         SNodeId id = SNodeId.fromString(nodeId);
         if (id != null) {
           consumer.externalNodeRef(id);

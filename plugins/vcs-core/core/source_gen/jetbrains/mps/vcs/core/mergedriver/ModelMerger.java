@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Level;
@@ -50,8 +48,6 @@ import org.apache.log4j.LogManager;
     }
 
     RuntimeFlags.setMergeDriverMode(true);
-    LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
-    PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
 
     String ext = (myExtension == null ? MPSExtentions.MODEL : myExtension);
     if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
@@ -78,12 +74,6 @@ import org.apache.log4j.LogManager;
     } else {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(String.format("%s: Conflicting model persistence versions", myModelName));
-      }
-      return backup(baseContent, localContent, latestContent);
-    }
-    if (!(persistenceEnv.isConsistent())) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelName));
       }
       return backup(baseContent, localContent, latestContent);
     }

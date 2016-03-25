@@ -14,9 +14,7 @@
     <classNode dependClassName="jetbrains.mps.core.platform.PlatformOptionsBuilder" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.persistence.LightModelEnvironmentInfoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.MetaModelInfoProvider" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
