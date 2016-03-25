@@ -15,19 +15,14 @@
  */
 package jetbrains.mps.workbench.findusages;
 
-import com.intellij.mock.MockVirtualFile;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.containers.SingletonIterator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
-public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope implements Iterable<VirtualFile> {
+public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
   private final Collection<VirtualFile> myScopeFiles;
 
   public ConcreteFilesGlobalSearchScope(Collection<VirtualFile> scopeFiles) {
@@ -53,34 +48,5 @@ public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope implements
   @Override
   public boolean isSearchInLibraries() {
     return false;
-  }
-
-  @Override
-  public Iterator<VirtualFile> iterator() {
-    /*
-    * Return EmptyIterator to fix behaviour of FileBasedIndexImpl.forceUpdate(@Nullable Project project, @Nullable final GlobalSearchScope filter,
-    * @Nullable final VirtualFile restrictedTo) method in new platform:
-    *
-    * 1. If virtualFilesToBeUpdatedForProject.isEmpty() != true then myForceUpdateTask.processAll(virtualFilesToBeUpdatedForProject, project) will throw Exception,
-    *   because project == null and parameter annotated as @NotNull
-    * 2. ConcreteFilesGlobalSearchScope.getProject() == null => project == null => projectIndexableFiles(project) == null =>
-    *   will not affect list of virtualFilesToBeUpdatedForProject
-    * 3. In method value(VirtualFile file) of new ProjectFilesCondition(projectIndexableFiles(project), filter, restrictedTo, includeFilesFromOtherProjects)
-    *   only parameter filter will be used to exclude all none MPS indexable files, but if includeFilesFromOtherProjects == true,
-    *   then two random foles (MAX_FILES_TO_UPDATE_FROM_OTHER_PROJECT = 2) will be added to index.
-    * 4. To prevent this ConcreteFilesGlobalSearchScope needs to implement Iterable, so restrictedTo will not be null =>
-    *   virtualFilesToBeUpdatedForProject will always be empty
-    * 5. Use SingletonIterator instead of EmptyIterator, because FileBasedIndexImpl.getValues check that iterator contain exactly one item
-    * */
-    return new SingletonIterator<VirtualFile>(new MockVirtualFile(""));
-  }
-
-  @Override
-  public void forEach(Consumer<? super VirtualFile> action) {
-  }
-
-  @Override
-  public Spliterator<VirtualFile> spliterator() {
-    return null;
   }
 }

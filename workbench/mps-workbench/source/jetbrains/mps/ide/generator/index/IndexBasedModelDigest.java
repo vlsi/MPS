@@ -87,9 +87,6 @@ public class IndexBasedModelDigest implements ApplicationComponent {
         LOG.debug(e.getClass().getName(), e);
       } catch (ProcessCanceledException e) {
         LOG.warn(e.getMessage());
-      } catch (RuntimeException e) {
-        // Just ignore for now
-        // TODO: after fix in platform - remove this catch
       }
       return null;
     }
