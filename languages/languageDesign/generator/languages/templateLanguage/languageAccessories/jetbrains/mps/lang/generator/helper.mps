@@ -1710,6 +1710,12 @@
                   <node concept="3gn64h" id="2fk6dphVury" role="3gmYPZ">
                     <ref role="3gnhBz" to="tpf8:1$dcvTE4IIO" resolve="PatternReduction_MappingRule" />
                   </node>
+                  <node concept="3gn64h" id="7viyBeYK85U" role="3gmYPZ">
+                    <ref role="3gnhBz" to="tpf8:hKaNPzJ" resolve="DropRootRule" />
+                  </node>
+                  <node concept="3gn64h" id="7viyBeYK866" role="3gmYPZ">
+                    <ref role="3gnhBz" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
+                  </node>
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxgm8mI" role="2Oq$k0">
@@ -1796,6 +1802,60 @@
             </node>
             <node concept="37vLTw" id="3GM_nagT_Hy" role="2Oq$k0">
               <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7viyBeYK55S" role="3cqZAp">
+          <node concept="3clFbS" id="7viyBeYK55U" role="3clFbx">
+            <node concept="3cpWs6" id="7viyBeYK6mo" role="3cqZAp">
+              <node concept="2OqwBi" id="7viyBeYK6M1" role="3cqZAk">
+                <node concept="1PxgMI" id="7viyBeYK6Cp" role="2Oq$k0">
+                  <ref role="1m5ApE" to="tpf8:hKaNPzJ" resolve="DropRootRule" />
+                  <node concept="37vLTw" id="7viyBeYK6mR" role="1m5AlR">
+                    <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="7viyBeYK6VV" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpf8:hKaOQmo" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7viyBeYK6bR" role="3clFbw">
+            <node concept="37vLTw" id="7viyBeYK57l" role="2Oq$k0">
+              <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+            </node>
+            <node concept="1mIQ4w" id="7viyBeYK6lL" role="2OqNvi">
+              <node concept="chp4Y" id="7viyBeYK6lQ" role="cj9EA">
+                <ref role="cht4Q" to="tpf8:hKaNPzJ" resolve="DropRootRule" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7viyBeYK6Z5" role="3cqZAp">
+          <node concept="3clFbS" id="7viyBeYK6Z7" role="3clFbx">
+            <node concept="3cpWs6" id="7viyBeYK7k2" role="3cqZAp">
+              <node concept="2OqwBi" id="7viyBeYK7CK" role="3cqZAk">
+                <node concept="1PxgMI" id="7viyBeYK7ux" role="2Oq$k0">
+                  <ref role="1m5ApE" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
+                  <node concept="37vLTw" id="7viyBeYK7kx" role="1m5AlR">
+                    <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="7viyBeYK7Nh" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpf8:6uPxrhfjpgY" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7viyBeYK78N" role="3clFbw">
+            <node concept="37vLTw" id="7viyBeYK70H" role="2Oq$k0">
+              <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+            </node>
+            <node concept="1mIQ4w" id="7viyBeYK7jr" role="2OqNvi">
+              <node concept="chp4Y" id="7viyBeYK7jw" role="cj9EA">
+                <ref role="cht4Q" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
+              </node>
             </node>
           </node>
         </node>
