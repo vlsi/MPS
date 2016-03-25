@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -66,8 +65,21 @@ public class ChildSubstituteActionsHelper {
     // special case
     if (childConcept == SNodeUtil.concept_BaseConcept.getDeclarationNode()) {
       if ((currentChild == null || currentChild.getConcept().equals(SNodeUtil.concept_BaseConcept))) {
-        ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true);
-        List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
+        final SModel model = parentNode.getModel();
+        LanguageRegistry lr = LanguageRegistry.getInstance(model.getRepository());
+        ArrayList<SNode> allVisibleConcepts = new ArrayList<SNode>(100);
+        for (SLanguage l : new SLanguageHierarchy(lr, SModelOperations.getAllLanguageImports(model)).getExtended()) {
+          for (SAbstractConcept c : l.getConcepts()) {
+            if (c.isAbstract()) {
+              // it used to allow non-interface, abstract concept declarations, however I don't see a reason to
+              continue;
+            }
+            SNode conceptDeclNode = c.getDeclarationNode();
+            if (conceptDeclNode != null) {
+              allVisibleConcepts.add(conceptDeclNode);
+            }
+          }
+        }
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());
         for (final SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter) {

@@ -276,7 +276,16 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     super.rename(newNamespace);
   }
 
+  /**
+   * @deprecated method is not bad per se (Language module could tell SNode with concept declaration. However,
+   *            it silently excludes Interface concepts, and likely its uses need attention and switch to SConcept.
+   *            Then, we could decide whether we truly need access to language's concept nodes this way, or shall use
+   *            LanguageAspects instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public List<SNode> getConceptDeclarations() {
+    // FIXME thera are uses in mbeddr
     SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
     return FastNodeFinderManager.get(structureModel).getNodes(SNodeUtil.concept_ConceptDeclaration, true);
@@ -301,15 +310,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public SModel getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
-  }
-
-  /**
-   * @deprecated Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public SNode findConceptDeclaration(@NotNull final String conceptName) {
-    return new ConceptDeclarationLookup(this).findConceptDeclaration(conceptName);
   }
 
   @Override

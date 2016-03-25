@@ -10,19 +10,12 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelOperations;
 
 public class SModelSearchUtil {
   public SModelSearchUtil() {
   }
   public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly) {
     return new ModelAndImportedModelsScope(model, rootsOnly);
-  }
-  public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
-    return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly);
   }
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) {
@@ -38,6 +31,7 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
   public static List<SNode> getLinkDeclarations(SNode concept) {
+    // uses in mbeddr 
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
   public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
@@ -66,6 +60,7 @@ public class SModelSearchUtil {
     });
   }
   public static List<SNode> getPropertyDeclarations(SNode concept) {
+    // uses in mbeddr 
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
   @Nullable
@@ -74,41 +69,5 @@ public class SModelSearchUtil {
       return null;
     }
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
-  }
-  private static class _ConceptsFromModelLanguagesScope extends AbstractSearchScope {
-    private SModel myModel;
-    private boolean myRootsOnly;
-    private List<SNode> myConcepts;
-    public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
-      myModel = model;
-      myRootsOnly = rootsOnly;
-    }
-    @NotNull
-    @Override
-    public List<SNode> getNodes(Condition<SNode> condition) {
-      if (myConcepts == null) {
-        myConcepts = new ArrayList<SNode>();
-        List<Language> languages = SModelOperations.getLanguages(myModel);
-        for (Language language : languages) {
-          if (myRootsOnly) {
-            SModel structureModel = language.getStructureModelDescriptor();
-            for (SNode node : structureModel.getRootNodes()) {
-              if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
-                myConcepts.add(node);
-              }
-            }
-          } else {
-            myConcepts.addAll(language.getConceptDeclarations());
-          }
-        }
-      }
-      List<SNode> concepts = new ArrayList<SNode>();
-      for (SNode concept : myConcepts) {
-        if (condition.met(concept)) {
-          concepts.add(concept);
-        }
-      }
-      return concepts;
-    }
   }
 }

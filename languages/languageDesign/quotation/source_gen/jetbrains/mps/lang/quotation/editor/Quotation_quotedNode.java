@@ -9,9 +9,13 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,16 +30,21 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
     public Quotation_generic_cellMenu_61vnku_a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (SNode nextConcept : ListSequence.fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true).getNodes())) {
-        ListSequence.fromList(result).addElement((SNode) nextConcept);
+      List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+      LanguageRegistry lr = LanguageRegistry.getInstance(editorContext.getRepository());
+      for (SLanguage l : new SLanguageHierarchy(lr, SModelOperations.getAllLanguageImports(SNodeOperations.getModel(node))).getExtended()) {
+        for (SAbstractConcept c : l.getConcepts()) {
+          if (!(c.isAbstract())) {
+            ListSequence.fromList(result).addElement(c);
+          }
+        }
       }
       return result;
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      this.handleAction_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
     }
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode oldInstance = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), null));
       if (oldInstance != null) {
