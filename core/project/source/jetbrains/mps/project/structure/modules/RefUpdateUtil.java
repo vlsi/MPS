@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -102,14 +101,5 @@ public class RefUpdateUtil {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
     if (module == null) return reference;
     return module.getModuleReference();
-  }
-
-  /**
-   * @deprecated use {@link jetbrains.mps.project.structure.modules.ModuleReference#differs(org.jetbrains.mps.openapi.module.SModuleReference, org.jetbrains.mps.openapi.module.SModuleReference)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean differs(SModuleReference ref1, SModuleReference ref2) {
-    return ModuleReference.differs(ref1, ref2);
   }
 }

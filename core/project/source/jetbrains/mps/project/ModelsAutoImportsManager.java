@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -42,21 +39,6 @@ public class ModelsAutoImportsManager {
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getAutoImportedModels(contextModule, model));
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @deprecated use {@link #getLanguages(SModule, SModel)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static Set<Language> getAutoImportedLanguages(SModule contextModule, SModel model) {
-    Set<Language> result = new HashSet<Language>();
-    for (AutoImportsContributor contributor : contributors) {
-      if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
-        result.addAll(contributor.getAutoImportedLanguages(contextModule, model));
       }
     }
     return result;
@@ -107,25 +89,8 @@ public class ModelsAutoImportsManager {
       return Collections.emptySet();
     }
 
-    /**
-     * @deprecated override {@link #getLanguages(SModule, SModel)} instead
-     */
-    @Deprecated
-    @ToRemove(version = 3.3)
-    public Set<Language> getAutoImportedLanguages(ModuleType contextModule, SModel model) {
-      return Collections.emptySet();
-    }
-
-    // FIXME update subclasses to utilize new API. For a while, old implementation left to check if compatibility is ok (just in case there other contributors out there).
     @NotNull
-    public Collection<SLanguage> getLanguages(ModuleType contextModule, SModel model) {
-      // XXX transition: delegate to legacy code, drop along with the delegate method
-      Set<SLanguage> rv = new HashSet<SLanguage>();
-      for (Language l : getAutoImportedLanguages(contextModule, model)) {
-        rv.add(MetaAdapterFactory.getLanguage(l.getModuleReference()));
-      }
-      return rv;
-    }
+    public abstract Collection<SLanguage> getLanguages(ModuleType contextModule, SModel model);
 
     public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {
       return Collections.emptySet();

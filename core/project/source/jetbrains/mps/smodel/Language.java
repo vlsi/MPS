@@ -460,6 +460,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
+    @NotNull
     @Override
     public Class<Language> getApplicableSModuleClass() {
       return Language.class;

@@ -222,6 +222,7 @@ public class Generator extends ReloadableModuleBase {
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
+    @NotNull
     @Override
     public Class<Generator> getApplicableSModuleClass() {
       return Generator.class;
