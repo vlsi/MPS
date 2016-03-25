@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,14 @@ import gnu.trove.THashSet;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Triplet;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Set;
@@ -69,7 +72,7 @@ public abstract class DoubleTermRules<K> {
 
     LinkedList<Pair<SAbstractConcept, SAbstractConcept>> queue = new LinkedList<Pair<SAbstractConcept, SAbstractConcept>>();
     queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftConcept, rightConcept));
-    for (SAbstractConcept leftSuperConcept : allSuperConcepts(leftConcept)) {
+    for (SConcept leftSuperConcept : allSuperConcepts(leftConcept)) {
       queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftSuperConcept, rightConcept));
     }
 
@@ -79,7 +82,7 @@ public abstract class DoubleTermRules<K> {
         result.add(applicableRule);
       }
 
-      for (SAbstractConcept rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
+      for (SConcept rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
         queue.add(new Pair<SAbstractConcept, SAbstractConcept>(nextConceptPair.o1, rightSuperConcept));
       }
     }
@@ -87,7 +90,23 @@ public abstract class DoubleTermRules<K> {
     return Collections.unmodifiableSet(result);
   }
 
-  abstract protected Iterable<SAbstractConcept> allSuperConcepts(SAbstractConcept conceptFQName);
+  // all super-concepts provided supplied concept is not an interface; including BaseConcept
+  private Iterable<SConcept> allSuperConcepts(SAbstractConcept concept) {
+    // I have no idea why interface concepts are not considered - computeRules(iface1, iface2) would
+    // look for applicable rules anyway (queue is initialized regardless of concept kind), just won't
+    // traverse concept hierarchy like it does for computeRules(concept1, concept2).
+    if (!(concept instanceof SConcept)) {
+      return Collections.emptyList();
+    }
+    // not sure there's much sense in BaseConcept among return values, left as it used to be.
+    SConcept c = ((SConcept) concept).getSuperConcept();
+    ArrayList<SConcept> rv = new ArrayList<SConcept>();
+    while (c != null) {
+      rv.add(c);
+      c = c.getSuperConcept();
+    }
+    return rv;
+  }
 
   abstract protected Iterable<K> allForConceptPair(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.newTypesystem.rules.DoubleTermRules;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,25 +37,6 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   ConcurrentMap<Pair<SAbstractConcept, SAbstractConcept>, Set<T>> myRules = new ConcurrentHashMap<Pair<SAbstractConcept, SAbstractConcept>, /* synchronized */ Set<T>>();
 
   private DoubleTermRules<T> myDoubleTermRules = new DoubleTermRules<T>() {
-    @Override
-    protected Iterable<SAbstractConcept> allSuperConcepts(SAbstractConcept conceptFQName) {
-      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName);
-      if (concept.isInterfaceConcept()) return Collections.emptyList();
-
-      SConceptId sid = concept.getSuperConceptId();
-      String sname = concept.getSuperConcept();
-
-      List<SAbstractConcept> res = new ArrayList<SAbstractConcept>(2);
-      while (sid != null) {
-        SAbstractConcept superConcept = MetaAdapterFactory.getConcept(sid, sname);
-        res.add(superConcept);
-
-        ConceptDescriptor superDesc = ConceptRegistry.getInstance().getConceptDescriptor(superConcept);
-        sid = superDesc.getSuperConceptId();
-        sname = superDesc.getSuperConcept();
-      }
-      return res;
-    }
 
     @Override
     protected Iterable<T> allForConceptPair(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope) {
