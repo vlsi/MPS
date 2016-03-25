@@ -2495,18 +2495,6 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_8431202617644808451(final TemplateQueryContext _context) {
     return ((boolean) NodeMacro__BehaviorDescriptor.hasMappingLabel_id5KmckUrKj9u.invoke(_context.getNode()) ? "context" + ((int[]) _context.getVariable("varindex"))[0] : ((String) _context.getVariable("contextVar")));
   }
-  public static Object templateArgumentQuery_3205439297087209311(final TemplateArgumentContext _context) {
-    return new VariableNameSource("context");
-  }
-  public static Object templateArgumentQuery_3205439297087188027(final TemplateArgumentContext _context) {
-    return new VariableNameSource("context");
-  }
-  public static Object templateArgumentQuery_4006750417599331591(final TemplateArgumentContext _context) {
-    return _context.getNode();
-  }
-  public static Object templateArgumentQuery_3205439297087202364(final TemplateArgumentContext _context) {
-    return new VariableNameSource("context");
-  }
   public static Object templateArgumentQuery_1317766042766407591(final TemplateArgumentContext _context) {
     return new VariableNameSource("context");
   }
@@ -2517,6 +2505,18 @@ public class QueriesGenerated {
     return new VariableNameSource("context");
   }
   public static Object templateArgumentQuery_1317766042765398120(final TemplateArgumentContext _context) {
+    return new VariableNameSource("context");
+  }
+  public static Object templateArgumentQuery_3205439297087209311(final TemplateArgumentContext _context) {
+    return new VariableNameSource("context");
+  }
+  public static Object templateArgumentQuery_3205439297087188027(final TemplateArgumentContext _context) {
+    return new VariableNameSource("context");
+  }
+  public static Object templateArgumentQuery_4006750417599331591(final TemplateArgumentContext _context) {
+    return _context.getNode();
+  }
+  public static Object templateArgumentQuery_3205439297087202364(final TemplateArgumentContext _context) {
     return new VariableNameSource("context");
   }
   public static Iterable<SNode> sourceNodesQuery_6220262973299791769(final SourceSubstituteMacroNodesContext _context) {
