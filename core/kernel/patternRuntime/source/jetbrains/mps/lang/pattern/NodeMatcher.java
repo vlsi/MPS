@@ -34,6 +34,9 @@ import java.util.Map;
 /**
  * Match/extract values of a node against pattern/sample node.
  * Not thread-safe.
+ * <p/>
+ * IMPLEMENTATION NODE: Pattern node passed to {@link #match(SNode, SNode)} doesn't need to have
+ * set properties/association/aggregation we are going to capture/iterate with distinct matcher.
  * @author Artem Tikhomirov
  * @since 3.4
  */

@@ -33,9 +33,6 @@
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
-    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
-      <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -220,13 +217,13 @@
       <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
         <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
       </concept>
+      <concept id="1202776937179" name="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" flags="lg" index="b5Tf3" />
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="7473026166162327259" name="dropAttrubuteRule" index="CYSdJ" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
-        <child id="1195502346405" name="postMappingScript" index="1pvy6N" />
       </concept>
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
         <child id="1177093586806" name="templateNode" index="gfFT$" />
@@ -283,7 +280,6 @@
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
         <child id="1092060348987" name="contentNode" index="13RCb5" />
       </concept>
-      <concept id="1225228973247" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" flags="in" index="15lBmy" />
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
@@ -293,7 +289,6 @@
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
-      <concept id="1184690432998" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" flags="nn" index="3l3mFP" />
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
@@ -303,14 +298,6 @@
       </concept>
       <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
         <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
-        <child id="1225229330048" name="postMapperFunction" index="15mYut" />
-      </concept>
-      <concept id="1195499912406" name="jetbrains.mps.lang.generator.structure.MappingScript" flags="lg" index="1pmfR0">
-        <child id="1195501105008" name="codeBlock" index="1pqMTA" />
-      </concept>
-      <concept id="1195500722856" name="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" flags="in" index="1pplIY" />
-      <concept id="1195502151594" name="jetbrains.mps.lang.generator.structure.MappingScriptReference" flags="lg" index="1puMqW">
-        <reference id="1195502167610" name="mappingScript" index="1puQsG" />
       </concept>
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
@@ -426,9 +413,6 @@
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
-      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
-      </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
@@ -452,9 +436,6 @@
       </concept>
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
-      </concept>
-      <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
-        <reference id="1139867957129" name="concept" index="1_rbq0" />
       </concept>
       <concept id="6407023681583040688" name="jetbrains.mps.lang.smodel.structure.AllAttributeQualifier" flags="ng" index="3CFTEB" />
       <concept id="6407023681583040953" name="jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier" flags="ng" index="3CFTII">
@@ -517,7 +498,6 @@
       <concept id="1172650591544" name="jetbrains.mps.baseLanguage.collections.structure.SkipOperation" flags="nn" index="7r0gD">
         <child id="1172658456740" name="elementsToSkip" index="7T0AP" />
       </concept>
-      <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
@@ -549,7 +529,6 @@
       <concept id="1175845471038" name="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" flags="nn" index="35Qw8J" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
-      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
@@ -833,35 +812,36 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="4tPQHKlp1e$" role="3acgRq">
-      <property role="2n97ot" value="When a quotation is copied, we don't want OrPatternVariableReference to stay there (they'd be broken anyway, and prevent further generation), but need a child in the pattern node for NodeMatcher to activate check" />
+    <node concept="3aamgX" id="2JppxAbPC2t" role="3acgRq">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="When a quotation is copied, we don't want OrPatternVariableReference to stay there" />
       <ref role="30HIoZ" to="tp3t:3GJnBG73j5W" resolve="OrPatternVariableReference" />
-      <node concept="gft3U" id="7zRBRvFKauu" role="1lVwrX">
-        <node concept="3clFbT" id="7zRBRvFK_P0" role="gfFT$">
-          <node concept="1pdMLZ" id="6fHRTW4GffQ" role="lGtFl">
-            <node concept="15lBmy" id="6fHRTW4GffW" role="15mYut">
-              <node concept="3clFbS" id="6fHRTW4GffX" role="2VODD2">
-                <node concept="3SKdUt" id="6fHRTW4GwIk" role="3cqZAp">
-                  <node concept="3SKdUq" id="6fHRTW4GwIm" role="3SKWNk">
-                    <property role="3SKdUp" value="FIXME this is a hack to address Quotation's peculiarity that it tries to" />
-                  </node>
+      <node concept="b5Tf3" id="2JppxAbPC3E" role="1lVwrX" />
+    </node>
+    <node concept="3aamgX" id="2JppxAbPbZB" role="3acgRq">
+      <property role="2n97ot" value="OrPattern requires special handling as though they are attributes, sometime they are used directly as nodes. Ancestor check is here not to break old templates (just in case, until we drop them); OrPattern that are atrtibutes are handled below." />
+      <ref role="30HIoZ" to="tp3t:2vRmfyWqEE4" resolve="OrPattern" />
+      <node concept="b5Tf3" id="2JppxAbPfvy" role="1lVwrX" />
+      <node concept="30G5F_" id="2JppxAbPc0z" role="30HLyM">
+        <node concept="3clFbS" id="2JppxAbPc0$" role="2VODD2">
+          <node concept="3clFbF" id="2JppxAbPcI7" role="3cqZAp">
+            <node concept="1Wc70l" id="2JppxAbPfn4" role="3clFbG">
+              <node concept="3fqX7Q" id="2JppxAbPdot" role="3uHU7B">
+                <node concept="2OqwBi" id="2JppxAbPdov" role="3fr31v">
+                  <node concept="30H73N" id="2JppxAbPdow" role="2Oq$k0" />
+                  <node concept="32XrjI" id="2JppxAbPdox" role="2OqNvi" />
                 </node>
-                <node concept="3SKdUt" id="6fHRTW4GwJN" role="3cqZAp">
-                  <node concept="3SKdUq" id="6fHRTW4GwJP" role="3SKWNk">
-                    <property role="3SKdUp" value="find original node when instantiating a quoted node, and instead of BooleanConstant" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="6fHRTW4GwLm" role="3cqZAp">
-                  <node concept="3SKdUq" id="6fHRTW4GwLo" role="3SKWNk">
-                    <property role="3SKdUp" value="instantiates OrPatternVariableReference" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="6fHRTW4GiD9" role="3cqZAp">
-                  <node concept="2YIFZM" id="6fHRTW4GiDq" role="3clFbG">
-                    <ref role="37wK5l" to="fwk:~TracingUtil.putInput(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNodeReference):void" resolve="putInput" />
-                    <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
-                    <node concept="3l3mFP" id="6fHRTW4GiD$" role="37wK5m" />
-                    <node concept="10Nm6u" id="6fHRTW4GiEM" role="37wK5m" />
+              </node>
+              <node concept="3y3z36" id="2JppxAbPfnn" role="3uHU7w">
+                <node concept="10Nm6u" id="2JppxAbPfno" role="3uHU7w" />
+                <node concept="2OqwBi" id="2JppxAbPfnp" role="3uHU7B">
+                  <node concept="30H73N" id="2JppxAbPfnq" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="2JppxAbPfnr" role="2OqNvi">
+                    <node concept="1xMEDy" id="2JppxAbPfns" role="1xVPHs">
+                      <node concept="chp4Y" id="2JppxAbPfnt" role="ri$Ld">
+                        <ref role="cht4Q" to="tp3r:hqc44pp" resolve="Quotation" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -928,9 +908,6 @@
       <property role="TrG5h" value="disjunctToPatternNode" />
       <ref role="2rTdP9" to="tp3t:4dzCQkRGb9g" resolve="OrPatternClause" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
-    </node>
-    <node concept="1puMqW" id="4rt$Wg4VHGX" role="1pvy6N">
-      <ref role="1puQsG" node="4rt$Wg4VakN" resolve="dropPatternAttributes" />
     </node>
   </node>
   <node concept="jVnub" id="h68Ga$4">
@@ -6565,77 +6542,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1pmfR0" id="4rt$Wg4VakN">
-    <property role="TrG5h" value="dropPatternAttributes" />
-    <node concept="1pplIY" id="4rt$Wg4VakO" role="1pqMTA">
-      <node concept="3clFbS" id="4rt$Wg4VakP" role="2VODD2">
-        <node concept="3SKdUt" id="6fHRTW4GJbG" role="3cqZAp">
-          <node concept="3SKdUq" id="6fHRTW4GJbI" role="3SKWNk">
-            <property role="3SKdUp" value="OrPattern requires special handling as though they are attributes, sometime they are used directly as nodes and if we drop them from the pattern," />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="6fHRTW4GZXL" role="3cqZAp">
-          <node concept="3SKdUq" id="6fHRTW4GZXN" role="3SKWNk">
-            <property role="3SKdUp" value="it couldn't navigate containingLink of the OrPattern node as it has no idea about it. Thus we replace it with bogus node." />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6fHRTW4GG50" role="3cqZAp">
-          <node concept="2OqwBi" id="6fHRTW4GIwY" role="3clFbG">
-            <node concept="2OqwBi" id="6fHRTW4GGO6" role="2Oq$k0">
-              <node concept="2OqwBi" id="6fHRTW4GG52" role="2Oq$k0">
-                <node concept="1Q6Npb" id="6fHRTW4GG53" role="2Oq$k0" />
-                <node concept="2SmgA7" id="6fHRTW4GG54" role="2OqNvi">
-                  <node concept="chp4Y" id="6fHRTW4GG55" role="1dBWTz">
-                    <ref role="cht4Q" to="tp3t:2vRmfyWqEE4" resolve="OrPattern" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3zZkjj" id="6fHRTW4GI5t" role="2OqNvi">
-                <node concept="1bVj0M" id="6fHRTW4GI5v" role="23t8la">
-                  <node concept="3clFbS" id="6fHRTW4GI5w" role="1bW5cS">
-                    <node concept="3clFbF" id="6fHRTW4GI7b" role="3cqZAp">
-                      <node concept="3fqX7Q" id="6fHRTW4GIti" role="3clFbG">
-                        <node concept="2OqwBi" id="6fHRTW4GItk" role="3fr31v">
-                          <node concept="37vLTw" id="6fHRTW4GItl" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6fHRTW4GI5x" resolve="it" />
-                          </node>
-                          <node concept="32XrjI" id="6fHRTW4GItm" role="2OqNvi" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="6fHRTW4GI5x" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="6fHRTW4GI5y" role="1tU5fm" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2es0OD" id="6fHRTW4GIEo" role="2OqNvi">
-              <node concept="1bVj0M" id="6fHRTW4GIEq" role="23t8la">
-                <node concept="3clFbS" id="6fHRTW4GIEr" role="1bW5cS">
-                  <node concept="3clFbF" id="6fHRTW4GIFZ" role="3cqZAp">
-                    <node concept="2OqwBi" id="6fHRTW4GILG" role="3clFbG">
-                      <node concept="37vLTw" id="6fHRTW4GIFY" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6fHRTW4GIEs" resolve="it" />
-                      </node>
-                      <node concept="1_qnLN" id="6fHRTW4GJ12" role="2OqNvi">
-                        <ref role="1_rbq0" to="tpee:fzclF81" resolve="BooleanConstant" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="Rh6nW" id="6fHRTW4GIEs" role="1bW2Oz">
-                  <property role="TrG5h" value="it" />
-                  <node concept="2jxLKc" id="6fHRTW4GIEt" role="1tU5fm" />
                 </node>
               </node>
             </node>

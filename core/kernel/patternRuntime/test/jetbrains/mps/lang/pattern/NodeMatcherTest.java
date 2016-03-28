@@ -56,16 +56,6 @@ public class NodeMatcherTest {
     patternNode.addChild(ourC1Child1, patternChild);
     final SProperty p1 = SNodeUtil.property_INamedConcept_name;
     final SProperty p2 = SNodeUtil.property_BaseConcept_alias;
-    // XXX this is questionable side-effect of our implementation assumptions (perhaps, we shall change it):
-    // NodeValueExtractor assumes we do not record values for properties missing in the pattern (iow, one can
-    // specify PropertyPatternVariableDeclaration for an existing property only, which is true for PropertyAttribute),
-    // thus we 'touch' properties in the pattern node. OTOH, for manually crafted matcher, it's not necessary and we
-    // could have altered NodeValueExtractor.match code to iterate through properties to record in addition to properties
-    // present at a pattern node.
-    patternNode.setProperty(p1, "");
-    patternNode.setProperty(p2, "");
-    patternChild.setProperty(p1, "");
-    patternChild.setProperty(p2, "");
 
     final SNode actualNode = newNode(ourConcept1);
     actualNode.addChild(ourC1Child1, newNode(ourConcept1));
@@ -126,10 +116,6 @@ public class NodeMatcherTest {
   @Test
   public void testChildListValues() {
     final SNode patternNode = newNode(ourConcept1);
-    // we don't really need these actual children here, but as for properties (above, see #testPropertyValues()),
-    // we need these children to tell matcher that it needs to follow these containment references
-    patternNode.addChild(ourC1Child1, newNode(ourConcept1));
-    patternNode.addChild(ourC1Child2, newNode(ourConcept2));
 
     ValueContainer vc = new ValueContainer();
     final NodeMatcher top = new NodeMatcher(vc);
@@ -161,9 +147,6 @@ public class NodeMatcherTest {
     final SNode patternNode = newNode(ourConcept1);
     final SNode patternChild = newNode(ourConcept1);
     patternNode.addChild(ourC1Child1, patternChild);
-    // doesn't matter where the reference point, but can't use SNode as ImmatureReferences.getInstance == null deep in SReferenceBase
-    patternNode.setReference(ourC1Ref, SReference.create(ourC1Ref, patternNode, null, null));
-    patternChild.setReference(ourC1Ref, SReference.create(ourC1Ref, patternChild, null, null));
 
     ValueContainer vc = new ValueContainer();
     final NodeMatcher top = new NodeMatcher(vc);
@@ -176,6 +159,7 @@ public class NodeMatcherTest {
     final SNode actualNode = newNode(ourConcept1);
     final SNode actualChild = newNode(ourConcept1);
     actualNode.addChild(ourC1Child1, actualChild);
+    // doesn't matter where the reference point, but can't use SNode as ImmatureReferences.getInstance == null deep in SReferenceBase
     actualNode.setReference(ourC1Ref, SReference.create(ourC1Ref, actualNode, targetModel, targetNode.getNodeId()));
     actualChild.setReference(ourC1Ref, SReference.create(ourC1Ref, actualChild, targetModel, targetNode.getNodeId()));
 
