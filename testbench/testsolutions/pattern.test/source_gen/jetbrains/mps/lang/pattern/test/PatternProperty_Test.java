@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.pattern.DefaultMatchingPattern;
 import junit.framework.Assert;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -34,8 +34,8 @@ public class PatternProperty_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c2();
-      GeneratedMatchingPattern pattern = new Pattern_bvqxbpasdekk(_quotation_createNode_xihehy_a0a0b0c2());
-      boolean matchNeeded = true;
+      DefaultMatchingPattern pattern = new Pattern_bvqxbpasdekk(_quotation_createNode_xihehy_a0a0b0c2());
+      final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
         return false;
@@ -43,7 +43,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals("something", (String) pattern.getFieldValue("patternVar_printed"));
+      Assert.assertEquals("something", pattern.getMatchedProperty("printed"));
       return true;
     }
     private static SNode _quotation_createNode_xihehy_a0a0c2() {

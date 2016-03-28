@@ -8,7 +8,7 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.pattern.DefaultMatchingPattern;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -38,8 +38,8 @@ public class Patternv2_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_ofki36_a0a0c2();
-      GeneratedMatchingPattern pattern = new Pattern_674x54k06icr(_quotation_createNode_ofki36_a0a0b0c2());
-      boolean matchNeeded = true;
+      DefaultMatchingPattern pattern = new Pattern_674x54k06icr(_quotation_createNode_ofki36_a0a0b0c2());
+      final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
         return false;
@@ -49,7 +49,7 @@ public class Patternv2_Test extends BaseTransformationTest {
       }
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ofki36_a0a0a0g0c2());
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_ifbody"));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), pattern.getMatchedNode("ifbody"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
       return true;
