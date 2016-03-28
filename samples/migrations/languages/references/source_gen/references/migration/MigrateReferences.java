@@ -60,7 +60,7 @@ public class MigrateReferences extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_w5820p_a0a0f(pattern.getFieldValue("patternVar_comp"));
+              return _quotation_createNode_w5820p_a0a0f(pattern.getMatchedNode("comp"));
             }
           }, null);
         }

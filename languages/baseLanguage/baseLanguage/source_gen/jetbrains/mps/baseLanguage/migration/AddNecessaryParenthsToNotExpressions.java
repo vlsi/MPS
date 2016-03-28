@@ -66,7 +66,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_fbexqr_a0a0f(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_expr"))));
+              return _quotation_createNode_fbexqr_a0a0f(MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("expr")));
             }
           }, null);
         }

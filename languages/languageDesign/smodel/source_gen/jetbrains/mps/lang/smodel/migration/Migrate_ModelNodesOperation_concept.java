@@ -59,7 +59,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode op) {
-          if (pattern.getFieldValue("patternVar_concept") == null) {
+          if (pattern.getMatchedNode("concept") == null) {
             return false;
           }
           if ((int) BaseConcept__BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(op) != 0 && SNodeOperations.getContainingRoot(op) == SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "3164834233148532313")) {
@@ -76,7 +76,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_vs95qi_a0a0f(pattern.getFieldValue("patternVar_concept"));
+              return _quotation_createNode_vs95qi_a0a0f(pattern.getMatchedNode("concept"));
             }
           }, new _FunctionTypes._void_P2_E0<SNode, SNode>() {
             public void invoke(SNode oldNode, SNode newNode) {

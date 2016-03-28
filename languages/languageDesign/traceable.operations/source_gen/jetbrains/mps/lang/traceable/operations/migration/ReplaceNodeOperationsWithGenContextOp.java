@@ -70,7 +70,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_operand")))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("operand"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }
@@ -107,7 +107,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_args")))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("args"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }

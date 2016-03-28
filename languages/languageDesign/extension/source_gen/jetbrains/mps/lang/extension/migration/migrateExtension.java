@@ -20,11 +20,11 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
-import java.util.List;
 import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import java.util.List;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
@@ -76,7 +76,7 @@ public class migrateExtension extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_2kk9yi_a0d0c(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_type"))), ((String) pattern.getFieldValue("patternVar_name")));
+              return _quotation_createNode_2kk9yi_a0d0c(MigrationScriptBase.detachNodePatternVariable(pattern.getMatchedNode("type")), pattern.getMatchedProperty("name"));
             }
           }, new _FunctionTypes._void_P2_E0<SNode, SNode>() {
             public void invoke(SNode oldNode, SNode newNode) {
@@ -114,7 +114,7 @@ public class migrateExtension extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_2kk9yi_a0f0c(pattern.getFieldValue("patternVar_decl"));
+              return _quotation_createNode_2kk9yi_a0f0c(pattern.getMatchedNode("decl"));
             }
           }, new _FunctionTypes._void_P2_E0<SNode, SNode>() {
             public void invoke(SNode oldNode, SNode newNode) {
@@ -164,10 +164,10 @@ public class migrateExtension extends MigrationScriptBase {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
                   if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253eeL, "activator"))) {
-                    return _quotation_createNode_2kk9yi_a0a0a0h0c(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_statements"))));
+                    return _quotation_createNode_2kk9yi_a0a0a0h0c(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("statements")));
                   }
                   if (SNodeOperations.hasRole(node, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253f6L, "deactivator"))) {
-                    return _quotation_createNode_2kk9yi_a0a1a0h0c(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_statements"))));
+                    return _quotation_createNode_2kk9yi_a0a1a0h0c(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("statements")));
                   }
                   throw new IllegalStateException();
                 }
@@ -218,7 +218,7 @@ public class migrateExtension extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_2kk9yi_a0j0c(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_fields"))), (ListSequence.fromList(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_activate")))).isEmpty() ? ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.copyNode(activatePlaceholder)) : MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_activate")))), (ListSequence.fromList(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_deactivate")))).isEmpty() ? ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.copyNode(deactivatePlaceholder)) : MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_deactivate")))), MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_statements"))), ((String) pattern.getFieldValue("patternVar_name")), pattern.getFieldValue("patternVar_ep"));
+              return _quotation_createNode_2kk9yi_a0j0c(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("fields")), (ListSequence.fromList(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("activate"))).isEmpty() ? ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.copyNode(activatePlaceholder)) : MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("activate"))), (ListSequence.fromList(MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("deactivate"))).isEmpty() ? ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.copyNode(deactivatePlaceholder)) : MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("deactivate"))), MigrationScriptBase.detachListPatternVariable(pattern.getMatchedList("statements")), pattern.getMatchedProperty("name"), pattern.getMatchedNode("ep"));
             }
           }, new _FunctionTypes._void_P2_E0<SNode, SNode>() {
             public void invoke(SNode oldNode, SNode newNode) {
