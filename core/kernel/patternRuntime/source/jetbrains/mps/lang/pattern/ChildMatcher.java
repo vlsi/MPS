@@ -72,8 +72,17 @@ public final class ChildMatcher {
       // generated code for list pattern variable didn't dig deeper
       return true;
     }
+    final boolean noPatternChildrenExtractorsOnly;
     if (pattern.size() != actual.size()) {
-      return false;
+      if (pattern.size() == 0 && myIndexToExtractor != null && actual.size() == myIndexToExtractor.size()) {
+        // for completeness, shall check that all index keys are continuous values [0..actual.size)
+        // but don't want to bother unless face an issue that breaks without such check.
+        noPatternChildrenExtractorsOnly = true;
+      } else {
+        return false;
+      }
+    } else {
+      noPatternChildrenExtractorsOnly = false;
     }
     final Set<Integer> index = new HashSet<Integer>(myIndexToExtractor == null ? Collections.<Integer>emptySet() : myIndexToExtractor.keySet());
     final NodeMatcher defaultHandler = new NodeMatcher(this);
@@ -82,7 +91,7 @@ public final class ChildMatcher {
       if (index.remove(i)) {
         childExtractor = myIndexToExtractor.get(i);
       }
-      if (!childExtractor.match(pattern.get(i), actual.get(i))) {
+      if (!childExtractor.internalMatch(noPatternChildrenExtractorsOnly ? null : pattern.get(i), actual.get(i))) {
         return false;
       }
     }

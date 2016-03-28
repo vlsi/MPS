@@ -18,6 +18,7 @@ package jetbrains.mps.lang.pattern;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -133,6 +134,15 @@ public final class NodeMatcher {
   }
 
   public boolean match(@NotNull SNode pattern, @NotNull SNode against) {
+    return internalMatch(pattern, against);
+  }
+
+  /**
+   * relaxed version of {@link #match(SNode, SNode)} that accounts for missing child in pattern node,
+   * when e.g. a disjunction or wildcard would match that of actual.
+   * Shall be used from within {@link ChildMatcher} only!
+   */
+  /*package*/ boolean internalMatch(@Nullable SNode pattern, SNode against) {
     if (myMatchAny) {
       return true;
     }
@@ -158,6 +168,9 @@ public final class NodeMatcher {
       // After some consideration and discussion, it seems we need to cover both scenarios (explicitly picked by user when
       // pattern variable is assigned), and this alternative shall remain default for compatibility with existing code.
       return true;
+    }
+    if (pattern == null) {
+      return false;
     }
     if (!against.getConcept().isSubConceptOf(pattern.getConcept())) {
       return false;
