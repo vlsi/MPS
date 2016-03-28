@@ -40,7 +40,7 @@ public final class MacroIntentionsUtil {
         GeneratedMatchingPattern pattern_iiuth6_a0d0b = new Pattern_m84bxgbllskx(_quotation_createNode_iiuth6_a0a0a0a0d0b());
         SNode coercedNode_iiuth6_a0d0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0d0b);
         if (coercedNode_iiuth6_a0d0b != null) {
-          return ((SNode) pattern_iiuth6_a0d0b.getFieldValue("patternVar_concept"));
+          return pattern_iiuth6_a0d0b.getMatchedNode("concept");
         } else {
           return null;
         }
@@ -50,7 +50,7 @@ public final class MacroIntentionsUtil {
         GeneratedMatchingPattern pattern_iiuth6_a0a3a1 = new Pattern_m84bxgbllskj(_quotation_createNode_iiuth6_a0a0a0a0a3a1());
         SNode coercedNode_iiuth6_a0a3a1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_iiuth6_a0a3a1);
         if (coercedNode_iiuth6_a0a3a1 != null) {
-          return ((SNode) pattern_iiuth6_a0a3a1.getFieldValue("patternVar_concept"));
+          return pattern_iiuth6_a0a3a1.getMatchedNode("concept");
         } else {
           return null;
         }

@@ -20,7 +20,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_nagdzg_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_VALUE")), ((SNode) status.getPattern().getFieldValue("patternVar_KEY")));
+    return _quotation_createNode_nagdzg_a0a2(status.getPattern().getMatchedNode("VALUE"), status.getPattern().getMatchedNode("KEY"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

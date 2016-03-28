@@ -20,7 +20,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode ignore, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_y1o6nk_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_KEY")), ((SNode) status.getPattern().getFieldValue("patternVar_VALUE")));
+    return _quotation_createNode_y1o6nk_a0a2(status.getPattern().getMatchedNode("KEY"), status.getPattern().getMatchedNode("VALUE"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

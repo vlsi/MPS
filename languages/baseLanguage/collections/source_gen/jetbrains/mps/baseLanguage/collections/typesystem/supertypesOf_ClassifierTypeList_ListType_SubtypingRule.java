@@ -20,7 +20,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_u9nlj8_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_elemType")));
+    return _quotation_createNode_u9nlj8_a0a2(status.getPattern().getMatchedNode("elemType"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

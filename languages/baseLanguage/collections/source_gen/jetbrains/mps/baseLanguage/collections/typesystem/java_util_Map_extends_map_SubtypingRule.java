@@ -20,7 +20,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   public java_util_Map_extends_map_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_cwf9bn_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_keyType")), ((SNode) status.getPattern().getFieldValue("patternVar_valueType")));
+    return _quotation_createNode_cwf9bn_a0a2(status.getPattern().getMatchedNode("keyType"), status.getPattern().getMatchedNode("valueType"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

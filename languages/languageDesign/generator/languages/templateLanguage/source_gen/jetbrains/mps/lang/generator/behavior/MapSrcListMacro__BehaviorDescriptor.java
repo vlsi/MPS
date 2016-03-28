@@ -41,7 +41,7 @@ public final class MapSrcListMacro__BehaviorDescriptor extends BaseBHDescriptor 
       GeneratedMatchingPattern pattern_wn5chh_a0a = new Pattern_fhnb6zbi(_quotation_createNode_wn5chh_a0a0a0a0a());
       SNode coercedNode_wn5chh_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11003977640L, "sourceNodesQuery"))), pattern_wn5chh_a0a);
       if (coercedNode_wn5chh_a0a != null) {
-        return ((SNode) pattern_wn5chh_a0a.getFieldValue("patternVar_concept"));
+        return pattern_wn5chh_a0a.getMatchedNode("concept");
       } else {
       }
     }

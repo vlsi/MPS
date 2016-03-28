@@ -20,7 +20,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
   public LowerBoundType_subtypeOf_bound_InequationReplacementRule() {
   }
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return MatchingUtil.matchNodes(((SNode) status.getPattern1().getFieldValue("patternVar_TYPE")), supertype);
+    return MatchingUtil.matchNodes(status.getPattern1().getMatchedNode("TYPE"), supertype);
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // 'nuff said 

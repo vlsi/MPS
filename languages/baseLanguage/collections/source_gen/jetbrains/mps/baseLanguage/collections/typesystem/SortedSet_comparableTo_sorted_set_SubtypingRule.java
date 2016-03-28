@@ -20,7 +20,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   public SortedSet_comparableTo_sorted_set_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_9omwya_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_ELEMENT")));
+    return _quotation_createNode_9omwya_a0a2(status.getPattern().getMatchedNode("ELEMENT"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

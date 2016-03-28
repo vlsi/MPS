@@ -20,7 +20,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
   public set_weakSupertypeOf_ClassifierType_Set_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_lt6k7h_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_elementType")));
+    return _quotation_createNode_lt6k7h_a0a2(status.getPattern().getMatchedNode("elementType"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

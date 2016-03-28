@@ -20,7 +20,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   public supertypesOf_ClassifierType_Iterator_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode iterator, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_36aa7y_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_p")));
+    return _quotation_createNode_36aa7y_a0a2(status.getPattern().getMatchedNode("p"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

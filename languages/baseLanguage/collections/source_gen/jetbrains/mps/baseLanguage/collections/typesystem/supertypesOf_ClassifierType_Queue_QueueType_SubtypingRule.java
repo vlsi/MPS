@@ -20,7 +20,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   public supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode classQueueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_4viu4b_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_ELEMENT_TYPE")));
+    return _quotation_createNode_4viu4b_a0a2(status.getPattern().getMatchedNode("ELEMENT_TYPE"));
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");

@@ -1857,7 +1857,7 @@
     </file>
     <file name="supertypesOf_ClassifierTypeList_ListType_SubtypingRule.java">
       <node id="1178725705719" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1178725705721" at="22,114,23,113" concept="10" />
+      <node id="1178725705721" at="22,114,23,93" concept="10" />
       <node id="1178725705719" at="25,50,26,154" concept="10" />
       <node id="1178725705719" at="29,5,30,104" concept="9" />
       <node id="1178725705719" at="30,104,31,39" concept="4" />
@@ -1897,7 +1897,7 @@
       <node id="8519118779653927097" at="50,0,60,0" concept="13" trace="_quotation_createNode_u9nlj8_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196777966139" at="39,0,50,0" concept="13" trace="_quotation_createNode_u9nlj8_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178725705719" at="20,67,20,67" />
-      <scope id="1178725705720" at="22,114,23,113" />
+      <scope id="1178725705720" at="22,114,23,93" />
       <scope id="1178725705719" at="25,50,26,154" />
       <scope id="1178725705719" at="36,27,37,16" />
       <scope id="1196777966139" at="45,31,46,193" />
@@ -1953,7 +1953,7 @@
     </file>
     <file name="supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.java">
       <node id="1178881531250" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1178881599082" at="22,132,23,106" concept="10" />
+      <node id="1178881599082" at="22,132,23,86" concept="10" />
       <node id="1178881531250" at="25,50,26,154" concept="10" />
       <node id="1178881531250" at="29,5,30,104" concept="9" />
       <node id="1178881531250" at="30,104,31,39" concept="4" />
@@ -1993,7 +1993,7 @@
       <node id="8519118779653927086" at="50,0,60,0" concept="13" trace="_quotation_createNode_x5x8gb_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1196777966146" at="39,0,50,0" concept="13" trace="_quotation_createNode_x5x8gb_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178881531250" at="20,75,20,75" />
-      <scope id="1178881531251" at="22,132,23,106" />
+      <scope id="1178881531251" at="22,132,23,86" />
       <scope id="1178881531250" at="25,50,26,154" />
       <scope id="1178881531250" at="36,27,37,16" />
       <scope id="1196777966146" at="45,31,46,193" />
@@ -2500,7 +2500,7 @@
     </file>
     <file name="java_util_Map_extends_map_SubtypingRule.java">
       <node id="1198166032007" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1198166091720" at="22,117,23,181" concept="10" />
+      <node id="1198166091720" at="22,117,23,141" concept="10" />
       <node id="1198166032007" at="25,50,26,154" concept="10" />
       <node id="1198166032007" at="29,5,30,104" concept="9" />
       <node id="1198166032007" at="30,104,31,39" concept="4" />
@@ -2551,7 +2551,7 @@
       <node id="8519118779653927105" at="55,0,68,0" concept="13" trace="_quotation_createNode_cwf9bn_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1198166093115" at="39,0,55,0" concept="13" trace="_quotation_createNode_cwf9bn_a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1198166032007" at="20,52,20,52" />
-      <scope id="1198166032008" at="22,117,23,181" />
+      <scope id="1198166032008" at="22,117,23,141" />
       <scope id="1198166032007" at="25,50,26,154" />
       <scope id="1198166032007" at="36,27,37,16" />
       <scope id="1198166093115" at="46,31,47,189" />
@@ -5439,7 +5439,7 @@
     </file>
     <file name="set_weakSupertypeOf_ClassifierType_Set_SubtypingRule.java">
       <node id="1226598429206" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1226598588376" at="22,113,23,116" concept="10" />
+      <node id="1226598588376" at="22,113,23,96" concept="10" />
       <node id="1226598429206" at="25,50,26,154" concept="10" />
       <node id="1226598429206" at="29,5,30,104" concept="9" />
       <node id="1226598429206" at="30,104,31,39" concept="4" />
@@ -5479,7 +5479,7 @@
       <node id="8519118779653927091" at="50,0,60,0" concept="13" trace="_quotation_createNode_lt6k7h_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1226598589599" at="39,0,50,0" concept="13" trace="_quotation_createNode_lt6k7h_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1226598429206" at="20,65,20,65" />
-      <scope id="1226598429207" at="22,113,23,116" />
+      <scope id="1226598429207" at="22,113,23,96" />
       <scope id="1226598429206" at="25,50,26,154" />
       <scope id="1226598429206" at="36,27,37,16" />
       <scope id="1226598589599" at="45,31,46,193" />
@@ -5535,7 +5535,7 @@
     </file>
     <file name="sequence_supertypeOf_set_SubtypingRule.java">
       <node id="1226598870189" at="18,0,19,0" concept="5" trace="myMatchingPattern" />
-      <node id="1226598901185" at="21,113,22,116" concept="10" />
+      <node id="1226598901185" at="21,113,22,96" concept="10" />
       <node id="1226598870189" at="24,50,25,159" concept="10" />
       <node id="1226598870189" at="28,5,29,104" concept="9" />
       <node id="1226598870189" at="29,104,30,39" concept="4" />
@@ -5574,7 +5574,7 @@
       <node id="8519118779653927089" at="49,0,58,0" concept="13" trace="_quotation_createNode_5z9xz6_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1226598903785" at="38,0,49,0" concept="13" trace="_quotation_createNode_5z9xz6_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1226598870189" at="19,51,19,51" />
-      <scope id="1226598870190" at="21,113,22,116" />
+      <scope id="1226598870190" at="21,113,22,96" />
       <scope id="1226598870189" at="24,50,25,159" />
       <scope id="1226598870189" at="35,27,36,17" />
       <scope id="1226598903785" at="44,31,45,193" />
@@ -6708,7 +6708,7 @@
     </file>
     <file name="supertypesOf_ClassifierType_Iterator_SubtypingRule.java">
       <node id="1237469274783" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1237469942895" at="22,118,23,106" concept="10" />
+      <node id="1237469942895" at="22,118,23,86" concept="10" />
       <node id="1237469274783" at="25,50,26,154" concept="10" />
       <node id="1237469274783" at="29,5,30,104" concept="9" />
       <node id="1237469274783" at="30,104,31,39" concept="4" />
@@ -6748,7 +6748,7 @@
       <node id="8519118779653927102" at="50,0,60,0" concept="13" trace="_quotation_createNode_36aa7y_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1237469942896" at="39,0,50,0" concept="13" trace="_quotation_createNode_36aa7y_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1237469274783" at="20,63,20,63" />
-      <scope id="1237469274784" at="22,118,23,106" />
+      <scope id="1237469274784" at="22,118,23,86" />
       <scope id="1237469274783" at="25,50,26,154" />
       <scope id="1237469274783" at="36,27,37,16" />
       <scope id="1237469942896" at="45,31,46,193" />
@@ -7527,7 +7527,7 @@
     </file>
     <file name="supertypesOf_IEnumerator_SubtypingRule.java">
       <node id="1237496715796" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1237496748592" at="22,120,23,106" concept="10" />
+      <node id="1237496748592" at="22,120,23,86" concept="10" />
       <node id="1237496715796" at="25,50,26,154" concept="10" />
       <node id="1237496715796" at="29,5,30,104" concept="9" />
       <node id="1237496715796" at="30,104,31,39" concept="4" />
@@ -7567,7 +7567,7 @@
       <node id="8519118779653927094" at="50,0,60,0" concept="13" trace="_quotation_createNode_24ecqj_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1237496750947" at="39,0,50,0" concept="13" trace="_quotation_createNode_24ecqj_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1237496715796" at="20,51,20,51" />
-      <scope id="1237496715797" at="22,120,23,106" />
+      <scope id="1237496715797" at="22,120,23,86" />
       <scope id="1237496715796" at="25,50,26,154" />
       <scope id="1237496715796" at="36,27,37,16" />
       <scope id="1237496750947" at="45,31,46,193" />
@@ -9254,7 +9254,7 @@
     </file>
     <file name="SortedMap_comparableTo_sorted_map_SubtypingRule.java">
       <node id="1240252125253" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1240253050698" at="22,119,23,173" concept="10" />
+      <node id="1240253050698" at="22,119,23,133" concept="10" />
       <node id="1240252125253" at="25,50,26,154" concept="10" />
       <node id="1240252125253" at="29,5,30,104" concept="9" />
       <node id="1240252125253" at="30,104,31,39" concept="4" />
@@ -9305,7 +9305,7 @@
       <node id="8519118779653927090" at="55,0,68,0" concept="13" trace="_quotation_createNode_nagdzg_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1240253050699" at="39,0,55,0" concept="13" trace="_quotation_createNode_nagdzg_a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1240252125253" at="20,60,20,60" />
-      <scope id="1240252125254" at="22,119,23,173" />
+      <scope id="1240252125254" at="22,119,23,133" />
       <scope id="1240252125253" at="25,50,26,154" />
       <scope id="1240252125253" at="36,27,37,16" />
       <scope id="1240253050699" at="46,31,47,191" />
@@ -9433,7 +9433,7 @@
     </file>
     <file name="SortedSet_comparableTo_sorted_set_SubtypingRule.java">
       <node id="1240252404452" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1240253019884" at="22,119,23,112" concept="10" />
+      <node id="1240253019884" at="22,119,23,92" concept="10" />
       <node id="1240252404452" at="25,50,26,154" concept="10" />
       <node id="1240252404452" at="29,5,30,104" concept="9" />
       <node id="1240252404452" at="30,104,31,39" concept="4" />
@@ -9473,7 +9473,7 @@
       <node id="8519118779653927103" at="50,0,60,0" concept="13" trace="_quotation_createNode_9omwya_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1240253019885" at="39,0,50,0" concept="13" trace="_quotation_createNode_9omwya_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1240252404452" at="20,60,20,60" />
-      <scope id="1240252404453" at="22,119,23,112" />
+      <scope id="1240252404453" at="22,119,23,92" />
       <scope id="1240252404452" at="25,50,26,154" />
       <scope id="1240252404452" at="36,27,37,16" />
       <scope id="1240253019885" at="45,31,46,193" />
@@ -9957,7 +9957,7 @@
     </file>
     <file name="mappingType_sypertypeOf_IMapping_interface_SubtypingRule.java">
       <node id="1240824401992" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="1240826025185" at="22,116,23,173" concept="10" />
+      <node id="1240826025185" at="22,116,23,133" concept="10" />
       <node id="1240824401992" at="25,50,26,154" concept="10" />
       <node id="1240824401992" at="29,5,30,104" concept="9" />
       <node id="1240824401992" at="30,104,31,39" concept="4" />
@@ -10008,7 +10008,7 @@
       <node id="8519118779653927088" at="55,0,68,0" concept="13" trace="_quotation_createNode_y1o6nk_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1240826025186" at="39,0,55,0" concept="13" trace="_quotation_createNode_y1o6nk_a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1240824401992" at="20,69,20,69" />
-      <scope id="1240824401993" at="22,116,23,173" />
+      <scope id="1240824401993" at="22,116,23,133" />
       <scope id="1240824401992" at="25,50,26,154" />
       <scope id="1240824401992" at="36,27,37,16" />
       <scope id="1240826025186" at="46,31,47,189" />
@@ -12063,7 +12063,7 @@
     </file>
     <file name="supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.java">
       <node id="2976448425532787493" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="2976448425532787504" at="22,124,23,117" concept="10" />
+      <node id="2976448425532787504" at="22,124,23,97" concept="10" />
       <node id="2976448425532787493" at="25,50,26,154" concept="10" />
       <node id="2976448425532787493" at="29,5,30,108" concept="9" />
       <node id="2976448425532787493" at="30,108,31,39" concept="4" />
@@ -12103,7 +12103,7 @@
       <node id="8519118779653927099" at="50,0,60,0" concept="13" trace="_quotation_createNode_4viu4b_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2976448425532787506" at="39,0,50,0" concept="13" trace="_quotation_createNode_4viu4b_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2976448425532787493" at="20,70,20,70" />
-      <scope id="2976448425532787494" at="22,124,23,117" />
+      <scope id="2976448425532787494" at="22,124,23,97" />
       <scope id="2976448425532787493" at="25,50,26,154" />
       <scope id="2976448425532787493" at="36,27,37,16" />
       <scope id="2976448425532787506" at="45,31,46,203" />
@@ -12419,7 +12419,7 @@
     </file>
     <file name="supertypesOf_ClassifierType_Collection_SubtypingRule.java">
       <node id="3070162689085490475" at="19,0,20,0" concept="5" trace="myMatchingPattern" />
-      <node id="3070162689085490485" at="22,112,23,112" concept="10" />
+      <node id="3070162689085490485" at="22,112,23,92" concept="10" />
       <node id="3070162689085490475" at="25,50,26,154" concept="10" />
       <node id="3070162689085490475" at="29,5,30,108" concept="9" />
       <node id="3070162689085490475" at="30,108,31,39" concept="4" />
@@ -12459,7 +12459,7 @@
       <node id="8519118779653927101" at="50,0,60,0" concept="13" trace="_quotation_createNode_832k9i_a0a0a0a0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3070162689085490487" at="39,0,50,0" concept="13" trace="_quotation_createNode_832k9i_a0a2#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3070162689085490475" at="20,65,20,65" />
-      <scope id="3070162689085490476" at="22,112,23,112" />
+      <scope id="3070162689085490476" at="22,112,23,92" />
       <scope id="3070162689085490475" at="25,50,26,154" />
       <scope id="3070162689085490475" at="36,27,37,16" />
       <scope id="3070162689085490487" at="45,31,46,203" />

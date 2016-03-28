@@ -53,7 +53,7 @@ public final class LoopMacro__BehaviorDescriptor extends BaseBHDescriptor {
       GeneratedMatchingPattern pattern_cdqxf8_a0a = new Pattern_fhnb8mu8(_quotation_createNode_cdqxf8_a0a0a0a0a());
       SNode coercedNode_cdqxf8_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x10fef5e42d7L, "sourceNodesQuery"))), pattern_cdqxf8_a0a);
       if (coercedNode_cdqxf8_a0a != null) {
-        return ((SNode) pattern_cdqxf8_a0a.getFieldValue("patternVar_concept"));
+        return pattern_cdqxf8_a0a.getMatchedNode("concept");
       } else {
       }
     }

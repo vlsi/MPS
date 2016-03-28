@@ -42,7 +42,7 @@ public final class CopySrcListMacro__BehaviorDescriptor extends BaseBHDescriptor
       GeneratedMatchingPattern pattern_26ny8p_b0a = new Pattern_fhnb5nnz(_quotation_createNode_26ny8p_a0a0a0b0a());
       SNode coercedNode_26ny8p_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_26ny8p_b0a);
       if (coercedNode_26ny8p_b0a != null) {
-        return ((SNode) pattern_26ny8p_b0a.getFieldValue("patternVar_concept"));
+        return pattern_26ny8p_b0a.getMatchedNode("concept");
       } else {
       }
     }

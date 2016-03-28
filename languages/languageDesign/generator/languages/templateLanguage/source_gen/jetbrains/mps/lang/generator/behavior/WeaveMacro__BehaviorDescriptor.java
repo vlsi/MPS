@@ -42,7 +42,7 @@ public final class WeaveMacro__BehaviorDescriptor extends BaseBHDescriptor {
       GeneratedMatchingPattern pattern_bvvctf_b0a = new Pattern_t95ks2ugq5gn(_quotation_createNode_bvvctf_a0a0a0b0a());
       SNode coercedNode_bvvctf_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_bvvctf_b0a);
       if (coercedNode_bvvctf_b0a != null) {
-        return ((SNode) pattern_bvvctf_b0a.getFieldValue("patternVar_concept"));
+        return pattern_bvvctf_b0a.getMatchedNode("concept");
       } else {
       }
     }

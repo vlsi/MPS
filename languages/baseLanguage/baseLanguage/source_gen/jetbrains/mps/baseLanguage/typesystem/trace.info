@@ -12302,7 +12302,7 @@
     </file>
     <file name="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java">
       <node id="2048470898155992824" at="20,0,21,0" concept="7" trace="myMatchingPattern2" />
-      <node id="5450156852672030723" at="23,97,24,240" concept="13" />
+      <node id="5450156852672030723" at="23,97,24,200" concept="13" />
       <node id="2048470898156175050" at="26,253,27,18" concept="14" />
       <node id="2048470898155992824" at="29,207,30,35" concept="12" />
       <node id="2048470898155992824" at="30,35,31,18" concept="1" />
@@ -12348,7 +12348,7 @@
       <node id="2048470898155992824" at="40,0,48,0" concept="11" trace="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8519118779653926836" at="62,0,71,0" concept="17" trace="_quotation_createNode_w2c88q_a0a0a0a0h#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2048470898155992824" at="21,72,21,72" />
-      <scope id="2048470898156083917" at="23,97,24,240" />
+      <scope id="2048470898156083917" at="23,97,24,200" />
       <scope id="2048470898155993060" at="26,253,27,18" />
       <scope id="2048470898155993060" at="30,35,31,18" />
       <scope id="2048470898155992824" at="34,27,35,16" />
@@ -15802,7 +15802,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/360223900462930831">
     <file name="LowerBoundType_subtypeOf_bound_InequationReplacementRule.java">
       <node id="360223900462930831" at="19,0,20,0" concept="7" trace="myMatchingPattern1" />
-      <node id="360223900462969455" at="22,97,23,111" concept="13" />
+      <node id="360223900462969455" at="22,97,23,91" concept="13" />
       <node id="360223900463006011" at="25,253,26,18" concept="14" />
       <node id="360223900462930831" at="28,207,29,35" concept="12" />
       <node id="360223900462930831" at="29,35,30,18" concept="1" />
@@ -15840,7 +15840,7 @@
       <node id="360223900462930831" at="36,0,44,0" concept="11" trace="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8519118779653926826" at="54,0,63,0" concept="17" trace="_quotation_createNode_ap69b7_a0a0a0a0g#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="360223900462930831" at="20,69,20,69" />
-      <scope id="360223900462947012" at="22,97,23,111" />
+      <scope id="360223900462947012" at="22,97,23,91" />
       <scope id="360223900462930833" at="25,253,26,18" />
       <scope id="360223900462930833" at="29,35,30,18" />
       <scope id="360223900462930831" at="33,27,34,16" />

@@ -177,7 +177,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       SNode coercedNode_hz3823_b0j = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0j);
       if (coercedNode_hz3823_b0j != null) {
         {
-          Iterator<SNode> typeParam_it = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0j.getFieldValue("patternVar_l"))).iterator();
+          Iterator<SNode> typeParam_it = ListSequence.fromList(pattern_hz3823_b0j.getMatchedList("l")).iterator();
           Iterator<SNode> myParam_it = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
           SNode typeParam_var;
           SNode myParam_var;
@@ -221,7 +221,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       SNode coercedNode_hz3823_b0k = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0k);
       if (coercedNode_hz3823_b0k != null) {
         {
-          Iterator<SNode> typeParam_it = ListSequence.fromList(((List<SNode>) pattern_hz3823_b0k.getFieldValue("patternVar_l"))).iterator();
+          Iterator<SNode> typeParam_it = ListSequence.fromList(pattern_hz3823_b0k.getMatchedList("l")).iterator();
           Iterator<SNode> myParam_it = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
           SNode typeParam_var;
           SNode myParam_var;
