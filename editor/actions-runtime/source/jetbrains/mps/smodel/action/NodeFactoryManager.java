@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 public class NodeFactoryManager {
@@ -62,7 +63,7 @@ public class NodeFactoryManager {
   }
 
   public static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(nodeConcept, sampleNode, enclosingNode, model, createConceptsSet());
+    return createNode(nodeConcept, sampleNode, enclosingNode, model, new HashSet<SAbstractConcept>());
   }
 
   private static SNode createNode(@NotNull SAbstractConcept nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model,
@@ -133,21 +134,5 @@ public class NodeFactoryManager {
 
   private static SConcept asSConcept(SNode nodeConcept) {
     return MetaAdapterByDeclaration.getInstanceConcept(nodeConcept);
-  }
-
-  private static Set<SAbstractConcept> createConceptsSet() {
-    return new THashSet<SAbstractConcept>(new ConceptHashingStrategy());
-  }
-
-  private static class ConceptHashingStrategy implements TObjectHashingStrategy<SAbstractConcept> {
-    @Override
-    public int computeHashCode(SAbstractConcept concept) {
-      return MetaIdHelper.getConcept(concept).hashCode();
-    }
-
-    @Override
-    public boolean equals(SAbstractConcept concept1, SAbstractConcept concept2) {
-      return concept1.equals(concept2);
-    }
   }
 }
