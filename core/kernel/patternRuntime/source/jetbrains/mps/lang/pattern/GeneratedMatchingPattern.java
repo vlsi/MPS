@@ -15,9 +15,21 @@
  */
 package jetbrains.mps.lang.pattern;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * This class is of no real use for anyone but typesystem, which needs access to methods like
+ * fillFieldValuesFrom and and hasAntiquotations. performActions might need a distinct interface in dataFlow,
+ * and getFieldValue() use in generator might require generic getMatchedValue() in {@link DefaultMatchingPattern}.
+ *
+ *
+ */
 public class GeneratedMatchingPattern extends DefaultMatchingPattern {
+  /**
+   * Generic access to matched values, don't use unless generic is the only way to go.
+   * Prefer {@link #getMatchedNode(String)}, {@link #getMatchedProperty(String)} and {@link #getMatchedList(String)} instead.
+   */
   public Object getFieldValue(String s) {
     return null;
   }
@@ -27,19 +39,21 @@ public class GeneratedMatchingPattern extends DefaultMatchingPattern {
   }
 
   public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-
+    // FIXME dubious approach: to cache GeneratedMatchingPattern instance and update its values from new matches.
   }
 
   public void performActions(Object o) {
     
   }
 
+  @NotNull
   public SConcept getConcept() {
-    return null;
+    // keep this method as it narrows return type (unless we use SConcept in IMatchingPattern)
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public String getConceptFQName() {
-    return getConcept() == null ? null : getConcept().getQualifiedName();
+    return getConcept().getQualifiedName();
   }
 }

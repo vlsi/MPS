@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,23 @@
  */
 package jetbrains.mps.lang.pattern;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IMatchingPattern {
   public boolean match(SNode nodeToMatch);
   //public Object getFieldValue(String s);
+
+  /**
+   * @deprecated use {@link #getConcept()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public String getConceptFQName();
+
+  // perhaps, shall be SConcept, I don't know exact contract for pattern's concept
+  @NotNull
+  SAbstractConcept getConcept();
 }

@@ -47,14 +47,22 @@ public class CoercionManager {
 
 
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext context) {
-    if (subtype == null) return null;
-    if (pattern.match(subtype)) return subtype;
-    if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
+    if (subtype == null) {
+      return null;
+    }
+    if (pattern.match(subtype)) {
+      return subtype;
+    }
+    if (!CoerceUtil.canBeCoerced(subtype, pattern.getConcept())) {
+      return null;
+    }
     if (CoerceUtil.concept_MeetType.equals(subtype.getConcept())) {
       List<SNode> children = new ArrayList<SNode>(IterableUtil.asCollection(subtype.getChildren(CoerceUtil.link_MeetType_argument)));
       for (SNode child : children) {
         SNode result = coerceSubTypingNew(child, pattern, isWeak, context);
-        if (result != null) return result;
+        if (result != null) {
+          return result;
+        }
       }
       return null;
     }
@@ -155,25 +163,19 @@ public class CoercionManager {
     return null;
   }
 
-  static class CoercionMatcher implements INodeMatcher {
+  static class CoercionMatcher {
     private final IMatchingPattern myPattern;
 
     public CoercionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
     }
 
-    @Override
     public boolean matchesWith(SNode nodeToMatch) {
       return myPattern.match(nodeToMatch);
     }
 
     public IMatchingPattern getMatchingPattern() {
       return myPattern;
-    }
-
-    @Override
-    public String getConceptFQName() {
-      return myPattern.getConceptFQName();
     }
   }
 

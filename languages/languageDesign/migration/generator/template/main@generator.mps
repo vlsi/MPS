@@ -5,7 +5,6 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
@@ -13,7 +12,6 @@
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -26,7 +24,6 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="7jhi" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern(MPS.Core/)" />
-    <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="5jto" ref="r:5dd063a0-3217-40ce-84a4-0ef961abad0b(jetbrains.mps.lang.migration.util)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure()" />
@@ -35,10 +32,10 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -168,7 +165,6 @@
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
-        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -2294,7 +2290,7 @@
         <node concept="3clFbF" id="5AdB13cPRb_" role="3cqZAp">
           <node concept="2OqwBi" id="5AdB13cPRbA" role="3clFbG">
             <node concept="liA8E" id="5AdB13cPRbB" role="2OqNvi">
-              <ref role="37wK5l" to="7jhi:~GeneratedMatchingPattern.getFieldValue(java.lang.String):java.lang.Object" resolve="getFieldValue" />
+              <ref role="37wK5l" to="7jhi:~DefaultMatchingPattern.getMatchedNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getMatchedNode" />
               <node concept="Xl_RD" id="5AdB13cPRbC" role="37wK5m">
                 <property role="Xl_RC" value="" />
                 <node concept="17Uvod" id="5AdB13cPRbD" role="lGtFl">
@@ -2302,15 +2298,16 @@
                   <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                   <node concept="3zFVjK" id="5AdB13cPRbE" role="3zH0cK">
                     <node concept="3clFbS" id="5AdB13cPRbF" role="2VODD2">
-                      <node concept="3clFbF" id="5AdB13cPRbG" role="3cqZAp">
-                        <node concept="2YIFZM" id="5AdB13cPRbH" role="3clFbG">
-                          <ref role="37wK5l" to="tp2b:53CRRPogNU2" resolve="getFieldName" />
-                          <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
-                          <node concept="2OqwBi" id="5AdB13cPRbI" role="37wK5m">
-                            <node concept="30H73N" id="5AdB13cPRbJ" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="5AdB13cPSaN" role="2OqNvi">
+                      <node concept="3clFbF" id="2ihAaD8DvAm" role="3cqZAp">
+                        <node concept="2OqwBi" id="2ihAaD8DwzS" role="3clFbG">
+                          <node concept="2OqwBi" id="2ihAaD8DvMb" role="2Oq$k0">
+                            <node concept="30H73N" id="2ihAaD8DvAg" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2ihAaD8Dw4_" role="2OqNvi">
                               <ref role="3Tt5mk" to="53vh:2MN8ysKPshW" />
                             </node>
+                          </node>
+                          <node concept="3TrcHB" id="2ihAaD8DwY_" role="2OqNvi">
+                            <ref role="3TsBF5" to="tp3t:gzjrwU$" resolve="varName" />
                           </node>
                         </node>
                       </node>
@@ -2321,8 +2318,8 @@
             </node>
             <node concept="3VmV3z" id="5AdB13cPRbL" role="2Oq$k0">
               <property role="3VnrPo" value="pattern" />
-              <node concept="3uibUv" id="5AdB13cPRbM" role="3Vn4Tt">
-                <ref role="3uigEE" to="7jhi:~GeneratedMatchingPattern" resolve="GeneratedMatchingPattern" />
+              <node concept="3uibUv" id="2ihAaD8DyeS" role="3Vn4Tt">
+                <ref role="3uigEE" to="7jhi:~DefaultMatchingPattern" resolve="DefaultMatchingPattern" />
               </node>
             </node>
             <node concept="raruj" id="5AdB13cPRbN" role="lGtFl" />
@@ -2344,44 +2341,38 @@
           <node concept="2YIFZM" id="6oJSkzEcEIn" role="3clFbG">
             <ref role="37wK5l" to="6f4m:6oJSkzEcB7u" resolve="detachNodePatternVariable" />
             <ref role="1Pybhc" to="6f4m:6d7r2Fq7hpH" resolve="MigrationScriptBase" />
-            <node concept="1eOMI4" id="2DGHozYKrg6" role="37wK5m">
-              <node concept="10QFUN" id="2DGHozYKrg7" role="1eOMHV">
-                <node concept="2OqwBi" id="2DGHozYKrfS" role="10QFUP">
-                  <node concept="liA8E" id="2DGHozYKrfT" role="2OqNvi">
-                    <ref role="37wK5l" to="7jhi:~GeneratedMatchingPattern.getFieldValue(java.lang.String):java.lang.Object" resolve="getFieldValue" />
-                    <node concept="Xl_RD" id="2DGHozYKrfU" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                      <node concept="17Uvod" id="2DGHozYKrfV" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="2DGHozYKrfW" role="3zH0cK">
-                          <node concept="3clFbS" id="2DGHozYKrfX" role="2VODD2">
-                            <node concept="3clFbF" id="2DGHozYKrfY" role="3cqZAp">
-                              <node concept="2YIFZM" id="2DGHozYKrfZ" role="3clFbG">
-                                <ref role="37wK5l" to="tp2b:53CRRPogNU2" resolve="getFieldName" />
-                                <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
-                                <node concept="2OqwBi" id="2DGHozYKrg0" role="37wK5m">
-                                  <node concept="30H73N" id="2DGHozYKrg1" role="2Oq$k0" />
-                                  <node concept="3TrEf2" id="2DGHozYKrg2" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="53vh:6xRUAczIf6$" />
-                                  </node>
-                                </node>
+            <node concept="2OqwBi" id="2DGHozYKrfS" role="37wK5m">
+              <node concept="liA8E" id="2DGHozYKrfT" role="2OqNvi">
+                <ref role="37wK5l" to="7jhi:~DefaultMatchingPattern.getMatchedNode(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getMatchedNode" />
+                <node concept="Xl_RD" id="2DGHozYKrfU" role="37wK5m">
+                  <property role="Xl_RC" value="" />
+                  <node concept="17Uvod" id="2DGHozYKrfV" role="lGtFl">
+                    <property role="2qtEX9" value="value" />
+                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                    <node concept="3zFVjK" id="2DGHozYKrfW" role="3zH0cK">
+                      <node concept="3clFbS" id="2DGHozYKrfX" role="2VODD2">
+                        <node concept="3clFbF" id="2ihAaD8DBaE" role="3cqZAp">
+                          <node concept="2OqwBi" id="2ihAaD8DBLf" role="3clFbG">
+                            <node concept="2OqwBi" id="2DGHozYKrg0" role="2Oq$k0">
+                              <node concept="30H73N" id="2DGHozYKrg1" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="2DGHozYKrg2" role="2OqNvi">
+                                <ref role="3Tt5mk" to="53vh:6xRUAczIf6$" />
                               </node>
+                            </node>
+                            <node concept="3TrcHB" id="2ihAaD8DCe$" role="2OqNvi">
+                              <ref role="3TsBF5" to="tp3t:gyDMOuk" resolve="varName" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3VmV3z" id="2DGHozYKrg3" role="2Oq$k0">
-                    <property role="3VnrPo" value="pattern" />
-                    <node concept="3uibUv" id="2DGHozYKrg4" role="3Vn4Tt">
-                      <ref role="3uigEE" to="7jhi:~GeneratedMatchingPattern" resolve="GeneratedMatchingPattern" />
-                    </node>
-                  </node>
                 </node>
-                <node concept="3uibUv" id="2DGHozYKyku" role="10QFUM">
-                  <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
+              <node concept="3VmV3z" id="2DGHozYKrg3" role="2Oq$k0">
+                <property role="3VnrPo" value="pattern" />
+                <node concept="3uibUv" id="2ihAaD8DAXF" role="3Vn4Tt">
+                  <ref role="3uigEE" to="7jhi:~DefaultMatchingPattern" resolve="DefaultMatchingPattern" />
                 </node>
               </node>
             </node>
@@ -2401,52 +2392,41 @@
       <node concept="3Tm1VV" id="18FKXYbL8nr" role="1B3o_S" />
       <node concept="3clFbS" id="18FKXYbL8ns" role="3clF47">
         <node concept="3clFbF" id="18FKXYbL9x4" role="3cqZAp">
-          <node concept="2OqwBi" id="2DGHozYKALc" role="3clFbG">
-            <node concept="1eOMI4" id="2DGHozYKAho" role="2Oq$k0">
-              <node concept="10QFUN" id="2DGHozYKAhp" role="1eOMHV">
-                <node concept="2OqwBi" id="2DGHozYKAha" role="10QFUP">
-                  <node concept="liA8E" id="2DGHozYKAhb" role="2OqNvi">
-                    <ref role="37wK5l" to="7jhi:~GeneratedMatchingPattern.getFieldValue(java.lang.String):java.lang.Object" resolve="getFieldValue" />
-                    <node concept="Xl_RD" id="2DGHozYKAhc" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                      <node concept="17Uvod" id="2DGHozYKAhd" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="2DGHozYKAhe" role="3zH0cK">
-                          <node concept="3clFbS" id="2DGHozYKAhf" role="2VODD2">
-                            <node concept="3clFbF" id="2DGHozYKAhg" role="3cqZAp">
-                              <node concept="2YIFZM" id="2DGHozYKAhh" role="3clFbG">
-                                <ref role="37wK5l" to="tp2b:53CRRPogNU2" resolve="getFieldName" />
-                                <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
-                                <node concept="2OqwBi" id="2DGHozYKAhi" role="37wK5m">
-                                  <node concept="30H73N" id="2DGHozYKAhj" role="2Oq$k0" />
-                                  <node concept="3TrEf2" id="2DGHozYKAhk" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="53vh:2MN8ysKNYhD" />
-                                  </node>
-                                </node>
-                              </node>
+          <node concept="2OqwBi" id="2DGHozYKAha" role="3clFbG">
+            <node concept="liA8E" id="2DGHozYKAhb" role="2OqNvi">
+              <ref role="37wK5l" to="7jhi:~DefaultMatchingPattern.getMatchedProperty(java.lang.String):java.lang.String" resolve="getMatchedProperty" />
+              <node concept="Xl_RD" id="2DGHozYKAhc" role="37wK5m">
+                <property role="Xl_RC" value="" />
+                <node concept="17Uvod" id="2DGHozYKAhd" role="lGtFl">
+                  <property role="2qtEX9" value="value" />
+                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                  <node concept="3zFVjK" id="2DGHozYKAhe" role="3zH0cK">
+                    <node concept="3clFbS" id="2DGHozYKAhf" role="2VODD2">
+                      <node concept="3clFbF" id="2DGHozYKAhg" role="3cqZAp">
+                        <node concept="2OqwBi" id="2ihAaD8DuAa" role="3clFbG">
+                          <node concept="2OqwBi" id="2DGHozYKAhi" role="2Oq$k0">
+                            <node concept="30H73N" id="2DGHozYKAhj" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2DGHozYKAhk" role="2OqNvi">
+                              <ref role="3Tt5mk" to="53vh:2MN8ysKNYhD" />
                             </node>
+                          </node>
+                          <node concept="3TrcHB" id="2ihAaD8DuPP" role="2OqNvi">
+                            <ref role="3TsBF5" to="tp3t:gyDMOum" resolve="varName" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3VmV3z" id="2DGHozYKAhl" role="2Oq$k0">
-                    <property role="3VnrPo" value="pattern" />
-                    <node concept="3uibUv" id="2DGHozYKAhm" role="3Vn4Tt">
-                      <ref role="3uigEE" to="7jhi:~GeneratedMatchingPattern" resolve="GeneratedMatchingPattern" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="2DGHozYKAoc" role="10QFUM">
-                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
-              <node concept="raruj" id="2DGHozYKAx3" role="lGtFl" />
             </node>
-            <node concept="liA8E" id="2DGHozYKB5m" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.toString():java.lang.String" resolve="toString" />
+            <node concept="3VmV3z" id="2DGHozYKAhl" role="2Oq$k0">
+              <property role="3VnrPo" value="pattern" />
+              <node concept="3uibUv" id="2ihAaD8Dt_w" role="3Vn4Tt">
+                <ref role="3uigEE" to="7jhi:~DefaultMatchingPattern" resolve="DefaultMatchingPattern" />
+              </node>
             </node>
+            <node concept="raruj" id="2ihAaD8DvrC" role="lGtFl" />
           </node>
         </node>
       </node>
@@ -2465,47 +2445,38 @@
           <node concept="2YIFZM" id="6oJSkzEcEgw" role="3clFbG">
             <ref role="37wK5l" to="6f4m:6oJSkzEcCI3" resolve="detachListPatternVariable" />
             <ref role="1Pybhc" to="6f4m:6d7r2Fq7hpH" resolve="MigrationScriptBase" />
-            <node concept="1eOMI4" id="2DGHozYKz4H" role="37wK5m">
-              <node concept="10QFUN" id="2DGHozYKz4I" role="1eOMHV">
-                <node concept="2OqwBi" id="2DGHozYKz4v" role="10QFUP">
-                  <node concept="liA8E" id="2DGHozYKz4w" role="2OqNvi">
-                    <ref role="37wK5l" to="7jhi:~GeneratedMatchingPattern.getFieldValue(java.lang.String):java.lang.Object" resolve="getFieldValue" />
-                    <node concept="Xl_RD" id="2DGHozYKz4x" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                      <node concept="17Uvod" id="2DGHozYKz4y" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="2DGHozYKz4z" role="3zH0cK">
-                          <node concept="3clFbS" id="2DGHozYKz4$" role="2VODD2">
-                            <node concept="3clFbF" id="2DGHozYKz4_" role="3cqZAp">
-                              <node concept="2YIFZM" id="2DGHozYKz4A" role="3clFbG">
-                                <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
-                                <ref role="37wK5l" to="tp2b:53CRRPogNU2" resolve="getFieldName" />
-                                <node concept="2OqwBi" id="2DGHozYKz4B" role="37wK5m">
-                                  <node concept="30H73N" id="2DGHozYKz4C" role="2Oq$k0" />
-                                  <node concept="3TrEf2" id="2DGHozYKz4D" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="53vh:5kfvu3HEc1V" />
-                                  </node>
-                                </node>
+            <node concept="2OqwBi" id="2DGHozYKz4v" role="37wK5m">
+              <node concept="liA8E" id="2DGHozYKz4w" role="2OqNvi">
+                <ref role="37wK5l" to="7jhi:~DefaultMatchingPattern.getMatchedList(java.lang.String):java.util.List" resolve="getMatchedList" />
+                <node concept="Xl_RD" id="2DGHozYKz4x" role="37wK5m">
+                  <property role="Xl_RC" value="" />
+                  <node concept="17Uvod" id="2DGHozYKz4y" role="lGtFl">
+                    <property role="2qtEX9" value="value" />
+                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                    <node concept="3zFVjK" id="2DGHozYKz4z" role="3zH0cK">
+                      <node concept="3clFbS" id="2DGHozYKz4$" role="2VODD2">
+                        <node concept="3clFbF" id="2ihAaD8DyAg" role="3cqZAp">
+                          <node concept="2OqwBi" id="2ihAaD8DzjM" role="3clFbG">
+                            <node concept="2OqwBi" id="2DGHozYKz4B" role="2Oq$k0">
+                              <node concept="30H73N" id="2DGHozYKz4C" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="2DGHozYKz4D" role="2OqNvi">
+                                <ref role="3Tt5mk" to="53vh:5kfvu3HEc1V" />
                               </node>
+                            </node>
+                            <node concept="3TrcHB" id="2ihAaD8DzQn" role="2OqNvi">
+                              <ref role="3TsBF5" to="tp3t:gyDMOuk" resolve="varName" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3VmV3z" id="2DGHozYKz4E" role="2Oq$k0">
-                    <property role="3VnrPo" value="pattern" />
-                    <node concept="3uibUv" id="2DGHozYKz4F" role="3Vn4Tt">
-                      <ref role="3uigEE" to="7jhi:~GeneratedMatchingPattern" resolve="GeneratedMatchingPattern" />
-                    </node>
-                  </node>
                 </node>
-                <node concept="3uibUv" id="2DGHozYKzO5" role="10QFUM">
-                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                  <node concept="3uibUv" id="2DGHozYK$lc" role="11_B2D">
-                    <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                  </node>
+              </node>
+              <node concept="3VmV3z" id="2DGHozYKz4E" role="2Oq$k0">
+                <property role="3VnrPo" value="pattern" />
+                <node concept="3uibUv" id="2ihAaD8DylE" role="3Vn4Tt">
+                  <ref role="3uigEE" to="7jhi:~DefaultMatchingPattern" resolve="DefaultMatchingPattern" />
                 </node>
               </node>
             </node>

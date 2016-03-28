@@ -15,16 +15,45 @@
  */
 package jetbrains.mps.lang.pattern;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.List;
+
+/**
+ * Base implementation of {@link IMatchingPattern} with access to matched parts through named variables
+ */
 public class DefaultMatchingPattern implements IMatchingPattern {
   @Override
   public boolean match(SNode nodeToMatch) {
     return true;
   }
 
+  @NotNull
+  @Override
+  public SAbstractConcept getConcept() {
+    throw new UnsupportedOperationException();
+  }
+
   @Override
   public String getConceptFQName() {
+    return null;
+  }
+
+  @Nullable
+  public SNode getMatchedNode(String varName) {
+    return null;
+  }
+
+  @Nullable
+  public String getMatchedProperty(String varName) {
+    return null;
+  }
+
+  @Nullable
+  public List<SNode> getMatchedList(String varName) {
     return null;
   }
 }

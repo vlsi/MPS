@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.pattern;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -75,6 +76,29 @@ public class GeneratedMatcher extends GeneratedMatchingPattern {
     }
   }
 
+  @Nullable
+  @Override
+  public SNode getMatchedNode(String varName) {
+    SNode rv = myValues.getNode(varName);
+    if (rv == null) {
+      rv = myValues.getRefTarget(varName);
+    }
+    return rv;
+  }
+
+  @Nullable
+  @Override
+  public String getMatchedProperty(String varName) {
+    return myValues.getProperty(varName);
+  }
+
+  @Nullable
+  @Override
+  public List<SNode> getMatchedList(String varName) {
+    return myValues.getList(varName);
+  }
+
+  @NotNull
   @Override
   public SConcept getConcept() {
     return myPatternNode.getConcept();

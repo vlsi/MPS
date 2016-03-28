@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -71,9 +72,11 @@ public class TypeSystemReporter {
     report(time, conceptFqName, myIsSubTypeTime);
   }
 
-  public void reportCoerce(SNode subType, String fq, long time) {
-    if (!isEnabled || null == subType) return;
-    String conceptFqName = subType.getConcept().getQualifiedName() + "   " + fq;
+  public void reportCoerce(SNode subType, SAbstractConcept concept, long time) {
+    if (!isEnabled || null == subType) {
+      return;
+    }
+    String conceptFqName = subType.getConcept().getQualifiedName() + "   " + concept.getQualifiedName();
     report(time, conceptFqName, myCoerceTime);
   }
 

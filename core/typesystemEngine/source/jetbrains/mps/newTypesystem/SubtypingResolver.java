@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -25,6 +24,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -195,7 +195,7 @@ public class SubtypingResolver {
     }
     return answer;
   }
-  private static class SupertypeMatcher implements INodeMatcher {
+  private static class SupertypeMatcher {
     private final SNode mySuperType;
     private final Collection<Pair<SNode, SNode>> myMatchingPairs;
 
@@ -204,17 +204,12 @@ public class SubtypingResolver {
       myMatchingPairs = matchingPairs;
     }
 
-    @Override
     public boolean matchesWith(SNode nodeToMatch) {
       return TypesUtil.match(nodeToMatch, mySuperType, myMatchingPairs);
     }
 
     public SNode getSuperType() {
       return mySuperType;
-    }
-    @Override
-    public String getConceptFQName() {
-      return mySuperType.getConcept().getQualifiedName();
     }
   }
 
