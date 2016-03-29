@@ -61,8 +61,7 @@ public class ConceptRegistryUtil {
   public static ConstraintsDescriptor getConstraintsDescriptor(SAbstractConcept concept) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr == null) {
-      SConceptId id = MetaIdHelper.getConcept(concept);
-      return new IllegalConstraintsDescriptor(id, concept.getQualifiedName());
+      return new IllegalConstraintsDescriptor(concept);
     }
 
     if (concept instanceof SAbstractConceptAdapterById) {
