@@ -83,7 +83,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   // SConceptId used as key here (instead of SConcept) because of hasCode() method implementation for sub-classes of SConcept.
   // Currently all implementors return 0 from the hashCode() method.
   // TODO: use SConcept as a key after reimplementing SConcept.hasCode() method properly.
-  private final ConcurrentMap<SConceptId, Set<SAbstractConcept>> myDescendantsCache = new ConcurrentHashMap<SConceptId, Set<SAbstractConcept>>();
+  private final ConcurrentMap<SAbstractConcept, Set<SAbstractConcept>> myDescendantsCache = new ConcurrentHashMap<SAbstractConcept, Set<SAbstractConcept>>();
 
   private void loadConcepts(Collection<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
@@ -117,7 +117,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       //linked guarantees iteration order
       Set<SAbstractConcept> descendants = new LinkedHashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.add(MetaAdapterFactory.getAbstractConcept(concept));
-      myDescendantsCache.put(MetaIdHelper.getConcept(parentConcept), Collections.unmodifiableSet(descendants));
+      myDescendantsCache.put(parentConcept, Collections.unmodifiableSet(descendants));
     }
   }
 
@@ -131,7 +131,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       //linked guarantees iteration order
       Set<SAbstractConcept> descendants = new LinkedHashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.remove(MetaAdapterFactory.getAbstractConcept(concept));
-      myDescendantsCache.put(MetaIdHelper.getConcept(parentConcept), Collections.unmodifiableSet(descendants));
+      myDescendantsCache.put(parentConcept, Collections.unmodifiableSet(descendants));
     }
   }
 
@@ -183,7 +183,7 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   public Set<SAbstractConcept> getDirectDescendants(SAbstractConcept concept) {
     myModuleRepository.getModelAccess().checkReadAccess();
-    Set<SAbstractConcept> result = myDescendantsCache.get(MetaIdHelper.getConcept(concept));
+    Set<SAbstractConcept> result = myDescendantsCache.get(concept);
     return result != null ? result : Collections.<SAbstractConcept>emptySet();
   }
 
