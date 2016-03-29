@@ -14410,7 +14410,7 @@
       <node concept="13uQ2_" id="6eCuTcwOX20" role="39821P">
         <node concept="3_J27D" id="6eCuTcwOX21" role="13uQ07">
           <node concept="3Mxwew" id="6eCuTcwOX22" role="3MwsjC">
-            <property role="3MwjfP" value="xstream-1.4.3.jar" />
+            <property role="3MwjfP" value="xstream-1.4.8.jar" />
           </node>
         </node>
       </node>

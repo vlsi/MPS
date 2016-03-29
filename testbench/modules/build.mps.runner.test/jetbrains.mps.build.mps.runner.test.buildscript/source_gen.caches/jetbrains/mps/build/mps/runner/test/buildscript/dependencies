@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.build.mps.runner.test.buildscript.test1" file="test1.xml" />
-  <dependency className="jetbrains.mps.build.mps.runner.test.buildscript.test2" file="test2.xml" />
-  <dependency className="jetbrains.mps.build.mps.runner.test.buildscript.test3" file="test3.xml" />
-  <dependency className="jetbrains.mps.build.mps.runner.test.buildscript.test4" file="test4.xml" />
-</dependenciesRoot>
+<dependenciesRoot />
 
