@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
@@ -31,6 +32,7 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -57,6 +59,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
 
   public BaseConstraintsDescriptor(SConceptId conceptId) {
     this.myConcept = conceptId;
+    calcInheritance();
+  }
+
+  public BaseConstraintsDescriptor(SAbstractConcept concept) {
+    this.myConcept = MetaIdHelper.getConcept(concept);
     calcInheritance();
   }
 
@@ -321,7 +328,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return getConceptId();
   }
 
-  private static interface InheritanceCalculateParameters {
+  private interface InheritanceCalculateParameters {
     ConstraintsDescriptor getParentCalculatedDescriptor(BaseConstraintsDescriptor parentDescriptor);
 
     boolean hasOwn(ConstraintsDispatchable parentDescriptor);
