@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.Collection;
@@ -45,7 +46,7 @@ public abstract class IntentionAspectBase implements IntentionAspectDescriptor {
 
   @Nullable
   @Override
-  public Collection<IntentionFactory> getIntentions(@NotNull SConcept concept) {
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
     //default implementation to be removed after 3.4
     if (concept instanceof SConceptAdapterById) {
       return getIntentions(((SConceptAdapterById) concept).getId());

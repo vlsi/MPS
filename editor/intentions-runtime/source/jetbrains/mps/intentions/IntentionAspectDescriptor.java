@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.Collection;
@@ -46,7 +47,7 @@ public interface IntentionAspectDescriptor extends LanguageAspectDescriptor {
   Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId);
 
   @Nullable
-  Collection<IntentionFactory> getIntentions(@NotNull SConcept concept);
+  Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept);
 
   /**
    * PROVISIONAL API.

@@ -374,10 +374,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     // there's no special meaning in using depth-first iterator, it's just the only one available at the moment
     // and looks pretty reasonable for the task (super-concepts first, then implemented interfaces)
     for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(node.getConcept()))) {
-      final SConceptId conceptId = MetaIdHelper.getConcept(concept);
       ArrayList<IntentionFactory> intentionsForConcept = new ArrayList<IntentionFactory>();
       for (IntentionAspectDescriptor intentionAspect : activeIntentionAspects) {
-        final Collection<IntentionFactory> intentions = intentionAspect.getIntentions(conceptId);
+        final Collection<IntentionFactory> intentions = intentionAspect.getIntentions(concept);
         if (intentions == null) {
           continue;
         }
