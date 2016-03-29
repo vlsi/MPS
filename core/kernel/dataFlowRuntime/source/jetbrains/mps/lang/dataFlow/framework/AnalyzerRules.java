@@ -71,7 +71,7 @@ public class AnalyzerRules {
     }
     SModelInternal modelInternal = (SModelInternal) model;
     for (SLanguage language : modelInternal.getModelDepsManager().getAllImportedLanguagesIds()) {
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language.getQualifiedName());
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
       if (languageRuntime == null) {
         continue;
       }

@@ -118,7 +118,7 @@ public class NodeFactoryManager {
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
     for (SAbstractConcept ancestor : new DepthFirstConceptIterator(nodeConcept)) {
       ActionAspectDescriptor actionAspectDescriptor = null;
-      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage().getQualifiedName());
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage());
       if (languageRuntime != null) {
         actionAspectDescriptor = languageRuntime.getAspect(ActionAspectDescriptor.class);
       }
