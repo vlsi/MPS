@@ -1192,6 +1192,9 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_4185277353618128134(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
+  public static Object referenceMacro_GetReferent_1170351924342(final ReferenceMacroContext _context) {
+    return SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
+  }
   public static boolean ifMacro_Condition_7517620136073670748(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, 0x240ba2de0c6c0b6eL, "contextHints"))).isNotEmpty();
   }
@@ -2155,8 +2158,8 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_6032662166933451124(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, 0xae2d2fe1c9d6bfeL, "nodeFunction")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
   }
-  public static SNode sourceNodeQuery_7429591467344146543(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
+  public static SNode sourceNodeQuery_8740634663379465684(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL, 0x794cf8ea9e29183bL, "expression"));
   }
   public static SNode sourceNodeQuery_5692353713941632135(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -2472,7 +2475,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3495720260243953966(final TemplateQueryContext _context) {
     return Sequence.fromIterable(ContextAssistantMenuUtil.getDefaultMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a566(INamedContextAssistantItems__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a666(INamedContextAssistantItems__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2483,7 +2486,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_5624877018229882334(final TemplateQueryContext _context) {
     return Sequence.fromIterable(ContextAssistantMenuUtil.getNamedMenusAndContributions(_context.getInputModel())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a666(INamedContextAssistantItems__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
+        return eq_x583g4_a0a0a0a0a0a0a766(INamedContextAssistantItems__BehaviorDescriptor.getApplicableConcept_id5OVd5tVoadE.invoke(it), _context.getNode());
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -2735,10 +2738,10 @@ public class QueriesGenerated {
   private static boolean eq_x583g4_a0a0a0a0a0b0ek(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a566(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a666(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a666(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a766(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

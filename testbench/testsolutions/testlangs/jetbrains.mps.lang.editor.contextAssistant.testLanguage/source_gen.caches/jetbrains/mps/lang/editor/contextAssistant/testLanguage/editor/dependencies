@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.contextAssistant.testLanguage.editor.Child_ContextAssistantMenu" file="Child_ContextAssistantMenu.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.ActionItemMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.ConditionalMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.contextAssistant.IncludeMenuMenuPart" />

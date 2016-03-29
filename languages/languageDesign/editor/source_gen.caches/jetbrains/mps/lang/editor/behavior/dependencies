@@ -388,6 +388,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextAssistantMenuReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextAssistantMenu_Default__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextAssistantMenu__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextExpression_ContextAssistantCondition__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.DefaultBaseLine__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.DrawBorderStyleClassItem__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.DrawBracketsStyleClassItem__BehaviorDescriptor" />
@@ -398,6 +399,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ForegroundColorStyleClassItem__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ForegroundNullColorStyleClassItem__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.INamedContextAssistantItems__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.INodeProvider__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember__BehaviorDescriptor" />
@@ -3405,10 +3407,69 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextExpression_ContextAssistantCondition_Behavior" file="ContextExpression_ContextAssistantCondition_Behavior.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextExpression_ContextAssistantCondition_BehaviorDescriptor" file="ContextExpression_ContextAssistantCondition_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IEditorContextProvider_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.INodeProvider_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextExpression_ContextAssistantCondition__BehaviorDescriptor" file="ContextExpression_ContextAssistantCondition__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.INamedContextAssistantItems__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.ContextHintsSpecification_BehaviorDescriptor" file="ContextHintsSpecification_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextVariable_BehaviorDescriptor" file="ContextVariable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextVariable_EditorContext_BehaviorDescriptor" file="ContextVariable_EditorContext_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextVariable_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.ContextVariable_Node_BehaviorDescriptor" file="ContextVariable_Node_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextVariable_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_Behavior" file="DefaultBaseLine_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -3949,6 +4010,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IEditorContextProvider_BehaviorDescriptor" file="IEditorContextProvider_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.INamedContextAssistantItems_Behavior" file="INamedContextAssistantItems_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
@@ -3959,6 +4023,35 @@
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.INamedContextAssistantItems__BehaviorDescriptor" file="INamedContextAssistantItems__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.INodeProvider_Behavior" file="INodeProvider_Behavior.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.INodeProvider_BehaviorDescriptor" file="INodeProvider_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.INodeProvider__BehaviorDescriptor" file="INodeProvider__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
