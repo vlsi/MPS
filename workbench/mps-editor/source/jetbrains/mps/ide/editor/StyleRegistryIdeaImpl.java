@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.editor.SyntaxHighlighterColors;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsListener;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
@@ -185,8 +184,6 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("NOT_USED_ELEMENT", "NOT_USED_ELEMENT_ATTRIBUTES");
       addIdeaMappingsExt("TODO", "TODO_DEFAULT_ATTRIBUTES");
 
-      //HACK: find out right way to init Syntax Highlighters
-      Object o = SyntaxHighlighterColors.KEYWORD;
       addIdeaMappingsExt("DOC_TAG", DefaultLanguageHighlighterColors.DOC_COMMENT_TAG.toString());
       addIdeaMappingsExt("DOC_COMMENT", DefaultLanguageHighlighterColors.DOC_COMMENT.toString());
       addIdeaMappingsExt("KEYWORD", DefaultLanguageHighlighterColors.KEYWORD.toString());
