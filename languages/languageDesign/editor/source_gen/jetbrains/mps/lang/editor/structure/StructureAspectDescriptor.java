@@ -138,7 +138,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuContribution = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.INamedContextAssistantItems", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L)).childDescriptors(new ConceptDescriptorBuilder.Link(6718020819489956031L, "menuReference", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L), false, false, false)).children(new String[]{"menuReference"}, new boolean[]{false}).alias("Context Assistant Menu Contribution", "").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_Action = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).childDescriptors(new ConceptDescriptorBuilder.Link(5692353713941573325L, "textFunction", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L), false, false, false), new ConceptDescriptorBuilder.Link(1638911550608610281L, "executeFunction", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL), false, false, false)).children(new String[]{"textFunction", "executeFunction"}, new boolean[]{false, false}).alias("action", "").create();
-  /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_Conditional = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).childDescriptors(new ConceptDescriptorBuilder.Link(7429591467341004877L, "condition", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d34751cL), false, false, false), new ConceptDescriptorBuilder.Link(7429591467341004872L, "parts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL), true, true, false)).children(new String[]{"condition", "parts"}, new boolean[]{false, true}).alias("if", "conditional menu part").create();
+  /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_Conditional = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).childDescriptors(new ConceptDescriptorBuilder.Link(7429591467341004877L, "condition", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL), false, false, false), new ConceptDescriptorBuilder.Link(7429591467341004872L, "parts", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL), true, true, false)).children(new String[]{"condition", "parts"}, new boolean[]{false, true}).alias("group", "conditional group").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_IncludeMenu = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_IncludeMenu", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).childDescriptors(new ConceptDescriptorBuilder.Link(784421273959492606L, "nodeFunction", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL), true, false, false), new ConceptDescriptorBuilder.Link(6718020819487784677L, "menuReference", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L), true, false, false)).children(new String[]{"nodeFunction", "menuReference"}, new boolean[]{false, false}).alias("include", "include another menu").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_SubMenu = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_SubMenu", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).childDescriptors(new ConceptDescriptorBuilder.Link(5692353713941631155L, "textFunction", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L), false, false, false), new ConceptDescriptorBuilder.Link(4056398722183895554L, "items", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL), true, true, false)).children(new String[]{"textFunction", "items"}, new boolean[]{false, true}).alias("submenu", "").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuPart_Super = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Super", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7541587144d24773L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL)).alias("superconcept menu", "superconcept menu").create();
@@ -147,7 +147,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenuReference_Named = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(6718020819487620874L, "menu", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L), false)).references("menu").alias("named menu", "").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenu_Default = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenu").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenu").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL)).alias("Context Assistant Default Menu", "").create();
   /*package*/ final ConceptDescriptor myConceptContextAssistantMenu_Named = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L)).super_("jetbrains.mps.lang.editor.structure.ContextAssistantMenu").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL)).parents("jetbrains.mps.lang.editor.structure.ContextAssistantMenu", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL)).alias("Context Assistant Named Menu", "").create();
+  /*package*/ final ConceptDescriptor myConceptContextExpression_ContextAssistantCondition = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextExpression_ContextAssistantCondition", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IEditorContextProvider", "jetbrains.mps.lang.editor.structure.INodeProvider").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L)).childDescriptors(new ConceptDescriptorBuilder.Link(8740634663378819131L, "expression", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptContextHintsSpecification = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextHintsSpecification", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x40953da3e594b7a8L)).interface_().parents("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).create();
+  /*package*/ final ConceptDescriptor myConceptContextVariable = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextVariable", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptContextVariable_EditorContext = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d5L)).super_("jetbrains.mps.lang.editor.structure.ContextVariable").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L)).parents("jetbrains.mps.lang.editor.structure.ContextVariable").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L)).alias("editorContext", "").create();
+  /*package*/ final ConceptDescriptor myConceptContextVariable_Node = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextVariable_Node", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f4L)).super_("jetbrains.mps.lang.editor.structure.ContextVariable").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L)).parents("jetbrains.mps.lang.editor.structure.ContextVariable").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L)).alias("node", "node").create();
   /*package*/ final ConceptDescriptor myConceptDefaultBaseLine = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DefaultBaseLine", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L)).super_("jetbrains.mps.lang.editor.structure.StyleClassItem").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).parents("jetbrains.mps.lang.editor.structure.StyleClassItem").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7620205565664606477L, "baseline")).properties("baseline").alias("default-baseline", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptDefaultCaretPositionStyleClassItem = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac437b468L)).super_("jetbrains.mps.lang.editor.structure.StyleClassItem").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).parents("jetbrains.mps.lang.editor.structure.StyleClassItem").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1214472762473L, "position")).properties("position").alias("default-caret-position", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptDominatesRecord = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DominatesRecord", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x22926e62b7d495a0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ImplementationPart").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x12509ddfaa7c0557L)).childDescriptors(new ConceptDescriptorBuilder.Link(2491174914159330058L, "dominatesStyleClassList", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1cb5b6d8L), true, false, false)).children(new String[]{"dominatesStyleClassList"}, new boolean[]{false}).alias("dominates over", "").create();
@@ -168,7 +172,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptHorizontalAlign = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.HorizontalAlign", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fc74ebe6cL)).super_("jetbrains.mps.lang.editor.structure.StyleClassItem").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).parents("jetbrains.mps.lang.editor.structure.StyleClassItem").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1235999920262L, "align")).properties("align").alias("horizontal-align", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptHorizontalGapStyleClassItem = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f459b72d3L)).super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").super_(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L)).parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L)).alias("horizontal-gap", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptICellStyle = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ICellStyle", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L)).interface_().parents("jetbrains.mps.lang.editor.structure.IStyleContainer").parentIds(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1381004262292426837L, "parentStyleClass", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L), true)).references("parentStyleClass").create();
+  /*package*/ final ConceptDescriptor myConceptIEditorContextProvider = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IEditorContextProvider", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d4L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptINamedContextAssistantItems = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.INamedContextAssistantItems", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(1638911550608572412L, "items", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL), true, true, false)).children(new String[]{"items"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptINodeProvider = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.INodeProvider", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIQueryFunction_Color = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IQueryFunction_Color", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIStyle = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyle", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1f5847b8L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptIStyleContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleContainer", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L)).interface_().childDescriptors(new ConceptDescriptorBuilder.Link(1219418656006L, "styleItem", MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L), true, true, false)).children(new String[]{"styleItem"}, new boolean[]{true}).create();
@@ -297,13 +303,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractCellSelector, myConceptAbstractComponent, myConceptAbstractPaddingStyleClassItem, myConceptAbstractStyledTextOperation, myConceptAppendTextOperation, myConceptApplyStyleClass, myConceptApplyStyleClassCondition, myConceptAttributeStyleClassItem, myConceptAutoDeletableStyleClassItem, myConceptBackgroundColorStyleClassItem, myConceptBaseEditorComponent, myConceptBaseLineCell, myConceptBooleanStyleSheetItem, myConceptBracketColorStyleClassItem, myConceptCaretPositionParameter, myConceptCellActionMapDeclaration, myConceptCellActionMapItem, myConceptCellActionMap_CanExecuteFunction, myConceptCellActionMap_ExecuteFunction, myConceptCellActionMap_FunctionParm_selectedNode, myConceptCellIdReferenceSelector, myConceptCellKeyMapDeclaration, myConceptCellKeyMapItem, myConceptCellKeyMapKeystroke, myConceptCellKeyMap_AbstractFunction, myConceptCellKeyMap_ExecuteFunction, myConceptCellKeyMap_FunctionParm_selectedNode, myConceptCellKeyMap_FunctionParm_selectedNodes, myConceptCellKeyMap_IsApplicableFunction, myConceptCellLayout, myConceptCellLayout_Flow, myConceptCellLayout_Horizontal, myConceptCellLayout_Indent, myConceptCellLayout_Indent_Old, myConceptCellLayout_Superscript, myConceptCellLayout_Table, myConceptCellLayout_Vertical, myConceptCellLayout_VerticalGrid, myConceptCellMenuComponent, myConceptCellMenuComponentFeature, myConceptCellMenuComponentFeature_Link, myConceptCellMenuComponentFeature_Property, myConceptCellMenuDescriptor, myConceptCellMenuPart_Abstract, myConceptCellMenuPart_AbstractGroup, myConceptCellMenuPart_AbstractGroup_DescriptionText, myConceptCellMenuPart_AbstractGroup_MatchingText, myConceptCellMenuPart_AbstractGroup_Query, myConceptCellMenuPart_AbstractGroup_parameterObject, myConceptCellMenuPart_Abstract_editedNode, myConceptCellMenuPart_ApplySideTransforms, myConceptCellMenuPart_CellMenuComponent, myConceptCellMenuPart_Generic_Group, myConceptCellMenuPart_Generic_Group_Handler, myConceptCellMenuPart_Generic_Item, myConceptCellMenuPart_Generic_Item_Handler, myConceptCellMenuPart_PropertyPostfixHints, myConceptCellMenuPart_PropertyPostfixHints_GetPostfixes, myConceptCellMenuPart_PropertyValues, myConceptCellMenuPart_PropertyValues_GetValues, myConceptCellMenuPart_ReferentPrimary, myConceptCellMenuPart_ReplaceChildPrimary, myConceptCellMenuPart_ReplaceChild_CustomChildConcept, myConceptCellMenuPart_ReplaceChild_CustomChildConcept_Query, myConceptCellMenuPart_ReplaceChild_Group, myConceptCellMenuPart_ReplaceChild_Group_Create, myConceptCellMenuPart_ReplaceChild_Group_Query, myConceptCellMenuPart_ReplaceChild_Item, myConceptCellMenuPart_ReplaceChild_Item_Create, myConceptCellMenuPart_ReplaceChild_currentChild, myConceptCellMenuPart_ReplaceChild_defaultConceptOfChild, myConceptCellMenuPart_ReplaceNode_CustomNodeConcept, myConceptCellMenuPart_ReplaceNode_Group, myConceptCellMenuPart_ReplaceNode_Group_Create, myConceptCellModel_AbstractLabel, myConceptCellModel_Alternation, myConceptCellModel_AttributedLinkCell, myConceptCellModel_AttributedNodeCell, myConceptCellModel_AttributedPropertyCell, myConceptCellModel_Block, myConceptCellModel_BlockEnd, myConceptCellModel_BlockStart, myConceptCellModel_Collection, myConceptCellModel_Component, myConceptCellModel_Constant, myConceptCellModel_ContextAssistant, myConceptCellModel_Custom, myConceptCellModel_Empty, myConceptCellModel_Error, myConceptCellModel_Image, myConceptCellModel_Indent, myConceptCellModel_JComponent, myConceptCellModel_ListWithRole, myConceptCellModel_ModelAccess, myConceptCellModel_NextEditor, myConceptCellModel_NonEmptyProperty, myConceptCellModel_Property, myConceptCellModel_ReadOnlyModelAccessor, myConceptCellModel_RefCell, myConceptCellModel_RefNode, myConceptCellModel_RefNodeList, myConceptCellModel_ReferencePresentation, myConceptCellModel_TransactionalProperty, myConceptCellModel_URL, myConceptCellModel_WithRole, myConceptColorStyleClassItem, myConceptConceptEditorContextHints, myConceptConceptEditorDeclaration, myConceptConceptEditorHintDeclaration, myConceptConceptEditorHintDeclarationReference, myConceptConceptEditorHintDeclarationReferenceExpression, myConceptConceptFunctionParameter_StyledText, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_editorContext, myConceptConceptFunctionParameter_nextNode, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_oldText, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_prevNode, myConceptConceptFunctionParameter_selectedNode, myConceptConceptFunctionParameter_text, myConceptContextAssistantMenu, myConceptContextAssistantMenuContribution, myConceptContextAssistantMenuPart, myConceptContextAssistantMenuPart_Action, myConceptContextAssistantMenuPart_Conditional, myConceptContextAssistantMenuPart_IncludeMenu, myConceptContextAssistantMenuPart_SubMenu, myConceptContextAssistantMenuPart_Super, myConceptContextAssistantMenuReference, myConceptContextAssistantMenuReference_Default, myConceptContextAssistantMenuReference_Named, myConceptContextAssistantMenu_Default, myConceptContextAssistantMenu_Named, myConceptContextHintsSpecification, myConceptDefaultBaseLine, myConceptDefaultCaretPositionStyleClassItem, myConceptDominatesRecord, myConceptDrawBorderStyleClassItem, myConceptDrawBracketsStyleClassItem, myConceptEditableStyleClassItem, myConceptEditorCellId, myConceptEditorCellModel, myConceptEditorComponentDeclaration, myConceptEditorComponentDeclarationReference, myConceptExplicitHintsSpecification, myConceptFirstPositionAllowedStyleClassItem, myConceptFloatStyleClassItem, myConceptFontSizeStyleClassItem, myConceptFontStyleStyleClassItem, myConceptForegroundColorStyleClassItem, myConceptForegroundNullColorStyleClassItem, myConceptHorizontalAlign, myConceptHorizontalGapStyleClassItem, myConceptICellStyle, myConceptINamedContextAssistantItems, myConceptIQueryFunction_Color, myConceptIStyle, myConceptIStyleContainer, myConceptIStyleSheetItem, myConceptIStyleSheetMember, myConceptIdSelector, myConceptImagePathProvider, myConceptIndentLayoutIndentAnchorStyleClassItem, myConceptIndentLayoutIndentStyleClassItem, myConceptIndentLayoutNewLineChildrenStyleClassItem, myConceptIndentLayoutNewLineStyleClassItem, myConceptIndentLayoutNoWrapClassItem, myConceptIndentLayoutOnNewLineStyleClassItem, myConceptIndentLayoutWrapAnchorStyleClassItem, myConceptInlineEditorComponent, myConceptInlineStyleDeclaration, myConceptLastPositionAllowedStyleClassItem, myConceptLayoutConstraintStyleClassItem, myConceptMatchingLabelStyleClassItem, myConceptMaxWidthStyleClassItem, myConceptModelAccessor, myConceptNavigatableNodeStyleClassItem, myConceptNavigatableReferenceStyleClassItem, myConceptPaddingBottomStyleClassItem, myConceptPaddingLeftStyleClassItem, myConceptPaddingRightStyleClassItem, myConceptPaddingTopStyleClassItem, myConceptParametersInformationQuery, myConceptParametersInformationStyleClassItem, myConceptPositionChildrenStyleClassItem, myConceptPositionStyleClassItem, myConceptPreDefinedStyleClassItem, myConceptPredefinedSelector, myConceptPropertyDeclarationCellSelector, myConceptPropertyExpressionCellSelector, myConceptPunctuationLeftStyleClassItem, myConceptPunctuationRightStyleClassItem, myConceptQueryFunction_AttributeStyleParameter, myConceptQueryFunction_Boolean, myConceptQueryFunction_CellProvider, myConceptQueryFunction_Color, myConceptQueryFunction_ColorComposit, myConceptQueryFunction_ContextAssistant, myConceptQueryFunction_ContextAssistantCondition, myConceptQueryFunction_ContextAssistantExecuteFunction, myConceptQueryFunction_ContextAssistantTargetNode, myConceptQueryFunction_ContextAssistantText, myConceptQueryFunction_ContextAssistant_node, myConceptQueryFunction_FontStyle, myConceptQueryFunction_ImagePath, myConceptQueryFunction_Integer, myConceptQueryFunction_IsMethodCurrent, myConceptQueryFunction_JComponent, myConceptQueryFunction_MethodPresentation, myConceptQueryFunction_ModelAccess_Getter, myConceptQueryFunction_ModelAccess_Setter, myConceptQueryFunction_ModelAccess_Validator, myConceptQueryFunction_ModuleAndPath, myConceptQueryFunction_NodeCondition, myConceptQueryFunction_NodeFactory, myConceptQueryFunction_NodeListFilter, myConceptQueryFunction_ParametersList, myConceptQueryFunction_SNode, myConceptQueryFunction_SeparatorText, myConceptQueryFunction_String, myConceptQueryFunction_Style, myConceptQueryFunction_StyleParameter, myConceptQueryFunction_Underlined, myConceptQueryHintsSpecification, myConceptRGBColor, myConceptReadOnlyModelAccessor, myConceptReadOnlyStyleClassItem, myConceptRightTransformAnchorTagWrapper, myConceptScriptKindClassItem, myConceptSelectInEditorOperation, myConceptSelectParameter, myConceptSelectPositionParameter, myConceptSelectableStyleSheetItem, myConceptSetBoldOperation, myConceptSideTransformAnchorTagStyleClassItem, myConceptStrikeOutStyleSheet, myConceptStubCellModel_Alternation, myConceptStubCellModel_Block, myConceptStubCellModel_Collection, myConceptStubCellModel_Component, myConceptStubCellModel_Constant, myConceptStubCellModel_ContextAssistant, myConceptStubCellModel_Custom, myConceptStubCellModel_Error, myConceptStubCellModel_Image, myConceptStubCellModel_JComponent, myConceptStubCellModel_ModelAccess, myConceptStubCellModel_NonEmptyProperty, myConceptStubCellModel_Property, myConceptStubCellModel_ReadOnlyModelAccessor, myConceptStubCellModel_RefCell, myConceptStubCellModel_RefNode, myConceptStubCellModel_RefNodeList, myConceptStubCellModel_ReferencePresentation, myConceptStubCellModel_Table, myConceptStubCellModel_TransactionalProperty, myConceptStubCellModel_URL, myConceptStubEditorCellModel, myConceptStyleAttributeDeclaration, myConceptStyleAttributeReferenceExpression, myConceptStyleClass, myConceptStyleClassItem, myConceptStyleClassReference, myConceptStyleClassReferenceList, myConceptStyleKey, myConceptStyleKeyPack, myConceptStyleReference, myConceptStyleSheet, myConceptStyleSheetClass, myConceptStyleSheetClassReference, myConceptStyledTextType, myConceptSynchronizeable, myConceptTableComponentStyleClassItem, myConceptTextBackgroundColorSelectedStyleClassItem, myConceptTextBackgroundColorStyleClassItem, myConceptTransactionPropertyHandler_newValue, myConceptTransactionPropertyHandler_oldValue, myConceptTransactionalPropertyHandler, myConceptUnapplyStyle, myConceptUnderlinedStyleClassItem);
+    return Arrays.asList(myConceptAbstractCellSelector, myConceptAbstractComponent, myConceptAbstractPaddingStyleClassItem, myConceptAbstractStyledTextOperation, myConceptAppendTextOperation, myConceptApplyStyleClass, myConceptApplyStyleClassCondition, myConceptAttributeStyleClassItem, myConceptAutoDeletableStyleClassItem, myConceptBackgroundColorStyleClassItem, myConceptBaseEditorComponent, myConceptBaseLineCell, myConceptBooleanStyleSheetItem, myConceptBracketColorStyleClassItem, myConceptCaretPositionParameter, myConceptCellActionMapDeclaration, myConceptCellActionMapItem, myConceptCellActionMap_CanExecuteFunction, myConceptCellActionMap_ExecuteFunction, myConceptCellActionMap_FunctionParm_selectedNode, myConceptCellIdReferenceSelector, myConceptCellKeyMapDeclaration, myConceptCellKeyMapItem, myConceptCellKeyMapKeystroke, myConceptCellKeyMap_AbstractFunction, myConceptCellKeyMap_ExecuteFunction, myConceptCellKeyMap_FunctionParm_selectedNode, myConceptCellKeyMap_FunctionParm_selectedNodes, myConceptCellKeyMap_IsApplicableFunction, myConceptCellLayout, myConceptCellLayout_Flow, myConceptCellLayout_Horizontal, myConceptCellLayout_Indent, myConceptCellLayout_Indent_Old, myConceptCellLayout_Superscript, myConceptCellLayout_Table, myConceptCellLayout_Vertical, myConceptCellLayout_VerticalGrid, myConceptCellMenuComponent, myConceptCellMenuComponentFeature, myConceptCellMenuComponentFeature_Link, myConceptCellMenuComponentFeature_Property, myConceptCellMenuDescriptor, myConceptCellMenuPart_Abstract, myConceptCellMenuPart_AbstractGroup, myConceptCellMenuPart_AbstractGroup_DescriptionText, myConceptCellMenuPart_AbstractGroup_MatchingText, myConceptCellMenuPart_AbstractGroup_Query, myConceptCellMenuPart_AbstractGroup_parameterObject, myConceptCellMenuPart_Abstract_editedNode, myConceptCellMenuPart_ApplySideTransforms, myConceptCellMenuPart_CellMenuComponent, myConceptCellMenuPart_Generic_Group, myConceptCellMenuPart_Generic_Group_Handler, myConceptCellMenuPart_Generic_Item, myConceptCellMenuPart_Generic_Item_Handler, myConceptCellMenuPart_PropertyPostfixHints, myConceptCellMenuPart_PropertyPostfixHints_GetPostfixes, myConceptCellMenuPart_PropertyValues, myConceptCellMenuPart_PropertyValues_GetValues, myConceptCellMenuPart_ReferentPrimary, myConceptCellMenuPart_ReplaceChildPrimary, myConceptCellMenuPart_ReplaceChild_CustomChildConcept, myConceptCellMenuPart_ReplaceChild_CustomChildConcept_Query, myConceptCellMenuPart_ReplaceChild_Group, myConceptCellMenuPart_ReplaceChild_Group_Create, myConceptCellMenuPart_ReplaceChild_Group_Query, myConceptCellMenuPart_ReplaceChild_Item, myConceptCellMenuPart_ReplaceChild_Item_Create, myConceptCellMenuPart_ReplaceChild_currentChild, myConceptCellMenuPart_ReplaceChild_defaultConceptOfChild, myConceptCellMenuPart_ReplaceNode_CustomNodeConcept, myConceptCellMenuPart_ReplaceNode_Group, myConceptCellMenuPart_ReplaceNode_Group_Create, myConceptCellModel_AbstractLabel, myConceptCellModel_Alternation, myConceptCellModel_AttributedLinkCell, myConceptCellModel_AttributedNodeCell, myConceptCellModel_AttributedPropertyCell, myConceptCellModel_Block, myConceptCellModel_BlockEnd, myConceptCellModel_BlockStart, myConceptCellModel_Collection, myConceptCellModel_Component, myConceptCellModel_Constant, myConceptCellModel_ContextAssistant, myConceptCellModel_Custom, myConceptCellModel_Empty, myConceptCellModel_Error, myConceptCellModel_Image, myConceptCellModel_Indent, myConceptCellModel_JComponent, myConceptCellModel_ListWithRole, myConceptCellModel_ModelAccess, myConceptCellModel_NextEditor, myConceptCellModel_NonEmptyProperty, myConceptCellModel_Property, myConceptCellModel_ReadOnlyModelAccessor, myConceptCellModel_RefCell, myConceptCellModel_RefNode, myConceptCellModel_RefNodeList, myConceptCellModel_ReferencePresentation, myConceptCellModel_TransactionalProperty, myConceptCellModel_URL, myConceptCellModel_WithRole, myConceptColorStyleClassItem, myConceptConceptEditorContextHints, myConceptConceptEditorDeclaration, myConceptConceptEditorHintDeclaration, myConceptConceptEditorHintDeclarationReference, myConceptConceptEditorHintDeclarationReferenceExpression, myConceptConceptFunctionParameter_StyledText, myConceptConceptFunctionParameter_childNode, myConceptConceptFunctionParameter_editorContext, myConceptConceptFunctionParameter_nextNode, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_oldText, myConceptConceptFunctionParameter_parameterObject, myConceptConceptFunctionParameter_prevNode, myConceptConceptFunctionParameter_selectedNode, myConceptConceptFunctionParameter_text, myConceptContextAssistantMenu, myConceptContextAssistantMenuContribution, myConceptContextAssistantMenuPart, myConceptContextAssistantMenuPart_Action, myConceptContextAssistantMenuPart_Conditional, myConceptContextAssistantMenuPart_IncludeMenu, myConceptContextAssistantMenuPart_SubMenu, myConceptContextAssistantMenuPart_Super, myConceptContextAssistantMenuReference, myConceptContextAssistantMenuReference_Default, myConceptContextAssistantMenuReference_Named, myConceptContextAssistantMenu_Default, myConceptContextAssistantMenu_Named, myConceptContextExpression_ContextAssistantCondition, myConceptContextHintsSpecification, myConceptContextVariable, myConceptContextVariable_EditorContext, myConceptContextVariable_Node, myConceptDefaultBaseLine, myConceptDefaultCaretPositionStyleClassItem, myConceptDominatesRecord, myConceptDrawBorderStyleClassItem, myConceptDrawBracketsStyleClassItem, myConceptEditableStyleClassItem, myConceptEditorCellId, myConceptEditorCellModel, myConceptEditorComponentDeclaration, myConceptEditorComponentDeclarationReference, myConceptExplicitHintsSpecification, myConceptFirstPositionAllowedStyleClassItem, myConceptFloatStyleClassItem, myConceptFontSizeStyleClassItem, myConceptFontStyleStyleClassItem, myConceptForegroundColorStyleClassItem, myConceptForegroundNullColorStyleClassItem, myConceptHorizontalAlign, myConceptHorizontalGapStyleClassItem, myConceptICellStyle, myConceptIEditorContextProvider, myConceptINamedContextAssistantItems, myConceptINodeProvider, myConceptIQueryFunction_Color, myConceptIStyle, myConceptIStyleContainer, myConceptIStyleSheetItem, myConceptIStyleSheetMember, myConceptIdSelector, myConceptImagePathProvider, myConceptIndentLayoutIndentAnchorStyleClassItem, myConceptIndentLayoutIndentStyleClassItem, myConceptIndentLayoutNewLineChildrenStyleClassItem, myConceptIndentLayoutNewLineStyleClassItem, myConceptIndentLayoutNoWrapClassItem, myConceptIndentLayoutOnNewLineStyleClassItem, myConceptIndentLayoutWrapAnchorStyleClassItem, myConceptInlineEditorComponent, myConceptInlineStyleDeclaration, myConceptLastPositionAllowedStyleClassItem, myConceptLayoutConstraintStyleClassItem, myConceptMatchingLabelStyleClassItem, myConceptMaxWidthStyleClassItem, myConceptModelAccessor, myConceptNavigatableNodeStyleClassItem, myConceptNavigatableReferenceStyleClassItem, myConceptPaddingBottomStyleClassItem, myConceptPaddingLeftStyleClassItem, myConceptPaddingRightStyleClassItem, myConceptPaddingTopStyleClassItem, myConceptParametersInformationQuery, myConceptParametersInformationStyleClassItem, myConceptPositionChildrenStyleClassItem, myConceptPositionStyleClassItem, myConceptPreDefinedStyleClassItem, myConceptPredefinedSelector, myConceptPropertyDeclarationCellSelector, myConceptPropertyExpressionCellSelector, myConceptPunctuationLeftStyleClassItem, myConceptPunctuationRightStyleClassItem, myConceptQueryFunction_AttributeStyleParameter, myConceptQueryFunction_Boolean, myConceptQueryFunction_CellProvider, myConceptQueryFunction_Color, myConceptQueryFunction_ColorComposit, myConceptQueryFunction_ContextAssistant, myConceptQueryFunction_ContextAssistantCondition, myConceptQueryFunction_ContextAssistantExecuteFunction, myConceptQueryFunction_ContextAssistantTargetNode, myConceptQueryFunction_ContextAssistantText, myConceptQueryFunction_ContextAssistant_node, myConceptQueryFunction_FontStyle, myConceptQueryFunction_ImagePath, myConceptQueryFunction_Integer, myConceptQueryFunction_IsMethodCurrent, myConceptQueryFunction_JComponent, myConceptQueryFunction_MethodPresentation, myConceptQueryFunction_ModelAccess_Getter, myConceptQueryFunction_ModelAccess_Setter, myConceptQueryFunction_ModelAccess_Validator, myConceptQueryFunction_ModuleAndPath, myConceptQueryFunction_NodeCondition, myConceptQueryFunction_NodeFactory, myConceptQueryFunction_NodeListFilter, myConceptQueryFunction_ParametersList, myConceptQueryFunction_SNode, myConceptQueryFunction_SeparatorText, myConceptQueryFunction_String, myConceptQueryFunction_Style, myConceptQueryFunction_StyleParameter, myConceptQueryFunction_Underlined, myConceptQueryHintsSpecification, myConceptRGBColor, myConceptReadOnlyModelAccessor, myConceptReadOnlyStyleClassItem, myConceptRightTransformAnchorTagWrapper, myConceptScriptKindClassItem, myConceptSelectInEditorOperation, myConceptSelectParameter, myConceptSelectPositionParameter, myConceptSelectableStyleSheetItem, myConceptSetBoldOperation, myConceptSideTransformAnchorTagStyleClassItem, myConceptStrikeOutStyleSheet, myConceptStubCellModel_Alternation, myConceptStubCellModel_Block, myConceptStubCellModel_Collection, myConceptStubCellModel_Component, myConceptStubCellModel_Constant, myConceptStubCellModel_ContextAssistant, myConceptStubCellModel_Custom, myConceptStubCellModel_Error, myConceptStubCellModel_Image, myConceptStubCellModel_JComponent, myConceptStubCellModel_ModelAccess, myConceptStubCellModel_NonEmptyProperty, myConceptStubCellModel_Property, myConceptStubCellModel_ReadOnlyModelAccessor, myConceptStubCellModel_RefCell, myConceptStubCellModel_RefNode, myConceptStubCellModel_RefNodeList, myConceptStubCellModel_ReferencePresentation, myConceptStubCellModel_Table, myConceptStubCellModel_TransactionalProperty, myConceptStubCellModel_URL, myConceptStubEditorCellModel, myConceptStyleAttributeDeclaration, myConceptStyleAttributeReferenceExpression, myConceptStyleClass, myConceptStyleClassItem, myConceptStyleClassReference, myConceptStyleClassReferenceList, myConceptStyleKey, myConceptStyleKeyPack, myConceptStyleReference, myConceptStyleSheet, myConceptStyleSheetClass, myConceptStyleSheetClassReference, myConceptStyledTextType, myConceptSynchronizeable, myConceptTableComponentStyleClassItem, myConceptTextBackgroundColorSelectedStyleClassItem, myConceptTextBackgroundColorStyleClassItem, myConceptTransactionPropertyHandler_newValue, myConceptTransactionPropertyHandler_oldValue, myConceptTransactionalPropertyHandler, myConceptUnapplyStyle, myConceptUnderlinedStyleClassItem);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0zk, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fl, conceptFqName)) {
       case 0:
         return myConceptAbstractCellSelector;
       case 1:
@@ -573,302 +579,314 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 133:
         return myConceptContextAssistantMenu_Named;
       case 134:
-        return myConceptContextHintsSpecification;
+        return myConceptContextExpression_ContextAssistantCondition;
       case 135:
-        return myConceptDefaultBaseLine;
+        return myConceptContextHintsSpecification;
       case 136:
-        return myConceptDefaultCaretPositionStyleClassItem;
+        return myConceptContextVariable;
       case 137:
-        return myConceptDominatesRecord;
+        return myConceptContextVariable_EditorContext;
       case 138:
-        return myConceptDrawBorderStyleClassItem;
+        return myConceptContextVariable_Node;
       case 139:
-        return myConceptDrawBracketsStyleClassItem;
+        return myConceptDefaultBaseLine;
       case 140:
-        return myConceptEditableStyleClassItem;
+        return myConceptDefaultCaretPositionStyleClassItem;
       case 141:
-        return myConceptEditorCellId;
+        return myConceptDominatesRecord;
       case 142:
-        return myConceptEditorCellModel;
+        return myConceptDrawBorderStyleClassItem;
       case 143:
-        return myConceptEditorComponentDeclaration;
+        return myConceptDrawBracketsStyleClassItem;
       case 144:
-        return myConceptEditorComponentDeclarationReference;
+        return myConceptEditableStyleClassItem;
       case 145:
-        return myConceptExplicitHintsSpecification;
+        return myConceptEditorCellId;
       case 146:
-        return myConceptFirstPositionAllowedStyleClassItem;
+        return myConceptEditorCellModel;
       case 147:
-        return myConceptFloatStyleClassItem;
+        return myConceptEditorComponentDeclaration;
       case 148:
-        return myConceptFontSizeStyleClassItem;
+        return myConceptEditorComponentDeclarationReference;
       case 149:
-        return myConceptFontStyleStyleClassItem;
+        return myConceptExplicitHintsSpecification;
       case 150:
-        return myConceptForegroundColorStyleClassItem;
+        return myConceptFirstPositionAllowedStyleClassItem;
       case 151:
-        return myConceptForegroundNullColorStyleClassItem;
+        return myConceptFloatStyleClassItem;
       case 152:
-        return myConceptHorizontalAlign;
+        return myConceptFontSizeStyleClassItem;
       case 153:
-        return myConceptHorizontalGapStyleClassItem;
+        return myConceptFontStyleStyleClassItem;
       case 154:
-        return myConceptICellStyle;
+        return myConceptForegroundColorStyleClassItem;
       case 155:
-        return myConceptINamedContextAssistantItems;
+        return myConceptForegroundNullColorStyleClassItem;
       case 156:
-        return myConceptIQueryFunction_Color;
+        return myConceptHorizontalAlign;
       case 157:
-        return myConceptIStyle;
+        return myConceptHorizontalGapStyleClassItem;
       case 158:
-        return myConceptIStyleContainer;
+        return myConceptICellStyle;
       case 159:
-        return myConceptIStyleSheetItem;
+        return myConceptIEditorContextProvider;
       case 160:
-        return myConceptIStyleSheetMember;
+        return myConceptINamedContextAssistantItems;
       case 161:
-        return myConceptIdSelector;
+        return myConceptINodeProvider;
       case 162:
-        return myConceptImagePathProvider;
+        return myConceptIQueryFunction_Color;
       case 163:
-        return myConceptIndentLayoutIndentAnchorStyleClassItem;
+        return myConceptIStyle;
       case 164:
-        return myConceptIndentLayoutIndentStyleClassItem;
+        return myConceptIStyleContainer;
       case 165:
-        return myConceptIndentLayoutNewLineChildrenStyleClassItem;
+        return myConceptIStyleSheetItem;
       case 166:
-        return myConceptIndentLayoutNewLineStyleClassItem;
+        return myConceptIStyleSheetMember;
       case 167:
-        return myConceptIndentLayoutNoWrapClassItem;
+        return myConceptIdSelector;
       case 168:
-        return myConceptIndentLayoutOnNewLineStyleClassItem;
+        return myConceptImagePathProvider;
       case 169:
-        return myConceptIndentLayoutWrapAnchorStyleClassItem;
+        return myConceptIndentLayoutIndentAnchorStyleClassItem;
       case 170:
-        return myConceptInlineEditorComponent;
+        return myConceptIndentLayoutIndentStyleClassItem;
       case 171:
-        return myConceptInlineStyleDeclaration;
+        return myConceptIndentLayoutNewLineChildrenStyleClassItem;
       case 172:
-        return myConceptLastPositionAllowedStyleClassItem;
+        return myConceptIndentLayoutNewLineStyleClassItem;
       case 173:
-        return myConceptLayoutConstraintStyleClassItem;
+        return myConceptIndentLayoutNoWrapClassItem;
       case 174:
-        return myConceptMatchingLabelStyleClassItem;
+        return myConceptIndentLayoutOnNewLineStyleClassItem;
       case 175:
-        return myConceptMaxWidthStyleClassItem;
+        return myConceptIndentLayoutWrapAnchorStyleClassItem;
       case 176:
-        return myConceptModelAccessor;
+        return myConceptInlineEditorComponent;
       case 177:
-        return myConceptNavigatableNodeStyleClassItem;
+        return myConceptInlineStyleDeclaration;
       case 178:
-        return myConceptNavigatableReferenceStyleClassItem;
+        return myConceptLastPositionAllowedStyleClassItem;
       case 179:
-        return myConceptPaddingBottomStyleClassItem;
+        return myConceptLayoutConstraintStyleClassItem;
       case 180:
-        return myConceptPaddingLeftStyleClassItem;
+        return myConceptMatchingLabelStyleClassItem;
       case 181:
-        return myConceptPaddingRightStyleClassItem;
+        return myConceptMaxWidthStyleClassItem;
       case 182:
-        return myConceptPaddingTopStyleClassItem;
+        return myConceptModelAccessor;
       case 183:
-        return myConceptParametersInformationQuery;
+        return myConceptNavigatableNodeStyleClassItem;
       case 184:
-        return myConceptParametersInformationStyleClassItem;
+        return myConceptNavigatableReferenceStyleClassItem;
       case 185:
-        return myConceptPositionChildrenStyleClassItem;
+        return myConceptPaddingBottomStyleClassItem;
       case 186:
-        return myConceptPositionStyleClassItem;
+        return myConceptPaddingLeftStyleClassItem;
       case 187:
-        return myConceptPreDefinedStyleClassItem;
+        return myConceptPaddingRightStyleClassItem;
       case 188:
-        return myConceptPredefinedSelector;
+        return myConceptPaddingTopStyleClassItem;
       case 189:
-        return myConceptPropertyDeclarationCellSelector;
+        return myConceptParametersInformationQuery;
       case 190:
-        return myConceptPropertyExpressionCellSelector;
+        return myConceptParametersInformationStyleClassItem;
       case 191:
-        return myConceptPunctuationLeftStyleClassItem;
+        return myConceptPositionChildrenStyleClassItem;
       case 192:
-        return myConceptPunctuationRightStyleClassItem;
+        return myConceptPositionStyleClassItem;
       case 193:
-        return myConceptQueryFunction_AttributeStyleParameter;
+        return myConceptPreDefinedStyleClassItem;
       case 194:
-        return myConceptQueryFunction_Boolean;
+        return myConceptPredefinedSelector;
       case 195:
-        return myConceptQueryFunction_CellProvider;
+        return myConceptPropertyDeclarationCellSelector;
       case 196:
-        return myConceptQueryFunction_Color;
+        return myConceptPropertyExpressionCellSelector;
       case 197:
-        return myConceptQueryFunction_ColorComposit;
+        return myConceptPunctuationLeftStyleClassItem;
       case 198:
-        return myConceptQueryFunction_ContextAssistant;
+        return myConceptPunctuationRightStyleClassItem;
       case 199:
-        return myConceptQueryFunction_ContextAssistantCondition;
+        return myConceptQueryFunction_AttributeStyleParameter;
       case 200:
-        return myConceptQueryFunction_ContextAssistantExecuteFunction;
+        return myConceptQueryFunction_Boolean;
       case 201:
-        return myConceptQueryFunction_ContextAssistantTargetNode;
+        return myConceptQueryFunction_CellProvider;
       case 202:
-        return myConceptQueryFunction_ContextAssistantText;
+        return myConceptQueryFunction_Color;
       case 203:
-        return myConceptQueryFunction_ContextAssistant_node;
+        return myConceptQueryFunction_ColorComposit;
       case 204:
-        return myConceptQueryFunction_FontStyle;
+        return myConceptQueryFunction_ContextAssistant;
       case 205:
-        return myConceptQueryFunction_ImagePath;
+        return myConceptQueryFunction_ContextAssistantCondition;
       case 206:
-        return myConceptQueryFunction_Integer;
+        return myConceptQueryFunction_ContextAssistantExecuteFunction;
       case 207:
-        return myConceptQueryFunction_IsMethodCurrent;
+        return myConceptQueryFunction_ContextAssistantTargetNode;
       case 208:
-        return myConceptQueryFunction_JComponent;
+        return myConceptQueryFunction_ContextAssistantText;
       case 209:
-        return myConceptQueryFunction_MethodPresentation;
+        return myConceptQueryFunction_ContextAssistant_node;
       case 210:
-        return myConceptQueryFunction_ModelAccess_Getter;
+        return myConceptQueryFunction_FontStyle;
       case 211:
-        return myConceptQueryFunction_ModelAccess_Setter;
+        return myConceptQueryFunction_ImagePath;
       case 212:
-        return myConceptQueryFunction_ModelAccess_Validator;
+        return myConceptQueryFunction_Integer;
       case 213:
-        return myConceptQueryFunction_ModuleAndPath;
+        return myConceptQueryFunction_IsMethodCurrent;
       case 214:
-        return myConceptQueryFunction_NodeCondition;
+        return myConceptQueryFunction_JComponent;
       case 215:
-        return myConceptQueryFunction_NodeFactory;
+        return myConceptQueryFunction_MethodPresentation;
       case 216:
-        return myConceptQueryFunction_NodeListFilter;
+        return myConceptQueryFunction_ModelAccess_Getter;
       case 217:
-        return myConceptQueryFunction_ParametersList;
+        return myConceptQueryFunction_ModelAccess_Setter;
       case 218:
-        return myConceptQueryFunction_SNode;
+        return myConceptQueryFunction_ModelAccess_Validator;
       case 219:
-        return myConceptQueryFunction_SeparatorText;
+        return myConceptQueryFunction_ModuleAndPath;
       case 220:
-        return myConceptQueryFunction_String;
+        return myConceptQueryFunction_NodeCondition;
       case 221:
-        return myConceptQueryFunction_Style;
+        return myConceptQueryFunction_NodeFactory;
       case 222:
-        return myConceptQueryFunction_StyleParameter;
+        return myConceptQueryFunction_NodeListFilter;
       case 223:
-        return myConceptQueryFunction_Underlined;
+        return myConceptQueryFunction_ParametersList;
       case 224:
-        return myConceptQueryHintsSpecification;
+        return myConceptQueryFunction_SNode;
       case 225:
-        return myConceptRGBColor;
+        return myConceptQueryFunction_SeparatorText;
       case 226:
-        return myConceptReadOnlyModelAccessor;
+        return myConceptQueryFunction_String;
       case 227:
-        return myConceptReadOnlyStyleClassItem;
+        return myConceptQueryFunction_Style;
       case 228:
-        return myConceptRightTransformAnchorTagWrapper;
+        return myConceptQueryFunction_StyleParameter;
       case 229:
-        return myConceptScriptKindClassItem;
+        return myConceptQueryFunction_Underlined;
       case 230:
-        return myConceptSelectInEditorOperation;
+        return myConceptQueryHintsSpecification;
       case 231:
-        return myConceptSelectParameter;
+        return myConceptRGBColor;
       case 232:
-        return myConceptSelectPositionParameter;
+        return myConceptReadOnlyModelAccessor;
       case 233:
-        return myConceptSelectableStyleSheetItem;
+        return myConceptReadOnlyStyleClassItem;
       case 234:
-        return myConceptSetBoldOperation;
+        return myConceptRightTransformAnchorTagWrapper;
       case 235:
-        return myConceptSideTransformAnchorTagStyleClassItem;
+        return myConceptScriptKindClassItem;
       case 236:
-        return myConceptStrikeOutStyleSheet;
+        return myConceptSelectInEditorOperation;
       case 237:
-        return myConceptStubCellModel_Alternation;
+        return myConceptSelectParameter;
       case 238:
-        return myConceptStubCellModel_Block;
+        return myConceptSelectPositionParameter;
       case 239:
-        return myConceptStubCellModel_Collection;
+        return myConceptSelectableStyleSheetItem;
       case 240:
-        return myConceptStubCellModel_Component;
+        return myConceptSetBoldOperation;
       case 241:
-        return myConceptStubCellModel_Constant;
+        return myConceptSideTransformAnchorTagStyleClassItem;
       case 242:
-        return myConceptStubCellModel_ContextAssistant;
+        return myConceptStrikeOutStyleSheet;
       case 243:
-        return myConceptStubCellModel_Custom;
+        return myConceptStubCellModel_Alternation;
       case 244:
-        return myConceptStubCellModel_Error;
+        return myConceptStubCellModel_Block;
       case 245:
-        return myConceptStubCellModel_Image;
+        return myConceptStubCellModel_Collection;
       case 246:
-        return myConceptStubCellModel_JComponent;
+        return myConceptStubCellModel_Component;
       case 247:
-        return myConceptStubCellModel_ModelAccess;
+        return myConceptStubCellModel_Constant;
       case 248:
-        return myConceptStubCellModel_NonEmptyProperty;
+        return myConceptStubCellModel_ContextAssistant;
       case 249:
-        return myConceptStubCellModel_Property;
+        return myConceptStubCellModel_Custom;
       case 250:
-        return myConceptStubCellModel_ReadOnlyModelAccessor;
+        return myConceptStubCellModel_Error;
       case 251:
-        return myConceptStubCellModel_RefCell;
+        return myConceptStubCellModel_Image;
       case 252:
-        return myConceptStubCellModel_RefNode;
+        return myConceptStubCellModel_JComponent;
       case 253:
-        return myConceptStubCellModel_RefNodeList;
+        return myConceptStubCellModel_ModelAccess;
       case 254:
-        return myConceptStubCellModel_ReferencePresentation;
+        return myConceptStubCellModel_NonEmptyProperty;
       case 255:
-        return myConceptStubCellModel_Table;
+        return myConceptStubCellModel_Property;
       case 256:
-        return myConceptStubCellModel_TransactionalProperty;
+        return myConceptStubCellModel_ReadOnlyModelAccessor;
       case 257:
-        return myConceptStubCellModel_URL;
+        return myConceptStubCellModel_RefCell;
       case 258:
-        return myConceptStubEditorCellModel;
+        return myConceptStubCellModel_RefNode;
       case 259:
-        return myConceptStyleAttributeDeclaration;
+        return myConceptStubCellModel_RefNodeList;
       case 260:
-        return myConceptStyleAttributeReferenceExpression;
+        return myConceptStubCellModel_ReferencePresentation;
       case 261:
-        return myConceptStyleClass;
+        return myConceptStubCellModel_Table;
       case 262:
-        return myConceptStyleClassItem;
+        return myConceptStubCellModel_TransactionalProperty;
       case 263:
-        return myConceptStyleClassReference;
+        return myConceptStubCellModel_URL;
       case 264:
-        return myConceptStyleClassReferenceList;
+        return myConceptStubEditorCellModel;
       case 265:
-        return myConceptStyleKey;
+        return myConceptStyleAttributeDeclaration;
       case 266:
-        return myConceptStyleKeyPack;
+        return myConceptStyleAttributeReferenceExpression;
       case 267:
-        return myConceptStyleReference;
+        return myConceptStyleClass;
       case 268:
-        return myConceptStyleSheet;
+        return myConceptStyleClassItem;
       case 269:
-        return myConceptStyleSheetClass;
+        return myConceptStyleClassReference;
       case 270:
-        return myConceptStyleSheetClassReference;
+        return myConceptStyleClassReferenceList;
       case 271:
-        return myConceptStyledTextType;
+        return myConceptStyleKey;
       case 272:
-        return myConceptSynchronizeable;
+        return myConceptStyleKeyPack;
       case 273:
-        return myConceptTableComponentStyleClassItem;
+        return myConceptStyleReference;
       case 274:
-        return myConceptTextBackgroundColorSelectedStyleClassItem;
+        return myConceptStyleSheet;
       case 275:
-        return myConceptTextBackgroundColorStyleClassItem;
+        return myConceptStyleSheetClass;
       case 276:
-        return myConceptTransactionPropertyHandler_newValue;
+        return myConceptStyleSheetClassReference;
       case 277:
-        return myConceptTransactionPropertyHandler_oldValue;
+        return myConceptStyledTextType;
       case 278:
-        return myConceptTransactionalPropertyHandler;
+        return myConceptSynchronizeable;
       case 279:
-        return myConceptUnapplyStyle;
+        return myConceptTableComponentStyleClassItem;
       case 280:
+        return myConceptTextBackgroundColorSelectedStyleClassItem;
+      case 281:
+        return myConceptTextBackgroundColorStyleClassItem;
+      case 282:
+        return myConceptTransactionPropertyHandler_newValue;
+      case 283:
+        return myConceptTransactionPropertyHandler_oldValue;
+      case 284:
+        return myConceptTransactionalPropertyHandler;
+      case 285:
+        return myConceptUnapplyStyle;
+      case 286:
         return myConceptUnderlinedStyleClassItem;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0zk = new String[]{"jetbrains.mps.lang.editor.structure.AbstractCellSelector", "jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.ApplyStyleClass", "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NextEditor", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_IncludeMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_SubMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Super", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DominatesRecord", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellId", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.ICellStyle", "jetbrains.mps.lang.editor.structure.INamedContextAssistantItems", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetItem", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IdSelector", "jetbrains.mps.lang.editor.structure.ImagePathProvider", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PredefinedSelector", "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistant", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantExecuteFunction", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantTargetNode", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantText", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistant_node", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Style", "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.QueryHintsSpecification", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "jetbrains.mps.lang.editor.structure.SelectParameter", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StubCellModel_Alternation", "jetbrains.mps.lang.editor.structure.StubCellModel_Block", "jetbrains.mps.lang.editor.structure.StubCellModel_Collection", "jetbrains.mps.lang.editor.structure.StubCellModel_Component", "jetbrains.mps.lang.editor.structure.StubCellModel_Constant", "jetbrains.mps.lang.editor.structure.StubCellModel_ContextAssistant", "jetbrains.mps.lang.editor.structure.StubCellModel_Custom", "jetbrains.mps.lang.editor.structure.StubCellModel_Error", "jetbrains.mps.lang.editor.structure.StubCellModel_Image", "jetbrains.mps.lang.editor.structure.StubCellModel_JComponent", "jetbrains.mps.lang.editor.structure.StubCellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.StubCellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.StubCellModel_Property", "jetbrains.mps.lang.editor.structure.StubCellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.StubCellModel_RefCell", "jetbrains.mps.lang.editor.structure.StubCellModel_RefNode", "jetbrains.mps.lang.editor.structure.StubCellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.StubCellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.StubCellModel_Table", "jetbrains.mps.lang.editor.structure.StubCellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.StubCellModel_URL", "jetbrains.mps.lang.editor.structure.StubEditorCellModel", "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration", "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression", "jetbrains.mps.lang.editor.structure.StyleClass", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleClassReference", "jetbrains.mps.lang.editor.structure.StyleClassReferenceList", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleReference", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnapplyStyle", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+  private static String[] stringSwitchCases_1htk8d_a0a0fl = new String[]{"jetbrains.mps.lang.editor.structure.AbstractCellSelector", "jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.ApplyStyleClass", "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NextEditor", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Action", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Conditional", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_IncludeMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_SubMenu", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuPart_Super", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default", "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default", "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Named", "jetbrains.mps.lang.editor.structure.ContextExpression_ContextAssistantCondition", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification", "jetbrains.mps.lang.editor.structure.ContextVariable", "jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext", "jetbrains.mps.lang.editor.structure.ContextVariable_Node", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DominatesRecord", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellId", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.ICellStyle", "jetbrains.mps.lang.editor.structure.IEditorContextProvider", "jetbrains.mps.lang.editor.structure.INamedContextAssistantItems", "jetbrains.mps.lang.editor.structure.INodeProvider", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetItem", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IdSelector", "jetbrains.mps.lang.editor.structure.ImagePathProvider", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PredefinedSelector", "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistant", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantExecuteFunction", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantTargetNode", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantText", "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistant_node", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Style", "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.QueryHintsSpecification", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "jetbrains.mps.lang.editor.structure.SelectParameter", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StubCellModel_Alternation", "jetbrains.mps.lang.editor.structure.StubCellModel_Block", "jetbrains.mps.lang.editor.structure.StubCellModel_Collection", "jetbrains.mps.lang.editor.structure.StubCellModel_Component", "jetbrains.mps.lang.editor.structure.StubCellModel_Constant", "jetbrains.mps.lang.editor.structure.StubCellModel_ContextAssistant", "jetbrains.mps.lang.editor.structure.StubCellModel_Custom", "jetbrains.mps.lang.editor.structure.StubCellModel_Error", "jetbrains.mps.lang.editor.structure.StubCellModel_Image", "jetbrains.mps.lang.editor.structure.StubCellModel_JComponent", "jetbrains.mps.lang.editor.structure.StubCellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.StubCellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.StubCellModel_Property", "jetbrains.mps.lang.editor.structure.StubCellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.StubCellModel_RefCell", "jetbrains.mps.lang.editor.structure.StubCellModel_RefNode", "jetbrains.mps.lang.editor.structure.StubCellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.StubCellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.StubCellModel_Table", "jetbrains.mps.lang.editor.structure.StubCellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.StubCellModel_URL", "jetbrains.mps.lang.editor.structure.StubEditorCellModel", "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration", "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression", "jetbrains.mps.lang.editor.structure.StyleClass", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleClassReference", "jetbrains.mps.lang.editor.structure.StyleClassReferenceList", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleReference", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnapplyStyle", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
 }
