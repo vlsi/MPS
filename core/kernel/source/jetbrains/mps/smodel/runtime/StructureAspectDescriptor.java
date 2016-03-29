@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 import java.util.Collection;
 
@@ -31,19 +33,11 @@ import java.util.Collection;
  * @see jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor
  */
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
-  /**
-   *
-   * @param fqName qualified name of the concept to load, not-<code>null</code>
-   * @return <code>null</code> if no concept with the specified name is known to this descriptor
-   */
-  ConceptDescriptor getDescriptor(String fqName);
-
-  /**
-   *
-   * @param id concept identity, not <code>null</code>
-   * @return <code>null</code> if no concept with specified id is known to this descriptor
-   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   ConceptDescriptor getDescriptor(SConceptId id);
+
+  ConceptDescriptor getDescriptor(SAbstractConcept concept);
 
   Collection<ConceptDescriptor> getDescriptors();
 }

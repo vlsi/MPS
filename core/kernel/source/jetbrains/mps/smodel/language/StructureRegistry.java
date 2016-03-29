@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -79,7 +80,7 @@ public class StructureRegistry implements CoreAspectRegistry {
             return new IllegalConceptDescriptor(fqName);
           }
 
-          descriptor = structureAspectDescriptor.getDescriptor(fqName);
+          descriptor = ((BaseStructureAspectDescriptor) structureAspectDescriptor).getDescriptor(fqName);
         }
       } catch (Throwable e) {
         LOG.error("Exception while structure descriptor creating for the concept " + fqName, e);
