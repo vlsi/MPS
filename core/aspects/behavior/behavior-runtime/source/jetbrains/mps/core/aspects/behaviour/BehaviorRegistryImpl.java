@@ -78,23 +78,27 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
 
     try {
       try {
-        if ((concept instanceof SAbstractConceptAdapter)) {
-          LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
-          BehaviorAspectDescriptor behaviorAspect = null;
-          if (languageRuntime == null) {
-            LOG.warn("No language for: " + concept + ", while looking for the behavior descriptor.");
-          } else {
-            behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
-          }
-          if (behaviorAspect == null) {
+        if (!(concept instanceof SAbstractConceptAdapter)) {
+          throw new IllegalArgumentException();
+        }
+
+        LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
+        BehaviorAspectDescriptor behaviorAspect = null;
+        if (languageRuntime == null) {
+          LOG.warn("No language for: " + concept + ", while looking for the behavior descriptor.");
+        } else {
+          behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
+        }
+        if (behaviorAspect == null) {
+          descriptor = new EmptyBHDescriptor(this, concept);
+        } else if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
+          descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(concept);
+          if (descriptor == null) {
+            // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
             descriptor = new EmptyBHDescriptor(this, concept);
-          } else if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
-            descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(concept);
-            if (descriptor == null) {
-              // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
-              descriptor = new EmptyBHDescriptor(this, concept);
-            }
           }
+        } else {
+          throw new IllegalArgumentException();
         }
         if (descriptor instanceof BaseBHDescriptor) {
           ((BaseBHDescriptor) descriptor).init();
