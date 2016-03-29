@@ -159,135 +159,137 @@
     <file name="WatchingRunNotifier.java">
       <node id="5294483648489412209" at="23,0,24,0" concept="11" trace="DEFAULT_WATCH_LOGGER_LEVEL" />
       <node id="235515237953883247" at="24,0,25,0" concept="11" trace="EXECUTION_LIMIT_FAILED_PATTERN" />
-      <node id="235515237953892703" at="25,0,26,0" concept="11" trace="WARN_PATTERN" />
-      <node id="235515237953560656" at="27,0,28,0" concept="3" trace="myWatchLevel" />
-      <node id="5294483648489412244" at="29,0,30,0" concept="3" trace="myErrorCachingStream" />
-      <node id="5294483648489412248" at="31,0,32,0" concept="3" trace="myCachingAppender" />
-      <node id="5294483648489412252" at="32,0,33,0" concept="3" trace="myTestsToIgnore" />
-      <node id="5294483648489412261" at="33,0,34,0" concept="3" trace="myThreadWatcher" />
-      <node id="235515237953557008" at="35,52,36,53" concept="14" />
-      <node id="235515237953552825" at="39,94,40,20" concept="13" />
-      <node id="235515237953562495" at="40,20,41,30" concept="2" />
-      <node id="8119336008937542072" at="41,30,42,95" concept="2" />
-      <node id="235515237953873451" at="45,69,46,52" concept="7" />
-      <node id="235515237953874573" at="46,52,47,47" concept="2" />
-      <node id="235515237953875854" at="48,25,49,31" concept="2" />
-      <node id="235515237953939319" at="50,5,51,18" concept="8" />
-      <node id="5294483648489412355" at="58,86,59,39" concept="2" />
-      <node id="5294483648489412360" at="60,9,61,30" concept="2" />
-      <node id="5294483648489412368" at="62,27,63,57" concept="2" />
-      <node id="5294483648489412384" at="69,9,70,29" concept="2" />
-      <node id="5294483648489412392" at="71,27,72,57" concept="2" />
-      <node id="5294483648489412399" at="73,5,74,40" concept="2" />
-      <node id="5294483648489412409" at="78,48,79,64" concept="2" />
-      <node id="5294483648489412417" at="79,64,80,35" concept="2" />
-      <node id="5294483648489412427" at="84,57,85,64" concept="2" />
-      <node id="5294483648489412435" at="85,64,86,44" concept="2" />
-      <node id="5294483648489412445" at="90,56,91,51" concept="2" />
-      <node id="5294483648489412452" at="91,51,92,39" concept="2" />
-      <node id="8119336008937775508" at="95,45,96,35" concept="2" />
-      <node id="5294483648489412478" at="96,35,97,58" concept="2" />
-      <node id="5294483648489412484" at="97,58,98,58" concept="2" />
-      <node id="5294483648489412491" at="98,58,99,74" concept="7" />
-      <node id="5294483648489412506" at="101,46,102,65" concept="2" />
-      <node id="5294483648489412530" at="104,5,105,46" concept="2" />
-      <node id="5294483648489412543" at="108,44,109,44" concept="2" />
-      <node id="8119336008937773475" at="109,44,110,33" concept="2" />
-      <node id="5294483648489412549" at="110,33,111,35" concept="2" />
-      <node id="5294483648489412552" at="111,35,112,61" concept="2" />
-      <node id="5294483648489412565" at="112,61,113,24" concept="7" />
-      <node id="5294483648489412588" at="115,112,116,126" concept="2" />
-      <node id="8119336008937778198" at="118,5,119,33" concept="2" />
-      <node id="5294483648489412610" at="120,23,121,34" concept="2" />
-      <node id="5294483648489412271" at="54,0,56,0" concept="6" trace="dispose#()V" />
-      <node id="5294483648489412265" at="35,0,38,0" concept="1" trace="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
-      <node id="235515237953937114" at="47,47,50,5" concept="5" />
-      <node id="5294483648489412503" at="100,30,103,7" concept="4" />
-      <node id="235515237953599013" at="114,47,117,7" concept="5" />
-      <node id="5294483648489412604" at="119,33,122,5" concept="5" />
-      <node id="235515237953552820" at="39,0,44,0" concept="1" trace="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;Lorg/apache/log4j/Level;Z)V" />
-      <node id="5294483648489412373" at="59,39,64,5" concept="16" />
-      <node id="5294483648489412397" at="68,57,73,5" concept="16" />
-      <node id="5294483648489412404" at="77,0,82,0" concept="6" trace="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
-      <node id="5294483648489412422" at="83,0,88,0" concept="6" trace="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
-      <node id="5294483648489412440" at="89,0,94,0" concept="6" trace="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
-      <node id="5294483648489412497" at="99,74,104,5" concept="5" />
-      <node id="5294483648489412568" at="113,24,118,5" concept="5" />
-      <node id="235515237953871208" at="45,0,53,0" concept="6" trace="getPatternsToIgnore#(Z)Ljava/util/List;" />
-      <node id="5294483648489412349" at="57,0,66,0" concept="6" trace="fireTestStarted#(Lorg/junit/runner/Description;)V" />
-      <node id="5294483648489412377" at="67,0,76,0" concept="6" trace="fireTestFinished#(Lorg/junit/runner/Description;)V" />
-      <node id="5294483648489412457" at="95,0,107,0" concept="6" trace="beforeTest#(Lorg/junit/runner/Description;)V" />
-      <node id="5294483648489412539" at="108,0,124,0" concept="6" trace="afterTest#(Lorg/junit/runner/Description;)V" />
-      <scope id="5294483648489412272" at="54,25,54,25" />
-      <scope id="5294483648489412269" at="35,52,36,53" />
-      <scope id="235515237953937116" at="48,25,49,31" />
-      <scope id="5294483648489412359" at="60,9,61,30" />
-      <scope id="5294483648489412374" at="62,0,63,57">
+      <node id="235515237953892703" at="25,0,26,0" concept="11" trace="WARN_PATTERN_MULTILINE" />
+      <node id="2751049437426551028" at="26,0,27,0" concept="11" trace="WARN_PATTERN" />
+      <node id="235515237953560656" at="29,0,30,0" concept="3" trace="myWatchLevel" />
+      <node id="5294483648489412244" at="31,0,32,0" concept="3" trace="myErrorCachingStream" />
+      <node id="5294483648489412248" at="33,0,34,0" concept="3" trace="myCachingAppender" />
+      <node id="5294483648489412252" at="34,0,35,0" concept="3" trace="myTestsToIgnore" />
+      <node id="5294483648489412261" at="35,0,36,0" concept="3" trace="myThreadWatcher" />
+      <node id="235515237953557008" at="37,52,38,53" concept="14" />
+      <node id="235515237953552825" at="41,94,42,20" concept="13" />
+      <node id="235515237953562495" at="42,20,43,30" concept="2" />
+      <node id="8119336008937542072" at="43,30,44,95" concept="2" />
+      <node id="235515237953873451" at="47,69,48,52" concept="7" />
+      <node id="235515237953874573" at="48,52,49,47" concept="2" />
+      <node id="235515237953875854" at="50,25,51,41" concept="2" />
+      <node id="2751049437426551421" at="51,41,52,31" concept="2" />
+      <node id="235515237953939319" at="53,5,54,18" concept="8" />
+      <node id="5294483648489412355" at="61,86,62,39" concept="2" />
+      <node id="5294483648489412360" at="63,9,64,30" concept="2" />
+      <node id="5294483648489412368" at="65,27,66,57" concept="2" />
+      <node id="5294483648489412384" at="72,9,73,29" concept="2" />
+      <node id="5294483648489412392" at="74,27,75,57" concept="2" />
+      <node id="5294483648489412399" at="76,5,77,40" concept="2" />
+      <node id="5294483648489412409" at="81,48,82,64" concept="2" />
+      <node id="5294483648489412417" at="82,64,83,35" concept="2" />
+      <node id="5294483648489412427" at="87,57,88,64" concept="2" />
+      <node id="5294483648489412435" at="88,64,89,44" concept="2" />
+      <node id="5294483648489412445" at="93,56,94,51" concept="2" />
+      <node id="5294483648489412452" at="94,51,95,39" concept="2" />
+      <node id="8119336008937775508" at="98,45,99,35" concept="2" />
+      <node id="5294483648489412478" at="99,35,100,58" concept="2" />
+      <node id="5294483648489412484" at="100,58,101,58" concept="2" />
+      <node id="5294483648489412491" at="101,58,102,74" concept="7" />
+      <node id="5294483648489412506" at="104,46,105,65" concept="2" />
+      <node id="5294483648489412530" at="107,5,108,46" concept="2" />
+      <node id="5294483648489412543" at="111,44,112,44" concept="2" />
+      <node id="8119336008937773475" at="112,44,113,33" concept="2" />
+      <node id="5294483648489412549" at="113,33,114,35" concept="2" />
+      <node id="5294483648489412552" at="114,35,115,61" concept="2" />
+      <node id="5294483648489412565" at="115,61,116,24" concept="7" />
+      <node id="5294483648489412588" at="118,112,119,126" concept="2" />
+      <node id="8119336008937778198" at="121,5,122,33" concept="2" />
+      <node id="5294483648489412610" at="123,23,124,34" concept="2" />
+      <node id="5294483648489412271" at="57,0,59,0" concept="6" trace="dispose#()V" />
+      <node id="5294483648489412265" at="37,0,40,0" concept="1" trace="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
+      <node id="5294483648489412503" at="103,30,106,7" concept="4" />
+      <node id="235515237953599013" at="117,47,120,7" concept="5" />
+      <node id="5294483648489412604" at="122,33,125,5" concept="5" />
+      <node id="235515237953937114" at="49,47,53,5" concept="5" />
+      <node id="235515237953552820" at="41,0,46,0" concept="1" trace="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;Lorg/apache/log4j/Level;Z)V" />
+      <node id="5294483648489412373" at="62,39,67,5" concept="16" />
+      <node id="5294483648489412397" at="71,57,76,5" concept="16" />
+      <node id="5294483648489412404" at="80,0,85,0" concept="6" trace="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489412422" at="86,0,91,0" concept="6" trace="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489412440" at="92,0,97,0" concept="6" trace="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412497" at="102,74,107,5" concept="5" />
+      <node id="5294483648489412568" at="116,24,121,5" concept="5" />
+      <node id="235515237953871208" at="47,0,56,0" concept="6" trace="getPatternsToIgnore#(Z)Ljava/util/List;" />
+      <node id="5294483648489412349" at="60,0,69,0" concept="6" trace="fireTestStarted#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412377" at="70,0,79,0" concept="6" trace="fireTestFinished#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412457" at="98,0,110,0" concept="6" trace="beforeTest#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412539" at="111,0,127,0" concept="6" trace="afterTest#(Lorg/junit/runner/Description;)V" />
+      <scope id="5294483648489412272" at="57,25,57,25" />
+      <scope id="5294483648489412269" at="37,52,38,53" />
+      <scope id="5294483648489412359" at="63,9,64,30" />
+      <scope id="5294483648489412374" at="65,0,66,57">
         <var name="e" id="5294483648489412363" />
       </scope>
-      <scope id="5294483648489412367" at="62,27,63,57" />
-      <scope id="5294483648489412383" at="69,9,70,29" />
-      <scope id="5294483648489412398" at="71,0,72,57">
+      <scope id="5294483648489412367" at="65,27,66,57" />
+      <scope id="5294483648489412383" at="72,9,73,29" />
+      <scope id="5294483648489412398" at="74,0,75,57">
         <var name="e" id="5294483648489412387" />
       </scope>
-      <scope id="5294483648489412391" at="71,27,72,57" />
-      <scope id="5294483648489412505" at="101,46,102,65" />
-      <scope id="235515237953599015" at="115,112,116,126" />
-      <scope id="5294483648489412609" at="120,23,121,34" />
-      <scope id="5294483648489412271" at="54,0,56,0" />
-      <scope id="5294483648489412408" at="78,48,80,35" />
-      <scope id="5294483648489412426" at="84,57,86,44" />
-      <scope id="5294483648489412444" at="90,56,92,39" />
-      <scope id="5294483648489412265" at="35,0,38,0">
+      <scope id="5294483648489412391" at="74,27,75,57" />
+      <scope id="5294483648489412505" at="104,46,105,65" />
+      <scope id="235515237953599015" at="118,112,119,126" />
+      <scope id="5294483648489412609" at="123,23,124,34" />
+      <scope id="235515237953937116" at="50,25,52,31" />
+      <scope id="5294483648489412271" at="57,0,59,0" />
+      <scope id="5294483648489412408" at="81,48,83,35" />
+      <scope id="5294483648489412426" at="87,57,89,44" />
+      <scope id="5294483648489412444" at="93,56,95,39" />
+      <scope id="5294483648489412265" at="37,0,40,0">
         <var name="delegate" id="5294483648489412267" />
       </scope>
-      <scope id="235515237953552824" at="39,94,42,95" />
-      <scope id="5294483648489412502" at="100,30,103,7" />
-      <scope id="5294483648489412503" at="100,30,103,7">
+      <scope id="235515237953552824" at="41,94,44,95" />
+      <scope id="5294483648489412502" at="103,30,106,7" />
+      <scope id="5294483648489412503" at="103,30,106,7">
         <var name="text" id="5294483648489412512" />
       </scope>
-      <scope id="5294483648489412587" at="114,47,117,7" />
-      <scope id="235515237953552820" at="39,0,44,0">
+      <scope id="5294483648489412587" at="117,47,120,7" />
+      <scope id="235515237953552820" at="41,0,46,0">
         <var name="delegate" id="235515237953552822" />
         <var name="ignoreWarnings" id="235515237953556635" />
         <var name="watchLevel" id="235515237953556485" />
       </scope>
-      <scope id="5294483648489412404" at="77,0,82,0">
+      <scope id="5294483648489412404" at="80,0,85,0">
         <var name="failure" id="5294483648489412406" />
       </scope>
-      <scope id="5294483648489412422" at="83,0,88,0">
+      <scope id="5294483648489412422" at="86,0,91,0">
         <var name="failure" id="5294483648489412424" />
       </scope>
-      <scope id="5294483648489412440" at="89,0,94,0">
+      <scope id="5294483648489412440" at="92,0,97,0">
         <var name="description" id="5294483648489412442" />
       </scope>
-      <scope id="235515237953871211" at="45,69,51,18">
+      <scope id="5294483648489412354" at="61,86,67,5" />
+      <scope id="5294483648489412381" at="71,57,77,40" />
+      <scope id="235515237953871211" at="47,69,54,18">
         <var name="result" id="235515237953873452" />
       </scope>
-      <scope id="5294483648489412354" at="58,86,64,5" />
-      <scope id="5294483648489412381" at="68,57,74,40" />
-      <scope id="235515237953871208" at="45,0,53,0">
+      <scope id="235515237953871208" at="47,0,56,0">
         <var name="ignoreWarnings" id="235515237953876430" />
       </scope>
-      <scope id="5294483648489412349" at="57,0,66,0">
+      <scope id="5294483648489412349" at="60,0,69,0">
         <var name="description" id="5294483648489412351" />
       </scope>
-      <scope id="5294483648489412377" at="67,0,76,0">
+      <scope id="5294483648489412377" at="70,0,79,0">
         <var name="description" id="5294483648489412379" />
       </scope>
-      <scope id="5294483648489412460" at="95,45,105,46">
+      <scope id="5294483648489412460" at="98,45,108,46">
         <var name="ignoreEvent" id="5294483648489412490" />
       </scope>
-      <scope id="5294483648489412457" at="95,0,107,0">
+      <scope id="5294483648489412457" at="98,0,110,0">
         <var name="desc" id="5294483648489412458" />
       </scope>
-      <scope id="5294483648489412542" at="108,44,122,5">
+      <scope id="5294483648489412542" at="111,44,125,5">
         <var name="fail" id="5294483648489412564" />
       </scope>
-      <scope id="5294483648489412539" at="108,0,124,0">
+      <scope id="5294483648489412539" at="111,0,127,0">
         <var name="desc" id="5294483648489412540" />
       </scope>
-      <unit id="5294483648489412205" at="22,0,125,0" name="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+      <unit id="5294483648489412205" at="22,0,128,0" name="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
     </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412683">

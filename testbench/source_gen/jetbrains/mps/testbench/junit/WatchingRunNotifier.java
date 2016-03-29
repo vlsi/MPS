@@ -22,7 +22,9 @@ import org.apache.log4j.Logger;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level DEFAULT_WATCH_LOGGER_LEVEL = Level.ERROR;
   private static final Pattern EXECUTION_LIMIT_FAILED_PATTERN = Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*");
+  private static final Pattern WARN_PATTERN_MULTILINE = Pattern.compile("\\[([\\d\\s])*\\](\\s)*WARN.*:\\n[^\\[^\\s].*");
   private static final Pattern WARN_PATTERN = Pattern.compile("\\[([\\d\\s])*\\](\\s)*WARN.*");
+
 
   private final Level myWatchLevel;
 
@@ -46,6 +48,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     List<Pattern> result = new ArrayList<Pattern>();
     result.add(EXECUTION_LIMIT_FAILED_PATTERN);
     if (ignoreWarnings) {
+      result.add(WARN_PATTERN_MULTILINE);
       result.add(WARN_PATTERN);
     }
     return result;

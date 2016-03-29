@@ -1195,7 +1195,7 @@
     <node concept="Wx3nA" id="d4HXLLrJ5v" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="WARN_PATTERN" />
+      <property role="TrG5h" value="WARN_PATTERN_MULTILINE" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="d4HXLLrJ5w" role="1B3o_S" />
       <node concept="3uibUv" id="d4HXLLrJ5x" role="1tU5fm">
@@ -1205,10 +1205,28 @@
         <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
         <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
         <node concept="Xl_RD" id="d4HXLLrJ5z" role="37wK5m">
+          <property role="Xl_RC" value="\\[([\\d\\s])*\\](\\s)*WARN.*:\\n[^\\[^\\s].*" />
+        </node>
+      </node>
+    </node>
+    <node concept="Wx3nA" id="2oHGecXmgzO" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="WARN_PATTERN" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2oHGecXmgzP" role="1B3o_S" />
+      <node concept="3uibUv" id="2oHGecXmgzQ" role="1tU5fm">
+        <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
+      </node>
+      <node concept="2YIFZM" id="2oHGecXmgzR" role="33vP2m">
+        <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
+        <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+        <node concept="Xl_RD" id="2oHGecXmgzS" role="37wK5m">
           <property role="Xl_RC" value="\\[([\\d\\s])*\\](\\s)*WARN.*" />
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2oHGecXmguj" role="jymVt" />
     <node concept="2tJIrI" id="d4HXLLrIZr" role="jymVt" />
     <node concept="312cEg" id="d4HXLLqu1g" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -1415,7 +1433,20 @@
                 <node concept="liA8E" id="d4HXLLrFCA" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
                   <node concept="37vLTw" id="d4HXLLrTMW" role="37wK5m">
-                    <ref role="3cqZAo" node="d4HXLLrJ5v" resolve="WARN_PATTERN" />
+                    <ref role="3cqZAo" node="d4HXLLrJ5v" resolve="WARN_PATTERN_MULTILINE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2oHGecXmgDX" role="3cqZAp">
+              <node concept="2OqwBi" id="2oHGecXmgDY" role="3clFbG">
+                <node concept="37vLTw" id="2oHGecXmgDZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="d4HXLLrEoG" resolve="result" />
+                </node>
+                <node concept="liA8E" id="2oHGecXmgE0" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="2oHGecXmhfK" role="37wK5m">
+                    <ref role="3cqZAo" node="2oHGecXmgzO" resolve="WARN_PATTERN" />
                   </node>
                 </node>
               </node>
