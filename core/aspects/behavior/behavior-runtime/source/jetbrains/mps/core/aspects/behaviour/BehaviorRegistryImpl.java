@@ -50,10 +50,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   private static final Logger LOG = LogManager.getLogger(BehaviorRegistryImpl.class);
 
   private final CachingMethodResolutionOrder myMRO = new C3StarMethodResolutionOrder();
-  private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
-  private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private final ConcurrentHashMap<String, BehaviorDescriptor> myBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<SConceptId, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SConceptId, BHDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
@@ -65,40 +62,6 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   @NotNull
   public MethodResolutionOrder getMRO() {
     return myMRO;
-  }
-
-  @NotNull
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
-    BehaviorDescriptor behaviorDescriptor = myBehaviorDescriptors.get(fqName);
-    if (behaviorDescriptor != null) {
-      return behaviorDescriptor;
-    }
-
-    SAbstractConcept concept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(fqName));
-    BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    if (bhDescriptor instanceof BHDescriptorLegacyAdapter || bhDescriptor instanceof IllegalBHDescriptor) {
-      // then fallback to legacy is fine
-      myBehaviorDescriptors.putIfAbsent(fqName, getLegacyBehaviorDescriptor(fqName));
-    } else {
-      if (bhDescriptor instanceof BaseBHDescriptor) {
-        myBehaviorDescriptors.putIfAbsent(fqName, new BehaviorDescriptorAdapter((BaseBHDescriptor) bhDescriptor));
-      } else {
-        throw new IllegalStateException("Broken contract : unknown behavior descriptor is returned by #getBHDescriptor()");
-      }
-    }
-    return myBehaviorDescriptors.get(fqName);
-  }
-
-  @ToRemove(version = 3.3)
-  @Deprecated
-  public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
-    if (node == null) {
-      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
-    } else {
-      return getBehaviorDescriptor(node.getConcept().getQualifiedName());
-    }
   }
 
   @Override
@@ -131,11 +94,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
               // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
               descriptor = new EmptyBHDescriptor(this, concept);
             }
-          } else {
-            descriptor = fallbackToInterpretedLegacy(concept);
           }
-        } else {
-          descriptor = fallbackToInterpretedLegacy(concept);
         }
         if (descriptor instanceof BaseBHDescriptor) {
           ((BaseBHDescriptor) descriptor).init();
@@ -151,43 +110,9 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
     }
   }
 
-  @ToRemove(version = 3.3)
-  @NotNull
-  private BehaviorDescriptor getLegacyBehaviorDescriptor(@NotNull String conceptFqName) {
-    BehaviorDescriptor descriptor = myLegacyBehaviorDescriptors.get(conceptFqName);
-    if (descriptor != null) {
-      return descriptor;
-    }
-
-    if (!myLegacyStorage.startLoading(conceptFqName)) {
-      LOG.warn("Returning null-safe illegal behavior descriptor for the concept " + conceptFqName);
-      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
-    }
-
-    descriptor = new InterpretedBehaviorDescriptor(conceptFqName);
-    myLegacyBehaviorDescriptors.put(conceptFqName, descriptor);
-
-    myLegacyStorage.finishLoading(conceptFqName);
-
-    return descriptor;
-  }
-
-  @ToRemove(version = 3.3)
-  @NotNull
-  private BHDescriptor fallbackToInterpretedLegacy(@NotNull SAbstractConcept concept) {
-    BehaviorDescriptor legacyBehaviorDescriptor = getLegacyBehaviorDescriptor(concept.getQualifiedName());
-    if (legacyBehaviorDescriptor instanceof InterpretedBehaviorDescriptor) {
-      return new BHDescriptorLegacyAdapter(this, (InterpretedBehaviorDescriptor) legacyBehaviorDescriptor);
-    } else {
-      return new IllegalBHDescriptor(concept);
-    }
-  }
-
   @Override
   public void clear() {
-    myBehaviorDescriptors.clear();
     myBHDescriptors.clear();
-    myLegacyBehaviorDescriptors.clear();
     myMRO.reset();
   }
 }
