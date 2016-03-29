@@ -120,7 +120,7 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
   private class MyDebuggerContextListener implements DebuggerContextListener {
     @Override
     public void changeEvent(@NotNull DebuggerContextImpl newContext, Event event) {
-      if (event != Event.REFRESH_VIEWS_ONLY && event != Event.THREADS_REFRESH) {
+      if (event != Event.REFRESH_WITH_STACK && event != Event.THREADS_REFRESH) {
         reAttachPainter(newContext.getDebuggerSession(), true);
       }
     }
