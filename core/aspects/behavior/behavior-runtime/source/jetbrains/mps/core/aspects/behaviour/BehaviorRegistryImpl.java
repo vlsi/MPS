@@ -126,8 +126,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
           if (behaviorAspect == null) {
             descriptor = new EmptyBHDescriptor(this, concept);
           } else if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
-            SConceptId conceptId = ((SAbstractConceptAdapter) concept).getId();
-            descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(conceptId);
+            descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(concept);
             if (descriptor == null) {
               // falling back to the case when we have outdated generated bh code OR we have no bh aspect at all
               descriptor = new EmptyBHDescriptor(this, concept);
