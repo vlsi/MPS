@@ -62,11 +62,6 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   }
 
   @NotNull
-  public InterpretedBehaviorDescriptor getLegacyDescriptor() {
-    return myLegacyDescriptor;
-  }
-
-  @NotNull
   @Override
   public SAbstractConcept getConcept() {
     return getConcept(myLegacyDescriptor.getConceptFqName());

@@ -103,14 +103,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return myConstraintsRegistry.getConstraintsDescriptor(concept);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  @NotNull
-  //no usages in MPS
-  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
-    return myConstraintsRegistry.getConstraintsDescriptor(fqName);
-  }
-
   /**
    * Use {@link jetbrains.mps.smodel.language.ConceptRegistryUtil#getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept)}
    * if you got SConcept
