@@ -565,10 +565,10 @@
       <node id="2209739309055597279" at="31,207,32,21" concept="6" />
       <node id="1227009797309" at="34,26,35,23" concept="12" />
       <node id="1228580949966" at="38,28,39,65" concept="11" />
-      <node id="2034046503361581097" at="41,25,42,280" concept="6" />
+      <node id="4735826595946231090" at="41,25,42,280" concept="6" />
       <node id="1228580487321" at="44,7,45,24" concept="12" />
       <node id="1229529344680" at="47,45,48,101" concept="11" />
-      <node id="8419500403890450040" at="48,101,49,231" concept="6" />
+      <node id="4735826595946234610" at="48,101,49,140" concept="6" />
       <node id="5681471431307928017" at="51,66,52,85" concept="11" />
       <node id="5681471431307948577" at="53,188,54,67" concept="6" />
       <node id="5521353027966010533" at="55,5,56,185" concept="6" />
@@ -592,25 +592,25 @@
       <node id="5521353027966010487" at="79,5,80,0" concept="14" />
       <node id="5097407566121991608" at="77,10,79,5" concept="1" />
       <node id="1227009788555" at="34,0,37,0" concept="10" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2034046503361581095" at="41,0,44,0" concept="10" trace="run#()V" />
+      <node id="4735826595946228855" at="41,0,44,0" concept="10" trace="run#()V" />
       <node id="5681471431307948567" at="52,85,55,5" concept="9" />
       <node id="1228589548291" at="47,0,51,0" concept="10" trace="setupSelection#(Ljetbrains/mps/openapi/editor/Editor;)V" />
       <node id="1226949310942" at="29,0,34,0" concept="3" trace="CellReference#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
-      <node id="2034046503361581091" at="39,65,44,7" concept="6" />
+      <node id="4735826595946228853" at="39,65,44,7" concept="6" />
       <node id="7556920020845005410" at="63,218,68,7" concept="9" />
       <node id="1228580480145" at="37,0,47,0" concept="10" trace="toString#()Ljava/lang/String;" />
       <node id="7556920020845005349" at="59,79,79,5" concept="9" />
       <node id="6268941039745719501" at="51,0,82,0" concept="10" trace="assertEditor#(Ljetbrains/mps/openapi/editor/Editor;Ljava/util/Map;)V" />
       <scope id="1227009788558" at="34,26,35,23" />
-      <scope id="2034046503361581096" at="41,25,42,280" />
+      <scope id="4735826595946228857" at="41,25,42,280" />
       <scope id="5681471431307948568" at="53,188,54,67" />
       <scope id="5097407566121991609" at="77,12,78,76" />
-      <scope id="1228589548294" at="47,45,49,231">
+      <scope id="1228589548294" at="47,45,49,140">
         <var name="editorComponent" id="1229529344681" />
       </scope>
       <scope id="1226949310945" at="29,77,32,21" />
       <scope id="1227009788555" at="34,0,37,0" />
-      <scope id="2034046503361581095" at="41,0,44,0" />
+      <scope id="4735826595946228855" at="41,0,44,0" />
       <scope id="7556920020845005411" at="64,53,67,226">
         <var name="label" id="7556920020845005413" />
       </scope>
@@ -640,7 +640,7 @@
         <var name="editor" id="6268941039745719506" />
         <var name="map" id="1932269937152492149" />
       </scope>
-      <unit id="2034046503361581095" at="40,45,44,5" name="jetbrains.mps.lang.test.runtime.CellReference$1" />
+      <unit id="4735826595946228855" at="40,45,44,5" name="jetbrains.mps.lang.test.runtime.CellReference$1" />
       <unit id="1226949310940" at="25,0,83,0" name="jetbrains.mps.lang.test.runtime.CellReference" />
     </file>
   </root>

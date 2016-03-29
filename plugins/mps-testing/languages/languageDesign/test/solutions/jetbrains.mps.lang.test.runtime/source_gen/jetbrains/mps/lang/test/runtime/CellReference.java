@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -46,7 +46,7 @@ public class CellReference {
   }
   public void setupSelection(Editor editor) {
     NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
-    BehaviorReflection.invokeNonVirtual(Void.class, this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "call_setupSelection_6268941039745707957", new Object[]{editorComponent, this.myNode, this.myMap});
+    AnonymousCellAnnotation__BehaviorDescriptor.setupSelection_id5rZKa_fUiYP.invoke(myAnnotation, editorComponent, this.myNode, this.myMap);
   }
   public void assertEditor(Editor editor, Map<SNode, SNode> map) {
     EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
