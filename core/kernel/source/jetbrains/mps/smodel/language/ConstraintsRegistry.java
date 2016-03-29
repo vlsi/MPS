@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.BaseConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
@@ -59,18 +59,25 @@ public class ConstraintsRegistry implements CoreAspectRegistry {
     try {
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
-        ConstraintsAspectDescriptor constraintsAspectDescriptor = null;
+        ConstraintsAspectDescriptor aspectDescriptor = null;
         if (languageRuntime == null) {
           // Then language was just renamed and was not re-generated then it can happen that it has no
           LOG.warn("No language for: " + concept + ", while looking for constraints descriptor.");
         } else {
-          constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
+          aspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        if (constraintsAspectDescriptor == null) {
+        if (aspectDescriptor == null) {
           // @see jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor
-          constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
+          aspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         }
-        descriptor = constraintsAspectDescriptor.getDescriptor(MetaIdHelper.getConcept(concept));
+
+        //todo simplify following if after 3.4
+        if (aspectDescriptor instanceof BaseConstraintsAspectDescriptor) {
+          descriptor = ((BaseConstraintsAspectDescriptor) aspectDescriptor).getConstraints(concept);
+        } else {
+          //can't remove id here before 3.4
+          descriptor = aspectDescriptor.getDescriptor(MetaIdHelper.getConcept(concept));
+        }
       } catch (Throwable e) {
         LOG.error("Exception while constraints descriptor creating", e);
       }

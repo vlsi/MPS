@@ -16,6 +16,10 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * LanguageRuntime is allowed to return null descriptor in case there are no constraints for language's concept defined right in the language.
@@ -30,5 +34,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
  * @see jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor
  */
 public interface ConstraintsAspectDescriptor extends LanguageAspectDescriptor {
+  @Deprecated
+  @ToRemove(version = 3.4)
+  //in 3.4, use cast to BaseConstraintsAspectDescriptor
   ConstraintsDescriptor getDescriptor(SConceptId conceptId);
+
+  //we can't introduce this method now as in 3.3 generated classes do not extend base class, will lead to compilation error
+  //ConstraintsDescriptor getDescriptor(SAbstractConcept concept);
 }
