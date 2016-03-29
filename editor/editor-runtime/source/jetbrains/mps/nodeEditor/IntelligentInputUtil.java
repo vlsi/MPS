@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -35,12 +37,15 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -184,7 +189,9 @@ public class IntelligentInputUtil {
 
       newNode = editorContext.getSelectedCell().getSNode();
 
-      if (newNode == null) return true;
+      if (newNode == null) {
+        return true;
+      }
 
       cellForNewNode = editorContext.getEditorComponent().findNodeCell(newNode);
       EditorCell_Label errorCell = CellFinderUtil.findFirstError(cellForNewNode, true);
@@ -298,8 +305,9 @@ public class IntelligentInputUtil {
     if (concept == null) {
       return false;
     }
-    boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, MetaAdapterByDeclaration.getConcept(concept),
-        "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
+    boolean property = (Boolean) BHReflection.invoke(MetaAdapterByDeclaration.getConcept(concept),
+        SMethodTrimmedId.create("substituteInAmbigousPosition", null, "1653mnvAgq$"));
+
     if (property) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
       for (SubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
@@ -331,7 +339,9 @@ public class IntelligentInputUtil {
     } else if (canCompleteSmallPatternImmediatelyLeft(info, head, smallPattern) &&
         !canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
-      if (newNode == null) return true;
+      if (newNode == null) {
+        return true;
+      }
 
       cellForNewNode = findNodeCell(editorContext, newNode);
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, false);
