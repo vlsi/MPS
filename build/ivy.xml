@@ -349,8 +349,8 @@
     <dependency org="lib" name="commons-net-3.1.jar" rev="138.1980">
       <artifact name="commons-net-3.1.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="ecj-4.4.jar" rev="138.1980">
-      <artifact name="ecj-4.4.jar" ext="jar"/>
+    <dependency org="lib" name="ecj-4.4.2.jar" rev="${idea.platform.version}">
+      <artifact name="ecj-4.4.2.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="extensions.jar" rev="${idea.platform.version}">
       <artifact name="extensions.jar" ext="jar"/>

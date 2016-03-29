@@ -41,7 +41,7 @@
   </path>
   
   <path id="path.java.library.core-libraries">
-    <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.4.2.jar" />
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
     <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
