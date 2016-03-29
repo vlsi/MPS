@@ -31,5 +31,6 @@ public interface BehaviorAspectDescriptor extends LanguageAspectDescriptor {
    */
   @Deprecated
   @ToRemove(version = 3.3)
+  //This can't be removed before 3.4 as there are @override methods in 3.3. Removal will lead to compilation error
   BehaviorDescriptor getDescriptor(String fqName);
 }
