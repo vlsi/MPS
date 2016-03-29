@@ -16,9 +16,16 @@
 package jetbrains.mps.text.rt;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Aspect of a language which describes the ways to produce text from a node
@@ -30,6 +37,11 @@ public interface TextGenAspectDescriptor extends LanguageAspectDescriptor {
    * @param concept input kind for textgen
    * @return descriptor for the concept, or <code>null</code> if this aspect knows nothing about the concept
    */
+  @Deprecated
+  @ToRemove(version = 3.4)
   @Nullable
   TextGenDescriptor getDescriptor(@NotNull SConceptId concept);
+
+  @Nullable
+  TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept);
 }
