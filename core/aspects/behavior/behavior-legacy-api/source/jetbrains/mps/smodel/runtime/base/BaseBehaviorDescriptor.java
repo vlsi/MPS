@@ -15,31 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.core.aspects.behaviour.BHDescriptorLegacyAdapter;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.BehaviorDescriptorAdapter;
-import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Used to be the common ancestor for all generated behavior descriptors.
