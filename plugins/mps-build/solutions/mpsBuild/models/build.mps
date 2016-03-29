@@ -17015,14 +17015,6 @@
             </node>
           </node>
         </node>
-        <node concept="1688n2" id="AwiPu7jJ74" role="28jJR8">
-          <property role="1688n3" value="1\.6\*" />
-          <node concept="NbPM2" id="AwiPu7jJ76" role="1688n0">
-            <node concept="3Mxwew" id="AwiPu7jJ7k" role="3MwsjC">
-              <property role="3MwjfP" value="1\.6\+" />
-            </node>
-          </node>
-        </node>
         <node concept="1688n2" id="AwiPu7kuoz" role="28jJR8">
           <property role="1688n3" value="NoJavaDistribution" />
           <node concept="NbPM2" id="AwiPu7kuo_" role="1688n0">

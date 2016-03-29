@@ -253,9 +253,6 @@
           <replaceregex pattern="\$build\$" replace="${mps.build.number}" flags="" />
         </tokenfilter>
         <tokenfilter>
-          <replaceregex pattern="1\.6\*" replace="1\.6\+" flags="" />
-        </tokenfilter>
-        <tokenfilter>
           <replaceregex pattern="NoJavaDistribution" replace="custom-jdk-bundled" flags="" />
         </tokenfilter>
         <tokenfilter>

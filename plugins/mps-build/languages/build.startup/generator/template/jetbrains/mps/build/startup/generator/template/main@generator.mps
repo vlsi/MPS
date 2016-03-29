@@ -808,7 +808,7 @@
             <node concept="2pNNFK" id="7Muxx6JTrCm" role="3o6s8t">
               <property role="2pNNFO" value="string" />
               <node concept="3o6iSG" id="7Muxx6JTrCn" role="3o6s8t">
-                <property role="3o6i5n" value="1.6*" />
+                <property role="3o6i5n" value="1.8+" />
               </node>
             </node>
             <node concept="2pNNFK" id="7Muxx6JTrCe" role="3o6s8t">
