@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SDataTypeAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SPrimitiveDataTypeAdapter;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -82,11 +84,16 @@ public abstract class SPropertyAdapter implements SProperty {
       return null;
     }
     if (dataType.isInstanceOfConcept(SNodeUtil.concept_PrimitiveDataTypeDeclaration)) {
+      Boolean isBoolean = (Boolean) BHReflection.invoke(dataType, SMethodTrimmedId.create("isBoolean",
+          MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L,
+              "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "hKtG1tp"));
+      Boolean isInteger = (Boolean) BHReflection.invoke(dataType, SMethodTrimmedId.create("isInteger",
+          MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L,
+              "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "hKtFYCF"));
+
       return new SPrimitiveDataTypeAdapter((
-          BehaviorReflection.invokeNonVirtual(Boolean.TYPE, dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
-              "call_isBoolean_1220268791641", new Object[]{}) ? SPrimitiveDataType.BOOL :
-              ((BehaviorReflection.invokeNonVirtual(Boolean.TYPE, dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration",
-                  "call_isInteger_1220268780075", new Object[]{}) ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING))));
+          isBoolean ? SPrimitiveDataType.BOOL : ((isInteger ? SPrimitiveDataType.INT : SPrimitiveDataType.STRING)))
+      );
     }
     return new SDataTypeAdapter();
   }
