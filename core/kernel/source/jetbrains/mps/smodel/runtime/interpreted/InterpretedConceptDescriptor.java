@@ -262,8 +262,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myPropertiesByName = Collections.unmodifiableMap(propertiesByName);
 
       // references
-      Map<SReferenceLinkId, ReferenceDescriptor> referencesByIds = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
-      Map<String, ReferenceDescriptor> referencesByName = new HashMap<String, ReferenceDescriptor>();
+      Map<SReferenceLinkId, ReferenceDescriptor> referencesByIds = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
+      Map<String, ReferenceDescriptor> referencesByName = new LinkedHashMap<String, ReferenceDescriptor>();
 
       referencesByIds.putAll(directReferencesByIds);
       referencesByName.putAll(directReferencesByName);
@@ -280,8 +280,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       myReferencesByName = Collections.unmodifiableMap(referencesByName);
 
       // children
-      Map<SContainmentLinkId, LinkDescriptor> linksByIds = new HashMap<SContainmentLinkId, LinkDescriptor>();
-      Map<String, LinkDescriptor> linksByName = new HashMap<String, LinkDescriptor>();
+      Map<SContainmentLinkId, LinkDescriptor> linksByIds = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
+      Map<String, LinkDescriptor> linksByName = new LinkedHashMap<String, LinkDescriptor>();
 
       linksByIds.putAll(directLinksByIds);
       linksByName.putAll(directLinksByName);
