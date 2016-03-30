@@ -18,13 +18,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -51,7 +51,9 @@ public class RefactoringProcessor {
     });
 
     final List<RefactoringParticipant.Option> selectedOptions = selectParticipants(project, options.value);
-
+    if (selectedOptions == null) {
+      return null;
+    }
     final Wrappers._boolean cancelled = new Wrappers._boolean(false);
     ProgressManager.getInstance().run(new Task.Modal(project.getProject(), "Refactoring", true) {
       public void run(@NotNull ProgressIndicator progressIndicator) {
@@ -61,7 +63,15 @@ public class RefactoringProcessor {
             int steps = MapSequence.fromMap(changes).count();
             progressMonitor.start("Searching for usages", steps);
             for (IMapping<RefactoringParticipant, RefactoringParticipant.ParticipantState<?, ?, T, S>> participantStates : MapSequence.fromMap(changes)) {
-              participantStates.value().findChanges(project.getRepository(), selectedOptions, project.getScope(), progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
+              try {
+                participantStates.value().findChanges(project.getRepository(), selectedOptions, project.getScope(), progressMonitor.subTask(1, SubProgressKind.AS_COMMENT));
+              } catch (RuntimeException e) {
+                if (LOG.isEnabledFor(Level.ERROR)) {
+                  LOG.error("Exception during usages search", e);
+                }
+                cancelled.value = true;
+                break;
+              }
               if (progressMonitor.isCanceled()) {
                 cancelled.value = true;
                 break;
