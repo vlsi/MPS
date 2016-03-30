@@ -158,12 +158,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myScriptKindClassItem__BehaviorDescriptor = new ScriptKindClassItem__BehaviorDescriptor();
   private final BHDescriptor myCellModel_Empty__BehaviorDescriptor = new CellModel_Empty__BehaviorDescriptor();
   private final BHDescriptor myCellModel_NextEditor__BehaviorDescriptor = new CellModel_NextEditor__BehaviorDescriptor();
+  private final BHDescriptor myINodeProvider__BehaviorDescriptor = new INodeProvider__BehaviorDescriptor();
+  private final BHDescriptor myContextExpression_ContextAssistantCondition__BehaviorDescriptor = new ContextExpression_ContextAssistantCondition__BehaviorDescriptor();
   private final BHDescriptor mySynchronizeable__BehaviorDescriptor = new Synchronizeable__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[147];
+    myConceptBehaviorIds = new long[149];
     myConceptBehaviorIds[0] = 0xf9845363abL;
     myConceptBehaviorIds[1] = 0xf9eafb9a39L;
     myConceptBehaviorIds[2] = 0xf9eaff2517L;
@@ -310,7 +312,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[143] = 0x72908ac6c78618c8L;
     myConceptBehaviorIds[144] = 0x73604585b6d5c973L;
     myConceptBehaviorIds[145] = 0x7456aec153c7f5a2L;
-    myConceptBehaviorIds[146] = 0x79b75ced2c4a134dL;
+    myConceptBehaviorIds[146] = 0x794cf8ea9e1140f3L;
+    myConceptBehaviorIds[147] = 0x794cf8ea9e29183aL;
+    myConceptBehaviorIds[148] = 0x79b75ced2c4a134dL;
   }
 
   @Deprecated
@@ -617,6 +621,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 145:
         return myCellModel_NextEditor__BehaviorDescriptor;
       case 146:
+        return myINodeProvider__BehaviorDescriptor;
+      case 147:
+        return myContextExpression_ContextAssistantCondition__BehaviorDescriptor;
+      case 148:
         return mySynchronizeable__BehaviorDescriptor;
       default:
         return null;

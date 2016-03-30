@@ -36,8 +36,7 @@
       <node id="1207648166366218223" at="52,45,53,281" concept="2" />
       <node id="1108339487640189080" at="57,76,58,71" concept="6" />
       <node id="1108339487640189080" at="58,71,59,45" concept="6" />
-      <node id="1108339487640189080" at="59,45,60,306" concept="0" />
-      <node id="7429591467343814400" at="59,45,60,306" concept="7" />
+      <node id="1108339487640189080" at="59,45,60,304" concept="7" />
       <node id="1108339487640189080" at="67,74,68,75" concept="6" />
       <node id="1108339487640189080" at="68,75,69,49" concept="6" />
       <node id="1108339487640189080" at="69,49,70,38" concept="0" />
@@ -77,8 +76,8 @@
       <node id="1108339487640189080" at="158,49,159,75" concept="6" />
       <node id="1108339487640189080" at="159,75,160,0" concept="8" />
       <node id="1108339487640189080" at="160,0,161,294" concept="7" />
-      <node id="7429591467343814401" at="167,71,168,46" concept="7" />
-      <node id="7429591467343814401" at="167,0,170,0" concept="9" trace="eq_1z2qg6_a0a0c0a0a2a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="7429591467343814401" at="167,69,168,46" concept="7" />
+      <node id="7429591467343814401" at="167,0,170,0" concept="9" trace="eq_1z2qg6_a0c0a0a2a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="1108339487640189080" at="76,49,80,13" concept="0" />
       <node id="1108339487640189080" at="85,0,89,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1108339487640189080" at="121,49,125,13" concept="0" />
@@ -111,14 +110,13 @@
       <scope id="1108339487640189095" at="38,45,39,277" />
       <scope id="1207648166366217716" at="45,45,46,27" />
       <scope id="1207648166366217720" at="52,45,53,281" />
-      <scope id="7429591467343813957" at="59,45,60,306" />
       <scope id="1207648166366225095" at="69,49,70,38" />
       <scope id="542153281319935557" at="86,67,87,30" />
       <scope id="542153281319936231" at="96,49,97,28" />
       <scope id="542153281319936765" at="114,49,115,27" />
       <scope id="542153281319936925" at="131,49,132,24" />
       <scope id="542153281319934575" at="148,67,149,31" />
-      <scope id="7429591467343814401" at="167,71,168,46" />
+      <scope id="7429591467343814401" at="167,69,168,46" />
       <scope id="1207648166366225099" at="77,13,79,59">
         <var name="inserted" id="542153281320168014" />
       </scope>
@@ -144,7 +142,7 @@
         <var name="editorContext" id="1108339487640189080" />
         <var name="node" id="1108339487640189080" />
       </scope>
-      <scope id="1108339487640189080" at="57,76,60,306">
+      <scope id="1108339487640189080" at="57,76,60,304">
         <var name="editorContext" id="1108339487640189080" />
         <var name="node" id="1108339487640189080" />
       </scope>
@@ -2736,8 +2734,7 @@
       <node id="542153281319933270" at="46,45,47,277" concept="2" />
       <node id="542153281319932690" at="51,76,52,71" concept="6" />
       <node id="542153281319932690" at="52,71,53,45" concept="6" />
-      <node id="542153281319932690" at="53,45,54,306" concept="0" />
-      <node id="7429591467343816526" at="53,45,54,306" concept="7" />
+      <node id="542153281319932690" at="53,45,54,304" concept="7" />
       <node id="542153281319932690" at="61,74,62,75" concept="6" />
       <node id="542153281319932690" at="62,75,63,49" concept="6" />
       <node id="542153281319932690" at="63,49,64,29" concept="0" />
@@ -2746,8 +2743,8 @@
       <node id="542153281319932690" at="69,75,70,49" concept="6" />
       <node id="542153281319972307" at="71,13,72,303" concept="6" />
       <node id="542153281319972413" at="72,303,73,59" concept="2" />
-      <node id="7429591467343816527" at="80,71,81,46" concept="7" />
-      <node id="7429591467343816527" at="80,0,83,0" concept="9" trace="eq_uewb7w_a0a0c0a0a2a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="7429591467343816527" at="80,69,81,46" concept="7" />
+      <node id="7429591467343816527" at="80,0,83,0" concept="9" trace="eq_uewb7w_a0c0a0a2a0a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="542153281319932690" at="70,49,74,13" concept="0" />
       <node id="542153281319932690" at="22,0,28,0" concept="5" trace="getText#(Ljetbrains/mps/openapi/editor/descriptor/ContextAssistantMenu/Context;)Ljava/lang/String;" />
       <node id="542153281319932690" at="29,0,35,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/descriptor/ContextAssistantMenu/Context;)V" />
@@ -2764,9 +2761,8 @@
       <scope id="542153281319932731" at="32,45,33,277" />
       <scope id="542153281319933265" at="39,45,40,22" />
       <scope id="542153281319933269" at="46,45,47,277" />
-      <scope id="7429591467343816258" at="53,45,54,306" />
       <scope id="542153281319933838" at="63,49,64,29" />
-      <scope id="7429591467343816527" at="80,71,81,46" />
+      <scope id="7429591467343816527" at="80,69,81,46" />
       <scope id="542153281319933842" at="71,13,73,59">
         <var name="inserted" id="542153281319972308" />
       </scope>
@@ -2786,7 +2782,7 @@
         <var name="editorContext" id="542153281319932690" />
         <var name="node" id="542153281319932690" />
       </scope>
-      <scope id="542153281319932690" at="51,76,54,306">
+      <scope id="542153281319932690" at="51,76,54,304">
         <var name="editorContext" id="542153281319932690" />
         <var name="node" id="542153281319932690" />
       </scope>

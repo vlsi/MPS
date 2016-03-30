@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ContextAssistantPanel;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
-import java.util.Collections;
 import java.util.List;
 
 public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBase implements ContextAssistant {
@@ -35,16 +33,6 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
     super(editorContext, node);
     myAssistantPanel = new ContextAssistantPanel(editorContext);
     hideMenu();
-  }
-
-  public static EditorCell_ContextAssistantComponent createWithDefaults(EditorContext editorContext, SNode node) {
-    EditorCell_ContextAssistantComponent cell = new EditorCell_ContextAssistantComponent(editorContext, node);
-
-    cell.setSelectable(false);
-    cell.getStyle().set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    cell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-
-    return cell;
   }
 
   @Override

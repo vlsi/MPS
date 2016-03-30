@@ -4424,14 +4424,14 @@
     <property role="1pbfSe" value="734169510" />
     <property role="3GE5qa" value="ContextAssistant" />
     <property role="TrG5h" value="ContextAssistantMenuPart_Conditional" />
-    <property role="34LRSv" value="if" />
-    <property role="R4oN_" value="conditional menu part" />
+    <property role="34LRSv" value="group" />
+    <property role="R4oN_" value="conditional group" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="ContextAssistantMenuPart" />
     <node concept="1TJgyj" id="6srdxdH8$1d" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6srdxdHd7ks" resolve="QueryFunction_ContextAssistantCondition" />
+      <ref role="20lvS9" node="7_cYeEuahwU" resolve="ContextExpression_ContextAssistantCondition" />
     </node>
     <node concept="1TJgyj" id="6srdxdH8$18" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -4626,6 +4626,57 @@
     <property role="34LRSv" value="node" />
     <property role="R4oN_" value="function parameter" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="PlHQZ" id="7_cYeEu4k3N">
+    <property role="1pbfSe" value="392051165" />
+    <property role="TrG5h" value="INodeProvider" />
+    <property role="3GE5qa" value="QueryExpression" />
+  </node>
+  <node concept="1TIwiD" id="7_cYeEu4k3O">
+    <property role="1pbfSe" value="392051166" />
+    <property role="3GE5qa" value="QueryExpression" />
+    <property role="TrG5h" value="ContextVariable_Node" />
+    <property role="34LRSv" value="node" />
+    <property role="R4oN_" value="node" />
+    <ref role="1TJDcQ" node="7_cYeEu4pYp" resolve="ContextVariable" />
+  </node>
+  <node concept="PlHQZ" id="7_cYeEu4m3k">
+    <property role="1pbfSe" value="392059326" />
+    <property role="3GE5qa" value="QueryExpression" />
+    <property role="TrG5h" value="IEditorContextProvider" />
+  </node>
+  <node concept="1TIwiD" id="7_cYeEu4m3l">
+    <property role="1pbfSe" value="392059327" />
+    <property role="3GE5qa" value="QueryExpression" />
+    <property role="TrG5h" value="ContextVariable_EditorContext" />
+    <property role="34LRSv" value="editorContext" />
+    <ref role="1TJDcQ" node="7_cYeEu4pYp" resolve="ContextVariable" />
+  </node>
+  <node concept="1TIwiD" id="7_cYeEu4pYp">
+    <property role="1pbfSe" value="392075395" />
+    <property role="3GE5qa" value="QueryExpression" />
+    <property role="TrG5h" value="ContextVariable" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="7_cYeEuahwU">
+    <property role="1pbfSe" value="393613604" />
+    <property role="3GE5qa" value="ContextAssistant" />
+    <property role="TrG5h" value="ContextExpression_ContextAssistantCondition" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7_cYeEuahwV" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="7_cYeEuairS" role="PzmwI">
+      <ref role="PrY4T" node="7_cYeEu4m3k" resolve="IEditorContextProvider" />
+    </node>
+    <node concept="PrWs8" id="7_cYeEuairY" role="PzmwI">
+      <ref role="PrY4T" node="7_cYeEu4k3N" resolve="INodeProvider" />
+    </node>
   </node>
 </model>
 

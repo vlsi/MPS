@@ -51,7 +51,7 @@ public class OtherCommands extends ContextAssistantMenuBase {
       protected boolean isApplicable(ContextAssistantMenu.Context context) {
         final EditorContext editorContext = context.getEditorContext();
         final SNode node = context.getNode();
-        return eq_uewb7w_a0a0c0a0a2a0a0(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(node));
+        return eq_uewb7w_a0c0a0a2a0a0(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(node));
       }
 
       @Override
@@ -77,7 +77,7 @@ public class OtherCommands extends ContextAssistantMenuBase {
       }
     });
   }
-  private static boolean eq_uewb7w_a0a0c0a0a2a0a0(Object a, Object b) {
+  private static boolean eq_uewb7w_a0c0a0a2a0a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

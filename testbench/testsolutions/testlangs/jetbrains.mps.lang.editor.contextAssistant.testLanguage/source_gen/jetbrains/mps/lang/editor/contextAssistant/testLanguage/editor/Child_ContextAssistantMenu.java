@@ -10,6 +10,7 @@ import jetbrains.mps.lang.editor.contextAssistant.ConditionalMenuPart;
 import jetbrains.mps.openapi.editor.descriptor.ContextAssistantMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.contextAssistant.ActionItemMenuPart;
@@ -30,10 +31,14 @@ public class Child_ContextAssistantMenu extends ContextAssistantMenuBase {
       protected boolean isApplicable(ContextAssistantMenu.Context context) {
         final EditorContext editorContext = context.getEditorContext();
         final SNode node = context.getNode();
-        if ("error".equals(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-          throw new RuntimeException("Intentional exception - ignore this");
-        }
-        return true;
+        return new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
+            if ("error".equals(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+              throw new RuntimeException("Intentional exception - ignore this");
+            }
+            return true;
+          }
+        }.invoke();
       }
 
       @Override

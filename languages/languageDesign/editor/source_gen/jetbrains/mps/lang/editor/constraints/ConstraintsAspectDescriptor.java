@@ -104,6 +104,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x5d3b34577b3cff0cL) {
       return new ContextAssistantMenuReference_Default_Constraints();
     }
+    if (id == 0x794cf8ea9e1140f4L) {
+      return new ContextVariable_Node_Constraints();
+    }
+    if (id == 0x794cf8ea9e1160d5L) {
+      return new ContextVariable_EditorContext_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

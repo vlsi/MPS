@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.editor;
 
-import com.intellij.openapi.editor.SyntaxHighlighterColors;
+import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsListener;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
@@ -168,37 +168,35 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("FOLDED_TEXT", "FOLDED_TEXT_ATTRIBUTES");
       addIdeaMappingsExt("URL", "HYPERLINK_ATTRIBUTES");
 
-      addIdeaMappingsExt("LOCAL_VARIABLE", "LOCAL_VARIABLE_ATTRIBUTES");
-      addIdeaMappingsExt("PARAMETER", "PARAMETER_ATTRIBUTES");
+      addIdeaMappingsExt("LOCAL_VARIABLE", DefaultLanguageHighlighterColors.LOCAL_VARIABLE.toString());
+      addIdeaMappingsExt("PARAMETER", DefaultLanguageHighlighterColors.PARAMETER.toString());
       addIdeaMappingsExt("INSTANCE_FIELD", "INSTANCE_FIELD_ATTRIBUTES");
-      addIdeaMappingsExt("METHOD_DECLARATION", "METHOD_DECLARATION_ATTRIBUTES");
-      addIdeaMappingsExt("METHOD_CALL", "METHOD_CALL_ATTRIBUTES");
+      addIdeaMappingsExt("METHOD_DECLARATION", DefaultLanguageHighlighterColors.FUNCTION_DECLARATION.toString());
+      addIdeaMappingsExt("METHOD_CALL", DefaultLanguageHighlighterColors.FUNCTION_CALL.toString());
       addIdeaMappingsExt("STATIC_FIELD", "STATIC_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_FINAL_FIELD", "STATIC_FINAL_FIELD_ATTRIBUTES");
-      addIdeaMappingsExt("STATIC_METHOD", "STATIC_METHOD_ATTRIBUTES");
+      addIdeaMappingsExt("STATIC_METHOD", DefaultLanguageHighlighterColors.STATIC_METHOD.toString());
       addIdeaMappingsExt("DEPRECATED", "DEPRECATED_ATTRIBUTES");
 
-      addIdeaMappingsExt("CLASS_NAME", "CLASS_NAME_ATTRIBUTES");
+      addIdeaMappingsExt("CLASS_NAME", DefaultLanguageHighlighterColors.CLASS_NAME.toString());
 
       addIdeaMappingsExt("ANNOTATION", "ANNOTATION_NAME_ATTRIBUTES");
       addIdeaMappingsExt("NOT_USED_ELEMENT", "NOT_USED_ELEMENT_ATTRIBUTES");
       addIdeaMappingsExt("TODO", "TODO_DEFAULT_ATTRIBUTES");
 
-      //HACK: find out right way to init Syntax Highlighters
-      Object o = SyntaxHighlighterColors.KEYWORD;
-      addIdeaMappingsExt("DOC_TAG", "JAVA_DOC_TAG");
-      addIdeaMappingsExt("DOC_COMMENT", "JAVA_DOC_COMMENT");
-      addIdeaMappingsExt("KEYWORD", "JAVA_KEYWORD");
-      addIdeaMappingsExt("LINE_COMMENT", "JAVA_LINE_COMMENT");
-      addIdeaMappingsExt("BLOCK_COMMENT", "JAVA_BLOCK_COMMENT");
-      addIdeaMappingsExt("NUMBER", "JAVA_NUMBER");
-      addIdeaMappingsExt("STRING", "JAVA_STRING");
-      addIdeaMappingsExt("OPERATION_SIGN", "JAVA_OPERATION_SIGN");
-      addIdeaMappingsExt("PARENTH", "JAVA_PARENTH");
-      addIdeaMappingsExt("BRACKETS", "JAVA_BRACKETS");
-      addIdeaMappingsExt("BRACES", "JAVA_BRACES");
-      addIdeaMappingsExt("SEMICOLON", "JAVA_SEMICOLON");
-      addIdeaMappingsExt("DOT", "JAVA_DOT");
+      addIdeaMappingsExt("DOC_TAG", DefaultLanguageHighlighterColors.DOC_COMMENT_TAG.toString());
+      addIdeaMappingsExt("DOC_COMMENT", DefaultLanguageHighlighterColors.DOC_COMMENT.toString());
+      addIdeaMappingsExt("KEYWORD", DefaultLanguageHighlighterColors.KEYWORD.toString());
+      addIdeaMappingsExt("LINE_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT.toString());
+      addIdeaMappingsExt("BLOCK_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT.toString());
+      addIdeaMappingsExt("NUMBER", DefaultLanguageHighlighterColors.NUMBER.toString());
+      addIdeaMappingsExt("STRING", DefaultLanguageHighlighterColors.STRING.toString());
+      addIdeaMappingsExt("OPERATION_SIGN", DefaultLanguageHighlighterColors.OPERATION_SIGN.toString());
+      addIdeaMappingsExt("PARENTH", DefaultLanguageHighlighterColors.PARENTHESES.toString());
+      addIdeaMappingsExt("BRACKETS", DefaultLanguageHighlighterColors.BRACKETS.toString());
+      addIdeaMappingsExt("BRACES", DefaultLanguageHighlighterColors.BRACES.toString());
+      addIdeaMappingsExt("SEMICOLON", DefaultLanguageHighlighterColors.SEMICOLON.toString());
+      addIdeaMappingsExt("DOT", DefaultLanguageHighlighterColors.DOT.toString());
 
       addIdeaMappingsExt("BREAKPOINT", "BREAKPOINT_ATTRIBUTES");
       addIdeaMappingsExt("EXECUTIONPOINT", "EXECUTIONPOINT_ATTRIBUTES");
