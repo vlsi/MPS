@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JList;
-import javax.swing.SwingUtilities;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +66,8 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   public MessagesViewTool(Project project) {
     myProject = project;
     myDefaultList = new MyMessageList(project, "Messages");
+    // default list doesn't need too much attention, don't activate it on any message
+    myDefaultList.setActivateOnMessage(false);
     myDefaultList.setTitleUpdateFormat("{1,choice,0#--|1#1 error|2#{1} errors}/{2,choice,0#--|1#1 warning|2#{2} warnings}/{3,choice,0#--|1#1 info|2#{3} infos}");
     addList(DEFAULT_LIST, myDefaultList);
   }
@@ -78,10 +79,6 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   public Project getProject() {
     return myProject;
-  }
-
-  public void openToolLater(final boolean setActive) {
-    new ShowList(getDefaultList(), setActive).execute();
   }
 
   public void clear() {
@@ -100,12 +97,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void add(final IMessage message, String listName) {
-    final MessageList list = getAvailableList(listName, true);
-    list.add(message);
-
-    if (list.isVisible(message) && message.getKind() == MessageKind.ERROR) {
-      new ShowList(list).execute();
-    }
+    getAvailableList(listName, true).add(message);
   }
 
   @Override
@@ -159,8 +151,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public IMessageHandler newHandler() {
-    // default list doesn't need too much attention, don't activate it on any message
-    return new MsgHandler(getDefaultList()).activateOnMessage(false);
+    return new MsgHandler(getDefaultList());
   }
 
   public IMessageHandler newHandler(@NotNull final String name) {
@@ -205,6 +196,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private synchronized MessageList createList(String name) {
     MyMessageList list = new MyMessageList(myProject, name);
     list.loadState(getDefaultList().getState());
+    list.setActivateOnMessage(true);
     list.createContent(true, true);
     return list;
   }
@@ -294,51 +286,19 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   private static class MsgHandler implements IMessageHandler {
     private final MessageList myList;
-    private boolean myActivateOnMessage = true;
 
     MsgHandler(@NotNull MessageList list) {
       myList = list;
     }
 
-    protected MsgHandler activateOnMessage(boolean activateOnMessage) {
-      myActivateOnMessage = activateOnMessage;
-      return this;
-    }
-
     @Override
     public void handle(IMessage msg) {
       myList.add(msg);
-      if (myActivateOnMessage && myList.isVisible(msg)) {
-        new ShowList(myList).execute();
-      }
     }
 
     @Override
     public void clear() {
       myList.clear();
-    }
-  }
-
-  private static class ShowList implements Runnable {
-    private final MessageList myList;
-    private final boolean mySetActive;
-
-    ShowList(@NotNull MessageList list) {
-      this(list, false);
-    }
-
-    ShowList(@NotNull MessageList list, boolean setActive) {
-      myList = list;
-      mySetActive = setActive;
-    }
-
-    public void execute() {
-      SwingUtilities.invokeLater(this);
-    }
-
-    @Override
-    public void run() {
-      myList.show(mySetActive);
     }
   }
 }
