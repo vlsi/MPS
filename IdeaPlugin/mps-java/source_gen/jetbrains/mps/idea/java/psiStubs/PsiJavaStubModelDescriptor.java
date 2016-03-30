@@ -115,7 +115,7 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
     if (oldModel != null) {
       oldModel.setModelDescriptor(null);
       myModel = null;
-      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
     }
   }
   private void loadContents(SModel into) {

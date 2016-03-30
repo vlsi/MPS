@@ -6,5 +6,5 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import com.intellij.psi.PsiJavaFile;
 
 public interface JavaFilesHolder extends DataSource {
-  public Iterable<PsiJavaFile> getJavaFiles();
+  Iterable<PsiJavaFile> getJavaFiles();
 }
