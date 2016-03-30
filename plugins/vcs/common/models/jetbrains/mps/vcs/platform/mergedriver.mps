@@ -7617,7 +7617,7 @@
           <property role="Xl_RC" value="asm-all.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRi" role="37wK5m">
-          <property role="Xl_RC" value="xstream-1.4.3.jar" />
+          <property role="Xl_RC" value="xstream-1.4.8.jar" />
         </node>
         <node concept="Xl_RD" id="6gjr9XnnBRe" role="37wK5m">
           <property role="Xl_RC" value="guava-17.0.jar" />

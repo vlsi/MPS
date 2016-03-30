@@ -4303,10 +4303,10 @@
             <property role="Xl_RC" value="log4j.jar" />
           </node>
           <node concept="Xl_RD" id="5w9VucAHx14" role="3g7hyw">
-            <property role="Xl_RC" value="ecj-4.4.jar" />
+            <property role="Xl_RC" value="ecj-4.4.2.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqCByZ" role="3g7hyw">
-            <property role="Xl_RC" value="xstream-1.4.3.jar" />
+            <property role="Xl_RC" value="xstream-1.4.8.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqDAc8" role="3g7hyw">
             <property role="Xl_RC" value="asm4-all.jar" />

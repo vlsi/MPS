@@ -47,7 +47,7 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
   private static final String JAR_EXT = ".jar";
   @NonNls
   private static final String PLUGINS_PATH_ENV = "PLUGINS_PATH";
-  private static final String JDK_NAME = "1.6";
+  private static final String JDK_NAME = "1.8";
   private String IDEA_HOME;
   private String PLUGINS_PATH;
   private String JAVA_HOME;
@@ -112,7 +112,7 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
   }
 
   private void setUpJdk() {
-    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk(JDK_NAME, JAVA_HOME, "1.6", JpsJavaSdkType.INSTANCE);
+    JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk(JDK_NAME, JAVA_HOME, "1.8", JpsJavaSdkType.INSTANCE);
     jdk.addRoot(JpsPathUtil.pathToUrl(PlatformTestUtil.getRtJarPath()), JpsOrderRootType.COMPILED);
     if (getToolsJarPath().exists()) {
       jdk.addRoot(JpsPathUtil.pathToUrl(getToolsJarPath().getAbsolutePath()), JpsOrderRootType.COMPILED);
@@ -123,7 +123,7 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     JpsSimpleElement<JpsIdeaSdkProperties> props =
       new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(IDEA_HOME, JDK_NAME));
     JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk;
-    ideaSdk = myModel.getGlobal().addSdk("IDEA IC", IDEA_HOME, "1.6", JpsIdeaSdkType.INSTANCE, props);
+    ideaSdk = myModel.getGlobal().addSdk("IDEA IC", IDEA_HOME, "1.8", JpsIdeaSdkType.INSTANCE, props);
 
     final File ideaHomeLib = new File(IDEA_HOME, "lib");
     if (ideaHomeLib.exists() && ideaHomeLib.isDirectory()) {

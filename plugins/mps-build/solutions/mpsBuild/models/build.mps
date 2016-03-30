@@ -14382,7 +14382,7 @@
       <node concept="13uQ2_" id="5w9VucA$Mg7" role="39821P">
         <node concept="3_J27D" id="5w9VucA$Mg9" role="13uQ07">
           <node concept="3Mxwew" id="5w9VucA$Mlw" role="3MwsjC">
-            <property role="3MwjfP" value="ecj-4.4.jar" />
+            <property role="3MwjfP" value="ecj-4.4.2.jar" />
           </node>
         </node>
       </node>
@@ -14410,7 +14410,7 @@
       <node concept="13uQ2_" id="6eCuTcwOX20" role="39821P">
         <node concept="3_J27D" id="6eCuTcwOX21" role="13uQ07">
           <node concept="3Mxwew" id="6eCuTcwOX22" role="3MwsjC">
-            <property role="3MwjfP" value="xstream-1.4.3.jar" />
+            <property role="3MwjfP" value="xstream-1.4.8.jar" />
           </node>
         </node>
       </node>
@@ -17012,14 +17012,6 @@
           <node concept="NbPM2" id="AwiPu7jIGj" role="1688n0">
             <node concept="3Mxwey" id="AwiPu7jIGk" role="3MwsjC">
               <ref role="3Mxwex" node="3IKDaVZnAxg" resolve="build.number" />
-            </node>
-          </node>
-        </node>
-        <node concept="1688n2" id="AwiPu7jJ74" role="28jJR8">
-          <property role="1688n3" value="1\.6\*" />
-          <node concept="NbPM2" id="AwiPu7jJ76" role="1688n0">
-            <node concept="3Mxwew" id="AwiPu7jJ7k" role="3MwsjC">
-              <property role="3MwjfP" value="1\.6\+" />
             </node>
           </node>
         </node>

@@ -6,5 +6,5 @@ import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 public interface PsiJavaStubListener extends DataSourceListener {
-  public void changed(DataSource source, PsiJavaStubEvent event);
+  void changed(DataSource source, PsiJavaStubEvent event);
 }
