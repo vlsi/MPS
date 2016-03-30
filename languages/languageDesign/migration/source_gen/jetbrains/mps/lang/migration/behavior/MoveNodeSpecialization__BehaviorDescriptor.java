@@ -45,7 +45,7 @@ public final class MoveNodeSpecialization__BehaviorDescriptor extends BaseBHDesc
     return check_cflqrt_a0a1(SLinkOperations.getTarget(MoveNodeSpecialization__BehaviorDescriptor.getMyMoveNodeItem_id4yRsQKnq58F.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), repository);
   }
   /*package*/ static SNode getMyMoveNodeItem_id4yRsQKnq58F(@NotNull SNode __thisNode__) {
-    return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNode"));
+    return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNodeMigrationPart"));
   }
   /*package*/ static boolean shouldKeepOldNode_id1NHZk5hi$oq(@NotNull SNode __thisNode__) {
     return false;

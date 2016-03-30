@@ -2,7 +2,7 @@
 <model ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,6 +21,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -322,9 +323,11 @@
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
   </node>
   <node concept="1TIwiD" id="6szrkDoc28u">
-    <property role="TrG5h" value="MoveNode" />
+    <property role="TrG5h" value="MoveNodeMigrationPart" />
     <property role="3GE5qa" value="refactoring" />
     <property role="EcuMT" value="7431903976166007326" />
+    <property role="34LRSv" value="move" />
+    <ref role="1TJDcQ" node="2pO6eqPKF$2" resolve="PureMigrationPart" />
     <node concept="1TJgyj" id="6szrkDod3Ol" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fromNode" />
@@ -370,7 +373,7 @@
       <property role="20kJfa" value="part" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7431903976166447091" />
-      <ref role="20lvS9" node="6szrkDoc28u" resolve="MoveNode" />
+      <ref role="20lvS9" node="2pO6eqPKF$2" resolve="PureMigrationPart" />
     </node>
     <node concept="PrWs8" id="4uVwhQyPPvQ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -559,6 +562,26 @@
       <property role="TrG5h" value="description" />
       <property role="IQ2nx" value="3597905718825650036" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2pO6eqPKF$2">
+    <property role="1pbfSe" value="600387096" />
+    <property role="TrG5h" value="PureMigrationPart" />
+    <property role="3GE5qa" value="refactoring" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+  </node>
+  <node concept="1TIwiD" id="2pO6eqPKF$3">
+    <property role="1pbfSe" value="600387095" />
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="IncludeMigrationPart" />
+    <property role="34LRSv" value="include" />
+    <ref role="1TJDcQ" node="2pO6eqPKF$2" resolve="PureMigrationPart" />
+    <node concept="1TJgyj" id="2pO6eqPKF_w" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
   </node>
 </model>

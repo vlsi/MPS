@@ -730,10 +730,10 @@
   </node>
   <node concept="24kQdi" id="6szrkDod3OM">
     <property role="3GE5qa" value="refactoring" />
-    <ref role="1XX52x" to="53vh:6szrkDoc28u" resolve="MoveNode" />
+    <ref role="1XX52x" to="53vh:6szrkDoc28u" resolve="MoveNodeMigrationPart" />
     <node concept="3EZMnI" id="6szrkDod3OO" role="2wV5jI">
-      <node concept="3F0ifn" id="6szrkDod3OV" role="3EZMnx">
-        <property role="3F0ifm" value="move" />
+      <node concept="PMmxH" id="2pO6eqPKF$4" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0ifn" id="6szrkDod3P1" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -859,6 +859,36 @@
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
       </node>
       <node concept="l2Vlx" id="6szrkDocqDG" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2pO6eqPKF$M">
+    <property role="3GE5qa" value="refactoring" />
+    <ref role="1XX52x" to="53vh:2pO6eqPKF$3" resolve="IncludeMigrationPart" />
+    <node concept="3EZMnI" id="2pO6eqPKF$Q" role="2wV5jI">
+      <node concept="PMmxH" id="2pO6eqPKF$R" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="2pO6eqPKF$S" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="1iCGBv" id="2pO6eqPKFA7" role="3EZMnx">
+        <ref role="1NtTu8" to="53vh:2pO6eqPKF_w" />
+        <node concept="1sVBvm" id="2pO6eqPKFA9" role="1sWHZn">
+          <node concept="3F0A7n" id="2pO6eqPKFAx" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="2pO6eqPKF$W" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+        <node concept="ljvvj" id="2pO6eqPKF$X" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="2pO6eqPKF_1" role="2iSdaV" />
     </node>
   </node>
 </model>

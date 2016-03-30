@@ -28,10 +28,10 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
@@ -133,7 +133,10 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
       });
     }
     public void addPart(SNode initialStateNode, SNode finalStateNode, SNode specialization) {
-      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(createMoveNode_kz6lmo_a0a0a4l(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(finalStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"))));
+      addPart(createMoveNodeMigrationPart_kz6lmo_a0a0e11(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(finalStateNode)), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"))));
+    }
+    public void addPart(SNode migrationPart) {
+      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(migrationPart);
     }
     private static SNode createPureMigrationScript_kz6lmo_a0b0d11(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -142,9 +145,9 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), p1 + "");
       return n1;
     }
-    private static SNode createMoveNode_kz6lmo_a0a0a4l(Object p0, Object p1, Object p2) {
+    private static SNode createMoveNodeMigrationPart_kz6lmo_a0a0e11(Object p0, Object p1, Object p2) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNode"), null, null, false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNodeMigrationPart"), null, null, false);
       if (p0 != null) {
         n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"), (SNode) p0);
       }

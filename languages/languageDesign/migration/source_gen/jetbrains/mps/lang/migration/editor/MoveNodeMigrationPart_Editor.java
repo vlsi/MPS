@@ -24,44 +24,42 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 
-public class MoveNode_Editor extends DefaultNodeEditor {
+public class MoveNodeMigrationPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8eqyfw_a(editorContext, node);
+    return this.createCollection_mx2ru7_a(editorContext, node);
   }
-  private EditorCell createCollection_8eqyfw_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mx2ru7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8eqyfw_a");
+    editorCell.setCellId("Collection_mx2ru7_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_8eqyfw_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8eqyfw_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8eqyfw_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8eqyfw_d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8eqyfw_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8eqyfw_f0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_8eqyfw_g0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_mx2ru7_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mx2ru7_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mx2ru7_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mx2ru7_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mx2ru7_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mx2ru7_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mx2ru7_g0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_8eqyfw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "move");
-    editorCell.setCellId("Constant_8eqyfw_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_mx2ru7_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createConstant_8eqyfw_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mx2ru7_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_8eqyfw_b0");
+    editorCell.setCellId("Constant_mx2ru7_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_8eqyfw_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new MoveNode_Editor.fromNodeSingleRoleHandler_8eqyfw_c0(node, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"), editorContext);
+  private EditorCell createRefNode_mx2ru7_c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new MoveNodeMigrationPart_Editor.fromNodeSingleRoleHandler_mx2ru7_c0(node, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"), editorContext);
     return provider.createCell();
   }
-  private class fromNodeSingleRoleHandler_8eqyfw_c0 extends SingleRoleCellProvider {
-    public fromNodeSingleRoleHandler_8eqyfw_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class fromNodeSingleRoleHandler_mx2ru7_c0 extends SingleRoleCellProvider {
+    public fromNodeSingleRoleHandler_mx2ru7_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -86,18 +84,18 @@ public class MoveNode_Editor extends DefaultNodeEditor {
       return "<no fromNode>";
     }
   }
-  private EditorCell createConstant_8eqyfw_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mx2ru7_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_8eqyfw_d0");
+    editorCell.setCellId("Constant_mx2ru7_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_8eqyfw_e0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new MoveNode_Editor.toNodeSingleRoleHandler_8eqyfw_e0(node, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), editorContext);
+  private EditorCell createRefNode_mx2ru7_e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new MoveNodeMigrationPart_Editor.toNodeSingleRoleHandler_mx2ru7_e0(node, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), editorContext);
     return provider.createCell();
   }
-  private class toNodeSingleRoleHandler_8eqyfw_e0 extends SingleRoleCellProvider {
-    public toNodeSingleRoleHandler_8eqyfw_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class toNodeSingleRoleHandler_mx2ru7_e0 extends SingleRoleCellProvider {
+    public toNodeSingleRoleHandler_mx2ru7_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     protected EditorCell createChildCell(SNode child) {
@@ -122,9 +120,9 @@ public class MoveNode_Editor extends DefaultNodeEditor {
       return "<no toNode>";
     }
   }
-  private EditorCell createConstant_8eqyfw_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mx2ru7_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_8eqyfw_f0");
+    editorCell.setCellId("Constant_mx2ru7_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
@@ -132,8 +130,8 @@ public class MoveNode_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_8eqyfw_g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MoveNode_Editor.specializationListHandler_8eqyfw_g0(node, "specialization", editorContext);
+  private EditorCell createRefNodeList_mx2ru7_g0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MoveNodeMigrationPart_Editor.specializationListHandler_mx2ru7_g0(node, "specialization", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_specialization");
     Style style = new StyleImpl();
@@ -142,8 +140,8 @@ public class MoveNode_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class specializationListHandler_8eqyfw_g0 extends RefNodeListHandler {
-    public specializationListHandler_8eqyfw_g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class specializationListHandler_mx2ru7_g0 extends RefNodeListHandler {
+    public specializationListHandler_mx2ru7_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

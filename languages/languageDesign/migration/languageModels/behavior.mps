@@ -2,8 +2,8 @@
 <model ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -25,7 +25,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="5jto" ref="r:5dd063a0-3217-40ce-84a4-0ef961abad0b(jetbrains.mps.lang.migration.util)" />
-    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
+    <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
@@ -114,7 +114,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -508,21 +508,6 @@
         <property role="TrG5h" value="md" />
         <node concept="3Tqbb2" id="6d7r2Fq2jB8" role="1tU5fm">
           <ref role="ehGHo" to="oubp:3geGFOI0X5B" resolve="MethodDescriptor" />
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="5Fumpqe4XH$" role="13h7CS">
-      <property role="TrG5h" value="getClassName" />
-      <node concept="3Tm1VV" id="5Fumpqe4XH_" role="1B3o_S" />
-      <node concept="17QB3L" id="5Fumpqe4XQT" role="3clF45" />
-      <node concept="3clFbS" id="5Fumpqe4XHB" role="3clF47">
-        <node concept="3clFbF" id="5UnT0283djn" role="3cqZAp">
-          <node concept="2OqwBi" id="5UnT0283dsJ" role="3clFbG">
-            <node concept="13iPFW" id="5UnT0283dji" role="2Oq$k0" />
-            <node concept="3TrcHB" id="5UnT0283ebG" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
         </node>
       </node>
     </node>
@@ -1586,7 +1571,7 @@
         <node concept="3clFbF" id="4yRsQKnq5ah" role="3cqZAp">
           <node concept="1PxgMI" id="4yRsQKnq5aj" role="3clFbG">
             <property role="1BlNFB" value="true" />
-            <ref role="1m5ApE" to="53vh:6szrkDoc28u" resolve="MoveNode" />
+            <ref role="1m5ApE" to="53vh:6szrkDoc28u" resolve="MoveNodeMigrationPart" />
             <node concept="2OqwBi" id="4yRsQKnq5ak" role="1m5AlR">
               <node concept="13iPFW" id="4yRsQKnq5al" role="2Oq$k0" />
               <node concept="1mfA1w" id="4yRsQKnq5am" role="2OqNvi" />
@@ -1595,7 +1580,7 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="4yRsQKnq5ae" role="3clF45">
-        <ref role="ehGHo" to="53vh:6szrkDoc28u" resolve="MoveNode" />
+        <ref role="ehGHo" to="53vh:6szrkDoc28u" resolve="MoveNodeMigrationPart" />
       </node>
     </node>
     <node concept="13i0hz" id="1NHZk5hi$oq" role="13h7CS">
@@ -2083,13 +2068,6 @@
       <node concept="3Tm1VV" id="2mdzW6dVu9M" role="1B3o_S" />
     </node>
   </node>
-  <node concept="13h7C7" id="4uVwhQyQ2ut">
-    <property role="3GE5qa" value="refactoring" />
-    <ref role="13h7C2" to="53vh:6szrkDoc28u" resolve="MoveNode" />
-    <node concept="13hLZK" id="4uVwhQyQ2uu" role="13h7CW">
-      <node concept="3clFbS" id="4uVwhQyQ2uv" role="2VODD2" />
-    </node>
-  </node>
   <node concept="13h7C7" id="4uVwhQyFfsK">
     <property role="3GE5qa" value="refactoring" />
     <ref role="13h7C2" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
@@ -2371,6 +2349,22 @@
       </node>
       <node concept="17QB3L" id="5T5Tgcp0u53" role="3clF45" />
       <node concept="3Tm1VV" id="5T5Tgcp0u54" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="5Fumpqe4XH$" role="13h7CS">
+      <property role="TrG5h" value="getClassName" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="5Fumpqe4XH_" role="1B3o_S" />
+      <node concept="17QB3L" id="5Fumpqe4XQT" role="3clF45" />
+      <node concept="3clFbS" id="5Fumpqe4XHB" role="3clF47">
+        <node concept="3clFbF" id="5UnT0283djn" role="3cqZAp">
+          <node concept="2OqwBi" id="5UnT0283dsJ" role="3clFbG">
+            <node concept="13iPFW" id="5UnT0283dji" role="2Oq$k0" />
+            <node concept="3TrcHB" id="5UnT0283ebG" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="4uVwhQyFcnj" role="13h7CW">
       <node concept="3clFbS" id="4uVwhQyFcnk" role="2VODD2" />
