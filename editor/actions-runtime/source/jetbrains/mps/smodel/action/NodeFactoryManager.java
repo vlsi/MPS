@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -73,7 +74,7 @@ public class NodeFactoryManager {
     if (nodeConcept instanceof SInterfaceConcept) {
       return newNode;
     }
-    BehaviorReflection.initNode(newNode);
+    BHReflection.initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }

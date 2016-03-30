@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
@@ -36,6 +38,15 @@ public final class BHReflection {
   @NotNull
   public static SNode newNode(@Nullable SModel model, @NotNull SConstructor constructor, Object... parameters) {
     return constructor.newNode(model, parameters);
+  }
+
+  public static void initNode(@NotNull SNode node) {
+    BHDescriptor bhDescriptor = getBHDescriptor(node.getConcept());
+    if (bhDescriptor instanceof BaseBHDescriptor) {
+      ((BaseBHDescriptor) bhDescriptor).initNode(node);
+    } else {
+      throw new IllegalArgumentException("Impossible to init node " + node);
+    }
   }
 
   public static Object invoke(@Nullable SNode node, @NotNull SMethodId methodId, Object... parameters) {

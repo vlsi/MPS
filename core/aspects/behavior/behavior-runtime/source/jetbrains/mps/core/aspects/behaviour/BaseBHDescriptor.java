@@ -199,6 +199,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return node;
   }
 
+  public void initNode(@NotNull SNode node) {
+    SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
+    Object[] emptyParameters = new Object[0];
+    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor, getParametersArray(Collections.<SParameter>emptyList(), emptyParameters));
+  }
+
   @Override
   public final <T> T invoke(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();

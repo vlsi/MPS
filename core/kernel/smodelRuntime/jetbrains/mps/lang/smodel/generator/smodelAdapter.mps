@@ -42,6 +42,7 @@
     <import index="cavf" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.legacy(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="cm64" ref="d936855b-48da-4812-a8a0-2bfddd633ac5/java:jetbrains.mps.smodel.behaviour(jetbrains.mps.lang.behavior.api/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4551,10 +4552,10 @@
         </node>
         <node concept="3clFbH" id="3Hd_QmE5nw4" role="3cqZAp" />
         <node concept="3clFbF" id="1x8_mT5A15p" role="3cqZAp">
-          <node concept="2YIFZM" id="1x8_mT5A3vF" role="3clFbG">
-            <ref role="37wK5l" to="cm63:~BehaviorReflection.initNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="initNode" />
-            <ref role="1Pybhc" to="cm63:~BehaviorReflection" resolve="BehaviorReflection" />
-            <node concept="37vLTw" id="1x8_mT5A5t1" role="37wK5m">
+          <node concept="2YIFZM" id="4$rrWrCsCnE" role="3clFbG">
+            <ref role="37wK5l" to="cm64:~BHReflection.initNode(org.jetbrains.mps.openapi.model.SNode):void" resolve="initNode" />
+            <ref role="1Pybhc" to="cm64:~BHReflection" resolve="BHReflection" />
+            <node concept="37vLTw" id="4$rrWrCsCnF" role="37wK5m">
               <ref role="3cqZAo" node="8W0anMXH0m" resolve="result" />
             </node>
           </node>
