@@ -2201,33 +2201,42 @@
                           </node>
                           <node concept="3clFbH" id="6vKfkTruOQ" role="3cqZAp" />
                           <node concept="3cpWs6" id="3S8kul4RZlW" role="3cqZAp">
-                            <node concept="22lmx$" id="CgolD_zmRe" role="3cqZAk">
-                              <node concept="2YIFZM" id="CgolD_znvL" role="3uHU7w">
+                            <node concept="22lmx$" id="6798YLJ2hlv" role="3cqZAk">
+                              <node concept="2YIFZM" id="6798YLJ2oaM" role="3uHU7w">
+                                <ref role="37wK5l" to="zq1i:6798YLJ2hu6" resolve="hasStyleAttributeDeclaration" />
                                 <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
-                                <ref role="37wK5l" to="zq1i:CgolD_uRQD" resolve="hasManualEditorAspectDescriptor" />
-                                <node concept="1iwH7S" id="CgolD_zo9W" role="37wK5m" />
-                                <node concept="37vLTw" id="7IH442cXIKN" role="37wK5m">
+                                <node concept="37vLTw" id="6798YLJ2ob5" role="37wK5m">
                                   <ref role="3cqZAo" node="7IH442cXHPD" resolve="aspectModel" />
                                 </node>
                               </node>
-                              <node concept="2YIFZM" id="3S8kul4RZlX" role="3uHU7B">
-                                <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
-                                <ref role="37wK5l" to="zq1i:1XXGcSTYFLY" resolve="isAspectOfLanguage" />
-                                <node concept="37vLTw" id="7IH442cXI5L" role="37wK5m">
-                                  <ref role="3cqZAo" node="7IH442cXHPD" resolve="aspectModel" />
+                              <node concept="22lmx$" id="CgolD_zmRe" role="3uHU7B">
+                                <node concept="2YIFZM" id="3S8kul4RZlX" role="3uHU7B">
+                                  <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
+                                  <ref role="37wK5l" to="zq1i:1XXGcSTYFLY" resolve="isAspectOfLanguage" />
+                                  <node concept="37vLTw" id="7IH442cXI5L" role="37wK5m">
+                                    <ref role="3cqZAo" node="7IH442cXHPD" resolve="aspectModel" />
+                                  </node>
+                                  <node concept="1iwH7S" id="3S8kul4RZm0" role="37wK5m" />
+                                  <node concept="35c_gC" id="52UGxk5qCDB" role="37wK5m">
+                                    <ref role="35c_gD" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
+                                  </node>
+                                  <node concept="35c_gC" id="4GorVqgrFnJ" role="37wK5m">
+                                    <ref role="35c_gD" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
+                                  </node>
+                                  <node concept="35c_gC" id="52UGxk5qDGN" role="37wK5m">
+                                    <ref role="35c_gD" to="tpc2:59ZEGVOSPtB" resolve="ConceptEditorContextHints" />
+                                  </node>
+                                  <node concept="35c_gC" id="67q8fiOz7RT" role="37wK5m">
+                                    <ref role="35c_gD" to="tpc2:4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+                                  </node>
                                 </node>
-                                <node concept="1iwH7S" id="3S8kul4RZm0" role="37wK5m" />
-                                <node concept="35c_gC" id="52UGxk5qCDB" role="37wK5m">
-                                  <ref role="35c_gD" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
-                                </node>
-                                <node concept="35c_gC" id="4GorVqgrFnJ" role="37wK5m">
-                                  <ref role="35c_gD" to="tpc2:fGPKFH7" resolve="EditorComponentDeclaration" />
-                                </node>
-                                <node concept="35c_gC" id="52UGxk5qDGN" role="37wK5m">
-                                  <ref role="35c_gD" to="tpc2:59ZEGVOSPtB" resolve="ConceptEditorContextHints" />
-                                </node>
-                                <node concept="35c_gC" id="67q8fiOz7RT" role="37wK5m">
-                                  <ref role="35c_gD" to="tpc2:4Sf$XywKhwM" resolve="INamedContextAssistantItems" />
+                                <node concept="2YIFZM" id="CgolD_znvL" role="3uHU7w">
+                                  <ref role="1Pybhc" to="zq1i:3Y_BMlivqcz" resolve="LanguageRuntimeGeneratorUtils" />
+                                  <ref role="37wK5l" to="zq1i:CgolD_uRQD" resolve="hasManualEditorAspectDescriptor" />
+                                  <node concept="1iwH7S" id="CgolD_zo9W" role="37wK5m" />
+                                  <node concept="37vLTw" id="7IH442cXIKN" role="37wK5m">
+                                    <ref role="3cqZAo" node="7IH442cXHPD" resolve="aspectModel" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
