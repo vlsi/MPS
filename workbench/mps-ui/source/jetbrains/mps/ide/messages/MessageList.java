@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.messages.MessagesListCellRenderer.NavStatus;
@@ -72,7 +73,6 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -138,10 +138,23 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private final Object myUpdateIdentity = new Object();
   private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
   private volatile boolean myIsDisposed = false;
+  private boolean myActivateOnMessage = false;
 
   protected MessageList(Project project) {
     myProject = project;
     myUpdateQueue.setRestartTimerOnAdd(true);
+  }
+
+  /**
+   * Tells whether the list shall show up once message is added.
+   * XXX Note, there's difference between "just show up" and "show up and get active", but I don't know what is it
+   *  (i.e. whether window.show() brings the window to front, or it's windows.activate() that does, see #show(boolean), below.
+   *  Perhaps, it's just about focus gained?)
+   *
+   * By default, we don't show the list when message is added.
+   */
+  public void setActivateOnMessage(boolean activateOnMessage) {
+    myActivateOnMessage = activateOnMessage;
   }
 
   @Override
@@ -159,9 +172,15 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
     }
 
     ToolWindow window = ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
-    if (!window.isAvailable()) window.setAvailable(true, null);
-    if (!window.isVisible()) window.show(null);
-    if (setActive) window.activate(null);
+    if (!window.isAvailable()) {
+      window.setAvailable(true, null);
+    }
+    if (!window.isVisible()) {
+      window.show(null);
+    }
+    if (setActive) {
+      window.activate(null);
+    }
 
     Content content = getMessagesService().getContentManager().getContent(myComponent);
     getMessagesService().getContentManager().setSelectedContent(content);
@@ -173,7 +192,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
       return;
     }
 
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         if (myIsDisposed) {
@@ -259,6 +278,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
         updateHeader();
         updateActions();
+        if (myActivateOnMessage && messagesToAdd.size() > 0) {
+          show(false);
+        }
       }
 
       private void updateMessageCounters(IMessage m, int delta) {
@@ -276,10 +298,6 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         }
       }
     });
-  }
-
-  public void resetAutoscrollOption() {
-    myList.setAutoscrolls(true);
   }
 
   @Override
