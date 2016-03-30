@@ -15,16 +15,18 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
+import com.intellij.testFramework.ThreadTracker;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 
-public class CaretBlinker {
+public class CaretBlinker extends ApplicationAdapter {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
@@ -42,7 +44,14 @@ public class CaretBlinker {
 
 
   public CaretBlinker() {
+    ApplicationManager.getApplication().addApplicationListener(this);
     launch();
+  }
+
+  @Override
+  public void applicationExiting() {
+    ApplicationManager.getApplication().removeApplicationListener(this);
+    myRunnable.stop();
   }
 
   private void launch() {
@@ -51,6 +60,9 @@ public class CaretBlinker {
     t.setDaemon(true);
     t.setPriority(3);
     t.start();
+
+    // Register thread as long running to exclude from checkLeak
+    ThreadTracker.longRunningThreadCreated(ApplicationManager.getApplication(), t.getName());
   }
 
   public int getCaretBlinkingRateTimeMillis() {
@@ -79,6 +91,7 @@ public class CaretBlinker {
 
   private class MyRunnable implements Runnable {
     private int myBlinkRate;
+    private boolean isApplicationWorking = true;
 
     public MyRunnable(int blinkValue) {
       setBlinkRate(blinkValue);
@@ -87,7 +100,7 @@ public class CaretBlinker {
     @Override
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
-      while (true) {
+      while (isApplicationWorking) {
         synchronized (myRegistrationLock) {
           for (EditorComponent editor : myEditors) {
             if (editor.isActive()) {
@@ -111,6 +124,10 @@ public class CaretBlinker {
 
     public void setBlinkRate(int value) {
       myBlinkRate = value;
+    }
+
+    public void stop() {
+      this.isApplicationWorking = false;
     }
   }
 }
