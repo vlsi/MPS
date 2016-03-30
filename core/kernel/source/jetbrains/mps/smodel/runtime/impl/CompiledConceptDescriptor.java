@@ -175,8 +175,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
-    HashMap<String, ReferenceDescriptor> refsByNameMap = new HashMap<String, ReferenceDescriptor>();
+    Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
+    HashMap<String, ReferenceDescriptor> refsByNameMap = new LinkedHashMap<String, ReferenceDescriptor>();
     for (ReferenceDescriptor r : myOwnReferences) {
       refsMap.put(r.getId(), r);
       refsByNameMap.put(r.getName(), r);
@@ -196,8 +196,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     assert !myInitialized;
 
     //ids
-    Map<SContainmentLinkId, LinkDescriptor> linksMap = new HashMap<SContainmentLinkId, LinkDescriptor>();
-    HashMap<String, LinkDescriptor> linksByNameMap = new HashMap<String, LinkDescriptor>();
+    Map<SContainmentLinkId, LinkDescriptor> linksMap = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
+    HashMap<String, LinkDescriptor> linksByNameMap = new LinkedHashMap<String, LinkDescriptor>();
     for (LinkDescriptor r : myOwnLinks) {
       linksMap.put(r.getId(), r);
       linksByNameMap.put(r.getName(), r);
