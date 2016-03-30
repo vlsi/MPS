@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 
 public abstract class BaseTool {
   private Project myProject;
@@ -96,7 +95,7 @@ public abstract class BaseTool {
    * Opens the tool's window, shows tool if invisible at the moment
    */
   public void openToolLater(final boolean setActive) {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         openTool(setActive);
@@ -116,7 +115,7 @@ public abstract class BaseTool {
    * Minimizes the window, doesn't remove tool from panel
    */
   public void closeLater() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         close();
@@ -147,7 +146,7 @@ public abstract class BaseTool {
    * If the tool is visible, does nothing, else show the tool in panel in minimized state
    */
   public void makeAvailableLater() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         makeAvailable();
@@ -164,7 +163,7 @@ public abstract class BaseTool {
    * Removes the tool from the panel
    */
   public void makeUnavailableLater() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         makeUnavailable();
@@ -192,7 +191,7 @@ public abstract class BaseTool {
   }
 
   public void registerLater() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         DumbService.getInstance(getProject()).runWhenSmart(new Runnable() {
@@ -270,7 +269,7 @@ public abstract class BaseTool {
   }
 
   public void unregisterLater() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         unregister();
