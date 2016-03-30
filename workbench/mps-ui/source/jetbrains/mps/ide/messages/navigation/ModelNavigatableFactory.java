@@ -16,28 +16,32 @@
 package jetbrains.mps.ide.messages.navigation;
 
 import com.intellij.pom.Navigatable;
+import jetbrains.mps.ide.navigation.ModelNavigatable;
 import jetbrains.mps.ide.navigation.NavigatableFactory;
-import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
-class NodePointerNavigationHandler implements NavigatableFactory {
-
+/**
+ * non-public unless necessary. XXX perhaps, shall move next to ModelNavigatable into jetbrains.mps.ide.navigation?
+ * @author Artem Tikhomirov
+ * @since 3.4
+ */
+class ModelNavigatableFactory implements NavigatableFactory {
   private final Project myProject;
 
-  NodePointerNavigationHandler(@NotNull Project mpsProject) {
+  ModelNavigatableFactory(@NotNull Project mpsProject) {
     myProject = mpsProject;
   }
 
   @Override
   public boolean canCreate(@NotNull Object o) {
-    return o instanceof SNodeReference;
+    return o instanceof SModelReference;
   }
 
   @NotNull
   @Override
   public Navigatable create(@NotNull Object o) {
-    return new NodeNavigatable(myProject, (SNodeReference) o);
+    return new ModelNavigatable(myProject, (SModelReference) o);
   }
 }

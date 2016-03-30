@@ -1,12 +1,4 @@
 <components>
-  <application-components>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
-    </component>
-
-  </application-components>
-
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
@@ -16,6 +8,9 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.actions.AnalyzeDependenciesViewTool</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
     </component>
   </project-components>
 

@@ -13,31 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages.navigation;
+package jetbrains.mps.ide.navigation;
 
 import com.intellij.pom.Navigatable;
-import jetbrains.mps.ide.navigation.NavigatableFactory;
-import jetbrains.mps.ide.navigation.NodeNavigatable;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
-class NodePointerNavigationHandler implements NavigatableFactory {
-
-  private final Project myProject;
-
-  NodePointerNavigationHandler(@NotNull Project mpsProject) {
-    myProject = mpsProject;
-  }
-
-  @Override
-  public boolean canCreate(@NotNull Object o) {
-    return o instanceof SNodeReference;
-  }
+/**
+ * Factory for {@link com.intellij.pom.Navigatable}, bridge MPS objects with IDEA's platform navigation mechanism.
+ * @author Artem Tikhomirov
+ * @since 3.4
+ */
+public interface NavigatableFactory {
+  boolean canCreate(@NotNull Object o);
 
   @NotNull
-  @Override
-  public Navigatable create(@NotNull Object o) {
-    return new NodeNavigatable(myProject, (SNodeReference) o);
-  }
+  Navigatable create(@NotNull Object o);
 }

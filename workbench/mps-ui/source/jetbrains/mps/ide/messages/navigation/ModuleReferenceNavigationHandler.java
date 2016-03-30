@@ -15,27 +15,28 @@
  */
 package jetbrains.mps.ide.messages.navigation;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
+import com.intellij.pom.Navigatable;
+import jetbrains.mps.ide.navigation.ModuleNavigatable;
+import jetbrains.mps.ide.navigation.NavigatableFactory;
+import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-class ModuleReferenceNavigationHandler implements INavigationHandler<SModuleReference> {
-  @Override
-  public boolean canNavigate(SModuleReference object) {
-    // FIXME can't answer without a context (e.g. project)
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
-    return module != null;
+class ModuleReferenceNavigationHandler implements NavigatableFactory {
+  private final Project myProject;
+
+  ModuleReferenceNavigationHandler(@NotNull Project mpsProject) {
+    myProject = mpsProject;
   }
 
   @Override
-  public void navigate(SModuleReference object, Project project, boolean focus, boolean select) {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    SModule module = object.resolve(mpsProject.getRepository());
-    if (module == null) return;
+  public boolean canCreate(@NotNull Object o) {
+    return o instanceof SModuleReference;
+  }
 
-    NavigationSupport.getInstance().selectInTree(mpsProject, module, focus);
+  @NotNull
+  @Override
+  public Navigatable create(@NotNull Object o) {
+    return new ModuleNavigatable(myProject, (SModuleReference) o);
   }
 }

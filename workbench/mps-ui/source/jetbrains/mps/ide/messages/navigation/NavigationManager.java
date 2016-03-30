@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,71 +15,71 @@
  */
 package jetbrains.mps.ide.messages.navigation;
 
-import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.messages.FileWithLogicalPosition;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.make.FileWithPosition;
+import jetbrains.mps.ide.navigation.NavigatableFactory;
 import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.NodeWithContext;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class NavigationManager {
-  private static final Logger LOG = LogManager.getLogger(NavigationManager.class);
+/**
+ * Facilitate navigation to different kinds of {@link IMessage#getHintObject() hint objects} from {@link IMessage}.
+ */
+public class NavigationManager extends AbstractProjectComponent {
+  private final List<NavigatableFactory> myHandlers = new ArrayList<NavigatableFactory>();
 
-  public static NavigationManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(NavigationManager.class);
-  }
-
-  private Map<Class, INavigationHandler> myHandlers = new HashMap<Class, INavigationHandler>();
-
-  public NavigationManager() {
-    myHandlers.put(NodeWithContext.class, new NodeWithContextNavigationHandler());
-    myHandlers.put(FileWithPosition.class, new FileWithPositionNavigationHandler());
-    myHandlers.put(FileWithLogicalPosition.class, new FileWithLogicalPositionNavigationHandler());
-    myHandlers.put(SNodeReference.class, new NodePointerNavigationHandler());
-    myHandlers.put(SModuleReference.class, new ModuleReferenceNavigationHandler());
+  public NavigationManager(Project ideaProject, MPSProject mpsProject) {
+    super(ideaProject);
+    myHandlers.add(new FileWithPositionNavigationHandler(ideaProject));
+    myHandlers.add(new FileWithLogicalPositionNavigationHandler(ideaProject));
+    myHandlers.add(new NodePointerNavigationHandler(mpsProject));
+    myHandlers.add(new ModelNavigatableFactory(mpsProject));
+    myHandlers.add(new ModuleReferenceNavigationHandler(mpsProject));
   }
 
   public boolean canNavigateTo(Object o) {
-    assert !(o instanceof IMessage) : "accepts object to navigate, not a message";
-    return getHandlers(o).isEmpty();
+    if (o instanceof IMessage) {
+      o = ((IMessage) o).getHintObject();
+    }
+    return o != null && !getHandlers(o).isEmpty();
   }
 
+  /**
+   * @deprecated use {@link #navigateTo(Object,boolean)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    ProjectHelper.getModelAccess(project).checkReadAccess();
+    navigateTo(o, focus);
+  }
 
-    for (INavigationHandler h : getHandlers(o)) {
-      h.navigate(o, project, focus, select);
+  /**
+   * There's no requirement about model read or EDT thread.
+   * @param o hint object that (usually) describes origin/location of a message
+   * @param focus <code>false</code> is handy when user navigates through messages using keyboard, and would like to stay in messages view
+   */
+  public void navigateTo(Object o, boolean focus) {
+    final List<NavigatableFactory> handlers = getHandlers(o);
+    if (handlers.isEmpty()) {
+      LogManager.getLogger(NavigationManager.class).warn("Can't navigate to " + o + ". There is no navigation handler for it.");
+      return;
+    }
+    for (NavigatableFactory h : handlers) {
+      h.create(o).navigate(focus);
     }
   }
 
-  private List<INavigationHandler> getHandlers(Object o) {
-    ArrayList<INavigationHandler> result = new ArrayList<INavigationHandler>();
-    boolean hasHandler = false;
-    for (Class c : myHandlers.keySet()) {
-      if (!c.isInstance(o)) continue;
-
-      INavigationHandler handler = myHandlers.get(c);
-      hasHandler = true;
-      if (!handler.canNavigate(o)) continue;
-
-      result.add(handler);
+  private List<NavigatableFactory> getHandlers(Object o) {
+    ArrayList<NavigatableFactory> result = new ArrayList<NavigatableFactory>(4);
+    for (NavigatableFactory f : myHandlers) {
+      if (f.canCreate(o)) {
+        result.add(f);
+      }
     }
-
-    if (!hasHandler) {
-      LOG.warn("Can't navigate to " + o + ". There is no navigation handler for it.");
-    }
-
     return result;
   }
 }

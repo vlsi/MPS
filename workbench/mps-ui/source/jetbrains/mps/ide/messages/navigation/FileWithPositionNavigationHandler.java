@@ -22,29 +22,32 @@ import com.intellij.openapi.fileEditor.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.pom.Navigatable;
+import com.intellij.pom.NonNavigatable;
+import jetbrains.mps.ide.navigation.NavigatableFactory;
 import jetbrains.mps.make.FileWithPosition;
+import org.jetbrains.annotations.NotNull;
 
-class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
-  @Override
-  public boolean canNavigate(FileWithPosition pos) {
-    VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
-    return vf != null;
+class FileWithPositionNavigationHandler implements NavigatableFactory {
+  private final Project myProject;
+
+  FileWithPositionNavigationHandler(@NotNull Project ideaProject) {
+    myProject = ideaProject;
   }
 
   @Override
-  public void navigate(FileWithPosition pos, Project project, boolean focus, boolean select) {
+  public boolean canCreate(@NotNull Object o) {
+    return o instanceof FileWithPosition;
+  }
+
+  @NotNull
+  @Override
+  public Navigatable create(@NotNull Object o) {
+    final FileWithPosition pos = (FileWithPosition) o;
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
-    if (vf == null) return;
-
-    for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true, true)){
-      if (!(fe instanceof TextEditor)) continue;
-
-      TextEditor te = (TextEditor) fe;
-      int offset = pos.getOffset();
-      int maxOff = te.getEditor().getDocument().getTextLength();
-      te.getEditor().getCaretModel().moveToOffset(Math.min(offset, maxOff));
-      te.getEditor().getScrollingModel().scrollToCaret(ScrollType.MAKE_VISIBLE);
-      return;
+    if (vf == null) {
+      return NonNavigatable.INSTANCE;
     }
+    return new VirtualFileNavigatable(myProject, vf).offset(pos.getOffset());
   }
 }
