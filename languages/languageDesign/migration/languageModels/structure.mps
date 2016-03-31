@@ -325,8 +325,8 @@
   <node concept="1TIwiD" id="6szrkDoc28u">
     <property role="TrG5h" value="MoveNodeMigrationPart" />
     <property role="3GE5qa" value="refactoring" />
-    <property role="EcuMT" value="7431903976166007326" />
     <property role="34LRSv" value="move" />
+    <property role="EcuMT" value="7431903976166007326" />
     <ref role="1TJDcQ" node="2pO6eqPKF$2" resolve="PureMigrationPart" />
     <node concept="1TJgyj" id="6szrkDod3Ol" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -582,6 +582,38 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4uVwhQyFcjm" resolve="IMigrationUnit" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3oob4NQ8SMl">
+    <property role="1pbfSe" value="742111457" />
+    <property role="3GE5qa" value="refactoring.reference" />
+    <property role="TrG5h" value="ConceptMigrationReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3oob4NQ8SMm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="migrationScript" />
+      <ref role="20lvS9" node="6rIOn75Y3Ja" resolve="MigrationScriptReference" />
+    </node>
+    <node concept="1TJgyj" id="3oob4NQ8SMp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="oldConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2GZlO$G5$zc" resolve="AbstractNodeReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6rIOn75Y3Ja">
+    <property role="3GE5qa" value="refactoring.reference" />
+    <property role="TrG5h" value="MigrationScriptReference" />
+    <property role="1pbfSe" value="753339707" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6rIOn75Yg8y" role="1TKVEl">
+      <property role="TrG5h" value="fromVersion" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6rIOn760HDO" role="1TKVEl">
+      <property role="TrG5h" value="module" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
