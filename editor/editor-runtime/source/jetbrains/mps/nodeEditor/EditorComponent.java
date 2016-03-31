@@ -1523,6 +1523,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     mySelectionManager.dispose();
 
     myLeftMarginPressListeners.clear();
+
+    if(CaretBlinker.getInstance() != null) {
+      CaretBlinker.getInstance().unregisterEditor(this);
+    }
   }
 
   protected void detachListeners() {

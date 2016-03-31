@@ -15,51 +15,37 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
+import com.intellij.ui.components.panels.HorizontalLayout;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
-import javax.swing.Timer;
-import javax.swing.border.Border;
+import javax.swing.SpinnerNumberModel;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-class EditorSettingsPreferencesPage {
-  private static final int SLIDER_RATIO = 10000;
+class EditorSettingsPreferencesPage implements Disposable {
   private JPanel myEditorSettingsPanel;
   private JComboBox myFontsComboBox;
-  private JTextField myLineSpacingField;
+  private final JSpinner myLineSpacing;
   private JComboBox myFontSizesComboBox;
   private JComboBox myVerticalBoundComboBox;
   private JComboBox myIndentSizeComboBox;
@@ -68,9 +54,7 @@ class EditorSettingsPreferencesPage {
   private JCheckBox myAutoQuickFixCheckBox;
   private JCheckBox myUseBraces;
   private JCheckBox myShowContextAssistant;
-  private JSlider myBlinkingRateSlider;
-  private final EditorComponent myBlinkingDemo;
-  private Timer myTimer;
+  private final JSpinner myCaretBlinkPeriod;
   private JBRadioButton myDontShow;
   private JBRadioButton myTabPerAspect;
   private JBRadioButton myTabPerNode;
@@ -78,6 +62,7 @@ class EditorSettingsPreferencesPage {
 
   private JBRadioButton myFirstSelection;
   private EditorSettings mySettings;
+  private CaretBlinker myCaretBlinker = CaretBlinker.getInstance();
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
@@ -119,23 +104,31 @@ class EditorSettingsPreferencesPage {
 
     fontPropertiesPanel.add(new JLabel("Font Size : "), getLabelConstraint(1, 0));
     List<String> fontSizes = new ArrayList<String>(50);
-    for (int i = 1; i <= 50; i++) fontSizes.add(String.valueOf(i));
+    for (int i = 1; i <= 50; i++) {
+      fontSizes.add(String.valueOf(i));
+    }
     myFontSizesComboBox = new JComboBox(fontSizes.toArray());
     fontPropertiesPanel.add(myFontSizesComboBox, getEditorConstraint(1, 1));
 
     fontPropertiesPanel.add(new JLabel("Line Spacing : "), getLabelConstraint(2, 0));
-    myLineSpacingField = new JTextField();
-    fontPropertiesPanel.add(myLineSpacingField, getEditorConstraint(2, 1));
+    myLineSpacing = new JSpinner(new SpinnerNumberModel(1.0, 1.0, 3.0, 0.1));
+    final JFormattedTextField textField = ((JSpinner.DefaultEditor) myLineSpacing.getEditor()).getTextField();
+    textField.setHorizontalAlignment(JTextField.LEFT);
+    fontPropertiesPanel.add(myLineSpacing, getEditorConstraint(2, 1));
 
     fontPropertiesPanel.add(new JLabel("Text Width : "), getLabelConstraint(3, 0));
     List<String> textWidthValues = new ArrayList<String>(13);
-    for (int i = 60; i <= 300; i += 20) textWidthValues.add(String.valueOf(i));
+    for (int i = 60; i <= 300; i += 20) {
+      textWidthValues.add(String.valueOf(i));
+    }
     myVerticalBoundComboBox = new JComboBox(textWidthValues.toArray());
     fontPropertiesPanel.add(myVerticalBoundComboBox, getEditorConstraint(3, 1));
 
     fontPropertiesPanel.add(new JLabel("Indent Size : "), getLabelConstraint(4, 0));
     List<String> indents = new ArrayList<String>(5);
-    for (int i = 2; i <= 10; i += 2) indents.add(String.valueOf(i));
+    for (int i = 2; i <= 10; i += 2) {
+      indents.add(String.valueOf(i));
+    }
     myIndentSizeComboBox = new JComboBox(indents.toArray());
     fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4, 1));
 
@@ -163,66 +156,18 @@ class EditorSettingsPreferencesPage {
         new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
-    JPanel colorSettingsPanel = new JPanel();
-    Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
-    colorSettingsPanel.setBorder(border);
-    colorSettingsPanel.setLayout(new BoxLayout(colorSettingsPanel, BoxLayout.Y_AXIS));
+    JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(0));
+    caretBlinkingPanel.add(new JLabel("Caret blinking (ms):"));
+    myCaretBlinkPeriod =
+        new JSpinner(new SpinnerNumberModel(CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MAX_BLINKING_PERIOD, 100));
+    caretBlinkingPanel.add(myCaretBlinkPeriod);
 
-    colorSettingsPanel.add(new JLabel(" "));
-    colorSettingsPanel.add(new JLabel("Caret Blinking Rate : "));
-    myBlinkingRateSlider = new JSlider(1, 10, 5);
-    colorSettingsPanel.add(myBlinkingRateSlider);
-    myBlinkingDemo = createBlinkingDemo();
-    colorSettingsPanel.add(myBlinkingDemo);
-
-    for (Component c : colorSettingsPanel.getComponents()) {
-      if (c instanceof JComponent) {
-        ((JComponent) c).setAlignmentX(Component.LEFT_ALIGNMENT);
-      }
-    }
-
-    MouseAdapter adapter = new MouseAdapter() {
-      @Override
-      public void mousePressed(MouseEvent e) {
-        myBlinkingDemo.getSelectionManager().clearSelection();
-      }
-    };
-    panel.addMouseListener(adapter);
-
-    panel.add(colorSettingsPanel,
+    panel.add(caretBlinkingPanel,
         new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
-    myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
-
-    for (Component c : panel.getComponents()) {
-      if (c instanceof JComponent) {
-        ((JComponent) c).setAlignmentX(Component.LEFT_ALIGNMENT);
-      }
-    }
-
-    ActionListener listener = new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        // repaint() should be called here since repaintExternalComponent() does not redraw the caret
-        myBlinkingDemo.repaint();
-        EditorCell rootCell = myBlinkingDemo.getRootCell();
-        if (rootCell != null) {
-          rootCell.switchCaretVisible();
-          myTimer.setDelay(getBlinkingPeriod());
-        }
-      }
-    };
-    myTimer = new Timer(CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis(), listener);
-
     myEditorSettingsPanel = new JPanel(new BorderLayout());
     myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
-    myEditorSettingsPanel.addMouseListener(adapter);
-
-    myTimer.start();
-
-//    reset();
-    validate();
   }
 
   private GridConstraints getLabelConstraint(int row, int column) {
@@ -235,30 +180,6 @@ class EditorSettingsPreferencesPage {
         GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
-
-  private EditorComponent createBlinkingDemo() {
-    EditorComponent blinking = new EditorComponent(MPSModuleRepository.getInstance()) {
-      {
-        CaretBlinker.getInstance().unregisterEditor(this);
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            rebuildEditorContent();
-          }
-        });
-      }
-
-      @Override
-      public jetbrains.mps.openapi.editor.cells.EditorCell createEmptyCell() {
-        return new EditorCell_Demo(getEditorContext(), "blinking");
-      }
-    };
-    for (FocusListener listener : blinking.getListeners(FocusListener.class)) {
-      blinking.removeFocusListener(listener);
-    }
-    return blinking;
-  }
-
   public String getName() {
     return "Editor Settings";
   }
@@ -267,50 +188,39 @@ class EditorSettingsPreferencesPage {
     return myEditorSettingsPanel;
   }
 
-  public boolean validate() {
-    return true;
-  }
-
   public void commit() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        String fontName = myFontsComboBox.getSelectedItem().toString();
-        int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
-        Font newFont = new Font(fontName, Font.PLAIN, fontSize);
-        mySettings.setDefaultEditorFont(newFont);
+    String fontName = myFontsComboBox.getSelectedItem().toString();
+    int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
 
-        mySettings.setVerticalBound(Integer.parseInt(myVerticalBoundComboBox.getSelectedItem().toString()));
+    Font newFont = new Font(fontName, Font.PLAIN, fontSize);
+    mySettings.setDefaultEditorFont(newFont);
 
-        mySettings.setIndentSize(Integer.parseInt(myIndentSizeComboBox.getSelectedItem().toString()));
+    mySettings.setVerticalBound(Integer.parseInt(myVerticalBoundComboBox.getSelectedItem().toString()));
 
-        int blinkingPeriod = getBlinkingPeriod();
-        CaretBlinker.getInstance().setCaretBlinkingRateTimeMillis(blinkingPeriod);
+    mySettings.setIndentSize(Integer.parseInt(myIndentSizeComboBox.getSelectedItem().toString()));
 
-        mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
-        mySettings.setUseBraces(myUseBraces.isSelected());
-        mySettings.setShowContextAssistant(myShowContextAssistant.isSelected());
+    if (myCaretBlinker != null) {
+      myCaretBlinker.setCaretBlinkingRateTimeMillis((Integer) myCaretBlinkPeriod.getModel().getValue());
+    }
 
-        mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
-        mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
+    mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
+    mySettings.setUseBraces(myUseBraces.isSelected());
+    mySettings.setShowContextAssistant(myShowContextAssistant.isSelected());
 
-        try {
-          mySettings.getState().setLineSpacing(Double.parseDouble(myLineSpacingField.getText()));
-        } catch (NumberFormatException e) {
-          mySettings.getState().setLineSpacing(1.0);
-        }
+    mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
+    mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
 
-        mySettings.getState().setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
-        mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
-        mySettings.getState().setShowGrayed(myAllTabs.isSelected());
-        applyState();
+    mySettings.getState().setLineSpacing((Double) myLineSpacing.getModel().getValue());
 
-        mySettings.updateCachedValue();
-        mySettings.updateGlobalScheme();
-        mySettings.fireEditorSettingsChanged();
-      }
-    });
+    mySettings.getState().setShow(myTabPerAspect.isSelected() || myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
+    mySettings.getState().setShowGrayed(myAllTabs.isSelected());
+    applyState();
+
+    mySettings.updateCachedValue();
+    mySettings.updateGlobalScheme();
+    mySettings.fireEditorSettingsChanged();
   }
 
   private void applyState() {
@@ -325,11 +235,6 @@ class EditorSettingsPreferencesPage {
     }
   }
 
-  private int getBlinkingPeriod() {
-    int sliderValue = myBlinkingRateSlider.getValue();
-    return SLIDER_RATIO / sliderValue;
-  }
-
   public boolean isModified() {
     boolean sameTextWidth = myVerticalBoundComboBox.getSelectedItem().equals("" + mySettings.getVerticalBound());
     boolean sameIndentSize = myIndentSizeComboBox.getSelectedItem().equals("" + mySettings.getIndentSize());
@@ -339,8 +244,11 @@ class EditorSettingsPreferencesPage {
     boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + mySettings.getState().getFontSize());
     boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + mySettings.getState().getFontFamily());
-    boolean sameLineSpacing = myLineSpacingField.getText().equals("" + mySettings.getState().getLineSpacing());
-    boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
+    boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getState().getLineSpacing());
+    boolean sameBlinkingRate = true;
+    if (myCaretBlinker != null) {
+      sameBlinkingRate = myCaretBlinkPeriod.getModel().getValue().equals(myCaretBlinker.getCaretBlinkingRateTimeMillis());
+    }
     boolean sameTabs = myFirstSelection.isSelected();
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
@@ -367,69 +275,18 @@ class EditorSettingsPreferencesPage {
 
     myFontsComboBox.setSelectedItem("" + mySettings.getState().getFontFamily());
 
-    myLineSpacingField.setText("" + mySettings.getState().getLineSpacing());
+    myLineSpacing.setValue(mySettings.getState().getLineSpacing());
 
-    long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
-    int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
-    int intMax = (SLIDER_RATIO / CaretBlinker.MIN_BLINKING_PERIOD);
-    int intValue = (int) (SLIDER_RATIO / value);
-    myBlinkingRateSlider.setMinimum(intMin);
-    myBlinkingRateSlider.setMaximum(intMax);
-    myBlinkingRateSlider.setValue(intValue);
+    if (myCaretBlinker != null) {
+      myCaretBlinkPeriod.setValue(myCaretBlinker.getCaretBlinkingRateTimeMillis());
+    }
 
     applyState();
     myFirstSelection.setSelected(true);
-
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        myBlinkingDemo.rebuildEditorContent();
-      }
-    });
   }
 
+  @Override
   public void dispose() {
-    myTimer.stop();
-  }
-
-  private class EditorCell_Demo extends EditorCell_Constant {
-    public EditorCell_Demo(jetbrains.mps.openapi.editor.EditorContext editorContext, String text) {
-      super(editorContext, null, text);
-      this.setCaretPosition(3);
-    }
-
-    @Override
-    public void changeText(String text) {
-    }
-
-    @Override
-    public boolean isEditable() {
-      return true;
-    }
-
-    @Override
-    public boolean isSelectable() {
-      return true;
-    }
-
-    @Override
-    public void paintSelection(Graphics g, Color c, boolean drawBorder) {
-
-    }
-
-    @Override
-    protected boolean toShowCaret() {
-      return myCaretIsVisible;
-    }
-
-    @Override
-    public boolean isDrawBrackets() {
-      return false;
-    }
-
-    @Override
-    protected ParentSettings isSelectionPaintedOnAncestor(ParentSettings parentSettings) {
-      return ParentSettings.createSelectedSetting(isSelected());
-    }
+    myEditorSettingsPanel = null;
   }
 }
