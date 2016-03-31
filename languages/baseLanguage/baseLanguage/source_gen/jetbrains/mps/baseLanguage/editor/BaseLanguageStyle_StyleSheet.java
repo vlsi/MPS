@@ -466,6 +466,7 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
   }
   public static void apply_Dot(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
