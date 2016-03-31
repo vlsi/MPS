@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.concurrency.JobScheduler;
 import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
-import com.intellij.testFramework.ThreadTracker;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
+import javax.swing.SwingUtilities;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 
 public class CaretBlinker extends ApplicationAdapter {
-  private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
     return ApplicationManager.getApplication() == null ? null : ServiceManager.getService(CaretBlinker.class);
@@ -36,33 +37,26 @@ public class CaretBlinker extends ApplicationAdapter {
   public static final int MIN_BLINKING_PERIOD = 100; //millis
   public static final int MAX_BLINKING_PERIOD = 1000;
 
-  private MyRunnable myRunnable;
+  private final RepaintCursorCommand myRunnable = new RepaintCursorCommand();
+  private ScheduledFuture<?> mySchedulerHandle = null;
 
   private final Object myRegistrationLock = new Object();
 
   private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
 
-
-  public CaretBlinker() {
+  // Hide constructor to avoid direct use. If there is no Application, getInstance() will return null.
+  private CaretBlinker() {
     ApplicationManager.getApplication().addApplicationListener(this);
-    launch();
+    start();
   }
 
-  @Override
-  public void applicationExiting() {
-    ApplicationManager.getApplication().removeApplicationListener(this);
-    myRunnable.stop();
-  }
+  private void start() {
+    if (mySchedulerHandle != null) {
+      mySchedulerHandle.cancel(false);
+    }
 
-  private void launch() {
-    myRunnable = new MyRunnable(getCaretBlinkingRateTimeMillis());
-    Thread t = new Thread(myRunnable, "caret blinker daemon");
-    t.setDaemon(true);
-    t.setPriority(3);
-    t.start();
-
-    // Register thread as long running to exclude from checkLeak
-    ThreadTracker.longRunningThreadCreated(ApplicationManager.getApplication(), t.getName());
+    mySchedulerHandle = JobScheduler.getScheduler().scheduleWithFixedDelay(
+        myRunnable, getCaretBlinkingRateTimeMillis(), getCaretBlinkingRateTimeMillis(), TimeUnit.MILLISECONDS);
   }
 
   public int getCaretBlinkingRateTimeMillis() {
@@ -71,9 +65,7 @@ public class CaretBlinker extends ApplicationAdapter {
 
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
     EditorSettingsExternalizable.getInstance().setBlinkPeriod(timeMillis);
-    if (myRunnable != null) {
-      myRunnable.setBlinkRate(timeMillis);
-    }
+    start();
   }
 
   public void registerEditor(EditorComponent editorComponent) {
@@ -88,46 +80,40 @@ public class CaretBlinker extends ApplicationAdapter {
     }
   }
 
+  @Override
+  public void applicationExiting() {
+    ApplicationManager.getApplication().removeApplicationListener(this);
+    // Force stop runnable on app close
+    mySchedulerHandle.cancel(true);
+  }
 
-  private class MyRunnable implements Runnable {
-    private int myBlinkRate;
-    private boolean isApplicationWorking = true;
 
-    public MyRunnable(int blinkValue) {
-      setBlinkRate(blinkValue);
-    }
-
+  private class RepaintCursorCommand implements Runnable {
     @Override
-    @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
-      while (isApplicationWorking) {
-        synchronized (myRegistrationLock) {
-          for (EditorComponent editor : myEditors) {
-            if (editor.isActive()) {
-              EditorCell selectedCell = editor.getDeepestSelectedCell();
-              if (selectedCell == null) continue;
-              ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
-              editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
+      synchronized (myRegistrationLock) {
+        for (final EditorComponent editor : myEditors) {
+          if (editor.isActive()) {
+            final EditorCell selectedCell = editor.getDeepestSelectedCell();
+            if (selectedCell == null) {
+              // in this case there is no currently active editor, so we just stop searching
               break;
             }
+
+            SwingUtilities.invokeLater(new Runnable() {
+              @Override
+              public void run() {
+                if (!editor.isDisposed() && editor.isActive()) {
+                  ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).switchCaretVisible();
+                  editor.repaint(selectedCell.getX(), selectedCell.getY(), selectedCell.getWidth() + 1, selectedCell.getHeight() + 1);
+                }
+              }
+            });
+
+            break;
           }
-        }
-        try {
-          synchronized (this) {
-            wait(myBlinkRate);
-          }
-        } catch (Throwable t) {
-          LOG.error(null, t);
         }
       }
-    }
-
-    public void setBlinkRate(int value) {
-      myBlinkRate = value;
-    }
-
-    public void stop() {
-      this.isApplicationWorking = false;
     }
   }
 }
