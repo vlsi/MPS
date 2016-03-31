@@ -144,40 +144,6 @@ public class SModelUtil {
     }
     return MetaAdapterByDeclaration.getConcept(from).isSubConceptOf(MetaAdapterByDeclaration.getConcept(to));
   }
-  /**
-   * 
-   * @deprecated use SConcept.isSubConceptOf
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean isAssignableConcept(SNode from, String toFqName) {
-    // not used in MPS 
-    if (from == null) {
-      return false;
-    }
-    String fromFqName = NameUtil.nodeFQName(from);
-    return isAssignableConcept(fromFqName, toFqName);
-  }
-  /**
-   * 
-   * @deprecated use SConcept.isSubConceptOf
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    // not used in MPS 
-    if (eq_74see4_a0b0k(fromFqName, toFqName)) {
-      return true;
-    }
-    if (fromFqName == null || toFqName == null) {
-      return false;
-    }
-    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(toFqName)) {
-      return true;
-    }
-
-    return ConceptRegistry.getInstance().getConceptDescriptor(fromFqName).isAssignableTo(toFqName);
-  }
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"));
   }
