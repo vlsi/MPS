@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class VirtualPackageFeature extends Feature {
   private String myVirtualPackage;
@@ -19,7 +20,7 @@ public class VirtualPackageFeature extends Feature {
   }
   @Nullable
   @Override
-  public Feature getParent() {
+  protected Feature getParent(SRepository repo) {
     int lastIndexOf = myVirtualPackage.lastIndexOf('.');
     if (lastIndexOf == -1) {
       return null;

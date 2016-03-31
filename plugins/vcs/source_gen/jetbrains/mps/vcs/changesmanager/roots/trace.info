@@ -15,38 +15,38 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)/2722286076674321023">
     <file name="NodeFileStatusMappingExt.java">
-      <node id="2722286076674321044" at="18,91,19,29" concept="12" />
-      <node id="2722286076674321627" at="22,115,23,48" concept="3" />
-      <node id="2722286076674321274" at="23,48,24,79" concept="8" />
-      <node id="2722286076674321287" at="25,128,26,50" concept="8" />
-      <node id="2722286076674321295" at="27,56,28,57" concept="3" />
-      <node id="2722286076674321303" at="28,57,29,14" concept="1" />
-      <node id="2722286076674321632" at="31,5,32,0" concept="10" />
-      <node id="2722286076674321025" at="18,0,21,0" concept="2" trace="NodeFileStatusMappingExt#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
-      <node id="2722286076674321293" at="26,50,30,7" concept="6" />
-      <node id="2722286076674321285" at="24,79,31,5" concept="5" />
-      <node id="2722286076674321616" at="21,0,34,0" concept="7" trace="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-      <scope id="2722286076674321028" at="18,91,19,29" />
-      <scope id="2722286076674321294" at="27,56,29,14" />
-      <scope id="2722286076674321025" at="18,0,21,0">
+      <node id="2722286076674321044" at="17,91,18,29" concept="12" />
+      <node id="2722286076674321627" at="21,115,22,48" concept="3" />
+      <node id="2722286076674321274" at="22,48,23,74" concept="8" />
+      <node id="2722286076674321287" at="24,128,25,50" concept="8" />
+      <node id="2722286076674321295" at="26,56,27,57" concept="3" />
+      <node id="2722286076674321303" at="27,57,28,14" concept="1" />
+      <node id="2722286076674321632" at="30,5,31,0" concept="10" />
+      <node id="2722286076674321025" at="17,0,20,0" concept="2" trace="NodeFileStatusMappingExt#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
+      <node id="2722286076674321293" at="25,50,29,7" concept="6" />
+      <node id="2722286076674321285" at="23,74,30,5" concept="5" />
+      <node id="2722286076674321616" at="20,0,33,0" concept="7" trace="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+      <scope id="2722286076674321028" at="17,91,18,29" />
+      <scope id="2722286076674321294" at="26,56,28,14" />
+      <scope id="2722286076674321025" at="17,0,20,0">
         <var name="project" id="2722286076674321040" />
         <var name="registry" id="2722286076674321055" />
       </scope>
-      <scope id="2722286076674321286" at="25,128,30,7">
+      <scope id="2722286076674321286" at="24,128,29,7">
         <var name="baseNode" id="2722286076674321263" />
       </scope>
-      <scope id="2722286076674321285" at="24,79,31,5">
+      <scope id="2722286076674321285" at="23,74,30,5">
         <var name="d" id="2722286076674321262" />
       </scope>
-      <scope id="2722286076674321625" at="22,115,32,0">
+      <scope id="2722286076674321625" at="21,115,31,0">
         <var name="currentNode" id="2722286076674321275" />
       </scope>
-      <scope id="2722286076674321616" at="21,0,34,0">
+      <scope id="2722286076674321616" at="20,0,33,0">
         <var name="fsm" id="2722286076674321619" />
         <var name="nodePointer" id="2722286076674321623" />
         <var name="nvfs" id="2722286076674321621" />
       </scope>
-      <unit id="2722286076674321023" at="17,0,35,0" name="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" />
+      <unit id="2722286076674321023" at="16,0,34,0" name="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" />
     </file>
   </root>
   <root nodeRef="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)/5332932484372864216">

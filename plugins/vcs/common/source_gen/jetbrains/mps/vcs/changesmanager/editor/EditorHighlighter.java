@@ -14,10 +14,8 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -49,14 +47,15 @@ public class EditorHighlighter implements EditorMessageOwner {
 
     CurrentDifferenceRegistry.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        final SRepository repo = editorComponent.getEditorContext().getRepository();
+        repo.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             synchronized (myDisposedLock) {
               if (myDisposed) {
                 return;
               }
-              final SNode editedNode = editorComponent.getEditedNode();
-              if (editedNode == null || !(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
+              final SNode editedNode = (editorComponent.getEditedNodePointer() == null ? null : editorComponent.getEditedNodePointer().resolve(repo));
+              if (editedNode == null) {
                 return;
               }
               final SModel model = editedNode.getModel();
@@ -109,10 +108,11 @@ public class EditorHighlighter implements EditorMessageOwner {
   private List<ChangeEditorMessage> createMessages(final ModelChange change) {
     final Wrappers._T<List<ChangeEditorMessage>> messages = new Wrappers._T<List<ChangeEditorMessage>>(null);
     if (!(change instanceof AddRootChange)) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      final SRepository repo = myEditorComponent.getEditorContext().getRepository();
+      repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          SNode editedNode = myEditorComponent.getEditedNode();
-          if (editedNode == null || !(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
+          SNode editedNode = (myEditorComponent.getEditedNodePointer() == null ? null : myEditorComponent.getEditedNodePointer().resolve(repo));
+          if (editedNode == null) {
             return;
           }
           SModel model = editedNode.getModel();
@@ -151,32 +151,28 @@ public class EditorHighlighter implements EditorMessageOwner {
     }
   }
   public void dispose() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        synchronized (myDisposedLock) {
-          myDisposed = true;
-          try {
-            synchronized (myChangesMessages) {
-              SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<ModelChange>() {
-                public void visit(ModelChange ch) {
-                  removeMessages(ch);
-                }
-              });
+    synchronized (myDisposedLock) {
+      myDisposed = true;
+      try {
+        synchronized (myChangesMessages) {
+          SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence().visitAll(new IVisitor<ModelChange>() {
+            public void visit(ModelChange ch) {
+              removeMessages(ch);
             }
-            getHighlightManager().clearForOwner(EditorHighlighter.this);
-            if (myStripsPainter != null) {
-              getLeftEditorHighlighter().removeFoldingAreaPainter(myStripsPainter);
-              myStripsPainter.dispose();
-            }
-          } finally {
-            if (myCurrentDifference != null) {
-              myCurrentDifference.removeDifferenceListener(myListener);
-              myListener = null;
-            }
-          }
+          });
+        }
+        getHighlightManager().clearForOwner(this);
+        if (myStripsPainter != null) {
+          getLeftEditorHighlighter().removeFoldingAreaPainter(myStripsPainter);
+          myStripsPainter.dispose();
+        }
+      } finally {
+        if (myCurrentDifference != null) {
+          myCurrentDifference.removeDifferenceListener(myListener);
+          myListener = null;
         }
       }
-    });
+    }
   }
   @Nullable
   /*package*/ ChangeSet getChangeSet() {

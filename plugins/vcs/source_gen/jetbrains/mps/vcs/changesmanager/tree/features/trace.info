@@ -13,128 +13,138 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/3201398707754971881">
     <file name="ModelFeature.java">
-      <node id="3201398707754971893" at="10,64,11,26" concept="10" />
-      <node id="3201398707754971909" at="15,30,16,16" concept="9" />
-      <node id="3201398707754971911" at="20,28,21,49" concept="9" />
-      <node id="3201398707754971888" at="10,0,13,0" concept="2" trace="ModelFeature#(Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="3201398707754971904" at="13,0,18,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <node id="3201398707754971899" at="18,0,23,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <scope id="3201398707754971892" at="10,64,11,26" />
-      <scope id="3201398707754971908" at="15,30,16,16" />
-      <scope id="3201398707754971903" at="20,28,21,49" />
-      <scope id="3201398707754971888" at="10,0,13,0">
+      <node id="3201398707754971893" at="11,64,12,26" concept="10" />
+      <node id="3201398707754971909" at="16,49,17,16" concept="9" />
+      <node id="3201398707754971911" at="21,28,22,49" concept="9" />
+      <node id="3201398707754971888" at="11,0,14,0" concept="2" trace="ModelFeature#(Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
+      <node id="3201398707754971904" at="14,0,19,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="3201398707754971899" at="19,0,24,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <scope id="3201398707754971892" at="11,64,12,26" />
+      <scope id="3201398707754971908" at="16,49,17,16" />
+      <scope id="3201398707754971903" at="21,28,22,49" />
+      <scope id="3201398707754971888" at="11,0,14,0">
         <var name="modelReference" id="3201398707754971894" />
       </scope>
-      <scope id="3201398707754971904" at="13,0,18,0" />
-      <scope id="3201398707754971899" at="18,0,23,0" />
-      <unit id="3201398707754971881" at="9,0,24,0" name="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" />
+      <scope id="3201398707754971904" at="14,0,19,0">
+        <var name="repo" id="3249499558395488255" />
+      </scope>
+      <scope id="3201398707754971899" at="19,0,24,0" />
+      <unit id="3201398707754971881" at="10,0,25,0" name="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868246">
     <file name="DeletedChildFeature.java">
-      <node id="5060092229902868247" at="10,0,11,0" concept="4" trace="myRole" />
-      <node id="5060092229902868250" at="11,0,12,0" concept="4" trace="myIndex" />
-      <node id="5060092229902868279" at="12,91,13,23" concept="10" />
-      <node id="5060092229902868281" at="13,23,14,18" concept="3" />
-      <node id="5060092229902868285" at="14,18,15,20" concept="3" />
-      <node id="5060092229902868260" at="19,28,20,92" concept="9" />
-      <node id="5060092229902868301" at="24,30,25,45" concept="9" />
-      <node id="5060092229902868275" at="12,0,17,0" concept="2" trace="DeletedChildFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;I)V" />
-      <node id="5060092229902868255" at="17,0,22,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <node id="5060092229902868296" at="22,0,27,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <scope id="5060092229902868259" at="19,28,20,92" />
-      <scope id="5060092229902868300" at="24,30,25,45" />
-      <scope id="5060092229902868278" at="12,91,15,20" />
-      <scope id="5060092229902868275" at="12,0,17,0">
+      <node id="5060092229902868247" at="11,0,12,0" concept="4" trace="myRole" />
+      <node id="5060092229902868250" at="12,0,13,0" concept="4" trace="myIndex" />
+      <node id="5060092229902868279" at="13,91,14,23" concept="10" />
+      <node id="5060092229902868281" at="14,23,15,18" concept="3" />
+      <node id="5060092229902868285" at="15,18,16,20" concept="3" />
+      <node id="5060092229902868260" at="20,28,21,92" concept="9" />
+      <node id="5060092229902868301" at="25,49,26,45" concept="9" />
+      <node id="5060092229902868275" at="13,0,18,0" concept="2" trace="DeletedChildFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;I)V" />
+      <node id="5060092229902868255" at="18,0,23,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <node id="5060092229902868296" at="23,0,28,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <scope id="5060092229902868259" at="20,28,21,92" />
+      <scope id="5060092229902868300" at="25,49,26,45" />
+      <scope id="5060092229902868278" at="13,91,16,20" />
+      <scope id="5060092229902868275" at="13,0,18,0">
         <var name="index" id="5060092229902868294" />
         <var name="nodePointer" id="5060092229902868289" />
         <var name="role" id="5060092229902868292" />
       </scope>
-      <scope id="5060092229902868255" at="17,0,22,0" />
-      <scope id="5060092229902868296" at="22,0,27,0" />
-      <unit id="5060092229902868246" at="9,0,28,0" name="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" />
+      <scope id="5060092229902868255" at="18,0,23,0" />
+      <scope id="5060092229902868296" at="23,0,28,0">
+        <var name="repo" id="3249499558395496023" />
+      </scope>
+      <unit id="5060092229902868246" at="10,0,29,0" name="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868305">
     <file name="Feature.java">
-      <node id="5060092229902868326" at="17,0,18,0" concept="4" trace="myModelReference" />
-      <node id="5060092229902868329" at="18,0,19,0" concept="4" trace="myHashCode" />
-      <node id="5060092229902868337" at="19,62,20,38" concept="3" />
-      <node id="5060092229902868348" at="23,52,24,28" concept="9" />
-      <node id="5060092229902868365" at="30,26,31,41" concept="3" />
-      <node id="5060092229902868373" at="32,28,33,55" concept="0" />
-      <node id="5060092229902868379" at="35,5,36,22" concept="9" />
-      <node id="5060092229902868390" at="40,47,41,40" concept="8" />
-      <node id="5060092229902868409" at="43,66,44,22" concept="9" />
-      <node id="5060092229902868425" at="47,5,48,17" concept="9" />
-      <node id="5060092229902868438" at="53,35,54,77" concept="8" />
-      <node id="5060092229902868447" at="55,89,56,58" concept="3" />
-      <node id="5060092229902868463" at="57,5,58,73" concept="9" />
-      <node id="5060092229902868351" at="26,0,28,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <node id="5060092229902868333" at="19,0,22,0" concept="2" trace="Feature#(Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="5060092229902868371" at="31,41,34,7" concept="6" />
-      <node id="5060092229902868399" at="42,47,45,9" concept="6" />
-      <node id="5060092229902868428" at="50,0,53,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <node id="5060092229902868445" at="54,77,57,5" concept="5" />
-      <node id="5060092229902868344" at="22,0,26,0" concept="7" trace="getModelReference#()Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="5060092229902868397" at="41,40,46,7" concept="6" />
-      <node id="5060092229902868360" at="29,25,35,5" concept="6" />
-      <node id="5060092229902868433" at="53,0,60,0" concept="7" trace="getAncestors#()[Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <node id="5060092229902868388" at="39,40,47,5" concept="6" />
-      <node id="5060092229902868356" at="28,0,38,0" concept="7" trace="hashCode#()I" />
-      <node id="5060092229902868382" at="38,0,50,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
-      <scope id="5060092229902868336" at="19,62,20,38" />
-      <scope id="5060092229902868347" at="23,52,24,28" />
-      <scope id="5060092229902868372" at="32,28,33,55" />
-      <scope id="5060092229902868408" at="43,66,44,22" />
-      <scope id="5060092229902868446" at="55,89,56,58" />
-      <scope id="5060092229902868351" at="26,0,28,0" />
-      <scope id="5060092229902868333" at="19,0,22,0">
+      <node id="5060092229902868326" at="18,0,19,0" concept="4" trace="myModelReference" />
+      <node id="5060092229902868329" at="19,0,20,0" concept="4" trace="myHashCode" />
+      <node id="5060092229902868337" at="20,62,21,38" concept="3" />
+      <node id="5060092229902868348" at="24,52,25,28" concept="9" />
+      <node id="5060092229902868365" at="31,26,32,41" concept="3" />
+      <node id="5060092229902868373" at="33,28,34,55" concept="0" />
+      <node id="5060092229902868379" at="36,5,37,22" concept="9" />
+      <node id="5060092229902868390" at="41,47,42,40" concept="8" />
+      <node id="5060092229902868409" at="44,66,45,22" concept="9" />
+      <node id="5060092229902868425" at="48,5,49,17" concept="9" />
+      <node id="5060092229902868438" at="54,51,55,77" concept="8" />
+      <node id="5060092229902868447" at="56,97,57,58" concept="3" />
+      <node id="5060092229902868463" at="58,5,59,73" concept="9" />
+      <node id="5060092229902868351" at="27,0,29,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="5060092229902868333" at="20,0,23,0" concept="2" trace="Feature#(Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
+      <node id="5060092229902868371" at="32,41,35,7" concept="6" />
+      <node id="5060092229902868399" at="43,47,46,9" concept="6" />
+      <node id="5060092229902868428" at="51,0,54,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <node id="5060092229902868445" at="55,77,58,5" concept="5" />
+      <node id="5060092229902868344" at="23,0,27,0" concept="7" trace="getModelReference#()Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <node id="5060092229902868397" at="42,40,47,7" concept="6" />
+      <node id="5060092229902868360" at="30,25,36,5" concept="6" />
+      <node id="5060092229902868433" at="54,0,61,0" concept="7" trace="getAncestors#(Lorg/jetbrains/mps/openapi/module/SRepository;)[Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="5060092229902868388" at="40,40,48,5" concept="6" />
+      <node id="5060092229902868356" at="29,0,39,0" concept="7" trace="hashCode#()I" />
+      <node id="5060092229902868382" at="39,0,51,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="5060092229902868336" at="20,62,21,38" />
+      <scope id="5060092229902868347" at="24,52,25,28" />
+      <scope id="5060092229902868372" at="33,28,34,55" />
+      <scope id="5060092229902868408" at="44,66,45,22" />
+      <scope id="5060092229902868446" at="56,97,57,58" />
+      <scope id="5060092229902868351" at="27,0,29,0">
+        <var name="repo" id="3249499558395485977" />
+      </scope>
+      <scope id="5060092229902868333" at="20,0,23,0">
         <var name="modelReference" id="5060092229902868341" />
       </scope>
-      <scope id="5060092229902868398" at="42,47,45,9" />
-      <scope id="5060092229902868428" at="50,0,53,0" />
-      <scope id="5060092229902868445" at="54,77,57,5">
+      <scope id="5060092229902868398" at="43,47,46,9" />
+      <scope id="5060092229902868428" at="51,0,54,0" />
+      <scope id="5060092229902868445" at="55,77,58,5">
         <var name="current" id="5060092229902868452" />
       </scope>
-      <scope id="5060092229902868344" at="22,0,26,0" />
-      <scope id="5060092229902868364" at="30,26,34,7" />
-      <scope id="5060092229902868437" at="53,35,58,73">
+      <scope id="5060092229902868344" at="23,0,27,0" />
+      <scope id="5060092229902868364" at="31,26,35,7" />
+      <scope id="5060092229902868437" at="54,51,59,73">
         <var name="features" id="5060092229902868439" />
       </scope>
-      <scope id="5060092229902868389" at="40,47,46,7">
+      <scope id="5060092229902868389" at="41,47,47,7">
         <var name="that" id="5060092229902868391" />
       </scope>
-      <scope id="5060092229902868359" at="29,25,36,22" />
-      <scope id="5060092229902868433" at="53,0,60,0" />
-      <scope id="5060092229902868387" at="39,40,48,17" />
-      <scope id="5060092229902868356" at="28,0,38,0" />
-      <scope id="5060092229902868382" at="38,0,50,0">
+      <scope id="5060092229902868359" at="30,25,37,22" />
+      <scope id="5060092229902868433" at="54,0,61,0">
+        <var name="repo" id="3249499558395424404" />
+      </scope>
+      <scope id="5060092229902868387" at="40,40,49,17" />
+      <scope id="5060092229902868356" at="29,0,39,0" />
+      <scope id="5060092229902868382" at="39,0,51,0">
         <var name="object" id="5060092229902868385" />
       </scope>
-      <unit id="5060092229902868305" at="16,0,61,0" name="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
+      <unit id="5060092229902868305" at="17,0,62,0" name="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868472">
     <file name="NodeAggregationFeature.java">
-      <node id="5060092229902868479" at="9,73,10,23" concept="10" />
-      <node id="5060092229902868489" at="14,30,15,45" concept="9" />
-      <node id="5060092229902868475" at="9,0,12,0" concept="2" trace="NodeAggregationFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-      <node id="5060092229902868484" at="12,0,17,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <scope id="5060092229902868478" at="9,73,10,23" />
-      <scope id="5060092229902868488" at="14,30,15,45" />
-      <scope id="5060092229902868475" at="9,0,12,0">
+      <node id="5060092229902868479" at="10,73,11,23" concept="10" />
+      <node id="5060092229902868489" at="15,49,16,45" concept="9" />
+      <node id="5060092229902868475" at="10,0,13,0" concept="2" trace="NodeAggregationFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+      <node id="5060092229902868484" at="13,0,18,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <scope id="5060092229902868478" at="10,73,11,23" />
+      <scope id="5060092229902868488" at="15,49,16,45" />
+      <scope id="5060092229902868475" at="10,0,13,0">
         <var name="nodePointer" id="5060092229902868481" />
       </scope>
-      <scope id="5060092229902868484" at="12,0,17,0" />
-      <unit id="5060092229902868472" at="8,0,18,0" name="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
+      <scope id="5060092229902868484" at="13,0,18,0">
+        <var name="repo" id="3249499558395494686" />
+      </scope>
+      <unit id="5060092229902868472" at="9,0,19,0" name="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868493">
     <file name="NodeFeature.java">
       <node id="5060092229902868500" at="16,50,17,23" concept="10" />
-      <node id="8214059917935787121" at="21,30,22,77" concept="8" />
-      <node id="5060092229902868509" at="22,77,23,55" concept="8" />
+      <node id="8214059917935787121" at="21,49,22,48" concept="8" />
+      <node id="5060092229902868509" at="22,48,23,55" concept="8" />
       <node id="8214059917935787140" at="24,29,25,190" concept="8" />
       <node id="8214059917935787158" at="26,69,27,20" concept="9" />
       <node id="8214059917935787163" at="28,14,29,78" concept="9" />
@@ -145,7 +155,7 @@
       <node id="8214059917935787148" at="25,190,30,7" concept="6" />
       <node id="5060092229902868530" at="34,0,39,0" concept="7" trace="toString#()Ljava/lang/String;" />
       <node id="5060092229902868517" at="23,55,31,5" concept="6" />
-      <node id="5060092229902868504" at="19,0,34,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="5060092229902868504" at="19,0,34,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
       <scope id="5060092229902868499" at="16,50,17,23" />
       <scope id="8214059917935787149" at="26,69,27,20" />
       <scope id="8214059917935787162" at="28,14,29,78" />
@@ -157,11 +167,13 @@
       <scope id="5060092229902868518" at="24,29,30,7">
         <var name="virtualPackage" id="8214059917935787141" />
       </scope>
-      <scope id="5060092229902868508" at="21,30,32,57">
+      <scope id="5060092229902868508" at="21,49,32,57">
         <var name="node" id="8214059917935787122" />
         <var name="parentNode" id="5060092229902868510" />
       </scope>
-      <scope id="5060092229902868504" at="19,0,34,0" />
+      <scope id="5060092229902868504" at="19,0,34,0">
+        <var name="repo" id="3249499558395491945" />
+      </scope>
       <unit id="5060092229902868493" at="15,0,40,0" name="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
     </file>
   </root>
@@ -182,66 +194,70 @@
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868568">
     <file name="PropertyFeature.java">
-      <node id="5060092229902868569" at="10,0,11,0" concept="4" trace="myPropertyName" />
-      <node id="5060092229902868578" at="11,93,12,23" concept="10" />
-      <node id="5060092229902868580" at="12,23,13,34" concept="3" />
-      <node id="5060092229902868594" at="16,35,17,26" concept="9" />
-      <node id="5060092229902868602" at="21,30,22,51" concept="9" />
-      <node id="5060092229902868613" at="25,40,26,105" concept="9" />
-      <node id="5060092229902868632" at="30,28,31,83" concept="9" />
-      <node id="5060092229902868574" at="11,0,15,0" concept="2" trace="PropertyFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;)V" />
-      <node id="5060092229902868590" at="15,0,19,0" concept="7" trace="getPropertyName#()Ljava/lang/String;" />
-      <node id="5060092229902868606" at="24,0,28,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
-      <node id="5060092229902868597" at="19,0,24,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <node id="5060092229902868628" at="28,0,33,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <scope id="5060092229902868593" at="16,35,17,26" />
-      <scope id="5060092229902868601" at="21,30,22,51" />
-      <scope id="5060092229902868612" at="25,40,26,105" />
-      <scope id="5060092229902868631" at="30,28,31,83" />
-      <scope id="5060092229902868577" at="11,93,13,34" />
-      <scope id="5060092229902868574" at="11,0,15,0">
+      <node id="5060092229902868569" at="11,0,12,0" concept="4" trace="myPropertyName" />
+      <node id="5060092229902868578" at="12,93,13,23" concept="10" />
+      <node id="5060092229902868580" at="13,23,14,34" concept="3" />
+      <node id="5060092229902868594" at="17,35,18,26" concept="9" />
+      <node id="5060092229902868602" at="22,49,23,51" concept="9" />
+      <node id="5060092229902868613" at="26,40,27,105" concept="9" />
+      <node id="5060092229902868632" at="31,28,32,83" concept="9" />
+      <node id="5060092229902868574" at="12,0,16,0" concept="2" trace="PropertyFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;)V" />
+      <node id="5060092229902868590" at="16,0,20,0" concept="7" trace="getPropertyName#()Ljava/lang/String;" />
+      <node id="5060092229902868606" at="25,0,29,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="5060092229902868597" at="20,0,25,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="5060092229902868628" at="29,0,34,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <scope id="5060092229902868593" at="17,35,18,26" />
+      <scope id="5060092229902868601" at="22,49,23,51" />
+      <scope id="5060092229902868612" at="26,40,27,105" />
+      <scope id="5060092229902868631" at="31,28,32,83" />
+      <scope id="5060092229902868577" at="12,93,14,34" />
+      <scope id="5060092229902868574" at="12,0,16,0">
         <var name="nodePointer" id="5060092229902868584" />
         <var name="propertyName" id="5060092229902868587" />
       </scope>
-      <scope id="5060092229902868590" at="15,0,19,0" />
-      <scope id="5060092229902868606" at="24,0,28,0">
+      <scope id="5060092229902868590" at="16,0,20,0" />
+      <scope id="5060092229902868606" at="25,0,29,0">
         <var name="object" id="5060092229902868609" />
       </scope>
-      <scope id="5060092229902868597" at="19,0,24,0" />
-      <scope id="5060092229902868628" at="28,0,33,0" />
-      <unit id="5060092229902868568" at="9,0,34,0" name="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" />
+      <scope id="5060092229902868597" at="20,0,25,0">
+        <var name="repo" id="3249499558395490738" />
+      </scope>
+      <scope id="5060092229902868628" at="29,0,34,0" />
+      <unit id="5060092229902868568" at="10,0,35,0" name="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868645">
     <file name="ReferenceFeature.java">
-      <node id="5060092229902868646" at="10,0,11,0" concept="4" trace="myReferenceRole" />
-      <node id="5060092229902868655" at="11,95,12,23" concept="10" />
-      <node id="5060092229902868657" at="12,23,13,36" concept="3" />
-      <node id="5060092229902868671" at="16,36,17,27" concept="9" />
-      <node id="5060092229902868679" at="21,30,22,51" concept="9" />
-      <node id="5060092229902868690" at="25,40,26,108" concept="9" />
-      <node id="5060092229902868709" at="30,28,31,85" concept="9" />
-      <node id="5060092229902868651" at="11,0,15,0" concept="2" trace="ReferenceFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;)V" />
-      <node id="5060092229902868667" at="15,0,19,0" concept="7" trace="getReferenceRole#()Ljava/lang/String;" />
-      <node id="5060092229902868683" at="24,0,28,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
-      <node id="5060092229902868674" at="19,0,24,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <node id="5060092229902868705" at="28,0,33,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <scope id="5060092229902868670" at="16,36,17,27" />
-      <scope id="5060092229902868678" at="21,30,22,51" />
-      <scope id="5060092229902868689" at="25,40,26,108" />
-      <scope id="5060092229902868708" at="30,28,31,85" />
-      <scope id="5060092229902868654" at="11,95,13,36" />
-      <scope id="5060092229902868651" at="11,0,15,0">
+      <node id="5060092229902868646" at="11,0,12,0" concept="4" trace="myReferenceRole" />
+      <node id="5060092229902868655" at="12,95,13,23" concept="10" />
+      <node id="5060092229902868657" at="13,23,14,36" concept="3" />
+      <node id="5060092229902868671" at="17,36,18,27" concept="9" />
+      <node id="5060092229902868679" at="22,49,23,51" concept="9" />
+      <node id="5060092229902868690" at="26,40,27,108" concept="9" />
+      <node id="5060092229902868709" at="31,28,32,85" concept="9" />
+      <node id="5060092229902868651" at="12,0,16,0" concept="2" trace="ReferenceFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;)V" />
+      <node id="5060092229902868667" at="16,0,20,0" concept="7" trace="getReferenceRole#()Ljava/lang/String;" />
+      <node id="5060092229902868683" at="25,0,29,0" concept="7" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="5060092229902868674" at="20,0,25,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <node id="5060092229902868705" at="29,0,34,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <scope id="5060092229902868670" at="17,36,18,27" />
+      <scope id="5060092229902868678" at="22,49,23,51" />
+      <scope id="5060092229902868689" at="26,40,27,108" />
+      <scope id="5060092229902868708" at="31,28,32,85" />
+      <scope id="5060092229902868654" at="12,95,14,36" />
+      <scope id="5060092229902868651" at="12,0,16,0">
         <var name="nodePointer" id="5060092229902868661" />
         <var name="referenceRole" id="5060092229902868664" />
       </scope>
-      <scope id="5060092229902868667" at="15,0,19,0" />
-      <scope id="5060092229902868683" at="24,0,28,0">
+      <scope id="5060092229902868667" at="16,0,20,0" />
+      <scope id="5060092229902868683" at="25,0,29,0">
         <var name="object" id="5060092229902868686" />
       </scope>
-      <scope id="5060092229902868674" at="19,0,24,0" />
-      <scope id="5060092229902868705" at="28,0,33,0" />
-      <unit id="5060092229902868645" at="9,0,34,0" name="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature" />
+      <scope id="5060092229902868674" at="20,0,25,0">
+        <var name="repo" id="3249499558395489762" />
+      </scope>
+      <scope id="5060092229902868705" at="29,0,34,0" />
+      <unit id="5060092229902868645" at="10,0,35,0" name="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature" />
     </file>
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/5060092229902868722">
@@ -288,35 +304,37 @@
   </root>
   <root nodeRef="r:eed7a462-d012-4d9f-b223-97987e5d1cb3(jetbrains.mps.vcs.changesmanager.tree.features)/8214059917935786316">
     <file name="VirtualPackageFeature.java">
-      <node id="8214059917935786322" at="10,0,11,0" concept="4" trace="myVirtualPackage" />
-      <node id="8214059917935786332" at="11,105,12,26" concept="10" />
-      <node id="8214059917935786339" at="12,26,13,38" concept="3" />
-      <node id="8214059917935787119" at="17,28,18,95" concept="9" />
-      <node id="8214059917935787079" at="22,30,23,56" concept="8" />
-      <node id="8214059917935787091" at="24,28,25,18" concept="9" />
-      <node id="8214059917935787095" at="26,12,27,72" concept="8" />
-      <node id="8214059917935787111" at="27,72,28,75" concept="9" />
-      <node id="8214059917935787093" at="26,10,29,5" concept="1" />
-      <node id="8214059917935786327" at="11,0,15,0" concept="2" trace="VirtualPackageFeature#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)V" />
-      <node id="8214059917935786352" at="15,0,20,0" concept="7" trace="toString#()Ljava/lang/String;" />
-      <node id="8214059917935786389" at="23,56,29,5" concept="6" />
-      <node id="8214059917935786381" at="20,0,31,0" concept="7" trace="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <scope id="8214059917935786356" at="17,28,18,95" />
-      <scope id="8214059917935786390" at="24,28,25,18" />
-      <scope id="8214059917935786331" at="11,105,13,38" />
-      <scope id="8214059917935787094" at="26,12,28,75">
+      <node id="8214059917935786322" at="11,0,12,0" concept="4" trace="myVirtualPackage" />
+      <node id="8214059917935786332" at="12,105,13,26" concept="10" />
+      <node id="8214059917935786339" at="13,26,14,38" concept="3" />
+      <node id="8214059917935787119" at="18,28,19,95" concept="9" />
+      <node id="8214059917935787079" at="23,49,24,56" concept="8" />
+      <node id="8214059917935787091" at="25,28,26,18" concept="9" />
+      <node id="8214059917935787095" at="27,12,28,72" concept="8" />
+      <node id="8214059917935787111" at="28,72,29,75" concept="9" />
+      <node id="8214059917935787093" at="27,10,30,5" concept="1" />
+      <node id="8214059917935786327" at="12,0,16,0" concept="2" trace="VirtualPackageFeature#(Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)V" />
+      <node id="8214059917935786352" at="16,0,21,0" concept="7" trace="toString#()Ljava/lang/String;" />
+      <node id="8214059917935786389" at="24,56,30,5" concept="6" />
+      <node id="8214059917935786381" at="21,0,32,0" concept="7" trace="getParent#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <scope id="8214059917935786356" at="18,28,19,95" />
+      <scope id="8214059917935786390" at="25,28,26,18" />
+      <scope id="8214059917935786331" at="12,105,14,38" />
+      <scope id="8214059917935787094" at="27,12,29,75">
         <var name="parentPackage" id="8214059917935787096" />
       </scope>
-      <scope id="8214059917935786327" at="11,0,15,0">
+      <scope id="8214059917935786327" at="12,0,16,0">
         <var name="modelReference" id="8214059917935786333" />
         <var name="virtualPackage" id="8214059917935786337" />
       </scope>
-      <scope id="8214059917935786352" at="15,0,20,0" />
-      <scope id="8214059917935786385" at="22,30,29,5">
+      <scope id="8214059917935786352" at="16,0,21,0" />
+      <scope id="8214059917935786385" at="23,49,30,5">
         <var name="lastIndexOf" id="8214059917935787080" />
       </scope>
-      <scope id="8214059917935786381" at="20,0,31,0" />
-      <unit id="8214059917935786316" at="9,0,32,0" name="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
+      <scope id="8214059917935786381" at="21,0,32,0">
+        <var name="repo" id="3249499558395487237" />
+      </scope>
+      <unit id="8214059917935786316" at="10,0,33,0" name="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
     </file>
   </root>
 </debug-info>
