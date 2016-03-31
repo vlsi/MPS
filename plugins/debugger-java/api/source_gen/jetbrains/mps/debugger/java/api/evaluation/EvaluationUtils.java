@@ -79,7 +79,7 @@ public abstract class EvaluationUtils {
    * Do something and convert jdi exceptions to evaluation exception
    * 
    * @param invocatable what to invoke
-   * @param T result
+   * @param <T> result
    * @throws EvaluationException wrapper of the original exception
    * @return result
    */
@@ -117,7 +117,7 @@ public abstract class EvaluationUtils {
    * 
    * @param invocatable the action to invoke
    * @param failure value to return in case of failure
-   * @param T result
+   * @param <T> result
    * @return result
    */
   public static <T> T consumeEvaluationException(EvaluationUtils.EvaluationInvocatable<T> invocatable, T failure) {
@@ -149,7 +149,7 @@ public abstract class EvaluationUtils {
   /**
    * Something that can throw one of jdi exceptions or EvaluationException
    * 
-   * @param T result
+   * @param <T> result
    */
   public static interface Invocatable<T> {
     T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
@@ -157,7 +157,7 @@ public abstract class EvaluationUtils {
   /**
    * Something that can throw EvaluationException
    * 
-   * @param T result
+   * @param <T> result
    */
   public static interface EvaluationInvocatable<T> {
     T invoke() throws EvaluationException;
@@ -165,7 +165,7 @@ public abstract class EvaluationUtils {
   /**
    * Some action which also has information about thread reference where it happenes.
    * 
-   * @param T result
+   * @param <T> result
    */
   public static abstract class ThreadInvocatable<T> implements EvaluationUtils.Invocatable<T> {
     private final ThreadReference myThreadReference;

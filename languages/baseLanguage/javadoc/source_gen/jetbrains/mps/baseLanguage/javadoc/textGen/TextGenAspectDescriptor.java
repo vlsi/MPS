@@ -13,7 +13,7 @@ import jetbrains.mps.text.rt.TextGenModelOutline;
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[25];
+    myId2Index = new long[26];
     myId2Index[0] = 0x1cb65d9fe66a764cL;
     myId2Index[1] = 0x1ec532ec252a7b73L;
     myId2Index[2] = 0x1ec532ec252c9a28L;
@@ -30,15 +30,16 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     myId2Index[13] = 0x5a38b07c2d6d7c7bL;
     myId2Index[14] = 0x5bc4aa08e154b399L;
     myId2Index[15] = 0x5ed0d79d7dbe86d7L;
-    myId2Index[16] = 0x5ed0d79d7dc44bf2L;
-    myId2Index[17] = 0x60a0f9237ac5e83bL;
-    myId2Index[18] = 0x757ba20a4c87dda0L;
-    myId2Index[19] = 0x757ba20a4c87ddadL;
-    myId2Index[20] = 0x757ba20a4c87f964L;
-    myId2Index[21] = 0x757ba20a4c87f96cL;
-    myId2Index[22] = 0x757ba20a4c905f8aL;
-    myId2Index[23] = 0x7c7f5b2f31990287L;
-    myId2Index[24] = 0x7c7f5b2f31990289L;
+    myId2Index[16] = 0x5ed0d79d7dbe86dbL;
+    myId2Index[17] = 0x5ed0d79d7dc44bf2L;
+    myId2Index[18] = 0x60a0f9237ac5e83bL;
+    myId2Index[19] = 0x757ba20a4c87dda0L;
+    myId2Index[20] = 0x757ba20a4c87ddadL;
+    myId2Index[21] = 0x757ba20a4c87f964L;
+    myId2Index[22] = 0x757ba20a4c87f96cL;
+    myId2Index[23] = 0x757ba20a4c905f8aL;
+    myId2Index[24] = 0x7c7f5b2f31990287L;
+    myId2Index[25] = 0x7c7f5b2f31990289L;
   }
   @Nullable
   @Override
@@ -78,22 +79,24 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
       case 15:
         return new BaseParameterReference_TextGen();
       case 16:
-        return new FieldDocComment_TextGen();
+        return new DocTypeParameterReference_TextGen();
       case 17:
-        return new ValueInlineDocTag_TextGen();
+        return new FieldDocComment_TextGen();
       case 18:
-        return new VersionBlockDocTag_TextGen();
+        return new ValueInlineDocTag_TextGen();
       case 19:
-        return new SinceBlockDocTag_TextGen();
+        return new VersionBlockDocTag_TextGen();
       case 20:
-        return new DeprecatedBlockDocTag_TextGen();
+        return new SinceBlockDocTag_TextGen();
       case 21:
-        return new CommentLine_TextGen();
+        return new DeprecatedBlockDocTag_TextGen();
       case 22:
-        return new ParameterBlockDocTag_TextGen();
+        return new CommentLine_TextGen();
       case 23:
-        return new TextCommentLinePart_TextGen();
+        return new ParameterBlockDocTag_TextGen();
       case 24:
+        return new TextCommentLinePart_TextGen();
+      case 25:
         return new InlineTagCommentLinePart_TextGen();
       default:
         return null;

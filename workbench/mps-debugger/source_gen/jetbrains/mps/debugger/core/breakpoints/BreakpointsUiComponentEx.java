@@ -27,8 +27,8 @@ import jetbrains.mps.smodel.ModelAccess;
 /**
  * 
  * 
- * @param B breakpoint type
- * @param L location breakpoint type
+ * @param <B> breakpoint type
+ * @param <L> location breakpoint type
  */
 public abstract class BreakpointsUiComponentEx<B, L extends B> {
   protected final FileEditorManager myFileEditorManager;

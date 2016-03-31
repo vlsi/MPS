@@ -24,7 +24,7 @@ import org.apache.log4j.LogManager;
  * This is a map from 'Feature' to arbitrary value. Also it stores which features are ancestors of
  * features which are added in this map.
  * 
- * @param V map value
+ * @param <V> map value
  */
 public class FeatureForestMap<V> {
   private static boolean ourLoggingEnabled = "true".equals(System.getProperty("changesmanager.debug"));
