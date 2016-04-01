@@ -24,6 +24,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
+import jetbrains.mps.nodeEditor.resources.EditorSettingsBundle;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
@@ -43,25 +44,25 @@ import java.util.Vector;
 
 class EditorSettingsPreferencesPage implements Disposable {
   private JPanel myEditorSettingsPanel;
-  private JComboBox myFontsComboBox;
+  private final JComboBox myFontsComboBox;
   private final JSpinner myLineSpacing;
-  private JComboBox myFontSizesComboBox;
-  private JComboBox myVerticalBoundComboBox;
-  private JComboBox myIndentSizeComboBox;
-  private JCheckBox myAntialiasingCheckBox;
-  private JCheckBox myPowerSaveModeCheckBox;
-  private JCheckBox myAutoQuickFixCheckBox;
-  private JCheckBox myUseBraces;
-  private JCheckBox myShowContextAssistant;
+  private final JComboBox myFontSizesComboBox;
+  private final JComboBox myVerticalBoundComboBox;
+  private final JComboBox myIndentSizeComboBox;
+  private final JCheckBox myAntialiasingCheckBox;
+  private final JCheckBox myPowerSaveModeCheckBox;
+  private final JCheckBox myAutoQuickFixCheckBox;
+  private final JCheckBox myUseBraces;
+  private final JCheckBox myShowContextAssistant;
   private final JSpinner myCaretBlinkPeriod;
-  private JBRadioButton myDontShow;
-  private JBRadioButton myTabPerAspect;
-  private JBRadioButton myTabPerNode;
-  private JBRadioButton myAllTabs;
-
+  private final JBRadioButton myDontShow;
+  private final JBRadioButton myTabPerAspect;
+  private final JBRadioButton myTabPerNode;
+  private final JBRadioButton myAllTabs;
   private JBRadioButton myFirstSelection;
-  private EditorSettings mySettings;
-  private CaretBlinker myCaretBlinker = CaretBlinker.getInstance();
+
+  private final EditorSettings mySettings;
+  private final CaretBlinker myCaretBlinker = CaretBlinker.getInstance();
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
@@ -70,21 +71,21 @@ class EditorSettingsPreferencesPage implements Disposable {
     ButtonGroup group = new ButtonGroup();
 
     JPanel editorTabsRB = new JPanel(new GridLayout(4, 1));
-    editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder("Aspect Tabs", true));
+    editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder(EditorSettingsBundle.message("border.title.aspect.tabs"), true));
 
-    myDontShow = new JBRadioButton("Do not show tabs");
+    myDontShow = new JBRadioButton(EditorSettingsBundle.message("radiobutton.aspect.tabs.do.not.show"));
     editorTabsRB.add(myDontShow);
     group.add(myDontShow);
 
-    myTabPerAspect = new JBRadioButton("Show 1 tab for each aspect");
+    myTabPerAspect = new JBRadioButton(EditorSettingsBundle.message("radiobutton.aspect.tabs.for.aspect"));
     editorTabsRB.add(myTabPerAspect);
     group.add(myTabPerAspect);
 
-    myTabPerNode = new JBRadioButton("Each aspect node in a separate tab");
+    myTabPerNode = new JBRadioButton(EditorSettingsBundle.message("radiobutton.aspect.tabs.for.node"));
     editorTabsRB.add(myTabPerNode);
     group.add(myTabPerNode);
 
-    myAllTabs = new JBRadioButton("Each aspect node in a separate tab, tabs for non-existing aspects");
+    myAllTabs = new JBRadioButton(EditorSettingsBundle.message("radiobutton.aspect.tabs.for.non.existing"));
     editorTabsRB.add(myAllTabs);
     group.add(myAllTabs);
 
@@ -97,58 +98,58 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, JBUI.emptyInsets(), 2, 2));
 
-    fontPropertiesPanel.add(new JBLabel("Font Name : "), getLabelConstraint(0, 0));
+    fontPropertiesPanel.add(new JBLabel(EditorSettingsBundle.message("label.font.name")), getLabelConstraint(0));
     myFontsComboBox = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
-    fontPropertiesPanel.add(myFontsComboBox, getEditorConstraint(0, 1));
+    fontPropertiesPanel.add(myFontsComboBox, getEditorConstraint(0));
 
-    fontPropertiesPanel.add(new JLabel("Font Size : "), getLabelConstraint(1, 0));
+    fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.font.size")), getLabelConstraint(1));
     Vector<Integer> fontSizes = new Vector<Integer>(50);
     for (int i = 1; i <= 50; i++) {
       fontSizes.add(i);
     }
     myFontSizesComboBox = new JComboBox(fontSizes);
-    fontPropertiesPanel.add(myFontSizesComboBox, getEditorConstraint(1, 1));
+    fontPropertiesPanel.add(myFontSizesComboBox, getEditorConstraint(1));
 
-    fontPropertiesPanel.add(new JLabel("Line Spacing : "), getLabelConstraint(2, 0));
+    fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.line.spacing")), getLabelConstraint(2));
     myLineSpacing = new JSpinner(new SpinnerNumberModel(1.0, 1.0, 3.0, 0.1));
     final JFormattedTextField textField = ((JSpinner.DefaultEditor) myLineSpacing.getEditor()).getTextField();
     textField.setHorizontalAlignment(JTextField.LEFT);
-    fontPropertiesPanel.add(myLineSpacing, getEditorConstraint(2, 1));
+    fontPropertiesPanel.add(myLineSpacing, getEditorConstraint(2));
 
-    fontPropertiesPanel.add(new JLabel("Text Width : "), getLabelConstraint(3, 0));
+    fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.text.width")), getLabelConstraint(3));
     Vector<Integer> textWidthValues = new Vector<Integer>(13);
     for (int i = 60; i <= 300; i += 20) {
       textWidthValues.add(i);
     }
     myVerticalBoundComboBox = new JComboBox(textWidthValues);
-    fontPropertiesPanel.add(myVerticalBoundComboBox, getEditorConstraint(3, 1));
+    fontPropertiesPanel.add(myVerticalBoundComboBox, getEditorConstraint(3));
 
-    fontPropertiesPanel.add(new JLabel("Indent Size : "), getLabelConstraint(4, 0));
+    fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.indent.size")), getLabelConstraint(4));
     Vector<Integer> indents = new Vector<Integer>(5);
     for (int i = 2; i <= 10; i += 2) {
       indents.add(i);
     }
     myIndentSizeComboBox = new JComboBox(indents);
-    fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4, 1));
+    fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4));
 
     panel.add(fontPropertiesPanel,
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel checkboxes = new JPanel(new GridLayout(3, 1));
-    myUseBraces = new JCheckBox("Use Braces");
+    myUseBraces = new JCheckBox(EditorSettingsBundle.message("checkbox.use.braces"));
     checkboxes.add(myUseBraces);
 
-    myAntialiasingCheckBox = new JCheckBox("Use Antialiasing");
+    myAntialiasingCheckBox = new JCheckBox(EditorSettingsBundle.message("checkbox.use.antialiasing"));
     checkboxes.add(myAntialiasingCheckBox);
 
-    myPowerSaveModeCheckBox = new JCheckBox("Power Save Mode");
+    myPowerSaveModeCheckBox = new JCheckBox(EditorSettingsBundle.message("checkbox.power.save.mode"));
     checkboxes.add(myPowerSaveModeCheckBox);
 
-    myAutoQuickFixCheckBox = new JCheckBox("Automatically run reference resolve quick fixes");
+    myAutoQuickFixCheckBox = new JCheckBox(EditorSettingsBundle.message("checkbox.auto.resolve.refs"));
     checkboxes.add(myAutoQuickFixCheckBox);
 
-    myShowContextAssistant = new JCheckBox("Show context assistant");
+    myShowContextAssistant = new JCheckBox(EditorSettingsBundle.message("checkbox.context.assistant"));
     checkboxes.add(myShowContextAssistant);
 
     panel.add(checkboxes,
@@ -156,7 +157,7 @@ class EditorSettingsPreferencesPage implements Disposable {
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(0));
-    caretBlinkingPanel.add(new JLabel("Caret blinking (ms):"));
+    caretBlinkingPanel.add(new JLabel(EditorSettingsBundle.message("label.caret.blinking")));
     myCaretBlinkPeriod =
         new JSpinner(new SpinnerNumberModel(CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MAX_BLINKING_PERIOD, 100));
     caretBlinkingPanel.add(myCaretBlinkPeriod);
@@ -169,18 +170,14 @@ class EditorSettingsPreferencesPage implements Disposable {
     myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
   }
 
-  private GridConstraints getLabelConstraint(int row, int column) {
-    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+  private GridConstraints getLabelConstraint(int row) {
+    return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
         GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
-  private GridConstraints getEditorConstraint(int row, int column) {
-    return new GridConstraints(row, column, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+  private GridConstraints getEditorConstraint(int row) {
+    return new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
         GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-  }
-
-  public String getName() {
-    return "Editor Settings";
   }
 
   public JComponent getComponent() {
