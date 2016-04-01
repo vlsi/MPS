@@ -25,7 +25,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.annotations.Nullable;
 
@@ -269,10 +270,7 @@ public class IntelligentNodeMover {
   }
 
   private EditorCell findCellToMoveInsideCell(@NotNull EditorCell parentCell) {
-    if (isProperCellToMove(parentCell)) {
-      return parentCell;
-    }
-    DfsTraverserIterable cellIterable = new DfsTraverserIterable(parentCell, myIsForward, true);
+    CellTreeIterable cellIterable = CellTraversalUtil.iterateTree(parentCell, parentCell, myIsForward);
     for (EditorCell cell : cellIterable) {
       if (isProperCellToMove(cell)) {
         return cell;

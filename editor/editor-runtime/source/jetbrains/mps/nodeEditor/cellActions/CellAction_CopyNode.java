@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -108,7 +108,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
         Set<SNode> selectedAttributes = new HashSet<SNode>();
         selectedAttributes.add(node);
         if (selectedCell instanceof EditorCell_Collection) {
-          for (EditorCell cell : new DfsTraverserIterable(selectedCell, true, true)) {
+          for (EditorCell cell : CellTraversalUtil.iterateTree(selectedCell, selectedCell, true)) {
             if (condition.met(cell)) {
               selectedAttributes.add(cell.getSNode());
             }

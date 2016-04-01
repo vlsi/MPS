@@ -37,6 +37,7 @@
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="wwqx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.logging(MPS.Core/)" />
+    <import index="jgwk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.traversal(MPS.Editor/)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="t552" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.fileGenerator(MPS.Core/)" implicit="true" />
@@ -4778,39 +4779,23 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="77iVR6M3BjD" role="3clF47">
-        <node concept="3clFbJ" id="77iVR6M44Db" role="3cqZAp">
-          <node concept="3clFbS" id="77iVR6M44Dc" role="3clFbx">
-            <node concept="3cpWs6" id="77iVR6M44U1" role="3cqZAp">
-              <node concept="37vLTw" id="77iVR6M45nb" role="3cqZAk">
-                <ref role="3cqZAo" node="77iVR6M3BNG" resolve="parentCell" />
-              </node>
-            </node>
-          </node>
-          <node concept="1rXfSq" id="77iVR6M44Lt" role="3clFbw">
-            <ref role="37wK5l" node="77iVR6M3DBB" resolve="isProperCellToMove" />
-            <node concept="37vLTw" id="77iVR6M4dVW" role="37wK5m">
-              <ref role="3cqZAo" node="77iVR6M3BNG" resolve="parentCell" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="77iVR6M4aaO" role="3cqZAp">
           <node concept="3cpWsn" id="77iVR6M4aaP" role="3cpWs9">
             <property role="TrG5h" value="cellIterable" />
-            <node concept="3uibUv" id="77iVR6M4aaN" role="1tU5fm">
-              <ref role="3uigEE" to="f4zo:~DfsTraverserIterable" resolve="DfsTraverserIterable" />
+            <node concept="3uibUv" id="7GLNvvgj5QS" role="1tU5fm">
+              <ref role="3uigEE" to="jgwk:~CellTreeIterable" resolve="CellTreeIterable" />
             </node>
-            <node concept="2ShNRf" id="77iVR6M4aaQ" role="33vP2m">
-              <node concept="1pGfFk" id="77iVR6M4aaR" role="2ShVmc">
-                <ref role="37wK5l" to="f4zo:~DfsTraverserIterable.&lt;init&gt;(jetbrains.mps.openapi.editor.cells.EditorCell,boolean,boolean)" resolve="DfsTraverserIterable" />
-                <node concept="37vLTw" id="77iVR6M4aaS" role="37wK5m">
-                  <ref role="3cqZAo" node="77iVR6M3BNG" resolve="parentCell" />
-                </node>
-                <node concept="37vLTw" id="77iVR6M4aaT" role="37wK5m">
-                  <ref role="3cqZAo" node="77iVR6LYjPp" resolve="myIsForward" />
-                </node>
-                <node concept="3clFbT" id="77iVR6M4aaU" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
+            <node concept="2YIFZM" id="7AMjDDiT8UJ" role="33vP2m">
+              <ref role="37wK5l" to="f4zo:~CellTraversalUtil.iterateTree(jetbrains.mps.openapi.editor.cells.EditorCell,jetbrains.mps.openapi.editor.cells.EditorCell,boolean):jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable" resolve="iterateTree" />
+              <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
+              <node concept="37vLTw" id="7AMjDDiT8UK" role="37wK5m">
+                <ref role="3cqZAo" node="77iVR6M3BNG" resolve="parentCell" />
+              </node>
+              <node concept="37vLTw" id="7AMjDDiT9Xd" role="37wK5m">
+                <ref role="3cqZAo" node="77iVR6M3BNG" resolve="parentCell" />
+              </node>
+              <node concept="37vLTw" id="7AMjDDiT8UL" role="37wK5m">
+                <ref role="3cqZAo" node="77iVR6LYjPp" resolve="myIsForward" />
               </node>
             </node>
           </node>

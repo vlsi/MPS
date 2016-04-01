@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -194,10 +194,7 @@ class IntelligentNodeMover {
   }
 
   private boolean tryPasteToCellAndChildren(EditorCell anchorCell) {
-    if (tryPasteToCell(anchorCell)) {
-      return true;
-    }
-    for (EditorCell levelCell : new DfsTraverserIterable(anchorCell, forward(), true)) {
+    for (EditorCell levelCell : CellTraversalUtil.iterateTree(anchorCell, anchorCell, forward())) {
       if (tryPasteToCell(levelCell)) {
         return true;
       }

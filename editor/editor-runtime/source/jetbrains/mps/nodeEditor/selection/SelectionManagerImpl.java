@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
@@ -283,7 +283,7 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private EditorCell_Label getNextApplicableCell(EditorCell_Label startCell, boolean forwardDirection, boolean findEditableCell) {
-    for (EditorCell nextCell : new DfsTraverserIterable(startCell, forwardDirection, false)) {
+    for (EditorCell nextCell : CellTraversalUtil.iterateTree(null, startCell, forwardDirection).skipStart()) {
       if (nextCell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label) nextCell;
         if (findEditableCell ? labelCell.isSelectable() && labelCell.isEditable() : labelCell.isSelectable()) {
@@ -332,7 +332,7 @@ public class SelectionManagerImpl implements SelectionManager {
     boolean ignoreChildNodes =
         !SelectionManager.FIRST_CELL.equals(cellId) && !SelectionManager.FIRST_EDITABLE_CELL.equals(cellId) && !SelectionManager.LAST_CELL.equals(cellId) &&
             !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
-    for (EditorCell cell : new DfsTraverserIterable(nodeCell, useForwardIterator, true)) {
+    for (EditorCell cell : CellTraversalUtil.iterateTree(nodeCell, nodeCell, useForwardIterator).skipStart()) {
       if (ignoreChildNodes && cell.getSNode() != nodeCell.getSNode()) {
         continue;
       }
