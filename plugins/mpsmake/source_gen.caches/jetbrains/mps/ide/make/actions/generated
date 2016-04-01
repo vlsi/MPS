@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-akard7ad1tv6bq55bxg8uxlqftareg4">
+<dependencies version="2" modelHash="9i3jjhor3mkwtdae6sio1h95qlmahhj">
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.ui(MPS.IDEA/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" />
   <dep model="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
@@ -64,7 +64,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-424s16478i43l6jr2damk7gdqpyx68n" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="b2wux696k8z6lrjuk3z4m0vyklfvdkl" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="1mg93gkm3xrzojwazpeeyf16a5aek7a" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="c1s2kamngj83xm25e7z3l5ws6dv1ele" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="7gjxl1tystre0c7pnodpd0kn6ktrygr" />
   <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" hash="c78b6o6hi0qtdbjwdd28adiutq2hdx8" />
   <dep model="r:0dff1723-c756-41af-8aa7-4cfea375b0ba(jetbrains.mps.make.facet.generator.template.main@generator)" hash="apdrivuj338fs5asok00jj99i3tunlt" />
   <dep model="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)" hash="3zk5b28cqbxuexnmnifbjwvzemc7j9o" />
@@ -75,7 +75,7 @@
   <dep model="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" hash="avjvkinb2f0mbmnj8axk9zxqzkekr3c" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="8c4a9n47ijfsks8os6y2b6s1sv58xni" />
   <dep model="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" hash="-ativ0gtw5o9euzl7s5pgwqqvoue2jvu" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="3vlphmn0ycz8t3bu4brl9e040ozaqel" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="8lkdq2a21zhymffgj7ve7b2mdkhnuvl" />
   <dep model="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" hash="-bym7h2l0pj8dkydto4qsiktjk8tlfz5" />
   <dep model="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" hash="-72d9djjvhufkevsit6hssj8rlk7jnzm" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-5t2n7pbiki1m6v3v4q1tkqyoxiar6vh" />
@@ -148,7 +148,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="5882989260841555164" name="Make" hash="-3qcg0ydruwmf3zoqmauqe94cbdb8plp" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="5882989260841555164" name="Make" hash="2b156pny0caly2uuurvjcp0uq1yhziu" dependsOnCreated="true" dependsOnNodes="true">
     <dep root="1815980786159353546" />
     <dep root="2017614408232613001" />
     <dep root="2017614408232613007" />

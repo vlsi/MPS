@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8wou5ho74rp58m8gxnwxjzz1nijt5oc">
+<dependencies version="2" modelHash="dqcdzy7y518moyi74nmvrtktiwqpiak">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" />
   <dep model="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.intellij.lang.annotations(Annotations/)" />
   <dep model="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
@@ -1756,7 +1756,7 @@
   <dep model="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" hash="hs281ytdaxr0unksg6eku9r91q99of" />
   <dep model="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" hash="czebkah1av2me1xgaj0d1awgrr7v46u" />
   <dep model="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)" hash="-42eqzgesbl485ygkj8756gbxmg4le4y" />
-  <dep model="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" hash="-bq2yek8r2nnlndo2ydd7927gcnzfwtb" />
+  <dep model="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" hash="-86ggkb29s5ngd58dm7ofur8sp48q4m0" />
   <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="6t7ft48ybavxkmiadzl6eipjqt433yi" />
   <dep model="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" hash="awpelng7r6jprdcnwzhwi12gsbwvdw4" />
   <dep model="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)" hash="44f0l6cmpumfuens8hfeg5bxvo5aeew" />
@@ -1858,7 +1858,7 @@
     <file name="BeforeTasksInitializer_CustomProjectPlugin.java" />
     <file name="RunConfigurationsInitializer_CustomApplicationPlugin.java" />
   </common>
-  <source id="6893245555985399815" name="Execution Configurations" hash="-2erkgvdkt2i2pxc9sjdvunzjo72vlxj" dependsOnCreated="true" dependsOnNodes="true">
+  <source id="6893245555985399815" name="Execution Configurations" hash="3ak9pnlwbsrg78u87xoval618n4cd9g" dependsOnCreated="true" dependsOnNodes="true">
     <dep root="1353230511309561845" />
     <dep root="1353230511309561865" />
     <dep root="1706452255240565482" />
