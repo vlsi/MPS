@@ -86,13 +86,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return myStructureRegistry.getConceptDescriptor(concept);
   }
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  @NotNull
-  public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
-    return myStructureRegistry.getConceptDescriptor(fqName);
-  }
-
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     return myStructureRegistry.getConceptDescriptor(id);

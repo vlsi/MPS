@@ -30,24 +30,11 @@ public class ConceptRegistryUtil {
   /**
    * Look up concept registry for specified concept
    *
-   * @param fqName qualified name of a concept to look up
-   * @return <code>null</code> if concept with specified name is not found
-   */
-  @Nullable
-  public static ConceptDescriptor getConceptDescriptor(String fqName) {
-    ConceptRegistry cr = ConceptRegistry.getInstance();
-    if (cr == null) return null;
-    ConceptDescriptor result = cr.getConceptDescriptor(fqName);
-    return result instanceof IllegalConceptDescriptor ? null : result;
-  }
-
-  /**
-   * Look up concept registry for specified concept
-   *
    * @param conceptId id of a concept to look up
    * @return <code>null</code> if not found
    */
   @Nullable
+  @Deprecated //not a public API, deprecated before 3.4
   public static ConceptDescriptor getConceptDescriptor(SConceptId conceptId) {
     ConceptRegistry cr = ConceptRegistry.getInstance();
     if (cr == null) {
