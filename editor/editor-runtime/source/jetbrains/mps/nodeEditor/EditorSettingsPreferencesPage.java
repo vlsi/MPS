@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.ui.ComboBox;
+import com.intellij.ui.FontComboBox;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
@@ -23,14 +25,13 @@ import com.intellij.ui.components.panels.HorizontalLayout;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
-import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.nodeEditor.resources.EditorSettingsBundle;
 
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JComponent;
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
@@ -38,17 +39,27 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import java.awt.BorderLayout;
 import java.awt.Font;
-import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
-import java.util.Vector;
 
 class EditorSettingsPreferencesPage implements Disposable {
+  private static final double LINE_SPACING_MIN = 0.6;
+  private static final double LINE_SPACING_MAX = 3.0;
+  private static final double LINE_SPACING_STEP = 0.1;
+
+  private static final int RIGHT_MARGIN_MIN = 1;
+  private static final int RIGHT_MARGIN_MAX = 1000;
+  private static final int RIGHT_MARGIN_STEP = 20;
+
+  private static final int INDENT_SIZE_MIN = 0;
+  private static final int INDENT_SIZE_MAX = 100;
+  private static final int INDENT_SIZE_STEP = 2;
+
   private JPanel myEditorSettingsPanel;
-  private final JComboBox myFontsComboBox;
+  private final FontComboBox myFontsComboBox;
   private final JSpinner myLineSpacing;
-  private final JComboBox myFontSizesComboBox;
-  private final JComboBox myVerticalBoundComboBox;
-  private final JComboBox myIndentSizeComboBox;
+  private final ComboBox myFontSizesComboBox;
+  private final JSpinner myRightMargin;
+  private final JSpinner myIndentSize;
   private final JCheckBox myAntialiasingCheckBox;
   private final JCheckBox myPowerSaveModeCheckBox;
   private final JCheckBox myAutoQuickFixCheckBox;
@@ -66,7 +77,9 @@ class EditorSettingsPreferencesPage implements Disposable {
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
-    JPanel panel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5, 5, 5, 5), 10, 10));
+    final int gap = 5;
+    final JBInsets insets = new JBInsets(gap, gap, gap, gap);
+    JPanel panel = new JPanel(new GridLayoutManager(4, 1, insets, gap, gap));
 
     ButtonGroup group = new ButtonGroup();
 
@@ -96,41 +109,32 @@ class EditorSettingsPreferencesPage implements Disposable {
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
-    JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, JBUI.emptyInsets(), 2, 2));
+    JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, insets, gap, gap));
 
     fontPropertiesPanel.add(new JBLabel(EditorSettingsBundle.message("label.font.name")), getLabelConstraint(0));
-    myFontsComboBox = new JComboBox(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
+    myFontsComboBox = new FontComboBox();
     fontPropertiesPanel.add(myFontsComboBox, getEditorConstraint(0));
 
     fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.font.size")), getLabelConstraint(1));
-    Vector<Integer> fontSizes = new Vector<Integer>(50);
-    for (int i = 1; i <= 50; i++) {
-      fontSizes.add(i);
-    }
-    myFontSizesComboBox = new JComboBox(fontSizes);
+    //noinspection unchecked
+    myFontSizesComboBox = new ComboBox(new DefaultComboBoxModel(UIUtil.getStandardFontSizes()));
+    myFontSizesComboBox.setEditable(true);
     fontPropertiesPanel.add(myFontSizesComboBox, getEditorConstraint(1));
 
     fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.line.spacing")), getLabelConstraint(2));
-    myLineSpacing = new JSpinner(new SpinnerNumberModel(1.0, 1.0, 3.0, 0.1));
-    final JFormattedTextField textField = ((JSpinner.DefaultEditor) myLineSpacing.getEditor()).getTextField();
-    textField.setHorizontalAlignment(JTextField.LEFT);
+    myLineSpacing = new JSpinner(new SpinnerNumberModel(LINE_SPACING_MIN, LINE_SPACING_MIN, LINE_SPACING_MAX, LINE_SPACING_STEP));
+    ((JSpinner.DefaultEditor) myLineSpacing.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
     fontPropertiesPanel.add(myLineSpacing, getEditorConstraint(2));
 
     fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.text.width")), getLabelConstraint(3));
-    Vector<Integer> textWidthValues = new Vector<Integer>(13);
-    for (int i = 60; i <= 300; i += 20) {
-      textWidthValues.add(i);
-    }
-    myVerticalBoundComboBox = new JComboBox(textWidthValues);
-    fontPropertiesPanel.add(myVerticalBoundComboBox, getEditorConstraint(3));
+    myRightMargin = new JSpinner(new SpinnerNumberModel(RIGHT_MARGIN_MIN, RIGHT_MARGIN_MIN, RIGHT_MARGIN_MAX, RIGHT_MARGIN_STEP));
+    ((JSpinner.DefaultEditor) myRightMargin.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
+    fontPropertiesPanel.add(myRightMargin, getEditorConstraint(3));
 
     fontPropertiesPanel.add(new JLabel(EditorSettingsBundle.message("label.indent.size")), getLabelConstraint(4));
-    Vector<Integer> indents = new Vector<Integer>(5);
-    for (int i = 2; i <= 10; i += 2) {
-      indents.add(i);
-    }
-    myIndentSizeComboBox = new JComboBox(indents);
-    fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4));
+    myIndentSize = new JSpinner(new SpinnerNumberModel(INDENT_SIZE_MIN, INDENT_SIZE_MIN, INDENT_SIZE_MAX, INDENT_SIZE_STEP));
+    ((JSpinner.DefaultEditor) myIndentSize.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
+    fontPropertiesPanel.add(myIndentSize, getEditorConstraint(4));
 
     panel.add(fontPropertiesPanel,
         new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -156,7 +160,7 @@ class EditorSettingsPreferencesPage implements Disposable {
         new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
-    JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(0));
+    JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(gap));
     caretBlinkingPanel.add(new JLabel(EditorSettingsBundle.message("label.caret.blinking")));
     myCaretBlinkPeriod =
         new JSpinner(new SpinnerNumberModel(CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MIN_BLINKING_PERIOD, CaretBlinker.MAX_BLINKING_PERIOD, 100));
@@ -185,16 +189,21 @@ class EditorSettingsPreferencesPage implements Disposable {
   }
 
   public void commit() {
-
-    String fontName = myFontsComboBox.getSelectedItem().toString();
-    int fontSize = (Integer) myFontSizesComboBox.getSelectedItem();
+    String fontName = myFontsComboBox.getFontName();
+    int fontSize = mySettings.getState().getFontSize();
+    try {
+      fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
+    } catch (NumberFormatException e) {
+      // ignore wrong formatted value and reset combo box
+      myFontSizesComboBox.setSelectedItem(Integer.toString(fontSize));
+    }
 
     Font newFont = new Font(fontName, Font.PLAIN, fontSize);
     mySettings.setDefaultEditorFont(newFont);
 
-    mySettings.setVerticalBound((Integer) myVerticalBoundComboBox.getSelectedItem());
+    mySettings.setVerticalBound((Integer) myRightMargin.getModel().getValue());
 
-    mySettings.setIndentSize((Integer) myIndentSizeComboBox.getSelectedItem());
+    mySettings.setIndentSize((Integer) myIndentSize.getModel().getValue());
 
     if (myCaretBlinker != null) {
       myCaretBlinker.setCaretBlinkingRateTimeMillis((Integer) myCaretBlinkPeriod.getModel().getValue());
@@ -232,14 +241,14 @@ class EditorSettingsPreferencesPage implements Disposable {
   }
 
   public boolean isModified() {
-    boolean sameTextWidth = myVerticalBoundComboBox.getSelectedItem().equals(mySettings.getVerticalBound());
-    boolean sameIndentSize = myIndentSizeComboBox.getSelectedItem().equals(mySettings.getIndentSize());
+    boolean sameTextWidth = myRightMargin.getModel().getValue().equals(mySettings.getVerticalBound());
+    boolean sameIndentSize = myIndentSize.getModel().getValue().equals(mySettings.getIndentSize());
     boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == mySettings.isUseAntialiasing();
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
     boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
-    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(mySettings.getState().getFontSize());
-    boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals(mySettings.getState().getFontFamily());
+    boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getState().getFontSize()));
+    boolean sameFontFamily = myFontsComboBox.getFontName().equals(mySettings.getState().getFontFamily());
     boolean sameLineSpacing = myLineSpacing.getModel().getValue().equals(mySettings.getState().getLineSpacing());
     boolean sameBlinkingRate = true;
     if (myCaretBlinker != null) {
@@ -253,9 +262,9 @@ class EditorSettingsPreferencesPage implements Disposable {
   }
 
   public void reset() {
-    myVerticalBoundComboBox.setSelectedItem(mySettings.getVerticalBound());
+    myRightMargin.setValue(mySettings.getVerticalBound());
 
-    myIndentSizeComboBox.setSelectedItem(mySettings.getIndentSize());
+    myIndentSize.setValue(mySettings.getIndentSize());
 
     myAntialiasingCheckBox.setSelected(mySettings.isUseAntialiasing());
 
@@ -267,9 +276,9 @@ class EditorSettingsPreferencesPage implements Disposable {
 
     myShowContextAssistant.setSelected(mySettings.isShowContextAssistant());
 
-    myFontSizesComboBox.setSelectedItem(mySettings.getState().getFontSize());
+    myFontSizesComboBox.setSelectedItem(Integer.toString(mySettings.getState().getFontSize()));
 
-    myFontsComboBox.setSelectedItem(mySettings.getState().getFontFamily());
+    myFontsComboBox.setFontName(mySettings.getState().getFontFamily());
 
     myLineSpacing.setValue(mySettings.getState().getLineSpacing());
 
