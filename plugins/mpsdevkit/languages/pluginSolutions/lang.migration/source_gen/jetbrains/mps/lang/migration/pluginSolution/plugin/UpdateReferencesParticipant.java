@@ -78,14 +78,16 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
     return "moveNode.updateReferences";
   }
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references");
-  private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference>() {
+
+  protected class MyMoveNodeRefactoringDataCollector implements MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> {
     public NamedNodeReference beforeMove(SNode nodeToMove) {
       return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
     }
     public NamedNodeReference afterMove(SNode movedNode) {
       return new NamedNodeReference(movedNode.getReference(), NodeReferenceUtil.getNodePresentation(movedNode));
     }
-  };
+  }
+  private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new UpdateReferencesParticipant.MyMoveNodeRefactoringDataCollector();
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> getDataCollector() {
     return myDataCollector;
   }
@@ -156,14 +158,11 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
         public void confirm(final NamedNodeReference finalState, final SRepository repository, final RefactoringSession refactoringSession) {
           refactoringSession.registerChange(new Runnable() {
             public void run() {
-              SNode node = containingNode.resolve(repository);
-              MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
-              if (node == null || (MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node) && movingNode != null && movingNode.getModel() != null)) {
-                return;
-              }
-              node.setReference(role, jetbrains.mps.smodel.SReference.create(role, node, finalState.reference().getModelReference(), finalState.reference().getNodeId(), resolveInfo));
-              if (ListSequence.fromList(selectedOptions).contains(UpdateModelImports.OPTION)) {
-                UpdateModelImports.addModelImport(node.getModel(), finalState.reference().getModelReference().resolve(repository));
+              if (shouldUpdateReference(repository, containingNode.resolve(repository), role, movingNode, refactoringSession)) {
+                doUpdateReference(repository, containingNode.resolve(repository), role, finalState.reference(), resolveInfo);
+                if (ListSequence.fromList(selectedOptions).contains(UpdateModelImports.OPTION)) {
+                  doUpdateModelImport(repository, containingNode.resolve(repository), role, finalState.reference());
+                }
               }
             }
           });
@@ -179,6 +178,23 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
         return MapSequence.fromMap(result).get(initialState.reference());
       }
     }).toListSequence();
+  }
+  protected boolean shouldUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, SNode movingNode, RefactoringSession refactoringSession) {
+    MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
+    if (containingNode == null) {
+      return false;
+    }
+    // do not update reference from old node to other old node 
+    if (MapSequence.fromMap(copyMap.getCopyMap()).containsKey(containingNode) && movingNode != null && movingNode.getModel() != null) {
+      return false;
+    }
+    return true;
+  }
+  protected void doUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, SNodeReference newTarget, final String resolveInfo) {
+    containingNode.setReference(role, jetbrains.mps.smodel.SReference.create(role, containingNode, newTarget.getModelReference(), newTarget.getNodeId(), resolveInfo));
+  }
+  protected void doUpdateModelImport(SRepository repository, final SNode containingNode, final SReferenceLink role, SNodeReference newTarget) {
+    UpdateModelImports.addModelImport(containingNode.getModel(), newTarget.getModelReference().resolve(repository));
   }
   public SNode serializeInitialState(NamedNodeReference initialState) {
     return NodeReferenceUtil.makeReflection(initialState.reference(), initialState.name());

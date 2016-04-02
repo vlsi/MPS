@@ -4839,6 +4839,9 @@
       <node concept="3clFb_" id="5z_gLGeqYia" role="jymVt">
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="beforeMove" />
+        <node concept="2AHcQZ" id="4qkYgnA1wxy" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
         <node concept="16syzq" id="5z_gLGeqYib" role="3clF45">
           <ref role="16sUi3" node="5z_gLGeqYin" resolve="InitialDataObject" />
         </node>
@@ -4854,6 +4857,9 @@
       <node concept="3clFb_" id="5z_gLGeqYig" role="jymVt">
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="afterMove" />
+        <node concept="2AHcQZ" id="4qkYgnA1x33" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
         <node concept="16syzq" id="5z_gLGeqYih" role="3clF45">
           <ref role="16sUi3" node="5z_gLGeqYio" resolve="FinalDataObject" />
         </node>
@@ -5079,6 +5085,9 @@
       <property role="TrG5h" value="getChanges" />
       <node concept="37vLTG" id="3KqYwoBIK$S" role="3clF46">
         <property role="TrG5h" value="initialStates" />
+        <node concept="2AHcQZ" id="4qkYgnA1vZP" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+        </node>
         <node concept="_YKpA" id="5SvlHWogo5T" role="1tU5fm">
           <node concept="16syzq" id="5SvlHWogoHS" role="_ZDj9">
             <ref role="16sUi3" node="3KqYwoBIHZv" resolve="InitialDataObject" />
