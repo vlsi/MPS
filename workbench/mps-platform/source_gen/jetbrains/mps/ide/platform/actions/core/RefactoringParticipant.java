@@ -12,14 +12,25 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
   static interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+    /**
+     * 
+     * @return null if participant ignores the node
+     */
     @Nullable
     InitialDataObject beforeMove(InitialPoint nodeToMove);
+    /**
+     * 
+     * @return null if there is no data to save
+     */
     @Nullable
     FinalDataObject afterMove(FinalPoint movedNode);
   }
@@ -93,13 +104,34 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
       }).toListSequence();
     }
     public List<RefactoringParticipant.Option> getAvaliableOptions(SRepository repository) {
-      return myParticipant.getAvailableOptions(myInitialStates, repository);
+      return myParticipant.getAvailableOptions(ListSequence.fromList(myInitialStates).where(new IWhereFilter<I>() {
+        public boolean accept(I it) {
+          return it != null;
+        }
+      }).toListSequence(), repository);
     }
     public List<List<RefactoringParticipant.Change<I, F>>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
       return changes = initChanges(repository, selectedOptions, searchScope, progressMonitor);
     }
-    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
-      return myParticipant.getChanges(myInitialStates, repository, selectedOptions, searchScope, progressMonitor);
+    protected <T, S> List<S> mapNotNull(List<T> arguments, _FunctionTypes._return_P1_E0<? extends List<S>, ? super List<T>> notNullMapFunc) {
+      List<S> filteredResult = notNullMapFunc.invoke(ListSequence.fromList(arguments).where(new IWhereFilter<T>() {
+        public boolean accept(T it) {
+          return it != null;
+        }
+      }).toListSequence());
+      List<S> result = ListSequence.fromList(new ArrayList<S>(ListSequence.fromList(arguments).count()));
+      int j = 0;
+      for (T v : arguments) {
+        ListSequence.fromList(result).addElement((v == null ? null : ListSequence.fromList(filteredResult).getElement(j++)));
+      }
+      return result;
+    }
+    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(final SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope, final ProgressMonitor progressMonitor) {
+      return mapNotNull(myInitialStates, new _FunctionTypes._return_P1_E0<List<List<RefactoringParticipant.Change<I, F>>>, List<I>>() {
+        public List<List<RefactoringParticipant.Change<I, F>>> invoke(List<I> initialStates) {
+          return myParticipant.getChanges(initialStates, repository, selectedOptions, searchScope, progressMonitor);
+        }
+      });
     }
     public void doRefactor(List<FP> newNodes, final SRepository repository, final RefactoringSession session) {
       {

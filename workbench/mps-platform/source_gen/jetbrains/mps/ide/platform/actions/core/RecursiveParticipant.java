@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface RecursiveParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
 
@@ -23,26 +25,27 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject, Initia
       myParents = parents;
     }
     @Override
-    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor) {
+    protected List<List<RefactoringParticipant.Change<I, F>>> initChanges(final SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope, final ProgressMonitor progressMonitor) {
       if (getParticipant() instanceof RecursiveParticipant) {
         if (Sequence.fromIterable(myParents).any(new IWhereFilter<RefactoringParticipant.ParticipantState>() {
           public boolean accept(RefactoringParticipant.ParticipantState parent) {
-            return eq_7nv468_a0a0a0a0a0a0a0a3d_0(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && eq_7nv468_a0a0a0a0a0a0a0a3d(parent.getInitialStates(), RecursiveParticipantState.this.getInitialStates());
+            return eq_7nv468_a0a0a0a0a0a0a0a0d3(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && ListSequence.fromList(parent.getInitialStates()).containsSequence(ListSequence.fromList(RecursiveParticipantState.this.getInitialStates())) && ListSequence.fromList(((List<Object>) RecursiveParticipantState.this.getInitialStates())).containsSequence(ListSequence.fromList(parent.getInitialStates()));
           }
         })) {
           // todo: checked exception 
           throw new IllegalStateException("infinite recursion detected");
         } else {
-          return ((RecursiveParticipant<I, F, IP, FP>) getParticipant()).getChanges(getInitialStates(), repository, selectedOptions, searchScope, progressMonitor, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));
+          return mapNotNull(getInitialStates(), new _FunctionTypes._return_P1_E0<List<List<RefactoringParticipant.Change<I, F>>>, List<I>>() {
+            public List<List<RefactoringParticipant.Change<I, F>>> invoke(List<I> initialStates) {
+              return ((RecursiveParticipant<I, F, IP, FP>) getParticipant()).getChanges(initialStates, repository, selectedOptions, searchScope, progressMonitor, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(RecursiveParticipantState.this))));
+            }
+          });
         }
       } else {
         return super.initChanges(repository, selectedOptions, searchScope, progressMonitor);
       }
     }
-    private static boolean eq_7nv468_a0a0a0a0a0a0a0a3d(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_7nv468_a0a0a0a0a0a0a0a3d_0(Object a, Object b) {
+    private static boolean eq_7nv468_a0a0a0a0a0a0a0a0d3(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

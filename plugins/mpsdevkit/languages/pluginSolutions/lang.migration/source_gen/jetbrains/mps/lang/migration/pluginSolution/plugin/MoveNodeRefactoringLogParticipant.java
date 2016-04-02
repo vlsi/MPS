@@ -85,10 +85,18 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
       return myPersistentParticipant;
     }
     public SNode getSerializedInitial(SNode oldNode) {
-      return myPersistentParticipant.serializeInitialState(myParticipant.getDataCollector().beforeMove(oldNode));
+      I initialState = myParticipant.getDataCollector().beforeMove(oldNode);
+      if (initialState == null) {
+        return null;
+      }
+      return myPersistentParticipant.serializeInitialState(initialState);
     }
     public SNode getSerializedFinal(SNode newNode) {
-      return myPersistentParticipant.serializeFinalState(myParticipant.getDataCollector().afterMove(newNode));
+      F finalState = myParticipant.getDataCollector().afterMove(newNode);
+      if (finalState == null) {
+        return null;
+      }
+      return myPersistentParticipant.serializeFinalState(finalState);
     }
   }
 
@@ -273,7 +281,9 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
             participant_var = participant_it.next();
             i_var = i_it.next();
             f_var = f_it.next();
-            logBuilder.addPart(participant_var, i_var, f_var);
+            if (i_var != null) {
+              logBuilder.addPart(participant_var, i_var, f_var);
+            }
           }
         }
       }
