@@ -22,27 +22,31 @@ public class BaseTestBody {
   public Project myProject;
   protected Map<SNode, SNode> myMap;
   private List<SNode> myCopies;
+
   public BaseTestBody() {
-    this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    this.myCopies = ListSequence.fromList(new ArrayList<SNode>());
+    myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    myCopies = ListSequence.fromList(new ArrayList<SNode>());
   }
+
   public void addNodeById(final String id) throws Exception {
     myProject.getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
-        SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
+        SNode node = myModel.getNode(SNodeId.fromString(id));
+        SNode copy = CopyUtil.copy(node, myMap, true);
         for (SNode a : ListSequence.fromList(SNodeOperations.getNodeDescendants(copy, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e0d52da47L, "jetbrains.mps.lang.test.structure.INodeAnnotation"), false, new SAbstractConcept[]{}))) {
           SNodeOperations.deleteNode(a);
         }
-        BaseTestBody.this.myModel.addRootNode(copy);
-        ListSequence.fromList(BaseTestBody.this.myCopies).addElement(copy);
+        myModel.addRootNode(copy);
+        ListSequence.fromList(myCopies).addElement(copy);
       }
     });
   }
+
   public SNode getNodeById(String id) {
-    return MapSequence.fromMap(this.myMap).get(this.myModel.getNode(SNodeId.fromString(id)));
+    return MapSequence.fromMap(myMap).get(myModel.getNode(SNodeId.fromString(id)));
   }
+
   public SNode getRealNodeById(String id) {
-    return this.myModel.getNode(SNodeId.fromString(id));
+    return myModel.getNode(SNodeId.fromString(id));
   }
 }
