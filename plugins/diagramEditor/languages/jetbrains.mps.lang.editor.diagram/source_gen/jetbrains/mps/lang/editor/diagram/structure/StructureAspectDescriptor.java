@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -61,93 +65,230 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0tb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractArgument;
-      case 1:
-        return myConceptAbstractDiagramCreation;
-      case 2:
-        return myConceptAbstractFigureReference;
-      case 3:
-        return myConceptActionGroup;
-      case 4:
-        return myConceptActionReference;
-      case 5:
-        return myConceptAttributedFigureReference;
-      case 6:
-        return myConceptBLQueryArgument;
-      case 7:
-        return myConceptCellModel_Diagram;
-      case 8:
-        return myConceptCellModel_DiagramConnector;
-      case 9:
-        return myConceptCellModel_DiagramNode;
-      case 10:
-        return myConceptCellModel_DiagramPort;
-      case 11:
-        return myConceptConnectionEnd;
-      case 12:
-        return myConceptConnectionEndBLQuery;
-      case 13:
-        return myConceptCreationActionReference;
-      case 14:
-        return myConceptCustomElementReference;
-      case 15:
-        return myConceptDiagramConnectorCanCreateHandler;
-      case 16:
-        return myConceptDiagramConnectorCreation;
-      case 17:
-        return myConceptDiagramConnectorCreationHandler;
-      case 18:
-        return myConceptDiagramElement;
-      case 19:
-        return myConceptDiagramElementBLQuery;
-      case 20:
-        return myConceptDiagramElementCreationHandler;
-      case 21:
-        return myConceptDiagramElementsCreation;
-      case 22:
-        return myConceptExternalFigureReference;
-      case 23:
-        return myConceptFigureParameterMapping;
-      case 24:
-        return myConceptFromIdFunctionParameter;
-      case 25:
-        return myConceptFromNodeFunctionParameter;
-      case 26:
-        return myConceptLinkArgument;
-      case 27:
-        return myConceptNodeFunctionParameter;
-      case 28:
-        return myConceptPalette;
-      case 29:
-        return myConceptPaletteElement;
-      case 30:
-        return myConceptPropertyArgument;
-      case 31:
-        return myConceptSeparator;
-      case 32:
-        return myConceptStubCellModel_Diagram;
-      case 33:
-        return myConceptStubCellModel_DiagramConnector;
-      case 34:
-        return myConceptStubCellModel_DiagramNode;
-      case 35:
-        return myConceptStubCellModel_DiagramPort;
-      case 36:
-        return myConceptThisEditorNodeExpression;
-      case 37:
-        return myConceptToIdFunctionParameter;
-      case 38:
-        return myConceptToNodeFunctionParameter;
-      case 39:
-        return myConceptXFunctionParameter;
-      case 40:
-        return myConceptYFunctionParameter;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0tb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractArgument;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractDiagramCreation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAbstractFigureReference;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptActionGroup;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptActionReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptAttributedFigureReference;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptBLQueryArgument;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptCellModel_Diagram;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptCellModel_DiagramConnector;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptCellModel_DiagramNode;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptCellModel_DiagramPort;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptConnectionEnd;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptConnectionEndBLQuery;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptCreationActionReference;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptCustomElementReference;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptDiagramConnectorCanCreateHandler;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptDiagramConnectorCreation;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptDiagramConnectorCreationHandler;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptDiagramElement;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptDiagramElementBLQuery;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptDiagramElementCreationHandler;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptDiagramElementsCreation;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptExternalFigureReference;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptFigureParameterMapping;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptFromIdFunctionParameter;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptFromNodeFunctionParameter;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptLinkArgument;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptNodeFunctionParameter;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptPalette;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptPaletteElement;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptPropertyArgument;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptSeparator;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptStubCellModel_Diagram;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptStubCellModel_DiagramConnector;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptStubCellModel_DiagramNode;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptStubCellModel_DiagramPort;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptThisEditorNodeExpression;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptToIdFunctionParameter;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptToNodeFunctionParameter;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptXFunctionParameter;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptYFunctionParameter;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0tb = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractArgument", "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.ActionReference", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElement", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PaletteElement", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0tb = buildConceptIndices(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8aeL, "jetbrains.mps.lang.editor.diagram.structure.AbstractArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a329d6L, "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L, "jetbrains.mps.lang.editor.diagram.structure.ActionGroup"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d82L, "jetbrains.mps.lang.editor.diagram.structure.ActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x25c3d1ab937de9c0L, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L, "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371634eL, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de371007cL, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31a6add1L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElement"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d63L, "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d59L, "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL, "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L, "jetbrains.mps.lang.editor.diagram.structure.Palette"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d85L, "jetbrains.mps.lang.editor.diagram.structure.PaletteElement"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L, "jetbrains.mps.lang.editor.diagram.structure.Separator"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc2d376L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_Diagram"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37a82L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramConnector"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37aa7L, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramNode"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xa2364a3edc37accL, "jetbrains.mps.lang.editor.diagram.structure.StubCellModel_DiagramPort"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL, "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d68L, "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3724d5eL, "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L, "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L, "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"));
 }

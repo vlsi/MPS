@@ -4,12 +4,12 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myDoRefactorClause__BehaviorDescriptor = new DoRefactorClause__BehaviorDescriptor();
@@ -37,97 +37,149 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myScopeOperation__BehaviorDescriptor = new ScopeOperation__BehaviorDescriptor();
   private final BHDescriptor myMainProjectOperation__BehaviorDescriptor = new MainProjectOperation__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[24];
-    myConceptBehaviorIds[0] = 0x114ff4a9da3L;
-    myConceptBehaviorIds[1] = 0x114ff551cd5L;
-    myConceptBehaviorIds[2] = 0x1174ee3c478L;
-    myConceptBehaviorIds[3] = 0x1179d272ac6L;
-    myConceptBehaviorIds[4] = 0x1199f56b378L;
-    myConceptBehaviorIds[5] = 0x1199f5764daL;
-    myConceptBehaviorIds[6] = 0x119f1c05cbcL;
-    myConceptBehaviorIds[7] = 0x175aa0f4225aa61fL;
-    myConceptBehaviorIds[8] = 0x1c9210c7226dbbf4L;
-    myConceptBehaviorIds[9] = 0x4c4b92003e483aaaL;
-    myConceptBehaviorIds[10] = 0x4c4b92003e4d77d2L;
-    myConceptBehaviorIds[11] = 0x526920001de2794bL;
-    myConceptBehaviorIds[12] = 0x5fb04b74a778e245L;
-    myConceptBehaviorIds[13] = 0x5fb04b74a77a0571L;
-    myConceptBehaviorIds[14] = 0x5fb04b74a77a0598L;
-    myConceptBehaviorIds[15] = 0x6e6245e06b61646dL;
-    myConceptBehaviorIds[16] = 0x6e6245e06b61646fL;
-    myConceptBehaviorIds[17] = 0x6e6245e06b616471L;
-    myConceptBehaviorIds[18] = 0x6e6245e06b616473L;
-    myConceptBehaviorIds[19] = 0x6e6245e06b616475L;
-    myConceptBehaviorIds[20] = 0x6e6245e06b616477L;
-    myConceptBehaviorIds[21] = 0x6e6245e06b616479L;
-    myConceptBehaviorIds[22] = 0x6e6245e06b61647bL;
-    myConceptBehaviorIds[23] = 0x709995bad7715796L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myDoRefactorClause__BehaviorDescriptor;
-      case 1:
-        return myConceptFunctionParameter_SModel__BehaviorDescriptor;
-      case 2:
-        return myAbstractMoveExpression__BehaviorDescriptor;
-      case 3:
-        return myAffectedNodesClause__BehaviorDescriptor;
-      case 4:
-        return myIsApplicableToModelClause__BehaviorDescriptor;
-      case 5:
-        return myConceptFunctionParameter_Model__BehaviorDescriptor;
-      case 6:
-        return myGetModelsToUpdateClause__BehaviorDescriptor;
-      case 7:
-        return myModelsToGenerateClause__BehaviorDescriptor;
-      case 8:
-        return myDoWhenDoneClause__BehaviorDescriptor;
-      case 9:
-        return myRefactoringFieldReference__BehaviorDescriptor;
-      case 10:
-        return myInitClause__BehaviorDescriptor;
-      case 11:
-        return myRepositoryOperation__BehaviorDescriptor;
-      case 12:
-        return myRefactoring__BehaviorDescriptor;
-      case 13:
-        return myIsApplicableToModuleClause__BehaviorDescriptor;
-      case 14:
-        return myIsApplicableToNodeClause__BehaviorDescriptor;
-      case 15:
-        return myContextMemberOperation__BehaviorDescriptor;
-      case 16:
-        return myModelDescriptorOperation__BehaviorDescriptor;
-      case 17:
-        return myModuleOperation__BehaviorDescriptor;
-      case 18:
-        return myNodeOperation__BehaviorDescriptor;
-      case 19:
-        return myNodesOperation__BehaviorDescriptor;
-      case 20:
-        return myOperationContextOperation__BehaviorDescriptor;
-      case 21:
-        return myProjectOperation__BehaviorDescriptor;
-      case 22:
-        return myScopeOperation__BehaviorDescriptor;
-      case 23:
-        return myMainProjectOperation__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0bb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractMoveExpression__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAffectedNodesClause__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptFunctionParameter_Model__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptFunctionParameter_SModel__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myContextMemberOperation__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myDoRefactorClause__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myDoWhenDoneClause__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myGetModelsToUpdateClause__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myInitClause__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myIsApplicableToModelClause__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myIsApplicableToModuleClause__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myIsApplicableToNodeClause__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myMainProjectOperation__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myModelDescriptorOperation__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myModelsToGenerateClause__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myModuleOperation__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myNodeOperation__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myNodesOperation__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myOperationContextOperation__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myProjectOperation__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myRefactoring__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myRefactoringFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myRepositoryOperation__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myScopeOperation__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0bb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1179d272ac6L, "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f5764daL, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff551cd5L, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff4a9da3L, "jetbrains.mps.lang.refactoring.structure.DoRefactorClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1c9210c7226dbbf4L, "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x119f1c05cbcL, "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e4d77d2L, "jetbrains.mps.lang.refactoring.structure.InitClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f56b378L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0571L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0598L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x709995bad7715796L, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646fL, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x175aa0f4225aa61fL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616471L, "jetbrains.mps.lang.refactoring.structure.ModuleOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616473L, "jetbrains.mps.lang.refactoring.structure.NodeOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616475L, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616477L, "jetbrains.mps.lang.refactoring.structure.OperationContextOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616479L, "jetbrains.mps.lang.refactoring.structure.ProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL, "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x526920001de2794bL, "jetbrains.mps.lang.refactoring.structure.RepositoryOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61647bL, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"));
 }

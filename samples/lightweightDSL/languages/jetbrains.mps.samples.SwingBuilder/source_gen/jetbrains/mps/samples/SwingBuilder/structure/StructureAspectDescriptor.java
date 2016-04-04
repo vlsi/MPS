@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -36,43 +40,105 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
-      case 0:
-        return myConceptButton;
-      case 1:
-        return myConceptComponent;
-      case 2:
-        return myConceptConverter;
-      case 3:
-        return myConceptElementReference;
-      case 4:
-        return myConceptEmptyComponent;
-      case 5:
-        return myConceptFilter;
-      case 6:
-        return myConceptFrame;
-      case 7:
-        return myConceptLabel;
-      case 8:
-        return myConceptMap;
-      case 9:
-        return myConceptPanel;
-      case 10:
-        return myConceptPipeline;
-      case 11:
-        return myConceptSourceDataType;
-      case 12:
-        return myConceptSwingBuilderMember;
-      case 13:
-        return myConceptTargetDataType;
-      case 14:
-        return myConceptTextField;
-      case 15:
-        return myConceptTransformers;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0u.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptButton;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptComponent;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptConverter;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptElementReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptEmptyComponent;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptFilter;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptFrame;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptLabel;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptMap;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptPanel;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptPipeline;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptSourceDataType;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptSwingBuilderMember;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptTargetDataType;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptTextField;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptTransformers;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.samples.SwingBuilder.structure.Button", "jetbrains.mps.samples.SwingBuilder.structure.Component", "jetbrains.mps.samples.SwingBuilder.structure.Converter", "jetbrains.mps.samples.SwingBuilder.structure.ElementReference", "jetbrains.mps.samples.SwingBuilder.structure.EmptyComponent", "jetbrains.mps.samples.SwingBuilder.structure.Filter", "jetbrains.mps.samples.SwingBuilder.structure.Frame", "jetbrains.mps.samples.SwingBuilder.structure.Label", "jetbrains.mps.samples.SwingBuilder.structure.Map", "jetbrains.mps.samples.SwingBuilder.structure.Panel", "jetbrains.mps.samples.SwingBuilder.structure.Pipeline", "jetbrains.mps.samples.SwingBuilder.structure.SourceDataType", "jetbrains.mps.samples.SwingBuilder.structure.SwingBuilderMember", "jetbrains.mps.samples.SwingBuilder.structure.TargetDataType", "jetbrains.mps.samples.SwingBuilder.structure.TextField", "jetbrains.mps.samples.SwingBuilder.structure.Transformers"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543043L, "jetbrains.mps.samples.SwingBuilder.structure.Button"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543016L, "jetbrains.mps.samples.SwingBuilder.structure.Component"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b28563fL, "jetbrains.mps.samples.SwingBuilder.structure.Converter"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1e8aL, "jetbrains.mps.samples.SwingBuilder.structure.ElementReference"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa545621L, "jetbrains.mps.samples.SwingBuilder.structure.EmptyComponent"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1c61L, "jetbrains.mps.samples.SwingBuilder.structure.Filter"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543006L, "jetbrains.mps.samples.SwingBuilder.structure.Frame"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543023L, "jetbrains.mps.samples.SwingBuilder.structure.Label"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1d95L, "jetbrains.mps.samples.SwingBuilder.structure.Map"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, "jetbrains.mps.samples.SwingBuilder.structure.Panel"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1e59L, "jetbrains.mps.samples.SwingBuilder.structure.Pipeline"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b276c5aL, "jetbrains.mps.samples.SwingBuilder.structure.SourceDataType"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa5245c9L, "jetbrains.mps.samples.SwingBuilder.structure.SwingBuilderMember"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4d5f82383b277405L, "jetbrains.mps.samples.SwingBuilder.structure.TargetDataType"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa54931bL, "jetbrains.mps.samples.SwingBuilder.structure.TextField"), MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1e78L, "jetbrains.mps.samples.SwingBuilder.structure.Transformers"));
 }

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -37,43 +41,105 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
-      case 0:
-        return myConceptAbstractFinderDeclaration;
-      case 1:
-        return myConceptCategorizeBlock;
-      case 2:
-        return myConceptCheckCancelledStatusStatement;
-      case 3:
-        return myConceptConceptFunctionParameter_node;
-      case 4:
-        return myConceptExecuteFinderExpression;
-      case 5:
-        return myConceptExecuteFindersGetSearchResults;
-      case 6:
-        return myConceptFindBlock;
-      case 7:
-        return myConceptFinderDeclaration;
-      case 8:
-        return myConceptFinderReference;
-      case 9:
-        return myConceptIsApplicableBlock;
-      case 10:
-        return myConceptIsUsedByDefault;
-      case 11:
-        return myConceptIsVisibleBlock;
-      case 12:
-        return myConceptMakeResultProvider;
-      case 13:
-        return myConceptNodeStatement;
-      case 14:
-        return myConceptResultStatement;
-      case 15:
-        return myConceptSearchedNodesBlock;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0u.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractFinderDeclaration;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCategorizeBlock;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCheckCancelledStatusStatement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConceptFunctionParameter_node;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExecuteFinderExpression;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExecuteFindersGetSearchResults;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptFindBlock;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptFinderDeclaration;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptFinderReference;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIsApplicableBlock;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIsUsedByDefault;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptIsVisibleBlock;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptMakeResultProvider;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptNodeStatement;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptResultStatement;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptSearchedNodesBlock;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", "jetbrains.mps.lang.findUsages.structure.CategorizeBlock", "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", "jetbrains.mps.lang.findUsages.structure.IsUsedByDefault", "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11bd0c17f12L, "jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b14c36L, "jetbrains.mps.lang.findUsages.structure.CategorizeBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116c9c51f82L, "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L, "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a88L, "jetbrains.mps.lang.findUsages.structure.FindBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, "jetbrains.mps.lang.findUsages.structure.FinderReference"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a94L, "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1660f4e85a04a8fL, "jetbrains.mps.lang.findUsages.structure.IsUsedByDefault"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x11b36e60151L, "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L, "jetbrains.mps.lang.findUsages.structure.MakeResultProvider"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL, "jetbrains.mps.lang.findUsages.structure.NodeStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L, "jetbrains.mps.lang.findUsages.structure.ResultStatement"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118e6b5cc19L, "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"));
 }

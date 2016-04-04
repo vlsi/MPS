@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -46,61 +50,150 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0db, conceptFqName)) {
-      case 0:
-        return myConceptAdvanceWorkStatement;
-      case 1:
-        return myConceptAllWorkLeftExpression;
-      case 2:
-        return myConceptBeginWorkStatement;
-      case 3:
-        return myConceptConceptFunctionParameter_progressMonitor;
-      case 4:
-        return myConceptConfigDefinition;
-      case 5:
-        return myConceptExpected;
-      case 6:
-        return myConceptExpectedInput;
-      case 7:
-        return myConceptExpectedOption;
-      case 8:
-        return myConceptFinishWorkStatement;
-      case 9:
-        return myConceptIExpected;
-      case 10:
-        return myConceptInputResourcesParameter;
-      case 11:
-        return myConceptJobDeclaration;
-      case 12:
-        return myConceptJobDefinition;
-      case 13:
-        return myConceptOption;
-      case 14:
-        return myConceptOptionExpression;
-      case 15:
-        return myConceptOptionType;
-      case 16:
-        return myConceptOutputResources;
-      case 17:
-        return myConceptPropertiesAccessorParameter;
-      case 18:
-        return myConceptQueryDefinition;
-      case 19:
-        return myConceptQueryParameterDeclaration;
-      case 20:
-        return myConceptRelayQueryExpression;
-      case 21:
-        return myConceptReportFeedbackStatement;
-      case 22:
-        return myConceptResourceType;
-      case 23:
-        return myConceptResultStatement;
-      case 24:
-        return myConceptText;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0db.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAdvanceWorkStatement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAllWorkLeftExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBeginWorkStatement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConceptFunctionParameter_progressMonitor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptConfigDefinition;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExpected;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptExpectedInput;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptExpectedOption;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptFinishWorkStatement;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIExpected;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptInputResourcesParameter;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptJobDeclaration;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptJobDefinition;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptOption;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptOptionExpression;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptOptionType;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptOutputResources;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptPropertiesAccessorParameter;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptQueryDefinition;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptQueryParameterDeclaration;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptRelayQueryExpression;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptReportFeedbackStatement;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptResourceType;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptResultStatement;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptText;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0db = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.Expected", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.IExpected", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.PropertiesAccessorParameter", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0db = buildConceptIndices(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L, "jetbrains.mps.make.script.structure.AdvanceWorkStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL, "jetbrains.mps.make.script.structure.AllWorkLeftExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x40d591ab6a24e48dL, "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dcbee4L, "jetbrains.mps.make.script.structure.ConfigDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7c2L, "jetbrains.mps.make.script.structure.Expected"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7c6L, "jetbrains.mps.make.script.structure.ExpectedInput"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L, "jetbrains.mps.make.script.structure.FinishWorkStatement"), MetaAdapterFactory.getInterfaceConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc581e7L, "jetbrains.mps.make.script.structure.IExpected"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dacL, "jetbrains.mps.make.script.structure.InputResourcesParameter"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7edL, "jetbrains.mps.make.script.structure.JobDeclaration"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L, "jetbrains.mps.make.script.structure.Option"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, "jetbrains.mps.make.script.structure.OptionExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b5L, "jetbrains.mps.make.script.structure.OptionType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L, "jetbrains.mps.make.script.structure.OutputResources"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x716499a9068b35e9L, "jetbrains.mps.make.script.structure.PropertiesAccessorParameter"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL, "jetbrains.mps.make.script.structure.QueryDefinition"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec7L, "jetbrains.mps.make.script.structure.QueryParameterDeclaration"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL, "jetbrains.mps.make.script.structure.RelayQueryExpression"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement"), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ecaL, "jetbrains.mps.make.script.structure.Text"));
 }

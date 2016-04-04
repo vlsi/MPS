@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,31 +35,75 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
-      case 0:
-        return myConceptConvertTo;
-      case 1:
-        return myConceptCurrencyDefTable;
-      case 2:
-        return myConceptCurrencyUnit;
-      case 3:
-        return myConceptCurrentStockPrice;
-      case 4:
-        return myConceptGetAmount;
-      case 5:
-        return myConceptGetCurrency;
-      case 6:
-        return myConceptMoneyLiteral;
-      case 7:
-        return myConceptMoneyType;
-      case 8:
-        return myConceptMovingAverage;
-      case 9:
-        return myConceptStockSymbol;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0o.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConvertTo;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCurrencyDefTable;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCurrencyUnit;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptCurrentStockPrice;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptGetAmount;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptGetCurrency;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptMoneyLiteral;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptMoneyType;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptMovingAverage;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptStockSymbol;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b34209aL, "org.jetbrains.mps.samples.Money.structure.ConvertTo"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443596L, "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443597L, "org.jetbrains.mps.samples.Money.structure.CurrencyUnit"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913c339L, "org.jetbrains.mps.samples.Money.structure.GetAmount"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b32f1b1L, "org.jetbrains.mps.samples.Money.structure.GetCurrency"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913516aL, "org.jetbrains.mps.samples.Money.structure.MoneyType"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, "org.jetbrains.mps.samples.Money.structure.MovingAverage"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, "org.jetbrains.mps.samples.Money.structure.StockSymbol"));
 }

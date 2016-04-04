@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,19 +29,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
-      case 0:
-        return myConceptComeFromExpression;
-      case 1:
-        return myConceptCompositeWithParentScopeExpression;
-      case 2:
-        return myConceptParentScope;
-      case 3:
-        return myConceptUniformScopeProvider;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptComeFromExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCompositeWithParentScopeExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptParentScope;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptUniformScopeProvider;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.lang.scopes.structure.ComeFromExpression", "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression", "jetbrains.mps.lang.scopes.structure.ParentScope", "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x701a981462928bdfL, "jetbrains.mps.lang.scopes.structure.ComeFromExpression"), MetaAdapterFactory.getConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x701a9814629119bdL, "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression"), MetaAdapterFactory.getConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x701a981462920832L, "jetbrains.mps.lang.scopes.structure.ParentScope"), MetaAdapterFactory.getInterfaceConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x299275268ba48780L, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"));
 }

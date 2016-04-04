@@ -7,30 +7,45 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L, "org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) {
-        return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"))) {
-        return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"))) {
-        return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool"))) {
-        return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) {
-        return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NonThreadSafeClass_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ParallelFor_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ParallelLoopVariable_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ThreadPool_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ThreadSafe_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -39,4 +54,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L, "org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"));
 }

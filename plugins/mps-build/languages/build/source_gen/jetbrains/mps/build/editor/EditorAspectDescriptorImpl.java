@@ -7,325 +7,536 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL, "jetbrains.mps.build.structure.BuildAspect"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b23438dabL, "jetbrains.mps.build.structure.BuildCustomWorkflow"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a23L, "jetbrains.mps.build.structure.BuildDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, "jetbrains.mps.build.structure.BuildFileExcludeSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262f9cL, "jetbrains.mps.build.structure.BuildFileIncludeSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, "jetbrains.mps.build.structure.BuildFileIncludesSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a7L, "jetbrains.mps.build.structure.BuildFileSelector"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6d2aa38ffdbd053fL, "jetbrains.mps.build.structure.BuildInputFolders"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9216ceaL, "jetbrains.mps.build.structure.BuildInputResourceSet"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9ac67L, "jetbrains.mps.build.structure.BuildJavaPlugin"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6dea0cbL, "jetbrains.mps.build.structure.BuildLayout_Comment"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd24L, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3a43b020f623c9acL, "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3956ec48L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a39527645L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceTokens"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x60d5783406a77553L, "jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935ad4caL, "jetbrains.mps.build.structure.BuildLayout_CopyGlobMapper"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394dcc33L, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935d7c9fL, "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L, "jetbrains.mps.build.structure.BuildLayout_CustomCopy"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda46aL, "jetbrains.mps.build.structure.BuildLayout_EchoProperties"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda477L, "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6a3e160a3eff6a94L, "jetbrains.mps.build.structure.BuildLayout_EchoXml"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde534f69bL, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, "jetbrains.mps.build.structure.BuildLayout_File"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, "jetbrains.mps.build.structure.BuildLayout_FileStub"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, "jetbrains.mps.build.structure.BuildLayout_Files"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, "jetbrains.mps.build.structure.BuildLayout_FilesOf"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, "jetbrains.mps.build.structure.BuildLayout_Import"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, "jetbrains.mps.build.structure.BuildLayout_ImportContent"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, "jetbrains.mps.build.structure.BuildLayout_Tar"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L, "jetbrains.mps.build.structure.BuildLayout_TransparentContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL, "jetbrains.mps.build.structure.BuildPlugin"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc08L, "jetbrains.mps.build.structure.BuildProjectPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61c2404L, "jetbrains.mps.build.structure.BuildSource_JavaCP"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbd021959L, "jetbrains.mps.build.structure.BuildSource_JavaClassFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d431989677L, "jetbrains.mps.build.structure.BuildSource_JavaDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6fcf41976cfa6175L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61fe867L, "jetbrains.mps.build.structure.BuildSource_JavaJars"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144e320L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f21e006dL, "jetbrains.mps.build.structure.BuildSource_JavaResources"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974fcL, "jetbrains.mps.build.structure.BuildSource_JavaSources"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L, "jetbrains.mps.build.structure.BuildStringNotEmpty"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL, "jetbrains.mps.build.structure.BuildStringPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d2c3e4L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d43ad7L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892875c0L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f1f0652f6049405L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildAspect_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildCompositePath_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildCustomWorkflow_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildDependency_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildExternalLayout_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildExternalLayoutDependency_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildFileExcludeSelector_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildFileIncludeSelector_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildFileIncludesSelector_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildFileSelector_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildFolderMacro_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildInputFiles_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildInputFolders_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildInputResourceSet_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildInputSingleFile_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildInputSingleFolder_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildJavaPlugin_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_AbstractCopy_Editor());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Comment_Editor());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CompileOutputOf_Editor());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterFixCRLF_Editor());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceRegex_Editor());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFilterReplaceTokens_Editor());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyFlattenMapper_Editor());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyGlobMapper_Editor());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyHandler_Editor());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CopyRegexMapper_Editor());
+          }
+          break;
+        case 28:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_CustomCopy_Editor());
+          }
+          break;
+        case 29:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoProperties_Editor());
+          }
+          break;
+        case 30:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoPropertyEntry_Editor());
+          }
+          break;
+        case 31:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_EchoXml_Editor());
+          }
+          break;
+        case 32:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_ExportAsJavaLibrary_Editor());
+          }
+          break;
+        case 33:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_File_Editor());
+          }
+          break;
+        case 34:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_FileStub_Editor());
+          }
+          break;
+        case 35:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Filemode_Editor());
+          }
+          break;
+        case 36:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Files_Editor());
+          }
+          break;
+        case 37:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_FilesOf_Editor());
+          }
+          break;
+        case 38:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Import_Editor());
+          }
+          break;
+        case 39:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_ImportContent_Editor());
+          }
+          break;
+        case 40:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Editor());
+          }
+          break;
+        case 41:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Attribute_Editor());
+          }
+          break;
+        case 42:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_JarManifest_Section_Editor());
+          }
+          break;
+        case 43:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_NamedContainer_Editor());
+          }
+          break;
+        case 44:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Node_Editor());
+          }
+          break;
+        case 45:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_Tar_Editor());
+          }
+          break;
+        case 46:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildLayout_TransparentContainer_Editor());
+          }
+          break;
+        case 47:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildMacro_Editor());
+          }
+          break;
+        case 48:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildNamedLayout_Editor());
+          }
+          break;
+        case 49:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildPlugin_Editor());
+          }
+          break;
+        case 50:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildProject_Editor());
+          }
+          break;
+        case 51:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildProjectDependency_Editor());
+          }
+          break;
+        case 52:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildProjectPart_Editor());
+          }
+          break;
+        case 53:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSourceArchiveRelativePath_Editor());
+          }
+          break;
+        case 54:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSourceMacroRelativePath_Editor());
+          }
+          break;
+        case 55:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSourcePath_Editor());
+          }
+          break;
+        case 56:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSourceProjectRelativePath_Editor());
+          }
+          break;
+        case 57:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaCP_Editor());
+          }
+          break;
+        case 58:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaClassFolder_Editor());
+          }
+          break;
+        case 59:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentFolder_Editor());
+          }
+          break;
+        case 60:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaContentRoot_Editor());
+          }
+          break;
+        case 61:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependency_Editor());
+          }
+          break;
+        case 62:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJar_Editor());
+          }
+          break;
+        case 63:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyExternalJarInFolder_Editor());
+          }
+          break;
+        case 64:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyFileset_Editor());
+          }
+          break;
+        case 65:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyJar_Editor());
+          }
+          break;
+        case 66:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyLibrary_Editor());
+          }
+          break;
+        case 67:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaDependencyModule_Editor());
+          }
+          break;
+        case 68:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarFolderRef_Editor());
+          }
+          break;
+        case 69:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaExternalJarRef_Editor());
+          }
+          break;
+        case 70:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaFiles_Editor());
+          }
+          break;
+        case 71:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJar_Editor());
+          }
+          break;
+        case 72:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaJars_Editor());
+          }
+          break;
+        case 73:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibrary_Editor());
+          }
+          break;
+        case 74:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryCP_Editor());
+          }
+          break;
+        case 75:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryElement_Editor());
+          }
+          break;
+        case 76:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJar_Editor());
+          }
+          break;
+        case 77:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaLibraryExternalJarFolder_Editor());
+          }
+          break;
+        case 78:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModule_Editor());
+          }
+          break;
+        case 79:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaModuleOptions_Editor());
+          }
+          break;
+        case 80:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaOptions_Editor());
+          }
+          break;
+        case 81:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaResources_Editor());
+          }
+          break;
+        case 82:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildSource_JavaSources_Editor());
+          }
+          break;
+        case 83:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildString_Editor());
+          }
+          break;
+        case 84:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildStringNotEmpty_Editor());
+          }
+          break;
+        case 85:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildStringPart_Editor());
+          }
+          break;
+        case 86:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildTextStringPart_Editor());
+          }
+          break;
+        case 87:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVarRefStringPart_Editor());
+          }
+          break;
+        case 88:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVariableMacro_Editor());
+          }
+          break;
+        case 89:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitValue_Editor());
+          }
+          break;
+        case 90:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithDate_Editor());
+          }
+          break;
+        case 91:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithString_Editor());
+          }
+          break;
+        case 92:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildVariableMacroInitWithValueFromFile_Editor());
+          }
+          break;
+        case 93:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_Folder_Editor());
+          }
+          break;
+        case 94:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JarFolder_Editor());
+          }
+          break;
+        case 95:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaJar_Editor());
+          }
+          break;
+        case 96:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_Editor());
+          }
+          break;
+        case 97:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_JavaModule_Editor());
+          }
+          break;
+        case 98:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSource_SingleFile_Editor());
+          }
+          break;
+        case 99:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkflowParticipantReference_Editor());
+          }
+          break;
+        case 100:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_IWorkfowParticipants_Editor());
+          }
+          break;
+        case 101:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_LibraryArtifacts_Editor());
+          }
+          break;
+        case 102:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ProjectDependency_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -335,10 +546,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
-        if ("jetbrains.mps.build.editor.BuildLayout_containerElements".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements());
-        }
+      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            if ("jetbrains.mps.build.editor.BuildLayout_containerElements".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new BuildLayout_containerElements());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -346,4 +564,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL, "jetbrains.mps.build.structure.BuildAspect"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b23438dabL, "jetbrains.mps.build.structure.BuildCustomWorkflow"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a23L, "jetbrains.mps.build.structure.BuildDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262fa7L, "jetbrains.mps.build.structure.BuildFileExcludeSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9262f9cL, "jetbrains.mps.build.structure.BuildFileIncludeSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, "jetbrains.mps.build.structure.BuildFileIncludesSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a7L, "jetbrains.mps.build.structure.BuildFileSelector"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6d2aa38ffdbd053fL, "jetbrains.mps.build.structure.BuildInputFolders"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9216ceaL, "jetbrains.mps.build.structure.BuildInputResourceSet"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9ac67L, "jetbrains.mps.build.structure.BuildJavaPlugin"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6dea0cbL, "jetbrains.mps.build.structure.BuildLayout_Comment"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd24L, "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3a43b020f623c9acL, "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3956ec48L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceRegex"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a39527645L, "jetbrains.mps.build.structure.BuildLayout_CopyFilterReplaceTokens"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x60d5783406a77553L, "jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935ad4caL, "jetbrains.mps.build.structure.BuildLayout_CopyGlobMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394dcc33L, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3718a2df935d7c9fL, "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L, "jetbrains.mps.build.structure.BuildLayout_CustomCopy"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda46aL, "jetbrains.mps.build.structure.BuildLayout_EchoProperties"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x2d0f82f7bfda477L, "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6a3e160a3eff6a94L, "jetbrains.mps.build.structure.BuildLayout_EchoXml"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde534f69bL, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, "jetbrains.mps.build.structure.BuildLayout_File"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, "jetbrains.mps.build.structure.BuildLayout_FileStub"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6c4335df4e838e40L, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x262a04c08b56faffL, "jetbrains.mps.build.structure.BuildLayout_Files"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6b9a2011083f9404L, "jetbrains.mps.build.structure.BuildLayout_FilesOf"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, "jetbrains.mps.build.structure.BuildLayout_Import"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, "jetbrains.mps.build.structure.BuildLayout_JarManifest"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7709f0532a526203L, "jetbrains.mps.build.structure.BuildLayout_Tar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L, "jetbrains.mps.build.structure.BuildLayout_TransparentContainer"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL, "jetbrains.mps.build.structure.BuildPlugin"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc08L, "jetbrains.mps.build.structure.BuildProjectPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL, "jetbrains.mps.build.structure.BuildSourceMacroRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61c2404L, "jetbrains.mps.build.structure.BuildSource_JavaCP"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbd021959L, "jetbrains.mps.build.structure.BuildSource_JavaClassFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, "jetbrains.mps.build.structure.BuildSource_JavaContentFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d431989677L, "jetbrains.mps.build.structure.BuildSource_JavaDependency"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6fcf41976cfa6175L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyFileset"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61fe867L, "jetbrains.mps.build.structure.BuildSource_JavaJars"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144e320L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f21e006dL, "jetbrains.mps.build.structure.BuildSource_JavaResources"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974fcL, "jetbrains.mps.build.structure.BuildSource_JavaSources"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L, "jetbrains.mps.build.structure.BuildStringNotEmpty"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL, "jetbrains.mps.build.structure.BuildStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL, "jetbrains.mps.build.structure.BuildVariableMacroInitValue"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d2c3e4L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d43ad7L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892875c0L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f1f0652f6049405L, "jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x35951dfcf9e0ba02L, "jetbrains.mps.build.structure.GeneratorInternal_LibraryArtifacts"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"));
 }

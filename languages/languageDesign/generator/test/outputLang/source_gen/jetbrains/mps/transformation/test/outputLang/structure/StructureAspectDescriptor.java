@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -28,25 +32,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptCustomRoot;
-      case 1:
-        return myConceptCustomStatement;
-      case 2:
-        return myConceptCustomStatementRef;
-      case 3:
-        return myConceptOutputNode;
-      case 4:
-        return myConceptOutputNode_forDontApplyReductionTwice_test;
-      case 5:
-        return myConceptOutputRoot;
-      case 6:
-        return myConceptTwoVarStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptCustomRoot;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCustomStatement;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCustomStatementRef;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptOutputNode;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptOutputNode_forDontApplyReductionTwice_test;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptOutputRoot;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptTwoVarStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x2535e9813339efcaL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x119a204b891L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x5369bd6a5b4e4e08L, "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"));
 }

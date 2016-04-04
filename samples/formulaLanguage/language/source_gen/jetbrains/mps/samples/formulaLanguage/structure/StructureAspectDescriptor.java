@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -42,55 +46,135 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ab, conceptFqName)) {
-      case 0:
-        return myConceptAndOperation;
-      case 1:
-        return myConceptConstant;
-      case 2:
-        return myConceptEqualsOperation;
-      case 3:
-        return myConceptExpression;
-      case 4:
-        return myConceptFloatingPointConstant;
-      case 5:
-        return myConceptFormula;
-      case 6:
-        return myConceptFunction;
-      case 7:
-        return myConceptGreaterThanOperation;
-      case 8:
-        return myConceptIfFunction;
-      case 9:
-        return myConceptIntegerConstant;
-      case 10:
-        return myConceptIsNullOperation;
-      case 11:
-        return myConceptLessThanOperation;
-      case 12:
-        return myConceptMinusOperation;
-      case 13:
-        return myConceptMultOperation;
-      case 14:
-        return myConceptNotOperation;
-      case 15:
-        return myConceptNullConstant;
-      case 16:
-        return myConceptOperation;
-      case 17:
-        return myConceptOrOperation;
-      case 18:
-        return myConceptParenthisizedExpression;
-      case 19:
-        return myConceptPlusOperation;
-      case 20:
-        return myConceptReference;
-      case 21:
-        return myConceptStringConstant;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0ab.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAndOperation;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptConstant;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptEqualsOperation;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptExpression;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptFloatingPointConstant;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptFormula;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptFunction;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptGreaterThanOperation;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptIfFunction;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIntegerConstant;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIsNullOperation;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptLessThanOperation;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptMinusOperation;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptMultOperation;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptNotOperation;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptNullConstant;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptOperation;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptOrOperation;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptParenthisizedExpression;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptPlusOperation;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptReference;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptStringConstant;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ab = new String[]{"jetbrains.mps.samples.formulaLanguage.structure.AndOperation", "jetbrains.mps.samples.formulaLanguage.structure.Constant", "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", "jetbrains.mps.samples.formulaLanguage.structure.Expression", "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", "jetbrains.mps.samples.formulaLanguage.structure.Formula", "jetbrains.mps.samples.formulaLanguage.structure.Function", "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.IfFunction", "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", "jetbrains.mps.samples.formulaLanguage.structure.MultOperation", "jetbrains.mps.samples.formulaLanguage.structure.NotOperation", "jetbrains.mps.samples.formulaLanguage.structure.NullConstant", "jetbrains.mps.samples.formulaLanguage.structure.Operation", "jetbrains.mps.samples.formulaLanguage.structure.OrOperation", "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", "jetbrains.mps.samples.formulaLanguage.structure.Reference", "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0ab = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L, "jetbrains.mps.samples.formulaLanguage.structure.AndOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L, "jetbrains.mps.samples.formulaLanguage.structure.Constant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L, "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L, "jetbrains.mps.samples.formulaLanguage.structure.Formula"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL, "jetbrains.mps.samples.formulaLanguage.structure.Function"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L, "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, "jetbrains.mps.samples.formulaLanguage.structure.IfFunction"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL, "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L, "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL, "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL, "jetbrains.mps.samples.formulaLanguage.structure.MultOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L, "jetbrains.mps.samples.formulaLanguage.structure.NotOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L, "jetbrains.mps.samples.formulaLanguage.structure.NullConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L, "jetbrains.mps.samples.formulaLanguage.structure.OrOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL, "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL, "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL, "jetbrains.mps.samples.formulaLanguage.structure.Reference"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L, "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"));
 }

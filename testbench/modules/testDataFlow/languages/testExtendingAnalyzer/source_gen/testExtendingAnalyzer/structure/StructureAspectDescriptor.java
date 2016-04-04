@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -22,15 +26,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
-      case 0:
-        return myConceptNullSafeDotExpression;
-      case 1:
-        return myConceptNullUnsafeDotExpression;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptNullSafeDotExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptNullUnsafeDotExpression;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"testExtendingAnalyzer.structure.NullSafeDotExpression", "testExtendingAnalyzer.structure.NullUnsafeDotExpression"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557dc29L, "testExtendingAnalyzer.structure.NullSafeDotExpression"), MetaAdapterFactory.getConcept(0x3ac033a0bffa48e3L, 0xa843a40cbdd89859L, 0x13ac54c0e557da2eL, "testExtendingAnalyzer.structure.NullUnsafeDotExpression"));
 }

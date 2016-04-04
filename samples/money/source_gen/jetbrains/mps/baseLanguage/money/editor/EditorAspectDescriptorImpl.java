@@ -7,24 +7,35 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"))) {
-        return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral"))) {
-        return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L, "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"))) {
-        return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MoneyCreator_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MoneyMethodCall_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -33,4 +44,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L, "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"));
 }

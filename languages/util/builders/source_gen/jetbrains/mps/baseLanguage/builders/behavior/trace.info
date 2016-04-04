@@ -16,96 +16,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AsBuilderStatement_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_BehaviorDescriptor" />
-    </file>
-    <file name="AsTypeBuilder_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="BaseSimpleBuilderDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,23,0" name="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="BeanBuilder_BehaviorDescriptor.java">
-      <unit at="15,0,54,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="BeanPropertyBuilder_BehaviorDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,94,0" name="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BuilderContainer_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderCreator_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderCreator_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderStatement_BehaviorDescriptor" />
-    </file>
-    <file name="Builder_BehaviorDescriptor.java">
-      <unit at="15,0,40,0" name="jetbrains.mps.baseLanguage.builders.behavior.Builder_BehaviorDescriptor" />
-    </file>
-    <file name="ResultExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.ResultExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderChildExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderChildExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderChild_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderChild_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderExtensionDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExtensionDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParameterReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParameter_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParameter_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderParentExpression_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderParentExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyBuilder_BehaviorDescriptor.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyExpression_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyParent_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyParent_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderPropertyValue_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilderProperty_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderProperty_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilder_BehaviorDescriptor.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleBuilders_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_BehaviorDescriptor" />
+      <unit at="14,0,126,0" name="jetbrains.mps.baseLanguage.builders.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/2679357232284040708">
-    <file name="BeanPropertyBuilder_Behavior.java">
-      <node id="2679357232284040708" at="13,118,14,110" concept="7" />
-      <node id="2679357232284040708" at="13,0,16,0" concept="10" trace="call_getPropertyName_2679357232284040711#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="2679357232284040708" at="13,118,14,110" />
-      <scope id="2679357232284040708" at="13,0,16,0">
-        <var name="__thisConcept__" id="2679357232284040708" />
-        <var name="methodName" id="2679357232284045688" />
-      </scope>
-      <unit id="2679357232284040708" at="11,0,17,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_Behavior" />
-    </file>
     <file name="BeanPropertyBuilder__BehaviorDescriptor.java">
       <node id="2679357232284040708" at="31,0,32,0" concept="9" trace="CONCEPT" />
       <node id="2679357232284040708" at="32,0,33,0" concept="9" trace="REGISTRY" />
@@ -285,56 +200,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/3816167865390595154">
-    <file name="SimpleBuilderDeclaration_Behavior.java">
-      <node id="3816167865390595154" at="15,77,16,91" concept="7" />
-      <node id="3816167865390595154" at="18,92,19,100" concept="7" />
-      <node id="3816167865390595154" at="21,103,22,106" concept="7" />
-      <node id="3816167865390595154" at="24,87,25,97" concept="7" />
-      <node id="3816167865390595154" at="27,102,28,105" concept="7" />
-      <node id="3816167865390595154" at="30,100,31,103" concept="7" />
-      <node id="3816167865390595154" at="33,102,34,105" concept="7" />
-      <node id="3816167865390595154" at="15,0,18,0" concept="10" trace="call_isRoot_8969040284892403078#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3816167865390595154" at="18,0,21,0" concept="10" trace="call_isDescendant_3816167865390595157#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3816167865390595154" at="21,0,24,0" concept="10" trace="call_getDescendants_3816167865390609214#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="3816167865390595154" at="24,0,27,0" concept="10" trace="call_getAncestors_7782956297805865272#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="3816167865390595154" at="27,0,30,0" concept="10" trace="call_getExtensions_7782956297805903915#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="3816167865390595154" at="30,0,33,0" concept="10" trace="call_getChildren_3816167865390856298#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="3816167865390595154" at="33,0,36,0" concept="10" trace="call_getProperties_5389689214217081373#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <scope id="3816167865390595154" at="15,77,16,91" />
-      <scope id="3816167865390595154" at="18,92,19,100" />
-      <scope id="3816167865390595154" at="21,103,22,106" />
-      <scope id="3816167865390595154" at="24,87,25,97" />
-      <scope id="3816167865390595154" at="27,102,28,105" />
-      <scope id="3816167865390595154" at="30,100,31,103" />
-      <scope id="3816167865390595154" at="33,102,34,105" />
-      <scope id="3816167865390595154" at="15,0,18,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-      </scope>
-      <scope id="3816167865390595154" at="18,0,21,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-        <var name="b" id="3816167865390595162" />
-      </scope>
-      <scope id="3816167865390595154" at="21,0,24,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-        <var name="model" id="5199967550912567462" />
-      </scope>
-      <scope id="3816167865390595154" at="24,0,27,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-      </scope>
-      <scope id="3816167865390595154" at="27,0,30,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-        <var name="model" id="7782956297805903931" />
-      </scope>
-      <scope id="3816167865390595154" at="30,0,33,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-        <var name="model" id="7782956297805940290" />
-      </scope>
-      <scope id="3816167865390595154" at="33,0,36,0">
-        <var name="__thisNode__" id="3816167865390595154" />
-        <var name="model" id="7782956297805865175" />
-      </scope>
-      <unit id="3816167865390595154" at="13,0,37,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior" />
-    </file>
     <file name="SimpleBuilderDeclaration__BehaviorDescriptor.java">
       <node id="3816167865390595154" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="3816167865390595154" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -554,29 +419,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/5199967550912384282">
-    <file name="SimpleBuilders_Behavior.java">
-      <node id="5199967550912384282" at="15,92,16,90" concept="7" />
-      <node id="5199967550912384282" at="18,105,19,98" concept="7" />
-      <node id="5199967550912384282" at="21,87,22,87" concept="7" />
-      <node id="5199967550912384282" at="15,0,18,0" concept="10" trace="call_isDescendant_5199967550912479710#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5199967550912384282" at="18,0,21,0" concept="10" trace="call_getDescendands_5199967550912479741#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <node id="5199967550912384282" at="21,0,24,0" concept="10" trace="call_getAncestors_6211769134875410554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="5199967550912384282" at="15,92,16,90" />
-      <scope id="5199967550912384282" at="18,105,19,98" />
-      <scope id="5199967550912384282" at="21,87,22,87" />
-      <scope id="5199967550912384282" at="15,0,18,0">
-        <var name="__thisNode__" id="5199967550912384282" />
-        <var name="b" id="5199967550912479737" />
-      </scope>
-      <scope id="5199967550912384282" at="18,0,21,0">
-        <var name="__thisNode__" id="5199967550912384282" />
-        <var name="context" id="5199967550912479746" />
-      </scope>
-      <scope id="5199967550912384282" at="21,0,24,0">
-        <var name="__thisNode__" id="5199967550912384282" />
-      </scope>
-      <unit id="5199967550912384282" at="13,0,25,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_Behavior" />
-    </file>
     <file name="SimpleBuilders__BehaviorDescriptor.java">
       <node id="5199967550912384282" at="29,0,30,0" concept="9" trace="CONCEPT" />
       <node id="5199967550912384282" at="30,0,31,0" concept="9" trace="REGISTRY" />
@@ -697,9 +539,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/5389689214216563777">
-    <file name="AsTypeBuilder_Behavior.java">
-      <unit id="5389689214216563777" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_Behavior" />
-    </file>
     <file name="AsTypeBuilder__BehaviorDescriptor.java">
       <node id="5389689214216563777" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="5389689214216563777" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -784,9 +623,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/5389689214217569803">
-    <file name="SimpleBuilderPropertyBuilder_Behavior.java">
-      <unit id="5389689214217569803" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyBuilder_Behavior" />
-    </file>
     <file name="SimpleBuilderPropertyBuilder__BehaviorDescriptor.java">
       <node id="5389689214217569803" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="5389689214217569803" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -908,9 +744,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/6254726786820551252">
-    <file name="BaseSimpleBuilderDeclaration_Behavior.java">
-      <unit id="6254726786820551252" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior" />
-    </file>
     <file name="BaseSimpleBuilderDeclaration__BehaviorDescriptor.java">
       <node id="6254726786820551252" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="6254726786820551252" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -977,9 +810,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/6254726786820574439">
-    <file name="SimpleBuilderExtensionDeclaration_Behavior.java">
-      <unit id="6254726786820574439" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExtensionDeclaration_Behavior" />
-    </file>
     <file name="SimpleBuilderExtensionDeclaration__BehaviorDescriptor.java">
       <node id="6254726786820574439" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="6254726786820574439" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1054,9 +884,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/6666322667909649857">
-    <file name="BeanBuilder_Behavior.java">
-      <unit id="6666322667909649857" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_Behavior" />
-    </file>
     <file name="BeanBuilder__BehaviorDescriptor.java">
       <node id="6666322667909649857" at="30,0,31,0" concept="9" trace="CONCEPT" />
       <node id="6666322667909649857" at="31,0,32,0" concept="9" trace="REGISTRY" />
@@ -1196,22 +1023,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/7057666463730306574">
-    <file name="Builder_Behavior.java">
-      <node id="7057666463730306574" at="14,86,15,85" concept="7" />
-      <node id="7057666463730306574" at="17,115,18,97" concept="7" />
-      <node id="7057666463730306574" at="14,0,17,0" concept="10" trace="call_getContextBuilder_7057666463730306577#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7057666463730306574" at="17,0,20,0" concept="10" trace="call_getContextBuilder_7057666463730366732#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7057666463730306574" at="14,86,15,85" />
-      <scope id="7057666463730306574" at="17,115,18,97" />
-      <scope id="7057666463730306574" at="14,0,17,0">
-        <var name="__thisNode__" id="7057666463730306574" />
-      </scope>
-      <scope id="7057666463730306574" at="17,0,20,0">
-        <var name="__thisConcept__" id="7057666463730306574" />
-        <var name="context" id="7057666463730366743" />
-      </scope>
-      <unit id="7057666463730306574" at="12,0,21,0" name="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
-    </file>
     <file name="Builder__BehaviorDescriptor.java">
       <node id="7057666463730306574" at="28,0,29,0" concept="9" trace="CONCEPT" />
       <node id="7057666463730306574" at="29,0,30,0" concept="9" trace="REGISTRY" />
@@ -1355,16 +1166,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/7288041816793071804">
-    <file name="SimpleBuilder_Behavior.java">
-      <node id="7288041816793071804" at="15,108,16,100" concept="7" />
-      <node id="7288041816793071804" at="15,0,18,0" concept="10" trace="call_getPossibleChildren_8969040284892300232#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <scope id="7288041816793071804" at="15,108,16,100" />
-      <scope id="7288041816793071804" at="15,0,18,0">
-        <var name="__thisNode__" id="7288041816793071804" />
-        <var name="model" id="5199967550912567388" />
-      </scope>
-      <unit id="7288041816793071804" at="13,0,19,0" name="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior" />
-    </file>
     <file name="SimpleBuilder__BehaviorDescriptor.java">
       <node id="7288041816793071804" at="31,0,32,0" concept="9" trace="CONCEPT" />
       <node id="7288041816793071804" at="32,0,33,0" concept="9" trace="REGISTRY" />
@@ -1548,9 +1349,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/7802271442981792255">
-    <file name="BuilderCreator_Behavior.java">
-      <unit id="7802271442981792255" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderCreator_Behavior" />
-    </file>
     <file name="BuilderCreator__BehaviorDescriptor.java">
       <node id="7802271442981792255" at="20,0,21,0" concept="9" trace="CONCEPT" />
       <node id="7802271442981792255" at="21,0,22,0" concept="9" trace="REGISTRY" />
@@ -1616,9 +1414,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/7802271442981792270">
-    <file name="BuilderStatement_Behavior.java">
-      <unit id="7802271442981792270" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderStatement_Behavior" />
-    </file>
     <file name="BuilderStatement__BehaviorDescriptor.java">
       <node id="7802271442981792270" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="7802271442981792270" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -1693,9 +1488,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/7802271442981792284">
-    <file name="AsBuilderStatement_Behavior.java">
-      <unit id="7802271442981792284" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_Behavior" />
-    </file>
     <file name="AsBuilderStatement__BehaviorDescriptor.java">
       <node id="7802271442981792284" at="20,0,21,0" concept="9" trace="CONCEPT" />
       <node id="7802271442981792284" at="21,0,22,0" concept="9" trace="REGISTRY" />
@@ -1761,9 +1553,6 @@
     </file>
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/932644095877881868">
-    <file name="BuilderContainer_Behavior.java">
-      <unit id="932644095877881868" at="10,0,13,0" name="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_Behavior" />
-    </file>
     <file name="BuilderContainer__BehaviorDescriptor.java">
       <node id="932644095877881868" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="932644095877881868" at="25,0,26,0" concept="9" trace="REGISTRY" />

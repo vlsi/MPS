@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -27,23 +31,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
-      case 0:
-        return myConceptConstant;
-      case 1:
-        return myConceptConstantReference;
-      case 2:
-        return myConceptConstantReferenceKeeper;
-      case 3:
-        return myConceptConstants;
-      case 4:
-        return myConceptDistantConstantReference;
-      case 5:
-        return myConceptGeneratedClassKeeper;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConstant;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptConstantReference;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptConstantReferenceKeeper;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConstants;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDistantConstantReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptGeneratedClassKeeper;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper", "org.jetbrains.mps.samples.Constants.structure.Constants", "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference", "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L, "org.jetbrains.mps.samples.Constants.structure.Constant"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, "org.jetbrains.mps.samples.Constants.structure.ConstantReference"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f2365L, "org.jetbrains.mps.samples.Constants.structure.ConstantReferenceKeeper"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861417L, "org.jetbrains.mps.samples.Constants.structure.Constants"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d06d11fL, "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference"), MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper"));
 }

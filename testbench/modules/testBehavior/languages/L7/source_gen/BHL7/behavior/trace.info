@@ -12,50 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="A_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="BHL7.behavior.A_BehaviorDescriptor" />
-    </file>
-    <file name="B_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="BHL7.behavior.B_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,86,0" name="BHL7.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="C_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="BHL7.behavior.C_BehaviorDescriptor" />
-    </file>
-    <file name="D_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="BHL7.behavior.D_BehaviorDescriptor" />
-    </file>
-    <file name="E_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="BHL7.behavior.E_BehaviorDescriptor" />
-    </file>
-    <file name="F_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="BHL7.behavior.F_BehaviorDescriptor" />
-    </file>
-    <file name="G_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="BHL7.behavior.G_BehaviorDescriptor" />
-    </file>
-    <file name="H_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="BHL7.behavior.H_BehaviorDescriptor" />
-    </file>
-    <file name="I1_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="BHL7.behavior.I1_BehaviorDescriptor" />
-    </file>
-    <file name="I2_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="BHL7.behavior.I2_BehaviorDescriptor" />
-    </file>
-    <file name="I3_BehaviorDescriptor.java">
-      <unit at="12,0,17,0" name="BHL7.behavior.I3_BehaviorDescriptor" />
-    </file>
-    <file name="K_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="BHL7.behavior.K_BehaviorDescriptor" />
+      <unit at="14,0,114,0" name="BHL7.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/1203202913687794487">
-    <file name="I3_Behavior.java">
-      <unit id="1203202913687794487" at="10,0,13,0" name="BHL7.behavior.I3_Behavior" />
-    </file>
     <file name="I3__BehaviorDescriptor.java">
       <node id="1203202913687794487" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1203202913687794487" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -123,9 +84,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/1203202913687794540">
-    <file name="E_Behavior.java">
-      <unit id="1203202913687794540" at="10,0,13,0" name="BHL7.behavior.E_Behavior" />
-    </file>
     <file name="E__BehaviorDescriptor.java">
       <node id="1203202913687794540" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1203202913687794540" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -209,9 +167,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/4208420198882789395">
-    <file name="H_Behavior.java">
-      <unit id="4208420198882789395" at="10,0,13,0" name="BHL7.behavior.H_Behavior" />
-    </file>
     <file name="H__BehaviorDescriptor.java">
       <node id="4208420198882789395" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4208420198882789395" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -295,23 +250,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/5606797489885813387">
-    <file name="C_Behavior.java">
-      <node id="5606797489885813387" at="13,92,14,79" concept="5" />
-      <node id="5606797489885813387" at="16,91,17,79" concept="5" />
-      <node id="5606797489885813387" at="13,0,16,0" concept="7" trace="call_argTypeResolve_1474492522700410264#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Integer;)I" />
-      <node id="5606797489885813387" at="16,0,19,0" concept="7" trace="call_argTypeResolve_1474492522700410741#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)I" />
-      <scope id="5606797489885813387" at="13,92,14,79" />
-      <scope id="5606797489885813387" at="16,91,17,79" />
-      <scope id="5606797489885813387" at="13,0,16,0">
-        <var name="__thisNode__" id="5606797489885813387" />
-        <var name="a" id="1474492522700410301" />
-      </scope>
-      <scope id="5606797489885813387" at="16,0,19,0">
-        <var name="__thisNode__" id="5606797489885813387" />
-        <var name="o" id="1474492522700410804" />
-      </scope>
-      <unit id="5606797489885813387" at="11,0,20,0" name="BHL7.behavior.C_Behavior" />
-    </file>
     <file name="C__BehaviorDescriptor.java">
       <node id="5606797489885813387" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="5606797489885813387" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -397,9 +335,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/6097773470847816314">
-    <file name="I1_Behavior.java">
-      <unit id="6097773470847816314" at="10,0,13,0" name="BHL7.behavior.I1_Behavior" />
-    </file>
     <file name="I1__BehaviorDescriptor.java">
       <node id="6097773470847816314" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="6097773470847816314" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -466,9 +401,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/6097773470847816357">
-    <file name="I2_Behavior.java">
-      <unit id="6097773470847816357" at="10,0,13,0" name="BHL7.behavior.I2_Behavior" />
-    </file>
     <file name="I2__BehaviorDescriptor.java">
       <node id="6097773470847816357" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="6097773470847816357" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -535,9 +467,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/6097773470847816406">
-    <file name="D_Behavior.java">
-      <unit id="6097773470847816406" at="10,0,13,0" name="BHL7.behavior.D_Behavior" />
-    </file>
     <file name="D__BehaviorDescriptor.java">
       <node id="6097773470847816406" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="6097773470847816406" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -621,57 +550,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/6167444251392503126">
-    <file name="A_Behavior.java">
-      <node id="6167444251392503126" at="14,83,15,78" concept="5" />
-      <node id="6167444251392503126" at="17,93,18,77" concept="5" />
-      <node id="6167444251392503126" at="20,93,21,80" concept="1" />
-      <node id="6167444251392503126" at="23,93,24,80" concept="1" />
-      <node id="6167444251392503126" at="26,82,27,73" concept="5" />
-      <node id="6167444251392503126" at="29,81,30,72" concept="5" />
-      <node id="6167444251392503126" at="32,90,33,71" concept="5" />
-      <node id="6167444251392503126" at="35,91,36,72" concept="5" />
-      <node id="6167444251392503126" at="14,0,17,0" concept="7" trace="call_nonVirtualMethod_6167444251392503129#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <node id="6167444251392503126" at="17,0,20,0" concept="7" trace="call_staticMethod_6167444251392503213#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
-      <node id="6167444251392503126" at="20,0,23,0" concept="7" trace="call_justVoidReturnTypeMethod1_6167444251392504413#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6167444251392503126" at="23,0,26,0" concept="7" trace="call_justVoidReturnTypeMethod2_5722502787480038418#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6167444251392503126" at="26,0,29,0" concept="7" trace="call_boolMethod1_2569465595672254009#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6167444251392503126" at="29,0,32,0" concept="7" trace="call_boolMethod2_360045928603804516#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6167444251392503126" at="32,0,35,0" concept="7" trace="call_seqMethod_2569465595672315305#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="6167444251392503126" at="35,0,38,0" concept="7" trace="call_seqMethod2_2569465595672564713#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="6167444251392503126" at="14,83,15,78" />
-      <scope id="6167444251392503126" at="17,93,18,77" />
-      <scope id="6167444251392503126" at="20,93,21,80" />
-      <scope id="6167444251392503126" at="23,93,24,80" />
-      <scope id="6167444251392503126" at="26,82,27,73" />
-      <scope id="6167444251392503126" at="29,81,30,72" />
-      <scope id="6167444251392503126" at="32,90,33,71" />
-      <scope id="6167444251392503126" at="35,91,36,72" />
-      <scope id="6167444251392503126" at="14,0,17,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="17,0,20,0">
-        <var name="__thisConcept__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="20,0,23,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="23,0,26,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="26,0,29,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="29,0,32,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="32,0,35,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <scope id="6167444251392503126" at="35,0,38,0">
-        <var name="__thisNode__" id="6167444251392503126" />
-      </scope>
-      <unit id="6167444251392503126" at="12,0,39,0" name="BHL7.behavior.A_Behavior" />
-    </file>
     <file name="A__BehaviorDescriptor.java">
       <node id="6167444251392503126" at="28,0,29,0" concept="6" trace="CONCEPT" />
       <node id="6167444251392503126" at="29,0,30,0" concept="6" trace="REGISTRY" />
@@ -848,37 +726,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/6167444251392504493">
-    <file name="B_Behavior.java">
-      <node id="6167444251392504493" at="13,87,14,82" concept="5" />
-      <node id="6167444251392504493" at="16,113,17,89" concept="5" />
-      <node id="6167444251392504493" at="19,99,20,86" concept="5" />
-      <node id="6167444251392504493" at="22,96,23,80" concept="5" />
-      <node id="6167444251392504493" at="13,0,16,0" concept="7" trace="call_primitiveReturnValue_5606797489885796553#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <node id="6167444251392504493" at="16,0,19,0" concept="7" trace="call_primitiveParameter_8715627930483242200#(Lorg/jetbrains/mps/openapi/model/SNode;IZD)I" />
-      <node id="6167444251392504493" at="19,0,22,0" concept="7" trace="call_nonPrimitiveParameter_5644162487225577572#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Integer;)I" />
-      <node id="6167444251392504493" at="22,0,25,0" concept="7" trace="call_genericReturnValue_5606797489885798976#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
-      <scope id="6167444251392504493" at="13,87,14,82" />
-      <scope id="6167444251392504493" at="16,113,17,89" />
-      <scope id="6167444251392504493" at="19,99,20,86" />
-      <scope id="6167444251392504493" at="22,96,23,80" />
-      <scope id="6167444251392504493" at="13,0,16,0">
-        <var name="__thisNode__" id="6167444251392504493" />
-      </scope>
-      <scope id="6167444251392504493" at="16,0,19,0">
-        <var name="__thisNode__" id="6167444251392504493" />
-        <var name="a" id="8715627930483242282" />
-        <var name="b" id="8715627930483242296" />
-        <var name="d" id="8715627930483242321" />
-      </scope>
-      <scope id="6167444251392504493" at="19,0,22,0">
-        <var name="__thisNode__" id="6167444251392504493" />
-        <var name="a" id="5644162487225577621" />
-      </scope>
-      <scope id="6167444251392504493" at="22,0,25,0">
-        <var name="__thisNode__" id="6167444251392504493" />
-      </scope>
-      <unit id="6167444251392504493" at="11,0,26,0" name="BHL7.behavior.B_Behavior" />
-    </file>
     <file name="B__BehaviorDescriptor.java">
       <node id="6167444251392504493" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="6167444251392504493" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -1002,30 +849,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/7406547389145840623">
-    <file name="K_Behavior.java">
-      <node id="7406547389145840623" at="13,85,14,71" concept="5" />
-      <node id="7406547389145840623" at="16,85,17,71" concept="5" />
-      <node id="7406547389145840623" at="19,85,20,71" concept="5" />
-      <node id="7406547389145840623" at="13,0,16,0" concept="7" trace="call_foo_7406547389145840626#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="7406547389145840623" at="16,0,19,0" concept="7" trace="call_foo_7406547389145840812#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="7406547389145840623" at="19,0,22,0" concept="7" trace="call_foo_7406547389145840886#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <scope id="7406547389145840623" at="13,85,14,71" />
-      <scope id="7406547389145840623" at="16,85,17,71" />
-      <scope id="7406547389145840623" at="19,85,20,71" />
-      <scope id="7406547389145840623" at="13,0,16,0">
-        <var name="__thisNode__" id="7406547389145840623" />
-        <var name="node" id="7406547389145840638" />
-      </scope>
-      <scope id="7406547389145840623" at="16,0,19,0">
-        <var name="__thisNode__" id="7406547389145840623" />
-        <var name="node" id="7406547389145840818" />
-      </scope>
-      <scope id="7406547389145840623" at="19,0,22,0">
-        <var name="__thisNode__" id="7406547389145840623" />
-        <var name="node" id="7406547389145840892" />
-      </scope>
-      <unit id="7406547389145840623" at="11,0,23,0" name="BHL7.behavior.K_Behavior" />
-    </file>
     <file name="K__BehaviorDescriptor.java">
       <node id="7406547389145840623" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="7406547389145840623" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -1121,9 +944,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/8464581681145774381">
-    <file name="F_Behavior.java">
-      <unit id="8464581681145774381" at="10,0,13,0" name="BHL7.behavior.F_Behavior" />
-    </file>
     <file name="F__BehaviorDescriptor.java">
       <node id="8464581681145774381" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="8464581681145774381" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -1207,9 +1027,6 @@
     </file>
   </root>
   <root nodeRef="r:c2ede4d9-ba61-4abd-becb-13ff09cc0b21(BHL7.behavior)/8464581681145774507">
-    <file name="G_Behavior.java">
-      <unit id="8464581681145774507" at="10,0,13,0" name="BHL7.behavior.G_Behavior" />
-    </file>
     <file name="G__BehaviorDescriptor.java">
       <node id="8464581681145774507" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="8464581681145774507" at="25,0,26,0" concept="6" trace="REGISTRY" />

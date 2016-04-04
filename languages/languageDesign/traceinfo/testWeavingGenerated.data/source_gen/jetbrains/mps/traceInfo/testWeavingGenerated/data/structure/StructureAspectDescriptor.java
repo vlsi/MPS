@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,21 +29,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptChildConceptWeave;
-      case 1:
-        return myConceptChildConceptWeaveEach;
-      case 2:
-        return myConceptChildConceptWeaveEachMany;
-      case 3:
-        return myConceptChildConceptWeaveMany;
-      case 4:
-        return myConceptRootConcept;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptChildConceptWeave;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptChildConceptWeaveEach;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptChildConceptWeaveEachMany;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptChildConceptWeaveMany;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptRootConcept;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany", "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64f39cL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64f39aL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c681163L, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c681159L, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"));
 }

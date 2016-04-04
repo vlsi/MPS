@@ -4,12 +4,12 @@ package jetbrains.mps.lang.migration.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myRefactoringLog__BehaviorDescriptor = new RefactoringLog__BehaviorDescriptor();
@@ -33,85 +33,129 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myPureMigrationScript__BehaviorDescriptor = new PureMigrationScript__BehaviorDescriptor();
   private final BHDescriptor myMigrationScript__BehaviorDescriptor = new MigrationScript__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[20];
-    myConceptBehaviorIds[0] = 0x1bf9eb43276b6d8fL;
-    myConceptBehaviorIds[1] = 0x27bf3263be23f0dfL;
-    myConceptBehaviorIds[2] = 0x2b3f57492c1648ccL;
-    myConceptBehaviorIds[3] = 0x2b3f57492c165c5dL;
-    myConceptBehaviorIds[4] = 0x2b3f57492c1741b6L;
-    myConceptBehaviorIds[5] = 0x2b3f57492c1741b7L;
-    myConceptBehaviorIds[6] = 0x2b3f57492c1741b8L;
-    myConceptBehaviorIds[7] = 0x2b3f57492c1741b9L;
-    myConceptBehaviorIds[8] = 0x2b3f57492c1741baL;
-    myConceptBehaviorIds[9] = 0x398343344f07b404L;
-    myConceptBehaviorIds[10] = 0x3d90e8d384845a8fL;
-    myConceptBehaviorIds[11] = 0x44b28148e401c891L;
-    myConceptBehaviorIds[12] = 0x47bb811da2acc4d6L;
-    myConceptBehaviorIds[13] = 0x4e382b39b6529ec9L;
-    myConceptBehaviorIds[14] = 0x50c63f9f4a0dacfbL;
-    myConceptBehaviorIds[15] = 0x63476c2ad9bcd736L;
-    myConceptBehaviorIds[16] = 0x67236d4a5830221eL;
-    myConceptBehaviorIds[17] = 0x67236d4a58303771L;
-    myConceptBehaviorIds[18] = 0x67236d4a5836cabbL;
-    myConceptBehaviorIds[19] = 0x73e8a2c68b62c6a3L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myRefactoringLog__BehaviorDescriptor;
-      case 1:
-        return myReflectionNodeReference__BehaviorDescriptor;
-      case 2:
-        return myAbstractNodeReference__BehaviorDescriptor;
-      case 3:
-        return myMoveNodeSpecialization__BehaviorDescriptor;
-      case 4:
-        return myMoveConcept__BehaviorDescriptor;
-      case 5:
-        return myMoveReferenceLink__BehaviorDescriptor;
-      case 6:
-        return myMoveConceptMember__BehaviorDescriptor;
-      case 7:
-        return myMoveProperty__BehaviorDescriptor;
-      case 8:
-        return myMoveContainmentLink__BehaviorDescriptor;
-      case 9:
-        return myExecuteAfterDeclaration__BehaviorDescriptor;
-      case 10:
-        return myRequiredDataDeclaration__BehaviorDescriptor;
-      case 11:
-        return myDataDependency__BehaviorDescriptor;
-      case 12:
-        return myIMigrationUnit__BehaviorDescriptor;
-      case 13:
-        return myTransformStatement__BehaviorDescriptor;
-      case 14:
-        return myProducedDataDeclaration__BehaviorDescriptor;
-      case 15:
-        return myDataDependencyReference__BehaviorDescriptor;
-      case 16:
-        return myMoveNode__BehaviorDescriptor;
-      case 17:
-        return myDirectNodeReference__BehaviorDescriptor;
-      case 18:
-        return myPureMigrationScript__BehaviorDescriptor;
-      case 19:
-        return myMigrationScript__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0x.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractNodeReference__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myDataDependency__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myDataDependencyReference__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myDirectNodeReference__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myExecuteAfterDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myIMigrationUnit__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myMigrationScript__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myMoveConcept__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myMoveConceptMember__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myMoveContainmentLink__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myMoveNode__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myMoveNodeSpecialization__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myMoveProperty__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myMoveReferenceLink__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myProducedDataDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myPureMigrationScript__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myRefactoringLog__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myReflectionNodeReference__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myRequiredDataDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myTransformStatement__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0x = buildConceptIndices(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, "jetbrains.mps.lang.migration.structure.DataDependencyReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, "jetbrains.mps.lang.migration.structure.DirectNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L, "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b8L, "jetbrains.mps.lang.migration.structure.MoveConceptMember"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741baL, "jetbrains.mps.lang.migration.structure.MoveContainmentLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNode"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L, "jetbrains.mps.lang.migration.structure.MoveProperty"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, "jetbrains.mps.lang.migration.structure.MoveReferenceLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.structure.ReflectionNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"));
 }

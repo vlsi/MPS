@@ -4,12 +4,12 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myRule__BehaviorDescriptor = new Rule__BehaviorDescriptor();
@@ -25,61 +25,89 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myAnalyzer__BehaviorDescriptor = new Analyzer__BehaviorDescriptor();
   private final BHDescriptor myInstruction__BehaviorDescriptor = new Instruction__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[12];
-    myConceptBehaviorIds[0] = 0x5faaa6bbd57b6c8L;
-    myConceptBehaviorIds[1] = 0x2e25b6b7919dd6d8L;
-    myConceptBehaviorIds[2] = 0x2e25b6b7919e0b63L;
-    myConceptBehaviorIds[3] = 0x376a4d52f8c421f8L;
-    myConceptBehaviorIds[4] = 0x3a887e9da0b3e894L;
-    myConceptBehaviorIds[5] = 0x3a887e9da0b4cedcL;
-    myConceptBehaviorIds[6] = 0x41dd50940e1dd4c8L;
-    myConceptBehaviorIds[7] = 0x41dd50940e1dd4c9L;
-    myConceptBehaviorIds[8] = 0x449938e788e9b9deL;
-    myConceptBehaviorIds[9] = 0x58ba0a6689e9c309L;
-    myConceptBehaviorIds[10] = 0x5bd9e43c93f46789L;
-    myConceptBehaviorIds[11] = 0x5bd9e43c93f4678aL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myRule__BehaviorDescriptor;
-      case 1:
-        return myApplicableCondition__BehaviorDescriptor;
-      case 2:
-        return myPatternCondition__BehaviorDescriptor;
-      case 3:
-        return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
-      case 4:
-        return myEmitInstruction__BehaviorDescriptor;
-      case 5:
-        return myInstructionReference__BehaviorDescriptor;
-      case 6:
-        return myAnalyzerInitialFunction__BehaviorDescriptor;
-      case 7:
-        return myAnalyzerFunFunction__BehaviorDescriptor;
-      case 8:
-        return myConceptCondition__BehaviorDescriptor;
-      case 9:
-        return myAnalyzerMergeFunction__BehaviorDescriptor;
-      case 10:
-        return myAnalyzer__BehaviorDescriptor;
-      case 11:
-        return myInstruction__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAnalyzer__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myAnalyzerFunFunction__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myAnalyzerInitialFunction__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myAnalyzerMergeFunction__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myApplicableCondition__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptCondition__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myEmitInstruction__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myInstruction__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myInstructionReference__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myPatternCondition__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myRule__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919dd6d8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919e0b63L, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"));
 }

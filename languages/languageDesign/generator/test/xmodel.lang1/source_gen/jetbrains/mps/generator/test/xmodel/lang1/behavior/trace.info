@@ -1,15 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="Bean_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.Bean_BehaviorDescriptor" />
-    </file>
-    <file name="Operation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.Operation_BehaviorDescriptor" />
-    </file>
-    <file name="Property_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.generator.test.xmodel.lang1.behavior.Property_BehaviorDescriptor" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

@@ -13,49 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,58,0" name="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConvertTo_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="org.jetbrains.mps.samples.Money.behavior.ConvertTo_BehaviorDescriptor" />
-    </file>
-    <file name="CurrencyDefTable_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Money.behavior.CurrencyDefTable_BehaviorDescriptor" />
-    </file>
-    <file name="CurrencyUnit_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="org.jetbrains.mps.samples.Money.behavior.CurrencyUnit_BehaviorDescriptor" />
-    </file>
-    <file name="CurrentStockPrice_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_BehaviorDescriptor" />
-    </file>
-    <file name="GetAmount_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="org.jetbrains.mps.samples.Money.behavior.GetAmount_BehaviorDescriptor" />
-    </file>
-    <file name="GetCurrency_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="org.jetbrains.mps.samples.Money.behavior.GetCurrency_BehaviorDescriptor" />
-    </file>
-    <file name="MoneyLiteral_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" />
-    </file>
-    <file name="MoneyType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" />
-    </file>
-    <file name="MovingAverage_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage_BehaviorDescriptor" />
-    </file>
-    <file name="StockSymbol_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol_BehaviorDescriptor" />
+      <unit at="14,0,72,0" name="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958233292670">
-    <file name="CurrentStockPrice_Behavior.java">
-      <node id="4001135958233292670" at="14,84,15,93" concept="5" />
-      <node id="4001135958233292670" at="14,0,17,0" concept="7" trace="call_getCurrentPrice_4001135958233293105#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
-      <scope id="4001135958233292670" at="14,84,15,93" />
-      <scope id="4001135958233292670" at="14,0,17,0">
-        <var name="__thisNode__" id="4001135958233292670" />
-      </scope>
-      <unit id="4001135958233292670" at="12,0,18,0" name="org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_Behavior" />
-    </file>
     <file name="CurrentStockPrice__BehaviorDescriptor.java">
       <node id="4001135958233292670" at="29,0,30,0" concept="6" trace="CONCEPT" />
       <node id="4001135958233292670" at="30,0,31,0" concept="6" trace="REGISTRY" />
@@ -139,16 +100,6 @@
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235787086">
-    <file name="StockSymbol_Behavior.java">
-      <node id="4001135958235787086" at="13,99,14,93" concept="5" />
-      <node id="4001135958235787086" at="13,0,16,0" concept="7" trace="call_isValidSymbol_4001135958235787610#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <scope id="4001135958235787086" at="13,99,14,93" />
-      <scope id="4001135958235787086" at="13,0,16,0">
-        <var name="__thisNode__" id="4001135958235787086" />
-        <var name="symbol" id="4001135958235787626" />
-      </scope>
-      <unit id="4001135958235787086" at="11,0,17,0" name="org.jetbrains.mps.samples.Money.behavior.StockSymbol_Behavior" />
-    </file>
     <file name="StockSymbol__BehaviorDescriptor.java">
       <node id="4001135958235787086" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4001135958235787086" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -227,15 +178,6 @@
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235925005">
-    <file name="MovingAverage_Behavior.java">
-      <node id="4001135958235925005" at="14,93,15,83" concept="5" />
-      <node id="4001135958235925005" at="14,0,17,0" concept="7" trace="call_calculate_4001135958235925008#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <scope id="4001135958235925005" at="14,93,15,83" />
-      <scope id="4001135958235925005" at="14,0,17,0">
-        <var name="__thisNode__" id="4001135958235925005" />
-      </scope>
-      <unit id="4001135958235925005" at="12,0,18,0" name="org.jetbrains.mps.samples.Money.behavior.MovingAverage_Behavior" />
-    </file>
     <file name="MovingAverage__BehaviorDescriptor.java">
       <node id="4001135958235925005" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="4001135958235925005" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -310,9 +252,6 @@
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/6451560055131607330">
-    <file name="MoneyType_Behavior.java">
-      <unit id="6451560055131607330" at="10,0,13,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyType_Behavior" />
-    </file>
     <file name="MoneyType__BehaviorDescriptor.java">
       <node id="6451560055131607330" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="6451560055131607330" at="27,0,28,0" concept="6" trace="REGISTRY" />
@@ -387,16 +326,6 @@
     </file>
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/6451560055131620545">
-    <file name="MoneyLiteral_Behavior.java">
-      <node id="6451560055131620545" at="13,108,14,101" concept="5" />
-      <node id="6451560055131620545" at="13,0,16,0" concept="7" trace="call_convertAmountAdvanced_595452003767176013#(Lorg/jetbrains/mps/openapi/model/SNode;I)Ljava/lang/String;" />
-      <scope id="6451560055131620545" at="13,108,14,101" />
-      <scope id="6451560055131620545" at="13,0,16,0">
-        <var name="__thisNode__" id="6451560055131620545" />
-        <var name="amount" id="595452003767176055" />
-      </scope>
-      <unit id="6451560055131620545" at="11,0,17,0" name="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_Behavior" />
-    </file>
     <file name="MoneyLiteral__BehaviorDescriptor.java">
       <node id="6451560055131620545" at="30,0,31,0" concept="6" trace="CONCEPT" />
       <node id="6451560055131620545" at="31,0,32,0" concept="6" trace="REGISTRY" />

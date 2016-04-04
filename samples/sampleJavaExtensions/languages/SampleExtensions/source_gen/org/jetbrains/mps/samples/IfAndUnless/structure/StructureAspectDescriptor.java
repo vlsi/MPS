@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,21 +30,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptFalseFlow;
-      case 1:
-        return myConceptFlow;
-      case 2:
-        return myConceptMyIfStatement;
-      case 3:
-        return myConceptTrueFlow;
-      case 4:
-        return myConceptUnlessStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptFalseFlow;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptFlow;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptMyIfStatement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptTrueFlow;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptUnlessStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd24L, "org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccfL, "org.jetbrains.mps.samples.IfAndUnless.structure.Flow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad45dd1fL, "org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"));
 }

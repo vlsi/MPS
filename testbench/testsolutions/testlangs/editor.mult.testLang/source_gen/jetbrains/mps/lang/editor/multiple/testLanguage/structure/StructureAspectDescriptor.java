@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -29,29 +33,70 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
-      case 0:
-        return myConceptMultipleEditorsTestChild;
-      case 1:
-        return myConceptMultipleEditorsTestEditorComponentChild;
-      case 2:
-        return myConceptMultipleEditorsTestEditorComponentChildSubconcept;
-      case 3:
-        return myConceptMultipleEditorsTestEditorComponentRoot;
-      case 4:
-        return myConceptMultipleEditorsTestMostSpecificChild;
-      case 5:
-        return myConceptMultipleEditorsTestMostSpecificRoot;
-      case 6:
-        return myConceptMultipleEditorsTestRefNodeListRoot;
-      case 7:
-        return myConceptMultipleEditorsTestRefNodeRoot;
-      case 8:
-        return myConceptMultipleEditorsTestRoot;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0n.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptMultipleEditorsTestChild;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptMultipleEditorsTestEditorComponentChild;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptMultipleEditorsTestEditorComponentChildSubconcept;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptMultipleEditorsTestEditorComponentRoot;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptMultipleEditorsTestMostSpecificChild;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptMultipleEditorsTestMostSpecificRoot;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptMultipleEditorsTestRefNodeListRoot;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptMultipleEditorsTestRefNodeRoot;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptMultipleEditorsTestRoot;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot", "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27f5c1L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x10e3b2b96584da79L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x591b11eaedfa2868L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentChildSubconcept"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x10e3b2b965847f13L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestEditorComponentRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x76f70aa86b49610dL, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificChild"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x76f70aa86b495d20L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestMostSpecificRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x650641cc62465f6cL, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeListRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x51568a5db0cc3a79L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRefNodeRoot"), MetaAdapterFactory.getConcept(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, "jetbrains.mps.lang.editor.multiple.testLanguage.structure.MultipleEditorsTestRoot"));
 }

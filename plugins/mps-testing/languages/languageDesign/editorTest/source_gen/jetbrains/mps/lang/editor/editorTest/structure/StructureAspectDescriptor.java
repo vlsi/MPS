@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -68,107 +72,265 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ac, conceptFqName)) {
-      case 0:
-        return myConceptAttractsFocusBlock;
-      case 1:
-        return myConceptBinaryExpression;
-      case 2:
-        return myConceptBracesBlock;
-      case 3:
-        return myConceptBracesStubBlock;
-      case 4:
-        return myConceptClassReference;
-      case 5:
-        return myConceptCollapsedByDefault;
-      case 6:
-        return myConceptCollapsedConditionally;
-      case 7:
-        return myConceptCollapsibleConcept;
-      case 8:
-        return myConceptComposition;
-      case 9:
-        return myConceptDelTestAbstractChild;
-      case 10:
-        return myConceptDelTestChild1;
-      case 11:
-        return myConceptDelTestChildContainer;
-      case 12:
-        return myConceptDelTestRoot;
-      case 13:
-        return myConceptFoldingContainer;
-      case 14:
-        return myConceptIBaseTestBlock;
-      case 15:
-        return myConceptInitAbstractChild;
-      case 16:
-        return myConceptInitChildWithDirectCycle_card1;
-      case 17:
-        return myConceptInitChildWithDirectCycle_card1n;
-      case 18:
-        return myConceptInitChildWithIndirectCycle_card1;
-      case 19:
-        return myConceptInitChildWithIndirectCycle_card1n;
-      case 20:
-        return myConceptInitChildWithTwoSameConceptChildren;
-      case 21:
-        return myConceptInitContainer;
-      case 22:
-        return myConceptInitGrandChild;
-      case 23:
-        return myConceptInitGrandChildWithIndirectCycle_card1;
-      case 24:
-        return myConceptInitGrandChildWithIndirectCycle_card1n;
-      case 25:
-        return myConceptInspectorBlock;
-      case 26:
-        return myConceptIntegerLiteral;
-      case 27:
-        return myConceptNonEmptyProperty;
-      case 28:
-        return myConceptNotEditableVaraileReference;
-      case 29:
-        return myConceptPlusExpression;
-      case 30:
-        return myConceptReferenceAnnotataion;
-      case 31:
-        return myConceptSelectionChild;
-      case 32:
-        return myConceptSelectionContainer;
-      case 33:
-        return myConceptSideTranformWrapper;
-      case 34:
-        return myConceptSimplePropertyAttribute;
-      case 35:
-        return myConceptSimplePropertyContainer;
-      case 36:
-        return myConceptStubBlock;
-      case 37:
-        return myConceptStyleChild;
-      case 38:
-        return myConceptStyleParent;
-      case 39:
-        return myConceptSubstMiddlewareChild;
-      case 40:
-        return myConceptSubstTestAbstractChild;
-      case 41:
-        return myConceptSubstTestBooleanPropertyChild;
-      case 42:
-        return myConceptSubstTestEnumPropertyChild;
-      case 43:
-        return myConceptSubstTestRoot;
-      case 44:
-        return myConceptTestBlockList;
-      case 45:
-        return myConceptVariableDeclarationBlock;
-      case 46:
-        return myConceptVariableDeclarationReference;
-      case 47:
-        return myConceptVerticalLayoutBlockList;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0ac.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAttractsFocusBlock;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBinaryExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBracesBlock;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBracesStubBlock;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptClassReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptCollapsedByDefault;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptCollapsedConditionally;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptCollapsibleConcept;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptComposition;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptDelTestAbstractChild;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptDelTestChild1;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptDelTestChildContainer;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptDelTestRoot;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptFoldingContainer;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptIBaseTestBlock;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptInitAbstractChild;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptInitChildWithDirectCycle_card1;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptInitChildWithDirectCycle_card1n;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptInitChildWithIndirectCycle_card1;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptInitChildWithIndirectCycle_card1n;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptInitChildWithTwoSameConceptChildren;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptInitContainer;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptInitGrandChild;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptInitGrandChildWithIndirectCycle_card1;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptInitGrandChildWithIndirectCycle_card1n;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptInspectorBlock;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptIntegerLiteral;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptNonEmptyProperty;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptNotEditableVaraileReference;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptPlusExpression;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptReferenceAnnotataion;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptSelectionChild;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptSelectionContainer;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptSideTranformWrapper;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptSimplePropertyAttribute;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptSimplePropertyContainer;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptStubBlock;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptStyleChild;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptStyleParent;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptSubstMiddlewareChild;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptSubstTestAbstractChild;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptSubstTestBooleanPropertyChild;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptSubstTestEnumPropertyChild;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptSubstTestRoot;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptTestBlockList;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptVariableDeclarationBlock;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptVariableDeclarationReference;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptVerticalLayoutBlockList;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ac = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally", "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InitAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1", "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n", "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1", "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1n", "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren", "jetbrains.mps.lang.editor.editorTest.structure.InitContainer", "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChild", "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1", "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1n", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild", "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.StyleChild", "jetbrains.mps.lang.editor.editorTest.structure.StyleParent", "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0ac = buildConceptIndices(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, "jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa8L, "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75ed75ef06861df4L, "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x214b16e1c73042cfL, "jetbrains.mps.lang.editor.editorTest.structure.ClassReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c480L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a8839faL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a8L, "jetbrains.mps.lang.editor.editorTest.structure.InitAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c41e6eL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c48499L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithIndirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a4L, "jetbrains.mps.lang.editor.editorTest.structure.InitContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404cL, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c41e70L, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c4849dL, "jetbrains.mps.lang.editor.editorTest.structure.InitGrandChildWithIndirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L, "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f68107L, "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L, "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12fa01d4L, "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc6674L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d9420cL, "jetbrains.mps.lang.editor.editorTest.structure.StubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efcL, "jetbrains.mps.lang.editor.editorTest.structure.StyleChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efbL, "jetbrains.mps.lang.editor.editorTest.structure.StyleParent"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L, "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5f322b2c7f2c2abaL, "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"));
 }

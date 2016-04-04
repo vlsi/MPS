@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.samples.heating.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,65,0" name="jetbrains.mps.samples.heating.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/2161719505004861768">

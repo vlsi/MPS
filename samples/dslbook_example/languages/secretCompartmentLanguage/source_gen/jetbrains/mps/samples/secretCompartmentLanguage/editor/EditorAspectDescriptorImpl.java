@@ -7,36 +7,55 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bcdac91eL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Event"))) {
-        return Collections.<ConceptEditor>singletonList(new Event_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c2015933L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"))) {
-        return Collections.<ConceptEditor>singletonList(new HandleEvent_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bced8217L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.State"))) {
-        return Collections.<ConceptEditor>singletonList(new State_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine"))) {
-        return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"))) {
-        return Collections.<ConceptEditor>singletonList(new StateMachineTest_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"))) {
-        return Collections.<ConceptEditor>singletonList(new StateMachineTestMethod_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c112fe2aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"))) {
-        return Collections.<ConceptEditor>singletonList(new Transition_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Event_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new HandleEvent_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new State_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StateMachineTest_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StateMachineTestMethod_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Transition_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -45,4 +64,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bcdac91eL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c2015933L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bced8217L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.State"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c112fe2aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
 }

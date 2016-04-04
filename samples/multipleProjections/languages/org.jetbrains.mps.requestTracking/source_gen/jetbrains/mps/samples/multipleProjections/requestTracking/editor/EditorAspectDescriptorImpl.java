@@ -11,10 +11,10 @@ import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tabular", "Use tabular notation for workflow presentation", true, "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"));
@@ -22,11 +22,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow"))) {
-        return Collections.<ConceptEditor>singletonList(new Workflow_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2cf63L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new WorkflowContainer_Editor());
+      Integer preIndex = indices_xbvbvu_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Workflow_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new WorkflowContainer_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -38,4 +47,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow"), MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2cf63L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"));
 }

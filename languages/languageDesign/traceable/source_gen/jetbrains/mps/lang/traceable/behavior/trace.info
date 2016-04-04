@@ -13,22 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ScopeConcept_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
-    </file>
-    <file name="TraceableConcept_BehaviorDescriptor.java">
-      <unit at="13,0,18,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
-    </file>
-    <file name="UnitConcept_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369893">
-    <file name="ScopeConcept_Behavior.java">
-      <unit id="5067982036267369893" at="10,0,13,0" name="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
-    </file>
     <file name="ScopeConcept__BehaviorDescriptor.java">
       <node id="5067982036267369893" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="5067982036267369893" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -95,9 +83,6 @@
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369900">
-    <file name="TraceableConcept_Behavior.java">
-      <unit id="5067982036267369900" at="10,0,13,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
-    </file>
     <file name="TraceableConcept__BehaviorDescriptor.java">
       <node id="5067982036267369900" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="5067982036267369900" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -172,9 +157,6 @@
     </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369910">
-    <file name="UnitConcept_Behavior.java">
-      <unit id="5067982036267369910" at="10,0,13,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
-    </file>
     <file name="UnitConcept__BehaviorDescriptor.java">
       <node id="5067982036267369910" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="5067982036267369910" at="25,0,26,0" concept="6" trace="REGISTRY" />

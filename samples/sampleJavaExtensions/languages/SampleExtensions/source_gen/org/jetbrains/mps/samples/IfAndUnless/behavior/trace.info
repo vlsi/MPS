@@ -13,28 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="FalseFlow_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
-    </file>
-    <file name="Flow_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
-    </file>
-    <file name="MyIfStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
-    </file>
-    <file name="TrueFlow_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
-    </file>
-    <file name="UnlessStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741498059">
-    <file name="Flow_Behavior.java">
-      <unit id="1262430001741498059" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
-    </file>
     <file name="Flow__BehaviorDescriptor.java">
       <node id="1262430001741498059" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1262430001741498059" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -109,9 +91,6 @@
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741702961">
-    <file name="TrueFlow_Behavior.java">
-      <unit id="1262430001741702961" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
-    </file>
     <file name="TrueFlow__BehaviorDescriptor.java">
       <node id="1262430001741702961" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1262430001741702961" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -186,9 +165,6 @@
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741703052">
-    <file name="FalseFlow_Behavior.java">
-      <unit id="1262430001741703052" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
-    </file>
     <file name="FalseFlow__BehaviorDescriptor.java">
       <node id="1262430001741703052" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1262430001741703052" at="25,0,26,0" concept="6" trace="REGISTRY" />

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -38,45 +42,110 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
-      case 0:
-        return myConceptAbstractClassifierSpecification;
-      case 1:
-        return myConceptAbstractMethodSpecification;
-      case 2:
-        return myConceptCommentMigrationScriptPart;
-      case 3:
-        return myConceptDirectClassifierSpecification;
-      case 4:
-        return myConceptDirectMethodSpecification;
-      case 5:
-        return myConceptExtractInterfaceMigration;
-      case 6:
-        return myConceptFQNameClassifierSpecification;
-      case 7:
-        return myConceptFQNameMethodSpecification;
-      case 8:
-        return myConceptFactoryMigrationScriptPart;
-      case 9:
-        return myConceptMigrationScript;
-      case 10:
-        return myConceptMigrationScriptPart;
-      case 11:
-        return myConceptMigrationScriptPart_Instance;
-      case 12:
-        return myConceptMigrationScriptPart_Instance_Predicate;
-      case 13:
-        return myConceptMigrationScriptPart_Instance_Updater;
-      case 14:
-        return myConceptMigrationScriptPart_node;
-      case 15:
-        return myConceptPullUpMethod;
-      case 16:
-        return myConceptWhitespaceMigrationScriptPart;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0v.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractClassifierSpecification;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractMethodSpecification;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCommentMigrationScriptPart;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDirectClassifierSpecification;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDirectMethodSpecification;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExtractInterfaceMigration;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptFQNameClassifierSpecification;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptFQNameMethodSpecification;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptFactoryMigrationScriptPart;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptMigrationScript;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptMigrationScriptPart;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptMigrationScriptPart_Instance;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptMigrationScriptPart_Instance_Predicate;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptMigrationScriptPart_Instance_Updater;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptMigrationScriptPart_node;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptPullUpMethod;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptWhitespaceMigrationScriptPart;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.lang.script.structure.AbstractClassifierSpecification", "jetbrains.mps.lang.script.structure.AbstractMethodSpecification", "jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.lang.script.structure.MigrationScriptPart_node", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a61a23aL, "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b46c9dL, "jetbrains.mps.lang.script.structure.AbstractMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438569102L, "jetbrains.mps.lang.script.structure.CommentMigrationScriptPart"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, "jetbrains.mps.lang.script.structure.DirectClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c757c2dL, "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x60bdd7da75343e05L, "jetbrains.mps.lang.script.structure.MigrationScriptPart"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f4f883L, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f8301cL, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225fec23cL, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225fae1f1L, "jetbrains.mps.lang.script.structure.MigrationScriptPart_node"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, "jetbrains.mps.lang.script.structure.PullUpMethod"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c76b63eL, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"));
 }

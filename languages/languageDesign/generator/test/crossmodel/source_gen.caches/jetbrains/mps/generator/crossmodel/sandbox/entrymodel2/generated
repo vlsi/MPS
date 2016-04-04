@@ -1,24 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1z3qc7u6m2vocwnr7poh61wq7svipp5">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-21mpnlvt1xhi3h8mfbz6w37gnkszpzi" />
-  <dep model="r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)" hash="bm71ki0wvafbw2wmqegaiqb44jtgrx9" />
-  <dep model="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" hash="-6ftfkr77ho7hd9rz9z7fyrgidhbcbwf" />
-  <dep model="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" hash="3vmm5g7qdi8ejotzw7ugtiszhbyrhjq" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bndmtqbgh4wi3lemqw459runlf2h30g" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-nyb4ptgkkdic5dtz3f6g9xw3oiuvpx" />
-  <common hash="-8ud1sm1gh4co2asmonfm86kucdvlh52" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="4355167635272070340" name="Second" hash="bc9kkcldx61p7r0zlh9c3c2i01eq9bt">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)" />
-    <dep model="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" />
-    <dep model="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="SecondBeanImpl.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-1z3qc7u6m2vocwnr7poh61wq7svipp5" />
 

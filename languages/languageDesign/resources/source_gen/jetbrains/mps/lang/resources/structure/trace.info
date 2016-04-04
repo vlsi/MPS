@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.lang.resources.structure.StructureAspectDescriptor" />
+      <unit at="18,0,86,0" name="jetbrains.mps.lang.resources.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -38,45 +42,110 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
-      case 0:
-        return myConceptAbstractAntiquotation;
-      case 1:
-        return myConceptAntiquotation;
-      case 2:
-        return myConceptGeneratorInternal_InternalReferenceHolder;
-      case 3:
-        return myConceptGeneratorInternal_PropertyDescriptor;
-      case 4:
-        return myConceptGeneratorInternal_ReferenceDescriptor;
-      case 5:
-        return myConceptListAntiquotation;
-      case 6:
-        return myConceptNodeBuilder;
-      case 7:
-        return myConceptNodeBuilderExpression;
-      case 8:
-        return myConceptNodeBuilderInitLink;
-      case 9:
-        return myConceptNodeBuilderInitPart;
-      case 10:
-        return myConceptNodeBuilderInitProperty;
-      case 11:
-        return myConceptNodeBuilderList;
-      case 12:
-        return myConceptNodeBuilderNode;
-      case 13:
-        return myConceptNodeBuilderRef;
-      case 14:
-        return myConceptPropertyAntiquotation;
-      case 15:
-        return myConceptQuotation;
-      case 16:
-        return myConceptReferenceAntiquotation;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0v.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractAntiquotation;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAntiquotation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptGeneratorInternal_InternalReferenceHolder;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptGeneratorInternal_PropertyDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptGeneratorInternal_ReferenceDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptListAntiquotation;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptNodeBuilder;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptNodeBuilderExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptNodeBuilderInitLink;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptNodeBuilderInitPart;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptNodeBuilderInitProperty;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptNodeBuilderList;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptNodeBuilderNode;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptNodeBuilderRef;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptPropertyAntiquotation;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptQuotation;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptReferenceAntiquotation;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.GeneratorInternal_InternalReferenceHolder", "jetbrains.mps.lang.quotation.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.quotation.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0v = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1c4b068f93acf228L, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_InternalReferenceHolder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_PropertyDescriptor"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, "jetbrains.mps.lang.quotation.structure.GeneratorInternal_ReferenceDescriptor"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0339L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a2df32L, "jetbrains.mps.lang.quotation.structure.NodeBuilderList"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a0fa93L, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
 }

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -53,75 +57,185 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0kb, conceptFqName)) {
-      case 0:
-        return myConceptAfterPosition;
-      case 1:
-        return myConceptBaseEmitJumpStatement;
-      case 2:
-        return myConceptBaseEmitVariableStatement;
-      case 3:
-        return myConceptBaseInstructionOperation;
-      case 4:
-        return myConceptBeforePosition;
-      case 5:
-        return myConceptBooleanInstructionOperation;
-      case 6:
-        return myConceptBuilderBlock;
-      case 7:
-        return myConceptDataFlowBuilderDeclaration;
-      case 8:
-        return myConceptEmitCodeForStatement;
-      case 9:
-        return myConceptEmitIfJumpStatement;
-      case 10:
-        return myConceptEmitJumpStatement;
-      case 11:
-        return myConceptEmitLabelStatement;
-      case 12:
-        return myConceptEmitMayBeUnreachable;
-      case 13:
-        return myConceptEmitNopStatement;
-      case 14:
-        return myConceptEmitReadStatement;
-      case 15:
-        return myConceptEmitRetStatement;
-      case 16:
-        return myConceptEmitStatement;
-      case 17:
-        return myConceptEmitTryFinallyStatement;
-      case 18:
-        return myConceptEmitWriteStatement;
-      case 19:
-        return myConceptGetCodeForExpression;
-      case 20:
-        return myConceptInsertAfter;
-      case 21:
-        return myConceptInsertBefore;
-      case 22:
-        return myConceptInsertPosition;
-      case 23:
-        return myConceptInstructionGetSourceOperation;
-      case 24:
-        return myConceptInstructionIsJump;
-      case 25:
-        return myConceptInstructionIsNop;
-      case 26:
-        return myConceptInstructionIsRet;
-      case 27:
-        return myConceptInstructionType;
-      case 28:
-        return myConceptLabelPosition;
-      case 29:
-        return myConceptNodeParameter;
-      case 30:
-        return myConceptPosition;
-      case 31:
-        return myConceptRelativePosition;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0kb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAfterPosition;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBaseEmitJumpStatement;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBaseEmitVariableStatement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBaseInstructionOperation;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptBeforePosition;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptBooleanInstructionOperation;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptBuilderBlock;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptDataFlowBuilderDeclaration;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptEmitCodeForStatement;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptEmitIfJumpStatement;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptEmitJumpStatement;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptEmitLabelStatement;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptEmitMayBeUnreachable;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptEmitNopStatement;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptEmitReadStatement;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptEmitRetStatement;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptEmitStatement;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptEmitTryFinallyStatement;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptEmitWriteStatement;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptGetCodeForExpression;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptInsertAfter;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptInsertBefore;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptInsertPosition;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptInstructionGetSourceOperation;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptInstructionIsJump;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptInstructionIsNop;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptInstructionIsRet;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptInstructionType;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptLabelPosition;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptNodeParameter;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptPosition;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptRelativePosition;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0kb = new String[]{"jetbrains.mps.lang.dataFlow.structure.AfterPosition", "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BeforePosition", "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BuilderBlock", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation", "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump", "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop", "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet", "jetbrains.mps.lang.dataFlow.structure.InstructionType", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.lang.dataFlow.structure.Position", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0kb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bb091aL, "jetbrains.mps.lang.dataFlow.structure.AfterPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b40208L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb65L, "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bad3a1L, "jetbrains.mps.lang.dataFlow.structure.BeforePosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d63L, "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5960f51L, "jetbrains.mps.lang.dataFlow.structure.BuilderBlock"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e58cd635L, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e643e7efL, "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a87adadL, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a554f4L, "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a7d02aL, "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e6ca4377L, "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x119043714f5L, "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5afd8deL, "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x2912c3e08c4f3324L, "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e662L, "jetbrains.mps.lang.dataFlow.structure.InsertAfter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e664L, "jetbrains.mps.lang.dataFlow.structure.InsertBefore"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x75c73261efe5e666L, "jetbrains.mps.lang.dataFlow.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x194dbbd57c9dbb64L, "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x797fabdf814e7af5L, "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5cL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x63a490c22d094d5dL, "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x44f5e79f9e613080L, "jetbrains.mps.lang.dataFlow.structure.InstructionType"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e597667fL, "jetbrains.mps.lang.dataFlow.structure.NodeParameter"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b7dfc0L, "jetbrains.mps.lang.dataFlow.structure.Position"), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b86667L, "jetbrains.mps.lang.dataFlow.structure.RelativePosition"));
 }

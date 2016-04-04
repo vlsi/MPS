@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -35,39 +39,95 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0s, conceptFqName)) {
-      case 0:
-        return myConceptDebuggedType;
-      case 1:
-        return myConceptDoNotTransformAnnotation;
-      case 2:
-        return myConceptDownCastToLowLevel;
-      case 3:
-        return myConceptEvaluator;
-      case 4:
-        return myConceptEvaluatorConcept;
-      case 5:
-        return myConceptEvaluatorsSuperMethodCall;
-      case 6:
-        return myConceptEvaluatorsThisExpression;
-      case 7:
-        return myConceptGenerationHelperAnnotation;
-      case 8:
-        return myConceptIEvaluatorConcept;
-      case 9:
-        return myConceptLowLevelVariable;
-      case 10:
-        return myConceptLowLevelVariableReference;
-      case 11:
-        return myConceptToEvaluateAnnotation;
-      case 12:
-        return myConceptUnitNode;
-      case 13:
-        return myConceptUnprocessedAnnotation;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0s.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptDebuggedType;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptDoNotTransformAnnotation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDownCastToLowLevel;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptEvaluator;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptEvaluatorConcept;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptEvaluatorsSuperMethodCall;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptEvaluatorsThisExpression;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptGenerationHelperAnnotation;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptIEvaluatorConcept;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptLowLevelVariable;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptLowLevelVariableReference;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptToEvaluateAnnotation;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptUnitNode;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptUnprocessedAnnotation;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0s = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode", "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0s = buildConceptIndices(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7eed83c2376f34a5L, "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x6dd9f7bd221bb1d5L, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1feL, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1c6L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x17b1c8f7ef7ab40cL, "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation"), MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x4135c73fbe7fc985L, "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x50b810dd5c871ea2L, "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"));
 }

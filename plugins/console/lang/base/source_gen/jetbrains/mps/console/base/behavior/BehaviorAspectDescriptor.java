@@ -4,12 +4,12 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myCommandHolder__BehaviorDescriptor = new CommandHolder__BehaviorDescriptor();
@@ -31,79 +31,119 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myAbstractPrintExpression__BehaviorDescriptor = new AbstractPrintExpression__BehaviorDescriptor();
   private final BHDescriptor myIActionHolder__BehaviorDescriptor = new IActionHolder__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[18];
-    myConceptBehaviorIds[0] = 0x4e27160acb4484bL;
-    myConceptBehaviorIds[1] = 0x690b986730a1f80L;
-    myConceptBehaviorIds[2] = 0x9992dadc6de20a7L;
-    myConceptBehaviorIds[3] = 0xa721a59126bb908L;
-    myConceptBehaviorIds[4] = 0xf6d4d958ec2f2c6L;
-    myConceptBehaviorIds[5] = 0x188f8efcef689c65L;
-    myConceptBehaviorIds[6] = 0x188f8efcef689c71L;
-    myConceptBehaviorIds[7] = 0x2095ece53ba81265L;
-    myConceptBehaviorIds[8] = 0x2095ece53bbb600cL;
-    myConceptBehaviorIds[9] = 0x36ac6f29ae8c1fb5L;
-    myConceptBehaviorIds[10] = 0x4bd43869e610f3e9L;
-    myConceptBehaviorIds[11] = 0x51132a123c89fa7eL;
-    myConceptBehaviorIds[12] = 0x5b02f032bc93b714L;
-    myConceptBehaviorIds[13] = 0x5f1fb64db424879fL;
-    myConceptBehaviorIds[14] = 0x6979f0787b2a9377L;
-    myConceptBehaviorIds[15] = 0x6a40a3596560a9d9L;
-    myConceptBehaviorIds[16] = 0x6c8954f469a7c420L;
-    myConceptBehaviorIds[17] = 0x7633e0214d3a5856L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myCommandHolder__BehaviorDescriptor;
-      case 1:
-        return myHelpCommand__BehaviorDescriptor;
-      case 2:
-        return myModifiedCommandHistoryItem__BehaviorDescriptor;
-      case 3:
-        return myProjectExpression__BehaviorDescriptor;
-      case 4:
-        return myNodeWithClosure__BehaviorDescriptor;
-      case 5:
-        return myInterpretedCommand__BehaviorDescriptor;
-      case 6:
-        return myGeneratedCommand__BehaviorDescriptor;
-      case 7:
-        return myNodeReferenceString__BehaviorDescriptor;
-      case 8:
-        return myNodeReferencePresentation__BehaviorDescriptor;
-      case 9:
-        return myINodeWithReference__BehaviorDescriptor;
-      case 10:
-        return myBLCommand__BehaviorDescriptor;
-      case 11:
-        return myPastedNodeReference__BehaviorDescriptor;
-      case 12:
-        return myExceptionHolder__BehaviorDescriptor;
-      case 13:
-        return myCommand__BehaviorDescriptor;
-      case 14:
-        return myPrintExpression__BehaviorDescriptor;
-      case 15:
-        return myBLExpression__BehaviorDescriptor;
-      case 16:
-        return myAbstractPrintExpression__BehaviorDescriptor;
-      case 17:
-        return myIActionHolder__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0v.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractPrintExpression__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBLCommand__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myBLExpression__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myCommand__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myCommandHolder__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myExceptionHolder__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myGeneratedCommand__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myHelpCommand__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myIActionHolder__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myINodeWithReference__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myInterpretedCommand__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myModifiedCommandHistoryItem__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myNodeReferencePresentation__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myNodeReferenceString__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myNodeWithClosure__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myPastedNodeReference__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myPrintExpression__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myProjectExpression__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L, "jetbrains.mps.console.base.structure.GeneratedCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, "jetbrains.mps.console.base.structure.HelpCommand"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L, "jetbrains.mps.console.base.structure.InterpretedCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L, "jetbrains.mps.console.base.structure.NodeReferenceString"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6979f0787b2a9377L, "jetbrains.mps.console.base.structure.PrintExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa721a59126bb908L, "jetbrains.mps.console.base.structure.ProjectExpression"));
 }

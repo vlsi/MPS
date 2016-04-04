@@ -15,65 +15,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AbstractAntiquotation_BehaviorDescriptor.java">
-      <unit at="14,0,17,0" name="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
-    </file>
-    <file name="Antiquotation_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,74,0" name="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="ListAntiquotation_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderInitLink_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderInitPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderInitProperty_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderList_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderNode_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilderRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" />
-    </file>
-    <file name="NodeBuilder_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyAntiquotation_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
-    </file>
-    <file name="Quotation_BehaviorDescriptor.java">
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" />
-    </file>
-    <file name="ReferenceAntiquotation_BehaviorDescriptor.java">
-      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
+      <unit at="14,0,96,0" name="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1262430001741642838">
-    <file name="ReferenceAntiquotation_Behavior.java">
-      <unit id="1262430001741642838" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_Behavior" />
-    </file>
     <file name="ReferenceAntiquotation__BehaviorDescriptor.java">
       <node id="1262430001741642838" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741642838" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -139,9 +85,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1262430001741646984">
-    <file name="ListAntiquotation_Behavior.java">
-      <unit id="1262430001741646984" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_Behavior" />
-    </file>
     <file name="ListAntiquotation__BehaviorDescriptor.java">
       <node id="1262430001741646984" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741646984" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -207,9 +150,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1262430001741702883">
-    <file name="PropertyAntiquotation_Behavior.java">
-      <unit id="1262430001741702883" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_Behavior" />
-    </file>
     <file name="PropertyAntiquotation__BehaviorDescriptor.java">
       <node id="1262430001741702883" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741702883" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -275,9 +215,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1262430001741717386">
-    <file name="Antiquotation_Behavior.java">
-      <unit id="1262430001741717386" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.Antiquotation_Behavior" />
-    </file>
     <file name="Antiquotation__BehaviorDescriptor.java">
       <node id="1262430001741717386" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741717386" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -343,9 +280,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1866752856968178589">
-    <file name="NodeBuilder_Behavior.java">
-      <unit id="1866752856968178589" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_Behavior" />
-    </file>
     <file name="NodeBuilder__BehaviorDescriptor.java">
       <node id="1866752856968178589" at="28,0,29,0" concept="8" trace="CONCEPT" />
       <node id="1866752856968178589" at="29,0,30,0" concept="8" trace="REGISTRY" />
@@ -425,9 +359,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1866752856968185013">
-    <file name="NodeBuilderInitLink_Behavior.java">
-      <unit id="1866752856968185013" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_Behavior" />
-    </file>
     <file name="NodeBuilderInitLink__BehaviorDescriptor.java">
       <node id="1866752856968185013" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="1866752856968185013" at="32,0,33,0" concept="8" trace="REGISTRY" />
@@ -517,9 +448,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/3981318653438276256">
-    <file name="Quotation_Behavior.java">
-      <unit id="3981318653438276256" at="10,0,13,0" name="jetbrains.mps.lang.quotation.behavior.Quotation_Behavior" />
-    </file>
     <file name="Quotation__BehaviorDescriptor.java">
       <node id="3981318653438276256" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="3981318653438276256" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -594,16 +522,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/3981318653438276804">
-    <file name="AbstractAntiquotation_Behavior.java">
-      <node id="3981318653438276804" at="14,89,15,96" concept="7" />
-      <node id="3981318653438276804" at="14,0,17,0" concept="9" trace="call_getScope_7939206742749757475#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3981318653438276804" at="14,89,15,96" />
-      <scope id="3981318653438276804" at="14,0,17,0">
-        <var name="__thisNode__" id="3981318653438276804" />
-        <var name="kind" id="7939206742749757474" />
-      </scope>
-      <unit id="3981318653438276804" at="12,0,18,0" name="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_Behavior" />
-    </file>
     <file name="AbstractAntiquotation__BehaviorDescriptor.java">
       <node id="3981318653438276804" at="28,0,29,0" concept="8" trace="CONCEPT" />
       <node id="3981318653438276804" at="29,0,30,0" concept="8" trace="REGISTRY" />
@@ -728,29 +646,6 @@
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/5455284157993978658">
-    <file name="NodeBuilderNode_Behavior.java">
-      <node id="5455284157993978658" at="15,101,16,97" concept="7" />
-      <node id="5455284157993978658" at="18,123,19,111" concept="7" />
-      <node id="5455284157993978658" at="21,112,22,100" concept="2" />
-      <node id="5455284157993978658" at="15,0,18,0" concept="9" trace="call_getExternalExpressions_1006429225401327586#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="5455284157993978658" at="18,0,21,0" concept="9" trace="call_isExpressionExternal_5448983161218224552#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5455284157993978658" at="21,0,24,0" concept="9" trace="call_collectExternalExpressions_1006429225401327680#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
-      <scope id="5455284157993978658" at="15,101,16,97" />
-      <scope id="5455284157993978658" at="18,123,19,111" />
-      <scope id="5455284157993978658" at="21,112,22,100" />
-      <scope id="5455284157993978658" at="15,0,18,0">
-        <var name="__thisNode__" id="5455284157993978658" />
-      </scope>
-      <scope id="5455284157993978658" at="18,0,21,0">
-        <var name="__thisConcept__" id="5455284157993978658" />
-        <var name="expression" id="5448983161218225454" />
-      </scope>
-      <scope id="5455284157993978658" at="21,0,24,0">
-        <var name="__thisNode__" id="5455284157993978658" />
-        <var name="list" id="1006429225401327690" />
-      </scope>
-      <unit id="5455284157993978658" at="13,0,25,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior" />
-    </file>
     <file name="NodeBuilderNode__BehaviorDescriptor.java">
       <node id="5455284157993978658" at="34,0,35,0" concept="8" trace="CONCEPT" />
       <node id="5455284157993978658" at="35,0,36,0" concept="8" trace="REGISTRY" />

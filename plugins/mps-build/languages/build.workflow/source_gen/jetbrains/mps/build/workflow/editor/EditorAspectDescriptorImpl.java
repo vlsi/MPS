@@ -7,99 +7,160 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5dc467L, "jetbrains.mps.build.workflow.structure.BwfAntStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc1e415L, "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfAntTaskBundleDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x1c936d31d3127b3bL, "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfAntTaskDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x365f30e12d6048cL, "jetbrains.mps.build.workflow.structure.BwfCustomMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfCustomMacro_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x7313ce29aa27bafcL, "jetbrains.mps.build.workflow.structure.BwfDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfFileSet_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaClassPath_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114723a759L, "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db4e306L, "jetbrains.mps.build.workflow.structure.BwfJavaLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db759cbL, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaLibraryReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaModule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfJavaModuleReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, "jetbrains.mps.build.workflow.structure.BwfMacro"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfMacro_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5a7e1dc16b0ca24fL, "jetbrains.mps.build.workflow.structure.BwfMacroListImport"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfMacroListImport_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfPathDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL, "jetbrains.mps.build.workflow.structure.BwfPathReference"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfPathReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, "jetbrains.mps.build.workflow.structure.BwfProject"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfProject_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L, "jetbrains.mps.build.workflow.structure.BwfProjectPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfProjectPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc153dbL, "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfProjectPartStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b4a1bL, "jetbrains.mps.build.workflow.structure.BwfStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6275L, "jetbrains.mps.build.workflow.structure.BwfSubTask"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfSubTask_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfSubTaskDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfTask_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfTaskDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfTaskLibrary_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfTaskLibraryDependency_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart"))) {
-        return Collections.<ConceptEditor>singletonList(new BwfTaskPart_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfAntStatement_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfAntTaskBundleDeclaration_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfAntTaskDeclaration_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfCustomMacro_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfDependency_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfFileSet_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaClassPath_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaDependency_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaDescriptor_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaLibrary_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaLibraryReference_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaModule_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfJavaModuleReference_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfMacro_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfMacroListImport_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfPathDeclaration_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfPathReference_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfProject_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfProjectPart_Editor());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfProjectPartStatement_Editor());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfStatement_Editor());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfSubTask_Editor());
+          }
+          break;
+        case 22:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfSubTaskDependency_Editor());
+          }
+          break;
+        case 23:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfTask_Editor());
+          }
+          break;
+        case 24:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfTaskDependency_Editor());
+          }
+          break;
+        case 25:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfTaskLibrary_Editor());
+          }
+          break;
+        case 26:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfTaskLibraryDependency_Editor());
+          }
+          break;
+        case 27:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BwfTaskPart_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -108,4 +169,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5dc467L, "jetbrains.mps.build.workflow.structure.BwfAntStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc1e415L, "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x1c936d31d3127b3bL, "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x365f30e12d6048cL, "jetbrains.mps.build.workflow.structure.BwfCustomMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x7313ce29aa27bafcL, "jetbrains.mps.build.workflow.structure.BwfDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114723a759L, "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db4e306L, "jetbrains.mps.build.workflow.structure.BwfJavaLibrary"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2021cfb4db759cbL, "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, "jetbrains.mps.build.workflow.structure.BwfMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5a7e1dc16b0ca24fL, "jetbrains.mps.build.workflow.structure.BwfMacroListImport"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL, "jetbrains.mps.build.workflow.structure.BwfPathReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, "jetbrains.mps.build.workflow.structure.BwfProject"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc153dbL, "jetbrains.mps.build.workflow.structure.BwfProjectPartStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b4a1bL, "jetbrains.mps.build.workflow.structure.BwfStatement"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6275L, "jetbrains.mps.build.workflow.structure.BwfSubTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, "jetbrains.mps.build.workflow.structure.BwfTaskDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
 }

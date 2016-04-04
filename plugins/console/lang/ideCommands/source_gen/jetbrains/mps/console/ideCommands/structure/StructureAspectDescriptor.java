@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -47,65 +51,160 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fb, conceptFqName)) {
-      case 0:
-        return myConceptAbsractMake;
-      case 1:
-        return myConceptActionCallDeclaredParameter;
-      case 2:
-        return myConceptActionCallGlobalParameter;
-      case 3:
-        return myConceptActionCallParameter;
-      case 4:
-        return myConceptCallActionExpression;
-      case 5:
-        return myConceptClean;
-      case 6:
-        return myConceptClickableGenerator;
-      case 7:
-        return myConceptGlobalStatisticTarget;
-      case 8:
-        return myConceptINodeSetReference;
-      case 9:
-        return myConceptIStatisticsTarget;
-      case 10:
-        return myConceptMake;
-      case 11:
-        return myConceptModelProperties;
-      case 12:
-        return myConceptModelReference;
-      case 13:
-        return myConceptModelStatisticsTarget;
-      case 14:
-        return myConceptModuleProperties;
-      case 15:
-        return myConceptNodeReference;
-      case 16:
-        return myConceptOfAspectOperation;
-      case 17:
-        return myConceptProjectStatisticsTarget;
-      case 18:
-        return myConceptRebuildProjectCommand;
-      case 19:
-        return myConceptRemoveGenSources;
-      case 20:
-        return myConceptShowBrokenReferences;
-      case 21:
-        return myConceptShowExpression;
-      case 22:
-        return myConceptShowGenPlan;
-      case 23:
-        return myConceptStatCommand;
-      case 24:
-        return myConceptSubtreeStatisticsTarget;
-      case 25:
-        return myConceptUnloadModelsCommand;
-      case 26:
-        return myConceptWithDependencies;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0fb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbsractMake;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptActionCallDeclaredParameter;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptActionCallGlobalParameter;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptActionCallParameter;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptCallActionExpression;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptClean;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptClickableGenerator;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptGlobalStatisticTarget;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptINodeSetReference;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIStatisticsTarget;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptMake;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptModelProperties;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptModelReference;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptModelStatisticsTarget;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptModuleProperties;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptNodeReference;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptOfAspectOperation;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptProjectStatisticsTarget;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptRebuildProjectCommand;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptRemoveGenSources;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptShowBrokenReferences;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptShowExpression;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptShowGenPlan;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptStatCommand;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptSubtreeStatisticsTarget;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptUnloadModelsCommand;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptWithDependencies;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0fb = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.Clean", "jetbrains.mps.console.ideCommands.structure.ClickableGenerator", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.Make", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand", "jetbrains.mps.console.ideCommands.structure.RemoveGenSources", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowExpression", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand", "jetbrains.mps.console.ideCommands.structure.WithDependencies"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0fb = buildConceptIndices(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, "jetbrains.mps.console.ideCommands.structure.AbsractMake"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587abL, "jetbrains.mps.console.ideCommands.structure.ActionCallParameter"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e74f88509L, "jetbrains.mps.console.ideCommands.structure.Clean"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L, "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afcebfef23L, "jetbrains.mps.console.ideCommands.structure.Make"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b0L, "jetbrains.mps.console.ideCommands.structure.ModelProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b3L, "jetbrains.mps.console.ideCommands.structure.ModuleProperties"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL, "jetbrains.mps.console.ideCommands.structure.NodeReference"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579e36L, "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191df02L, "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a11bL, "jetbrains.mps.console.ideCommands.structure.RemoveGenSources"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, "jetbrains.mps.console.ideCommands.structure.StatCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191ddffL, "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand"), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x826e97ca237a1b1L, "jetbrains.mps.console.ideCommands.structure.WithDependencies"));
 }

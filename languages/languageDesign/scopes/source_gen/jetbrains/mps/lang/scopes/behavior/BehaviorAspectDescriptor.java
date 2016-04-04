@@ -4,38 +4,44 @@ package jetbrains.mps.lang.scopes.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myUniformScopeProvider__BehaviorDescriptor = new UniformScopeProvider__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[1];
-    myConceptBehaviorIds[0] = 0x299275268ba48780L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myUniformScopeProvider__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0e.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myUniformScopeProvider__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0e = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x299275268ba48780L, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"));
 }

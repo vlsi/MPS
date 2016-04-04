@@ -16,83 +16,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="DevKit_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.DevKit_BehaviorDescriptor" />
-    </file>
-    <file name="Generator_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" />
-    </file>
-    <file name="Language_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.Language_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigExternalRef_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigNormalRef_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigRefAllGlobal_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllGlobal_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigRefAllLocal_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllLocal_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigRefBase_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" />
-    </file>
-    <file name="MappingConfigRefSet_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" />
-    </file>
-    <file name="MappingPriorityRule_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.MappingPriorityRule_BehaviorDescriptor" />
-    </file>
-    <file name="ModelReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" />
-    </file>
-    <file name="ModelRoot_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModelRoot_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleDependency_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModuleDependency_BehaviorDescriptor" />
-    </file>
-    <file name="ModuleReference_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
-    </file>
-    <file name="Module_BehaviorDescriptor.java">
-      <unit at="14,0,32,0" name="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
-    </file>
-    <file name="Solution_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
-    </file>
-    <file name="SourcePath_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" />
-    </file>
-    <file name="StubEntry_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" />
-    </file>
-    <file name="StubSolution_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/1250389701475344621">
-    <file name="ModuleReference_Behavior.java">
-      <node id="1250389701475344621" at="14,97,15,93" concept="7" />
-      <node id="1250389701475344621" at="17,108,18,92" concept="2" />
-      <node id="1250389701475344621" at="14,0,17,0" concept="10" trace="call_toModuleReference_3021261446821266667#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="1250389701475344621" at="17,0,20,0" concept="10" trace="call_populateFrom_3021261446821273137#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SModuleReference;)V" />
-      <scope id="1250389701475344621" at="14,97,15,93" />
-      <scope id="1250389701475344621" at="17,108,18,92" />
-      <scope id="1250389701475344621" at="14,0,17,0">
-        <var name="__thisNode__" id="1250389701475344621" />
-      </scope>
-      <scope id="1250389701475344621" at="17,0,20,0">
-        <var name="__thisNode__" id="1250389701475344621" />
-        <var name="moduleRef" id="3021261446821273355" />
-      </scope>
-      <unit id="1250389701475344621" at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModuleReference_Behavior" />
-    </file>
     <file name="ModuleReference__BehaviorDescriptor.java">
       <node id="1250389701475344621" at="27,0,28,0" concept="9" trace="CONCEPT" />
       <node id="1250389701475344621" at="28,0,29,0" concept="9" trace="REGISTRY" />
@@ -193,9 +120,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110256912">
-    <file name="MappingConfigRefBase_Behavior.java">
-      <unit id="2721285250110256912" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
-    </file>
     <file name="MappingConfigRefBase__BehaviorDescriptor.java">
       <node id="2721285250110256912" at="24,0,25,0" concept="9" trace="CONCEPT" />
       <node id="2721285250110256912" at="25,0,26,0" concept="9" trace="REGISTRY" />
@@ -270,9 +194,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110391053">
-    <file name="MappingConfigRefSet_Behavior.java">
-      <unit id="2721285250110391053" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" />
-    </file>
     <file name="MappingConfigRefSet__BehaviorDescriptor.java">
       <node id="2721285250110391053" at="26,0,27,0" concept="9" trace="CONCEPT" />
       <node id="2721285250110391053" at="27,0,28,0" concept="9" trace="REGISTRY" />
@@ -355,9 +276,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110400380">
-    <file name="MappingConfigNormalRef_Behavior.java">
-      <unit id="2721285250110400380" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
-    </file>
     <file name="MappingConfigNormalRef__BehaviorDescriptor.java">
       <node id="2721285250110400380" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="2721285250110400380" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -447,9 +365,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110400486">
-    <file name="MappingConfigExternalRef_Behavior.java">
-      <unit id="2721285250110400486" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_Behavior" />
-    </file>
     <file name="MappingConfigExternalRef__BehaviorDescriptor.java">
       <node id="2721285250110400486" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="2721285250110400486" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -524,28 +439,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/6236774123822284796">
-    <file name="ModelReference_Behavior.java">
-      <node id="6236774123822284796" at="15,87,16,92" concept="7" />
-      <node id="6236774123822284796" at="18,95,19,91" concept="7" />
-      <node id="6236774123822284796" at="21,106,22,90" concept="2" />
-      <node id="6236774123822284796" at="18,0,21,0" concept="10" trace="call_toModelReference_3021261446821245772#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="6236774123822284796" at="21,0,24,0" concept="10" trace="call_populateFrom_3021261446821259789#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;)V" />
-      <node id="6236774123822284796" at="14,0,18,0" concept="10" trace="call_getModelReference_6236774123822284799#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6236774123822284796" at="15,87,16,92" />
-      <scope id="6236774123822284796" at="18,95,19,91" />
-      <scope id="6236774123822284796" at="21,106,22,90" />
-      <scope id="6236774123822284796" at="18,0,21,0">
-        <var name="__thisNode__" id="6236774123822284796" />
-      </scope>
-      <scope id="6236774123822284796" at="21,0,24,0">
-        <var name="__thisNode__" id="6236774123822284796" />
-        <var name="modelRef" id="3021261446821260037" />
-      </scope>
-      <scope id="6236774123822284796" at="14,0,18,0">
-        <var name="__thisNode__" id="6236774123822284796" />
-      </scope>
-      <unit id="6236774123822284796" at="12,0,25,0" name="jetbrains.mps.lang.project.behavior.ModelReference_Behavior" />
-    </file>
     <file name="ModelReference__BehaviorDescriptor.java">
       <node id="6236774123822284796" at="32,0,33,0" concept="9" trace="CONCEPT" />
       <node id="6236774123822284796" at="33,0,34,0" concept="9" trace="REGISTRY" />
@@ -668,9 +561,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/6370754048397723597">
-    <file name="Module_Behavior.java">
-      <unit id="6370754048397723597" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.Module_Behavior" />
-    </file>
     <file name="Module__BehaviorDescriptor.java">
       <node id="6370754048397723597" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="6370754048397723597" at="26,0,27,0" concept="9" trace="REGISTRY" />
@@ -763,9 +653,6 @@
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/6655394244919391905">
-    <file name="Generator_Behavior.java">
-      <unit id="6655394244919391905" at="10,0,13,0" name="jetbrains.mps.lang.project.behavior.Generator_Behavior" />
-    </file>
     <file name="Generator__BehaviorDescriptor.java">
       <node id="6655394244919391905" at="25,0,26,0" concept="9" trace="CONCEPT" />
       <node id="6655394244919391905" at="26,0,27,0" concept="9" trace="REGISTRY" />

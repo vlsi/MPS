@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -48,65 +52,160 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fb, conceptFqName)) {
-      case 0:
-        return myConceptXmlAttribute;
-      case 1:
-        return myConceptXmlBaseAttribute;
-      case 2:
-        return myConceptXmlBaseElement;
-      case 3:
-        return myConceptXmlBasePrologElement;
-      case 4:
-        return myConceptXmlCDATA;
-      case 5:
-        return myConceptXmlCharRef;
-      case 6:
-        return myConceptXmlCharRefValue;
-      case 7:
-        return myConceptXmlComment;
-      case 8:
-        return myConceptXmlCommentLine;
-      case 9:
-        return myConceptXmlContent;
-      case 10:
-        return myConceptXmlDeclaration;
-      case 11:
-        return myConceptXmlDoctypeDeclaration;
-      case 12:
-        return myConceptXmlDocument;
-      case 13:
-        return myConceptXmlElement;
-      case 14:
-        return myConceptXmlEntityRef;
-      case 15:
-        return myConceptXmlEntityRefValue;
-      case 16:
-        return myConceptXmlExternalId;
-      case 17:
-        return myConceptXmlFile;
-      case 18:
-        return myConceptXmlNoSpaceValue;
-      case 19:
-        return myConceptXmlPart;
-      case 20:
-        return myConceptXmlProcessingInstruction;
-      case 21:
-        return myConceptXmlProlog;
-      case 22:
-        return myConceptXmlPrologElement;
-      case 23:
-        return myConceptXmlText;
-      case 24:
-        return myConceptXmlTextValue;
-      case 25:
-        return myConceptXmlValuePart;
-      case 26:
-        return myConceptXmlWhitespace;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0fb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptXmlAttribute;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptXmlBaseAttribute;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptXmlBaseElement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptXmlBasePrologElement;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptXmlCDATA;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptXmlCharRef;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptXmlCharRefValue;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptXmlComment;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptXmlCommentLine;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptXmlContent;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptXmlDeclaration;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptXmlDoctypeDeclaration;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptXmlDocument;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptXmlElement;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptXmlEntityRef;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptXmlEntityRefValue;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptXmlExternalId;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptXmlFile;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptXmlNoSpaceValue;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptXmlPart;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptXmlProcessingInstruction;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptXmlProlog;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptXmlPrologElement;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptXmlText;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptXmlTextValue;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptXmlValuePart;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptXmlWhitespace;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0fb = new String[]{"jetbrains.mps.core.xml.structure.XmlAttribute", "jetbrains.mps.core.xml.structure.XmlBaseAttribute", "jetbrains.mps.core.xml.structure.XmlBaseElement", "jetbrains.mps.core.xml.structure.XmlBasePrologElement", "jetbrains.mps.core.xml.structure.XmlCDATA", "jetbrains.mps.core.xml.structure.XmlCharRef", "jetbrains.mps.core.xml.structure.XmlCharRefValue", "jetbrains.mps.core.xml.structure.XmlComment", "jetbrains.mps.core.xml.structure.XmlCommentLine", "jetbrains.mps.core.xml.structure.XmlContent", "jetbrains.mps.core.xml.structure.XmlDeclaration", "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration", "jetbrains.mps.core.xml.structure.XmlDocument", "jetbrains.mps.core.xml.structure.XmlElement", "jetbrains.mps.core.xml.structure.XmlEntityRef", "jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlExternalId", "jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlPart", "jetbrains.mps.core.xml.structure.XmlProcessingInstruction", "jetbrains.mps.core.xml.structure.XmlProlog", "jetbrains.mps.core.xml.structure.XmlPrologElement", "jetbrains.mps.core.xml.structure.XmlText", "jetbrains.mps.core.xml.structure.XmlTextValue", "jetbrains.mps.core.xml.structure.XmlValuePart", "jetbrains.mps.core.xml.structure.XmlWhitespace"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0fb = buildConceptIndices(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, "jetbrains.mps.core.xml.structure.XmlAttribute"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486dL, "jetbrains.mps.core.xml.structure.XmlBaseElement"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f08788L, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, "jetbrains.mps.core.xml.structure.XmlCDATA"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffe9886L, "jetbrains.mps.core.xml.structure.XmlCharRef"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffed7feL, "jetbrains.mps.core.xml.structure.XmlCharRefValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, "jetbrains.mps.core.xml.structure.XmlComment"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9bec5eL, "jetbrains.mps.core.xml.structure.XmlCommentLine"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5e2f66f285946ac9L, "jetbrains.mps.core.xml.structure.XmlDocument"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9c6f4dL, "jetbrains.mps.core.xml.structure.XmlEntityRef"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, "jetbrains.mps.core.xml.structure.XmlExternalId"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54c94c0L, "jetbrains.mps.core.xml.structure.XmlFile"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf085050020e3cL, "jetbrains.mps.core.xml.structure.XmlNoSpaceValue"), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494875L, "jetbrains.mps.core.xml.structure.XmlProcessingInstruction"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, "jetbrains.mps.core.xml.structure.XmlProlog"), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace"));
 }

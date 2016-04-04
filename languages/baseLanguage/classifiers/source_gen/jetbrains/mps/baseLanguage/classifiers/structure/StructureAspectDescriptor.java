@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -34,37 +38,90 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0r, conceptFqName)) {
-      case 0:
-        return myConceptBaseClassifierType;
-      case 1:
-        return myConceptDefaultClassifier;
-      case 2:
-        return myConceptDefaultClassifierFieldAccessOperation;
-      case 3:
-        return myConceptDefaultClassifierFieldDeclaration;
-      case 4:
-        return myConceptDefaultClassifierMethodCallOperation;
-      case 5:
-        return myConceptDefaultClassifierMethodDeclaration;
-      case 6:
-        return myConceptDefaultClassifierType;
-      case 7:
-        return myConceptIClassifier;
-      case 8:
-        return myConceptIClassifierPart;
-      case 9:
-        return myConceptIMember;
-      case 10:
-        return myConceptIMemberOperation;
-      case 11:
-        return myConceptSuperClassifierExpresson;
-      case 12:
-        return myConceptThisClassifierExpression;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0r.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptBaseClassifierType;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptDefaultClassifier;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDefaultClassifierFieldAccessOperation;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDefaultClassifierFieldDeclaration;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDefaultClassifierMethodCallOperation;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptDefaultClassifierMethodDeclaration;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptDefaultClassifierType;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptIClassifier;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptIClassifierPart;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIMember;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIMemberOperation;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptSuperClassifierExpresson;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptThisClassifierExpression;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0r = new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0r = buildConceptIndices(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc77d845L, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0xe48d14bf726e967L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11b74b0357cL, "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
 }

@@ -7,30 +7,45 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, "jetbrains.mps.build.startup.structure.ClassPathItem"))) {
-        return Collections.<ConceptEditor>singletonList(new ClassPathItem_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, "jetbrains.mps.build.startup.structure.MpsStartupScript"))) {
-        return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"))) {
-        return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, "jetbrains.mps.build.startup.structure.TextLine"))) {
-        return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ClassPathItem_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MpsStartupScript_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleVmOptions_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TextFile_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TextLine_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -39,4 +54,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, "jetbrains.mps.build.startup.structure.ClassPathItem"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, "jetbrains.mps.build.startup.structure.MpsStartupScript"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, "jetbrains.mps.build.startup.structure.TextLine"));
 }

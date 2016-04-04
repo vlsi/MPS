@@ -55,6 +55,5 @@
     <classNode dependClassName="org.w3c.dom.Node" />
     <classNode extendsClassName="org.apache.tools.ant.util.XMLFragment" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.runtime.anttask.antlib" file="antlib.xml" />
 </dependenciesRoot>
 

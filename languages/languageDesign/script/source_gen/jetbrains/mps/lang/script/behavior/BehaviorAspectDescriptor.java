@@ -4,12 +4,12 @@ package jetbrains.mps.lang.script.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor = new MigrationScriptPart_Instance_Predicate__BehaviorDescriptor();
@@ -22,52 +22,74 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myDirectClassifierSpecification__BehaviorDescriptor = new DirectClassifierSpecification__BehaviorDescriptor();
   private final BHDescriptor myFQNameClassifierSpecification__BehaviorDescriptor = new FQNameClassifierSpecification__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[9];
-    myConceptBehaviorIds[0] = 0x11225f8301cL;
-    myConceptBehaviorIds[1] = 0x11225fec23cL;
-    myConceptBehaviorIds[2] = 0xbc887f0950c99c4L;
-    myConceptBehaviorIds[3] = 0x1fcdfeb518c43583L;
-    myConceptBehaviorIds[4] = 0x4243146ba1b412e3L;
-    myConceptBehaviorIds[5] = 0x4243146ba1b46c9dL;
-    myConceptBehaviorIds[6] = 0x4b6b6d7b2a61a23aL;
-    myConceptBehaviorIds[7] = 0x4b6b6d7b2a638d23L;
-    myConceptBehaviorIds[8] = 0x4b6b6d7b2a638ddbL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
-      case 1:
-        return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
-      case 2:
-        return myPullUpMethod__BehaviorDescriptor;
-      case 3:
-        return myDirectMethodSpecification__BehaviorDescriptor;
-      case 4:
-        return myFQNameMethodSpecification__BehaviorDescriptor;
-      case 5:
-        return myAbstractMethodSpecification__BehaviorDescriptor;
-      case 6:
-        return myAbstractClassifierSpecification__BehaviorDescriptor;
-      case 7:
-        return myDirectClassifierSpecification__BehaviorDescriptor;
-      case 8:
-        return myFQNameClassifierSpecification__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractClassifierSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAbstractMethodSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myDirectClassifierSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myDirectMethodSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myFQNameClassifierSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myFQNameMethodSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myMigrationScriptPart_Instance_Predicate__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myMigrationScriptPart_Instance_Updater__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myPullUpMethod__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a61a23aL, "jetbrains.mps.lang.script.structure.AbstractClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b46c9dL, "jetbrains.mps.lang.script.structure.AbstractMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, "jetbrains.mps.lang.script.structure.DirectClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f8301cL, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225fec23cL, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, "jetbrains.mps.lang.script.structure.PullUpMethod"));
 }

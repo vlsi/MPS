@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,19 +29,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
-      case 0:
-        return myConceptPrivateFieldReferenceOperation;
-      case 1:
-        return myConceptPrivateInstanceMethodCallOperation;
-      case 2:
-        return myConceptPrivateStaticFieldReference;
-      case 3:
-        return myConceptPrivateStaticMethodCall;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptPrivateFieldReferenceOperation;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptPrivateInstanceMethodCallOperation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptPrivateStaticFieldReference;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptPrivateStaticMethodCall;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference"), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"));
 }

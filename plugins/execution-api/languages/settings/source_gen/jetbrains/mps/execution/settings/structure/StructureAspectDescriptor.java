@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -51,71 +55,175 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ib, conceptFqName)) {
-      case 0:
-        return myConceptApplyTo_Function;
-      case 1:
-        return myConceptCheckProperitesOperation;
-      case 2:
-        return myConceptCheckProperties_Function;
-      case 3:
-        return myConceptConfiguration_Parameter;
-      case 4:
-        return myConceptCreateEditor_Function;
-      case 5:
-        return myConceptDeprecatedAnnotation;
-      case 6:
-        return myConceptDispose_Function;
-      case 7:
-        return myConceptEditorExpression;
-      case 8:
-        return myConceptEditorOperationCall;
-      case 9:
-        return myConceptEditorOperationDeclaration;
-      case 10:
-        return myConceptEditorPropertyDeclaration;
-      case 11:
-        return myConceptEditorPropertyReference;
-      case 12:
-        return myConceptGetEditorOperation;
-      case 13:
-        return myConceptGridBagConstraints;
-      case 14:
-        return myConceptIPersistentPropertyHolder;
-      case 15:
-        return myConceptPersistentConfiguration;
-      case 16:
-        return myConceptPersistentConfigurationAssistent;
-      case 17:
-        return myConceptPersistentConfigurationMethod;
-      case 18:
-        return myConceptPersistentConfigurationTemplate;
-      case 19:
-        return myConceptPersistentConfigurationTemplateInitializer;
-      case 20:
-        return myConceptPersistentConfigurationType;
-      case 21:
-        return myConceptPersistentPropertyDeclaration;
-      case 22:
-        return myConceptPersistentPropertyReferenceOperation;
-      case 23:
-        return myConceptReportConfigurationErrorStatement;
-      case 24:
-        return myConceptResetFrom_Function;
-      case 25:
-        return myConceptSettingsEditor;
-      case 26:
-        return myConceptSettingsEditorType;
-      case 27:
-        return myConceptTemplateParameter;
-      case 28:
-        return myConceptTemplateParameterReference;
-      case 29:
-        return myConceptTemplatePersistentConfigurationType;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0ib.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptApplyTo_Function;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCheckProperitesOperation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCheckProperties_Function;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConfiguration_Parameter;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptCreateEditor_Function;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptDeprecatedAnnotation;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptDispose_Function;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptEditorExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptEditorOperationCall;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptEditorOperationDeclaration;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptEditorPropertyDeclaration;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptEditorPropertyReference;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptGetEditorOperation;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptGridBagConstraints;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptIPersistentPropertyHolder;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptPersistentConfiguration;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptPersistentConfigurationAssistent;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptPersistentConfigurationMethod;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptPersistentConfigurationTemplate;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptPersistentConfigurationTemplateInitializer;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptPersistentConfigurationType;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptPersistentPropertyDeclaration;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptPersistentPropertyReferenceOperation;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptReportConfigurationErrorStatement;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptResetFrom_Function;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptSettingsEditor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptSettingsEditorType;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptTemplateParameter;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptTemplateParameterReference;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptTemplatePersistentConfigurationType;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ib = new String[]{"jetbrains.mps.execution.settings.structure.ApplyTo_Function", "jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.CheckProperties_Function", "jetbrains.mps.execution.settings.structure.Configuration_Parameter", "jetbrains.mps.execution.settings.structure.CreateEditor_Function", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.Dispose_Function", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.ResetFrom_Function", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0ib = buildConceptIndices(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910129L, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL, "jetbrains.mps.execution.settings.structure.CheckProperitesOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910125L, "jetbrains.mps.execution.settings.structure.CheckProperties_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910390L, "jetbrains.mps.execution.settings.structure.Configuration_Parameter"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910106L, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010bL, "jetbrains.mps.execution.settings.structure.Dispose_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL, "jetbrains.mps.execution.settings.structure.EditorExpression"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, "jetbrains.mps.execution.settings.structure.EditorOperationCall"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910132L, "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L, "jetbrains.mps.execution.settings.structure.EditorPropertyReference"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x4a75ebd58602caa5L, "jetbrains.mps.execution.settings.structure.GetEditorOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb488L, "jetbrains.mps.execution.settings.structure.GridBagConstraints"), MetaAdapterFactory.getInterfaceConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910122L, "jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), MetaAdapterFactory.getInterfaceConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001bL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910136L, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011aL, "jetbrains.mps.execution.settings.structure.TemplateParameter"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L, "jetbrains.mps.execution.settings.structure.TemplateParameterReference"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"));
 }

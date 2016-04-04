@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -48,67 +52,165 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0gb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractionVarRef;
-      case 1:
-        return myConceptAbstractionVariable;
-      case 2:
-        return myConceptAddOperation;
-      case 3:
-        return myConceptBinaryNumericOperation;
-      case 4:
-        return myConceptBinaryOperation;
-      case 5:
-        return myConceptBinaryStringOperation;
-      case 6:
-        return myConceptConcatenateOperation;
-      case 7:
-        return myConceptDivideOperation;
-      case 8:
-        return myConceptFunctionType;
-      case 9:
-        return myConceptLambdaAbstraction;
-      case 10:
-        return myConceptLambdaApplication;
-      case 11:
-        return myConceptLambdaExpression;
-      case 12:
-        return myConceptLambdaType;
-      case 13:
-        return myConceptLetExpression;
-      case 14:
-        return myConceptLetRef;
-      case 15:
-        return myConceptLetVariable;
-      case 16:
-        return myConceptMultipleExpression;
-      case 17:
-        return myConceptMultiplyOperation;
-      case 18:
-        return myConceptNumberType;
-      case 19:
-        return myConceptNumericConstant;
-      case 20:
-        return myConceptParenthesisExpression;
-      case 21:
-        return myConceptProgram;
-      case 22:
-        return myConceptStringConstant;
-      case 23:
-        return myConceptStringType;
-      case 24:
-        return myConceptSubtractOperation;
-      case 25:
-        return myConceptVariable;
-      case 26:
-        return myConceptVariableOwner;
-      case 27:
-        return myConceptVariableReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0gb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractionVarRef;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractionVariable;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAddOperation;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBinaryNumericOperation;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptBinaryOperation;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptBinaryStringOperation;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptConcatenateOperation;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptDivideOperation;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptFunctionType;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptLambdaAbstraction;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptLambdaApplication;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptLambdaExpression;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptLambdaType;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptLetExpression;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptLetRef;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptLetVariable;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptMultipleExpression;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptMultiplyOperation;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptNumberType;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptNumericConstant;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptParenthesisExpression;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptProgram;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptStringConstant;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptStringType;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptSubtractOperation;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptVariable;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptVariableOwner;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptVariableReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0gb = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef", "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable", "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation", "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation", "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaType", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LetRef", "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0gb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fe548fL, "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf81L, "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1ad829a6925a0969L, "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1a34313bb1413cb4L, "jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1ad829a6925a095bL, "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1a34313bb1413cb6L, "jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1a34313bb1413cb8L, "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x5c3aaf5269584eeeL, "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afad8L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaType"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edc7216cL, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x74076973acb52e68L, "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x5c3aaf5269584eeaL, "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afadaL, "jetbrains.mps.samples.lambdaCalculus.structure.NumberType"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3735fdad52687b59L, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fc0389L, "jetbrains.mps.samples.lambdaCalculus.structure.Program"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dc8L, "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae1L, "jetbrains.mps.samples.lambdaCalculus.structure.StringType"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x5c3aaf5269584eecL, "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"));
 }

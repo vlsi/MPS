@@ -4,12 +4,12 @@ package jetbrains.mps.execution.settings.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myPersistentConfigurationType__BehaviorDescriptor = new PersistentConfigurationType__BehaviorDescriptor();
@@ -30,76 +30,114 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySettingsEditor__BehaviorDescriptor = new SettingsEditor__BehaviorDescriptor();
   private final BHDescriptor myDeprecatedAnnotation__BehaviorDescriptor = new DeprecatedAnnotation__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[17];
-    myConceptBehaviorIds[0] = 0xd244b712f91001cL;
-    myConceptBehaviorIds[1] = 0xd244b712f910020L;
-    myConceptBehaviorIds[2] = 0xd244b712f910101L;
-    myConceptBehaviorIds[3] = 0xd244b712f910103L;
-    myConceptBehaviorIds[4] = 0xd244b712f910106L;
-    myConceptBehaviorIds[5] = 0xd244b712f91010bL;
-    myConceptBehaviorIds[6] = 0xd244b712f91010eL;
-    myConceptBehaviorIds[7] = 0xd244b712f910113L;
-    myConceptBehaviorIds[8] = 0xd244b712f910119L;
-    myConceptBehaviorIds[9] = 0xd244b712f910125L;
-    myConceptBehaviorIds[10] = 0xd244b712f910129L;
-    myConceptBehaviorIds[11] = 0xd244b712f91012dL;
-    myConceptBehaviorIds[12] = 0xd244b712f910132L;
-    myConceptBehaviorIds[13] = 0xd244b712f910133L;
-    myConceptBehaviorIds[14] = 0xd244b712f910136L;
-    myConceptBehaviorIds[15] = 0xd244b712f91013dL;
-    myConceptBehaviorIds[16] = 0x7f8de21e263f5819L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myPersistentConfigurationType__BehaviorDescriptor;
-      case 1:
-        return myPersistentConfiguration__BehaviorDescriptor;
-      case 2:
-        return myTemplateParameterReference__BehaviorDescriptor;
-      case 3:
-        return myReportConfigurationErrorStatement__BehaviorDescriptor;
-      case 4:
-        return myCreateEditor_Function__BehaviorDescriptor;
-      case 5:
-        return myDispose_Function__BehaviorDescriptor;
-      case 6:
-        return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
-      case 7:
-        return myPersistentConfigurationTemplate__BehaviorDescriptor;
-      case 8:
-        return myPersistentPropertyDeclaration__BehaviorDescriptor;
-      case 9:
-        return myCheckProperties_Function__BehaviorDescriptor;
-      case 10:
-        return myApplyTo_Function__BehaviorDescriptor;
-      case 11:
-        return myEditorOperationDeclaration__BehaviorDescriptor;
-      case 12:
-        return myEditorPropertyDeclaration__BehaviorDescriptor;
-      case 13:
-        return myEditorPropertyReference__BehaviorDescriptor;
-      case 14:
-        return myResetFrom_Function__BehaviorDescriptor;
-      case 15:
-        return mySettingsEditor__BehaviorDescriptor;
-      case 16:
-        return myDeprecatedAnnotation__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0u.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myApplyTo_Function__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myCheckProperties_Function__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myCreateEditor_Function__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myDeprecatedAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myDispose_Function__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myEditorOperationDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myEditorPropertyDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myEditorPropertyReference__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myPersistentConfiguration__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myPersistentConfigurationTemplate__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myPersistentConfigurationType__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myPersistentPropertyDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myReportConfigurationErrorStatement__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myResetFrom_Function__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return mySettingsEditor__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myTemplateParameterReference__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910129L, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910125L, "jetbrains.mps.execution.settings.structure.CheckProperties_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910106L, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010bL, "jetbrains.mps.execution.settings.structure.Dispose_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012dL, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910132L, "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L, "jetbrains.mps.execution.settings.structure.EditorPropertyReference"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910136L, "jetbrains.mps.execution.settings.structure.ResetFrom_Function"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L, "jetbrains.mps.execution.settings.structure.TemplateParameterReference"));
 }

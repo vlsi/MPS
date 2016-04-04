@@ -11,11 +11,11 @@ import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("compact", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact"), new ConceptEditorHintImpl("inspected", "", true, "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.inspected"));
@@ -23,29 +23,50 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1748L, "jetbrains.mps.samples.notesOrganizer.structure.Category"))) {
-        return Collections.<ConceptEditor>singletonList(new Category_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, "jetbrains.mps.samples.notesOrganizer.structure.CategoryReference"))) {
-        return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"))) {
-        return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, "jetbrains.mps.samples.notesOrganizer.structure.Notes"))) {
-        return Collections.<ConceptEditor>singletonList(new Notes_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"))) {
-        return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d174bL, "jetbrains.mps.samples.notesOrganizer.structure.Priority"))) {
-        return Collections.<ConceptEditor>singletonList(new Priority_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df360L, "jetbrains.mps.samples.notesOrganizer.structure.Status"))) {
-        return Collections.<ConceptEditor>singletonList(new Status_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df404L, "jetbrains.mps.samples.notesOrganizer.structure.TextNotePart"))) {
-        return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
+      Integer preIndex = indices_xbvbvu_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Category_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CategoryReference_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Arrays.asList(new ConceptEditor[]{new Note_Editor(), new Note_compact_Editor(), new Note_inspected_Editor()});
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Notes_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NotesConfiguration_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Priority_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Status_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TextNotePart_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -55,15 +76,24 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"))) {
-        if ("jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new NoteMetaInformation());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x36042ea354974c99L, "jetbrains.mps.samples.notesOrganizer.structure.NoteMetaInfo"))) {
-        if ("jetbrains.mps.samples.notesOrganizer.editor.MetaInfo".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new MetaInfo());
-        }
+      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            if ("jetbrains.mps.samples.notesOrganizer.editor.NoteMetaInformation".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new NoteMetaInformation());
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            if ("jetbrains.mps.samples.notesOrganizer.editor.MetaInfo".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new MetaInfo());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -74,4 +104,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1748L, "jetbrains.mps.samples.notesOrganizer.structure.Category"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, "jetbrains.mps.samples.notesOrganizer.structure.CategoryReference"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, "jetbrains.mps.samples.notesOrganizer.structure.Notes"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d174bL, "jetbrains.mps.samples.notesOrganizer.structure.Priority"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df360L, "jetbrains.mps.samples.notesOrganizer.structure.Status"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df404L, "jetbrains.mps.samples.notesOrganizer.structure.TextNotePart"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x36042ea354974c99L, "jetbrains.mps.samples.notesOrganizer.structure.NoteMetaInfo"));
 }

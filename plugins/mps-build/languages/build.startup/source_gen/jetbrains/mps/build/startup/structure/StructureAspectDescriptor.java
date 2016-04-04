@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,23 +30,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
-      case 0:
-        return myConceptClassPathItem;
-      case 1:
-        return myConceptMpsStartupScript;
-      case 2:
-        return myConceptSimpleVmOptions;
-      case 3:
-        return myConceptTextFile;
-      case 4:
-        return myConceptTextLine;
-      case 5:
-        return myConceptVmOptions;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptClassPathItem;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptMpsStartupScript;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptSimpleVmOptions;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptTextFile;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptTextLine;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptVmOptions;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.TextFile", "jetbrains.mps.build.startup.structure.TextLine", "jetbrains.mps.build.startup.structure.VmOptions"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, "jetbrains.mps.build.startup.structure.ClassPathItem"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, "jetbrains.mps.build.startup.structure.MpsStartupScript"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, "jetbrains.mps.build.startup.structure.TextLine"), MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL, "jetbrains.mps.build.startup.structure.VmOptions"));
 }

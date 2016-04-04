@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -22,15 +26,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
-      case 0:
-        return myConceptWorkflow;
-      case 1:
-        return myConceptWorkflowContainer;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptWorkflow;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptWorkflowContainer;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow", "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2e4f6L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow"), MetaAdapterFactory.getConcept(0x8d18a45bac7e4d84L, 0xa53975f1d720b09bL, 0x3301f82dc7d2cf63L, "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"));
 }

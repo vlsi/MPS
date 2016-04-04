@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -27,25 +31,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptListValue;
-      case 1:
-        return myConceptPatternTest;
-      case 2:
-        return myConceptPropertyValue;
-      case 3:
-        return myConceptTestListReference;
-      case 4:
-        return myConceptTestPropertyVariableReference;
-      case 5:
-        return myConceptTestVariableReference;
-      case 6:
-        return myConceptVariableValue;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptListValue;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptPatternTest;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptPropertyValue;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptTestListReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptTestPropertyVariableReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptTestVariableReference;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptVariableValue;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.lang.pattern.testLang.structure.ListValue", "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue", "jetbrains.mps.lang.pattern.testLang.structure.TestListReference", "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference", "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614aL, "jetbrains.mps.lang.pattern.testLang.structure.ListValue"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, "jetbrains.mps.lang.pattern.testLang.structure.PatternTest"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d042b6L, "jetbrains.mps.lang.pattern.testLang.structure.PropertyValue"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614bL, "jetbrains.mps.lang.pattern.testLang.structure.TestListReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8cfebb8L, "jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb11L, "jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference"), MetaAdapterFactory.getConcept(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb0eL, "jetbrains.mps.lang.pattern.testLang.structure.VariableValue"));
 }

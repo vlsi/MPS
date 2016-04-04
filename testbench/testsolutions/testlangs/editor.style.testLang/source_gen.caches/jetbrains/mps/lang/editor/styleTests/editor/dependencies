@@ -2,10 +2,13 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.styleTests.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.InheritableStyleAttribute" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.SimpleStyleAttribute" />
     <classNode dependClassName="jetbrains.mps.lang.editor.styleTests.editor.HugePriorityStyle_Editor" />
@@ -20,8 +23,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.styleTests.editor.TestInheritedAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.styleTests.editor.TestSimpleAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.styleTests.editor.UnapplyPriorityStyleCopy_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />

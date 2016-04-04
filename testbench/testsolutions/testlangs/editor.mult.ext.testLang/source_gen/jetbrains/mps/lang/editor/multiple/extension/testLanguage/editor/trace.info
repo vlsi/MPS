@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="16,0,44,0" name="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="16,0,68,0" name="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:a554b43d-e081-43aa-820b-45da05206260(jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor)/1217012833662768584">

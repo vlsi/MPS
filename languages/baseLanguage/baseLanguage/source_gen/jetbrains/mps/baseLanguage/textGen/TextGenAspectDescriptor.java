@@ -6,448 +6,733 @@ import jetbrains.mps.text.rt.TextGenAspectBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.text.impl.BufferLayoutBuilder;
 import jetbrains.mps.text.impl.RegularTextUnit2;
+import java.util.Map;
+import java.util.HashMap;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
-  private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[140];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0xf8c108ca68L;
-    myId2Index[2] = 0xf8c37a7f6eL;
-    myId2Index[3] = 0xf8c77f1e94L;
-    myId2Index[4] = 0xf8c77f1e98L;
-    myId2Index[5] = 0xf8cc56b200L;
-    myId2Index[6] = 0xf8cc56b201L;
-    myId2Index[7] = 0xf8cc56b204L;
-    myId2Index[8] = 0xf8cc56b210L;
-    myId2Index[9] = 0xf8cc56b213L;
-    myId2Index[10] = 0xf8cc56b215L;
-    myId2Index[11] = 0xf8cc56b217L;
-    myId2Index[12] = 0xf8cc56b21dL;
-    myId2Index[13] = 0xf8cc59b314L;
-    myId2Index[14] = 0xf8cc67c7efL;
-    myId2Index[15] = 0xf8cc67c7f0L;
-    myId2Index[16] = 0xf8cc67c7f3L;
-    myId2Index[17] = 0xf8cc67c7f5L;
-    myId2Index[18] = 0xf8cc67c7fbL;
-    myId2Index[19] = 0xf8cc67c7feL;
-    myId2Index[20] = 0xf8cc6bf96dL;
-    myId2Index[21] = 0xf93c84351fL;
-    myId2Index[22] = 0xf93d4da00cL;
-    myId2Index[23] = 0xf93d512e1eL;
-    myId2Index[24] = 0xf93d565d10L;
-    myId2Index[25] = 0xf940c80846L;
-    myId2Index[26] = 0xf940cc380dL;
-    myId2Index[27] = 0xf940cd6167L;
-    myId2Index[28] = 0xf940d22479L;
-    myId2Index[29] = 0xf940d327fdL;
-    myId2Index[30] = 0xf940d451a6L;
-    myId2Index[31] = 0xf940d4f826L;
-    myId2Index[32] = 0xf940d5b617L;
-    myId2Index[33] = 0xf940d6513eL;
-    myId2Index[34] = 0xf940d819f7L;
-    myId2Index[35] = 0xf940dabe4aL;
-    myId2Index[36] = 0xf9d78b55aaL;
-    myId2Index[37] = 0xf9e20e303fL;
-    myId2Index[38] = 0xfaa4bf0f2fL;
-    myId2Index[39] = 0xfb4ed32b7fL;
-    myId2Index[40] = 0xfb7c3070eeL;
-    myId2Index[41] = 0xfb8255689fL;
-    myId2Index[42] = 0xfbbebabf09L;
-    myId2Index[43] = 0xfbbebabf0aL;
-    myId2Index[44] = 0xfbbff03700L;
-    myId2Index[45] = 0xfbced38fcfL;
-    myId2Index[46] = 0xfbced3b82aL;
-    myId2Index[47] = 0xfbcf6bd10dL;
-    myId2Index[48] = 0xfbe39a867fL;
-    myId2Index[49] = 0xfbf3043726L;
-    myId2Index[50] = 0xfc092b6b77L;
-    myId2Index[51] = 0xfc367070a5L;
-    myId2Index[52] = 0xfc367388b3L;
-    myId2Index[53] = 0xfc37588bc8L;
-    myId2Index[54] = 0xfe476b758fL;
-    myId2Index[55] = 0xff2bbc13daL;
-    myId2Index[56] = 0x101c66e2c0bL;
-    myId2Index[57] = 0x101de48bf9eL;
-    myId2Index[58] = 0x101edd46144L;
-    myId2Index[59] = 0x1024639ed74L;
-    myId2Index[60] = 0x102467229d8L;
-    myId2Index[61] = 0x102cb19a434L;
-    myId2Index[62] = 0x103fb730c14L;
-    myId2Index[63] = 0x10a6933ce33L;
-    myId2Index[64] = 0x10a698082feL;
-    myId2Index[65] = 0x10ab8473cc5L;
-    myId2Index[66] = 0x10af957d96eL;
-    myId2Index[67] = 0x10c8d0fac2cL;
-    myId2Index[68] = 0x10c8d509af4L;
-    myId2Index[69] = 0x10c8d53a915L;
-    myId2Index[70] = 0x10cacebf556L;
-    myId2Index[71] = 0x10cd01b77ddL;
-    myId2Index[72] = 0x10e50ecba3dL;
-    myId2Index[73] = 0x10ef01239c9L;
-    myId2Index[74] = 0x10ef02a8c6aL;
-    myId2Index[75] = 0x10f383e6771L;
-    myId2Index[76] = 0x10f39a56e2fL;
-    myId2Index[77] = 0x10f3ee082d8L;
-    myId2Index[78] = 0x1101757c8faL;
-    myId2Index[79] = 0x1106df1d8d8L;
-    myId2Index[80] = 0x1107e0cb103L;
-    myId2Index[81] = 0x110dae5f4a3L;
-    myId2Index[82] = 0x110dae9d53dL;
-    myId2Index[83] = 0x110daeaa84aL;
-    myId2Index[84] = 0x11126b40c25L;
-    myId2Index[85] = 0x1121e2102fdL;
-    myId2Index[86] = 0x11232674988L;
-    myId2Index[87] = 0x112353ac52dL;
-    myId2Index[88] = 0x1127b878882L;
-    myId2Index[89] = 0x1129761e073L;
-    myId2Index[90] = 0x1133e3b449aL;
-    myId2Index[91] = 0x113e4952f12L;
-    myId2Index[92] = 0x113e4b2dfdaL;
-    myId2Index[93] = 0x114a69dc80cL;
-    myId2Index[94] = 0x114a6a17a27L;
-    myId2Index[95] = 0x114a6b4ccabL;
-    myId2Index[96] = 0x114a71a2770L;
-    myId2Index[97] = 0x114a71b1af4L;
-    myId2Index[98] = 0x114a770dc0dL;
-    myId2Index[99] = 0x116b46a08c4L;
-    myId2Index[100] = 0x116b483d77aL;
-    myId2Index[101] = 0x1177d44b21bL;
-    myId2Index[102] = 0x118154a6332L;
-    myId2Index[103] = 0x118ceceb41aL;
-    myId2Index[104] = 0x118f0b909f7L;
-    myId2Index[105] = 0x1197781411dL;
-    myId2Index[106] = 0x11a59b0fbceL;
-    myId2Index[107] = 0x11adecdb4f0L;
-    myId2Index[108] = 0x11aded05fe6L;
-    myId2Index[109] = 0x11b0d00332cL;
-    myId2Index[110] = 0x11c08f42e7bL;
-    myId2Index[111] = 0x11c7538039dL;
-    myId2Index[112] = 0x11d19eede01L;
-    myId2Index[113] = 0x11d19ef4652L;
-    myId2Index[114] = 0x11d19ef69abL;
-    myId2Index[115] = 0x11d1e4bce56L;
-    myId2Index[116] = 0x11d1e5db156L;
-    myId2Index[117] = 0x11d47da71ecL;
-    myId2Index[118] = 0x11d6cde9fb9L;
-    myId2Index[119] = 0x11d6ce051dfL;
-    myId2Index[120] = 0x11d6d026f5fL;
-    myId2Index[121] = 0x11ef4675fccL;
-    myId2Index[122] = 0x120a46df580L;
-    myId2Index[123] = 0x120a472f0e8L;
-    myId2Index[124] = 0x470fa5a7b03ac59L;
-    myId2Index[125] = 0x115f7830a32a65e7L;
-    myId2Index[126] = 0x1458378889e6d166L;
-    myId2Index[127] = 0x19659b074928781eL;
-    myId2Index[128] = 0x23cf7b405b3b9761L;
-    myId2Index[129] = 0x2724644c0ac833a5L;
-    myId2Index[130] = 0x37f722a7ce38076aL;
-    myId2Index[131] = 0x3b418722717710b4L;
-    myId2Index[132] = 0x3f57ea36bd70a4e1L;
-    myId2Index[133] = 0x483ee9d7f09580d6L;
-    myId2Index[134] = 0x494547eeedc219b9L;
-    myId2Index[135] = 0x57d533a7af15ed3aL;
-    myId2Index[136] = 0x57d533a7af15ed3dL;
-    myId2Index[137] = 0x57d533a7af16ff67L;
-    myId2Index[138] = 0x6c6b6a1e379f9404L;
-    myId2Index[139] = 0x6fea7de6103549b1L;
   }
+
   @Nullable
   @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId id) {
-    final int index = Arrays.binarySearch(myId2Index, id.getIdValue());
-    switch (index) {
-      case 0:
-        return new ClassConcept_TextGen();
-      case 1:
-        return new FieldDeclaration_TextGen();
-      case 2:
-        return new VariableDeclaration_TextGen();
-      case 3:
-        return new ParameterDeclaration_TextGen();
-      case 4:
-        return new VariableReference_TextGen();
-      case 5:
-        return new StatementList_TextGen();
-      case 6:
-        return new BooleanConstant_TextGen();
-      case 7:
-        return new ConstructorDeclaration_TextGen();
-      case 8:
-        return new EqualsExpression_TextGen();
-      case 9:
-        return new ExpressionStatement_TextGen();
-      case 10:
-        return new Statement_TextGen();
-      case 11:
-        return new IfStatement_TextGen();
-      case 12:
-        return new InstanceMethodDeclaration_TextGen();
-      case 13:
-        return new IntegerConstant_TextGen();
-      case 14:
-        return new LocalVariableDeclaration_TextGen();
-      case 15:
-        return new LocalVariableDeclarationStatement_TextGen();
-      case 16:
-        return new LongType_TextGen();
-      case 17:
-        return new MinusExpression_TextGen();
-      case 18:
-        return new PlusExpression_TextGen();
-      case 19:
-        return new ReturnStatement_TextGen();
-      case 20:
-        return new VoidType_TextGen();
-      case 21:
-        return new StaticFieldDeclaration_TextGen();
-      case 22:
-        return new ThisExpression_TextGen();
-      case 23:
-        return new SuperConstructorInvocation_TextGen();
-      case 24:
-        return new StringLiteral_TextGen();
-      case 25:
-        return new StaticFieldReference_TextGen();
-      case 26:
-        return new ShortType_TextGen();
-      case 27:
-        return new NullLiteral_TextGen();
-      case 28:
-        return new IntegerType_TextGen();
-      case 29:
-        return new FloatType_TextGen();
-      case 30:
-        return new DoubleType_TextGen();
-      case 31:
-        return new CharType_TextGen();
-      case 32:
-        return new ByteType_TextGen();
-      case 33:
-        return new BooleanType_TextGen();
-      case 34:
-        return new ArrayType_TextGen();
-      case 35:
-        return new CastExpression_TextGen();
-      case 36:
-        return new SuperMethodCall_TextGen();
-      case 37:
-        return new NotEqualsExpression_TextGen();
-      case 38:
-        return new WhileStatement_TextGen();
-      case 39:
-        return new ParenthesizedExpression_TextGen();
-      case 40:
-        return new AndExpression_TextGen();
-      case 41:
-        return new OrExpression_TextGen();
-      case 42:
-        return new StaticMethodCall_TextGen();
-      case 43:
-        return new StaticMethodDeclaration_TextGen();
-      case 44:
-        return new InstanceOfExpression_TextGen();
-      case 45:
-        return new GreaterThanExpression_TextGen();
-      case 46:
-        return new LessThanExpression_TextGen();
-      case 47:
-        return new NotExpression_TextGen();
-      case 48:
-        return new BreakStatement_TextGen();
-      case 49:
-        return new ContinueStatement_TextGen();
-      case 50:
-        return new BlockStatement_TextGen();
-      case 51:
-        return new EnumClass_TextGen();
-      case 52:
-        return new EnumConstantDeclaration_TextGen();
-      case 53:
-        return new EnumConstantReference_TextGen();
-      case 54:
-        return new MulExpression_TextGen();
-      case 55:
-        return new DivExpression_TextGen();
-      case 56:
-        return new ConceptFunctionParameter_TextGen();
-      case 57:
-        return new ClassifierType_TextGen();
-      case 58:
-        return new Interface_TextGen();
-      case 59:
-        return new TypeVariableDeclaration_TextGen();
-      case 60:
-        return new TypeVariableReference_TextGen();
-      case 61:
-        return new FloatingPointConstant_TextGen();
-      case 62:
-        return new ClassifierClassExpression_TextGen();
-      case 63:
-        return new ForeachStatement_TextGen();
-      case 64:
-        return new ForStatement_TextGen();
-      case 65:
-        return new GenericNewExpression_TextGen();
-      case 66:
-        return new Visibility_TextGen();
-      case 67:
-        return new GreaterThanOrEqualsExpression_TextGen();
-      case 68:
-        return new RemExpression_TextGen();
-      case 69:
-        return new LessThanOrEqualsExpression_TextGen();
-      case 70:
-        return new TryStatement_TextGen();
-      case 71:
-        return new ArrayCreatorWithInitializer_TextGen();
-      case 72:
-        return new AssertStatement_TextGen();
-      case 73:
-        return new TernaryOperatorExpression_TextGen();
-      case 74:
-        return new SwitchStatement_TextGen();
-      case 75:
-        return new TryCatchStatement_TextGen();
-      case 76:
-        return new CatchClause_TextGen();
-      case 77:
-        return new ThrowStatement_TextGen();
-      case 78:
-        return new RemarkStatement_TextGen();
-      case 79:
-        return new SynchronizedStatement_TextGen();
-      case 80:
-        return new AnonymousClass_TextGen();
-      case 81:
-        return new WildCardType_TextGen();
-      case 82:
-        return new LowerBoundType_TextGen();
-      case 83:
-        return new UpperBoundType_TextGen();
-      case 84:
-        return new ArrayAccessExpression_TextGen();
-      case 85:
-        return new CommentedStatementsBlock_TextGen();
-      case 86:
-        return new DoWhileStatement_TextGen();
-      case 87:
-        return new VarType_TextGen();
-      case 88:
-        return new ThisConstructorInvocation_TextGen();
-      case 89:
-        return new HexIntegerLiteral_TextGen();
-      case 90:
-        return new AnonymousClassCreator_TextGen();
-      case 91:
-        return new ArrayCreator_TextGen();
-      case 92:
-        return new DimensionExpression_TextGen();
-      case 93:
-        return new Annotation_TextGen();
-      case 94:
-        return new AnnotationMethodDeclaration_TextGen();
-      case 95:
-        return new AnnotationInstance_TextGen();
-      case 96:
-        return new AnnotationInstanceExpression_TextGen();
-      case 97:
-        return new AnnotationInstanceValue_TextGen();
-      case 98:
-        return new ArrayLiteral_TextGen();
-      case 99:
-        return new DotExpression_TextGen();
-      case 100:
-        return new FieldReferenceOperation_TextGen();
-      case 101:
-        return new CharConstant_TextGen();
-      case 102:
-        return new InstanceMethodCallOperation_TextGen();
-      case 103:
-        return new ElsifClause_TextGen();
-      case 104:
-        return new InstanceInitializer_TextGen();
-      case 105:
-        return new ArrayLengthOperation_TextGen();
-      case 106:
-        return new ClassCreator_TextGen();
-      case 107:
-        return new PostfixIncrementExpression_TextGen();
-      case 108:
-        return new PostfixDecrementExpression_TextGen();
-      case 109:
-        return new BaseAssignmentExpression_TextGen();
-      case 110:
-        return new VariableArityType_TextGen();
-      case 111:
-        return new StaticInitializer_TextGen();
-      case 112:
-        return new BitwiseAndExpression_TextGen();
-      case 113:
-        return new BitwiseOrExpression_TextGen();
-      case 114:
-        return new BitwiseXorExpression_TextGen();
-      case 115:
-        return new EnumValuesExpression_TextGen();
-      case 116:
-        return new EnumValueOfExpression_TextGen();
-      case 117:
-        return new StringType_TextGen();
-      case 118:
-        return new ShiftLeftExpression_TextGen();
-      case 119:
-        return new ShiftRightExpression_TextGen();
-      case 120:
-        return new BitwiseNotExpression_TextGen();
-      case 121:
-        return new CommentedStatement_TextGen();
-      case 122:
-        return new PrefixIncrementExpression_TextGen();
-      case 123:
-        return new PrefixDecrementExpression_TextGen();
-      case 124:
-        return new ShiftRightUnsignedExpression_TextGen();
-      case 125:
-        return new ArrayClassExpression_TextGen();
-      case 126:
-        return new PlaceholderMember_TextGen();
-      case 127:
-        return new AdditionalForLoopVariable_TextGen();
-      case 128:
-        return new ImplicitAnnotationInstanceValue_TextGen();
-      case 129:
-        return new DefaultClassCreator_TextGen();
-      case 130:
-        return new QualifiedSuperMethodCall_TextGen();
-      case 131:
-        return new LongLiteral_TextGen();
-      case 132:
-        return new PrimitiveClassExpression_TextGen();
-      case 133:
-        return new ArrayCloneOperation_TextGen();
-      case 134:
-        return new FloatingPointFloatConstant_TextGen();
-      case 135:
-        return new SingleLineComment_TextGen();
-      case 136:
-        return new TextCommentPart_TextGen();
-      case 137:
-        return new StatementCommentPart_TextGen();
-      case 138:
-        return new LocalMethodCall_TextGen();
-      case 139:
-        return new UnaryMinus_TextGen();
-      default:
-        return null;
+  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_t8hmqt_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return new AdditionalForLoopVariable_TextGen();
+          }
+          break;
+        case 1:
+          if (true) {
+            return new AndExpression_TextGen();
+          }
+          break;
+        case 2:
+          if (true) {
+            return new Annotation_TextGen();
+          }
+          break;
+        case 3:
+          if (true) {
+            return new AnnotationInstance_TextGen();
+          }
+          break;
+        case 4:
+          if (true) {
+            return new AnnotationInstanceExpression_TextGen();
+          }
+          break;
+        case 5:
+          if (true) {
+            return new AnnotationInstanceValue_TextGen();
+          }
+          break;
+        case 6:
+          if (true) {
+            return new AnnotationMethodDeclaration_TextGen();
+          }
+          break;
+        case 7:
+          if (true) {
+            return new AnonymousClass_TextGen();
+          }
+          break;
+        case 8:
+          if (true) {
+            return new AnonymousClassCreator_TextGen();
+          }
+          break;
+        case 9:
+          if (true) {
+            return new ArrayAccessExpression_TextGen();
+          }
+          break;
+        case 10:
+          if (true) {
+            return new ArrayClassExpression_TextGen();
+          }
+          break;
+        case 11:
+          if (true) {
+            return new ArrayCloneOperation_TextGen();
+          }
+          break;
+        case 12:
+          if (true) {
+            return new ArrayCreator_TextGen();
+          }
+          break;
+        case 13:
+          if (true) {
+            return new ArrayCreatorWithInitializer_TextGen();
+          }
+          break;
+        case 14:
+          if (true) {
+            return new ArrayLengthOperation_TextGen();
+          }
+          break;
+        case 15:
+          if (true) {
+            return new ArrayLiteral_TextGen();
+          }
+          break;
+        case 16:
+          if (true) {
+            return new ArrayType_TextGen();
+          }
+          break;
+        case 17:
+          if (true) {
+            return new AssertStatement_TextGen();
+          }
+          break;
+        case 18:
+          if (true) {
+            return new BaseAssignmentExpression_TextGen();
+          }
+          break;
+        case 19:
+          if (true) {
+            return new BitwiseAndExpression_TextGen();
+          }
+          break;
+        case 20:
+          if (true) {
+            return new BitwiseNotExpression_TextGen();
+          }
+          break;
+        case 21:
+          if (true) {
+            return new BitwiseOrExpression_TextGen();
+          }
+          break;
+        case 22:
+          if (true) {
+            return new BitwiseXorExpression_TextGen();
+          }
+          break;
+        case 23:
+          if (true) {
+            return new BlockStatement_TextGen();
+          }
+          break;
+        case 24:
+          if (true) {
+            return new BooleanConstant_TextGen();
+          }
+          break;
+        case 25:
+          if (true) {
+            return new BooleanType_TextGen();
+          }
+          break;
+        case 26:
+          if (true) {
+            return new BreakStatement_TextGen();
+          }
+          break;
+        case 27:
+          if (true) {
+            return new ByteType_TextGen();
+          }
+          break;
+        case 28:
+          if (true) {
+            return new CastExpression_TextGen();
+          }
+          break;
+        case 29:
+          if (true) {
+            return new CatchClause_TextGen();
+          }
+          break;
+        case 30:
+          if (true) {
+            return new CharConstant_TextGen();
+          }
+          break;
+        case 31:
+          if (true) {
+            return new CharType_TextGen();
+          }
+          break;
+        case 32:
+          if (true) {
+            return new ClassConcept_TextGen();
+          }
+          break;
+        case 33:
+          if (true) {
+            return new ClassCreator_TextGen();
+          }
+          break;
+        case 34:
+          if (true) {
+            return new ClassifierClassExpression_TextGen();
+          }
+          break;
+        case 35:
+          if (true) {
+            return new ClassifierType_TextGen();
+          }
+          break;
+        case 36:
+          if (true) {
+            return new CommentedStatement_TextGen();
+          }
+          break;
+        case 37:
+          if (true) {
+            return new CommentedStatementsBlock_TextGen();
+          }
+          break;
+        case 38:
+          if (true) {
+            return new ConceptFunctionParameter_TextGen();
+          }
+          break;
+        case 39:
+          if (true) {
+            return new ConstructorDeclaration_TextGen();
+          }
+          break;
+        case 40:
+          if (true) {
+            return new ContinueStatement_TextGen();
+          }
+          break;
+        case 41:
+          if (true) {
+            return new DefaultClassCreator_TextGen();
+          }
+          break;
+        case 42:
+          if (true) {
+            return new DimensionExpression_TextGen();
+          }
+          break;
+        case 43:
+          if (true) {
+            return new DivExpression_TextGen();
+          }
+          break;
+        case 44:
+          if (true) {
+            return new DoWhileStatement_TextGen();
+          }
+          break;
+        case 45:
+          if (true) {
+            return new DotExpression_TextGen();
+          }
+          break;
+        case 46:
+          if (true) {
+            return new DoubleType_TextGen();
+          }
+          break;
+        case 47:
+          if (true) {
+            return new ElsifClause_TextGen();
+          }
+          break;
+        case 48:
+          if (true) {
+            return new EnumClass_TextGen();
+          }
+          break;
+        case 49:
+          if (true) {
+            return new EnumConstantDeclaration_TextGen();
+          }
+          break;
+        case 50:
+          if (true) {
+            return new EnumConstantReference_TextGen();
+          }
+          break;
+        case 51:
+          if (true) {
+            return new EnumValueOfExpression_TextGen();
+          }
+          break;
+        case 52:
+          if (true) {
+            return new EnumValuesExpression_TextGen();
+          }
+          break;
+        case 53:
+          if (true) {
+            return new EqualsExpression_TextGen();
+          }
+          break;
+        case 54:
+          if (true) {
+            return new ExpressionStatement_TextGen();
+          }
+          break;
+        case 55:
+          if (true) {
+            return new FieldDeclaration_TextGen();
+          }
+          break;
+        case 56:
+          if (true) {
+            return new FieldReferenceOperation_TextGen();
+          }
+          break;
+        case 57:
+          if (true) {
+            return new FloatType_TextGen();
+          }
+          break;
+        case 58:
+          if (true) {
+            return new FloatingPointConstant_TextGen();
+          }
+          break;
+        case 59:
+          if (true) {
+            return new FloatingPointFloatConstant_TextGen();
+          }
+          break;
+        case 60:
+          if (true) {
+            return new ForStatement_TextGen();
+          }
+          break;
+        case 61:
+          if (true) {
+            return new ForeachStatement_TextGen();
+          }
+          break;
+        case 62:
+          if (true) {
+            return new GenericNewExpression_TextGen();
+          }
+          break;
+        case 63:
+          if (true) {
+            return new GreaterThanExpression_TextGen();
+          }
+          break;
+        case 64:
+          if (true) {
+            return new GreaterThanOrEqualsExpression_TextGen();
+          }
+          break;
+        case 65:
+          if (true) {
+            return new HexIntegerLiteral_TextGen();
+          }
+          break;
+        case 66:
+          if (true) {
+            return new IfStatement_TextGen();
+          }
+          break;
+        case 67:
+          if (true) {
+            return new ImplicitAnnotationInstanceValue_TextGen();
+          }
+          break;
+        case 68:
+          if (true) {
+            return new InstanceInitializer_TextGen();
+          }
+          break;
+        case 69:
+          if (true) {
+            return new InstanceMethodCallOperation_TextGen();
+          }
+          break;
+        case 70:
+          if (true) {
+            return new InstanceMethodDeclaration_TextGen();
+          }
+          break;
+        case 71:
+          if (true) {
+            return new InstanceOfExpression_TextGen();
+          }
+          break;
+        case 72:
+          if (true) {
+            return new IntegerConstant_TextGen();
+          }
+          break;
+        case 73:
+          if (true) {
+            return new IntegerType_TextGen();
+          }
+          break;
+        case 74:
+          if (true) {
+            return new Interface_TextGen();
+          }
+          break;
+        case 75:
+          if (true) {
+            return new LessThanExpression_TextGen();
+          }
+          break;
+        case 76:
+          if (true) {
+            return new LessThanOrEqualsExpression_TextGen();
+          }
+          break;
+        case 77:
+          if (true) {
+            return new LocalMethodCall_TextGen();
+          }
+          break;
+        case 78:
+          if (true) {
+            return new LocalVariableDeclaration_TextGen();
+          }
+          break;
+        case 79:
+          if (true) {
+            return new LocalVariableDeclarationStatement_TextGen();
+          }
+          break;
+        case 80:
+          if (true) {
+            return new LongLiteral_TextGen();
+          }
+          break;
+        case 81:
+          if (true) {
+            return new LongType_TextGen();
+          }
+          break;
+        case 82:
+          if (true) {
+            return new LowerBoundType_TextGen();
+          }
+          break;
+        case 83:
+          if (true) {
+            return new MinusExpression_TextGen();
+          }
+          break;
+        case 84:
+          if (true) {
+            return new MulExpression_TextGen();
+          }
+          break;
+        case 85:
+          if (true) {
+            return new NotEqualsExpression_TextGen();
+          }
+          break;
+        case 86:
+          if (true) {
+            return new NotExpression_TextGen();
+          }
+          break;
+        case 87:
+          if (true) {
+            return new NullLiteral_TextGen();
+          }
+          break;
+        case 88:
+          if (true) {
+            return new OrExpression_TextGen();
+          }
+          break;
+        case 89:
+          if (true) {
+            return new ParameterDeclaration_TextGen();
+          }
+          break;
+        case 90:
+          if (true) {
+            return new ParenthesizedExpression_TextGen();
+          }
+          break;
+        case 91:
+          if (true) {
+            return new PlaceholderMember_TextGen();
+          }
+          break;
+        case 92:
+          if (true) {
+            return new PlusExpression_TextGen();
+          }
+          break;
+        case 93:
+          if (true) {
+            return new PostfixDecrementExpression_TextGen();
+          }
+          break;
+        case 94:
+          if (true) {
+            return new PostfixIncrementExpression_TextGen();
+          }
+          break;
+        case 95:
+          if (true) {
+            return new PrefixDecrementExpression_TextGen();
+          }
+          break;
+        case 96:
+          if (true) {
+            return new PrefixIncrementExpression_TextGen();
+          }
+          break;
+        case 97:
+          if (true) {
+            return new PrimitiveClassExpression_TextGen();
+          }
+          break;
+        case 98:
+          if (true) {
+            return new QualifiedSuperMethodCall_TextGen();
+          }
+          break;
+        case 99:
+          if (true) {
+            return new RemExpression_TextGen();
+          }
+          break;
+        case 100:
+          if (true) {
+            return new RemarkStatement_TextGen();
+          }
+          break;
+        case 101:
+          if (true) {
+            return new ReturnStatement_TextGen();
+          }
+          break;
+        case 102:
+          if (true) {
+            return new ShiftLeftExpression_TextGen();
+          }
+          break;
+        case 103:
+          if (true) {
+            return new ShiftRightExpression_TextGen();
+          }
+          break;
+        case 104:
+          if (true) {
+            return new ShiftRightUnsignedExpression_TextGen();
+          }
+          break;
+        case 105:
+          if (true) {
+            return new ShortType_TextGen();
+          }
+          break;
+        case 106:
+          if (true) {
+            return new SingleLineComment_TextGen();
+          }
+          break;
+        case 107:
+          if (true) {
+            return new Statement_TextGen();
+          }
+          break;
+        case 108:
+          if (true) {
+            return new StatementCommentPart_TextGen();
+          }
+          break;
+        case 109:
+          if (true) {
+            return new StatementList_TextGen();
+          }
+          break;
+        case 110:
+          if (true) {
+            return new StaticFieldDeclaration_TextGen();
+          }
+          break;
+        case 111:
+          if (true) {
+            return new StaticFieldReference_TextGen();
+          }
+          break;
+        case 112:
+          if (true) {
+            return new StaticInitializer_TextGen();
+          }
+          break;
+        case 113:
+          if (true) {
+            return new StaticMethodCall_TextGen();
+          }
+          break;
+        case 114:
+          if (true) {
+            return new StaticMethodDeclaration_TextGen();
+          }
+          break;
+        case 115:
+          if (true) {
+            return new StringLiteral_TextGen();
+          }
+          break;
+        case 116:
+          if (true) {
+            return new StringType_TextGen();
+          }
+          break;
+        case 117:
+          if (true) {
+            return new SuperConstructorInvocation_TextGen();
+          }
+          break;
+        case 118:
+          if (true) {
+            return new SuperMethodCall_TextGen();
+          }
+          break;
+        case 119:
+          if (true) {
+            return new SwitchStatement_TextGen();
+          }
+          break;
+        case 120:
+          if (true) {
+            return new SynchronizedStatement_TextGen();
+          }
+          break;
+        case 121:
+          if (true) {
+            return new TernaryOperatorExpression_TextGen();
+          }
+          break;
+        case 122:
+          if (true) {
+            return new TextCommentPart_TextGen();
+          }
+          break;
+        case 123:
+          if (true) {
+            return new ThisConstructorInvocation_TextGen();
+          }
+          break;
+        case 124:
+          if (true) {
+            return new ThisExpression_TextGen();
+          }
+          break;
+        case 125:
+          if (true) {
+            return new ThrowStatement_TextGen();
+          }
+          break;
+        case 126:
+          if (true) {
+            return new TryCatchStatement_TextGen();
+          }
+          break;
+        case 127:
+          if (true) {
+            return new TryStatement_TextGen();
+          }
+          break;
+        case 128:
+          if (true) {
+            return new TypeVariableDeclaration_TextGen();
+          }
+          break;
+        case 129:
+          if (true) {
+            return new TypeVariableReference_TextGen();
+          }
+          break;
+        case 130:
+          if (true) {
+            return new UnaryMinus_TextGen();
+          }
+          break;
+        case 131:
+          if (true) {
+            return new UpperBoundType_TextGen();
+          }
+          break;
+        case 132:
+          if (true) {
+            return new VarType_TextGen();
+          }
+          break;
+        case 133:
+          if (true) {
+            return new VariableArityType_TextGen();
+          }
+          break;
+        case 134:
+          if (true) {
+            return new VariableDeclaration_TextGen();
+          }
+          break;
+        case 135:
+          if (true) {
+            return new VariableReference_TextGen();
+          }
+          break;
+        case 136:
+          if (true) {
+            return new Visibility_TextGen();
+          }
+          break;
+        case 137:
+          if (true) {
+            return new VoidType_TextGen();
+          }
+          break;
+        case 138:
+          if (true) {
+            return new WhileStatement_TextGen();
+          }
+          break;
+        case 139:
+          if (true) {
+            return new WildCardType_TextGen();
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
 
   @Override
@@ -547,4 +832,13 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     rv.setBufferLayout(lb.create());
     return rv;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_t8hmqt_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x19659b074928781eL, "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71a2770L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11126b40c25L, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x115f7830a32a65e7L, "jetbrains.mps.baseLanguage.structure.ArrayClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4952f12L, "jetbrains.mps.baseLanguage.structure.ArrayCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cd01b77ddL, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19eede01L, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6d026f5fL, "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef4652L, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d19ef69abL, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, "jetbrains.mps.baseLanguage.structure.BreakStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, "jetbrains.mps.baseLanguage.structure.CommentedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x113e4b2dfdaL, "jetbrains.mps.baseLanguage.structure.DimensionExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xff2bbc13daL, "jetbrains.mps.baseLanguage.structure.DivExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, "jetbrains.mps.baseLanguage.structure.DoWhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d451a6L, "jetbrains.mps.baseLanguage.structure.DoubleType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e5db156L, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d1e4bce56L, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d327fdL, "jetbrains.mps.baseLanguage.structure.FloatType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d0fac2cL, "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d53a915L, "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f3L, "jetbrains.mps.baseLanguage.structure.LongType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11aded05fe6L, "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11adecdb4f0L, "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a472f0e8L, "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a46df580L, "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x37f722a7ce38076aL, "jetbrains.mps.baseLanguage.structure.QualifiedSuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c8d509af4L, "jetbrains.mps.baseLanguage.structure.RemExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6cde9fb9L, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d6ce051dfL, "jetbrains.mps.baseLanguage.structure.ShiftRightExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x470fa5a7b03ac59L, "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af16ff67L, "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d47da71ecL, "jetbrains.mps.baseLanguage.structure.StringType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9d78b55aaL, "jetbrains.mps.baseLanguage.structure.SuperMethodCall"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, "jetbrains.mps.baseLanguage.structure.SynchronizedStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f3ee082d8L, "jetbrains.mps.baseLanguage.structure.ThrowStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112353ac52dL, "jetbrains.mps.baseLanguage.structure.VarType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af957d96eL, "jetbrains.mps.baseLanguage.structure.Visibility"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, "jetbrains.mps.baseLanguage.structure.WhileStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
 }

@@ -7,24 +7,35 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L, "jetbrains.mps.samples.readerConfigLanguage.structure.Field"))) {
-        return Collections.<ConceptEditor>singletonList(new Field_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L, "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping"))) {
-        return Collections.<ConceptEditor>singletonList(new Mapping_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L, "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"))) {
-        return Collections.<ConceptEditor>singletonList(new ReaderConfiguration_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Field_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Mapping_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ReaderConfiguration_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -33,4 +44,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L, "jetbrains.mps.samples.readerConfigLanguage.structure.Field"), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L, "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping"), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L, "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"));
 }

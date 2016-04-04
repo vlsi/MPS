@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -45,59 +49,145 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
-      case 0:
-        return myConceptAndSimpleMathExpression;
-      case 1:
-        return myConceptArithmeticSimpleMathExpression;
-      case 2:
-        return myConceptBinarySimpleMathExpression;
-      case 3:
-        return myConceptLogicalSimpleMathExpression;
-      case 4:
-        return myConceptNotSimpleMathExpression;
-      case 5:
-        return myConceptOrSimpleMathExpression;
-      case 6:
-        return myConceptSimpleMathAssignment;
-      case 7:
-        return myConceptSimpleMathBooleanConstant;
-      case 8:
-        return myConceptSimpleMathBooleanType;
-      case 9:
-        return myConceptSimpleMathElementType;
-      case 10:
-        return myConceptSimpleMathExpression;
-      case 11:
-        return myConceptSimpleMathFloatConstant;
-      case 12:
-        return myConceptSimpleMathFloatType;
-      case 13:
-        return myConceptSimpleMathIntegerConstant;
-      case 14:
-        return myConceptSimpleMathIntegerType;
-      case 15:
-        return myConceptSimpleMathLongConstant;
-      case 16:
-        return myConceptSimpleMathLongType;
-      case 17:
-        return myConceptSimpleMathNumberType;
-      case 18:
-        return myConceptSimpleMathType;
-      case 19:
-        return myConceptSimpleMathTypedVarDeclaration;
-      case 20:
-        return myConceptSimpleMathVarDeclaration;
-      case 21:
-        return myConceptSimpleMathVarReference;
-      case 22:
-        return myConceptSimpleMathWrapper;
-      case 23:
-        return myConceptUnarySimpleMathExpression;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0cb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAndSimpleMathExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptArithmeticSimpleMathExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBinarySimpleMathExpression;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptLogicalSimpleMathExpression;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptNotSimpleMathExpression;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptOrSimpleMathExpression;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptSimpleMathAssignment;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptSimpleMathBooleanConstant;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptSimpleMathBooleanType;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptSimpleMathElementType;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptSimpleMathExpression;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptSimpleMathFloatConstant;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptSimpleMathFloatType;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptSimpleMathIntegerConstant;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptSimpleMathIntegerType;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptSimpleMathLongConstant;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptSimpleMathLongType;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptSimpleMathNumberType;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptSimpleMathType;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptSimpleMathTypedVarDeclaration;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptSimpleMathVarDeclaration;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptSimpleMathVarReference;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptSimpleMathWrapper;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptUnarySimpleMathExpression;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.LogicalSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathType", "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper", "jetbrains.mps.samples.Expressions.structure.UnarySimpleMathExpression"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0cb = buildConceptIndices(MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b825cc49L, "jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8289497L, "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, "jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81dcba5L, "jetbrains.mps.samples.Expressions.structure.LogicalSimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81d5484L, "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b825cc4aL, "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0xce8a4f56651064cL, "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b826823eL, "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81f9f68L, "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b835454eL, "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c4c0bL, "jetbrains.mps.samples.Expressions.structure.SimpleMathExpression"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b84b40a4L, "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b84b3e3eL, "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b826940aL, "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b82698e0L, "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b83bf7eaL, "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b837a88aL, "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8354763L, "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81f9f67L, "jetbrains.mps.samples.Expressions.structure.SimpleMathType"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x77a1220187231476L, "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b832ccbfL, "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b832e4e1L, "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b8237002L, "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"), MetaAdapterFactory.getConcept(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81d547bL, "jetbrains.mps.samples.Expressions.structure.UnarySimpleMathExpression"));
 }

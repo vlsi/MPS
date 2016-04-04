@@ -4,42 +4,50 @@ package jetbrains.mps.lang.editor.table.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myCellModel_HierarchycalTable__BehaviorDescriptor = new CellModel_HierarchycalTable__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_TableModel__BehaviorDescriptor = new QueryFunction_TableModel__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[2];
-    myConceptBehaviorIds[0] = 0x1f44bcab4ea21b62L;
-    myConceptBehaviorIds[1] = 0x3e51593e83e97a4dL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myCellModel_HierarchycalTable__BehaviorDescriptor;
-      case 1:
-        return myQueryFunction_TableModel__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myCellModel_HierarchycalTable__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myQueryFunction_TableModel__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL, "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
 }

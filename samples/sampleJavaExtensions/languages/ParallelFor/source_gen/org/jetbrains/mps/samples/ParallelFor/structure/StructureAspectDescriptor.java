@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,21 +30,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptNonThreadSafeClass;
-      case 1:
-        return myConceptParallelFor;
-      case 2:
-        return myConceptParallelLoopVariable;
-      case 3:
-        return myConceptThreadPool;
-      case 4:
-        return myConceptThreadSafe;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptNonThreadSafeClass;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptParallelFor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptParallelLoopVariable;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptThreadPool;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptThreadSafe;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L, "org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770abL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x8c9905a80efd03cL, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool"), MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"));
 }

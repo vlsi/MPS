@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myClassifierDocComment__BehaviorDescriptor = new ClassifierDocComment__BehaviorDescriptor();
@@ -23,55 +23,79 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myCommentLinePart__BehaviorDescriptor = new CommentLinePart__BehaviorDescriptor();
   private final BHDescriptor myInlineTagCommentLinePart__BehaviorDescriptor = new InlineTagCommentLinePart__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[10];
-    myConceptBehaviorIds[0] = 0x1cb65d9fe66a764cL;
-    myConceptBehaviorIds[1] = 0x44ac82392ce5c6b0L;
-    myConceptBehaviorIds[2] = 0x4a3c146b7fae70d3L;
-    myConceptBehaviorIds[3] = 0x4a3c146b7faee13eL;
-    myConceptBehaviorIds[4] = 0x4a3c146b7faeeb34L;
-    myConceptBehaviorIds[5] = 0x5bc4aa08e154b399L;
-    myConceptBehaviorIds[6] = 0x5ed0d79d7dc44bf2L;
-    myConceptBehaviorIds[7] = 0x757ba20a4c87f96cL;
-    myConceptBehaviorIds[8] = 0x7c7f5b2f31990286L;
-    myConceptBehaviorIds[9] = 0x7c7f5b2f31990289L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myClassifierDocComment__BehaviorDescriptor;
-      case 1:
-        return myEmptyBlockDocTag__BehaviorDescriptor;
-      case 2:
-        return myBaseDocComment__BehaviorDescriptor;
-      case 3:
-        return myAuthorBlockDocTag__BehaviorDescriptor;
-      case 4:
-        return myMethodDocComment__BehaviorDescriptor;
-      case 5:
-        return myHTMLElement__BehaviorDescriptor;
-      case 6:
-        return myFieldDocComment__BehaviorDescriptor;
-      case 7:
-        return myCommentLine__BehaviorDescriptor;
-      case 8:
-        return myCommentLinePart__BehaviorDescriptor;
-      case 9:
-        return myInlineTagCommentLinePart__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0n.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAuthorBlockDocTag__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBaseDocComment__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myClassifierDocComment__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myCommentLine__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myCommentLinePart__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myEmptyBlockDocTag__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myFieldDocComment__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myHTMLElement__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myInlineTagCommentLinePart__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myMethodDocComment__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990286L, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x44ac82392ce5c6b0L, "jetbrains.mps.baseLanguage.javadoc.structure.EmptyBlockDocTag"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990289L, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
 }

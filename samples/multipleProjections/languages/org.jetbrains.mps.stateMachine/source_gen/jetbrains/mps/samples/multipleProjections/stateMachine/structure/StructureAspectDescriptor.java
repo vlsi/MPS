@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -27,25 +31,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptAbstractStateMachineElement;
-      case 1:
-        return myConceptEvent;
-      case 2:
-        return myConceptEventReference;
-      case 3:
-        return myConceptState;
-      case 4:
-        return myConceptStateMachine;
-      case 5:
-        return myConceptStateReference;
-      case 6:
-        return myConceptTransition;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractStateMachineElement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptEvent;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptEventReference;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptState;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptStateMachine;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptStateReference;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptTransition;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0x6e3eaf7a54e76eeaL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"));
 }

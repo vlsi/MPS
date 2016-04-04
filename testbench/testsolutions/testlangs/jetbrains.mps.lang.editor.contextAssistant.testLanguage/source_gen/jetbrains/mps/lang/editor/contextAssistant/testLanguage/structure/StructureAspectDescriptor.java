@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,17 +27,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
-      case 0:
-        return myConceptChild;
-      case 1:
-        return myConceptParent;
-      case 2:
-        return myConceptSubconceptOfChild;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptChild;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptParent;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptSubconceptOfChild;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child", "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent", "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.SubconceptOfChild"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Child"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.Parent"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL, "jetbrains.mps.lang.editor.contextAssistant.testLanguage.structure.SubconceptOfChild"));
 }

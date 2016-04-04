@@ -4,12 +4,12 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myConceptDeclaration__BehaviorDescriptor = new ConceptDeclaration__BehaviorDescriptor();
@@ -27,67 +27,99 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myIConceptAspect__BehaviorDescriptor = new IConceptAspect__BehaviorDescriptor();
   private final BHDescriptor myAttributeInfo__BehaviorDescriptor = new AttributeInfo__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[14];
-    myConceptBehaviorIds[0] = 0xf979ba0450L;
-    myConceptBehaviorIds[1] = 0xf979bd086aL;
-    myConceptBehaviorIds[2] = 0xf979bd086bL;
-    myConceptBehaviorIds[3] = 0xfc26875dfaL;
-    myConceptBehaviorIds[4] = 0xfc26875dfbL;
-    myConceptBehaviorIds[5] = 0xfc268c7a37L;
-    myConceptBehaviorIds[6] = 0xfc321331b2L;
-    myConceptBehaviorIds[7] = 0xfc3652de27L;
-    myConceptBehaviorIds[8] = 0x1103553c5ffL;
-    myConceptBehaviorIds[9] = 0x1103556dcafL;
-    myConceptBehaviorIds[10] = 0x11d0a70ae54L;
-    myConceptBehaviorIds[11] = 0x11d2ea63881L;
-    myConceptBehaviorIds[12] = 0x24614259e94f0c84L;
-    myConceptBehaviorIds[13] = 0x29889a701b928195L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myConceptDeclaration__BehaviorDescriptor;
-      case 1:
-        return myLinkDeclaration__BehaviorDescriptor;
-      case 2:
-        return myPropertyDeclaration__BehaviorDescriptor;
-      case 3:
-        return myDataTypeDeclaration__BehaviorDescriptor;
-      case 4:
-        return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
-      case 5:
-        return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
-      case 6:
-        return myEnumerationMemberDeclaration__BehaviorDescriptor;
-      case 7:
-        return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
-      case 8:
-        return myAbstractConceptDeclaration__BehaviorDescriptor;
-      case 9:
-        return myInterfaceConceptDeclaration__BehaviorDescriptor;
-      case 10:
-        return myDeprecatedNodeAnnotation__BehaviorDescriptor;
-      case 11:
-        return myIStructureDeprecatable__BehaviorDescriptor;
-      case 12:
-        return myIConceptAspect__BehaviorDescriptor;
-      case 13:
-        return myAttributeInfo__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0r.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractConceptDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAttributeInfo__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConstrainedDataTypeDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myDataTypeDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myDeprecatedNodeAnnotation__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myEnumerationDataTypeDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myEnumerationMemberDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myIConceptAspect__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myIStructureDeprecatable__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myInterfaceConceptDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myLinkDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myPrimitiveDataTypeDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myPropertyDeclaration__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0r = buildConceptIndices(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, "jetbrains.mps.lang.structure.structure.AttributeInfo"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
 }

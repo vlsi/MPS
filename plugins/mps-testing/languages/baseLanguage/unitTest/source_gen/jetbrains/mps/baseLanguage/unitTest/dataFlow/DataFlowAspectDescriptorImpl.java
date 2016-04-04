@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
 
@@ -19,42 +19,62 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df569442L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertEquals_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfae1d08L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertFalse_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x624233a5cf1ae0f7L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertInNotNull_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e252ba91L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertIsNull_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfcb1f43L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertSame_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e4cee82cL, "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertThrows_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df833483L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AssertTrue_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5064e8fL, "jetbrains.mps.baseLanguage.unitTest.structure.Message"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new Message_DataFlow());
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_vhxjlb_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertEquals_DataFlow());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertFalse_DataFlow());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertInNotNull_DataFlow());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertIsNull_DataFlow());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertSame_DataFlow());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertThrows_DataFlow());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AssertTrue_DataFlow());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new Message_DataFlow());
+          }
+          break;
+        default:
+          // default 
       }
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df569442L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfae1d08L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x624233a5cf1ae0f7L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e252ba91L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfcb1f43L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e4cee82cL, "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df833483L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5064e8fL, "jetbrains.mps.baseLanguage.unitTest.structure.Message"));
 }

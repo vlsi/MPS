@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -37,45 +41,110 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
-      case 0:
-        return myConceptAccountType;
-      case 1:
-        return myConceptAgreementDeclarations;
-      case 2:
-        return myConceptDate;
-      case 3:
-        return myConceptDate_Future;
-      case 4:
-        return myConceptDate_Past;
-      case 5:
-        return myConceptEvent;
-      case 6:
-        return myConceptEventType;
-      case 7:
-        return myConceptEventVariable;
-      case 8:
-        return myConceptEventVariableReference;
-      case 9:
-        return myConceptPlan;
-      case 10:
-        return myConceptPostingRule;
-      case 11:
-        return myConceptPostingRuleTemporalProperty;
-      case 12:
-        return myConceptQuantity;
-      case 13:
-        return myConceptQuantityTemporalProperty;
-      case 14:
-        return myConceptTemporalProperty;
-      case 15:
-        return myConceptValue;
-      case 16:
-        return myConceptValueReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0v.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAccountType;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAgreementDeclarations;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDate;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDate_Future;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDate_Past;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptEvent;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptEventType;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptEventVariable;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptEventVariableReference;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptPlan;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptPostingRule;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptPostingRuleTemporalProperty;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptQuantity;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptQuantityTemporalProperty;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptTemporalProperty;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptValue;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptValueReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L, "jetbrains.mps.samples.agreementLanguage.structure.AccountType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL, "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd8dcdL, "jetbrains.mps.samples.agreementLanguage.structure.Date"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f15b1a76L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Future"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f1595f54L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Past"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L, "jetbrains.mps.samples.agreementLanguage.structure.EventType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, "jetbrains.mps.samples.agreementLanguage.structure.EventVariable"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd085fL, "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, "jetbrains.mps.samples.agreementLanguage.structure.Value"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"));
 }

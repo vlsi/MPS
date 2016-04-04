@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,31 +35,75 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
-      case 0:
-        return myConceptBaseExecuteCommandStatement;
-      case 1:
-        return myConceptBaseExecuteCommandStatementSync;
-      case 2:
-        return myConceptCommandClosureLiteral;
-      case 3:
-        return myConceptExecuteCommandInEDTStatement;
-      case 4:
-        return myConceptExecuteCommandStatement;
-      case 5:
-        return myConceptExecuteEDTCommandStatement;
-      case 6:
-        return myConceptExecuteLightweightCommandStatement;
-      case 7:
-        return myConceptExecuteTransparentCommandStatement;
-      case 8:
-        return myConceptExecuteWriteActionStatement;
-      case 9:
-        return myConceptIExecuteCommandStatementSync;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0o.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptBaseExecuteCommandStatement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBaseExecuteCommandStatementSync;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCommandClosureLiteral;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptExecuteCommandInEDTStatement;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExecuteCommandStatement;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExecuteEDTCommandStatement;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptExecuteLightweightCommandStatement;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptExecuteTransparentCommandStatement;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptExecuteWriteActionStatement;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIExecuteCommandStatementSync;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20cL, "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20dL, "jetbrains.mps.lang.access.structure.CommandClosureLiteral"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20eL, "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea211L, "jetbrains.mps.lang.access.structure.ExecuteCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea213L, "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea215L, "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x4a0179cdfba5eb77L, "jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement"), MetaAdapterFactory.getConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea217L, "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement"), MetaAdapterFactory.getInterfaceConcept(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea219L, "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"));
 }

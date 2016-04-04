@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -24,19 +28,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
-      case 0:
-        return myConceptConsoleModelExpression;
-      case 1:
-        return myConceptInternalMode;
-      case 2:
-        return myConceptReloadClassesCommand;
-      case 3:
-        return myConceptShowRepositoryCommand;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConsoleModelExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptInternalMode;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptReloadClassesCommand;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptShowRepositoryCommand;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x4d7759afcea851bdL, "jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x7a89354654722219L, "jetbrains.mps.console.internalCommands.structure.InternalMode"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191dd31L, "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191df0cL, "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"));
 }

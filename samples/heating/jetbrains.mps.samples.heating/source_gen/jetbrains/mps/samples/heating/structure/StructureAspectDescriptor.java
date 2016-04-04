@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,33 +35,80 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
-      case 0:
-        return myConceptApplicability;
-      case 1:
-        return myConceptChangeEvent;
-      case 2:
-        return myConceptDailyPlan;
-      case 3:
-        return myConceptDailyPlanReference;
-      case 4:
-        return myConceptDayRange;
-      case 5:
-        return myConceptHeatingPlan;
-      case 6:
-        return myConceptNotSpecified;
-      case 7:
-        return myConceptSlot;
-      case 8:
-        return myConceptSpecificDay;
-      case 9:
-        return myConceptWeekDays;
-      case 10:
-        return myConceptWeekendDay;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptApplicability;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptChangeEvent;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDailyPlan;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDailyPlanReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDayRange;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptHeatingPlan;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptNotSpecified;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptSlot;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptSpecificDay;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptWeekDays;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptWeekendDay;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DailyPlanReference", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68643cL, "jetbrains.mps.samples.heating.structure.Applicability"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, "jetbrains.mps.samples.heating.structure.ChangeEvent"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, "jetbrains.mps.samples.heating.structure.DailyPlanReference"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6bc56bL, "jetbrains.mps.samples.heating.structure.DayRange"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, "jetbrains.mps.samples.heating.structure.HeatingPlan"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68b8b8L, "jetbrains.mps.samples.heating.structure.NotSpecified"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea6L, "jetbrains.mps.samples.heating.structure.SpecificDay"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e6b4ea5L, "jetbrains.mps.samples.heating.structure.WeekDays"), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x40bcae6c0e68b8faL, "jetbrains.mps.samples.heating.structure.WeekendDay"));
 }

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -47,63 +51,155 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0eb, conceptFqName)) {
-      case 0:
-        return myConceptXMLSAXAttributeHandler;
-      case 1:
-        return myConceptXMLSAXAttributeHandler_value;
-      case 2:
-        return myConceptXMLSAXAttributeReference;
-      case 3:
-        return myConceptXMLSAXAttributeRule;
-      case 4:
-        return myConceptXMLSAXBreakStatement;
-      case 5:
-        return myConceptXMLSAXChildHandler;
-      case 6:
-        return myConceptXMLSAXChildHandler_childObject;
-      case 7:
-        return myConceptXMLSAXChildRule;
-      case 8:
-        return myConceptXMLSAXChildRuleCondition;
-      case 9:
-        return myConceptXMLSAXDefaultChildHandler;
-      case 10:
-        return myConceptXMLSAXDefaultChildHandler_tagName;
-      case 11:
-        return myConceptXMLSAXDefaultChildRule;
-      case 12:
-        return myConceptXMLSAXFieldDeclaration;
-      case 13:
-        return myConceptXMLSAXFieldReference;
-      case 14:
-        return myConceptXMLSAXHandlerFunction;
-      case 15:
-        return myConceptXMLSAXHandler_resultObject;
-      case 16:
-        return myConceptXMLSAXLocatorExpression;
-      case 17:
-        return myConceptXMLSAXNodeCreator;
-      case 18:
-        return myConceptXMLSAXNodeRule;
-      case 19:
-        return myConceptXMLSAXNodeRuleParam;
-      case 20:
-        return myConceptXMLSAXNodeRuleParamRef;
-      case 21:
-        return myConceptXMLSAXNodeValidator;
-      case 22:
-        return myConceptXMLSAXParser;
-      case 23:
-        return myConceptXMLSAXTextHandler;
-      case 24:
-        return myConceptXMLSAXTextHandler_value;
-      case 25:
-        return myConceptXMLSAXTextRule;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0eb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptXMLSAXAttributeHandler;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptXMLSAXAttributeHandler_value;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptXMLSAXAttributeReference;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptXMLSAXAttributeRule;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptXMLSAXBreakStatement;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptXMLSAXChildHandler;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptXMLSAXChildHandler_childObject;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptXMLSAXChildRule;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptXMLSAXChildRuleCondition;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptXMLSAXDefaultChildHandler;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptXMLSAXDefaultChildHandler_tagName;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptXMLSAXDefaultChildRule;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptXMLSAXFieldDeclaration;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptXMLSAXFieldReference;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptXMLSAXHandlerFunction;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptXMLSAXHandler_resultObject;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptXMLSAXLocatorExpression;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptXMLSAXNodeCreator;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptXMLSAXNodeRule;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptXMLSAXNodeRuleParam;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptXMLSAXNodeRuleParamRef;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptXMLSAXNodeValidator;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptXMLSAXParser;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptXMLSAXTextHandler;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptXMLSAXTextHandler_value;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptXMLSAXTextRule;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0eb = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator", "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0eb = buildConceptIndices(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c1L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a76f2eL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2c9L, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cfL, "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d5L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369bed9265L, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd693759ffee07L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd69375a089554L, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x3afd693759ffa97fL, "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2ddL, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e3L, "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2eaL, "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2edL, "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2efL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0xd9be961730be3edL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x4180d2369b1f16c6L, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2fcL, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e308L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x30181d5ee4a78284L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value"), MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e310L, "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"));
 }

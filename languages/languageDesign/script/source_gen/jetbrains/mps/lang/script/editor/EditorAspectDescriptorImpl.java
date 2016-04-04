@@ -7,48 +7,75 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438569102L, "jetbrains.mps.lang.script.structure.CommentMigrationScriptPart"))) {
-        return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, "jetbrains.mps.lang.script.structure.DirectClassifierSpecification"))) {
-        return Collections.<ConceptEditor>singletonList(new DirectClassifierSpecification_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"))) {
-        return Collections.<ConceptEditor>singletonList(new DirectMethodSpecification_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"))) {
-        return Collections.<ConceptEditor>singletonList(new ExtractInterfaceMigration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification"))) {
-        return Collections.<ConceptEditor>singletonList(new FQNameClassifierSpecification_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification"))) {
-        return Collections.<ConceptEditor>singletonList(new FQNameMethodSpecification_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c757c2dL, "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart"))) {
-        return Collections.<ConceptEditor>singletonList(new FactoryMigrationScriptPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"))) {
-        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f4f883L, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"))) {
-        return Collections.<ConceptEditor>singletonList(new MigrationScriptPart_Instance_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, "jetbrains.mps.lang.script.structure.PullUpMethod"))) {
-        return Collections.<ConceptEditor>singletonList(new PullUpMethod_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c76b63eL, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"))) {
-        return Collections.<ConceptEditor>singletonList(new WhitespaceMigrationScriptPart_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DirectClassifierSpecification_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DirectMethodSpecification_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExtractInterfaceMigration_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FQNameClassifierSpecification_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FQNameMethodSpecification_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FactoryMigrationScriptPart_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MigrationScriptPart_Instance_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PullUpMethod_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new WhitespaceMigrationScriptPart_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -57,4 +84,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438569102L, "jetbrains.mps.lang.script.structure.CommentMigrationScriptPart"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, "jetbrains.mps.lang.script.structure.DirectClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638ddbL, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c757c2dL, "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225f4f883L, "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, "jetbrains.mps.lang.script.structure.PullUpMethod"), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x24105a807c76b63eL, "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"));
 }

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -39,49 +43,120 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0x, conceptFqName)) {
-      case 0:
-        return myConceptAbstractConceptDeclaration;
-      case 1:
-        return myConceptAggregationLinkDeclarationScopeKind;
-      case 2:
-        return myConceptAttributeInfo;
-      case 3:
-        return myConceptAttributeInfo_AttributedConcept;
-      case 4:
-        return myConceptAttributeInfo_IsMultiple;
-      case 5:
-        return myConceptConceptDeclaration;
-      case 6:
-        return myConceptConstrainedDataTypeDeclaration;
-      case 7:
-        return myConceptDataTypeDeclaration;
-      case 8:
-        return myConceptDeprecatedNodeAnnotation;
-      case 9:
-        return myConceptEnumerationDataTypeDeclaration;
-      case 10:
-        return myConceptEnumerationMemberDeclaration;
-      case 11:
-        return myConceptIConceptAspect;
-      case 12:
-        return myConceptIStructureDeprecatable;
-      case 13:
-        return myConceptInterfaceConceptDeclaration;
-      case 14:
-        return myConceptInterfaceConceptReference;
-      case 15:
-        return myConceptLinkDeclaration;
-      case 16:
-        return myConceptPrimitiveDataTypeDeclaration;
-      case 17:
-        return myConceptPropertyDeclaration;
-      case 18:
-        return myConceptReferenceLinkDeclartionScopeKind;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0x.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractConceptDeclaration;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAggregationLinkDeclarationScopeKind;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAttributeInfo;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptAttributeInfo_AttributedConcept;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptAttributeInfo_IsMultiple;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConceptDeclaration;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptConstrainedDataTypeDeclaration;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptDataTypeDeclaration;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptDeprecatedNodeAnnotation;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptEnumerationDataTypeDeclaration;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptEnumerationMemberDeclaration;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptIConceptAspect;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptIStructureDeprecatable;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptInterfaceConceptDeclaration;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptInterfaceConceptReference;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptLinkDeclaration;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptPrimitiveDataTypeDeclaration;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptPropertyDeclaration;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptReferenceLinkDeclartionScopeKind;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0x = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0x = buildConceptIndices(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x4f57884e07c08a31L, "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, "jetbrains.mps.lang.structure.structure.AttributeInfo"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd03496acb49L, "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x5405fd034959f7dcL, "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, "jetbrains.mps.lang.structure.structure.InterfaceConceptReference"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x4f57884e07c08838L, "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"));
 }

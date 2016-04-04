@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myIClassifier__BehaviorDescriptor = new IClassifier__BehaviorDescriptor();
@@ -24,58 +24,84 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myDefaultClassifierFieldAccessOperation__BehaviorDescriptor = new DefaultClassifierFieldAccessOperation__BehaviorDescriptor();
   private final BHDescriptor mySuperClassifierExpresson__BehaviorDescriptor = new SuperClassifierExpresson__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[11];
-    myConceptBehaviorIds[0] = 0x118bc6b2af5L;
-    myConceptBehaviorIds[1] = 0x118bc6becc0L;
-    myConceptBehaviorIds[2] = 0x118bc6e188eL;
-    myConceptBehaviorIds[3] = 0x118bc751a81L;
-    myConceptBehaviorIds[4] = 0x118bc77d845L;
-    myConceptBehaviorIds[5] = 0x118bc7942feL;
-    myConceptBehaviorIds[6] = 0x118bca97396L;
-    myConceptBehaviorIds[7] = 0x118bd6ee3c3L;
-    myConceptBehaviorIds[8] = 0x11aa7fc0293L;
-    myConceptBehaviorIds[9] = 0x11aa7fc7570L;
-    myConceptBehaviorIds[10] = 0x11b74b0357cL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myIClassifier__BehaviorDescriptor;
-      case 1:
-        return myIMember__BehaviorDescriptor;
-      case 2:
-        return myIClassifierPart__BehaviorDescriptor;
-      case 3:
-        return myThisClassifierExpression__BehaviorDescriptor;
-      case 4:
-        return myBaseClassifierType__BehaviorDescriptor;
-      case 5:
-        return myDefaultClassifierType__BehaviorDescriptor;
-      case 6:
-        return myIMemberOperation__BehaviorDescriptor;
-      case 7:
-        return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
-      case 8:
-        return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
-      case 9:
-        return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
-      case 10:
-        return mySuperClassifierExpresson__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0o.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBaseClassifierType__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myDefaultClassifierType__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myIClassifier__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myIClassifierPart__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myIMember__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myIMemberOperation__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return mySuperClassifierExpresson__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myThisClassifierExpression__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc77d845L, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc0293L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11b74b0357cL, "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson"), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
 }

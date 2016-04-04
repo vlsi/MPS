@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor" />
@@ -18,18 +15,8 @@
     <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.TestCaseRef__BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.IModuleRef_Behavior" file="IModuleRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" file="IModuleRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor" file="IModuleRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -53,15 +40,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior" file="ITestRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" file="ITestRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef__BehaviorDescriptor" file="ITestRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -87,26 +65,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" file="JUnit3TestCaseRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" file="JUnit3TestCaseRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef__BehaviorDescriptor" file="JUnit3TestCaseRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -149,26 +107,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_Behavior" file="JUnit4TestCaseRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" file="JUnit4TestCaseRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef__BehaviorDescriptor" file="JUnit4TestCaseRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -210,24 +148,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior" file="ModuleSuite_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ModuleSuite__BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" file="ModuleSuite_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.ModuleSuite__BehaviorDescriptor" file="ModuleSuite__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -260,20 +180,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.SolutionRef_Behavior" file="SolutionRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.SolutionRef_BehaviorDescriptor" file="SolutionRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.SolutionRef__BehaviorDescriptor" file="SolutionRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -298,22 +204,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.TestCaseRef_Behavior" file="TestCaseRef_Behavior.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.TestCaseRef_BehaviorDescriptor" file="TestCaseRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
-    <classNode dependClassName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.TestCaseRef__BehaviorDescriptor" file="TestCaseRef__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />

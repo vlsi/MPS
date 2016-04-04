@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myInternalStaticMethodCall__BehaviorDescriptor = new InternalStaticMethodCall__BehaviorDescriptor();
@@ -25,61 +25,89 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myInternalSuperMethodCallOperation__BehaviorDescriptor = new InternalSuperMethodCallOperation__BehaviorDescriptor();
   private final BHDescriptor myExtractStaticInnerClassExpression__BehaviorDescriptor = new ExtractStaticInnerClassExpression__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[12];
-    myConceptBehaviorIds[0] = 0x1115749abe3L;
-    myConceptBehaviorIds[1] = 0x11157a3736dL;
-    myConceptBehaviorIds[2] = 0x1116962fa68L;
-    myConceptBehaviorIds[3] = 0x111fb5bb1f2L;
-    myConceptBehaviorIds[4] = 0x1122dd58737L;
-    myConceptBehaviorIds[5] = 0xf46f1c42ee50930L;
-    myConceptBehaviorIds[6] = 0x2c5dbc7b762fd2a7L;
-    myConceptBehaviorIds[7] = 0x2f7b79225e746809L;
-    myConceptBehaviorIds[8] = 0x31c3f88088ea0ac4L;
-    myConceptBehaviorIds[9] = 0x31c3f88088ed999aL;
-    myConceptBehaviorIds[10] = 0x33c9311d003a97d3L;
-    myConceptBehaviorIds[11] = 0x6b63d4344723dac8L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myInternalStaticMethodCall__BehaviorDescriptor;
-      case 1:
-        return myInternalNewExpression__BehaviorDescriptor;
-      case 2:
-        return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
-      case 3:
-        return myInternalVariableReference__BehaviorDescriptor;
-      case 4:
-        return myInternalPartialFieldReference__BehaviorDescriptor;
-      case 5:
-        return myInternalClassCreator__BehaviorDescriptor;
-      case 6:
-        return myExtractStatementListExpression__BehaviorDescriptor;
-      case 7:
-        return myInternalAnonymousClass__BehaviorDescriptor;
-      case 8:
-        return myExtractStaticMethodExpression__BehaviorDescriptor;
-      case 9:
-        return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
-      case 10:
-        return myInternalSuperMethodCallOperation__BehaviorDescriptor;
-      case 11:
-        return myExtractStaticInnerClassExpression__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myExtractStatementListExpression__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myExtractStaticInnerClassExpression__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myExtractStaticMethodExpression__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myInternalAnonymousClass__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myInternalClassCreator__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myInternalNewExpression__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myInternalPartialFieldReference__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myInternalStaticMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myInternalSuperMethodCallOperation__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myInternalVariableReference__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b762fd2a7L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x6b63d4344723dac8L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ea0ac4L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xf46f1c42ee50930L, "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1122dd58737L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"));
 }

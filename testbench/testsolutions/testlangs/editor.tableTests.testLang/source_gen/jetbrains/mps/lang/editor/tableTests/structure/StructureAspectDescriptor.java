@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -38,45 +42,110 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
-      case 0:
-        return myConceptAbstractStateMachineElement;
-      case 1:
-        return myConceptContentElement;
-      case 2:
-        return myConceptDataCell;
-      case 3:
-        return myConceptEvent;
-      case 4:
-        return myConceptEventReference;
-      case 5:
-        return myConceptHierarchycalTable;
-      case 6:
-        return myConceptLightWeightDecisionTable;
-      case 7:
-        return myConceptMatrix;
-      case 8:
-        return myConceptRow;
-      case 9:
-        return myConceptState;
-      case 10:
-        return myConceptStateMachine;
-      case 11:
-        return myConceptStateReference;
-      case 12:
-        return myConceptTable;
-      case 13:
-        return myConceptTransition;
-      case 14:
-        return myConceptUltimateContainer;
-      case 15:
-        return myConceptXElement;
-      case 16:
-        return myConceptYElement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0v.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractStateMachineElement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptContentElement;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDataCell;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptEvent;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptEventReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptHierarchycalTable;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptLightWeightDecisionTable;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptMatrix;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptRow;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptState;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptStateMachine;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptStateReference;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptTable;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptTransition;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptUltimateContainer;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptXElement;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptYElement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement", "jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.Row", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0v = buildConceptIndices(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6e3eaf7a54e76eeaL, "jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23ef6a8L, "jetbrains.mps.lang.editor.tableTests.structure.ContentElement"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c845743bL, "jetbrains.mps.lang.editor.tableTests.structure.Event"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8457446L, "jetbrains.mps.lang.editor.tableTests.structure.EventReference"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23e4590L, "jetbrains.mps.lang.editor.tableTests.structure.Matrix"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, "jetbrains.mps.lang.editor.tableTests.structure.Row"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8457442L, "jetbrains.mps.lang.editor.tableTests.structure.State"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, "jetbrains.mps.lang.editor.tableTests.structure.StateMachine"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8457444L, "jetbrains.mps.lang.editor.tableTests.structure.StateReference"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, "jetbrains.mps.lang.editor.tableTests.structure.Table"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c845743dL, "jetbrains.mps.lang.editor.tableTests.structure.Transition"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x4c733427bdedcbd0L, "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23ef6a6L, "jetbrains.mps.lang.editor.tableTests.structure.XElement"), MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x3cc6bd99e23ef6a7L, "jetbrains.mps.lang.editor.tableTests.structure.YElement"));
 }

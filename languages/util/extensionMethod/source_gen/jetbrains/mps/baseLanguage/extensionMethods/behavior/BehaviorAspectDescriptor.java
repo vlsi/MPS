@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myExtensionMethodCall__BehaviorDescriptor = new ExtensionMethodCall__BehaviorDescriptor();
@@ -18,40 +18,54 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myExtensionStaticFieldDeclaration__BehaviorDescriptor = new ExtensionStaticFieldDeclaration__BehaviorDescriptor();
   private final BHDescriptor myBaseExtensionMethodContainer__BehaviorDescriptor = new BaseExtensionMethodContainer__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[5];
-    myConceptBehaviorIds[0] = 0x1583d1b63359483bL;
-    myConceptBehaviorIds[1] = 0x1583d1b63365e7f9L;
-    myConceptBehaviorIds[2] = 0x1b622d944bbdfbc7L;
-    myConceptBehaviorIds[3] = 0x1b622d944bc0aff7L;
-    myConceptBehaviorIds[4] = 0x6f5433076549f519L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myExtensionMethodCall__BehaviorDescriptor;
-      case 1:
-        return myExtensionMethodDeclaration__BehaviorDescriptor;
-      case 2:
-        return myExtensionStaticFieldReference__BehaviorDescriptor;
-      case 3:
-        return myExtensionStaticFieldDeclaration__BehaviorDescriptor;
-      case 4:
-        return myBaseExtensionMethodContainer__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBaseExtensionMethodContainer__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myExtensionMethodCall__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myExtensionMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myExtensionStaticFieldDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myExtensionStaticFieldReference__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference"));
 }

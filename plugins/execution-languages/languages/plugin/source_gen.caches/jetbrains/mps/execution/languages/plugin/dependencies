@@ -10,6 +10,5 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.languages.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 

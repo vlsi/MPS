@@ -32,10 +32,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.formulaLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.AndOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.formulaLanguage.editor.Constant_Editor" />

@@ -15,97 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,102,0" name="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BuilderBlockStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.BuilderParameter_BehaviorDescriptor" />
-    </file>
-    <file name="CommandBuilderExpression_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="CommandDebuggerOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.commands.behavior.CommandDebuggerOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CommandDeclaration_BehaviorDescriptor.java">
-      <unit at="18,0,60,0" name="jetbrains.mps.execution.commands.behavior.CommandDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="CommandMethod_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.CommandMethod_BehaviorDescriptor" />
-    </file>
-    <file name="CommandParameterAssignment_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterAssignment_BehaviorDescriptor" />
-    </file>
-    <file name="CommandParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,29,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="CommandParameterReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterReference_BehaviorDescriptor" />
-    </file>
-    <file name="CommandPartLengthOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CommandPartToListOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CommandProcessType_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.commands.behavior.CommandProcessType_BehaviorDescriptor" />
-    </file>
-    <file name="CommandReferenceExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.CommandReferenceExpression_BehaviorDescriptor" />
-    </file>
-    <file name="CommandType_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.commands.behavior.CommandType_BehaviorDescriptor" />
-    </file>
-    <file name="DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteCommandPart_BehaviorDescriptor.java">
-      <unit at="18,0,57,0" name="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_BehaviorDescriptor" />
-    </file>
-    <file name="ExplicitCommandParameterDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="KeyValueCommandPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.commands.behavior.KeyValueCommandPart_BehaviorDescriptor" />
-    </file>
-    <file name="ListCommandPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.commands.behavior.ListCommandPart_BehaviorDescriptor" />
-    </file>
-    <file name="NewProcessBuilderExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ProcessBuilderCommandPartType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPartType_BehaviorDescriptor" />
-    </file>
-    <file name="ProcessBuilderCommandPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPart_BehaviorDescriptor" />
-    </file>
-    <file name="ProcessType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyCommandPart_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.execution.commands.behavior.PropertyCommandPart_BehaviorDescriptor" />
-    </file>
-    <file name="RedirectOutputExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ReportErrorStatement_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ReportExecutionError_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
-    </file>
-    <file name="StartAndWaitOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
+      <unit at="14,0,138,0" name="jetbrains.mps.execution.commands.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1262430001741647344">
-    <file name="BuilderBlockStatement_Behavior.java">
-      <unit id="1262430001741647344" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_Behavior" />
-    </file>
     <file name="BuilderBlockStatement__BehaviorDescriptor.java">
       <node id="1262430001741647344" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741647344" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -171,9 +84,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1262430001741704806">
-    <file name="BuilderParameter_Behavior.java">
-      <unit id="1262430001741704806" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.BuilderParameter_Behavior" />
-    </file>
     <file name="BuilderParameter__BehaviorDescriptor.java">
       <node id="1262430001741704806" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741704806" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -239,9 +149,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1616228152992024986">
-    <file name="CommandPartLengthOperation_Behavior.java">
-      <unit id="1616228152992024986" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_Behavior" />
-    </file>
     <file name="CommandPartLengthOperation__BehaviorDescriptor.java">
       <node id="1616228152992024986" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1616228152992024986" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -325,9 +232,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/3474133302907912062">
-    <file name="RedirectOutputExpression_Behavior.java">
-      <unit id="3474133302907912062" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_Behavior" />
-    </file>
     <file name="RedirectOutputExpression__BehaviorDescriptor.java">
       <node id="3474133302907912062" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="3474133302907912062" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -402,33 +306,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/6129022259108621140">
-    <file name="ExecuteCommandPart_Behavior.java">
-      <node id="6129022259108621140" at="14,88,15,92" concept="6" />
-      <node id="6129022259108621140" at="17,96,18,100" concept="6" />
-      <node id="6129022259108621140" at="20,90,21,100" concept="6" />
-      <node id="6129022259108621140" at="23,79,24,88" concept="6" />
-      <node id="6129022259108621140" at="14,0,17,0" concept="9" trace="call_getParameters_6129022259108621180#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="6129022259108621140" at="17,0,20,0" concept="9" trace="call_getRequiredParameters_6129022259108621289#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="6129022259108621140" at="20,0,23,0" concept="9" trace="call_getCommandDeclaration_6129022259108621200#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6129022259108621140" at="23,0,26,0" concept="9" trace="call_getSuffix_3754131050835940463#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6129022259108621140" at="14,88,15,92" />
-      <scope id="6129022259108621140" at="17,96,18,100" />
-      <scope id="6129022259108621140" at="20,90,21,100" />
-      <scope id="6129022259108621140" at="23,79,24,88" />
-      <scope id="6129022259108621140" at="14,0,17,0">
-        <var name="__thisNode__" id="6129022259108621140" />
-      </scope>
-      <scope id="6129022259108621140" at="17,0,20,0">
-        <var name="__thisNode__" id="6129022259108621140" />
-      </scope>
-      <scope id="6129022259108621140" at="20,0,23,0">
-        <var name="__thisNode__" id="6129022259108621140" />
-      </scope>
-      <scope id="6129022259108621140" at="23,0,26,0">
-        <var name="__thisNode__" id="6129022259108621140" />
-      </scope>
-      <unit id="6129022259108621140" at="12,0,27,0" name="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior" />
-    </file>
     <file name="ExecuteCommandPart__BehaviorDescriptor.java">
       <node id="48168216977945622" at="153,232,153,232" concept="0" />
       <node id="6129022259108621140" at="35,0,36,0" concept="8" trace="CONCEPT" />
@@ -611,54 +488,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/7327337331549086041">
-    <file name="CommandParameterDeclaration_Behavior.java">
-      <node id="7327337331549086041" at="14,83,15,101" concept="6" />
-      <node id="7327337331549086041" at="17,87,18,105" concept="6" />
-      <node id="7327337331549086041" at="20,86,21,104" concept="6" />
-      <node id="7327337331549086041" at="23,82,24,100" concept="6" />
-      <node id="7327337331549086041" at="26,109,27,109" concept="6" />
-      <node id="7327337331549086041" at="29,109,30,110" concept="6" />
-      <node id="7327337331549086041" at="32,113,33,113" concept="6" />
-      <node id="7327337331549086041" at="14,0,17,0" concept="9" trace="call_getSetterName_7327337331549086044#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="17,0,20,0" concept="9" trace="call_getSetterLongName_3754131050835964459#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="20,0,23,0" concept="9" trace="call_getUpperCaseName_7327337331549086061#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="23,0,26,0" concept="9" trace="call_getFieldName_7327337331549117850#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="26,0,29,0" concept="9" trace="call_getFieldName_7327337331549086089#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="29,0,32,0" concept="9" trace="call_getTypeSuffix_3754131050835992327#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7327337331549086041" at="32,0,35,0" concept="9" trace="call_getUpperCaseName_7327337331549086070#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="7327337331549086041" at="14,83,15,101" />
-      <scope id="7327337331549086041" at="17,87,18,105" />
-      <scope id="7327337331549086041" at="20,86,21,104" />
-      <scope id="7327337331549086041" at="23,82,24,100" />
-      <scope id="7327337331549086041" at="26,109,27,109" />
-      <scope id="7327337331549086041" at="29,109,30,110" />
-      <scope id="7327337331549086041" at="32,113,33,113" />
-      <scope id="7327337331549086041" at="14,0,17,0">
-        <var name="__thisNode__" id="7327337331549086041" />
-      </scope>
-      <scope id="7327337331549086041" at="17,0,20,0">
-        <var name="__thisNode__" id="7327337331549086041" />
-      </scope>
-      <scope id="7327337331549086041" at="20,0,23,0">
-        <var name="__thisNode__" id="7327337331549086041" />
-      </scope>
-      <scope id="7327337331549086041" at="23,0,26,0">
-        <var name="__thisNode__" id="7327337331549086041" />
-      </scope>
-      <scope id="7327337331549086041" at="26,0,29,0">
-        <var name="__thisConcept__" id="7327337331549086041" />
-        <var name="name" id="7327337331549086090" />
-      </scope>
-      <scope id="7327337331549086041" at="29,0,32,0">
-        <var name="__thisConcept__" id="7327337331549086041" />
-        <var name="type" id="3754131050835992332" />
-      </scope>
-      <scope id="7327337331549086041" at="32,0,35,0">
-        <var name="__thisConcept__" id="7327337331549086041" />
-        <var name="name" id="7327337331549086071" />
-      </scope>
-      <unit id="7327337331549086041" at="12,0,36,0" name="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior" />
-    </file>
     <file name="CommandParameterDeclaration__BehaviorDescriptor.java">
       <node id="7327337331549086041" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="7327337331549086041" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -808,9 +637,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/8234001627573935256">
-    <file name="CommandPartToListOperation_Behavior.java">
-      <unit id="8234001627573935256" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.CommandPartToListOperation_Behavior" />
-    </file>
     <file name="CommandPartToListOperation__BehaviorDescriptor.java">
       <node id="8234001627573935256" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="8234001627573935256" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -894,9 +720,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/8478830098674460032">
-    <file name="DebuggerSettingsCommandParameterDeclaration_Behavior.java">
-      <unit id="8478830098674460032" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_Behavior" />
-    </file>
     <file name="DebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor.java">
       <node id="8478830098674460032" at="23,0,24,0" concept="8" trace="CONCEPT" />
       <node id="8478830098674460032" at="24,0,25,0" concept="8" trace="REGISTRY" />
@@ -976,9 +799,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941281983">
-    <file name="CommandType_Behavior.java">
-      <unit id="856705193941281983" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.CommandType_Behavior" />
-    </file>
     <file name="CommandType__BehaviorDescriptor.java">
       <node id="856705193941281983" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="856705193941281983" at="27,0,28,0" concept="8" trace="REGISTRY" />
@@ -1054,9 +874,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941281999">
-    <file name="ExplicitCommandParameterDeclaration_Behavior.java">
-      <unit id="856705193941281999" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_Behavior" />
-    </file>
     <file name="ExplicitCommandParameterDeclaration__BehaviorDescriptor.java">
       <node id="856705193941281999" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="856705193941281999" at="26,0,27,0" concept="8" trace="REGISTRY" />
@@ -1149,9 +966,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282073">
-    <file name="CommandMethod_Behavior.java">
-      <unit id="856705193941282073" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.CommandMethod_Behavior" />
-    </file>
     <file name="CommandMethod__BehaviorDescriptor.java">
       <node id="856705193941282073" at="23,0,24,0" concept="8" trace="CONCEPT" />
       <node id="856705193941282073" at="24,0,25,0" concept="8" trace="REGISTRY" />
@@ -1219,51 +1033,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282089">
-    <file name="CommandDeclaration_Behavior.java">
-      <node id="856705193941282089" at="15,82,16,90" concept="6" />
-      <node id="856705193941282089" at="18,101,19,105" concept="6" />
-      <node id="856705193941282089" at="21,114,22,118" concept="6" />
-      <node id="856705193941282089" at="24,97,25,97" concept="6" />
-      <node id="856705193941282089" at="27,109,28,107" concept="6" />
-      <node id="856705193941282089" at="30,107,31,105" concept="6" />
-      <node id="856705193941282089" at="33,121,34,119" concept="6" />
-      <node id="856705193941282089" at="15,0,18,0" concept="9" trace="call_isDebuggable_856705193941282102#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="856705193941282089" at="18,0,21,0" concept="9" trace="call_getDistinctFieldParameters_6129022259108623165#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="856705193941282089" at="21,0,24,0" concept="9" trace="call_getDistinctByNameAndTypeFieldParameters_3754131050835964183#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="856705193941282089" at="24,0,27,0" concept="9" trace="call_getFieldParameters_3754131050835964275#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="856705193941282089" at="27,0,30,0" concept="9" trace="call_getCreateProcessMethodName_856705193941282090#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="856705193941282089" at="30,0,33,0" concept="9" trace="call_getGetDebuggerMethodName_856705193941282096#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="856705193941282089" at="33,0,36,0" concept="9" trace="call_getGetDebuggerConfidurationMethodName_6226796386650472924#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="856705193941282089" at="15,82,16,90" />
-      <scope id="856705193941282089" at="18,101,19,105" />
-      <scope id="856705193941282089" at="21,114,22,118" />
-      <scope id="856705193941282089" at="24,97,25,97" />
-      <scope id="856705193941282089" at="27,109,28,107" />
-      <scope id="856705193941282089" at="30,107,31,105" />
-      <scope id="856705193941282089" at="33,121,34,119" />
-      <scope id="856705193941282089" at="15,0,18,0">
-        <var name="__thisNode__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="18,0,21,0">
-        <var name="__thisNode__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="21,0,24,0">
-        <var name="__thisNode__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="24,0,27,0">
-        <var name="__thisNode__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="27,0,30,0">
-        <var name="__thisConcept__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="30,0,33,0">
-        <var name="__thisConcept__" id="856705193941282089" />
-      </scope>
-      <scope id="856705193941282089" at="33,0,36,0">
-        <var name="__thisConcept__" id="856705193941282089" />
-      </scope>
-      <unit id="856705193941282089" at="13,0,37,0" name="jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior" />
-    </file>
     <file name="CommandDeclaration__BehaviorDescriptor.java">
       <node id="856705193941282089" at="36,0,37,0" concept="8" trace="CONCEPT" />
       <node id="856705193941282089" at="37,0,38,0" concept="8" trace="REGISTRY" />
@@ -1518,9 +1287,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282161">
-    <file name="CommandBuilderExpression_Behavior.java">
-      <unit id="856705193941282161" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.CommandBuilderExpression_Behavior" />
-    </file>
     <file name="CommandBuilderExpression__BehaviorDescriptor.java">
       <node id="856705193941282161" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="856705193941282161" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -1604,9 +1370,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282170">
-    <file name="ReportExecutionError_Behavior.java">
-      <unit id="856705193941282170" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.ReportExecutionError_Behavior" />
-    </file>
     <file name="ReportExecutionError__BehaviorDescriptor.java">
       <node id="856705193941282170" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="856705193941282170" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -1695,9 +1458,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282180">
-    <file name="ReportErrorStatement_Behavior.java">
-      <unit id="856705193941282180" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_Behavior" />
-    </file>
     <file name="ReportErrorStatement__BehaviorDescriptor.java">
       <node id="856705193941282180" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="856705193941282180" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1789,9 +1549,6 @@
     </file>
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/889694274151974335">
-    <file name="NewProcessBuilderExpression_Behavior.java">
-      <unit id="889694274151974335" at="10,0,13,0" name="jetbrains.mps.execution.commands.behavior.NewProcessBuilderExpression_Behavior" />
-    </file>
     <file name="NewProcessBuilderExpression__BehaviorDescriptor.java">
       <node id="889694274151974335" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="889694274151974335" at="25,0,26,0" concept="8" trace="REGISTRY" />

@@ -4,12 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myConceptEditorDeclaration__BehaviorDescriptor = new ConceptEditorDeclaration__BehaviorDescriptor();
@@ -162,472 +162,774 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myContextExpression_ContextAssistantCondition__BehaviorDescriptor = new ContextExpression_ContextAssistantCondition__BehaviorDescriptor();
   private final BHDescriptor mySynchronizeable__BehaviorDescriptor = new Synchronizeable__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[149];
-    myConceptBehaviorIds[0] = 0xf9845363abL;
-    myConceptBehaviorIds[1] = 0xf9eafb9a39L;
-    myConceptBehaviorIds[2] = 0xf9eaff2517L;
-    myConceptBehaviorIds[3] = 0xf9eb01232eL;
-    myConceptBehaviorIds[4] = 0xf9eb02612eL;
-    myConceptBehaviorIds[5] = 0xf9eb05cdc7L;
-    myConceptBehaviorIds[6] = 0xf9eb0ad38eL;
-    myConceptBehaviorIds[7] = 0xfa3d28fe7dL;
-    myConceptBehaviorIds[8] = 0xfa61615ec3L;
-    myConceptBehaviorIds[9] = 0xfb103073dcL;
-    myConceptBehaviorIds[10] = 0xfb35c2bb47L;
-    myConceptBehaviorIds[11] = 0xfb35c96896L;
-    myConceptBehaviorIds[12] = 0xfba0eb7c50L;
-    myConceptBehaviorIds[13] = 0xfbc216b31bL;
-    myConceptBehaviorIds[14] = 0xfd52a2c922L;
-    myConceptBehaviorIds[15] = 0xfd5cee772bL;
-    myConceptBehaviorIds[16] = 0xfd766383e4L;
-    myConceptBehaviorIds[17] = 0x1081e457de7L;
-    myConceptBehaviorIds[18] = 0x108a0861503L;
-    myConceptBehaviorIds[19] = 0x108b58b0fabL;
-    myConceptBehaviorIds[20] = 0x108b58c7e8fL;
-    myConceptBehaviorIds[21] = 0x10951978cfeL;
-    myConceptBehaviorIds[22] = 0x109519ae500L;
-    myConceptBehaviorIds[23] = 0x10964446123L;
-    myConceptBehaviorIds[24] = 0x1098c8cf48aL;
-    myConceptBehaviorIds[25] = 0x10a1953c797L;
-    myConceptBehaviorIds[26] = 0x10bb871ad98L;
-    myConceptBehaviorIds[27] = 0x10e32c7f49dL;
-    myConceptBehaviorIds[28] = 0x10eaa4bf8b2L;
-    myConceptBehaviorIds[29] = 0x10eecbddc4fL;
-    myConceptBehaviorIds[30] = 0x10eecbf54a7L;
-    myConceptBehaviorIds[31] = 0x10f06eea1c5L;
-    myConceptBehaviorIds[32] = 0x10f06f0e8a4L;
-    myConceptBehaviorIds[33] = 0x10f34f6aaacL;
-    myConceptBehaviorIds[34] = 0x10f34f8c0deL;
-    myConceptBehaviorIds[35] = 0x10f3a50ec74L;
-    myConceptBehaviorIds[36] = 0x10f4f8b3f0fL;
-    myConceptBehaviorIds[37] = 0x10f4f906349L;
-    myConceptBehaviorIds[38] = 0x10f5026c90dL;
-    myConceptBehaviorIds[39] = 0x10f53a2ada9L;
-    myConceptBehaviorIds[40] = 0x10f587b827aL;
-    myConceptBehaviorIds[41] = 0x10f58b90423L;
-    myConceptBehaviorIds[42] = 0x10f7d702058L;
-    myConceptBehaviorIds[43] = 0x10f7d811428L;
-    myConceptBehaviorIds[44] = 0x10f7d86ed9bL;
-    myConceptBehaviorIds[45] = 0x10f7df344a9L;
-    myConceptBehaviorIds[46] = 0x111eb58c684L;
-    myConceptBehaviorIds[47] = 0x111f9d863e4L;
-    myConceptBehaviorIds[48] = 0x111f9d95571L;
-    myConceptBehaviorIds[49] = 0x111f9d9c896L;
-    myConceptBehaviorIds[50] = 0x111f9da0bacL;
-    myConceptBehaviorIds[51] = 0x111faaffcc5L;
-    myConceptBehaviorIds[52] = 0x111fbbfae55L;
-    myConceptBehaviorIds[53] = 0x111ff56f066L;
-    myConceptBehaviorIds[54] = 0x1120492bc7eL;
-    myConceptBehaviorIds[55] = 0x11204aae906L;
-    myConceptBehaviorIds[56] = 0x112e23362bdL;
-    myConceptBehaviorIds[57] = 0x113401f5070L;
-    myConceptBehaviorIds[58] = 0x113bef3a464L;
-    myConceptBehaviorIds[59] = 0x1143b151743L;
-    myConceptBehaviorIds[60] = 0x1143b178f1fL;
-    myConceptBehaviorIds[61] = 0x1143b191dc6L;
-    myConceptBehaviorIds[62] = 0x1143b38c56eL;
-    myConceptBehaviorIds[63] = 0x1143bd1283bL;
-    myConceptBehaviorIds[64] = 0x1143bd61987L;
-    myConceptBehaviorIds[65] = 0x1143bd721ebL;
-    myConceptBehaviorIds[66] = 0x1143bd774e0L;
-    myConceptBehaviorIds[67] = 0x1143bd7dc37L;
-    myConceptBehaviorIds[68] = 0x1146e20cfb3L;
-    myConceptBehaviorIds[69] = 0x116fdad17a0L;
-    myConceptBehaviorIds[70] = 0x116fdb876c6L;
-    myConceptBehaviorIds[71] = 0x116fdba37cdL;
-    myConceptBehaviorIds[72] = 0x1170b90f356L;
-    myConceptBehaviorIds[73] = 0x11ac043ee66L;
-    myConceptBehaviorIds[74] = 0x11ac0441c7eL;
-    myConceptBehaviorIds[75] = 0x11ae41cffc4L;
-    myConceptBehaviorIds[76] = 0x11ae41d378fL;
-    myConceptBehaviorIds[77] = 0x11ae8b76d40L;
-    myConceptBehaviorIds[78] = 0x11ae8b8b7d7L;
-    myConceptBehaviorIds[79] = 0x11b35f4f515L;
-    myConceptBehaviorIds[80] = 0x11b35f5eefdL;
-    myConceptBehaviorIds[81] = 0x11bdf8bf6bbL;
-    myConceptBehaviorIds[82] = 0x11beb039542L;
-    myConceptBehaviorIds[83] = 0x11c47c26987L;
-    myConceptBehaviorIds[84] = 0x11c4caca3eeL;
-    myConceptBehaviorIds[85] = 0x11c4cd1c73aL;
-    myConceptBehaviorIds[86] = 0x11c4d022befL;
-    myConceptBehaviorIds[87] = 0x11cd786e1a9L;
-    myConceptBehaviorIds[88] = 0x11cd78e1636L;
-    myConceptBehaviorIds[89] = 0x11d52e019f6L;
-    myConceptBehaviorIds[90] = 0x11d52e2b1a0L;
-    myConceptBehaviorIds[91] = 0x11d6d56c00cL;
-    myConceptBehaviorIds[92] = 0x11d878b980aL;
-    myConceptBehaviorIds[93] = 0x11d878c87bcL;
-    myConceptBehaviorIds[94] = 0x11d878e7095L;
-    myConceptBehaviorIds[95] = 0x11f41c44bf7L;
-    myConceptBehaviorIds[96] = 0x11f41c727e1L;
-    myConceptBehaviorIds[97] = 0x11fb7279917L;
-    myConceptBehaviorIds[98] = 0x11fe1c8b36cL;
-    myConceptBehaviorIds[99] = 0x120154c4089L;
-    myConceptBehaviorIds[100] = 0x120154df6f3L;
-    myConceptBehaviorIds[101] = 0x120194c6bfdL;
-    myConceptBehaviorIds[102] = 0x12019ed89beL;
-    myConceptBehaviorIds[103] = 0x120c4d9abaeL;
-    myConceptBehaviorIds[104] = 0x3e34c38c0ad5587L;
-    myConceptBehaviorIds[105] = 0x3e34c38c0b28cacL;
-    myConceptBehaviorIds[106] = 0x950e7629b27d75eL;
-    myConceptBehaviorIds[107] = 0x950e7629b27d763L;
-    myConceptBehaviorIds[108] = 0x9da6a4591fc7fb5L;
-    myConceptBehaviorIds[109] = 0xae2d2fe1c9d6e2eL;
-    myConceptBehaviorIds[110] = 0xae2d2fe1c9d9a96L;
-    myConceptBehaviorIds[111] = 0xb09275c2ae83bcdL;
-    myConceptBehaviorIds[112] = 0x16be955f384efce1L;
-    myConceptBehaviorIds[113] = 0x16be955f384f95eeL;
-    myConceptBehaviorIds[114] = 0x2de97a3d3b88abfaL;
-    myConceptBehaviorIds[115] = 0x2ef3b3796a0b8287L;
-    myConceptBehaviorIds[116] = 0x2ef3b3796a126f24L;
-    myConceptBehaviorIds[117] = 0x3001698d23c1e791L;
-    myConceptBehaviorIds[118] = 0x30eb862d8702cebfL;
-    myConceptBehaviorIds[119] = 0x329d4406465c63a0L;
-    myConceptBehaviorIds[120] = 0x334adf8cb15f3fdeL;
-    myConceptBehaviorIds[121] = 0x3744c0f9ea5367ebL;
-    myConceptBehaviorIds[122] = 0x3744c0f9eb0a02a3L;
-    myConceptBehaviorIds[123] = 0x399cb6c68aa9aeaaL;
-    myConceptBehaviorIds[124] = 0x3ed01d37608fe0afL;
-    myConceptBehaviorIds[125] = 0x3ee423fc2ad10eceL;
-    myConceptBehaviorIds[126] = 0x4e0f93d8a0ac3ebaL;
-    myConceptBehaviorIds[127] = 0x4e0f93d8a0c10ff0L;
-    myConceptBehaviorIds[128] = 0x4e0f93d8a0c11832L;
-    myConceptBehaviorIds[129] = 0x4eff4d8b1f5ceed1L;
-    myConceptBehaviorIds[130] = 0x511249404d287d9dL;
-    myConceptBehaviorIds[131] = 0x527faacef50d095eL;
-    myConceptBehaviorIds[132] = 0x555cb285f801e1a1L;
-    myConceptBehaviorIds[133] = 0x5917043ba8fab771L;
-    myConceptBehaviorIds[134] = 0x5d3b34577b3cff08L;
-    myConceptBehaviorIds[135] = 0x5d3b34577b3cff09L;
-    myConceptBehaviorIds[136] = 0x5d3b34577b3cff0cL;
-    myConceptBehaviorIds[137] = 0x671b36136d34751cL;
-    myConceptBehaviorIds[138] = 0x696ed29ebd7c142bL;
-    myConceptBehaviorIds[139] = 0x69c06896a0e42a51L;
-    myConceptBehaviorIds[140] = 0x6a67a319ce06ae0fL;
-    myConceptBehaviorIds[141] = 0x6a692c170d1b09d8L;
-    myConceptBehaviorIds[142] = 0x6a692c170d1d584eL;
-    myConceptBehaviorIds[143] = 0x72908ac6c78618c8L;
-    myConceptBehaviorIds[144] = 0x73604585b6d5c973L;
-    myConceptBehaviorIds[145] = 0x7456aec153c7f5a2L;
-    myConceptBehaviorIds[146] = 0x794cf8ea9e1140f3L;
-    myConceptBehaviorIds[147] = 0x794cf8ea9e29183aL;
-    myConceptBehaviorIds[148] = 0x79b75ced2c4a134dL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myConceptEditorDeclaration__BehaviorDescriptor;
-      case 1:
-        return myEditorCellModel__BehaviorDescriptor;
-      case 2:
-        return myCellModel_Collection__BehaviorDescriptor;
-      case 3:
-        return myCellModel_Constant__BehaviorDescriptor;
-      case 4:
-        return myCellModel_Property__BehaviorDescriptor;
-      case 5:
-        return myCellModel_RefNode__BehaviorDescriptor;
-      case 6:
-        return myCellModel_RefNodeList__BehaviorDescriptor;
-      case 7:
-        return myCellModel_ModelAccess__BehaviorDescriptor;
-      case 8:
-        return myCellModel_Error__BehaviorDescriptor;
-      case 9:
-        return myCellModel_Custom__BehaviorDescriptor;
-      case 10:
-        return myEditorComponentDeclaration__BehaviorDescriptor;
-      case 11:
-        return myCellModel_Component__BehaviorDescriptor;
-      case 12:
-        return myBaseEditorComponent__BehaviorDescriptor;
-      case 13:
-        return myCellKeyMapDeclaration__BehaviorDescriptor;
-      case 14:
-        return myCellModel_RefCell__BehaviorDescriptor;
-      case 15:
-        return myInlineEditorComponent__BehaviorDescriptor;
-      case 16:
-        return myCellModel_Alternation__BehaviorDescriptor;
-      case 17:
-        return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
-      case 18:
-        return myCellModel_AttributedLinkCell__BehaviorDescriptor;
-      case 19:
-        return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
-      case 20:
-        return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
-      case 21:
-        return myCellActionMapDeclaration__BehaviorDescriptor;
-      case 22:
-        return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
-      case 23:
-        return myCellModel_WithRole__BehaviorDescriptor;
-      case 24:
-        return myCellModel_ListWithRole__BehaviorDescriptor;
-      case 25:
-        return myQueryFunction_NodeCondition__BehaviorDescriptor;
-      case 26:
-        return myCellModel_AttributedNodeCell__BehaviorDescriptor;
-      case 27:
-        return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
-      case 28:
-        return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
-      case 29:
-        return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
-      case 30:
-        return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
-      case 31:
-        return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
-      case 32:
-        return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
-      case 33:
-        return myCellMenuDescriptor__BehaviorDescriptor;
-      case 34:
-        return myCellMenuPart_Abstract__BehaviorDescriptor;
-      case 35:
-        return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
-      case 36:
-        return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
-      case 37:
-        return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
-      case 38:
-        return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
-      case 39:
-        return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
-      case 40:
-        return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
-      case 41:
-        return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
-      case 42:
-        return myCellMenuComponent__BehaviorDescriptor;
-      case 43:
-        return myCellMenuComponentFeature_Property__BehaviorDescriptor;
-      case 44:
-        return myCellMenuComponentFeature_Link__BehaviorDescriptor;
-      case 45:
-        return myAbstractComponent__BehaviorDescriptor;
-      case 46:
-        return myQueryFunction_JComponent__BehaviorDescriptor;
-      case 47:
-        return myConceptFunctionParameter_text__BehaviorDescriptor;
-      case 48:
-        return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
-      case 49:
-        return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
-      case 50:
-        return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
-      case 51:
-        return myConceptFunctionParameter_oldText__BehaviorDescriptor;
-      case 52:
-        return myQueryFunction_CellProvider__BehaviorDescriptor;
-      case 53:
-        return myQueryFunction_Color__BehaviorDescriptor;
-      case 54:
-        return myQueryFunction_NodeFactory__BehaviorDescriptor;
-      case 55:
-        return myQueryFunction_ImagePath__BehaviorDescriptor;
-      case 56:
-        return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
-      case 57:
-        return myQueryFunction_NodeListFilter__BehaviorDescriptor;
-      case 58:
-        return myCellModel_NonEmptyProperty__BehaviorDescriptor;
-      case 59:
-        return myStyleSheet__BehaviorDescriptor;
-      case 60:
-        return myStyleSheetClass__BehaviorDescriptor;
-      case 61:
-        return myStyleClassItem__BehaviorDescriptor;
-      case 62:
-        return myForegroundColorStyleClassItem__BehaviorDescriptor;
-      case 63:
-        return myBooleanStyleSheetItem__BehaviorDescriptor;
-      case 64:
-        return myEditableStyleClassItem__BehaviorDescriptor;
-      case 65:
-        return mySelectableStyleSheetItem__BehaviorDescriptor;
-      case 66:
-        return myAutoDeletableStyleClassItem__BehaviorDescriptor;
-      case 67:
-        return myDrawBorderStyleClassItem__BehaviorDescriptor;
-      case 68:
-        return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
-      case 69:
-        return myCellModel_Indent__BehaviorDescriptor;
-      case 70:
-        return myCellModel_BlockStart__BehaviorDescriptor;
-      case 71:
-        return myCellModel_BlockEnd__BehaviorDescriptor;
-      case 72:
-        return myCellModel_Block__BehaviorDescriptor;
-      case 73:
-        return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
-      case 74:
-        return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
-      case 75:
-        return myPaddingLeftStyleClassItem__BehaviorDescriptor;
-      case 76:
-        return myPaddingRightStyleClassItem__BehaviorDescriptor;
-      case 77:
-        return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
-      case 78:
-        return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
-      case 79:
-        return myCellModel_TransactionalProperty__BehaviorDescriptor;
-      case 80:
-        return myTransactionalPropertyHandler__BehaviorDescriptor;
-      case 81:
-        return myDrawBracketsStyleClassItem__BehaviorDescriptor;
-      case 82:
-        return myIStyleContainer__BehaviorDescriptor;
-      case 83:
-        return myQueryFunction_FontStyle__BehaviorDescriptor;
-      case 84:
-        return myQueryFunction_Integer__BehaviorDescriptor;
-      case 85:
-        return myQueryFunction_StyleParameter__BehaviorDescriptor;
-      case 86:
-        return myQueryFunction_Underlined__BehaviorDescriptor;
-      case 87:
-        return myStrikeOutStyleSheet__BehaviorDescriptor;
-      case 88:
-        return myQueryFunction_Boolean__BehaviorDescriptor;
-      case 89:
-        return myIQueryFunction_Color__BehaviorDescriptor;
-      case 90:
-        return myRGBColor__BehaviorDescriptor;
-      case 91:
-        return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
-      case 92:
-        return myPaddingTopStyleClassItem__BehaviorDescriptor;
-      case 93:
-        return myPaddingBottomStyleClassItem__BehaviorDescriptor;
-      case 94:
-        return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
-      case 95:
-        return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
-      case 96:
-        return myPunctuationRightStyleClassItem__BehaviorDescriptor;
-      case 97:
-        return myBaseLineCell__BehaviorDescriptor;
-      case 98:
-        return myQueryFunction_String__BehaviorDescriptor;
-      case 99:
-        return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
-      case 100:
-        return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
-      case 101:
-        return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
-      case 102:
-        return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
-      case 103:
-        return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
-      case 104:
-        return myAppendTextOperation__BehaviorDescriptor;
-      case 105:
-        return mySetBoldOperation__BehaviorDescriptor;
-      case 106:
-        return myQueryFunction_MethodPresentation__BehaviorDescriptor;
-      case 107:
-        return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
-      case 108:
-        return myQueryFunction_SeparatorText__BehaviorDescriptor;
-      case 109:
-        return myQueryFunction_ContextAssistantTargetNode__BehaviorDescriptor;
-      case 110:
-        return myQueryFunction_ContextAssistant__BehaviorDescriptor;
-      case 111:
-        return myReadOnlyStyleClassItem__BehaviorDescriptor;
-      case 112:
-        return myContextAssistantMenu_Default__BehaviorDescriptor;
-      case 113:
-        return myQueryFunction_ContextAssistantExecuteFunction__BehaviorDescriptor;
-      case 114:
-        return myQueryFunction_ColorComposit__BehaviorDescriptor;
-      case 115:
-        return myIStyleSheetMember__BehaviorDescriptor;
-      case 116:
-        return myStyleClass__BehaviorDescriptor;
-      case 117:
-        return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
-      case 118:
-        return myQueryFunction_Style__BehaviorDescriptor;
-      case 119:
-        return mySelectInEditorOperation__BehaviorDescriptor;
-      case 120:
-        return myCellModel_URL__BehaviorDescriptor;
-      case 121:
-        return myStyleAttributeDeclaration__BehaviorDescriptor;
-      case 122:
-        return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
-      case 123:
-        return myStyleKey__BehaviorDescriptor;
-      case 124:
-        return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
-      case 125:
-        return myAbstractStyledTextOperation__BehaviorDescriptor;
-      case 126:
-        return myContextAssistantMenu__BehaviorDescriptor;
-      case 127:
-        return myContextAssistantMenuContribution__BehaviorDescriptor;
-      case 128:
-        return myINamedContextAssistantItems__BehaviorDescriptor;
-      case 129:
-        return myQueryFunction_ContextAssistantText__BehaviorDescriptor;
-      case 130:
-        return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
-      case 131:
-        return myConceptEditorHintDeclaration__BehaviorDescriptor;
-      case 132:
-        return myQueryHintsSpecification__BehaviorDescriptor;
-      case 133:
-        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
-      case 134:
-        return myContextAssistantMenuReference__BehaviorDescriptor;
-      case 135:
-        return myContextAssistantMenuReference_Named__BehaviorDescriptor;
-      case 136:
-        return myContextAssistantMenuReference_Default__BehaviorDescriptor;
-      case 137:
-        return myQueryFunction_ContextAssistantCondition__BehaviorDescriptor;
-      case 138:
-        return myQueryFunction_SNode__BehaviorDescriptor;
-      case 139:
-        return myDefaultBaseLine__BehaviorDescriptor;
-      case 140:
-        return myQueryFunction_ParametersList__BehaviorDescriptor;
-      case 141:
-        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
-      case 142:
-        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
-      case 143:
-        return myScriptKindClassItem__BehaviorDescriptor;
-      case 144:
-        return myCellModel_Empty__BehaviorDescriptor;
-      case 145:
-        return myCellModel_NextEditor__BehaviorDescriptor;
-      case 146:
-        return myINodeProvider__BehaviorDescriptor;
-      case 147:
-        return myContextExpression_ContextAssistantCondition__BehaviorDescriptor;
-      case 148:
-        return mySynchronizeable__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0wf.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractComponent__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myAbstractStyledTextOperation__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myAppendTextOperation__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myAutoDeletableStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myBaseEditorComponent__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myBaseLineCell__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myBooleanStyleSheetItem__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myCellActionMapDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myCellKeyMapDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myCellMenuComponent__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myCellMenuComponentFeature_Link__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myCellMenuComponentFeature_Property__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myCellMenuDescriptor__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myCellMenuPart_Abstract__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myCellModel_Alternation__BehaviorDescriptor;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myCellModel_AttributedLinkCell__BehaviorDescriptor;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myCellModel_AttributedNodeCell__BehaviorDescriptor;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myCellModel_Block__BehaviorDescriptor;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myCellModel_BlockEnd__BehaviorDescriptor;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myCellModel_BlockStart__BehaviorDescriptor;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myCellModel_Collection__BehaviorDescriptor;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myCellModel_Component__BehaviorDescriptor;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myCellModel_Constant__BehaviorDescriptor;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myCellModel_Custom__BehaviorDescriptor;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myCellModel_Empty__BehaviorDescriptor;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myCellModel_Error__BehaviorDescriptor;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myCellModel_Indent__BehaviorDescriptor;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myCellModel_ListWithRole__BehaviorDescriptor;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myCellModel_ModelAccess__BehaviorDescriptor;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myCellModel_NextEditor__BehaviorDescriptor;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myCellModel_NonEmptyProperty__BehaviorDescriptor;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myCellModel_Property__BehaviorDescriptor;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myCellModel_RefCell__BehaviorDescriptor;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myCellModel_RefNode__BehaviorDescriptor;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myCellModel_RefNodeList__BehaviorDescriptor;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myCellModel_TransactionalProperty__BehaviorDescriptor;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myCellModel_URL__BehaviorDescriptor;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myCellModel_WithRole__BehaviorDescriptor;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myConceptEditorDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myConceptEditorHintDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 61:
+          if (true) {
+            return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
+          }
+          break;
+        case 62:
+          if (true) {
+            return myConceptFunctionParameter_oldText__BehaviorDescriptor;
+          }
+          break;
+        case 63:
+          if (true) {
+            return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
+          }
+          break;
+        case 64:
+          if (true) {
+            return myConceptFunctionParameter_text__BehaviorDescriptor;
+          }
+          break;
+        case 65:
+          if (true) {
+            return myContextAssistantMenu__BehaviorDescriptor;
+          }
+          break;
+        case 66:
+          if (true) {
+            return myContextAssistantMenuContribution__BehaviorDescriptor;
+          }
+          break;
+        case 67:
+          if (true) {
+            return myContextAssistantMenuReference__BehaviorDescriptor;
+          }
+          break;
+        case 68:
+          if (true) {
+            return myContextAssistantMenuReference_Default__BehaviorDescriptor;
+          }
+          break;
+        case 69:
+          if (true) {
+            return myContextAssistantMenuReference_Named__BehaviorDescriptor;
+          }
+          break;
+        case 70:
+          if (true) {
+            return myContextAssistantMenu_Default__BehaviorDescriptor;
+          }
+          break;
+        case 71:
+          if (true) {
+            return myContextExpression_ContextAssistantCondition__BehaviorDescriptor;
+          }
+          break;
+        case 72:
+          if (true) {
+            return myDefaultBaseLine__BehaviorDescriptor;
+          }
+          break;
+        case 73:
+          if (true) {
+            return myDrawBorderStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 74:
+          if (true) {
+            return myDrawBracketsStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 75:
+          if (true) {
+            return myEditableStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 76:
+          if (true) {
+            return myEditorCellModel__BehaviorDescriptor;
+          }
+          break;
+        case 77:
+          if (true) {
+            return myEditorComponentDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 78:
+          if (true) {
+            return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 79:
+          if (true) {
+            return myForegroundColorStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 80:
+          if (true) {
+            return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 81:
+          if (true) {
+            return myINamedContextAssistantItems__BehaviorDescriptor;
+          }
+          break;
+        case 82:
+          if (true) {
+            return myINodeProvider__BehaviorDescriptor;
+          }
+          break;
+        case 83:
+          if (true) {
+            return myIQueryFunction_Color__BehaviorDescriptor;
+          }
+          break;
+        case 84:
+          if (true) {
+            return myIStyleContainer__BehaviorDescriptor;
+          }
+          break;
+        case 85:
+          if (true) {
+            return myIStyleSheetMember__BehaviorDescriptor;
+          }
+          break;
+        case 86:
+          if (true) {
+            return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 87:
+          if (true) {
+            return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 88:
+          if (true) {
+            return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 89:
+          if (true) {
+            return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 90:
+          if (true) {
+            return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 91:
+          if (true) {
+            return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 92:
+          if (true) {
+            return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 93:
+          if (true) {
+            return myInlineEditorComponent__BehaviorDescriptor;
+          }
+          break;
+        case 94:
+          if (true) {
+            return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 95:
+          if (true) {
+            return myPaddingBottomStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 96:
+          if (true) {
+            return myPaddingLeftStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 97:
+          if (true) {
+            return myPaddingRightStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 98:
+          if (true) {
+            return myPaddingTopStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 99:
+          if (true) {
+            return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 100:
+          if (true) {
+            return myPunctuationRightStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 101:
+          if (true) {
+            return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
+          }
+          break;
+        case 102:
+          if (true) {
+            return myQueryFunction_Boolean__BehaviorDescriptor;
+          }
+          break;
+        case 103:
+          if (true) {
+            return myQueryFunction_CellProvider__BehaviorDescriptor;
+          }
+          break;
+        case 104:
+          if (true) {
+            return myQueryFunction_Color__BehaviorDescriptor;
+          }
+          break;
+        case 105:
+          if (true) {
+            return myQueryFunction_ColorComposit__BehaviorDescriptor;
+          }
+          break;
+        case 106:
+          if (true) {
+            return myQueryFunction_ContextAssistant__BehaviorDescriptor;
+          }
+          break;
+        case 107:
+          if (true) {
+            return myQueryFunction_ContextAssistantCondition__BehaviorDescriptor;
+          }
+          break;
+        case 108:
+          if (true) {
+            return myQueryFunction_ContextAssistantExecuteFunction__BehaviorDescriptor;
+          }
+          break;
+        case 109:
+          if (true) {
+            return myQueryFunction_ContextAssistantTargetNode__BehaviorDescriptor;
+          }
+          break;
+        case 110:
+          if (true) {
+            return myQueryFunction_ContextAssistantText__BehaviorDescriptor;
+          }
+          break;
+        case 111:
+          if (true) {
+            return myQueryFunction_FontStyle__BehaviorDescriptor;
+          }
+          break;
+        case 112:
+          if (true) {
+            return myQueryFunction_ImagePath__BehaviorDescriptor;
+          }
+          break;
+        case 113:
+          if (true) {
+            return myQueryFunction_Integer__BehaviorDescriptor;
+          }
+          break;
+        case 114:
+          if (true) {
+            return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
+          }
+          break;
+        case 115:
+          if (true) {
+            return myQueryFunction_JComponent__BehaviorDescriptor;
+          }
+          break;
+        case 116:
+          if (true) {
+            return myQueryFunction_MethodPresentation__BehaviorDescriptor;
+          }
+          break;
+        case 117:
+          if (true) {
+            return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
+          }
+          break;
+        case 118:
+          if (true) {
+            return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
+          }
+          break;
+        case 119:
+          if (true) {
+            return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
+          }
+          break;
+        case 120:
+          if (true) {
+            return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
+          }
+          break;
+        case 121:
+          if (true) {
+            return myQueryFunction_NodeCondition__BehaviorDescriptor;
+          }
+          break;
+        case 122:
+          if (true) {
+            return myQueryFunction_NodeFactory__BehaviorDescriptor;
+          }
+          break;
+        case 123:
+          if (true) {
+            return myQueryFunction_NodeListFilter__BehaviorDescriptor;
+          }
+          break;
+        case 124:
+          if (true) {
+            return myQueryFunction_ParametersList__BehaviorDescriptor;
+          }
+          break;
+        case 125:
+          if (true) {
+            return myQueryFunction_SNode__BehaviorDescriptor;
+          }
+          break;
+        case 126:
+          if (true) {
+            return myQueryFunction_SeparatorText__BehaviorDescriptor;
+          }
+          break;
+        case 127:
+          if (true) {
+            return myQueryFunction_String__BehaviorDescriptor;
+          }
+          break;
+        case 128:
+          if (true) {
+            return myQueryFunction_Style__BehaviorDescriptor;
+          }
+          break;
+        case 129:
+          if (true) {
+            return myQueryFunction_StyleParameter__BehaviorDescriptor;
+          }
+          break;
+        case 130:
+          if (true) {
+            return myQueryFunction_Underlined__BehaviorDescriptor;
+          }
+          break;
+        case 131:
+          if (true) {
+            return myQueryHintsSpecification__BehaviorDescriptor;
+          }
+          break;
+        case 132:
+          if (true) {
+            return myRGBColor__BehaviorDescriptor;
+          }
+          break;
+        case 133:
+          if (true) {
+            return myReadOnlyStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 134:
+          if (true) {
+            return myScriptKindClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 135:
+          if (true) {
+            return mySelectInEditorOperation__BehaviorDescriptor;
+          }
+          break;
+        case 136:
+          if (true) {
+            return mySelectableStyleSheetItem__BehaviorDescriptor;
+          }
+          break;
+        case 137:
+          if (true) {
+            return mySetBoldOperation__BehaviorDescriptor;
+          }
+          break;
+        case 138:
+          if (true) {
+            return myStrikeOutStyleSheet__BehaviorDescriptor;
+          }
+          break;
+        case 139:
+          if (true) {
+            return myStyleAttributeDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 140:
+          if (true) {
+            return myStyleClass__BehaviorDescriptor;
+          }
+          break;
+        case 141:
+          if (true) {
+            return myStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 142:
+          if (true) {
+            return myStyleKey__BehaviorDescriptor;
+          }
+          break;
+        case 143:
+          if (true) {
+            return myStyleSheet__BehaviorDescriptor;
+          }
+          break;
+        case 144:
+          if (true) {
+            return myStyleSheetClass__BehaviorDescriptor;
+          }
+          break;
+        case 145:
+          if (true) {
+            return mySynchronizeable__BehaviorDescriptor;
+          }
+          break;
+        case 146:
+          if (true) {
+            return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 147:
+          if (true) {
+            return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
+          }
+          break;
+        case 148:
+          if (true) {
+            return myTransactionalPropertyHandler__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0wf = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, "jetbrains.mps.lang.editor.structure.AbstractComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3001698d23c1e791L, "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519ae500L, "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58b0fabL, "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06f0e8a4L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06eea1c5L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbddc4fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f587b827aL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b90423L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e23362bdL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e32c7f49dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5026c90dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f906349L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f8b3f0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbf54a7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff08L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.ContextAssistantMenu_Default"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e29183aL, "jetbrains.mps.lang.editor.structure.ContextExpression_ContextAssistantCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11bdf8bf6bbL, "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd61987L, "jetbrains.mps.lang.editor.structure.EditableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b76d40L, "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1146e20cfb3L, "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.INamedContextAssistantItems"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L, "jetbrains.mps.lang.editor.structure.INodeProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1b09d8L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120c4d9abaeL, "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1d584eL, "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878c87bcL, "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41d378fL, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eb0a02a3L, "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd78e1636L, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111fbbfae55L, "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de97a3d3b88abfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d9a96L, "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d34751cL, "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantTargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L, "jetbrains.mps.lang.editor.structure.QueryFunction_ContextAssistantText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11204aae906L, "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4caca3eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5917043ba8fab771L, "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111eb58c684L, "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d75eL, "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d95571L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d9c896L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9da0bacL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d287d9dL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a1953c797L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1120492bc7eL, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113401f5070L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06ae0fL, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c142bL, "jetbrains.mps.lang.editor.structure.QueryFunction_SNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fe1c8b36cL, "jetbrains.mps.lang.editor.structure.QueryFunction_String"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30eb862d8702cebfL, "jetbrains.mps.lang.editor.structure.QueryFunction_Style"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4d022befL, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x555cb285f801e1a1L, "jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f5eefdL, "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"));
 }

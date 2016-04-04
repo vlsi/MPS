@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,31 +35,75 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
-      case 0:
-        return myConceptArgumentClause;
-      case 1:
-        return myConceptCustomArgumentClause;
-      case 2:
-        return myConceptCustomConstructor;
-      case 3:
-        return myConceptCustomConstructorContainer;
-      case 4:
-        return myConceptCustomConstructorParameter;
-      case 5:
-        return myConceptCustomConstructorParameterReference;
-      case 6:
-        return myConceptCustomConstructorUsage;
-      case 7:
-        return myConceptListArgumentsClause;
-      case 8:
-        return myConceptListCustomParameter;
-      case 9:
-        return myConceptListParameterReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0o.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptArgumentClause;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCustomArgumentClause;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCustomConstructor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptCustomConstructorContainer;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptCustomConstructorParameter;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptCustomConstructorParameterReference;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptCustomConstructorUsage;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptListArgumentsClause;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptListCustomParameter;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptListParameterReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter", "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0o = buildConceptIndices(MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b7L, "jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6baL, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c1L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b7431819L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b745ce64L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a5073807afbL, "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter"), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a50737ea2a7L, "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"));
 }

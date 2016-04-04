@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -28,25 +32,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptMoneyCreator;
-      case 1:
-        return myConceptMoneyGetAmountMethodCall;
-      case 2:
-        return myConceptMoneyGetCurrencyMethodCall;
-      case 3:
-        return myConceptMoneyIsZeroMethodCall;
-      case 4:
-        return myConceptMoneyLiteral;
-      case 5:
-        return myConceptMoneyMethodCall;
-      case 6:
-        return myConceptMoneyType;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptMoneyCreator;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptMoneyGetAmountMethodCall;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptMoneyGetCurrencyMethodCall;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptMoneyIsZeroMethodCall;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptMoneyLiteral;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptMoneyMethodCall;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptMoneyType;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyType"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b5d60L, "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740c6f9bL, "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11483863450L, "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x114740b1673L, "jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall"), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144b05194dL, "jetbrains.mps.baseLanguage.money.structure.MoneyType"));
 }

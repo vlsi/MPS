@@ -4,55 +4,62 @@ package org.jetbrains.mps.samples.IfAndUnless.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[3];
-    myId2Index[0] = 0xf8cc56b215L;
-    myId2Index[1] = 0x57547b70f36dc0dL;
-    myId2Index[2] = 0xd403d58ad448ccaL;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: Statement 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new SurroundWithUnless_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: UnlessStatement 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[2];
-          myIntentions1[0] = new UnwrapUnlessBlock_Intention();
-          myIntentions1[1] = new TurnToIfStatement_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: MyIfStatement 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new ConvertMyIfToIf_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: MyIfStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertMyIfToIf_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: Statement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new SurroundWithUnless_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: UnlessStatement 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new UnwrapUnlessBlock_Intention();
+            intentions[1] = new TurnToIfStatement_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -65,4 +72,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new SurroundWithUnless_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"));
 }

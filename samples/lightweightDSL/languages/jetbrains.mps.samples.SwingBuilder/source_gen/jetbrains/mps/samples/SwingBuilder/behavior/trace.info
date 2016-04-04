@@ -13,61 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,70,0" name="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Button_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Button_BehaviorDescriptor" />
-    </file>
-    <file name="Component_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Component_BehaviorDescriptor" />
-    </file>
-    <file name="Converter_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Converter_BehaviorDescriptor" />
-    </file>
-    <file name="ElementReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.SwingBuilder.behavior.ElementReference_BehaviorDescriptor" />
-    </file>
-    <file name="EmptyComponent_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.SwingBuilder.behavior.EmptyComponent_BehaviorDescriptor" />
-    </file>
-    <file name="Filter_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Filter_BehaviorDescriptor" />
-    </file>
-    <file name="Frame_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Frame_BehaviorDescriptor" />
-    </file>
-    <file name="Label_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Label_BehaviorDescriptor" />
-    </file>
-    <file name="Map_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Map_BehaviorDescriptor" />
-    </file>
-    <file name="Panel_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Panel_BehaviorDescriptor" />
-    </file>
-    <file name="Pipeline_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline_BehaviorDescriptor" />
-    </file>
-    <file name="SourceDataType_BehaviorDescriptor.java">
-      <unit at="18,0,53,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType_BehaviorDescriptor" />
-    </file>
-    <file name="SwingBuilderMember_BehaviorDescriptor.java">
-      <unit at="18,0,53,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember_BehaviorDescriptor" />
-    </file>
-    <file name="TargetDataType_BehaviorDescriptor.java">
-      <unit at="18,0,53,0" name="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType_BehaviorDescriptor" />
-    </file>
-    <file name="TextField_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.samples.SwingBuilder.behavior.TextField_BehaviorDescriptor" />
-    </file>
-    <file name="Transformers_BehaviorDescriptor.java">
-      <unit at="18,0,53,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Transformers_BehaviorDescriptor" />
+      <unit at="14,0,90,0" name="jetbrains.mps.samples.SwingBuilder.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/5340361359451375119">
-    <file name="SwingBuilderMember_Behavior.java">
-      <unit id="5340361359451375119" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SwingBuilderMember_Behavior" />
-    </file>
     <file name="SwingBuilderMember__BehaviorDescriptor.java">
       <node id="5340361359451375119" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="5340361359451375119" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -142,9 +91,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/5575318041730182313">
-    <file name="SourceDataType_Behavior.java">
-      <unit id="5575318041730182313" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.SourceDataType_Behavior" />
-    </file>
     <file name="SourceDataType__BehaviorDescriptor.java">
       <node id="5575318041730182313" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="5575318041730182313" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -219,9 +165,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/5575318041730184276">
-    <file name="TargetDataType_Behavior.java">
-      <unit id="5575318041730184276" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.TargetDataType_Behavior" />
-    </file>
     <file name="TargetDataType__BehaviorDescriptor.java">
       <node id="5575318041730184276" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="5575318041730184276" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -296,21 +239,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/5575318041730242139">
-    <file name="Converter_Behavior.java">
-      <node id="5575318041730242139" at="13,82,14,83" concept="5" />
-      <node id="5575318041730242139" at="16,82,17,83" concept="5" />
-      <node id="5575318041730242139" at="13,0,16,0" concept="7" trace="call_getSourceType_5575318041730244800#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5575318041730242139" at="16,0,19,0" concept="7" trace="call_getTargetType_5575318041730246446#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5575318041730242139" at="13,82,14,83" />
-      <scope id="5575318041730242139" at="16,82,17,83" />
-      <scope id="5575318041730242139" at="13,0,16,0">
-        <var name="__thisNode__" id="5575318041730242139" />
-      </scope>
-      <scope id="5575318041730242139" at="16,0,19,0">
-        <var name="__thisNode__" id="5575318041730242139" />
-      </scope>
-      <unit id="5575318041730242139" at="11,0,20,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Converter_Behavior" />
-    </file>
     <file name="Converter__BehaviorDescriptor.java">
       <node id="5575318041730242139" at="28,0,29,0" concept="6" trace="CONCEPT" />
       <node id="5575318041730242139" at="29,0,30,0" concept="6" trace="REGISTRY" />
@@ -403,9 +331,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/941086956890758381">
-    <file name="Filter_Behavior.java">
-      <unit id="941086956890758381" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Filter_Behavior" />
-    </file>
     <file name="Filter__BehaviorDescriptor.java">
       <node id="941086956890758381" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="941086956890758381" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -480,9 +405,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/941086956890758640">
-    <file name="Map_Behavior.java">
-      <unit id="941086956890758640" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Map_Behavior" />
-    </file>
     <file name="Map__BehaviorDescriptor.java">
       <node id="941086956890758640" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="941086956890758640" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -557,9 +479,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/941086956890758974">
-    <file name="Transformers_Behavior.java">
-      <unit id="941086956890758974" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Transformers_Behavior" />
-    </file>
     <file name="Transformers__BehaviorDescriptor.java">
       <node id="941086956890758974" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="941086956890758974" at="26,0,27,0" concept="6" trace="REGISTRY" />
@@ -634,9 +553,6 @@
     </file>
   </root>
   <root nodeRef="r:7b3e122e-7e64-4c05-a2c6-a91fde0cc734(jetbrains.mps.samples.SwingBuilder.behavior)/941086956891067877">
-    <file name="Pipeline_Behavior.java">
-      <unit id="941086956891067877" at="10,0,13,0" name="jetbrains.mps.samples.SwingBuilder.behavior.Pipeline_Behavior" />
-    </file>
     <file name="Pipeline__BehaviorDescriptor.java">
       <node id="941086956891067877" at="25,0,26,0" concept="6" trace="CONCEPT" />
       <node id="941086956891067877" at="26,0,27,0" concept="6" trace="REGISTRY" />

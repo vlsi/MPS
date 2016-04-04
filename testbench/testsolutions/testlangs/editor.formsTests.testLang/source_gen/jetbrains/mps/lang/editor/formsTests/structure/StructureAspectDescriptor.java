@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,17 +27,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
-      case 0:
-        return myConceptUsesPlatformCheckbox;
-      case 1:
-        return myConceptUsesTextCheckbox;
-      case 2:
-        return myConceptVariousCheckboxes;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptUsesPlatformCheckbox;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptUsesTextCheckbox;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptVariousCheckboxes;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"));
 }

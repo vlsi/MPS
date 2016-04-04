@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,15 +27,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
-      case 0:
-        return myConceptAspectModelRefExpression;
-      case 1:
-        return myConceptModel_IsAspectOperation;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAspectModelRefExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptModel_IsAspectOperation;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression", "jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x55a418200fd9206aL, "jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression"), MetaAdapterFactory.getConcept(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x1c2d7d27ffb53efbL, "jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation"));
 }

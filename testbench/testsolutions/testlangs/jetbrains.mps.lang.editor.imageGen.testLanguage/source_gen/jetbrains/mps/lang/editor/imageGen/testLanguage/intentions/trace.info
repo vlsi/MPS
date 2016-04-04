@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="IntentionsDescriptor.java">
-      <unit at="14,0,48,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.intentions.IntentionsDescriptor" />
+      <unit at="17,0,68,0" name="jetbrains.mps.lang.editor.imageGen.testLanguage.intentions.IntentionsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f4a32df3-ddb6-4338-8cd1-da1b81738090(jetbrains.mps.lang.editor.imageGen.testLanguage.intentions)/2442780630506700692">

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -70,109 +74,270 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0bc, conceptFqName)) {
-      case 0:
-        return myConceptAbstractMoveExpression;
-      case 1:
-        return myConceptAbstractMoveNodeExpression;
-      case 2:
-        return myConceptAbstractMoveNodesExpression;
-      case 3:
-        return myConceptAffectedNodesClause;
-      case 4:
-        return myConceptConceptFunctionParameter_Model;
-      case 5:
-        return myConceptConceptFunctionParameter_Module;
-      case 6:
-        return myConceptConceptFunctionParameter_SModel;
-      case 7:
-        return myConceptConceptFunctionParameter_SNode;
-      case 8:
-        return myConceptContextMemberOperation;
-      case 9:
-        return myConceptContextType;
-      case 10:
-        return myConceptCreateRefactoringContext;
-      case 11:
-        return myConceptDoRefactorClause;
-      case 12:
-        return myConceptDoWhenDoneClause;
-      case 13:
-        return myConceptExecuteRefactoringStatement;
-      case 14:
-        return myConceptGetModelsToUpdateClause;
-      case 15:
-        return myConceptInitClause;
-      case 16:
-        return myConceptIsApplicableToModelClause;
-      case 17:
-        return myConceptIsApplicableToModuleClause;
-      case 18:
-        return myConceptIsApplicableToNodeClause;
-      case 19:
-        return myConceptIsRefactoringApplicable;
-      case 20:
-        return myConceptMainProjectOperation;
-      case 21:
-        return myConceptModelDescriptorOperation;
-      case 22:
-        return myConceptModelTarget;
-      case 23:
-        return myConceptModelsToGenerateByDefault;
-      case 24:
-        return myConceptModelsToGenerateClause;
-      case 25:
-        return myConceptModuleOperation;
-      case 26:
-        return myConceptModuleTarget;
-      case 27:
-        return myConceptMoveNodeToModelExpression;
-      case 28:
-        return myConceptMoveNodeToNodeExpression;
-      case 29:
-        return myConceptMoveNodesToModelExpression;
-      case 30:
-        return myConceptMoveNodesToNodeExpression;
-      case 31:
-        return myConceptNodeOperation;
-      case 32:
-        return myConceptNodeTarget;
-      case 33:
-        return myConceptNodesOperation;
-      case 34:
-        return myConceptOperationContextOperation;
-      case 35:
-        return myConceptProjectOperation;
-      case 36:
-        return myConceptRefactoring;
-      case 37:
-        return myConceptRefactoringAction;
-      case 38:
-        return myConceptRefactoringArgument;
-      case 39:
-        return myConceptRefactoringArgumentReference;
-      case 40:
-        return myConceptRefactoringContext_ConceptFunctionParameter;
-      case 41:
-        return myConceptRefactoringField;
-      case 42:
-        return myConceptRefactoringFieldReference;
-      case 43:
-        return myConceptRefactoringParameter;
-      case 44:
-        return myConceptRefactoringParameterReference;
-      case 45:
-        return myConceptRefactoringTarget;
-      case 46:
-        return myConceptRepositoryOperation;
-      case 47:
-        return myConceptScopeOperation;
-      case 48:
-        return myConceptUpdateModelProcedure;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0bc.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractMoveExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractMoveNodeExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAbstractMoveNodesExpression;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptAffectedNodesClause;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptConceptFunctionParameter_Model;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConceptFunctionParameter_Module;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptConceptFunctionParameter_SModel;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptConceptFunctionParameter_SNode;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptContextMemberOperation;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptContextType;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptCreateRefactoringContext;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptDoRefactorClause;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptDoWhenDoneClause;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptExecuteRefactoringStatement;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptGetModelsToUpdateClause;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptInitClause;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptIsApplicableToModelClause;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptIsApplicableToModuleClause;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptIsApplicableToNodeClause;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptIsRefactoringApplicable;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptMainProjectOperation;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptModelDescriptorOperation;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptModelTarget;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptModelsToGenerateByDefault;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptModelsToGenerateClause;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptModuleOperation;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptModuleTarget;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptMoveNodeToModelExpression;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptMoveNodeToNodeExpression;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptMoveNodesToModelExpression;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptMoveNodesToNodeExpression;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptNodeOperation;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptNodeTarget;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptNodesOperation;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptOperationContextOperation;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptProjectOperation;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptRefactoring;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptRefactoringAction;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptRefactoringArgument;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptRefactoringArgumentReference;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptRefactoringContext_ConceptFunctionParameter;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptRefactoringField;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptRefactoringFieldReference;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptRefactoringParameter;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptRefactoringParameterReference;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptRefactoringTarget;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptRepositoryOperation;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptScopeOperation;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myConceptUpdateModelProcedure;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0bc = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression", "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel", "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.DoRefactorClause", "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause", "jetbrains.mps.lang.refactoring.structure.InitClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause", "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.MainProjectOperation", "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", "jetbrains.mps.lang.refactoring.structure.ModuleOperation", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeOperation", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.NodesOperation", "jetbrains.mps.lang.refactoring.structure.OperationContextOperation", "jetbrains.mps.lang.refactoring.structure.ProjectOperation", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringArgument", "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringField", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RefactoringTarget", "jetbrains.mps.lang.refactoring.structure.RepositoryOperation", "jetbrains.mps.lang.refactoring.structure.ScopeOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0bc = buildConceptIndices(MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eee67c1L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174eeedfb6L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1179d272ac6L, "jetbrains.mps.lang.refactoring.structure.AffectedNodesClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f5764daL, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Model"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0577L, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_Module"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff551cd5L, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SModel"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a059eL, "jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b65b84aL, "jetbrains.mps.lang.refactoring.structure.ContextType"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x335c206b02bc2de5L, "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x114ff4a9da3L, "jetbrains.mps.lang.refactoring.structure.DoRefactorClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1c9210c7226dbbf4L, "jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1fe4fcef62d0186cL, "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x119f1c05cbcL, "jetbrains.mps.lang.refactoring.structure.GetModelsToUpdateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e4d77d2L, "jetbrains.mps.lang.refactoring.structure.InitClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1199f56b378L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0571L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToModuleClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0598L, "jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5b9318cd86fd917dL, "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x709995bad7715796L, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646fL, "jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056aL, "jetbrains.mps.lang.refactoring.structure.ModelTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x3c55f2dab56d441dL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x175aa0f4225aa61fL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616471L, "jetbrains.mps.lang.refactoring.structure.ModuleOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056bL, "jetbrains.mps.lang.refactoring.structure.ModuleTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef1677bL, "jetbrains.mps.lang.refactoring.structure.MoveNodeToModelExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef58749L, "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef7a718L, "jetbrains.mps.lang.refactoring.structure.MoveNodesToModelExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174efa95a1L, "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616473L, "jetbrains.mps.lang.refactoring.structure.NodeOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616475L, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616477L, "jetbrains.mps.lang.refactoring.structure.OperationContextOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b616479L, "jetbrains.mps.lang.refactoring.structure.ProjectOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x2cfffca8ff395f2fL, "jetbrains.mps.lang.refactoring.structure.RefactoringAction"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327d5dL, "jetbrains.mps.lang.refactoring.structure.RefactoringArgument"), MetaAdapterFactory.getInterfaceConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6a4d729d0327dc4L, "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61724aL, "jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0662L, "jetbrains.mps.lang.refactoring.structure.RefactoringField"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL, "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameter"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77cda06L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0569L, "jetbrains.mps.lang.refactoring.structure.RefactoringTarget"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x526920001de2794bL, "jetbrains.mps.lang.refactoring.structure.RepositoryOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61647bL, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x11710c75c77L, "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"));
 }

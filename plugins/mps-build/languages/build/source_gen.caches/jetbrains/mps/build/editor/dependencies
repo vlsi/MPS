@@ -1994,9 +1994,12 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildAspect_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildCompositePath_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildCustomWorkflow_Editor" />
@@ -2101,8 +2104,6 @@
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_LibraryArtifacts_Editor" />
     <classNode dependClassName="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

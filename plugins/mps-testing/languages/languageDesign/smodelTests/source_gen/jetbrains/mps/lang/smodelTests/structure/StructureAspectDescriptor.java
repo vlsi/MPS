@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,23 +30,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
-      case 0:
-        return myConceptChild;
-      case 1:
-        return myConceptChildSubConcept;
-      case 2:
-        return myConceptGrandChild;
-      case 3:
-        return myConceptReferenceContainer;
-      case 4:
-        return myConceptReferenceContainerSubConcept;
-      case 5:
-        return myConceptRoot;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptChild;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptChildSubConcept;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptGrandChild;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptReferenceContainer;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptReferenceContainerSubConcept;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptRoot;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, "jetbrains.mps.lang.smodelTests.structure.Child"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x7a02788de4ab4dL, "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc4L, "jetbrains.mps.lang.smodelTests.structure.GrandChild"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x279bb63b8ca8b7feL, "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fc5L, "jetbrains.mps.lang.smodelTests.structure.Root"));
 }

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -32,33 +36,80 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
-      case 0:
-        return myConceptApplicationPluginDeclaration;
-      case 1:
-        return myConceptApplicationPluginDisposeBlock;
-      case 2:
-        return myConceptApplicationPluginInitBlock;
-      case 3:
-        return myConceptApplicationPluginType;
-      case 4:
-        return myConceptGetPreferencesComponentInProjectOperation;
-      case 5:
-        return myConceptGetToolInProjectOperation;
-      case 6:
-        return myConceptProjectPluginDeclaration;
-      case 7:
-        return myConceptProjectPluginDisposeBlock;
-      case 8:
-        return myConceptProjectPluginInitBlock;
-      case 9:
-        return myConceptProjectPluginType;
-      case 10:
-        return myConceptStandalonePluginDescriptor;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptApplicationPluginDeclaration;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptApplicationPluginDisposeBlock;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptApplicationPluginInitBlock;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptApplicationPluginType;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptGetPreferencesComponentInProjectOperation;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptGetToolInProjectOperation;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptProjectPluginDeclaration;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptProjectPluginDisposeBlock;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptProjectPluginInitBlock;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptProjectPluginType;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptStandalonePluginDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f205eL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2063L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f204fL, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2118L, "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2115L, "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2043L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2049L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2068L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType"), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"));
 }

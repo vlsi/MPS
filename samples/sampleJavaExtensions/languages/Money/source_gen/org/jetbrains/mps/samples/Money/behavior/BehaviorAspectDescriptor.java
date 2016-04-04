@@ -4,12 +4,12 @@ package org.jetbrains.mps.samples.Money.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myCurrentStockPrice__BehaviorDescriptor = new CurrentStockPrice__BehaviorDescriptor();
@@ -18,40 +18,54 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myMoneyLiteral__BehaviorDescriptor = new MoneyLiteral__BehaviorDescriptor();
   private final BHDescriptor myMoneyType__BehaviorDescriptor = new MoneyType__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[5];
-    myConceptBehaviorIds[0] = 0x3786e3f4808999c3L;
-    myConceptBehaviorIds[1] = 0x3786e3f480a9b18aL;
-    myConceptBehaviorIds[2] = 0x3786e3f480b1c19aL;
-    myConceptBehaviorIds[3] = 0x4b9a2fe559135132L;
-    myConceptBehaviorIds[4] = 0x4b9a2fe55913516aL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myCurrentStockPrice__BehaviorDescriptor;
-      case 1:
-        return myStockSymbol__BehaviorDescriptor;
-      case 2:
-        return myMovingAverage__BehaviorDescriptor;
-      case 3:
-        return myMoneyLiteral__BehaviorDescriptor;
-      case 4:
-        return myMoneyType__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myCurrentStockPrice__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myMoneyLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myMoneyType__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myMovingAverage__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myStockSymbol__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913516aL, "org.jetbrains.mps.samples.Money.structure.MoneyType"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, "org.jetbrains.mps.samples.Money.structure.MovingAverage"), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, "org.jetbrains.mps.samples.Money.structure.StockSymbol"));
 }

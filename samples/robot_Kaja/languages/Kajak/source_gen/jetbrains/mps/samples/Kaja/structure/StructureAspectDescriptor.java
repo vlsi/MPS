@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -49,69 +53,170 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0hb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractCommand;
-      case 1:
-        return myConceptCommandList;
-      case 2:
-        return myConceptCommentLine;
-      case 3:
-        return myConceptDirection;
-      case 4:
-        return myConceptDrop;
-      case 5:
-        return myConceptEast;
-      case 6:
-        return myConceptEmptyLine;
-      case 7:
-        return myConceptHeading;
-      case 8:
-        return myConceptIfStatement;
-      case 9:
-        return myConceptIsFull;
-      case 10:
-        return myConceptIsMark;
-      case 11:
-        return myConceptIsWall;
-      case 12:
-        return myConceptLeftTurn;
-      case 13:
-        return myConceptLibrary;
-      case 14:
-        return myConceptLogicalExpression;
-      case 15:
-        return myConceptLooking;
-      case 16:
-        return myConceptNorth;
-      case 17:
-        return myConceptNot;
-      case 18:
-        return myConceptPick;
-      case 19:
-        return myConceptRepeat;
-      case 20:
-        return myConceptRequire;
-      case 21:
-        return myConceptRoutineCall;
-      case 22:
-        return myConceptRoutineDefinition;
-      case 23:
-        return myConceptScript;
-      case 24:
-        return myConceptSouth;
-      case 25:
-        return myConceptStep;
-      case 26:
-        return myConceptTraceMessage;
-      case 27:
-        return myConceptWest;
-      case 28:
-        return myConceptWhile;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0hb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractCommand;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCommandList;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCommentLine;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDirection;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDrop;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptEast;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptEmptyLine;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptHeading;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptIfStatement;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIsFull;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIsMark;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptIsWall;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptLeftTurn;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptLibrary;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptLogicalExpression;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptLooking;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptNorth;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptNot;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptPick;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptRepeat;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptRequire;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptRoutineCall;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptRoutineDefinition;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptScript;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptSouth;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptStep;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptTraceMessage;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptWest;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptWhile;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0hb = new String[]{"jetbrains.mps.samples.Kaja.structure.AbstractCommand", "jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Direction", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0hb = buildConceptIndices(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713fa2b43L, "jetbrains.mps.samples.Kaja.structure.CommentLine"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d39L, "jetbrains.mps.samples.Kaja.structure.Direction"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f79f27L, "jetbrains.mps.samples.Kaja.structure.Drop"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d41L, "jetbrains.mps.samples.Kaja.structure.East"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c41L, "jetbrains.mps.samples.Kaja.structure.Heading"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0xbebd01a737bec18L, "jetbrains.mps.samples.Kaja.structure.IsFull"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f89fe6L, "jetbrains.mps.samples.Kaja.structure.IsMark"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785eca02cL, "jetbrains.mps.samples.Kaja.structure.IsWall"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L, "jetbrains.mps.samples.Kaja.structure.LogicalExpression"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x61fd16e423a38042L, "jetbrains.mps.samples.Kaja.structure.Looking"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d3bL, "jetbrains.mps.samples.Kaja.structure.North"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f85f1dL, "jetbrains.mps.samples.Kaja.structure.Pick"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, "jetbrains.mps.samples.Kaja.structure.Repeat"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f1a1049L, "jetbrains.mps.samples.Kaja.structure.Require"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f92L, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, "jetbrains.mps.samples.Kaja.structure.Script"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d4bL, "jetbrains.mps.samples.Kaja.structure.South"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2c8eb033a8375aeeL, "jetbrains.mps.samples.Kaja.structure.TraceMessage"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c3cL, "jetbrains.mps.samples.Kaja.structure.West"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While"));
 }

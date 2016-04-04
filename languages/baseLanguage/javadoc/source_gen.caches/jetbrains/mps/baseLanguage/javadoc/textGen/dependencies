@@ -237,8 +237,10 @@
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.AuthorBlockDocTag_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.BaseParameterReference_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
@@ -265,11 +267,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.ValueInlineDocTag_TextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.VersionBlockDocTag_TextGen" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
     <classNode dependClassName="jetbrains.mps.text.rt.TextGenModelOutline" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenAspectBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.textGen.ThrowsBlockDocTag_TextGen" file="ThrowsBlockDocTag_TextGen.java">

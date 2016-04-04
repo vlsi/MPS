@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -47,63 +51,155 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0eb, conceptFqName)) {
-      case 0:
-        return myConceptConstantValue;
-      case 1:
-        return myConceptExtractStatementListExpression;
-      case 2:
-        return myConceptExtractStatementListInnerExpression;
-      case 3:
-        return myConceptExtractStaticInnerClassConcept;
-      case 4:
-        return myConceptExtractStaticInnerClassCreator;
-      case 5:
-        return myConceptExtractStaticInnerClassExpression;
-      case 6:
-        return myConceptExtractStaticMethodExpression;
-      case 7:
-        return myConceptExtractStaticMethod_CallExpression;
-      case 8:
-        return myConceptExtractToConstantExpression;
-      case 9:
-        return myConceptExtractToConstantRefExpression;
-      case 10:
-        return myConceptInternalAnonymousClass;
-      case 11:
-        return myConceptInternalAnonymousClassCreator;
-      case 12:
-        return myConceptInternalClassCreator;
-      case 13:
-        return myConceptInternalClassExpression;
-      case 14:
-        return myConceptInternalClassifierType;
-      case 15:
-        return myConceptInternalNewExpression;
-      case 16:
-        return myConceptInternalPartialFieldReference;
-      case 17:
-        return myConceptInternalPartialInstanceMethodCall;
-      case 18:
-        return myConceptInternalStaticFieldReference;
-      case 19:
-        return myConceptInternalStaticMethodCall;
-      case 20:
-        return myConceptInternalSuperMethodCallOperation;
-      case 21:
-        return myConceptInternalThisExpression;
-      case 22:
-        return myConceptInternalTypedStaticFieldReference;
-      case 23:
-        return myConceptInternalVariableReference;
-      case 24:
-        return myConceptTypeHintExpression;
-      case 25:
-        return myConceptWeakClassReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0eb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConstantValue;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptExtractStatementListExpression;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptExtractStatementListInnerExpression;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptExtractStaticInnerClassConcept;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExtractStaticInnerClassCreator;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExtractStaticInnerClassExpression;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptExtractStaticMethodExpression;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptExtractStaticMethod_CallExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptExtractToConstantExpression;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptExtractToConstantRefExpression;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptInternalAnonymousClass;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptInternalAnonymousClassCreator;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptInternalClassCreator;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptInternalClassExpression;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptInternalClassifierType;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptInternalNewExpression;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptInternalPartialFieldReference;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptInternalPartialInstanceMethodCall;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptInternalStaticFieldReference;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptInternalStaticMethodCall;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptInternalSuperMethodCallOperation;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptInternalThisExpression;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptInternalTypedStaticFieldReference;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptInternalVariableReference;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptTypeHintExpression;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptWeakClassReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0eb = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalTypedStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0eb = buildConceptIndices(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, "jetbrains.mps.baseLanguageInternal.structure.ConstantValue"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b762fd2a7L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b763512c9L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xd01bb6e8b1cd97aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x50cc34ef144c9181L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x6b63d4344723dac8L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ea0ac4L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746808L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xf46f1c42ee50930L, "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1117461827dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1118e558c6dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1122dd58737L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1180ebdd5b4L, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7232370459dfc310L, "jetbrains.mps.baseLanguageInternal.structure.InternalTypedStaticFieldReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"));
 }

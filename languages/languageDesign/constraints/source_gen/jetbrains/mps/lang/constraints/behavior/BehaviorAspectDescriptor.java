@@ -4,12 +4,12 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myNodePropertyConstraint__BehaviorDescriptor = new NodePropertyConstraint__BehaviorDescriptor();
@@ -47,127 +47,199 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor();
   private final BHDescriptor myConstraintFunctionParameter_contextNode__BehaviorDescriptor = new ConstraintFunctionParameter_contextNode__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[34];
-    myConceptBehaviorIds[0] = 0x10b2a5eaa48L;
-    myConceptBehaviorIds[1] = 0x10b2a68f861L;
-    myConceptBehaviorIds[2] = 0x10b2a71bcdcL;
-    myConceptBehaviorIds[3] = 0x10b72e99b73L;
-    myConceptBehaviorIds[4] = 0x10b731752daL;
-    myConceptBehaviorIds[5] = 0x10b81d516b4L;
-    myConceptBehaviorIds[6] = 0x10b81d7448bL;
-    myConceptBehaviorIds[7] = 0x10c71c4f329L;
-    myConceptBehaviorIds[8] = 0x10dead47852L;
-    myConceptBehaviorIds[9] = 0x10ed4250f82L;
-    myConceptBehaviorIds[10] = 0x11817c381baL;
-    myConceptBehaviorIds[11] = 0x11817c5715bL;
-    myConceptBehaviorIds[12] = 0x1181873ed50L;
-    myConceptBehaviorIds[13] = 0x11818761c19L;
-    myConceptBehaviorIds[14] = 0x11818f5cad4L;
-    myConceptBehaviorIds[15] = 0x11a369c051fL;
-    myConceptBehaviorIds[16] = 0x11a7208faaeL;
-    myConceptBehaviorIds[17] = 0x11db3f6ffbbL;
-    myConceptBehaviorIds[18] = 0x295782e439c9459bL;
-    myConceptBehaviorIds[19] = 0x297f56a5546902a8L;
-    myConceptBehaviorIds[20] = 0x30502bd604b2430aL;
-    myConceptBehaviorIds[21] = 0x341b038f9307e5cfL;
-    myConceptBehaviorIds[22] = 0x36367902116a44c1L;
-    myConceptBehaviorIds[23] = 0x3fb59c48ff4b8cfdL;
-    myConceptBehaviorIds[24] = 0x40a0f5576472817aL;
-    myConceptBehaviorIds[25] = 0x40a0f55764728181L;
-    myConceptBehaviorIds[26] = 0x40a0f55764728188L;
-    myConceptBehaviorIds[27] = 0x44df12c18fcb2300L;
-    myConceptBehaviorIds[28] = 0x4ec772c80d1cb34bL;
-    myConceptBehaviorIds[29] = 0x5d82bba5f0907509L;
-    myConceptBehaviorIds[30] = 0x5df04ce71509adf4L;
-    myConceptBehaviorIds[31] = 0x5df04ce71509adfdL;
-    myConceptBehaviorIds[32] = 0x6d03b53f575b9685L;
-    myConceptBehaviorIds[33] = 0x7c6f6cc2e7bb76f0L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myNodePropertyConstraint__BehaviorDescriptor;
-      case 1:
-        return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
-      case 2:
-        return myConstraintsFunctionParameter_node__BehaviorDescriptor;
-      case 3:
-        return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
-      case 4:
-        return myNodeReferentConstraint__BehaviorDescriptor;
-      case 5:
-        return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
-      case 6:
-        return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
-      case 7:
-        return myConstraintFunction_PropertySetter__BehaviorDescriptor;
-      case 8:
-        return myNodeDefaultSearchScope__BehaviorDescriptor;
-      case 9:
-        return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
-      case 10:
-        return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
-      case 11:
-        return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
-      case 12:
-        return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
-      case 13:
-        return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
-      case 14:
-        return myConstraintFunctionParameter_link__BehaviorDescriptor;
-      case 15:
-        return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
-      case 16:
-        return myConceptConstraints__BehaviorDescriptor;
-      case 17:
-        return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
-      case 18:
-        return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
-      case 19:
-        return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
-      case 20:
-        return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
-      case 21:
-        return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
-      case 22:
-        return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
-      case 23:
-        return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
-      case 24:
-        return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
-      case 25:
-        return myConstraintFunctionParameter_exists__BehaviorDescriptor;
-      case 26:
-        return myConstraintFunctionParameter_position__BehaviorDescriptor;
-      case 27:
-        return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
-      case 28:
-        return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
-      case 29:
-        return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
-      case 30:
-        return myConstraintFunctionParameter_visible__BehaviorDescriptor;
-      case 31:
-        return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
-      case 32:
-        return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
-      case 33:
-        return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0lb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConstraints__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConstraintFunctionParameter_exists__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConstraintFunctionParameter_link__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConstraintFunctionParameter_position__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConstraintFunctionParameter_visible__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConstraintFunction_PropertySetter__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConstraintsFunctionParameter_node__BehaviorDescriptor;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myNodeDefaultSearchScope__BehaviorDescriptor;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myNodePropertyConstraint__BehaviorDescriptor;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myNodeReferentConstraint__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0lb = buildConceptIndices(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d7448bL, "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x297f56a5546902a8L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818761c19L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5d82bba5f0907509L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x295782e439c9459bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x7c6f6cc2e7bb76f0L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f5576472817aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728181L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x3fb59c48ff4b8cfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11818f5cad4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c5715bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x40a0f55764728188L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adfdL, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11817c381baL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x1181873ed50L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11db3f6ffbbL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x6d03b53f575b9685L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x341b038f9307e5cfL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b81d516b4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b72e99b73L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x4ec772c80d1cb34bL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x30502bd604b2430aL, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a71bcdcL, "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint"), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"));
 }

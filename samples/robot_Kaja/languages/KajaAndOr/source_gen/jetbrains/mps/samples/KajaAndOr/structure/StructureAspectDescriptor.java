@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,17 +27,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
-      case 0:
-        return myConceptAnd;
-      case 1:
-        return myConceptLogicalOperator;
-      case 2:
-        return myConceptOr;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAnd;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptLogicalOperator;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptOr;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.samples.KajaAndOr.structure.And", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.KajaAndOr.structure.Or"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a460aL, "jetbrains.mps.samples.KajaAndOr.structure.And"), MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L, "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), MetaAdapterFactory.getConcept(0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46bbL, "jetbrains.mps.samples.KajaAndOr.structure.Or"));
 }

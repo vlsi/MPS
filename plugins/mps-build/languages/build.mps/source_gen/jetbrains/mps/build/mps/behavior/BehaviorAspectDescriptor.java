@@ -4,12 +4,12 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myBuildMps_DevKit__BehaviorDescriptor = new BuildMps_DevKit__BehaviorDescriptor();
@@ -30,76 +30,114 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myBuildMps_IdeaPluginGroup__BehaviorDescriptor = new BuildMps_IdeaPluginGroup__BehaviorDescriptor();
   private final BHDescriptor myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor = new BuildMpsLayout_PluginDescriptor__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[17];
-    myConceptBehaviorIds[0] = 0x4780308f5d2060eL;
-    myConceptBehaviorIds[1] = 0x4780308f5d333ebL;
-    myConceptBehaviorIds[2] = 0xc0bde9fc71699d9L;
-    myConceptBehaviorIds[3] = 0x11918e0f209b83e7L;
-    myConceptBehaviorIds[4] = 0x127671bd5d8bb460L;
-    myConceptBehaviorIds[5] = 0x177c2feaf3463710L;
-    myConceptBehaviorIds[6] = 0x1d38569c566c8c91L;
-    myConceptBehaviorIds[7] = 0x2c446791464290f7L;
-    myConceptBehaviorIds[8] = 0x2c446791464290f8L;
-    myConceptBehaviorIds[9] = 0x48e82d508331930cL;
-    myConceptBehaviorIds[10] = 0x4c6db07d2e56a8b4L;
-    myConceptBehaviorIds[11] = 0x5b7be37b4de9bb6eL;
-    myConceptBehaviorIds[12] = 0x5b7be37b4de9bb74L;
-    myConceptBehaviorIds[13] = 0x5b7be37b4de9bbdcL;
-    myConceptBehaviorIds[14] = 0x5b7be37b4de9bbebL;
-    myConceptBehaviorIds[15] = 0x5b7be37b4deb1201L;
-    myConceptBehaviorIds[16] = 0x5b7be37b4dee437cL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myBuildMps_DevKit__BehaviorDescriptor;
-      case 1:
-        return myBuildMps_AbstractModule__BehaviorDescriptor;
-      case 2:
-        return myBuildMPSPlugin__BehaviorDescriptor;
-      case 3:
-        return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
-      case 4:
-        return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
-      case 5:
-        return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
-      case 6:
-        return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
-      case 7:
-        return myBuildMps_Solution__BehaviorDescriptor;
-      case 8:
-        return myBuildMps_Language__BehaviorDescriptor;
-      case 9:
-        return myBuildMps_Module__BehaviorDescriptor;
-      case 10:
-        return myBuildMps_Generator__BehaviorDescriptor;
-      case 11:
-        return myBuildMpsLayout_Plugin__BehaviorDescriptor;
-      case 12:
-        return myBuildMps_IdeaPlugin__BehaviorDescriptor;
-      case 13:
-        return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
-      case 14:
-        return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
-      case 15:
-        return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
-      case 16:
-        return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0u.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBuildMPSPlugin__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myBuildMpsLayout_Plugin__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myBuildMps_AbstractModule__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myBuildMps_DevKit__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myBuildMps_Generator__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myBuildMps_IdeaPlugin__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myBuildMps_Language__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myBuildMps_Module__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myBuildMps_Solution__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x1d38569c566c8c91L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbebL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"));
 }

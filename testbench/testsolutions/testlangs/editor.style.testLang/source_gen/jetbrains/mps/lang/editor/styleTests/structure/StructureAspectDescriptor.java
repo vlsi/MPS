@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -29,29 +33,70 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
-      case 0:
-        return myConceptHugePriorityStyle;
-      case 1:
-        return myConceptLeafNode;
-      case 2:
-        return myConceptNodeContainer;
-      case 3:
-        return myConceptPriorityStyle;
-      case 4:
-        return myConceptPriorityStyleCopy;
-      case 5:
-        return myConceptTestConceptWithStyleAttributes;
-      case 6:
-        return myConceptTestInheritedAttribute;
-      case 7:
-        return myConceptTestSimpleAttribute;
-      case 8:
-        return myConceptUnapplyPriorityStyleCopy;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0n.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptHugePriorityStyle;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptLeafNode;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptNodeContainer;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptPriorityStyle;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptPriorityStyleCopy;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptTestConceptWithStyleAttributes;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptTestInheritedAttribute;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptTestSimpleAttribute;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptUnapplyPriorityStyleCopy;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.LeafNode", "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes", "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute", "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute", "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0aL, "jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x38990895c164873aL, "jetbrains.mps.lang.editor.styleTests.structure.LeafNode"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a34c76L, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3689eL, "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x5bb841570e741168L, "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a35eddL, "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute"), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0fL, "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"));
 }

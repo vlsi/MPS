@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,15 +27,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
-      case 0:
-        return myConceptLogStatement;
-      case 1:
-        return myConceptPrintStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptLogStatement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptPrintStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x1100a2cc320L, "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"));
 }

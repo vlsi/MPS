@@ -15,34 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,58,0" name="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Canvas_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.samples.Shapes.behavior.Canvas_BehaviorDescriptor" />
-    </file>
-    <file name="Circle_BehaviorDescriptor.java">
-      <unit at="13,0,26,0" name="jetbrains.mps.samples.Shapes.behavior.Circle_BehaviorDescriptor" />
-    </file>
-    <file name="ColorReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.samples.Shapes.behavior.ColorReference_BehaviorDescriptor" />
-    </file>
-    <file name="Shape_BehaviorDescriptor.java">
-      <unit at="14,0,27,0" name="jetbrains.mps.samples.Shapes.behavior.Shape_BehaviorDescriptor" />
-    </file>
-    <file name="Square_BehaviorDescriptor.java">
-      <unit at="13,0,26,0" name="jetbrains.mps.samples.Shapes.behavior.Square_BehaviorDescriptor" />
+      <unit at="14,0,72,0" name="jetbrains.mps.samples.Shapes.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535528661">
-    <file name="Canvas_Behavior.java">
-      <node id="1082824515535528661" at="13,77,14,68" concept="1" />
-      <node id="1082824515535528661" at="13,0,16,0" concept="8" trace="call_interpret_1082824515535528722#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1082824515535528661" at="13,77,14,68" />
-      <scope id="1082824515535528661" at="13,0,16,0">
-        <var name="__thisNode__" id="1082824515535528661" />
-      </scope>
-      <unit id="1082824515535528661" at="11,0,17,0" name="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior" />
-    </file>
     <file name="Canvas__BehaviorDescriptor.java">
       <node id="1082824515535528661" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="1082824515535528661" at="28,0,29,0" concept="7" trace="REGISTRY" />
@@ -125,9 +101,6 @@
     </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535573728">
-    <file name="Shape_Behavior.java">
-      <unit id="1082824515535573728" at="10,0,13,0" name="jetbrains.mps.samples.Shapes.behavior.Shape_Behavior" />
-    </file>
     <file name="Shape__BehaviorDescriptor.java">
       <node id="1082824515535573728" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="1082824515535573728" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -217,9 +190,6 @@
     </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535622258">
-    <file name="Circle_Behavior.java">
-      <unit id="1082824515535622258" at="10,0,13,0" name="jetbrains.mps.samples.Shapes.behavior.Circle_Behavior" />
-    </file>
     <file name="Circle__BehaviorDescriptor.java">
       <node id="1082824515535622258" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="1082824515535622258" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -311,9 +281,6 @@
     </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/1082824515535631875">
-    <file name="Square_Behavior.java">
-      <unit id="1082824515535631875" at="10,0,13,0" name="jetbrains.mps.samples.Shapes.behavior.Square_Behavior" />
-    </file>
     <file name="Square__BehaviorDescriptor.java">
       <node id="1082824515535631875" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="1082824515535631875" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -405,15 +372,6 @@
     </file>
   </root>
   <root nodeRef="r:e3fd34ee-160e-4715-9be9-898a6a1653e6(jetbrains.mps.samples.Shapes.behavior)/2097561739636354491">
-    <file name="ColorReference_Behavior.java">
-      <node id="2097561739636354491" at="14,78,15,84" concept="5" />
-      <node id="2097561739636354491" at="14,0,17,0" concept="8" trace="call_findColor_2097561739636344968#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/awt/Color;" />
-      <scope id="2097561739636354491" at="14,78,15,84" />
-      <scope id="2097561739636354491" at="14,0,17,0">
-        <var name="__thisNode__" id="2097561739636354491" />
-      </scope>
-      <unit id="2097561739636354491" at="12,0,18,0" name="jetbrains.mps.samples.Shapes.behavior.ColorReference_Behavior" />
-    </file>
     <file name="ColorReference__BehaviorDescriptor.java">
       <node id="2097561739636354491" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="2097561739636354491" at="28,0,29,0" concept="7" trace="REGISTRY" />

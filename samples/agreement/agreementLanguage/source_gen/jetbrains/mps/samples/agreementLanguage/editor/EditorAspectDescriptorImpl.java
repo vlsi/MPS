@@ -7,63 +7,100 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L, "jetbrains.mps.samples.agreementLanguage.structure.AccountType"))) {
-        return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL, "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"))) {
-        return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd8dcdL, "jetbrains.mps.samples.agreementLanguage.structure.Date"))) {
-        return Collections.<ConceptEditor>singletonList(new Date_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f15b1a76L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Future"))) {
-        return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f1595f54L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Past"))) {
-        return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"))) {
-        return Collections.<ConceptEditor>singletonList(new Event_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L, "jetbrains.mps.samples.agreementLanguage.structure.EventType"))) {
-        return Collections.<ConceptEditor>singletonList(new EventType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, "jetbrains.mps.samples.agreementLanguage.structure.EventVariable"))) {
-        return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
-        return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"))) {
-        return Collections.<ConceptEditor>singletonList(new Plan_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"))) {
-        return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"))) {
-        return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"))) {
-        return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"))) {
-        return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, "jetbrains.mps.samples.agreementLanguage.structure.Value"))) {
-        return Collections.<ConceptEditor>singletonList(new Value_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Date_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Event_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EventType_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Value_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -72,4 +109,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L, "jetbrains.mps.samples.agreementLanguage.structure.AccountType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL, "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd8dcdL, "jetbrains.mps.samples.agreementLanguage.structure.Date"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f15b1a76L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Future"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f1595f54L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Past"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L, "jetbrains.mps.samples.agreementLanguage.structure.EventType"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, "jetbrains.mps.samples.agreementLanguage.structure.EventVariable"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, "jetbrains.mps.samples.agreementLanguage.structure.Value"), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"));
 }

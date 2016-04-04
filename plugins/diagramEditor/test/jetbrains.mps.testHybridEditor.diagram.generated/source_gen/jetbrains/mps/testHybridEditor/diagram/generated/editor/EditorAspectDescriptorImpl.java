@@ -7,36 +7,55 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block"))) {
-        return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"))) {
-        return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector"))) {
-        return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"))) {
-        return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, "jetbrains.mps.testHybridEditor.structure.Diagram"))) {
-        return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort"))) {
-        return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort"))) {
-        return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Block_diagram_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BlockInstance_diagram_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Connector_diagram_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagram_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputPort_diagram_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OutputPort_diagram_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -45,4 +64,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, "jetbrains.mps.testHybridEditor.structure.Diagram"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort"));
 }

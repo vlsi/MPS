@@ -19,212 +19,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="AbstractNodeAssert_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeAssert_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractNodeErrorCheckOperation_BehaviorDescriptor.java">
-      <unit at="12,0,29,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeErrorCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractNodeRuleCheckOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeRuleCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="AbstractNodeWarningCheckOperation_BehaviorDescriptor.java">
-      <unit at="12,0,29,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeWarningCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="ActionReference_BehaviorDescriptor.java">
-      <unit at="13,0,23,0" name="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
-    </file>
-    <file name="AnonymousCellAnnotation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="AssertMatch_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,206,0" name="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BootstrapActionReference_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />
-    </file>
-    <file name="CheckDataFlowOperation_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CheckNodeDataflow_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.test.behavior.CheckNodeDataflow_BehaviorDescriptor" />
-    </file>
-    <file name="CheckNodeForErrorMessagesOperation_BehaviorDescriptor.java">
-      <unit at="13,0,33,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_BehaviorDescriptor" />
-    </file>
-    <file name="CheckNodeForErrors_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrors_BehaviorDescriptor" />
-    </file>
-    <file name="DragMouseStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.DragMouseStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EditorComponentExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.EditorComponentExpression_BehaviorDescriptor" />
-    </file>
-    <file name="EditorExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.EditorExpression_BehaviorDescriptor" />
-    </file>
-    <file name="EditorOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />
-    </file>
-    <file name="EditorTestCase_BehaviorDescriptor.java">
-      <unit at="22,0,85,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
-    </file>
-    <file name="ExpressionContainer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.ExpressionContainer_BehaviorDescriptor" />
-    </file>
-    <file name="IChecksRules_BehaviorDescriptor.java">
-      <unit at="13,0,17,0" name="jetbrains.mps.lang.test.behavior.IChecksRules_BehaviorDescriptor" />
-    </file>
-    <file name="INodeAnnotation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.INodeAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="IReferenceAttachable_BehaviorDescriptor.java">
-      <unit at="12,0,19,0" name="jetbrains.mps.lang.test.behavior.IReferenceAttachable_BehaviorDescriptor" />
-    </file>
-    <file name="IRuleReference_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.lang.test.behavior.IRuleReference_BehaviorDescriptor" />
-    </file>
-    <file name="InvokeActionStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.InvokeActionStatement_BehaviorDescriptor" />
-    </file>
-    <file name="InvokeIntentionStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.InvokeIntentionStatement_BehaviorDescriptor" />
-    </file>
-    <file name="LogEvent_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.LogEvent_BehaviorDescriptor" />
-    </file>
-    <file name="MPSActionReference_BehaviorDescriptor.java">
-      <unit at="12,0,24,0" name="jetbrains.mps.lang.test.behavior.MPSActionReference_BehaviorDescriptor" />
-    </file>
-    <file name="MockAnnotation_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.MockAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="ModelExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.ModelExpression_BehaviorDescriptor" />
-    </file>
-    <file name="NodeCheckOperation_BehaviorDescriptor.java">
-      <unit at="16,0,42,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeConstraintsErrorCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,31,0" name="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeConstraintsWarningCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,31,0" name="jetbrains.mps.lang.test.behavior.NodeConstraintsWarningCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeErrorCheckOperation_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeExpectedTypeCheckOperation_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeOperationsContainer_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor" />
-    </file>
-    <file name="NodePropertiesContainer_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.NodePropertiesContainer_BehaviorDescriptor" />
-    </file>
-    <file name="NodeReachable_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_BehaviorDescriptor" />
-    </file>
-    <file name="NodeRuleCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTypeCheckOperation_BehaviorDescriptor.java">
-      <unit at="12,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeTypeCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTypeSetCheckOperation_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTypeSystemErrorCheckOperation_BehaviorDescriptor.java">
-      <unit at="12,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemErrorCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTypeSystemRuleCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemRuleCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeTypeSystemWarningCheckOperation_BehaviorDescriptor.java">
-      <unit at="12,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemWarningCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeUnknownErrorCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,31,0" name="jetbrains.mps.lang.test.behavior.NodeUnknownErrorCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeUnknownWarningCheckOperation_BehaviorDescriptor.java">
-      <unit at="14,0,31,0" name="jetbrains.mps.lang.test.behavior.NodeUnknownWarningCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodeUnreachable_BehaviorDescriptor.java">
-      <unit at="12,0,26,0" name="jetbrains.mps.lang.test.behavior.NodeUnreachable_BehaviorDescriptor" />
-    </file>
-    <file name="NodeWarningCheckOperation_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_BehaviorDescriptor" />
-    </file>
-    <file name="NodesTestCase_BehaviorDescriptor.java">
-      <unit at="19,0,67,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
-    </file>
-    <file name="NodesTestMethod_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />
-    </file>
-    <file name="PressKeyStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.PressKeyStatement_BehaviorDescriptor" />
-    </file>
-    <file name="PressMouseStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.PressMouseStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.ProjectExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ReportErrorStatementReference_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_BehaviorDescriptor" />
-    </file>
-    <file name="ScopesExpectedNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.ScopesExpectedNode_BehaviorDescriptor" />
-    </file>
-    <file name="ScopesTest_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.ScopesTest_BehaviorDescriptor" />
-    </file>
-    <file name="SimpleNodeTest_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.test.behavior.SimpleNodeTest_BehaviorDescriptor" />
-    </file>
-    <file name="SwitchToInspector_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.SwitchToInspector_BehaviorDescriptor" />
-    </file>
-    <file name="TestInfo_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.TestInfo_BehaviorDescriptor" />
-    </file>
-    <file name="TestNodeAnnotation_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.TestNodeAnnotation_BehaviorDescriptor" />
-    </file>
-    <file name="TestNodeReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.TestNodeReference_BehaviorDescriptor" />
-    </file>
-    <file name="TestNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.TestNode_BehaviorDescriptor" />
-    </file>
-    <file name="TypeKeyStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.TypeKeyStatement_BehaviorDescriptor" />
-    </file>
-    <file name="UnknownRuleReference_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.UnknownRuleReference_BehaviorDescriptor" />
-    </file>
-    <file name="UntypedExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.UntypedExpression_BehaviorDescriptor" />
-    </file>
-    <file name="VariableAlive_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_BehaviorDescriptor" />
-    </file>
-    <file name="VariableInitialized_BehaviorDescriptor.java">
-      <unit at="13,0,30,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_BehaviorDescriptor" />
-    </file>
-    <file name="WarningStatementReference_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.WarningStatementReference_BehaviorDescriptor" />
+      <unit at="14,0,294,0" name="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1101347953350122759">
-    <file name="ActionReference_Behavior.java">
-      <unit id="1101347953350122759" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.ActionReference_Behavior" />
-    </file>
     <file name="ActionReference__BehaviorDescriptor.java">
       <node id="1101347953350122759" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="1101347953350122759" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -291,9 +90,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1101347953350127911">
-    <file name="BootstrapActionReference_Behavior.java">
-      <unit id="1101347953350127911" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.BootstrapActionReference_Behavior" />
-    </file>
     <file name="BootstrapActionReference__BehaviorDescriptor.java">
       <node id="1101347953350127911" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="1101347953350127911" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -368,21 +164,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1215601170868">
-    <file name="NodeCheckOperation_Behavior.java">
-      <node id="1215601170868" at="13,71,14,82" concept="10" />
-      <node id="1215601170868" at="16,85,17,95" concept="10" />
-      <node id="1215601170868" at="13,0,16,0" concept="13" trace="call_getName_1217435265700#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1215601170868" at="16,0,19,0" concept="13" trace="call_getAnnotatedNode_2912288420882528229#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1215601170868" at="13,71,14,82" />
-      <scope id="1215601170868" at="16,85,17,95" />
-      <scope id="1215601170868" at="13,0,16,0">
-        <var name="__thisNode__" id="1215601170868" />
-      </scope>
-      <scope id="1215601170868" at="16,0,19,0">
-        <var name="__thisNode__" id="1215601170868" />
-      </scope>
-      <unit id="1215601170868" at="11,0,20,0" name="jetbrains.mps.lang.test.behavior.NodeCheckOperation_Behavior" />
-    </file>
     <file name="NodeCheckOperation__BehaviorDescriptor.java">
       <node id="1215601170868" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="1215601170868" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -512,9 +293,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1215607133327">
-    <file name="CheckNodeForErrorMessagesOperation_Behavior.java">
-      <unit id="1215607133327" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_Behavior" />
-    </file>
     <file name="CheckNodeForErrorMessagesOperation__BehaviorDescriptor.java">
       <node id="1215607133327" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="1215607133327" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -623,9 +401,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1215611890874">
-    <file name="CheckDataFlowOperation_Behavior.java">
-      <unit id="1215611890874" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_Behavior" />
-    </file>
     <file name="CheckDataFlowOperation__BehaviorDescriptor.java">
       <node id="1215611890874" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="1215611890874" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -720,28 +495,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1217250493536">
-    <file name="NodesTestCase_Behavior.java">
-      <node id="1217250493536" at="14,112,15,100" concept="10" />
-      <node id="1217250493536" at="17,93,18,88" concept="10" />
-      <node id="1217250493536" at="20,87,21,90" concept="10" />
-      <node id="1217250493536" at="14,0,17,0" concept="13" trace="call_isIntentionApplicable_1217250498008#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1217250493536" at="17,0,20,0" concept="13" trace="call_getTestBodyName_1224602741295#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="1217250493536" at="20,0,23,0" concept="13" trace="call_needsWriteAction_6339244025081193722#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1217250493536" at="14,112,15,100" />
-      <scope id="1217250493536" at="17,93,18,88" />
-      <scope id="1217250493536" at="20,87,21,90" />
-      <scope id="1217250493536" at="14,0,17,0">
-        <var name="__thisConcept__" id="1217250493536" />
-        <var name="node" id="1217250498037" />
-      </scope>
-      <scope id="1217250493536" at="17,0,20,0">
-        <var name="__thisConcept__" id="1217250493536" />
-      </scope>
-      <scope id="1217250493536" at="20,0,23,0">
-        <var name="__thisNode__" id="1217250493536" />
-      </scope>
-      <unit id="1217250493536" at="12,0,24,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior" />
-    </file>
     <file name="NodesTestCase__BehaviorDescriptor.java">
       <node id="1217250493536" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1217250493536" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -880,9 +633,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1217423888659">
-    <file name="NodesTestMethod_Behavior.java">
-      <unit id="1217423888659" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodesTestMethod_Behavior" />
-    </file>
     <file name="NodesTestMethod__BehaviorDescriptor.java">
       <node id="1217423888659" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="1217423888659" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -976,9 +726,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1229204042979">
-    <file name="EditorTestCase_Behavior.java">
-      <unit id="1229204042979" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_Behavior" />
-    </file>
     <file name="EditorTestCase__BehaviorDescriptor.java">
       <node id="1229204042979" at="33,0,34,0" concept="12" trace="CONCEPT" />
       <node id="1229204042979" at="34,0,35,0" concept="12" trace="REGISTRY" />
@@ -1151,9 +898,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741647533">
-    <file name="NodePropertiesContainer_Behavior.java">
-      <unit id="1262430001741647533" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodePropertiesContainer_Behavior" />
-    </file>
     <file name="NodePropertiesContainer__BehaviorDescriptor.java">
       <node id="1262430001741647533" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741647533" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -1219,23 +963,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741703830">
-    <file name="NodeOperationsContainer_Behavior.java">
-      <node id="1262430001741703830" at="14,92,15,101" concept="4" />
-      <node id="1262430001741703830" at="17,137,18,125" concept="4" />
-      <node id="1262430001741703830" at="14,0,17,0" concept="13" trace="call_detachAllErrorOperations_5587533744543326483#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741703830" at="17,0,20,0" concept="13" trace="call_createNodeAndAttachReference_428590876657265140#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/IErrorReporter;)V" />
-      <scope id="1262430001741703830" at="14,92,15,101" />
-      <scope id="1262430001741703830" at="17,137,18,125" />
-      <scope id="1262430001741703830" at="14,0,17,0">
-        <var name="__thisNode__" id="1262430001741703830" />
-      </scope>
-      <scope id="1262430001741703830" at="17,0,20,0">
-        <var name="__thisNode__" id="1262430001741703830" />
-        <var name="reference" id="428590876657268093" />
-        <var name="reporter" id="428590876657555664" />
-      </scope>
-      <unit id="1262430001741703830" at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior" />
-    </file>
     <file name="NodeOperationsContainer__BehaviorDescriptor.java">
       <node id="1262430001741703830" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741703830" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1360,9 +1087,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741717278">
-    <file name="INodeAnnotation_Behavior.java">
-      <unit id="1262430001741717278" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.INodeAnnotation_Behavior" />
-    </file>
     <file name="INodeAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741717278" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741717278" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -1428,9 +1152,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741718862">
-    <file name="MockAnnotation_Behavior.java">
-      <unit id="1262430001741718862" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.MockAnnotation_Behavior" />
-    </file>
     <file name="MockAnnotation__BehaviorDescriptor.java">
       <node id="1262430001741718862" at="20,0,21,0" concept="12" trace="CONCEPT" />
       <node id="1262430001741718862" at="21,0,22,0" concept="12" trace="REGISTRY" />
@@ -1526,9 +1247,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2133390315206433591">
-    <file name="NodeTypeCheckOperation_Behavior.java">
-      <unit id="2133390315206433591" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeTypeCheckOperation_Behavior" />
-    </file>
     <file name="NodeTypeCheckOperation__BehaviorDescriptor.java">
       <node id="2133390315206433591" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="2133390315206433591" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -1631,9 +1349,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389421795">
-    <file name="NodeErrorCheckOperation_Behavior.java">
-      <unit id="2754172450389421795" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_Behavior" />
-    </file>
     <file name="NodeErrorCheckOperation__BehaviorDescriptor.java">
       <node id="2754172450389421795" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389421795" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -1731,9 +1446,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389427103">
-    <file name="NodeReachable_Behavior.java">
-      <unit id="2754172450389427103" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeReachable_Behavior" />
-    </file>
     <file name="NodeReachable__BehaviorDescriptor.java">
       <node id="2754172450389427103" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389427103" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -1828,9 +1540,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389427819">
-    <file name="NodeExpectedTypeCheckOperation_Behavior.java">
-      <unit id="2754172450389427819" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_Behavior" />
-    </file>
     <file name="NodeExpectedTypeCheckOperation__BehaviorDescriptor.java">
       <node id="2754172450389427819" at="29,0,30,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389427819" at="30,0,31,0" concept="12" trace="REGISTRY" />
@@ -1942,9 +1651,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389428163">
-    <file name="NodeTypeSetCheckOperation_Behavior.java">
-      <unit id="2754172450389428163" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSetCheckOperation_Behavior" />
-    </file>
     <file name="NodeTypeSetCheckOperation__BehaviorDescriptor.java">
       <node id="2754172450389428163" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389428163" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -2065,9 +1771,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389429364">
-    <file name="NodeUnreachable_Behavior.java">
-      <unit id="2754172450389429364" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeUnreachable_Behavior" />
-    </file>
     <file name="NodeUnreachable__BehaviorDescriptor.java">
       <node id="2754172450389429364" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389429364" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -2153,9 +1856,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389430646">
-    <file name="NodeWarningCheckOperation_Behavior.java">
-      <unit id="2754172450389430646" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_Behavior" />
-    </file>
     <file name="NodeWarningCheckOperation__BehaviorDescriptor.java">
       <node id="2754172450389430646" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389430646" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2253,9 +1953,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389432063">
-    <file name="VariableInitialized_Behavior.java">
-      <unit id="2754172450389432063" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.VariableInitialized_Behavior" />
-    </file>
     <file name="VariableInitialized__BehaviorDescriptor.java">
       <node id="2754172450389432063" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389432063" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -2350,9 +2047,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2754172450389650566">
-    <file name="VariableAlive_Behavior.java">
-      <unit id="2754172450389650566" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.VariableAlive_Behavior" />
-    </file>
     <file name="VariableAlive__BehaviorDescriptor.java">
       <node id="2754172450389650566" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="2754172450389650566" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -2447,9 +2141,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/2893471348147804005">
-    <file name="IReferenceAttachable_Behavior.java">
-      <unit id="2893471348147804005" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
-    </file>
     <file name="IReferenceAttachable__BehaviorDescriptor.java">
       <node id="2893471348147804005" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="2893471348147804005" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2524,9 +2215,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4098794966562281137">
-    <file name="NodeRuleCheckOperation_Behavior.java">
-      <unit id="4098794966562281137" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_Behavior" />
-    </file>
     <file name="NodeRuleCheckOperation__BehaviorDescriptor.java">
       <node id="4098794966562281137" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="4098794966562281137" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -2622,15 +2310,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4196004291146430722">
-    <file name="DragMouseStatement_Behavior.java">
-      <node id="4196004291146430722" at="13,91,14,101" concept="10" />
-      <node id="4196004291146430722" at="13,0,16,0" concept="13" trace="call_getPressMouseStatement_4196004291146433125#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4196004291146430722" at="13,91,14,101" />
-      <scope id="4196004291146430722" at="13,0,16,0">
-        <var name="__thisNode__" id="4196004291146430722" />
-      </scope>
-      <unit id="4196004291146430722" at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.DragMouseStatement_Behavior" />
-    </file>
     <file name="DragMouseStatement__BehaviorDescriptor.java">
       <node id="4196004291146430722" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="4196004291146430722" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -2705,9 +2384,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4239542196496960972">
-    <file name="MPSActionReference_Behavior.java">
-      <unit id="4239542196496960972" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.MPSActionReference_Behavior" />
-    </file>
     <file name="MPSActionReference__BehaviorDescriptor.java">
       <node id="4239542196496960972" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="4239542196496960972" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -2782,9 +2458,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/428590876651758704">
-    <file name="NodeTypeSystemErrorCheckOperation_Behavior.java">
-      <unit id="428590876651758704" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemErrorCheckOperation_Behavior" />
-    </file>
     <file name="NodeTypeSystemErrorCheckOperation__BehaviorDescriptor.java">
       <node id="428590876651758704" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="428590876651758704" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -2870,23 +2543,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/5097124989038916372">
-    <file name="TestInfo_Behavior.java">
-      <node id="5097124989038916372" at="14,112,15,91" concept="10" />
-      <node id="5097124989038916372" at="17,112,18,93" concept="10" />
-      <node id="5097124989038916372" at="14,0,17,0" concept="13" trace="call_reOpenProject_1031873601093419509#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="5097124989038916372" at="17,0,20,0" concept="13" trace="call_getProjectPath_5097124989038916375#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-      <scope id="5097124989038916372" at="14,112,15,91" />
-      <scope id="5097124989038916372" at="17,112,18,93" />
-      <scope id="5097124989038916372" at="14,0,17,0">
-        <var name="__thisConcept__" id="5097124989038916372" />
-        <var name="model" id="1031873601093419519" />
-      </scope>
-      <scope id="5097124989038916372" at="17,0,20,0">
-        <var name="__thisConcept__" id="5097124989038916372" />
-        <var name="model" id="5097124989038927789" />
-      </scope>
-      <unit id="5097124989038916372" at="12,0,21,0" name="jetbrains.mps.lang.test.behavior.TestInfo_Behavior" />
-    </file>
     <file name="TestInfo__BehaviorDescriptor.java">
       <node id="5097124989038916372" at="28,0,29,0" concept="12" trace="CONCEPT" />
       <node id="5097124989038916372" at="29,0,30,0" concept="12" trace="REGISTRY" />
@@ -2988,9 +2644,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/5348336190814876814">
-    <file name="IChecksRules_Behavior.java">
-      <unit id="5348336190814876814" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.IChecksRules_Behavior" />
-    </file>
     <file name="IChecksRules__BehaviorDescriptor.java">
       <node id="5348336190814876814" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="5348336190814876814" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -3057,9 +2710,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/5348336190815082995">
-    <file name="NodeTypeSystemRuleCheckOperation_Behavior.java">
-      <unit id="5348336190815082995" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemRuleCheckOperation_Behavior" />
-    </file>
     <file name="NodeTypeSystemRuleCheckOperation__BehaviorDescriptor.java">
       <node id="5348336190815082995" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="5348336190815082995" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -3146,29 +2796,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/5449224527592367169">
-    <file name="ScopesTest_Behavior.java">
-      <node id="5449224527592367169" at="15,94,16,91" concept="10" />
-      <node id="5449224527592367169" at="18,105,19,88" concept="10" />
-      <node id="5449224527592367169" at="21,109,22,92" concept="10" />
-      <node id="5449224527592367169" at="15,0,18,0" concept="13" trace="call_getCheckingReference_5449224527592367549#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SReference;" />
-      <node id="5449224527592367169" at="18,0,21,0" concept="13" trace="call_isSimple_5449224527592395483#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5449224527592367169" at="21,0,24,0" concept="13" trace="call_isApplicable_5449224527592368025#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5449224527592367169" at="15,94,16,91" />
-      <scope id="5449224527592367169" at="18,105,19,88" />
-      <scope id="5449224527592367169" at="21,109,22,92" />
-      <scope id="5449224527592367169" at="15,0,18,0">
-        <var name="__thisNode__" id="5449224527592367169" />
-      </scope>
-      <scope id="5449224527592367169" at="18,0,21,0">
-        <var name="__thisConcept__" id="5449224527592367169" />
-        <var name="node" id="5449224527592420837" />
-      </scope>
-      <scope id="5449224527592367169" at="21,0,24,0">
-        <var name="__thisConcept__" id="5449224527592367169" />
-        <var name="node" id="5449224527592368030" />
-      </scope>
-      <unit id="5449224527592367169" at="13,0,25,0" name="jetbrains.mps.lang.test.behavior.ScopesTest_Behavior" />
-    </file>
     <file name="ScopesTest__BehaviorDescriptor.java">
       <node id="5449224527592367169" at="30,0,31,0" concept="12" trace="CONCEPT" />
       <node id="5449224527592367169" at="31,0,32,0" concept="12" trace="REGISTRY" />
@@ -3325,40 +2952,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/6268941039745707954">
-    <file name="AnonymousCellAnnotation_Behavior.java">
-      <node id="6268941039745707954" at="18,158,19,123" concept="4" />
-      <node id="6268941039745707954" at="21,107,22,107" concept="10" />
-      <node id="6268941039745707954" at="24,113,25,111" concept="4" />
-      <node id="6268941039745707954" at="27,146,28,125" concept="10" />
-      <node id="6268941039745707954" at="18,0,21,0" concept="13" trace="call_setupSelection_6268941039745707957#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/NodeEditorComponent;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
-      <node id="6268941039745707954" at="21,0,24,0" concept="13" trace="call_getCaretPosition_6268941039745717986#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)I" />
-      <node id="6268941039745707954" at="24,0,27,0" concept="13" trace="call_setupCaretAndSelection_9114978211826243747#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="6268941039745707954" at="27,0,30,0" concept="13" trace="call_setupInspector_5681471431307922086#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/NodeEditorComponent;)Ljetbrains/mps/nodeEditor/EditorComponent;" />
-      <scope id="6268941039745707954" at="18,158,19,123" />
-      <scope id="6268941039745707954" at="21,107,22,107" />
-      <scope id="6268941039745707954" at="24,113,25,111" />
-      <scope id="6268941039745707954" at="27,146,28,125" />
-      <scope id="6268941039745707954" at="18,0,21,0">
-        <var name="__thisNode__" id="6268941039745707954" />
-        <var name="map" id="2209739309055569265" />
-        <var name="node" id="6268941039745711583" />
-        <var name="nodeEditorComponent" id="6268941039745711578" />
-      </scope>
-      <scope id="6268941039745707954" at="21,0,24,0">
-        <var name="__thisNode__" id="6268941039745707954" />
-        <var name="label" id="6268941039745717992" />
-      </scope>
-      <scope id="6268941039745707954" at="24,0,27,0">
-        <var name="__thisNode__" id="6268941039745707954" />
-        <var name="cellWithId" id="9114978211826243750" />
-      </scope>
-      <scope id="6268941039745707954" at="27,0,30,0">
-        <var name="__thisNode__" id="6268941039745707954" />
-        <var name="node" id="5681471431307922089" />
-        <var name="nodeEditorComponent" id="5681471431307922091" />
-      </scope>
-      <unit id="6268941039745707954" at="16,0,31,0" name="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior" />
-    </file>
     <file name="AnonymousCellAnnotation__BehaviorDescriptor.java">
       <node id="6268941039745707954" at="36,0,37,0" concept="12" trace="CONCEPT" />
       <node id="6268941039745707954" at="37,0,38,0" concept="12" trace="REGISTRY" />
@@ -3521,9 +3114,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7691029917083872181">
-    <file name="IRuleReference_Behavior.java">
-      <unit id="7691029917083872181" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.IRuleReference_Behavior" />
-    </file>
     <file name="IRuleReference__BehaviorDescriptor.java">
       <node id="7691029917083872181" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="7691029917083872181" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3590,9 +3180,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7691029917083872220">
-    <file name="UnknownRuleReference_Behavior.java">
-      <unit id="7691029917083872220" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.UnknownRuleReference_Behavior" />
-    </file>
     <file name="UnknownRuleReference__BehaviorDescriptor.java">
       <node id="7691029917083872220" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="7691029917083872220" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -3667,9 +3254,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7835233914436809558">
-    <file name="AbstractNodeErrorCheckOperation_Behavior.java">
-      <unit id="7835233914436809558" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeErrorCheckOperation_Behavior" />
-    </file>
     <file name="AbstractNodeErrorCheckOperation__BehaviorDescriptor.java">
       <node id="7835233914436809558" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="7835233914436809558" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -3773,9 +3357,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/7835233914436825711">
-    <file name="NodeUnknownErrorCheckOperation_Behavior.java">
-      <unit id="7835233914436825711" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeUnknownErrorCheckOperation_Behavior" />
-    </file>
     <file name="NodeUnknownErrorCheckOperation__BehaviorDescriptor.java">
       <node id="7835233914436825711" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="7835233914436825711" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -3994,9 +3575,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8202121391118617645">
-    <file name="WarningStatementReference_Behavior.java">
-      <unit id="8202121391118617645" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.WarningStatementReference_Behavior" />
-    </file>
     <file name="WarningStatementReference__BehaviorDescriptor.java">
       <node id="8202121391118617645" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="8202121391118617645" at="27,0,28,0" concept="12" trace="REGISTRY" />
@@ -4071,9 +3649,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8333855927547430356">
-    <file name="NodeConstraintsErrorCheckOperation_Behavior.java">
-      <unit id="8333855927547430356" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_Behavior" />
-    </file>
     <file name="NodeConstraintsErrorCheckOperation__BehaviorDescriptor.java">
       <node id="8333855927547430356" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="8333855927547430356" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -4171,9 +3746,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8333855927564181362">
-    <file name="AbstractNodeWarningCheckOperation_Behavior.java">
-      <unit id="8333855927564181362" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.AbstractNodeWarningCheckOperation_Behavior" />
-    </file>
     <file name="AbstractNodeWarningCheckOperation__BehaviorDescriptor.java">
       <node id="8333855927564181362" at="25,0,26,0" concept="12" trace="CONCEPT" />
       <node id="8333855927564181362" at="26,0,27,0" concept="12" trace="REGISTRY" />
@@ -4280,9 +3852,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8333855927564263159">
-    <file name="NodeConstraintsWarningCheckOperation_Behavior.java">
-      <unit id="8333855927564263159" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeConstraintsWarningCheckOperation_Behavior" />
-    </file>
     <file name="NodeConstraintsWarningCheckOperation__BehaviorDescriptor.java">
       <node id="8333855927564263159" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="8333855927564263159" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -4380,9 +3949,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8333855927564349429">
-    <file name="NodeUnknownWarningCheckOperation_Behavior.java">
-      <unit id="8333855927564349429" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeUnknownWarningCheckOperation_Behavior" />
-    </file>
     <file name="NodeUnknownWarningCheckOperation__BehaviorDescriptor.java">
       <node id="8333855927564349429" at="27,0,28,0" concept="12" trace="CONCEPT" />
       <node id="8333855927564349429" at="28,0,29,0" concept="12" trace="REGISTRY" />
@@ -4480,9 +4046,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8578280453511612110">
-    <file name="NodeTypeSystemWarningCheckOperation_Behavior.java">
-      <unit id="8578280453511612110" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemWarningCheckOperation_Behavior" />
-    </file>
     <file name="NodeTypeSystemWarningCheckOperation__BehaviorDescriptor.java">
       <node id="8578280453511612110" at="24,0,25,0" concept="12" trace="CONCEPT" />
       <node id="8578280453511612110" at="25,0,26,0" concept="12" trace="REGISTRY" />
@@ -4568,9 +4131,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/8578280453517059631">
-    <file name="ReportErrorStatementReference_Behavior.java">
-      <unit id="8578280453517059631" at="10,0,13,0" name="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_Behavior" />
-    </file>
     <file name="ReportErrorStatementReference__BehaviorDescriptor.java">
       <node id="8578280453517059631" at="26,0,27,0" concept="12" trace="CONCEPT" />
       <node id="8578280453517059631" at="27,0,28,0" concept="12" trace="REGISTRY" />

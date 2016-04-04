@@ -13,107 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractPrintExpression_old_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.AbstractPrintExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="BLCommand_old_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.BLCommand_old_BehaviorDescriptor" />
-    </file>
-    <file name="BLExpression_old_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.BLExpression_old_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,78,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CustomScope_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.CustomScope_BehaviorDescriptor" />
-    </file>
-    <file name="ExpressionHelpProvider_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.ExpressionHelpProvider_BehaviorDescriptor" />
-    </file>
-    <file name="GlobalScope_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.GlobalScope_BehaviorDescriptor" />
-    </file>
-    <file name="HelpProvider_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor" />
-    </file>
-    <file name="InstancesExpression_BehaviorDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.lang.smodel.query.behavior.InstancesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ModelScope_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.ModelScope_BehaviorDescriptor" />
-    </file>
-    <file name="ModelsExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.smodel.query.behavior.ModelsExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ModulesExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.smodel.query.behavior.ModulesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ModulesScope_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.ModulesScope_BehaviorDescriptor" />
-    </file>
-    <file name="NodesExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.smodel.query.behavior.NodesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="OperationHelpProvider_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.lang.smodel.query.behavior.OperationHelpProvider_BehaviorDescriptor" />
-    </file>
-    <file name="PrintExpression_old_BehaviorDescriptor.java">
-      <unit at="12,0,39,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="PrintNodeExpression_old_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="PrintNodeReferenceExpression_old_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintNodeReferenceExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="PrintSequenceExpression_old_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintSequenceExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="PrintTextExpression_old_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.PrintTextExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectExpression_old_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="ProjectScope_old_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.ProjectScope_old_BehaviorDescriptor" />
-    </file>
-    <file name="QueryExpression_BehaviorDescriptor.java">
-      <unit at="15,0,46,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterIncludeReadOnly_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterList_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterList_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameterScope_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameterScope_BehaviorDescriptor" />
-    </file>
-    <file name="QueryParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryParameter_BehaviorDescriptor" />
-    </file>
-    <file name="ReferencesExpression_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.smodel.query.behavior.ReferencesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ScopeParameter_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.ScopeParameter_BehaviorDescriptor" />
-    </file>
-    <file name="ShowExpression_old_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.smodel.query.behavior.ShowExpression_old_BehaviorDescriptor" />
-    </file>
-    <file name="UsagesExpression_BehaviorDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.lang.smodel.query.behavior.UsagesExpression_BehaviorDescriptor" />
-    </file>
-    <file name="WithStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.smodel.query.behavior.WithStatement_BehaviorDescriptor" />
+      <unit at="14,0,102,0" name="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146936308">
-    <file name="UsagesExpression_Behavior.java">
-      <unit id="4307205004146936308" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.UsagesExpression_Behavior" />
-    </file>
     <file name="UsagesExpression__BehaviorDescriptor.java">
       <node id="4307205004146936308" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146936308" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -206,9 +110,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146945906">
-    <file name="QueryExpression_Behavior.java">
-      <unit id="4307205004146945906" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.QueryExpression_Behavior" />
-    </file>
     <file name="QueryExpression__BehaviorDescriptor.java">
       <node id="4307205004146945906" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146945906" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -322,9 +223,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146945952">
-    <file name="NodesExpression_Behavior.java">
-      <unit id="4307205004146945952" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.NodesExpression_Behavior" />
-    </file>
     <file name="NodesExpression__BehaviorDescriptor.java">
       <node id="4307205004146945952" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146945952" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -399,9 +297,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146956485">
-    <file name="ModulesExpression_Behavior.java">
-      <unit id="4307205004146956485" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.ModulesExpression_Behavior" />
-    </file>
     <file name="ModulesExpression__BehaviorDescriptor.java">
       <node id="4307205004146956485" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146956485" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -476,9 +371,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146963229">
-    <file name="ModelsExpression_Behavior.java">
-      <unit id="4307205004146963229" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.ModelsExpression_Behavior" />
-    </file>
     <file name="ModelsExpression__BehaviorDescriptor.java">
       <node id="4307205004146963229" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146963229" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -553,9 +445,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146970004">
-    <file name="InstancesExpression_Behavior.java">
-      <unit id="4307205004146970004" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.InstancesExpression_Behavior" />
-    </file>
     <file name="InstancesExpression__BehaviorDescriptor.java">
       <node id="4307205004146970004" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146970004" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -648,9 +537,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/4307205004146976962">
-    <file name="ReferencesExpression_Behavior.java">
-      <unit id="4307205004146976962" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.ReferencesExpression_Behavior" />
-    </file>
     <file name="ReferencesExpression__BehaviorDescriptor.java">
       <node id="4307205004146976962" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="4307205004146976962" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -725,9 +611,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/473081947982699336">
-    <file name="HelpProvider_Behavior.java">
-      <unit id="473081947982699336" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior" />
-    </file>
     <file name="HelpProvider__BehaviorDescriptor.java">
       <node id="473081947982699336" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="473081947982699336" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -847,9 +730,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/5932042262275648698">
-    <file name="OperationHelpProvider_Behavior.java">
-      <unit id="5932042262275648698" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.OperationHelpProvider_Behavior" />
-    </file>
     <file name="OperationHelpProvider__BehaviorDescriptor.java">
       <node id="5932042262275648698" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="5932042262275648698" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -924,9 +804,6 @@
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.lang.smodel.query.behavior)/7006261637496548522">
-    <file name="ExpressionHelpProvider_Behavior.java">
-      <unit id="7006261637496548522" at="10,0,13,0" name="jetbrains.mps.lang.smodel.query.behavior.ExpressionHelpProvider_Behavior" />
-    </file>
     <file name="ExpressionHelpProvider__BehaviorDescriptor.java">
       <node id="7006261637496548522" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="7006261637496548522" at="25,0,26,0" concept="7" trace="REGISTRY" />

@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
 
@@ -19,74 +19,102 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x3a6682eeb060fd5L, "jetbrains.mps.baseLanguage.math.structure.Determinant"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205307b067L, "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, "jetbrains.mps.baseLanguage.math.structure.MatrixNorm"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, "jetbrains.mps.baseLanguage.math.structure.MatrixZero"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_vhxjlb_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new Determinant_DataFlow());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new DivExpressionFraction_DataFlow());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ExponentialOperation_DataFlow());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new LinearSolveOperation_DataFlow());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MathFuncExpression_DataFlow());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MathSymbol_DataFlow());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolFromToIndex_DataFlow());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndex_DataFlow());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MathSymbolIndexReference_DataFlow());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixConstructor_DataFlow());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixElementAccessExpression_DataFlow());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializer_DataFlow());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixInitializerIndexReference_DataFlow());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixNorm_DataFlow());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new MatrixZero_DataFlow());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new VectorInitializer_DataFlow());
+          }
+          break;
+        default:
+          // default 
       }
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x3a6682eeb060fd5L, "jetbrains.mps.baseLanguage.math.structure.Determinant"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205307b067L, "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, "jetbrains.mps.baseLanguage.math.structure.MatrixNorm"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, "jetbrains.mps.baseLanguage.math.structure.MatrixZero"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
 }

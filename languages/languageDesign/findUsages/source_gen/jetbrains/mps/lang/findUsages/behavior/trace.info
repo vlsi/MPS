@@ -13,62 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AbstractFinderDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.AbstractFinderDeclaration_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,82,0" name="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CategorizeBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_BehaviorDescriptor" />
-    </file>
-    <file name="CheckCancelledStatusStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.findUsages.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteFinderExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteFindersGetSearchResults_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.ExecuteFindersGetSearchResults_BehaviorDescriptor" />
-    </file>
-    <file name="FindBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.FindBlock_BehaviorDescriptor" />
-    </file>
-    <file name="FinderDeclaration_BehaviorDescriptor.java">
-      <unit at="20,0,58,0" name="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="FinderReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.FinderReference_BehaviorDescriptor" />
-    </file>
-    <file name="IsApplicableBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock_BehaviorDescriptor" />
-    </file>
-    <file name="IsUsedByDefault_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_BehaviorDescriptor" />
-    </file>
-    <file name="IsVisibleBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock_BehaviorDescriptor" />
-    </file>
-    <file name="MakeResultProvider_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.MakeResultProvider_BehaviorDescriptor" />
-    </file>
-    <file name="NodeStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.NodeStatement_BehaviorDescriptor" />
-    </file>
-    <file name="ResultStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.findUsages.behavior.ResultStatement_BehaviorDescriptor" />
-    </file>
-    <file name="SearchedNodesBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock_BehaviorDescriptor" />
+      <unit at="14,0,108,0" name="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/100784871586157909">
-    <file name="IsUsedByDefault_Behavior.java">
-      <unit id="100784871586157909" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_Behavior" />
-    </file>
     <file name="IsUsedByDefault__BehaviorDescriptor.java">
       <node id="100784871586157909" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="100784871586157909" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -178,27 +127,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877240100">
-    <file name="FinderDeclaration_Behavior.java">
-      <node id="1213877240100" at="13,85,14,95" concept="6" />
-      <node id="1213877240100" at="16,78,17,88" concept="6" />
-      <node id="1213877240100" at="19,89,20,99" concept="6" />
-      <node id="1213877240100" at="13,0,16,0" concept="8" trace="call_getGeneratedClassName_1213877240101#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1213877240100" at="16,0,19,0" concept="8" trace="call_getConceptName_1213877240111#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1213877240100" at="19,0,22,0" concept="8" trace="call_getGeneratedClassLongName_1213877240120#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877240100" at="13,85,14,95" />
-      <scope id="1213877240100" at="16,78,17,88" />
-      <scope id="1213877240100" at="19,89,20,99" />
-      <scope id="1213877240100" at="13,0,16,0">
-        <var name="__thisNode__" id="1213877240100" />
-      </scope>
-      <scope id="1213877240100" at="16,0,19,0">
-        <var name="__thisNode__" id="1213877240100" />
-      </scope>
-      <scope id="1213877240100" at="19,0,22,0">
-        <var name="__thisNode__" id="1213877240100" />
-      </scope>
-      <unit id="1213877240100" at="11,0,23,0" name="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
-    </file>
     <file name="FinderDeclaration__BehaviorDescriptor.java">
       <node id="1213877240100" at="30,0,31,0" concept="7" trace="CONCEPT" />
       <node id="1213877240100" at="31,0,32,0" concept="7" trace="REGISTRY" />
@@ -320,9 +248,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877299657">
-    <file name="ExecuteFinderExpression_Behavior.java">
-      <unit id="1213877299657" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_Behavior" />
-    </file>
     <file name="ExecuteFinderExpression__BehaviorDescriptor.java">
       <node id="1213877299657" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877299657" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -388,9 +313,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877363196">
-    <file name="CheckCancelledStatusStatement_Behavior.java">
-      <unit id="1213877363196" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_Behavior" />
-    </file>
     <file name="CheckCancelledStatusStatement__BehaviorDescriptor.java">
       <node id="1213877363196" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877363196" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -456,9 +378,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877373943">
-    <file name="ResultStatement_Behavior.java">
-      <unit id="1213877373943" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.ResultStatement_Behavior" />
-    </file>
     <file name="ResultStatement__BehaviorDescriptor.java">
       <node id="1213877373943" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877373943" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -524,9 +443,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877418351">
-    <file name="NodeStatement_Behavior.java">
-      <unit id="1213877418351" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.NodeStatement_Behavior" />
-    </file>
     <file name="NodeStatement__BehaviorDescriptor.java">
       <node id="1213877418351" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877418351" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -592,9 +508,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1262430001741523366">
-    <file name="IsVisibleBlock_Behavior.java">
-      <unit id="1262430001741523366" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock_Behavior" />
-    </file>
     <file name="IsVisibleBlock__BehaviorDescriptor.java">
       <node id="1262430001741523366" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741523366" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -705,9 +618,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1262430001741647362">
-    <file name="IsApplicableBlock_Behavior.java">
-      <unit id="1262430001741647362" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock_Behavior" />
-    </file>
     <file name="IsApplicableBlock__BehaviorDescriptor.java">
       <node id="1262430001741647362" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741647362" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -817,9 +727,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1262430001741703536">
-    <file name="CategorizeBlock_Behavior.java">
-      <unit id="1262430001741703536" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_Behavior" />
-    </file>
     <file name="CategorizeBlock__BehaviorDescriptor.java">
       <node id="1262430001741703536" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703536" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -929,9 +836,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1262430001741704757">
-    <file name="FindBlock_Behavior.java">
-      <unit id="1262430001741704757" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.FindBlock_Behavior" />
-    </file>
     <file name="FindBlock__BehaviorDescriptor.java">
       <node id="1262430001741704757" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741704757" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -1043,9 +947,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1262430001741718473">
-    <file name="SearchedNodesBlock_Behavior.java">
-      <unit id="1262430001741718473" at="10,0,13,0" name="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock_Behavior" />
-    </file>
     <file name="SearchedNodesBlock__BehaviorDescriptor.java">
       <node id="1262430001741718473" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741718473" at="30,0,31,0" concept="7" trace="REGISTRY" />

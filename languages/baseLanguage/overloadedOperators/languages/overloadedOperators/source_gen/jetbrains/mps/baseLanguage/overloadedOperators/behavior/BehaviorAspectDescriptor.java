@@ -4,46 +4,56 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myOverloadedBinaryOperator__BehaviorDescriptor = new OverloadedBinaryOperator__BehaviorDescriptor();
   private final BHDescriptor myCustomOperatorUsage__BehaviorDescriptor = new CustomOperatorUsage__BehaviorDescriptor();
   private final BHDescriptor myContainerImport__BehaviorDescriptor = new ContainerImport__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[3];
-    myConceptBehaviorIds[0] = 0x6b6f5c41300f84dL;
-    myConceptBehaviorIds[1] = 0x15c86fdc6084766fL;
-    myConceptBehaviorIds[2] = 0x66302c3c8df72c49L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myOverloadedBinaryOperator__BehaviorDescriptor;
-      case 1:
-        return myCustomOperatorUsage__BehaviorDescriptor;
-      case 2:
-        return myContainerImport__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0g.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myContainerImport__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myCustomOperatorUsage__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myOverloadedBinaryOperator__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0g = buildConceptIndices(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c41300f84dL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"));
 }

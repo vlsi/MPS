@@ -7,27 +7,40 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x37967cbe67d9eca4L, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildModuleTestsPlugin_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef372L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModuleGroup_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"))) {
-        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModules_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildModuleTestsPlugin_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModule_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModuleGroup_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_TestModules_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -36,4 +49,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x37967cbe67d9eca4L, "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef372L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup"), MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"));
 }

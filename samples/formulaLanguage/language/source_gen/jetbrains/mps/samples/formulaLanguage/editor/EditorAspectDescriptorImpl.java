@@ -7,81 +7,130 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L, "jetbrains.mps.samples.formulaLanguage.structure.AndOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new AndOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L, "jetbrains.mps.samples.formulaLanguage.structure.Constant"))) {
-        return Collections.<ConceptEditor>singletonList(new Constant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L, "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new EqualsOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"))) {
-        return Collections.<ConceptEditor>singletonList(new Expression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"))) {
-        return Collections.<ConceptEditor>singletonList(new FloatingPointConstant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L, "jetbrains.mps.samples.formulaLanguage.structure.Formula"))) {
-        return Collections.<ConceptEditor>singletonList(new Formula_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL, "jetbrains.mps.samples.formulaLanguage.structure.Function"))) {
-        return Collections.<ConceptEditor>singletonList(new Function_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L, "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new GreaterThanOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, "jetbrains.mps.samples.formulaLanguage.structure.IfFunction"))) {
-        return Collections.<ConceptEditor>singletonList(new IfFunction_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"))) {
-        return Collections.<ConceptEditor>singletonList(new IntegerConstant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL, "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new IsNullOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L, "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new LessThanOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL, "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new MinusOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL, "jetbrains.mps.samples.formulaLanguage.structure.MultOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new MultOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L, "jetbrains.mps.samples.formulaLanguage.structure.NotOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new NotOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L, "jetbrains.mps.samples.formulaLanguage.structure.NullConstant"))) {
-        return Collections.<ConceptEditor>singletonList(new NullConstant_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"))) {
-        return Collections.<ConceptEditor>singletonList(new Operation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L, "jetbrains.mps.samples.formulaLanguage.structure.OrOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new OrOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL, "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new ParenthisizedExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL, "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new PlusOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL, "jetbrains.mps.samples.formulaLanguage.structure.Reference"))) {
-        return Collections.<ConceptEditor>singletonList(new Reference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L, "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"))) {
-        return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AndOperation_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Constant_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EqualsOperation_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Expression_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FloatingPointConstant_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Formula_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Function_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GreaterThanOperation_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IfFunction_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IntegerConstant_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IsNullOperation_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LessThanOperation_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MinusOperation_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new MultOperation_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NotOperation_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NullConstant_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Operation_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OrOperation_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ParenthisizedExpression_Editor());
+          }
+          break;
+        case 19:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PlusOperation_Editor());
+          }
+          break;
+        case 20:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Reference_Editor());
+          }
+          break;
+        case 21:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -90,4 +139,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050a5816L, "jetbrains.mps.samples.formulaLanguage.structure.AndOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L, "jetbrains.mps.samples.formulaLanguage.structure.Constant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809c54870L, "jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db80c054L, "jetbrains.mps.samples.formulaLanguage.structure.Formula"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8296fcL, "jetbrains.mps.samples.formulaLanguage.structure.Function"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x103009e5ee0L, "jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8d4298L, "jetbrains.mps.samples.formulaLanguage.structure.IfFunction"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a037c6c0bL, "jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ea976b99L, "jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba2244aL, "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102ff4441ddL, "jetbrains.mps.samples.formulaLanguage.structure.MultOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a04135987L, "jetbrains.mps.samples.formulaLanguage.structure.NotOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10a036c79c0L, "jetbrains.mps.samples.formulaLanguage.structure.NullConstant"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x108050ab746L, "jetbrains.mps.samples.formulaLanguage.structure.OrOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10809d032baL, "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102dba0a69dL, "jetbrains.mps.samples.formulaLanguage.structure.PlusOperation"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db83846eL, "jetbrains.mps.samples.formulaLanguage.structure.Reference"), MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x10804f6f702L, "jetbrains.mps.samples.formulaLanguage.structure.StringConstant"));
 }

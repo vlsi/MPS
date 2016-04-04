@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -52,75 +56,185 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0kb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractNodeReference;
-      case 1:
-        return myConceptConsequenceFunction;
-      case 2:
-        return myConceptDataDependency;
-      case 3:
-        return myConceptDataDependencyReference;
-      case 4:
-        return myConceptDirectNodeReference;
-      case 5:
-        return myConceptExecuteAfterDeclaration;
-      case 6:
-        return myConceptIMigrationUnit;
-      case 7:
-        return myConceptLinkPatternVariableReference;
-      case 8:
-        return myConceptListPatternVariableReference;
-      case 9:
-        return myConceptMigrationScript;
-      case 10:
-        return myConceptMoveConcept;
-      case 11:
-        return myConceptMoveConceptMember;
-      case 12:
-        return myConceptMoveContainmentLink;
-      case 13:
-        return myConceptMoveNode;
-      case 14:
-        return myConceptMoveNodeSpecialization;
-      case 15:
-        return myConceptMoveProperty;
-      case 16:
-        return myConceptMoveReferenceLink;
-      case 17:
-        return myConceptNodePatternVariableReference;
-      case 18:
-        return myConceptOrderDependency;
-      case 19:
-        return myConceptProducedDataDeclaration;
-      case 20:
-        return myConceptPropertyPatternVariableReference;
-      case 21:
-        return myConceptPureMigrationScript;
-      case 22:
-        return myConceptQuotationConsequence;
-      case 23:
-        return myConceptRefactoringLog;
-      case 24:
-        return myConceptRefactoringOption;
-      case 25:
-        return myConceptRefactoringOptions;
-      case 26:
-        return myConceptRefactoringOrderDependency;
-      case 27:
-        return myConceptRefactoringPart;
-      case 28:
-        return myConceptReflectionNodeReference;
-      case 29:
-        return myConceptRequiredDataDeclaration;
-      case 30:
-        return myConceptTransformConsequence;
-      case 31:
-        return myConceptTransformStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0kb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractNodeReference;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptConsequenceFunction;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDataDependency;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDataDependencyReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDirectNodeReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExecuteAfterDeclaration;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptIMigrationUnit;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptLinkPatternVariableReference;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptListPatternVariableReference;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptMigrationScript;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptMoveConcept;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptMoveConceptMember;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptMoveContainmentLink;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptMoveNode;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptMoveNodeSpecialization;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptMoveProperty;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptMoveReferenceLink;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptNodePatternVariableReference;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptOrderDependency;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptProducedDataDeclaration;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptPropertyPatternVariableReference;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptPureMigrationScript;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptQuotationConsequence;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptRefactoringLog;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptRefactoringOption;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptRefactoringOptions;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptRefactoringOrderDependency;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptRefactoringPart;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptReflectionNodeReference;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptRequiredDataDeclaration;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptTransformConsequence;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptTransformStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0kb = new String[]{"jetbrains.mps.lang.migration.structure.AbstractNodeReference", "jetbrains.mps.lang.migration.structure.ConsequenceFunction", "jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.DirectNodeReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.IMigrationUnit", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MoveConcept", "jetbrains.mps.lang.migration.structure.MoveConceptMember", "jetbrains.mps.lang.migration.structure.MoveContainmentLink", "jetbrains.mps.lang.migration.structure.MoveNode", "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization", "jetbrains.mps.lang.migration.structure.MoveProperty", "jetbrains.mps.lang.migration.structure.MoveReferenceLink", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.PureMigrationScript", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RefactoringLog", "jetbrains.mps.lang.migration.structure.RefactoringOption", "jetbrains.mps.lang.migration.structure.RefactoringOptions", "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency", "jetbrains.mps.lang.migration.structure.RefactoringPart", "jetbrains.mps.lang.migration.structure.ReflectionNodeReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformConsequence", "jetbrains.mps.lang.migration.structure.TransformStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0kb = buildConceptIndices(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.structure.AbstractNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532eb7L, "jetbrains.mps.lang.migration.structure.ConsequenceFunction"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, "jetbrains.mps.lang.migration.structure.DataDependencyReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, "jetbrains.mps.lang.migration.structure.DirectNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L, "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL, "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b8L, "jetbrains.mps.lang.migration.structure.MoveConceptMember"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741baL, "jetbrains.mps.lang.migration.structure.MoveContainmentLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNode"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.structure.MoveNodeSpecialization"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b9L, "jetbrains.mps.lang.migration.structure.MoveProperty"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b7L, "jetbrains.mps.lang.migration.structure.MoveReferenceLink"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, "jetbrains.mps.lang.migration.structure.OrderDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL, "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23343L, "jetbrains.mps.lang.migration.structure.RefactoringOption"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, "jetbrains.mps.lang.migration.structure.RefactoringOptions"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, "jetbrains.mps.lang.migration.structure.RefactoringPart"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.structure.ReflectionNodeReference"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ef3L, "jetbrains.mps.lang.migration.structure.TransformConsequence"), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"));
 }

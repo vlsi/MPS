@@ -4,12 +4,12 @@ package jetbrains.mps.debugger.api.lang.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myDebuggerReference__BehaviorDescriptor = new DebuggerReference__BehaviorDescriptor();
@@ -21,49 +21,69 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConceptFunction_IsApplicableToConcept__BehaviorDescriptor = new ConceptFunction_IsApplicableToConcept__BehaviorDescriptor();
   private final BHDescriptor myConceptFunctionParameter_Concept__BehaviorDescriptor = new ConceptFunctionParameter_Concept__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[8];
-    myConceptBehaviorIds[0] = 0xf528808f912d151L;
-    myConceptBehaviorIds[1] = 0x11a2c8c0148e628cL;
-    myConceptBehaviorIds[2] = 0x11a2c8c0148e6290L;
-    myConceptBehaviorIds[3] = 0x2b1681328a5d4b64L;
-    myConceptBehaviorIds[4] = 0x2bd07aa080dfb93aL;
-    myConceptBehaviorIds[5] = 0x5d457621242d18e2L;
-    myConceptBehaviorIds[6] = 0x79747203892d4cc9L;
-    myConceptBehaviorIds[7] = 0x79747203892d4ccdL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myDebuggerReference__BehaviorDescriptor;
-      case 1:
-        return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
-      case 2:
-        return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
-      case 3:
-        return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
-      case 4:
-        return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
-      case 5:
-        return myGetDebuggerSettings_Function__BehaviorDescriptor;
-      case 6:
-        return myConceptFunction_IsApplicableToConcept__BehaviorDescriptor;
-      case 7:
-        return myConceptFunctionParameter_Concept__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptFunctionParameter_Concept__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptFunction_IsApplicableToConcept__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myDebuggerReference__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myGetDebuggerSettings_Function__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x79747203892d4ccdL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x11a2c8c0148e628cL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x11a2c8c0148e6290L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb93aL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2b1681328a5d4b64L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x79747203892d4cc9L, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d18e2L, "jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function"));
 }

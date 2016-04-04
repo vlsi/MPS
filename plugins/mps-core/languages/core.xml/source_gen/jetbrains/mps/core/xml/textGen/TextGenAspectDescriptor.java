@@ -6,85 +6,130 @@ import jetbrains.mps.text.rt.TextGenAspectBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Map;
+import java.util.HashMap;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
-  private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[20];
-    myId2Index[0] = 0x16838b3fce9aa513L;
-    myId2Index[1] = 0x16838b3fce9bec5eL;
-    myId2Index[2] = 0x16838b3fce9c6f4dL;
-    myId2Index[3] = 0x1d9c27c394f4069bL;
-    myId2Index[4] = 0x1d9c27c394f6033fL;
-    myId2Index[5] = 0x2abf08504ffe9886L;
-    myId2Index[6] = 0x2abf08504ffed7feL;
-    myId2Index[7] = 0x2abf085050020e3cL;
-    myId2Index[8] = 0x4890619bb401ef6eL;
-    myId2Index[9] = 0x5c842a42c5494871L;
-    myId2Index[10] = 0x5c842a42c5494875L;
-    myId2Index[11] = 0x5c842a42c5494878L;
-    myId2Index[12] = 0x5c842a42c549487aL;
-    myId2Index[13] = 0x5c842a42c54b10b2L;
-    myId2Index[14] = 0x5c842a42c54b8df3L;
-    myId2Index[15] = 0x5c842a42c54c94c0L;
-    myId2Index[16] = 0x5c842a42c54cfd1fL;
-    myId2Index[17] = 0x5c842a42c54cfd21L;
-    myId2Index[18] = 0x5e2f66f285946ac9L;
-    myId2Index[19] = 0x6988ccb84e3cfaa8L;
   }
+
   @Nullable
   @Override
-  public TextGenDescriptor getDescriptor(@NotNull SConceptId id) {
-    final int index = Arrays.binarySearch(myId2Index, id.getIdValue());
-    switch (index) {
-      case 0:
-        return new XmlText_TextGen();
-      case 1:
-        return new XmlCommentLine_TextGen();
-      case 2:
-        return new XmlEntityRef_TextGen();
-      case 3:
-        return new XmlDoctypeDeclaration_TextGen();
-      case 4:
-        return new XmlExternalId_TextGen();
-      case 5:
-        return new XmlCharRef_TextGen();
-      case 6:
-        return new XmlCharRefValue_TextGen();
-      case 7:
-        return new XmlNoSpaceValue_TextGen();
-      case 8:
-        return new XmlDeclaration_TextGen();
-      case 9:
-        return new XmlProlog_TextGen();
-      case 10:
-        return new XmlProcessingInstruction_TextGen();
-      case 11:
-        return new XmlComment_TextGen();
-      case 12:
-        return new XmlCDATA_TextGen();
-      case 13:
-        return new XmlElement_TextGen();
-      case 14:
-        return new XmlAttribute_TextGen();
-      case 15:
-        return new XmlFile_TextGen();
-      case 16:
-        return new XmlTextValue_TextGen();
-      case 17:
-        return new XmlEntityRefValue_TextGen();
-      case 18:
-        return new XmlDocument_TextGen();
-      case 19:
-        return new XmlWhitespace_TextGen();
-      default:
-        return null;
+  public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_t8hmqt_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return new XmlAttribute_TextGen();
+          }
+          break;
+        case 1:
+          if (true) {
+            return new XmlCDATA_TextGen();
+          }
+          break;
+        case 2:
+          if (true) {
+            return new XmlCharRef_TextGen();
+          }
+          break;
+        case 3:
+          if (true) {
+            return new XmlCharRefValue_TextGen();
+          }
+          break;
+        case 4:
+          if (true) {
+            return new XmlComment_TextGen();
+          }
+          break;
+        case 5:
+          if (true) {
+            return new XmlCommentLine_TextGen();
+          }
+          break;
+        case 6:
+          if (true) {
+            return new XmlDeclaration_TextGen();
+          }
+          break;
+        case 7:
+          if (true) {
+            return new XmlDoctypeDeclaration_TextGen();
+          }
+          break;
+        case 8:
+          if (true) {
+            return new XmlDocument_TextGen();
+          }
+          break;
+        case 9:
+          if (true) {
+            return new XmlElement_TextGen();
+          }
+          break;
+        case 10:
+          if (true) {
+            return new XmlEntityRef_TextGen();
+          }
+          break;
+        case 11:
+          if (true) {
+            return new XmlEntityRefValue_TextGen();
+          }
+          break;
+        case 12:
+          if (true) {
+            return new XmlExternalId_TextGen();
+          }
+          break;
+        case 13:
+          if (true) {
+            return new XmlFile_TextGen();
+          }
+          break;
+        case 14:
+          if (true) {
+            return new XmlNoSpaceValue_TextGen();
+          }
+          break;
+        case 15:
+          if (true) {
+            return new XmlProcessingInstruction_TextGen();
+          }
+          break;
+        case 16:
+          if (true) {
+            return new XmlProlog_TextGen();
+          }
+          break;
+        case 17:
+          if (true) {
+            return new XmlText_TextGen();
+          }
+          break;
+        case 18:
+          if (true) {
+            return new XmlTextValue_TextGen();
+          }
+          break;
+        case 19:
+          if (true) {
+            return new XmlWhitespace_TextGen();
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
 
   @Override
@@ -104,4 +149,13 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   private static String getFileExtension_XmlFile(SNode node) {
     return "xml";
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_t8hmqt_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, "jetbrains.mps.core.xml.structure.XmlAttribute"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, "jetbrains.mps.core.xml.structure.XmlCDATA"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffe9886L, "jetbrains.mps.core.xml.structure.XmlCharRef"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffed7feL, "jetbrains.mps.core.xml.structure.XmlCharRefValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, "jetbrains.mps.core.xml.structure.XmlComment"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9bec5eL, "jetbrains.mps.core.xml.structure.XmlCommentLine"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5e2f66f285946ac9L, "jetbrains.mps.core.xml.structure.XmlDocument"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9c6f4dL, "jetbrains.mps.core.xml.structure.XmlEntityRef"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd21L, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, "jetbrains.mps.core.xml.structure.XmlExternalId"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54c94c0L, "jetbrains.mps.core.xml.structure.XmlFile"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf085050020e3cL, "jetbrains.mps.core.xml.structure.XmlNoSpaceValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494875L, "jetbrains.mps.core.xml.structure.XmlProcessingInstruction"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, "jetbrains.mps.core.xml.structure.XmlProlog"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, "jetbrains.mps.core.xml.structure.XmlText"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace"));
 }

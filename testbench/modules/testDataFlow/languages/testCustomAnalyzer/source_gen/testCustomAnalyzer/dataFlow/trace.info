@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="DataFlowAspectDescriptorImpl.java">
-      <unit at="17,0,46,0" name="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
+      <unit at="17,0,59,0" name="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/6628579460233828323">

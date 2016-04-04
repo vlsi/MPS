@@ -7,69 +7,110 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"))) {
-        return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern"))) {
-        return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd38L, "jetbrains.mps.lang.pattern.structure.InsertAfterPosition"))) {
-        return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd3aL, "jetbrains.mps.lang.pattern.structure.InsertBeforePosition"))) {
-        return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108aa36731aL, "jetbrains.mps.lang.pattern.structure.ListPattern"))) {
-        return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"))) {
-        return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause"))) {
-        return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"))) {
-        return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"))) {
-        return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x2b7df577ffbb6a85L, "jetbrains.mps.lang.pattern.structure.PatternVariableReference"))) {
-        return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4797L, "jetbrains.mps.lang.pattern.structure.WildcardPattern"))) {
-        return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ActionAsPattern_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AsPattern_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ChildDescriptor_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_PropertyDescriptor_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorInternal_ReferenceDescriptor_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InsertAfterPosition_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InsertBeforePosition_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LinkPatternVariableDeclaration_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ListPattern_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OrPattern_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OrPatternClause_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OrPatternVariableReference_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Pattern_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PatternExpression_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PatternVariableDeclaration_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PatternVariableReference_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableDeclaration_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new WildcardPattern_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -78,4 +119,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd38L, "jetbrains.mps.lang.pattern.structure.InsertAfterPosition"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x16e4c142caf2bd3aL, "jetbrains.mps.lang.pattern.structure.InsertBeforePosition"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108aa36731aL, "jetbrains.mps.lang.pattern.structure.ListPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478fL, "jetbrains.mps.lang.pattern.structure.Pattern"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x2b7df577ffbb6a85L, "jetbrains.mps.lang.pattern.structure.PatternVariableReference"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4797L, "jetbrains.mps.lang.pattern.structure.WildcardPattern"));
 }

@@ -7,33 +7,50 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event"))) {
-        return Collections.<ConceptEditor>singletonList(new Event_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference"))) {
-        return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State"))) {
-        return Collections.<ConceptEditor>singletonList(new State_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"))) {
-        return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference"))) {
-        return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"))) {
-        return Collections.<ConceptEditor>singletonList(new Transition_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Event_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EventReference_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new State_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StateMachine_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new StateReference_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Transition_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -42,4 +59,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference"), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"));
 }

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -54,79 +58,195 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0mb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractPrintExpression;
-      case 1:
-        return myConceptBLCommand;
-      case 2:
-        return myConceptBLExpression;
-      case 3:
-        return myConceptCommand;
-      case 4:
-        return myConceptCommandHolder;
-      case 5:
-        return myConceptConsoleRoot;
-      case 6:
-        return myConceptExceptionHolder;
-      case 7:
-        return myConceptGeneratedCommand;
-      case 8:
-        return myConceptHelpCommand;
-      case 9:
-        return myConceptHelpConceptReference;
-      case 10:
-        return myConceptHistory;
-      case 11:
-        return myConceptHistoryItem;
-      case 12:
-        return myConceptIActionHolder;
-      case 13:
-        return myConceptIClickable;
-      case 14:
-        return myConceptINodeWithReference;
-      case 15:
-        return myConceptInterpretedCommand;
-      case 16:
-        return myConceptModifiedCommandHistoryItem;
-      case 17:
-        return myConceptNewLineResponseItem;
-      case 18:
-        return myConceptNodeReferencePresentation;
-      case 19:
-        return myConceptNodeReferenceString;
-      case 20:
-        return myConceptNodeResponseItem;
-      case 21:
-        return myConceptNodeWithClosure;
-      case 22:
-        return myConceptOutputConsoleRoot;
-      case 23:
-        return myConceptPastedNodeReference;
-      case 24:
-        return myConceptPrintExpression;
-      case 25:
-        return myConceptPrintNodeExpression;
-      case 26:
-        return myConceptPrintNodeReferenceExpression;
-      case 27:
-        return myConceptPrintSequenceExpression;
-      case 28:
-        return myConceptPrintTextExpression;
-      case 29:
-        return myConceptProjectExpression;
-      case 30:
-        return myConceptProjectScope;
-      case 31:
-        return myConceptResponse;
-      case 32:
-        return myConceptResponseItem;
-      case 33:
-        return myConceptTextResponseItem;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0mb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractPrintExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBLCommand;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBLExpression;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptCommand;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptCommandHolder;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConsoleRoot;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptExceptionHolder;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptGeneratedCommand;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptHelpCommand;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptHelpConceptReference;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptHistory;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptHistoryItem;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptIActionHolder;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptIClickable;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptINodeWithReference;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptInterpretedCommand;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptModifiedCommandHistoryItem;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptNewLineResponseItem;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptNodeReferencePresentation;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptNodeReferenceString;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptNodeResponseItem;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptNodeWithClosure;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptOutputConsoleRoot;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptPastedNodeReference;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptPrintExpression;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptPrintNodeExpression;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptPrintNodeReferenceExpression;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptPrintSequenceExpression;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptPrintTextExpression;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptProjectExpression;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptProjectScope;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptResponse;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptResponseItem;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptTextResponseItem;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0mb = new String[]{"jetbrains.mps.console.base.structure.AbstractPrintExpression", "jetbrains.mps.console.base.structure.BLCommand", "jetbrains.mps.console.base.structure.BLExpression", "jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.ExceptionHolder", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.IActionHolder", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.PrintExpression", "jetbrains.mps.console.base.structure.PrintNodeExpression", "jetbrains.mps.console.base.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.base.structure.PrintSequenceExpression", "jetbrains.mps.console.base.structure.PrintTextExpression", "jetbrains.mps.console.base.structure.ProjectExpression", "jetbrains.mps.console.base.structure.ProjectScope", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.ResponseItem", "jetbrains.mps.console.base.structure.TextResponseItem"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0mb = buildConceptIndices(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, "jetbrains.mps.console.base.structure.AbstractPrintExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L, "jetbrains.mps.console.base.structure.BLCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6a40a3596560a9d9L, "jetbrains.mps.console.base.structure.BLExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, "jetbrains.mps.console.base.structure.ConsoleRoot"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L, "jetbrains.mps.console.base.structure.GeneratedCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, "jetbrains.mps.console.base.structure.HelpCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, "jetbrains.mps.console.base.structure.HelpConceptReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, "jetbrains.mps.console.base.structure.History"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd47defL, "jetbrains.mps.console.base.structure.HistoryItem"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, "jetbrains.mps.console.base.structure.IClickable"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L, "jetbrains.mps.console.base.structure.InterpretedCommand"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x9992dadc6de20a7L, "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35d30L, "jetbrains.mps.console.base.structure.NewLineResponseItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL, "jetbrains.mps.console.base.structure.NodeReferencePresentation"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L, "jetbrains.mps.console.base.structure.NodeReferenceString"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c14L, "jetbrains.mps.console.base.structure.NodeResponseItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x131ec6f2097ff75fL, "jetbrains.mps.console.base.structure.OutputConsoleRoot"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6979f0787b2a9377L, "jetbrains.mps.console.base.structure.PrintExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4c7a26b31bd03b59L, "jetbrains.mps.console.base.structure.PrintNodeExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f195a051bd9bddcL, "jetbrains.mps.console.base.structure.PrintNodeReferenceExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6979f0787b7db64fL, "jetbrains.mps.console.base.structure.PrintSequenceExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7417cca3eb1feca9L, "jetbrains.mps.console.base.structure.PrintTextExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa721a59126bb908L, "jetbrains.mps.console.base.structure.ProjectExpression"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x3bc64421763adda2L, "jetbrains.mps.console.base.structure.ProjectScope"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, "jetbrains.mps.console.base.structure.Response"), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b3583cL, "jetbrains.mps.console.base.structure.ResponseItem"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"));
 }

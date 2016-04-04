@@ -4,172 +4,153 @@ package jetbrains.mps.lang.smodel.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
-  private IntentionFactory[] myIntentions4;
-  private IntentionFactory[] myIntentions5;
-  private IntentionFactory[] myIntentions6;
-  private IntentionFactory[] myIntentions7;
-  private IntentionFactory[] myIntentions8;
-  private IntentionFactory[] myIntentions9;
-  private IntentionFactory[] myIntentions10;
-  private IntentionFactory[] myIntentions11;
-  private IntentionFactory[] myIntentions12;
-  private IntentionFactory[] myIntentions13;
-  private IntentionFactory[] myIntentions14;
-  private IntentionFactory[] myIntentions15;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[16];
-    myId2Index[0] = 0xf8cc56b217L;
-    myId2Index[1] = 0xf940dabe4aL;
-    myId2Index[2] = 0xfbbff03700L;
-    myId2Index[3] = 0x1090ea2ebacL;
-    myId2Index[4] = 0x1091d8a1d53L;
-    myId2Index[5] = 0x10975850da7L;
-    myId2Index[6] = 0x1099887af60L;
-    myId2Index[7] = 0x10a61caab68L;
-    myId2Index[8] = 0x10c25fb076aL;
-    myId2Index[9] = 0x110f3e65fdcL;
-    myId2Index[10] = 0x110f9b63680L;
-    myId2Index[11] = 0x110f9eb64c6L;
-    myId2Index[12] = 0x11d88b27d15L;
-    myId2Index[13] = 0x3c7a9d8c8d63d4f3L;
-    myId2Index[14] = 0x48e6e2695189e59aL;
-    myId2Index[15] = 0x73bd24cca4f91254L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: IfStatement 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new AddSNodeCastStatement_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: CastExpression 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new ConvertCastToNodeCast_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: InstanceOfExpression 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new ConvertInstanceofToNodeInstanceof_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: SNodeOperation 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new AddOperationParameter_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      case 4:
-        // Concept: Property_SetOperation 
-        if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[1];
-          myIntentions4[0] = new ConvertPropertySetToAssignment_Intention();
-        }
-        return Arrays.asList(myIntentions4);
-      case 5:
-        // Concept: SNodeTypeCastExpression 
-        if (myIntentions5 == null) {
-          myIntentions5 = new IntentionFactory[2];
-          myIntentions5[0] = new ChangeAsCast_Intention();
-          myIntentions5[1] = new ConvertCastToSConceptType_Intention();
-        }
-        return Arrays.asList(myIntentions5);
-      case 6:
-        // Concept: Link_SetTargetOperation 
-        if (myIntentions6 == null) {
-          myIntentions6 = new IntentionFactory[1];
-          myIntentions6[0] = new ConvertLinkSetToAssignment_Intention();
-        }
-        return Arrays.asList(myIntentions6);
-      case 7:
-        // Concept: OperationParm_Concept 
-        if (myIntentions7 == null) {
-          myIntentions7 = new IntentionFactory[1];
-          myIntentions7[0] = new ReplaceConceptIsWithConceptEquals_Intention();
-        }
-        return Arrays.asList(myIntentions7);
-      case 8:
-        // Concept: ListType 
-        if (myIntentions8 == null) {
-          myIntentions8 = new IntentionFactory[1];
-          myIntentions8[0] = new Replace_ListType_withNodeListType_Intention();
-        }
-        return Arrays.asList(myIntentions8);
-      case 9:
-        // Concept: Node_GetConceptOperation 
-        if (myIntentions9 == null) {
-          myIntentions9 = new IntentionFactory[1];
-          myIntentions9[0] = new ConvertConceptNodeToSCOncept_Intention();
-        }
-        return Arrays.asList(myIntentions9);
-      case 10:
-        // Concept: ConceptNodeType 
-        if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[1];
-          myIntentions10[0] = new ConceptNodeType2SConceptType_Intention();
-        }
-        return Arrays.asList(myIntentions10);
-      case 11:
-        // Concept: ConceptRefExpression 
-        if (myIntentions11 == null) {
-          myIntentions11 = new IntentionFactory[1];
-          myIntentions11[0] = new ConceptRef2Concept_Intention();
-        }
-        return Arrays.asList(myIntentions11);
-      case 12:
-        // Concept: LinkRefExpression 
-        if (myIntentions12 == null) {
-          myIntentions12 = new IntentionFactory[1];
-          myIntentions12[0] = new LinkRef2Link_Intention();
-        }
-        return Arrays.asList(myIntentions12);
-      case 13:
-        // Concept: CheckedModuleReference 
-        if (myIntentions13 == null) {
-          myIntentions13 = new IntentionFactory[1];
-          myIntentions13[0] = new ReplaceWithUncheckedRef_Intention();
-        }
-        return Arrays.asList(myIntentions13);
-      case 14:
-        // Concept: LinkNameRefExpression 
-        if (myIntentions14 == null) {
-          myIntentions14 = new IntentionFactory[1];
-          myIntentions14[0] = new LinkName2Link_Intention();
-        }
-        return Arrays.asList(myIntentions14);
-      case 15:
-        // Concept: ConceptFqNameRefExpression 
-        if (myIntentions15 == null) {
-          myIntentions15 = new IntentionFactory[1];
-          myIntentions15[0] = new ConceptName2Concept_Intention();
-        }
-        return Arrays.asList(myIntentions15);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: CastExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertCastToNodeCast_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: CheckedModuleReference 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceWithUncheckedRef_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: ConceptFqNameRefExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConceptName2Concept_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: ConceptNodeType 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConceptNodeType2SConceptType_Intention();
+          }
+          break;
+        case 4:
+          if (true) {
+            // Concept: ConceptRefExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConceptRef2Concept_Intention();
+          }
+          break;
+        case 5:
+          if (true) {
+            // Concept: IfStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddSNodeCastStatement_Intention();
+          }
+          break;
+        case 6:
+          if (true) {
+            // Concept: InstanceOfExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertInstanceofToNodeInstanceof_Intention();
+          }
+          break;
+        case 7:
+          if (true) {
+            // Concept: LinkNameRefExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new LinkName2Link_Intention();
+          }
+          break;
+        case 8:
+          if (true) {
+            // Concept: LinkRefExpression 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new LinkRef2Link_Intention();
+          }
+          break;
+        case 9:
+          if (true) {
+            // Concept: Link_SetTargetOperation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertLinkSetToAssignment_Intention();
+          }
+          break;
+        case 10:
+          if (true) {
+            // Concept: ListType 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new Replace_ListType_withNodeListType_Intention();
+          }
+          break;
+        case 11:
+          if (true) {
+            // Concept: Node_GetConceptOperation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertConceptNodeToSCOncept_Intention();
+          }
+          break;
+        case 12:
+          if (true) {
+            // Concept: OperationParm_Concept 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ReplaceConceptIsWithConceptEquals_Intention();
+          }
+          break;
+        case 13:
+          if (true) {
+            // Concept: Property_SetOperation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new ConvertPropertySetToAssignment_Intention();
+          }
+          break;
+        case 14:
+          if (true) {
+            // Concept: SNodeOperation 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddOperationParameter_Intention();
+          }
+          break;
+        case 15:
+          if (true) {
+            // Concept: SNodeTypeCastExpression 
+            intentions = new IntentionFactory[2];
+            intentions[0] = new ChangeAsCast_Intention();
+            intentions[1] = new ConvertCastToSConceptType_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -195,4 +176,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[16] = new ConvertConceptNodeToSCOncept_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, "jetbrains.mps.lang.smodel.structure.CheckedModuleReference"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L, "jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e2695189e59aL, "jetbrains.mps.lang.smodel.structure.LinkNameRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11d88b27d15L, "jetbrains.mps.lang.smodel.structure.LinkRefExpression"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L, "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation"), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"));
 }

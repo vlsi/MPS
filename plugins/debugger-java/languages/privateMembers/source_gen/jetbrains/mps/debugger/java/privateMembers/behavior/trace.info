@@ -13,25 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="PrivateFieldReferenceOperation_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PrivateInstanceMethodCallOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation_BehaviorDescriptor" />
-    </file>
-    <file name="PrivateStaticFieldReference_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference_BehaviorDescriptor" />
-    </file>
-    <file name="PrivateStaticMethodCall_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticMethodCall_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d56331d6-5f8f-417d-8ab3-d7bc220d7936(jetbrains.mps.debugger.java.privateMembers.behavior)/1262430001741718941">
-    <file name="PrivateInstanceMethodCallOperation_Behavior.java">
-      <unit id="1262430001741718941" at="10,0,13,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateInstanceMethodCallOperation_Behavior" />
-    </file>
     <file name="PrivateInstanceMethodCallOperation__BehaviorDescriptor.java">
       <node id="1262430001741718941" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="1262430001741718941" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -106,9 +91,6 @@
     </file>
   </root>
   <root nodeRef="r:d56331d6-5f8f-417d-8ab3-d7bc220d7936(jetbrains.mps.debugger.java.privateMembers.behavior)/2511103526757024637">
-    <file name="PrivateFieldReferenceOperation_Behavior.java">
-      <unit id="2511103526757024637" at="10,0,13,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateFieldReferenceOperation_Behavior" />
-    </file>
     <file name="PrivateFieldReferenceOperation__BehaviorDescriptor.java">
       <node id="2511103526757024637" at="27,0,28,0" concept="6" trace="CONCEPT" />
       <node id="2511103526757024637" at="28,0,29,0" concept="6" trace="REGISTRY" />
@@ -195,9 +177,6 @@
     </file>
   </root>
   <root nodeRef="r:d56331d6-5f8f-417d-8ab3-d7bc220d7936(jetbrains.mps.debugger.java.privateMembers.behavior)/7488520339326239023">
-    <file name="PrivateStaticFieldReference_Behavior.java">
-      <unit id="7488520339326239023" at="10,0,13,0" name="jetbrains.mps.debugger.java.privateMembers.behavior.PrivateStaticFieldReference_Behavior" />
-    </file>
     <file name="PrivateStaticFieldReference__BehaviorDescriptor.java">
       <node id="7488520339326239023" at="27,0,28,0" concept="6" trace="CONCEPT" />
       <node id="7488520339326239023" at="28,0,29,0" concept="6" trace="REGISTRY" />

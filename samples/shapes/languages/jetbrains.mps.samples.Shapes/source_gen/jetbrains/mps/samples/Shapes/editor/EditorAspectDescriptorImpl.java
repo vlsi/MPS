@@ -11,11 +11,11 @@ import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("ScenePreview", "With Scene Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"), new ConceptEditorHintImpl("ShapePreview", "With Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"));
@@ -23,17 +23,30 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"))) {
-        return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"))) {
-        return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"))) {
-        return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
+      Integer preIndex = indices_xbvbvu_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
+          }
+          break;
+        case 1:
+          if (true) {
+            return Arrays.asList(new ConceptEditor[]{new Circle_Editor(), new Circle_ShapePreview_Editor()});
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ColorReference_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Arrays.asList(new ConceptEditor[]{new Square_Editor(), new Square_ShapePreview_Editor()});
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -43,10 +56,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, "jetbrains.mps.samples.Shapes.structure.Shape"))) {
-        if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
-        }
+      Integer preIndex = indices_xbvbvu_a0d.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -57,4 +77,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, "jetbrains.mps.samples.Shapes.structure.Shape"));
 }

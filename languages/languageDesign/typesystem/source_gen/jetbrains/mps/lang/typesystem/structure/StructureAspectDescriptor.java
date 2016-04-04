@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -142,253 +146,630 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ve, conceptFqName)) {
-      case 0:
-        return myConceptAbstractCheckingRule;
-      case 1:
-        return myConceptAbstractComparableStatement;
-      case 2:
-        return myConceptAbstractEquationStatement;
-      case 3:
-        return myConceptAbstractInequationStatement;
-      case 4:
-        return myConceptAbstractOverloadedOpsTypeRule;
-      case 5:
-        return myConceptAbstractRule;
-      case 6:
-        return myConceptAbstractSubtypingRule;
-      case 7:
-        return myConceptAddDependencyStatement;
-      case 8:
-        return myConceptApplicableNodeCondition;
-      case 9:
-        return myConceptApplicableNodeReference;
-      case 10:
-        return myConceptAssertStatement;
-      case 11:
-        return myConceptAttributedNodeExpression;
-      case 12:
-        return myConceptCaretPositionOperation;
-      case 13:
-        return myConceptCoerceExpression;
-      case 14:
-        return myConceptCoerceStatement;
-      case 15:
-        return myConceptCoerceStrongExpression;
-      case 16:
-        return myConceptComparisonRule;
-      case 17:
-        return myConceptConceptClauseLinkInfo;
-      case 18:
-        return myConceptConceptFunctionParameter_ContextNode;
-      case 19:
-        return myConceptConceptFunctionParameter_EditorContext;
-      case 20:
-        return myConceptConceptFunctionParameter_Role;
-      case 21:
-        return myConceptConceptFunctionParameter_Selection;
-      case 22:
-        return myConceptConceptFunctionParameter_isAggregation;
-      case 23:
-        return myConceptConceptFunctionParameter_node;
-      case 24:
-        return myConceptConceptFunctionParameter_var;
-      case 25:
-        return myConceptConceptReference;
-      case 26:
-        return myConceptCreateComparableEquationStatement;
-      case 27:
-        return myConceptCreateComparableEquationStatementStrong;
-      case 28:
-        return myConceptCreateEquationStatement;
-      case 29:
-        return myConceptCreateGreaterThanInequationStatement;
-      case 30:
-        return myConceptCreateLessThanInequationStatement;
-      case 31:
-        return myConceptCreateStrongGreaterThanInequationStatement;
-      case 32:
-        return myConceptCreateStrongLessThanInequationStatement;
-      case 33:
-        return myConceptDefaultGroupReference;
-      case 34:
-        return myConceptErrorInfoExpression;
-      case 35:
-        return myConceptGetOperationType;
-      case 36:
-        return myConceptIRuleWithOneNode;
-      case 37:
-        return myConceptIRuleWithTwoNodes;
-      case 38:
-        return myConceptImmediateSupertypesExpression;
-      case 39:
-        return myConceptInequationReference;
-      case 40:
-        return myConceptInequationReplacementRule;
-      case 41:
-        return myConceptInferenceRule;
-      case 42:
-        return myConceptInfoStatement;
-      case 43:
-        return myConceptInfoStatementAnnotation;
-      case 44:
-        return myConceptIsApplicableConceptFunction;
-      case 45:
-        return myConceptIsReplacementRuleApplicable_ConceptFunction;
-      case 46:
-        return myConceptIsStrongSubtypeExpression;
-      case 47:
-        return myConceptIsSubtypeExpression;
-      case 48:
-        return myConceptJoinContainer;
-      case 49:
-        return myConceptJoinType;
-      case 50:
-        return myConceptLeftOperandType_parameter;
-      case 51:
-        return myConceptLinkPatternVariableReference;
-      case 52:
-        return myConceptMatchStatement;
-      case 53:
-        return myConceptMatchStatementItem;
-      case 54:
-        return myConceptMeetContainer;
-      case 55:
-        return myConceptMeetType;
-      case 56:
-        return myConceptMessageStatement;
-      case 57:
-        return myConceptMessageStatementAnnotation;
-      case 58:
-        return myConceptMessageTarget;
-      case 59:
-        return myConceptMultipleForeachLoop;
-      case 60:
-        return myConceptMultipleForeachLoopVariable;
-      case 61:
-        return myConceptNodeInfo;
-      case 62:
-        return myConceptNode_InferTypeOperation;
-      case 63:
-        return myConceptNode_TypeOperation;
-      case 64:
-        return myConceptNonTypesystemRule;
-      case 65:
-        return myConceptNormalTypeClause;
-      case 66:
-        return myConceptOperation_parameter;
-      case 67:
-        return myConceptOrStatement;
-      case 68:
-        return myConceptOriginalNodeId;
-      case 69:
-        return myConceptOverloadedOpIsApplicableFunction;
-      case 70:
-        return myConceptOverloadedOpRulesContainer;
-      case 71:
-        return myConceptOverloadedOpTypeRule_OneTypeSpecified;
-      case 72:
-        return myConceptOverloadedOperatorTypeFunction;
-      case 73:
-        return myConceptOverloadedOperatorTypeRule;
-      case 74:
-        return myConceptOverridesConceptFunction;
-      case 75:
-        return myConceptPatternCondition;
-      case 76:
-        return myConceptPatternVariableReference;
-      case 77:
-        return myConceptPrintToTrace;
-      case 78:
-        return myConceptProcessed;
-      case 79:
-        return myConceptPropertyMessageTarget;
-      case 80:
-        return myConceptPropertyNameTarget;
-      case 81:
-        return myConceptPropertyPatternVariableReference;
-      case 82:
-        return myConceptQuickFixArgument;
-      case 83:
-        return myConceptQuickFixArgumentReference;
-      case 84:
-        return myConceptQuickFixDescriptionBlock;
-      case 85:
-        return myConceptQuickFixExecuteBlock;
-      case 86:
-        return myConceptQuickFixField;
-      case 87:
-        return myConceptQuickFixFieldReference;
-      case 88:
-        return myConceptQuickFixSetSelectionBlock;
-      case 89:
-        return myConceptReferenceMessageTarget;
-      case 90:
-        return myConceptReferenceRoleTarget;
-      case 91:
-        return myConceptReplacementRuleReference;
-      case 92:
-        return myConceptReportErrorStatement;
-      case 93:
-        return myConceptReportErrorStatementAnnotation;
-      case 94:
-        return myConceptRightOperandType_parameter;
-      case 95:
-        return myConceptRuntimeErrorType;
-      case 96:
-        return myConceptRuntimeHoleType;
-      case 97:
-        return myConceptRuntimeListVariable;
-      case 98:
-        return myConceptRuntimeTypeVariable;
-      case 99:
-        return myConceptSelectionType;
-      case 100:
-        return myConceptSubstituteTypeRule;
-      case 101:
-        return myConceptSubtypingRule;
-      case 102:
-        return myConceptSupersedeConceptFunction;
-      case 103:
-        return myConceptTypeCheckerAccessExpression;
-      case 104:
-        return myConceptTypeClause;
-      case 105:
-        return myConceptTypeOfExpression;
-      case 106:
-        return myConceptTypeVarDeclaration;
-      case 107:
-        return myConceptTypeVarReference;
-      case 108:
-        return myConceptTypesystemIntention;
-      case 109:
-        return myConceptTypesystemIntentionArgument;
-      case 110:
-        return myConceptTypesystemQuickFix;
-      case 111:
-        return myConceptVariableConverterItem;
-      case 112:
-        return myConceptVariableConverterItem_ApplicableBlock;
-      case 113:
-        return myConceptVariableConverterItem_ConvertBlock;
-      case 114:
-        return myConceptVariableConvertersContainer;
-      case 115:
-        return myConceptWarningStatement;
-      case 116:
-        return myConceptWarningStatementAnnotation;
-      case 117:
-        return myConceptWasSelectedNodeOperation;
-      case 118:
-        return myConceptWhenConcreteStatement;
-      case 119:
-        return myConceptWhenConcreteVariableDeclaration;
-      case 120:
-        return myConceptWhenConcreteVariableReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0ve.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractCheckingRule;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractComparableStatement;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAbstractEquationStatement;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptAbstractInequationStatement;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptAbstractOverloadedOpsTypeRule;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptAbstractRule;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptAbstractSubtypingRule;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptAddDependencyStatement;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptApplicableNodeCondition;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptApplicableNodeReference;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptAssertStatement;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptAttributedNodeExpression;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptCaretPositionOperation;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptCoerceExpression;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptCoerceStatement;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptCoerceStrongExpression;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptComparisonRule;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptConceptClauseLinkInfo;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptConceptFunctionParameter_ContextNode;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptConceptFunctionParameter_EditorContext;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptConceptFunctionParameter_Role;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptConceptFunctionParameter_Selection;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptConceptFunctionParameter_isAggregation;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptConceptFunctionParameter_node;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptConceptFunctionParameter_var;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptConceptReference;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptCreateComparableEquationStatement;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptCreateComparableEquationStatementStrong;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptCreateEquationStatement;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptCreateGreaterThanInequationStatement;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptCreateLessThanInequationStatement;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptCreateStrongGreaterThanInequationStatement;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptCreateStrongLessThanInequationStatement;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptDefaultGroupReference;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptErrorInfoExpression;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptGetOperationType;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptIRuleWithOneNode;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptIRuleWithTwoNodes;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptImmediateSupertypesExpression;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptInequationReference;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptInequationReplacementRule;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptInferenceRule;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptInfoStatement;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptInfoStatementAnnotation;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptIsApplicableConceptFunction;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptIsReplacementRuleApplicable_ConceptFunction;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptIsStrongSubtypeExpression;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptIsSubtypeExpression;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myConceptJoinContainer;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myConceptJoinType;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myConceptLeftOperandType_parameter;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myConceptLinkPatternVariableReference;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myConceptMatchStatement;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myConceptMatchStatementItem;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myConceptMeetContainer;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myConceptMeetType;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myConceptMessageStatement;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myConceptMessageStatementAnnotation;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myConceptMessageTarget;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myConceptMultipleForeachLoop;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myConceptMultipleForeachLoopVariable;
+          }
+          break;
+        case 61:
+          if (true) {
+            return myConceptNodeInfo;
+          }
+          break;
+        case 62:
+          if (true) {
+            return myConceptNode_InferTypeOperation;
+          }
+          break;
+        case 63:
+          if (true) {
+            return myConceptNode_TypeOperation;
+          }
+          break;
+        case 64:
+          if (true) {
+            return myConceptNonTypesystemRule;
+          }
+          break;
+        case 65:
+          if (true) {
+            return myConceptNormalTypeClause;
+          }
+          break;
+        case 66:
+          if (true) {
+            return myConceptOperation_parameter;
+          }
+          break;
+        case 67:
+          if (true) {
+            return myConceptOrStatement;
+          }
+          break;
+        case 68:
+          if (true) {
+            return myConceptOriginalNodeId;
+          }
+          break;
+        case 69:
+          if (true) {
+            return myConceptOverloadedOpIsApplicableFunction;
+          }
+          break;
+        case 70:
+          if (true) {
+            return myConceptOverloadedOpRulesContainer;
+          }
+          break;
+        case 71:
+          if (true) {
+            return myConceptOverloadedOpTypeRule_OneTypeSpecified;
+          }
+          break;
+        case 72:
+          if (true) {
+            return myConceptOverloadedOperatorTypeFunction;
+          }
+          break;
+        case 73:
+          if (true) {
+            return myConceptOverloadedOperatorTypeRule;
+          }
+          break;
+        case 74:
+          if (true) {
+            return myConceptOverridesConceptFunction;
+          }
+          break;
+        case 75:
+          if (true) {
+            return myConceptPatternCondition;
+          }
+          break;
+        case 76:
+          if (true) {
+            return myConceptPatternVariableReference;
+          }
+          break;
+        case 77:
+          if (true) {
+            return myConceptPrintToTrace;
+          }
+          break;
+        case 78:
+          if (true) {
+            return myConceptProcessed;
+          }
+          break;
+        case 79:
+          if (true) {
+            return myConceptPropertyMessageTarget;
+          }
+          break;
+        case 80:
+          if (true) {
+            return myConceptPropertyNameTarget;
+          }
+          break;
+        case 81:
+          if (true) {
+            return myConceptPropertyPatternVariableReference;
+          }
+          break;
+        case 82:
+          if (true) {
+            return myConceptQuickFixArgument;
+          }
+          break;
+        case 83:
+          if (true) {
+            return myConceptQuickFixArgumentReference;
+          }
+          break;
+        case 84:
+          if (true) {
+            return myConceptQuickFixDescriptionBlock;
+          }
+          break;
+        case 85:
+          if (true) {
+            return myConceptQuickFixExecuteBlock;
+          }
+          break;
+        case 86:
+          if (true) {
+            return myConceptQuickFixField;
+          }
+          break;
+        case 87:
+          if (true) {
+            return myConceptQuickFixFieldReference;
+          }
+          break;
+        case 88:
+          if (true) {
+            return myConceptQuickFixSetSelectionBlock;
+          }
+          break;
+        case 89:
+          if (true) {
+            return myConceptReferenceMessageTarget;
+          }
+          break;
+        case 90:
+          if (true) {
+            return myConceptReferenceRoleTarget;
+          }
+          break;
+        case 91:
+          if (true) {
+            return myConceptReplacementRuleReference;
+          }
+          break;
+        case 92:
+          if (true) {
+            return myConceptReportErrorStatement;
+          }
+          break;
+        case 93:
+          if (true) {
+            return myConceptReportErrorStatementAnnotation;
+          }
+          break;
+        case 94:
+          if (true) {
+            return myConceptRightOperandType_parameter;
+          }
+          break;
+        case 95:
+          if (true) {
+            return myConceptRuntimeErrorType;
+          }
+          break;
+        case 96:
+          if (true) {
+            return myConceptRuntimeHoleType;
+          }
+          break;
+        case 97:
+          if (true) {
+            return myConceptRuntimeListVariable;
+          }
+          break;
+        case 98:
+          if (true) {
+            return myConceptRuntimeTypeVariable;
+          }
+          break;
+        case 99:
+          if (true) {
+            return myConceptSelectionType;
+          }
+          break;
+        case 100:
+          if (true) {
+            return myConceptSubstituteTypeRule;
+          }
+          break;
+        case 101:
+          if (true) {
+            return myConceptSubtypingRule;
+          }
+          break;
+        case 102:
+          if (true) {
+            return myConceptSupersedeConceptFunction;
+          }
+          break;
+        case 103:
+          if (true) {
+            return myConceptTypeCheckerAccessExpression;
+          }
+          break;
+        case 104:
+          if (true) {
+            return myConceptTypeClause;
+          }
+          break;
+        case 105:
+          if (true) {
+            return myConceptTypeOfExpression;
+          }
+          break;
+        case 106:
+          if (true) {
+            return myConceptTypeVarDeclaration;
+          }
+          break;
+        case 107:
+          if (true) {
+            return myConceptTypeVarReference;
+          }
+          break;
+        case 108:
+          if (true) {
+            return myConceptTypesystemIntention;
+          }
+          break;
+        case 109:
+          if (true) {
+            return myConceptTypesystemIntentionArgument;
+          }
+          break;
+        case 110:
+          if (true) {
+            return myConceptTypesystemQuickFix;
+          }
+          break;
+        case 111:
+          if (true) {
+            return myConceptVariableConverterItem;
+          }
+          break;
+        case 112:
+          if (true) {
+            return myConceptVariableConverterItem_ApplicableBlock;
+          }
+          break;
+        case 113:
+          if (true) {
+            return myConceptVariableConverterItem_ConvertBlock;
+          }
+          break;
+        case 114:
+          if (true) {
+            return myConceptVariableConvertersContainer;
+          }
+          break;
+        case 115:
+          if (true) {
+            return myConceptWarningStatement;
+          }
+          break;
+        case 116:
+          if (true) {
+            return myConceptWarningStatementAnnotation;
+          }
+          break;
+        case 117:
+          if (true) {
+            return myConceptWasSelectedNodeOperation;
+          }
+          break;
+        case 118:
+          if (true) {
+            return myConceptWhenConcreteStatement;
+          }
+          break;
+        case 119:
+          if (true) {
+            return myConceptWhenConcreteVariableDeclaration;
+          }
+          break;
+        case 120:
+          if (true) {
+            return myConceptWhenConcreteVariableReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ve = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", "jetbrains.mps.lang.typesystem.structure.AbstractRule", "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.AttributedNodeExpression", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode", "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.IsApplicableConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.MessageTarget", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.OverridesConceptFunction", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.SupersedeConceptFunction", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeClause", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0ve = buildConceptIndices(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3be2294807013eb7L, "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70bfdafbb2c9449bL, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c40dfb0L, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11c22f6c964L, "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L, "jetbrains.mps.lang.typesystem.structure.AssertStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2152354b0d500086L, "jetbrains.mps.lang.typesystem.structure.AttributedNodeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc395068L, "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL, "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111f05e2451L, "jetbrains.mps.lang.typesystem.structure.CoerceStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a376a3dL, "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL, "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ffb82L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x335fe1d0b7494cfcL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078e410eL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x611e7dc14a69a014L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ecdbdL, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3618c300L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07431ba7L, "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f63bc23L, "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112c36bc7ecL, "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f179e8dL, "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f62956cL, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f60bfd5L, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31c3185c17a0f767L, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112b37f1b6eL, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x12541e5f229acee2L, "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c6082b85L, "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fd11186b7L, "jetbrains.mps.lang.typesystem.structure.GetOperationType"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3e3c1137fe6cb778L, "jetbrains.mps.lang.typesystem.structure.IRuleWithOneNode"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3e3c1137fe6cb779L, "jetbrains.mps.lang.typesystem.structure.IRuleWithTwoNodes"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1120ebd8531L, "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L, "jetbrains.mps.lang.typesystem.structure.InequationReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f31L, "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x669222c8f1941d7fL, "jetbrains.mps.lang.typesystem.structure.IsApplicableConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x31d99a115038e5e8L, "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11222e251f1L, "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7b9fb7L, "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cda22fcL, "jetbrains.mps.lang.typesystem.structure.JoinContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4cf5b0L, "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1122952fb1dL, "jetbrains.mps.lang.typesystem.structure.MatchStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x112295a8fecL, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cd802f8L, "jetbrains.mps.lang.typesystem.structure.MeetContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a65783L, "jetbrains.mps.lang.typesystem.structure.MessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x5dffc3ada5b76687L, "jetbrains.mps.lang.typesystem.structure.NodeInfo"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x584039bf75272c67L, "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7d5e03L, "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164853e0faL, "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1141682561cL, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8298L, "jetbrains.mps.lang.typesystem.structure.Operation_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xba3b706cf9561ecL, "jetbrains.mps.lang.typesystem.structure.OrStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2980b78b2f03a40bL, "jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x5529dae3231347deL, "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fd137d047L, "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70bfdafbb2c80edcL, "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4bffaeL, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4a641fL, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1885777d1370d97bL, "jetbrains.mps.lang.typesystem.structure.OverridesConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2c3e68L, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d10036L, "jetbrains.mps.lang.typesystem.structure.PatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x76b48f1c91e9de8L, "jetbrains.mps.lang.typesystem.structure.PrintToTrace"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11cd732687dL, "jetbrains.mps.lang.typesystem.structure.Processed"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L, "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b361afb76L, "jetbrains.mps.lang.typesystem.structure.QuickFixArgument"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L, "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b368d7f20L, "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3617feddL, "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8478e93eL, "jetbrains.mps.lang.typesystem.structure.QuickFixField"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8479b55dL, "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x335fe1d0b7494a6dL, "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54de8fdL, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x4cffb708491a734cL, "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f2eL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8edaL, "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956f9L, "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e68800741L, "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11831ae86e3L, "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x611e7dc14a6926c8L, "jetbrains.mps.lang.typesystem.structure.SelectionType"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x58e32a0782bca52aL, "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1119c426ccaL, "jetbrains.mps.lang.typesystem.structure.SubtypingRule"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x65684a1aee252403L, "jetbrains.mps.lang.typesystem.structure.SupersedeConceptFunction"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b6ea6b9bL, "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114168188c7L, "jetbrains.mps.lang.typesystem.structure.TypeClause"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f85df7bL, "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL, "jetbrains.mps.lang.typesystem.structure.TypeVarReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L, "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b36163865L, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e073a595aL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e0740f5fbL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e074487bbL, "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07487edcL, "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L, "jetbrains.mps.lang.typesystem.structure.WarningStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x6ee9803e48223f34L, "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc39506eL, "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd05a27aL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"));
 }

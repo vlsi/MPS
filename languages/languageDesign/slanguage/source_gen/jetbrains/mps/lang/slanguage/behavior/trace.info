@@ -12,20 +12,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AspectModelRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.slanguage.behavior.AspectModelRefExpression_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="Model_IsAspectOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.lang.slanguage.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:bd7e7514-3c03-4167-934e-dc32a649b114(jetbrains.mps.lang.slanguage.behavior)/2030416617761226735">
-    <file name="Model_IsAspectOperation_Behavior.java">
-      <unit id="2030416617761226735" at="10,0,13,0" name="jetbrains.mps.lang.slanguage.behavior.Model_IsAspectOperation_Behavior" />
-    </file>
     <file name="Model_IsAspectOperation__BehaviorDescriptor.java">
       <node id="2030416617761226735" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="2030416617761226735" at="25,0,26,0" concept="6" trace="REGISTRY" />

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -80,129 +84,320 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lc, conceptFqName)) {
-      case 0:
-        return myConceptAbsExpression;
-      case 1:
-        return myConceptAbstractIndex;
-      case 2:
-        return myConceptArithmSymbol;
-      case 3:
-        return myConceptBigComplexType;
-      case 4:
-        return myConceptBigDecimalType;
-      case 5:
-        return myConceptBigIntegerType;
-      case 6:
-        return myConceptBigMaxExpression;
-      case 7:
-        return myConceptBigMinExpression;
-      case 8:
-        return myConceptBigProdExpression;
-      case 9:
-        return myConceptBigSumExpression;
-      case 10:
-        return myConceptComplexLiteral;
-      case 11:
-        return myConceptComplexType;
-      case 12:
-        return myConceptConjugateOperation;
-      case 13:
-        return myConceptCosineExpression;
-      case 14:
-        return myConceptDecimalBinaryOperation;
-      case 15:
-        return myConceptDecimalDivExpression;
-      case 16:
-        return myConceptDecimalMinusExpression;
-      case 17:
-        return myConceptDecimalMulExpression;
-      case 18:
-        return myConceptDecimalPlusExpression;
-      case 19:
-        return myConceptDeterminant;
-      case 20:
-        return myConceptDivExpressionFraction;
-      case 21:
-        return myConceptExponentExpression;
-      case 22:
-        return myConceptExponentialOperation;
-      case 23:
-        return myConceptExtrSymbol;
-      case 24:
-        return myConceptInIntervalExpression;
-      case 25:
-        return myConceptIntervalContainsExpression;
-      case 26:
-        return myConceptIntervalLiteral;
-      case 27:
-        return myConceptIntervalType;
-      case 28:
-        return myConceptLinearSolveOperation;
-      case 29:
-        return myConceptLiteralI;
-      case 30:
-        return myConceptLogExpression;
-      case 31:
-        return myConceptMathContext;
-      case 32:
-        return myConceptMathFuncExpression;
-      case 33:
-        return myConceptMathPrimitiveType;
-      case 34:
-        return myConceptMathSymbol;
-      case 35:
-        return myConceptMathSymbolFromToIndex;
-      case 36:
-        return myConceptMathSymbolIndex;
-      case 37:
-        return myConceptMathSymbolIndexReference;
-      case 38:
-        return myConceptMathTypeCast;
-      case 39:
-        return myConceptMatrixConstructor;
-      case 40:
-        return myConceptMatrixElementAccessExpression;
-      case 41:
-        return myConceptMatrixExponentialOperation;
-      case 42:
-        return myConceptMatrixIndexWildcard;
-      case 43:
-        return myConceptMatrixInitializer;
-      case 44:
-        return myConceptMatrixInitializerIndex;
-      case 45:
-        return myConceptMatrixInitializerIndexReference;
-      case 46:
-        return myConceptMatrixInverseOperation;
-      case 47:
-        return myConceptMatrixNorm;
-      case 48:
-        return myConceptMatrixOrVectorInitializer;
-      case 49:
-        return myConceptMatrixOrVectorType;
-      case 50:
-        return myConceptMatrixType;
-      case 51:
-        return myConceptMatrixUnit;
-      case 52:
-        return myConceptMatrixZero;
-      case 53:
-        return myConceptPowExpression;
-      case 54:
-        return myConceptSineExpression;
-      case 55:
-        return myConceptTangentExpression;
-      case 56:
-        return myConceptTransposeOperation;
-      case 57:
-        return myConceptVectorInitializer;
-      case 58:
-        return myConceptVectorType;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0lc.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbsExpression;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAbstractIndex;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptArithmSymbol;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBigComplexType;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptBigDecimalType;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptBigIntegerType;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptBigMaxExpression;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptBigMinExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptBigProdExpression;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptBigSumExpression;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptComplexLiteral;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptComplexType;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptConjugateOperation;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptCosineExpression;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptDecimalBinaryOperation;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptDecimalDivExpression;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptDecimalMinusExpression;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptDecimalMulExpression;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptDecimalPlusExpression;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptDeterminant;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptDivExpressionFraction;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptExponentExpression;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptExponentialOperation;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptExtrSymbol;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptInIntervalExpression;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptIntervalContainsExpression;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptIntervalLiteral;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptIntervalType;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptLinearSolveOperation;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptLiteralI;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptLogExpression;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptMathContext;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptMathFuncExpression;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptMathPrimitiveType;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptMathSymbol;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptMathSymbolFromToIndex;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptMathSymbolIndex;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptMathSymbolIndexReference;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptMathTypeCast;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptMatrixConstructor;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptMatrixElementAccessExpression;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptMatrixExponentialOperation;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptMatrixIndexWildcard;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptMatrixInitializer;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptMatrixInitializerIndex;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptMatrixInitializerIndexReference;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptMatrixInverseOperation;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptMatrixNorm;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myConceptMatrixOrVectorInitializer;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myConceptMatrixOrVectorType;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myConceptMatrixType;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myConceptMatrixUnit;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myConceptMatrixZero;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myConceptPowExpression;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myConceptSineExpression;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myConceptTangentExpression;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myConceptTransposeOperation;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myConceptVectorInitializer;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myConceptVectorType;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0lc = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0lc = buildConceptIndices(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12051ecbe19L, "jetbrains.mps.baseLanguage.math.structure.AbsExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea76c7e0L, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e7ac42L, "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120096f8e4cL, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12009449465L, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e16047L, "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e1674dL, "jetbrains.mps.baseLanguage.math.structure.BigMinExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e12aa0L, "jetbrains.mps.baseLanguage.math.structure.BigProdExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe188eafbL, "jetbrains.mps.baseLanguage.math.structure.BigSumExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120095d7138L, "jetbrains.mps.baseLanguage.math.structure.ComplexType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e64afe53L, "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12053114b76L, "jetbrains.mps.baseLanguage.math.structure.CosineExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697107bL, "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12076988136L, "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120769754c8L, "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697a328L, "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x3a6682eeb060fd5L, "jetbrains.mps.baseLanguage.math.structure.Determinant"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120531e6b2fL, "jetbrains.mps.baseLanguage.math.structure.ExponentExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0e1ca4eL, "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483964L, "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483968L, "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483972L, "jetbrains.mps.baseLanguage.math.structure.IntervalType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205202c5edL, "jetbrains.mps.baseLanguage.math.structure.LiteralI"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311f8ffL, "jetbrains.mps.baseLanguage.math.structure.LogExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205307b067L, "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200ff11214L, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, "jetbrains.mps.baseLanguage.math.structure.MathTypeCast"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e647ad7dL, "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f4339L, "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f255L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, "jetbrains.mps.baseLanguage.math.structure.MatrixNorm"), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d5141L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer"), MetaAdapterFactory.getInterfaceConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x513c04200c187a63L, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af3c3bdfL, "jetbrains.mps.baseLanguage.math.structure.MatrixUnit"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, "jetbrains.mps.baseLanguage.math.structure.MatrixZero"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052b2cdd3L, "jetbrains.mps.baseLanguage.math.structure.PowExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311204eL, "jetbrains.mps.baseLanguage.math.structure.SineExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205311cb56L, "jetbrains.mps.baseLanguage.math.structure.TangentExpression"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x7418107bdc9576d4L, "jetbrains.mps.baseLanguage.math.structure.TransposeOperation"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
 }

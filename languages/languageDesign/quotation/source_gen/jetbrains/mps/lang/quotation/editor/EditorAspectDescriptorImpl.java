@@ -7,57 +7,90 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"))) {
-        return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"))) {
-        return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0339L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a2df32L, "jetbrains.mps.lang.quotation.structure.NodeBuilderList"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a0fa93L, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"))) {
-        return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"))) {
-        return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"))) {
-        return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
-        return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractAntiquotation_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Antiquotation_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ListAntiquotation_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilder_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderExpression_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitLink_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitPart_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderInitProperty_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderList_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderNode_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new NodeBuilderRef_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PropertyAntiquotation_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Quotation_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ReferenceAntiquotation_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -66,4 +99,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104658L, "jetbrains.mps.lang.quotation.structure.Antiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465eL, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, "jetbrains.mps.lang.quotation.structure.NodeBuilder"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20c8e1aL, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0339L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a2df32L, "jetbrains.mps.lang.quotation.structure.NodeBuilderList"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a0fa93L, "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"));
 }

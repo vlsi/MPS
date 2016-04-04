@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -46,61 +50,150 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0db, conceptFqName)) {
-      case 0:
-        return myConceptAsBuilderStatement;
-      case 1:
-        return myConceptAsTypeBuilder;
-      case 2:
-        return myConceptBaseSimpleBuilderDeclaration;
-      case 3:
-        return myConceptBeanBuilder;
-      case 4:
-        return myConceptBeanPropertyBuilder;
-      case 5:
-        return myConceptBuilder;
-      case 6:
-        return myConceptBuilderContainer;
-      case 7:
-        return myConceptBuilderCreator;
-      case 8:
-        return myConceptBuilderStatement;
-      case 9:
-        return myConceptResultExpression;
-      case 10:
-        return myConceptSimpleBuilder;
-      case 11:
-        return myConceptSimpleBuilderChild;
-      case 12:
-        return myConceptSimpleBuilderChildExpression;
-      case 13:
-        return myConceptSimpleBuilderDeclaration;
-      case 14:
-        return myConceptSimpleBuilderExpression;
-      case 15:
-        return myConceptSimpleBuilderExtensionDeclaration;
-      case 16:
-        return myConceptSimpleBuilderParameter;
-      case 17:
-        return myConceptSimpleBuilderParameterReference;
-      case 18:
-        return myConceptSimpleBuilderParentExpression;
-      case 19:
-        return myConceptSimpleBuilderProperty;
-      case 20:
-        return myConceptSimpleBuilderPropertyBuilder;
-      case 21:
-        return myConceptSimpleBuilderPropertyExpression;
-      case 22:
-        return myConceptSimpleBuilderPropertyParent;
-      case 23:
-        return myConceptSimpleBuilderPropertyValue;
-      case 24:
-        return myConceptSimpleBuilders;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0db.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAsBuilderStatement;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAsTypeBuilder;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBaseSimpleBuilderDeclaration;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBeanBuilder;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptBeanPropertyBuilder;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptBuilder;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptBuilderContainer;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptBuilderCreator;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptBuilderStatement;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptResultExpression;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptSimpleBuilder;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptSimpleBuilderChild;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptSimpleBuilderChildExpression;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptSimpleBuilderDeclaration;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptSimpleBuilderExpression;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptSimpleBuilderExtensionDeclaration;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptSimpleBuilderParameter;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptSimpleBuilderParameterReference;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptSimpleBuilderParentExpression;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptSimpleBuilderProperty;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptSimpleBuilderPropertyBuilder;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptSimpleBuilderPropertyExpression;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptSimpleBuilderPropertyParent;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptSimpleBuilderPropertyValue;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptSimpleBuilders;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0db = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0db = buildConceptIndices(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d721d314L, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78d35b1L, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x5c83892592e1ebbfL, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder"), MetaAdapterFactory.getInterfaceConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0eL, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf23L, "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e18dae0L, "jetbrains.mps.baseLanguage.builders.structure.ResultExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353eL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d3540L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78dcaf3L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9010958L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9029ce4L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353cL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72870eaL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72ec05fL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c5e70L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c5e8aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"));
 }

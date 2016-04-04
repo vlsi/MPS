@@ -4,12 +4,12 @@ package jetbrains.mps.lang.sharedConcepts.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myConceptFunctionParameter_model__BehaviorDescriptor = new ConceptFunctionParameter_model__BehaviorDescriptor();
@@ -17,37 +17,49 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myConceptFunctionParameter_editorContext__BehaviorDescriptor = new ConceptFunctionParameter_editorContext__BehaviorDescriptor();
   private final BHDescriptor myConceptFunctionParameter_node__BehaviorDescriptor = new ConceptFunctionParameter_node__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[4];
-    myConceptBehaviorIds[0] = 0x10e761b3745L;
-    myConceptBehaviorIds[1] = 0x10e761c927aL;
-    myConceptBehaviorIds[2] = 0x11601f73f7aL;
-    myConceptBehaviorIds[3] = 0x118e7145df4L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myConceptFunctionParameter_model__BehaviorDescriptor;
-      case 1:
-        return myConceptFunctionParameter_operationContext__BehaviorDescriptor;
-      case 2:
-        return myConceptFunctionParameter_editorContext__BehaviorDescriptor;
-      case 3:
-        return myConceptFunctionParameter_node__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptFunctionParameter_editorContext__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptFunctionParameter_model__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptFunctionParameter_node__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptFunctionParameter_operationContext__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x11601f73f7aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761b3745L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x118e7145df4L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761c927aL, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext"));
 }

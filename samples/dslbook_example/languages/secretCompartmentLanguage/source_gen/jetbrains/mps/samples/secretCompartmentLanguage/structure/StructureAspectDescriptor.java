@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -27,25 +31,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptEvent;
-      case 1:
-        return myConceptHandleEvent;
-      case 2:
-        return myConceptState;
-      case 3:
-        return myConceptStateMachine;
-      case 4:
-        return myConceptStateMachineTest;
-      case 5:
-        return myConceptStateMachineTestMethod;
-      case 6:
-        return myConceptTransition;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptEvent;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptHandleEvent;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptState;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptStateMachine;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptStateMachineTest;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptStateMachineTestMethod;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptTransition;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bcdac91eL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Event"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c2015933L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bced8217L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.State"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod"), MetaAdapterFactory.getConcept(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c112fe2aL, "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"));
 }

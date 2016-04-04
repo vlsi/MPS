@@ -7,72 +7,115 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d721d314L, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x5c83892592e1ebbfL, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder"))) {
-        return Collections.<ConceptEditor>singletonList(new Builder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0eL, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"))) {
-        return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf23L, "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e18dae0L, "jetbrains.mps.baseLanguage.builders.structure.ResultExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d3540L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78dcaf3L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9010958L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9029ce4L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72870eaL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72ec05fL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AsTypeBuilder_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BeanBuilder_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BeanPropertyBuilder_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Builder_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuilderCreator_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BuilderStatement_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ResultExpression_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilder_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderChild_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderDeclaration_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderExpression_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderExtensionDeclaration_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameter_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderParameterReference_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderProperty_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyBuilder_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilderPropertyExpression_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleBuilders_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -81,4 +124,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d721d314L, "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x5c83892592e1ebbfL, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x252efd34f8a58ec7L, "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0bL, "jetbrains.mps.baseLanguage.builders.structure.Builder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0eL, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf23L, "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e18dae0L, "jetbrains.mps.baseLanguage.builders.structure.ResultExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e24c0baL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d353aL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1d3540L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78dcaf3L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9010958L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4b4c01fdd9029ce4L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72870eaL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72ec05fL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x4acc05c8d72c48e2L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"));
 }

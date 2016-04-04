@@ -13,34 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="CustomRoot_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_BehaviorDescriptor" />
-    </file>
-    <file name="CustomStatementRef_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatementRef_BehaviorDescriptor" />
-    </file>
-    <file name="CustomStatement_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatement_BehaviorDescriptor" />
-    </file>
-    <file name="OutputNode_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_BehaviorDescriptor" />
-    </file>
-    <file name="OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor" />
-    </file>
-    <file name="OutputRoot_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputRoot_BehaviorDescriptor" />
-    </file>
-    <file name="TwoVarStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.transformation.test.outputLang.behavior.TwoVarStatement_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:6403882d-ffad-429a-8b59-eb2f29334fb1(jetbrains.mps.transformation.test.outputLang.behavior)/2511103526757027810">
-    <file name="CustomRoot_Behavior.java">
-      <unit id="2511103526757027810" at="10,0,13,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_Behavior" />
-    </file>
     <file name="CustomRoot__BehaviorDescriptor.java">
       <node id="2511103526757027810" at="20,0,21,0" concept="6" trace="CONCEPT" />
       <node id="2511103526757027810" at="21,0,22,0" concept="6" trace="REGISTRY" />

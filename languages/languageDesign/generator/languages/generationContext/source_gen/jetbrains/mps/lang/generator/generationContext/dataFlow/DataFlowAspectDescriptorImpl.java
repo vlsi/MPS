@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
 
@@ -19,42 +19,62 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b994bfa0fL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_CreateUniqueName_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f9620cdL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetCopiedOutputByInput_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11e42912257L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c5652e4d5L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c529a6c83L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9417864bL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_ShowMessageBase_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe60348L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_UserObjectAccessBase_DataFlow());
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_vhxjlb_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_CreateUniqueName_DataFlow());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetCopiedOutputByInput_DataFlow());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_DataFlow());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_DataFlow());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_ShowMessageBase_DataFlow());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new GenerationContextOp_UserObjectAccessBase_DataFlow());
+          }
+          break;
+        default:
+          // default 
       }
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b994bfa0fL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f9620cdL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11e42912257L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0dbL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c5652e4d5L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c529a6c83L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9417864bL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase"), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe60348L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase"));
 }

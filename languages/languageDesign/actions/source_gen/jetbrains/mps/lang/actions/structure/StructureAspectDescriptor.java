@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -135,239 +139,595 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0oe, conceptFqName)) {
-      case 0:
-        return myConceptAddMenuPart;
-      case 1:
-        return myConceptConceptFunctionParameter_EditorCell;
-      case 2:
-        return myConceptConceptFunctionParameter_OperationContext;
-      case 3:
-        return myConceptConceptFunctionParameter_childConcept;
-      case 4:
-        return myConceptConceptFunctionParameter_childSetter;
-      case 5:
-        return myConceptConceptFunctionParameter_concept;
-      case 6:
-        return myConceptConceptFunctionParameter_createdNode;
-      case 7:
-        return myConceptConceptFunctionParameter_currentTargetNode;
-      case 8:
-        return myConceptConceptFunctionParameter_link;
-      case 9:
-        return myConceptConceptFunctionParameter_nodeToCopyPreProcess;
-      case 10:
-        return myConceptConceptFunctionParameter_nodeToCopyPreProcessOriginal;
-      case 11:
-        return myConceptConceptFunctionParameter_nodeToPastePostProcess;
-      case 12:
-        return myConceptConceptFunctionParameter_nodeToPasteWrap;
-      case 13:
-        return myConceptConceptFunctionParameter_nodeToWrap;
-      case 14:
-        return myConceptConceptFunctionParameter_parameterObject;
-      case 15:
-        return myConceptConceptFunctionParameter_parentNode;
-      case 16:
-        return myConceptConceptFunctionParameter_pattern;
-      case 17:
-        return myConceptConceptFunctionParameter_result;
-      case 18:
-        return myConceptConceptFunctionParameter_sourceNode;
-      case 19:
-        return myConceptConceptFunctionParameter_strictly;
-      case 20:
-        return myConceptConceptFunctionParameter_targetNode;
-      case 21:
-        return myConceptConceptFunctionParameter_wrapped;
-      case 22:
-        return myConceptConceptPart;
-      case 23:
-        return myConceptConceptRightTransformPart;
-      case 24:
-        return myConceptConceptSubstitutePart;
-      case 25:
-        return myConceptConceptsSubstituteMenuPart;
-      case 26:
-        return myConceptCopyPasteHandlers;
-      case 27:
-        return myConceptCopyPreProcessFunction;
-      case 28:
-        return myConceptCopyPreProcessor;
-      case 29:
-        return myConceptExecuteSmartActionFunction;
-      case 30:
-        return myConceptGenerateCodeAction;
-      case 31:
-        return myConceptGenericSubstituteMenuPart;
-      case 32:
-        return myConceptGetActionUIFunction;
-      case 33:
-        return myConceptISideTransform_String;
-      case 34:
-        return myConceptISubstitute_String;
-      case 35:
-        return myConceptIncludeRightTransformForNodePart;
-      case 36:
-        return myConceptIsSmartActionApplicableFunction;
-      case 37:
-        return myConceptMenuPart;
-      case 38:
-        return myConceptNF_Concept_NewInstance;
-      case 39:
-        return myConceptNF_LinkList_AddNewChildOperation;
-      case 40:
-        return myConceptNF_Link_SetNewChildOperation;
-      case 41:
-        return myConceptNF_Model_CreateNewNodeOperation;
-      case 42:
-        return myConceptNF_Model_CreateNewRootNodeOperation;
-      case 43:
-        return myConceptNF_Node_InsertNewNextSiblingOperation;
-      case 44:
-        return myConceptNF_Node_InsertNewPrevSiblingOperation;
-      case 45:
-        return myConceptNF_Node_ReplaceWithNewOperation;
-      case 46:
-        return myConceptNodeFactories;
-      case 47:
-        return myConceptNodeFactory;
-      case 48:
-        return myConceptNodeSetupFunction;
-      case 49:
-        return myConceptNodeSetupFunction_EnclosingNode;
-      case 50:
-        return myConceptNodeSetupFunction_NewNode;
-      case 51:
-        return myConceptNodeSetupFunction_SampleNode;
-      case 52:
-        return myConceptNodeSubstituteActions;
-      case 53:
-        return myConceptNodeSubstituteActionsBuilder;
-      case 54:
-        return myConceptNodeSubstituteMenuBuilderPart;
-      case 55:
-        return myConceptNodeSubstitutePreconditionFunction;
-      case 56:
-        return myConceptParameterizedSideTransformMenuPart;
-      case 57:
-        return myConceptParameterizedSubstituteMenuPart;
-      case 58:
-        return myConceptPastePostProcessFunction;
-      case 59:
-        return myConceptPastePostProcessor;
-      case 60:
-        return myConceptPasteWrapper;
-      case 61:
-        return myConceptPasteWrappers;
-      case 62:
-        return myConceptQueryFunction_ActionType;
-      case 63:
-        return myConceptQueryFunction_CanSubstitute;
-      case 64:
-        return myConceptQueryFunction_GenericSubstituteMenuPart;
-      case 65:
-        return myConceptQueryFunction_IconNode;
-      case 66:
-        return myConceptQueryFunction_ParameterizedSideTransform_Handler;
-      case 67:
-        return myConceptQueryFunction_ParameterizedSideTransform_Query;
-      case 68:
-        return myConceptQueryFunction_ParameterizedSubstitute_Handler;
-      case 69:
-        return myConceptQueryFunction_ParameterizedSubstitute_Icon;
-      case 70:
-        return myConceptQueryFunction_ParameterizedSubstitute_Query;
-      case 71:
-        return myConceptQueryFunction_ParameterizedSubstitute_String;
-      case 72:
-        return myConceptQueryFunction_PasteWrapper;
-      case 73:
-        return myConceptQueryFunction_RemoveBy_Condition;
-      case 74:
-        return myConceptQueryFunction_ReturnSmallPart;
-      case 75:
-        return myConceptQueryFunction_STVariableInitializer;
-      case 76:
-        return myConceptQueryFunction_ST_CommonInitializer;
-      case 77:
-        return myConceptQueryFunction_ST_RemoveBy_Condition;
-      case 78:
-        return myConceptQueryFunction_SideTransform_ConceptHandler;
-      case 79:
-        return myConceptQueryFunction_SideTransform_Handler;
-      case 80:
-        return myConceptQueryFunction_SideTransform_Icon;
-      case 81:
-        return myConceptQueryFunction_SideTransform_NodeQuery;
-      case 82:
-        return myConceptQueryFunction_SideTransform_String;
-      case 83:
-        return myConceptQueryFunction_SubstituteIcon;
-      case 84:
-        return myConceptQueryFunction_SubstituteString;
-      case 85:
-        return myConceptQueryFunction_SubstituteVariableInitializer;
-      case 86:
-        return myConceptQueryFunction_SubstituteWrapper;
-      case 87:
-        return myConceptQueryFunction_Substitute_CommonInitializer;
-      case 88:
-        return myConceptQueryFunction_Substitute_Handler;
-      case 89:
-        return myConceptQueryFunction_Substitute_SelectionHandler;
-      case 90:
-        return myConceptRemoveByConditionPart;
-      case 91:
-        return myConceptRemoveDefaultsPart;
-      case 92:
-        return myConceptRemovePart;
-      case 93:
-        return myConceptRemoveSTByConditionPart;
-      case 94:
-        return myConceptSNodeCreatorAndInitializer;
-      case 95:
-        return myConceptSideTransformHintSubstituteActions;
-      case 96:
-        return myConceptSideTransformHintSubstituteActionsBuilder;
-      case 97:
-        return myConceptSideTransformHintSubstitutePreconditionFunction;
-      case 98:
-        return myConceptSideTransformMenuBuilderPart;
-      case 99:
-        return myConceptSideTransformMenuPart;
-      case 100:
-        return myConceptSideTransformVariableDeclaration;
-      case 101:
-        return myConceptSideTransformVariableReference;
-      case 102:
-        return myConceptSideTransform_SimpleString;
-      case 103:
-        return myConceptSimpleItemSubstitutePart;
-      case 104:
-        return myConceptSimpleSideTransformMenuPart;
-      case 105:
-        return myConceptSmartActionParameter;
-      case 106:
-        return myConceptSmartActionParameterReference;
-      case 107:
-        return myConceptSmartEditorActions;
-      case 108:
-        return myConceptSubstituteMenuPart;
-      case 109:
-        return myConceptSubstituteNodeBuilderVariableDeclaration;
-      case 110:
-        return myConceptSubstituteNodeBuilderVariableReference;
-      case 111:
-        return myConceptSubstitute_SimpleString;
-      case 112:
-        return myConceptSurroundWithAction;
-      case 113:
-        return myConceptWrapperSubstituteMenuPart;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0oe.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAddMenuPart;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptConceptFunctionParameter_EditorCell;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptConceptFunctionParameter_OperationContext;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConceptFunctionParameter_childConcept;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptConceptFunctionParameter_childSetter;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConceptFunctionParameter_concept;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptConceptFunctionParameter_createdNode;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptConceptFunctionParameter_currentTargetNode;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptConceptFunctionParameter_link;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptConceptFunctionParameter_nodeToCopyPreProcess;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptConceptFunctionParameter_nodeToCopyPreProcessOriginal;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptConceptFunctionParameter_nodeToPastePostProcess;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptConceptFunctionParameter_nodeToPasteWrap;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptConceptFunctionParameter_nodeToWrap;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptConceptFunctionParameter_parameterObject;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptConceptFunctionParameter_parentNode;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptConceptFunctionParameter_pattern;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptConceptFunctionParameter_result;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptConceptFunctionParameter_sourceNode;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptConceptFunctionParameter_strictly;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptConceptFunctionParameter_targetNode;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptConceptFunctionParameter_wrapped;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptConceptPart;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptConceptRightTransformPart;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptConceptSubstitutePart;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptConceptsSubstituteMenuPart;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptCopyPasteHandlers;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptCopyPreProcessFunction;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptCopyPreProcessor;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptExecuteSmartActionFunction;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptGenerateCodeAction;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptGenericSubstituteMenuPart;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptGetActionUIFunction;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptISideTransform_String;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptISubstitute_String;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptIncludeRightTransformForNodePart;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptIsSmartActionApplicableFunction;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptMenuPart;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptNF_Concept_NewInstance;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptNF_LinkList_AddNewChildOperation;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptNF_Link_SetNewChildOperation;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptNF_Model_CreateNewNodeOperation;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptNF_Model_CreateNewRootNodeOperation;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptNF_Node_InsertNewNextSiblingOperation;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptNF_Node_InsertNewPrevSiblingOperation;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptNF_Node_ReplaceWithNewOperation;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptNodeFactories;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptNodeFactory;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myConceptNodeSetupFunction;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myConceptNodeSetupFunction_EnclosingNode;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myConceptNodeSetupFunction_NewNode;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myConceptNodeSetupFunction_SampleNode;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myConceptNodeSubstituteActions;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myConceptNodeSubstituteActionsBuilder;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myConceptNodeSubstituteMenuBuilderPart;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myConceptNodeSubstitutePreconditionFunction;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myConceptParameterizedSideTransformMenuPart;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myConceptParameterizedSubstituteMenuPart;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myConceptPastePostProcessFunction;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myConceptPastePostProcessor;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myConceptPasteWrapper;
+          }
+          break;
+        case 61:
+          if (true) {
+            return myConceptPasteWrappers;
+          }
+          break;
+        case 62:
+          if (true) {
+            return myConceptQueryFunction_ActionType;
+          }
+          break;
+        case 63:
+          if (true) {
+            return myConceptQueryFunction_CanSubstitute;
+          }
+          break;
+        case 64:
+          if (true) {
+            return myConceptQueryFunction_GenericSubstituteMenuPart;
+          }
+          break;
+        case 65:
+          if (true) {
+            return myConceptQueryFunction_IconNode;
+          }
+          break;
+        case 66:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSideTransform_Handler;
+          }
+          break;
+        case 67:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSideTransform_Query;
+          }
+          break;
+        case 68:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSubstitute_Handler;
+          }
+          break;
+        case 69:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSubstitute_Icon;
+          }
+          break;
+        case 70:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSubstitute_Query;
+          }
+          break;
+        case 71:
+          if (true) {
+            return myConceptQueryFunction_ParameterizedSubstitute_String;
+          }
+          break;
+        case 72:
+          if (true) {
+            return myConceptQueryFunction_PasteWrapper;
+          }
+          break;
+        case 73:
+          if (true) {
+            return myConceptQueryFunction_RemoveBy_Condition;
+          }
+          break;
+        case 74:
+          if (true) {
+            return myConceptQueryFunction_ReturnSmallPart;
+          }
+          break;
+        case 75:
+          if (true) {
+            return myConceptQueryFunction_STVariableInitializer;
+          }
+          break;
+        case 76:
+          if (true) {
+            return myConceptQueryFunction_ST_CommonInitializer;
+          }
+          break;
+        case 77:
+          if (true) {
+            return myConceptQueryFunction_ST_RemoveBy_Condition;
+          }
+          break;
+        case 78:
+          if (true) {
+            return myConceptQueryFunction_SideTransform_ConceptHandler;
+          }
+          break;
+        case 79:
+          if (true) {
+            return myConceptQueryFunction_SideTransform_Handler;
+          }
+          break;
+        case 80:
+          if (true) {
+            return myConceptQueryFunction_SideTransform_Icon;
+          }
+          break;
+        case 81:
+          if (true) {
+            return myConceptQueryFunction_SideTransform_NodeQuery;
+          }
+          break;
+        case 82:
+          if (true) {
+            return myConceptQueryFunction_SideTransform_String;
+          }
+          break;
+        case 83:
+          if (true) {
+            return myConceptQueryFunction_SubstituteIcon;
+          }
+          break;
+        case 84:
+          if (true) {
+            return myConceptQueryFunction_SubstituteString;
+          }
+          break;
+        case 85:
+          if (true) {
+            return myConceptQueryFunction_SubstituteVariableInitializer;
+          }
+          break;
+        case 86:
+          if (true) {
+            return myConceptQueryFunction_SubstituteWrapper;
+          }
+          break;
+        case 87:
+          if (true) {
+            return myConceptQueryFunction_Substitute_CommonInitializer;
+          }
+          break;
+        case 88:
+          if (true) {
+            return myConceptQueryFunction_Substitute_Handler;
+          }
+          break;
+        case 89:
+          if (true) {
+            return myConceptQueryFunction_Substitute_SelectionHandler;
+          }
+          break;
+        case 90:
+          if (true) {
+            return myConceptRemoveByConditionPart;
+          }
+          break;
+        case 91:
+          if (true) {
+            return myConceptRemoveDefaultsPart;
+          }
+          break;
+        case 92:
+          if (true) {
+            return myConceptRemovePart;
+          }
+          break;
+        case 93:
+          if (true) {
+            return myConceptRemoveSTByConditionPart;
+          }
+          break;
+        case 94:
+          if (true) {
+            return myConceptSNodeCreatorAndInitializer;
+          }
+          break;
+        case 95:
+          if (true) {
+            return myConceptSideTransformHintSubstituteActions;
+          }
+          break;
+        case 96:
+          if (true) {
+            return myConceptSideTransformHintSubstituteActionsBuilder;
+          }
+          break;
+        case 97:
+          if (true) {
+            return myConceptSideTransformHintSubstitutePreconditionFunction;
+          }
+          break;
+        case 98:
+          if (true) {
+            return myConceptSideTransformMenuBuilderPart;
+          }
+          break;
+        case 99:
+          if (true) {
+            return myConceptSideTransformMenuPart;
+          }
+          break;
+        case 100:
+          if (true) {
+            return myConceptSideTransformVariableDeclaration;
+          }
+          break;
+        case 101:
+          if (true) {
+            return myConceptSideTransformVariableReference;
+          }
+          break;
+        case 102:
+          if (true) {
+            return myConceptSideTransform_SimpleString;
+          }
+          break;
+        case 103:
+          if (true) {
+            return myConceptSimpleItemSubstitutePart;
+          }
+          break;
+        case 104:
+          if (true) {
+            return myConceptSimpleSideTransformMenuPart;
+          }
+          break;
+        case 105:
+          if (true) {
+            return myConceptSmartActionParameter;
+          }
+          break;
+        case 106:
+          if (true) {
+            return myConceptSmartActionParameterReference;
+          }
+          break;
+        case 107:
+          if (true) {
+            return myConceptSmartEditorActions;
+          }
+          break;
+        case 108:
+          if (true) {
+            return myConceptSubstituteMenuPart;
+          }
+          break;
+        case 109:
+          if (true) {
+            return myConceptSubstituteNodeBuilderVariableDeclaration;
+          }
+          break;
+        case 110:
+          if (true) {
+            return myConceptSubstituteNodeBuilderVariableReference;
+          }
+          break;
+        case 111:
+          if (true) {
+            return myConceptSubstitute_SimpleString;
+          }
+          break;
+        case 112:
+          if (true) {
+            return myConceptSurroundWithAction;
+          }
+          break;
+        case 113:
+          if (true) {
+            return myConceptWrapperSubstituteMenuPart;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0oe = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_createdNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", "jetbrains.mps.lang.actions.structure.ConceptPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.GetActionUIFunction", "jetbrains.mps.lang.actions.structure.ISideTransform_String", "jetbrains.mps.lang.actions.structure.ISubstitute_String", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSetupFunction", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart", "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessFunction", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.QueryFunction_IconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart", "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_SelectionHandler", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.SideTransformMenuBuilderPart", "jetbrains.mps.lang.actions.structure.SideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteMenuPart", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.SurroundWithAction", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0oe = buildConceptIndices(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121dfa84e4L, "jetbrains.mps.lang.actions.structure.AddMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f120523L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f139b1dL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112387cf896L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fd19500L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112235845abL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x61f403867e2f6f6L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_createdNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122c8bef38L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c6f1d424dL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3326034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3326068L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x53a34ae13c0d287bL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51740034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222aa8df0L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecda6bbL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10ccb7e17b2L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e2c89d1L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122a0d061aL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112284c7b8bL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11976233a0aL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11ad991846fL, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e8bfbfdL, "jetbrains.mps.lang.actions.structure.ConceptPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1136583873dL, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3317b9fL, "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3311946L, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f52c18fL, "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eca117bL, "jetbrains.mps.lang.actions.structure.GenerateCodeAction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fc5138eL, "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8f5118d4L, "jetbrains.mps.lang.actions.structure.GetActionUIFunction"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169101ee91L, "jetbrains.mps.lang.actions.structure.ISideTransform_String"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11691102070L, "jetbrains.mps.lang.actions.structure.ISubstitute_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c41b4114L, "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8effcd77L, "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x6bea674d717de5f4L, "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f8701L, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86feL, "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9e128L, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9f70cL, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86f8L, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86faL, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0xaa57300a39f86fcL, "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, "jetbrains.mps.lang.actions.structure.NodeFactory"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f89eecL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf35eL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cd43fL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf25dL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1d4eL, "jetbrains.mps.lang.actions.structure.NodeSubstituteMenuBuilderPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10ccb7b7b84L, "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228fddb03L, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x53a34ae13c0cee4fL, "jetbrains.mps.lang.actions.structure.PastePostProcessFunction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7d4ebb4f893516cL, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, "jetbrains.mps.lang.actions.structure.PasteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51553d4eL, "jetbrains.mps.lang.actions.structure.PasteWrappers"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11e73a269d4L, "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e2acf26L, "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fc590cfL, "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x58d3fff801434049L, "jetbrains.mps.lang.actions.structure.QueryFunction_IconNode"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122905dd10L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228ff0cb4L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ee2e40fL, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cb91355L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ece8624L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ee13382L, "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51746008L, "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223572c26L, "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x118ccd8c942L, "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1b57deL, "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d37f835L, "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cdd863ddL, "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122a0de432L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112285d125eL, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cc7eba9L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266483c18L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112285ab108L, "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1181cbf9d29L, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121eb0d54dL, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1129d121a7cL, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a97b92L, "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11274dc9ebaL, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e310c5dL, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x61f4038641e3123L, "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_SelectionHandler"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223561225L, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122f4e71c0L, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x52fd3043dd42f3a9L, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10cd4def236L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction"), MetaAdapterFactory.getInterfaceConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x743255fa452e1995L, "jetbrains.mps.lang.actions.structure.SideTransformMenuBuilderPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112283d3033L, "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1a6565L, "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL, "jetbrains.mps.lang.actions.structure.SideTransformVariableReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169104df47L, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e328443L, "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122859d0ecL, "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eeedcb4L, "jetbrains.mps.lang.actions.structure.SmartActionParameter"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L, "jetbrains.mps.lang.actions.structure.SmartActionParameterReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ec8c7e9L, "jetbrains.mps.lang.actions.structure.SmartEditorActions"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121df5451bL, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112668f8fe4L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116910ff20bL, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ec99f09L, "jetbrains.mps.lang.actions.structure.SurroundWithAction"), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"));
 }

@@ -14,94 +14,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,122,0" name="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="XmlAttribute_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.core.xml.behavior.XmlAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="XmlBaseAttribute_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="XmlBaseElement_BehaviorDescriptor.java">
-      <unit at="14,0,38,0" name="jetbrains.mps.core.xml.behavior.XmlBaseElement_BehaviorDescriptor" />
-    </file>
-    <file name="XmlBasePrologElement_BehaviorDescriptor.java">
-      <unit at="15,0,48,0" name="jetbrains.mps.core.xml.behavior.XmlBasePrologElement_BehaviorDescriptor" />
-    </file>
-    <file name="XmlCDATA_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.core.xml.behavior.XmlCDATA_BehaviorDescriptor" />
-    </file>
-    <file name="XmlCharRefValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlCharRefValue_BehaviorDescriptor" />
-    </file>
-    <file name="XmlCharRef_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.core.xml.behavior.XmlCharRef_BehaviorDescriptor" />
-    </file>
-    <file name="XmlCommentLine_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlCommentLine_BehaviorDescriptor" />
-    </file>
-    <file name="XmlComment_BehaviorDescriptor.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.core.xml.behavior.XmlComment_BehaviorDescriptor" />
-    </file>
-    <file name="XmlContent_BehaviorDescriptor.java">
-      <unit at="15,0,48,0" name="jetbrains.mps.core.xml.behavior.XmlContent_BehaviorDescriptor" />
-    </file>
-    <file name="XmlDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.core.xml.behavior.XmlDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="XmlDoctypeDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.core.xml.behavior.XmlDoctypeDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="XmlDocument_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlDocument_BehaviorDescriptor" />
-    </file>
-    <file name="XmlElement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlElement_BehaviorDescriptor" />
-    </file>
-    <file name="XmlEntityRefValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlEntityRefValue_BehaviorDescriptor" />
-    </file>
-    <file name="XmlEntityRef_BehaviorDescriptor.java">
-      <unit at="13,0,28,0" name="jetbrains.mps.core.xml.behavior.XmlEntityRef_BehaviorDescriptor" />
-    </file>
-    <file name="XmlExternalId_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlExternalId_BehaviorDescriptor" />
-    </file>
-    <file name="XmlFile_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.core.xml.behavior.XmlFile_BehaviorDescriptor" />
-    </file>
-    <file name="XmlNoSpaceValue_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.core.xml.behavior.XmlNoSpaceValue_BehaviorDescriptor" />
-    </file>
-    <file name="XmlPart_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor" />
-    </file>
-    <file name="XmlProcessingInstruction_BehaviorDescriptor.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.core.xml.behavior.XmlProcessingInstruction_BehaviorDescriptor" />
-    </file>
-    <file name="XmlPrologElement_BehaviorDescriptor.java">
-      <unit at="12,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlPrologElement_BehaviorDescriptor" />
-    </file>
-    <file name="XmlProlog_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.core.xml.behavior.XmlProlog_BehaviorDescriptor" />
-    </file>
-    <file name="XmlTextValue_BehaviorDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.core.xml.behavior.XmlTextValue_BehaviorDescriptor" />
-    </file>
-    <file name="XmlText_BehaviorDescriptor.java">
-      <unit at="15,0,39,0" name="jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor" />
-    </file>
-    <file name="XmlValuePart_BehaviorDescriptor.java">
-      <unit at="14,0,35,0" name="jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor" />
-    </file>
-    <file name="XmlWhitespace_BehaviorDescriptor.java">
-      <unit at="14,0,41,0" name="jetbrains.mps.core.xml.behavior.XmlWhitespace_BehaviorDescriptor" />
+      <unit at="14,0,168,0" name="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741498286">
-    <file name="XmlEntityRef_Behavior.java">
-      <unit id="1262430001741498286" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlEntityRef_Behavior" />
-    </file>
     <file name="XmlEntityRef__BehaviorDescriptor.java">
       <node id="1262430001741498286" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741498286" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -185,9 +101,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741498307">
-    <file name="XmlCharRef_Behavior.java">
-      <unit id="1262430001741498307" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlCharRef_Behavior" />
-    </file>
     <file name="XmlCharRef__BehaviorDescriptor.java">
       <node id="1262430001741498307" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741498307" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -271,9 +184,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741498316">
-    <file name="XmlProcessingInstruction_Behavior.java">
-      <unit id="1262430001741498316" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlProcessingInstruction_Behavior" />
-    </file>
     <file name="XmlProcessingInstruction__BehaviorDescriptor.java">
       <node id="1262430001741498316" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741498316" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -357,9 +267,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741498325">
-    <file name="XmlCDATA_Behavior.java">
-      <unit id="1262430001741498325" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlCDATA_Behavior" />
-    </file>
     <file name="XmlCDATA__BehaviorDescriptor.java">
       <node id="1262430001741498325" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741498325" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -443,9 +350,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1262430001741703368">
-    <file name="XmlDoctypeDeclaration_Behavior.java">
-      <unit id="1262430001741703368" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlDoctypeDeclaration_Behavior" />
-    </file>
     <file name="XmlDoctypeDeclaration__BehaviorDescriptor.java">
       <node id="1262430001741703368" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1262430001741703368" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -520,9 +424,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1622293396949036116">
-    <file name="XmlContent_Behavior.java">
-      <unit id="1622293396949036116" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlContent_Behavior" />
-    </file>
     <file name="XmlContent__BehaviorDescriptor.java">
       <node id="1622293396949036116" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="1622293396949036116" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -684,9 +585,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/1622293396949044245">
-    <file name="XmlComment_Behavior.java">
-      <unit id="1622293396949044245" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlComment_Behavior" />
-    </file>
     <file name="XmlComment__BehaviorDescriptor.java">
       <node id="1622293396949044245" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1622293396949044245" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -770,9 +668,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/2133624044437631432">
-    <file name="XmlPart_Behavior.java">
-      <unit id="2133624044437631432" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
-    </file>
     <file name="XmlPart__BehaviorDescriptor.java">
       <node id="2133624044437631432" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="2133624044437631432" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -844,9 +739,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/2133624044437669771">
-    <file name="XmlBasePrologElement_Behavior.java">
-      <unit id="2133624044437669771" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlBasePrologElement_Behavior" />
-    </file>
     <file name="XmlBasePrologElement__BehaviorDescriptor.java">
       <node id="2133624044437669771" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="2133624044437669771" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -990,16 +882,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/2133624044437891373">
-    <file name="XmlProlog_Behavior.java">
-      <node id="2133624044437891373" at="13,103,14,96" concept="6" />
-      <node id="2133624044437891373" at="13,0,16,0" concept="8" trace="call_isInValidPosition_2133624044437891376#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="2133624044437891373" at="13,103,14,96" />
-      <scope id="2133624044437891373" at="13,0,16,0">
-        <var name="__thisNode__" id="2133624044437891373" />
-        <var name="element" id="2133624044437891381" />
-      </scope>
-      <unit id="2133624044437891373" at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlProlog_Behavior" />
-    </file>
     <file name="XmlProlog__BehaviorDescriptor.java">
       <node id="2133624044437891373" at="28,0,29,0" concept="7" trace="CONCEPT" />
       <node id="2133624044437891373" at="29,0,30,0" concept="7" trace="REGISTRY" />
@@ -1088,9 +970,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/3080189811177259777">
-    <file name="XmlAttribute_Behavior.java">
-      <unit id="3080189811177259777" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" />
-    </file>
     <file name="XmlAttribute__BehaviorDescriptor.java">
       <node id="3080189811177259777" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="3080189811177259777" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -1176,9 +1055,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/3080189811177259785">
-    <file name="XmlBaseAttribute_Behavior.java">
-      <unit id="3080189811177259785" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_Behavior" />
-    </file>
     <file name="XmlBaseAttribute__BehaviorDescriptor.java">
       <node id="3080189811177259785" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="3080189811177259785" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1253,9 +1129,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/3080189811177340419">
-    <file name="XmlValuePart_Behavior.java">
-      <unit id="3080189811177340419" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
-    </file>
     <file name="XmlValuePart__BehaviorDescriptor.java">
       <node id="3080189811177340419" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="3080189811177340419" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -1372,9 +1245,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/3080189811177366840">
-    <file name="XmlTextValue_Behavior.java">
-      <unit id="3080189811177366840" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlTextValue_Behavior" />
-    </file>
     <file name="XmlTextValue__BehaviorDescriptor.java">
       <node id="3080189811177366840" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="3080189811177366840" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -1494,9 +1364,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/543355706921831335">
-    <file name="XmlFile_Behavior.java">
-      <unit id="543355706921831335" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlFile_Behavior" />
-    </file>
     <file name="XmlFile__BehaviorDescriptor.java">
       <node id="543355706921831335" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="543355706921831335" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -1571,9 +1438,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/5491461270226117682">
-    <file name="XmlDeclaration_Behavior.java">
-      <unit id="5491461270226117682" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlDeclaration_Behavior" />
-    </file>
     <file name="XmlDeclaration__BehaviorDescriptor.java">
       <node id="5491461270226117682" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="5491461270226117682" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -1658,9 +1522,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/5491461270226170007">
-    <file name="XmlPrologElement_Behavior.java">
-      <unit id="5491461270226170007" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlPrologElement_Behavior" />
-    </file>
     <file name="XmlPrologElement__BehaviorDescriptor.java">
       <node id="5491461270226170007" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="5491461270226170007" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -1744,9 +1605,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/5491461270226170017">
-    <file name="XmlWhitespace_Behavior.java">
-      <unit id="5491461270226170017" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlWhitespace_Behavior" />
-    </file>
     <file name="XmlWhitespace__BehaviorDescriptor.java">
       <node id="5491461270226170017" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="5491461270226170017" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -1884,9 +1742,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/6999033275467454437">
-    <file name="XmlText_Behavior.java">
-      <unit id="6999033275467454437" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlText_Behavior" />
-    </file>
     <file name="XmlText__BehaviorDescriptor.java">
       <node id="6999033275467454437" at="26,0,27,0" concept="7" trace="CONCEPT" />
       <node id="6999033275467454437" at="27,0,28,0" concept="7" trace="REGISTRY" />
@@ -2015,9 +1870,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/6999033275467469815">
-    <file name="XmlBaseElement_Behavior.java">
-      <unit id="6999033275467469815" at="10,0,13,0" name="jetbrains.mps.core.xml.behavior.XmlBaseElement_Behavior" />
-    </file>
     <file name="XmlBaseElement__BehaviorDescriptor.java">
       <node id="6999033275467469815" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="6999033275467469815" at="25,0,26,0" concept="7" trace="REGISTRY" />
@@ -2128,15 +1980,6 @@
     </file>
   </root>
   <root nodeRef="r:d4d8dc74-6f4e-4494-bacc-55342de185e1(jetbrains.mps.core.xml.behavior)/8886258982030574872">
-    <file name="XmlElement_Behavior.java">
-      <node id="8886258982030574872" at="13,82,14,82" concept="6" />
-      <node id="8886258982030574872" at="13,0,16,0" concept="8" trace="call_isMultiline_8886258982030574875#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="8886258982030574872" at="13,82,14,82" />
-      <scope id="8886258982030574872" at="13,0,16,0">
-        <var name="__thisNode__" id="8886258982030574872" />
-      </scope>
-      <unit id="8886258982030574872" at="11,0,17,0" name="jetbrains.mps.core.xml.behavior.XmlElement_Behavior" />
-    </file>
     <file name="XmlElement__BehaviorDescriptor.java">
       <node id="8886258982030574872" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="8886258982030574872" at="28,0,29,0" concept="7" trace="REGISTRY" />

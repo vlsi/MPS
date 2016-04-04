@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -32,35 +36,85 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0q, conceptFqName)) {
-      case 0:
-        return myConceptAbstractDeveloper;
-      case 1:
-        return myConceptCanvas;
-      case 2:
-        return myConceptCompany;
-      case 3:
-        return myConceptDefaultNodeAttribute;
-      case 4:
-        return myConceptDefaultPropertyAttribute;
-      case 5:
-        return myConceptDefaultReferenceAttribute;
-      case 6:
-        return myConceptDeveloper;
-      case 7:
-        return myConceptDummyMethod;
-      case 8:
-        return myConceptFriend;
-      case 9:
-        return myConceptNotSubstitutableDeveloper;
-      case 10:
-        return myConceptShape;
-      case 11:
-        return myConceptTeam;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0q.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractDeveloper;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCanvas;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCompany;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDefaultNodeAttribute;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDefaultPropertyAttribute;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptDefaultReferenceAttribute;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptDeveloper;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptDummyMethod;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptFriend;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptNotSubstitutableDeveloper;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptShape;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptTeam;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0q = new String[]{"testDefaultEditor.structure.AbstractDeveloper", "testDefaultEditor.structure.Canvas", "testDefaultEditor.structure.Company", "testDefaultEditor.structure.DefaultNodeAttribute", "testDefaultEditor.structure.DefaultPropertyAttribute", "testDefaultEditor.structure.DefaultReferenceAttribute", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.NotSubstitutableDeveloper", "testDefaultEditor.structure.Shape", "testDefaultEditor.structure.Team"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0q = buildConceptIndices(MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L, "testDefaultEditor.structure.AbstractDeveloper"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5daL, "testDefaultEditor.structure.Canvas"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f723L, "testDefaultEditor.structure.Company"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8aee1L, "testDefaultEditor.structure.DefaultNodeAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8ae64L, "testDefaultEditor.structure.DefaultPropertyAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x27d5e845b8e8aeb7L, "testDefaultEditor.structure.DefaultReferenceAttribute"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, "testDefaultEditor.structure.Developer"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x535e489f8b62af67L, "testDefaultEditor.structure.DummyMethod"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf13be7aL, "testDefaultEditor.structure.Friend"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9853b871L, "testDefaultEditor.structure.NotSubstitutableDeveloper"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x5a79ee4e776cb5dbL, "testDefaultEditor.structure.Shape"), MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L, "testDefaultEditor.structure.Team"));
 }

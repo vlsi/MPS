@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -32,33 +36,80 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
-      case 0:
-        return myConceptExtension;
-      case 1:
-        return myConceptExtensionDeclaration;
-      case 2:
-        return myConceptExtensionFieldDeclaration;
-      case 3:
-        return myConceptExtensionFieldReference;
-      case 4:
-        return myConceptExtensionFunction;
-      case 5:
-        return myConceptExtensionObjectGetter;
-      case 6:
-        return myConceptExtensionPointDeclaration;
-      case 7:
-        return myConceptExtensionPointExpression;
-      case 8:
-        return myConceptExtensionPointType;
-      case 9:
-        return myConceptGetExtensionObjectsOperation;
-      case 10:
-        return myConceptIRootWithUniqueName;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptExtension;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptExtensionDeclaration;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptExtensionFieldDeclaration;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptExtensionFieldReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExtensionFunction;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptExtensionObjectGetter;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptExtensionPointDeclaration;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptExtensionPointExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptExtensionPointType;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptGetExtensionObjectsOperation;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIRootWithUniqueName;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x1c30c5b543be3b2L, "jetbrains.mps.lang.extension.structure.Extension"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L, "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, "jetbrains.mps.lang.extension.structure.ExtensionFieldReference"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL, "jetbrains.mps.lang.extension.structure.ExtensionFunction"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x6f6f7f3b7a178565L, "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x5bf74eafefe0e940L, "jetbrains.mps.lang.extension.structure.ExtensionPointExpression"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, "jetbrains.mps.lang.extension.structure.ExtensionPointType"), MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142ef747L, "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"), MetaAdapterFactory.getInterfaceConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L, "jetbrains.mps.lang.extension.structure.IRootWithUniqueName"));
 }

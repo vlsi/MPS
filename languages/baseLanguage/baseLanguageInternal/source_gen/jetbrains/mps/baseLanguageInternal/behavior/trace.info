@@ -15,91 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,86,0" name="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConstantValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.ConstantValue_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStatementListExpression_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStatementListInnerExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListInnerExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStaticInnerClassConcept_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassConcept_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStaticInnerClassCreator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassCreator_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStaticInnerClassExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStaticMethodExpression_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethodExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractStaticMethod_CallExpression_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractToConstantExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ExtractToConstantRefExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractToConstantRefExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InternalAnonymousClassCreator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClassCreator_BehaviorDescriptor" />
-    </file>
-    <file name="InternalAnonymousClass_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_BehaviorDescriptor" />
-    </file>
-    <file name="InternalClassCreator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalClassCreator_BehaviorDescriptor" />
-    </file>
-    <file name="InternalClassExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalClassExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InternalClassifierType_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalClassifierType_BehaviorDescriptor" />
-    </file>
-    <file name="InternalNewExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InternalPartialFieldReference_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialFieldReference_BehaviorDescriptor" />
-    </file>
-    <file name="InternalPartialInstanceMethodCall_BehaviorDescriptor.java">
-      <unit at="16,0,43,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="InternalStaticFieldReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticFieldReference_BehaviorDescriptor" />
-    </file>
-    <file name="InternalStaticMethodCall_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="InternalSuperMethodCallOperation_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalSuperMethodCallOperation_BehaviorDescriptor" />
-    </file>
-    <file name="InternalThisExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalThisExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InternalTypedStaticFieldReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalTypedStaticFieldReference_BehaviorDescriptor" />
-    </file>
-    <file name="InternalVariableReference_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="TypeHintExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguageInternal.behavior.TypeHintExpression_BehaviorDescriptor" />
-    </file>
-    <file name="WeakClassReference_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguageInternal.behavior.WeakClassReference_BehaviorDescriptor" />
+      <unit at="14,0,114,0" name="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/1100832983841311076">
-    <file name="InternalClassCreator_Behavior.java">
-      <unit id="1100832983841311076" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalClassCreator_Behavior" />
-    </file>
     <file name="InternalClassCreator__BehaviorDescriptor.java">
       <node id="1100832983841311076" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1100832983841311076" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -165,9 +84,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/1230552150899">
-    <file name="InternalNewExpression_Behavior.java">
-      <unit id="1230552150899" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_Behavior" />
-    </file>
     <file name="InternalNewExpression__BehaviorDescriptor.java">
       <node id="1230552150899" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1230552150899" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -233,9 +149,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/1262430001741642101">
-    <file name="InternalSuperMethodCallOperation_Behavior.java">
-      <unit id="1262430001741642101" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalSuperMethodCallOperation_Behavior" />
-    </file>
     <file name="InternalSuperMethodCallOperation__BehaviorDescriptor.java">
       <node id="1262430001741642101" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741642101" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -310,9 +223,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/1262430001741703587">
-    <file name="InternalPartialInstanceMethodCall_Behavior.java">
-      <unit id="1262430001741703587" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialInstanceMethodCall_Behavior" />
-    </file>
     <file name="InternalPartialInstanceMethodCall__BehaviorDescriptor.java">
       <node id="1262430001741703587" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741703587" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -387,9 +297,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/199058371937620708">
-    <file name="ExtractStaticMethodExpression_Behavior.java">
-      <unit id="199058371937620708" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethodExpression_Behavior" />
-    </file>
     <file name="ExtractStaticMethodExpression__BehaviorDescriptor.java">
       <node id="199058371937620708" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="199058371937620708" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -464,9 +371,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/199058371937623738">
-    <file name="ExtractStaticInnerClassExpression_Behavior.java">
-      <unit id="199058371937623738" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticInnerClassExpression_Behavior" />
-    </file>
     <file name="ExtractStaticInnerClassExpression__BehaviorDescriptor.java">
       <node id="199058371937623738" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="199058371937623738" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -541,9 +445,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/2603987804373970227">
-    <file name="InternalPartialFieldReference_Behavior.java">
-      <unit id="2603987804373970227" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalPartialFieldReference_Behavior" />
-    </file>
     <file name="InternalPartialFieldReference__BehaviorDescriptor.java">
       <node id="2603987804373970227" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="2603987804373970227" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -618,9 +519,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/3196918548952834929">
-    <file name="ExtractStatementListExpression_Behavior.java">
-      <unit id="3196918548952834929" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_Behavior" />
-    </file>
     <file name="ExtractStatementListExpression__BehaviorDescriptor.java">
       <node id="3196918548952834929" at="27,0,28,0" concept="8" trace="CONCEPT" />
       <node id="3196918548952834929" at="28,0,29,0" concept="8" trace="REGISTRY" />
@@ -700,28 +598,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/3421461530438560191">
-    <file name="InternalAnonymousClass_Behavior.java">
-      <node id="3421461530438560191" at="13,81,14,94" concept="7" />
-      <node id="3421461530438560191" at="16,92,17,108" concept="7" />
-      <node id="3421461530438560191" at="19,127,20,134" concept="7" />
-      <node id="3421461530438560191" at="13,0,16,0" concept="9" trace="call_getJavaName_3421461530438560397#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3421461530438560191" at="16,0,19,0" concept="9" trace="call_getIndexInContainingClass_3421461530438560434#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-      <node id="3421461530438560191" at="19,0,22,0" concept="9" trace="call_getAnonymousClassPresentation_3421461530438560331#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="3421461530438560191" at="13,81,14,94" />
-      <scope id="3421461530438560191" at="16,92,17,108" />
-      <scope id="3421461530438560191" at="19,127,20,134" />
-      <scope id="3421461530438560191" at="13,0,16,0">
-        <var name="__thisNode__" id="3421461530438560191" />
-      </scope>
-      <scope id="3421461530438560191" at="16,0,19,0">
-        <var name="__thisNode__" id="3421461530438560191" />
-      </scope>
-      <scope id="3421461530438560191" at="19,0,22,0">
-        <var name="__thisNode__" id="3421461530438560191" />
-        <var name="containingClassifier" id="3421461530438560332" />
-      </scope>
-      <unit id="3421461530438560191" at="11,0,23,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalAnonymousClass_Behavior" />
-    </file>
     <file name="InternalAnonymousClass__BehaviorDescriptor.java">
       <node id="3421461530438560191" at="33,0,34,0" concept="8" trace="CONCEPT" />
       <node id="3421461530438560191" at="34,0,35,0" concept="8" trace="REGISTRY" />
@@ -898,22 +774,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/3585982959253821896">
-    <file name="ExtractStaticMethod_CallExpression_Behavior.java">
-      <node id="3585982959253821896" at="15,93,16,119" concept="7" />
-      <node id="3585982959253821896" at="18,114,19,117" concept="7" />
-      <node id="3585982959253821896" at="15,0,18,0" concept="9" trace="call_getContainingExtractExpr_8881995820265485533#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3585982959253821896" at="18,0,21,0" concept="9" trace="call_getMethods_5857910569715993654#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="3585982959253821896" at="15,93,16,119" />
-      <scope id="3585982959253821896" at="18,114,19,117" />
-      <scope id="3585982959253821896" at="15,0,18,0">
-        <var name="__thisNode__" id="3585982959253821896" />
-      </scope>
-      <scope id="3585982959253821896" at="18,0,21,0">
-        <var name="__thisConcept__" id="3585982959253821896" />
-        <var name="context" id="5857910569715993669" />
-      </scope>
-      <unit id="3585982959253821896" at="13,0,22,0" name="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior" />
-    </file>
     <file name="ExtractStaticMethod_CallExpression__BehaviorDescriptor.java">
       <node id="3585982959253821896" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="3585982959253821896" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -1048,9 +908,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/3650511996773376131">
-    <file name="InternalStaticMethodCall_Behavior.java">
-      <unit id="3650511996773376131" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalStaticMethodCall_Behavior" />
-    </file>
     <file name="InternalStaticMethodCall__BehaviorDescriptor.java">
       <node id="3650511996773376131" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="3650511996773376131" at="25,0,26,0" concept="8" trace="REGISTRY" />
@@ -1125,9 +982,6 @@
     </file>
   </root>
   <root nodeRef="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)/9122903797335921055">
-    <file name="InternalVariableReference_Behavior.java">
-      <unit id="9122903797335921055" at="10,0,13,0" name="jetbrains.mps.baseLanguageInternal.behavior.InternalVariableReference_Behavior" />
-    </file>
     <file name="InternalVariableReference__BehaviorDescriptor.java">
       <node id="9122903797335921055" at="24,0,25,0" concept="8" trace="CONCEPT" />
       <node id="9122903797335921055" at="25,0,26,0" concept="8" trace="REGISTRY" />

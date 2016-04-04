@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -82,133 +86,330 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0nc, conceptFqName)) {
-      case 0:
-        return myConceptAtLeastNTimesRegexp;
-      case 1:
-        return myConceptBinaryRegexp;
-      case 2:
-        return myConceptCharacterSymbolClassPart;
-      case 3:
-        return myConceptDotRegexp;
-      case 4:
-        return myConceptFindMatchExpression;
-      case 5:
-        return myConceptFindMatchStatement;
-      case 6:
-        return myConceptForEachMatchStatement;
-      case 7:
-        return myConceptFromNToMTimesRegexp;
-      case 8:
-        return myConceptInlineRegexpExpression;
-      case 9:
-        return myConceptIntersectionSymbolClassPart;
-      case 10:
-        return myConceptIntervalSymbolClassPart;
-      case 11:
-        return myConceptLazyPlusRegexp;
-      case 12:
-        return myConceptLazyQuestionRegexp;
-      case 13:
-        return myConceptLazyStarRegexp;
-      case 14:
-        return myConceptLineEndRegexp;
-      case 15:
-        return myConceptLineStartRegexp;
-      case 16:
-        return myConceptLiteralReplacement;
-      case 17:
-        return myConceptLookRegexp;
-      case 18:
-        return myConceptMatchParensRegexp;
-      case 19:
-        return myConceptMatchRegexpExpression;
-      case 20:
-        return myConceptMatchRegexpOperation;
-      case 21:
-        return myConceptMatchRegexpStatement;
-      case 22:
-        return myConceptMatchVariableReference;
-      case 23:
-        return myConceptMatchVariableReferenceRegexp;
-      case 24:
-        return myConceptMatchVariableReferenceReplacement;
-      case 25:
-        return myConceptNTimesRegexp;
-      case 26:
-        return myConceptNegativeLookAheadRegexp;
-      case 27:
-        return myConceptNegativeLookBehindRegexp;
-      case 28:
-        return myConceptNegativeSymbolClassRegexp;
-      case 29:
-        return myConceptOrRegexp;
-      case 30:
-        return myConceptParensRegexp;
-      case 31:
-        return myConceptPlusRegexp;
-      case 32:
-        return myConceptPositiveLookAheadRegexp;
-      case 33:
-        return myConceptPositiveLookBehindRegexp;
-      case 34:
-        return myConceptPositiveSymbolClassRegexp;
-      case 35:
-        return myConceptPredefinedSymbolClassDeclaration;
-      case 36:
-        return myConceptPredefinedSymbolClassRegexp;
-      case 37:
-        return myConceptPredefinedSymbolClassSymbolClassPart;
-      case 38:
-        return myConceptPredefinedSymbolClasses;
-      case 39:
-        return myConceptQuestionRegexp;
-      case 40:
-        return myConceptRegexp;
-      case 41:
-        return myConceptRegexpDeclaration;
-      case 42:
-        return myConceptRegexpDeclarationReferenceRegexp;
-      case 43:
-        return myConceptRegexpExpression;
-      case 44:
-        return myConceptRegexpUsingConstruction;
-      case 45:
-        return myConceptRegexps;
-      case 46:
-        return myConceptReplaceBlock;
-      case 47:
-        return myConceptReplaceRegexpOperation;
-      case 48:
-        return myConceptReplaceWithRegexpExpression;
-      case 49:
-        return myConceptReplaceWithRegexpOperation;
-      case 50:
-        return myConceptReplacement;
-      case 51:
-        return myConceptSeqRegexp;
-      case 52:
-        return myConceptSplitExpression;
-      case 53:
-        return myConceptSplitOperation;
-      case 54:
-        return myConceptStarRegexp;
-      case 55:
-        return myConceptStringLiteralRegexp;
-      case 56:
-        return myConceptSymbolClassPart;
-      case 57:
-        return myConceptSymbolClassRegexp;
-      case 58:
-        return myConceptSymbolClassRegexpAndPart;
-      case 59:
-        return myConceptUnaryRegexp;
-      case 60:
-        return myConceptUnicodeCharacterRegexp;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0nc.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAtLeastNTimesRegexp;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBinaryRegexp;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCharacterSymbolClassPart;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDotRegexp;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptFindMatchExpression;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptFindMatchStatement;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptForEachMatchStatement;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptFromNToMTimesRegexp;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptInlineRegexpExpression;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIntersectionSymbolClassPart;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIntervalSymbolClassPart;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptLazyPlusRegexp;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptLazyQuestionRegexp;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptLazyStarRegexp;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptLineEndRegexp;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptLineStartRegexp;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptLiteralReplacement;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptLookRegexp;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptMatchParensRegexp;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptMatchRegexpExpression;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptMatchRegexpOperation;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptMatchRegexpStatement;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptMatchVariableReference;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptMatchVariableReferenceRegexp;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptMatchVariableReferenceReplacement;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptNTimesRegexp;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptNegativeLookAheadRegexp;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptNegativeLookBehindRegexp;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptNegativeSymbolClassRegexp;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptOrRegexp;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptParensRegexp;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptPlusRegexp;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptPositiveLookAheadRegexp;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptPositiveLookBehindRegexp;
+          }
+          break;
+        case 34:
+          if (true) {
+            return myConceptPositiveSymbolClassRegexp;
+          }
+          break;
+        case 35:
+          if (true) {
+            return myConceptPredefinedSymbolClassDeclaration;
+          }
+          break;
+        case 36:
+          if (true) {
+            return myConceptPredefinedSymbolClassRegexp;
+          }
+          break;
+        case 37:
+          if (true) {
+            return myConceptPredefinedSymbolClassSymbolClassPart;
+          }
+          break;
+        case 38:
+          if (true) {
+            return myConceptPredefinedSymbolClasses;
+          }
+          break;
+        case 39:
+          if (true) {
+            return myConceptQuestionRegexp;
+          }
+          break;
+        case 40:
+          if (true) {
+            return myConceptRegexp;
+          }
+          break;
+        case 41:
+          if (true) {
+            return myConceptRegexpDeclaration;
+          }
+          break;
+        case 42:
+          if (true) {
+            return myConceptRegexpDeclarationReferenceRegexp;
+          }
+          break;
+        case 43:
+          if (true) {
+            return myConceptRegexpExpression;
+          }
+          break;
+        case 44:
+          if (true) {
+            return myConceptRegexpUsingConstruction;
+          }
+          break;
+        case 45:
+          if (true) {
+            return myConceptRegexps;
+          }
+          break;
+        case 46:
+          if (true) {
+            return myConceptReplaceBlock;
+          }
+          break;
+        case 47:
+          if (true) {
+            return myConceptReplaceRegexpOperation;
+          }
+          break;
+        case 48:
+          if (true) {
+            return myConceptReplaceWithRegexpExpression;
+          }
+          break;
+        case 49:
+          if (true) {
+            return myConceptReplaceWithRegexpOperation;
+          }
+          break;
+        case 50:
+          if (true) {
+            return myConceptReplacement;
+          }
+          break;
+        case 51:
+          if (true) {
+            return myConceptSeqRegexp;
+          }
+          break;
+        case 52:
+          if (true) {
+            return myConceptSplitExpression;
+          }
+          break;
+        case 53:
+          if (true) {
+            return myConceptSplitOperation;
+          }
+          break;
+        case 54:
+          if (true) {
+            return myConceptStarRegexp;
+          }
+          break;
+        case 55:
+          if (true) {
+            return myConceptStringLiteralRegexp;
+          }
+          break;
+        case 56:
+          if (true) {
+            return myConceptSymbolClassPart;
+          }
+          break;
+        case 57:
+          if (true) {
+            return myConceptSymbolClassRegexp;
+          }
+          break;
+        case 58:
+          if (true) {
+            return myConceptSymbolClassRegexpAndPart;
+          }
+          break;
+        case 59:
+          if (true) {
+            return myConceptUnaryRegexp;
+          }
+          break;
+        case 60:
+          if (true) {
+            return myConceptUnicodeCharacterRegexp;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0nc = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.Replacement", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0nc = buildConceptIndices(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111790aa926L, "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x550fbf4ebc5de3f5L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d8807a3L, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119caff72eL, "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f38e076L, "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f394b67L, "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f383367L, "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d126564L, "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d11da7eL, "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de32185L, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x112972a0c32L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c9466ae95L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11176652f14L, "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de1f935L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6e3f6L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e35c63L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0d780L, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a15de8L, "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ddfb973L, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6742fL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2f48cL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e59fd0L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e5efc7L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178c4e1e0L, "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a6454dL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ea37105L, "jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression"), MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ecbc07aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f550b6dL, "jetbrains.mps.baseLanguage.regexp.structure.Regexps"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef80054L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef3f72dL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c94680172L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab952L, "jetbrains.mps.baseLanguage.regexp.structure.Replacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174bc30e7L, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1119d41c734L, "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c942ab86bL, "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a16ffaL, "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c22ec8f79L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"));
 }

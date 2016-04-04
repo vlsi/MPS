@@ -15,50 +15,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,50,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BinaryOperationReference_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BinaryOperationReference_BehaviorDescriptor" />
-    </file>
-    <file name="ContainerImport_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
-    </file>
-    <file name="CustomOperatorDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="CustomOperatorUsage_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
-    </file>
-    <file name="CustomOperator_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperator_BehaviorDescriptor" />
-    </file>
-    <file name="LeftOperand_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.LeftOperand_BehaviorDescriptor" />
-    </file>
-    <file name="Operator_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.Operator_BehaviorDescriptor" />
-    </file>
-    <file name="OverloadedBinaryOperator_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_BehaviorDescriptor" />
-    </file>
-    <file name="OverloadedOperatorContainer_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
-    </file>
-    <file name="RightOperand_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.RightOperand_BehaviorDescriptor" />
+      <unit at="14,0,60,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/1141736782992984502">
-    <file name="CustomOperatorUsage_Behavior.java">
-      <node id="1141736782992984502" at="16,128,17,114" concept="7" />
-      <node id="1141736782992984502" at="16,0,19,0" concept="9" trace="call_getVisibleCustomOperators_1141736782992984505#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <scope id="1141736782992984502" at="16,128,17,114" />
-      <scope id="1141736782992984502" at="16,0,19,0">
-        <var name="__thisConcept__" id="1141736782992984502" />
-        <var name="model" id="1141736782992986276" />
-      </scope>
-      <unit id="1141736782992984502" at="14,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior" />
-    </file>
     <file name="CustomOperatorUsage__BehaviorDescriptor.java">
       <node id="1141736782992984502" at="29,0,30,0" concept="8" trace="CONCEPT" />
       <node id="1141736782992984502" at="30,0,31,0" concept="8" trace="REGISTRY" />
@@ -145,15 +105,6 @@
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/6677452554239147646">
-    <file name="OverloadedBinaryOperator_Behavior.java">
-      <node id="6677452554239147646" at="13,85,14,100" concept="7" />
-      <node id="6677452554239147646" at="13,0,16,0" concept="9" trace="call_getFunctionName_6677452554240637506#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="6677452554239147646" at="13,85,14,100" />
-      <scope id="6677452554239147646" at="13,0,16,0">
-        <var name="__thisNode__" id="6677452554239147646" />
-      </scope>
-      <unit id="6677452554239147646" at="11,0,17,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
-    </file>
     <file name="OverloadedBinaryOperator__BehaviorDescriptor.java">
       <node id="6677452554239147646" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="6677452554239147646" at="32,0,33,0" concept="8" trace="REGISTRY" />
@@ -260,9 +211,6 @@
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/7363434029342255602">
-    <file name="ContainerImport_Behavior.java">
-      <unit id="7363434029342255602" at="10,0,13,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_Behavior" />
-    </file>
     <file name="ContainerImport__BehaviorDescriptor.java">
       <node id="7363434029342255602" at="26,0,27,0" concept="8" trace="CONCEPT" />
       <node id="7363434029342255602" at="27,0,28,0" concept="8" trace="REGISTRY" />

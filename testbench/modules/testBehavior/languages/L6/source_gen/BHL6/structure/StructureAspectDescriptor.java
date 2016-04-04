@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -32,35 +36,85 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0q, conceptFqName)) {
-      case 0:
-        return myConceptA;
-      case 1:
-        return myConceptB;
-      case 2:
-        return myConceptC;
-      case 3:
-        return myConceptD;
-      case 4:
-        return myConceptE;
-      case 5:
-        return myConceptF;
-      case 6:
-        return myConceptG;
-      case 7:
-        return myConceptH;
-      case 8:
-        return myConceptI;
-      case 9:
-        return myConceptI1;
-      case 10:
-        return myConceptI2;
-      case 11:
-        return myConceptJ;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0q.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptA;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptB;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptC;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptD;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptE;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptF;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptG;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptH;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptI;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptI1;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptI2;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptJ;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0q = new String[]{"BHL6.structure.A", "BHL6.structure.B", "BHL6.structure.C", "BHL6.structure.D", "BHL6.structure.E", "BHL6.structure.F", "BHL6.structure.G", "BHL6.structure.H", "BHL6.structure.I", "BHL6.structure.I1", "BHL6.structure.I2", "BHL6.structure.J"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0q = buildConceptIndices(MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04606a7L, "BHL6.structure.A"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0460fdaL, "BHL6.structure.B"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0461c33L, "BHL6.structure.C"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec04623e8L, "BHL6.structure.D"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0462797L, "BHL6.structure.E"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465379L, "BHL6.structure.F"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x559729dec0465442L, "BHL6.structure.G"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x1206f7d464a22147L, "BHL6.structure.H"), MetaAdapterFactory.getInterfaceConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1774L, "BHL6.structure.I"), MetaAdapterFactory.getInterfaceConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde175eL, "BHL6.structure.I1"), MetaAdapterFactory.getInterfaceConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde1769L, "BHL6.structure.I2"), MetaAdapterFactory.getConcept(0x424c173aee734dc9L, 0xbc43d0051c9b1e8fL, 0x13b01619ddde16fdL, "BHL6.structure.J"));
 }

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,21 +29,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptAbstractCheckboxUI;
-      case 1:
-        return myConceptCellModel_Checkbox;
-      case 2:
-        return myConceptCheckboxUI_Platform;
-      case 3:
-        return myConceptCheckboxUI_Text;
-      case 4:
-        return myConceptStubCellModel_Checkbox;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractCheckboxUI;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCellModel_Checkbox;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCheckboxUI_Platform;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptCheckboxUI_Text;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptStubCellModel_Checkbox;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.lang.editor.forms.structure.AbstractCheckboxUI", "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text", "jetbrains.mps.lang.editor.forms.structure.StubCellModel_Checkbox"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1900c370e334d3daL, "jetbrains.mps.lang.editor.forms.structure.AbstractCheckboxUI"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x617bb6da72073973L, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text"), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63eef06L, "jetbrains.mps.lang.editor.forms.structure.StubCellModel_Checkbox"));
 }

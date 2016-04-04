@@ -4,61 +4,68 @@ package jetbrains.mps.lang.test.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[3];
-    myId2Index[0] = 0x10802efe25aL;
-    myId2Index[1] = 0x11db4aad802L;
-    myId2Index[2] = 0x7181d929c720809L;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: BaseConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[8];
-          myIntentions0[0] = new AddTestAnnotation_Intention();
-          myIntentions0[1] = new AddOperationsAnnotation_Intention();
-          myIntentions0[2] = new AddCellAnnotation_Intention();
-          myIntentions0[3] = new AddMockAnnotation_Intention();
-          myIntentions0[4] = new AddNodeHasErrorAnnotation_Intention();
-          myIntentions0[5] = new AddScopeTestAnnotation_Intention();
-          myIntentions0[6] = new AddNodeHasWarningAnnotation_Intention();
-          myIntentions0[7] = new SpecifyRuleReferences_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: MessageStatement 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new AddMessageAnnotation_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: ScopesTest 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new AddScopeExpectedNodes_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: BaseConcept 
+            intentions = new IntentionFactory[8];
+            intentions[0] = new AddTestAnnotation_Intention();
+            intentions[1] = new AddOperationsAnnotation_Intention();
+            intentions[2] = new AddCellAnnotation_Intention();
+            intentions[3] = new AddMockAnnotation_Intention();
+            intentions[4] = new AddNodeHasErrorAnnotation_Intention();
+            intentions[5] = new AddScopeTestAnnotation_Intention();
+            intentions[6] = new AddNodeHasWarningAnnotation_Intention();
+            intentions[7] = new SpecifyRuleReferences_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: MessageStatement 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddMessageAnnotation_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: ScopesTest 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddScopeExpectedNodes_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -77,4 +84,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[9] = new SpecifyRuleReferences_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
 }

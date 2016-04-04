@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -43,57 +47,140 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0bb, conceptFqName)) {
-      case 0:
-        return myConceptActionTestAbstractChild;
-      case 1:
-        return myConceptActionTestAbstractChildWrapper;
-      case 2:
-        return myConceptActionTestChild1;
-      case 3:
-        return myConceptActionTestChild1Child;
-      case 4:
-        return myConceptActionTestChild1SubConcept;
-      case 5:
-        return myConceptActionTestChild2;
-      case 6:
-        return myConceptActionTestChildToWrap1;
-      case 7:
-        return myConceptActionTestChildToWrap2;
-      case 8:
-        return myConceptActionTestChildWrapper;
-      case 9:
-        return myConceptActionTestContainer;
-      case 10:
-        return myConceptActionTestDefaultAbstractChild;
-      case 11:
-        return myConceptActionTestDefaultChild1;
-      case 12:
-        return myConceptActionTestDefaultChild2;
-      case 13:
-        return myConceptActionTestSidetransformAbstractChild;
-      case 14:
-        return myConceptActionTestSidetransformAddConceptAbstractChild;
-      case 15:
-        return myConceptActionTestSidetransformAddConceptChild;
-      case 16:
-        return myConceptActionTestSidetransformAnotherAbstractChild;
-      case 17:
-        return myConceptActionTestSidetransformAnotherChild1;
-      case 18:
-        return myConceptActionTestSidetransformAnotherChild2;
-      case 19:
-        return myConceptActionTestSidetransformAnotherChildCommonSuperConcept;
-      case 20:
-        return myConceptActionTestSidetransformChild1;
-      case 21:
-        return myConceptActionTestSidetransformTestAncestor;
-      case 22:
-        return myConceptActionTestSidetransformTestContainer;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0bb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptActionTestAbstractChild;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptActionTestAbstractChildWrapper;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptActionTestChild1;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptActionTestChild1Child;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptActionTestChild1SubConcept;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptActionTestChild2;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptActionTestChildToWrap1;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptActionTestChildToWrap2;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptActionTestChildWrapper;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptActionTestContainer;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptActionTestDefaultAbstractChild;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptActionTestDefaultChild1;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptActionTestDefaultChild2;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptActionTestSidetransformAbstractChild;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptActionTestSidetransformAddConceptAbstractChild;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptActionTestSidetransformAddConceptChild;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptActionTestSidetransformAnotherAbstractChild;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptActionTestSidetransformAnotherChild1;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptActionTestSidetransformAnotherChild2;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptActionTestSidetransformAnotherChildCommonSuperConcept;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptActionTestSidetransformChild1;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptActionTestSidetransformTestAncestor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptActionTestSidetransformTestContainer;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0bb = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0bb = buildConceptIndices(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec53f71L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x7f805f0c2dd45b4eL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2622c47afd434fd2L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec9ad4dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25516733L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25516dd5L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade471f3L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAbstractChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d415e8d80L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptAbstractChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x43d1b15d4168a426L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefca54d96L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefca55189L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefca551bdL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefcaa0dd0L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x44969b12b8c94c1bL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c35cefefc9cfa78L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"));
 }

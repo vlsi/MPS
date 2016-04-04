@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="15,0,163,0" name="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,267,0" name="jetbrains.mps.baseLanguage.regexp.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1174482859926">

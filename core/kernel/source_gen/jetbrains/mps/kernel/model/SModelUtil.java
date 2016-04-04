@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -171,9 +170,6 @@ public class SModelUtil {
       return checkedDotOperand.getModule();
     }
     return null;
-  }
-  private static boolean eq_74see4_a0b0k(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_74see4_a0b0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

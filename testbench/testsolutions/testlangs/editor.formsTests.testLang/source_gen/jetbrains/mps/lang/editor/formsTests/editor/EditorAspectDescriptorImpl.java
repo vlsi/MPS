@@ -7,24 +7,35 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox"))) {
-        return Collections.<ConceptEditor>singletonList(new UsesPlatformCheckbox_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox"))) {
-        return Collections.<ConceptEditor>singletonList(new UsesTextCheckbox_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"))) {
-        return Collections.<ConceptEditor>singletonList(new VariousCheckboxes_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UsesPlatformCheckbox_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UsesTextCheckbox_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new VariousCheckboxes_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -33,4 +44,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox"), MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"));
 }

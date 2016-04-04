@@ -4,12 +4,12 @@ package jetbrains.mps.samples.Shapes.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myColorReference__BehaviorDescriptor = new ColorReference__BehaviorDescriptor();
@@ -18,40 +18,54 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myCircle__BehaviorDescriptor = new Circle__BehaviorDescriptor();
   private final BHDescriptor mySquare__BehaviorDescriptor = new Square__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[5];
-    myConceptBehaviorIds[0] = 0x3a2b0182df2201afL;
-    myConceptBehaviorIds[1] = 0x51dcaa29974fa71dL;
-    myConceptBehaviorIds[2] = 0x51dcaa29974fc161L;
-    myConceptBehaviorIds[3] = 0x51dcaa29974fc198L;
-    myConceptBehaviorIds[4] = 0x51dcaa29974fc1a2L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myColorReference__BehaviorDescriptor;
-      case 1:
-        return myCanvas__BehaviorDescriptor;
-      case 2:
-        return myShape__BehaviorDescriptor;
-      case 3:
-        return myCircle__BehaviorDescriptor;
-      case 4:
-        return mySquare__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myCanvas__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myCircle__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myColorReference__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myShape__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return mySquare__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, "jetbrains.mps.samples.Shapes.structure.Shape"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"));
 }

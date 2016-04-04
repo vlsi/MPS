@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="15,0,60,0" name="jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor" />
+      <unit at="16,0,82,0" name="jetbrains.mps.core.properties.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f932d908-c9e0-4024-9391-fa0430e430e2(jetbrains.mps.core.properties.textGen)/6896005762093550587">
@@ -57,7 +57,7 @@
       <unit id="6896005762093550606" at="14,0,31,0" name="jetbrains.mps.core.properties.textGen.PropertiesFile_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
-      <node id="6896005762093550613" at="56,69,57,24" concept="5" />
+      <node id="6896005762093550613" at="69,69,70,24" concept="5" />
     </file>
   </root>
   <root nodeRef="r:f932d908-c9e0-4024-9391-fa0430e430e2(jetbrains.mps.core.properties.textGen)/6896005762093552917">

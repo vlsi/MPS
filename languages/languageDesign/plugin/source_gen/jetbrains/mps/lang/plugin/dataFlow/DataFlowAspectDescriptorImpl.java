@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowBuilder;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
 
@@ -19,50 +19,72 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<IDataFlowBuilder> getDataFlowBuilders(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      boolean matchedCase = false;
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6d2bdcL, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionConstructionParameterDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6e60e3L, "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionConstructorParameterReferenceOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterReferenceOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionInstance_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b812427fL, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionParameterDeclaration_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ActionParameterReferenceOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AddStatement_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17237b8L, "jetbrains.mps.lang.plugin.structure.AddTabOperation"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new AddTabOperation_DataFlow());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL, "jetbrains.mps.lang.plugin.structure.ToolTab"))) {
-        matchedCase = true;
-        return Collections.<IDataFlowBuilder>singletonList(new ToolTab_DataFlow());
-      }
-      if (!(matchedCase)) {
+      Integer preIndex = indices_vhxjlb_a0b.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionConstructionParameterDeclaration_DataFlow());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionConstructorParameterReferenceOperation_DataFlow());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterDeclaration_DataFlow());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionDataParameterReferenceOperation_DataFlow());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionInstance_DataFlow());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionParameterDeclaration_DataFlow());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ActionParameterReferenceOperation_DataFlow());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AddStatement_DataFlow());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new AddTabOperation_DataFlow());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<IDataFlowBuilder>singletonList(new ToolTab_DataFlow());
+          }
+          break;
+        default:
+          // default 
       }
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_vhxjlb_a0b = buildConceptIndices(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6d2bdcL, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11daf6e60e3L, "jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, "jetbrains.mps.lang.plugin.structure.ActionInstance"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b812427fL, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118d0b7fab3L, "jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11dafad4b27L, "jetbrains.mps.lang.plugin.structure.AddStatement"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x51d51510f17237b8L, "jetbrains.mps.lang.plugin.structure.AddTabOperation"), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6048eaf0c78f324eL, "jetbrains.mps.lang.plugin.structure.ToolTab"));
 }

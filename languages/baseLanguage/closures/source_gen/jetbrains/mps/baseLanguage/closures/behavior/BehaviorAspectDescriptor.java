@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myFunctionType__BehaviorDescriptor = new FunctionType__BehaviorDescriptor();
@@ -30,76 +30,114 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myFunctionMethodDeclaration__BehaviorDescriptor = new FunctionMethodDeclaration__BehaviorDescriptor();
   private final BHDescriptor myAbstractFunctionType__BehaviorDescriptor = new AbstractFunctionType__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[17];
-    myConceptBehaviorIds[0] = 0x1174a4d19ffL;
-    myConceptBehaviorIds[1] = 0x1174a964795L;
-    myConceptBehaviorIds[2] = 0x1174bed3125L;
-    myConceptBehaviorIds[3] = 0x117545d385aL;
-    myConceptBehaviorIds[4] = 0x11797183e82L;
-    myConceptBehaviorIds[5] = 0x118276b7086L;
-    myConceptBehaviorIds[6] = 0x11d67349093L;
-    myConceptBehaviorIds[7] = 0x11e25fc6c63L;
-    myConceptBehaviorIds[8] = 0x11e49cdf7cbL;
-    myConceptBehaviorIds[9] = 0x11e49cfed99L;
-    myConceptBehaviorIds[10] = 0x11e49db3870L;
-    myConceptBehaviorIds[11] = 0x11e49dc8097L;
-    myConceptBehaviorIds[12] = 0x11e505b9d83L;
-    myConceptBehaviorIds[13] = 0x11fb8425aa8L;
-    myConceptBehaviorIds[14] = 0xe8770ba07b68051L;
-    myConceptBehaviorIds[15] = 0x42d79e63a78a7784L;
-    myConceptBehaviorIds[16] = 0x4de23a15f719357dL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myFunctionType__BehaviorDescriptor;
-      case 1:
-        return myInvokeFunctionExpression__BehaviorDescriptor;
-      case 2:
-        return myClosureLiteral__BehaviorDescriptor;
-      case 3:
-        return myInvokeExpression__BehaviorDescriptor;
-      case 4:
-        return myYieldStatement__BehaviorDescriptor;
-      case 5:
-        return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
-      case 6:
-        return myInvokeFunctionOperation__BehaviorDescriptor;
-      case 7:
-        return myYieldAllStatement__BehaviorDescriptor;
-      case 8:
-        return myUnrestrictedClosureLiteral__BehaviorDescriptor;
-      case 9:
-        return myClosureControlStatement__BehaviorDescriptor;
-      case 10:
-        return myControlAbstractionContainer__BehaviorDescriptor;
-      case 11:
-        return myControlAbstractionDeclaration__BehaviorDescriptor;
-      case 12:
-        return myUnrestrictedFunctionType__BehaviorDescriptor;
-      case 13:
-        return myCompactInvokeFunctionExpression__BehaviorDescriptor;
-      case 14:
-        return myClosureLiteralType__BehaviorDescriptor;
-      case 15:
-        return myFunctionMethodDeclaration__BehaviorDescriptor;
-      case 16:
-        return myAbstractFunctionType__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0u.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAbstractFunctionType__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myClosureControlStatement__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myClosureLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myClosureLiteralType__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myCompactInvokeFunctionExpression__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myControlAbstractionContainer__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myControlAbstractionDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myFunctionMethodDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myFunctionType__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myInvokeExpression__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myInvokeFunctionExpression__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myInvokeFunctionOperation__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myUnrestrictedClosureLiteral__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myUnrestrictedFunctionType__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myYieldAllStatement__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myYieldStatement__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0u = buildConceptIndices(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL, "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L, "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"));
 }

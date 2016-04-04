@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -30,29 +34,70 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
-      case 0:
-        return myConceptBaseExtensionMethodContainer;
-      case 1:
-        return myConceptExtensionMethodCall;
-      case 2:
-        return myConceptExtensionMethodDeclaration;
-      case 3:
-        return myConceptExtensionStaticFieldDeclaration;
-      case 4:
-        return myConceptExtensionStaticFieldReference;
-      case 5:
-        return myConceptLocalExtendedMethodCall;
-      case 6:
-        return myConceptSimpleExtensionMethodsContainer;
-      case 7:
-        return myConceptThisExtensionExpression;
-      case 8:
-        return myConceptTypeExtension;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0n.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptBaseExtensionMethodContainer;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptExtensionMethodCall;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptExtensionMethodDeclaration;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptExtensionStaticFieldDeclaration;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExtensionStaticFieldReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptLocalExtendedMethodCall;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptSimpleExtensionMethodsContainer;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptThisExtensionExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptTypeExtension;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0n = buildConceptIndices(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076549f519L, "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L, "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"));
 }

@@ -7,73 +7,116 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractDiagramCreation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L, "jetbrains.mps.lang.editor.diagram.structure.ActionGroup"))) {
-        return Collections.<ConceptEditor>singletonList(new ActionGroup_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"))) {
-        return Collections.<ConceptEditor>singletonList(new AttributedFigureReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"))) {
-        return Collections.<ConceptEditor>singletonList(new BLQueryArgument_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_Diagram_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramConnector_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort"))) {
-        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramPort_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"))) {
-        return Collections.<ConceptEditor>singletonList(new ConnectionEndBLQuery_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"))) {
-        return Collections.<ConceptEditor>singletonList(new CreationActionReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L, "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference"))) {
-        return Collections.<ConceptEditor>singletonList(new CustomElementReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery"))) {
-        return Collections.<ConceptEditor>singletonList(new DiagramElementBLQuery_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping"))) {
-        return Collections.<ConceptEditor>singletonList(new FigureParameterMapping_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"))) {
-        return Collections.<ConceptEditor>singletonList(new LinkArgument_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L, "jetbrains.mps.lang.editor.diagram.structure.Palette"))) {
-        return Collections.<ConceptEditor>singletonList(new Palette_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"))) {
-        return Collections.<ConceptEditor>singletonList(new PropertyArgument_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L, "jetbrains.mps.lang.editor.diagram.structure.Separator"))) {
-        return Collections.<ConceptEditor>singletonList(new Separator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL, "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractDiagramCreation_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ActionGroup_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AttributedFigureReference_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BLQueryArgument_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_Diagram_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_DiagramConnector_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CellModel_DiagramPort_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConnectionEndBLQuery_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CreationActionReference_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CustomElementReference_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DiagramElementBLQuery_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FigureParameterMapping_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LinkArgument_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Palette_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PropertyArgument_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Separator_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -83,25 +126,38 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"))) {
-        if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"))) {
-        if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation"))) {
-        if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent());
-        }
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"))) {
-        if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent());
-        }
+      Integer preIndex = indices_xbvbvu_a0c.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
+            }
+          }
+          break;
+        case 1:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
+            }
+          }
+          break;
+        case 2:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new ConnectorCreationHandlers_EditorComponent());
+            }
+          }
+          break;
+        case 3:
+          if (true) {
+            if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
+              return Collections.<ConceptEditorComponent>singletonList(new DiagramElementCreationHandlers_EditoComponent());
+            }
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditorComponent>emptyList();
@@ -109,4 +165,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d83L, "jetbrains.mps.lang.editor.diagram.structure.ActionGroup"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL, "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x58940e88f3ef74c9L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x10efa534a508176dL, "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e8L, "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4a53d4fb31aaee31L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a7d7c7L, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d84L, "jetbrains.mps.lang.editor.diagram.structure.Palette"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x74dc91e9e6c7d86L, "jetbrains.mps.lang.editor.diagram.structure.Separator"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x2cd0b06754b27e2fL, "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0c = buildConceptIndices(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, "jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xd0b2f9de3710044L, "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation"), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba75918aL, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"));
 }

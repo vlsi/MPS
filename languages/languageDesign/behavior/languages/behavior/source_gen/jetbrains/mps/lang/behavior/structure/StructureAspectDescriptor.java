@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -29,27 +33,65 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
-      case 0:
-        return myConceptConceptBehavior;
-      case 1:
-        return myConceptConceptConstructorDeclaration;
-      case 2:
-        return myConceptConceptMethodDeclaration;
-      case 3:
-        return myConceptInternalConceptDeclarationReference;
-      case 4:
-        return myConceptInternalConceptDeclarationsHolder;
-      case 5:
-        return myConceptLocalBehaviorMethodCall;
-      case 6:
-        return myConceptSuperNodeExpression;
-      case 7:
-        return myConceptThisNodeExpression;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptConceptBehavior;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptConceptConstructorDeclaration;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptConceptMethodDeclaration;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptInternalConceptDeclarationReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptInternalConceptDeclarationsHolder;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptLocalBehaviorMethodCall;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptSuperNodeExpression;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptThisNodeExpression;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference", "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43471eedL, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe09L, "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationReference"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x8fa3b96a509fe0bL, "jetbrains.mps.lang.behavior.structure.InternalConceptDeclarationsHolder"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L, "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"));
 }

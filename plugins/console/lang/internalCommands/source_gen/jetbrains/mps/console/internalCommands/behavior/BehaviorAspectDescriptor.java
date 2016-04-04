@@ -4,12 +4,12 @@ package jetbrains.mps.console.internalCommands.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myConsoleModelExpression__BehaviorDescriptor = new ConsoleModelExpression__BehaviorDescriptor();
@@ -17,37 +17,49 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myShowRepositoryCommand__BehaviorDescriptor = new ShowRepositoryCommand__BehaviorDescriptor();
   private final BHDescriptor myInternalMode__BehaviorDescriptor = new InternalMode__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[4];
-    myConceptBehaviorIds[0] = 0x4d7759afcea851bdL;
-    myConceptBehaviorIds[1] = 0x75bb0160f191dd31L;
-    myConceptBehaviorIds[2] = 0x75bb0160f191df0cL;
-    myConceptBehaviorIds[3] = 0x7a89354654722219L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myConsoleModelExpression__BehaviorDescriptor;
-      case 1:
-        return myReloadClassesCommand__BehaviorDescriptor;
-      case 2:
-        return myShowRepositoryCommand__BehaviorDescriptor;
-      case 3:
-        return myInternalMode__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConsoleModelExpression__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myInternalMode__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myReloadClassesCommand__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myShowRepositoryCommand__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x4d7759afcea851bdL, "jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x7a89354654722219L, "jetbrains.mps.console.internalCommands.structure.InternalMode"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191dd31L, "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand"), MetaAdapterFactory.getConcept(0x995a73947f764b8bL, 0xa929c53448708106L, 0x75bb0160f191df0cL, "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"));
 }

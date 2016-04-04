@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -27,25 +31,60 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0l, conceptFqName)) {
-      case 0:
-        return myConceptIModuleRef;
-      case 1:
-        return myConceptITestRef;
-      case 2:
-        return myConceptJUnit3TestCaseRef;
-      case 3:
-        return myConceptJUnit4TestCaseRef;
-      case 4:
-        return myConceptModuleSuite;
-      case 5:
-        return myConceptSolutionRef;
-      case 6:
-        return myConceptTestCaseRef;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0l.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptIModuleRef;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptITestRef;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptJUnit3TestCaseRef;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptJUnit4TestCaseRef;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptModuleSuite;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptSolutionRef;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptTestCaseRef;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0l = new String[]{"jetbrains.mps.testbench.suite.structure.IModuleRef", "jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0l = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1d7a3L, "jetbrains.mps.testbench.suite.structure.IModuleRef"), MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef"), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb7L, "jetbrains.mps.testbench.suite.structure.TestCaseRef"));
 }

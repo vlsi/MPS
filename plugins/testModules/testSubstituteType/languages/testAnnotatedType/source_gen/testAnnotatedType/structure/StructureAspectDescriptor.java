@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -28,27 +32,65 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
-      case 0:
-        return myConceptPresenceCondition;
-      case 1:
-        return myConceptPrimDoubleType;
-      case 2:
-        return myConceptPrimFloatType;
-      case 3:
-        return myConceptPrimIntType;
-      case 4:
-        return myConceptPrimLongType;
-      case 5:
-        return myConceptPrimNumConstant;
-      case 6:
-        return myConceptPrimType;
-      case 7:
-        return myConceptSubstituteAnnotation;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0m.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptPresenceCondition;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptPrimDoubleType;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptPrimFloatType;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptPrimIntType;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptPrimLongType;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptPrimNumConstant;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptPrimType;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptSubstituteAnnotation;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimDoubleType", "testAnnotatedType.structure.PrimFloatType", "testAnnotatedType.structure.PrimIntType", "testAnnotatedType.structure.PrimLongType", "testAnnotatedType.structure.PrimNumConstant", "testAnnotatedType.structure.PrimType", "testAnnotatedType.structure.SubstituteAnnotation"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0m = buildConceptIndices(MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L, "testAnnotatedType.structure.PresenceCondition"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09c62e6L, "testAnnotatedType.structure.PrimDoubleType"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL, "testAnnotatedType.structure.PrimFloatType"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL, "testAnnotatedType.structure.PrimIntType"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x786549534310b4f5L, "testAnnotatedType.structure.PrimLongType"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL, "testAnnotatedType.structure.PrimNumConstant"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType"), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, "testAnnotatedType.structure.SubstituteAnnotation"));
 }

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -23,17 +27,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
-      case 0:
-        return myConceptMigrationScriptReference;
-      case 1:
-        return myConceptStepData;
-      case 2:
-        return myConceptStringData;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptMigrationScriptReference;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptStepData;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptStringData;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.util.structure.StepData", "jetbrains.mps.lang.migration.util.structure.StringData"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f83bcaL, "jetbrains.mps.lang.migration.util.structure.MigrationScriptReference"), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, "jetbrains.mps.lang.migration.util.structure.StepData"), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2c90e78b233c3efeL, "jetbrains.mps.lang.migration.util.structure.StringData"));
 }

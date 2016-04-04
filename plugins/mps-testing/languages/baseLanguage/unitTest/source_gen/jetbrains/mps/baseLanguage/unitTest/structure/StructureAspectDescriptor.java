@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -41,51 +45,125 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0y, conceptFqName)) {
-      case 0:
-        return myConceptAfterTest;
-      case 1:
-        return myConceptAssertEquals;
-      case 2:
-        return myConceptAssertFalse;
-      case 3:
-        return myConceptAssertInNotNull;
-      case 4:
-        return myConceptAssertIsNull;
-      case 5:
-        return myConceptAssertSame;
-      case 6:
-        return myConceptAssertThrows;
-      case 7:
-        return myConceptAssertTrue;
-      case 8:
-        return myConceptBTestCase;
-      case 9:
-        return myConceptBeforeTest;
-      case 10:
-        return myConceptBinaryAssert;
-      case 11:
-        return myConceptFail;
-      case 12:
-        return myConceptITestCase;
-      case 13:
-        return myConceptITestMethod;
-      case 14:
-        return myConceptITestable;
-      case 15:
-        return myConceptMessage;
-      case 16:
-        return myConceptMessageHolder;
-      case 17:
-        return myConceptPrepareMethod;
-      case 18:
-        return myConceptTestMethod;
-      case 19:
-        return myConceptTestMethodList;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0y.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAfterTest;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAssertEquals;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAssertFalse;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptAssertInNotNull;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptAssertIsNull;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptAssertSame;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptAssertThrows;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptAssertTrue;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptBTestCase;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptBeforeTest;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptBinaryAssert;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptFail;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptITestCase;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptITestMethod;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptITestable;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptMessage;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptMessageHolder;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptPrepareMethod;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptTestMethod;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptTestMethodList;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0y = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AfterTest", "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder", "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0y = buildConceptIndices(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x72682467022fd3ddL, "jetbrains.mps.baseLanguage.unitTest.structure.AfterTest"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df569442L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfae1d08L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x624233a5cf1ae0f7L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e252ba91L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dfcb1f43L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e4cee82cL, "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110df833483L, "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x72682467022fc039L, "jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e1ab948aL, "jetbrains.mps.baseLanguage.unitTest.structure.Fail"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b08a01119L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5064e8fL, "jetbrains.mps.baseLanguage.unitTest.structure.Message"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x72682467022fdbbaL, "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc92748eL, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"), MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc95061dL, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"));
 }

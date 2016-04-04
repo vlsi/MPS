@@ -14,86 +14,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="ActionAsPattern_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.ActionAsPattern_BehaviorDescriptor" />
-    </file>
-    <file name="ActionStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.ActionStatement_BehaviorDescriptor" />
-    </file>
-    <file name="AsPattern_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.AsPattern_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,66,0" name="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ChildDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ChildDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="InsertAfterPosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.InsertAfterPosition_BehaviorDescriptor" />
-    </file>
-    <file name="InsertBeforePosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.InsertBeforePosition_BehaviorDescriptor" />
-    </file>
-    <file name="InsertPosition_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.InsertPosition_BehaviorDescriptor" />
-    </file>
-    <file name="LinkPatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ListPattern_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.ListPattern_BehaviorDescriptor" />
-    </file>
-    <file name="OrPatternClause_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.OrPatternClause_BehaviorDescriptor" />
-    </file>
-    <file name="OrPatternVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.OrPatternVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="OrPattern_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.pattern.behavior.OrPattern_BehaviorDescriptor" />
-    </file>
-    <file name="PatternExpression_BehaviorDescriptor.java">
-      <unit at="16,0,28,0" name="jetbrains.mps.lang.pattern.behavior.PatternExpression_BehaviorDescriptor" />
-    </file>
-    <file name="PatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="PatternVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.PatternVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="Pattern_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.behavior.Pattern_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyPatternVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="WildcardPattern_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.WildcardPattern_BehaviorDescriptor" />
+      <unit at="14,0,84,0" name="jetbrains.mps.lang.pattern.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/111677556049506422">
-    <file name="ActionStatement_Behavior.java">
-      <node id="111677556049506422" at="13,84,14,91" concept="6" />
-      <node id="111677556049506422" at="16,75,17,82" concept="6" />
-      <node id="111677556049506422" at="13,0,16,0" concept="9" trace="call_getActionPattern_111677556049506425#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="111677556049506422" at="16,0,19,0" concept="9" trace="call_getNode_111677556049506460#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="111677556049506422" at="13,84,14,91" />
-      <scope id="111677556049506422" at="16,75,17,82" />
-      <scope id="111677556049506422" at="13,0,16,0">
-        <var name="__thisNode__" id="111677556049506422" />
-      </scope>
-      <scope id="111677556049506422" at="16,0,19,0">
-        <var name="__thisNode__" id="111677556049506422" />
-      </scope>
-      <unit id="111677556049506422" at="11,0,20,0" name="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
-    </file>
     <file name="ActionStatement__BehaviorDescriptor.java">
       <node id="111677556049506422" at="25,0,26,0" concept="8" trace="CONCEPT" />
       <node id="111677556049506422" at="26,0,27,0" concept="8" trace="REGISTRY" />
@@ -186,9 +111,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/1213877200307">
-    <file name="PatternVariableDeclaration_Behavior.java">
-      <unit id="1213877200307" at="10,0,13,0" name="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
-    </file>
     <file name="PatternVariableDeclaration__BehaviorDescriptor.java">
       <node id="1213877200307" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1213877200307" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -254,9 +176,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/1213877241295">
-    <file name="PropertyPatternVariableDeclaration_Behavior.java">
-      <unit id="1213877241295" at="10,0,13,0" name="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
-    </file>
     <file name="PropertyPatternVariableDeclaration__BehaviorDescriptor.java">
       <node id="1213877241295" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1213877241295" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -322,9 +241,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/1213877344249">
-    <file name="LinkPatternVariableDeclaration_Behavior.java">
-      <unit id="1213877344249" at="10,0,13,0" name="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
-    </file>
     <file name="LinkPatternVariableDeclaration__BehaviorDescriptor.java">
       <node id="1213877344249" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1213877344249" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -390,9 +306,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/1262430001741639271">
-    <file name="Pattern_Behavior.java">
-      <unit id="1262430001741639271" at="10,0,13,0" name="jetbrains.mps.lang.pattern.behavior.Pattern_Behavior" />
-    </file>
     <file name="Pattern__BehaviorDescriptor.java">
       <node id="1262430001741639271" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741639271" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -458,9 +371,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/1262430001741642795">
-    <file name="AsPattern_Behavior.java">
-      <unit id="1262430001741642795" at="10,0,13,0" name="jetbrains.mps.lang.pattern.behavior.AsPattern_Behavior" />
-    </file>
     <file name="AsPattern__BehaviorDescriptor.java">
       <node id="1262430001741642795" at="20,0,21,0" concept="8" trace="CONCEPT" />
       <node id="1262430001741642795" at="21,0,22,0" concept="8" trace="REGISTRY" />
@@ -526,39 +436,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/534621188390792429">
-    <file name="PatternExpression_Behavior.java">
-      <node id="534621188390792429" at="15,87,16,90" concept="6" />
-      <node id="534621188390792429" at="18,93,19,96" concept="6" />
-      <node id="534621188390792429" at="21,90,22,93" concept="6" />
-      <node id="534621188390792429" at="24,100,25,98" concept="6" />
-      <node id="534621188390792429" at="27,82,28,89" concept="6" />
-      <node id="534621188390792429" at="15,0,18,0" concept="9" trace="call_getVariables_4855904478357072957#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="534621188390792429" at="18,0,21,0" concept="9" trace="call_getUniqueVariables_4855904478357073018#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="534621188390792429" at="21,0,24,0" concept="9" trace="call_getOwnVariables_8288845019109059987#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="534621188390792429" at="24,0,27,0" concept="9" trace="call_getQuotedNodeConcept_5187569781989334116#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="534621188390792429" at="27,0,30,0" concept="9" trace="call_hasVariable_4855904478357073120#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="534621188390792429" at="15,87,16,90" />
-      <scope id="534621188390792429" at="18,93,19,96" />
-      <scope id="534621188390792429" at="21,90,22,93" />
-      <scope id="534621188390792429" at="24,100,25,98" />
-      <scope id="534621188390792429" at="27,82,28,89" />
-      <scope id="534621188390792429" at="15,0,18,0">
-        <var name="__thisNode__" id="534621188390792429" />
-      </scope>
-      <scope id="534621188390792429" at="18,0,21,0">
-        <var name="__thisNode__" id="534621188390792429" />
-      </scope>
-      <scope id="534621188390792429" at="21,0,24,0">
-        <var name="__thisNode__" id="534621188390792429" />
-      </scope>
-      <scope id="534621188390792429" at="24,0,27,0">
-        <var name="__thisNode__" id="534621188390792429" />
-      </scope>
-      <scope id="534621188390792429" at="27,0,30,0">
-        <var name="__thisNode__" id="534621188390792429" />
-      </scope>
-      <unit id="534621188390792429" at="13,0,31,0" name="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
-    </file>
     <file name="PatternExpression__BehaviorDescriptor.java">
       <node id="534621188390792429" at="31,0,32,0" concept="8" trace="CONCEPT" />
       <node id="534621188390792429" at="32,0,33,0" concept="8" trace="REGISTRY" />

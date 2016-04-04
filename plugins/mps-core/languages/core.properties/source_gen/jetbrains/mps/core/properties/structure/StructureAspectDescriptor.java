@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,19 +29,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
-      case 0:
-        return myConceptPropertiesComment;
-      case 1:
-        return myConceptPropertiesDeclaration;
-      case 2:
-        return myConceptPropertiesFile;
-      case 3:
-        return myConceptPropertiesLine;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0i.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptPropertiesComment;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptPropertiesDeclaration;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptPropertiesFile;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptPropertiesLine;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.core.properties.structure.PropertiesLine"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0i = buildConceptIndices(MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ad9L, "jetbrains.mps.core.properties.structure.PropertiesComment"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, "jetbrains.mps.core.properties.structure.PropertiesDeclaration"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a2754L, "jetbrains.mps.core.properties.structure.PropertiesFile"), MetaAdapterFactory.getConcept(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac2L, "jetbrains.mps.core.properties.structure.PropertiesLine"));
 }

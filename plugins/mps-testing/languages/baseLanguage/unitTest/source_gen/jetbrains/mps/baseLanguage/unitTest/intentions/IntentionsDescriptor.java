@@ -4,63 +4,68 @@ package jetbrains.mps.baseLanguage.unitTest.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
-  private final long[] myId2Index;
-  private IntentionFactory[] myIntentions0;
-  private IntentionFactory[] myIntentions1;
-  private IntentionFactory[] myIntentions2;
-  private IntentionFactory[] myIntentions3;
+  private static final IntentionFactory[] EMPTY_ARRAY = new IntentionFactory[0];
+  private Map<SAbstractConcept, IntentionFactory[]> myCached = new HashMap<SAbstractConcept, IntentionFactory[]>();
 
   public IntentionsDescriptor() {
-    myId2Index = new long[4];
-    myId2Index[0] = 0xf8c108ca66L;
-    myId2Index[1] = 0x110e5250918L;
-    myId2Index[2] = 0x11b2709bd56L;
-    myId2Index[3] = 0x74f562a3a993fd3dL;
   }
 
-  @Override
   @Nullable
-  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
-    final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
-    switch (index) {
-      case 0:
-        // Concept: ClassConcept 
-        if (myIntentions0 == null) {
-          myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new convert_test_case_to_unittest_case_Intention();
-        }
-        return Arrays.asList(myIntentions0);
-      case 1:
-        // Concept: MessageHolder 
-        if (myIntentions1 == null) {
-          myIntentions1 = new IntentionFactory[1];
-          myIntentions1[0] = new AddRemoveMessage_Intention();
-        }
-        return Arrays.asList(myIntentions1);
-      case 2:
-        // Concept: ITestCase 
-        if (myIntentions2 == null) {
-          myIntentions2 = new IntentionFactory[1];
-          myIntentions2[0] = new FixPluginKindForMPSTestCase_Intention();
-        }
-        return Arrays.asList(myIntentions2);
-      case 3:
-        // Concept: BinaryAssert 
-        if (myIntentions3 == null) {
-          myIntentions3 = new IntentionFactory[1];
-          myIntentions3[0] = new FlipAssertEquals_Intention();
-        }
-        return Arrays.asList(myIntentions3);
-      default:
-        return null;
+  public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+    if (myCached.containsKey(concept)) {
+      return Arrays.asList(myCached.get(concept));
     }
+
+    IntentionFactory[] intentions = EMPTY_ARRAY;
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_hphjzv_d0f.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            // Concept: BinaryAssert 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new FlipAssertEquals_Intention();
+          }
+          break;
+        case 1:
+          if (true) {
+            // Concept: ClassConcept 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new convert_test_case_to_unittest_case_Intention();
+          }
+          break;
+        case 2:
+          if (true) {
+            // Concept: ITestCase 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new FixPluginKindForMPSTestCase_Intention();
+          }
+          break;
+        case 3:
+          if (true) {
+            // Concept: MessageHolder 
+            intentions = new IntentionFactory[1];
+            intentions[0] = new AddRemoveMessage_Intention();
+          }
+          break;
+        default:
+          // default 
+      }
+    }
+    myCached.put(concept, intentions);
+    return Arrays.asList(intentions);
   }
 
   @NotNull
@@ -73,4 +78,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[3] = new FixPluginKindForMPSTestCase_Intention();
     return Arrays.asList(rv);
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_hphjzv_d0f = buildConceptIndices(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"));
 }

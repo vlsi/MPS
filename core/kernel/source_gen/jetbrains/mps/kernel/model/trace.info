@@ -61,7 +61,7 @@
       <node id="1238251366623" at="138,37,139,19" concept="10" />
       <node id="1238251395465" at="141,174,142,18" concept="10" />
       <node id="5200543944413702461" at="143,5,144,109" concept="10" />
-      <node id="1240932501532" at="146,139,147,373" concept="10" />
+      <node id="1240932501532" at="146,71,147,373" concept="10" />
       <node id="5200543944413705807" at="149,87,150,236" concept="9" />
       <node id="5200543944413708841" at="150,236,151,67" concept="10" />
       <node id="1733398552130436942" at="153,83,154,388" concept="10" />
@@ -87,7 +87,7 @@
       <node id="1238251332672" at="134,110,137,5" concept="7" />
       <node id="1238251353700" at="137,5,140,5" concept="7" />
       <node id="1238251381643" at="140,5,143,5" concept="7" />
-      <node id="1238252473172" at="146,0,149,0" concept="13" trace="getGenuineLinkSourceCardinality#(Lorg/jetbrains/mps/openapi/model/SNode;)null" />
+      <node id="1238252473172" at="146,0,149,0" concept="13" trace="getGenuineLinkSourceCardinality#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1733398552130426570" at="153,0,156,0" concept="13" trace="isMultipleLinkDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1482016848005527349" at="156,0,159,0" concept="13" trace="isAggregation#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1733398552130470052" at="159,0,162,0" concept="13" trace="getLinkDeclarationTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -129,7 +129,7 @@
       <scope id="1238251332674" at="135,21,136,18" />
       <scope id="1238251353701" at="138,37,139,19" />
       <scope id="1238251381644" at="141,174,142,18" />
-      <scope id="1238252473175" at="146,139,147,373" />
+      <scope id="1238252473175" at="146,71,147,373" />
       <scope id="1733398552130426573" at="153,83,154,388" />
       <scope id="1482016848005527352" at="156,71,157,202" />
       <scope id="1733398552130470055" at="159,71,160,173" />

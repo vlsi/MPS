@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,21 +29,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptCanvas;
-      case 1:
-        return myConceptCircle;
-      case 2:
-        return myConceptColorReference;
-      case 3:
-        return myConceptShape;
-      case 4:
-        return myConceptSquare;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptCanvas;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCircle;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptColorReference;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptShape;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptSquare;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Shape", "jetbrains.mps.samples.Shapes.structure.Square"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, "jetbrains.mps.samples.Shapes.structure.Circle"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, "jetbrains.mps.samples.Shapes.structure.ColorReference"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc161L, "jetbrains.mps.samples.Shapes.structure.Shape"), MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc1a2L, "jetbrains.mps.samples.Shapes.structure.Square"));
 }

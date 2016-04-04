@@ -4,12 +4,12 @@ package jetbrains.mps.build.workflow.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myBwfCustomMacro__BehaviorDescriptor = new BwfCustomMacro__BehaviorDescriptor();
@@ -27,67 +27,99 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myBwfPathDeclaration__BehaviorDescriptor = new BwfPathDeclaration__BehaviorDescriptor();
   private final BHDescriptor myBwfMacro__BehaviorDescriptor = new BwfMacro__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[14];
-    myConceptBehaviorIds[0] = 0x365f30e12d6048cL;
-    myConceptBehaviorIds[1] = 0x1c936d31d3127b3bL;
-    myConceptBehaviorIds[2] = 0x2318e5dbdfc1e415L;
-    myConceptBehaviorIds[3] = 0x2670d5989d5a6271L;
-    myConceptBehaviorIds[4] = 0x2670d5989d5a6273L;
-    myConceptBehaviorIds[5] = 0x2670d5989d5a6275L;
-    myConceptBehaviorIds[6] = 0x2670d5989d5a6287L;
-    myConceptBehaviorIds[7] = 0x36fb0dc9fd32c1b8L;
-    myConceptBehaviorIds[8] = 0x41fde5e4adce38bbL;
-    myConceptBehaviorIds[9] = 0x41fde5e4adce38c4L;
-    myConceptBehaviorIds[10] = 0x5a7e1dc16b0ca24fL;
-    myConceptBehaviorIds[11] = 0x5c3f3e2c1cede06eL;
-    myConceptBehaviorIds[12] = 0x5c3f3e2c1cef4c10L;
-    myConceptBehaviorIds[13] = 0x5fb388b43aa25d48L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myBwfCustomMacro__BehaviorDescriptor;
-      case 1:
-        return myBwfAntTaskDeclaration__BehaviorDescriptor;
-      case 2:
-        return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
-      case 3:
-        return myBwfProject__BehaviorDescriptor;
-      case 4:
-        return myBwfTask__BehaviorDescriptor;
-      case 5:
-        return myBwfSubTask__BehaviorDescriptor;
-      case 6:
-        return myBwfProjectPart__BehaviorDescriptor;
-      case 7:
-        return myBwfTaskPart__BehaviorDescriptor;
-      case 8:
-        return myBwfJavaModule__BehaviorDescriptor;
-      case 9:
-        return myBwfJavaModuleReference__BehaviorDescriptor;
-      case 10:
-        return myBwfMacroListImport__BehaviorDescriptor;
-      case 11:
-        return myBwfJavaDependency__BehaviorDescriptor;
-      case 12:
-        return myBwfPathDeclaration__BehaviorDescriptor;
-      case 13:
-        return myBwfMacro__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0r.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myBwfAntTaskBundleDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myBwfAntTaskDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myBwfCustomMacro__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myBwfJavaDependency__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myBwfJavaModule__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myBwfJavaModuleReference__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myBwfMacro__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myBwfMacroListImport__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myBwfPathDeclaration__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myBwfProject__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myBwfProjectPart__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myBwfSubTask__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myBwfTask__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myBwfTaskPart__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0r = buildConceptIndices(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2318e5dbdfc1e415L, "jetbrains.mps.build.workflow.structure.BwfAntTaskBundleDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x1c936d31d3127b3bL, "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x365f30e12d6048cL, "jetbrains.mps.build.workflow.structure.BwfCustomMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, "jetbrains.mps.build.workflow.structure.BwfMacro"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5a7e1dc16b0ca24fL, "jetbrains.mps.build.workflow.structure.BwfMacroListImport"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, "jetbrains.mps.build.workflow.structure.BwfProject"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6287L, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6275L, "jetbrains.mps.build.workflow.structure.BwfSubTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6273L, "jetbrains.mps.build.workflow.structure.BwfTask"), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
 }

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,23 +30,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
-      case 0:
-        return myConceptErrorType;
-      case 1:
-        return myConceptOverrideAnnotation;
-      case 2:
-        return myConceptOverridingPrimFloatType;
-      case 3:
-        return myConceptOverridingPrimIntType;
-      case 4:
-        return myConceptOverridingPrimNumConstant;
-      case 5:
-        return myConceptUnconditionalOverrideAnnotation;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptErrorType;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptOverrideAnnotation;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptOverridingPrimFloatType;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptOverridingPrimIntType;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptOverridingPrimNumConstant;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptUnconditionalOverrideAnnotation;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"testOverridingType.structure.ErrorType", "testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimFloatType", "testOverridingType.structure.OverridingPrimIntType", "testOverridingType.structure.OverridingPrimNumConstant", "testOverridingType.structure.UnconditionalOverrideAnnotation"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a7f40L, "testOverridingType.structure.ErrorType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, "testOverridingType.structure.OverrideAnnotation"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4993604L, "testOverridingType.structure.OverridingPrimFloatType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a49935f1L, "testOverridingType.structure.OverridingPrimIntType"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4988795L, "testOverridingType.structure.OverridingPrimNumConstant"), MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a050aL, "testOverridingType.structure.UnconditionalOverrideAnnotation"));
 }

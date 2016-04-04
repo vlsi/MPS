@@ -19,49 +19,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConceptBehavior_BehaviorDescriptor.java">
-      <unit at="21,0,59,0" name="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptConstructorDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.behavior.behavior.ConceptConstructorDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="15,0,36,0" name="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="InternalConceptDeclarationReference_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationReference_BehaviorDescriptor" />
-    </file>
-    <file name="InternalConceptDeclarationsHolder_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
-    </file>
-    <file name="LocalBehaviorMethodCall_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
-    </file>
-    <file name="SuperNodeExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
-    </file>
-    <file name="ThisNodeExpression_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.lang.behavior.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/1225194243289">
-    <file name="ConceptBehavior_Behavior.java">
-      <node id="1225194243289" at="14,95,15,96" concept="9" />
-      <node id="1225194243289" at="17,87,18,93" concept="9" />
-      <node id="1225194243289" at="14,0,17,0" concept="12" trace="call_getAllSuperBehaviors_1818770337282950280#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="1225194243289" at="17,0,20,0" concept="12" trace="call_getBehaviorFqName_7038509668547148540#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1225194243289" at="14,95,15,96" />
-      <scope id="1225194243289" at="17,87,18,93" />
-      <scope id="1225194243289" at="14,0,17,0">
-        <var name="__thisNode__" id="1225194243289" />
-      </scope>
-      <scope id="1225194243289" at="17,0,20,0">
-        <var name="__thisNode__" id="1225194243289" />
-      </scope>
-      <unit id="1225194243289" at="12,0,21,0" name="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior" />
-    </file>
     <file name="ConceptBehavior__BehaviorDescriptor.java">
       <node id="1225194243289" at="45,0,46,0" concept="11" trace="CONCEPT" />
       <node id="1225194243289" at="46,0,47,0" concept="11" trace="REGISTRY" />
@@ -340,39 +301,6 @@
     </file>
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/1225196403946">
-    <file name="ConceptMethodDeclaration_Behavior.java">
-      <node id="1225196403946" at="13,75,14,93" concept="9" />
-      <node id="1225196403946" at="16,83,17,101" concept="9" />
-      <node id="1225196403946" at="19,81,20,99" concept="9" />
-      <node id="1225196403946" at="22,85,23,101" concept="9" />
-      <node id="1225196403946" at="25,93,26,110" concept="9" />
-      <node id="1225196403946" at="13,0,16,0" concept="12" trace="call_getBehaviour_1225196403947#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1225196403946" at="16,0,19,0" concept="12" trace="call_getContainingConcept_1241074789565#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1225196403946" at="19,0,22,0" concept="12" trace="call_getOverridenMethod_1225196403956#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1225196403946" at="22,0,25,0" concept="12" trace="call_isCorrectlyOverriden_1227262347923#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1225196403946" at="25,0,28,0" concept="12" trace="call_getOverridenMethodConceptName_1225196403980#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1225196403946" at="13,75,14,93" />
-      <scope id="1225196403946" at="16,83,17,101" />
-      <scope id="1225196403946" at="19,81,20,99" />
-      <scope id="1225196403946" at="22,85,23,101" />
-      <scope id="1225196403946" at="25,93,26,110" />
-      <scope id="1225196403946" at="13,0,16,0">
-        <var name="__thisNode__" id="1225196403946" />
-      </scope>
-      <scope id="1225196403946" at="16,0,19,0">
-        <var name="__thisNode__" id="1225196403946" />
-      </scope>
-      <scope id="1225196403946" at="19,0,22,0">
-        <var name="__thisNode__" id="1225196403946" />
-      </scope>
-      <scope id="1225196403946" at="22,0,25,0">
-        <var name="__thisNode__" id="1225196403946" />
-      </scope>
-      <scope id="1225196403946" at="25,0,28,0">
-        <var name="__thisNode__" id="1225196403946" />
-      </scope>
-      <unit id="1225196403946" at="11,0,29,0" name="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior" />
-    </file>
     <file name="ConceptMethodDeclaration__BehaviorDescriptor.java">
       <node id="1225196403946" at="30,0,31,0" concept="11" trace="CONCEPT" />
       <node id="1225196403946" at="31,0,32,0" concept="11" trace="REGISTRY" />
@@ -594,21 +522,6 @@
     </file>
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/7148319044498527609">
-    <file name="LocalBehaviorMethodCall_Behavior.java">
-      <node id="7148319044498527609" at="13,90,14,103" concept="9" />
-      <node id="7148319044498527609" at="16,96,17,111" concept="9" />
-      <node id="7148319044498527609" at="13,0,16,0" concept="12" trace="call_isVirtualMethodCall_7148319044498537586#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7148319044498527609" at="16,0,19,0" concept="12" trace="call_getVirtualMethodDeclaration_7148319044498527612#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="7148319044498527609" at="13,90,14,103" />
-      <scope id="7148319044498527609" at="16,96,17,111" />
-      <scope id="7148319044498527609" at="13,0,16,0">
-        <var name="__thisNode__" id="7148319044498527609" />
-      </scope>
-      <scope id="7148319044498527609" at="16,0,19,0">
-        <var name="__thisNode__" id="7148319044498527609" />
-      </scope>
-      <unit id="7148319044498527609" at="11,0,20,0" name="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior" />
-    </file>
     <file name="LocalBehaviorMethodCall__BehaviorDescriptor.java">
       <node id="7148319044498527609" at="26,0,27,0" concept="11" trace="CONCEPT" />
       <node id="7148319044498527609" at="27,0,28,0" concept="11" trace="REGISTRY" />
@@ -712,27 +625,6 @@
     </file>
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/7448026190102457307">
-    <file name="SuperNodeExpression_Behavior.java">
-      <node id="7448026190102457307" at="13,84,14,95" concept="9" />
-      <node id="7448026190102457307" at="16,87,17,98" concept="9" />
-      <node id="7448026190102457307" at="19,94,20,103" concept="9" />
-      <node id="7448026190102457307" at="13,0,16,0" concept="12" trace="call_getSuperConcept_7448026190102457310#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7448026190102457307" at="16,0,19,0" concept="12" trace="call_getEnclosingMethod_5527038142169086661#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7448026190102457307" at="19,0,22,0" concept="12" trace="call_isEnclosingMethodStatic_5212852298298945349#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="7448026190102457307" at="13,84,14,95" />
-      <scope id="7448026190102457307" at="16,87,17,98" />
-      <scope id="7448026190102457307" at="19,94,20,103" />
-      <scope id="7448026190102457307" at="13,0,16,0">
-        <var name="__thisNode__" id="7448026190102457307" />
-      </scope>
-      <scope id="7448026190102457307" at="16,0,19,0">
-        <var name="__thisNode__" id="7448026190102457307" />
-      </scope>
-      <scope id="7448026190102457307" at="19,0,22,0">
-        <var name="__thisNode__" id="7448026190102457307" />
-      </scope>
-      <unit id="7448026190102457307" at="11,0,23,0" name="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
-    </file>
     <file name="SuperNodeExpression__BehaviorDescriptor.java">
       <node id="7448026190102457307" at="28,0,29,0" concept="11" trace="CONCEPT" />
       <node id="7448026190102457307" at="29,0,30,0" concept="11" trace="REGISTRY" />

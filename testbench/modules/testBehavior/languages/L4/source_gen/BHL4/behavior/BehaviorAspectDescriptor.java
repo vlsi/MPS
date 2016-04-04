@@ -4,12 +4,12 @@ package BHL4.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myI__BehaviorDescriptor = new I__BehaviorDescriptor();
@@ -17,37 +17,49 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myI1__BehaviorDescriptor = new I1__BehaviorDescriptor();
   private final BHDescriptor myI2__BehaviorDescriptor = new I2__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[4];
-    myConceptBehaviorIds[0] = 0x6ab2e61d35e495a3L;
-    myConceptBehaviorIds[1] = 0x6ab2e61d35e495a9L;
-    myConceptBehaviorIds[2] = 0x6ab2e61d35e495aaL;
-    myConceptBehaviorIds[3] = 0x6ab2e61d35e495adL;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myI__BehaviorDescriptor;
-      case 1:
-        return myC1__BehaviorDescriptor;
-      case 2:
-        return myI1__BehaviorDescriptor;
-      case 3:
-        return myI2__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myC1__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myI__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myI1__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myI2__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a9L, "BHL4.structure.C1"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L, "BHL4.structure.I"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495aaL, "BHL4.structure.I1"), MetaAdapterFactory.getInterfaceConcept(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495adL, "BHL4.structure.I2"));
 }

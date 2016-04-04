@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,33 +35,80 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
-      case 0:
-        return myConceptBlock;
-      case 1:
-        return myConceptBlockExt;
-      case 2:
-        return myConceptBlockInstance;
-      case 3:
-        return myConceptConnector;
-      case 4:
-        return myConceptConnectorEndInstance;
-      case 5:
-        return myConceptConnectorInstance;
-      case 6:
-        return myConceptDiagram;
-      case 7:
-        return myConceptInputPort;
-      case 8:
-        return myConceptMetaBlock;
-      case 9:
-        return myConceptMetaPort;
-      case 10:
-        return myConceptOutputPort;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptBlock;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBlockExt;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBlockInstance;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConnector;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptConnectorEndInstance;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConnectorInstance;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptDiagram;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptInputPort;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptMetaBlock;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptMetaPort;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptOutputPort;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockExt", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.MetaBlock", "jetbrains.mps.testHybridEditor.structure.MetaPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x471a0145ea2e78cL, "jetbrains.mps.testHybridEditor.structure.BlockExt"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x4966445919822461L, "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, "jetbrains.mps.testHybridEditor.structure.Diagram"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, "jetbrains.mps.testHybridEditor.structure.MetaBlock"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40fc5dL, "jetbrains.mps.testHybridEditor.structure.MetaPort"), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort"));
 }

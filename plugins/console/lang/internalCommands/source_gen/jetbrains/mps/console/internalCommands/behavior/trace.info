@@ -13,25 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ConsoleModelExpression_BehaviorDescriptor.java">
-      <unit at="15,0,30,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InternalMode_BehaviorDescriptor.java">
-      <unit at="16,0,49,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
-    </file>
-    <file name="ReloadClassesCommand_BehaviorDescriptor.java">
-      <unit at="16,0,30,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
-    </file>
-    <file name="ShowRepositoryCommand_BehaviorDescriptor.java">
-      <unit at="16,0,27,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
+      <unit at="14,0,66,0" name="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">
-    <file name="ConsoleModelExpression_Behavior.java">
-      <unit id="5582028874770305521" at="10,0,13,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_Behavior" />
-    </file>
     <file name="ConsoleModelExpression__BehaviorDescriptor.java">
       <node id="5582028874770305521" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="5582028874770305521" at="25,0,26,0" concept="6" trace="REGISTRY" />
@@ -115,9 +100,6 @@
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134007787">
-    <file name="ReloadClassesCommand_Behavior.java">
-      <unit id="6224631407134007787" at="10,0,13,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_Behavior" />
-    </file>
     <file name="ReloadClassesCommand__BehaviorDescriptor.java">
       <node id="6224631407134007787" at="28,0,29,0" concept="6" trace="CONCEPT" />
       <node id="6224631407134007787" at="29,0,30,0" concept="6" trace="REGISTRY" />
@@ -205,9 +187,6 @@
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134025051">
-    <file name="ShowRepositoryCommand_Behavior.java">
-      <unit id="6224631407134025051" at="10,0,13,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_Behavior" />
-    </file>
     <file name="ShowRepositoryCommand__BehaviorDescriptor.java">
       <node id="6224631407134025051" at="26,0,27,0" concept="6" trace="CONCEPT" />
       <node id="6224631407134025051" at="27,0,28,0" concept="6" trace="REGISTRY" />
@@ -284,9 +263,6 @@
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/8829647120617318761">
-    <file name="InternalMode_Behavior.java">
-      <unit id="8829647120617318761" at="10,0,13,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_Behavior" />
-    </file>
     <file name="InternalMode__BehaviorDescriptor.java">
       <node id="8829647120617318761" at="24,0,25,0" concept="6" trace="CONCEPT" />
       <node id="8829647120617318761" at="25,0,26,0" concept="6" trace="REGISTRY" />

@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -31,33 +35,80 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
-      case 0:
-        return myConceptDiagram1;
-      case 1:
-        return myConceptDiagram2;
-      case 2:
-        return myConceptInputPort;
-      case 3:
-        return myConceptNode;
-      case 4:
-        return myConceptNodeWithName;
-      case 5:
-        return myConceptNodeWithPortQueries;
-      case 6:
-        return myConceptNodeWithPorts;
-      case 7:
-        return myConceptNodeWithSize;
-      case 8:
-        return myConceptOutputPort;
-      case 9:
-        return myConceptOutputToInputPortConnector;
-      case 10:
-        return myConceptRectangleNode;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0p.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptDiagram1;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptDiagram2;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptInputPort;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptNode;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptNodeWithName;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptNodeWithPortQueries;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptNodeWithPorts;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptNodeWithSize;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptOutputPort;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptOutputToInputPortConnector;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptRectangleNode;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0p = buildConceptIndices(MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x71771b7f74c017aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71f2L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x1f9eb8946b56ad09L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x71771b7f74c01b3L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"));
 }

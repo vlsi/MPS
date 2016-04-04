@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myRegexp__BehaviorDescriptor = new Regexp__BehaviorDescriptor();
@@ -40,106 +40,164 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myMatchVariableReferenceReplacement__BehaviorDescriptor = new MatchVariableReferenceReplacement__BehaviorDescriptor();
   private final BHDescriptor myReplacement__BehaviorDescriptor = new Replacement__BehaviorDescriptor();
 
-  private final long[] myConceptBehaviorIds;
-
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[27];
-    myConceptBehaviorIds[0] = 0x11174a06efdL;
-    myConceptBehaviorIds[1] = 0x11174a0992dL;
-    myConceptBehaviorIds[2] = 0x11174a0d780L;
-    myConceptBehaviorIds[3] = 0x11174bc30e7L;
-    myConceptBehaviorIds[4] = 0x11174c678adL;
-    myConceptBehaviorIds[5] = 0x111752101b0L;
-    myConceptBehaviorIds[6] = 0x11178e2916aL;
-    myConceptBehaviorIds[7] = 0x11178fa2a18L;
-    myConceptBehaviorIds[8] = 0x111791aa602L;
-    myConceptBehaviorIds[9] = 0x111791ae82fL;
-    myConceptBehaviorIds[10] = 0x11179215e8bL;
-    myConceptBehaviorIds[11] = 0x1117928d9f2L;
-    myConceptBehaviorIds[12] = 0x111797946c7L;
-    myConceptBehaviorIds[13] = 0x1117ef80054L;
-    myConceptBehaviorIds[14] = 0x1117f58ea2aL;
-    myConceptBehaviorIds[15] = 0x1118dbeda57L;
-    myConceptBehaviorIds[16] = 0x1118dc30ee2L;
-    myConceptBehaviorIds[17] = 0x1118dc58c6eL;
-    myConceptBehaviorIds[18] = 0x1118de32185L;
-    myConceptBehaviorIds[19] = 0x1118e0a1c55L;
-    myConceptBehaviorIds[20] = 0x11831260718L;
-    myConceptBehaviorIds[21] = 0x11c0ef7f429L;
-    myConceptBehaviorIds[22] = 0x11c22ec8f79L;
-    myConceptBehaviorIds[23] = 0x34ae970c1923d18aL;
-    myConceptBehaviorIds[24] = 0x34ae970c192ab94cL;
-    myConceptBehaviorIds[25] = 0x34ae970c192ab94eL;
-    myConceptBehaviorIds[26] = 0x34ae970c192ab952L;
-  }
-
-  @Deprecated
-  @Override
-  public BehaviorDescriptor getDescriptor(String fqName) {
-    return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
   }
 
   @Nullable
-  @Override
-  public BHDescriptor getDescriptor(@NotNull SConceptId conceptId) {
-    int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
-    switch (behaviorIndex) {
-      case 0:
-        return myRegexp__BehaviorDescriptor;
-      case 1:
-        return myStringLiteralRegexp__BehaviorDescriptor;
-      case 2:
-        return myOrRegexp__BehaviorDescriptor;
-      case 3:
-        return mySeqRegexp__BehaviorDescriptor;
-      case 4:
-        return myUnaryRegexp__BehaviorDescriptor;
-      case 5:
-        return myParensRegexp__BehaviorDescriptor;
-      case 6:
-        return mySymbolClassRegexp__BehaviorDescriptor;
-      case 7:
-        return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
-      case 8:
-        return mySymbolClassPart__BehaviorDescriptor;
-      case 9:
-        return myCharacterSymbolClassPart__BehaviorDescriptor;
-      case 10:
-        return myIntervalSymbolClassPart__BehaviorDescriptor;
-      case 11:
-        return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
-      case 12:
-        return myMatchParensRegexp__BehaviorDescriptor;
-      case 13:
-        return myReplaceBlock__BehaviorDescriptor;
-      case 14:
-        return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
-      case 15:
-        return myNTimesRegexp__BehaviorDescriptor;
-      case 16:
-        return myAtLeastNTimesRegexp__BehaviorDescriptor;
-      case 17:
-        return myFromNToMTimesRegexp__BehaviorDescriptor;
-      case 18:
-        return myLookRegexp__BehaviorDescriptor;
-      case 19:
-        return myMatchVariableReferenceRegexp__BehaviorDescriptor;
-      case 20:
-        return myUnicodeCharacterRegexp__BehaviorDescriptor;
-      case 21:
-        return myIntersectionSymbolClassPart__BehaviorDescriptor;
-      case 22:
-        return mySymbolClassRegexpAndPart__BehaviorDescriptor;
-      case 23:
-        return myReplaceRegexpOperation__BehaviorDescriptor;
-      case 24:
-        return myLiteralReplacement__BehaviorDescriptor;
-      case 25:
-        return myMatchVariableReferenceReplacement__BehaviorDescriptor;
-      case 26:
-        return myReplacement__BehaviorDescriptor;
-      default:
-        return null;
+  public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_846f5o_a0eb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myAtLeastNTimesRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myCharacterSymbolClassPart__BehaviorDescriptor;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myFromNToMTimesRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myIntersectionSymbolClassPart__BehaviorDescriptor;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myIntervalSymbolClassPart__BehaviorDescriptor;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myLiteralReplacement__BehaviorDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myLookRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myMatchParensRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myMatchVariableReferenceRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myMatchVariableReferenceReplacement__BehaviorDescriptor;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myNTimesRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myOrRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myParensRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myReplaceBlock__BehaviorDescriptor;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myReplaceRegexpOperation__BehaviorDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myReplacement__BehaviorDescriptor;
+          }
+          break;
+        case 20:
+          if (true) {
+            return mySeqRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myStringLiteralRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 22:
+          if (true) {
+            return mySymbolClassPart__BehaviorDescriptor;
+          }
+          break;
+        case 23:
+          if (true) {
+            return mySymbolClassRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 24:
+          if (true) {
+            return mySymbolClassRegexpAndPart__BehaviorDescriptor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myUnaryRegexp__BehaviorDescriptor;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myUnicodeCharacterRegexp__BehaviorDescriptor;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0eb = buildConceptIndices(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791ae82fL, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11179215e8bL, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94cL, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de32185L, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0d780L, "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117ef80054L, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab952L, "jetbrains.mps.baseLanguage.regexp.structure.Replacement"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174bc30e7L, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), MetaAdapterFactory.getInterfaceConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c22ec8f79L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11831260718L, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"));
 }

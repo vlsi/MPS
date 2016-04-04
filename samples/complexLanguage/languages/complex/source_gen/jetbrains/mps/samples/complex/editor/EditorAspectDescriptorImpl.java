@@ -7,24 +7,35 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x116904e45f4L, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new DegreeComplexExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11691060ce1L, "jetbrains.mps.samples.complex.structure.ImaginaryUnit"))) {
-        return Collections.<ConceptEditor>singletonList(new ImaginaryUnit_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL, "jetbrains.mps.samples.complex.structure.SingleComplexExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new SingleComplexExpression_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new DegreeComplexExpression_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ImaginaryUnit_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SingleComplexExpression_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -33,4 +44,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x116904e45f4L, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11691060ce1L, "jetbrains.mps.samples.complex.structure.ImaginaryUnit"), MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686b3b49dL, "jetbrains.mps.samples.complex.structure.SingleComplexExpression"));
 }

@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -54,77 +58,190 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractRunConfigurationExecutor;
-      case 1:
-        return myConceptBeforeTask;
-      case 2:
-        return myConceptBeforeTaskCall;
-      case 3:
-        return myConceptBeforeTaskParameter;
-      case 4:
-        return myConceptBeforeTaskParameterReference;
-      case 5:
-        return myConceptConfigurationFromExecutorReference;
-      case 6:
-        return myConceptConsoleCreator;
-      case 7:
-        return myConceptConsoleType;
-      case 8:
-        return myConceptContextExpression;
-      case 9:
-        return myConceptCreate_ConceptFunction;
-      case 10:
-        return myConceptDebuggerSettings_Parameter;
-      case 11:
-        return myConceptEnvironmentExpression;
-      case 12:
-        return myConceptExecuteBeforeTask_ConceptFunction;
-      case 13:
-        return myConceptExecuteConfiguration_Function;
-      case 14:
-        return myConceptExecutor_Parameter;
-      case 15:
-        return myConceptGetProjectOperation;
-      case 16:
-        return myConceptModelSource;
-      case 17:
-        return myConceptModuleSource;
-      case 18:
-        return myConceptNodeListSource;
-      case 19:
-        return myConceptNodeSource;
-      case 20:
-        return myConceptProjectSource;
-      case 21:
-        return myConceptProject_Parameter;
-      case 22:
-        return myConceptRunConfiguration;
-      case 23:
-        return myConceptRunConfigurationCreator;
-      case 24:
-        return myConceptRunConfigurationExecutor;
-      case 25:
-        return myConceptRunConfigurationKind;
-      case 26:
-        return myConceptRunConfigurationProducer;
-      case 27:
-        return myConceptRunConfigurationProducerPart;
-      case 28:
-        return myConceptRunConfigurationSource;
-      case 29:
-        return myConceptSModelSource;
-      case 30:
-        return myConceptSModuleSource;
-      case 31:
-        return myConceptSource_ConceptFunctionParameter;
-      case 32:
-        return myConceptStartProcessHandlerStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0lb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractRunConfigurationExecutor;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBeforeTask;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBeforeTaskCall;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptBeforeTaskParameter;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptBeforeTaskParameterReference;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptConfigurationFromExecutorReference;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptConsoleCreator;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptConsoleType;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptContextExpression;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptCreate_ConceptFunction;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptDebuggerSettings_Parameter;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptEnvironmentExpression;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptExecuteBeforeTask_ConceptFunction;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptExecuteConfiguration_Function;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptExecutor_Parameter;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptGetProjectOperation;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptModelSource;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptModuleSource;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptNodeListSource;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptNodeSource;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptProjectSource;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptProject_Parameter;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptRunConfiguration;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptRunConfigurationCreator;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptRunConfigurationExecutor;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptRunConfigurationKind;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptRunConfigurationProducer;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptRunConfigurationProducerPart;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptRunConfigurationSource;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptSModelSource;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptSModuleSource;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptSource_ConceptFunctionParameter;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptStartProcessHandlerStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0lb = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.ContextExpression", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.Executor_Parameter", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SModelSource", "jetbrains.mps.execution.configurations.structure.SModuleSource", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0lb = buildConceptIndices(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x61a8be33d403b7bfL, "jetbrains.mps.execution.configurations.structure.BeforeTask"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L, "jetbrains.mps.execution.configurations.structure.BeforeTaskCall"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f8014L, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd24a8aL, "jetbrains.mps.execution.configurations.structure.ConsoleCreator"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd1ac93L, "jetbrains.mps.execution.configurations.structure.ConsoleType"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6a69999da766290fL, "jetbrains.mps.execution.configurations.structure.ContextExpression"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L, "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x42d74d4aa8cbc400L, "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x7664b739387f64L, "jetbrains.mps.execution.configurations.structure.EnvironmentExpression"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x220f4a2c4aff4248L, "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5532ce3cbd91002cL, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x28470a6f6e7e49eL, "jetbrains.mps.execution.configurations.structure.Executor_Parameter"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x4bafca3d818c1d2aL, "jetbrains.mps.execution.configurations.structure.GetProjectOperation"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf299246dL, "jetbrains.mps.execution.configurations.structure.ModelSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf2992470L, "jetbrains.mps.execution.configurations.structure.ModuleSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf299246fL, "jetbrains.mps.execution.configurations.structure.NodeListSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf2992471L, "jetbrains.mps.execution.configurations.structure.NodeSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf299246eL, "jetbrains.mps.execution.configurations.structure.ProjectSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6aa58a34eb0efa2dL, "jetbrains.mps.execution.configurations.structure.Project_Parameter"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL, "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL, "jetbrains.mps.execution.configurations.structure.RunConfigurationKind"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84af96L, "jetbrains.mps.execution.configurations.structure.RunConfigurationSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3e34888186184223L, "jetbrains.mps.execution.configurations.structure.SModelSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3e34888186187479L, "jetbrains.mps.execution.configurations.structure.SModuleSource"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f2097e87L, "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter"), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"));
 }

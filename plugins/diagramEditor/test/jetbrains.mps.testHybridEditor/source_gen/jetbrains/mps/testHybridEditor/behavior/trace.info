@@ -13,46 +13,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.testHybridEditor.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BlockExt_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.testHybridEditor.behavior.BlockExt_BehaviorDescriptor" />
-    </file>
-    <file name="BlockInstance_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.BlockInstance_BehaviorDescriptor" />
-    </file>
-    <file name="Block_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.Block_BehaviorDescriptor" />
-    </file>
-    <file name="ConnectorEndInstance_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.testHybridEditor.behavior.ConnectorEndInstance_BehaviorDescriptor" />
-    </file>
-    <file name="ConnectorInstance_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.testHybridEditor.behavior.ConnectorInstance_BehaviorDescriptor" />
-    </file>
-    <file name="Connector_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.Connector_BehaviorDescriptor" />
-    </file>
-    <file name="Diagram_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.Diagram_BehaviorDescriptor" />
-    </file>
-    <file name="InputPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.InputPort_BehaviorDescriptor" />
-    </file>
-    <file name="MetaBlock_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.MetaBlock_BehaviorDescriptor" />
-    </file>
-    <file name="MetaPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.MetaPort_BehaviorDescriptor" />
-    </file>
-    <file name="OutputPort_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="jetbrains.mps.testHybridEditor.behavior.OutputPort_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.testHybridEditor.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e439f2bb-d621-491c-afa6-8441abb35a00(jetbrains.mps.testHybridEditor.behavior)/3175567003993184846">
-    <file name="BlockInstance_Behavior.java">
-      <unit id="3175567003993184846" at="10,0,13,0" name="jetbrains.mps.testHybridEditor.behavior.BlockInstance_Behavior" />
-    </file>
     <file name="BlockInstance__BehaviorDescriptor.java">
       <node id="3175567003993184846" at="21,0,22,0" concept="6" trace="CONCEPT" />
       <node id="3175567003993184846" at="22,0,23,0" concept="6" trace="REGISTRY" />

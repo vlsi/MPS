@@ -7,72 +7,115 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType"))) {
-        return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x5620d42a452422c7L, "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ClosureArgReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new ClosureControlStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
-        return Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType"))) {
-        return Collections.<ConceptEditor>singletonList(new ClosureLiteralType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL, "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral"))) {
-        return Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) {
-        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL, "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L, "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"))) {
-        return Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"))) {
-        return Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"))) {
-        return Collections.<ConceptEditor>singletonList(new YieldStatement_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ClosureArgReference_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ClosureControlStatement_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ClosureLiteralType_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor());
+          }
+          break;
+        case 17:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor());
+          }
+          break;
+        case 18:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new YieldStatement_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -81,4 +124,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x4de23a15f719357dL, "jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x5620d42a452422c7L, "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL, "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x42d79e63a78a7784L, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x117545d385aL, "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a964795L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x118276b7086L, "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e25fc6c63L, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11797183e82L, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"));
 }

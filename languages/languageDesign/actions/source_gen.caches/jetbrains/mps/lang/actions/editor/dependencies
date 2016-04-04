@@ -156,8 +156,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.AddMenuPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptRightTransformPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.ConceptSubstitutePart_Editor" />
@@ -197,8 +200,6 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.SubstituteNodeBuilderVariableDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.Substitute_SimpleString_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.editor.WrapperSubstituteMenuPart_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

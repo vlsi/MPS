@@ -7,48 +7,75 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"))) {
-        return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e69cb58aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B"))) {
-        return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C"))) {
-        return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"))) {
-        return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986ebf992L, "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"))) {
-        return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfbL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e01L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e00L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e07L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"))) {
-        return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputNode_A_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputNode_B_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputNode_C_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputRoot_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InputRootWithStatementList_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestClass_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestExpression_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestMethod_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestMethodCall_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestParam_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RefTestParamRef_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -57,4 +84,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e69cb58aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_C"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986ebf992L, "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfbL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestClass"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e01L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestExpression"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995dfeL, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestMethodCall"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e00L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParam"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e07L, "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef"));
 }

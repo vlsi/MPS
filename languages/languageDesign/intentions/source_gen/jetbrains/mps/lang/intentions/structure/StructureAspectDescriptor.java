@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -41,51 +45,125 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0y, conceptFqName)) {
-      case 0:
-        return myConceptBaseIntentionDeclaration;
-      case 1:
-        return myConceptChildFilterBlock;
-      case 2:
-        return myConceptChildFilterFunction;
-      case 3:
-        return myConceptConceptFunctionParameter_childNode;
-      case 4:
-        return myConceptConceptFunctionParameter_node;
-      case 5:
-        return myConceptDescriptionBlock;
-      case 6:
-        return myConceptErrorIntentionPriority;
-      case 7:
-        return myConceptExecuteBlock;
-      case 8:
-        return myConceptForConceptMethodParameter;
-      case 9:
-        return myConceptIntention;
-      case 10:
-        return myConceptIntentionDeclaration;
-      case 11:
-        return myConceptIntentionParameter;
-      case 12:
-        return myConceptIntentionPriority;
-      case 13:
-        return myConceptIsApplicableBlock;
-      case 14:
-        return myConceptParameter;
-      case 15:
-        return myConceptParameterizedDescriptionBlock;
-      case 16:
-        return myConceptParameterizedExecuteBlock;
-      case 17:
-        return myConceptParameterizedIntentionDeclaration;
-      case 18:
-        return myConceptQueryBlock;
-      case 19:
-        return myConceptSurroundWithIntentionDeclaration;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0y.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptBaseIntentionDeclaration;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptChildFilterBlock;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptChildFilterFunction;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptConceptFunctionParameter_childNode;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptConceptFunctionParameter_node;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptDescriptionBlock;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptErrorIntentionPriority;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptExecuteBlock;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptForConceptMethodParameter;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptIntention;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIntentionDeclaration;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptIntentionParameter;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptIntentionPriority;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptIsApplicableBlock;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptParameter;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptParameterizedDescriptionBlock;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptParameterizedExecuteBlock;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptParameterizedIntentionDeclaration;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptQueryBlock;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptSurroundWithIntentionDeclaration;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0y = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.ForConceptMethodParameter", "jetbrains.mps.lang.intentions.structure.Intention", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IntentionPriority", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.Parameter", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0y = buildConceptIndices(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getInterfaceConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L, "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c1bbL, "jetbrains.mps.lang.intentions.structure.ChildFilterFunction"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c750L, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b83c562eL, "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81bfaa7L, "jetbrains.mps.lang.intentions.structure.DescriptionBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82d36d9L, "jetbrains.mps.lang.intentions.structure.ExecuteBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x44d08b803f255effL, "jetbrains.mps.lang.intentions.structure.ForConceptMethodParameter"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c8fd57fbL, "jetbrains.mps.lang.intentions.structure.IntentionParameter"), MetaAdapterFactory.getInterfaceConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744617L, "jetbrains.mps.lang.intentions.structure.IntentionPriority"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82b10f5L, "jetbrains.mps.lang.intentions.structure.IsApplicableBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x6688b42d39674b7aL, "jetbrains.mps.lang.intentions.structure.Parameter"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x1925e8184af03861L, "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x1925e8184af310edL, "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c89cc719L, "jetbrains.mps.lang.intentions.structure.QueryBlock"), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"));
 }

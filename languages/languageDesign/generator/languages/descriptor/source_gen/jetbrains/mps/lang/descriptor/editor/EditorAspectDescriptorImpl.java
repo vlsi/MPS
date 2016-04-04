@@ -7,21 +7,30 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, "jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new GeneratorDescriptor_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"))) {
-        return Collections.<ConceptEditor>singletonList(new LanguageDescriptor_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new GeneratorDescriptor_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LanguageDescriptor_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -30,4 +39,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, "jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor"), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"));
 }

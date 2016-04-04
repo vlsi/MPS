@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -26,23 +30,55 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
-      case 0:
-        return myConceptDeclMigrationData_Component;
-      case 1:
-        return myConceptDeclMigrationData_WholeModule;
-      case 2:
-        return myConceptNewComponent;
-      case 3:
-        return myConceptNewComponentMember;
-      case 4:
-        return myConceptOldComponent;
-      case 5:
-        return myConceptOldComponentMember;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0k.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptDeclMigrationData_Component;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptDeclMigrationData_WholeModule;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptNewComponent;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptNewComponentMember;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptOldComponent;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptOldComponentMember;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"decl.structure.DeclMigrationData_Component", "decl.structure.DeclMigrationData_WholeModule", "decl.structure.NewComponent", "decl.structure.NewComponentMember", "decl.structure.OldComponent", "decl.structure.OldComponentMember"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0k = buildConceptIndices(MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732860L, "decl.structure.DeclMigrationData_Component"), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x1b931c975a732f8bL, "decl.structure.DeclMigrationData_WholeModule"), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049329d71L, "decl.structure.NewComponent"), MetaAdapterFactory.getInterfaceConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104932a602L, "decl.structure.NewComponentMember"), MetaAdapterFactory.getConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c1049316cdaL, "decl.structure.OldComponent"), MetaAdapterFactory.getInterfaceConcept(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, 0x6aff2c104931bb26L, "decl.structure.OldComponentMember"));
 }

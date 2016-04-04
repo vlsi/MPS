@@ -14,40 +14,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,42,0" name="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="ListValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
-    </file>
-    <file name="PatternTest_BehaviorDescriptor.java">
-      <unit at="20,0,59,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="TestListReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
-    </file>
-    <file name="TestPropertyVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="TestVariableReference_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="VariableValue_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
+      <unit at="14,0,48,0" name="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">
-    <file name="PatternTest_Behavior.java">
-      <node id="394224946578869061" at="13,87,14,89" concept="5" />
-      <node id="394224946578869061" at="13,0,16,0" concept="8" trace="call_getPatternTestName_394224946578869064#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="394224946578869061" at="13,87,14,89" />
-      <scope id="394224946578869061" at="13,0,16,0">
-        <var name="__thisNode__" id="394224946578869061" />
-      </scope>
-      <unit id="394224946578869061" at="11,0,17,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
-    </file>
     <file name="PatternTest__BehaviorDescriptor.java">
       <node id="394224946578869061" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="394224946578869061" at="30,0,31,0" concept="7" trace="REGISTRY" />

@@ -7,39 +7,60 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"))) {
-        return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L, "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall"))) {
-        return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"))) {
-        return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
-        return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -48,4 +69,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L, "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"));
 }

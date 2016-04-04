@@ -7,66 +7,105 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection"))) {
-        return Collections.<ConceptEditor>singletonList(new AnalysisDirection_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"))) {
-        return Collections.<ConceptEditor>singletonList(new Analyzer_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter"))) {
-        return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameter_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"))) {
-        return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameterReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator"))) {
-        return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerCreator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"))) {
-        return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"))) {
-        return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction"))) {
-        return Collections.<ConceptEditor>singletonList(new EmitInstruction_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition"))) {
-        return Collections.<ConceptEditor>singletonList(new InsertPosition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"))) {
-        return Collections.<ConceptEditor>singletonList(new Instruction_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd583aa0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter"))) {
-        return Collections.<ConceptEditor>singletonList(new InstructionParameter_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference"))) {
-        return Collections.<ConceptEditor>singletonList(new InstructionReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x6ed2c546d46ea462L, "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"))) {
-        return Collections.<ConceptEditor>singletonList(new IsOperation_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919e0b63L, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"))) {
-        return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
-        return Collections.<ConceptEditor>singletonList(new Rule_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"))) {
-        return Collections.<ConceptEditor>singletonList(new RuleReference_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AnalysisDirection_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Analyzer_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameter_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AnalyzerConstructorParameterReference_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerAnalyzeOperation_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new AnalyzerRunnerCreator_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ApplicableNodeReference_Editor());
+          }
+          break;
+        case 7:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ConceptCondition_Editor());
+          }
+          break;
+        case 8:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new EmitInstruction_Editor());
+          }
+          break;
+        case 9:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InsertPosition_Editor());
+          }
+          break;
+        case 10:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Instruction_Editor());
+          }
+          break;
+        case 11:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InstructionParameter_Editor());
+          }
+          break;
+        case 12:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new InstructionReference_Editor());
+          }
+          break;
+        case 13:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new IsOperation_Editor());
+          }
+          break;
+        case 14:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new PatternCondition_Editor());
+          }
+          break;
+        case 15:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new Rule_Editor());
+          }
+          break;
+        case 16:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new RuleReference_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -75,4 +114,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd583aa0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x6ed2c546d46ea462L, "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919e0b63L, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"));
 }

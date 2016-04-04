@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -55,79 +59,195 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0mb, conceptFqName)) {
-      case 0:
-        return myConceptAnalysisDirection;
-      case 1:
-        return myConceptAnalyzer;
-      case 2:
-        return myConceptAnalyzerConstructorParameter;
-      case 3:
-        return myConceptAnalyzerConstructorParameterReference;
-      case 4:
-        return myConceptAnalyzerFunFunction;
-      case 5:
-        return myConceptAnalyzerFunParameterInput;
-      case 6:
-        return myConceptAnalyzerFunParameterProgramState;
-      case 7:
-        return myConceptAnalyzerFunctionResultType;
-      case 8:
-        return myConceptAnalyzerInitialFunction;
-      case 9:
-        return myConceptAnalyzerMergeFunction;
-      case 10:
-        return myConceptAnalyzerMergeParameterInput;
-      case 11:
-        return myConceptAnalyzerParameterProgram;
-      case 12:
-        return myConceptAnalyzerRunnerAnalyzeOperation;
-      case 13:
-        return myConceptAnalyzerRunnerClassKeeper;
-      case 14:
-        return myConceptAnalyzerRunnerCreator;
-      case 15:
-        return myConceptAnalyzerRunnerType;
-      case 16:
-        return myConceptAnalyzerTypeAnnotation;
-      case 17:
-        return myConceptApplicableCondition;
-      case 18:
-        return myConceptApplicableNodeReference;
-      case 19:
-        return myConceptBackwardDirection;
-      case 20:
-        return myConceptConceptCondition;
-      case 21:
-        return myConceptEmitInstruction;
-      case 22:
-        return myConceptForwardDirection;
-      case 23:
-        return myConceptInsertAfterPosition;
-      case 24:
-        return myConceptInsertBeforePosition;
-      case 25:
-        return myConceptInsertPosition;
-      case 26:
-        return myConceptInstruction;
-      case 27:
-        return myConceptInstructionClassKeeper;
-      case 28:
-        return myConceptInstructionParameter;
-      case 29:
-        return myConceptInstructionReference;
-      case 30:
-        return myConceptIsOperation;
-      case 31:
-        return myConceptPatternCondition;
-      case 32:
-        return myConceptRule;
-      case 33:
-        return myConceptRuleReference;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0mb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAnalysisDirection;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptAnalyzer;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptAnalyzerConstructorParameter;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptAnalyzerConstructorParameterReference;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptAnalyzerFunFunction;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptAnalyzerFunParameterInput;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptAnalyzerFunParameterProgramState;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptAnalyzerFunctionResultType;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptAnalyzerInitialFunction;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptAnalyzerMergeFunction;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptAnalyzerMergeParameterInput;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptAnalyzerParameterProgram;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptAnalyzerRunnerAnalyzeOperation;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptAnalyzerRunnerClassKeeper;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptAnalyzerRunnerCreator;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptAnalyzerRunnerType;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptAnalyzerTypeAnnotation;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptApplicableCondition;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptApplicableNodeReference;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptBackwardDirection;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptConceptCondition;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptEmitInstruction;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptForwardDirection;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptInsertAfterPosition;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptInsertBeforePosition;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptInsertPosition;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptInstruction;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptInstructionClassKeeper;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptInstructionParameter;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptInstructionReference;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptIsOperation;
+          }
+          break;
+        case 31:
+          if (true) {
+            return myConceptPatternCondition;
+          }
+          break;
+        case 32:
+          if (true) {
+            return myConceptRule;
+          }
+          break;
+        case 33:
+          if (true) {
+            return myConceptRuleReference;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0mb = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerTypeAnnotation", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0mb = buildConceptIndices(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d4L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d2L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c52fa7L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1d7ec5L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1d7ebcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x1c63af9d2f3a7f23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x54720c1a488325eaL, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerTypeAnnotation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919dd6d8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb96L, "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb88L, "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf24L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafce9c9fL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x74ea0fbaafcebf23L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd583aa0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x6ed2c546d46ea462L, "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919e0b63L, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"));
 }

@@ -13,110 +13,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
-    <file name="AfterPosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.AfterPosition_BehaviorDescriptor" />
-    </file>
-    <file name="BaseEmitJumpStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseEmitJumpStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BaseEmitVariableStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseEmitVariableStatement_BehaviorDescriptor" />
-    </file>
-    <file name="BaseInstructionOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseInstructionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="BeforePosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="14,0,62,0" name="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
-    </file>
-    <file name="BooleanInstructionOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />
-    </file>
-    <file name="BuilderBlock_BehaviorDescriptor.java">
-      <unit at="16,0,34,0" name="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />
-    </file>
-    <file name="DataFlowBuilderDeclaration_BehaviorDescriptor.java">
-      <unit at="19,0,45,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="EmitCodeForStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitCodeForStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitIfJumpStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitIfJumpStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitJumpStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitJumpStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitLabelStatement_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitLabelStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitMayBeUnreachable_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitMayBeUnreachable_BehaviorDescriptor" />
-    </file>
-    <file name="EmitNopStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitNopStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitReadStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitReadStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitRetStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitRetStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitStatement_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitTryFinallyStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitTryFinallyStatement_BehaviorDescriptor" />
-    </file>
-    <file name="EmitWriteStatement_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitWriteStatement_BehaviorDescriptor" />
-    </file>
-    <file name="GetCodeForExpression_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.behavior.GetCodeForExpression_BehaviorDescriptor" />
-    </file>
-    <file name="InsertAfter_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertAfter_BehaviorDescriptor" />
-    </file>
-    <file name="InsertBefore_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertBefore_BehaviorDescriptor" />
-    </file>
-    <file name="InsertPosition_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertPosition_BehaviorDescriptor" />
-    </file>
-    <file name="InstructionGetSourceOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionGetSourceOperation_BehaviorDescriptor" />
-    </file>
-    <file name="InstructionIsJump_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsJump_BehaviorDescriptor" />
-    </file>
-    <file name="InstructionIsNop_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsNop_BehaviorDescriptor" />
-    </file>
-    <file name="InstructionIsRet_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsRet_BehaviorDescriptor" />
-    </file>
-    <file name="InstructionType_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionType_BehaviorDescriptor" />
-    </file>
-    <file name="LabelPosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_BehaviorDescriptor" />
-    </file>
-    <file name="NodeParameter_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_BehaviorDescriptor" />
-    </file>
-    <file name="Position_BehaviorDescriptor.java">
-      <unit at="12,0,21,0" name="jetbrains.mps.lang.dataFlow.behavior.Position_BehaviorDescriptor" />
-    </file>
-    <file name="RelativePosition_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.RelativePosition_BehaviorDescriptor" />
+      <unit at="14,0,78,0" name="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877268329">
-    <file name="EmitStatement_Behavior.java">
-      <unit id="1213877268329" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
-    </file>
     <file name="EmitStatement__BehaviorDescriptor.java">
       <node id="1213877268329" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877268329" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -182,9 +83,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877408160">
-    <file name="BuilderBlock_Behavior.java">
-      <unit id="1213877408160" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
-    </file>
     <file name="BuilderBlock__BehaviorDescriptor.java">
       <node id="1213877408160" at="29,0,30,0" concept="7" trace="CONCEPT" />
       <node id="1213877408160" at="30,0,31,0" concept="7" trace="REGISTRY" />
@@ -295,9 +193,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877418697">
-    <file name="NodeParameter_Behavior.java">
-      <unit id="1213877418697" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
-    </file>
     <file name="NodeParameter__BehaviorDescriptor.java">
       <node id="1213877418697" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877418697" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -363,9 +258,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877439994">
-    <file name="DataFlowBuilderDeclaration_Behavior.java">
-      <unit id="1213877439994" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
-    </file>
     <file name="DataFlowBuilderDeclaration__BehaviorDescriptor.java">
       <node id="1213877439994" at="25,0,26,0" concept="7" trace="CONCEPT" />
       <node id="1213877439994" at="26,0,27,0" concept="7" trace="REGISTRY" />
@@ -451,9 +343,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877480940">
-    <file name="LabelPosition_Behavior.java">
-      <unit id="1213877480940" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
-    </file>
     <file name="LabelPosition__BehaviorDescriptor.java">
       <node id="1213877480940" at="20,0,21,0" concept="7" trace="CONCEPT" />
       <node id="1213877480940" at="21,0,22,0" concept="7" trace="REGISTRY" />
@@ -519,9 +408,6 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1823319949748055875">
-    <file name="InstructionType_Behavior.java">
-      <unit id="1823319949748055875" at="10,0,13,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
-    </file>
     <file name="InstructionType__BehaviorDescriptor.java">
       <node id="1823319949748055875" at="24,0,25,0" concept="7" trace="CONCEPT" />
       <node id="1823319949748055875" at="25,0,26,0" concept="7" trace="REGISTRY" />

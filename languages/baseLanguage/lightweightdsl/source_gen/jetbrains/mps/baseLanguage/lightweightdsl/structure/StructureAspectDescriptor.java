@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -44,59 +48,145 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
-      case 0:
-        return myConceptAutoInitDSLClass;
-      case 1:
-        return myConceptBooleanPropertyInstance;
-      case 2:
-        return myConceptCustomMemberDescriptor;
-      case 3:
-        return myConceptDSLAnnotation;
-      case 4:
-        return myConceptDSLClassMember;
-      case 5:
-        return myConceptDSLDescriptor;
-      case 6:
-        return myConceptDependentTypeDescriptor;
-      case 7:
-        return myConceptDependentTypeInstance;
-      case 8:
-        return myConceptEmptyMemberDescriptor;
-      case 9:
-        return myConceptGenerateModifier;
-      case 10:
-        return myConceptIntegerPropertyInstance;
-      case 11:
-        return myConceptMemberInstance;
-      case 12:
-        return myConceptMemberModifier;
-      case 13:
-        return myConceptMemberPlaceholder;
-      case 14:
-        return myConceptMethodDescriptor;
-      case 15:
-        return myConceptMethodInstance;
-      case 16:
-        return myConceptMethodParameterInstance;
-      case 17:
-        return myConceptMultipleModifier;
-      case 18:
-        return myConceptParameterDescriptor;
-      case 19:
-        return myConceptPlaceholderModifier;
-      case 20:
-        return myConceptPropertyDescriptor;
-      case 21:
-        return myConceptPropertyInstance;
-      case 22:
-        return myConceptRequiredModifier;
-      case 23:
-        return myConceptStringPropertyInstance;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0cb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAutoInitDSLClass;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBooleanPropertyInstance;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptCustomMemberDescriptor;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDSLAnnotation;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptDSLClassMember;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptDSLDescriptor;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptDependentTypeDescriptor;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptDependentTypeInstance;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptEmptyMemberDescriptor;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptGenerateModifier;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptIntegerPropertyInstance;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptMemberInstance;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptMemberModifier;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptMemberPlaceholder;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptMethodDescriptor;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptMethodInstance;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptMethodParameterInstance;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptMultipleModifier;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptParameterDescriptor;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptPlaceholderModifier;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptPropertyDescriptor;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptPropertyInstance;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptRequiredModifier;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptStringPropertyInstance;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.baseLanguage.lightweightdsl.structure.AutoInitDSLClass", "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.GenerateModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.IntegerPropertyInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodParameterInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.ParameterDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor", "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance", "jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier", "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0cb = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0xea740fb893a13edL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.AutoInitDSLClass"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLClassMember"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x50c63f9f4a0dea5fL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.EmptyMemberDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x331be730bdf88d98L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.GenerateModifier"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec5L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.IntegerPropertyInstance"), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberInstance"), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x2f38f33681e6c5feL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberModifier"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MemberPlaceholder"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7b3d7e6b74000c44L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodParameterInstance"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x1db73bac2eaf51eeL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MultipleModifier"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d164L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.ParameterDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044804f29L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PlaceholderModifier"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x2f38f33681e6c616L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier"), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance"));
 }

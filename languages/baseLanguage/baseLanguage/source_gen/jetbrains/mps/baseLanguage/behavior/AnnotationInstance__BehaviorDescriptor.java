@@ -27,6 +27,8 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import java.util.Map;
+import java.util.HashMap;
 
 public final class AnnotationInstance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
@@ -44,11 +46,22 @@ public final class AnnotationInstance__BehaviorDescriptor extends BaseBHDescript
 
     {
       SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
-      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"))) {
-        return new NamedElementsScope(methods);
-      }
-      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5ce6f8ed8648519aL, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"))) {
-        return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
+      Integer preIndex = indices_4lr1gy_c0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        default:
+          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"))) {
+            if (true) {
+              return new NamedElementsScope(methods);
+            }
+            break;
+          }
+          if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5ce6f8ed8648519aL, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind"))) {
+            if (true) {
+              return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
+            }
+            break;
+          }
       }
     }
 
@@ -101,4 +114,13 @@ public final class AnnotationInstance__BehaviorDescriptor extends BaseBHDescript
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_4lr1gy_c0j = buildConceptIndices();
 }

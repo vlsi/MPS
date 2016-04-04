@@ -7,36 +7,55 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = ((SAbstractConcept) concept);
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"))) {
-        return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport"))) {
-        return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator"))) {
-        return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc60940541L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"))) {
-        return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"))) {
-        return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c41300f84dL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"))) {
-        return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
-      }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c413011207L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"))) {
-        return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
+      Integer preIndex = indices_xbvbvu_a0a.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
+          }
+          break;
+        case 1:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
+          }
+          break;
+        case 2:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
+          }
+          break;
+        case 3:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
+          }
+          break;
+        case 4:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
+          }
+          break;
+        case 5:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
+          }
+          break;
+        case 6:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
+          }
+          break;
+        default:
       }
     }
     return Collections.<ConceptEditor>emptyList();
@@ -45,4 +64,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc60940541L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c41300f84dL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator"), MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c413011207L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
 }

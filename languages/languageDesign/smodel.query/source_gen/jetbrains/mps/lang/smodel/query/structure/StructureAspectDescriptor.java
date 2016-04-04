@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -51,73 +55,180 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
-      case 0:
-        return myConceptAbstractPrintExpression_old;
-      case 1:
-        return myConceptBLCommand_old;
-      case 2:
-        return myConceptBLExpression_old;
-      case 3:
-        return myConceptCustomScope;
-      case 4:
-        return myConceptExpressionHelpProvider;
-      case 5:
-        return myConceptGlobalScope;
-      case 6:
-        return myConceptHelpProvider;
-      case 7:
-        return myConceptInstancesExpression;
-      case 8:
-        return myConceptModelScope;
-      case 9:
-        return myConceptModelsExpression;
-      case 10:
-        return myConceptModulesExpression;
-      case 11:
-        return myConceptModulesScope;
-      case 12:
-        return myConceptNodesExpression;
-      case 13:
-        return myConceptOperationHelpProvider;
-      case 14:
-        return myConceptPrintExpression_old;
-      case 15:
-        return myConceptPrintNodeExpression_old;
-      case 16:
-        return myConceptPrintNodeReferenceExpression_old;
-      case 17:
-        return myConceptPrintSequenceExpression_old;
-      case 18:
-        return myConceptPrintTextExpression_old;
-      case 19:
-        return myConceptProjectExpression_old;
-      case 20:
-        return myConceptProjectScope_old;
-      case 21:
-        return myConceptQueryExpression;
-      case 22:
-        return myConceptQueryParameter;
-      case 23:
-        return myConceptQueryParameterIncludeReadOnly;
-      case 24:
-        return myConceptQueryParameterList;
-      case 25:
-        return myConceptQueryParameterScope;
-      case 26:
-        return myConceptReferencesExpression;
-      case 27:
-        return myConceptScopeParameter;
-      case 28:
-        return myConceptShowExpression_old;
-      case 29:
-        return myConceptUsagesExpression;
-      case 30:
-        return myConceptWithStatement;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0jb.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractPrintExpression_old;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBLCommand_old;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptBLExpression_old;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptCustomScope;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptExpressionHelpProvider;
+          }
+          break;
+        case 5:
+          if (true) {
+            return myConceptGlobalScope;
+          }
+          break;
+        case 6:
+          if (true) {
+            return myConceptHelpProvider;
+          }
+          break;
+        case 7:
+          if (true) {
+            return myConceptInstancesExpression;
+          }
+          break;
+        case 8:
+          if (true) {
+            return myConceptModelScope;
+          }
+          break;
+        case 9:
+          if (true) {
+            return myConceptModelsExpression;
+          }
+          break;
+        case 10:
+          if (true) {
+            return myConceptModulesExpression;
+          }
+          break;
+        case 11:
+          if (true) {
+            return myConceptModulesScope;
+          }
+          break;
+        case 12:
+          if (true) {
+            return myConceptNodesExpression;
+          }
+          break;
+        case 13:
+          if (true) {
+            return myConceptOperationHelpProvider;
+          }
+          break;
+        case 14:
+          if (true) {
+            return myConceptPrintExpression_old;
+          }
+          break;
+        case 15:
+          if (true) {
+            return myConceptPrintNodeExpression_old;
+          }
+          break;
+        case 16:
+          if (true) {
+            return myConceptPrintNodeReferenceExpression_old;
+          }
+          break;
+        case 17:
+          if (true) {
+            return myConceptPrintSequenceExpression_old;
+          }
+          break;
+        case 18:
+          if (true) {
+            return myConceptPrintTextExpression_old;
+          }
+          break;
+        case 19:
+          if (true) {
+            return myConceptProjectExpression_old;
+          }
+          break;
+        case 20:
+          if (true) {
+            return myConceptProjectScope_old;
+          }
+          break;
+        case 21:
+          if (true) {
+            return myConceptQueryExpression;
+          }
+          break;
+        case 22:
+          if (true) {
+            return myConceptQueryParameter;
+          }
+          break;
+        case 23:
+          if (true) {
+            return myConceptQueryParameterIncludeReadOnly;
+          }
+          break;
+        case 24:
+          if (true) {
+            return myConceptQueryParameterList;
+          }
+          break;
+        case 25:
+          if (true) {
+            return myConceptQueryParameterScope;
+          }
+          break;
+        case 26:
+          if (true) {
+            return myConceptReferencesExpression;
+          }
+          break;
+        case 27:
+          if (true) {
+            return myConceptScopeParameter;
+          }
+          break;
+        case 28:
+          if (true) {
+            return myConceptShowExpression_old;
+          }
+          break;
+        case 29:
+          if (true) {
+            return myConceptUsagesExpression;
+          }
+          break;
+        case 30:
+          if (true) {
+            return myConceptWithStatement;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", "jetbrains.mps.lang.smodel.query.structure.BLCommand_old", "jetbrains.mps.lang.smodel.query.structure.BLExpression_old", "jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.ExpressionHelpProvider", "jetbrains.mps.lang.smodel.query.structure.GlobalScope", "jetbrains.mps.lang.smodel.query.structure.HelpProvider", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModelsExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesExpression", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.NodesExpression", "jetbrains.mps.lang.smodel.query.structure.OperationHelpProvider", "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old", "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old", "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old", "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old", "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old", "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old", "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old", "jetbrains.mps.lang.smodel.query.structure.QueryExpression", "jetbrains.mps.lang.smodel.query.structure.QueryParameter", "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ReferencesExpression", "jetbrains.mps.lang.smodel.query.structure.ScopeParameter", "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0jb = buildConceptIndices(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L, "jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L, "jetbrains.mps.lang.smodel.query.structure.BLCommand_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L, "jetbrains.mps.lang.smodel.query.structure.BLExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f98575c9L, "jetbrains.mps.lang.smodel.query.structure.CustomScope"), MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L, "jetbrains.mps.lang.smodel.query.structure.ExpressionHelpProvider"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L, "jetbrains.mps.lang.smodel.query.structure.GlobalScope"), MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f952484eL, "jetbrains.mps.lang.smodel.query.structure.ModelScope"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f41efb675beab2dL, "jetbrains.mps.lang.smodel.query.structure.ModelsExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f41efb675cc2262L, "jetbrains.mps.lang.smodel.query.structure.ModulesExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, "jetbrains.mps.lang.smodel.query.structure.ModulesScope"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x272b1214886bd08eL, "jetbrains.mps.lang.smodel.query.structure.NodesExpression"), MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5252d9021b8b6c03L, "jetbrains.mps.lang.smodel.query.structure.OperationHelpProvider"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L, "jetbrains.mps.lang.smodel.query.structure.PrintExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L, "jetbrains.mps.lang.smodel.query.structure.PrintNodeExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL, "jetbrains.mps.lang.smodel.query.structure.PrintNodeReferenceExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL, "jetbrains.mps.lang.smodel.query.structure.PrintSequenceExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L, "jetbrains.mps.lang.smodel.query.structure.PrintTextExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L, "jetbrains.mps.lang.smodel.query.structure.ProjectExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L, "jetbrains.mps.lang.smodel.query.structure.ProjectScope_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.lang.smodel.query.structure.QueryParameter"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterList"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x57bda059470950bdL, "jetbrains.mps.lang.smodel.query.structure.ReferencesExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL, "jetbrains.mps.lang.smodel.query.structure.ShowExpression_old"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d6ebL, "jetbrains.mps.lang.smodel.query.structure.UsagesExpression"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3ac2ae2c0bcf368bL, "jetbrains.mps.lang.smodel.query.structure.WithStatement"));
 }

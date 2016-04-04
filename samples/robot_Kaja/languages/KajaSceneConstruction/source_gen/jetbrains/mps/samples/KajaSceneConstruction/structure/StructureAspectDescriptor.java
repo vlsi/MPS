@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -25,21 +29,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
-      case 0:
-        return myConceptAbstractBuilderCommand;
-      case 1:
-        return myConceptBuildWall;
-      case 2:
-        return myConceptDestroyWall;
-      case 3:
-        return myConceptDropMark;
-      case 4:
-        return myConceptPickMark;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0j.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptAbstractBuilderCommand;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptBuildWall;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptDestroyWall;
+          }
+          break;
+        case 3:
+          if (true) {
+            return myConceptDropMark;
+          }
+          break;
+        case 4:
+          if (true) {
+            return myConceptPickMark;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0j = buildConceptIndices(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"), MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a8341e10L, "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall"), MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fa55L, "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall"), MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3eL, "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark"), MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a835165fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"));
 }

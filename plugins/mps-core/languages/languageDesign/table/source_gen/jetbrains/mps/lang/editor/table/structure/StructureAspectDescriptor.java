@@ -10,6 +10,10 @@ import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Map;
+import java.util.HashMap;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
@@ -24,17 +28,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   @Nullable
-  public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
-      case 0:
-        return myConceptCellModel_HierarchycalTable;
-      case 1:
-        return myConceptCellModel_Table;
-      case 2:
-        return myConceptQueryFunction_TableModel;
-      default:
-        return null;
+  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = concept;
+      Integer preIndex = indices_1htk8d_a0h.get(cncpt);
+      int switchIndex = (preIndex == null ? -1 : preIndex);
+      switch (switchIndex) {
+        case 0:
+          if (true) {
+            return myConceptCellModel_HierarchycalTable;
+          }
+          break;
+        case 1:
+          if (true) {
+            return myConceptCellModel_Table;
+          }
+          break;
+        case 2:
+          if (true) {
+            return myConceptQueryFunction_TableModel;
+          }
+          break;
+        default:
+          // default 
+      }
     }
+    return null;
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"};
+  private static Map<SAbstractConcept, Integer> buildConceptIndices(SAbstractConcept... concepts) {
+    HashMap<SAbstractConcept, Integer> res = new HashMap<SAbstractConcept, Integer>();
+    int counter = 0;
+    for (SAbstractConcept c : concepts) {
+      res.put(c, counter++);
+    }
+    return res;
+  }
+  private static final Map<SAbstractConcept, Integer> indices_1htk8d_a0h = buildConceptIndices(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x40e932ec28a2d18bL, "jetbrains.mps.lang.editor.table.structure.CellModel_Table"), MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x3e51593e83e97a4dL, "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"));
 }
