@@ -3979,30 +3979,6 @@
           </node>
           <node concept="1pnPoh" id="1CTTqHRaL1F" role="1_3QMm">
             <node concept="3clFbS" id="1CTTqHRaL1G" role="1pnPq1">
-              <node concept="3SKdUt" id="1CTTqHRaQ2i" role="3cqZAp">
-                <node concept="3SKdUq" id="1CTTqHRaQ2j" role="3SKWNk">
-                  <property role="3SKdUp" value="Concept:" />
-                </node>
-                <node concept="3SKdUq" id="1CTTqHRaQ2k" role="3SKWNk">
-                  <property role="3SKdUp" value="concept" />
-                  <node concept="17Uvod" id="1CTTqHRaQ2l" role="lGtFl">
-                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" />
-                    <property role="2qtEX9" value="text" />
-                    <node concept="3zFVjK" id="1CTTqHRaQ2m" role="3zH0cK">
-                      <node concept="3clFbS" id="1CTTqHRaQ2n" role="2VODD2">
-                        <node concept="3clFbF" id="1CTTqHRaQ2o" role="3cqZAp">
-                          <node concept="2OqwBi" id="1CTTqHRaQ2p" role="3clFbG">
-                            <node concept="30H73N" id="1CTTqHRaQ2q" role="2Oq$k0" />
-                            <node concept="3TrcHB" id="1CTTqHRaQ2r" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3cpWs6" id="5FFmclY2on3" role="3cqZAp">
                 <node concept="1nCR9W" id="5FFmclY2q2N" role="3cqZAk">
                   <property role="1nD$Q0" value="ConstraintsDescriptor" />

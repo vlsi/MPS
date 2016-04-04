@@ -119,9 +119,6 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5096292688183698680(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_1889794043260133526(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-  }
   public static Object propertyMacro_GetPropertyValue_8145375452081973427(final PropertyMacroContext _context) {
     boolean sameModels = _context.getInputModel() == SNodeOperations.getModel(_context.getNode());
     SModel mainModel = (sameModels ? _context.getOriginalInputModel() : SNodeOperations.getModel(_context.getNode()));
@@ -185,7 +182,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_6551427688186219815(final ReferenceMacroContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getOriginalInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0pb(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return eq_x583g4_a0a0a0a0a0a0ob(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     });
   }
@@ -418,7 +415,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_3002767456620556765(final TemplateQueryContext _context) {
     return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0pb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0ob(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean isNotEmptyString(String str) {
