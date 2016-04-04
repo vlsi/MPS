@@ -9,23 +9,20 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoChangesOfTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public UndoChangesOfTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_UndoChangesOfTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoChangesOfTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoChangesOfTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1758932278023383299", "1758932278023383301");
-      this.typeString("tmpstr");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("$Undo");
+      initEditorComponent("1758932278023383299", "1758932278023383301");
+      typeString("tmpstr");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("$Undo");
     }
   }
 }

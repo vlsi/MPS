@@ -11,31 +11,28 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class CreateLink_Test extends BaseTransformationTest {
-  public CreateLink_Test() {
-  }
   @Test
   public void test_CreateLink() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.CreateLink_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.CreateLink_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5540569706414443798", "5540569706415669333");
+      initEditorComponent("5540569706414443798", "5540569706415669333");
       {
         int x_rsydnf_a0 = 105;
         int y_rsydnf_a0 = 60;
-        Component eventTargetComponent_rsydnf_a0 = this.processMouseEvent(x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_PRESSED);
+        Component eventTargetComponent_rsydnf_a0 = processMouseEvent(x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_PRESSED);
         // This is a work-around for existing problem with connection creation: 
         // for now connection source will be selected on receiving first mouse drag event 
         // in general connection source should be selected on mouse-pressed event 
         // TODO: remove first drag mouse statement. 
-        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 106, y_rsydnf_a0 = 60, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 195, y_rsydnf_a0 = 240, MouseEvent.MOUSE_DRAGGED);
-        this.processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 106, y_rsydnf_a0 = 60, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0 = 195, y_rsydnf_a0 = 240, MouseEvent.MOUSE_DRAGGED);
+        processSecondaryMouseEvent(eventTargetComponent_rsydnf_a0, x_rsydnf_a0, y_rsydnf_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

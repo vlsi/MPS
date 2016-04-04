@@ -34,68 +34,69 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class FileSwapOwnerTests_Test extends BaseTransformationTest {
   @Test
   public void test_justWrite() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
   }
   @Test
   public void test_stringUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
   }
   @Test
   public void test_intUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
   }
   @Test
   public void test_charUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
   }
   @Test
   public void test_numberUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
   }
   @Test
   public void test_booleanUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
   }
   @Test
   public void test_mpsUserObjects() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
   }
   @Test
   public void test_baseLanguageStructure() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
   }
   @Test
   public void test_testOverloadedOperatorsSandbox() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
   }
   @Test
   public void test_testSkipNodesWhileSaving() throws Throwable {
-    this.initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
-    this.runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
+    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+    runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_justWrite() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       try {
         SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
 
         try {
-          SNode node = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+          SNode node = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
           model.addRootNode(node);
           {
-            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
             List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), node);
-            Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+            Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
           }
         } finally {
           TemporaryModels.getInstance().dispose(model);
@@ -106,14 +107,14 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       }
     }
     public void test_stringUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new HashMap<Object, Object>());
       MapSequence.fromMap(userObjects).put("1", "1");
       MapSequence.fromMap(userObjects).put("2", "2");
       this.testUserObjectsSaving(userObjects);
     }
     public void test_intUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put(2, "2");
       MapSequence.fromMap(userObjects).put("3", 3);
@@ -121,7 +122,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       this.testUserObjectsSaving(userObjects);
     }
     public void test_charUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put('1', '1');
       MapSequence.fromMap(userObjects).put('2', '2');
@@ -129,7 +130,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       this.testUserObjectsSaving(userObjects);
     }
     public void test_numberUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put(0.5, 0.5);
       MapSequence.fromMap(userObjects).put(((float) 1.5), ((float) 1.5));
@@ -139,7 +140,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       this.testUserObjectsSaving(userObjects);
     }
     public void test_booleanUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put(false, false);
       MapSequence.fromMap(userObjects).put(false, true);
@@ -148,57 +149,59 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
       this.testUserObjectsSaving(userObjects);
     }
     public void test_mpsUserObjects() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
-      MapSequence.fromMap(userObjects).put(new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getReference(), SModelRepository.getInstance().getModelDescriptor("java.lang@java_stub").getReference());
-      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getNodeId(), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getReference());
+      MapSequence.fromMap(userObjects).put(new SNodePointer(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))), new SNodePointer(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))));
+      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getReference(), SModelRepository.getInstance().getModelDescriptor("java.lang@java_stub").getReference());
+      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getNodeId(), new SNodePointer(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))));
+      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getModelId(), SNodeOperations.getModel(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"))).getReference());
       this.testUserObjectsSaving(userObjects);
     }
     public void test_baseLanguageStructure() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.structure");
       SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelBase) sampleModel).getSModel());
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testOverloadedOperatorsSandbox() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       SModel sampleModel = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test");
       SModel resultModel = FileSwapOwner.writeAndReadModel(((SModelBase) sampleModel).getSModel());
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testSkipNodesWhileSaving() throws Exception {
-      this.addNodeById("1732396662099564446");
+      addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put("1", "1");
-      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      MapSequence.fromMap(userObjects).put(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       MapSequence.fromMap(userObjects).put("2", "2");
 
       Map<Object, Object> userObjectsToSkip = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
-      MapSequence.fromMap(userObjectsToSkip).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      MapSequence.fromMap(userObjectsToSkip).put(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
 
       this.testUserObjectsSaving(userObjects, userObjectsToSkip);
     }
+
+
     public void testUserObjectsSaving(Map<Object, Object> userObjects, Map<Object, Object> userObjectsToLoose) {
-      SNode var1732396662099564454 = this.getNodeById("1732396662099564449");
+      SNode var1732396662099564454 = getNodeById("1732396662099564449");
       try {
 
         for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
-          SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).putUserObject(object.key(), object.value());
+          SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).putUserObject(object.key(), object.value());
         }
 
-        SNode readNode = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+        SNode readNode = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
         SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
 
         try {
           model.addRootNode(readNode);
           {
-            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
             List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
-            Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
+            Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
           }
 
           for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {

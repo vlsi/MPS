@@ -6,39 +6,39 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)/359299525883788095">
     <file name="SConceptHierarchy_Test.java">
-      <node id="359299525883788095" at="23,56,24,124" concept="0" />
-      <node id="359299525883788095" at="24,124,25,118" concept="0" />
-      <node id="6638738203687277589" at="29,58,30,374" concept="0" />
-      <node id="6638738203687278534" at="30,374,31,326" concept="0" />
-      <node id="6638738203687280475" at="31,326,32,375" concept="0" />
-      <node id="6638738203687284413" at="32,375,33,413" concept="0" />
-      <node id="359299525882683688" at="33,413,34,202" concept="0" />
-      <node id="359299525883522055" at="34,202,35,100" concept="2" />
-      <node id="7344669911420836450" at="37,27,38,283" concept="0" />
-      <node id="359299525883527475" at="40,9,41,263" concept="0" />
-      <node id="359299525883524125" at="41,263,42,252" concept="0" />
-      <node id="359299525883533395" at="42,252,43,208" concept="0" />
-      <node id="359299525883539319" at="43,208,44,216" concept="0" />
-      <node id="5302237107384186928" at="44,216,45,0" concept="3" />
-      <node id="5302237107384220681" at="45,0,46,71" concept="0" />
-      <node id="5302237107384229502" at="46,71,47,227" concept="0" />
-      <node id="5302237107384317212" at="47,227,48,124" concept="0" />
-      <node id="5302237107384209108" at="48,124,49,259" concept="0" />
-      <node id="7344669911420835898" at="37,0,40,0" concept="1" trace="run#()V" />
+      <node id="359299525883788095" at="23,56,24,119" concept="0" />
+      <node id="359299525883788095" at="24,119,25,113" concept="0" />
+      <node id="6638738203687277589" at="30,58,31,374" concept="0" />
+      <node id="6638738203687278534" at="31,374,32,326" concept="0" />
+      <node id="6638738203687280475" at="32,326,33,375" concept="0" />
+      <node id="6638738203687284413" at="33,375,34,413" concept="0" />
+      <node id="359299525882683688" at="34,413,35,202" concept="0" />
+      <node id="359299525883522055" at="35,202,36,100" concept="2" />
+      <node id="7344669911420836450" at="38,27,39,283" concept="0" />
+      <node id="359299525883527475" at="41,9,42,263" concept="0" />
+      <node id="359299525883524125" at="42,263,43,252" concept="0" />
+      <node id="359299525883533395" at="43,252,44,208" concept="0" />
+      <node id="359299525883539319" at="44,208,45,216" concept="0" />
+      <node id="5302237107384186928" at="45,216,46,0" concept="3" />
+      <node id="5302237107384220681" at="46,0,47,71" concept="0" />
+      <node id="5302237107384229502" at="47,71,48,227" concept="0" />
+      <node id="5302237107384317212" at="48,227,49,124" concept="0" />
+      <node id="5302237107384209108" at="49,124,50,259" concept="0" />
+      <node id="7344669911420835898" at="38,0,41,0" concept="1" trace="run#()V" />
       <node id="359299525883788095" at="22,0,27,0" concept="1" trace="test_conceptHierarchy#()V" />
-      <node id="7344669911420835896" at="35,100,40,9" concept="0" />
-      <node id="359299525883788102" at="29,0,51,0" concept="1" trace="test_conceptHierarchy#()V" />
-      <scope id="7344669911420835900" at="37,27,38,283" />
-      <scope id="359299525883788095" at="23,56,25,118" />
-      <scope id="7344669911420835898" at="37,0,40,0" />
+      <node id="7344669911420835896" at="36,100,41,9" concept="0" />
+      <node id="359299525883788102" at="30,0,52,0" concept="1" trace="test_conceptHierarchy#()V" />
+      <scope id="7344669911420835900" at="38,27,39,283" />
+      <scope id="359299525883788095" at="23,56,25,113" />
+      <scope id="7344669911420835898" at="38,0,41,0" />
       <scope id="359299525883788095" at="22,0,27,0" />
-      <scope id="359299525883788102" at="29,58,49,259">
+      <scope id="359299525883788102" at="30,58,50,259">
         <var name="defaultIfaceConcept" id="359299525883522056" />
       </scope>
-      <scope id="359299525883788102" at="29,0,51,0" />
-      <unit id="7344669911420835898" at="36,47,40,7" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$1" />
-      <unit id="359299525883788095" at="27,0,52,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody" />
-      <unit id="359299525883788095" at="20,0,53,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test" />
+      <scope id="359299525883788102" at="30,0,52,0" />
+      <unit id="7344669911420835898" at="37,47,41,7" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$1" />
+      <unit id="359299525883788095" at="28,0,55,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody" />
+      <unit id="359299525883788095" at="20,0,56,0" name="jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test" />
     </file>
   </root>
 </debug-info>

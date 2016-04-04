@@ -23,28 +23,25 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView
 
 @MPSLaunch
 public class BlockDecoratorTest_Test extends BaseTransformationTest {
-  public BlockDecoratorTest_Test() {
-  }
   @Test
   public void test_BlockDecoratorTest() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("141381309807688262", "141381309807688282");
+      initEditorComponent("141381309807688262", "141381309807688282");
       Mapper descendantMapper;
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          node.value = SNodeOperations.cast(TestBody.this.getNodeById("141381309807688263"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName"));
+          node.value = SNodeOperations.cast(getNodeById("141381309807688263"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName"));
         }
       });
-      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, this.getEditorComponent(), BlockCell.class);
+      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, getEditorComponent(), BlockCell.class);
       Assert.assertTrue(descendantMapper != null);
       Assert.assertTrue(descendantMapper.getTarget() != null);
       Assert.assertTrue(descendantMapper.getTarget() instanceof NodeDecoratorView);

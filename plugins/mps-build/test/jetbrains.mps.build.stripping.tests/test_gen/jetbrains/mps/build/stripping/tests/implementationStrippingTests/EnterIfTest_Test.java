@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class EnterIfTest_Test extends BaseTransformationTest {
-  public EnterIfTest_Test() {
-  }
   @Test
   public void test_EnterIfTest() throws Throwable {
-    this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
-    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
+    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5264300948581797740", "5264300948581797748");
-      this.typeString("if not heading south");
+      initEditorComponent("5264300948581797740", "5264300948581797748");
+      typeString("if not heading south");
     }
   }
 }

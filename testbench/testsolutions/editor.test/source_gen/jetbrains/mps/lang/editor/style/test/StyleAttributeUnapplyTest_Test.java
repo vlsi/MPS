@@ -17,35 +17,32 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 @MPSLaunch
 public class StyleAttributeUnapplyTest_Test extends BaseTransformationTest {
-  public StyleAttributeUnapplyTest_Test() {
-  }
   @Test
   public void test_StyleAttributeUnapplyTest() throws Throwable {
-    this.initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
-    this.runTest("jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
+    runTest("jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("23293207023100753", "");
+      initEditorComponent("23293207023100753", "");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode root = SNodeOperations.cast(TestBody.this.getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
+          SNode root = SNodeOperations.cast(getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
           SNode leaf = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
           SNode priority = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(1);
           SNode innerLeaf = ListSequence.fromList(SLinkOperations.getChildren(priority, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
           SNode unapply = ListSequence.fromList(SLinkOperations.getChildren(priority, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(1);
           SNode unapplyLeaf = ListSequence.fromList(SLinkOperations.getChildren(unapply, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
 
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(priority).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(innerLeaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(unapply).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
-          Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(unapplyLeaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
+          Assert.assertEquals(getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
+          Assert.assertEquals(getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
+          Assert.assertEquals(getEditorComponent().findNodeCell(priority).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
+          Assert.assertEquals(getEditorComponent().findNodeCell(innerLeaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
+          Assert.assertEquals(getEditorComponent().findNodeCell(unapply).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
+          Assert.assertEquals(getEditorComponent().findNodeCell(unapplyLeaf).getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "top");
         }
       });
     }

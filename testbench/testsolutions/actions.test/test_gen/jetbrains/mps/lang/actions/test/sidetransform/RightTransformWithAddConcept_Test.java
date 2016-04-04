@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RightTransformWithAddConcept_Test extends BaseTransformationTest {
-  public RightTransformWithAddConcept_Test() {
-  }
   @Test
   public void test_RightTransformWithAddConcept() throws Throwable {
-    this.initTest("${mps_home}", "r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)");
+    runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6500338114639041002", "6500338114639041005");
-      this.typeString(" addConceptChild");
+      initEditorComponent("6500338114639041002", "6500338114639041005");
+      typeString(" addConceptChild");
     }
   }
 }

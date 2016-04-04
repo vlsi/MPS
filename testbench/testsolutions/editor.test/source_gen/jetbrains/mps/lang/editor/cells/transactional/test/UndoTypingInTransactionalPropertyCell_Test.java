@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class UndoTypingInTransactionalPropertyCell_Test extends BaseTransformationTest {
-  public UndoTypingInTransactionalPropertyCell_Test() {
-  }
   @Test
   public void test_UndoTypingInTransactionalPropertyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
-    this.runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
+    runTest("jetbrains.mps.lang.editor.cells.transactional.test.UndoTypingInTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5379654361813488296", "1758932278023187628");
-      this.typeString("tmpstr");
-      this.invokeAction("$Undo");
+      initEditorComponent("5379654361813488296", "1758932278023187628");
+      typeString("tmpstr");
+      invokeAction("$Undo");
     }
   }
 }

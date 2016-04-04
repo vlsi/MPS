@@ -12,13 +12,16 @@ import junit.framework.Assert;
 public class SimpleTestCase_Test_Test extends BaseTransformationTest {
   @Test
   public void test_test1() throws Throwable {
-    this.initTest("${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test$TestBody", "test_test1", true);
+    initTest("${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.SimpleTestCase_Test_Test$TestBody", "test_test1", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_test1() throws Exception {
       Assert.assertFalse(false);
     }
+
+
   }
 }

@@ -11,33 +11,30 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class CreateDiagramNode_Test extends BaseTransformationTest {
-  public CreateDiagramNode_Test() {
-  }
   @Test
   public void test_CreateDiagramNode() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4633202057943822985", "4633202057941654436");
+      initEditorComponent("4633202057943822985", "4633202057941654436");
       {
         int x_n6e1jw_a0 = 100;
         int y_n6e1jw_a0 = 100;
-        Component eventTargetComponent_n6e1jw_a0 = this.processMouseEvent(x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_n6e1jw_a0 = processMouseEvent(x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_CLICKED);
       }
       {
         int x_n6e1jw_b0 = 100;
         int y_n6e1jw_b0 = 100;
-        Component eventTargetComponent_n6e1jw_b0 = this.processMouseEvent(x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_n6e1jw_b0 = processMouseEvent(x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

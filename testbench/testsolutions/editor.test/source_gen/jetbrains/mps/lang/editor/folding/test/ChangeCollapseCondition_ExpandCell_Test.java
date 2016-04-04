@@ -9,30 +9,27 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ChangeCollapseCondition_ExpandCell_Test extends BaseTransformationTest {
-  public ChangeCollapseCondition_ExpandCell_Test() {
-  }
   @Test
   public void test_ChangeCollapseCondition_ExpandCell() throws Throwable {
-    this.initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
-    this.runTest("jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ExpandCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
+    runTest("jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ExpandCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("866632705892346112", "866632705892346130");
-      this.typeString("false");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      initEditorComponent("866632705892346112", "866632705892346130");
+      typeString("false");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
 
     }
   }

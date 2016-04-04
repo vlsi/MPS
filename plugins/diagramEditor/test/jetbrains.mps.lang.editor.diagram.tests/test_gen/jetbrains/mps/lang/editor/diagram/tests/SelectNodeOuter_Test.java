@@ -11,26 +11,23 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class SelectNodeOuter_Test extends BaseTransformationTest {
-  public SelectNodeOuter_Test() {
-  }
   @Test
   public void test_SelectNodeOuter() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.SelectNodeOuter_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.SelectNodeOuter_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8095638845859348585", "8095638845859348589");
+      initEditorComponent("8095638845859348585", "8095638845859348589");
       {
         int x_qi7d9q_a0 = 20;
         int y_qi7d9q_a0 = 20;
-        Component eventTargetComponent_qi7d9q_a0 = this.processMouseEvent(x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_qi7d9q_a0 = processMouseEvent(x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_qi7d9q_a0, x_qi7d9q_a0, y_qi7d9q_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

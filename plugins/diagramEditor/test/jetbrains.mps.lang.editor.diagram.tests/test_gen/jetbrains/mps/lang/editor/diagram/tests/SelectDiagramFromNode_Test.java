@@ -11,29 +11,26 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class SelectDiagramFromNode_Test extends BaseTransformationTest {
-  public SelectDiagramFromNode_Test() {
-  }
   @Test
   public void test_SelectDiagramFromNode() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4459951312287602254", "4459951312287602272");
+      initEditorComponent("4459951312287602254", "4459951312287602272");
 
       {
         int x_vp76dd_b0 = 60;
         int y_vp76dd_b0 = 60;
-        Component eventTargetComponent_vp76dd_b0 = this.processMouseEvent(x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_vp76dd_b0 = processMouseEvent(x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_vp76dd_b0, x_vp76dd_b0, y_vp76dd_b0, MouseEvent.MOUSE_CLICKED);
       }
-      assert !(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
+      assert !(getEditorComponent().getNodeSubstituteChooser().isVisible());
 
     }
   }

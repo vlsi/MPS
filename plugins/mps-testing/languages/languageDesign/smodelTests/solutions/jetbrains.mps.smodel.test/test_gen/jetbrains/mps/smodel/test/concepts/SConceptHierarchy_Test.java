@@ -21,9 +21,10 @@ import jetbrains.mps.util.IterableUtil;
 public class SConceptHierarchy_Test extends BaseTransformationTest {
   @Test
   public void test_conceptHierarchy() throws Throwable {
-    this.initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
-    this.runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptHierarchy", true);
+    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
+    runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptHierarchy", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_conceptHierarchy() throws Exception {
@@ -48,5 +49,7 @@ public class SConceptHierarchy_Test extends BaseTransformationTest {
       Assert.assertTrue(IterableUtil.asCollection(((SConcept) defaultIfaceConcept.value).getSuperInterfaces()).size() == 1);
       Assert.assertTrue(((SConcept) defaultIfaceConcept.value).getSuperInterfaces().iterator().next().equals(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
     }
+
+
   }
 }

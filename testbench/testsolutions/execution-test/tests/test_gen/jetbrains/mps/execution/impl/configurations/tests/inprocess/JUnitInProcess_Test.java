@@ -36,14 +36,15 @@ import org.apache.log4j.LogManager;
 public class JUnitInProcess_Test extends BaseTransformationTest {
   @Test
   public void test_startSimpleTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
   }
   @Test
   public void test_startFailedTestCase() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
@@ -62,6 +63,8 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       });
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)));
     }
+
+
     public SModel getMyModel() {
       return SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
     }

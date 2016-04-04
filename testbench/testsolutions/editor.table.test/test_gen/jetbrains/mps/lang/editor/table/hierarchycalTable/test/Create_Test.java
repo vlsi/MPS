@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Create_Test extends BaseTransformationTest {
-  public Create_Test() {
-  }
   @Test
   public void test_Create() throws Throwable {
-    this.initTest("${mps_home}", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6170050146384276079", "6170050146384276081");
-      this.typeString("Hierarchy");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("6170050146384276079", "6170050146384276081");
+      typeString("Hierarchy");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

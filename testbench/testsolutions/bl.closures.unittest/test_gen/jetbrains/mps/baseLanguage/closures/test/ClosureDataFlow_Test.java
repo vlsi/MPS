@@ -14,14 +14,17 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ClosureDataFlow_Test extends BaseTransformationTest {
   @Test
   public void test_ClosureDataFlow() throws Throwable {
-    this.initTest("${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody", "test_ClosureDataFlow", true);
+    initTest("${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody", "test_ClosureDataFlow", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ClosureDataFlow() throws Exception {
-      this.addNodeById("1227886714746");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(this.getNodeById("1227886714749"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false);
+      addNodeById("1227886714746");
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1227886714749"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false);
     }
+
+
   }
 }

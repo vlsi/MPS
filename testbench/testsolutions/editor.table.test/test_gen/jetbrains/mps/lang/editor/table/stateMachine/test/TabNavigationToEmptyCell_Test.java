@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class TabNavigationToEmptyCell_Test extends BaseTransformationTest {
-  public TabNavigationToEmptyCell_Test() {
-  }
   @Test
   public void test_TabNavigationToEmptyCell() throws Throwable {
-    this.initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.TabNavigationToEmptyCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.stateMachine.test.TabNavigationToEmptyCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3152271290514981437", "3152271290514981463");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " TAB"));
+      initEditorComponent("3152271290514981437", "3152271290514981463");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " TAB"));
     }
   }
 }

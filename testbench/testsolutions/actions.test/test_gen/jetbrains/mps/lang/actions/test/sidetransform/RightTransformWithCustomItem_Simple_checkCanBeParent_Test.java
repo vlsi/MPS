@@ -12,26 +12,23 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class RightTransformWithCustomItem_Simple_checkCanBeParent_Test extends BaseTransformationTest {
-  public RightTransformWithCustomItem_Simple_checkCanBeParent_Test() {
-  }
   @Test
   public void test_RightTransformWithCustomItem_Simple_checkCanBeParent() throws Throwable {
-    this.initTest("${mps_home}", "r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)");
-    this.runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItem_Simple_checkCanBeParent_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)");
+    runTest("jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItem_Simple_checkCanBeParent_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4942308145798660282", "4942308145798660285");
-      this.typeString(" ");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
-      Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
-      this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
+      initEditorComponent("4942308145798660282", "4942308145798660285");
+      typeString(" ");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
+      getEditorComponent().getNodeSubstituteChooser().setVisible(false);
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
     }
   }
 }

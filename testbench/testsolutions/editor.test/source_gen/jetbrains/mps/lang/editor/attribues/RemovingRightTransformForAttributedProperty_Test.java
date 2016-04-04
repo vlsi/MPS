@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemovingRightTransformForAttributedProperty_Test extends BaseTransformationTest {
-  public RemovingRightTransformForAttributedProperty_Test() {
-  }
   @Test
   public void test_RemovingRightTransformForAttributedProperty() throws Throwable {
-    this.initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
-    this.runTest("jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
+    runTest("jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3447504547919057577", "3447504547919057582");
-      this.typeString(" ");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditorComponent("3447504547919057577", "3447504547919057582");
+      typeString(" ");
+      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

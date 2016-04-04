@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class OverridenEditorComponent_Test extends BaseTransformationTest {
-  public OverridenEditorComponent_Test() {
-  }
   @Test
   public void test_OverridenEditorComponent() throws Throwable {
-    this.initTest("${mps_home}", "r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)");
-    this.runTest("jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)");
+    runTest("jetbrains.mps.lang.editor.multiple.editorComponent.tests.OverridenEditorComponent_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6420745394459902384", "6420745394460144872");
-      this.typeString("new");
+      initEditorComponent("6420745394459902384", "6420745394460144872");
+      typeString("new");
     }
   }
 }

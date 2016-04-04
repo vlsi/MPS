@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CreateTransition_Test extends BaseTransformationTest {
-  public CreateTransition_Test() {
-  }
   @Test
   public void test_CreateTransition() throws Throwable {
-    this.initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CreateTransition_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CreateTransition_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8017670888383389087", "8207994269122295113");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditorComponent("8017670888383389087", "8207994269122295113");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

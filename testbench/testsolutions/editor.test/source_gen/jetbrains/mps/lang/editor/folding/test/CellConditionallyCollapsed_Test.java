@@ -9,24 +9,21 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CellConditionallyCollapsed_Test extends BaseTransformationTest {
-  public CellConditionallyCollapsed_Test() {
-  }
   @Test
   public void test_CellConditionallyCollapsed() throws Throwable {
-    this.initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
-    this.runTest("jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
+    runTest("jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("866632705892191819", "866632705892303060");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      initEditorComponent("866632705892191819", "866632705892303060");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
     }
   }
 }

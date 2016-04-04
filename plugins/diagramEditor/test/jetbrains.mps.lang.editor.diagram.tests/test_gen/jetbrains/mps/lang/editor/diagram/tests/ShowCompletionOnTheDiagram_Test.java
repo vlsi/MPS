@@ -11,28 +11,25 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class ShowCompletionOnTheDiagram_Test extends BaseTransformationTest {
-  public ShowCompletionOnTheDiagram_Test() {
-  }
   @Test
   public void test_ShowCompletionOnTheDiagram() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4459951312287475117", "4459951312287475131");
+      initEditorComponent("4459951312287475117", "4459951312287475131");
       {
         int x_2euokt_a0 = 10;
         int y_2euokt_a0 = 10;
-        Component eventTargetComponent_2euokt_a0 = this.processMouseEvent(x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_PRESSED);
-        this.processSecondaryMouseEvent(eventTargetComponent_2euokt_a0, x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_RELEASED);
-        this.processSecondaryMouseEvent(eventTargetComponent_2euokt_a0, x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_CLICKED);
+        Component eventTargetComponent_2euokt_a0 = processMouseEvent(x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_2euokt_a0, x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_2euokt_a0, x_2euokt_a0, y_2euokt_a0, MouseEvent.MOUSE_CLICKED);
       }
-      assert this.getEditorComponent().getNodeSubstituteChooser().isVisible();
+      assert getEditorComponent().getNodeSubstituteChooser().isVisible();
     }
   }
 }

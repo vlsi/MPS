@@ -13,9 +13,10 @@ import jetbrains.mps.ide.java.tests.utility.Utils;
 public class BytecodeVsSourceStubs_Test extends BaseTransformationTest {
   @Test
   public void test_Guava() throws Throwable {
-    this.initTest("${mps_home}", "r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)", false);
-    this.runTest("jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test$TestBody", "test_Guava", true);
+    initTest("${mps_home}", "r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)", false);
+    runTest("jetbrains.mps.ide.java.tests.realCode.BytecodeVsSourceStubs_Test$TestBody", "test_Guava", true);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_Guava() throws Exception {
@@ -23,5 +24,7 @@ public class BytecodeVsSourceStubs_Test extends BaseTransformationTest {
       String guavaPath = homePath + "/plugins/mpsjava/tests/realCodeBase/google-guava/";
       Utils.compareBinAndSrcStubs(guavaPath + "guava-12.0.1.jar", guavaPath + "src");
     }
+
+
   }
 }

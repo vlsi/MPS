@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Comment_CatchBlock_Test extends BaseTransformationTest {
-  public Comment_CatchBlock_Test() {
-  }
   @Test
   public void test_Comment_CatchBlock() throws Throwable {
-    this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Comment_CatchBlock_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
+    runTest("jetbrains.mps.lang.editor.actions.test.Comment_CatchBlock_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2893289111810574067", "2893289111810574076");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
+      initEditorComponent("2893289111810574067", "2893289111810574076");
+      invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }
 }

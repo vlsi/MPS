@@ -11,21 +11,18 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class UnSelectPort_Test extends BaseTransformationTest {
-  public UnSelectPort_Test() {
-  }
   @Test
   public void test_UnSelectPort() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2278461409093334301", "2278461409093334297");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
+      initEditorComponent("2278461409093334301", "2278461409093334297");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
     }
   }
 }

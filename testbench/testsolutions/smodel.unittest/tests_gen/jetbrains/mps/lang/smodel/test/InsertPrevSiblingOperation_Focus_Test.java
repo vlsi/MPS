@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
-  public InsertPrevSiblingOperation_Focus_Test() {
-  }
   @Test
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    this.initTest("${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
-    this.runTest("jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
+    runTest("jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("1835794636205189194", "1835794636205189199");
-      this.typeString("node.add next-sibling");
-      this.typeString("new");
+      initEditorComponent("1835794636205189194", "1835794636205189199");
+      typeString("node.add next-sibling");
+      typeString("new");
     }
   }
 }

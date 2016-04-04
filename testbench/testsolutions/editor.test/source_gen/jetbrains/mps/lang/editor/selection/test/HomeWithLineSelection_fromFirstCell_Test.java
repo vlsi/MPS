@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class HomeWithLineSelection_fromFirstCell_Test extends BaseTransformationTest {
-  public HomeWithLineSelection_fromFirstCell_Test() {
-  }
   @Test
   public void test_HomeWithLineSelection_fromFirstCell() throws Throwable {
-    this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
-    this.runTest("jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    runTest("jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("9080919888312354540", "9080919888312354548");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Home_Action");
+      initEditorComponent("9080919888312354540", "9080919888312354548");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.Home_Action");
     }
   }
 }

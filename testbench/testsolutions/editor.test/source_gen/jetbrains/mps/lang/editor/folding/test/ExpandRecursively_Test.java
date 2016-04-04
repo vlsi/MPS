@@ -9,25 +9,22 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ExpandRecursively_Test extends BaseTransformationTest {
-  public ExpandRecursively_Test() {
-  }
   @Test
   public void test_ExpandRecursively() throws Throwable {
-    this.initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
-    this.runTest("jetbrains.mps.lang.editor.folding.test.ExpandRecursively_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
+    runTest("jetbrains.mps.lang.editor.folding.test.ExpandRecursively_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8594145232740493172", "5611219249779241021");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.ExpandRecursively_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      initEditorComponent("8594145232740493172", "5611219249779241021");
+      invokeAction("jetbrains.mps.ide.editor.actions.ExpandRecursively_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     }
   }
 }

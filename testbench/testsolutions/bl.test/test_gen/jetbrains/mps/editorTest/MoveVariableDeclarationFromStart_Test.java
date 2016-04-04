@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class MoveVariableDeclarationFromStart_Test extends BaseTransformationTest {
-  public MoveVariableDeclarationFromStart_Test() {
-  }
   @Test
   public void test_MoveVariableDeclarationFromStart() throws Throwable {
-    this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.MoveVariableDeclarationFromStart_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
+    runTest("jetbrains.mps.editorTest.MoveVariableDeclarationFromStart_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7386845112408815361", "7386845112408815370");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
+      initEditorComponent("7386845112408815361", "7386845112408815370");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveElementsDown_Action");
     }
   }
 }

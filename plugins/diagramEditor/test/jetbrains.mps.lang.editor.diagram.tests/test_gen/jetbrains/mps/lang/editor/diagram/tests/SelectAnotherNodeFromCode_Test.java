@@ -21,25 +21,22 @@ import jetbrains.jetpad.projectional.view.View;
 
 @MPSLaunch
 public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
-  public SelectAnotherNodeFromCode_Test() {
-  }
   @Test
   public void test_SelectAnotherNodeFromCode() throws Throwable {
-    this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
+    runTest("jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8041297453110598745", "8041297453110598749");
+      initEditorComponent("8041297453110598745", "8041297453110598749");
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              TestBody.this.getEditorComponent().selectNode(SNodeOperations.cast(TestBody.this.getNodeById("8041297453110598748"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize")));
+              getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8041297453110598748"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize")));
             }
           });
         }
@@ -47,9 +44,9 @@ public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
       final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          EditorCell selectedCell = TestBody.this.getEditorComponent().getSelectedCell();
+          EditorCell selectedCell = getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);
-          DiagramCell diagramCell = CellFinderUtil.findChildByClass(TestBody.this.getEditorComponent().getRootCell(), DiagramCell.class, true);
+          DiagramCell diagramCell = CellFinderUtil.findChildByClass(getEditorComponent().getRootCell(), DiagramCell.class, true);
           descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(selectedCell.getSNode());
         }
       });

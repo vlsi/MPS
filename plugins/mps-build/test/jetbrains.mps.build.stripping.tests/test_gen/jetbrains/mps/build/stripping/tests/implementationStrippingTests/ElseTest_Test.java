@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ElseTest_Test extends BaseTransformationTest {
-  public ElseTest_Test() {
-  }
   @Test
   public void test_ElseTest() throws Throwable {
-    this.initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
-    this.runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
+    runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.ElseTest_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5264300948581800040", "5264300948581800044");
-      this.typeString("elsestep");
+      initEditorComponent("5264300948581800040", "5264300948581800044");
+      typeString("elsestep");
     }
   }
 }

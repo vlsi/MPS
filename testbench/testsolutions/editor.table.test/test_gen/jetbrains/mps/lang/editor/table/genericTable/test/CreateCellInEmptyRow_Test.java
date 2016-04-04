@@ -9,22 +9,19 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CreateCellInEmptyRow_Test extends BaseTransformationTest {
-  public CreateCellInEmptyRow_Test() {
-  }
   @Test
   public void test_CreateCellInEmptyRow() throws Throwable {
-    this.initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
-    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.CreateCellInEmptyRow_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
+    runTest("jetbrains.mps.lang.editor.table.genericTable.test.CreateCellInEmptyRow_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8316952525720946219", "8316952525720946242");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
-      this.typeString("cell1");
+      initEditorComponent("8316952525720946219", "8316952525720946242");
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      typeString("cell1");
     }
   }
 }

@@ -42,9 +42,10 @@ import org.apache.log4j.LogManager;
 public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   @Test
   public void test_terminate() throws Throwable {
-    this.initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
-    this.runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody", "test_terminate", false);
+    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+    runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcessTermination_Test$TestBody", "test_terminate", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
@@ -56,6 +57,8 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
       });
       this.startAndTerminate(JUnitUtil.wrapTests(model, Sequence.<String>singleton(testName)));
     }
+
+
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
         final TestRunState runState = new TestRunState(testNodes);
