@@ -109,7 +109,10 @@ public class ChildSubstituteActionsHelper {
       }
 
       // pretend we are going to substitute more concrete concept
-      childConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
+      SNode refinedChildConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
+      if (refinedChildConcept != null) {
+        childConcept = refinedChildConcept;
+      }
     }
 
     List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>();
@@ -161,8 +164,12 @@ public class ChildSubstituteActionsHelper {
     final Set<SAbstractConcept> desc = ConceptDescendantsCache.getInstance().getDescendants(childConcept);
     List<SConcept> concepts = new ArrayList<SConcept>();
     for (SAbstractConcept concept : desc) {
-      if (!(concept instanceof SConcept)) continue;
-      if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
+      if (!(concept instanceof SConcept)) {
+        continue;
+      }
+      if (!SNodeUtil.isDefaultSubstitutable(concept)) {
+        continue;
+      }
 
       if (!importedLangs.contains(concept.getLanguage())) {
         continue;
@@ -238,8 +245,9 @@ public class ChildSubstituteActionsHelper {
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
       if (referentNode == null ||
-          !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference))))
+          !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference)))) {
         continue;
+      }
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
           currentChild, childSetter, smartConcept, smartReference, refDescriptor));
     }
