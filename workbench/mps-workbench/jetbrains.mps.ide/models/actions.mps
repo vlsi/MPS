@@ -192,8 +192,8 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language()" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
+    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -1898,11 +1898,10 @@
         <node concept="3cpWs8" id="hIWP75a" role="3cqZAp">
           <node concept="3cpWsn" id="hIWP75b" role="3cpWs9">
             <property role="TrG5h" value="report" />
-            <property role="3TUv4t" value="false" />
-            <node concept="17QB3L" id="hP3nDRg" role="1tU5fm" />
             <node concept="Xl_RD" id="3z62ISXYEde" role="33vP2m">
               <property role="Xl_RC" value="" />
             </node>
+            <node concept="17QB3L" id="hP3nDRg" role="1tU5fm" />
           </node>
         </node>
         <node concept="3cpWs8" id="6DRNpvPQ2pb" role="3cqZAp">
@@ -22847,7 +22846,7 @@
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="9BnSO" value="143.1" />
-    <property role="9BnSK" value="3.3.4" />
+    <property role="9BnSK" value="3.3.5" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">
     <property role="TrG5h" value="EditGivenNode" />
