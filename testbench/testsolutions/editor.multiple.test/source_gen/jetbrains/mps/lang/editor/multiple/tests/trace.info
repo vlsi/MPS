@@ -162,28 +162,28 @@
       <node id="8961638890955737122" at="29,67,30,111" concept="0" />
       <node id="2112659629360607754" at="30,111,31,155" concept="1" />
       <node id="2112659629360663174" at="35,31,36,47" concept="1" />
-      <node id="2112659629360668203" at="40,9,41,49" concept="1" />
-      <node id="8961638890955733428" at="41,49,42,56" concept="1" />
+      <node id="2112659629360668203" at="38,13,39,53" concept="1" />
+      <node id="8961638890955733428" at="41,9,42,56" concept="1" />
       <node id="2112659629360604446" at="42,56,43,111" concept="0" />
       <node id="2112659629360713217" at="35,0,38,0" concept="2" trace="run#()V" />
       <node id="2112659629360604431" at="16,0,21,0" concept="2" trace="test_InspectorOfCompactPresentation_pushHints#()V" />
       <node id="2112659629360707143" at="33,27,38,13" concept="1" />
-      <node id="8041297453111221043" at="33,0,40,0" concept="2" trace="run#()V" />
-      <node id="8041297453111219303" at="31,155,40,9" concept="1" />
+      <node id="8041297453111221043" at="33,0,41,0" concept="2" trace="run#()V" />
+      <node id="8041297453111219303" at="31,155,41,9" concept="1" />
       <node id="2112659629360604431" at="24,0,45,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="2112659629360713218" at="35,31,36,47" />
       <scope id="2112659629360604431" at="17,80,19,132" />
       <scope id="2112659629360713217" at="35,0,38,0" />
       <scope id="2112659629360604431" at="16,0,21,0" />
-      <scope id="8041297453111221044" at="33,27,38,13" />
-      <scope id="8041297453111221043" at="33,0,40,0" />
+      <scope id="8041297453111221044" at="33,27,39,53" />
+      <scope id="8041297453111221043" at="33,0,41,0" />
       <scope id="2112659629360604431" at="25,51,43,111">
         <var name="component" id="2112659629360607302" />
         <var name="rootCell" id="2112659629360604436" />
       </scope>
       <scope id="2112659629360604431" at="24,0,45,0" />
       <unit id="2112659629360713217" at="34,90,38,11" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$2" />
-      <unit id="8041297453111221043" at="32,39,40,7" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$1" />
+      <unit id="8041297453111221043" at="32,39,41,7" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$1" />
       <unit id="2112659629360604431" at="22,0,46,0" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody" />
       <unit id="2112659629360604431" at="14,0,47,0" name="jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test" />
     </file>
