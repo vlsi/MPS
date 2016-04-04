@@ -77,6 +77,7 @@ public class Mps_Command {
           MpsInstanceLock.releaseLock();
         }
       });
+      return process;
     } else {
       throw new ExecutionException("Only one instance of MPS is allowed to be executed at once.");
     }

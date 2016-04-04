@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class CellInInspector_Test extends BaseTransformationTest {
@@ -24,8 +22,6 @@ public class CellInInspector_Test extends BaseTransformationTest {
       initEditorComponent("9120953217344030692", "9120953217344030713");
       typeString("true");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
-
     }
   }
 }
