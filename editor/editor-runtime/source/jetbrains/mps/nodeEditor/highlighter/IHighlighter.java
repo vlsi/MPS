@@ -35,7 +35,4 @@ public interface IHighlighter {
 
   @NotNull
   HighlighterEditorTracker getEditorTracker();
-
-  @Nullable
-  EditorComponent getInspector();
 }
