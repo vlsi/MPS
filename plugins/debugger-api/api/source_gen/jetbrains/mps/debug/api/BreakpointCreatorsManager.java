@@ -56,7 +56,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     }
     Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
       public Boolean invoke(SNode concept, SNode n) {
-        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)), SNodeOperations.asSConcept(concept));
+        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)), SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept)));
       }
     }, new _FunctionTypes._return_P2_E0<ILocationBreakpoint, SNode, Project>() {
       public ILocationBreakpoint invoke(SNode node, Project project) {
