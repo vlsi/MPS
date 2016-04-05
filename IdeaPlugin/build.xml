@@ -236,6 +236,9 @@
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
         </fileset>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-testing">
+          <include name="**/*.jar"/>
+        </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>
       <test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>
