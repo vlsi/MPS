@@ -11,22 +11,19 @@ import org.apache.log4j.Priority;
 
 @MPSLaunch
 public class ChildWithDirectCycle_card1n_Test extends BaseTransformationTest {
-  public ChildWithDirectCycle_card1n_Test() {
-  }
   @Test
   public void test_ChildWithDirectCycle_card1n() throws Throwable {
-    this.initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
-    this.runTest("jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
+    runTest("jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8705753908477435261", "8705753908477435267");
-      this.typeString("card1n_direct_");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditorComponent("8705753908477435261", "8705753908477435267");
+      typeString("card1n_direct_");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {

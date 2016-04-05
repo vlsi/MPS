@@ -9,21 +9,18 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SelectPrevious_InChildListWithFilter_Test extends BaseTransformationTest {
-  public SelectPrevious_InChildListWithFilter_Test() {
-  }
   @Test
   public void test_SelectPrevious_InChildListWithFilter() throws Throwable {
-    this.initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
-    this.runTest("jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test$TestBody", "testMethod", false);
+    initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    runTest("jetbrains.mps.lang.editor.selection.test.SelectPrevious_InChildListWithFilter_Test$TestBody", "testMethod", false);
   }
+
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public TestBody() {
-    }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6132666365585639800", "6132666365585680698");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
+      initEditorComponent("6132666365585639800", "6132666365585680698");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectPrevious_Action");
     }
   }
 }

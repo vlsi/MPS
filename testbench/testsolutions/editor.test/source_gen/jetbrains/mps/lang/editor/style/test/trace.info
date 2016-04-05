@@ -202,6 +202,23 @@
       <unit id="23293207023291586" at="18,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/6519503956375921847">
+    <file name="StyleOfSingleRoleChild_Test.java">
+      <node id="6519503956375921847" at="13,62,14,108" concept="0" />
+      <node id="6519503956375921847" at="14,108,15,110" concept="0" />
+      <node id="6519503956375921847" at="21,51,22,72" concept="0" />
+      <node id="6519503956376023409" at="22,72,23,69" concept="0" />
+      <node id="6519503956376023576" at="23,69,24,67" concept="0" />
+      <node id="6519503956375921847" at="12,0,17,0" concept="1" trace="test_StyleOfSingleRoleChild#()V" />
+      <node id="6519503956375921847" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6519503956375921847" at="13,62,15,110" />
+      <scope id="6519503956375921847" at="21,51,24,67" />
+      <scope id="6519503956375921847" at="12,0,17,0" />
+      <scope id="6519503956375921847" at="20,0,26,0" />
+      <unit id="6519503956375921847" at="18,0,27,0" name="jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test$TestBody" />
+      <unit id="6519503956375921847" at="10,0,28,0" name="jetbrains.mps.lang.editor.style.test.StyleOfSingleRoleChild_Test" />
+    </file>
+  </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/6609104295326585615">
     <file name="StyleAttributeInheritanceTest_Test.java">
       <node id="6609104295326585615" at="21,69,22,108" concept="0" />

@@ -25348,6 +25348,16 @@
         </node>
       </node>
     </node>
+    <node concept="PiPfp" id="3L2iO8sIVea" role="3989C9">
+      <property role="TrG5h" value="test.plugin" />
+      <node concept="25yagZ" id="3L2iO8sIVfH" role="PiKyV">
+        <node concept="3yqFpY" id="3L2iO8sIVfN" role="25yagT">
+          <node concept="3yqFqT" id="3L2iO8sIVfT" role="3yqFpW">
+            <ref role="3yqFr6" node="ymnOULAZ8H" resolve="mps-testing" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13uUGR" id="63lu3g6BW1T" role="1l3spa">
       <ref role="13uUGO" node="6eCuTcwOnJO" resolve="IDEA" />
       <node concept="398BVA" id="63lu3g6BW1U" role="13uUGP">
