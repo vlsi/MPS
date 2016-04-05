@@ -81,6 +81,7 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
         <reference id="1182955020723" name="classConcept" index="1HBi2w" />
       </concept>
@@ -711,6 +712,28 @@
   <node concept="312cEu" id="6h71hRDS6Lm">
     <property role="TrG5h" value="IntentionsDescriptor" />
     <property role="1EXbeo" value="true" />
+    <node concept="Wx3nA" id="5DXwPOVzcc" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="EMPTY_ARRAY" />
+      <node concept="3Tm6S6" id="5DXwPOVzc4" role="1B3o_S" />
+      <node concept="10Q1$e" id="5DXwPOVzc5" role="1tU5fm">
+        <node concept="3uibUv" id="5DXwPOVzc6" role="10Q1$1">
+          <ref role="3uigEE" to="91lp:~IntentionFactory" resolve="IntentionFactory" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="5DXwPOVzc7" role="33vP2m">
+        <node concept="3$_iS1" id="5DXwPOVzc8" role="2ShVmc">
+          <node concept="3uibUv" id="5DXwPOVzc9" role="3$_nBY">
+            <ref role="3uigEE" to="91lp:~IntentionFactory" resolve="IntentionFactory" />
+          </node>
+          <node concept="3$GHV9" id="5DXwPOVzca" role="3$GQph">
+            <node concept="3cmrfG" id="5DXwPOVzcb" role="3$I4v7">
+              <property role="3cmrfH" value="0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="1CTTqHRaU6n" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -754,43 +777,35 @@
         </node>
       </node>
       <node concept="3clFbS" id="1M8MwyY7Ip" role="3clF47">
-        <node concept="3cpWs8" id="1CTTqHRba3g" role="3cqZAp">
-          <node concept="3cpWsn" id="1CTTqHRba3h" role="3cpWs9">
-            <property role="TrG5h" value="cached" />
-            <node concept="10Q1$e" id="1CTTqHRba3c" role="1tU5fm">
-              <node concept="3uibUv" id="1CTTqHRba3f" role="10Q1$1">
-                <ref role="3uigEE" to="91lp:~IntentionFactory" resolve="IntentionFactory" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1CTTqHRba3i" role="33vP2m">
-              <node concept="37vLTw" id="1CTTqHRba3j" role="2Oq$k0">
-                <ref role="3cqZAo" node="1CTTqHRaU6n" resolve="myCached" />
-              </node>
-              <node concept="liA8E" id="1CTTqHRba3k" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                <node concept="37vLTw" id="1CTTqHRba3l" role="37wK5m">
-                  <ref role="3cqZAo" node="1M8MwyY7Wf" resolve="concept" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="1CTTqHRb6Rp" role="3cqZAp">
           <node concept="3clFbS" id="1CTTqHRb6Rr" role="3clFbx">
             <node concept="3cpWs6" id="1CTTqHRb9Zp" role="3cqZAp">
               <node concept="2YIFZM" id="1CTTqHRbA9$" role="3cqZAk">
                 <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                 <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                <node concept="37vLTw" id="1CTTqHRbAax" role="37wK5m">
-                  <ref role="3cqZAo" node="1CTTqHRba3h" resolve="cached" />
+                <node concept="2OqwBi" id="5DXwPOVxSq" role="37wK5m">
+                  <node concept="37vLTw" id="5DXwPOVxSr" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1CTTqHRaU6n" resolve="myCached" />
+                  </node>
+                  <node concept="liA8E" id="5DXwPOVxSs" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <node concept="37vLTw" id="5DXwPOVxSt" role="37wK5m">
+                      <ref role="3cqZAo" node="1M8MwyY7Wf" resolve="concept" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3y3z36" id="1CTTqHRb9FZ" role="3clFbw">
-            <node concept="10Nm6u" id="1CTTqHRb9YG" role="3uHU7w" />
-            <node concept="37vLTw" id="1CTTqHRba3m" role="3uHU7B">
-              <ref role="3cqZAo" node="1CTTqHRba3h" resolve="cached" />
+          <node concept="2OqwBi" id="5DXwPOVvKr" role="3clFbw">
+            <node concept="37vLTw" id="5DXwPOVupI" role="2Oq$k0">
+              <ref role="3cqZAo" node="1CTTqHRaU6n" resolve="myCached" />
+            </node>
+            <node concept="liA8E" id="5DXwPOVxzV" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+              <node concept="37vLTw" id="5DXwPOVxHL" role="37wK5m">
+                <ref role="3cqZAo" node="1M8MwyY7Wf" resolve="concept" />
+              </node>
             </node>
           </node>
         </node>
@@ -803,7 +818,9 @@
                 <ref role="3uigEE" to="91lp:~IntentionFactory" resolve="IntentionFactory" />
               </node>
             </node>
-            <node concept="10Nm6u" id="6hME9WD3KKe" role="33vP2m" />
+            <node concept="37vLTw" id="5DXwPOVzcg" role="33vP2m">
+              <ref role="3cqZAo" node="5DXwPOVzcc" resolve="EMPTY_ARRAY" />
+            </node>
           </node>
         </node>
         <node concept="1_3QMa" id="1CTTqHRaKYf" role="3cqZAp">
