@@ -136,8 +136,7 @@ public class IntelligentNodeMover {
         return true;
       }
     });
-    myEditorContext.getRepository().getModelAccess().runReadAction(computeIsValid);
-    return computeIsValid.getResult();
+    return computeIsValid.runRead(myEditorContext.getRepository().getModelAccess());
   }
 
   @NotNull
@@ -340,8 +339,7 @@ public class IntelligentNodeMover {
         return null;
       }
     });
-    editorContext.getRepository().getModelAccess().runReadAction(findNode);
-    return findNode.getResult();
+    return findNode.runRead(editorContext.getRepository().getModelAccess());
   }
   private static SContainmentLink getNodesContainmentLink(@NotNull SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))) {
