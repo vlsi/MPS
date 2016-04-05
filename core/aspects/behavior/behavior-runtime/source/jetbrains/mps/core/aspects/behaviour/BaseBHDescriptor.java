@@ -458,7 +458,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
 
     public void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
-      assert myConcept.equals(node.getConcept()) : "myConcept=" + myConcept + "; node.concept=" + node.getConcept();
+      //Qualified name is used just because we have instances of interfaces, and instance.getConcept() returns SConcept.
+      //This should be considered a hack and removed when possible
+      assert myConcept.getQualifiedName().equals(node.getConcept().getQualifiedName()) : "myConcept=" + myConcept + "; node.concept=" + node.getConcept();
       for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
         BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
         if (ancestorDescriptor instanceof BaseBHDescriptor) {
