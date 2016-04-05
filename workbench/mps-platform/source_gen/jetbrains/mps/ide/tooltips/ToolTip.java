@@ -93,10 +93,7 @@ public class ToolTip {
       if (rect.y + rect.height < location.y + getHeight()) {
         location.y = Math.max(0, rect.y + rect.height - getHeight());
       }
-      // cast to Component eliminates out of search scope error in Java8 vs Java6 
-      //  setLocation() has got implementation in Window class since Java7 
-      Component this_ = this;
-      this_.setLocation(location);
+      setLocation(location);
       addListeners();
     }
     private void addListeners() {
