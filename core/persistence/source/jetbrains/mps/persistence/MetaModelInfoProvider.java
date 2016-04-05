@@ -16,11 +16,14 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -36,6 +39,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.HashMap;
@@ -334,23 +338,18 @@ public interface MetaModelInfoProvider {
         return null;
       }
       // FIXME move stub concept id to ConceptDescriptor
-      String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
-      String langName = NameUtil.namespaceFromConceptFQName(stubFQName);
-      for (SLanguage l : LanguageRegistry.getInstance().getAllLanguages()) {
-        if (!l.getQualifiedName().equals(langName)) {
-          continue;
-        }
+      final String stubFQName = ConceptInfo.constructStubConceptName(originFQName);
 
-        for (SAbstractConcept c : l.getConcepts()) {
-          if (c.getQualifiedName().equals(stubFQName)) {
-            ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(c);
-            if (cd instanceof IllegalConceptDescriptor) return null;
-            return cd.getId();
-          }
+      final SConcept[] concept = new SConcept[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          //no instances of interfaces allowed
+          concept[0] = MetaAdapterFactoryByName.getConcept(stubFQName);
         }
-        return null;
-      }
-      return null;
+      });
+      if (!(concept[0].isValid())) return null;
+      return MetaIdHelper.getConcept(concept[0]);
     }
 
     @Override
