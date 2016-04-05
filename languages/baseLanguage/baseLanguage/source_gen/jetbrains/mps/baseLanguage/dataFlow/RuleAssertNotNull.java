@@ -17,11 +17,9 @@ public class RuleAssertNotNull implements DataFlowConstructor {
   public boolean isApplicable(SNode node) {
     return SNodeOperations.getConcept(node).equals(getApplicableConcept()) && myPattern.match(node);
   }
-
   public SAbstractConcept getApplicableConcept() {
     return myPattern.getConcept();
   }
-
   public void performActions(Program program, SNode node) {
     myPattern.performActions(program);
   }
