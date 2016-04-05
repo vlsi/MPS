@@ -44,6 +44,7 @@ import java.util.Set;
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
  */
+
 /**
  * TODO
  * Features:
@@ -66,6 +67,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   /**
    * Intended to be executed during concept behavior construction
+   *
    * @see BehaviorRegistry#getBHDescriptor
    */
   public synchronized void init() {
@@ -167,7 +169,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
           if (javaType.isArray()) {
             Class<?> componentType = javaType.getComponentType();
             for (int i = 0; i < parameters.length; ++i) {
-              if (parameters[i] == null) continue;
+              if (parameters[i] == null) {
+                continue;
+              }
               if (!componentType.isAssignableFrom(parameters[i].getClass())) {
                 return parameters;
               }
@@ -179,6 +183,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       return parameters;
     }
   }
+
   /**
    * in the case of the last vararg argument converts all arguments into arguments + separate array for the vararg arguments
    * also used against a single null in the varargs arguments
@@ -202,7 +207,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   public void initNode(@NotNull SNode node) {
     SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
     Object[] emptyParameters = new Object[0];
-    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor, getParametersArray(Collections.<SParameter>emptyList(), emptyParameters));
+    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, defaultConstructor,
+        getParametersArray(Collections.<SParameter>emptyList(), emptyParameters));
   }
 
   @Override
@@ -405,66 +411,66 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   public abstract List<SMethod<?>> getDeclaredMethods();
 
   /**
-   * @generated : switch by constructor; invoking without calling supers
-   * @param node -- the new node to initialize
+   * @param node        -- the new node to initialize
    * @param constructor -- constructor to invoke
-   * @param parameters -- parameters to pass to the constructor
+   * @param parameters  -- parameters to pass to the constructor
+   * @generated : switch by constructor; invoking without calling supers
    */
   protected abstract void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters);
 
   /**
    * invokes a method without dynamic resolution
    *
-   * @generated : switch by the method; direct invocation in each case
    * @param parameters is an array of arguments.
    *                   NB: in the case of the last var arg parameter, the last array member is actually packed into another array
    * @throws BHMethodNotFoundException if the method has not been found
+   * @generated : switch by the method; direct invocation in each case
    **/
   protected abstract <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters);
 
   /**
    * invokes a static method without dynamic resolution
    *
-   * @generated : switch by the method; direct invocation in each case
    * @throws BHMethodNotFoundException if the method has not been found
+   * @generated : switch by the method; direct invocation in each case
    **/
-    protected abstract <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters);
+  protected abstract <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters);
 
-    /**
-     * @return true iff the method exists (constructor is not a method here)
-     **/
-    private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
-                                                                          return getDeclaredMethods().contains(method);
-                                                                                                                                                                                             }
+  /**
+   * @return true iff the method exists (constructor is not a method here)
+   **/
+  private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
+    return getDeclaredMethods().contains(method);
+  }
 
-    @Override
-    public String toString() {
-                                 return getConcept() + " BHDescriptor";
-                                                                                                    }
+  @Override
+  public String toString() {
+    return getConcept() + " BHDescriptor";
+  }
 
-    private final class ConstructionHandler {
-      private final AncestorCache myAncestorCache;
-      private final SAbstractConcept myConcept;
+  private final class ConstructionHandler {
+    private final AncestorCache myAncestorCache;
+    private final SAbstractConcept myConcept;
 
-      public ConstructionHandler(AncestorCache ancestorCache, SAbstractConcept concept) {
-                                                                                          myAncestorCache = ancestorCache;
-                                                                                          myConcept = concept;
-                                                                                          }
+    public ConstructionHandler(AncestorCache ancestorCache, SAbstractConcept concept) {
+      myAncestorCache = ancestorCache;
+      myConcept = concept;
+    }
 
-      public void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
-        assert myConcept.equals(node.getConcept());
-        for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
-          BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
-          if (ancestorDescriptor instanceof BaseBHDescriptor) {
-            ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor, parameters);
-          }
+    public void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
+      assert myConcept.equals(node.getConcept()) : "myConcept=" + myConcept + "; node.concept=" + node.getConcept();
+      for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
+        BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
+        if (ancestorDescriptor instanceof BaseBHDescriptor) {
+          ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor, parameters);
         }
       }
     }
+  }
 
-    private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
-      public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
-        super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
+  private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
+    public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
+      super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
     }
   }
 
