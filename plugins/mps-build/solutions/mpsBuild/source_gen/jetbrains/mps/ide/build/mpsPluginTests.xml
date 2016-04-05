@@ -40,6 +40,10 @@
     <fileset file="${artifacts.IDEA}/plugins/devkit/lib/devkit-jps-plugin.jar" />
   </path>
   
+  <path id="path.java.library.test.plugin">
+    <fileset dir="${artifacts.mpsPlugin}/mps-testing" includes="*.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes">

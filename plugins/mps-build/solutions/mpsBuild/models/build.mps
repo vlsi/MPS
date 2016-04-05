@@ -28652,25 +28652,6 @@
             </node>
           </node>
         </node>
-        <node concept="398223" id="45oiMWk3w9x" role="39821P">
-          <node concept="3_J27D" id="45oiMWk3w9z" role="Nbhlr">
-            <node concept="3Mxwew" id="45oiMWk3w9R" role="3MwsjC">
-              <property role="3MwjfP" value="languages" />
-            </node>
-          </node>
-          <node concept="L2wRC" id="45oiMWk3wl5" role="39821P">
-            <ref role="L2wRA" node="ymnOULAU1W" resolve="jetbrains.mps.lang.editor.editorTest" />
-          </node>
-          <node concept="L2wRC" id="45oiMWk3wxa" role="39821P">
-            <ref role="L2wRA" node="ymnOULAU0H" resolve="jetbrains.mps.lang.test" />
-          </node>
-          <node concept="L2wRC" id="45oiMWk3wHi" role="39821P">
-            <ref role="L2wRA" node="ymnOULAU2c" resolve="jetbrains.mps.lang.smodelTests" />
-          </node>
-          <node concept="L2wRC" id="16OlLMGkAA7" role="39821P">
-            <ref role="L2wRA" node="6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="10PD9b" id="ymnOULALNk" role="10PD9s" />
