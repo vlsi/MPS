@@ -44,29 +44,6 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public ConceptDescriptor getDescriptor(SConceptId id) {
-    ensureInitialized();
-    ConceptDescriptor res = myDescriptors.get(id);
-    if (res != null) {
-      return res;
-    }
-
-    String cname = "<BaseStructureAspectDescriptor: this name must not be used>";
-
-    ConceptDescriptor cd = getDescriptor(MetaAdapterFactory.getConcept(id, cname));
-    if (cd != null) {
-      return cd;
-    }
-
-    return getDescriptor(MetaAdapterFactory.getInterfaceConcept(id, cname));
-  }
-
-  @Override
-  public ConceptDescriptor getDescriptor(SAbstractConcept concept) {
-    return getDescriptor(MetaIdHelper.getConcept(concept));
-  }
-
   protected void ensureInitialized() {
     if (myDescriptors != null) {
       return;

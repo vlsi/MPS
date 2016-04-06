@@ -33,11 +33,7 @@ import java.util.Collection;
  * @see jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor
  */
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
-  @Deprecated
-  @ToRemove(version = 3.4)
   ConceptDescriptor getDescriptor(SConceptId id);
-
-  ConceptDescriptor getDescriptor(SAbstractConcept concept);
 
   Collection<ConceptDescriptor> getDescriptors();
 }
