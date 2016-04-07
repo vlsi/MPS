@@ -44,6 +44,12 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
     throw new UnsupportedOperationException();
   }
 
+  @Override
+  public ConceptDescriptor getDescriptor(SConceptId id) {
+    ensureInitialized();
+    return myDescriptors.get(id);
+  }
+
   protected void ensureInitialized() {
     if (myDescriptors != null) {
       return;
