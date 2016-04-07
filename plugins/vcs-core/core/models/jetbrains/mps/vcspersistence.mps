@@ -4,6 +4,10 @@
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
   </languages>
   <imports>
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -246,6 +250,18 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
+      </concept>
+    </language>
+    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
+      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
+      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
+      </concept>
+      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -936,22 +952,76 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4BapoMDsKE3" role="3cqZAp">
-          <node concept="1rXfSq" id="4BapoMDsKE4" role="3clFbG">
-            <ref role="37wK5l" node="4BapoMDjgQK" resolve="parseAndHandleExceptions" />
-            <node concept="37vLTw" id="4BapoMDsKEa" role="37wK5m">
-              <ref role="3cqZAo" node="4BapoMDjgET" resolve="source" />
+        <node concept="3cpWs8" id="1VSGHIpOJvD" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOJvE" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpOJvF" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
             </node>
-            <node concept="2ShNRf" id="4BapoMDsKE6" role="37wK5m">
-              <node concept="1pGfFk" id="4BapoMDsKE7" role="2ShVmc">
-                <ref role="37wK5l" node="4BapoMDjg$6" resolve="VCSPersistenceSupport.MyDescriptorHandler" />
-                <node concept="37vLTw" id="4BapoMDsKEb" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgEX" resolve="result" />
+            <node concept="10Nm6u" id="1VSGHIpOJws" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="1VSGHIpOEik" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpOEim" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpOEio" role="1bW5cS">
+              <node concept="SfApY" id="1VSGHIpOJtz" role="3cqZAp">
+                <node concept="3clFbS" id="1VSGHIpOJt_" role="SfCbr">
+                  <node concept="3clFbF" id="4BapoMDsKE3" role="3cqZAp">
+                    <node concept="1rXfSq" id="4BapoMDsKE4" role="3clFbG">
+                      <ref role="37wK5l" node="4BapoMDjgQK" resolve="parseAndHandleExceptions" />
+                      <node concept="37vLTw" id="4BapoMDsKEa" role="37wK5m">
+                        <ref role="3cqZAo" node="4BapoMDjgET" resolve="source" />
+                      </node>
+                      <node concept="2ShNRf" id="4BapoMDsKE6" role="37wK5m">
+                        <node concept="1pGfFk" id="4BapoMDsKE7" role="2ShVmc">
+                          <ref role="37wK5l" node="4BapoMDjg$6" resolve="VCSPersistenceSupport.MyDescriptorHandler" />
+                          <node concept="37vLTw" id="4BapoMDsKEb" role="37wK5m">
+                            <ref role="3cqZAo" node="4BapoMDjgEX" resolve="result" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="4BapoMDsKE9" role="37wK5m">
+                        <property role="Xl_RC" value="model descriptor" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="TDmWw" id="1VSGHIpOJtA" role="TEbGg">
+                  <node concept="3cpWsn" id="1VSGHIpOJtC" role="TDEfY">
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="1VSGHIpOJu2" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="1VSGHIpOJtG" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpOJxA" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpOJGC" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpOJJM" role="37vLTx">
+                          <ref role="3cqZAo" node="1VSGHIpOJtC" resolve="e" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpOJx_" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpOJvE" resolve="ex" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
-            <node concept="Xl_RD" id="4BapoMDsKE9" role="37wK5m">
-              <property role="Xl_RC" value="model descriptor" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1VSGHIpOJKL" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpOJKN" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpOK0M" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpOK18" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpOJvE" resolve="ex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1VSGHIpOK02" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpOK0p" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpOJLD" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpOJvE" resolve="ex" />
             </node>
           </node>
         </node>
@@ -999,121 +1069,140 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4BapoMDjgFj" role="3cqZAp">
-          <node concept="1rXfSq" id="4BapoMDjgFk" role="3clFbG">
-            <ref role="37wK5l" node="4BapoMDjgDP" resolve="loadDescriptor" />
-            <node concept="37vLTw" id="4BapoMDjgFl" role="37wK5m">
-              <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
+        <node concept="3cpWs8" id="1VSGHIpOKAN" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOKAO" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpOKAP" role="1tU5fm">
+              <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
             </node>
-            <node concept="37vLTw" id="4BapoMDjgFm" role="37wK5m">
-              <ref role="3cqZAo" node="4BapoMDjgFb" resolve="source" />
-            </node>
+            <node concept="10Nm6u" id="1VSGHIpOKC9" role="33vP2m" />
           </node>
         </node>
-        <node concept="3SKdUt" id="4BapoMDjgTr" role="3cqZAp">
-          <node concept="3SKdUq" id="4BapoMDjgTq" role="3SKWNk">
-            <property role="3SKdUp" value="for old persistences try to load header from metadata" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4BapoMDjgFn" role="3cqZAp">
-          <node concept="1Wc70l" id="4BapoMDjgFo" role="3clFbw">
-            <node concept="3eOVzh" id="4BapoMDjgFp" role="3uHU7B">
-              <node concept="2OqwBi" id="4BapoMDjlcI" role="3uHU7B">
-                <node concept="37vLTw" id="4BapoMDjlcH" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
-                </node>
-                <node concept="liA8E" id="4BapoMDjlcJ" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelHeader.getPersistenceVersion():int" resolve="getPersistenceVersion" />
-                </node>
-              </node>
-              <node concept="3cmrfG" id="4BapoMDjgFr" role="3uHU7w">
-                <property role="3cmrfH" value="7" />
-              </node>
-            </node>
-            <node concept="2ZW3vV" id="4BapoMDjgFu" role="3uHU7w">
-              <node concept="37vLTw" id="4BapoMDjgFs" role="2ZW6bz">
-                <ref role="3cqZAo" node="4BapoMDjgFb" resolve="source" />
-              </node>
-              <node concept="3uibUv" id="4BapoMDjgFt" role="2ZW6by">
-                <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="4BapoMDjgFw" role="3clFbx">
-            <node concept="3cpWs8" id="4BapoMDjgFy" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgFx" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="metadata" />
-                <node concept="3uibUv" id="4BapoMDjgFz" role="1tU5fm">
-                  <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-                  <node concept="3uibUv" id="4BapoMDjgF$" role="11_B2D">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <node concept="1QHqEK" id="1VSGHIpOK5F" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpOK5H" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpOK5J" role="1bW5cS">
+              <node concept="SfApY" id="1VSGHIpOKCY" role="3cqZAp">
+                <node concept="3clFbS" id="1VSGHIpOKD0" role="SfCbr">
+                  <node concept="3clFbF" id="4BapoMDjgFj" role="3cqZAp">
+                    <node concept="1rXfSq" id="4BapoMDjgFk" role="3clFbG">
+                      <ref role="37wK5l" node="4BapoMDjgDP" resolve="loadDescriptor" />
+                      <node concept="37vLTw" id="4BapoMDjgFl" role="37wK5m">
+                        <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
+                      </node>
+                      <node concept="37vLTw" id="4BapoMDjgFm" role="37wK5m">
+                        <ref role="3cqZAo" node="4BapoMDjgFb" resolve="source" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="3uibUv" id="4BapoMDjgF_" role="11_B2D">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                  <node concept="3SKdUt" id="4BapoMDjgTr" role="3cqZAp">
+                    <node concept="3SKdUq" id="4BapoMDjgTq" role="3SKWNk">
+                      <property role="3SKdUp" value="for old persistences try to load header from metadata" />
+                    </node>
                   </node>
-                </node>
-                <node concept="1rXfSq" id="4BapoMDjgFA" role="33vP2m">
-                  <ref role="37wK5l" node="4BapoMDjgPZ" resolve="loadMetadata" />
-                  <node concept="2OqwBi" id="4BapoMDjgFB" role="37wK5m">
-                    <node concept="1eOMI4" id="4BapoMDjgFF" role="2Oq$k0">
-                      <node concept="10QFUN" id="4BapoMDjgFC" role="1eOMHV">
-                        <node concept="37vLTw" id="4BapoMDjgFD" role="10QFUP">
+                  <node concept="3clFbJ" id="4BapoMDjgFn" role="3cqZAp">
+                    <node concept="1Wc70l" id="4BapoMDjgFo" role="3clFbw">
+                      <node concept="3eOVzh" id="4BapoMDjgFp" role="3uHU7B">
+                        <node concept="2OqwBi" id="4BapoMDjlcI" role="3uHU7B">
+                          <node concept="37vLTw" id="4BapoMDjlcH" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
+                          </node>
+                          <node concept="liA8E" id="4BapoMDjlcJ" role="2OqNvi">
+                            <ref role="37wK5l" to="w1kc:~SModelHeader.getPersistenceVersion():int" resolve="getPersistenceVersion" />
+                          </node>
+                        </node>
+                        <node concept="3cmrfG" id="4BapoMDjgFr" role="3uHU7w">
+                          <property role="3cmrfH" value="7" />
+                        </node>
+                      </node>
+                      <node concept="2ZW3vV" id="4BapoMDjgFu" role="3uHU7w">
+                        <node concept="37vLTw" id="4BapoMDjgFs" role="2ZW6bz">
                           <ref role="3cqZAo" node="4BapoMDjgFb" resolve="source" />
                         </node>
-                        <node concept="3uibUv" id="4BapoMDjgFE" role="10QFUM">
+                        <node concept="3uibUv" id="4BapoMDjgFt" role="2ZW6by">
                           <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="4BapoMDjgFG" role="2OqNvi">
-                      <ref role="37wK5l" to="ends:~FileDataSource.getFile():jetbrains.mps.vfs.IFile" resolve="getFile" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="4BapoMDjgFH" role="3cqZAp">
-              <node concept="3y3z36" id="4BapoMDjgFI" role="3clFbw">
-                <node concept="37vLTw" id="4BapoMDjgFJ" role="3uHU7B">
-                  <ref role="3cqZAo" node="4BapoMDjgFx" resolve="metadata" />
-                </node>
-                <node concept="10Nm6u" id="4BapoMDjgFK" role="3uHU7w" />
-              </node>
-              <node concept="3clFbS" id="4BapoMDjgFM" role="3clFbx">
-                <node concept="3clFbJ" id="4BapoMDjgFN" role="3cqZAp">
-                  <node concept="2OqwBi" id="4BapoMDjlcN" role="3clFbw">
-                    <node concept="37vLTw" id="4BapoMDjlcM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4BapoMDjgFx" resolve="metadata" />
-                    </node>
-                    <node concept="liA8E" id="4BapoMDjlcO" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
-                      <node concept="10M0yZ" id="4BapoMDjGtF" role="37wK5m">
-                        <ref role="1PxDUh" to="w1kc:~SModelHeader" resolve="SModelHeader" />
-                        <ref role="3cqZAo" to="w1kc:~SModelHeader.DO_NOT_GENERATE" resolve="DO_NOT_GENERATE" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="4BapoMDjgFR" role="3clFbx">
-                    <node concept="3clFbF" id="4BapoMDjgFS" role="3cqZAp">
-                      <node concept="2OqwBi" id="4BapoMDjlcV" role="3clFbG">
-                        <node concept="37vLTw" id="4BapoMDjlcU" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
+                    <node concept="3clFbS" id="4BapoMDjgFw" role="3clFbx">
+                      <node concept="3cpWs8" id="4BapoMDjgFy" role="3cqZAp">
+                        <node concept="3cpWsn" id="4BapoMDjgFx" role="3cpWs9">
+                          <property role="3TUv4t" value="false" />
+                          <property role="TrG5h" value="metadata" />
+                          <node concept="3uibUv" id="4BapoMDjgFz" role="1tU5fm">
+                            <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+                            <node concept="3uibUv" id="4BapoMDjgF$" role="11_B2D">
+                              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                            </node>
+                            <node concept="3uibUv" id="4BapoMDjgF_" role="11_B2D">
+                              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                            </node>
+                          </node>
+                          <node concept="1rXfSq" id="4BapoMDjgFA" role="33vP2m">
+                            <ref role="37wK5l" node="4BapoMDjgPZ" resolve="loadMetadata" />
+                            <node concept="2OqwBi" id="4BapoMDjgFB" role="37wK5m">
+                              <node concept="1eOMI4" id="4BapoMDjgFF" role="2Oq$k0">
+                                <node concept="10QFUN" id="4BapoMDjgFC" role="1eOMHV">
+                                  <node concept="37vLTw" id="4BapoMDjgFD" role="10QFUP">
+                                    <ref role="3cqZAo" node="4BapoMDjgFb" resolve="source" />
+                                  </node>
+                                  <node concept="3uibUv" id="4BapoMDjgFE" role="10QFUM">
+                                    <ref role="3uigEE" to="ends:~FileDataSource" resolve="FileDataSource" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="4BapoMDjgFG" role="2OqNvi">
+                                <ref role="37wK5l" to="ends:~FileDataSource.getFile():jetbrains.mps.vfs.IFile" resolve="getFile" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
-                        <node concept="liA8E" id="4BapoMDjlcW" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~SModelHeader.setDoNotGenerate(boolean):void" resolve="setDoNotGenerate" />
-                          <node concept="2YIFZM" id="4BapoMDjlcZ" role="37wK5m">
-                            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                            <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-                            <node concept="2OqwBi" id="4BapoMDjld3" role="37wK5m">
-                              <node concept="37vLTw" id="4BapoMDjld2" role="2Oq$k0">
+                      </node>
+                      <node concept="3clFbJ" id="4BapoMDjgFH" role="3cqZAp">
+                        <node concept="3y3z36" id="4BapoMDjgFI" role="3clFbw">
+                          <node concept="37vLTw" id="4BapoMDjgFJ" role="3uHU7B">
+                            <ref role="3cqZAo" node="4BapoMDjgFx" resolve="metadata" />
+                          </node>
+                          <node concept="10Nm6u" id="4BapoMDjgFK" role="3uHU7w" />
+                        </node>
+                        <node concept="3clFbS" id="4BapoMDjgFM" role="3clFbx">
+                          <node concept="3clFbJ" id="4BapoMDjgFN" role="3cqZAp">
+                            <node concept="2OqwBi" id="4BapoMDjlcN" role="3clFbw">
+                              <node concept="37vLTw" id="4BapoMDjlcM" role="2Oq$k0">
                                 <ref role="3cqZAo" node="4BapoMDjgFx" resolve="metadata" />
                               </node>
-                              <node concept="liA8E" id="4BapoMDjld4" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~Map.remove(java.lang.Object):java.lang.Object" resolve="remove" />
-                                <node concept="10M0yZ" id="4BapoMDjGtG" role="37wK5m">
+                              <node concept="liA8E" id="4BapoMDjlcO" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+                                <node concept="10M0yZ" id="4BapoMDjGtF" role="37wK5m">
                                   <ref role="1PxDUh" to="w1kc:~SModelHeader" resolve="SModelHeader" />
                                   <ref role="3cqZAo" to="w1kc:~SModelHeader.DO_NOT_GENERATE" resolve="DO_NOT_GENERATE" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbS" id="4BapoMDjgFR" role="3clFbx">
+                              <node concept="3clFbF" id="4BapoMDjgFS" role="3cqZAp">
+                                <node concept="2OqwBi" id="4BapoMDjlcV" role="3clFbG">
+                                  <node concept="37vLTw" id="4BapoMDjlcU" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4BapoMDjgFf" resolve="result" />
+                                  </node>
+                                  <node concept="liA8E" id="4BapoMDjlcW" role="2OqNvi">
+                                    <ref role="37wK5l" to="w1kc:~SModelHeader.setDoNotGenerate(boolean):void" resolve="setDoNotGenerate" />
+                                    <node concept="2YIFZM" id="4BapoMDjlcZ" role="37wK5m">
+                                      <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
+                                      <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                                      <node concept="2OqwBi" id="4BapoMDjld3" role="37wK5m">
+                                        <node concept="37vLTw" id="4BapoMDjld2" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="4BapoMDjgFx" resolve="metadata" />
+                                        </node>
+                                        <node concept="liA8E" id="4BapoMDjld4" role="2OqNvi">
+                                          <ref role="37wK5l" to="33ny:~Map.remove(java.lang.Object):java.lang.Object" resolve="remove" />
+                                          <node concept="10M0yZ" id="4BapoMDjGtG" role="37wK5m">
+                                            <ref role="1PxDUh" to="w1kc:~SModelHeader" resolve="SModelHeader" />
+                                            <ref role="3cqZAo" to="w1kc:~SModelHeader.DO_NOT_GENERATE" resolve="DO_NOT_GENERATE" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -1123,7 +1212,42 @@
                     </node>
                   </node>
                 </node>
+                <node concept="TDmWw" id="1VSGHIpOKD1" role="TEbGg">
+                  <node concept="3cpWsn" id="1VSGHIpOKD3" role="TDEfY">
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="1VSGHIpPD$y" role="1tU5fm">
+                      <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="1VSGHIpOKD7" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpOKEg" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpOKWq" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpOKYJ" role="37vLTx">
+                          <ref role="3cqZAo" node="1VSGHIpOKD3" resolve="e" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpOKEf" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpOKAO" resolve="ex" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1VSGHIpOL0o" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpOL0q" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpOLnG" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpOLo0" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpOKAO" resolve="ex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1VSGHIpOLl$" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpOLlV" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpOL1U" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpOKAO" resolve="ex" />
             </node>
           </node>
         </node>
@@ -1526,121 +1650,194 @@
         <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
       </node>
       <node concept="3clFbS" id="4BapoMDjgHB" role="3clF47">
-        <node concept="3cpWs8" id="4BapoMDjgHD" role="3cqZAp">
-          <node concept="3cpWsn" id="4BapoMDjgHC" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="in" />
-            <node concept="3uibUv" id="4BapoMDjgHE" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
+        <node concept="3cpWs8" id="1VSGHIpOOoR" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOOoS" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="1VSGHIpPgHg" role="1tU5fm">
+              <ref role="3uigEE" to="4it6:~ModelLoadResult" resolve="ModelLoadResult" />
             </node>
-            <node concept="10Nm6u" id="4BapoMDjgHF" role="33vP2m" />
           </node>
         </node>
-        <node concept="2GUZhq" id="4BapoMDjgIf" role="3cqZAp">
-          <node concept="TDmWw" id="4BapoMDjgIg" role="TEXxN">
-            <node concept="3clFbS" id="4BapoMDjgI7" role="TDEfX">
-              <node concept="YS8fn" id="4BapoMDjgIe" role="3cqZAp">
-                <node concept="2ShNRf" id="4BapoMDjle2" role="YScLw">
-                  <node concept="1pGfFk" id="4BapoMDjBDm" role="2ShVmc">
-                    <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable,jetbrains.mps.smodel.SModelHeader)" resolve="ModelReadException" />
-                    <node concept="3cpWs3" id="4BapoMDjgI9" role="37wK5m">
-                      <node concept="Xl_RD" id="4BapoMDjgIa" role="3uHU7B">
-                        <property role="Xl_RC" value="Couldn't read model: " />
-                      </node>
-                      <node concept="2OqwBi" id="4BapoMDjBDq" role="3uHU7w">
-                        <node concept="37vLTw" id="4BapoMDjBDp" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4BapoMDjgI3" resolve="e" />
+        <node concept="3cpWs8" id="1VSGHIpOLGi" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOLGj" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpPe0m" role="1tU5fm">
+              <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+            </node>
+            <node concept="10Nm6u" id="1VSGHIpOLGl" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="1VSGHIpOLGm" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpOLGn" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpOLGo" role="1bW5cS">
+              <node concept="3cpWs8" id="4BapoMDjgHD" role="3cqZAp">
+                <node concept="3cpWsn" id="4BapoMDjgHC" role="3cpWs9">
+                  <property role="3TUv4t" value="false" />
+                  <property role="TrG5h" value="in" />
+                  <node concept="3uibUv" id="4BapoMDjgHE" role="1tU5fm">
+                    <ref role="3uigEE" to="guwi:~InputStream" resolve="InputStream" />
+                  </node>
+                  <node concept="10Nm6u" id="4BapoMDjgHF" role="33vP2m" />
+                </node>
+              </node>
+              <node concept="2GUZhq" id="4BapoMDjgIf" role="3cqZAp">
+                <node concept="TDmWw" id="4BapoMDjgIg" role="TEXxN">
+                  <node concept="3clFbS" id="4BapoMDjgI7" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpOMYr" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpONnI" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpOMYp" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpOLGj" resolve="ex" />
                         </node>
-                        <node concept="liA8E" id="4BapoMDjBDr" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                        <node concept="2ShNRf" id="4BapoMDjle2" role="37vLTx">
+                          <node concept="1pGfFk" id="4BapoMDjBDm" role="2ShVmc">
+                            <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable,jetbrains.mps.smodel.SModelHeader)" resolve="ModelReadException" />
+                            <node concept="3cpWs3" id="4BapoMDjgI9" role="37wK5m">
+                              <node concept="Xl_RD" id="4BapoMDjgIa" role="3uHU7B">
+                                <property role="Xl_RC" value="Couldn't read model: " />
+                              </node>
+                              <node concept="2OqwBi" id="4BapoMDjBDq" role="3uHU7w">
+                                <node concept="37vLTw" id="4BapoMDjBDp" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4BapoMDjgI3" resolve="e" />
+                                </node>
+                                <node concept="liA8E" id="4BapoMDjBDr" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="4BapoMDjgIc" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgI3" resolve="e" />
+                            </node>
+                            <node concept="37vLTw" id="4BapoMDjgId" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgHu" resolve="header" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTw" id="4BapoMDjgIc" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgI3" resolve="e" />
-                    </node>
-                    <node concept="37vLTw" id="4BapoMDjgId" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgHu" resolve="header" />
+                  </node>
+                  <node concept="3cpWsn" id="4BapoMDjgI3" role="TDEfY">
+                    <property role="3TUv4t" value="false" />
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="4BapoMDjgI5" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="4BapoMDjgI3" role="TDEfY">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="4BapoMDjgI5" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+                <node concept="TDmWw" id="1VSGHIpOOBX" role="TEXxN">
+                  <node concept="3cpWsn" id="1VSGHIpOOBY" role="TDEfY">
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="1VSGHIpOOCr" role="1tU5fm">
+                      <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="1VSGHIpOOC0" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpOOCP" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpOOZK" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpOPaI" role="37vLTx">
+                          <ref role="3cqZAo" node="1VSGHIpOOBY" resolve="e" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpOOCO" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpOLGj" resolve="ex" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4BapoMDjgHZ" role="2GVbov">
+                  <node concept="3clFbF" id="4BapoMDjgI0" role="3cqZAp">
+                    <node concept="2YIFZM" id="4BapoMDjBDu" role="3clFbG">
+                      <ref role="37wK5l" to="18ew:~FileUtil.closeFileSafe(java.io.Closeable):void" resolve="closeFileSafe" />
+                      <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                      <node concept="37vLTw" id="4BapoMDjgI2" role="37wK5m">
+                        <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4BapoMDjgHH" role="2GV8ay">
+                  <node concept="3clFbF" id="4BapoMDjgHI" role="3cqZAp">
+                    <node concept="37vLTI" id="4BapoMDjgHJ" role="3clFbG">
+                      <node concept="37vLTw" id="4BapoMDjgHK" role="37vLTJ">
+                        <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
+                      </node>
+                      <node concept="2OqwBi" id="4BapoMDjBDy" role="37vLTx">
+                        <node concept="37vLTw" id="4BapoMDjBDx" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4BapoMDjgHx" resolve="dataSource" />
+                        </node>
+                        <node concept="liA8E" id="4BapoMDjBDz" role="2OqNvi">
+                          <ref role="37wK5l" to="dush:~StreamDataSource.openInputStream():java.io.InputStream" resolve="openInputStream" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4BapoMDjgHN" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgHM" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="source" />
+                      <node concept="3uibUv" id="4BapoMDjgHO" role="1tU5fm">
+                        <ref role="3uigEE" to="kart:~InputSource" resolve="InputSource" />
+                      </node>
+                      <node concept="2ShNRf" id="4BapoMDjBD$" role="33vP2m">
+                        <node concept="1pGfFk" id="4BapoMDjBDT" role="2ShVmc">
+                          <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
+                          <node concept="2ShNRf" id="4BapoMDjBDU" role="37wK5m">
+                            <node concept="1pGfFk" id="4BapoMDjBEt" role="2ShVmc">
+                              <ref role="37wK5l" to="guwi:~InputStreamReader.&lt;init&gt;(java.io.InputStream,java.nio.charset.Charset)" resolve="InputStreamReader" />
+                              <node concept="37vLTw" id="4BapoMDjgHR" role="37wK5m">
+                                <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
+                              </node>
+                              <node concept="10M0yZ" id="4BapoMDjGtH" role="37wK5m">
+                                <ref role="3cqZAo" to="18ew:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
+                                <ref role="1PxDUh" to="18ew:~FileUtil" resolve="FileUtil" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="1VSGHIpOOpz" role="3cqZAp">
+                    <node concept="37vLTI" id="1VSGHIpOOp_" role="3clFbG">
+                      <node concept="1rXfSq" id="1VSGHIpOOoT" role="37vLTx">
+                        <ref role="37wK5l" node="4BapoMDjgG1" resolve="readModel" />
+                        <node concept="37vLTw" id="1VSGHIpOOoU" role="37wK5m">
+                          <ref role="3cqZAo" node="4BapoMDjgHu" resolve="header" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpOOoV" role="37wK5m">
+                          <ref role="3cqZAo" node="4BapoMDjgHM" resolve="source" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpOOoW" role="37wK5m">
+                          <ref role="3cqZAo" node="4BapoMDjgH$" resolve="state" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1VSGHIpOOpD" role="37vLTJ">
+                        <ref role="3cqZAo" node="1VSGHIpOOoS" resolve="result" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="4BapoMDjgHZ" role="2GVbov">
-            <node concept="3clFbF" id="4BapoMDjgI0" role="3cqZAp">
-              <node concept="2YIFZM" id="4BapoMDjBDu" role="3clFbG">
-                <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-                <ref role="37wK5l" to="18ew:~FileUtil.closeFileSafe(java.io.Closeable):void" resolve="closeFileSafe" />
-                <node concept="37vLTw" id="4BapoMDjgI2" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
-                </node>
+        </node>
+        <node concept="3clFbJ" id="1VSGHIpOLHo" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpOLHp" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpOLHq" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpOLHr" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpOLGj" resolve="ex" />
               </node>
             </node>
           </node>
-          <node concept="3clFbS" id="4BapoMDjgHH" role="2GV8ay">
-            <node concept="3clFbF" id="4BapoMDjgHI" role="3cqZAp">
-              <node concept="37vLTI" id="4BapoMDjgHJ" role="3clFbG">
-                <node concept="37vLTw" id="4BapoMDjgHK" role="37vLTJ">
-                  <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
-                </node>
-                <node concept="2OqwBi" id="4BapoMDjBDy" role="37vLTx">
-                  <node concept="37vLTw" id="4BapoMDjBDx" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4BapoMDjgHx" resolve="dataSource" />
-                  </node>
-                  <node concept="liA8E" id="4BapoMDjBDz" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~StreamDataSource.openInputStream():java.io.InputStream" resolve="openInputStream" />
-                  </node>
-                </node>
-              </node>
+          <node concept="3y3z36" id="1VSGHIpOLHs" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpOLHt" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpOLHu" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpOLGj" resolve="ex" />
             </node>
-            <node concept="3cpWs8" id="4BapoMDjgHN" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgHM" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="source" />
-                <node concept="3uibUv" id="4BapoMDjgHO" role="1tU5fm">
-                  <ref role="3uigEE" to="kart:~InputSource" resolve="InputSource" />
-                </node>
-                <node concept="2ShNRf" id="4BapoMDjBD$" role="33vP2m">
-                  <node concept="1pGfFk" id="4BapoMDjBDT" role="2ShVmc">
-                    <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
-                    <node concept="2ShNRf" id="4BapoMDjBDU" role="37wK5m">
-                      <node concept="1pGfFk" id="4BapoMDjBEt" role="2ShVmc">
-                        <ref role="37wK5l" to="guwi:~InputStreamReader.&lt;init&gt;(java.io.InputStream,java.nio.charset.Charset)" resolve="InputStreamReader" />
-                        <node concept="37vLTw" id="4BapoMDjgHR" role="37wK5m">
-                          <ref role="3cqZAo" node="4BapoMDjgHC" resolve="in" />
-                        </node>
-                        <node concept="10M0yZ" id="4BapoMDjGtH" role="37wK5m">
-                          <ref role="1PxDUh" to="18ew:~FileUtil" resolve="FileUtil" />
-                          <ref role="3cqZAo" to="18ew:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="4BapoMDjgHT" role="3cqZAp">
-              <node concept="1rXfSq" id="4BapoMDjgHU" role="3cqZAk">
-                <ref role="37wK5l" node="4BapoMDjgG1" resolve="readModel" />
-                <node concept="37vLTw" id="4BapoMDjgHV" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgHu" resolve="header" />
-                </node>
-                <node concept="37vLTw" id="4BapoMDjgHW" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgHM" resolve="source" />
-                </node>
-                <node concept="37vLTw" id="4BapoMDjgHX" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgH$" resolve="state" />
-                </node>
-              </node>
-            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4BapoMDjgHT" role="3cqZAp">
+          <node concept="37vLTw" id="1VSGHIpOOoX" role="3cqZAk">
+            <ref role="3cqZAo" node="1VSGHIpOOoS" resolve="result" />
           </node>
         </node>
       </node>
@@ -1668,177 +1865,229 @@
         <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
       </node>
       <node concept="3clFbS" id="4BapoMDjgIo" role="3clF47">
-        <node concept="SfApY" id="4BapoMDjgJe" role="3cqZAp">
-          <node concept="TDmWw" id="4BapoMDjgJf" role="TEbGg">
-            <node concept="3clFbS" id="4BapoMDjgJ9" role="TDEfX">
-              <node concept="YS8fn" id="4BapoMDjgJd" role="3cqZAp">
-                <node concept="2ShNRf" id="4BapoMDjBEx" role="YScLw">
-                  <node concept="1pGfFk" id="4BapoMDjBEy" role="2ShVmc">
-                    <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="ModelReadException" />
-                    <node concept="2OqwBi" id="4BapoMDjBEA" role="37wK5m">
-                      <node concept="37vLTw" id="4BapoMDjBE_" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4BapoMDjgJ5" resolve="ex" />
-                      </node>
-                      <node concept="liA8E" id="4BapoMDjBEB" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Throwable.toString():java.lang.String" resolve="toString" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="4BapoMDjgJc" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgJ5" resolve="ex" />
-                    </node>
-                  </node>
-                </node>
+        <node concept="3cpWs8" id="1VSGHIpOPY4" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOPY5" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="1VSGHIpOPXD" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="1VSGHIpOPXG" role="11_B2D">
+                <ref role="3uigEE" to="mdm6:~LineContent" resolve="LineContent" />
               </node>
             </node>
-            <node concept="3cpWsn" id="4BapoMDjgJ5" role="TDEfY">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="ex" />
-              <node concept="3uibUv" id="4BapoMDjgJ7" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-              </node>
-            </node>
+            <node concept="10Nm6u" id="1VSGHIpP1Kb" role="33vP2m" />
           </node>
-          <node concept="3clFbS" id="4BapoMDjgIq" role="SfCbr">
-            <node concept="3cpWs8" id="4BapoMDjgIs" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgIr" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="header" />
-                <node concept="3uibUv" id="4BapoMDjgIt" role="1tU5fm">
-                  <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
-                </node>
-              </node>
+        </node>
+        <node concept="3cpWs8" id="1VSGHIpOPaP" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpOPaQ" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpPbvG" role="1tU5fm">
+              <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
             </node>
-            <node concept="3clFbF" id="4BapoMDjgIu" role="3cqZAp">
-              <node concept="37vLTI" id="4BapoMDjgIv" role="3clFbG">
-                <node concept="37vLTw" id="4BapoMDjgIw" role="37vLTJ">
-                  <ref role="3cqZAo" node="4BapoMDjgIr" resolve="header" />
-                </node>
-                <node concept="1rXfSq" id="4BapoMDjgIx" role="37vLTx">
-                  <ref role="37wK5l" node="4BapoMDjgER" resolve="loadDescriptor" />
-                  <node concept="2ShNRf" id="4BapoMDjBEC" role="37wK5m">
-                    <node concept="1pGfFk" id="4BapoMDjBEX" role="2ShVmc">
-                      <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
-                      <node concept="2ShNRf" id="4BapoMDjBEY" role="37wK5m">
-                        <node concept="1pGfFk" id="4BapoMDjBEZ" role="2ShVmc">
-                          <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
-                          <node concept="37vLTw" id="4BapoMDjgI$" role="37wK5m">
-                            <ref role="3cqZAo" node="4BapoMDjgIl" resolve="content" />
+            <node concept="10Nm6u" id="1VSGHIpOPaS" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="1VSGHIpOPaT" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpOPaU" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpOPaV" role="1bW5cS">
+              <node concept="SfApY" id="4BapoMDjgJe" role="3cqZAp">
+                <node concept="TDmWw" id="4BapoMDjgJf" role="TEbGg">
+                  <node concept="3clFbS" id="4BapoMDjgJ9" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpP0mi" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpP0IU" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpP11K" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpOPaQ" resolve="ex" />
+                        </node>
+                        <node concept="2ShNRf" id="4BapoMDjBEx" role="37vLTx">
+                          <node concept="1pGfFk" id="4BapoMDjBEy" role="2ShVmc">
+                            <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="ModelReadException" />
+                            <node concept="2OqwBi" id="4BapoMDjBEA" role="37wK5m">
+                              <node concept="37vLTw" id="4BapoMDjBE_" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4BapoMDjgJ5" resolve="e" />
+                              </node>
+                              <node concept="liA8E" id="4BapoMDjBEB" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Throwable.toString():java.lang.String" resolve="toString" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="4BapoMDjgJc" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgJ5" resolve="e" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="4BapoMDjgIA" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgI_" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="mp" />
-                <node concept="3uibUv" id="4BapoMDjgIB" role="1tU5fm">
-                  <ref role="3uigEE" to="5fzo:~IModelPersistence" resolve="IModelPersistence" />
-                </node>
-                <node concept="1rXfSq" id="4BapoMDjgIC" role="33vP2m">
-                  <ref role="37wK5l" node="4BapoMDmOc_" resolve="getPersistence" />
-                  <node concept="2OqwBi" id="4BapoMDjBF3" role="37wK5m">
-                    <node concept="37vLTw" id="4BapoMDjBF2" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4BapoMDjgIr" resolve="header" />
-                    </node>
-                    <node concept="liA8E" id="4BapoMDjBF4" role="2OqNvi">
-                      <ref role="37wK5l" to="w1kc:~SModelHeader.getPersistenceVersion():int" resolve="getPersistenceVersion" />
+                  <node concept="3cpWsn" id="4BapoMDjgJ5" role="TDEfY">
+                    <property role="3TUv4t" value="false" />
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="4BapoMDjgJ7" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="4BapoMDjgIE" role="3cqZAp">
-              <node concept="3clFbC" id="4BapoMDnlGQ" role="3clFbw">
-                <node concept="37vLTw" id="4BapoMDjgIG" role="3uHU7B">
-                  <ref role="3cqZAo" node="4BapoMDjgI_" resolve="mp" />
-                </node>
-                <node concept="10Nm6u" id="4BapoMDjgIH" role="3uHU7w" />
-              </node>
-              <node concept="3clFbS" id="4BapoMDnlGV" role="3clFbx">
-                <node concept="3cpWs6" id="4BapoMDnlYg" role="3cqZAp">
-                  <node concept="10Nm6u" id="4BapoMDnm6x" role="3cqZAk" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="4BapoMDnmpq" role="3cqZAp" />
-            <node concept="3cpWs8" id="4BapoMDjgIL" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgIK" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="handler" />
-                <node concept="3uibUv" id="4BapoMDjgIM" role="1tU5fm">
-                  <ref role="3uigEE" to="7a2w:1NGcDawKVyN" resolve="XMLSAXHandler" />
-                  <node concept="3uibUv" id="4BapoMDjgIN" role="11_B2D">
-                    <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                    <node concept="3uibUv" id="4BapoMDjgIO" role="11_B2D">
-                      <ref role="3uigEE" to="mdm6:~LineContent" resolve="LineContent" />
+                <node concept="3clFbS" id="4BapoMDjgIq" role="SfCbr">
+                  <node concept="3cpWs8" id="4BapoMDjgIs" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgIr" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="header" />
+                      <node concept="3uibUv" id="4BapoMDjgIt" role="1tU5fm">
+                        <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
+                      </node>
                     </node>
                   </node>
-                </node>
-                <node concept="2OqwBi" id="4BapoMDjBF8" role="33vP2m">
-                  <node concept="37vLTw" id="4BapoMDjBF7" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4BapoMDjgI_" resolve="mp" />
-                  </node>
-                  <node concept="liA8E" id="4BapoMDjBF9" role="2OqNvi">
-                    <ref role="37wK5l" to="5fzo:~IModelPersistence.getLineToContentMapReaderHandler():jetbrains.mps.util.xml.XMLSAXHandler" resolve="getLineToContentMapReaderHandler" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="4BapoMDjgIQ" role="3cqZAp">
-              <node concept="3clFbC" id="4BapoMDnmL7" role="3clFbw">
-                <node concept="37vLTw" id="4BapoMDjgIS" role="3uHU7B">
-                  <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
-                </node>
-                <node concept="10Nm6u" id="4BapoMDjgIT" role="3uHU7w" />
-              </node>
-              <node concept="3clFbS" id="4BapoMDnmLc" role="3clFbx">
-                <node concept="3cpWs6" id="4BapoMDnn1F" role="3cqZAp">
-                  <node concept="10Nm6u" id="4BapoMDnnc3" role="3cqZAk" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="4BapoMDnn$1" role="3cqZAp" />
-            <node concept="3clFbF" id="4BapoMDjgIW" role="3cqZAp">
-              <node concept="1rXfSq" id="4BapoMDjgIX" role="3clFbG">
-                <ref role="37wK5l" node="4BapoMDjgQK" resolve="parseAndHandleExceptions" />
-                <node concept="2ShNRf" id="4BapoMDjBFa" role="37wK5m">
-                  <node concept="1pGfFk" id="4BapoMDjBFv" role="2ShVmc">
-                    <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
-                    <node concept="2ShNRf" id="4BapoMDjBFw" role="37wK5m">
-                      <node concept="1pGfFk" id="4BapoMDjBFx" role="2ShVmc">
-                        <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
-                        <node concept="37vLTw" id="4BapoMDjgJ0" role="37wK5m">
-                          <ref role="3cqZAo" node="4BapoMDjgIl" resolve="content" />
+                  <node concept="3clFbF" id="4BapoMDjgIu" role="3cqZAp">
+                    <node concept="37vLTI" id="4BapoMDjgIv" role="3clFbG">
+                      <node concept="37vLTw" id="4BapoMDjgIw" role="37vLTJ">
+                        <ref role="3cqZAo" node="4BapoMDjgIr" resolve="header" />
+                      </node>
+                      <node concept="1rXfSq" id="4BapoMDjgIx" role="37vLTx">
+                        <ref role="37wK5l" node="4BapoMDjgER" resolve="loadDescriptor" />
+                        <node concept="2ShNRf" id="4BapoMDjBEC" role="37wK5m">
+                          <node concept="1pGfFk" id="4BapoMDjBEX" role="2ShVmc">
+                            <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
+                            <node concept="2ShNRf" id="4BapoMDjBEY" role="37wK5m">
+                              <node concept="1pGfFk" id="4BapoMDjBEZ" role="2ShVmc">
+                                <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
+                                <node concept="37vLTw" id="4BapoMDjgI$" role="37wK5m">
+                                  <ref role="3cqZAo" node="4BapoMDjgIl" resolve="content" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="37vLTw" id="4BapoMDjgJ1" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
-                </node>
-                <node concept="Xl_RD" id="4BapoMDjgJ2" role="37wK5m">
-                  <property role="Xl_RC" value="line to content map" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="4BapoMDjgJ3" role="3cqZAp">
-              <node concept="2OqwBi" id="4BapoMDjBF_" role="3cqZAk">
-                <node concept="37vLTw" id="4BapoMDjBF$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
-                </node>
-                <node concept="liA8E" id="4BapoMDjBFA" role="2OqNvi">
-                  <ref role="37wK5l" to="7a2w:1NGcDawKWcC" resolve="getResult" />
+                  <node concept="3cpWs8" id="4BapoMDjgIA" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgI_" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="mp" />
+                      <node concept="3uibUv" id="4BapoMDjgIB" role="1tU5fm">
+                        <ref role="3uigEE" to="5fzo:~IModelPersistence" resolve="IModelPersistence" />
+                      </node>
+                      <node concept="1rXfSq" id="4BapoMDjgIC" role="33vP2m">
+                        <ref role="37wK5l" node="4BapoMDmOc_" resolve="getPersistence" />
+                        <node concept="2OqwBi" id="4BapoMDjBF3" role="37wK5m">
+                          <node concept="37vLTw" id="4BapoMDjBF2" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4BapoMDjgIr" resolve="header" />
+                          </node>
+                          <node concept="liA8E" id="4BapoMDjBF4" role="2OqNvi">
+                            <ref role="37wK5l" to="w1kc:~SModelHeader.getPersistenceVersion():int" resolve="getPersistenceVersion" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="4BapoMDjgIE" role="3cqZAp">
+                    <node concept="3clFbC" id="4BapoMDnlGQ" role="3clFbw">
+                      <node concept="37vLTw" id="4BapoMDjgIG" role="3uHU7B">
+                        <ref role="3cqZAo" node="4BapoMDjgI_" resolve="mp" />
+                      </node>
+                      <node concept="10Nm6u" id="4BapoMDjgIH" role="3uHU7w" />
+                    </node>
+                    <node concept="3clFbS" id="4BapoMDnlGV" role="3clFbx">
+                      <node concept="3cpWs6" id="4BapoMDnlYg" role="3cqZAp" />
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="4BapoMDnmpq" role="3cqZAp" />
+                  <node concept="3cpWs8" id="4BapoMDjgIL" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgIK" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="handler" />
+                      <node concept="3uibUv" id="4BapoMDjgIM" role="1tU5fm">
+                        <ref role="3uigEE" to="7a2w:1NGcDawKVyN" resolve="XMLSAXHandler" />
+                        <node concept="3uibUv" id="4BapoMDjgIN" role="11_B2D">
+                          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                          <node concept="3uibUv" id="4BapoMDjgIO" role="11_B2D">
+                            <ref role="3uigEE" to="mdm6:~LineContent" resolve="LineContent" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="4BapoMDjBF8" role="33vP2m">
+                        <node concept="37vLTw" id="4BapoMDjBF7" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4BapoMDjgI_" resolve="mp" />
+                        </node>
+                        <node concept="liA8E" id="4BapoMDjBF9" role="2OqNvi">
+                          <ref role="37wK5l" to="5fzo:~IModelPersistence.getLineToContentMapReaderHandler():jetbrains.mps.util.xml.XMLSAXHandler" resolve="getLineToContentMapReaderHandler" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="4BapoMDjgIQ" role="3cqZAp">
+                    <node concept="3clFbC" id="4BapoMDnmL7" role="3clFbw">
+                      <node concept="37vLTw" id="4BapoMDjgIS" role="3uHU7B">
+                        <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
+                      </node>
+                      <node concept="10Nm6u" id="4BapoMDjgIT" role="3uHU7w" />
+                    </node>
+                    <node concept="3clFbS" id="4BapoMDnmLc" role="3clFbx">
+                      <node concept="3cpWs6" id="4BapoMDnn1F" role="3cqZAp" />
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="4BapoMDnn$1" role="3cqZAp" />
+                  <node concept="3clFbF" id="4BapoMDjgIW" role="3cqZAp">
+                    <node concept="1rXfSq" id="4BapoMDjgIX" role="3clFbG">
+                      <ref role="37wK5l" node="4BapoMDjgQK" resolve="parseAndHandleExceptions" />
+                      <node concept="2ShNRf" id="4BapoMDjBFa" role="37wK5m">
+                        <node concept="1pGfFk" id="4BapoMDjBFv" role="2ShVmc">
+                          <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
+                          <node concept="2ShNRf" id="4BapoMDjBFw" role="37wK5m">
+                            <node concept="1pGfFk" id="4BapoMDjBFx" role="2ShVmc">
+                              <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
+                              <node concept="37vLTw" id="4BapoMDjgJ0" role="37wK5m">
+                                <ref role="3cqZAo" node="4BapoMDjgIl" resolve="content" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="4BapoMDjgJ1" role="37wK5m">
+                        <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
+                      </node>
+                      <node concept="Xl_RD" id="4BapoMDjgJ2" role="37wK5m">
+                        <property role="Xl_RC" value="line to content map" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="1VSGHIpOQi$" role="3cqZAp">
+                    <node concept="37vLTI" id="1VSGHIpOQiA" role="3clFbG">
+                      <node concept="2OqwBi" id="1VSGHIpOPY6" role="37vLTx">
+                        <node concept="37vLTw" id="1VSGHIpOPY7" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4BapoMDjgIK" resolve="handler" />
+                        </node>
+                        <node concept="liA8E" id="1VSGHIpOPY8" role="2OqNvi">
+                          <ref role="37wK5l" to="7a2w:1NGcDawKWcC" resolve="getResult" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1VSGHIpOQiE" role="37vLTJ">
+                        <ref role="3cqZAo" node="1VSGHIpOPY5" resolve="result" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="4BapoMDnqJg" role="3cqZAp" />
+        <node concept="3clFbJ" id="1VSGHIpOPbI" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpOPbJ" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpOPbK" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpOPbL" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpOPaQ" resolve="ex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1VSGHIpOPbM" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpOPbN" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpOPbO" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpOPaQ" resolve="ex" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1VSGHIpP1Gh" role="3cqZAp">
+          <node concept="37vLTw" id="1VSGHIpP1Im" role="3cqZAk">
+            <ref role="3cqZAo" node="1VSGHIpOPY5" resolve="result" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="4BapoMDjgJi" role="1B3o_S" />
       <node concept="3uibUv" id="4BapoMDjgJj" role="3clF45">
@@ -1944,65 +2193,138 @@
         <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
       </node>
       <node concept="3clFbS" id="4BapoMDjgOs" role="3clF47">
-        <node concept="3cpWs8" id="4BapoMDjgOu" role="3cqZAp">
-          <node concept="3cpWsn" id="4BapoMDjgOt" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="header" />
-            <node concept="3uibUv" id="4BapoMDjgOv" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
-            </node>
-            <node concept="1rXfSq" id="4BapoMDjgOw" role="33vP2m">
-              <ref role="37wK5l" node="4BapoMDjgF9" resolve="loadDescriptor" />
-              <node concept="37vLTw" id="4BapoMDjgOx" role="37wK5m">
-                <ref role="3cqZAo" node="4BapoMDjgOm" resolve="source" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4BapoMDjgOz" role="3cqZAp">
-          <node concept="3cpWsn" id="4BapoMDjgOy" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="state" />
-            <node concept="3uibUv" id="4BapoMDjgO$" role="1tU5fm">
-              <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-            </node>
-            <node concept="3K4zz7" id="4BapoMDjgOC" role="33vP2m">
-              <node concept="37vLTw" id="4BapoMDjgO_" role="3K4Cdx">
-                <ref role="3cqZAo" node="4BapoMDjgOp" resolve="interfaceOnly" />
-              </node>
-              <node concept="Rm8GO" id="4BapoMDjC2W" role="3K4E3e">
-                <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                <ref role="Rm8GQ" to="4it6:~ModelLoadingState.INTERFACE_LOADED" resolve="INTERFACE_LOADED" />
-              </node>
-              <node concept="Rm8GO" id="4BapoMDjC2Z" role="3K4GZi">
-                <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="4BapoMDjgOD" role="3cqZAp">
-          <node concept="10QFUN" id="4BapoMDjgOE" role="3cqZAk">
-            <node concept="2OqwBi" id="4BapoMDjgOF" role="10QFUP">
-              <node concept="1rXfSq" id="4BapoMDjgOG" role="2Oq$k0">
-                <ref role="37wK5l" node="4BapoMDjgHs" resolve="readModel" />
-                <node concept="37vLTw" id="4BapoMDjgOH" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgOt" resolve="header" />
-                </node>
-                <node concept="37vLTw" id="4BapoMDjgOI" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgOm" resolve="source" />
-                </node>
-                <node concept="37vLTw" id="4BapoMDjgOJ" role="37wK5m">
-                  <ref role="3cqZAo" node="4BapoMDjgOy" resolve="state" />
-                </node>
-              </node>
-              <node concept="liA8E" id="4BapoMDjgOK" role="2OqNvi">
-                <ref role="37wK5l" to="4it6:~ModelLoadResult.getModel():jetbrains.mps.smodel.SModel" resolve="getModel" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="4BapoMDjgOL" role="10QFUM">
+        <node concept="3cpWs8" id="1VSGHIpPkd$" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpPkd_" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="1VSGHIpPkdn" role="1tU5fm">
               <ref role="3uigEE" to="w1kc:~DefaultSModel" resolve="DefaultSModel" />
             </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1VSGHIpPj9O" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpPj9P" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpPj9Q" role="1tU5fm">
+              <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+            </node>
+            <node concept="10Nm6u" id="1VSGHIpPj9R" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="1VSGHIpPj9S" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpPj9T" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpPj9U" role="1bW5cS">
+              <node concept="SfApY" id="1VSGHIpPj9V" role="3cqZAp">
+                <node concept="TDmWw" id="1VSGHIpPj9W" role="TEbGg">
+                  <node concept="3clFbS" id="1VSGHIpPj9X" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpPj9Y" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpPj9Z" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpPja0" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpPj9P" resolve="ex" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpPl5G" role="37vLTx">
+                          <ref role="3cqZAo" node="1VSGHIpPja7" resolve="e" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWsn" id="1VSGHIpPja7" role="TDEfY">
+                    <property role="3TUv4t" value="false" />
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="1VSGHIpPl2o" role="1tU5fm">
+                      <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="1VSGHIpPja9" role="SfCbr">
+                  <node concept="3cpWs8" id="4BapoMDjgOu" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgOt" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="header" />
+                      <node concept="3uibUv" id="4BapoMDjgOv" role="1tU5fm">
+                        <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
+                      </node>
+                      <node concept="1rXfSq" id="4BapoMDjgOw" role="33vP2m">
+                        <ref role="37wK5l" node="4BapoMDjgF9" resolve="loadDescriptor" />
+                        <node concept="37vLTw" id="4BapoMDjgOx" role="37wK5m">
+                          <ref role="3cqZAo" node="4BapoMDjgOm" resolve="source" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4BapoMDjgOz" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgOy" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="state" />
+                      <node concept="3uibUv" id="4BapoMDjgO$" role="1tU5fm">
+                        <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                      </node>
+                      <node concept="3K4zz7" id="4BapoMDjgOC" role="33vP2m">
+                        <node concept="37vLTw" id="4BapoMDjgO_" role="3K4Cdx">
+                          <ref role="3cqZAo" node="4BapoMDjgOp" resolve="interfaceOnly" />
+                        </node>
+                        <node concept="Rm8GO" id="4BapoMDjC2W" role="3K4E3e">
+                          <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                          <ref role="Rm8GQ" to="4it6:~ModelLoadingState.INTERFACE_LOADED" resolve="INTERFACE_LOADED" />
+                        </node>
+                        <node concept="Rm8GO" id="4BapoMDjC2Z" role="3K4GZi">
+                          <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                          <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="1VSGHIpPk$e" role="3cqZAp">
+                    <node concept="37vLTI" id="1VSGHIpPk$g" role="3clFbG">
+                      <node concept="10QFUN" id="1VSGHIpPkdA" role="37vLTx">
+                        <node concept="2OqwBi" id="1VSGHIpPkdB" role="10QFUP">
+                          <node concept="1rXfSq" id="1VSGHIpPkdC" role="2Oq$k0">
+                            <ref role="37wK5l" node="4BapoMDjgHs" resolve="readModel" />
+                            <node concept="37vLTw" id="1VSGHIpPkdD" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgOt" resolve="header" />
+                            </node>
+                            <node concept="37vLTw" id="1VSGHIpPkdE" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgOm" resolve="source" />
+                            </node>
+                            <node concept="37vLTw" id="1VSGHIpPkdF" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgOy" resolve="state" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="1VSGHIpPkdG" role="2OqNvi">
+                            <ref role="37wK5l" to="4it6:~ModelLoadResult.getModel():jetbrains.mps.smodel.SModel" resolve="getModel" />
+                          </node>
+                        </node>
+                        <node concept="3uibUv" id="1VSGHIpPkdH" role="10QFUM">
+                          <ref role="3uigEE" to="w1kc:~DefaultSModel" resolve="DefaultSModel" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1VSGHIpPk$k" role="37vLTJ">
+                        <ref role="3cqZAo" node="1VSGHIpPkd_" resolve="result" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1VSGHIpPjb2" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpPjb3" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpPjb4" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpPjb5" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpPj9P" resolve="ex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1VSGHIpPjb6" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpPjb7" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpPjb8" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpPj9P" resolve="ex" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1VSGHIpPjb9" role="3cqZAp">
+          <node concept="37vLTw" id="1VSGHIpPl61" role="3cqZAk">
+            <ref role="3cqZAo" node="1VSGHIpPkd_" resolve="result" />
           </node>
         </node>
       </node>
@@ -2038,118 +2360,191 @@
         <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
       </node>
       <node concept="3clFbS" id="4BapoMDjgOW" role="3clF47">
-        <node concept="SfApY" id="4BapoMDjgPx" role="3cqZAp">
-          <node concept="TDmWw" id="4BapoMDjgPy" role="TEbGg">
-            <node concept="3clFbS" id="4BapoMDjgPs" role="TDEfX">
-              <node concept="YS8fn" id="4BapoMDjgPw" role="3cqZAp">
-                <node concept="2ShNRf" id="4BapoMDjC30" role="YScLw">
-                  <node concept="1pGfFk" id="4BapoMDjC31" role="2ShVmc">
-                    <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="ModelReadException" />
-                    <node concept="2OqwBi" id="4BapoMDjC35" role="37wK5m">
-                      <node concept="37vLTw" id="4BapoMDjC34" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4BapoMDjgPo" resolve="ex" />
-                      </node>
-                      <node concept="liA8E" id="4BapoMDjC36" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Throwable.toString():java.lang.String" resolve="toString" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="4BapoMDjgPv" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgPo" resolve="ex" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="4BapoMDjgPo" role="TDEfY">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="ex" />
-              <node concept="3uibUv" id="4BapoMDjgPq" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-              </node>
+        <node concept="3cpWs8" id="1VSGHIpPl7A" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpPl7B" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="1VSGHIpPl7C" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~DefaultSModel" resolve="DefaultSModel" />
             </node>
           </node>
-          <node concept="3clFbS" id="4BapoMDjgOY" role="SfCbr">
-            <node concept="3cpWs8" id="4BapoMDjgP0" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgOZ" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="header" />
-                <node concept="3uibUv" id="4BapoMDjgP1" role="1tU5fm">
-                  <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
-                </node>
-                <node concept="1rXfSq" id="4BapoMDjgP2" role="33vP2m">
-                  <ref role="37wK5l" node="4BapoMDjgER" resolve="loadDescriptor" />
-                  <node concept="2ShNRf" id="4BapoMDjC37" role="37wK5m">
-                    <node concept="1pGfFk" id="4BapoMDjC3s" role="2ShVmc">
-                      <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
-                      <node concept="2ShNRf" id="4BapoMDjC3t" role="37wK5m">
-                        <node concept="1pGfFk" id="4BapoMDjC3u" role="2ShVmc">
-                          <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
-                          <node concept="37vLTw" id="4BapoMDjgP5" role="37wK5m">
-                            <ref role="3cqZAo" node="4BapoMDjgOQ" resolve="content" />
-                          </node>
+        </node>
+        <node concept="3cpWs8" id="1VSGHIpPl7D" role="3cqZAp">
+          <node concept="3cpWsn" id="1VSGHIpPl7E" role="3cpWs9">
+            <property role="TrG5h" value="ex" />
+            <node concept="3uibUv" id="1VSGHIpPl7F" role="1tU5fm">
+              <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+            </node>
+            <node concept="10Nm6u" id="1VSGHIpPl7G" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="1VSGHIpPl7H" role="3cqZAp">
+          <node concept="1QHqEC" id="1VSGHIpPl7I" role="1QHqEI">
+            <node concept="3clFbS" id="1VSGHIpPl7J" role="1bW5cS">
+              <node concept="SfApY" id="4BapoMDjgPx" role="3cqZAp">
+                <node concept="TDmWw" id="4BapoMDjgPy" role="TEbGg">
+                  <node concept="3clFbS" id="4BapoMDjgPs" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpPlOV" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpPm1v" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpPlOT" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpPl7E" resolve="ex" />
                         </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="4BapoMDjgP7" role="3cqZAp">
-              <node concept="3cpWsn" id="4BapoMDjgP6" role="3cpWs9">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="state" />
-                <node concept="3uibUv" id="4BapoMDjgP8" role="1tU5fm">
-                  <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                </node>
-                <node concept="3K4zz7" id="4BapoMDjgPc" role="33vP2m">
-                  <node concept="37vLTw" id="4BapoMDjgP9" role="3K4Cdx">
-                    <ref role="3cqZAo" node="4BapoMDjgOT" resolve="interfaceOnly" />
-                  </node>
-                  <node concept="Rm8GO" id="4BapoMDjC3x" role="3K4E3e">
-                    <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                    <ref role="Rm8GQ" to="4it6:~ModelLoadingState.INTERFACE_LOADED" resolve="INTERFACE_LOADED" />
-                  </node>
-                  <node concept="Rm8GO" id="4BapoMDjC3$" role="3K4GZi">
-                    <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                    <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="4BapoMDjgPd" role="3cqZAp">
-              <node concept="10QFUN" id="4BapoMDjgPe" role="3cqZAk">
-                <node concept="2OqwBi" id="4BapoMDjgPf" role="10QFUP">
-                  <node concept="1rXfSq" id="4BapoMDjgPg" role="2Oq$k0">
-                    <ref role="37wK5l" node="4BapoMDjgG1" resolve="readModel" />
-                    <node concept="37vLTw" id="4BapoMDjgPh" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgOZ" resolve="header" />
-                    </node>
-                    <node concept="2ShNRf" id="4BapoMDjC3_" role="37wK5m">
-                      <node concept="1pGfFk" id="4BapoMDjC3U" role="2ShVmc">
-                        <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
-                        <node concept="2ShNRf" id="4BapoMDjC3V" role="37wK5m">
-                          <node concept="1pGfFk" id="4BapoMDjC3W" role="2ShVmc">
-                            <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
-                            <node concept="37vLTw" id="4BapoMDjgPk" role="37wK5m">
-                              <ref role="3cqZAo" node="4BapoMDjgOQ" resolve="content" />
+                        <node concept="2ShNRf" id="4BapoMDjC30" role="37vLTx">
+                          <node concept="1pGfFk" id="4BapoMDjC31" role="2ShVmc">
+                            <ref role="37wK5l" to="5fzo:~ModelReadException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="ModelReadException" />
+                            <node concept="2OqwBi" id="4BapoMDjC35" role="37wK5m">
+                              <node concept="37vLTw" id="4BapoMDjC34" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4BapoMDjgPo" resolve="e" />
+                              </node>
+                              <node concept="liA8E" id="4BapoMDjC36" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Throwable.toString():java.lang.String" resolve="toString" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="4BapoMDjgPv" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgPo" resolve="e" />
                             </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTw" id="4BapoMDjgPl" role="37wK5m">
-                      <ref role="3cqZAo" node="4BapoMDjgP6" resolve="state" />
+                  </node>
+                  <node concept="3cpWsn" id="4BapoMDjgPo" role="TDEfY">
+                    <property role="3TUv4t" value="false" />
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="4BapoMDjgPq" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="4BapoMDjgPm" role="2OqNvi">
-                    <ref role="37wK5l" to="4it6:~ModelLoadResult.getModel():jetbrains.mps.smodel.SModel" resolve="getModel" />
+                </node>
+                <node concept="TDmWw" id="1VSGHIpPmU8" role="TEbGg">
+                  <node concept="3cpWsn" id="1VSGHIpPmU9" role="TDEfY">
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="1VSGHIpPmUz" role="1tU5fm">
+                      <ref role="3uigEE" to="5fzo:~ModelReadException" resolve="ModelReadException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="1VSGHIpPmUb" role="TDEfX">
+                    <node concept="3clFbF" id="1VSGHIpPmUX" role="3cqZAp">
+                      <node concept="37vLTI" id="1VSGHIpPn47" role="3clFbG">
+                        <node concept="37vLTw" id="1VSGHIpPna4" role="37vLTx">
+                          <ref role="3cqZAo" node="1VSGHIpPmU9" resolve="e" />
+                        </node>
+                        <node concept="37vLTw" id="1VSGHIpPmUW" role="37vLTJ">
+                          <ref role="3cqZAo" node="1VSGHIpPl7E" resolve="ex" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="3uibUv" id="4BapoMDjgPn" role="10QFUM">
-                  <ref role="3uigEE" to="w1kc:~DefaultSModel" resolve="DefaultSModel" />
+                <node concept="3clFbS" id="4BapoMDjgOY" role="SfCbr">
+                  <node concept="3cpWs8" id="4BapoMDjgP0" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgOZ" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="header" />
+                      <node concept="3uibUv" id="4BapoMDjgP1" role="1tU5fm">
+                        <ref role="3uigEE" to="w1kc:~SModelHeader" resolve="SModelHeader" />
+                      </node>
+                      <node concept="1rXfSq" id="4BapoMDjgP2" role="33vP2m">
+                        <ref role="37wK5l" node="4BapoMDjgER" resolve="loadDescriptor" />
+                        <node concept="2ShNRf" id="4BapoMDjC37" role="37wK5m">
+                          <node concept="1pGfFk" id="4BapoMDjC3s" role="2ShVmc">
+                            <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
+                            <node concept="2ShNRf" id="4BapoMDjC3t" role="37wK5m">
+                              <node concept="1pGfFk" id="4BapoMDjC3u" role="2ShVmc">
+                                <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
+                                <node concept="37vLTw" id="4BapoMDjgP5" role="37wK5m">
+                                  <ref role="3cqZAo" node="4BapoMDjgOQ" resolve="content" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="4BapoMDjgP7" role="3cqZAp">
+                    <node concept="3cpWsn" id="4BapoMDjgP6" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="state" />
+                      <node concept="3uibUv" id="4BapoMDjgP8" role="1tU5fm">
+                        <ref role="3uigEE" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                      </node>
+                      <node concept="3K4zz7" id="4BapoMDjgPc" role="33vP2m">
+                        <node concept="37vLTw" id="4BapoMDjgP9" role="3K4Cdx">
+                          <ref role="3cqZAo" node="4BapoMDjgOT" resolve="interfaceOnly" />
+                        </node>
+                        <node concept="Rm8GO" id="4BapoMDjC3x" role="3K4E3e">
+                          <ref role="Rm8GQ" to="4it6:~ModelLoadingState.INTERFACE_LOADED" resolve="INTERFACE_LOADED" />
+                          <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                        </node>
+                        <node concept="Rm8GO" id="4BapoMDjC3$" role="3K4GZi">
+                          <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                          <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="1VSGHIpPmLn" role="3cqZAp">
+                    <node concept="37vLTI" id="1VSGHIpPmLp" role="3clFbG">
+                      <node concept="10QFUN" id="1VSGHIpPmks" role="37vLTx">
+                        <node concept="2OqwBi" id="1VSGHIpPmkt" role="10QFUP">
+                          <node concept="1rXfSq" id="1VSGHIpPmku" role="2Oq$k0">
+                            <ref role="37wK5l" node="4BapoMDjgG1" resolve="readModel" />
+                            <node concept="37vLTw" id="1VSGHIpPmkv" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgOZ" resolve="header" />
+                            </node>
+                            <node concept="2ShNRf" id="1VSGHIpPmkw" role="37wK5m">
+                              <node concept="1pGfFk" id="1VSGHIpPmkx" role="2ShVmc">
+                                <ref role="37wK5l" to="kart:~InputSource.&lt;init&gt;(java.io.Reader)" resolve="InputSource" />
+                                <node concept="2ShNRf" id="1VSGHIpPmky" role="37wK5m">
+                                  <node concept="1pGfFk" id="1VSGHIpPmkz" role="2ShVmc">
+                                    <ref role="37wK5l" to="guwi:~StringReader.&lt;init&gt;(java.lang.String)" resolve="StringReader" />
+                                    <node concept="37vLTw" id="1VSGHIpPmk$" role="37wK5m">
+                                      <ref role="3cqZAo" node="4BapoMDjgOQ" resolve="content" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="1VSGHIpPmk_" role="37wK5m">
+                              <ref role="3cqZAo" node="4BapoMDjgP6" resolve="state" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="1VSGHIpPmkA" role="2OqNvi">
+                            <ref role="37wK5l" to="4it6:~ModelLoadResult.getModel():jetbrains.mps.smodel.SModel" resolve="getModel" />
+                          </node>
+                        </node>
+                        <node concept="3uibUv" id="1VSGHIpPmkB" role="10QFUM">
+                          <ref role="3uigEE" to="w1kc:~DefaultSModel" resolve="DefaultSModel" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1VSGHIpPmSz" role="37vLTJ">
+                        <ref role="3cqZAo" node="1VSGHIpPl7B" resolve="result" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1VSGHIpPl8j" role="3cqZAp">
+          <node concept="3clFbS" id="1VSGHIpPl8k" role="3clFbx">
+            <node concept="YS8fn" id="1VSGHIpPl8l" role="3cqZAp">
+              <node concept="37vLTw" id="1VSGHIpPl8m" role="YScLw">
+                <ref role="3cqZAo" node="1VSGHIpPl7E" resolve="ex" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1VSGHIpPl8n" role="3clFbw">
+            <node concept="10Nm6u" id="1VSGHIpPl8o" role="3uHU7w" />
+            <node concept="37vLTw" id="1VSGHIpPl8p" role="3uHU7B">
+              <ref role="3cqZAo" node="1VSGHIpPl7E" resolve="ex" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1VSGHIpPl8q" role="3cqZAp">
+          <node concept="37vLTw" id="1VSGHIpPl8r" role="3cqZAk">
+            <ref role="3cqZAo" node="1VSGHIpPl7B" resolve="result" />
           </node>
         </node>
       </node>
@@ -2462,6 +2857,7 @@
         </node>
       </node>
       <node concept="3cqZAl" id="4BapoMDjgRA" role="3clF45" />
+      <node concept="3Tm6S6" id="1VSGHIpOCeC" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4BapoMDnuAp" role="jymVt" />
     <node concept="312cEu" id="4BapoMDjgzY" role="jymVt">
@@ -3025,8 +3421,13 @@
           <property role="1dT_AB" value="3. must &quot;load&quot; the SModel in &quot;new format&quot; (as if they were save by the last persistence, see below)" />
         </node>
       </node>
-      <node concept="TZ5HA" id="4BapoMDqrhr" role="TZ5H$">
-        <node concept="1dT_AC" id="4BapoMDqrhs" role="1dT_Ay">
+      <node concept="TZ5HA" id="1VSGHIpOLDP" role="TZ5H$">
+        <node concept="1dT_AC" id="1VSGHIpOLDQ" role="1dT_Ay">
+          <property role="1dT_AB" value="4. should have &quot;read&quot; access when executing (for now, all public methods start read-actions)" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1VSGHIpOLEY" role="TZ5H$">
+        <node concept="1dT_AC" id="1VSGHIpOLEZ" role="1dT_Ay">
           <property role="1dT_AB" value="" />
         </node>
       </node>

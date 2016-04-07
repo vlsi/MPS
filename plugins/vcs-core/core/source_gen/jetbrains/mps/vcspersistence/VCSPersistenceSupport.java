@@ -20,6 +20,8 @@ import java.io.InputStreamReader;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.util.Map;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -62,6 +64,7 @@ import jetbrains.mps.util.StringUtil;
  * 1. should not be fully-functional. 
  * 2. can use any hacks to "load" the model. 
  * 3. must "load" the SModel in "new format" (as if they were save by the last persistence, see below)
+ * 4. should have "read" access when executing (for now, all public methods start read-actions)
  * 
  * E.g. if in some persistence we had only names of node's concepts, we are still able to remove SConceptByName in newer 
  * MPS versions. The persistences here can use in-repo or even in-structure-models search to obtain concept ids for 
@@ -139,24 +142,48 @@ public class VCSPersistenceSupport {
   }
 
   @NotNull
-  public static SModelHeader loadDescriptor(InputSource source) throws IOException {
-    SModelHeader result = new SModelHeader();
-    parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
+  public static SModelHeader loadDescriptor(final InputSource source) throws IOException {
+    final SModelHeader result = new SModelHeader();
+    final Wrappers._T<IOException> ex = new Wrappers._T<IOException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          parseAndHandleExceptions(source, new VCSPersistenceSupport.MyDescriptorHandler(result), "model descriptor");
+        } catch (IOException e) {
+          ex.value = e;
+        }
+      }
+    });
+    if (ex.value != null) {
+      throw ex.value;
+    }
     return result;
   }
 
   @NotNull
-  public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
+  public static SModelHeader loadDescriptor(final StreamDataSource source) throws ModelReadException {
     final SModelHeader result = new SModelHeader();
-    loadDescriptor(result, source);
-    // for old persistences try to load header from metadata 
-    if (result.getPersistenceVersion() < 7 && source instanceof FileDataSource) {
-      Map<String, String> metadata = loadMetadata(((FileDataSource) source).getFile());
-      if (metadata != null) {
-        if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
-          result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
+    final Wrappers._T<ModelReadException> ex = new Wrappers._T<ModelReadException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          loadDescriptor(result, source);
+          // for old persistences try to load header from metadata 
+          if (result.getPersistenceVersion() < 7 && source instanceof FileDataSource) {
+            Map<String, String> metadata = loadMetadata(((FileDataSource) source).getFile());
+            if (metadata != null) {
+              if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
+                result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
+              }
+            }
+          }
+        } catch (ModelReadException e) {
+          ex.value = e;
         }
       }
+    });
+    if (ex.value != null) {
+      throw ex.value;
     }
     return result;
   }
@@ -196,40 +223,61 @@ public class VCSPersistenceSupport {
   }
 
   @NotNull
-  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource, ModelLoadingState state) throws ModelReadException {
-    InputStream in = null;
-    try {
-      in = dataSource.openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-      return readModel(header, source, state);
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
-    } finally {
-      FileUtil.closeFileSafe(in);
+  public static ModelLoadResult readModel(@NotNull final SModelHeader header, @NotNull final StreamDataSource dataSource, final ModelLoadingState state) throws ModelReadException {
+    final Wrappers._T<ModelLoadResult> result = new Wrappers._T<ModelLoadResult>();
+    final Wrappers._T<ModelReadException> ex = new Wrappers._T<ModelReadException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        InputStream in = null;
+        try {
+          in = dataSource.openInputStream();
+          InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
+          result.value = readModel(header, source, state);
+        } catch (IOException e) {
+          ex.value = new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
+        } catch (ModelReadException e) {
+          ex.value = e;
+        } finally {
+          FileUtil.closeFileSafe(in);
+        }
+      }
+    });
+    if (ex.value != null) {
+      throw ex.value;
     }
+    return result.value;
   }
 
   @Nullable
-  public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
-    try {
-      SModelHeader header;
-      header = loadDescriptor(new InputSource(new StringReader(content)));
-      IModelPersistence mp = getPersistence(header.getPersistenceVersion());
-      if (mp == null) {
-        return null;
-      }
+  public static List<LineContent> getLineToContentMap(final String content) throws ModelReadException {
+    final Wrappers._T<List<LineContent>> result = new Wrappers._T<List<LineContent>>(null);
+    final Wrappers._T<ModelReadException> ex = new Wrappers._T<ModelReadException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          SModelHeader header;
+          header = loadDescriptor(new InputSource(new StringReader(content)));
+          IModelPersistence mp = getPersistence(header.getPersistenceVersion());
+          if (mp == null) {
+            return;
+          }
 
-      XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
-      if (handler == null) {
-        return null;
-      }
+          XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
+          if (handler == null) {
+            return;
+          }
 
-      parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
-      return handler.getResult();
-    } catch (IOException ex) {
-      throw new ModelReadException(ex.toString(), ex);
+          parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
+          result.value = handler.getResult();
+        } catch (IOException e) {
+          ex.value = new ModelReadException(e.toString(), e);
+        }
+      }
+    });
+    if (ex.value != null) {
+      throw ex.value;
     }
-
+    return result.value;
   }
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) throws IOException {
@@ -241,21 +289,47 @@ public class VCSPersistenceSupport {
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean interfaceOnly) throws ModelReadException {
-    SModelHeader header = loadDescriptor(source);
-    ModelLoadingState state = (interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
-    return (DefaultSModel) readModel(header, source, state).getModel();
+  public static DefaultSModel readModel(@NotNull final StreamDataSource source, final boolean interfaceOnly) throws ModelReadException {
+    final Wrappers._T<DefaultSModel> result = new Wrappers._T<DefaultSModel>();
+    final Wrappers._T<ModelReadException> ex = new Wrappers._T<ModelReadException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          SModelHeader header = loadDescriptor(source);
+          ModelLoadingState state = (interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+          result.value = (DefaultSModel) readModel(header, source, state).getModel();
+        } catch (ModelReadException e) {
+          ex.value = e;
+        }
+      }
+    });
+    if (ex.value != null) {
+      throw ex.value;
+    }
+    return result.value;
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final String content, boolean interfaceOnly) throws ModelReadException {
-    try {
-      SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-      ModelLoadingState state = (interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
-      return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
-    } catch (IOException ex) {
-      throw new ModelReadException(ex.toString(), ex);
+  public static DefaultSModel readModel(@NotNull final String content, final boolean interfaceOnly) throws ModelReadException {
+    final Wrappers._T<DefaultSModel> result = new Wrappers._T<DefaultSModel>();
+    final Wrappers._T<ModelReadException> ex = new Wrappers._T<ModelReadException>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
+          ModelLoadingState state = (interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+          result.value = (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
+        } catch (IOException e) {
+          ex.value = new ModelReadException(e.toString(), e);
+        } catch (ModelReadException e) {
+          ex.value = e;
+        }
+      }
+    });
+    if (ex.value != null) {
+      throw ex.value;
     }
+    return result.value;
   }
 
   @Nullable
@@ -269,7 +343,7 @@ public class VCSPersistenceSupport {
     return DefaultMetadataPersistence.load(metadataFile);
   }
 
-  /*package*/ static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws IOException {
+  private static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws IOException {
     try {
       JDOMUtil.createSAXParser().parse(source, handler);
     } catch (BreakParseSAXException e) {
